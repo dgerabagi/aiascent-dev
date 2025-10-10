@@ -1,39 +1,60 @@
 # Artifact A0: aiascent.dev - Master Artifact List
+
 # Date Created: C0
+
 # Author: AI Model & Curator
 
-## 1. Purpose
+## 1\. Purpose
 
-This file serves as the definitive, parseable list of all documentation artifacts for the `aiascent.dev` website project. This project aims to create a promotional website for the Data Curation Environment (DCE) VS Code Extension, featuring an interactive whitepaper as a primary showcase.
+This file serves as the definitive, parseable list of all documentation artifacts for the `aiascent.dev` website project. This project aims to create a promotional website for the Data Curation Environment (DCE) VS Code Extension, featuring an interactive showcase.
 
-## 2. Formatting Rules for Parsing
+## 2\. Formatting Rules for Parsing
 
-*   Lines beginning with `#` are comments and are ignored.
-*   `##` denotes a major category header and is ignored.
-*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
-*   Lines beginning with `- **Description:**` provide context for the project.
-*   Lines beginning with `- **Tags:**` provide keywords for Inference.
+\*   Lines beginning with `#` are comments and are ignored.
+\*   `##` denotes a major category header and is ignored.
+\*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
+\*   Lines beginning with `- **Description:**` provide context for the project.
+\*   Lines beginning with `- **Tags:**` provide keywords for Inference.
 
-## 3. Artifacts List
+## 3\. Artifacts List
 
-## I. Project Planning & Design
+## I. Project Planning & Vision
 
-### A1. Project Vision and Goals
-- **Description:** High-level overview of the `aiascent.dev` website, its purpose to promote the DCE, and the phased development plan.
-- **Tags:** project vision, goals, scope, dce, whitepaper, promotional website
+### A1. aiascent.dev - Project Vision and Goals
 
-### A2. Phase 1 - Requirements & Design
-- **Description:** Detailed functional and technical requirements for Phase 1, focusing on building the static site shell and porting the interactive report viewer.
-- **Tags:** requirements, design, phase 1, report viewer, nextjs
+  - **Description:** High-level overview of the aiascent.dev website, its purpose to promote the DCE, and the phased development plan.
+  - **Tags:** project vision, goals, scope, dce, promotional website, interactive showcase
 
-### A3. Technical Scaffolding Plan
-- **Description:** Outlines the proposed file structure and technologies, leveraging the `automationsaas` project shell and components from `aiascent.game`.
-- **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss
+### A2. aiascent.dev - Phase 1 Requirements & Design
 
-### A7. Development and Testing Guide
-- **Description:** A step-by-step guide explaining how to run, debug, and test the `aiascent.dev` website locally.
-- **Tags:** development, testing, debugging, workflow, nextjs
+  - **Description:** Detailed functional and technical requirements for Phase 1 of aiascent.dev, focusing on the static site shell and the interactive showcase.
+  - **Tags:** requirements, design, phase 1, features, nextjs, showcase
 
-### A9. GitHub Repository Setup Guide
-- **Description:** A step-by-step guide with the necessary git commands to initialize the project as a local repository and push it to a new remote repository on GitHub.
-- **Tags:** git, github, version control, setup, repository
+### A11. aiascent.dev - Implementation Roadmap
+
+  - **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
+  - **Tags:** roadmap, implementation plan, project management, development stages
+
+## II. Technical Architecture & Implementation
+
+### A3. aiascent.dev - Technical Scaffolding Plan
+
+  - **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
+  - **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
+
+## III. Process & Workflow
+
+### A4. aiascent.dev - Universal Task Checklist
+
+  - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
+  - **Tags:** checklist, task management, planning, roadmap
+
+### A7. aiascent.dev - Development and Testing Guide
+
+  - **Description:** A guide providing the standard procedure for running, debugging, and testing the aiascent.dev Next.js website locally.
+  - **Tags:** documentation, project setup, development, testing, nextjs, workflow
+
+### A14. aiascent.dev - GitHub Repository Setup Guide
+
+  - **Description:** A guide on setting up the aiascent.dev project with Git and GitHub, including the essential workflow for using Git alongside the Data Curation Environment (DCE).
+  - **Tags:** git, github, version control, workflow, setup, dce

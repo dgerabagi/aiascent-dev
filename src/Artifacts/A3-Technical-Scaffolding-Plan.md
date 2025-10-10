@@ -1,62 +1,65 @@
 # Artifact A3: aiascent.dev - Technical Scaffolding Plan
+
 # Date Created: C0
+
 # Author: AI Model & Curator
 
-- **Key/Value for A0:**
-- **Description:** Outlines the proposed technical scaffolding and file structure, leveraging the `automationsaas` project shell and components from `aiascent.game`.
-- **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss
+  - **Key/Value for A0:**
+  - **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
+  - **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
 
 ## 1. Overview
 
-This document outlines the proposed technical scaffolding and file structure for the `aiascent.dev` project. This plan leverages existing assets to accelerate development, ensuring a clean and scalable architecture from the start.
+This document outlines the proposed technical scaffolding and file structure for the **aiascent.dev** project. This plan aims to establish a modern, efficient, and scalable architecture suitable for a promotional and educational website.
 
 ## 2. Technology Stack
 
--   **Language:** TypeScript
--   **Framework:** Next.js (from `automationsaas` shell)
--   **UI Library:** React (from `automationsaas` shell)
--   **Styling:** TailwindCSS (from `automationsaas` shell)
--   **Deployment:** The project will be deployed as a static site, hosted on the existing server infrastructure and managed by Caddy.
+-   **Language:** TypeScript
+-   **Framework:** Next.js (for React framework, routing, and Static Site Generation - SSG)
+-   **Styling:** TailwindCSS (Utility-first CSS framework for rapid UI development)
+
+  - **Component Library:** Shadcn/ui (Optional, for pre-built accessible components)
+    -   **Hosting:** Vercel, Netlify, or self-hosted (TBD, optimized for static sites)
 
 ## 3. Proposed File Structure
 
-The project will start with the file structure from the `automationsaas` project and will be adapted as follows:
+The project will adhere to the modern Next.js App Router structure for optimal performance and organization:
 
 ```
 aiascent-dev/
 ├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.tsx
-│   │   │   └── Footer.tsx
-│   │   └── whitepaper/
-│   │       ├── InteractiveWhitepaper.tsx  # Ported & refactored from aiascent.game
-│   │       └── PageContent.tsx            # Dependency of the viewer
-│   │
-│   ├── pages/
-│   │   ├── _app.tsx
-│   │   ├── index.tsx                  # The main landing page
-│   │   └── whitepaper.tsx             # Page to host the interactive whitepaper
-│   │
-│   ├── styles/
-│   │   └── globals.css
-│   │
-│   └── data/
-│       └── whitepaperContent.json     # Data source for the whitepaper
+│   ├── app/                   # Next.js App Router
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Landing page (/)
+│   │   ├── globals.css        # Global styles and Tailwind directives
+│   │   └── showcase/
+│   │       └── page.tsx       # Showcase page (/showcase)
+│   │
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   └── Footer.tsx
+│   │   ├── showcase/
+│   │   │   └── InteractiveWhitepaper.tsx  # The main interactive component
+│   │   └── ui/                # Shadcn/ui components (Button, Card)
+│   │
+│   ├── lib/                 # Utility functions and helpers
+│   │
+│   └── data/
+│       └── whitepaperContent.json  # Data source for the interactive showcase
 │
-├── public/
-│   └── ... (images, fonts)
+├── public/                 # Static assets (images, fonts, favicon)
 │
 ├── package.json
 ├── tsconfig.json
-└── ... (Next.js config files)
+├── tailwind.config.ts
+└── next.config.js
 ```
 
 ## 4. Key Architectural Concepts
 
--   **Leverage Existing Assets:** The core strategy is to reuse and adapt existing, proven components and project structures to accelerate development.
-    -   The Next.js/React/TailwindCSS foundation from `automationsaas` provides a modern and efficient web development stack.
-    -   The `ReportViewer` from `aiascent.game` provides the complex logic for the interactive document experience.
--   **Component-Based Architecture:** The UI will be built by composing reusable React components.
--   **Static Site Generation (SSG):** Next.js will be used to generate a static site, ensuring maximum performance and security.
--   **Data Decoupling:** The content for the whitepaper will be stored in a separate JSON file, decoupling the data from the presentation layer and making it easy to update or add new reports in the future.
+-   **Next.js App Router:** Utilizing the latest Next.js features for efficient routing, layouts, and server components where applicable.
+-   **Static Site Generation (SSG):** We will leverage SSG to pre-render pages at build time. This ensures maximum performance, SEO benefits, and security.
+-   **Component-Based UI:** The UI will be built using reusable React components, ensuring consistency and maintainability.
+-   **TypeScript:** TypeScript will be used throughout the project to ensure type safety, improve code quality, and enhance the developer experience.
+-   **Utility-First CSS:** TailwindCSS allows for rapid styling directly within the markup, reducing context switching.
