@@ -1,5 +1,5 @@
 // src/components/home/MissionSection.tsx
-// C6 - Add negative margin to pull footer up
+// C7 - Adjust negative margin to match lamp container changes
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -9,8 +9,8 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-// C6: Added negative bottom margin to allow footer to overlap with sparkles
-<section className="w-full -mb-40">
+// C7: Adjusted negative bottom margin to -20 to work with new lamp padding
+<section className="w-full -mb-20">
 <LampContainer>
 <motion.div
 initial={{ opacity: 0.5, y: 100 }}
@@ -23,7 +23,7 @@ ease: 'easeInOut',
 className="flex flex-col items-center text-center"
 >
 <h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
-More Than Code:<br /> The Rise of Cognitive Capitalism.
+THE RISE OF COGNITIVE CAPITALISM.
 </h2>
 <p className="text-xl text-neutral-200 max-w-3xl text-center my-8">
 Mastering AI collaboration is essential for competitiveness and individual empowerment. The DCE is the foundational tool for a decentralized future, enabling Citizen Architects to combat AI centralization.

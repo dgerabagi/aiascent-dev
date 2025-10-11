@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T16:58:01.235Z
+  Date Generated: 2025-10-11T17:11:27.811Z
   ---
   Total Files: 69
-  Approx. Tokens: 162199
+  Approx. Tokens: 162156
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -16,8 +16,8 @@
 6. src\components\ui\dropdown-menu.tsx (1827 tokens)
 7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
 8. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
-9. src\components\global\lamp.tsx (1103 tokens)
-10. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
+9. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
+10. src\Artifacts\A5-Dual Domain Hosting Guide.md (1066 tokens)
 
 <!-- Full File List -->
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 124 - Chars: 6150 - Tokens: 1538
@@ -45,9 +45,9 @@
 23. src\app\showcase\page.tsx - Lines: 24 - Chars: 890 - Tokens: 223
 24. src\app\globals.css - Lines: 81 - Chars: 1434 - Tokens: 359
 25. src\app\layout.tsx - Lines: 40 - Chars: 1048 - Tokens: 262
-26. src\app\page.tsx - Lines: 22 - Chars: 651 - Tokens: 163
+26. src\app\page.tsx - Lines: 22 - Chars: 672 - Tokens: 168
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-28. src\components\layout\Footer.tsx - Lines: 30 - Chars: 997 - Tokens: 250
+28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 976 - Tokens: 244
 29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2132 - Tokens: 533
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
@@ -79,11 +79,11 @@
 57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
 58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2777 - Tokens: 695
 59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
-60. src\components\global\lamp.tsx - Lines: 105 - Chars: 4412 - Tokens: 1103
+60. src\components\global\lamp.tsx - Lines: 102 - Chars: 4245 - Tokens: 1062
 61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
 62. src\components\home\FeaturesSection.tsx - Lines: 63 - Chars: 2591 - Tokens: 648
 63. src\components\home\HeroSection.tsx - Lines: 68 - Chars: 3207 - Tokens: 802
-64. src\components\home\MissionSection.tsx - Lines: 42 - Chars: 1424 - Tokens: 356
+64. src\components\home\MissionSection.tsx - Lines: 42 - Chars: 1418 - Tokens: 355
 65. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1443 - Tokens: 361
 66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
 67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
@@ -9200,14 +9200,15 @@ export function ModeToggle() {
 
 <file path="src/components/layout/Footer.tsx">
 // src/components/layout/Footer.tsx
-// C6 - Make background transparent for sparkle effect
+// C7 - Refactor to position text in corners
 const Footer = () => {
 return (
-// Updated C6: Changed background to transparent for sparkle overlap effect
-<footer className="border-t border-neutral-900 bg-transparent relative z-10">
-<div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-<div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+// Use a full-width container with padding
+<footer className="w-full border-t border-neutral-900 bg-transparent relative z-10 px-4 sm:px-6 lg:px-8">
+{/* Flex container to justify content between edges */}
+<div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-4 md:py-0 text-center md:text-left">
+{/* Left-aligned text */}
+<p className="text-sm text-muted-foreground">
 Built using the Data Curation Environment. The source code is available on{' '}
 <a
 href="https://github.com/dgerabagi/aiascent-dev"
@@ -9219,8 +9220,8 @@ GitHub
 </a>
 .
 </p>
-</div>
-<p className="text-center text-sm text-muted-foreground">
+{/* Right-aligned text */}
+<p className="text-sm text-muted-foreground mt-2 md:mt-0">
 &copy; 2025 aiascent.dev. All rights reserved.
 </p>
 </div>
@@ -12504,7 +12505,7 @@ className="relative rounded-2xl object-contain opacity-50"
 
 <file path="src/components/global/lamp.tsx">
 // src/components/global/lamp.tsx
-// C6 - Expand particle area, remove artifacts, adjust layout
+// C7 - Adjust layout to fix cut-off title, remove artifacts, and reduce empty space
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -12512,21 +12513,21 @@ import { cn } from '@/lib/utils'
 import { SparklesCore } from './sparkles' 
 
 export const LampContainer = ({
-  children,
-  className,
+  children,
+  className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode
+  className?: string
 }) => {
-  return (
-    <div
-      className={cn(
-        // C6: Removed min-h-[800px], added padding
-        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20 pb-40',
-        className
-      )}
-    >
-      {/* C6: Sparkles now fill the entire container */}
+  return (
+    <div
+      className={cn(
+        // C7: Reduced bottom padding from pb-40 to pb-20 to shrink empty space
+        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20 pb-20',
+        className
+      )}
+    >
+      {/* Sparkles now fill the entire container */}
       <div className="absolute inset-0 w-full h-full z-0">
           <SparklesCore
             background="transparent"
@@ -12538,75 +12539,72 @@ export const LampContainer = ({
           />
         </div>
 
-      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-10 ">
-        <motion.div
-          initial={{ opacity: 0.5, width: '15rem' }}
-          whileInView={{ opacity: 1, width: '30rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          style={{
-            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
-          }}
-          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
-        >
-          <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
-          <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0.5, width: '15rem' }}
-          whileInView={{ opacity: 1, width: '30rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          style={{
-            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
-          }}
-          className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
-        >
-          <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
-          <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
-        </motion.div>
+      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-10 ">
+        <motion.div
+          initial={{ opacity: 0.5, width: '15rem' }}
+          // C7: Increased width to '50rem' to eliminate side artifacts
+          whileInView={{ opacity: 1, width: '50rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          style={{
+            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+          }}
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[50rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+        >
+          <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0.5, width: '15rem' }}
+          // C7: Increased width to '50rem' to eliminate side artifacts
+          whileInView={{ opacity: 1, width: '50rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          style={{
+            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+          }}
+          className="absolute inset-auto left-1/2 h-56 w-[50rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
+        >
+          <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
+          <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+        </motion.div>
         
-        {/* C6: Removed the div causing the rectangular artifact */}
-        {/* <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div> */}
-        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-500 opacity-50 blur-3xl"></div>
-        <motion.div
-          initial={{ width: '8rem' }}
-          whileInView={{ width: '16rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-neutral-400 blur-2xl"
-        ></motion.div>
-        <motion.div
-          initial={{ width: '15rem' }}
-          whileInView={{ width: '30rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          // C6: Moved lamp line much higher
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[18rem] bg-neutral-400 "
-        ></motion.div>
+        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
+        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-500 opacity-50 blur-3xl"></div>
+        <motion.div
+          initial={{ width: '8rem' }}
+          whileInView={{ width: '16rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-neutral-400 blur-2xl"
+        ></motion.div>
+        <motion.div
+          initial={{ width: '15rem' }}
+          whileInView={{ width: '30rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          // C7: Lowered lamp line to give title more space
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[12rem] bg-neutral-400 "
+        ></motion.div>
+      </div>
 
-        {/* C6: Removed the div that created the top black bar */}
-        {/* <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div> */}
-      </div>
-
-      <div className="relative z-40 flex -translate-y-80 flex-col items-center px-5">
-        {children}
-      </div>
-    </div>
-  )
+      <div className="relative z-40 flex -translate-y-60 flex-col items-center px-5">
+        {children}
+      </div>
+    </div>
+  )
 }
 </file_artifact>
 
@@ -13064,7 +13062,7 @@ export default HeroSection;
 
 <file path="src/components/home/MissionSection.tsx">
 // src/components/home/MissionSection.tsx
-// C6 - Add negative margin to pull footer up
+// C7 - Adjust negative margin to match lamp container changes
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -13074,8 +13072,8 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-// C6: Added negative bottom margin to allow footer to overlap with sparkles
-<section className="w-full -mb-40">
+// C7: Adjusted negative bottom margin to -20 to work with new lamp padding
+<section className="w-full -mb-20">
 <LampContainer>
 <motion.div
 initial={{ opacity: 0.5, y: 100 }}
@@ -13088,7 +13086,7 @@ ease: 'easeInOut',
 className="flex flex-col items-center text-center"
 >
 <h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
-More Than Code:<br /> The Rise of Cognitive Capitalism.
+THE RISE OF COGNITIVE CAPITALISM.
 </h2>
 <p className="text-xl text-neutral-200 max-w-3xl text-center my-8">
 Mastering AI collaboration is essential for competitiveness and individual empowerment. The DCE is the foundational tool for a decentralized future, enabling Citizen Architects to combat AI centralization.

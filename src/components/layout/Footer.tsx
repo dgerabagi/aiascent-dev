@@ -1,12 +1,13 @@
 // src/components/layout/Footer.tsx
-// C6 - Make background transparent for sparkle effect
+// C7 - Refactor to position text in corners
 const Footer = () => {
 return (
-// Updated C6: Changed background to transparent for sparkle overlap effect
-<footer className="border-t border-neutral-900 bg-transparent relative z-10">
-<div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-<div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+// Use a full-width container with padding
+<footer className="w-full border-t border-neutral-900 bg-transparent relative z-10 px-4 sm:px-6 lg:px-8">
+{/* Flex container to justify content between edges */}
+<div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-4 md:py-0 text-center md:text-left">
+{/* Left-aligned text */}
+<p className="text-sm text-muted-foreground">
 Built using the Data Curation Environment. The source code is available on{' '}
 <a
 href="https://github.com/dgerabagi/aiascent-dev"
@@ -18,8 +19,8 @@ GitHub
 </a>
 .
 </p>
-</div>
-<p className="text-center text-sm text-muted-foreground">
+{/* Right-aligned text */}
+<p className="text-sm text-muted-foreground mt-2 md:mt-0">
 &copy; 2025 aiascent.dev. All rights reserved.
 </p>
 </div>
