@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T20:49:20.919Z
+  Date Generated: 2025-10-11T21:13:20.919Z
   ---
-  Total Files: 2431
-  Approx. Tokens: 245226
+  Total Files: 2436
+  Approx. Tokens: 250563
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -104,19 +104,19 @@
 82. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 83. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 84. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
-85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 131 - Chars: 6502 - Tokens: 1626
+85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 162 - Chars: 8274 - Tokens: 2069
 86. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 87. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 88. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 89. src\stores\reportStore.ts - Lines: 433 - Chars: 18282 - Tokens: 4571
 90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 91. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
-92. src\components\report-viewer\ReportViewer.tsx - Lines: 133 - Chars: 5861 - Tokens: 1466
+92. src\components\report-viewer\ReportViewer.tsx - Lines: 133 - Chars: 5993 - Tokens: 1499
 93. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 94. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 95. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-96. src\app\api\chat\route.ts - Lines: 70 - Chars: 2298 - Tokens: 575
-97. src\app\api\tts\route.ts - Lines: 50 - Chars: 1776 - Tokens: 444
+96. src\app\api\chat\route.ts - Lines: 102 - Chars: 4194 - Tokens: 1049
+97. src\app\api\tts\route.ts - Lines: 50 - Chars: 1825 - Tokens: 457
 98. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 99. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
 100. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
@@ -2451,6 +2451,11 @@
 2429. context\vcpg\ai.service.ts - Lines: 284 - Chars: 13001 - Tokens: 3251
 2430. context\vcpg\ai.gateway.ts - Lines: 88 - Chars: 2969 - Tokens: 743
 2431. context\vcpg\ai.module.ts - Lines: 26 - Chars: 907 - Tokens: 227
+2432. context\dce\A89. DCE - vLLM Integration and API Proxy Plan.md - Lines: 61 - Chars: 3736 - Tokens: 934
+2433. context\dce\A92. DCE - vLLM Setup Guide.md - Lines: 100 - Chars: 4302 - Tokens: 1076
+2434. context\dce\A94. DCE - Connecting to a Local LLM Guide.md - Lines: 42 - Chars: 2565 - Tokens: 642
+2435. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
+2436. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -16994,7 +16999,8 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // C15 Fix: Changed block to 'nearest' to avoid whole page scroll
+        messagesEndRef.current?.scrollIntoView({ behavior: 'auto', block: 'nearest' });
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
@@ -17028,18 +17034,48 @@ const ReportChatPanel: React.FC = () => {
             const decoder = new TextDecoder();
             let done = false;
             
+            updateReportChatStatus(temporaryId, 'streaming');
             while (!done) {
                 const { value, done: doneReading } = await reader.read();
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
-                updateReportChatMessage(temporaryId, chunk);
+                // Simple SSE parsing
+                const lines = chunk.split('\n');
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        const data = line.substring(6);
+                        if (data.trim() === '[DONE]') continue;
+                        try {
+                            const parsed = JSON.parse(data);
+                            interface Choice {
+                                text: string;
+                            }
+
+                            interface ParsedData {
+                                choices?: Choice[];
+                            }
+                            const parsedData: ParsedData = parsed;
+                            const textChunk: string = parsedData.choices?.[0]?.text || '';
+                            if (textChunk) {
+                                updateReportChatMessage(temporaryId, textChunk);
+                            }
+                        } catch (e) {
+                            // It might not be JSON, but raw text.
+                            // This can happen if the stream is not perfectly formatted SSE.
+                            // We will just append the raw data part if it's not JSON.
+                            if (data) updateReportChatMessage(temporaryId, data);
+                        }
+                    }
+                }
             }
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error) {
             console.error("Error with chat stream:", error);
             const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-            updateReportChatMessage(temporaryId, `Sorry, I encountered an error: ${errorMessage}`);
+            // C16: Provide a more helpful error message in the UI.
+            const userFriendlyError = `Sorry, I'm having trouble connecting to my core systems. The server logs may show a connection timeout error. Please ask the curator to check the vLLM server's status and firewall configuration. (Details: ${errorMessage})`;
+            updateReportChatMessage(temporaryId, userFriendlyError);
             updateReportChatStatus(temporaryId, 'complete');
         } finally {
             setIsThinking(false);
@@ -20904,8 +20940,9 @@ export async function POST(request: Request) {
   const llmUrl = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL;
   
   if (!llmUrl) {
-    console.error('LLM URL not configured. Set REMOTE_LLM_URL or LOCAL_LLM_URL in .env.local');
-    return new NextResponse('LLM service is not configured.', { status: 500 });
+    const errorMessage = 'LLM URL not configured. Set REMOTE_LLM_URL or LOCAL_LLM_URL in .env.local';
+    console.error(`[Chat API] ${errorMessage}`);
+    return new NextResponse(errorMessage, { status: 500 });
   }
 
   const completionsUrl = `${llmUrl}/v1/completions`;
@@ -20923,6 +20960,10 @@ User: ${prompt}
 
 Ascentia:`;
 
+  // C16: Add AbortController for robust timeout and cancellation handling
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000); // 15-second timeout
+
   try {
     const response = await fetch(completionsUrl, {
       method: 'POST',
@@ -20936,11 +20977,14 @@ Ascentia:`;
         temperature: 0.7,
         stream: true,
       }),
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
         const errorBody = await response.text();
-        console.error(`LLM server error: ${response.status} ${response.statusText}`, errorBody);
+        console.error(`[Chat API] LLM server error: ${response.status} ${response.statusText}`, errorBody);
         return new NextResponse(`Error from LLM service: ${errorBody}`, { status: response.status });
     }
 
@@ -20958,8 +21002,32 @@ Ascentia:`;
          },
     });
 
-  } catch (error) {
-    console.error('Error proxying chat request:', error);
+  } catch (error: any) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+        console.error(`[Chat API] Request to LLM server timed out after 15 seconds. URL: ${completionsUrl}`);
+        const debugMessage = `Connection timed out. 
+        TROUBLESHOOTING:
+        1. Verify the vLLM server is running on the host machine.
+        2. Check the firewall on the host machine (${llmUrl}) to ensure port 1234 is open for incoming TCP connections.
+        3. Ensure the vLLM server is started with '--host 0.0.0.0' to accept connections from other machines on the network.`;
+        console.error(debugMessage);
+        return new NextResponse(`Error: Connection to the AI service timed out. ${debugMessage}`, { status: 504 }); // Gateway Timeout
+    }
+
+    // Check for connection refused error
+    if (error instanceof TypeError && error.message.includes('fetch failed')) {
+        console.error(`[Chat API] Network error: Could not connect to the LLM server. URL: ${completionsUrl}. Cause: ${error.cause}`);
+        const debugMessage = `Network connection failed. This usually means the server at the specified address is not running or is unreachable.
+        TROUBLESHOOTING:
+        1. Verify the vLLM server is running.
+        2. Double-check the IP address and port in your .env.local file for REMOTE_LLM_URL.
+        3. Check the firewall on the host machine (${llmUrl}) for port 1234.`;
+        console.error(debugMessage);
+        return new NextResponse(`Error: Could not connect to the AI service. ${debugMessage}`, { status: 502 }); // Bad Gateway
+    }
+
+    console.error('[Chat API] Error proxying chat request:', error);
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
     return new NextResponse(`Error proxying chat request: ${errorMessage}`, { status: 500 });
   }
@@ -47644,5 +47712,344 @@ import { SynchronizationModule } from 'src/synchronization/synchronization.modul
   exports: [AiService], // Export AiService
 })
 export class AiModule {}
+</file_artifact>
+
+<file path="context/dce/A89. DCE - vLLM Integration and API Proxy Plan.md">
+# Artifact A89: DCE - vLLM Integration and API Proxy Plan
+# Date Created: C29
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Details the end-to-end plan for integrating the DCE with a remote vLLM instance via a secure proxy server, enabling high-throughput, parallelized AI responses.
+- **Tags:** feature plan, vllm, llm, proxy, api, integration, performance
+
+## 1. Vision & Goal
+
+The goal of this integration is to unlock a new level of performance for the Data Curation Environment (DCE) by connecting its parallel response UI to a high-throughput vLLM backend. This will enable users to generate multiple, simultaneous AI responses with extremely low latency, dramatically accelerating the iterative development workflow.
+
+To achieve this securely and flexibly, we will use the curator's existing `aiascent.game` server as a proxy, which will receive requests from the DCE extension and forward them to a dedicated vLLM instance.
+
+## 2. End-to-End Architecture
+
+The data will flow through three distinct components:
+
+```
++---------------+      +---------------------------+      +----------------------+
+| DCE Extension |----->|   aiascent.game (Proxy)   |----->|   vLLM Server        |
+| (VS Code)     |      | (Node.js/Express Server)  |      | (Python Instance)    |
++---------------+      +---------------------------+      +----------------------+
+```
+
+1.  **DCE Extension (The Client):**
+    *   The user will configure a "Model Card" in the DCE settings pointing to the proxy server's endpoint: `https://aiascent.game/api/dce/proxy`.
+    *   When the user sends a prompt, the extension will make a `POST` request to this endpoint, sending the prompt data in the request body.
+    *   It will be configured to handle a streaming response.
+
+2.  **aiascent.game (The Proxy Server):**
+    *   This server acts as a secure intermediary.
+    *   A new API endpoint, `/api/dce/proxy`, will be added to `server.ts`.
+    *   This endpoint will receive the request from the DCE extension.
+    *   It will then create a new request to the internal vLLM server, whose address will be stored in an environment variable (e.g., `VLLM_URL=http://localhost:8000`).
+    *   It will stream the response from the vLLM server back to the DCE extension client.
+
+3.  **vLLM Server (The Inference Engine):**
+    *   This is a dedicated Python process running the vLLM library.
+    *   It will be configured to serve a specific model (e.g., `unsloth/gpt-oss-20b`) and will expose an OpenAI-compatible API endpoint.
+    *   Its primary job is to handle the computationally intensive task of model inference with high efficiency through continuous batching.
+
+## 3. Implementation Details
+
+### 3.1. `server.ts` Modifications
+A new route will be added to handle the proxy request. This route will use `node-fetch` or a similar library to make a server-to-server request to the vLLM instance and pipe the streaming response back.
+
+**See Artifact `A90` for the proposed code.**
+
+### 3.2. `Caddyfile` Configuration
+The existing `Caddyfile` is already configured to reverse proxy all traffic to the Node.js server on port 3001. This configuration is sufficient and automatically handles HTTPS termination and header forwarding, so no changes are required.
+
+**See Artifact `A91` for the full file and analysis.**
+
+### 3.3. DCE Extension Configuration
+The user will configure the connection in the DCE settings panel as follows:
+-   **Model Card Name:** `Remote vLLM via AI Ascent`
+-   **Endpoint URL:** `https://aiascent.game/api/dce/proxy`
+-   **API Key:** (None required, as the proxy handles authentication if needed)
+
+This architecture provides a secure, scalable, and highly performant solution for integrating the DCE with vLLM.
+</file_artifact>
+
+<file path="context/dce/A92. DCE - vLLM Setup Guide.md">
+# Artifact A92: DCE - vLLM Setup Guide
+# Date Created: C30
+# Author: AI Model & Curator
+# Updated on: C45 (Add note about matching model name in proxy)
+
+- **Key/Value for A0:**
+- **Description:** A step-by-step guide for setting up the vLLM inference server with an OpenAI-compatible API endpoint for use with the DCE.
+- **Tags:** guide, setup, vllm, llm, inference, performance, openai
+
+## 1. Overview & Goal
+
+This guide provides the necessary steps to install `vLLM` and run a large language model with a high-throughput, OpenAI-compatible API server. This will allow the Data Curation Environment (DCE) to connect to a powerful local or remote inference engine.
+
+## 2. Prerequisites
+
+*   **OS:** Linux or Windows with WSL2 (Windows Subsystem for Linux).
+*   **Python:** Version 3.9 - 3.12.
+*   **GPU:** An NVIDIA GPU with CUDA drivers installed. Compute capability 7.0 or higher is recommended (e.g., V100, T4, RTX 20-series or newer).
+*   **Package Manager:** `pip` is required. Using a virtual environment manager like `venv` or `conda` is highly recommended.
+
+## 3. Recommended Method for Windows: Using WSL2
+
+
+The vLLM server has a dependency on `uvloop`, a library that is not compatible with native Windows. The most reliable and performant way to run vLLM on a Windows machine is within a WSL2 environment.
+
+### Step 1: Install or Verify WSL2
+Open PowerShell and check your WSL status.
+```powershell
+wsl --status
+```
+If WSL is not installed, run the following command and then restart your machine.
+```powershell
+wsl --install
+```
+
+### Step 2: Set up Python in WSL
+Open your WSL terminal (e.g., by typing `wsl` in the Start Menu). Update your package lists and install the necessary Python tools.
+```bash
+sudo apt update
+sudo apt install python3-venv python3-pip -y
+```
+
+### Step 3: Create and Activate a Virtual Environment in WSL
+It is crucial to install `vLLM` and its dependencies in an isolated environment *inside WSL*.
+
+```bash
+# Create a directory for your project
+mkdir -p ~/projects/vLLM
+cd ~/projects/vLLM
+
+# Create the virtual environment
+python3 -m venv vllm-env
+
+# Activate the environment
+source vllm-env/bin/activate
+```
+Your terminal prompt should now be prefixed with `(vllm-env)`.
+
+### Step 4: Install vLLM and uvloop
+With the virtual environment activated inside WSL, you can now install `vLLM` and its required dependency `uvloop`.
+```bash
+pip install vllm uvloop
+```
+
+### Step 5: Launch the OpenAI-Compatible Server
+This command will download the specified model and start the server.
+```bash
+python -m vllm.entrypoints.openai.api_server --model "unsloth/gpt-oss-20b"
+```
+The server will start on `http://localhost:8000` *inside* the WSL environment.
+
+### Step 6: Accessing the Server from Windows
+WSL2 automatically forwards network ports to your Windows host machine. This means you can access the vLLM server from your Windows applications (like the DCE extension or your browser) by navigating to **`http://localhost:8000`**.
+
+### Step 7: Verifying the API Endpoint
+When you navigate to `http://localhost:8000` in a web browser, you will see a `404 Not Found` error. This is expected and correct. The server is an API endpoint and is not designed to serve a webpage.
+
+To verify that the API is working, run the following `curl` command from your **WSL terminal** (the same one where the server is running). This sends a test prompt to the completions endpoint.
+
+```bash
+curl http://localhost:8000/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+    "model": "unsloth/gpt-oss-20b",
+    "prompt": "San Francisco is a",
+    "max_tokens": 7,
+    "temperature": 0
+}'
+```
+
+A successful response will be a JSON object that looks something like this:
+```json
+{"id":"cmpl-a1b2c3d4e5f6","object":"text_completion","created":1677652288,"model":"unsloth/gpt-oss-20b","choices":[{"index":0,"text":" city in Northern California,","logprobs":null,"finish_reason":"length"}],"usage":{"prompt_tokens":5,"total_tokens":12,"completion_tokens":7}}
+```
+If you receive this JSON response, your vLLM server is running correctly.
+
+### Step 8: Connecting the DCE Extension
+Once you have verified the API is running, you are ready to connect the DCE extension to it.
+
+For detailed instructions, please refer to the next guide: **`A94. DCE - Connecting to a Local LLM Guide.md`**.
+</file_artifact>
+
+<file path="context/dce/A94. DCE - Connecting to a Local LLM Guide.md">
+# Artifact A94: DCE - Connecting to a Local LLM Guide
+# Date Created: C35
+# Author: AI Model & Curator
+# Updated on: C36 (Align with new multi-modal settings UI)
+
+- **Key/Value for A0:**
+- **Description:** A step-by-step guide on how to configure the DCE extension to use a local LLM with an OpenAI-compatible API via the new settings panel.
+- **Tags:** guide, setup, llm, vllm, configuration, local
+
+## 1. Overview & Goal
+
+This guide explains how to configure the Data Curation Environment (DCE) extension to communicate with a locally hosted Large Language Model (LLM), such as the one set up via the `A92. DCE - vLLM Setup Guide`.
+
+The goal is to switch the extension from its default "Manual" mode to one of the automated modes that can make API calls directly to your local model, streamlining the development workflow.
+
+## 2. Step-by-Step Configuration
+
+### Step 1: Open the Settings Panel
+- Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`).
+- Run the command: **`DCE: Open Settings & Help`**. This will open the settings panel in a new editor tab.
+
+### Step 2: Navigate to the Settings Section
+- In the settings panel, find and expand the **"Settings"** section.
+
+### Step 3: Select Your Connection Mode
+You will see a list of connection modes. Choose the one that matches your setup.
+
+#### Option A: Demo Mode (Recommended for `aiascent.game` users)
+This is the simplest option if you are using the pre-configured `aiascent.game` proxy.
+-   Select the radio button for **"Demo Mode (Local vLLM via `aiascent.game`)"**.
+-   The endpoint is pre-configured. No other steps are needed.
+
+#### Option B: API Mode (URL)
+Use this option if you are running your own vLLM server (or another OpenAI-compatible service) and want to connect to it directly without a proxy.
+-   Select the radio button for **"API (URL)"**.
+-   An input field will appear. Enter the full API endpoint URL. For a standard vLLM server, this will be `http://localhost:8000/v1`.
+    -   **Important:** If your LLM server is on a different machine, replace `localhost` with that machine's local network IP address (e.g., `http://192.168.1.100:8000/v1`).
+-   Save the settings.
+
+## 4. Next Steps
+
+The DCE extension is now configured to send its API requests to your local LLM server. You can now use the "Generate Responses" button (once implemented) in the Parallel Co-Pilot Panel to automatically populate the response tabs, completing the automated workflow. To switch back to the manual copy/paste method, simply re-open the settings and select **"Free Mode (Manual Copy/Paste)"**.
+</file_artifact>
+
+<file path="context/dce/A96. DCE - Harmony-Aligned Response Schema Plan.md">
+# Artifact A96: DCE - Harmony-Aligned Response Schema Plan
+# Date Created: C45
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** An analysis of the `openai_harmony` library and a proposed plan for migrating the DCE's vLLM interaction schema from XML tags to a more robust, token-based structured format.
+- **Tags:** plan, architecture, interaction schema, parsing, llm, vllm, harmony
+
+## 1. Overview & Goal
+
+The current interaction schema (`A52.2`) relies on parsing XML-like tags (`<file>`, `<summary>`) and markdown headers from the LLM's free-text response. While functional, this approach is brittle. It is susceptible to minor formatting errors from the model and requires complex, string-based `stop` tokens that can prematurely truncate responses, as seen in Cycle 44.
+
+The `GPT-OSS` repository introduces a more advanced approach, "Harmony," which uses a vocabulary of special control tokens (e.g., `<|start|>`, `<|channel|>`, `<|message|>`, `<|end|>`) to guide the model's generation into a structured, machine-readable format. This is a significantly more robust and powerful way to handle structured data generation with LLMs.
+
+The goal of this plan is to outline a phased migration from our current XML-based schema to a Harmony-aligned schema for all communication with the vLLM backend.
+
+## 2. Analysis of the Harmony Approach
+
+The `openai_harmony` library and `harmony_vllm_app.py` demonstrate a sophisticated workflow:
+
+1.  **Structured Prompt Rendering:** Instead of a single block of text, the prompt is constructed as a series of messages, each with a `role` (system, user, assistant), and potentially a `channel` (analysis, commentary, final). This entire structure is "rendered" into a sequence of tokens that includes the special control tokens.
+2.  **Guided Generation:** The model is trained or fine-tuned to understand these control tokens. It learns to "speak" in this format, for example, by placing its internal monologue in an `analysis` channel and its final answer in a `final` channel.
+3.  **Robust Parsing:** The response from the model is not just a block of text; it's a stream of tokens that can be parsed deterministically using the same control tokens. A `StreamableParser` can listen to the token stream and identify when the model is opening a new message, writing to a specific channel, or finishing its turn.
+
+This is fundamentally superior to our current regex-based parsing.
+
+## 3. Proposed Migration Plan
+
+This is a major architectural change and should be implemented in phases.
+
+### Phase 1: Adopt Harmony for File Formatting (Immediate)
+
+-   **Goal:** Replace the `<file path="...">` and `
+</file_artifact>
+
+<file path="context/dce/A98. DCE - Harmony JSON Output Schema Plan.md">
+# Artifact A98: DCE - Harmony JSON Output Schema Plan
+# Date Created: C50
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A plan to migrate the vLLM interaction schema from XML-based parsing to a structured JSON object output, leveraging the `response_format` parameter in OpenAI-compatible APIs.
+- **Tags:** plan, architecture, interaction schema, parsing, llm, vllm, harmony, json
+
+## 1. Vision & Goal
+
+The current method of parsing AI responses relies on a set of regular expressions to extract content from within custom XML tags (`<summary>`, `<file>`, etc.). While functional, this approach is brittle and can fail if the model produces even slightly malformed output.
+
+Modern OpenAI-compatible APIs, including the one provided by vLLM, support a `response_format` parameter that can instruct the model to return its output as a guaranteed-valid JSON object. The goal of this plan is to leverage this feature to create a more robust, reliable, and maintainable parsing pipeline. We will define a clear JSON schema and update our extension to request and parse this structured format, moving away from fragile regex-based text processing.
+
+## 2. The Proposed JSON Schema
+
+Based on the example provided in the ephemeral context of Cycle 50, the target JSON schema for an AI response will be as follows:
+
+```typescript
+interface HarmonyFile {
+  path: string;
+  content: string;
+}
+
+interface CourseOfActionStep {
+  step: number;
+  description: string;
+}
+
+interface HarmonyJsonResponse {
+  summary: string;
+  course_of_action: CourseOfActionStep[];
+  files_updated?: string[]; // Optional, can be derived from `files`
+  curator_activity?: string; // Optional
+  files: HarmonyFile[];
+}
+```
+
+### Example JSON Output:
+```json
+{
+  "summary": "I have analyzed the request and will update the main application component and its corresponding service.",
+  "course_of_action": [
+    {
+      "step": 1,
+      "description": "Update `src/App.tsx`: Add a new state variable and a button to trigger the new functionality."
+    },
+    {
+      "step": 2,
+      "description": "Update `src/services/api.ts`: Create a new function to fetch the required data from the backend."
+    }
+  ],
+  "curator_activity": "Please ensure the backend API endpoint `GET /api/newdata` is running and accessible.",
+  "files": [
+    {
+      "path": "src/App.tsx",
+      "content": "// Full content of the updated App.tsx file..."
+    },
+    {
+      "path": "src/services/api.ts",
+      "content": "// Full content of the updated api.ts file..."
+    }
+  ]
+}
+```
+
+## 3. Technical Implementation Plan
+
+1.  **Backend (`llm.service.ts`):**
+    *   The `generateBatch` method will be updated.
+    *   When the `connectionMode` is set to `'demo'`, it will add `response_format: { "type": "json_object" }` to the JSON body of the `fetch` request sent to the vLLM proxy. This instructs the model to generate a JSON response.
+
+2.  **Frontend (`response-parser.ts`):**
+    *   The `parseResponse` function will be refactored to be "bilingual."
+    *   It will first attempt to parse the `rawText` as JSON using a `try...catch` block.
+    *   **If `JSON.parse` succeeds:**
+        *   It will validate that the parsed object contains the required keys (`summary`, `course_of_action`, `files`).
+        *   It will map the data from the JSON object to the `ParsedResponse` type.
+            *   The `course_of_action` array will be formatted into a numbered markdown list.
+            *   The `files` array will be directly mapped to the `ParsedFile` array.
+    *   **If `JSON.parse` fails:**
+        *   It will fall back to the existing regex-based parsing logic. This ensures backward compatibility with the manual copy/paste mode and any models that do not support JSON output mode.
+
+3.  **Interaction Schema (`A52.3`):**
+    *   The `A52.3 DCE - Harmony Interaction Schema Source.md` will be updated.
+    *   It will now instruct the AI to produce its output in the specified JSON format, providing the schema definition as an example. The instructions for using XML tags will be preserved as a fallback for the model.
+
+This migration to a structured JSON format will significantly improve the reliability of the extension's core parsing logic.
 </file_artifact>
 

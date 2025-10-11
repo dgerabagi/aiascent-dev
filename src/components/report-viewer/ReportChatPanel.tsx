@@ -25,7 +25,8 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // C15 Fix: Changed block to 'nearest' to avoid whole page scroll
+        messagesEndRef.current?.scrollIntoView({ behavior: 'auto', block: 'nearest' });
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
@@ -59,18 +60,48 @@ const ReportChatPanel: React.FC = () => {
             const decoder = new TextDecoder();
             let done = false;
             
+            updateReportChatStatus(temporaryId, 'streaming');
             while (!done) {
                 const { value, done: doneReading } = await reader.read();
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
-                updateReportChatMessage(temporaryId, chunk);
+                // Simple SSE parsing
+                const lines = chunk.split('\n');
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        const data = line.substring(6);
+                        if (data.trim() === '[DONE]') continue;
+                        try {
+                            const parsed = JSON.parse(data);
+                            interface Choice {
+                                text: string;
+                            }
+
+                            interface ParsedData {
+                                choices?: Choice[];
+                            }
+                            const parsedData: ParsedData = parsed;
+                            const textChunk: string = parsedData.choices?.[0]?.text || '';
+                            if (textChunk) {
+                                updateReportChatMessage(temporaryId, textChunk);
+                            }
+                        } catch (e) {
+                            // It might not be JSON, but raw text.
+                            // This can happen if the stream is not perfectly formatted SSE.
+                            // We will just append the raw data part if it's not JSON.
+                            if (data) updateReportChatMessage(temporaryId, data);
+                        }
+                    }
+                }
             }
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error) {
             console.error("Error with chat stream:", error);
             const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-            updateReportChatMessage(temporaryId, `Sorry, I encountered an error: ${errorMessage}`);
+            // C16: Provide a more helpful error message in the UI.
+            const userFriendlyError = `Sorry, I'm having trouble connecting to my core systems. The server logs may show a connection timeout error. Please ask the curator to check the vLLM server's status and firewall configuration. (Details: ${errorMessage})`;
+            updateReportChatMessage(temporaryId, userFriendlyError);
             updateReportChatStatus(temporaryId, 'complete');
         } finally {
             setIsThinking(false);
