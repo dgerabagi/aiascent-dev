@@ -1,5 +1,5 @@
 // src/components/home/MissionSection.tsx
-// C8 - Adjust negative margin to match lamp container changes
+// C10 - Apply standard gradient to title
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -9,7 +9,6 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-// C8: Removed negative bottom margin to allow the lamp container to sit flush with the footer
 <section className="w-full">
 <LampContainer>
 <motion.div
@@ -22,7 +21,7 @@ ease: 'easeInOut',
 }}
 className="flex flex-col items-center text-center"
 >
-<h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
+<h2 className="mt-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 text-center text-4xl font-bold tracking-tight md:text-6xl">
 THE RISE OF COGNITIVE CAPITALISM.
 </h2>
 <p className="text-xl text-neutral-200 max-w-3xl text-center my-8">

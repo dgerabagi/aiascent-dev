@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 10 - final issue remaining with missionsection
+Current Cycle 11 - light mode adjustment, documentation alignment, planning next steps
+Cycle 10 - final issue remaining with missionsection
 Cycle 9 - still two issues with the bottom, almost perfect
 Cycle 8 - final touches on bottom part
 Cycle 7 - focus on bottom of site
@@ -341,6 +342,41 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 11>
+<Cycle Context>
+fantastic work! okay the herosection still has a white border around the pcp.gif, in addition theres still 'room to grow', in the sense that we could still expand that gif more such that more of the details become visible. the red arrows are showing what i mean when i say how it could be expanded, and the yellow arrows are showing the white border.
+
+next, i believe we can port over the report viewer into the showcase, and then also to create the mission section. essentially, i want to be solarpunk prime. i want to be the OG vibe coder. i want to share what i have discovered to the rest of the country. i want america to continue to be a stabilizing force in to this new future. the fissured workplace is the antithesis of this dream. it is a de-facto pro-china stance. this is the overall story, please do not take my language verbatim, im speaking tersely here and now between us to get the big picture across. i want to create a community around the DCE. i will vibe code on stream using the DCE in order to teach others. the cognitive apprenticeship model for the report.
+
+lets continue, lets update our documentation to align our roadmap/checklists with our current progress, see what more is left to do, such as the 404 on the mission page, the learn section is also a 404, and the showcase.
+
+for the showcase, lets replicate the entire aiascent report. its already written. we can have it read by Ascentia as well. we will retain everything except the voting system.
+
+ive pulled out the report-related code files from aiascent and placed them in a `report` folder in the `context` directory. ill re-use the same report index and embedding that i already have just let me know where to put it, as well as where to copy/paste the images to, etc. that kind of planning artifact. review the situation then plan to get us from where we are at to where we need to be.
+
+
+then, on the homepage, we will want to replicate the exact same report viewer into the interactive visualization, and in there instead of the big ai ascent report, we will place our smaller whitepaper. we will do that after, as we will have to convert the whitepaper into a report.json and corresponding imagemanifest with appropriate images, when currently it is only a markdown file. compared to the ai ascent report which is already completed. just keep this in mind when planning, in that we plan to use the report viewer in more than one 'place' and will have more than one 'report' to view.
+
+for the learn section, this is where we will make new reports over time. this is where i can create curriculum on how to use the DCE, how to work with AI, etc. here we will need to add to the report viewer such that we can select from multiple reports, that way there can be a curriculum or lesson plan that we can 'put before' a 'visitor/prospective student'.
+
+
+finally, i just realized that the light mode color combinations have not been reviewed/considered. its very bad. ill provide three screenshots and critique the issues so we can resolve them.
+
+in screenshot 1, you can see the color scheme is not conducive to 'light mode', which is currently selected.
+in screenshot 2, you can see that the font choice is hard to read against the light background. additionally, the border around the images is not conducive to a light theme.
+in screenshot 3, same font choice issue against the light background, but also the text within the boxes is not visible, only the blue numbers in the boxes are. finally, the color selection of the particles is not conducive to light mode. it clashes with the light background above and below it.
+</Cycle Context>
+<Previous Cycle 10 Summary of Actions>
+I have analyzed the visual feedback from Cycle 9. The two outstanding issues are that the title in the "Rise of Cognitive Capitalism" section is still partially obscured, and the lamp's lighting effect does not extend far enough vertically to match the area of the particle effect.
+
+My course of action is to make targeted adjustments within the `lamp.tsx` component to correct both of these issues simultaneously. I will lower the text content to bring the title fully into view and expand the vertical dimensions of the lamp's lighting elements to ensure they fill the entire particle background as requested.
+
+1.  **Update `src/components/global/lamp.tsx`:**
+    *   To resolve the partially cut-off title, I will adjust the vertical translation of the content container. I will change the `translate-y-40` class to `translate-y-20`, which will shift the title, paragraph, and button downwards, making them fully visible.
+    *   To expand the lamp effect vertically to match the sparkles' area, I will modify the elements that create the light cone. I will increase the height of the two `motion.div`s responsible for the conic gradients from `h-56` to `h-96`. I will also increase the vertical scaling of the entire lighting effect container from `scale-y-125` to `scale-y-150`. This combination will stretch the light effect downwards to fill the entire height of the component, matching the particle effect as desired.
+</Previous Cycle 10 Summary of Actions>
+</Cycle 11>
+
 <Cycle 10>
 <Cycle Context>
 okay! its almost perfect! theres still just a tiny sliver of the sparkles/particles that are not encompassed by the lamp effect. ive provided an image without edits, as well as an image with three different colored/sized brackets. the green one indicates the issue, the space that the lamp effect is not affecting. the yellow shows what the lamp is affecting, relative to the particle effect. the red bracket indicates the desired coverage of the lamp effect.
@@ -349,24 +385,6 @@ next, by expanding this lamp effect, the overall light pollution has increased. 
 
 finally, a few notifications appear when running npm run dev (see ephemeral)
 </Cycle Context>
-<Ephemeral Context>
-Image with src "/assets/images/pcp.gif" has legacy prop "layout". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/images/pcp.gif" has legacy prop "objectFit". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/icons/context-curation.png" has legacy prop "layout". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/icons/context-curation.png" has legacy prop "objectFit". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/icons/parallel-copilot.png" has legacy prop "layout". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/icons/parallel-copilot.png" has legacy prop "objectFit". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/icons/iterative-workflow.png" has legacy prop "layout". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-Image with src "/assets/icons/iterative-workflow.png" has legacy prop "objectFit". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-</Ephemeral Context>
 <Previous Cycle 9 Summary of Actions>
 I have analyzed the user's feedback regarding the visual issues in the bottom "Mission" section of the website. My course of action is to make targeted adjustments to the `lamp.tsx` component to resolve the cut-off title, the rectangular lighting artifacts, and the gap at the bottom of the sparkles effect. I will also adjust the `MissionSection.tsx` to ensure it integrates seamlessly with these changes.
 
@@ -1670,10 +1688,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T17:53:19.171Z
+  Date Generated: 2025-10-11T18:39:13.838Z
   ---
-  Total Files: 69
-  Approx. Tokens: 162102
+  Total Files: 78
+  Approx. Tokens: 187284
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1681,12 +1699,12 @@ This file-centric approach helps in planning and prioritizing work, especially i
 2. context\automationsaas\flattened-repo.md (45210 tokens)
 3. context\aiascentgame\flattened-repo.md (18579 tokens)
 4. context\dce\flattened-repo.md (14794 tokens)
-5. src\components\global\sparkles.tsx (2122 tokens)
-6. src\components\ui\dropdown-menu.tsx (1827 tokens)
-7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
-8. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
-9. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
-10. src\Artifacts\A5-Dual Domain Hosting Guide.md (1066 tokens)
+5. context\aiascentgame\report\reportStore.ts (9081 tokens)
+6. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
+7. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
+8. context\aiascentgame\report\AudioControls.tsx (2831 tokens)
+9. src\components\global\sparkles.tsx (2122 tokens)
+10. context\aiascentgame\report\ImageNavigator.tsx (1900 tokens)
 
 <!-- Full File List -->
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 124 - Chars: 6150 - Tokens: 1538
@@ -1748,16 +1766,25 @@ This file-centric approach helps in planning and prioritizing work, especially i
 57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
 58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2777 - Tokens: 695
 59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
-60. src\components\global\lamp.tsx - Lines: 98 - Chars: 3947 - Tokens: 987
+60. src\components\global\lamp.tsx - Lines: 98 - Chars: 3941 - Tokens: 986
 61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
-62. src\components\home\FeaturesSection.tsx - Lines: 63 - Chars: 2591 - Tokens: 648
-63. src\components\home\HeroSection.tsx - Lines: 68 - Chars: 3207 - Tokens: 802
-64. src\components\home\MissionSection.tsx - Lines: 42 - Chars: 1471 - Tokens: 368
+62. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2512 - Tokens: 628
+63. src\components\home\HeroSection.tsx - Lines: 66 - Chars: 3042 - Tokens: 761
+64. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1300 - Tokens: 325
 65. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1443 - Tokens: 361
 66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
 67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
 68. public\assets\icons\parallel-copilot.png - [Binary] Size: 5.7 MB
 69. public\assets\icons\iterative-workflow.png - [Binary] Size: 6 MB
+70. context\aiascentgame\report\AudioControls.tsx - Lines: 290 - Chars: 11322 - Tokens: 2831
+71. context\aiascentgame\report\ImageNavigator.tsx - Lines: 203 - Chars: 7598 - Tokens: 1900
+72. context\aiascentgame\report\PageNavigator.tsx - Lines: 73 - Chars: 2272 - Tokens: 568
+73. context\aiascentgame\report\PromptNavigator.tsx - Lines: 43 - Chars: 1300 - Tokens: 325
+74. context\aiascentgame\report\ReportChatPanel.tsx - Lines: 289 - Chars: 17167 - Tokens: 4292
+75. context\aiascentgame\report\ReportProgressBar.tsx - Lines: 146 - Chars: 5008 - Tokens: 1252
+76. context\aiascentgame\report\reportStore.ts - Lines: 783 - Chars: 36322 - Tokens: 9081
+77. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
+78. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -14174,7 +14201,7 @@ className="relative rounded-2xl object-contain opacity-50"
 
 <file path="src/components/global/lamp.tsx">
 // src/components/global/lamp.tsx
-// C9 - Adjust layout to fix cut-off title and expand lamp effect vertically
+// C10 - Expand lamp effect vertically and reduce luminosity
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -14219,7 +14246,7 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto right-1/2 h-96 overflow-visible w-[80rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+          className="absolute inset-auto right-1/2 h-[60rem] overflow-visible w-[80rem] bg-gradient-conic from-neutral-700 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
           <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
           <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
@@ -14235,14 +14262,14 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto left-1/2 h-96 w-[80rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
+          className="absolute inset-auto left-1/2 h-[60rem] w-[80rem] bg-gradient-conic from-transparent via-transparent to-neutral-700 text-white [--conic-position:from_290deg_at_center_top]"
         >
           <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
         
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-500 opacity-50 blur-3xl"></div>
+        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-600 opacity-40 blur-3xl"></div>
         <motion.div
           initial={{ width: '8rem' }}
           whileInView={{ width: '16rem' }}
@@ -14590,7 +14617,7 @@ export const SparklesCore = (props: ParticlesProps) => {
 
 <file path="src/components/home/FeaturesSection.tsx">
 // src/components/home/FeaturesSection.tsx
-// C6 - Refactor layout to make images larger and more prominent
+// C10 - Update Image component to remove legacy props
 import React from 'react';
 import Image from 'next/image';
 
@@ -14630,9 +14657,8 @@ Stop Fighting Your Tools. Start Building the Future.
                 <Image 
                     src={feature.icon} 
                     alt={feature.title} 
-                    layout="fill"
-                    objectFit="cover" // Use cover to fill the container
-                    className='transition-transform duration-500 hover:scale-105'
+                    fill
+                    className='transition-transform duration-500 hover:scale-105 object-cover'
                 />
             </div>
           </div>
@@ -14656,7 +14682,7 @@ export default FeaturesSection;
 
 <file path="src/components/home/HeroSection.tsx">
 // src/components/home/HeroSection.tsx
-// C6 - Enlarge GIF and remove light background from card
+// C10 - Update Image component to remove legacy props
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -14704,15 +14730,13 @@ return (
         </div>
       }
     >
-        {/* Visuals (A16, 4.2 Updated C6) */}
-        {/* Removed the inner div with bg-gray-100 to eliminate the white background */}
+        {/* Visuals (A16, 4.2 Updated C10) */}
         <div className="relative h-full w-full overflow-hidden rounded-2xl">
             <Image
                 src="/assets/images/pcp.gif"
                 alt="DCE Workflow Demonstration GIF"
-                layout="fill"
-                objectFit="cover" // Changed to cover to fill the area better
-                className="rounded-2xl"
+                fill
+                className="rounded-2xl object-cover"
                 unoptimized={true} // GIFs should not be optimized by Next.js Image component
             />
         </div>
@@ -14727,7 +14751,7 @@ export default HeroSection;
 
 <file path="src/components/home/MissionSection.tsx">
 // src/components/home/MissionSection.tsx
-// C8 - Adjust negative margin to match lamp container changes
+// C10 - Apply standard gradient to title
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -14737,7 +14761,6 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-// C8: Removed negative bottom margin to allow the lamp container to sit flush with the footer
 <section className="w-full">
 <LampContainer>
 <motion.div
@@ -14750,7 +14773,7 @@ ease: 'easeInOut',
 }}
 className="flex flex-col items-center text-center"
 >
-<h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
+<h2 className="mt-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 text-center text-4xl font-bold tracking-tight md:text-6xl">
 THE RISE OF COGNITIVE CAPITALISM.
 </h2>
 <p className="text-xl text-neutral-200 max-w-3xl text-center my-8">
@@ -14873,6 +14896,2411 @@ export default WorkflowSection;
   }
 }
 </metadata>
+</file_artifact>
+
+<file path="context/aiascentgame/report/AudioControls.tsx">
+// src/components/menus/report/AudioControls.tsx
+// Updated on: C1401 (Implement responsive hiding of controls using ResizeObserver.)
+// Updated on: C1399 (Implement playback speed controls and restart-on-autoplay logic.)
+// Updated on: C1398 (Refactor play/pause logic to be more direct and fix state synchronization issues.)
+// Updated on: C1397 (Add volume and mute controls. Fix pause functionality.)
+import React, { useRef, useEffect, useState } from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { useShallow } from 'zustand/react/shallow';
+import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
+import { logInfo, logError } from '../../../logger';
+
+const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+
+const AudioControls: React.FC = () => {
+  const {
+    allPages, currentPageIndex, playbackStatus, autoplayEnabled,
+    currentAudioUrl, currentAudioPageIndex, currentTime, duration,
+    volume, isMuted, setVolume, toggleMute,
+    setPlaybackStatus, setAutoplay, setCurrentAudio,
+    setAudioTime, setAudioDuration, startSlideshow, stopSlideshow,
+    playbackSpeed, setPlaybackSpeed,
+  } = useReportStore(useShallow(state => ({
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    playbackStatus: state.playbackStatus,
+    autoplayEnabled: state.autoplayEnabled,
+    currentAudioUrl: state.currentAudioUrl,
+    currentAudioPageIndex: state.currentAudioPageIndex,
+    currentTime: state.currentTime,
+    duration: state.duration,
+    volume: state.volume,
+    isMuted: state.isMuted,
+    setVolume: state.setVolume,
+    toggleMute: state.toggleMute,
+    setPlaybackStatus: state.setPlaybackStatus,
+    setAutoplay: state.setAutoplay,
+    setCurrentAudio: state.setCurrentAudio,
+    setAudioTime: state.setAudioTime,
+    setAudioDuration: state.setAudioDuration,
+    startSlideshow: state.startSlideshow,
+    stopSlideshow: state.stopSlideshow,
+    playbackSpeed: state.playbackSpeed,
+    setPlaybackSpeed: state.setPlaybackSpeed,
+  })));
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioUrlRef = useRef<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null); // C1401
+  const [containerWidth, setContainerWidth] = useState(0); // C1401
+
+  const currentPage = allPages[currentPageIndex];
+
+  // C1401: Use ResizeObserver to track container width for responsive UI
+  useEffect(() => {
+    const observer = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      observer.observe(currentContainer);
+    }
+    return () => {
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
+      }
+    };
+  }, []);
+
+  const generateAndPlayAudio = async (restart = false) => {
+    if (!currentPage) return;
+
+    setPlaybackStatus('generating');
+    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
+
+    try {
+      const response = await fetch('/api/tts/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: textToNarrate }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`TTS server failed with status: ${response.status}`);
+      }
+
+      const audioBlob = await response.blob();
+      if (audioUrlRef.current) {
+        URL.revokeObjectURL(audioUrlRef.current);
+      }
+      const newUrl = URL.createObjectURL(audioBlob);
+      audioUrlRef.current = newUrl;
+      setCurrentAudio(newUrl, currentPageIndex);
+      if (restart && audioRef.current) {
+        audioRef.current.currentTime = 0;
+      }
+    } catch (error) {
+      logError('[AudioControls]', 'Failed to generate audio', error);
+      setPlaybackStatus('error');
+    }
+  };
+
+  useEffect(() => {
+    if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
+      generateAndPlayAudio();
+    }
+  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (currentAudioUrl && audio.src !== currentAudioUrl) {
+      audio.src = currentAudioUrl;
+      audio.load();
+      audio.play().catch(e => logError('[AudioControls]', 'Autoplay failed', e));
+    }
+  }, [currentAudioUrl]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = volume;
+    audio.muted = isMuted;
+    audio.playbackRate = playbackSpeed;
+  }, [volume, isMuted, playbackSpeed]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => setPlaybackStatus('playing');
+    const handlePause = () => setPlaybackStatus('paused');
+    const handleEnded = () => setPlaybackStatus('idle');
+    const handleTimeUpdate = () => setAudioTime(audio.currentTime);
+    const handleLoadedMetadata = () => setAudioDuration(audio.duration);
+    const handleWaiting = () => setPlaybackStatus('buffering');
+    const handleError = () => { logError('[AudioControls]', 'Audio playback error'); setPlaybackStatus('error'); };
+
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('playing', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('waiting', handleWaiting);
+    audio.addEventListener('error', handleError);
+
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('playing', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('waiting', handleWaiting);
+      audio.removeEventListener('error', handleError);
+      if (audioUrlRef.current) {
+        URL.revokeObjectURL(audioUrlRef.current);
+      }
+    };
+  }, []);
+
+  const handlePlayPause = () => {
+    stopSlideshow(true);
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (playbackStatus === 'playing' || playbackStatus === 'buffering') {
+      audio.pause();
+    } else if (playbackStatus === 'paused') {
+      audio.play().catch(e => logError('[AudioControls]', 'Resume play failed', e));
+    } else if (playbackStatus === 'idle' || playbackStatus === 'error') {
+      generateAndPlayAudio();
+    }
+  };
+
+  const handleRestart = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+    }
+  };
+
+  const handleAutoplayChange = (checked: boolean) => {
+    setAutoplay(checked);
+    if (checked) {
+      // C1399: Restart logic
+      generateAndPlayAudio(true); // true to force restart
+    } else {
+      stopSlideshow(true);
+    }
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Number(e.target.value);
+    }
+  };
+
+  const formatTime = (time: number) => {
+    if (isNaN(time) || !isFinite(time)) return '00:00';
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const containerStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: '8px', padding: '5px 0', fontSize: '10px', color: '#ccc', width: '100%' };
+  const buttonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', fontSize: '14px', cursor: 'pointer', padding: '5px', borderRadius: '4px', flexShrink: 0 };
+  const sliderStyle: React.CSSProperties = { flexGrow: 1, cursor: 'pointer', minWidth: '50px' };
+  const timeStyle: React.CSSProperties = { minWidth: '40px', textAlign: 'center', flexShrink: 0 };
+  const statusStyle: React.CSSProperties = { fontStyle: 'italic', minWidth: '70px', textAlign: 'center', flexShrink: 0 };
+  const speedSelectStyle: React.CSSProperties = { background: '#333', border: '1px solid #666', color: 'white', padding: '3px', fontSize: '9px', fontFamily: 'inherit', marginLeft: '5px', flexShrink: 0 };
+  const volumeSliderStyle: React.CSSProperties = { width: '80px', cursor: 'pointer', flexShrink: 0 };
+
+  const isPlaying = playbackStatus === 'playing' || playbackStatus === 'buffering';
+
+  return (
+    <div style={containerStyle} ref={containerRef}>
+      <audio ref={audioRef} />
+      <button style={buttonStyle} onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
+        {isPlaying ? <FaPause /> : <FaPlay />}
+      </button>
+      <button style={buttonStyle} onClick={handleRestart} title="Restart"><FaRedo /></button>
+
+      <span style={timeStyle}>{formatTime(currentTime)}</span>
+
+      {/* C1401: Hide seek bar on very small widths */}
+      {containerWidth > 450 && (
+        <input
+          type="range"
+          min="0"
+          max={duration || 100}
+          value={currentTime}
+          onChange={handleSeek}
+          style={sliderStyle}
+          disabled={playbackStatus === 'generating' || playbackStatus === 'idle'}
+        />
+      )}
+
+      <span style={timeStyle}>{formatTime(duration)}</span>
+
+      {/* C1401: Hide volume controls on small widths */}
+      {containerWidth > 650 && (
+        <>
+          <button style={buttonStyle} onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
+            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+          </button>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={(e) => setVolume(Number(e.target.value))}
+            style={volumeSliderStyle}
+            title={`Volume: ${Math.round(volume * 100)}%`}
+          />
+        </>
+      )}
+
+
+      <div style={statusStyle}>
+        {playbackStatus === 'generating' && <FaSpinner className="animate-spin" />}
+        {playbackStatus === 'buffering' && 'Buffering...'}
+        {playbackStatus === 'error' && 'Error!'}
+      </div>
+
+      <select
+        value={playbackSpeed}
+        onChange={(e) => setPlaybackSpeed(Number(e.target.value))}
+        style={speedSelectStyle}
+        title="Playback Speed"
+      >
+        {PLAYBACK_SPEEDS.map(speed => (
+          <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
+        ))}
+      </select>
+
+      {/* C1401: Hide autoplay on medium widths */}
+      {containerWidth > 550 && (
+        <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', flexShrink: 0 }}>
+          <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
+          Autoplay
+        </label>
+      )}
+    </div>
+  );
+};
+
+export default AudioControls;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ImageNavigator.tsx">
+// src/components/menus/report/ImageNavigator.tsx
+// Updated on: C1381 (Fix prompt toggle button functionality.)
+// Updated on: C1374 (Add hint toggle button and centralize hint text here.)
+// Updated on: C1373 (Change "Unvoted" to "Votes Left!", centralize hint text.)
+// Updated on: C1360 (Incorporate jumpPages action for Shift/Ctrl+Click functionality.)
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { FaChevronLeft, FaChevronRight, FaThumbsUp, FaCommentDots, FaTree, FaCheckSquare, FaChevronUp, FaChevronDown, FaInfoCircle } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+import { useSession } from 'next-auth/react';
+
+const ImageNavigator: React.FC = () => {
+  const { data: session } = useSession();
+  const {
+    allPages, currentPageIndex, currentImageIndex,
+    nextImage, prevImage, jumpPages, castVote, imageVotes, toggleChatPanel,
+    votesCastByPage, togglePromptVisibility, isPromptVisible,
+    isHintVisible, toggleHintVisibility,
+  } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      currentPageIndex: state.currentPageIndex,
+      currentImageIndex: state.currentImageIndex,
+      nextImage: state.nextImage,
+      prevImage: state.prevImage,
+      jumpPages: state.jumpPages,
+      castVote: state.castVote,
+      imageVotes: state.imageVotes,
+      toggleChatPanel: state.toggleChatPanel,
+      votesCastByPage: state.votesCastByPage,
+      togglePromptVisibility: state.togglePromptVisibility,
+      isPromptVisible: state.isPromptVisible,
+      isHintVisible: state.isHintVisible,
+      toggleHintVisibility: state.toggleHintVisibility,
+    }))
+  );
+  const { toggleTreeNav } = useReportStore();
+
+  const currentPage = allPages[currentPageIndex];
+  const currentPrompt = currentPage?.imagePrompts[0];
+  const currentImage = currentPrompt?.images[currentImageIndex];
+  const totalImages = currentPrompt?.images.length ?? 0;
+  const currentVotes = currentImage ? (imageVotes[currentImage.imageId] || 0) : 0;
+  const hasVotedOnThisPage = votesCastByPage.hasOwnProperty(currentPageIndex);
+  const isThisImageVoted = hasVotedOnThisPage && votesCastByPage[currentPageIndex] === currentImage?.imageId;
+
+  const pagesLeftToVote = allPages.length - Object.keys(votesCastByPage).length;
+
+  const handleVote = () => {
+    if (currentImage && session) {
+      castVote(currentImage.imageId, currentPageIndex);
+    }
+  };
+
+  const containerStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '10px',
+    fontSize: '10px',
+    color: '#ccc',
+    width: '100%',
+  };
+
+  const navGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    flex: 1,
+  };
+
+  const centerNavGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column', // Stack controls and hint
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '5px', // Gap between controls and hint
+    flex: 2,
+  };
+
+  const controlsRowStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '15px', // Adjusted gap
+  };
+
+  const actionGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    justifyContent: 'flex-end',
+    flex: 1,
+  };
+
+  const counterGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+  };
+
+  const buttonStyle: React.CSSProperties = {
+    background: 'none',
+    border: '1px solid #777',
+    color: '#ccc',
+    fontSize: '16px',
+    cursor: 'pointer',
+    padding: '5px 10px',
+    borderRadius: '4px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+  };
+
+  const smallButtonStyle: React.CSSProperties = {
+    ...buttonStyle,
+    fontSize: '12px',
+    padding: '3px 8px',
+  };
+
+  const hintTextStyle: React.CSSProperties = {
+    fontSize: '9px',
+    color: '#88ddff',
+    fontStyle: 'italic',
+    width: '100%',
+    textAlign: 'center',
+    lineHeight: '1.5',
+  };
+
+  const handlePageJump = (e: React.MouseEvent, direction: number) => {
+    let count = direction;
+    if (e.shiftKey) count *= 5;
+    if (e.ctrlKey) count *= 10;
+    jumpPages(count);
+  };
+
+
+  return (
+    <div style={containerStyle}>
+      <div style={navGroupStyle}>
+        <button style={smallButtonStyle} onClick={toggleTreeNav} title="Toggle Page Tree">
+          <FaTree /> Tree
+        </button>
+        <button style={smallButtonStyle} onClick={togglePromptVisibility} title={isPromptVisible ? "Hide Image Prompt" : "Show Image Prompt"}>
+          <FaInfoCircle /> Prompt
+        </button>
+      </div>
+
+      <div style={centerNavGroupStyle}>
+        <div style={controlsRowStyle}>
+          <div style={counterGroupStyle}>
+            <button style={buttonStyle} onClick={(e) => handlePageJump(e, -1)} title="Previous Page (Up Arrow)"><FaChevronUp /></button>
+            <span>Page {currentPageIndex + 1} / {allPages.length}</span>
+            <button style={buttonStyle} onClick={(e) => handlePageJump(e, 1)} title="Next Page (Down Arrow)"><FaChevronDown /></button>
+          </div>
+          {/* C1374: Added hint toggle button */}
+          <button style={smallButtonStyle} onClick={toggleHintVisibility} title={isHintVisible ? "Hide Controls Hint" : "Show Controls Hint"}>
+            <FaInfoCircle />
+          </button>
+          <div style={counterGroupStyle}>
+            <button style={buttonStyle} onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
+            <span>Image {currentImageIndex + 1} / {totalImages}</span>
+            <button style={buttonStyle} onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
+          </div>
+        </div>
+        {/* C1374: Hint text is now toggled */}
+        {isHintVisible && (
+          <div style={hintTextStyle}>
+            <span>Use <kbd>↑</kbd>/<kbd>↓</kbd> for pages. Use <kbd>←</kbd>/<kbd>→</kbd> for images. <kbd>Spacebar</kbd> to vote.</span>
+            <br />
+            <span>Hold <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Shift</kbd> to jump 5, or <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Ctrl</kbd> to jump 10.</span>
+          </div>
+        )}
+      </div>
+
+      <div style={actionGroupStyle}>
+        <button
+          style={{ ...smallButtonStyle, backgroundColor: pagesLeftToVote === 0 ? '#3a3' : '#553', borderColor: pagesLeftToVote === 0 ? '#7f7' : '#aa7' }}
+          disabled
+          title={pagesLeftToVote > 0 ? `${pagesLeftToVote} pages left to vote on` : "All pages voted on!"}
+        >
+          <FaCheckSquare /> {pagesLeftToVote} Votes Left!
+        </button>
+        <button
+          style={{ ...smallButtonStyle, backgroundColor: isThisImageVoted ? '#3a3' : (session ? '#555' : '#444'), borderColor: isThisImageVoted ? '#7f7' : (session ? '#777' : '#555') }}
+          onClick={handleVote}
+          disabled={!session}
+          title={session ? "Vote for this image (Spacebar)" : "You must be logged in to vote"}
+        >
+          <FaThumbsUp /> Vote ({currentVotes})
+        </button>
+        <button
+          style={{ ...smallButtonStyle, backgroundColor: '#448', borderColor: '#88f' }}
+          onClick={toggleChatPanel}
+          title="Ask @Ascentia about this page"
+        >
+          <FaCommentDots /> Ask
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ImageNavigator;
+</file_artifact>
+
+<file path="context/aiascentgame/report/PageNavigator.tsx">
+// src/components/menus/report/PageNavigator.tsx
+// Updated on: C1374 (Increase title font size.)
+// Updated on: C1373 (Remove hint text, which has been moved to ImageNavigator.)
+// Updated on: C1360 (Rearrange hint text layout and increase title font size.)
+// Updated on: C1359 (Simplify by removing page nav buttons, which are now in ImageNavigator.)
+// Updated on: C1355 (Add hint about arrow key navigation.)
+// Updated on: C1351 (Incorporate a close button and refactor layout to a single line.)
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { FaTimes } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+import { useUIStore } from '../../../state';
+
+interface PageNavigatorProps {
+  onClose: () => void;
+}
+
+const PageNavigator: React.FC<PageNavigatorProps> = ({ onClose }) => {
+  const { allPages, currentPageIndex } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      currentPageIndex: state.currentPageIndex,
+    }))
+  );
+
+  const currentPage = allPages[currentPageIndex];
+
+  const containerStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    position: 'relative',
+    minHeight: '40px',
+  };
+
+  const titleStyle: React.CSSProperties = {
+    fontSize: '18px', // C1374: Increased font size
+    color: '#FFA500',
+    margin: '0 0 5px 0',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: '100%',
+    padding: '0 50px', // Add padding to avoid overlap with close button
+    textAlign: 'center',
+  };
+
+  const closeButtonStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    background: 'none',
+    border: '1px solid #777',
+    color: '#aaa',
+    fontSize: '16px',
+    cursor: 'pointer',
+    padding: '5px 10px',
+    borderRadius: '4px',
+  };
+
+  if (!currentPage) return null;
+
+  return (
+    <div style={containerStyle}>
+      <h2 style={titleStyle} title={currentPage.pageTitle}>{currentPage.pageTitle}</h2>
+      <button style={closeButtonStyle} onClick={onClose} title="Close Report Viewer"><FaTimes /></button>
+    </div>
+  );
+};
+
+export default PageNavigator;
+</file_artifact>
+
+<file path="context/aiascentgame/report/PromptNavigator.tsx">
+// src/components/menus/report/PromptNavigator.tsx
+// Updated on: C1374 (Simplify component to only display prompt text, as header/toggle moved to parent.)
+// Updated on: C1359 (Add collapse/expand button and logic.)
+// Updated on: C1358 (Refactored to be a simple display component for a single static prompt.)
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { useShallow } from 'zustand/react/shallow';
+
+const PromptNavigator: React.FC = () => {
+  const { allPages, currentPageIndex } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      currentPageIndex: state.currentPageIndex,
+    }))
+  );
+
+  const currentPage = allPages[currentPageIndex];
+  const currentPrompt = currentPage?.imagePrompts[0];
+
+  const promptTextStyle: React.CSSProperties = {
+    width: '100%',
+    textAlign: 'left',
+    fontStyle: 'italic',
+    lineHeight: 1.4,
+    color: '#ccc',
+    fontSize: '10px',
+    padding: '8px',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: '4px',
+    border: '1px dashed #444',
+    margin: '0 0 15px 0',
+  };
+
+  if (!currentPrompt || !currentPrompt.promptText) return null;
+
+  return (
+    <div style={promptTextStyle}>
+      "{currentPrompt.promptText}"
+    </div>
+  );
+};
+
+export default PromptNavigator;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportChatPanel.tsx">
+// src/components/menus/report/ReportChatPanel.tsx
+// Updated on: C1400 (Add Ascentia message audio controls.)
+// Updated on: C1381 (Fix markdown rendering, thinking italics, and input focus loss.)
+// Updated on: C1377 (Refactor Ascentia chat tab into a stable component to fix input focus loss.)
+// Updated on: C1374 (Implement tabbed view for Ask @Ascentia and Main Chat. Add Settings button. Fix thinking italics.)
+import React, { useEffect, useRef, useCallback, useState, type ComponentType, type SVGProps } from 'react';
+import { FaCommentDots, FaTimes, FaBroom, FaCog, FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import { useMultiplayerStore, type ChatMessage } from '../../../state';
+import { useReportStore } from '../../../state/reportStore';
+import { logInfo, logError } from '../../../logger';
+import { formatMessage } from '../../../utils/chatFormatting';
+import { useShallow } from 'zustand/react/shallow';
+import { Resizable } from 're-resizable';
+import ChatPanel from '../../ui/ChatPanel'; // Import the main game chat panel
+import { useUIStore } from '../../../state';
+
+const TimesIcon = FaTimes as ComponentType<SVGProps<SVGSVGElement>>;
+const BroomIcon = FaBroom as ComponentType<SVGProps<SVGSVGElement>>;
+const SettingsIcon = FaCog as ComponentType<SVGProps<SVGSVGElement>>;
+const PlayIcon = FaPlay as ComponentType<SVGProps<SVGSVGElement>>;
+const PauseIcon = FaPause as ComponentType<SVGProps<SVGSVGElement>>;
+const SpinnerIcon = FaSpinner as ComponentType<SVGProps<SVGSVGElement>>;
+
+const parseMessageWithThinking = (message: string): { type: 'normal' | 'thought', content: string }[] => {
+  const parts: { type: 'normal' | 'thought', content: string }[] = [];
+  let lastIndex = 0;
+  const regex = /<Thinking>([\s\S]*?)<\/Thinking>/gi;
+  let match;
+
+  while ((match = regex.exec(message)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push({ type: 'normal', content: message.substring(lastIndex, match.index) });
+    }
+    parts.push({ type: 'thought', content: match[1] });
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < message.length) {
+    parts.push({ type: 'normal', content: message.substring(lastIndex) });
+  }
+
+  if (parts.length === 0) {
+    parts.push({ type: 'normal', content: message });
+  }
+
+  return parts;
+};
+
+// Ascentia chat view component
+const AscentiaChatView: React.FC = () => {
+  const {
+    allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput,
+    addReportChatMessage, updateReportChatMessage, updateReportChatStatus,
+    tokenCount, updateTokenCount, ascentiaAudioStatus, playAscentiaMessage,
+    setAscentiaAudioStatus, ascentiaAudioAutoplay, setAscentiaAutoplay, currentAscentiaAudioUrl
+  } = useReportStore(useShallow(state => ({
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    reportChatHistory: state.reportChatHistory,
+    reportChatInput: state.reportChatInput,
+    setReportChatInput: state.setReportChatInput,
+    addReportChatMessage: state.addReportChatMessage,
+    updateReportChatMessage: state.updateReportChatMessage,
+    updateReportChatStatus: state.updateReportChatStatus,
+    tokenCount: state.tokenCount,
+    updateTokenCount: state.updateTokenCount,
+    ascentiaAudioStatus: state.ascentiaAudioStatus,
+    playAscentiaMessage: state.playAscentiaMessage,
+    setAscentiaAudioStatus: state.setAscentiaAudioStatus,
+    ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
+    setAscentiaAutoplay: state.setAscentiaAutoplay,
+    currentAscentiaAudioUrl: state.currentAscentiaAudioUrl,
+  })));
+
+  const { socketInstance } = useMultiplayerStore(useShallow(state => ({ socketInstance: state.socketInstance })));
+  const currentPage = allPages[currentPageIndex];
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isThinking, setIsThinking] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (currentAscentiaAudioUrl && audio.src !== currentAscentiaAudioUrl) {
+      audio.src = currentAscentiaAudioUrl;
+      audio.play().catch(e => logError('[ReportChatPanel]', 'Ascentia audio autoplay failed', e));
+    }
+    const handlePlay = () => setAscentiaAudioStatus('playing');
+    const handlePause = () => setAscentiaAudioStatus('paused');
+    const handleEnded = () => setAscentiaAudioStatus('idle');
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('playing', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('playing', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
+    };
+  }, [currentAscentiaAudioUrl, setAscentiaAudioStatus]);
+
+  const handleStreamChunk = useCallback((data: { temporaryId: string, text: string }) => {
+    updateReportChatMessage(data.temporaryId, data.text);
+  }, [updateReportChatMessage]);
+
+  const handleStreamEnd = useCallback((data: { temporaryId: string, contextTokenCount?: number }) => {
+    setIsThinking(false);
+    updateReportChatStatus(data.temporaryId, 'complete');
+    if (data.contextTokenCount) updateTokenCount({ context: data.contextTokenCount });
+  }, [updateReportChatStatus, updateTokenCount]);
+
+  useEffect(() => {
+    if (!socketInstance) return;
+    socketInstance.on('report_ascentia_stream_chunk', handleStreamChunk);
+    socketInstance.on('report_ascentia_stream_end', handleStreamEnd);
+    return () => {
+      socketInstance.off('report_ascentia_stream_chunk', handleStreamChunk);
+      socketInstance.off('report_ascentia_stream_end', handleStreamEnd);
+    };
+  }, [socketInstance, handleStreamChunk, handleStreamEnd]);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (!isThinking) textareaRef.current?.focus();
+  }, [reportChatHistory, isThinking]);
+
+  const handleSend = () => {
+    const trimmedInput = reportChatInput.trim();
+    if (!trimmedInput || isThinking || !socketInstance) return;
+    addReportChatMessage({ author: 'You', flag: '👤', message: trimmedInput, channel: 'local' });
+    const temporaryId = `report_ascentia_response_${Date.now()}`;
+    addReportChatMessage({ id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: 'system' });
+    setIsThinking(true);
+    setReportChatInput('');
+    const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nImage Prompt: ${currentPage?.imagePrompts[0]?.promptText || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
+    updateTokenCount({ user: Math.ceil(trimmedInput.length / 4), context: Math.ceil(pageContext.length / 4), response: 0 });
+    socketInstance.emit('start_report_ascentia_stream', { prompt: trimmedInput, pageContext, temporaryId });
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } };
+
+  const handlePlayPauseClick = (message: ChatMessage) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (ascentiaAudioStatus === 'playing') {
+      audio.pause();
+    } else if (ascentiaAudioStatus === 'paused') {
+      audio.play().catch(e => logError('[ReportChatPanel]', 'Audio resume failed', e));
+    } else {
+      playAscentiaMessage(message.message);
+    }
+  };
+
+  const lastAscentiaMessage = [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia' && msg.status === 'complete');
+
+  const messageAreaStyle: React.CSSProperties = { flexGrow: 1, overflowY: 'auto', padding: '8px', fontSize: '10px', lineHeight: '1.4' };
+  const footerContainerStyle: React.CSSProperties = { borderTop: '1px solid #555', padding: '10px', flexShrink: 0 };
+  const tokenCounterStyle: React.CSSProperties = { fontSize: '9px', color: '#aaa', textAlign: 'center', marginBottom: '8px', position: 'relative', cursor: 'help' };
+  const tooltipStyle: React.CSSProperties = { visibility: 'hidden', width: '220px', backgroundColor: '#111', color: '#fff', textAlign: 'left', borderRadius: '6px', padding: '8px', position: 'absolute', zIndex: 1, bottom: '125%', left: '50%', marginLeft: '-110px', opacity: 0, transition: 'opacity 0.3s', border: '1px solid #555', fontSize: '9px', lineHeight: '1.5' };
+  const tooltipItemStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between' };
+  const textareaStyle: React.CSSProperties = { width: '100%', background: '#111', border: '1px solid #555', color: 'white', padding: '8px', fontSize: '10px', fontFamily: 'inherit', outline: 'none', borderRadius: '4px', resize: 'vertical', boxSizing: 'border-box', display: 'block', minHeight: '40px', maxHeight: '150px' };
+  const thinkingCursorStyle: React.CSSProperties = { display: 'inline-block', width: '8px', height: '1em', backgroundColor: '#ccc', animation: 'blink 1s step-end infinite', verticalAlign: 'text-bottom', marginLeft: '2px' };
+  const thoughtStyle: React.CSSProperties = { fontStyle: 'italic', color: '#99ccff', opacity: 0.8, display: 'block', borderLeft: '2px solid #5588cc', paddingLeft: '8px', margin: '4px 0' };
+  const tagStyle: React.CSSProperties = { color: '#66a3ff' };
+  const audioControlRowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px' };
+  const playButtonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', cursor: 'pointer', padding: '4px 8px', borderRadius: '4px' };
+
+  return (
+    <>
+      <audio ref={audioRef} />
+      <div style={messageAreaStyle}>
+        {reportChatHistory.map((msg, index) => {
+          const messageParts = parseMessageWithThinking(msg.message);
+          return (
+            <div key={msg.id || index} style={{ marginBottom: '8px' }}>
+              <span style={{ color: msg.author === 'You' ? '#0af' : '#00ffff' }}>{msg.flag} {String(msg.author)}: </span>
+              {msg.status === 'thinking' ? (<span>🤔...</span>) : (
+                <>
+                  {messageParts.map((part, i) =>
+                    part.type === 'thought' ? (
+                      <div key={i} style={thoughtStyle}>
+                        <span style={tagStyle}>&lt;Thinking&gt;</span>
+                        {formatMessage(part.content)}
+                        <span style={tagStyle}>&lt;/Thinking&gt;</span>
+                      </div>
+                    ) : (<React.Fragment key={i}>{formatMessage(part.content)}</React.Fragment>)
+                  )}
+                  {msg.status === 'streaming' && <span style={thinkingCursorStyle}></span>}
+                </>
+              )}
+            </div>
+          );
+        })}
+        <div ref={messagesEndRef} />
+      </div>
+      <div style={footerContainerStyle}>
+        <div style={tokenCounterStyle} onMouseEnter={() => setIsTooltipVisible(true)} onMouseLeave={() => setIsTooltipVisible(false)}>
+          Est. Context Tokens: {tokenCount.total} / 16,384
+          <div style={{ ...tooltipStyle, visibility: isTooltipVisible ? 'visible' : 'hidden', opacity: isTooltipVisible ? 1 : 0 }}>
+            <b>Token Breakdown (est. chars/4):</b>
+            <div style={tooltipItemStyle}><span>System Prompt:</span> <span>{tokenCount.breakdown.system}</span></div>
+            <div style={tooltipItemStyle}><span>Page Context:</span> <span>{tokenCount.breakdown.context}</span></div>
+            <div style={tooltipItemStyle}><span>Chat History:</span> <span>{tokenCount.breakdown.history}</span></div>
+            <div style={{ ...tooltipItemStyle, paddingLeft: '10px' }}><span style={{ fontStyle: 'italic' }}> LLM Response:</span> <span style={{ fontStyle: 'italic' }}>{tokenCount.breakdown.response}</span></div>
+            <div style={tooltipItemStyle}><span>User Prompt:</span> <span>{tokenCount.breakdown.user}</span></div>
+            <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '4px 0' }} />
+            <div style={{ ...tooltipItemStyle, fontWeight: 'bold' }}><span>Total:</span> <span>{tokenCount.total}</span></div>
+          </div>
+        </div>
+        <textarea ref={textareaRef} style={textareaStyle} value={reportChatInput} onChange={(e) => setReportChatInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Ask a question... (Shift+Enter for newline)" disabled={isThinking} />
+        <div style={audioControlRowStyle}>
+          {lastAscentiaMessage && (
+            <button style={playButtonStyle} onClick={() => handlePlayPauseClick(lastAscentiaMessage)} disabled={ascentiaAudioStatus === 'generating'}>
+              {ascentiaAudioStatus === 'generating' ? <SpinnerIcon className="animate-spin" /> : (ascentiaAudioStatus === 'playing' ? <PauseIcon /> : <PlayIcon />)}
+              <span style={{ marginLeft: '5px' }}>Read Last Response</span>
+            </button>
+          )}
+          <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', fontSize: '10px' }}>
+            <input type="checkbox" checked={ascentiaAudioAutoplay} onChange={(e) => setAscentiaAutoplay(e.target.checked)} />
+            Auto-Read Responses
+          </label>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const ReportChatPanel: React.FC = () => {
+  const { openChatSettingsModal } = useUIStore();
+  const [activeTab, setActiveTab] = useState<'ascentia' | 'main'>('ascentia');
+  const { allPages, currentPageIndex, toggleChatPanel, chatPanelWidth, setChatPanelWidth, clearReportChatHistory } = useReportStore(useShallow(state => ({ allPages: state.allPages, currentPageIndex: state.currentPageIndex, toggleChatPanel: state.toggleChatPanel, chatPanelWidth: state.chatPanelWidth, setChatPanelWidth: state.setChatPanelWidth, clearReportChatHistory: state.clearReportChatHistory, })));
+  const currentPage = allPages[currentPageIndex];
+  const currentPageTitle = currentPage?.pageTitle || 'the report';
+
+  const handleClear = () => {
+    if (activeTab === 'ascentia') {
+      clearReportChatHistory(currentPageTitle);
+    }
+  };
+
+  const containerStyle: React.CSSProperties = { height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', borderLeft: '1px solid #555', display: 'flex', flexDirection: 'column', flexShrink: 0 };
+  const headerStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0, padding: '10px' };
+  const closeChatButtonStyle: React.CSSProperties = { background: 'none', border: 'none', color: '#aaa', fontSize: '18px', cursor: 'pointer' };
+  const tabContainerStyle: React.CSSProperties = { display: 'flex', borderBottom: '1px solid #555', padding: '0 10px' };
+  const tabButtonStyle = (isActive: boolean): React.CSSProperties => ({ padding: '8px 12px', fontSize: '11px', background: 'none', border: 'none', borderBottom: `2px solid ${isActive ? '#00ffff' : 'transparent'}`, color: isActive ? '#00ffff' : '#aaa', cursor: 'pointer', fontFamily: 'inherit', });
+  const contentAreaStyle: React.CSSProperties = { flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' };
+
+  return (
+    <Resizable
+      size={{ width: chatPanelWidth, height: '100%' }}
+      minWidth={300}
+      maxWidth="60vw"
+      enable={{ left: true }}
+      onResizeStop={(e, direction, ref, d) => {
+        setChatPanelWidth(chatPanelWidth + d.width);
+      }}
+      handleClasses={{ left: 'resizable-handle-vertical' }}
+    >
+      <div style={containerStyle}>
+        <style>{`@keyframes blink { 50% { opacity: 0; } }`}</style>
+        <div style={headerStyle}>
+          <div style={tabContainerStyle}>
+            <button style={tabButtonStyle(activeTab === 'ascentia')} onClick={() => setActiveTab('ascentia')}>Ask @Ascentia</button>
+            <button style={tabButtonStyle(activeTab === 'main')} onClick={() => setActiveTab('main')}>Main Chat</button>
+          </div>
+          <div>
+            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={handleClear} title="Clear Chat History">
+              <BroomIcon />
+            </button>
+            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={openChatSettingsModal} title="Chat Settings">
+              <SettingsIcon />
+            </button>
+            <button style={closeChatButtonStyle} onClick={toggleChatPanel} title="Close Chat Panel">
+              <TimesIcon />
+            </button>
+          </div>
+        </div>
+        <div style={contentAreaStyle}>
+          {activeTab === 'ascentia' ? <AscentiaChatView /> : <ChatPanel isEmbedded={true} isEmbeddedInReport={true} />}
+        </div>
+      </div>
+    </Resizable>
+  );
+};
+
+export default ReportChatPanel;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportProgressBar.tsx">
+// src/components/menus/report/ReportProgressBar.tsx
+// Updated on: C1400 (Fix resizing issue by wrapping in a container with flex: 1.)
+// Updated on: C1369 (Refactor to use a flattened image list for accurate per-image progress.)
+// Updated on: C1360 (Add First Unseen button, remove text from Reset, make bar clickable.)
+// Updated on: C1359 (New file)
+import React, { useMemo } from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { useShallow } from 'zustand/react/shallow';
+import { FaEye, FaSync, FaStepBackward } from 'react-icons/fa';
+
+const ReportProgressBar: React.FC = () => {
+  const {
+    allPages, seenImages, jumpToNextUnseenImage, resetProgress,
+    jumpToFirstUnseenImage, goToPageByIndex,
+  } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      seenImages: state.seenImages,
+      jumpToNextUnseenImage: state.jumpToNextUnseenImage,
+      resetProgress: state.resetProgress,
+      jumpToFirstUnseenImage: state.jumpToFirstUnseenImage,
+      goToPageByIndex: state.goToPageByIndex,
+    }))
+  );
+
+  // C1369: Flatten all images from all pages into a single list for accurate progress tracking.
+  const allImages = useMemo(() => {
+    return allPages.flatMap((page, pageIndex) =>
+      page.imagePrompts.flatMap(prompt =>
+        prompt.images.map(image => ({
+          ...image,
+          pageId: page.pageId,
+          pageIndex: pageIndex,
+        }))
+      )
+    );
+  }, [allPages]);
+
+  const totalImages = allImages.length;
+  if (totalImages === 0) return null;
+
+  const seenImageCount = allImages.filter(img => seenImages[`${img.pageId}-${img.imageId}`]).length;
+  const progressPercent = totalImages > 0 ? (seenImageCount / totalImages) * 100 : 0;
+
+  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const bar = e.currentTarget;
+    const rect = bar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickPercent = clickX / rect.width;
+    // Find the corresponding image in the flattened list
+    const targetImageIndex = Math.floor(clickPercent * totalImages);
+    const targetImage = allImages[targetImageIndex];
+    if (targetImage) {
+      goToPageByIndex(targetImage.pageIndex);
+    }
+  };
+
+  const containerStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '8px 0',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  };
+
+  const buttonStyle: React.CSSProperties = {
+    background: 'none',
+    border: '1px solid #777',
+    color: '#ccc',
+    fontSize: '10px',
+    cursor: 'pointer',
+    padding: '3px 8px',
+    borderRadius: '4px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+    flexShrink: 0,
+  };
+
+  const barContainerStyle: React.CSSProperties = {
+    flexGrow: 1,
+    height: '12px',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    border: '1px solid #555',
+    borderRadius: '5px',
+    display: 'flex',
+    overflow: 'hidden',
+    position: 'relative',
+    cursor: 'pointer',
+  };
+
+  const progressTextStyle: React.CSSProperties = {
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    fontSize: '8px',
+    color: 'white',
+    fontWeight: 'bold',
+    textShadow: '0 0 2px black',
+    pointerEvents: 'none',
+  };
+
+  // C1400: Wrap the bar container in a flex-grow div to ensure it resizes correctly.
+  const wrapperStyle: React.CSSProperties = {
+    flex: 1, // This makes the wrapper take up available space
+    minWidth: 0, // This is crucial for flex items to shrink correctly
+  };
+
+  return (
+    <div style={containerStyle}>
+      <button style={buttonStyle} onClick={resetProgress} title="Reset all viewing progress">
+        <FaSync />
+      </button>
+      <button style={buttonStyle} onClick={jumpToFirstUnseenImage} title="Jump to the first unseen image">
+        <FaStepBackward /> First Unseen
+      </button>
+
+      <div style={wrapperStyle}>
+        <div style={barContainerStyle} title={`Viewed: ${seenImageCount} / ${totalImages} images (${progressPercent.toFixed(1)}%)`} onClick={handleBarClick}>
+          {allImages.map((image) => {
+            const isSeen = seenImages[`${image.pageId}-${image.imageId}`];
+            return (
+              <div
+                key={image.imageId}
+                style={{
+                  flex: 1,
+                  backgroundColor: isSeen ? '#00ffff' : 'transparent',
+                  borderRight: '1px solid rgba(85, 85, 85, 0.5)',
+                  transition: 'background-color 0.5s ease',
+                }}
+              />
+            );
+          })}
+          <div style={progressTextStyle}>{progressPercent.toFixed(0)}%</div>
+        </div>
+      </div>
+
+      <button style={buttonStyle} onClick={jumpToNextUnseenImage} title="Jump to the next unseen image">
+        <FaEye /> Next Unseen
+      </button>
+    </div>
+  );
+};
+
+export default ReportProgressBar;
+</file_artifact>
+
+<file path="context/aiascentgame/report/reportStore.ts">
+// src/state/reportStore.ts
+// Updated on: C1401 (Add state for Ascentia message audio narration.)
+// Updated on: C1399 (Implement playback speed control and fix continuous autoplay.)
+// Updated on: C1398 (Complete refactor of autoplay and slideshow logic to fix bugs and implement correct timer handling.)
+// Updated on: C1397 (Add volume and mute state. Refine slideshow and autoplay logic to fix bugs.)
+import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { logInfo, logWarn, logError } from '../logger';
+import { type ChatMessage } from './multiplayerStore';
+
+interface ReportImage {
+    imageId: string;
+    url: string;
+    prompt: string;
+    alt: string;
+}
+
+interface ReportImagePrompt {
+    promptId: string;
+    promptText: string;
+    images: ReportImage[];
+}
+
+export interface ReportPage {
+    pageId: string;
+    pageTitle: string;
+    tldr: string;
+    content: string;
+    imagePrompts: ReportImagePrompt[];
+}
+
+// --- Raw Data Structures from JSON files ---
+export interface RawReportPage {
+    pageId: string;
+    pageTitle: string;
+    tldr: string;
+    content: string;
+    imageGroupIds: string[];
+}
+
+export interface RawSubSection {
+    subSectionId: string;
+    subSectionTitle: string;
+    pages: RawReportPage[];
+}
+
+export interface RawReportSection {
+    sectionId: string;
+    sectionTitle: string;
+    pages?: RawReportPage[];
+    subSections?: RawSubSection[];
+}
+
+interface ReportContentData {
+    reportId: string;
+    reportTitle: string;
+    sections: RawReportSection[];
+}
+
+interface ImageManifestData {
+    manifestId: string;
+    basePath: string;
+    imageGroups: Record<string, {
+        path: string;
+        prompt: string;
+        alt: string;
+        baseFileName: string;
+        fileExtension: string;
+        imageCount: number;
+    }>;
+}
+// --- End Raw Data Structures ---
+
+
+export interface ReportState {
+    reportData: ReportContentData | null;
+    imageManifest: ImageManifestData | null;
+    allPages: ReportPage[];
+    currentPageIndex: number;
+    currentImageIndex: number;
+    imageVotes: Record<string, number>;
+    isTreeNavOpen: boolean;
+    expandedSections: Record<string, boolean>;
+    isChatPanelOpen: boolean;
+    chatPanelWidth: number;
+    imagePanelHeight: number;
+    isImageFullscreen: boolean;
+    votesCastByPage: Record<number, string>;
+    reportChatHistory: ChatMessage[];
+    reportChatInput: string;
+    tokenCount: {
+        total: number;
+        breakdown: { system: number; context: number; history: number; user: number; response: number; };
+    };
+    isPromptVisible: boolean;
+    isTldrVisible: boolean;
+    isContentVisible: boolean;
+    isHintVisible: boolean;
+    seenImages: Record<string, boolean>;
+    // Page Audio State
+    playbackStatus: 'idle' | 'generating' | 'buffering' | 'playing' | 'paused' | 'error';
+    autoplayEnabled: boolean;
+    currentAudioUrl: string | null;
+    currentAudioPageIndex: number | null;
+    currentTime: number;
+    duration: number;
+    volume: number;
+    isMuted: boolean;
+    slideshowTimer: NodeJS.Timeout | null;
+    nextPageTimer: NodeJS.Timeout | null;
+    playbackSpeed: number;
+    // Ascentia Message Audio State (NEW C1401)
+    ascentiaAudioStatus: 'idle' | 'generating' | 'playing' | 'paused' | 'error';
+    ascentiaAudioAutoplay: boolean;
+    currentAscentiaAudioUrl: string | null;
+    lastAscentiaMessageText: string | null;
+}
+
+export interface ReportActions {
+    loadReportData: () => Promise<void>;
+    nextPage: () => void;
+    prevPage: () => void;
+    jumpPages: (count: number) => void;
+    goToPageByIndex: (pageIndex: number) => void;
+    nextImage: () => void;
+    prevImage: () => void;
+    setCurrentImageIndex: (index: number) => void;
+    castVote: (imageId: string, pageIndex: number) => void;
+    voteWithKeyboard: () => void;
+    jumpToNextUnvotedPage: () => void;
+    handleKeyDown: (event: KeyboardEvent) => void;
+    toggleTreeNav: () => void;
+    toggleSectionExpansion: (sectionId: string) => void;
+    setActiveExpansionPath: (pageIndex: number) => void;
+    toggleChatPanel: () => void;
+    setChatPanelWidth: (width: number) => void;
+    setImagePanelHeight: (height: number) => void;
+    openImageFullscreen: () => void;
+    closeImageFullscreen: () => void;
+    setReportChatInput: (input: string) => void;
+    addReportChatMessage: (message: ChatMessage) => void;
+    updateReportChatMessage: (id: string, chunk: string) => void;
+    updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
+    clearReportChatHistory: (currentPageTitle: string) => void;
+    updateTokenCount: (parts: Partial<ReportState['tokenCount']['breakdown']>) => void;
+    togglePromptVisibility: () => void;
+    toggleTldrVisibility: () => void;
+    toggleContentVisibility: () => void;
+    toggleHintVisibility: () => void;
+    markImageAsSeen: (pageId: string, imageId: string) => void;
+    jumpToNextUnseenImage: () => void;
+    jumpToFirstUnseenImage: () => void;
+    resetProgress: () => void;
+    // Page Audio Actions
+    setPlaybackStatus: (status: ReportState['playbackStatus']) => void;
+    setAutoplay: (enabled: boolean) => void;
+    setCurrentAudio: (url: string | null, pageIndex: number) => void;
+    setAudioTime: (time: number) => void;
+    setAudioDuration: (duration: number) => void;
+    setVolume: (level: number) => void;
+    toggleMute: () => void;
+    startSlideshow: () => void;
+    stopSlideshow: (userInitiated?: boolean) => void;
+    setPlaybackSpeed: (speed: number) => void;
+    // Ascentia Message Audio Actions (NEW C1401)
+    setAscentiaAudioStatus: (status: ReportState['ascentiaAudioStatus']) => void;
+    setAscentiaAutoplay: (enabled: boolean) => void;
+    playAscentiaMessage: (messageText: string) => void;
+    setCurrentAscentiaAudioUrl: (url: string | null) => void;
+    _resetReportStore: () => void;
+}
+
+type PersistedReportState = Pick<
+    ReportState,
+    | 'currentPageIndex' | 'currentImageIndex' | 'votesCastByPage' | 'imageVotes'
+    | 'isTreeNavOpen' | 'expandedSections' | 'isChatPanelOpen' | 'chatPanelWidth'
+    | 'imagePanelHeight' | 'reportChatHistory' | 'reportChatInput'
+    | 'seenImages' | 'isPromptVisible' | 'isTldrVisible' | 'isContentVisible' | 'isHintVisible'
+    | 'autoplayEnabled' | 'volume' | 'isMuted' | 'playbackSpeed' | 'ascentiaAudioAutoplay'
+>;
+
+const createInitialReportState = (): ReportState => ({
+    reportData: null,
+    imageManifest: null,
+    allPages: [],
+    currentPageIndex: 0,
+    currentImageIndex: 0,
+    imageVotes: {},
+    isTreeNavOpen: false,
+    expandedSections: {},
+    isChatPanelOpen: false,
+    chatPanelWidth: 400,
+    imagePanelHeight: 300,
+    isImageFullscreen: false,
+    votesCastByPage: {},
+    reportChatHistory: [],
+    reportChatInput: '',
+    tokenCount: {
+        total: 0,
+        breakdown: { system: 0, context: 0, history: 0, user: 0, response: 0 },
+    },
+    isPromptVisible: true,
+    isTldrVisible: true,
+    isContentVisible: true,
+    isHintVisible: true,
+    seenImages: {},
+    // Page Audio State
+    playbackStatus: 'idle',
+    autoplayEnabled: false,
+    currentAudioUrl: null,
+    currentAudioPageIndex: null,
+    currentTime: 0,
+    duration: 0,
+    volume: 1,
+    isMuted: false,
+    slideshowTimer: null,
+    nextPageTimer: null,
+    playbackSpeed: 1,
+    // Ascentia Message Audio State (NEW C1401)
+    ascentiaAudioStatus: 'idle',
+    ascentiaAudioAutoplay: false,
+    currentAscentiaAudioUrl: null,
+    lastAscentiaMessageText: null,
+});
+
+export const useReportStore = create<ReportState & ReportActions>()(
+    persist(
+        (set, get) => ({
+            ...createInitialReportState(),
+
+            // NEW C1401: Ascentia Message Audio Actions
+            setAscentiaAudioStatus: (status) => set({ ascentiaAudioStatus: status }),
+            setAscentiaAutoplay: (enabled) => set({ ascentiaAudioAutoplay: enabled }),
+            setCurrentAscentiaAudioUrl: (url) => set({ currentAscentiaAudioUrl: url }),
+            playAscentiaMessage: (messageText) => {
+                const { setAscentiaAudioStatus, setCurrentAscentiaAudioUrl } = get();
+                setAscentiaAudioStatus('generating');
+                set({ lastAscentiaMessageText: messageText });
+                
+                fetch('/api/tts/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: messageText }),
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
+                    return response.blob();
+                })
+                .then(audioBlob => {
+                    const newUrl = URL.createObjectURL(audioBlob);
+                    setCurrentAscentiaAudioUrl(newUrl);
+                })
+                .catch(error => {
+                    logError('[reportStore:playAscentia]', 'Failed to generate audio for Ascentia message', error);
+                    setAscentiaAudioStatus('error');
+                });
+            },
+            // ---
+
+            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
+            setPlaybackSpeed: (speed) => {
+                const { startSlideshow, playbackStatus } = get();
+                set({ playbackSpeed: speed });
+                if (playbackStatus === 'playing' || playbackStatus === 'paused') {
+                    startSlideshow();
+                }
+            },
+
+            startSlideshow: () => {
+                const { stopSlideshow, allPages, currentPageIndex, duration, setCurrentImageIndex, nextPage, autoplayEnabled, playbackSpeed } = get();
+                stopSlideshow(false); 
+
+                const currentPage = allPages[currentPageIndex];
+                if (!currentPage || !autoplayEnabled) return;
+
+                const actualDuration = duration / playbackSpeed;
+                const actualDurationMs = actualDuration * 1000;
+                if (actualDurationMs <= 0) return;
+
+                logInfo('[reportStore:slideshow]', `Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
+
+                const nextPageTimer = setTimeout(() => {
+                    if (get().autoplayEnabled) {
+                        logInfo('[reportStore:slideshow]', `Next page timer fired. Advancing page.`);
+                        nextPage();
+                    }
+                }, actualDurationMs + 2000);
+                set({ nextPageTimer });
+
+                const images = currentPage.imagePrompts[0]?.images;
+                if (!images || images.length <= 1) return;
+
+                const timePerImage = actualDurationMs / images.length;
+                let imageIdx = get().currentImageIndex; 
+
+                const slideshowTimer = setInterval(() => {
+                    if (!get().autoplayEnabled) {
+                        clearInterval(slideshowTimer);
+                        return;
+                    }
+                    imageIdx = (get().currentImageIndex + 1);
+                    if (imageIdx < images.length) {
+                        setCurrentImageIndex(imageIdx);
+                    } else {
+                        clearInterval(slideshowTimer);
+                        set({ slideshowTimer: null });
+                    }
+                }, timePerImage);
+
+                set({ slideshowTimer });
+            },
+
+            stopSlideshow: (userInitiated = false) => {
+                const { slideshowTimer, nextPageTimer } = get();
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (nextPageTimer) clearTimeout(nextPageTimer);
+
+                const currentState = get();
+                if (currentState.slideshowTimer || currentState.nextPageTimer) {
+                    logInfo('[reportStore:slideshow]', `Stopping slideshow. User initiated: ${userInitiated}`);
+                }
+
+                if (userInitiated) {
+                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
+                } else {
+                    set({ slideshowTimer: null, nextPageTimer: null });
+                }
+            },
+            
+            // ... (loadReportData and other actions remain the same)
+            loadReportData: async () => {
+                const logPrefix = '[store:report:loadV3]';
+                if (get().reportData && get().imageManifest) return;
+
+                try {
+                    logInfo(logPrefix, 'Fetching report content and image manifest...');
+                    const [contentRes, manifestRes] = await Promise.all([
+                        fetch('/data/reports/reportContent.json'),
+                        fetch('/data/reports/imageManifest.json')
+                    ]);
+
+                    if (!contentRes.ok) throw new Error(`Failed to fetch reportContent.json: ${contentRes.statusText}`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch imageManifest.json: ${manifestRes.statusText}`);
+
+                    const contentData: ReportContentData = await contentRes.json();
+                    const manifestData: ImageManifestData = await manifestRes.json();
+
+                    logInfo(logPrefix, `Successfully fetched data. Content: "${contentData.reportTitle}", Manifest: "${manifestData.manifestId}"`);
+
+                    const reconstructedPages: ReportPage[] = [];
+                    contentData.sections.forEach(section => {
+                        const processPages = (pages: RawReportPage[]) => {
+                            (pages || []).forEach(rawPage => {
+                                const imagePrompts: ReportImagePrompt[] = [];
+
+                                (rawPage.imageGroupIds || []).forEach((groupId) => {
+                                    const groupMeta = manifestData.imageGroups[groupId];
+                                    if (groupMeta) {
+                                        const images: ReportImage[] = [];
+                                        for (let i = 1; i <= groupMeta.imageCount; i++) {
+                                            const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+                                            const url = `${manifestData.basePath}${groupMeta.path}${fileName}`;
+                                            const imageId = `${rawPage.pageId}-${groupId}-${i}`;
+                                            images.push({
+                                                imageId,
+                                                url,
+                                                prompt: groupMeta.prompt,
+                                                alt: groupMeta.alt,
+                                            });
+                                        }
+                                        imagePrompts.push({
+                                            promptId: groupId,
+                                            promptText: groupMeta.prompt,
+                                            images,
+                                        });
+                                    } else {
+                                        logWarn(logPrefix, `Image group metadata not found for groupId: ${groupId}`);
+                                    }
+                                });
+
+                                reconstructedPages.push({
+                                    pageId: rawPage.pageId,
+                                    pageTitle: rawPage.pageTitle,
+                                    tldr: rawPage.tldr,
+                                    content: rawPage.content,
+                                    imagePrompts,
+                                });
+                            });
+                        };
+                        
+                        if (section.pages) {
+                            processPages(section.pages);
+                        }
+                        if (section.subSections) {
+                            section.subSections.forEach(sub => processPages(sub.pages));
+                        }
+                    });
+
+                    logInfo(logPrefix, `Reconstructed ${reconstructedPages.length} pages.`);
+                    const { currentPageIndex, currentImageIndex } = get();
+                    const validPageIndex = currentPageIndex >= 0 && currentPageIndex < reconstructedPages.length ? currentPageIndex : 0;
+                    
+                    set({
+                        reportData: contentData,
+                        imageManifest: manifestData,
+                        allPages: reconstructedPages,
+                        currentPageIndex: validPageIndex,
+                        currentImageIndex: currentImageIndex || 0,
+                    });
+
+                } catch (error) {
+                    logError(logPrefix, "Failed to load and process report data.", error);
+                }
+            },
+            
+            nextPage: () => get().jumpPages(1),
+            prevPage: () => get().jumpPages(-1),
+
+            jumpPages: (count) => {
+                const { stopSlideshow, autoplayEnabled, setPlaybackStatus } = get();
+                const userInitiated = !autoplayEnabled;
+                stopSlideshow(userInitiated);
+                set((state) => {
+                    const totalPages = state.allPages.length;
+                    if (totalPages === 0) return state;
+                    let newIndex = state.currentPageIndex + count;
+                    if (newIndex >= totalPages) {
+                        // C1399: If autoplay is on and we reach the end, turn it off.
+                        if (state.autoplayEnabled) {
+                            logInfo('store:report', 'Autoplay reached end of report. Disabling.');
+                            setPlaybackStatus('idle');
+                            return { ...state, autoplayEnabled: false };
+                        }
+                        newIndex = 0;
+                    }
+                    if (newIndex < 0) newIndex = totalPages - 1;
+                    
+                    if (newIndex !== state.currentPageIndex) {
+                        logInfo('store:report', `Jumping ${count} pages to index ${newIndex}`);
+                        return { currentPageIndex: newIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 };
+                    }
+                    return state;
+                });
+            },
+
+            goToPageByIndex: (pageIndex) => {
+                get().stopSlideshow(true);
+                const totalPages = get().allPages.length;
+                if (pageIndex >= 0 && pageIndex < totalPages) {
+                    logInfo('store:report', `Jumping to page by index: ${pageIndex}`);
+                    set({ currentPageIndex: pageIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 });
+                } else {
+                    logWarn('store:report', `Attempted to jump to invalid page index: ${pageIndex}`);
+                }
+            },
+            
+            nextImage: () => {
+                get().stopSlideshow(true);
+                set((state) => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const currentPrompt = currentPage?.imagePrompts[0];
+                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
+                    const newImageIndex = (state.currentImageIndex + 1) % currentPrompt.images.length;
+                    return { currentImageIndex: newImageIndex };
+                });
+            },
+
+            prevImage: () => {
+                get().stopSlideshow(true);
+                set((state) => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const currentPrompt = currentPage?.imagePrompts[0];
+                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
+                    const newImageIndex = (state.currentImageIndex - 1 + currentPrompt.images.length) % currentPrompt.images.length;
+                    return { currentImageIndex: newImageIndex };
+                });
+            },
+            
+            setCurrentImageIndex: (index) => {
+                set((state) => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
+                    if (index >= 0 && index < totalImages) {
+                        return { currentImageIndex: index };
+                    }
+                    return state;
+                });
+            },
+
+            castVote: async (imageId, pageIndex) => {
+                const { votesCastByPage } = get();
+                const alreadyVotedFor = votesCastByPage[pageIndex];
+                if (alreadyVotedFor === imageId) return;
+                logInfo('store:report', `Casting vote for image: ${imageId} on page ${pageIndex}`);
+                set(state => ({
+                    votesCastByPage: { ...state.votesCastByPage, [pageIndex]: imageId },
+                    imageVotes: { ...state.imageVotes, [imageId]: (state.imageVotes[imageId] || 0) + 1 }
+                }));
+                try {
+                    const response = await fetch('/api/report/vote', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ imageId }),
+                    });
+                    if (!response.ok) throw new Error(await response.text());
+                    const result = await response.json();
+                    logInfo('store:report', `Vote successful for ${imageId}. New server count: ${result.newVoteCount}`);
+                } catch (error) {
+                    logWarn('store:report', `Failed to cast vote for ${imageId}. Reverting optimistic update.`, error);
+                    set(state => ({
+                        votesCastByPage: { ...state.votesCastByPage, [pageIndex]: alreadyVotedFor },
+                        imageVotes: { ...state.imageVotes, [imageId]: Math.max(0, (state.imageVotes[imageId] || 1) - 1) }
+                    }));
+                }
+            },
+            
+            voteWithKeyboard: () => {
+                get().stopSlideshow(true);
+                const { allPages, currentPageIndex, currentImageIndex, castVote } = get();
+                const currentPage = allPages[currentPageIndex];
+                const currentPrompt = currentPage?.imagePrompts[0];
+                const currentImage = currentPrompt?.images[currentImageIndex];
+                if (currentImage) castVote(currentImage.imageId, currentPageIndex);
+            },
+
+            jumpToNextUnvotedPage: () => {
+                const { allPages, votesCastByPage, goToPageByIndex } = get();
+                for (let i = 0; i < allPages.length; i++) {
+                    if (!votesCastByPage.hasOwnProperty(i)) {
+                        goToPageByIndex(i);
+                        return;
+                    }
+                }
+                logInfo('store:report', 'All pages have been voted on!');
+            },
+
+            handleKeyDown: (event: KeyboardEvent) => {
+                const { stopSlideshow } = get();
+                let jumpCount = 1;
+                if (event.shiftKey) jumpCount = 5;
+                if (event.ctrlKey) jumpCount = 10;
+
+                switch (event.key) {
+                    case 'ArrowUp': stopSlideshow(true); get().jumpPages(-jumpCount); break;
+                    case 'ArrowDown': stopSlideshow(true); get().jumpPages(jumpCount); break;
+                    case 'ArrowLeft': stopSlideshow(true); get().prevImage(); break;
+                    case 'ArrowRight': stopSlideshow(true); get().nextImage(); break;
+                    case ' ': get().voteWithKeyboard(); break;
+                }
+            },
+            
+            toggleTreeNav: () => set(state => ({ isTreeNavOpen: !state.isTreeNavOpen })),
+            toggleSectionExpansion: (sectionId) => set(state => ({
+                expandedSections: {
+                    ...state.expandedSections,
+                    [sectionId]: !state.expandedSections[sectionId],
+                }
+            })),
+
+            setActiveExpansionPath: (pageIndex) => {
+                const { reportData } = get();
+                if (!reportData) return;
+
+                let activeSectionId: string | null = null;
+                let activeSubSectionId: string | null = null;
+
+                let cumulativePages = 0;
+                for (const section of reportData.sections) {
+                    let pageCounterForSection = 0;
+                    
+                    const directPagesCount = (section.pages || []).length;
+                    if (pageIndex >= cumulativePages && pageIndex < cumulativePages + directPagesCount) {
+                        activeSectionId = section.sectionId;
+                        break;
+                    }
+                    pageCounterForSection += directPagesCount;
+
+                    if (section.subSections) {
+                        for (const subSection of section.subSections) {
+                            const subSectionPageCount = (subSection.pages || []).length;
+                            if (pageIndex >= cumulativePages + pageCounterForSection && pageIndex < cumulativePages + pageCounterForSection + subSectionPageCount) {
+                                activeSectionId = section.sectionId;
+                                activeSubSectionId = subSection.subSectionId;
+                                break;
+                            }
+                            pageCounterForSection += subSectionPageCount;
+                        }
+                    }
+                    if (activeSectionId) break;
+                    cumulativePages += pageCounterForSection;
+                }
+
+                if (!activeSectionId) return;
+
+                set(state => {
+                    const newExpandedSections: Record<string, boolean> = {};
+                    
+                    for (const section of state.reportData!.sections) {
+                        newExpandedSections[section.sectionId] = section.sectionId === activeSectionId;
+                        
+                        if (section.subSections) {
+                            for (const subSection of section.subSections) {
+                                newExpandedSections[subSection.subSectionId] = subSection.subSectionId === activeSubSectionId;
+                            }
+                        }
+                    }
+                    return { expandedSections: newExpandedSections };
+                });
+            },
+
+            toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
+            setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
+            setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
+            openImageFullscreen: () => set({ isImageFullscreen: true }),
+            closeImageFullscreen: () => set({ isImageFullscreen: false }),
+            setReportChatInput: (input) => set({ reportChatInput: input }),
+            addReportChatMessage: (message) => {
+                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
+                set(state => ({
+                    reportChatHistory: [...state.reportChatHistory, message].slice(-50),
+                }));
+                if (message.author === 'Ascentia' && message.status === 'complete' && ascentiaAudioAutoplay) {
+                    playAscentiaMessage(message.message);
+                }
+            },
+            updateReportChatMessage: (id, chunk) => set(state => ({
+                reportChatHistory: state.reportChatHistory.map(msg =>
+                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
+                )
+            })),
+            updateReportChatStatus: (id, status) => {
+                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
+                set(state => ({
+                    reportChatHistory: state.reportChatHistory.map(msg =>
+                        msg.id === id ? { ...msg, status } : msg
+                    )
+                }));
+                if (status === 'complete') {
+                    const finalMessage = get().reportChatHistory.find(msg => msg.id === id);
+                    if (finalMessage && ascentiaAudioAutoplay) {
+                        playAscentiaMessage(finalMessage.message);
+                    }
+                }
+            },
+            clearReportChatHistory: (currentPageTitle) => {
+                const initialMessage: ChatMessage = {
+                    author: 'Ascentia', flag: '🤖',
+                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
+                };
+                set({
+                    reportChatHistory: [initialMessage],
+                    reportChatInput: '',
+                    tokenCount: createInitialReportState().tokenCount,
+                });
+            },
+            updateTokenCount: (parts) => {
+                set(state => {
+                    const historyChars = state.reportChatHistory.map(m => (typeof m.author === 'string' ? m.author : m.author.displayName) + m.message).join('').length;
+                    const historyTokens = Math.ceil(historyChars / 4);
+
+                    const responseChars = state.reportChatHistory.filter(m => m.author === 'Ascentia').map(m => m.message).join('').length;
+                    const responseTokens = Math.ceil(responseChars / 4);
+
+                    const staticSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`;
+                    const systemTokens = Math.ceil(staticSystemPrompt.length / 4);
+
+                    const newBreakdown = {
+                        system: systemTokens,
+                        context: parts.context ?? state.tokenCount.breakdown.context,
+                        history: historyTokens,
+                        user: parts.user ?? state.tokenCount.breakdown.user,
+                        response: responseTokens,
+                    };
+                    
+                    const total = newBreakdown.system + newBreakdown.context + newBreakdown.history + newBreakdown.user;
+                    
+                    return { tokenCount: { total, breakdown: newBreakdown } };
+                });
+            },
+            togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
+            toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
+            toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
+            toggleHintVisibility: () => set(state => ({ isHintVisible: !state.isHintVisible })),
+            markImageAsSeen: (pageId, imageId) => {
+                const key = `${pageId}-${imageId}`;
+                if (get().seenImages[key]) return;
+                set(state => ({ seenImages: { ...state.seenImages, [key]: true } }));
+            },
+            jumpToFirstUnseenImage: () => {
+                const { allPages, seenImages, goToPageByIndex } = get();
+                for (let p = 0; p < allPages.length; p++) {
+                    const page = allPages[p];
+                    const image = page.imagePrompts[0]?.images[0];
+                    if (image) {
+                        const key = `${page.pageId}-${image.imageId}`;
+                        if (!seenImages[key]) {
+                            goToPageByIndex(p);
+                            return;
+                        }
+                    }
+                }
+                goToPageByIndex(0);
+            },
+            jumpToNextUnseenImage: () => {
+                const { allPages, seenImages, currentPageIndex, goToPageByIndex } = get();
+                const totalPages = allPages.length;
+                for (let i = 1; i <= totalPages; i++) {
+                    const nextIndex = (currentPageIndex + i) % totalPages;
+                    const page = allPages[nextIndex];
+                    const image = page.imagePrompts[0]?.images[0];
+                    if (image) {
+                        const key = `${page.pageId}-${image.imageId}`;
+                        if (!seenImages[key]) {
+                            goToPageByIndex(nextIndex);
+                            return;
+                        }
+                    }
+                }
+                logInfo('store:report', 'All images have been seen!');
+            },
+            resetProgress: () => {
+                logInfo('store:report', 'Resetting all image progress.');
+                set({ seenImages: {} });
+            },
+            setPlaybackStatus: (status) => set({ playbackStatus: status }),
+            setAutoplay: (enabled) => {
+                get().stopSlideshow(false); 
+                if (enabled) {
+                    set({ autoplayEnabled: true, currentImageIndex: 0 }); 
+                } else {
+                    set({ autoplayEnabled: false });
+                }
+            },
+            setCurrentAudio: (url, pageIndex) => set(state => {
+                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
+                    return state;
+                }
+                return {
+                    currentAudioUrl: url,
+                    currentAudioPageIndex: pageIndex,
+                    playbackStatus: url ? 'buffering' : 'idle',
+                    currentTime: 0,
+                    duration: 0,
+                };
+            }),
+            setAudioTime: (time) => set({ currentTime: time }),
+            setAudioDuration: (duration) => set({ duration: duration }),
+            _resetReportStore: () => set(createInitialReportState()),
+        }),
+        {
+            name: 'ai-ascent-report-storage',
+            storage: createJSONStorage(() => localStorage),
+            partialize: (state): PersistedReportState => ({
+                currentPageIndex: state.currentPageIndex,
+                currentImageIndex: state.currentImageIndex,
+                votesCastByPage: state.votesCastByPage,
+                imageVotes: state.imageVotes,
+                isTreeNavOpen: state.isTreeNavOpen,
+                expandedSections: state.expandedSections,
+                isChatPanelOpen: state.isChatPanelOpen,
+                chatPanelWidth: state.chatPanelWidth,
+                imagePanelHeight: state.imagePanelHeight,
+                reportChatHistory: state.reportChatHistory,
+                reportChatInput: state.reportChatInput,
+                seenImages: state.seenImages,
+                isPromptVisible: state.isPromptVisible,
+                isTldrVisible: state.isTldrVisible,
+                isContentVisible: state.isContentVisible,
+                isHintVisible: state.isHintVisible,
+                autoplayEnabled: state.autoplayEnabled,
+                volume: state.volume,
+                isMuted: state.isMuted,
+                playbackSpeed: state.playbackSpeed,
+                ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
+            }),
+        }
+    )
+);
+
+if (process.env.NODE_ENV === 'development') {
+    (window as any).reportStore = useReportStore;
+}
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportTreeNav.tsx">
+// src/components/menus/report/ReportTreeNav.tsx
+// Updated on: C1372 (Default subsection expansion to false.)
+// Updated on: C1369 (Robustly handle both nested and flat section structures.)
+// Updated on: C1367 (Fix property access and implicit any errors by adding explicit types.)
+// Updated on: C1360 (Render nested subsections.)
+// Updated on: C1356 (Use centralized expandedSections state from reportStore for persistence.)
+// NEW FILE - C1340
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+
+import type { RawReportSection, RawSubSection, RawReportPage } from '../../../state/reportStore';
+
+
+const ReportTreeNav: React.FC = () => {
+  const { reportData, currentPageIndex, goToPageByIndex, expandedSections, toggleSectionExpansion } = useReportStore(
+    useShallow(state => ({
+      reportData: state.reportData,
+      currentPageIndex: state.currentPageIndex,
+      goToPageByIndex: state.goToPageByIndex,
+      expandedSections: state.expandedSections,
+      toggleSectionExpansion: state.toggleSectionExpansion,
+    }))
+  );
+
+  if (!reportData) return null;
+
+  const containerStyle: React.CSSProperties = {
+    width: '250px',
+    minWidth: '250px',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    borderRight: '1px solid #555',
+    padding: '10px',
+    overflowY: 'auto',
+    flexShrink: 0,
+  };
+
+  const sectionHeaderStyle: React.CSSProperties = {
+    fontSize: '11px',
+    color: '#00ffff',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+    marginBottom: '5px',
+    fontWeight: 'bold',
+  };
+
+  const subSectionHeaderStyle: React.CSSProperties = {
+    ...sectionHeaderStyle,
+    fontSize: '10px',
+    color: '#aaddff',
+    paddingLeft: '10px',
+    fontWeight: 'normal',
+  };
+
+  const pageLinkStyle = (isActive: boolean): React.CSSProperties => ({
+    fontSize: '10px',
+    color: isActive ? '#FFA500' : '#ccc',
+    padding: '4px 0 4px 25px',
+    cursor: 'pointer',
+    display: 'block',
+    fontWeight: isActive ? 'bold' : 'normal',
+    borderLeft: `2px solid ${isActive ? '#FFA500' : 'transparent'}`,
+    transition: 'all 0.2s',
+  });
+
+  let pageCounter = 0;
+
+  return (
+    <div style={containerStyle}>
+      <h3 style={{ marginTop: 0, fontSize: '12px' }}>Report Navigator</h3>
+      {reportData.sections.map((section: RawReportSection) => {
+        const isSectionExpanded = expandedSections[section.sectionId] ?? false;
+        const sectionPageStartIndex = pageCounter;
+
+        // C1372: Combine page counting from direct pages and subsection pages
+        let sectionPageCount = (section.pages || []).length;
+        if (section.subSections) {
+          sectionPageCount += section.subSections.reduce((acc, sub) => acc + (sub.pages || []).length, 0);
+        }
+        pageCounter += sectionPageCount;
+
+        return (
+          <div key={section.sectionId}>
+            <div style={sectionHeaderStyle} onClick={() => toggleSectionExpansion(section.sectionId)}>
+              {isSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
+              {section.sectionTitle}
+            </div>
+            {isSectionExpanded && (
+              <div style={{ paddingLeft: '10px' }}>
+                {/* Render direct pages first if they exist */}
+                {(section.pages || []).map((page: RawReportPage, index: number) => {
+                  const globalPageIndex = sectionPageStartIndex + index;
+                  const isActive = globalPageIndex === currentPageIndex;
+                  return (
+                    <div
+                      key={page.pageId}
+                      style={pageLinkStyle(isActive)}
+                      onClick={() => goToPageByIndex(globalPageIndex)}
+                    >
+                      {page.pageTitle}
+                    </div>
+                  );
+                })}
+
+                {/* Then render subsections */}
+                {section.subSections && (() => {
+                  let subSectionPageCounter = sectionPageStartIndex + (section.pages || []).length;
+                  return section.subSections.map((subSection: RawSubSection) => {
+                    // C1372 FIX: Default to false to start collapsed
+                    const isSubSectionExpanded = expandedSections[subSection.subSectionId] ?? false;
+                    const startIndex = subSectionPageCounter;
+                    subSectionPageCounter += (subSection.pages || []).length;
+
+                    return (
+                      <div key={subSection.subSectionId}>
+                        <div style={subSectionHeaderStyle} onClick={() => toggleSectionExpansion(subSection.subSectionId)}>
+                          {isSubSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
+                          {subSection.subSectionTitle}
+                        </div>
+                        {isSubSectionExpanded && (
+                          (subSection.pages || []).map((page: RawReportPage, index: number) => {
+                            const globalPageIndex = startIndex + index;
+                            const isActive = globalPageIndex === currentPageIndex;
+                            return (
+                              <div
+                                key={page.pageId}
+                                style={pageLinkStyle(isActive)}
+                                onClick={() => goToPageByIndex(globalPageIndex)}
+                              >
+                                {page.pageTitle}
+                              </div>
+                            );
+                          })
+                        )}
+                      </div>
+                    );
+                  });
+                })()}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default ReportTreeNav;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportViewerModal.tsx">
+// src/components/menus/report/ReportViewerModal.tsx
+// Updated on: C1401 (Remove flex-shrink: 0 from progress bar container to fix resizing bug.)
+// Updated on: C1400 (Add a flex-shrink property to the progress bar container to help with resizing.)
+// Updated on: C1399 (Trigger audio generation on page change if autoplay is enabled.)
+// Updated on: C1398 (Add useEffect to orchestrate slideshow start on 'playing' state.)
+// Updated on: C1397 (Refine useEffect for autoplay to fix page jump bug.)
+import React, { useEffect, useState, useRef } from 'react';
+import { useUIStore } from '../../../state';
+import PageNavigator from './PageNavigator';
+import ImageNavigator from './ImageNavigator';
+import PromptNavigator from './PromptNavigator';
+import ReportTreeNav from './ReportTreeNav';
+import ReportChatPanel from './ReportChatPanel';
+import MarkdownRenderer from '../../ui/MarkdownRenderer';
+import { useReportStore } from '../../../state/reportStore';
+import { FaArrowsAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+import { logInfo, logError } from '../../../logger';
+import { Resizable } from 're-resizable';
+import ReportProgressBar from './ReportProgressBar';
+import AudioControls from './AudioControls';
+
+const ReportViewerModal: React.FC = () => {
+  const { closeReportViewer } = useUIStore();
+  const {
+    reportData, loadReportData, allPages, currentPageIndex,
+    currentImageIndex, isTreeNavOpen, isChatPanelOpen,
+    toggleChatPanel, imagePanelHeight, setImagePanelHeight,
+    isImageFullscreen, openImageFullscreen, closeImageFullscreen,
+    chatPanelWidth, setChatPanelWidth, handleKeyDown,
+    isPromptVisible, isTldrVisible, isContentVisible,
+    toggleTldrVisibility, toggleContentVisibility, markImageAsSeen,
+    setActiveExpansionPath,
+    stopSlideshow,
+    playbackStatus, autoplayEnabled, startSlideshow,
+  } = useReportStore(useShallow(state => ({
+    reportData: state.reportData,
+    loadReportData: state.loadReportData,
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    currentImageIndex: state.currentImageIndex,
+    isTreeNavOpen: state.isTreeNavOpen,
+    isChatPanelOpen: state.isChatPanelOpen,
+    toggleChatPanel: state.toggleChatPanel,
+    imagePanelHeight: state.imagePanelHeight,
+    setImagePanelHeight: state.setImagePanelHeight,
+    isImageFullscreen: state.isImageFullscreen,
+    openImageFullscreen: state.openImageFullscreen,
+    closeImageFullscreen: state.closeImageFullscreen,
+    chatPanelWidth: state.chatPanelWidth,
+    setChatPanelWidth: state.setChatPanelWidth,
+    handleKeyDown: state.handleKeyDown,
+    isPromptVisible: state.isPromptVisible,
+    isTldrVisible: state.isTldrVisible,
+    isContentVisible: state.isContentVisible,
+    toggleTldrVisibility: state.toggleTldrVisibility,
+    toggleContentVisibility: state.toggleContentVisibility,
+    markImageAsSeen: state.markImageAsSeen,
+    setActiveExpansionPath: state.setActiveExpansionPath,
+    stopSlideshow: state.stopSlideshow,
+    playbackStatus: state.playbackStatus,
+    autoplayEnabled: state.autoplayEnabled,
+    startSlideshow: state.startSlideshow,
+  })));
+
+  const [isDraggingCorner, setIsDraggingCorner] = useState(false);
+  const initialDragPos = useRef({ x: 0, y: 0 });
+  const initialDimensions = useRef({ width: 0, height: 0 });
+
+  useEffect(() => {
+    if (!reportData) {
+      loadReportData();
+    }
+  }, [reportData, loadReportData]);
+
+  useEffect(() => {
+    if (playbackStatus === 'playing' && autoplayEnabled) {
+      startSlideshow();
+    }
+  }, [playbackStatus, autoplayEnabled, startSlideshow]);
+
+  // C1399: This effect ensures that when autoplay navigates to a new page,
+  // the audio for that new page starts automatically.
+  useEffect(() => {
+    const audioControls = document.querySelector('#report-audio-controls button') as HTMLButtonElement;
+    if (autoplayEnabled && playbackStatus === 'idle') {
+      // Trigger the play/generation logic, which is now handled inside AudioControls
+      if (audioControls) {
+        // A bit of a hack, but it reliably triggers the generateAndPlayAudio flow
+        // when the page changes while autoplay is on.
+        audioControls.click();
+      }
+    }
+  }, [currentPageIndex, autoplayEnabled]);
+
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
+        return;
+      }
+      if (e.key === ' ' || e.key.startsWith('Arrow')) {
+        e.preventDefault();
+      }
+      handleKeyDown(e);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [handleKeyDown]);
+
+  useEffect(() => {
+    setActiveExpansionPath(currentPageIndex);
+  }, [currentPageIndex, setActiveExpansionPath]);
+
+  const currentPage = allPages[currentPageIndex];
+  const currentPrompt = currentPage?.imagePrompts[0];
+  const currentImage = currentPrompt?.images[currentImageIndex];
+
+  useEffect(() => {
+    if (currentPage && currentImage) {
+      markImageAsSeen(currentPage.pageId, currentImage.imageId);
+    }
+  }, [currentPage, currentImage, markImageAsSeen]);
+
+
+  const handleClose = () => {
+    if (isChatPanelOpen) {
+      toggleChatPanel();
+    } else {
+      closeReportViewer();
+    }
+  };
+
+  const handleCornerMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    stopSlideshow(true);
+    setIsDraggingCorner(true);
+    initialDragPos.current = { x: e.clientX, y: e.clientY };
+    initialDimensions.current = { width: chatPanelWidth, height: imagePanelHeight };
+  };
+
+  useEffect(() => {
+    const handleCornerMouseMove = (e: MouseEvent) => {
+      if (!isDraggingCorner) return;
+      const deltaX = e.clientX - initialDragPos.current.x;
+      const deltaY = e.clientY - initialDragPos.current.y;
+      setChatPanelWidth(initialDimensions.current.width - deltaX);
+      setImagePanelHeight(initialDimensions.current.height + deltaY);
+    };
+    const handleCornerMouseUp = () => setIsDraggingCorner(false);
+    if (isDraggingCorner) {
+      window.addEventListener('mousemove', handleCornerMouseMove);
+      window.addEventListener('mouseup', handleCornerMouseUp);
+    }
+    return () => {
+      window.removeEventListener('mousemove', handleCornerMouseMove);
+      window.removeEventListener('mouseup', handleCornerMouseUp);
+    };
+  }, [isDraggingCorner, setChatPanelWidth, setImagePanelHeight]);
+
+  const modalOverlayStyle: React.CSSProperties = {
+    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 100,
+    display: 'flex', justifyContent: 'center', alignItems: 'center',
+    pointerEvents: 'auto',
+    fontFamily: '"Press Start 2P", cursive',
+  };
+
+  const modalContentStyle: React.CSSProperties = {
+    background: 'linear-gradient(145deg, #1a1a1a, #2a2a2a)',
+    padding: isChatPanelOpen ? '10px' : '20px',
+    borderRadius: isChatPanelOpen ? '0' : '12px',
+    border: '2px solid #00ffff',
+    width: isChatPanelOpen ? '98%' : '95vw',
+    maxWidth: isChatPanelOpen ? 'none' : '1400px',
+    height: isChatPanelOpen ? '98%' : '95vh',
+    display: 'flex',
+    boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
+    color: 'white', position: 'relative',
+    gap: '15px',
+    transition: 'width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, padding 0.3s ease',
+  };
+
+  const mainContentAreaStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    minWidth: 0,
+  };
+
+  const imageDisplayArea: React.CSSProperties = {
+    width: '100%',
+    backgroundColor: '#111',
+    border: '1px solid #444',
+    borderRadius: '8px',
+    marginBottom: '10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#555',
+    fontSize: '12px',
+    position: 'relative',
+    overflow: 'hidden',
+    flexShrink: 0,
+  };
+
+  const imageStyle: React.CSSProperties = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    cursor: 'pointer',
+  };
+
+  const contentAreaStyle: React.CSSProperties = {
+    flex: '1 1 auto',
+    overflowY: 'auto',
+    padding: '10px',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: '4px',
+    fontSize: '11px',
+    lineHeight: '1.7',
+    minHeight: 0,
+  };
+
+  const headerContainer: React.CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    paddingBottom: '5px',
+    flexShrink: 0,
+  };
+
+  const navContainerStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '5px',
+    width: '100%',
+    borderTop: '1px solid #444',
+    borderBottom: '1px solid #444',
+    padding: '5px 0',
+    marginTop: '5px'
+  };
+
+  const fullscreenOverlayStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0.95)',
+    zIndex: 120,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+  };
+
+  const fullscreenImageStyle: React.CSSProperties = {
+    maxWidth: '95vw',
+    maxHeight: '95vh',
+    objectFit: 'contain',
+  };
+
+  const cornerDragHandleStyle: React.CSSProperties = {
+    position: 'absolute',
+    bottom: '-5px',
+    right: '-5px',
+    width: '20px',
+    height: '20px',
+    cursor: 'move',
+    zIndex: 115,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'rgba(255,255,255,0.3)',
+  };
+
+  const sectionHeaderStyle: React.CSSProperties = {
+    color: '#FFA500', borderBottom: '1px dashed #555', paddingBottom: '5px',
+    margin: '0 0 10px 0', display: 'flex', alignItems: 'center',
+    justifyContent: 'space-between',
+  };
+
+  const toggleButtonStyle: React.CSSProperties = {
+    background: 'none', border: 'none', color: '#aaa', cursor: 'pointer', fontSize: '12px'
+  };
+
+  if (!reportData || allPages.length === 0) {
+    return (
+      <div style={modalOverlayStyle}>
+        <div style={{ ...modalContentStyle, justifyContent: 'center', alignItems: 'center' }}>Loading Report...</div>
+      </div>
+    );
+  }
+
+  return (
+    <div style={modalOverlayStyle}>
+      {isImageFullscreen && currentImage && (
+        <div style={fullscreenOverlayStyle} onClick={closeImageFullscreen}>
+          <img src={currentImage.url} alt={currentPrompt?.promptText} style={fullscreenImageStyle} />
+        </div>
+      )}
+
+      <div style={modalContentStyle}>
+        {isTreeNavOpen && <ReportTreeNav />}
+
+        <div style={mainContentAreaStyle}>
+          <div style={headerContainer}>
+            <PageNavigator onClose={handleClose} />
+          </div>
+
+          {/* C1401: Removed flexShrink: 0 to allow resizing */}
+          <div>
+            <ReportProgressBar />
+          </div>
+
+          <Resizable
+            size={{ width: '100%', height: imagePanelHeight }}
+            minHeight={200}
+            maxHeight="60%"
+            onResizeStart={() => stopSlideshow(true)}
+            onResizeStop={(e, direction, ref, d) => {
+              setImagePanelHeight(imagePanelHeight + d.height);
+            }}
+            enable={{ top: false, right: false, bottom: true, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
+            style={{ flexShrink: 0, marginBottom: '10px', position: 'relative' }}
+          >
+            <div style={{ ...imageDisplayArea, height: '100%', marginBottom: 0 }}>
+              {currentImage?.url ? (
+                <img
+                  src={currentImage.url}
+                  alt={currentPrompt?.promptText}
+                  style={imageStyle}
+                  onClick={openImageFullscreen}
+                  onLoad={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    logInfo('[ReportViewer:Image]', `Successfully LOADED image. Natural dimensions: ${img.naturalWidth}x${img.naturalHeight}. Src: ${currentImage.url}`);
+                  }}
+                  onError={() => logError('[ReportViewer:Image]', `FAILED to load image. Path may be incorrect, file missing, or dev server not serving it. Path: ${currentImage.url}`)}
+                />
+              ) : (
+                'No Image Available'
+              )}
+            </div>
+            {isChatPanelOpen && (
+              <div
+                style={cornerDragHandleStyle}
+                onMouseDown={handleCornerMouseDown}
+                title="Resize panels"
+              >
+                <FaArrowsAlt />
+              </div>
+            )}
+          </Resizable>
+
+          <div style={navContainerStyle} id="report-audio-controls">
+            <ImageNavigator />
+            <AudioControls />
+          </div>
+
+          <div style={contentAreaStyle}>
+            {isPromptVisible && <PromptNavigator />}
+
+            <div style={sectionHeaderStyle}>
+              <h4>TL;DR</h4>
+              <button style={toggleButtonStyle} onClick={toggleTldrVisibility} title={isTldrVisible ? "Collapse" : "Expand"}>
+                {isTldrVisible ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+            </div>
+            {isTldrVisible && (
+              <p style={{ fontStyle: 'italic', color: '#ccc', margin: '0 0 15px 0' }}>
+                <MarkdownRenderer markdown={currentPage?.tldr || ''} />
+              </p>
+            )}
+
+            <div style={sectionHeaderStyle}>
+              <h4>Content</h4>
+              <button style={toggleButtonStyle} onClick={toggleContentVisibility} title={isContentVisible ? "Collapse" : "Expand"}>
+                {isContentVisible ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+            </div>
+            {isContentVisible && (
+              <MarkdownRenderer markdown={currentPage?.content || ''} />
+            )}
+          </div>
+        </div>
+
+        {isChatPanelOpen && <ReportChatPanel />}
+      </div>
+    </div>
+  );
+};
+
+export default ReportViewerModal;
 </file_artifact>
 
 

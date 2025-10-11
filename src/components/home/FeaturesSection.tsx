@@ -1,5 +1,5 @@
 // src/components/home/FeaturesSection.tsx
-// C6 - Refactor layout to make images larger and more prominent
+// C10 - Update Image component to remove legacy props
 import React from 'react';
 import Image from 'next/image';
 
@@ -39,9 +39,8 @@ Stop Fighting Your Tools. Start Building the Future.
                 <Image 
                     src={feature.icon} 
                     alt={feature.title} 
-                    layout="fill"
-                    objectFit="cover" // Use cover to fill the container
-                    className='transition-transform duration-500 hover:scale-105'
+                    fill
+                    className='transition-transform duration-500 hover:scale-105 object-cover'
                 />
             </div>
           </div>

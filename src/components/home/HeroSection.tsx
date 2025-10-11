@@ -1,5 +1,5 @@
 // src/components/home/HeroSection.tsx
-// C6 - Enlarge GIF and remove light background from card
+// C10 - Update Image component to remove legacy props
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -47,15 +47,13 @@ return (
         </div>
       }
     >
-        {/* Visuals (A16, 4.2 Updated C6) */}
-        {/* Removed the inner div with bg-gray-100 to eliminate the white background */}
+        {/* Visuals (A16, 4.2 Updated C10) */}
         <div className="relative h-full w-full overflow-hidden rounded-2xl">
             <Image
                 src="/assets/images/pcp.gif"
                 alt="DCE Workflow Demonstration GIF"
-                layout="fill"
-                objectFit="cover" // Changed to cover to fill the area better
-                className="rounded-2xl"
+                fill
+                className="rounded-2xl object-cover"
                 unoptimized={true} // GIFs should not be optimized by Next.js Image component
             />
         </div>
