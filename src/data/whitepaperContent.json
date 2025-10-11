@@ -1,0 +1,36 @@
+{
+"reportId": "dce-whitepaper-v1-placeholder",
+"reportTitle": "The Data Curation Environment: Process as Asset (Placeholder)",
+"sections": [
+{
+"sectionId": "introduction",
+"sectionTitle": "Introduction",
+"pages": [
+{
+"pageId": "intro-1",
+"pageTitle": "The Challenge of Specialized Content",
+"tldr": "Traditional content workflows are inefficient and opaque.",
+"content": "Organizations tasked with developing highly specialized content—such as technical training materials, intelligence reports, or complex software documentation—face a constant bottleneck: the time and expertise required to curate accurate data, collaborate effectively, and rapidly iterate on feedback."
+},
+{
+"pageId": "intro-2",
+"pageTitle": "Introducing the DCE",
+"tldr": "The DCE transforms the content creation process itself into a valuable organizational asset.",
+"content": "The Data Curation Environment (DCE) provides a structured, human-in-the-loop methodology that enables rapid dataset curation, seamless sharing of curated contexts between colleagues, and instant iteration on feedback."
+}
+]
+},
+{
+"sectionId": "conclusion",
+"sectionTitle": "Conclusion",
+"pages": [
+{
+"pageId": "conclusion-1",
+"pageTitle": "Scaling Expertise",
+"tldr": "The DCE provides the infrastructure necessary to scale expertise and accelerate the mission.",
+"content": "By capturing the entire workflow as a persistent, auditable knowledge graph, the DCE doesn't just help teams build content faster; it ensures quality and accelerates the entire organizational mission."
+}
+]
+}
+]
+}
