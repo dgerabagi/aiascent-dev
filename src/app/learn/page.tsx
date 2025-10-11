@@ -1,9 +1,9 @@
 // src/app/learn/page.tsx
-// C11 - New placeholder page
 import React from 'react';
 
 const LearnPage = () => {
     return (
+        // C15 Fix: Added pt-16 here to compensate for its removal from the main layout
         <div className="bg-background text-foreground min-h-screen pt-16">
             <div className="container mx-auto px-4 py-16 text-center">
                 <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">

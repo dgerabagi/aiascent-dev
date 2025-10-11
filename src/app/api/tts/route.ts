@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         model: 'kokoro',
-        voice: 'en_us_001',
+        voice: 'af_alloy', // C15 Fix: Changed from invalid 'en_us_001' to a valid voice
         input: text,
         response_format: 'wav',
         speed: 1.0,

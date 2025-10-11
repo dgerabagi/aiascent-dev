@@ -1,9 +1,9 @@
 // src/app/mission/page.tsx
-// C11 - New page
 import React from 'react';
 
 const MissionPage = () => {
     return (
+        // C15 Fix: Added pt-16 here to compensate for its removal from the main layout
         <div className="bg-background text-foreground min-h-screen pt-16">
             <div className="container mx-auto px-4 py-16">
 

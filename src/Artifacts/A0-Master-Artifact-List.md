@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C11 (Add new A20 artifact for Report Viewer)
+# Updated on: C15 (Add new A21 artifact for RAG Integration)
 
 ## 1. Purpose
 
@@ -48,6 +48,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A detailed plan for porting the "AI Ascent Report Viewer" from the `aiascentgame` context into the `aiascent.dev` project to serve as the primary component for the Showcase, Learn, and Home pages.
   - **Tags:** report viewer, integration plan, porting, showcase, learn, component, architecture
+
+### A21. aiascent.dev - Ask Ascentia RAG Integration
+
+  - **Description:** A guide explaining the implementation of the Retrieval-Augmented Generation (RAG) system for the "Ask @Ascentia" chat feature, including instructions for file placement and environment configuration.
+  - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, langchain, architecture
 
 ## III. Design and Assets
 

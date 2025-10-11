@@ -216,7 +216,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const correctedBasePath = '/assets/images/report/report-3/';
+                                    const correctedBasePath = '/assets/images/report/';
                                     
                                     for (let i = 1; i <= groupMeta.imageCount; i++) {
                                         const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
@@ -248,7 +248,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                         if (section.pages) processPages(section.pages);
                         if (section.subSections) section.subSections.forEach(sub => processPages(sub.pages));
                     });
-
+                    
                     set({
                         reportData: contentData,
                         imageManifest: manifestData,
