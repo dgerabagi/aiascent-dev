@@ -1,22 +1,22 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T19:39:46.332Z
+  Date Generated: 2025-10-11T20:10:21.906Z
   ---
-  Total Files: 2422
-  Approx. Tokens: 228074
+  Total Files: 2425
+  Approx. Tokens: 233687
 -->
 
 <!-- Top 10 Text Files by Token Count -->
-1. public\data\ai_ascent_report.json (51215 tokens)
+1. public\data\ai_ascent_report.json (51202 tokens)
 2. context\automationsaas\flattened-repo.md (45210 tokens)
-3. public\data\imageManifest.json (25535 tokens)
+3. public\data\imageManifest.json (25516 tokens)
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
-8. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
-9. src\stores\reportStore.ts (3263 tokens)
+7. src\stores\reportStore.ts (4481 tokens)
+8. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
+9. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
 10. context\aiascentgame\report\AudioControls.tsx (2831 tokens)
 
 <!-- Full File List -->
@@ -32,19 +32,19 @@
 10. context\dce\flattened-repo.md - Lines: 766 - Chars: 59174 - Tokens: 14794
 11. context\automationsaas\flattened-repo.md - Lines: 5731 - Chars: 180837 - Tokens: 45210
 12. context\aiascentgame\flattened-repo.md - Lines: 1381 - Chars: 74313 - Tokens: 18579
-13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3325 - Tokens: 832
+13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5201 - Tokens: 1301
-16. package.json - Lines: 43 - Chars: 1229 - Tokens: 308
+15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
+16. package.json - Lines: 43 - Chars: 1271 - Tokens: 318
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
 21. next.config.mjs - Lines: 13 - Chars: 335 - Tokens: 84
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
-23. src\app\showcase\page.tsx - Lines: 13 - Chars: 274 - Tokens: 69
+23. src\app\showcase\page.tsx - Lines: 13 - Chars: 270 - Tokens: 68
 24. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
-25. src\app\layout.tsx - Lines: 40 - Chars: 1048 - Tokens: 262
+25. src\app\layout.tsx - Lines: 40 - Chars: 1191 - Tokens: 298
 26. src\app\page.tsx - Lines: 22 - Chars: 672 - Tokens: 168
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
@@ -100,17 +100,17 @@
 78. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 79. src\app\learn\page.tsx - Lines: 27 - Chars: 1181 - Tokens: 296
 80. src\app\mission\page.tsx - Lines: 78 - Chars: 5510 - Tokens: 1378
-81. src\components\report-viewer\AudioControls.tsx - Lines: 12 - Chars: 279 - Tokens: 70
+81. src\components\report-viewer\AudioControls.tsx - Lines: 211 - Chars: 8074 - Tokens: 2019
 82. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 83. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 84. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
-85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 41 - Chars: 1943 - Tokens: 486
-86. src\components\report-viewer\ReportProgressBar.tsx - Lines: 17 - Chars: 588 - Tokens: 147
+85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 127 - Chars: 6167 - Tokens: 1542
+86. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 87. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 88. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-89. src\stores\reportStore.ts - Lines: 317 - Chars: 13050 - Tokens: 3263
-90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204858 - Tokens: 51215
-91. public\data\imageManifest.json - Lines: 1198 - Chars: 102139 - Tokens: 25535
+89. src\stores\reportStore.ts - Lines: 426 - Chars: 17921 - Tokens: 4481
+90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
+91. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
 92. public\assets\images\report\report-3\conclusion-rise-to-meet-the-machine\a-call-to-action-start-your-ascent\prompt-1\a-call-to-action-start-your-ascent-p1-1.webp - [Binary] Size: 544.8 KB
 93. public\assets\images\report\report-3\conclusion-rise-to-meet-the-machine\a-call-to-action-start-your-ascent\prompt-1\a-call-to-action-start-your-ascent-p1-2.webp - [Binary] Size: 533.1 KB
 94. public\assets\images\report\report-3\conclusion-rise-to-meet-the-machine\a-call-to-action-start-your-ascent\prompt-1\a-call-to-action-start-your-ascent-p1-3.webp - [Binary] Size: 632.7 KB
@@ -2385,63 +2385,66 @@
 2363. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\a-uniquely-american-solution\prompt-1\a-uniquely-american-solution-p1-img-8.webp - [Binary] Size: 630.8 KB
 2364. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\a-uniquely-american-solution\prompt-1\a-uniquely-american-solution-p1-img-9.webp - [Binary] Size: 719.3 KB
 2365. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\a-uniquely-american-solution\prompt-1\a-uniquely-american-solution-p1-img-10.webp - [Binary] Size: 698.4 KB
-2366. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-1.webp - [Binary] Size: 763.5 KB
-2367. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-2.webp - [Binary] Size: 577.6 KB
-2368. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-3.webp - [Binary] Size: 304.9 KB
-2369. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-4.webp - [Binary] Size: 627.9 KB
-2370. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-5.webp - [Binary] Size: 657.6 KB
-2371. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-6.webp - [Binary] Size: 335.9 KB
-2372. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-7.webp - [Binary] Size: 880.5 KB
-2373. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-8.webp - [Binary] Size: 560.8 KB
-2374. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-9.webp - [Binary] Size: 761.9 KB
-2375. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-10.webp - [Binary] Size: 681.4 KB
-2376. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certification-and-skills-infrastructure\prompt-1\pillar-1-national-certification-and-skills-infrastructure-p1-img-11.webp - [Binary] Size: 710.7 KB
-2377. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-1.webp - [Binary] Size: 375.2 KB
-2378. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-2.webp - [Binary] Size: 560.2 KB
-2379. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-3.webp - [Binary] Size: 428.9 KB
-2380. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-4.webp - [Binary] Size: 411.5 KB
-2381. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-5.webp - [Binary] Size: 440.9 KB
-2382. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-6.webp - [Binary] Size: 389.1 KB
-2383. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-7.webp - [Binary] Size: 583.5 KB
-2384. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-8.webp - [Binary] Size: 423.1 KB
-2385. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-9.webp - [Binary] Size: 499.6 KB
-2386. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-10.webp - [Binary] Size: 430.7 KB
-2387. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-11.webp - [Binary] Size: 456.7 KB
-2388. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-12.webp - [Binary] Size: 529.7 KB
-2389. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-13.webp - [Binary] Size: 627.8 KB
-2390. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-1.webp - [Binary] Size: 873 KB
-2391. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-2.webp - [Binary] Size: 888.1 KB
-2392. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-3.webp - [Binary] Size: 677.6 KB
-2393. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-4.webp - [Binary] Size: 709.9 KB
-2394. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-5.webp - [Binary] Size: 369.2 KB
-2395. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-6.webp - [Binary] Size: 755.5 KB
-2396. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-7.webp - [Binary] Size: 806.7 KB
-2397. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-8.webp - [Binary] Size: 874.8 KB
-2398. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-9.webp - [Binary] Size: 587 KB
-2399. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-10.webp - [Binary] Size: 825.4 KB
-2400. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-11.webp - [Binary] Size: 531.2 KB
-2401. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-12.webp - [Binary] Size: 503.3 KB
-2402. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-13.webp - [Binary] Size: 804 KB
-2403. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-14.webp - [Binary] Size: 769.5 KB
-2404. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-15.webp - [Binary] Size: 1.2 MB
-2405. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-16.webp - [Binary] Size: 825.5 KB
-2406. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-17.webp - [Binary] Size: 617.2 KB
-2407. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-1.webp - [Binary] Size: 811 KB
-2408. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-2.webp - [Binary] Size: 758.6 KB
-2409. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-3.webp - [Binary] Size: 783.8 KB
-2410. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-4.webp - [Binary] Size: 1.2 MB
-2411. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-5.webp - [Binary] Size: 999.1 KB
-2412. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-6.webp - [Binary] Size: 858.1 KB
-2413. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-7.webp - [Binary] Size: 889.9 KB
-2414. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-8.webp - [Binary] Size: 934.6 KB
-2415. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-9.webp - [Binary] Size: 831.5 KB
-2416. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-10.webp - [Binary] Size: 960.3 KB
-2417. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-11.webp - [Binary] Size: 782.5 KB
-2418. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-12.webp - [Binary] Size: 1 MB
-2419. src\components\report-viewer\ReportViewer.tsx - Lines: 136 - Chars: 6050 - Tokens: 1513
-2420. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-2421. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
-2422. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
+2366. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-1.webp - [Binary] Size: 375.2 KB
+2367. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-2.webp - [Binary] Size: 560.2 KB
+2368. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-3.webp - [Binary] Size: 428.9 KB
+2369. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-4.webp - [Binary] Size: 411.5 KB
+2370. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-5.webp - [Binary] Size: 440.9 KB
+2371. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-6.webp - [Binary] Size: 389.1 KB
+2372. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-7.webp - [Binary] Size: 583.5 KB
+2373. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-8.webp - [Binary] Size: 423.1 KB
+2374. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-9.webp - [Binary] Size: 499.6 KB
+2375. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-10.webp - [Binary] Size: 430.7 KB
+2376. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-11.webp - [Binary] Size: 456.7 KB
+2377. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-12.webp - [Binary] Size: 529.7 KB
+2378. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-2-the-citizen-architect-grant\prompt-1\pillar-2-the-citizen-architect-grant-p1-img-13.webp - [Binary] Size: 627.8 KB
+2379. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-1.webp - [Binary] Size: 873 KB
+2380. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-2.webp - [Binary] Size: 888.1 KB
+2381. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-3.webp - [Binary] Size: 677.6 KB
+2382. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-4.webp - [Binary] Size: 709.9 KB
+2383. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-5.webp - [Binary] Size: 369.2 KB
+2384. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-6.webp - [Binary] Size: 755.5 KB
+2385. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-7.webp - [Binary] Size: 806.7 KB
+2386. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-8.webp - [Binary] Size: 874.8 KB
+2387. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-9.webp - [Binary] Size: 587 KB
+2388. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-10.webp - [Binary] Size: 825.4 KB
+2389. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-11.webp - [Binary] Size: 531.2 KB
+2390. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-12.webp - [Binary] Size: 503.3 KB
+2391. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-13.webp - [Binary] Size: 804 KB
+2392. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-14.webp - [Binary] Size: 769.5 KB
+2393. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-15.webp - [Binary] Size: 1.2 MB
+2394. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-16.webp - [Binary] Size: 825.5 KB
+2395. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\subsection-new-collar-compact-title\prompt-1\subsection-new-collar-compact-title-p1-img-17.webp - [Binary] Size: 617.2 KB
+2396. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-1.webp - [Binary] Size: 811 KB
+2397. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-2.webp - [Binary] Size: 758.6 KB
+2398. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-3.webp - [Binary] Size: 783.8 KB
+2399. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-4.webp - [Binary] Size: 1.2 MB
+2400. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-5.webp - [Binary] Size: 999.1 KB
+2401. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-6.webp - [Binary] Size: 858.1 KB
+2402. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-7.webp - [Binary] Size: 889.9 KB
+2403. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-8.webp - [Binary] Size: 934.6 KB
+2404. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-9.webp - [Binary] Size: 831.5 KB
+2405. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-10.webp - [Binary] Size: 960.3 KB
+2406. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-11.webp - [Binary] Size: 782.5 KB
+2407. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-12.webp - [Binary] Size: 1 MB
+2408. src\components\report-viewer\ReportViewer.tsx - Lines: 131 - Chars: 5780 - Tokens: 1445
+2409. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
+2410. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
+2411. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
+2412. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-1.webp - [Binary] Size: 763.5 KB
+2413. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-10.webp - [Binary] Size: 681.4 KB
+2414. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-11.webp - [Binary] Size: 710.7 KB
+2415. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-2.webp - [Binary] Size: 577.6 KB
+2416. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-3.webp - [Binary] Size: 304.9 KB
+2417. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-4.webp - [Binary] Size: 627.9 KB
+2418. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-5.webp - [Binary] Size: 657.6 KB
+2419. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-6.webp - [Binary] Size: 335.9 KB
+2420. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-7.webp - [Binary] Size: 880.5 KB
+2421. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-8.webp - [Binary] Size: 560.8 KB
+2422. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-9.webp - [Binary] Size: 761.9 KB
+2423. src\app\api\chat\route.ts - Lines: 90 - Chars: 2873 - Tokens: 719
+2424. src\app\api\tts\route.ts - Lines: 42 - Chars: 1243 - Tokens: 311
+2425. .env.local - Lines: 4 - Chars: 347 - Tokens: 87
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -11363,7 +11366,7 @@ import React from "react";
 
 export default function ShowcasePage() {
   return (
-    <div className="h-screen w-screen">
+    <div className="h-full w-full">
         <ReportViewer />
     </div>
   );
@@ -11460,35 +11463,35 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-title: "AIAscent.dev | Home of the Data Curation Environment",
-description: "The official website for the Data Curation Environment (DCE) VS Code Extension. Learn how to revolutionize your AI-assisted development workflow.",
+  title: "AIAscent.dev | Home of the Data Curation Environment",
+  description: "The official website for the Data Curation Environment (DCE) VS Code Extension. Learn how to revolutionize your AI-assisted development workflow.",
 };
 
 export default function RootLayout({
-children,
+  children,
 }: Readonly<{
-children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-return (
-<html lang="en" suppressHydrationWarning>
-<body className={inter.className}>
-<ThemeProvider
-attribute="class"
-defaultTheme="system"
-enableSystem
-disableTransitionOnChange
->
-<div className="flex flex-col min-h-screen">
-<Header />
-<main className="flex-grow">
-{children}
-</main>
-<Footer />
-</div>
-</ThemeProvider>
-</body>
-</html>
-);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow pt-16">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
 </file_artifact>
 
@@ -16594,12 +16597,211 @@ export default MissionPage;
 
 <file path="src/components/report-viewer/AudioControls.tsx">
 // src/components/report-viewer/AudioControls.tsx
-import React from 'react';
+'use client';
+import React, { useRef, useEffect } from 'react';
+import { useReportStore, useReportState } from '@/stores/reportStore';
+import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
+
+const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
 
 const AudioControls: React.FC = () => {
+  const {
+    allPages, currentPageIndex, playbackStatus, autoplayEnabled,
+    currentAudioUrl, currentAudioPageIndex, currentTime, duration,
+    volume, isMuted, playbackSpeed,
+  } = useReportState(state => ({
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    playbackStatus: state.playbackStatus,
+    autoplayEnabled: state.autoplayEnabled,
+    currentAudioUrl: state.currentAudioUrl,
+    currentAudioPageIndex: state.currentAudioPageIndex,
+    currentTime: state.currentTime,
+    duration: state.duration,
+    volume: state.volume,
+    isMuted: state.isMuted,
+    playbackSpeed: state.playbackSpeed,
+  }));
+  
+  const {
+    setVolume, toggleMute, setPlaybackStatus, setAutoplay,
+    setCurrentAudio, setAudioTime, setAudioDuration,
+    setPlaybackSpeed, stopSlideshow
+  } = useReportStore.getState();
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioUrlRef = useRef<string | null>(null);
+  const currentPage = allPages[currentPageIndex];
+
+  const generateAndPlayAudio = async (restart = false) => {
+    if (!currentPage) return;
+
+    setPlaybackStatus('generating');
+    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
+
+    try {
+      const response = await fetch('/api/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: textToNarrate }),
+      });
+
+      if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
+
+      const audioBlob = await response.blob();
+      if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
+      
+      const newUrl = URL.createObjectURL(audioBlob);
+      audioUrlRef.current = newUrl;
+      setCurrentAudio(newUrl, currentPageIndex);
+      if (restart && audioRef.current) audioRef.current.currentTime = 0;
+    } catch (error) {
+      console.error('[AudioControls] Failed to generate audio', error);
+      setPlaybackStatus('error');
+    }
+  };
+
+  useEffect(() => {
+    if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
+      generateAndPlayAudio();
+    }
+  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (currentAudioUrl && audio.src !== currentAudioUrl) {
+      audio.src = currentAudioUrl;
+      audio.load();
+      audio.play().catch(e => console.error('[AudioControls] Autoplay failed', e));
+    }
+  }, [currentAudioUrl]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = volume;
+    audio.muted = isMuted;
+    audio.playbackRate = playbackSpeed;
+  }, [volume, isMuted, playbackSpeed]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => setPlaybackStatus('playing');
+    const handlePause = () => setPlaybackStatus('paused');
+    const handleEnded = () => setPlaybackStatus('idle');
+    const handleTimeUpdate = () => setAudioTime(audio.currentTime);
+    const handleLoadedMetadata = () => setAudioDuration(audio.duration);
+    const handleWaiting = () => setPlaybackStatus('buffering');
+    const handleError = () => { console.error('[AudioControls] Audio playback error'); setPlaybackStatus('error'); };
+
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('playing', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('waiting', handleWaiting);
+    audio.addEventListener('error', handleError);
+
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('playing', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('waiting', handleWaiting);
+      audio.removeEventListener('error', handleError);
+      if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
+    };
+  }, []);
+
+  const handlePlayPause = () => {
+    stopSlideshow(true);
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (playbackStatus === 'playing' || playbackStatus === 'buffering') audio.pause();
+    else if (playbackStatus === 'paused') audio.play().catch(e => console.error('[AudioControls] Resume play failed', e));
+    else if (playbackStatus === 'idle' || playbackStatus === 'error') generateAndPlayAudio();
+  };
+
+  const handleRestart = () => { if (audioRef.current) audioRef.current.currentTime = 0; };
+  const handleAutoplayChange = (checked: boolean) => {
+    setAutoplay(checked);
+    if (checked) generateAndPlayAudio(true);
+  };
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => { if (audioRef.current) audioRef.current.currentTime = Number(e.target.value); };
+
+  const formatTime = (time: number) => {
+    if (isNaN(time) || !isFinite(time)) return '00:00';
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const isPlaying = playbackStatus === 'playing' || playbackStatus === 'buffering';
+
   return (
-    <div className="text-muted-foreground text-xs p-2 text-center">
-      Audio Controls Placeholder
+    <div className="flex items-center gap-2 px-1 py-1 text-xs text-muted-foreground w-full">
+      <audio ref={audioRef} />
+      <button className="btn-report-sm" onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
+        {isPlaying ? <FaPause /> : <FaPlay />}
+      </button>
+      <button className="btn-report-sm" onClick={handleRestart} title="Restart"><FaRedo /></button>
+
+      <span className="min-w-[40px] text-center">{formatTime(currentTime)}</span>
+      
+      <input
+        type="range"
+        min="0"
+        max={duration || 100}
+        value={currentTime}
+        onChange={handleSeek}
+        className="flex-grow cursor-pointer"
+        disabled={playbackStatus === 'generating' || playbackStatus === 'idle'}
+      />
+
+      <span className="min-w-[40px] text-center">{formatTime(duration)}</span>
+
+      <button className="btn-report-sm" onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
+        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+      </button>
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value={volume}
+        onChange={(e) => setVolume(Number(e.target.value))}
+        className="w-20 cursor-pointer"
+        title={`Volume: ${Math.round(volume * 100)}%`}
+      />
+
+      <div className="italic min-w-[70px] text-center">
+        {playbackStatus === 'generating' && <FaSpinner className="animate-spin inline-block" />}
+        {playbackStatus === 'buffering' && 'Buffering...'}
+        {playbackStatus === 'error' && 'Error!'}
+      </div>
+
+      <select
+        value={playbackSpeed}
+        onChange={(e) => setPlaybackSpeed(Number(e.target.value))}
+        className="bg-muted border rounded p-1 text-xs"
+        title="Playback Speed"
+      >
+        {PLAYBACK_SPEEDS.map(speed => (
+          <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
+        ))}
+      </select>
+
+      <label className="flex items-center gap-1 cursor-pointer">
+        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
+        Autoplay
+      </label>
     </div>
   );
 };
@@ -16753,13 +16955,86 @@ export default PromptNavigator;
 
 <file path="src/components/report-viewer/ReportChatPanel.tsx">
 // src/components/report-viewer/ReportChatPanel.tsx
-import React from 'react';
-import { useReportStore } from '@/stores/reportStore';
-import { FaTimes, FaBroom, FaCog } from 'react-icons/fa';
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStore';
+import { FaTimes, FaBroom } from 'react-icons/fa';
 import { Resizable } from 're-resizable';
 
 const ReportChatPanel: React.FC = () => {
-    const { chatPanelWidth, setChatPanelWidth, toggleChatPanel } = useReportStore.getState();
+    const { chatPanelWidth, setChatPanelWidth, toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
+    const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus } = useReportState(state => ({
+        allPages: state.allPages,
+        currentPageIndex: state.currentPageIndex,
+        reportChatHistory: state.reportChatHistory,
+        reportChatInput: state.reportChatInput,
+        setReportChatInput: state.setReportChatInput,
+        addReportChatMessage: state.addReportChatMessage,
+        updateReportChatMessage: state.updateReportChatMessage,
+        updateReportChatStatus: state.updateReportChatStatus,
+    }));
+    
+    const [isThinking, setIsThinking] = useState(false);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+    const currentPage = allPages[currentPageIndex];
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        if (!isThinking) textareaRef.current?.focus();
+    }, [reportChatHistory, isThinking]);
+
+    const handleSend = async () => {
+        const trimmedInput = reportChatInput.trim();
+        if (!trimmedInput || isThinking) return;
+
+        addReportChatMessage({ author: 'You', flag: '👤', message: trimmedInput, channel: 'local' });
+        const temporaryId = `report_ascentia_response_${Date.now()}`;
+        addReportChatMessage({ id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: 'system' });
+        setIsThinking(true);
+        setReportChatInput('');
+
+        const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
+
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: trimmedInput, pageContext }),
+            });
+
+            if (!response.body) throw new Error("No response body");
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let done = false;
+            let fullResponse = "";
+
+            while (!done) {
+                const { value, done: doneReading } = await reader.read();
+                done = doneReading;
+                const chunk = decoder.decode(value);
+                fullResponse += chunk;
+                updateReportChatMessage(temporaryId, chunk);
+            }
+            updateReportChatStatus(temporaryId, 'complete');
+
+        } catch (error) {
+            console.error("Error with chat stream:", error);
+            updateReportChatMessage(temporaryId, "Sorry, I encountered an error.");
+            updateReportChatStatus(temporaryId, 'complete');
+        } finally {
+            setIsThinking(false);
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSend();
+        }
+    };
 
     return (
         <Resizable
@@ -16767,25 +17042,38 @@ const ReportChatPanel: React.FC = () => {
             minWidth={300}
             maxWidth="60vw"
             enable={{ left: true }}
-            onResizeStop={(e, direction, ref, d) => {
-                setChatPanelWidth(chatPanelWidth + d.width);
-            }}
+            onResizeStop={(e, direction, ref, d) => setChatPanelWidth(chatPanelWidth + d.width)}
             handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
         >
             <div className="h-full bg-background border-l flex flex-col flex-shrink-0">
-                <header className="flex justify-between items-center p-2 border-b">
-                    <h3 className="font-bold">Ask @Ascentia</h3>
+                <header className="flex justify-between items-center p-2 border-b flex-shrink-0">
+                    <h3 className="font-bold text-sm">Ask @Ascentia</h3>
                     <div>
-                        <button className="p-2 text-muted-foreground hover:text-foreground"><FaBroom /></button>
-                        <button className="p-2 text-muted-foreground hover:text-foreground"><FaCog /></button>
-                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel}><FaTimes /></button>
+                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => clearReportChatHistory(currentPage?.pageTitle || "Report")} title="Clear Chat History"><FaBroom /></button>
+                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
                     </div>
                 </header>
-                <div className="flex-1 p-2 overflow-y-auto text-sm text-muted-foreground">
-                    Chat functionality coming soon...
+                <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-2">
+                    {reportChatHistory.map((msg, index) => (
+                        <div key={msg.id || index}>
+                            <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
+                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{msg.message}</span>}
+                            {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
+                        </div>
+                    ))}
+                    <div ref={messagesEndRef} />
                 </div>
-                <footer className="p-2 border-t">
-                    <textarea className="w-full bg-muted border rounded p-2 text-sm" placeholder="Ask a question..." />
+                <footer className="p-2 border-t flex-shrink-0">
+                    <textarea
+                        ref={textareaRef}
+                        className="w-full bg-muted border rounded p-2 text-sm resize-none"
+                        placeholder="Ask a question... (Shift+Enter for newline)"
+                        value={reportChatInput}
+                        onChange={(e) => setReportChatInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        disabled={isThinking}
+                        rows={3}
+                    />
                 </footer>
             </div>
         </Resizable>
@@ -16797,19 +17085,50 @@ export default ReportChatPanel;
 
 <file path="src/components/report-viewer/ReportProgressBar.tsx">
 // src/components/report-viewer/ReportProgressBar.tsx
+'use client';
 import React from 'react';
+import { useReportState, useReportStore } from '@/stores/reportStore';
 
 const ReportProgressBar: React.FC = () => {
-    // Placeholder - full functionality depends on voting/seen state
-    return (
-        <div className="w-full p-2 flex items-center gap-2 text-xs text-muted-foreground">
-            <span>Progress:</span>
-            <div className="flex-grow h-3 bg-muted rounded-full border">
-                <div className="h-full bg-primary rounded-full w-0"></div>
-            </div>
-            <span>0%</span>
+  const { allPages, currentPageIndex } = useReportState(state => ({
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+  }));
+  const { goToPageByIndex } = useReportStore.getState();
+
+  const totalPages = allPages.length;
+  if (totalPages === 0) return null;
+
+  const progressPercent = totalPages > 0 ? ((currentPageIndex + 1) / totalPages) * 100 : 0;
+
+  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const bar = e.currentTarget;
+    const rect = bar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickPercent = clickX / rect.width;
+    const targetPageIndex = Math.floor(clickPercent * totalPages);
+    goToPageByIndex(targetPageIndex);
+  };
+
+  return (
+    <div className="w-full py-2 flex items-center gap-2">
+      <div
+        className="flex-grow h-3 bg-muted rounded-full border cursor-pointer relative"
+        onClick={handleBarClick}
+        title={`Page ${currentPageIndex + 1} of ${totalPages} (${progressPercent.toFixed(0)}%)`}
+      >
+        <div
+          className="h-full bg-primary rounded-full transition-all duration-300 ease-in-out"
+          style={{ width: `${progressPercent}%` }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-xs font-bold text-primary-foreground mix-blend-difference">
+                {progressPercent.toFixed(0)}%
+            </span>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ReportProgressBar;
@@ -16932,7 +17251,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Ported from aiascentgame context for aiascent.dev
+// Updated on: C13 (Merged from aiascentgame context to add TTS and Chat functionality)
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -16999,8 +17318,17 @@ interface ImageManifestData {
         imageCount: number;
     }>;
 }
+// --- End Raw Data Structures ---
 
-// Zustand State and Actions
+export type ChatMessage = {
+    id?: string;
+    author: string;
+    flag: string;
+    message: string;
+    channel: 'system' | 'local';
+    status?: 'thinking' | 'streaming' | 'complete';
+};
+
 export interface ReportState {
     reportData: ReportContentData | null;
     imageManifest: ImageManifestData | null;
@@ -17013,10 +17341,24 @@ export interface ReportState {
     chatPanelWidth: number;
     imagePanelHeight: number;
     isImageFullscreen: boolean;
+    reportChatHistory: ChatMessage[];
+    reportChatInput: string;
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
     isLoading: boolean;
+    // Page Audio State
+    playbackStatus: 'idle' | 'generating' | 'buffering' | 'playing' | 'paused' | 'error';
+    autoplayEnabled: boolean;
+    currentAudioUrl: string | null;
+    currentAudioPageIndex: number | null;
+    currentTime: number;
+    duration: number;
+    volume: number;
+    isMuted: boolean;
+    slideshowTimer: NodeJS.Timeout | null;
+    nextPageTimer: NodeJS.Timeout | null;
+    playbackSpeed: number;
 }
 
 export interface ReportActions {
@@ -17035,9 +17377,25 @@ export interface ReportActions {
     setImagePanelHeight: (height: number) => void;
     openImageFullscreen: () => void;
     closeImageFullscreen: () => void;
+    setReportChatInput: (input: string) => void;
+    addReportChatMessage: (message: ChatMessage) => void;
+    updateReportChatMessage: (id: string, chunk: string) => void;
+    updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
+    clearReportChatHistory: (currentPageTitle: string) => void;
     togglePromptVisibility: () => void;
     toggleTldrVisibility: () => void;
     toggleContentVisibility: () => void;
+    // Page Audio Actions
+    setPlaybackStatus: (status: ReportState['playbackStatus']) => void;
+    setAutoplay: (enabled: boolean) => void;
+    setCurrentAudio: (url: string | null, pageIndex: number) => void;
+    setAudioTime: (time: number) => void;
+    setAudioDuration: (duration: number) => void;
+    setVolume: (level: number) => void;
+    toggleMute: () => void;
+    startSlideshow: () => void;
+    stopSlideshow: (userInitiated?: boolean) => void;
+    setPlaybackSpeed: (speed: number) => void;
 }
 
 const createInitialReportState = (): ReportState => ({
@@ -17049,13 +17407,27 @@ const createInitialReportState = (): ReportState => ({
     isTreeNavOpen: true,
     expandedSections: {},
     isChatPanelOpen: false,
-    chatPanelWidth: 400,
+    chatPanelWidth: 450,
     imagePanelHeight: 400,
     isImageFullscreen: false,
+    reportChatHistory: [],
+    reportChatInput: '',
     isPromptVisible: true,
     isTldrVisible: true,
     isContentVisible: true,
     isLoading: true,
+    // Page Audio State
+    playbackStatus: 'idle',
+    autoplayEnabled: false,
+    currentAudioUrl: null,
+    currentAudioPageIndex: null,
+    currentTime: 0,
+    duration: 0,
+    volume: 1,
+    isMuted: false,
+    slideshowTimer: null,
+    nextPageTimer: null,
+    playbackSpeed: 1,
 });
 
 export const useReportStore = create<ReportState & ReportActions>()(
@@ -17093,7 +17465,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const correctedBasePath = '/assets/images/report/report-3/'; // Corrected path for aiascent.dev
+                                    // Path for aiascent.dev
+                                    const correctedBasePath = '/assets/images/report/report-3/';
                                     
                                     for (let i = 1; i <= groupMeta.imageCount; i++) {
                                         const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
@@ -17154,17 +17527,25 @@ export const useReportStore = create<ReportState & ReportActions>()(
             },
             nextImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
+                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
             }),
             prevImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
+                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
             }),
             handleKeyDown: (event: KeyboardEvent) => {
+                const target = event.target as HTMLElement;
+                if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
+                    return;
+                }
+                if (event.key.startsWith('Arrow')) {
+                    event.preventDefault();
+                }
+
                 switch (event.key) {
                     case 'ArrowUp': get().prevPage(); break;
                     case 'ArrowDown': get().nextPage(); break;
@@ -17177,8 +17558,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 expandedSections: { ...state.expandedSections, [sectionId]: !state.expandedSections[sectionId] }
             })),
             setActiveExpansionPath: (pageIndex) => {
-                const { reportData, allPages } = get();
-                if (!reportData || allPages.length === 0) return;
+                const { reportData } = get();
+                if (!reportData) return;
 
                 let pageCounter = 0;
                 let activeSectionId: string | null = null;
@@ -17221,9 +17602,53 @@ export const useReportStore = create<ReportState & ReportActions>()(
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
+            setReportChatInput: (input) => set({ reportChatInput: input }),
+            addReportChatMessage: (message) => set(state => ({
+                reportChatHistory: [...state.reportChatHistory, message].slice(-50),
+            })),
+            updateReportChatMessage: (id, chunk) => set(state => ({
+                reportChatHistory: state.reportChatHistory.map(msg =>
+                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
+                )
+            })),
+            updateReportChatStatus: (id, status) => set(state => ({
+                reportChatHistory: state.reportChatHistory.map(msg =>
+                    msg.id === id ? { ...msg, status } : msg
+                )
+            })),
+            clearReportChatHistory: (currentPageTitle) => {
+                const initialMessage: ChatMessage = {
+                    author: 'Ascentia', flag: '🤖',
+                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
+                };
+                set({ reportChatHistory: [initialMessage], reportChatInput: '' });
+            },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
+            // Audio Actions
+            setPlaybackStatus: (status) => set({ playbackStatus: status }),
+            setAutoplay: (enabled) => {
+                get().stopSlideshow(!enabled);
+                set({ autoplayEnabled: enabled });
+            },
+            setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
+            setAudioTime: (time) => set({ currentTime: time }),
+            setAudioDuration: (duration) => set({ duration: duration }),
+            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
+            startSlideshow: () => {/* Logic to be implemented in component */},
+            stopSlideshow: (userInitiated = false) => {
+                const { slideshowTimer, nextPageTimer } = get();
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (nextPageTimer) clearTimeout(nextPageTimer);
+                if (userInitiated) {
+                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
+                } else {
+                    set({ slideshowTimer: null, nextPageTimer: null });
+                }
+            },
+            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -17239,12 +17664,15 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 isPromptVisible: state.isPromptVisible,
                 isTldrVisible: state.isTldrVisible,
                 isContentVisible: state.isContentVisible,
+                autoplayEnabled: state.autoplayEnabled,
+                volume: state.volume,
+                isMuted: state.isMuted,
+                playbackSpeed: state.playbackSpeed,
             }),
         }
     )
 );
 
-// Custom hook for selecting parts of the state with shallow comparison
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
     return useReportStore(selector, shallow);
 };
@@ -18703,12 +19131,12 @@ export const useReportState = <T>(selector: (state: ReportState & ReportActions)
               ]
             },
             {
-              "pageId": "pillar-1-national-certification-and-skills-infrastructure",
+              "pageId": "pillar-1-national-certifications",
               "pageTitle": "Pillar 1: National Certification and Skills Infrastructure",
               "tldr": "The Compact will establish a national infrastructure for the digital workforce, featuring a tiered competency model, leveraging existing educational institutions, and emphasizing industry-driven curricula and apprenticeships to build a sustainable talent pipeline.",
               "content": "The foundation of any profession is a shared understanding of required competencies and a trusted mechanism for validating them. The Compact will establish a national infrastructure for training and certifying the new digital workforce, particularly the Data Curator and DCIA roles.\n\n**A National Competency Model:** In partnership with industry and academia, a federal body will develop and maintain a national competency model. This model will feature multiple tiers—e.g., Associate, Professional, and Master/Specialist—to create a clear career ladder. Certification will validate skills across Technical, Analytical, and Governance/Ethical domains.\n\n**Leveraging Existing Institutions:** Rather than creating a new bureaucracy, the Compact will deliver training primarily through the nation's existing network of community colleges, vocational schools, and university extension programs. These institutions are agile, locally embedded, and experienced in delivering skills-based education.\n\n**Industry-Driven Curriculum and Apprenticeships:** Federal funding will be contingent on sectoral partnerships, where curricula are co-designed and continuously updated with industry partners. The initiative will strongly emphasize 'Earn and Learn' models, such as Registered Apprenticeships, allowing trainees to gain paid, on-the-job experience while studying.\n\nThis infrastructure ensures that the supply of newly skilled workers is met with robust demand, creating a sustainable and scalable talent pipeline aligned with the strategic needs of the nation.",
               "imageGroupIds": [
-                "group_pillar-1-national-certification-and-skills-infrastructure_prompt-1"
+                "group_pillar-1-national-certifications_prompt-1"
               ]
             },
             {
@@ -19928,11 +20356,11 @@ export const useReportState = <T>(selector: (state: ReportState & ReportActions)
     "fileExtension": ".webp",
     "imageCount": 9
   },
-  "group_pillar-1-national-certification-and-skills-infrastructure_prompt-1": {
-    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/",
+  "group_pillar-1-national-certifications_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/",
     "prompt": "A cinematic visualization of the 'National Competency Model'. A clear, structured career ladder is shown holographically, with distinct tiers labeled 'Associate', 'Professional', and 'Master/Specialist'. A Citizen Architect is shown ascending this ladder. The aesthetic is futuristic and aspirational solarpunk. The message conveyed is \"The Ladder of Opportunity\".",
     "alt": "Pillar 1: National Certification and Skills Infrastructure",
-    "baseFileName": "pillar-1-national-certification-and-skills-infrastructure-p1-img-",
+    "baseFileName": "pillar-1-national-certifications-p1-img-",
     "fileExtension": ".webp",
     "imageCount": 11
   },
@@ -45018,127 +45446,6 @@ export const useReportState = <T>(selector: (state: ReportState & ReportActions)
 </metadata>
 </file_artifact>
 
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-1.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 781804
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-2.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 591454
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-3.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 312220
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-4.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 642934
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-5.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 673332
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-6.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 343958
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-7.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 901614
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-8.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 574282
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-9.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 780186
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-10.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 697736
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1/pillar-1-national-certification-and-skills-infrastructure-p1-img-11.webp">
-<metadata>
-{
-  "name": "pillar-1-national-certification-and-skills-infrastructure-p1-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certification-and-skills-infrastructure/prompt-1",
-  "fileType": "WEBP",
-  "sizeInBytes": 727722
-}
-</metadata>
-</file_artifact>
-
 <file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-2-the-citizen-architect-grant/prompt-1/pillar-2-the-citizen-architect-grant-p1-img-1.webp">
 <metadata>
 {
@@ -45605,7 +45912,7 @@ export const useReportState = <T>(selector: (state: ReportState & ReportActions)
 // src/components/report-viewer/ReportViewer.tsx
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import PageNavigator from './PageNavigator';
 import ImageNavigator from './ImageNavigator';
@@ -45614,7 +45921,6 @@ import ReportTreeNav from './ReportTreeNav';
 import ReportChatPanel from './ReportChatPanel';
 import ReportProgressBar from './ReportProgressBar';
 import AudioControls from './AudioControls';
-import { FaArrowsAlt } from 'react-icons/fa';
 import { Resizable } from 're-resizable';
 
 const ReportViewer: React.FC = () => {
@@ -45622,8 +45928,7 @@ const ReportViewer: React.FC = () => {
     const {
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
-        closeImageFullscreen, chatPanelWidth, setChatPanelWidth, isPromptVisible,
-        isTldrVisible, isContentVisible, isLoading
+        closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -45635,8 +45940,6 @@ const ReportViewer: React.FC = () => {
         isImageFullscreen: state.isImageFullscreen,
         openImageFullscreen: state.openImageFullscreen,
         closeImageFullscreen: state.closeImageFullscreen,
-        chatPanelWidth: state.chatPanelWidth,
-        setChatPanelWidth: state.setChatPanelWidth,
         isPromptVisible: state.isPromptVisible,
         isTldrVisible: state.isTldrVisible,
         isContentVisible: state.isContentVisible,
@@ -45653,12 +45956,12 @@ const ReportViewer: React.FC = () => {
     }, [handleKeyDown]);
 
     const currentPage = allPages[currentPageIndex];
-    const currentPrompt = currentPage?.imagePrompts[0];
-    const currentImage = currentPrompt?.images[currentImageIndex];
+    const currentPrompt = currentPage?.imagePrompts;
+    const currentImage = currentPrompt?.[0]?.images[currentImageIndex];
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center h-screen bg-background">
+            <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
             </div>
         );
@@ -45666,26 +45969,26 @@ const ReportViewer: React.FC = () => {
 
     if (!currentPage) {
         return (
-            <div className="flex items-center justify-center h-screen bg-background">
+            <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-red-500">Could not load report data.</p>
             </div>
         );
     }
     
     return (
-        <div className="fixed inset-0 bg-background z-[100] flex pt-16">
+        <div className="h-full w-full bg-background text-foreground flex">
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-[120] flex justify-center items-center" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center" onClick={closeImageFullscreen}>
                     <img src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" />
                 </div>
             )}
 
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
-                <header className="p-2 border-b">
+                <header className="p-2 border-b flex-shrink-0">
                     <PageNavigator />
                 </header>
-                <div className="p-2 border-b">
+                <div className="p-2 border-b flex-shrink-0">
                     <ReportProgressBar />
                 </div>
                 <main className="flex-1 flex flex-col p-2 overflow-hidden">
@@ -45697,7 +46000,7 @@ const ReportViewer: React.FC = () => {
                             setImagePanelHeight(imagePanelHeight + d.height);
                         }}
                         enable={{ bottom: true }}
-                        className="relative mb-2"
+                        className="relative mb-2 flex-shrink-0"
                     >
                         <div className="w-full h-full bg-black/50 border rounded-lg flex items-center justify-center overflow-hidden">
                             {currentImage?.url ? (
@@ -45711,10 +46014,9 @@ const ReportViewer: React.FC = () => {
                         </div>
                     </Resizable>
                     
-                    <div className="border-y p-1">
+                    <div className="border-y p-1 flex-shrink-0">
                         <ImageNavigator />
-                        {/* AudioControls placeholder/future implementation */}
-                        {/* <AudioControls /> */}
+                        <AudioControls />
                     </div>
 
                     <div className="flex-1 overflow-y-auto p-2 mt-2 space-y-4">
@@ -46039,5 +46341,271 @@ A new `AiModule` will be created to encapsulate all AI-related logic.
     -   The "Ask JANE" option will call `useAiStore.getState().askJane(selectedText)`.
 
 This architecture ensures that JANE has access to all necessary real-time information to provide intelligent, context-aware, and personalized assistance, fulfilling her role as a core part of the "Battle School" experience.
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-1.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 781804
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-10.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 697736
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-11.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 727722
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-2.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 591454
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-3.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 312220
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-4.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 642934
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-5.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 673332
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-6.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 343958
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-7.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 901614
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-8.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 574282
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/pillar-1-national-certifications-p1-img-9.webp">
+<metadata>
+{
+  "name": "pillar-1-national-certifications-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/report-3/part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1",
+  "fileType": "WEBP",
+  "sizeInBytes": 780186
+}
+</metadata>
+</file_artifact>
+
+<file path="src/app/api/chat/route.ts">
+import { NextResponse } from 'next/server';
+
+// This function is for streaming responses
+export async function POST(request: Request) {
+  const { prompt, pageContext } = await request.json();
+
+  // Determine the LLM endpoint from environment variables
+  const llmUrl = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234';
+  const completionsUrl = `${llmUrl}/v1/completions`;
+
+  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic. Do not invent information. If the answer is not in the context, say "That information is not available in the current context."`;
+
+  const finalPrompt = `
+System: ${systemPrompt}
+
+--- START CONTEXT ---
+${pageContext}
+--- END CONTEXT ---
+
+User: ${prompt}
+
+Ascentia:`;
+
+  try {
+    const response = await fetch(completionsUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'unsloth/gpt-oss-20b', // As per vcpg context
+        prompt: finalPrompt,
+        max_tokens: 512,
+        temperature: 0.7,
+        stream: true,
+      }),
+    });
+
+    if (!response.body) {
+      return new NextResponse("LLM response has no body", { status: 500 });
+    }
+
+    const stream = new ReadableStream({
+      async start(controller) {
+        const reader = response.body!.getReader();
+        const decoder = new TextDecoder();
+
+        function push() {
+          reader.read().then(({ done, value }) => {
+            if (done) {
+              controller.close();
+              return;
+            }
+            const chunk = decoder.decode(value, { stream: true });
+            // SSE format is data: {...}\n\n
+            const lines = chunk.split('\n\n');
+            for (const line of lines) {
+              if (line.startsWith('data: ')) {
+                const dataString = line.substring(6);
+                if (dataString === '[DONE]') {
+                  controller.close();
+                  return;
+                }
+                try {
+                  const jsonData = JSON.parse(dataString);
+                  const textChunk = jsonData.choices?.text || '';
+                  if (textChunk) {
+                    controller.enqueue(textChunk);
+                  }
+                } catch (e) {
+                  // Ignore parsing errors for incomplete JSON chunks
+                }
+              }
+            }
+            push();
+          });
+        }
+        push();
+      },
+    });
+
+    return new Response(stream, {
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    });
+
+  } catch (error) {
+    console.error('Error proxying chat request:', error);
+    return new NextResponse('Error proxying chat request.', { status: 500 });
+  }
+}
+</file_artifact>
+
+<file path="src/app/api/tts/route.ts">
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
+  const { text } = await request.json();
+
+  const ttsServerUrl = process.env.TTS_SERVER_URL;
+
+  if (!ttsServerUrl) {
+    return new NextResponse('TTS server URL not configured.', { status: 500 });
+  }
+
+  try {
+    const response = await fetch(ttsServerUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'kokoro',
+        voice: 'en_us_001',
+        input: text,
+        response_format: 'wav',
+        speed: 1.0,
+      }),
+    });
+
+    if (!response.ok || !response.body) {
+      const errorText = await response.text();
+      console.error(`TTS server error: ${response.status} ${response.statusText}`, errorText);
+      return new NextResponse(`TTS server error: ${errorText}`, { status: response.status });
+    }
+
+    // Stream the audio back to the client
+    const headers = new Headers();
+    headers.set('Content-Type', 'audio/wav');
+    return new NextResponse(response.body, { headers });
+
+  } catch (error) {
+    console.error('Error proxying TTS request:', error);
+    return new NextResponse('Error proxying TTS request.', { status: 500 });
+  }
+}
+</file_artifact>
+
+<file path=".env.local">
+# This file is a mirror of .env with any sensitive data removed such that this file can be added to the DCE context. A .env file exists with the sensitive data.
+# The TTS server should be an OpenAI-compatible endpoint.
+# Example using kokoro-fastapi: http://192.168.1.85:8880/v1/audio/speech
+TTS_SERVER_URL=http://192.168.1.85:8880/v1/audio/speech
 </file_artifact>
 

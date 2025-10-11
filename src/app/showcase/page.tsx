@@ -6,7 +6,7 @@ import React from "react";
 
 export default function ShowcasePage() {
   return (
-    <div className="h-screen w-screen">
+    <div className="h-full w-full">
         <ReportViewer />
     </div>
   );

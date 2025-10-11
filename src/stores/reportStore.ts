@@ -1,5 +1,5 @@
 // src/stores/reportStore.ts
-// Ported from aiascentgame context for aiascent.dev
+// Updated on: C13 (Merged from aiascentgame context to add TTS and Chat functionality)
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -66,8 +66,17 @@ interface ImageManifestData {
         imageCount: number;
     }>;
 }
+// --- End Raw Data Structures ---
 
-// Zustand State and Actions
+export type ChatMessage = {
+    id?: string;
+    author: string;
+    flag: string;
+    message: string;
+    channel: 'system' | 'local';
+    status?: 'thinking' | 'streaming' | 'complete';
+};
+
 export interface ReportState {
     reportData: ReportContentData | null;
     imageManifest: ImageManifestData | null;
@@ -80,10 +89,24 @@ export interface ReportState {
     chatPanelWidth: number;
     imagePanelHeight: number;
     isImageFullscreen: boolean;
+    reportChatHistory: ChatMessage[];
+    reportChatInput: string;
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
     isLoading: boolean;
+    // Page Audio State
+    playbackStatus: 'idle' | 'generating' | 'buffering' | 'playing' | 'paused' | 'error';
+    autoplayEnabled: boolean;
+    currentAudioUrl: string | null;
+    currentAudioPageIndex: number | null;
+    currentTime: number;
+    duration: number;
+    volume: number;
+    isMuted: boolean;
+    slideshowTimer: NodeJS.Timeout | null;
+    nextPageTimer: NodeJS.Timeout | null;
+    playbackSpeed: number;
 }
 
 export interface ReportActions {
@@ -102,9 +125,25 @@ export interface ReportActions {
     setImagePanelHeight: (height: number) => void;
     openImageFullscreen: () => void;
     closeImageFullscreen: () => void;
+    setReportChatInput: (input: string) => void;
+    addReportChatMessage: (message: ChatMessage) => void;
+    updateReportChatMessage: (id: string, chunk: string) => void;
+    updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
+    clearReportChatHistory: (currentPageTitle: string) => void;
     togglePromptVisibility: () => void;
     toggleTldrVisibility: () => void;
     toggleContentVisibility: () => void;
+    // Page Audio Actions
+    setPlaybackStatus: (status: ReportState['playbackStatus']) => void;
+    setAutoplay: (enabled: boolean) => void;
+    setCurrentAudio: (url: string | null, pageIndex: number) => void;
+    setAudioTime: (time: number) => void;
+    setAudioDuration: (duration: number) => void;
+    setVolume: (level: number) => void;
+    toggleMute: () => void;
+    startSlideshow: () => void;
+    stopSlideshow: (userInitiated?: boolean) => void;
+    setPlaybackSpeed: (speed: number) => void;
 }
 
 const createInitialReportState = (): ReportState => ({
@@ -116,13 +155,27 @@ const createInitialReportState = (): ReportState => ({
     isTreeNavOpen: true,
     expandedSections: {},
     isChatPanelOpen: false,
-    chatPanelWidth: 400,
+    chatPanelWidth: 450,
     imagePanelHeight: 400,
     isImageFullscreen: false,
+    reportChatHistory: [],
+    reportChatInput: '',
     isPromptVisible: true,
     isTldrVisible: true,
     isContentVisible: true,
     isLoading: true,
+    // Page Audio State
+    playbackStatus: 'idle',
+    autoplayEnabled: false,
+    currentAudioUrl: null,
+    currentAudioPageIndex: null,
+    currentTime: 0,
+    duration: 0,
+    volume: 1,
+    isMuted: false,
+    slideshowTimer: null,
+    nextPageTimer: null,
+    playbackSpeed: 1,
 });
 
 export const useReportStore = create<ReportState & ReportActions>()(
@@ -160,7 +213,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const correctedBasePath = '/assets/images/report/report-3/'; // Corrected path for aiascent.dev
+                                    // Path for aiascent.dev
+                                    const correctedBasePath = '/assets/images/report/report-3/';
                                     
                                     for (let i = 1; i <= groupMeta.imageCount; i++) {
                                         const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
@@ -221,17 +275,25 @@ export const useReportStore = create<ReportState & ReportActions>()(
             },
             nextImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
+                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
             }),
             prevImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
+                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
             }),
             handleKeyDown: (event: KeyboardEvent) => {
+                const target = event.target as HTMLElement;
+                if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
+                    return;
+                }
+                if (event.key.startsWith('Arrow')) {
+                    event.preventDefault();
+                }
+
                 switch (event.key) {
                     case 'ArrowUp': get().prevPage(); break;
                     case 'ArrowDown': get().nextPage(); break;
@@ -244,8 +306,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 expandedSections: { ...state.expandedSections, [sectionId]: !state.expandedSections[sectionId] }
             })),
             setActiveExpansionPath: (pageIndex) => {
-                const { reportData, allPages } = get();
-                if (!reportData || allPages.length === 0) return;
+                const { reportData } = get();
+                if (!reportData) return;
 
                 let pageCounter = 0;
                 let activeSectionId: string | null = null;
@@ -288,9 +350,53 @@ export const useReportStore = create<ReportState & ReportActions>()(
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
+            setReportChatInput: (input) => set({ reportChatInput: input }),
+            addReportChatMessage: (message) => set(state => ({
+                reportChatHistory: [...state.reportChatHistory, message].slice(-50),
+            })),
+            updateReportChatMessage: (id, chunk) => set(state => ({
+                reportChatHistory: state.reportChatHistory.map(msg =>
+                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
+                )
+            })),
+            updateReportChatStatus: (id, status) => set(state => ({
+                reportChatHistory: state.reportChatHistory.map(msg =>
+                    msg.id === id ? { ...msg, status } : msg
+                )
+            })),
+            clearReportChatHistory: (currentPageTitle) => {
+                const initialMessage: ChatMessage = {
+                    author: 'Ascentia', flag: '🤖',
+                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
+                };
+                set({ reportChatHistory: [initialMessage], reportChatInput: '' });
+            },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
+            // Audio Actions
+            setPlaybackStatus: (status) => set({ playbackStatus: status }),
+            setAutoplay: (enabled) => {
+                get().stopSlideshow(!enabled);
+                set({ autoplayEnabled: enabled });
+            },
+            setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
+            setAudioTime: (time) => set({ currentTime: time }),
+            setAudioDuration: (duration) => set({ duration: duration }),
+            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
+            startSlideshow: () => {/* Logic to be implemented in component */},
+            stopSlideshow: (userInitiated = false) => {
+                const { slideshowTimer, nextPageTimer } = get();
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (nextPageTimer) clearTimeout(nextPageTimer);
+                if (userInitiated) {
+                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
+                } else {
+                    set({ slideshowTimer: null, nextPageTimer: null });
+                }
+            },
+            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -306,12 +412,15 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 isPromptVisible: state.isPromptVisible,
                 isTldrVisible: state.isTldrVisible,
                 isContentVisible: state.isContentVisible,
+                autoplayEnabled: state.autoplayEnabled,
+                volume: state.volume,
+                isMuted: state.isMuted,
+                playbackSpeed: state.playbackSpeed,
             }),
         }
     )
 );
 
-// Custom hook for selecting parts of the state with shallow comparison
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
     return useReportStore(selector, shallow);
 };

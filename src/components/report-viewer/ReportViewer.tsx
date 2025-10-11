@@ -1,7 +1,7 @@
 // src/components/report-viewer/ReportViewer.tsx
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import PageNavigator from './PageNavigator';
 import ImageNavigator from './ImageNavigator';
@@ -10,7 +10,6 @@ import ReportTreeNav from './ReportTreeNav';
 import ReportChatPanel from './ReportChatPanel';
 import ReportProgressBar from './ReportProgressBar';
 import AudioControls from './AudioControls';
-import { FaArrowsAlt } from 'react-icons/fa';
 import { Resizable } from 're-resizable';
 
 const ReportViewer: React.FC = () => {
@@ -18,8 +17,7 @@ const ReportViewer: React.FC = () => {
     const {
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
-        closeImageFullscreen, chatPanelWidth, setChatPanelWidth, isPromptVisible,
-        isTldrVisible, isContentVisible, isLoading
+        closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -31,8 +29,6 @@ const ReportViewer: React.FC = () => {
         isImageFullscreen: state.isImageFullscreen,
         openImageFullscreen: state.openImageFullscreen,
         closeImageFullscreen: state.closeImageFullscreen,
-        chatPanelWidth: state.chatPanelWidth,
-        setChatPanelWidth: state.setChatPanelWidth,
         isPromptVisible: state.isPromptVisible,
         isTldrVisible: state.isTldrVisible,
         isContentVisible: state.isContentVisible,
@@ -49,12 +45,12 @@ const ReportViewer: React.FC = () => {
     }, [handleKeyDown]);
 
     const currentPage = allPages[currentPageIndex];
-    const currentPrompt = currentPage?.imagePrompts[0];
-    const currentImage = currentPrompt?.images[currentImageIndex];
+    const currentPrompt = currentPage?.imagePrompts;
+    const currentImage = currentPrompt?.[0]?.images[currentImageIndex];
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center h-screen bg-background">
+            <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
             </div>
         );
@@ -62,26 +58,26 @@ const ReportViewer: React.FC = () => {
 
     if (!currentPage) {
         return (
-            <div className="flex items-center justify-center h-screen bg-background">
+            <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-red-500">Could not load report data.</p>
             </div>
         );
     }
     
     return (
-        <div className="fixed inset-0 bg-background z-[100] flex pt-16">
+        <div className="h-full w-full bg-background text-foreground flex">
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-[120] flex justify-center items-center" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center" onClick={closeImageFullscreen}>
                     <img src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" />
                 </div>
             )}
 
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
-                <header className="p-2 border-b">
+                <header className="p-2 border-b flex-shrink-0">
                     <PageNavigator />
                 </header>
-                <div className="p-2 border-b">
+                <div className="p-2 border-b flex-shrink-0">
                     <ReportProgressBar />
                 </div>
                 <main className="flex-1 flex flex-col p-2 overflow-hidden">
@@ -93,7 +89,7 @@ const ReportViewer: React.FC = () => {
                             setImagePanelHeight(imagePanelHeight + d.height);
                         }}
                         enable={{ bottom: true }}
-                        className="relative mb-2"
+                        className="relative mb-2 flex-shrink-0"
                     >
                         <div className="w-full h-full bg-black/50 border rounded-lg flex items-center justify-center overflow-hidden">
                             {currentImage?.url ? (
@@ -107,10 +103,9 @@ const ReportViewer: React.FC = () => {
                         </div>
                     </Resizable>
                     
-                    <div className="border-y p-1">
+                    <div className="border-y p-1 flex-shrink-0">
                         <ImageNavigator />
-                        {/* AudioControls placeholder/future implementation */}
-                        {/* <AudioControls /> */}
+                        <AudioControls />
                     </div>
 
                     <div className="flex-1 overflow-y-auto p-2 mt-2 space-y-4">

@@ -8,33 +8,33 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-title: "AIAscent.dev | Home of the Data Curation Environment",
-description: "The official website for the Data Curation Environment (DCE) VS Code Extension. Learn how to revolutionize your AI-assisted development workflow.",
+  title: "AIAscent.dev | Home of the Data Curation Environment",
+  description: "The official website for the Data Curation Environment (DCE) VS Code Extension. Learn how to revolutionize your AI-assisted development workflow.",
 };
 
 export default function RootLayout({
-children,
+  children,
 }: Readonly<{
-children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-return (
-<html lang="en" suppressHydrationWarning>
-<body className={inter.className}>
-<ThemeProvider
-attribute="class"
-defaultTheme="system"
-enableSystem
-disableTransitionOnChange
->
-<div className="flex flex-col min-h-screen">
-<Header />
-<main className="flex-grow">
-{children}
-</main>
-<Footer />
-</div>
-</ThemeProvider>
-</body>
-</html>
-);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow pt-16">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
