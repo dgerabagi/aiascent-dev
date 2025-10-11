@@ -25,7 +25,7 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
@@ -48,25 +48,29 @@ const ReportChatPanel: React.FC = () => {
                 body: JSON.stringify({ prompt: trimmedInput, pageContext }),
             });
 
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Proxy error: ${response.status} ${errorText}`);
+            }
+
             if (!response.body) throw new Error("No response body");
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let done = false;
-            let fullResponse = "";
-
+            
             while (!done) {
                 const { value, done: doneReading } = await reader.read();
                 done = doneReading;
-                const chunk = decoder.decode(value);
-                fullResponse += chunk;
+                const chunk = decoder.decode(value, { stream: true });
                 updateReportChatMessage(temporaryId, chunk);
             }
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error) {
             console.error("Error with chat stream:", error);
-            updateReportChatMessage(temporaryId, "Sorry, I encountered an error.");
+            const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+            updateReportChatMessage(temporaryId, `Sorry, I encountered an error: ${errorMessage}`);
             updateReportChatStatus(temporaryId, 'complete');
         } finally {
             setIsThinking(false);
@@ -93,7 +97,7 @@ const ReportChatPanel: React.FC = () => {
                 <header className="flex justify-between items-center p-2 border-b flex-shrink-0">
                     <h3 className="font-bold text-sm">Ask @Ascentia</h3>
                     <div>
-                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => clearReportChatHistory(currentPage?.pageTitle || "Report")} title="Clear Chat History"><FaBroom /></button>
+                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => { clearReportChatHistory(currentPage?.pageTitle || "Report"); setTimeout(() => textareaRef.current?.focus(), 0); }} title="Clear Chat History"><FaBroom /></button>
                         <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
                     </div>
                 </header>

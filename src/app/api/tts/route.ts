@@ -3,11 +3,19 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   const { text } = await request.json();
 
+  if (!text || typeof text !== 'string' || text.trim().length === 0) {
+    console.error('TTS API received an empty or invalid text payload.');
+    return new NextResponse('Invalid request: text payload is empty.', { status: 400 });
+  }
+
   const ttsServerUrl = process.env.TTS_SERVER_URL;
 
   if (!ttsServerUrl) {
+    console.error('TTS_SERVER_URL is not configured in environment variables.');
     return new NextResponse('TTS server URL not configured.', { status: 500 });
   }
+
+  console.log(`[TTS Proxy] Received request for text: "${text.substring(0, 50)}..."`);
 
   try {
     const response = await fetch(ttsServerUrl, {
@@ -26,17 +34,17 @@ export async function POST(request: Request) {
 
     if (!response.ok || !response.body) {
       const errorText = await response.text();
-      console.error(`TTS server error: ${response.status} ${response.statusText}`, errorText);
+      console.error(`[TTS Proxy] Downstream TTS server error: ${response.status} ${response.statusText}`, errorText);
       return new NextResponse(`TTS server error: ${errorText}`, { status: response.status });
     }
 
-    // Stream the audio back to the client
+    console.log(`[TTS Proxy] Streaming audio response back to client.`);
     const headers = new Headers();
     headers.set('Content-Type', 'audio/wav');
     return new NextResponse(response.body, { headers });
 
   } catch (error) {
-    console.error('Error proxying TTS request:', error);
+    console.error('[TTS Proxy] Error proxying TTS request:', error);
     return new NextResponse('Error proxying TTS request.', { status: 500 });
   }
 }

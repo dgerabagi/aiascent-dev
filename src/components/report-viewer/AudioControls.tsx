@@ -36,7 +36,10 @@ const AudioControls: React.FC = () => {
   const currentPage = allPages[currentPageIndex];
 
   const generateAndPlayAudio = async (restart = false) => {
-    if (!currentPage) return;
+    if (!currentPage || !currentPage.pageTitle) {
+      console.warn('[AudioControls] Attempted to generate audio with no current page or title.');
+      return;
+    };
 
     setPlaybackStatus('generating');
     const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;

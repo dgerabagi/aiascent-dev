@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T20:10:21.906Z
+  Date Generated: 2025-10-11T20:29:51.126Z
   ---
-  Total Files: 2425
-  Approx. Tokens: 233687
+  Total Files: 2426
+  Approx. Tokens: 238065
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,10 +14,10 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (4481 tokens)
+7. src\stores\reportStore.ts (4568 tokens)
 8. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
-9. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
-10. context\aiascentgame\report\AudioControls.tsx (2831 tokens)
+9. context\dce\A90. AI Ascent - server.ts (Reference).md (4213 tokens)
+10. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
 
 <!-- Full File List -->
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 129 - Chars: 6525 - Tokens: 1632
@@ -48,7 +48,7 @@
 26. src\app\page.tsx - Lines: 22 - Chars: 672 - Tokens: 168
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
-29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2192 - Tokens: 548
+29. src\components\layout\Header.tsx - Lines: 60 - Chars: 2008 - Tokens: 502
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 32. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
@@ -100,15 +100,15 @@
 78. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 79. src\app\learn\page.tsx - Lines: 27 - Chars: 1181 - Tokens: 296
 80. src\app\mission\page.tsx - Lines: 78 - Chars: 5510 - Tokens: 1378
-81. src\components\report-viewer\AudioControls.tsx - Lines: 211 - Chars: 8074 - Tokens: 2019
+81. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
 82. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 83. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 84. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
-85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 127 - Chars: 6167 - Tokens: 1542
+85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 131 - Chars: 6502 - Tokens: 1626
 86. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 87. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 88. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-89. src\stores\reportStore.ts - Lines: 426 - Chars: 17921 - Tokens: 4481
+89. src\stores\reportStore.ts - Lines: 433 - Chars: 18271 - Tokens: 4568
 90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 91. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
 92. public\assets\images\report\report-3\conclusion-rise-to-meet-the-machine\a-call-to-action-start-your-ascent\prompt-1\a-call-to-action-start-your-ascent-p1-1.webp - [Binary] Size: 544.8 KB
@@ -2427,7 +2427,7 @@
 2405. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-10.webp - [Binary] Size: 960.3 KB
 2406. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-11.webp - [Binary] Size: 782.5 KB
 2407. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\the-trillion-dollar-billion-worker-opportunity\prompt-1\the-trillion-dollar-billion-worker-opportunity-p1-img-12.webp - [Binary] Size: 1 MB
-2408. src\components\report-viewer\ReportViewer.tsx - Lines: 131 - Chars: 5780 - Tokens: 1445
+2408. src\components\report-viewer\ReportViewer.tsx - Lines: 133 - Chars: 5861 - Tokens: 1466
 2409. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
 2410. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 2411. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
@@ -2442,9 +2442,10 @@
 2420. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-7.webp - [Binary] Size: 880.5 KB
 2421. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-8.webp - [Binary] Size: 560.8 KB
 2422. public\assets\images\report\report-3\part-v-the-american-counter-strategy\the-new-collar-compact\pillar-1-national-certifications\prompt-1\pillar-1-national-certifications-p1-img-9.webp - [Binary] Size: 761.9 KB
-2423. src\app\api\chat\route.ts - Lines: 90 - Chars: 2873 - Tokens: 719
-2424. src\app\api\tts\route.ts - Lines: 42 - Chars: 1243 - Tokens: 311
-2425. .env.local - Lines: 4 - Chars: 347 - Tokens: 87
+2423. src\app\api\chat\route.ts - Lines: 70 - Chars: 2298 - Tokens: 575
+2424. src\app\api\tts\route.ts - Lines: 50 - Chars: 1715 - Tokens: 429
+2425. .env.local - Lines: 5 - Chars: 387 - Tokens: 97
+2426. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -11602,7 +11603,6 @@ export default Footer;
 
 <file path="src/components/layout/Header.tsx">
 // src/components/layout/Header.tsx
-// C3 - Refined styling for dark/sophisticated aesthetic
 import Link from 'next/link';
 import { ModeToggle } from '@/components/global/mode-toggle';
 import Image from 'next/image';
@@ -11611,36 +11611,36 @@ const Header = () => {
 return (
 // Updated C3: Changed styling to match A16 (fixed, dark, blur)
 <header className="fixed top-0 z-50 w-full border-b border-neutral-900 bg-black/40 backdrop-blur-lg">
-<div className="container flex h-16 items-center justify-between px-4">
+<div className="container flex h-16 items-center px-4">
 
     {/* Logo and Title */}
-    <Link href="/" className="flex items-center gap-2">
-      {/* Placeholder for Logo (A15.2) */}
-      <Image
-        src="/assets/logo.svg" // Placeholder path
-        width={30}
-        height={30}
-        alt="AIAscent Logo"
-        className="shadow-sm"
-      />
-      <span className="text-2xl font-bold">AIAscent.dev</span>
-    </Link>
+    <div className="flex items-center gap-2 flex-1">
+      <Link href="/" className="flex items-center gap-2">
+        {/* Placeholder for Logo (A15.2) */}
+        <Image
+          src="/assets/logo.svg" // Placeholder path
+          width={30}
+          height={30}
+          alt="AIAscent Logo"
+          className="shadow-sm"
+        />
+        <span className="text-2xl font-bold">AIAscent.dev</span>
+      </Link>
+    </div>
 
-    {/* Navigation Links */}
-    {/* Centered navigation for desktop (hidden on mobile for now) */}
-    <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+    {/* Navigation Links - Centered */}
+    <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/showcase">Showcase</NavLink>
       <NavLink href="/learn">Learn</NavLink>
       <NavLink href="/mission">Mission</NavLink>
-      <a href="[https://github.com/dgerabagi/data-curation-environment](https://github.com/dgerabagi/data-curation-environment)" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground/80 text-foreground/60">
+      <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground/80 text-foreground/60">
         GitHub
       </a>
     </nav>
 
     {/* Right side (Actions/Toggle) */}
-    <div className="flex items-center space-x-4">
-      {/* Optional: Add a CTA Button here if needed */}
+    <div className="flex items-center justify-end gap-4 flex-1">
       <ModeToggle />
       {/* Placeholder for Mobile Menu Icon */}
       <div className="md:hidden">
@@ -16634,7 +16634,10 @@ const AudioControls: React.FC = () => {
   const currentPage = allPages[currentPageIndex];
 
   const generateAndPlayAudio = async (restart = false) => {
-    if (!currentPage) return;
+    if (!currentPage || !currentPage.pageTitle) {
+      console.warn('[AudioControls] Attempted to generate audio with no current page or title.');
+      return;
+    };
 
     setPlaybackStatus('generating');
     const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
@@ -16981,7 +16984,7 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
@@ -17004,25 +17007,29 @@ const ReportChatPanel: React.FC = () => {
                 body: JSON.stringify({ prompt: trimmedInput, pageContext }),
             });
 
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Proxy error: ${response.status} ${errorText}`);
+            }
+
             if (!response.body) throw new Error("No response body");
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let done = false;
-            let fullResponse = "";
-
+            
             while (!done) {
                 const { value, done: doneReading } = await reader.read();
                 done = doneReading;
-                const chunk = decoder.decode(value);
-                fullResponse += chunk;
+                const chunk = decoder.decode(value, { stream: true });
                 updateReportChatMessage(temporaryId, chunk);
             }
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error) {
             console.error("Error with chat stream:", error);
-            updateReportChatMessage(temporaryId, "Sorry, I encountered an error.");
+            const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+            updateReportChatMessage(temporaryId, `Sorry, I encountered an error: ${errorMessage}`);
             updateReportChatStatus(temporaryId, 'complete');
         } finally {
             setIsThinking(false);
@@ -17049,7 +17056,7 @@ const ReportChatPanel: React.FC = () => {
                 <header className="flex justify-between items-center p-2 border-b flex-shrink-0">
                     <h3 className="font-bold text-sm">Ask @Ascentia</h3>
                     <div>
-                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => clearReportChatHistory(currentPage?.pageTitle || "Report")} title="Clear Chat History"><FaBroom /></button>
+                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => { clearReportChatHistory(currentPage?.pageTitle || "Report"); setTimeout(() => textareaRef.current?.focus(), 0); }} title="Clear Chat History"><FaBroom /></button>
                         <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
                     </div>
                 </header>
@@ -17251,7 +17258,6 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C13 (Merged from aiascentgame context to add TTS and Chat functionality)
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -17330,6 +17336,7 @@ export type ChatMessage = {
 };
 
 export interface ReportState {
+    _hasHydrated: boolean; // Flag for rehydration
     reportData: ReportContentData | null;
     imageManifest: ImageManifestData | null;
     allPages: ReportPage[];
@@ -17362,6 +17369,7 @@ export interface ReportState {
 }
 
 export interface ReportActions {
+    setHasHydrated: (hydrated: boolean) => void;
     loadReportData: () => Promise<void>;
     nextPage: () => void;
     prevPage: () => void;
@@ -17399,6 +17407,7 @@ export interface ReportActions {
 }
 
 const createInitialReportState = (): ReportState => ({
+    _hasHydrated: false,
     reportData: null,
     imageManifest: null,
     allPages: [],
@@ -17434,6 +17443,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
+            setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
             loadReportData: async () => {
                 if (get().reportData) {
@@ -17465,7 +17475,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // Path for aiascent.dev
                                     const correctedBasePath = '/assets/images/report/report-3/';
                                     
                                     for (let i = 1; i <= groupMeta.imageCount; i++) {
@@ -17527,13 +17536,15 @@ export const useReportStore = create<ReportState & ReportActions>()(
             },
             nextImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
+                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
+                const totalImages = currentPrompt?.images?.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
             }),
             prevImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
+                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
+                const totalImages = currentPrompt?.images?.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
             }),
@@ -17653,6 +17664,9 @@ export const useReportStore = create<ReportState & ReportActions>()(
         {
             name: 'aiascent-dev-report-storage',
             storage: createJSONStorage(() => localStorage),
+            onRehydrateStorage: () => (state) => {
+                if (state) state.setHasHydrated(true);
+            },
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,
@@ -45926,10 +45940,12 @@ import { Resizable } from 're-resizable';
 const ReportViewer: React.FC = () => {
     const { loadReportData, handleKeyDown } = useReportStore.getState();
     const {
+        _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading
     } = useReportState(state => ({
+        _hasHydrated: state._hasHydrated,
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         currentImageIndex: state.currentImageIndex,
@@ -45956,10 +45972,10 @@ const ReportViewer: React.FC = () => {
     }, [handleKeyDown]);
 
     const currentPage = allPages[currentPageIndex];
-    const currentPrompt = currentPage?.imagePrompts;
-    const currentImage = currentPrompt?.[0]?.images[currentImageIndex];
+    const currentPrompt = currentPage?.imagePrompts?.[0];
+    const currentImage = currentPrompt?.images[currentImageIndex];
 
-    if (isLoading) {
+    if (!_hasHydrated || isLoading) {
         return (
             <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
@@ -46472,7 +46488,13 @@ export async function POST(request: Request) {
   const { prompt, pageContext } = await request.json();
 
   // Determine the LLM endpoint from environment variables
-  const llmUrl = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234';
+  const llmUrl = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL;
+  
+  if (!llmUrl) {
+    console.error('LLM URL not configured. Set REMOTE_LLM_URL or LOCAL_LLM_URL in .env.local');
+    return new NextResponse('LLM service is not configured.', { status: 500 });
+  }
+
   const completionsUrl = `${llmUrl}/v1/completions`;
 
   const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic. Do not invent information. If the answer is not in the context, say "That information is not available in the current context."`;
@@ -46495,7 +46517,7 @@ Ascentia:`;
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'unsloth/gpt-oss-20b', // As per vcpg context
+        model: 'unsloth/gpt-oss-20b',
         prompt: finalPrompt,
         max_tokens: 512,
         temperature: 0.7,
@@ -46503,56 +46525,30 @@ Ascentia:`;
       }),
     });
 
+    if (!response.ok) {
+        const errorBody = await response.text();
+        console.error(`LLM server error: ${response.status} ${response.statusText}`, errorBody);
+        return new NextResponse(`Error from LLM service: ${errorBody}`, { status: response.status });
+    }
+
     if (!response.body) {
       return new NextResponse("LLM response has no body", { status: 500 });
     }
 
-    const stream = new ReadableStream({
-      async start(controller) {
-        const reader = response.body!.getReader();
-        const decoder = new TextDecoder();
-
-        function push() {
-          reader.read().then(({ done, value }) => {
-            if (done) {
-              controller.close();
-              return;
-            }
-            const chunk = decoder.decode(value, { stream: true });
-            // SSE format is data: {...}\n\n
-            const lines = chunk.split('\n\n');
-            for (const line of lines) {
-              if (line.startsWith('data: ')) {
-                const dataString = line.substring(6);
-                if (dataString === '[DONE]') {
-                  controller.close();
-                  return;
-                }
-                try {
-                  const jsonData = JSON.parse(dataString);
-                  const textChunk = jsonData.choices?.text || '';
-                  if (textChunk) {
-                    controller.enqueue(textChunk);
-                  }
-                } catch (e) {
-                  // Ignore parsing errors for incomplete JSON chunks
-                }
-              }
-            }
-            push();
-          });
-        }
-        push();
-      },
-    });
+    const stream = response.body;
 
     return new Response(stream, {
-        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+        headers: { 
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+         },
     });
 
   } catch (error) {
     console.error('Error proxying chat request:', error);
-    return new NextResponse('Error proxying chat request.', { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
+    return new NextResponse(`Error proxying chat request: ${errorMessage}`, { status: 500 });
   }
 }
 </file_artifact>
@@ -46563,11 +46559,19 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   const { text } = await request.json();
 
+  if (!text || typeof text !== 'string' || text.trim().length === 0) {
+    console.error('TTS API received an empty or invalid text payload.');
+    return new NextResponse('Invalid request: text payload is empty.', { status: 400 });
+  }
+
   const ttsServerUrl = process.env.TTS_SERVER_URL;
 
   if (!ttsServerUrl) {
+    console.error('TTS_SERVER_URL is not configured in environment variables.');
     return new NextResponse('TTS server URL not configured.', { status: 500 });
   }
+
+  console.log(`[TTS Proxy] Received request for text: "${text.substring(0, 50)}..."`);
 
   try {
     const response = await fetch(ttsServerUrl, {
@@ -46586,17 +46590,17 @@ export async function POST(request: Request) {
 
     if (!response.ok || !response.body) {
       const errorText = await response.text();
-      console.error(`TTS server error: ${response.status} ${response.statusText}`, errorText);
+      console.error(`[TTS Proxy] Downstream TTS server error: ${response.status} ${response.statusText}`, errorText);
       return new NextResponse(`TTS server error: ${errorText}`, { status: response.status });
     }
 
-    // Stream the audio back to the client
+    console.log(`[TTS Proxy] Streaming audio response back to client.`);
     const headers = new Headers();
     headers.set('Content-Type', 'audio/wav');
     return new NextResponse(response.body, { headers });
 
   } catch (error) {
-    console.error('Error proxying TTS request:', error);
+    console.error('[TTS Proxy] Error proxying TTS request:', error);
     return new NextResponse('Error proxying TTS request.', { status: 500 });
   }
 }
@@ -46607,5 +46611,387 @@ export async function POST(request: Request) {
 # The TTS server should be an OpenAI-compatible endpoint.
 # Example using kokoro-fastapi: http://192.168.1.85:8880/v1/audio/speech
 TTS_SERVER_URL=http://192.168.1.85:8880/v1/audio/speech
+REMOTE_LLM_URL=http://192.168.1.85:1234
+</file_artifact>
+
+<file path="context/dce/A90. AI Ascent - server.ts (Reference).md">
+# Artifact A90: AI Ascent - server.ts (Reference)
+# Date Created: C29
+# Author: AI Model & Curator
+# Updated on: C102 (Add stream error handler to prevent crash)
+
+- **Key/Value for A0:**
+- **Description:** A reference copy of the `server.ts` file from the `aiascent.game` project. The proxy route has been updated with a stream error handler to gracefully catch `AbortError` and prevent the server from crashing when a client cancels a request.
+- **Tags:** reference, source code, backend, nodejs, express, streaming, sse, abortcontroller, error handling
+
+## 1. Overview
+
+This artifact contains the updated source code for `server.ts`. The `/api/dce/proxy` route has been made more robust. A `.on('error', ...)` handler has been added to the stream being piped from the vLLM server. This is the critical fix that catches the `AbortError` emitted when a stream is cancelled, preventing the unhandled exception that was crashing the Node.js process in the previous cycle.
+
+## 2. Source Code (with stream error handling)
+
+```typescript
+// Updated on: C1384 (Correct import path for generateSpeech from llmService.)
+// Updated on: C1383 (Add /api/tts/generate route handler.)
+// Updated on: C1355 (Add /api/report/vote route handler.)
+// Updated on: C41 (DCE Integration: Correct route to /api/dce/proxy)
+import dotenv from 'dotenv';
+dotenv.config();
+
+import express from 'express';
+import http from 'http';
+import { Server as SocketIOServer } from 'socket.io';
+import NextAuth from 'next-auth';
+import { authOptions } from './pages/api/auth/[...nextauth]';
+import cors from 'cors';
+import { logInfo, logError, logWarn } from './logger';
+import cookieParser from 'cookie-parser';
+import path from 'path';
+import fs from 'fs';
+import { Readable } from 'stream';
+import { type PlayerDirection, type PlayerProfile, type PoetryBattleChatbotData } from './state/gameStoreTypes';
+import type { Founder } from './state';
+import { CompetitionSystem } from './game/systems/CompetitionSystem';
+import { PvpSystem } from './game/systems/PvpSystem';
+import { PoetryBattleSystem } from './game/systems/PoetryBattleSystem';
+import { handleAscentiaStream, handleAscentiaWelcome, loadAscentiaKnowledgeBase, loadReportKnowledgeBase, handleReportAscentiaStream } from './server/api/ascentiaHandler';
+import { handlePlayerProductStream, handlePlayerProductRequest, generateSpeech } from './server/llmService';
+import updateProfileHandler from './server/api/userProfileHandler';
+import { handleReportVote } from './server/api/reportHandler';
+import threadsHandler from './pages/api/bbs/threads';
+import postsHandler from './pages/api/bbs/posts';
+import voteHandler from './pages/api/bbs/vote';
+import tagsHandler from './pages/api/bbs/tags';
+import leaderboardHandler from './pages/api/leaderboard';
+import leaderboardUpdateHandler from './pages/api/leaderboard/update';
+import playersListHandler from './pages/api/players/list';
+import playerProfileHandler from './pages/api/players/[userId]';
+import prisma from './lib/prisma';
+
+const app = express();
+const server = http.createServer(app);
+const port = process.env.PORT || 3001;
+const isProduction = process.env.NODE_ENV === 'production';
+
+// --- DCE/vLLM Integration Configuration ---
+const VLLM_ENDPOINT = process.env.VLLM_ENDPOINT || 'http://127.0.0.1:8000/v1/chat/completions';
+const DCE_API_KEY = process.env.DCE_API_KEY;
+
+let clientOrigin = 'http://localhost:8867';
+if (process.env.NEXTAUTH_URL) {
+    try {
+        const url = new URL(process.env.NEXTAUTH_URL);
+        clientOrigin = url.origin;
+    } catch (e) {
+        logError('[SERVER]', `Invalid NEXTAUTH_URL format: ${process.env.NEXTAUTH_URL}. Falling back to default localhost.`);
+    }
+} else {
+    logWarn('[SERVER]', 'NEXTAUTH_URL environment variable is not set. CORS may fail in production.');
+}
+
+logInfo('[SERVER]', `Server starting... Client Origin for CORS: ${clientOrigin}, Production: ${isProduction}`);
+logInfo('[DCE]', `vLLM proxy endpoint configured for: ${VLLM_ENDPOINT}`);
+if (!DCE_API_KEY) {
+    logWarn('[DCE]', 'DCE_API_KEY is not set. The /api/dce/proxy endpoint will be unsecured.');
+}
+
+// Instantiate systems
+const competitionSystem = new CompetitionSystem();
+const io = new SocketIOServer(server, {
+    path: "/api/socket.io",
+    cors: {
+        origin: [clientOrigin, 'vscode-webview://*'], // Allow requests from VS Code webviews
+        methods: ["GET", "POST"]
+    },
+    connectTimeout: 90000,
+    pingTimeout: 90000,
+    pingInterval: 25000,
+});
+const pvpSystem = new PvpSystem(competitionSystem, io);
+const poetryBattleSystem = new PoetryBattleSystem(io);
+(global as any).world = { poetryBattleSystem };
+
+app.use(cors({
+    origin: [clientOrigin, 'vscode-webview://*'], // Also apply CORS for standard HTTP requests
+    credentials: true,
+}));
+
+logInfo('[SERVER]', 'Socket.IO server initialized.');
+
+export interface PlayerState {
+    id: string; // socket.id
+    userId: string;
+    x: number;
+    y: number;
+    direction: PlayerDirection;
+    isMoving: boolean;
+    displayName: string;
+    founderKey: Founder;
+    countryCode: string | null;
+}
+const players: Record<string, PlayerState> = {};
+
+// --- Socket.IO Connection Handling ---
+io.on('connection', (socket) => {
+    logInfo('[SOCKET.IO]', `Player connected: ${socket.id}`);
+    (socket as any).playerState = {};
+    socket.on('identify', (data) => {
+        logInfo('[SOCKET.IO]', `Player identified: ${socket.id} as ${data.displayName} (User ID: ${data.userId})`);
+        const playerState: PlayerState = {
+            id: socket.id,
+            userId: data.userId,
+            x: data.x,
+            y: data.y,
+            direction: data.direction,
+            isMoving: false,
+            displayName: data.displayName,
+            founderKey: data.founderKey,
+            countryCode: data.countryCode,
+        };
+        players[socket.id] = playerState;
+        (socket as any).playerState = playerState;
+        socket.emit('playersUpdate', Object.values(players));
+        socket.broadcast.emit('playerJoined', players[socket.id]);
+        pvpSystem.handleRejoin(data.userId, socket.id);
+    });
+    socket.on('playerMove', (data) => {
+        if (players[socket.id]) {
+            players[socket.id] = { ...players[socket.id], ...data };
+            socket.broadcast.emit('playerMoved', players[socket.id]);
+        }
+    });
+    // --- Delegate Handlers ---
+    socket.on('get_ascentia_welcome', (payload) => handleAscentiaWelcome(socket, players, payload));
+    socket.on('start_ascentia_stream', (payload) => handleAscentiaStream(io, socket, players, payload));
+    socket.on('start_report_ascentia_stream', (payload) => handleReportAscentiaStream(io, socket, players, payload));
+    socket.on('start_chatbot_stream', (payload) => handlePlayerProductStream(socket, players, payload));
+    // --- PvP Handlers (Delegated to PvpSystem) ---
+    socket.on('send_pvp_challenge', (payload) => pvpSystem.handleChallenge(socket, players, payload));
+    socket.on('accept_pvp_challenge', (payload) => pvpSystem.handleAcceptChallenge(socket, players, payload));
+    socket.on('decline_pvp_challenge', (payload) => pvpSystem.handleDeclineChallenge(socket, players, payload));
+    socket.on('claim_pvp_rewards', (payload) => pvpSystem.claimRewards(players[socket.id]?.userId, payload.matchId));
+    socket.on('change_pvp_speed', (payload) => pvpSystem.handleChangeSpeed(players[socket.id]?.userId, payload.matchId, payload.requestedSpeed));
+    socket.on('send_poetry_battle_challenge', (payload) => {
+        const challenger = players[socket.id];
+        const target = players[payload.targetSocketId];
+        logInfo('[[SERVER]]', `Received 'send_poetry_battle_challenge' from ${challenger?.displayName ?? 'Unknown'} to ${target?.displayName ?? 'Unknown'} (socketId: ${payload.targetSocketId})`);
+        pvpSystem.handlePoetryBattleChallenge(socket, players, payload);
+    });
+    socket.on('accept_poetry_battle_challenge', (payload) => pvpSystem.handleAcceptPoetryBattleChallenge(socket, players, payload));
+    socket.on('decline_poetry_battle_challenge', (payload) => pvpSystem.handleDeclinePoetryBattleChallenge(socket, players, payload));
+    socket.on('poetry_battle_submit_move', (payload) => poetryBattleSystem.handlePlayerMove(socket, payload));
+    socket.on('submit_poetry_chatbot_data', (payload: { matchId: string, chatbotData: PoetryBattleChatbotData | null }) => {
+        pvpSystem.handleSubmitPoetryChatbotData(socket, players, payload);
+    });
+    socket.on('send_pvp_match_message', async (payload) => {
+        const logPrefix = '[SocketHandler:send_pvp_match_message]';
+        const senderState = players[socket.id];
+        if (!senderState) {
+            logWarn(logPrefix, `Received message from unidentified socket ${socket.id}`);
+            return;
+        }
+        try {
+            const senderDb = await prisma.leaderboardEntry.findUnique({
+                where: { userId: senderState.userId },
+                include: { user: { select: { displayName: true, countryCode: true } } }
+            });
+            if (!senderDb || !senderDb.user) {
+                logError(logPrefix, `Could not find DB entry for sender ${senderState.userId}`);
+                return;
+            }
+            const senderProfile: PlayerProfile = {
+                userId: senderState.userId,
+                displayName: senderDb.user.displayName ?? 'Player',
+                companyName: senderDb.companyName ?? 'Company',
+                agentName: senderDb.gameAiAgentName ?? 'Agent',
+                elo: senderDb.highestGameAIElo,
+                countryCode: senderDb.user.countryCode,
+                socketId: senderState.id,
+            };
+            pvpSystem.handleMatchChatMessage(senderState.userId, payload.matchId, payload.message, senderProfile);
+        } catch (error) {
+            logError(logPrefix, `Error constructing sender profile for chat message.`, error);
+        }
+    });
+
+    socket.on('sendMessage', (payload) => pvpSystem.handleLobbyChatMessage(io, socket, players, payload));
+
+    socket.on('disconnect', (reason) => {
+        logInfo('[SOCKET.IO]', `Player disconnected: ${socket.id}. Reason: ${reason}`);
+        pvpSystem.handleDisconnect(socket.id, players);
+        delete players[socket.id];
+        io.emit('playerLeft', { id: socket.id });
+    });
+});
+
+// --- PvpSystem Global Timer ---
+setInterval(() => {
+    pvpSystem.tickMatches(1); // Tick every 1 second
+}, 1000);
+// --- Middleware and API Routes ---
+app.use(cookieParser());
+app.use(express.json({ limit: '50mb' })); // Increase limit for large prompts
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
+app.use((req, res, next) => {
+    (req as any).io = io;
+    (req as any).players = players;
+    next();
+});
+
+app.all('/api/auth/*', (req, res) => {
+    if (!(req.query as any).nextauth) {
+      const nextauth = req.path.split('/').slice(3);
+      (req.query as any).nextauth = nextauth;
+      logInfo('[SERVER:Auth]', `Manually setting req.query.nextauth to:`, nextauth);
+    }
+    return NextAuth(req as any, res as any, authOptions);
+});
+
+// --- API Routes ---
+app.get('/api/bbs/threads', (req, res) => threadsHandler(req as any, res as any));
+app.post('/api/bbs/threads', (req, res) => threadsHandler(req as any, res as any));
+app.put('/api/bbs/threads', (req, res) => threadsHandler(req as any, res as any));
+app.delete('/api/bbs/threads', (req, res) => threadsHandler(req as any, res as any));
+app.get('/api/bbs/posts', (req, res) => postsHandler(req as any, res as any));
+app.post('/api/bbs/posts', (req, res) => postsHandler(req as any, res as any));
+app.post('/api/bbs/vote', (req, res) => voteHandler(req as any, res as any));
+app.get('/api/bbs/tags', (req, res) => tagsHandler(req as any, res as any));
+app.get('/api/leaderboard', (req, res) => leaderboardHandler(req as any, res as any));
+app.post('/api/leaderboard/update', (req, res) => leaderboardUpdateHandler(req as any, res as any));
+app.get('/api/players/list', (req, res) => playersListHandler(req as any, res as any));
+app.get('/api/players/:userId', (req, res) => playerProfileHandler(req as any, res as any));
+app.post('/api/user/updateProfile', (req, res) => updateProfileHandler(req as any, res as any));
+app.post('/api/llm/proxy', (req, res) => handlePlayerProductRequest(req as any, res as any));
+app.post('/api/report/vote', (req, res) => handleReportVote(req as any, res as any));
+
+// CORRECTED: DCE vLLM Proxy Route
+app.post('/api/dce/proxy', async (req, res) => {
+    logInfo('[DCE]', 'Received request on /api/dce/proxy');
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    res.on('close', () => {
+        logWarn('[DCE]', 'Client closed the connection. Aborting request to vLLM.');
+        controller.abort();
+    });
+
+    if (DCE_API_KEY) {
+        // ... (API key validation remains the same)
+    }
+
+    const { messages, n = 1, ...rest } = req.body;
+
+    if (!messages || !Array.isArray(messages) || messages.length === 0 || !messages[0].content) {
+        logError('[DCE]', `Bad request: Missing or invalid messages content.`, req.body);
+        return res.status(400).json({ error: 'Messages content is required in OpenAI chat format' });
+    }
+
+    logInfo('[DCE]', `Proxying streaming prompt to vLLM. Requesting ${n} parallel responses.`);
+
+    try {
+        const vllmResponse = await fetch(VLLM_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'text/event-stream'
+            },
+            body: JSON.stringify({
+                ...rest,
+                messages,
+                n,
+                stream: true,
+            }),
+            signal, 
+        });
+
+        if (!vllmResponse.ok || !vllmResponse.body) {
+            const errorBody = await vllmResponse.text();
+            throw new Error(`vLLM server returned an error: ${vllmResponse.status} ${vllmResponse.statusText} - ${errorBody}`);
+        }
+        res.setHeader('Content-Type', 'text/event-stream');
+        res.setHeader('Cache-Control', 'no-cache');
+        res.setHeader('Connection', 'keep-alive');
+
+        const stream = vllmResponse.body;
+        const nodeStream = Readable.fromWeb(stream as any);
+
+        // --- C102 FIX: Add error handler to prevent crash on abort ---
+        nodeStream.on('error', (err: any) => {
+            if (err.name === 'AbortError') {
+                logInfo('[DCE]', 'Stream from vLLM was successfully aborted by client.');
+            } else {
+                logError('[DCE]', 'An error occurred in the vLLM stream pipe.', err);
+            }
+        });
+        // --- END C102 FIX ---
+
+        nodeStream.pipe(res);
+        logInfo('[DCE]', 'Successfully established stream from vLLM to client.');
+
+    } catch (error: any) {
+        if (error.name === 'AbortError') {
+            logInfo('[DCE]', 'vLLM request was successfully aborted.');
+        } else {
+            logError('[DCE]', 'Error proxying request to vLLM:', error.message);
+            if (!res.headersSent) {
+                res.status(500).json({ error: 'Failed to get responses from vLLM backend.' });
+            }
+        }
+    }
+});
+
+// NEW: TTS Proxy Route
+app.post('/api/tts/generate', async (req, res) => {
+    try {
+        const { text } = req.body;
+        if (!text || typeof text !== 'string') {
+            return res.status(400).send('Invalid request: "text" field is required.');
+        }
+        const audioStream = await generateSpeech(text);
+        if (audioStream) {
+            res.setHeader('Content-Type', 'audio/wav');
+            audioStream.pipe(res);
+        } else {
+            res.status(500).send('Failed to generate speech.');
+        }
+    } catch (error) {
+        logError('[API:TTS]', 'Error in TTS generation route', error);
+        res.status(500).send('Internal server error during TTS generation.');
+    }
+});
+
+
+// --- Static File Serving (Production Only) ---
+if (isProduction) {
+    const buildPath = path.join(__dirname);
+    logInfo('[SERVER]', `Production mode detected. Serving static files from: ${buildPath}`);
+    app.use(express.static(buildPath));
+
+    app.get('*', (req, res) => {
+        const indexPath = path.join(buildPath, 'index.html');
+        if (fs.existsSync(indexPath)) {
+            res.sendFile(indexPath);
+        } else {
+            res.status(404).send(`'index.html' not found.`);
+        }
+    });
+}
+
+// --- Server Startup ---
+server.listen(port, () => {
+    logInfo('[SERVER]', `Server listening on http://localhost:${port}`);
+    const publicPath = isProduction ? __dirname : path.join(__dirname, '..', 'public');
+    loadAscentiaKnowledgeBase(publicPath);
+    loadReportKnowledgeBase(publicPath);
+});
+
+process.on('SIGINT', () => {
+    logInfo('[SERVER]', 'Shutting down...');
+    io.close();
+    server.close(() => process.exit(0));
+});
+```
 </file_artifact>
 

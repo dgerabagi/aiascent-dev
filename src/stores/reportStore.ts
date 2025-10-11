@@ -1,5 +1,4 @@
 // src/stores/reportStore.ts
-// Updated on: C13 (Merged from aiascentgame context to add TTS and Chat functionality)
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -78,6 +77,7 @@ export type ChatMessage = {
 };
 
 export interface ReportState {
+    _hasHydrated: boolean; // Flag for rehydration
     reportData: ReportContentData | null;
     imageManifest: ImageManifestData | null;
     allPages: ReportPage[];
@@ -110,6 +110,7 @@ export interface ReportState {
 }
 
 export interface ReportActions {
+    setHasHydrated: (hydrated: boolean) => void;
     loadReportData: () => Promise<void>;
     nextPage: () => void;
     prevPage: () => void;
@@ -147,6 +148,7 @@ export interface ReportActions {
 }
 
 const createInitialReportState = (): ReportState => ({
+    _hasHydrated: false,
     reportData: null,
     imageManifest: null,
     allPages: [],
@@ -182,6 +184,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
+            setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
             loadReportData: async () => {
                 if (get().reportData) {
@@ -213,7 +216,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // Path for aiascent.dev
                                     const correctedBasePath = '/assets/images/report/report-3/';
                                     
                                     for (let i = 1; i <= groupMeta.imageCount; i++) {
@@ -275,13 +277,15 @@ export const useReportStore = create<ReportState & ReportActions>()(
             },
             nextImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
+                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
+                const totalImages = currentPrompt?.images?.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
             }),
             prevImage: () => set(state => {
                 const currentPage = state.allPages[state.currentPageIndex];
-                const totalImages = currentPage?.imagePrompts?.images.length ?? 0;
+                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
+                const totalImages = currentPrompt?.images?.length ?? 0;
                 if (totalImages <= 1) return state;
                 return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
             }),
@@ -401,6 +405,9 @@ export const useReportStore = create<ReportState & ReportActions>()(
         {
             name: 'aiascent-dev-report-storage',
             storage: createJSONStorage(() => localStorage),
+            onRehydrateStorage: () => (state) => {
+                if (state) state.setHasHydrated(true);
+            },
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,

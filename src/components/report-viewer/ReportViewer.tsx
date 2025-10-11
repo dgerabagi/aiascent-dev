@@ -15,10 +15,12 @@ import { Resizable } from 're-resizable';
 const ReportViewer: React.FC = () => {
     const { loadReportData, handleKeyDown } = useReportStore.getState();
     const {
+        _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading
     } = useReportState(state => ({
+        _hasHydrated: state._hasHydrated,
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         currentImageIndex: state.currentImageIndex,
@@ -45,10 +47,10 @@ const ReportViewer: React.FC = () => {
     }, [handleKeyDown]);
 
     const currentPage = allPages[currentPageIndex];
-    const currentPrompt = currentPage?.imagePrompts;
-    const currentImage = currentPrompt?.[0]?.images[currentImageIndex];
+    const currentPrompt = currentPage?.imagePrompts?.[0];
+    const currentImage = currentPrompt?.images[currentImageIndex];
 
-    if (isLoading) {
+    if (!_hasHydrated || isLoading) {
         return (
             <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
