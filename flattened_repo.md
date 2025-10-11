@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T02:22:25.668Z
+  Date Generated: 2025-10-11T02:53:55.454Z
   ---
   Total Files: 69
-  Approx. Tokens: 162542
+  Approx. Tokens: 162319
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -15,9 +15,9 @@
 5. src\components\global\sparkles.tsx (2122 tokens)
 6. src\components\ui\dropdown-menu.tsx (1827 tokens)
 7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
-8. src\components\global\lamp.tsx (1317 tokens)
-9. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
-10. src\Artifacts\A4-Universal-Task-Checklist.md (1075 tokens)
+8. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
+9. src\components\global\lamp.tsx (1174 tokens)
+10. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
 
 <!-- Full File List -->
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 124 - Chars: 6150 - Tokens: 1538
@@ -34,8 +34,8 @@
 12. context\aiascentgame\flattened-repo.md - Lines: 1381 - Chars: 74313 - Tokens: 18579
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 54 - Chars: 3061 - Tokens: 766
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 102 - Chars: 4299 - Tokens: 1075
-16. package.json - Lines: 37 - Chars: 1036 - Tokens: 259
+15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 102 - Chars: 4400 - Tokens: 1100
+16. package.json - Lines: 40 - Chars: 1144 - Tokens: 286
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -44,8 +44,8 @@
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
 23. src\app\showcase\page.tsx - Lines: 24 - Chars: 890 - Tokens: 223
 24. src\app\globals.css - Lines: 81 - Chars: 1434 - Tokens: 359
-25. src\app\layout.tsx - Lines: 40 - Chars: 1009 - Tokens: 253
-26. src\app\page.tsx - Lines: 27 - Chars: 677 - Tokens: 170
+25. src\app\layout.tsx - Lines: 40 - Chars: 1048 - Tokens: 262
+26. src\app\page.tsx - Lines: 23 - Chars: 626 - Tokens: 157
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 28. src\components\layout\Footer.tsx - Lines: 30 - Chars: 1046 - Tokens: 262
 29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2132 - Tokens: 533
@@ -77,14 +77,14 @@
 55. src\Artifacts\A15.6-Image-Prompt-Icon-IterativeWorkflow.md - Lines: 38 - Chars: 1313 - Tokens: 329
 56. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
 57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
-58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2663 - Tokens: 666
+58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2777 - Tokens: 695
 59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
-60. src\components\global\lamp.tsx - Lines: 135 - Chars: 5265 - Tokens: 1317
+60. src\components\global\lamp.tsx - Lines: 120 - Chars: 4694 - Tokens: 1174
 61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
-62. src\components\home\FeaturesSection.tsx - Lines: 78 - Chars: 3010 - Tokens: 753
-63. src\components\home\HeroSection.tsx - Lines: 83 - Chars: 3631 - Tokens: 908
+62. src\components\home\FeaturesSection.tsx - Lines: 73 - Chars: 2890 - Tokens: 723
+63. src\components\home\HeroSection.tsx - Lines: 70 - Chars: 3182 - Tokens: 796
 64. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1317 - Tokens: 330
-65. src\components\home\WorkflowSection.tsx - Lines: 40 - Chars: 1501 - Tokens: 376
+65. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1443 - Tokens: 361
 66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
 67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
 68. public\assets\icons\parallel-copilot.png - [Binary] Size: 5.7 MB
@@ -8853,6 +8853,9 @@ This artifact provides a structured format for tracking development tasks for th
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
+    "@tsparticles/engine": "^3.3.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.7",
@@ -9126,7 +9129,7 @@ disableTransitionOnChange
 
 <file path="src/app/page.tsx">
 // src/app/page.tsx
-// C3 - Home Page Implementation
+// C4 - Adjust layout for fixed header
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import WorkflowSection from "@/components/home/WorkflowSection";
@@ -9134,22 +9137,18 @@ import MissionSection from "@/components/home/MissionSection";
 
 export default function Home() {
 return (
-<div className="flex flex-col">
+// Added pt-16 to the main container to push content below the h-16 fixed header
+<div className="flex flex-col pt-16">
 <HeroSection />
 
-
-  {/* Added a separator/spacer for visual distinction */}
-  <div className="mt-[10rem] md:mt-[18rem]">
+  <div className="mt-[-10rem] md:mt-[-15rem]">
     <FeaturesSection />
   </div>
 
   <WorkflowSection />
   
-  {/* Mission Section uses LampContainer which handles its own background/layout */}
   <MissionSection />
 </div>
-
-
 );
 }
 </file_artifact>
@@ -12506,15 +12505,13 @@ className="relative rounded-2xl object-contain opacity-50"
 
 <file path="src/components/global/lamp.tsx">
 // src/components/global/lamp.tsx
-// C3 - Ported from automationsaas context
+// C4 - Adjust z-index for sparkles
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { SparklesCore } from './sparkles' // Adjusted import path
+import { SparklesCore } from './sparkles' 
 
-// This component seems unused in the automationsaas context based on the flattened repo,
-// but it's required by LampContainer.
 export function LampComponent() {
   return (
     <LampContainer>
@@ -12545,7 +12542,6 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-// Adjusted min-h-[800px] to min-h-[600px] for better fit
         'relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0',
         className
       )}
@@ -12562,7 +12558,6 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-// Changed from-neutral-500 to a more vibrant color (e.g., cyan-500 or blue-500) for accent
           className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-cyan-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
           <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
@@ -12579,7 +12574,6 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-// Changed to-neutral-500 to the same vibrant color
           className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-cyan-500 text-white [--conic-position:from_290deg_at_center_top]"
         >
           <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
@@ -12587,7 +12581,6 @@ export const LampContainer = ({
         </motion.div>
         <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div>
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-{/* Changed bg-neutral-500 to the vibrant color */}
         <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
         <motion.div
           initial={{ width: '8rem' }}
@@ -12597,7 +12590,6 @@ export const LampContainer = ({
             duration: 0.8,
             ease: 'easeInOut',
           }}
-// Changed bg-neutral-400 to the vibrant color
           className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
         ></motion.div>
         <motion.div
@@ -12608,33 +12600,25 @@ export const LampContainer = ({
             duration: 0.8,
             ease: 'easeInOut',
           }}
-// Changed bg-neutral-400 to the vibrant color
           className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
         ></motion.div>
 
-
-  {/* Optional: SparklesCore integration, uncomment if needed */}
-
-
-        {/* <div className="w-[40rem] h-40 relative">
+        {/* SparklesCore integration */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-40 z-10">
           <SparklesCore
             background="transparent"
             minSize={0.4}
-            maxSize={1}
+            maxSize={1.2}
             particleDensity={1200}
             className="w-full h-full"
             particleColor="#FFFFFF"
           />
-        </div> */}
+        </div>
 
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div>
       </div>
 
-
-  {/* Adjusted translate-y-80 to -translate-y-40 for better vertical alignment */}
-
-
-      <div className="relative z-50 flex -translate-y-40 flex-col items-center px-5">
+      <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
         {children}
       </div>
     </div>
@@ -12959,7 +12943,7 @@ export const SparklesCore = (props: ParticlesProps) => {
 
 <file path="src/components/home/FeaturesSection.tsx">
 // src/components/home/FeaturesSection.tsx
-// C3 - Implementation
+// C4 - Update icons to PNG and fix text clipping
 import React from 'react';
 import { CardContainer, CardBody, CardItem } from '@/components/global/3d-card';
 import Image from 'next/image';
@@ -12968,19 +12952,19 @@ const features = [
 {
 title: "Precision Context Curation",
 description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
-icon: "/assets/icons/context-curation.svg",
+icon: "/assets/icons/context-curation.png", // Updated to PNG
 translateZ: "50",
 },
 {
 title: "Parallel Co-Pilot & Rapid Testing",
-description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow (Baseline/Restore) to safely audition code changes in seconds.",
-icon: "/assets/icons/parallel-copilot.svg",
+description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
+icon: "/assets/icons/parallel-copilot.png", // Updated to PNG
 translateZ: "60",
 },
 {
 title: "Iterative Knowledge Graph",
 description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
-icon: "/assets/icons/iterative-workflow.svg",
+icon: "/assets/icons/iterative-workflow.png", // Updated to PNG
 translateZ: "70",
 },
 ];
@@ -12989,10 +12973,9 @@ const FeaturesSection = () => {
 return (
 <section className="py-20 md:py-32 bg-background">
 <div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 pb-4">
 Stop Fighting Your Tools. Start Building the Future.
 </h2>
-
 
     <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8">
       {features.map((feature, index) => (
@@ -13003,10 +12986,8 @@ Stop Fighting Your Tools. Start Building the Future.
               translateZ={feature.translateZ}
               className="w-full mb-4"
             >
-                {/* Placeholder for icons. SVGs need proper handling or rendering */}
-              <div className="h-12 w-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
-                {/* Using Image component as a placeholder for SVG icons until SVGR is set up */}
-                <Image src={feature.icon} alt={feature.title} width={24} height={24} className='invert dark:invert-0'/>
+              <div className="h-24 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
+                <Image src={feature.icon} alt={feature.title} width={200} height={100} className='object-contain'/>
               </div>
             </CardItem>
 
@@ -13030,8 +13011,6 @@ Stop Fighting Your Tools. Start Building the Future.
     </div>
   </div>
 </section>
-
-
 );
 };
 
@@ -13040,7 +13019,7 @@ export default FeaturesSection;
 
 <file path="src/components/home/HeroSection.tsx">
 // src/components/home/HeroSection.tsx
-// C3 - Implementation
+// C4 - Adjust layout and visuals
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -13049,28 +13028,29 @@ import Image from 'next/image';
 
 const HeroSection = () => {
 return (
-<section className="h-screen w-full bg-neutral-950 rounded-md !overflow-visible relative flex flex-col items-center antialiased">
+<section className="min-h-screen w-full bg-neutral-950 rounded-md !overflow-visible relative flex flex-col items-center antialiased">
 {/* Background Gradient */}
 <div className="absolute inset-0 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#0D1A26_100%)]"></div>
 
-
   {/* ContainerScroll and Content */}
-  <div className="flex flex-col mt-[-100px] md:mt-[-50px]">
+  <div className="flex flex-col mt-[-150px] md:mt-[-100px]">
     <ContainerScroll
       titleComponent={
         <div className="flex items-center flex-col">
           {/* Headline (A16, 4.2) */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold text-center mb-8">
-            Master the Human-AI Workflow.<br/>Become a Citizen Architect.
+            <br/>
+            <br/>
+            Master the Human-AI Workflow. Become a Citizen Architect.
           </h1>
           
           {/* Subheadline (A16, 4.2) */}
-          <p className="text-xl text-neutral-400 max-w-4xl text-center mb-12">
+          <p className="text-lg md:text-xl text-neutral-400 max-w-4xl text-center mb-12">
             The Data Curation Environment (DCE) is the essential VS Code extension for developers who want to move beyond prompt-and-pray. Curate context with precision, test AI solutions rapidly, and build complex systems with confidence.
           </p>
 
           {/* CTAs (A16, 4.2) */}
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/showcase">
                 <Button
                     size={'lg'}
@@ -13089,35 +13069,21 @@ return (
         </div>
       }
     >
-        {/* Visuals (A16, 4.2 Updated C3) */}
-        {/* Using a grid inside the scroll container to show both assets */}
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 h-full w-full'>
-            <div className="relative h-full w-full">
-                <Image
-                    src="/assets/images/dce-hero-screenshot.png"
-                    alt="DCE Interface Screenshot"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-2xl"
-                />
-            </div>
-            <div className="relative h-full w-full">
-                {/* Assuming the GIF is placed here. If not available, it will show alt text */}
-                 <Image
-                    src="/assets/images/pcp.gif"
-                    alt="DCE Workflow Demonstration GIF"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-2xl"
-                    unoptimized={true} // GIFs should not be optimized by Next.js Image component
-                />
-            </div>
+        {/* Visuals (A16, 4.2 Updated C4) */}
+        {/* Replaced grid with a single visual to fix split-image issue */}
+        <div className="relative h-full w-full">
+            <Image
+                src="/assets/images/pcp.gif"
+                alt="DCE Workflow Demonstration GIF"
+                layout="fill"
+                objectFit="contain" // Use contain to ensure the whole GIF is visible
+                className="rounded-2xl"
+                unoptimized={true} // GIFs should not be optimized by Next.js Image component
+            />
         </div>
     </ContainerScroll>
   </div>
 </section>
-
-
 );
 };
 
@@ -13170,32 +13136,36 @@ export default MissionSection;
 
 <file path="src/components/home/WorkflowSection.tsx">
 // src/components/home/WorkflowSection.tsx
-// C3 - Implementation (Placeholder)
+// C4 - Enhanced styling for a more polished look
 import React from 'react';
 
-const WorkflowSection = () => {
-// Placeholder for the Workflow Visualization (A16, 4.4)
-// This will be implemented in a future cycle with more complex visualization logic.
+const workflowSteps = [
+    { id: 1, title: "Curate Context" },
+    { id: 2, title: "Generate Prompt" },
+    { id: 3, title: "Parallel AI Responses" },
+    { id: 4, title: "Test & Select" },
+    { id: 5, title: "Integrate & Commit" },
+];
 
+const WorkflowSection = () => {
 return (
-<section className="py-20 md:py-32 bg-card">
+<section className="py-20 md:py-32 bg-background">
 <div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
 The Power of Iteration: The DCE Workflow
 </h2>
 
-
-    <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-10 border rounded-lg shadow-lg bg-background/50">
-      {/* Simplified visualization */}
-      <div className="text-center p-4 border rounded-md">1. Curate Context</div>
-      <div className="text-2xl">→</div>
-      <div className="text-center p-4 border rounded-md">2. Generate Prompt</div>
-      <div className="text-2xl">→</div>
-      <div className="text-center p-4 border rounded-md">3. Parallel AI Responses</div>
-      <div className="text-2xl">→</div>
-      <div className="text-center p-4 border rounded-md">4. Test & Select</div>
-      <div className="text-2xl">→</div>
-      <div className="text-center p-4 border rounded-md">5. Integrate & Commit</div>
+    <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+      {workflowSteps.map((step, index) => (
+        <React.Fragment key={step.id}>
+          <div className="text-center p-6 border border-neutral-800 rounded-lg bg-neutral-950 shadow-lg min-w-[200px]">
+            <span className="text-primary font-bold">{step.id}.</span> {step.title}
+          </div>
+          {index < workflowSteps.length - 1 && (
+            <div className="text-2xl text-neutral-600 mx-4 hidden md:block">→</div>
+          )}
+        </React.Fragment>
+      ))}
     </div>
 
     <p className="text-center mt-8 text-muted-foreground">
@@ -13203,8 +13173,6 @@ The Power of Iteration: The DCE Workflow
     </p>
   </div>
 </section>
-
-
 );
 };
 

@@ -1,5 +1,5 @@
 // src/app/page.tsx
-// C3 - Home Page Implementation
+// C4 - Adjust layout for fixed header
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import WorkflowSection from "@/components/home/WorkflowSection";
@@ -7,21 +7,17 @@ import MissionSection from "@/components/home/MissionSection";
 
 export default function Home() {
 return (
-<div className="flex flex-col">
+// Added pt-16 to the main container to push content below the h-16 fixed header
+<div className="flex flex-col pt-16">
 <HeroSection />
 
-
-  {/* Added a separator/spacer for visual distinction */}
-  <div className="mt-[10rem] md:mt-[18rem]">
+  <div className="mt-[-10rem] md:mt-[-15rem]">
     <FeaturesSection />
   </div>
 
   <WorkflowSection />
   
-  {/* Mission Section uses LampContainer which handles its own background/layout */}
   <MissionSection />
 </div>
-
-
 );
 }
