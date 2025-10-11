@@ -1,5 +1,5 @@
 // src/app/page.tsx
-// C4 - Adjust layout for fixed header
+// C6 - Adjust layout for refactored sections
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import WorkflowSection from "@/components/home/WorkflowSection";
@@ -11,9 +11,8 @@ return (
 <div className="flex flex-col pt-16">
 <HeroSection />
 
-  <div className="mt-[-10rem] md:mt-[-15rem]">
-    <FeaturesSection />
-  </div>
+  {/* Removed negative margin to accommodate new FeaturesSection layout */}
+  <FeaturesSection />
 
   <WorkflowSection />
   

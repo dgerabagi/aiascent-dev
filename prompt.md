@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 6 - more progress, continue iterative improvement
+Current Cycle 7 - focus on bottom of site
+Cycle 6 - more progress, continue iterative improvement
 Cycle 5 - continue working through issues
 Cycle 4 - continue to iterate on homepage
 Cycle 3 - great work, continue development
@@ -336,6 +337,25 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 7>
+<Cycle Context>
+okay now lets just focus on the bottom/mission section. it really needs work. theres a lot of rectangular artifacts, and the footer is not in the corner, and the title/heading is being cut-off once again. finally, there is a lot of unnecessary space in between the read our mission button and the footer.
+
+im providing two screenshots. one is the raw image, and the other one ive marked up these issues with red lines. the red rectangle at the top is indicating the cut-off title/header, the two hollow arrows are pointing to the weird rectangle effects. they seem to be from the lamp. perhaps the lamp needs to expand too like the sparkles needed to expand? the bracket is indicating the random empty space that we want to reduce, and the two hand-drawn arrows are indiating how the footer text is too far from the corners.
+</Cycle Context>
+<Previous Cycle 6 Summary of Actions>
+I have analyzed the feedback from Cycle 5 and will implement the requested visual and layout adjustments to the homepage. My course of action is to increase spacing in the hero section, enlarge the feature images, and expand and refine the particle effect in the mission section.
+
+1.  **Adjust Hero Section Spacing:** I will modify `src/components/home/HeroSection.tsx` to add more vertical space between the main text/buttons and the animated `ContainerScroll` component, preventing the buttons from being obscured. I will also remove the temporary `<br>` tags from the title for a cleaner, CSS-based solution.
+2.  **Enlarge Feature Images:** I will update `src/components/home/FeaturesSection.tsx` to make the three feature images more prominent. This involves increasing the size of the image containers and the `Image` components themselves, as well as widening the parent cards to accommodate the new dimensions.
+3.  **Refine Mission Section Particles:**
+    *   I will edit `src/components/global/lamp.tsx` to expand the area where the particles are rendered by increasing the minimum height of the `LampContainer`.
+    *   To address the hard-to-read text in `src/components/home/MissionSection.tsx`, I will increase the text's contrast by making it a lighter color.
+    *   To fix the horizontal black line in the particle area, I will remove a specific overlay `div` within `lamp.tsx` that appears to be creating an unnatural hard edge, allowing the particle effect to blend more smoothly with the background.
+    *   I will also soften the harsh cyan light color in `lamp.tsx` to a more neutral tone to further improve text readability and align with the site's sophisticated aesthetic.
+</Previous Cycle 6 Summary of Actions>
+</Cycle 7>
 
 <Cycle 6>
 <Cycle Context>
@@ -1555,10 +1575,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T13:17:27.451Z
+  Date Generated: 2025-10-11T16:58:01.235Z
   ---
   Total Files: 69
-  Approx. Tokens: 162305
+  Approx. Tokens: 162199
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1570,7 +1590,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 6. src\components\ui\dropdown-menu.tsx (1827 tokens)
 7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
 8. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
-9. src\components\global\lamp.tsx (1158 tokens)
+9. src\components\global\lamp.tsx (1103 tokens)
 10. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
 
 <!-- Full File List -->
@@ -1599,9 +1619,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 23. src\app\showcase\page.tsx - Lines: 24 - Chars: 890 - Tokens: 223
 24. src\app\globals.css - Lines: 81 - Chars: 1434 - Tokens: 359
 25. src\app\layout.tsx - Lines: 40 - Chars: 1048 - Tokens: 262
-26. src\app\page.tsx - Lines: 23 - Chars: 626 - Tokens: 157
+26. src\app\page.tsx - Lines: 22 - Chars: 651 - Tokens: 163
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-28. src\components\layout\Footer.tsx - Lines: 30 - Chars: 1046 - Tokens: 262
+28. src\components\layout\Footer.tsx - Lines: 30 - Chars: 997 - Tokens: 250
 29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2132 - Tokens: 533
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
@@ -1633,11 +1653,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
 58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2777 - Tokens: 695
 59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
-60. src\components\global\lamp.tsx - Lines: 118 - Chars: 4630 - Tokens: 1158
+60. src\components\global\lamp.tsx - Lines: 105 - Chars: 4412 - Tokens: 1103
 61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
-62. src\components\home\FeaturesSection.tsx - Lines: 73 - Chars: 2911 - Tokens: 728
-63. src\components\home\HeroSection.tsx - Lines: 68 - Chars: 3162 - Tokens: 791
-64. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1327 - Tokens: 332
+62. src\components\home\FeaturesSection.tsx - Lines: 63 - Chars: 2591 - Tokens: 648
+63. src\components\home\HeroSection.tsx - Lines: 68 - Chars: 3207 - Tokens: 802
+64. src\components\home\MissionSection.tsx - Lines: 42 - Chars: 1424 - Tokens: 356
 65. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1443 - Tokens: 361
 66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
 67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
@@ -10683,7 +10703,7 @@ disableTransitionOnChange
 
 <file path="src/app/page.tsx">
 // src/app/page.tsx
-// C4 - Adjust layout for fixed header
+// C6 - Adjust layout for refactored sections
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import WorkflowSection from "@/components/home/WorkflowSection";
@@ -10695,9 +10715,8 @@ return (
 <div className="flex flex-col pt-16">
 <HeroSection />
 
-  <div className="mt-[-10rem] md:mt-[-15rem]">
-    <FeaturesSection />
-  </div>
+  {/* Removed negative margin to accommodate new FeaturesSection layout */}
+  <FeaturesSection />
 
   <WorkflowSection />
   
@@ -10755,17 +10774,17 @@ export function ModeToggle() {
 
 <file path="src/components/layout/Footer.tsx">
 // src/components/layout/Footer.tsx
-// C3 - Refined styling
+// C6 - Make background transparent for sparkle effect
 const Footer = () => {
 return (
-// Updated C3: Ensure footer matches the dark aesthetic
-<footer className="border-t border-neutral-900 bg-neutral-950">
+// Updated C6: Changed background to transparent for sparkle overlap effect
+<footer className="border-t border-neutral-900 bg-transparent relative z-10">
 <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
 <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
 <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
 Built using the Data Curation Environment. The source code is available on{' '}
 <a
-href="[https://github.com/dgerabagi/aiascent-dev](https://www.google.com/search?q=https://github.com/dgerabagi/aiascent-dev)" // Updated URL
+href="https://github.com/dgerabagi/aiascent-dev"
 target="_blank"
 rel="noreferrer"
 className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
@@ -10776,7 +10795,7 @@ GitHub
 </p>
 </div>
 <p className="text-center text-sm text-muted-foreground">
-&copy; {new Date().getFullYear()} aiascent.dev. All rights reserved.
+&copy; 2025 aiascent.dev. All rights reserved.
 </p>
 </div>
 </footer>
@@ -14059,32 +14078,12 @@ className="relative rounded-2xl object-contain opacity-50"
 
 <file path="src/components/global/lamp.tsx">
 // src/components/global/lamp.tsx
-// C5 - Expand particle area, soften light, remove horizontal line
+// C6 - Expand particle area, remove artifacts, adjust layout
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { SparklesCore } from './sparkles' 
-
-export function LampComponent() {
-  return (
-    <LampContainer>
-      <motion.h1
-        initial={{ opacity: 0.5, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: 'easeInOut',
-        }}
-        className="mt-20 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
-      >
-        Plans That
-        <br /> Fit You Best
-      </motion.h1>
-    </LampContainer>
-  )
-}
 
 export const LampContainer = ({
   children,
@@ -14096,11 +14095,24 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        'relative flex min-h-[800px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0',
+        // C6: Removed min-h-[800px], added padding
+        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20 pb-40',
         className
       )}
     >
-      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
+      {/* C6: Sparkles now fill the entire container */}
+      <div className="absolute inset-0 w-full h-full z-0">
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1.2}
+            particleDensity={1200}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+        </div>
+
+      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-10 ">
         <motion.div
           initial={{ opacity: 0.5, width: '15rem' }}
           whileInView={{ opacity: 1, width: '30rem' }}
@@ -14133,7 +14145,9 @@ export const LampContainer = ({
           <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
-        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div>
+        
+        {/* C6: Removed the div causing the rectangular artifact */}
+        {/* <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div> */}
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
         <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-500 opacity-50 blur-3xl"></div>
         <motion.div
@@ -14154,23 +14168,15 @@ export const LampContainer = ({
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-neutral-400 "
+          // C6: Moved lamp line much higher
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[18rem] bg-neutral-400 "
         ></motion.div>
 
-        {/* SparklesCore integration */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-10">
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1.2}
-            particleDensity={1200}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-        </div>
+        {/* C6: Removed the div that created the top black bar */}
+        {/* <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div> */}
       </div>
 
-      <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
+      <div className="relative z-40 flex -translate-y-80 flex-col items-center px-5">
         {children}
       </div>
     </div>
@@ -14495,29 +14501,25 @@ export const SparklesCore = (props: ParticlesProps) => {
 
 <file path="src/components/home/FeaturesSection.tsx">
 // src/components/home/FeaturesSection.tsx
-// C5 - Update icons to PNG and fix text clipping, increase image size
+// C6 - Refactor layout to make images larger and more prominent
 import React from 'react';
-import { CardContainer, CardBody, CardItem } from '@/components/global/3d-card';
 import Image from 'next/image';
 
 const features = [
 {
 title: "Precision Context Curation",
 description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
-icon: "/assets/icons/context-curation.png", // Updated to PNG
-translateZ: "50",
+icon: "/assets/icons/context-curation.png",
 },
 {
 title: "Parallel Co-Pilot & Rapid Testing",
 description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
-icon: "/assets/icons/parallel-copilot.png", // Updated to PNG
-translateZ: "60",
+icon: "/assets/icons/parallel-copilot.png",
 },
 {
 title: "Iterative Knowledge Graph",
 description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
-icon: "/assets/icons/iterative-workflow.png", // Updated to PNG
-translateZ: "70",
+icon: "/assets/icons/iterative-workflow.png",
 },
 ];
 
@@ -14525,40 +14527,34 @@ const FeaturesSection = () => {
 return (
 <section className="py-20 md:py-32 bg-background">
 <div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 pb-4">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 pb-4">
 Stop Fighting Your Tools. Start Building the Future.
 </h2>
 
-    <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8">
+    {/* Refactored to a vertical stacking layout with alternating image/text */}
+    <div className="flex flex-col gap-24">
       {features.map((feature, index) => (
-        <CardContainer key={index} className="inter-var">
-          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:w-[480px] h-auto rounded-xl p-6 border">
-            
-            <CardItem
-              translateZ={feature.translateZ}
-              className="w-full mb-4"
-            >
-              <div className="h-64 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
-                <Image src={feature.icon} alt={feature.title} width={400} height={200} className='object-contain'/>
-              </div>
-            </CardItem>
-
-            <CardItem
-              translateZ="50"
-              className="text-xl font-bold text-neutral-600 dark:text-white"
-            >
-              {feature.title}
-            </CardItem>
-            <CardItem
-              as="p"
-              translateZ="60"
-              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-            >
+        <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+          {/* Image Container */}
+          <div className="md:w-1/2 w-full p-4 border border-neutral-800 rounded-2xl bg-neutral-950/50 shadow-2xl shadow-black/20">
+            <div className="relative aspect-video rounded-lg overflow-hidden">
+                <Image 
+                    src={feature.icon} 
+                    alt={feature.title} 
+                    layout="fill"
+                    objectFit="cover" // Use cover to fill the container
+                    className='transition-transform duration-500 hover:scale-105'
+                />
+            </div>
+          </div>
+          {/* Text Content */}
+          <div className="md:w-1/2 w-full">
+            <h3 className="text-3xl font-bold text-white mb-4">{feature.title}</h3>
+            <p className="text-lg text-neutral-400">
               {feature.description}
-            </CardItem>
-            
-          </CardBody>
-        </CardContainer>
+            </p>
+          </div>
+        </div>
       ))}
     </div>
   </div>
@@ -14571,7 +14567,7 @@ export default FeaturesSection;
 
 <file path="src/components/home/HeroSection.tsx">
 // src/components/home/HeroSection.tsx
-// C5 - Adjust layout and visuals for spacing
+// C6 - Enlarge GIF and remove light background from card
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -14619,14 +14615,14 @@ return (
         </div>
       }
     >
-        {/* Visuals (A16, 4.2 Updated C4) */}
-        {/* Replaced grid with a single visual to fix split-image issue */}
-        <div className="relative h-full w-full">
+        {/* Visuals (A16, 4.2 Updated C6) */}
+        {/* Removed the inner div with bg-gray-100 to eliminate the white background */}
+        <div className="relative h-full w-full overflow-hidden rounded-2xl">
             <Image
                 src="/assets/images/pcp.gif"
                 alt="DCE Workflow Demonstration GIF"
                 layout="fill"
-                objectFit="contain" // Use contain to ensure the whole GIF is visible
+                objectFit="cover" // Changed to cover to fill the area better
                 className="rounded-2xl"
                 unoptimized={true} // GIFs should not be optimized by Next.js Image component
             />
@@ -14642,7 +14638,7 @@ export default HeroSection;
 
 <file path="src/components/home/MissionSection.tsx">
 // src/components/home/MissionSection.tsx
-// C5 - Improve text readability
+// C6 - Add negative margin to pull footer up
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -14652,7 +14648,8 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-<section className="w-full">
+// C6: Added negative bottom margin to allow footer to overlap with sparkles
+<section className="w-full -mb-40">
 <LampContainer>
 <motion.div
 initial={{ opacity: 0.5, y: 100 }}

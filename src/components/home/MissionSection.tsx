@@ -1,5 +1,5 @@
 // src/components/home/MissionSection.tsx
-// C5 - Improve text readability
+// C6 - Add negative margin to pull footer up
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -9,7 +9,8 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-<section className="w-full">
+// C6: Added negative bottom margin to allow footer to overlap with sparkles
+<section className="w-full -mb-40">
 <LampContainer>
 <motion.div
 initial={{ opacity: 0.5, y: 100 }}
