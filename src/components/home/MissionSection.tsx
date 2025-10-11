@@ -1,5 +1,5 @@
 // src/components/home/MissionSection.tsx
-// C7 - Adjust negative margin to match lamp container changes
+// C8 - Adjust negative margin to match lamp container changes
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -9,8 +9,8 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-// C7: Adjusted negative bottom margin to -20 to work with new lamp padding
-<section className="w-full -mb-20">
+// C8: Removed negative bottom margin to allow the lamp container to sit flush with the footer
+<section className="w-full">
 <LampContainer>
 <motion.div
 initial={{ opacity: 0.5, y: 100 }}

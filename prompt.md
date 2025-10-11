@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 8 - final touches on bottom part
+Current Cycle 9 - still two issues with the bottom, almost perfect
+Cycle 8 - final touches on bottom part
 Cycle 7 - focus on bottom of site
 Cycle 6 - more progress, continue iterative improvement
 Cycle 5 - continue working through issues
@@ -339,6 +340,31 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 9>
+<Cycle Context>
+okay, almost fixed. the lamp now encompasses the same space horizontally as the sparkles, now we just need to expand it downward to encompass all the same space as the sparkles in the vertical direction as well, and the title is still covered a bit.
+
+the yellow arrows are pointing to the title. we can now see the bottom slice of the title text, whereas previously we could not see the title what so ever. moving it down slightly more will be enough to make it completely visible. note, ill provide the markedup image of the previous cycle so you can see the progression. the image with the purple arrow is the image from the previous cycle, the purple arrow is pointing to the covered title.
+
+the red arrows are pointing to where the lamp stops expanding down vertically. the red bracket also indicates the lamp area. the green bracket is the ideal size of the lamp, it should match the area of the sparkles.
+</Cycle Context>
+<Previous Cycle 8 Summary of Actions>
+I have analyzed the user's feedback regarding the visual issues at the bottom of the homepage. My course of action is to correct the cut-off title, remove visual artifacts in the particle effect, reduce the excessive empty space, and properly align the footer content to the corners. I will achieve this by making targeted adjustments to the Mission section, the Lamp component, and the site's Footer.
+
+1.  **Update `src/components/global/lamp.tsx`:**
+    *   To fix the cut-off title, I will reduce the upward translation of the content container from `-translate-y-80` to a smaller value, bringing the title fully into view.
+    *   To eliminate the rectangular visual artifacts, I will modify the properties of the blur and gradient overlay divs. Specifically, I will increase the size and blur intensity of the main circular blur effect to ensure its edges are soft and blend seamlessly with the particle background.
+    *   To reduce the large empty space above the footer, I will decrease the bottom padding of the `LampContainer` itself.
+
+2.  **Update `src/components/home/MissionSection.tsx`:**
+    *   I will remove the large negative bottom margin (`-mb-40`). This was a temporary fix to pull the footer up, but with the `LampContainer` size being adjusted, this is no longer necessary and will allow for more precise control over the spacing.
+
+3.  **Update `src/components/layout/Footer.tsx`:**
+    *   To align the footer text to the corners, I will refactor the component's layout. I will change the main container to use Flexbox with `justify-between`, pushing the "Built using..." text to the left and the copyright notice to the right.
+    *   I will also adjust the padding and remove unnecessary container `divs` to ensure the text sits cleanly in the bottom corners of the viewport.
+</Previous Cycle 8 Summary of Actions>
+</Cycle 9>
+
 <Cycle 8>
 <Cycle Context>
 nice, we're closer to a clean look. here are the outstanding issues.
@@ -349,9 +375,6 @@ nice, we're closer to a clean look. here are the outstanding issues.
 
 same as last time, i provided you an unmarked image and then a marked up image, this time color coded with the issue/description/observation.
 </Cycle Context>
-<Ephemeral Context>
-resp 8 is good, resp 5 is good too, 6 too
-</Ephemeral Context>
 <Previous Cycle 7 Summary of Actions>
 I have analyzed the user's feedback from the screenshots and will implement the requested visual improvements. My course of action is to make the `pcp.gif` and feature images larger and more prominent, and to fix the layout and visual artifacts in the "More Than Code" section with the sparkles effect.
 
@@ -1607,10 +1630,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T17:11:27.811Z
+  Date Generated: 2025-10-11T17:26:03.924Z
   ---
   Total Files: 69
-  Approx. Tokens: 162156
+  Approx. Tokens: 162177
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1623,7 +1646,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
 8. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
 9. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
-10. src\Artifacts\A5-Dual Domain Hosting Guide.md (1066 tokens)
+10. src\components\global\lamp.tsx (1072 tokens)
 
 <!-- Full File List -->
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 124 - Chars: 6150 - Tokens: 1538
@@ -1653,7 +1676,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 25. src\app\layout.tsx - Lines: 40 - Chars: 1048 - Tokens: 262
 26. src\app\page.tsx - Lines: 22 - Chars: 672 - Tokens: 168
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 976 - Tokens: 244
+28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
 29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2132 - Tokens: 533
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
@@ -1685,11 +1708,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
 58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2777 - Tokens: 695
 59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
-60. src\components\global\lamp.tsx - Lines: 102 - Chars: 4245 - Tokens: 1062
+60. src\components\global\lamp.tsx - Lines: 102 - Chars: 4288 - Tokens: 1072
 61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
 62. src\components\home\FeaturesSection.tsx - Lines: 63 - Chars: 2591 - Tokens: 648
 63. src\components\home\HeroSection.tsx - Lines: 68 - Chars: 3207 - Tokens: 802
-64. src\components\home\MissionSection.tsx - Lines: 42 - Chars: 1418 - Tokens: 355
+64. src\components\home\MissionSection.tsx - Lines: 42 - Chars: 1430 - Tokens: 358
 65. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1443 - Tokens: 361
 66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
 67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
@@ -14111,7 +14134,7 @@ className="relative rounded-2xl object-contain opacity-50"
 
 <file path="src/components/global/lamp.tsx">
 // src/components/global/lamp.tsx
-// C7 - Adjust layout to fix cut-off title, remove artifacts, and reduce empty space
+// C8 - Adjust layout to fix cut-off title, artifacts, and bottom sliver
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -14128,8 +14151,8 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        // C7: Reduced bottom padding from pb-40 to pb-20 to shrink empty space
-        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20 pb-20',
+        // C8: Removed bottom padding (pb-20) to allow sparkles to reach the bottom. Added pt-20 for top spacing.
+        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20',
         className
       )}
     >
@@ -14148,8 +14171,8 @@ export const LampContainer = ({
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-10 ">
         <motion.div
           initial={{ opacity: 0.5, width: '15rem' }}
-          // C7: Increased width to '50rem' to eliminate side artifacts
-          whileInView={{ opacity: 1, width: '50rem' }}
+          // C8: Increased width to '80rem' to expand the light cone and remove rectangular artifacts
+          whileInView={{ opacity: 1, width: '80rem' }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -14158,15 +14181,15 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[50rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[80rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
           <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
           <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: '15rem' }}
-          // C7: Increased width to '50rem' to eliminate side artifacts
-          whileInView={{ opacity: 1, width: '50rem' }}
+          // C8: Increased width to '80rem' to expand the light cone
+          whileInView={{ opacity: 1, width: '80rem' }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -14175,7 +14198,7 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto left-1/2 h-56 w-[50rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
+          className="absolute inset-auto left-1/2 h-56 w-[80rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
         >
           <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
@@ -14206,7 +14229,7 @@ export const LampContainer = ({
         ></motion.div>
       </div>
 
-      <div className="relative z-40 flex -translate-y-60 flex-col items-center px-5">
+      <div className="relative z-40 flex -translate-y-40 flex-col items-center px-5">
         {children}
       </div>
     </div>
@@ -14668,7 +14691,7 @@ export default HeroSection;
 
 <file path="src/components/home/MissionSection.tsx">
 // src/components/home/MissionSection.tsx
-// C7 - Adjust negative margin to match lamp container changes
+// C8 - Adjust negative margin to match lamp container changes
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -14678,8 +14701,8 @@ import { motion } from 'framer-motion';
 
 const MissionSection = () => {
 return (
-// C7: Adjusted negative bottom margin to -20 to work with new lamp padding
-<section className="w-full -mb-20">
+// C8: Removed negative bottom margin to allow the lamp container to sit flush with the footer
+<section className="w-full">
 <LampContainer>
 <motion.div
 initial={{ opacity: 0.5, y: 100 }}

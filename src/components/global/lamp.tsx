@@ -1,5 +1,5 @@
 // src/components/global/lamp.tsx
-// C7 - Adjust layout to fix cut-off title, remove artifacts, and reduce empty space
+// C8 - Adjust layout to fix cut-off title, artifacts, and bottom sliver
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -16,8 +16,8 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        // C7: Reduced bottom padding from pb-40 to pb-20 to shrink empty space
-        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20 pb-20',
+        // C8: Removed bottom padding (pb-20) to allow sparkles to reach the bottom. Added pt-20 for top spacing.
+        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20',
         className
       )}
     >
@@ -36,8 +36,8 @@ export const LampContainer = ({
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-10 ">
         <motion.div
           initial={{ opacity: 0.5, width: '15rem' }}
-          // C7: Increased width to '50rem' to eliminate side artifacts
-          whileInView={{ opacity: 1, width: '50rem' }}
+          // C8: Increased width to '80rem' to expand the light cone and remove rectangular artifacts
+          whileInView={{ opacity: 1, width: '80rem' }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -46,15 +46,15 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[50rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[80rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
           <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
           <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: '15rem' }}
-          // C7: Increased width to '50rem' to eliminate side artifacts
-          whileInView={{ opacity: 1, width: '50rem' }}
+          // C8: Increased width to '80rem' to expand the light cone
+          whileInView={{ opacity: 1, width: '80rem' }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -63,7 +63,7 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto left-1/2 h-56 w-[50rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
+          className="absolute inset-auto left-1/2 h-56 w-[80rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
         >
           <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
@@ -94,7 +94,7 @@ export const LampContainer = ({
         ></motion.div>
       </div>
 
-      <div className="relative z-40 flex -translate-y-60 flex-col items-center px-5">
+      <div className="relative z-40 flex -translate-y-40 flex-col items-center px-5">
         {children}
       </div>
     </div>
