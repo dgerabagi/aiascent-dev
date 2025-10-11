@@ -1,5 +1,5 @@
 // src/components/home/WorkflowSection.tsx
-// C4 - Enhanced styling for a more polished look
+// C11 - Use theme-aware colors for text and background
 import React from 'react';
 
 const workflowSteps = [
@@ -14,18 +14,18 @@ const WorkflowSection = () => {
 return (
 <section className="py-20 md:py-32 bg-background">
 <div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground">
 The Power of Iteration: The DCE Workflow
 </h2>
 
     <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
       {workflowSteps.map((step, index) => (
         <React.Fragment key={step.id}>
-          <div className="text-center p-6 border border-neutral-800 rounded-lg bg-neutral-950 shadow-lg min-w-[200px]">
+          <div className="text-center p-6 border rounded-lg bg-card shadow-lg min-w-[200px] text-foreground">
             <span className="text-primary font-bold">{step.id}.</span> {step.title}
           </div>
           {index < workflowSteps.length - 1 && (
-            <div className="text-2xl text-neutral-600 mx-4 hidden md:block">→</div>
+            <div className="text-2xl text-muted-foreground mx-4 hidden md:block">→</div>
           )}
         </React.Fragment>
       ))}

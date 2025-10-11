@@ -1,5 +1,5 @@
 // src/components/home/MissionSection.tsx
-// C10 - Apply standard gradient to title
+// C11 - Use theme-aware text colors
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -21,10 +21,10 @@ ease: 'easeInOut',
 }}
 className="flex flex-col items-center text-center"
 >
-<h2 className="mt-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 text-center text-4xl font-bold tracking-tight md:text-6xl">
+<h2 className="mt-8 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground text-center text-4xl font-bold tracking-tight md:text-6xl">
 THE RISE OF COGNITIVE CAPITALISM.
 </h2>
-<p className="text-xl text-neutral-200 max-w-3xl text-center my-8">
+<p className="text-xl text-muted-foreground max-w-3xl text-center my-8">
 Mastering AI collaboration is essential for competitiveness and individual empowerment. The DCE is the foundational tool for a decentralized future, enabling Citizen Architects to combat AI centralization.
 </p>
 <Link href="/mission">

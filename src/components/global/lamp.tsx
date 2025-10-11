@@ -1,10 +1,11 @@
 // src/components/global/lamp.tsx
-// C10 - Expand lamp effect vertically and reduce luminosity
+// C11 - Add useTheme to dynamically set particle color
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { SparklesCore } from './sparkles' 
+import { useTheme } from 'next-themes'
 
 export const LampContainer = ({
   children,
@@ -13,10 +14,13 @@ export const LampContainer = ({
   children: React.ReactNode
   className?: string
 }) => {
+  const { theme } = useTheme();
+  const particleColor = theme === 'light' ? '#000000' : '#FFFFFF';
+
   return (
     <div
       className={cn(
-        'relative flex flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 pt-20',
+        'relative flex flex-col items-center justify-center overflow-hidden bg-background w-full rounded-md z-0 pt-20',
         className
       )}
     >
@@ -28,7 +32,7 @@ export const LampContainer = ({
             maxSize={1.2}
             particleDensity={1200}
             className="w-full h-full"
-            particleColor="#FFFFFF"
+            particleColor={particleColor}
           />
         </div>
 
@@ -46,8 +50,8 @@ export const LampContainer = ({
           }}
           className="absolute inset-auto right-1/2 h-[60rem] overflow-visible w-[80rem] bg-gradient-conic from-neutral-700 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
-          <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
-          <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
+          <div className="absolute  w-[100%] left-0 bg-background h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute  w-40 h-[100%] left-0 bg-background  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: '15rem' }}
@@ -62,8 +66,8 @@ export const LampContainer = ({
           }}
           className="absolute inset-auto left-1/2 h-[60rem] w-[80rem] bg-gradient-conic from-transparent via-transparent to-neutral-700 text-white [--conic-position:from_290deg_at_center_top]"
         >
-          <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
-          <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute  w-40 h-[100%] right-0 bg-background  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
+          <div className="absolute  w-[100%] right-0 bg-background h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
         
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>

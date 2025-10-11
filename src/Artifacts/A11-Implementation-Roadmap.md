@@ -4,6 +4,8 @@
 
 # Author: AI Model & Curator
 
+# Updated on: C11 (Reflect current progress and new feature integration)
+
   - **Key/Value for A0:**
   - **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
   - **Tags:** roadmap, implementation plan, project management, development stages
@@ -14,41 +16,47 @@ This document provides a clear, step-by-step roadmap for the implementation of *
 
 ## 2. Implementation Steps
 
-### Step 1: Foundational Setup & Scaffolding (Cycle 1)
+### Step 1: Foundational Setup & Scaffolding (Completed)
 
 -   **Goal:** Create the basic project structure and initialize the development environment.
--   **Tasks:**
-    1.  **Initialize Project:** Set up the Next.js project with TypeScript and TailwindCSS (A3).
-    2.  **Version Control:** Initialize the Git repository and push to GitHub (A14).
-    3.  **Basic Layout:** Implement the root layout (`src/app/layout.tsx`) with placeholder Header and Footer components.
 -   **Outcome:** A runnable Next.js application with the core technical structure in place.
 
-### Step 2: Landing Page UI Development (Cycle 2-3)
+### Step 2: Landing Page UI Development (Completed)
 
 -   **Goal:** Build the main landing page UI and core navigation.
--   **Tasks:**
-    1.  **Header & Footer:** Implement the functional Header and Footer components.
-    2.  **Hero Section:** Create the main hero section with the headline and primary CTA.
-    3.  **Features Section:** Implement the section detailing the key benefits of the DCE.
-    4.  **Styling & Responsiveness:** Apply the visual design using TailwindCSS and ensure responsiveness.
 -   **Outcome:** A visually complete and responsive landing page.
 
-### Step 3: Interactive Showcase Implementation (Cycle 4-6)
+### Step 3: Visual Polish and Theming (Cycle 11)
 
--   **Goal:** Develop the core feature of Phase 1: the interactive showcase component.
+-   **Goal:** Address outstanding visual bugs and implement a comprehensive light mode theme.
+-   **Tasks:**
+    1.  **Hero Section:** Fix sizing and background issues with the main `pcp.gif`.
+    2.  **Light Theme:** Implement a full light mode color palette, fixing all readability and aesthetic issues.
+-   **Outcome:** A polished, professional website that looks great in both dark and light modes.
+
+### Step 4: Core Content Pages (Cycle 11-12)
+
+-   **Goal:** Resolve 404s by creating the main content pages.
+-   **Tasks:**
+    1.  **Mission Page:** Implement the `/mission` page with its strategic narrative.
+    2.  **Learn & Showcase Shells:** Create the placeholder pages for `/learn` and `/showcase` to prepare for the next step.
+-   **Outcome:** All main navigation links lead to functional pages.
+
+### Step 5: Interactive Showcase Implementation (Cycle 12+)
+
+-   **Goal:** Develop the core feature of Phase 1 by porting and integrating the AI Ascent Report Viewer.
 -   **Tasks:**
-    1.  **Data Structure:** Define and create the JSON data source (`src/data/whitepaperContent.json`).
-    2.  **Showcase Page:** Create the `/showcase` page route.
-    3.  **Component Development:** Build the `InteractiveWhitepaper.tsx` component, including data loading and navigation logic.
-    4.  **Integration:** Integrate the component into the showcase page with accompanying explanatory text.
--   **Outcome:** A functional interactive showcase that demonstrates the DCE's capabilities.
+    1.  **Asset & Data Integration:** Place the report JSON data and image assets into the `public` directory.
+    2.  **Component Porting:** Adapt the report viewer components and Zustand store from the `aiascentgame` context.
+    3.  **Integration:** Embed the adapted `ReportViewer` component into the `/showcase` page.
+-   **Outcome:** A functional interactive showcase that demonstrates the DCE's capabilities by displaying the full AI Ascent Report.
 
-### Step 4: Polish, Testing, and Deployment (Cycle 7+)
+### Step 6: Feature Expansion and Deployment (Cycle 13+)
 
--   **Goal:** Finalize the content, fix bugs, and deploy the website.
+-   **Goal:** Reuse the report viewer for other pages and prepare for deployment.
 -   **Tasks:**
-    1.  **Content Finalization:** Review and finalize all text content and imagery.
-    2.  **Cross-Browser/Device Testing:** Ensure the website works correctly across major browsers and devices.
-    3.  **SEO Optimization:** Implement basic SEO metadata.
+    1.  **Homepage Integration:** Adapt the report viewer to display the smaller whitepaper on the homepage.
+    2.  **Learn Page Integration:** Enhance the viewer to support a curriculum of multiple reports.
+    3.  **Final Polish & Testing:** Conduct thorough cross-browser/device testing.
     4.  **Deployment:** Configure the hosting environment and deploy the application.
--   **Outcome:** The Phase 1 website is live and accessible to the public.
+-   **Outcome:** The Phase 1 website is feature-complete and live to the public.

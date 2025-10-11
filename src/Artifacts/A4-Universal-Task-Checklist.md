@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C3 (Mark T-3 complete, update T-5)
+# Updated on: C11 (Add tasks for visual fixes and feature implementation)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -20,83 +20,95 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 4+
+## Task List for Cycle 11+
 
-## T-4: Interactive Showcase Implementation (Cycle 4+)
+## T-7: Fix Hero Section GIF Styling
+- **Files Involved:**
+    - `src/components/home/HeroSection.tsx`
+    - `src/components/global/container-scroll-animation.tsx`
+- **Total Tokens:** ~1,500
+- **More than one cycle?** No
+- **Status:** To Do
 
-  - **Files Involved:**
-        - `src/components/showcase/InteractiveWhitepaper.tsx`
-        - `src/app/showcase/page.tsx`
-        - `src/data/whitepaperContent.json`
-
-  - **Total Tokens:** ~10,000+
-
-  - **More than one cycle?** Yes
-
-  - **Status:** To Do
-
-  - [ ] **Task (T-ID: 4.1):** Update `src/app/showcase/page.tsx` layout based on the design in A17 (Introduction, Component, Meta-Commentary).
-  - [ ] **Task (T-ID: 4.2):** Enhance the core logic and styling for the `InteractiveWhitepaper.tsx` component (e.g., adding a Table of Contents sidebar).
-  - [ ] **Task (T-ID: 4.3):** (Curator Task) Populate `whitepaperContent.json` with actual content (the placeholder is currently minimal).
+- [ ] **Task (T-ID: 7.1):** In `container-scroll-animation.tsx`, remove the `bg-gray-100` from the inner `div` of the `Card` component to eliminate the white border around the GIF.
+- [ ] **Task (T-ID: 7.2):** In `HeroSection.tsx`, adjust the styling of the `Image` component and its container to make the `pcp.gif` larger, filling more of the "monitor" frame to improve visibility of details.
 
 ### Verification Steps
+1.  Load the homepage.
+2.  **Expected:** The `pcp.gif` in the hero section should not have a white border. It should be noticeably larger and more detailed.
 
-1.  Navigate to `/showcase`.
-2.  **Expected:** The page layout should match A17. The interactive component should function correctly with the available data.
+## T-8: Implement Light Mode Theme
+- **Files Involved:**
+    - `src/app/globals.css`
+    - `tailwind.config.ts`
+    - `src/components/home/FeaturesSection.tsx`
+    - `src/components/home/WorkflowSection.tsx`
+    - `src/components/global/lamp.tsx`
+- **Total Tokens:** ~5,000
+- **More than one cycle?** No
+- **Status:** To Do
 
-## T-5: Asset Integration and Refinement (Cycle 4)
-
-  - **Files Involved:**
-        - `src/components/home/FeaturesSection.tsx`
-        - `src/components/layout/Header.tsx`
-        - `public/assets/**/*`
-
-  - **Total Tokens:** ~5,000
-
-  - **More than one cycle?** No
-
-  - **Status:** To Do
-
-  - [ ] **Task (T-ID: 5.1):** (Curator Task) Generate the assets using the prompts in A15.X and place them in the `public/assets` directory, replacing the placeholders.
-  - [ ] **Task (T-ID: 5.2):** Update `Header.tsx` to use the new logo (AS-01).
-  - [ ] **Task (T-ID: 5.3):** Update `FeaturesSection.tsx` to correctly display the new SVG icons (AS-04, AS-05, AS-06). This may require configuring SVGR or adjusting how SVGs are imported and rendered.
+- [ ] **Task (T-ID: 8.1):** In `globals.css`, define a new `:root` block with CSS variables for a complete light theme palette (backgrounds, foregrounds, cards, etc.).
+- [ ] **Task (T-ID: 8.2):** Apply `light:` variants in `FeaturesSection.tsx` and `WorkflowSection.tsx` to fix text visibility and border colors.
+- [ ] **Task (T-ID: 8.3):** In `lamp.tsx`, use `light:` variants to change the background color, gradient colors, and particle colors to be suitable for a light background.
 
 ### Verification Steps
+1.  Toggle the theme to "Light".
+2.  **Expected:** All text should be clearly readable. The image borders in the features section should be subtle. The workflow steps should be visible. The mission section's background, lamp effect, and particles should be aesthetically pleasing on a light theme.
 
-1.  Run the application.
-2.  **Expected:** The header displays the new logo. The Features section displays the newly generated icons correctly.
+## T-9: Implement Mission Page
+- **Files Involved:**
+    - `src/app/mission/page.tsx` (New)
+- **Total Tokens:** ~1,500
+- **More than one cycle?** No
+- **Status:** To Do
 
-## T-6: Plan for Next Cycle
+- [ ] **Task (T-ID: 9.1):** Create the `page.tsx` file for the `/mission` route.
+- [ ] **Task (T-ID: 9.2):** Implement the page layout and content based on `A19-Page-Design-Mission.md` and the user's narrative about "cognitive apprenticeship", "fissured workplace", and the "solarpunk" vision.
 
-  - **Files Involved:**
-        - `src/Artifacts/A4-Universal-Task-Checklist.md`
+### Verification Steps
+1.  Navigate to `/mission`.
+2.  **Expected:** The page should load without a 404 error and display the new content.
 
-  - [ ] **Task (T-ID: 6.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+## T-10: Port Report Viewer to Showcase Page
+- **Files Involved:**
+    - `src/app/showcase/page.tsx`
+    - `src/components/report-viewer/*` (New)
+    - `src/stores/reportStore.ts` (New)
+    - `package.json`
+- **Total Tokens:** ~20,000+
+- **More than one cycle?** Yes
+- **Status:** To Do
+
+- [ ] **Task (T-ID: 10.1):** Create `src/components/report-viewer/` and `src/stores/` directories.
+- [ ] **Task (T-ID: 10.2):** Copy all component files and the store file from the `context/aiascentgame/report/` directory.
+- [ ] **Task (T-ID: 10.3):** Add `react-icons` to `package.json`.
+- [ ] **Task (T-ID: 10.4):** Begin adapting the ported files, fixing imports and preparing for integration into the `/showcase` page.
+- [ ] **Task (T-ID: 10.5):** (Curator Task) Place `reportContent.json` into `public/data/ai_ascent_report.json` and place report images into `public/assets/images/report/`.
+
+### Verification Steps
+1.  The project should build successfully after adding the new files.
+2.  The `/showcase` page should render a placeholder for the upcoming component.
+
+## T-11: Create Learn Page Shell
+- **Files Involved:**
+    - `src/app/learn/page.tsx` (New)
+- **Total Tokens:** ~500
+- **More than one cycle?** No
+- **Status:** To Do
+
+- [ ] **Task (T-ID: 11.1):** Create the `page.tsx` file for the `/learn` route with placeholder content to resolve the 404 error.
+
+### Verification Steps
+1.  Navigate to `/learn`.
+2.  **Expected:** The page should load without a 404 error.
+
+## T-12: Plan for Next Cycle
+- **Files Involved:**
+    - `src/Artifacts/A4-Universal-Task-Checklist.md`
+- [ ] **Task (T-ID: 12.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
-
-## T-3: Home Page Implementation (Cycle 3)
-
-  - **Status:** Completed (C3)
-
-  - [X] **Task (T-ID: 3.1):** Implement the `HeroSection.tsx` component based on A16. Integrate the hero image/gif and utilize `ContainerScroll`.
-  - [X] **Task (T-ID: 3.2):** Implement the `FeaturesSection.tsx` component based on A16, utilizing placeholder icons.
-  - [X] **Task (T-ID: 3.3):** Implement a basic version of the `WorkflowVisualization.tsx` (renamed `WorkflowSection.tsx`) component.
-  - [X] **Task (T-ID: 3.4):** Implement the `MissionSection.tsx` component based on A16, utilizing the `LampComponent`.
-  - [X] **Task (T-ID: 3.5):** Integrate these new components into `src/app/page.tsx`.
-  - [X] **Task (T-ID: 3.6):** Refine Header and Footer styling to align with the dark, sophisticated aesthetic.
-  - [X] **Task (T-ID: 3.7):** (AI Internal) Import necessary dynamic components from `automationsaas` and update `tailwind.config.ts`.
-
-## T-2: Strategic Planning and Asset Management (Cycle 2)
-
-  - **Status:** Completed (C2)
-  - [X] **Task (T-ID: 2.1):** Create A15 (Asset Wishlist) and generate placeholder assets in `public/assets`.
-  - [X] **Task (T-ID: 2.2):** Create page design artifacts (A16-A19).
-
-## T-1: Project Scaffolding (Cycle 1)
-
-  - **Status:** Completed (C1)
-
-  - [X] **Task (T-ID: 1.1):** Generate the initial Next.js project structure.
+(Previous tasks T-1 through T-6 are omitted for brevity)

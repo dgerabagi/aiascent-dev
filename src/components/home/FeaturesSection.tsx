@@ -1,5 +1,5 @@
 // src/components/home/FeaturesSection.tsx
-// C10 - Update Image component to remove legacy props
+// C11 - Add light mode variants
 import React from 'react';
 import Image from 'next/image';
 
@@ -25,7 +25,7 @@ const FeaturesSection = () => {
 return (
 <section className="py-20 md:py-32 bg-background">
 <div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 pb-4">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 light:from-black light:to-neutral-700 pb-4">
 Stop Fighting Your Tools. Start Building the Future.
 </h2>
 
@@ -34,7 +34,7 @@ Stop Fighting Your Tools. Start Building the Future.
       {features.map((feature, index) => (
         <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
           {/* Image Container */}
-          <div className="md:w-1/2 w-full p-4 border border-neutral-800 rounded-2xl bg-neutral-950/50 shadow-2xl shadow-black/20">
+          <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
             <div className="relative aspect-video rounded-lg overflow-hidden">
                 <Image 
                     src={feature.icon} 
@@ -46,8 +46,8 @@ Stop Fighting Your Tools. Start Building the Future.
           </div>
           {/* Text Content */}
           <div className="md:w-1/2 w-full">
-            <h3 className="text-3xl font-bold text-white mb-4">{feature.title}</h3>
-            <p className="text-lg text-neutral-400">
+            <h3 className="text-3xl font-bold text-white light:text-black mb-4">{feature.title}</h3>
+            <p className="text-lg text-neutral-400 light:text-neutral-600">
               {feature.description}
             </p>
           </div>

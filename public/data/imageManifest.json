@@ -1,0 +1,1198 @@
+{
+  "manifestId": "ascent-report-images-v3",
+  "basePath": "/images/report-assets/report-3/",
+  "imageGroups": {
+    "group_cover-page_prompt-1": {
+      "path": "front-matter/cover-page/prompt-1/",
+      "prompt": "A powerful and iconic cover image for 'The Ascent Report.' It features a central figure, the Citizen Architect, who is part human and part glowing data streams. They stand between a dark, decaying cyberpunk city on one side and a bright, vibrant solarpunk city on the other, holding a glowing blueprint for a better future. The title 'The Ascent Report: From Ghost Worker to Citizen Architect' is elegantly integrated.",
+      "alt": "Cover of The Ascent Report",
+      "baseFileName": "cover-page-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_introduction-primer_prompt-1": {
+      "path": "front-matter/introduction-primer/prompt-1/",
+      "prompt": "A cinematic image showing the game world of aiascent.game on a large screen. In front of the screen, this very report is materialized as a glowing, holographic document. The two are visually linked by lines of light, showing that the game and the report are two halves of the same whole—one being the evidence, the other being the explanation.",
+      "alt": "Introduction to the Report",
+      "baseFileName": "introduction-primer-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 7
+    },
+    "group_introduction-title_prompt-1": {
+      "path": "introduction/introduction-title/prompt-1/",
+      "prompt": "A massive, ancient library with towering shelves. Instead of books, the shelves hold glowing, holographic words like 'Cognitive Capital,' 'Vibecoding,' and 'COGSEC.' A group of diverse individuals stands in the center, looking up in awe and understanding, as if discovering a new language that describes their world. The lighting is optimistic and forward-looking.",
+      "alt": "A New Vocabulary for a New Era",
+      "baseFileName": "introduction-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 7
+    },
+    "group_cognitive-capital_prompt-1": {
+      "path": "introduction/cognitive-capital/prompt-1/",
+      "prompt": "A cinematic visualization of a nation's collective mind. A vast network of glowing neural pathways connects millions of diverse people, forming a single, brilliant brain. The network pulses with energy, representing shared knowledge, skill, and creative potential. In the background, abstract symbols of innovation and resilience are being forged from this light.",
+      "alt": "Image for Cognitive Capital",
+      "baseFileName": "cognitive-capital-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_vibecoding_prompt-1": {
+      "path": "introduction/vibecoding/prompt-1/",
+      "prompt": "A creator, not necessarily a classic coder, sits in a comfortable, solarpunk-style workshop. They are gesturing with their hands, as if conducting music, and speaking to a floating, holographic AI interface. The AI is translating their intuitive 'vibe' and gestures into elegant, flowing lines of code that are constructing a complex 3D model on another screen. The process looks fluid, creative, and conversational.",
+      "alt": "Image for Vibecoding",
+      "baseFileName": "vibecoding-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-100x-data-curator-intro_prompt-1": {
+      "path": "introduction/the-100x-data-curator/prompt-1/",
+      "prompt": "A single, focused data curator stands before a massive, holographic data stream, like a conductor before an orchestra. With AI-powered tools represented as glowing batons, they are expertly directing the flow of information, cleansing corrupted data (red particles turning green), structuring chaotic information, and enhancing valuable insights. Their impact is visually exponential, showing their work affecting a vast network of AI systems.",
+      "alt": "Image for The 100x Data Curator",
+      "baseFileName": "the-100x-data-curator-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-fissured-workplace_prompt-1": {
+      "path": "introduction/the-fissured-workplace/prompt-1/",
+      "prompt": "An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers of subcontractors. The legal and financial responsibilities, visualized as heavy weights, are shown being passed down through the cracks, ultimately crushing the individual workers at the very bottom.",
+      "alt": "Image for The Fissured Workplace",
+      "baseFileName": "the-fissured-workplace-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-cognitive-bandwidth-tax_prompt-1": {
+      "path": "introduction/the-cognitive-bandwidth-tax/prompt-1/",
+      "prompt": "A human brain visualized as a computer's CPU. A significant portion of its processing power, shown in red, is being consumed by a process labeled 'FINANCIAL STRESS.' The remaining processing power, in green, is visibly small, leaving little capacity for tasks labeled 'PROBLEM SOLVING,' 'ATTENTION,' and 'LOGIC.'",
+      "alt": "Image for The Cognitive Bandwidth Tax",
+      "baseFileName": "the-cognitive-bandwidth-tax-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_cognitive-security-cogsec_prompt-1": {
+      "path": "introduction/cognitive-security-cogsec/prompt-1/",
+      "prompt": "A nation is depicted as a massive, interconnected brain. A shield, labeled 'COGSEC,' protects it. The shield is deflecting incoming attacks that are not missiles or bullets, but streams of weaponized misinformation, data poisoning, and psychological operations, safeguarding the nation's ability to think clearly and make sound decisions.",
+      "alt": "Image for Cognitive Security (COGSEC)",
+      "baseFileName": "cognitive-security-cogsec-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_universal-basic-access-uba_prompt-1": {
+      "path": "introduction/universal-basic-access-uba/prompt-1/",
+      "prompt": "A powerful visual metaphor in the style of a New Deal poster. Instead of electrical lines being extended to rural homes, fiber-optic cables of light are being extended to every citizen. The light terminates not in a lightbulb, but in a powerful AI tool that the citizen is using to build, create, and innovate. The text at the bottom reads 'UNIVERSAL BASIC ACCESS: POWERING A NATION OF CREATORS.'",
+      "alt": "Image for Universal Basic Access (UBA)",
+      "baseFileName": "universal-basic-access-uba-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_executive-summary-title_prompt-1": {
+      "path": "executive-summary/executive-summary-title/prompt-1/",
+      "prompt": "A powerful, high-level infographic that visually summarizes the entire report. It shows the U.S. on a precarious path, a strong Chinese competitor, and the proposed 'Ascentia Doctrine' as a bright, alternative path forward. Key concepts like 'Ghost Worker' and 'Citizen Architect' are represented by icons.",
+      "alt": "Executive Summary",
+      "baseFileName": "executive-summary-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 11
+    },
+    "group_a-flawed-foundation_prompt-1": {
+      "path": "executive-summary/a-flawed-foundation/prompt-1/",
+      "prompt": "Cinematic, wide-angle shot. The gleaming, high-tech superstructure of the U.S. AI industry (represented by glowing logos of tech giants and intricate circuits) is shown being built upon a foundation of crumbling, cracked earth. Through the cracks, shadowy, anonymous human figures can be seen toiling, their efforts barely holding the massive structure aloft. The image conveys a sense of immense weight resting on a precarious and overlooked base.",
+      "alt": "Image for A Flawed Foundation",
+      "baseFileName": "a-flawed-foundation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-coherent-competitor_prompt-1": {
+      "path": "executive-summary/the-coherent-competitor/prompt-1/",
+      "prompt": "A powerful image contrasting two national strategies. On the left, the U.S. model is depicted as a chaotic, fragmented bazaar of competing vendors and precarious workers. On the right, the Chinese model is a single, massive, and fortified data fortress, with a red dragon emblem, operating with disciplined, unified purpose. The image establishes the strategic asymmetry between the two approaches.",
+      "alt": "Image for The Coherent Competitor",
+      "baseFileName": "the-coherent-competitor-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-ascentia-doctrine_prompt-1": {
+      "path": "executive-summary/the-ascentia-doctrine/prompt-1/",
+      "prompt": "A blueprint showing a two-pronged strategy. One arrow, labeled 'Top-Down,' shows the creation of an elite, professional 'Digital Corps.' The second, larger arrow, labeled 'Bottom-Up,' shows a 'Digital Homestead Act' empowering a vast number of 'Citizen Architects' across the country. The two arrows converge on a secure and innovative future.",
+      "alt": "Image for The Ascentia Doctrine",
+      "baseFileName": "the-ascentia-doctrine-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_pillar-i-the-digital-homestead-act_prompt-1": {
+      "path": "executive-summary/pillar-i-the-digital-homestead-act/prompt-1/",
+      "prompt": "A modern version of a historical 'Homestead Act' poster. Instead of a covered wagon and a plot of land, it shows a worker-owned cooperative building a secure, local data center in a small American town, with fiber optic lines radiating outwards.",
+      "alt": "Image for Pillar I: The Digital Homestead Act",
+      "baseFileName": "pillar-i-the-digital-homestead-act-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_pillar-ii-cultivating-a-new-digital-corps_prompt-1": {
+      "path": "executive-summary/pillar-ii-cultivating-a-new-digital-corps/prompt-1/",
+      "prompt": "An image of a diverse group of individuals in a futuristic training facility. They are not in military uniforms but in modern, professional attire. They are engaged in 'Cognitive Apprenticeship,' with an expert mentor guiding them through complex data visualizations and AI models.",
+      "alt": "Image for Pillar II: Cultivating a New Digital Corps",
+      "baseFileName": "pillar-ii-cultivating-a-new-digital-corps-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_pillar-iii-a-national-ai-proving-ground_prompt-1": {
+      "path": "executive-summary/pillar-iii-a-national-ai-proving-ground/prompt-1/",
+      "prompt": "An image of a vast digital landscape representing a national 'AI Proving Ground.' Citizens from all walks of life are shown accessing this landscape with their digital toolkits, using high-performance computing and curated datasets to solve real-world challenges in medicine, climate, and security.",
+      "alt": "Image for Pillar III: A National AI Proving Ground",
+      "baseFileName": "pillar-iii-a-national-ai-proving-ground-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 14
+    },
+    "group_the-choice-ahead_prompt-1": {
+      "path": "executive-summary/the-choice-ahead/prompt-1/",
+      "prompt": "A final, powerful image of a fork in the road. One path leads to a dark, decaying cyberpunk city under corporate control. The other path leads to a bright, thriving solarpunk city built on empowerment and community. The choice is stark and clear.",
+      "alt": "Image for The Choice Ahead",
+      "baseFileName": "the-choice-ahead-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_part-i-title_prompt-1": {
+      "path": "part-i-the-proof/part-i-title/prompt-1/",
+      "prompt": "A cinematic title card. The text 'Part I: The Proof is the Product' is displayed in a strong, elegant font over a background that subtly blends imagery of a complex video game world with lines of source code, visually reinforcing the section's theme.",
+      "alt": "Part I: The Proof is the Product",
+      "baseFileName": "part-i-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "group_section-1-title_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/section-1-title/prompt-1/",
+      "prompt": "A visually compelling title card for 'Section 1: The Hook - An Artifact in Your Hands.' The text is overlaid on an image of a gamer holding a controller that is glowing, projecting a holographic version of the 'aiascent.game' world, emphasizing the game as a tangible object of study.",
+      "alt": "Section 1: The Hook",
+      "baseFileName": "section-1-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_more-than-a-game_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/more-than-a-game/prompt-1/",
+      "prompt": "A gamer is looking intently at a screen displaying `aiascent.game`. From the screen, a holographic overlay projects out, showing this very report. The game and the report are visually linked, one flowing into the other, establishing that the game is a primary source document.",
+      "alt": "Image for More Than a Game",
+      "baseFileName": "more-than-a-game-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-productivity-paradox_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/the-productivity-paradox/prompt-1/",
+      "prompt": "An infographic comparing two bar graphs. One graph, labeled 'AVERAGE AI PRODUCTIVITY GAIN,' shows a modest 20-30% increase. The other graph, labeled 'CITIZEN ARCHITECT GAIN,' is a massive, towering bar that goes off the chart, labeled '10,000% (100x).' The visual contrast is extreme and undeniable.",
+      "alt": "Image for The Productivity Paradox",
+      "baseFileName": "the-productivity-paradox-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-100x-paradigm_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/the-100x-paradigm/prompt-1/",
+      "prompt": "An image of a single \"100x Engineer\" standing confidently in front of a vast server farm. Their shadow is cast on the wall behind them, but the shadow is that of 100 distinct engineers, visually representing the exponential multiplication of their productive capacity.",
+      "alt": "Image for The 100x Paradigm",
+      "baseFileName": "the-100x-paradigm-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-revolutionary-leap_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/a-revolutionary-leap/prompt-1/",
+      "prompt": "A massive, towering bar labeled '10,000% (100x)' erupts from a productivity chart, shattering a glass ceiling above it. The visual contrast with smaller, evolutionary gains is extreme and undeniable.",
+      "alt": "Image for A Revolutionary Leap",
+      "baseFileName": "a-revolutionary-leap-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-fork-in-the-road_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/the-fork-in-the-road/prompt-1/",
+      "prompt": "A stark, dramatic image of a fork in a digital road. One path leads to a dark, corporate-dominated city where workers are depicted as small, interchangeable cogs. The other path leads to a bright, solarpunk city where individuals are shown as empowered creators, innovating and building together.",
+      "alt": "Image for The Fork in the Road",
+      "baseFileName": "the-fork-in-the-road-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-citizen-architect-has-arrived_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/",
+      "prompt": "A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure. The person is not coding line-by-line but acting as a conductor, guiding the AI with gestures and high-level commands.",
+      "alt": "Image for The Citizen Architect Has Arrived",
+      "baseFileName": "the-citizen-architect-has-arrived-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_proof-and-theory_prompt-1": {
+      "path": "part-i-the-proof/section-1-the-hook/proof-and-theory/prompt-1/",
+      "prompt": "A final, powerful image for the section. The game `aiascent.game` is shown on a screen. From it, a glowing thread of light emerges and weaves itself into the pages of this very report, which is displayed holographically next to the screen. The two artifacts are inextricably linked.",
+      "alt": "Image for Proof and Theory",
+      "baseFileName": "proof-and-theory-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_section-2-title_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/section-2-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Section 2: The Origin Story - A 120-Day Ascent.' The background is a time-lapse montage of a calendar flipping through 120 days, with code and diagrams rapidly evolving behind the text.",
+      "alt": "Section 2: The Origin Story",
+      "baseFileName": "section-2-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_the-spark-of-creation_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/the-spark-of-creation/prompt-1/",
+      "prompt": "A developer is shown in a dark room, their face illuminated only by the glow of a computer screen showing complex AI interfaces. A calendar on the wall shows 'March 25, 2025.' A lightbulb appears over their head, and a rapid-fire montage of documentation, architectural diagrams, and code generation flashes across the screen, symbolizing the compressed timeline from idea to execution.",
+      "alt": "Image for The Spark of Creation",
+      "baseFileName": "the-spark-of-creation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_from-tutorial-to-universe_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/from-tutorial-to-universe/prompt-1/",
+      "prompt": "A time-lapse sequence. The first panel shows a developer looking at a simple online tutorial for a web game. The middle panels show them in a flurry of activity, collaborating with AI agents, debugging code, and designing complex systems. The final panel shows the fully realized, complex, multiplayer world of `aiascent.game`, a testament to the rapid, AI-native workflow.",
+      "alt": "Image for From Tutorial to Universe",
+      "baseFileName": "from-tutorial-to-universe-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-110-day-sprint_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/the-110-day-sprint/prompt-1/",
+      "prompt": "A stylized montage showing a single developer in a rapid, iterative cycle: speaking to an AI, looking at generated code, testing, debugging, and refining. The background shows a calendar with days flying by, from 1 to 110. The process is depicted as a fluid and dynamic partnership, not a linear slog.",
+      "alt": "Image for The 110-Day Sprint",
+      "baseFileName": "the-110-day-sprint-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-one-person-studio_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/the-one-person-studio/prompt-1/",
+      "prompt": "An infographic-style blueprint of the `aiascent.game` architecture. It shows distinct, interconnected modules for \"Full-Stack Application,\" \"Real-Time Multiplayer Server,\" \"Self-Hosted RAG LLM,\" \"Persistent World State,\" and \"Interconnected Game Mechanics.\" A single human icon is shown at the center, conducting the entire system, illustrating the breadth of roles a single citizen architect can now fulfill.",
+      "alt": "Image for The One-Person Studio: A Technical Breakdown",
+      "baseFileName": "the-one-person-studio-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-paradigm-shift-in-labor_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/a-paradigm-shift-in-labor/prompt-1/",
+      "prompt": "A balance scale. On one side, a large team of specialists (backend dev, frontend dev, DBA, game designer, etc.) is shown. On the other side, a single \"Citizen Architect\" with a glowing AI companion perfectly balances the scale. With one hand, the \"Citizen Architect\" holds a blueprint labeled \"VISION.\" With the other, they conduct an orchestra of AI agents who are forging the complex systems of the game. This symbolizes the massive shift in the economics of creation and skilled labor.",
+      "alt": "Image for A Paradigm Shift in Labor",
+      "baseFileName": "a-paradigm-shift-in-labor-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-100x-data-curator-thesis_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/the-100x-data-curator-thesis/prompt-1/",
+      "prompt": "A single developer stands in front of a vast, glowing waterfall of code. The waterfall is composed of over one million distinct tokens of light. The developer is not typing, but conducting the flow of code with gestures, showing a shift from production to curation and orchestration. The scale of the code dwarfs the individual, highlighting the immense leverage of the AI-native workflow.",
+      "alt": "Image for The 100x Data Curator Thesis",
+      "baseFileName": "the-100x-data-curator-thesis-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-new-creative-partnership_prompt-1": {
+      "path": "part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/",
+      "prompt": "A hyper-realistic, solarpunk cinematic image of a developer, the 'Citizen Architect,' sitting cross-legged on a vast, glowing digital floor, reminiscent of a child playing with blocks. In front of them is a large, disorganized pile of glowing, translucent 'digital legos,' each block representing a different piece of technology (some with subtle code snippets or tech logos visible within). The Architect is thoughtfully placing one of these blocks into a complex, half-finished digital structure—the 'aiascent.game.' In one hand, they hold a faint, holographic blueprint labeled 'VISION.' Assisting them are one or more ethereal, glowing AI companions, who are actively sorting through the disorganized pile, finding the perfect 'lego' piece, and bringing it to the Architect's hand just as they need it. The scene is a seamless, intuitive dance between the human's architectural vision and the AI's tireless, organizational power. The lighting is dramatic, with the primary glow coming from the digital floor and the blocks, creating a futuristic and wondrous atmosphere.",
+      "alt": "Image for The New Creative Partnership",
+      "baseFileName": "the-new-creative-partnership-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_section-3-title_prompt-1": {
+      "path": "part-i-the-proof/section-3-the-how/section-3-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Section 3: The Thesis - How a Single Citizen Architect Achieved 100x Productivity.' The background is a dynamic visualization of a single person's productivity expanding exponentially.",
+      "alt": "Section 3: The How",
+      "baseFileName": "section-3-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_the-100x-multiplier-is-here_prompt-1": {
+      "path": "part-i-the-proof/section-3-the-how/the-100x-multiplier-is-here/prompt-1/",
+      "prompt": "A single figure, the \"Citizen Architect,\" stands on a hill overlooking a traditional, slow-moving digital corporate landscape. They are holding the `aiascent.game` artifact, a glowing crystal. The crystal is emitting light that is beginning to build a new, better world around them. A powerful, massive wave, labeled \"100x PRODUCTIVITY,\" cresting and about to crash over the traditional corporate landscape. The wave is not a distant storm but an immediate, transformative force.",
+      "alt": "Image for The 100x Multiplier is Here",
+      "baseFileName": "the-100x-multiplier-is-here-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_one-million-tokens-of-proof_prompt-1": {
+      "path": "part-i-the-proof/section-3-the-how/one-million-tokens-of-proof/prompt-1/",
+      "prompt": "A single developer stands in front of a vast, glowing waterfall of code. The waterfall is composed of over one million distinct tokens of light. The developer is not typing, but conducting the flow of code with gestures, showing a shift from production to curation and orchestration. The scale of the code dwarfs the individual, highlighting the immense leverage of the AI-native workflow.",
+      "alt": "Image for One Million Tokens of Proof",
+      "baseFileName": "one-million-tokens-of-proof-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 17
+    },
+    "group_the-human-ai-partnership_prompt-1": {
+      "path": "part-i-the-proof/section-3-the-how/the-human-ai-partnership/prompt-1/",
+      "prompt": "A hyper-realistic, solarpunk cinematic image of a developer, the 'Citizen Architect,' sitting cross-legged on a vast, glowing digital floor. In front of them is a large, disorganized pile of glowing, translucent 'digital legos,' each block representing a different piece of technology. The Architect is thoughtfully placing one of these blocks into a complex, half-finished digital structure—the 'aiascent.game.' Assisting them are ethereal, glowing AI companions, who are actively sorting through the pile, finding the perfect 'lego' piece, and bringing it to the Architect's hand. The scene is a seamless, intuitive dance between the human's architectural vision and the AI's tireless, organizational power.",
+      "alt": "Image for The Human-AI Partnership",
+      "baseFileName": "the-human-ai-partnership-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 19
+    },
+    "group_the-first-artifact-of-the-citizen-architect_prompt-1": {
+      "path": "part-i-the-proof/section-3-the-how/the-first-artifact-of-the-citizen-architect/prompt-1/",
+      "prompt": "A single figure, the 'Citizen Architect,' stands on a hill overlooking a traditional, slow-moving digital corporate landscape. They are holding the `aiascent.game` artifact, a glowing crystal. The crystal is emitting light that is beginning to build a new, better world around them. A powerful, massive wave, labeled '100x PRODUCTIVITY,' is cresting and about to crash over the traditional corporate landscape.",
+      "alt": "Image for The First Artifact of the Citizen Architect",
+      "baseFileName": "the-first-artifact-of-the-citizen-architect-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_subsection-vibecoding-title_prompt-1": {
+      "path": "part-i-the-proof/the-vibecoding-to-virtuosity-pathway/subsection-vibecoding-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The 'Vibecoding to Virtuosity' Pathway.' The background shows a path winding from a hazy, dreamlike landscape to a sharp, brilliantly lit solarpunk city, illustrating the journey from intuition to mastery.",
+      "alt": "The 'Vibecoding to Virtuosity' Pathway",
+      "baseFileName": "subsection-vibecoding-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_from-intuition-to-mastery_prompt-1": {
+      "path": "part-i-the-proof/the-vibecoding-to-virtuosity-pathway/from-intuition-to-mastery/prompt-1/",
+      "prompt": "A path winds from a hazy, dreamlike landscape labeled 'VIBECODING' to a sharp, clear, brilliantly lit city labeled 'VIRTUOSITY.' The path is paved with glowing stones representing skills like 'Structured Interaction' and 'Architectural Mindset.' The image illustrates a clear journey of skill development, from raw intuition to structured mastery.",
+      "alt": "Image for The Pathway from Intuition to Mastery",
+      "baseFileName": "from-intuition-to-mastery-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 14
+    },
+    "group_the-intuitive-starting-point_prompt-1": {
+      "path": "part-i-the-proof/the-vibecoding-to-virtuosity-pathway/the-intuitive-starting-point/prompt-1/",
+      "prompt": "A hyper-realistic, cinematic image of a young vibecoder sitting at a computer in a dark room. He is wearing headphones and looking towards the screen. A glowing blue speech bubble next to his head contains the clear, legible text 'Make it cool.' In front of the computer monitors, an AI coding assistant floats. It is composed of a massive swirl of glowing data particles and light beams. The monitors in the background are filled with lines of code. The primary lighting comes from the glow of the AI sphere and the monitors, creating a high-contrast, futuristic atmosphere.",
+      "alt": "Image for Defining 'Vibecoding': The Intuitive Starting Point",
+      "baseFileName": "the-intuitive-starting-point-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-pathway-to-virtuosity_prompt-1": {
+      "path": "part-i-the-proof/the-vibecoding-to-virtuosity-pathway/the-pathway-to-virtuosity/prompt-1/",
+      "prompt": "A three-panel infographic showing the stages of upskilling. Panel 1: A user speaking vague terms to an AI. Panel 2: The user learning to speak in more structured, technical language to the AI. Panel 3: The user thinking in terms of systems and architecture, directing the AI like an orchestra conductor.",
+      "alt": "Image for The Pathway to 'Virtuosity'",
+      "baseFileName": "the-pathway-to-virtuosity-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 6
+    },
+    "group_the-citizen-architect-the-end-state-of-virtuosity_prompt-1": {
+      "path": "part-i-the-proof/the-vibecoding-to-virtuosity-pathway/the-citizen-architect-the-end-state-of-virtuosity/prompt-1/",
+      "prompt": "A single Citizen Architect stands before a holographic interface, orchestrating the construction of a complex digital system with gestures. The traditional distinction between 'coder' and 'non-coder' is shown as a dissolving barrier in the background. The image signals a new era where individual creativity and architectural vision are the most valuable assets.",
+      "alt": "Image for The Citizen Architect: The End State of Virtuosity",
+      "baseFileName": "the-citizen-architect-the-end-state-of-virtuosity-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_part-ii-title_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/part-ii-title/prompt-1/",
+      "prompt": "A powerful title card for 'Part II: The Brittle Foundation - Anatomy of a Self-Inflicted Wound.' The background shows a massive, gleaming AI structure with deep, glowing cracks running through its foundation, which is made of stressed, ghost-like human figures.",
+      "alt": "Part II: The Brittle Foundation",
+      "baseFileName": "part-ii-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_subsection-fissured-workplace-title_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-fissured-workplace-in-ai/subsection-fissured-workplace-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Fissured Workplace in AI.' The background is an architectural blueprint of a corporation that is deliberately fractured into multiple, disconnected layers, visualizing the concept.",
+      "alt": "The Fissured Workplace in AI",
+      "baseFileName": "subsection-fissured-workplace-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 20
+    },
+    "group_the-architecture-of-obfuscation_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-fissured-workplace-in-ai/an-architecture-of-obfuscation/prompt-1/",
+      "prompt": "A corporate blueprint showing a lead firm (like Google) at the top. Below, the structure intentionally fractures into layers of subcontractors, with each layer becoming more fragmented. At the bottom, a vast, shadowy layer of individual workers is almost invisible, their connections to the top deliberately obscured by the complex structure.",
+      "alt": "Image for The Architecture of Obfuscation",
+      "baseFileName": "the-architecture-of-obfuscation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-ghost-workforce_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-fissured-workplace-in-ai/the-ghost-workforce/prompt-1/",
+      "prompt": "A vast, shadowy factory floor filled with transparent, ghost-like figures performing data annotation tasks. They are essential to the machinery of AI, but they are invisible, unacknowledged, and treated as disposable.",
+      "alt": "Image for The Ghost Workforce",
+      "baseFileName": "the-ghost-workforce-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-human-cost_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-fissured-workplace-in-ai/the-human-cost/prompt-1/",
+      "prompt": "A desperate worker in a developing nation stands before two doors. One door is labeled \"40% UNEMPLOYMENT\" and leads to a barren wasteland. The other door is labeled \"EXPLOITATIVE AI GIG (USD)\" and leads to a dark, high-tech factory. The worker, seeing no other choice, reluctantly walks through the second door. The scene highlights how exploitation masquerades as opportunity in the absence of alternatives.",
+      "alt": "Image for The Human Cost",
+      "baseFileName": "the-human-cost-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-race-to-the-bottom_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-fissured-workplace-in-ai/the-race-to-the-bottom/prompt-1/",
+      "prompt": "A diagram showing a lead tech firm applying immense cost pressure downwards onto a prime contractor, who then applies even more pressure onto a subcontractor. The subcontractor is shown being squeezed, forced to compete in a 'race to the bottom' on labor costs.",
+      "alt": "Image for The Race to the Bottom",
+      "baseFileName": "the-race-to-the-bottom-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 20
+    },
+    "group_subsection-cognitive-consequence-title_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-cognitive-consequence/subsection-cognitive-consequence-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Cognitive Consequence: Scarcity vs. Abundance.' The background is a split image of a brain trapped in a dark, narrow tunnel versus a brain in an open, bright landscape of possibility.",
+      "alt": "The Cognitive Consequence",
+      "baseFileName": "subsection-cognitive-consequence-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_the-cognitive-tax_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-cognitive-consequence/the-cognitive-tax/prompt-1/",
+      "prompt": "A human brain is visualized as a high-performance engine. Financial stress is depicted as thick, black sludge being poured into the engine, clogging its components and causing it to sputter and lose power. The sludge represents the 'Cognitive Bandwidth Tax' that degrades the brain's performance.",
+      "alt": "Image for The Cognitive Tax",
+      "baseFileName": "the-cognitive-tax-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_scarcity-vs-abundance-mindset_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-cognitive-consequence/scarcity-vs-abundance-mindset/prompt-1/",
+      "prompt": "A split-panel image. On the left, a brain is trapped in a dark, narrow tunnel labeled 'SCARCITY MINDSET,' focused on survival. On the right, a brain is in an open, bright space labeled 'ABUNDANCE MINDSET,' freely exploring creative and innovative ideas.",
+      "alt": "Image for Scarcity vs. Abundance Mindset",
+      "baseFileName": "scarcity-vs-abundance-mindset-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_an-assault-on-the-mind_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/the-cognitive-consequence/an-assault-on-the-mind/prompt-1/",
+      "prompt": "A human brain is visualized as a vibrant, glowing network. The 'Fissured Workplace' is depicted as a machine that is actively draining this energy, leaving the network dim and weakened. The image clearly communicates that economic precarity is a direct attack on cognitive function.",
+      "alt": "Image for An Assault on the Mind",
+      "baseFileName": "an-assault-on-the-mind-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+    "group_subsection-gigo-title_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/subsection-gigo-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Institutionalized GIGO (Garbage In, Garbage Out).' The background shows a massive industrial machine where the output chute feeds directly back into the input hopper, a perfect, self-perpetuating negative feedback loop.",
+      "alt": "Institutionalized GIGO",
+      "baseFileName": "subsection-gigo-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+    "group_an-architecture-of-self-sabotage_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/an-architecture-of-self-sabotage/prompt-1/",
+      "prompt": "A corporate architect is shown designing the 'Fissured Workplace' blueprint. However, the blueprint is also a circuit diagram that shows the system is designed to short-circuit itself, with the 'Low Wages' component directly causing a 'Cognitive Tax' that leads to 'System Failure.'",
+      "alt": "Image for An Architecture of Self-Sabotage",
+      "baseFileName": "an-architecture-of-self-sabotage-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_institutionalized-gigo_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/institutionalized-gigo/prompt-1/",
+      "prompt": "A massive, industrial machine labeled 'AI Development Pipeline.' The input hopper is being fed with corrupted, glitching data blocks by a stressed, cognitively taxed workforce. The machine's output is a stream of flawed, biased, and unreliable AI models. The scene is labeled 'Institutionalized GIGO: A Structural Feature, Not a Bug.'",
+      "alt": "Image for Institutionalized GIGO",
+      "baseFileName": "institutionalized-gigo-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-data-quality-crisis_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/the-data-quality-crisis/prompt-1/",
+      "prompt": "A corporate executive is shown looking at a dashboard displaying AI data quality metrics. The charts for 'Accuracy' and 'Reliability' are plummeting, with a large, red warning sign flashing over them.",
+      "alt": "Image for The Data Quality Crisis",
+      "baseFileName": "the-data-quality-crisis-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-ripple-effect-of-failure_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/the-ripple-effect-of-failure/prompt-1/",
+      "prompt": "A single, corrupted data point is shown dropping into a pond of information. The ripple effect is massive and destructive, causing failures in critical systems depicted around the pond: a medical diagnostic tool misidentifies a tumor, a financial fraud system misses a transaction, and an autonomous vehicle fails to see a pedestrian. The image illustrates how one small data error can cause a cascade of failures.",
+      "alt": "Image for The Ripple Effect of Failure",
+      "baseFileName": "the-ripple-effect-of-failure-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_courting-disaster_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/courting-disaster/prompt-1/",
+      "prompt": "An image of a tightrope walker, representing society, walking over a chasm. The tightrope is labeled 'AI SYSTEMS.' However, the rope is visibly frayed and unraveling, representing the brittle foundation of low-quality data. The walker is unknowingly heading toward a catastrophic fall.",
+      "alt": "Image for Courting Disaster",
+      "baseFileName": "courting-disaster-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 24
+    },
+    "group_the-negative-feedback-loop_prompt-1": {
+      "path": "part-ii-the-brittle-foundation/institutionalized-gigo/the-negative-feedback-loop/prompt-1/",
+      "prompt": "A diagram of a perfect, self-perpetuating negative feedback loop. 'Labor Exploitation' leads to a 'Cognitively Taxed Workforce,' which leads to 'Low-Quality Data,' which leads to 'Flawed AI Products,' which in turn justifies more 'Labor Exploitation' to cut costs. The cycle is a closed, vicious circle.",
+      "alt": "Image for The Negative Feedback Loop",
+      "baseFileName": "the-negative-feedback-loop-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 13
+    },
+    "group_part-iii-title_prompt-1": {
+      "path": "part-iii-the-pacing-threat/part-iii-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Part III: The Pacing Threat - China's Coherent Counter-Model.' The background shows a stylized Chinese dragon, its scales made of data and its eyes glowing with strategic intent, moving with speed and purpose.",
+      "alt": "Part III: The Pacing Threat",
+      "baseFileName": "part-iii-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 20
+    },
+    "group_subsection-dragons-playbook-title_prompt-1": {
+      "path": "part-iii-the-pacing-threat/the-dragons-playbook/subsection-dragons-playbook-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Dragon's Playbook.' The background shows an ancient, intricate Chinese scroll being unrolled, revealing a detailed, modern strategic blueprint for AI dominance.",
+      "alt": "The Dragon's Playbook",
+      "baseFileName": "subsection-dragons-playbook-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 26
+    },
+    "group_the-dragons-playbook_prompt-1": {
+      "path": "part-iii-the-pacing-threat/the-dragons-playbook/the-dragons-playbook/prompt-1/",
+      "prompt": "A detailed, ancient-looking scroll labeled 'CHINA AI 2030' is unrolled. It shows a meticulous, top-down blueprint connecting state-led industrial policy, social programs, and military modernization into a single, cohesive plan for global AI dominance. The imagery suggests strategic foresight and long-term planning.",
+      "alt": "Image for The Dragon's Playbook",
+      "baseFileName": "the-dragons-playbook-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-methodical-long-term-strategy_prompt-1": {
+      "path": "part-iii-the-pacing-threat/the-dragons-playbook/a-methodical-long-term-strategy/prompt-1/",
+      "prompt": "An image of a master Go player (representing the Chinese state) patiently placing stones on a board. Each stone represents a pillar of their strategy: 'Inland-Sourcing,' 'AI Trainer Professionalization,' and 'Military-Civil Fusion.' The stones form a powerful, interconnected structure.",
+      "alt": "Image for A Methodical, Long-Term Strategy",
+      "baseFileName": "a-methodical-long-term-strategy-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 10
+    },
+    "group_subsection-inland-sourcing-title_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-1-inland-sourcing/subsection-inland-sourcing-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Pillar 1: The 'Inland-Sourcing' Model.' The background shows a map of China with data streams flowing from coastal tech hubs to new data centers in the interior provinces, visualizing the strategy.",
+      "alt": "Pillar 1: Inland Sourcing",
+      "baseFileName": "subsection-inland-sourcing-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 29
+    },
+    "group_pillar-1-the-inland-sourcing-model-forging-a-loyal-data-army_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-1-inland-sourcing/the-inland-sourcing-model/prompt-1/",
+      "prompt": "A map of China. Data flows are shown originating from the wealthy coastal tech hubs and flowing *inward* to new, modern data annotation centers in the interior provinces. These centers are shown lifting entire communities out of poverty while simultaneously building a massive, loyal, and domestic 'data army.' The image contrasts sharply with the typical visual of offshoring.",
+      "alt": "Image for Pillar 1: The 'Inland-Sourcing' Model: Forging a Loyal Data Army",
+      "baseFileName": "pillar-1-the-inland-sourcing-model-forging-a-loyal-data-army-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_data-annotation-as-poverty-alleviation_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-1-inland-sourcing/data-annotation-as-poverty-alleviation/prompt-1/",
+      "prompt": "An image of a rural, mountainous province in China, once depicted as impoverished. Now, it is shown transformed, with a modern, clean 'big data hub' at its center, providing stable, well-paying digital jobs to local workers, particularly women.",
+      "alt": "Image for Data Annotation as Poverty Alleviation",
+      "baseFileName": "data-annotation-as-poverty-alleviation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 21
+    },
+    "group_insulating-the-supply-chain_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-1-inland-sourcing/insulating-the-supply-chain/prompt-1/",
+      "prompt": "A symbolic image of China's AI data supply chain depicted as a fortress, completely contained within the borders of the nation. This fortress is contrasted with the Western model, shown as a sprawling, chaotic, and porous network stretching across the globe, easily infiltrated by shadowy figures.",
+      "alt": "Image for Insulating the Supply Chain",
+      "baseFileName": "insulating-the-supply-chain-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+    "group_subsection-professionalization-title_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-2-national-professionalization-of-ai-trainer/subsection-professionalization-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Pillar 2: National Professionalization of the 'AI Trainer'.' The background shows a Chinese data worker proudly receiving an official government certificate, symbolizing the legitimization of the profession.",
+      "alt": "Pillar 2: National Professionalization of AI Trainer",
+      "baseFileName": "subsection-professionalization-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-5-5-year-head-start_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-2-national-professionalization-of-ai-trainer/a-5-5-year-head-start/prompt-1/",
+      "prompt": "A timeline is shown. In 2020, a large, solid block labeled 'CHINA: 'AI Trainer' National Vocation Established' is placed on the timeline. The timeline extends to the present day, 2025, with the space under the U.S. labeled 'No Federal Category.' A large arrow indicates a '5.5-YEAR HEAD START' for China.",
+      "alt": "Image for Pillar 2: National Professionalization of the 'AI Trainer' as a Strategic Tool",
+      "baseFileName": "a-5-5-year-head-start-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-tool-of-control_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-2-national-professionalization-of-ai-trainer/a-tool-of-control/prompt-1/",
+      "prompt": "A double-edged sword. One side of the sword is labeled 'LEGITIMACY & STABILITY' and is shown providing a stable career path for a worker. The other side of the sword is labeled 'PRECISION LABOR & CONTROL' and is shown imposing strict, sometimes arbitrary accuracy standards on the same worker, illustrating the dual nature of state-led professionalization.",
+      "alt": "Image for A Tool of Control",
+      "baseFileName": "a-tool-of-control-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_precision-labor_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-2-national-professionalization-of-ai-trainer/precision-labor/prompt-1/",
+      "prompt": "An image of a data annotator working under intense pressure, with multiple screens showing impossibly high accuracy targets and performance metrics. The scene conveys a sense of 'precision labor,' where professionalization is used to legitimize and enforce extreme performance standards.",
+      "alt": "Image for Precision Labor",
+      "baseFileName": "precision-labor-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-national-talent-pipeline_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-2-national-professionalization-of-ai-trainer/a-national-talent-pipeline/prompt-1/",
+      "prompt": "A diagram showing a clear, structured talent pipeline in China. It starts with 'Vocational Standards,' leads to 'National Competitions,' and culminates in 'Professional Education & Training Programs' led by tech giants like Alibaba and Baidu. The pipeline is shown producing a steady stream of skilled AI Trainers.",
+      "alt": "Image for A National Talent Pipeline",
+      "baseFileName": "a-national-talent-pipeline-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 20
+    },
+    "group_the-professionalized-ai-trainer_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-2-national-professionalization-of-ai-trainer/the-professionalized-ai-trainer/prompt-1/",
+      "prompt": "A Chinese data worker is shown receiving an official government certificate that reads 'AI TRAINER.' Behind them, a clear, multi-tiered career ladder is visualized, showing a path from entry-level work to senior technician. This is contrasted with a shadowed Western 'ghost worker' who has no such path. The image highlights China's 5.5-year head start in professionalizing this workforce.",
+      "alt": "Image for The Professionalized AI Trainer",
+      "baseFileName": "the-professionalized-ai-trainer-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+    "group_subsection-mcf-title_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/subsection-mcf-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Pillar 3: The Doctrine of Military-Civil Fusion (MCF).' The background shows a commercial Chinese tech building seamlessly merging with a PLA military compound, visualizing the core concept.",
+      "alt": "Pillar 3: The Doctrine of Military-Civil Fusion",
+      "baseFileName": "subsection-mcf-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 19
+    },
+    "group_military-civil-fusion_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/military-civil-fusion/prompt-1/",
+      "prompt": "A symbolic image where a commercial Chinese tech company building, labeled with logos like iFlytek and DeepSeek, is shown seamlessly merging with a PLA military compound. Data and personnel flow freely between the two, illustrating the elimination of barriers between the civilian and military sectors.",
+      "alt": "Image for Pillar 3: The Doctrine of Military-Civil Fusion (MCF)",
+      "baseFileName": "military-civil-fusion-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-weaponized-ecosystem_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/a-weaponized-ecosystem/prompt-1/",
+      "prompt": "A diagram showing China's entire AI ecosystem—tech companies, universities, and the data workforce—being funneled into a single, powerful weapon labeled 'Geopolitical Dominance.' The image clearly shows the whole-of-nation approach in service of a singular strategic objective.",
+      "alt": "Image for A Weaponized Ecosystem",
+      "baseFileName": "a-weaponized-ecosystem-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_fusion-in-practice-deepseek_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/fusion-in-practice-deepseek/prompt-1/",
+      "prompt": "A diagram illustrating the \"MCF Pipeline\" fueling DeepSeek. On the left, inputs flow from sanctioned entities: talent icons wearing graduation caps marked with \"Seven Sons of National Defence\" logos, and server icons labeled \"Inspur\" and \"Sugon.\" These inputs merge into the DeepSeek logo in the center. On the right, outputs flow to specific military endpoints: a PLA Central Theatre Command hospital interface, a People's Armed Police training simulation, and a stylized representation of PLA procurement contracts.",
+      "alt": "Image for Fusion in Practice: DeepSeek",
+      "baseFileName": "fusion-in-practice-deepseek-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_intelligentized-warfare_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/intelligentized-warfare/prompt-1/",
+      "prompt": "A visualization of 'Human-Machine Hybrid Intelligence' (人机混合智能). A PLA commander (the 'Intellect-Warrior') is shown in a futuristic command center, interfaced with an AI 'digital staff.' The human provides strategic direction (Planning), while the AI processes vast data streams and optimizes the execution (Plotting). The commander is directing a coordinated swarm of autonomous drones and unmanned ground vehicles operating on a multi-domain battlefield visualization that includes the 'Brain Battlefield' (cognitive domain).",
+      "alt": "Illustration of a PLA commander utilizing Human-Machine Hybrid Intelligence to direct autonomous systems in a multi-domain conflict.",
+      "baseFileName": "intelligentized-warfare-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 9
+    },
+    "group_mcf-in-practice-the-national-champions_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/mcf-in-practice-the-national-champions/prompt-1/",
+      "prompt": "A montage of logos for iFlytek, SenseTime, and Megvii. Each logo is shown connected by glowing lines to PLA military applications: iFlytek to command and control systems, and SenseTime/Megvii to advanced surveillance and security systems.",
+      "alt": "Image for MCF in Practice: The National Champions",
+      "baseFileName": "mcf-in-practice-the-national-champions-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 9
+    },
+    "group_the-plas-ai-shopping-list_prompt-1": {
+      "path": "part-iii-the-pacing-threat/pillar-3-the-doctrine-of-military-civil-fusion/the-plas-ai-shopping-list/prompt-1/",
+      "prompt": "An infographic showing the PLA's top AI procurement priorities: Autonomous Vehicles (especially drones), ISR (Intelligence, Surveillance, Reconnaissance), Information Warfare, Predictive Maintenance, and Automated Target Recognition. The list highlights a focus on pragmatic, near-term capabilities.",
+      "alt": "Image for The PLA's AI Shopping List",
+      "baseFileName": "the-plas-ai-shopping-list-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 6
+    },
+    "group_subsection-net-assessment-title_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/subsection-net-assessment-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Net Assessment: The Cognitive Capital Gap.' The background shows a widening chasm between a crumbling U.S. foundation and a solid, rising Chinese foundation.",
+      "alt": "Net Assessment: The Cognitive Capital Gap",
+      "baseFileName": "subsection-net-assessment-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 7
+    },
+    "group_the-cognitive-capital-gap_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/the-cognitive-capital-gap/prompt-1/",
+      "prompt": "A widening chasm is depicted. On one side, labeled 'USA,' a small group of precarious 'ghost workers' are shown on a crumbling cliff edge. On the other side, labeled 'CHINA,' a vast, organized army of professional 'AI Trainers' stands on solid, rising ground. The image visually represents the growing gap in the quality, stability, and strategic alignment of the two nations' foundational AI workforces.",
+      "alt": "Image for The Cognitive Capital Gap",
+      "baseFileName": "the-cognitive-capital-gap-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-tale-of-two-systems_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/a-tale-of-two-systems/prompt-1/",
+      "prompt": "A clean, modern infographic table comparing the U.S. and Chinese models across key vectors: Labor Model, Compensation, Training, Data Control, State Involvement, and Strategic Goal. The U.S. side is filled with icons of chaos and precarity, while the Chinese side shows icons of order, stability, and strategic alignment.",
+      "alt": "Image for A Tale of Two Systems",
+      "baseFileName": "a-tale-of-two-systems-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-enduring-vulnerability_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/the-enduring-vulnerability/prompt-1/",
+      "prompt": "A powerful American bald eagle, representing U.S. AI leadership, is shown perched on a branch. However, the branch is revealed to be brittle and cracking, representing the fragile human capital foundation. In the background, a patient Chinese dragon watches, knowing that a system built on a brittle foundation cannot be sustained.",
+      "alt": "Image for The Enduring Vulnerability",
+      "baseFileName": "the-enduring-vulnerability-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_an-unsustainable-superpower_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/an-unsustainable-superpower/prompt-1/",
+      "prompt": "A massive, gleaming AI superpower structure is shown, but it is built on a foundation of sand labeled 'Brittle Foundation.' The sand is beginning to erode, and the entire structure is at risk of collapse.",
+      "alt": "Image for An Unsustainable Superpower",
+      "baseFileName": "an-unsustainable-superpower-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 19
+    },
+    "group_net-assessment-us-vs-china-ai-human-capital-models_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/net-assessment-us-vs-china-ai-human-capital-models/prompt-1/",
+      "prompt": "A clean, professional infographic table directly comparing the U.S. and Chinese models across key vectors: Labor Model, Compensation, Training, Data Control, State Involvement, and Strategic Goal. The table visually summarizes China's advantage in human infrastructure.",
+      "alt": "Image for Net Assessment: U.S. vs. China AI Human Capital Models",
+      "baseFileName": "net-assessment-us-vs-china-ai-human-capital-models-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 9
+    },
+    "group_short-term-profit-vs-long-term-power_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/short-term-profit-vs-long-term-power/prompt-1/",
+      "prompt": "A split-panel image. On the U.S. side, a corporate executive is shown celebrating short-term profits while the foundation of their AI system, made of precarious workers, crumbles. On the Chinese side, a state planner is shown patiently building a solid, stable foundation of professionalized workers, aiming for long-term national power.",
+      "alt": "Image for Short-Term Profit vs. Long-Term Power",
+      "baseFileName": "short-term-profit-vs-long-term-power-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 10
+    },
+    "group_the-tipping-point_prompt-1": {
+      "path": "part-iii-the-pacing-threat/net-assessment-the-cognitive-capital-gap/the-tipping-point/prompt-1/",
+      "prompt": "A set of scales. On one side, a small, intricate, and highly advanced AI chip labeled 'U.S. FRONTIER R&D' is slightly weighing it down. On the other side, a massive, solid foundation made of human figures labeled 'CHINA'S HUMAN INFRASTRUCTURE' is slowly but surely tipping the scales in its favor. The image shows that foundational strength will eventually outweigh a narrow technological lead.",
+      "alt": "Image for The Tipping Point",
+      "baseFileName": "the-tipping-point-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_part-iv-title_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/part-iv-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Part IV: The Unseen Battlefield - The Cognitive Security Imperative.' The background is a dark, digital landscape where the conflict is not fought with tanks and planes, but with streams of data and information.",
+      "alt": "Part IV: The Unseen Battlefield",
+      "baseFileName": "part-iv-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 13
+    },
+    "group_subsection-human-vector-title_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-human-vector/subsection-human-vector-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Human Vector.' The background is a network diagram of an AI system with a single, glowing red, unlocked door labeled 'HUMAN VECTOR,' highlighting it as the primary vulnerability.",
+      "alt": "The Human Vector",
+      "baseFileName": "subsection-human-vector-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+    "group_the-human-vector_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-human-vector/the-human-vector/prompt-1/",
+      "prompt": "A fortress representing the 'American AI Ecosystem.' Its walls are high and made of secure hardware. However, a massive, unguarded gate labeled 'GIG ECONOMY WORKFORCE' stands wide open. A shadowy figure is shown walking through the gate, carrying a corrupted data chip, completely bypassing the fortified walls.",
+      "alt": "Image for The Human Vector: America's Open Backdoor",
+      "baseFileName": "the-human-vector-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-data-poisoning-threat_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-human-vector/the-data-poisoning-threat/prompt-1/",
+      "prompt": "An adversary, represented by a shadowy figure, is shown recruiting a financially desperate data annotator. For a small payment, the annotator subtly alters data labels in a critical military dataset, an act of 'data poisoning' that compromises the entire AI model from within.",
+      "alt": "Image for The Data Poisoning Threat",
+      "baseFileName": "the-data-poisoning-threat-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-clean-label-attack_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-human-vector/clean-label-attack/prompt-1/",
+      "prompt": "A human reviewer is shown inspecting a dataset. They are giving a green checkmark to a 'clean-label' poisoned data point, which looks perfectly normal on the surface but contains a hidden, malicious payload represented by a subtle, glowing red virus icon.",
+      "alt": "Image for The Clean-Label Attack",
+      "baseFileName": "the-clean-label-attack-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_a-security-nightmare_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-human-vector/a-security-nightmare/prompt-1/",
+      "prompt": "An infographic showing alarming statistics about the gig economy workforce: '87% Retain Access to Sensitive Data,' '76% Have Been Hacked.' These numbers are displayed over a background of anonymous workers on laptops, highlighting the massive, uncontrolled security risk.",
+      "alt": "Image for A Security Nightmare",
+      "baseFileName": "a-security-nightmare-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+    "group_the-human-in-the-loophole_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-human-vector/the-human-in-the-loophole/prompt-1/",
+      "prompt": "The most significant near-term risk is not that AI will spontaneously become malicious, but that a human adversary will deliberately *teach* our AI malicious behaviors by exploiting the very people we task with training them.",
+      "alt": "Image for The Human in the Loophole",
+      "baseFileName": "the-human-in-the-loophole-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 4
+    },
+    "group_subsection-cogsec-title_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/defining-cogsec/subsection-cogsec-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Defining COGSEC.' The background is a futuristic command center where analysts are defending a nation's 'cognitive ecosystem' from manipulation.",
+      "alt": "Defining COGSEC",
+      "baseFileName": "subsection-cogsec-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 17
+    },
+    "group_defining-cogsec_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/defining-cogsec/defining-cogsec/prompt-1/",
+      "prompt": "A diagram showing a new domain of national security. Traditional cybersecurity is shown as a shield protecting hardware and networks. A new, larger shield labeled 'COGSEC' is shown protecting the entire socio-technical ecosystem, including the human mind, from manipulation and disruption.",
+      "alt": "Image for Defining COGSEC: Protecting the Human Mind",
+      "baseFileName": "defining-cogsec-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-two-dimensions-of-cogsec_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/defining-cogsec/the-two-dimensions-of-cogsec/prompt-1/",
+      "prompt": "An infographic with two interconnected parts. Part 1 shows a shield protecting the 'Human Cognitive Supply Chain'—the health and integrity of the data workers. Part 2 shows a shield protecting an AI brain from corrupted data, labeled 'Protecting AI from Cognitive Manipulation.' An arrow shows that protecting the humans is the foundation for protecting the AI.",
+      "alt": "Image for The Two Dimensions of COGSEC",
+      "baseFileName": "the-two-dimensions-of-cogsec-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-true-near-term-risk_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/defining-cogsec/the-true-near-term-risk/prompt-1/",
+      "prompt": "A split image. On one side, a sci-fi robot with glowing red eyes represents the 'Hypothetical AI Threat.' On the other side, a realistic image of a human adversary is shown easily manipulating the AI's training data by exploiting a human worker, representing the 'Real-World COGSEC Threat.' The real-world threat is shown as larger and more immediate.",
+      "alt": "Image for The True Near-Term Risk",
+      "baseFileName": "the-true-near-term-risk-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_weaponized-human-exploitation_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/defining-cogsec/weaponized-human-exploitation/prompt-1/",
+      "prompt": "A military weapon system is shown with its AI brain exposed. A shadowy hand is shown 'training' the brain with corrupted data, teaching it malicious behaviors. The image highlights the immediate threat of a human adversary deliberately weaponizing our AI systems by exploiting the people who train them.",
+      "alt": "Image for Weaponized Human Exploitation",
+      "baseFileName": "weaponized-human-exploitation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_subsection-strategic-boomerang-title_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-strategic-boomerang/subsection-strategic-boomerang-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Strategic Boomerang: The Great Cognitive Capital Transfer.' The background shows a boomerang, labeled 'COGNITIVE CAPITAL,' being thrown from the U.S. and returning as a competitive threat.",
+      "alt": "The Strategic Boomerang",
+      "baseFileName": "subsection-strategic-boomerang-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_the-strategic-boomerang_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-strategic-boomerang/the-strategic-boomerang/prompt-1/",
+      "prompt": "A boomerang is shown in flight. On its forward arc, it is labeled 'OFFSHORED LABOR.' On its return arc, it has transformed into a powerful, high-tech weapon labeled 'COMPETITOR'S SKILLED WORKFORCE,' heading directly back toward the sender.",
+      "alt": "Image for The Strategic Boomerang",
+      "baseFileName": "the-strategic-boomerang-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 11
+    },
+    "group_historys-warning-apple-in-china_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-strategic-boomerang/a-cautionary-tale-apple-in-china/prompt-1/",
+      "prompt": "A historical diptych. The top panel shows an Apple executive in the 2000s handing over manufacturing blueprints to a Chinese factory owner. The bottom panel, set in the present day, shows a powerful, futuristic Huawei phone rolling off the same advanced assembly line, now a formidable competitor to the iPhone.",
+      "alt": "Image for History's Warning: Apple in China",
+      "baseFileName": "historys-warning-apple-in-china-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 12
+    },
+    "group_the-great-cognitive-capital-transfer_prompt-1": {
+      "path": "part-iv-the-unseen-battlefield/the-strategic-boomerang/the-great-cognitive-capital-transfer/prompt-1/",
+      "prompt": "A symbolic image of a massive brain, representing U.S. 'Cognitive Capital,' being drained. The cognitive energy is flowing through a pipeline labeled 'OFFSHORING' to another nation, which is using it to build its own, stronger cognitive foundation.",
+      "alt": "Image for The Great Cognitive Capital Transfer",
+      "baseFileName": "the-great-cognitive-capital-transfer-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_part-v-title_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/part-v-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Part V: The American Counter-Strategy - From Ghost Worker to Citizen Architect.' The background is a hopeful, solarpunk image of a diverse group of Americans collaboratively building a better future with AI.",
+      "alt": "Part V: The American Counter-Strategy",
+      "baseFileName": "part-v-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 9
+    },
+    "group_subsection-hidden-curriculum-title_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-hidden-curriculum/subsection-hidden-curriculum-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Hidden Curriculum: The Rise of the 100x Data Curator.' The background shows a data worker with a glowing skill tree growing above their head, visualizing the unseen learning process.",
+      "alt": "The Hidden Curriculum",
+      "baseFileName": "subsection-hidden-curriculum-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 11
+    },
+    "group_the-hidden-curriculum_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-hidden-curriculum/the-hidden-curriculum/prompt-1/",
+      "prompt": "A data worker is shown labeling a simple dataset. As they work, a 'hidden curriculum' is visualized as glowing lines of light flowing from the task into their brain, unlocking new skills in pattern recognition, logical consistency, bias detection, and systems thinking. The image reveals the unseen upskilling inherent in data work.",
+      "alt": "Image for The Hidden Curriculum",
+      "baseFileName": "the-hidden-curriculum-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_the-100x-data-curator_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-hidden-curriculum/the-100x-data-curator/prompt-1/",
+      "prompt": "A single, professional '100x Data Curator' is shown using AI-powered tools to validate, clean, and secure a massive dataset that dwarfs them in size. Their impact is visualized as being 100 times greater than a large team of manual laborers working in the background. They are an architect of knowledge.",
+      "alt": "Image for The 100x Data Curator",
+      "baseFileName": "the-100x-data-curator-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 13
+    },
+    "group_the-citizen-architect-pathway_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-hidden-curriculum/the-citizen-architect-pathway/prompt-1/",
+      "prompt": "A clear, four-stage roadmap is shown. Stage 1: 'Vibecoder/Annotator' (Intuitive). Stage 2: 'AI Apprentice/Data Technician' (Validational). Stage 3: 'Journeyman Developer/Data Steward' (Integrative). Stage 4: 'Citizen Architect/100x Data Curator' (Architectural & Strategic). This visualizes the concrete developmental journey from novice to high-impact professional.",
+      "alt": "Image for The Citizen Architect Pathway",
+      "baseFileName": "the-citizen-architect-pathway-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_a-valuable-career-path_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-hidden-curriculum/a-valuable-career-path/prompt-1/",
+      "prompt": "A final image showing a data worker at a crossroads. One path leads to a dead-end job labeled 'Ghost Work.' The other path, labeled 'Data Curator,' is a bright, ascending road leading to a prosperous and fulfilling career.",
+      "alt": "Image for A Valuable Career Path",
+      "baseFileName": "a-valuable-career-path-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 14
+    },
+    "group_subsection-human-firewall-title_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-human-firewall/subsection-human-firewall-title/prompt-1/",
+      "prompt": "A cinematic title card for 'A New Professional Cadre - The Human Firewall.' The background shows a powerful, symbolic image of a diverse group of highly skilled, professional data curators standing together, forming a literal human firewall.",
+      "alt": "The Human Firewall",
+      "baseFileName": "subsection-human-firewall-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_the-human-firewall_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-human-firewall/the-human-firewall/prompt-1/",
+      "prompt": "A symbolic image of a nation's most sensitive data, depicted as a glowing, secure vault. Surrounding the vault is not a technical firewall, but a 'human firewall'—a dedicated, highly skilled, and security-cleared corps of professionals who are actively curating and protecting the data from insider threats and foreign exploitation.",
+      "alt": "Image for The Human Firewall",
+      "baseFileName": "the-human-firewall-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 15
+    },
+    "group_subsection-nsac-title_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/nsac/subsection-nsac-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The National Security Annotation Corps (NSAC).' The background shows a professional, government-style logo for the NSAC, featuring an eagle, a shield, and a strand of digital data.",
+      "alt": "The National Security Annotation Corps (NSAC)",
+      "baseFileName": "subsection-nsac-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 20
+    },
+    "group_nsac_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/nsac/nsac/prompt-1/",
+      "prompt": "A diverse group of U.S. citizens, including military spouses, are shown working in a secure, high-tech government facility. They are meticulously curating sensitive data, their focus and professionalism evident. The scene evokes a sense of mission, security, and national service.",
+      "alt": "Image for The National Security Annotation Corps (NSAC)",
+      "baseFileName": "nsac-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 14
+    },
+    "group_nsac-structure-and-operations_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/nsac/nsac-structure-and-operations/prompt-1/",
+      "prompt": "An organizational chart for the NSAC, showing it as a joint component under the ODNI or DoD's CDAO. The chart details its operational characteristics: security-cleared U.S. citizen personnel, secure facilities, and targeted recruitment from underutilized domestic talent pools like military spouses.",
+      "alt": "Image for NSAC: Structure and Operations",
+      "baseFileName": "nsac-structure-and-operations-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 18
+    },
+    "group_subsection-dcia-title_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-dcia/subsection-dcia-title/prompt-1/",
+      "prompt": "A cinematic title card for 'The Data Curator Intelligence Analyst (DCIA).' The background is a symbolic portrait of the DCIA, a hybrid professional merging the skills of data curation and intelligence analysis.",
+      "alt": "The Data Curator Intelligence Analyst (DCIA)",
+      "baseFileName": "subsection-dcia-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 16
+    },
+  "group_from-prompt-to-context-engineering_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-dcia/from-prompt-to-context-engineering/prompt-1/",
+    "prompt": "A hyper-realistic, cinematic image of a holographic comparison table displayed in a bright, solarpunk-style command center. The table clearly compares 'Prompt Engineering (The Art of Conversation)' and 'Context Engineering (The Science of Architecture)'. The columns detail 'Core Function', 'Mindset', 'Scope', 'Scalability', 'Key Skills', and 'Primary Tools'. The environment is clean, featuring integrated greenery and advanced interfaces. The lighting is optimistic and clear. The central message conveyed is \"From Voodoo to Architecture\".",
+    "alt": "The End of Prompting, The Rise of Context Engineering",
+    "baseFileName": "from-prompt-to-context-engineering-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 18
+  },
+  "group_the-architecture-of-context_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-dcia/the-architecture-of-context/prompt-1/",
+    "prompt": "A powerful, cinematic infographic visualized in a high-tech solarpunk environment. Three massive, glowing pillars support a platform labeled 'Governable AI Worldview'. The pillars are clearly labeled: '1. Grounding (RAG)', '2. Structuring (Vector DBs & Knowledge Graphs)', and '3. Governing (System Prompts & Tooling)'. A DCIA stands confidently in the foreground, observing the structure. The lighting is dramatic and futuristic. The message conveyed is \"The Pillars of AI Cognition\".",
+    "alt": "The Architecture of Context: The DCIA's Toolkit",
+    "baseFileName": "the-architecture-of-context-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 20
+  },
+  "group_the-dcia-skill-matrix_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-dcia/the-dcia-skill-matrix/prompt-1/",
+    "prompt": "A powerful, cinematic portrait of a Data Curator Intelligence Analyst (DCIA). The figure is stylized to visually represent the convergence of three archetypes. One aspect of their attire and interface suggests the structured order of the '100x Data Curator'. Another aspect suggests the sharp, analytical focus of the 'Intelligence Analyst' (e.g., adversarial visualization). A third aspect suggests the creative energy of the 'Virtuoso Vibecoder' (e.g., dynamic code visualization). The figure stands confidently in a solarpunk command center. The message conveyed is \"The Hybrid Mind\".",
+    "alt": "The DCIA Skill Matrix: A Hybrid Professional",
+    "baseFileName": "the-dcia-skill-matrix-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 19
+  },
+  "group_the-professionalized-human-firewall_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-dcia/the-professionalized-human-firewall/prompt-1/",
+    "prompt": "A powerful, cinematic image of a DCIA standing as a 'Guardian of the Ground Truth'. They are positioned in front of a massive, glowing vault of pure data labeled 'GROUND TRUTH'. The DCIA is actively deploying a shield labeled 'COGSEC' which is deflecting incoming attacks visualized as corrupted, red data streams (representing 'Data Poisoning' and 'Reality Hacking'). The environment is a secure, futuristic data center with solarpunk aesthetics. The mood is vigilant and resolute. The message conveyed is \"Securing the Cognitive Domain\".",
+    "alt": "The Professionalized Human Firewall: Securing the Cognitive Domain",
+    "baseFileName": "the-professionalized-human-firewall-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 16
+  },
+  "group_the-strategic-imperative-quality-as-advantage_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-dcia/the-strategic-imperative-quality-as-advantage/prompt-1/",
+    "prompt": "A cinematic visualization of the transformation from GIGO to QIVO. On the left, a machine labeled 'Traditional AI Pipeline' is consuming 'Garbage' data and producing flawed output. On the right, a machine labeled 'DCIA-Secured Pipeline' is consuming 'Quality' data, curated by a professional, and producing 'Virtuosity' (visualized as brilliant, complex innovation). The aesthetic is bright, optimistic solarpunk. The message conveyed is \"Quality In, Virtuosity Out\".",
+    "alt": "The Strategic Imperative: Quality as the Ultimate Advantage",
+    "baseFileName": "the-strategic-imperative-quality-as-advantage-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 12
+  },
+  "group_subsection-vibecoding-virtuosity-title_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/subsection-vibecoding-virtuosity-title/prompt-1/",
+    "prompt": "The V2V pathway is a structured pedagogical model, grounded in Cognitive Apprenticeship, designed to transform intuitive AI interaction ('vibecoding') into the architectural mastery required by the DCIA.",
+    "alt": "The 'Vibecoding to Virtuosity' Pathway",
+    "baseFileName": "vibecoding-virtuosity-title-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 5
+  },
+  "group_the-pedagogical-engine-cam_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/",
+    "prompt": "A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is \"The Hidden Curriculum Revealed\".",
+    "alt": "The Pedagogical Engine: Cognitive Apprenticeship in the AI Era",
+    "baseFileName": "the-pedagogical-engine-cam-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 16
+  },
+  "group_v2v-stages-1-and-2_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/v2v-stages-1-and-2/prompt-1/",
+    "prompt": "A cinematic split panel image in a solarpunk environment. Left Panel: 'Stage 1: Cognitive Annotator'. A learner is meticulously analyzing AI output, highlighting flaws and biases with a critical eye. They are deconstructing the 'vibe'. Right Panel: 'Stage 2: Adaptive Toolmaker'. The same learner is now actively building a simple automation script to solve a workflow problem, using AI to generate components. The transition shows the shift from analysis to creation. The message conveyed is \"Analyze, Then Build\".",
+    "alt": "Stages 1 & 2: Building the Foundation (Annotator & Toolmaker)",
+    "baseFileName": "v2v-stages-1-and-2-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 12
+  },
+  "group_v2v-stages-3-and-4_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/v2v-stages-3-and-4/prompt-1/",
+    "prompt": "A cinematic split panel image showcasing the advanced stages of V2V. Left Panel: 'Stage 3: Recursive Learner'. A learner is shown analyzing their own cognitive process (metacognition) and using AI as a 'Meta-Tool' to build a personalized 'Learning Accelerator'. Right Panel: 'Stage 4: Virtuoso'. The same learner, now an expert, is effortlessly orchestrating a complex system, with the AI acting as a seamless 'Cognitive Exoskeleton'. The environment is a high-level solarpunk command center. The message conveyed is \"Learn, Then Master\".",
+    "alt": "Stages 3 & 4: Achieving Mastery (Recursive Learner & Virtuoso)",
+    "baseFileName": "v2v-stages-3-and-4-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 16
+  },
+  "group_the-v2v-framework-consolidated_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-v2v-framework-consolidated/prompt-1/",
+    "prompt": "A hyper-realistic, cinematic image of the consolidated 'Vibecoding to Virtuosity Framework' table displayed on a large holographic interface in a solarpunk academy. The table is clear and legible, detailing the 'Learner's Role', 'Core Activities', 'Key Cognitive Skills Developed', and 'Function of AI' for all four stages. The environment is optimistic and educational. The message conveyed is \"The Path to Virtuosity\".",
+    "alt": "The 'Vibecoding to Virtuosity' Framework",
+    "baseFileName": "the-v2v-framework-consolidated-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 17
+  },
+  "group_the-accelerator-deliberate-practice_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-accelerator-deliberate-practice/prompt-1/",
+    "prompt": "A hyper-realistic, cinematic image of a learner engaged in 'Deliberate Practice'. They are intensely focused, working on a task clearly at the edge of their ability. An 'AI Coach' is visualized as a supportive overlay, highlighting areas for improvement and providing targeted challenges. The learner's concentration and effort are palpable. The setting is a futuristic training environment. The message conveyed is \"The Edge of Competence\".",
+    "alt": "The Accelerator: Deliberate Practice and the AI Coach",
+    "baseFileName": "the-accelerator-deliberate-practice-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 15
+  },
+  "group_the-apex-skill-on-the-fly-tooling_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-apex-skill-on-the-fly-tooling/prompt-1/",
+    "prompt": "A hyper-realistic, cinematic image visualizing the AI as a 'Foundry'. A Virtuoso DCIA is shown using the AI not as a conversational partner, but as a generative medium. They are rapidly forging a glowing, bespoke digital tool (e.g., a validation script) from raw data streams, shaping it with gestures and high-level commands. The process looks like advanced, high-tech craftsmanship. The setting is a solarpunk workshop. The message conveyed is \"The Foundry of Thought\".",
+    "alt": "The Apex Skill: On-the-Fly Tooling",
+    "baseFileName": "the-apex-skill-on-the-fly-tooling-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 28
+  },
+  "group_subsection-mass-empowerment-title_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/mass-empowerment-uba/subsection-mass-empowerment-title/prompt-1/",
+    "prompt": "A powerful, cinematic split image contrasting two futures. Left Panel: 'UBI - Dependency'. A passive citizen sits in a slightly dystopian, sterile environment, receiving a cash transfer, but their surroundings are stagnant and uninspired. Right Panel: 'UBA - Agency'. An empowered Citizen Architect is actively building a community project in a vibrant solarpunk environment, using AI tools provided by UBA. The contrast highlights the difference between consumption and production. The message conveyed is \"Agency, Not Dependency\".",
+    "alt": "The UBI Fallacy and the UBA Alternative: Agency vs. Dependency",
+    "baseFileName": "mass-empowerment-uba-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 19
+  },
+  "group_the-ubi-fallacy-the-uba-alternative_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/mass-empowerment-uba/the-ubi-fallacy-the-uba-alternative/prompt-1/",
+    "prompt": "A powerful, cinematic split image contrasting two futures. Left Panel: 'UBI - Dependency'. A passive citizen sits in a slightly dystopian, sterile environment, receiving a cash transfer, but their surroundings are stagnant and uninspired. Right Panel: 'UBA - Agency'. An empowered Citizen Architect is actively building a community project in a vibrant solarpunk environment, using AI tools provided by UBA. The contrast highlights the difference between consumption and production. The message conveyed is \"Agency, Not Dependency\".",
+    "alt": "The UBI Fallacy and the UBA Alternative: Agency vs. Dependency",
+    "baseFileName": "the-ubi-fallacy-the-uba-alternative-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 8
+  },
+  "group_the-economics-of-empowerment_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/mass-empowerment-uba/the-economics-of-empowerment/prompt-1/",
+    "prompt": "A hyper-realistic, cinematic infographic chart showing the 'Appreciating AI Credit'. A line representing 'UBI Cash Purchasing Power' is shown steadily declining due to inflation. A line representing 'UBA Credit Productive Power' is shown skyrocketing exponentially due to AI cost deflation (Wright's Law). The visual contrast is extreme and undeniable. The background is a bright solarpunk cityscape. The message conveyed is \"The Power of Deflation\".",
+    "alt": "The Economics of Empowerment: The Appreciating AI Credit",
+    "baseFileName": "the-economics-of-empowerment-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 10
+  },
+  "group_a-proven-blueprint_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/mass-empowerment-uba/a-proven-blueprint/prompt-1/",
+    "prompt": "A powerful cinematic diptych (two-panel image). Left Panel: A historical, sepia-toned photograph of the Rural Electrification Act (REA) of 1936, showing power lines being extended to a rural farm. Right Panel: A vibrant, futuristic solarpunk image showing fiber-optic cables of light (representing AI compute) being extended to a diverse group of American citizens in a modern rural setting. The parallel is clear and inspiring. The message conveyed is \"Electrifying the Future\".",
+    "alt": "A Proven Blueprint: The 21st Century Rural Electrification Act",
+    "baseFileName": "a-proven-blueprint-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 17
+  },
+  "group_implementation-the-cooperative-model_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/mass-empowerment-uba/implementation-the-cooperative-model/prompt-1/",
+    "prompt": "A cinematic infographic visualizing the 'Two-Tier Governance Structure'. A diagram shows the relationship between 'Community Data Trusts (CDTs)' (focused on Ethics and Stewardship) and 'Tech Worker Cooperatives (TWCs)' (focused on Operations and Infrastructure). Arrows indicate the flow of oversight and execution. The visualization is clean, futuristic, and emphasizes decentralized accountability. The message conveyed is \"Ethics and Execution\".",
+    "alt": "Implementation: The Cooperative Model and Permissionless Innovation",
+    "baseFileName": "implementation-the-cooperative-model-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 15
+  },
+  "group_the-strategic-choice_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/mass-empowerment-uba/the-strategic-choice/prompt-1/",
+    "prompt": "A stark, cinematic split image contrasting two AI models. Left Panel: 'China's Model'. A massive, centralized, monolithic AI structure controlled by the state, emphasizing order and control. The aesthetic is authoritarian and rigid. Right Panel: 'The American Model (UBA)'. A vast, decentralized network of interconnected nodes, representing millions of empowered citizens, emphasizing dynamism and freedom. The aesthetic is vibrant solarpunk. The message conveyed is \"Control vs Empowerment\".",
+    "alt": "The Strategic Choice: A Democratic Alternative to Digital Authoritarianism",
+    "baseFileName": "the-strategic-choice-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 13
+  },
+  "group_subsection-new-collar-compact-title_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/subsection-new-collar-compact-title/prompt-1/",
+    "prompt": "A massive, cinematic visualization of the 'Billion-Person Workforce'. A vast sea of diverse individuals is shown, representing the hidden workforce powering the multi-trillion-dollar AI economy. The scale is immense, highlighting the magnitude of the opportunity and the challenge. The lighting is dramatic, suggesting a turning point. The message conveyed is \"The Largest Shift in Labor\".",
+    "alt": "The Trillion-Dollar, Billion-Worker Opportunity",
+    "baseFileName": "subsection-new-collar-compact-title-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 17
+  },
+  "group_the-trillion-dollar-billion-worker-opportunity_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/the-trillion-dollar-billion-worker-opportunity/prompt-1/",
+    "prompt": "A massive, cinematic visualization of the 'Billion-Person Workforce'. A vast sea of diverse individuals is shown, representing the hidden workforce powering the multi-trillion-dollar AI economy. The scale is immense, highlighting the magnitude of the opportunity and the challenge. The lighting is dramatic, suggesting a turning point. The message conveyed is \"The Largest Shift in Labor\".",
+    "alt": "The Trillion-Dollar, Billion-Worker Opportunity",
+    "baseFileName": "the-trillion-dollar-billion-worker-opportunity-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 12
+  },
+  "group_a-blueprint-from-history_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/a-blueprint-from-history/prompt-1/",
+    "prompt": "A cinematic diptych (two-panel image). Left Panel: A historical photograph of veterans utilizing the G.I. Bill for education after WWII. Right Panel: A futuristic solarpunk image of modern citizens utilizing a 'New Collar Compact' grant for AI training. The parallel highlights the proven blueprint for navigating technological transition. The message conveyed is \"The Blueprint for Renewal\".",
+    "alt": "A Blueprint from History: The G.I. Bill for the AI Era",
+    "baseFileName": "a-blueprint-from-history-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 9
+  },
+  "group_pillar-1-national-certifications_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/pillar-1-national-certifications/prompt-1/",
+    "prompt": "A cinematic visualization of the 'National Competency Model'. A clear, structured career ladder is shown holographically, with distinct tiers labeled 'Associate', 'Professional', and 'Master/Specialist'. A Citizen Architect is shown ascending this ladder. The aesthetic is futuristic and aspirational solarpunk. The message conveyed is \"The Ladder of Opportunity\".",
+    "alt": "Pillar 1: National Certification and Skills Infrastructure",
+    "baseFileName": "pillar-1-national-certifications-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 11
+  },
+  "group_pillar-2-the-citizen-architect-grant_prompt-1": {
+    "path": "part-v-the-american-counter-strategy/the-new-collar-compact/pillar-2-the-citizen-architect-grant/prompt-1/",
+    "prompt": "A stylized, cinematic visualization of the 'Citizen Architect Grant' certificate. It is presented as an official, prestigious document, modeled on the G.I. Bill, symbolizing the national commitment to the individual's future. The design is elegant and futuristic, with solarpunk motifs. The message conveyed is \"The Key to the Future\".",
+    "alt": "Pillar 2: The 'Citizen Architect' Grant",
+    "baseFileName": "pillar-2-the-citizen-architect-grant-p1-img-",
+    "fileExtension": ".webp",
+    "imageCount": 13
+  },
+    "group_a-uniquely-american-solution_prompt-1": {
+      "path": "part-v-the-american-counter-strategy/the-new-collar-compact/a-uniquely-american-solution/prompt-1/",
+      "prompt": "A symbolic image showing three paths. The left path, 'STATE CONTROL,' leads to a rigid, authoritarian structure. The right path, 'UNFETTERED MARKETS,' leads to a chaotic, exploitative environment. The center path, 'THE NEW COLLAR COMPACT,' is a balanced, well-lit road that leverages strategic public investment to empower private citizens and secure the public good, leading to a prosperous, solarpunk future.",
+      "alt": "Image for A Uniquely American Solution",
+      "baseFileName": "a-uniquely-american-solution-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 10
+    },
+    "group_conclusion-title_prompt-1": {
+      "path": "conclusion-rise-to-meet-the-machine/conclusion-title/prompt-1/",
+      "prompt": "A cinematic title card for 'Conclusion: Rise to Meet the Machine.' The background shows a human hand reaching out to shake a robotic hand, symbolizing a new partnership between humanity and AI.",
+      "alt": "Conclusion: Rise to Meet the Machine",
+      "baseFileName": "conclusion-title-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "group_the-choice_prompt-1": {
+      "path": "conclusion-rise-to-meet-the-machine/the-choice/prompt-1/",
+      "prompt": "A stark choice is presented. On one side, a worker is depicted as a disposable, invisible cog in a massive machine. On the other, the same worker is shown as an empowered 'Citizen Architect,' actively building and shaping their world. The choice is between being a ghost or an architect.",
+      "alt": "Image for The Choice",
+      "baseFileName": "the-choice-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 14
+    },
+    "group_the-intersection-of-progress_prompt-1": {
+      "path": "conclusion-rise-to-meet-the-machine/the-intersection-of-progress/prompt-1/",
+      "prompt": "A line graph. A descending line represents the exponential improvement of AI. An ascending line represents a human's technological knowledge. The point where they intersect is a brilliant flash of light labeled 'THE 100x MOMENT,' where an individual becomes a force multiplier.",
+      "alt": "Image for The Intersection of Progress",
+      "baseFileName": "the-intersection-of-progress-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 14
+    },
+    "group_a-national-project-of-ascent_prompt-1": {
+      "path": "conclusion-rise-to-meet-the-machine/a-national-project-of-ascent/prompt-1/",
+      "prompt": "A map of the United States with millions of ascending lines, each representing a citizen raising their skill level. The entire nation is shown lighting up as these lines intersect with the descending line of AI capability, symbolizing a national project to accelerate this moment of transformation for the entire population.",
+      "alt": "Image for A National Project of Ascent",
+      "baseFileName": "a-national-project-of-ascent-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 13
+    },
+    "group_a-call-to-action-start-your-ascent_prompt-1": {
+      "path": "conclusion-rise-to-meet-the-machine/a-call-to-action-start-your-ascent/prompt-1/",
+      "prompt": "A final, inspiring image. The gamer from the beginning is shown stepping away from their screen. The game world of `aiascent.game` is now projected into their real-world workshop, where they are using the skills they learned to build a real community project. The image is a direct call to action, showing that the game is a training ground for building a better reality.",
+      "alt": "Image for A Call to Action: Start Your Ascent",
+      "baseFileName": "a-call-to-action-start-your-ascent-p1-",
+      "fileExtension": ".webp",
+      "imageCount": 63
+    },
+    "group_end-page_prompt-1": {
+      "path": "end-matter/end-page/prompt-1/",
+      "prompt": "A simple, elegant final image. The text 'The Future is Unwritten. It is time to build.' is displayed in a clean, hopeful font over a background of a solarpunk city at sunrise. The mood is one of quiet determination and forward-looking optimism.",
+      "alt": "End of Report",
+      "baseFileName": "end-page-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    }
+  }
+}

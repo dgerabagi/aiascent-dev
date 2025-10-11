@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C3 (Add new A15.X image prompt artifacts)
+# Updated on: C11 (Add new A20 artifact for Report Viewer)
 
 ## 1. Purpose
 
@@ -43,6 +43,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
   - **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
+
+### A20. aiascent.dev - Report Viewer Integration Plan
+
+  - **Description:** A detailed plan for porting the "AI Ascent Report Viewer" from the `aiascentgame` context into the `aiascent.dev` project to serve as the primary component for the Showcase, Learn, and Home pages.
+  - **Tags:** report viewer, integration plan, porting, showcase, learn, component, architecture
 
 ## III. Design and Assets
 
