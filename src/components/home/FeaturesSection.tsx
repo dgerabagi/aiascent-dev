@@ -1,5 +1,5 @@
 // src/components/home/FeaturesSection.tsx
-// C4 - Update icons to PNG and fix text clipping
+// C5 - Update icons to PNG and fix text clipping, increase image size
 import React from 'react';
 import { CardContainer, CardBody, CardItem } from '@/components/global/3d-card';
 import Image from 'next/image';
@@ -36,14 +36,14 @@ Stop Fighting Your Tools. Start Building the Future.
     <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8">
       {features.map((feature, index) => (
         <CardContainer key={index} className="inter-var">
-          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:w-[350px] h-auto rounded-xl p-6 border">
+          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:w-[480px] h-auto rounded-xl p-6 border">
             
             <CardItem
               translateZ={feature.translateZ}
               className="w-full mb-4"
             >
-              <div className="h-24 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
-                <Image src={feature.icon} alt={feature.title} width={200} height={100} className='object-contain'/>
+              <div className="h-64 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
+                <Image src={feature.icon} alt={feature.title} width={400} height={200} className='object-contain'/>
               </div>
             </CardItem>
 

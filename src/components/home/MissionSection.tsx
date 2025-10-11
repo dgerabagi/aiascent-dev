@@ -1,5 +1,5 @@
 // src/components/home/MissionSection.tsx
-// C3 - Implementation
+// C5 - Improve text readability
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -24,7 +24,7 @@ className="flex flex-col items-center text-center"
 <h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
 More Than Code:<br /> The Rise of Cognitive Capitalism.
 </h2>
-<p className="text-xl text-neutral-400 max-w-2xl text-center my-8">
+<p className="text-xl text-neutral-200 max-w-3xl text-center my-8">
 Mastering AI collaboration is essential for competitiveness and individual empowerment. The DCE is the foundational tool for a decentralized future, enabling Citizen Architects to combat AI centralization.
 </p>
 <Link href="/mission">

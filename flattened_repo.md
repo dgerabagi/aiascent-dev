@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T02:53:55.454Z
+  Date Generated: 2025-10-11T13:17:27.451Z
   ---
   Total Files: 69
-  Approx. Tokens: 162319
+  Approx. Tokens: 162305
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -16,7 +16,7 @@
 6. src\components\ui\dropdown-menu.tsx (1827 tokens)
 7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
 8. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
-9. src\components\global\lamp.tsx (1174 tokens)
+9. src\components\global\lamp.tsx (1158 tokens)
 10. src\Artifacts\A4-Universal-Task-Checklist.md (1100 tokens)
 
 <!-- Full File List -->
@@ -79,11 +79,11 @@
 57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
 58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2777 - Tokens: 695
 59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
-60. src\components\global\lamp.tsx - Lines: 120 - Chars: 4694 - Tokens: 1174
+60. src\components\global\lamp.tsx - Lines: 118 - Chars: 4630 - Tokens: 1158
 61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
-62. src\components\home\FeaturesSection.tsx - Lines: 73 - Chars: 2890 - Tokens: 723
-63. src\components\home\HeroSection.tsx - Lines: 70 - Chars: 3182 - Tokens: 796
-64. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1317 - Tokens: 330
+62. src\components\home\FeaturesSection.tsx - Lines: 73 - Chars: 2911 - Tokens: 728
+63. src\components\home\HeroSection.tsx - Lines: 68 - Chars: 3162 - Tokens: 791
+64. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1327 - Tokens: 332
 65. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1443 - Tokens: 361
 66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
 67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
@@ -12505,7 +12505,7 @@ className="relative rounded-2xl object-contain opacity-50"
 
 <file path="src/components/global/lamp.tsx">
 // src/components/global/lamp.tsx
-// C4 - Adjust z-index for sparkles
+// C5 - Expand particle area, soften light, remove horizontal line
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -12542,7 +12542,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        'relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0',
+        'relative flex min-h-[800px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0',
         className
       )}
     >
@@ -12558,7 +12558,7 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-cyan-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
           <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
           <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
@@ -12574,14 +12574,14 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-cyan-500 text-white [--conic-position:from_290deg_at_center_top]"
+          className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
         >
           <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
         <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div>
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
+        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-500 opacity-50 blur-3xl"></div>
         <motion.div
           initial={{ width: '8rem' }}
           whileInView={{ width: '16rem' }}
@@ -12590,7 +12590,7 @@ export const LampContainer = ({
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-neutral-400 blur-2xl"
         ></motion.div>
         <motion.div
           initial={{ width: '15rem' }}
@@ -12600,11 +12600,11 @@ export const LampContainer = ({
             duration: 0.8,
             ease: 'easeInOut',
           }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-neutral-400 "
         ></motion.div>
 
         {/* SparklesCore integration */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-40 z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-10">
           <SparklesCore
             background="transparent"
             minSize={0.4}
@@ -12614,8 +12614,6 @@ export const LampContainer = ({
             particleColor="#FFFFFF"
           />
         </div>
-
-        <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div>
       </div>
 
       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
@@ -12943,7 +12941,7 @@ export const SparklesCore = (props: ParticlesProps) => {
 
 <file path="src/components/home/FeaturesSection.tsx">
 // src/components/home/FeaturesSection.tsx
-// C4 - Update icons to PNG and fix text clipping
+// C5 - Update icons to PNG and fix text clipping, increase image size
 import React from 'react';
 import { CardContainer, CardBody, CardItem } from '@/components/global/3d-card';
 import Image from 'next/image';
@@ -12980,14 +12978,14 @@ Stop Fighting Your Tools. Start Building the Future.
     <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8">
       {features.map((feature, index) => (
         <CardContainer key={index} className="inter-var">
-          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:w-[350px] h-auto rounded-xl p-6 border">
+          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:w-[480px] h-auto rounded-xl p-6 border">
             
             <CardItem
               translateZ={feature.translateZ}
               className="w-full mb-4"
             >
-              <div className="h-24 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
-                <Image src={feature.icon} alt={feature.title} width={200} height={100} className='object-contain'/>
+              <div className="h-64 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
+                <Image src={feature.icon} alt={feature.title} width={400} height={200} className='object-contain'/>
               </div>
             </CardItem>
 
@@ -13019,7 +13017,7 @@ export default FeaturesSection;
 
 <file path="src/components/home/HeroSection.tsx">
 // src/components/home/HeroSection.tsx
-// C4 - Adjust layout and visuals
+// C5 - Adjust layout and visuals for spacing
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -13033,14 +13031,12 @@ return (
 <div className="absolute inset-0 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#0D1A26_100%)]"></div>
 
   {/* ContainerScroll and Content */}
-  <div className="flex flex-col mt-[-150px] md:mt-[-100px]">
+  <div className="flex flex-col mt-[-50px] md:mt-0">
     <ContainerScroll
       titleComponent={
         <div className="flex items-center flex-col">
           {/* Headline (A16, 4.2) */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold text-center mb-8">
-            <br/>
-            <br/>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold text-center mb-8 pt-16">
             Master the Human-AI Workflow. Become a Citizen Architect.
           </h1>
           
@@ -13050,7 +13046,7 @@ return (
           </p>
 
           {/* CTAs (A16, 4.2) */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link href="/showcase">
                 <Button
                     size={'lg'}
@@ -13092,7 +13088,7 @@ export default HeroSection;
 
 <file path="src/components/home/MissionSection.tsx">
 // src/components/home/MissionSection.tsx
-// C3 - Implementation
+// C5 - Improve text readability
 'use client'; // LampContainer requires client-side rendering
 import React from 'react';
 import { LampContainer } from '@/components/global/lamp';
@@ -13117,7 +13113,7 @@ className="flex flex-col items-center text-center"
 <h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
 More Than Code:<br /> The Rise of Cognitive Capitalism.
 </h2>
-<p className="text-xl text-neutral-400 max-w-2xl text-center my-8">
+<p className="text-xl text-neutral-200 max-w-3xl text-center my-8">
 Mastering AI collaboration is essential for competitiveness and individual empowerment. The DCE is the foundational tool for a decentralized future, enabling Citizen Architects to combat AI centralization.
 </p>
 <Link href="/mission">

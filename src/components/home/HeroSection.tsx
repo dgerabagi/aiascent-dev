@@ -1,5 +1,5 @@
 // src/components/home/HeroSection.tsx
-// C4 - Adjust layout and visuals
+// C5 - Adjust layout and visuals for spacing
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -13,14 +13,12 @@ return (
 <div className="absolute inset-0 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#0D1A26_100%)]"></div>
 
   {/* ContainerScroll and Content */}
-  <div className="flex flex-col mt-[-150px] md:mt-[-100px]">
+  <div className="flex flex-col mt-[-50px] md:mt-0">
     <ContainerScroll
       titleComponent={
         <div className="flex items-center flex-col">
           {/* Headline (A16, 4.2) */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold text-center mb-8">
-            <br/>
-            <br/>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold text-center mb-8 pt-16">
             Master the Human-AI Workflow. Become a Citizen Architect.
           </h1>
           
@@ -30,7 +28,7 @@ return (
           </p>
 
           {/* CTAs (A16, 4.2) */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link href="/showcase">
                 <Button
                     size={'lg'}
