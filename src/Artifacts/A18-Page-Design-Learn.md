@@ -8,20 +8,20 @@
   - **Description:** Detailed design blueprint for the Learn page, the educational hub for the DCE and the Citizen Architect methodology.
   - **Tags:** page design, learn, tutorials, education, documentation, ui, ux
 
-## 1\. Purpose and Goal
+## 1. Purpose and Goal
 
 The Learn page (planned for Phase 2, designed in C2) will be the central educational hub for aiascent.dev. Its goal is to onboard new users to the DCE extension and, more importantly, to teach the methodology and mindset of the "Citizen Architect." It aims to empower users to master AI-assisted development.
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Developers actively learning or using the DCE extension.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
   * **Aesthetic:** Structured, clear, and easy to navigate. The design should prioritize readability and information hierarchy, similar to modern documentation sites (e.g., Next.js docs, Stripe docs).
   * **Tone:** Instructional, supportive, and practical.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 

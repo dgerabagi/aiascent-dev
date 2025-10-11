@@ -19,13 +19,13 @@
 # Misc
 
 .DS_Store
-\*.pem
+*.pem
 
 # Debugging
 
-npm-debug.log\*
-yarn-debug.log\*
-yarn-error.log\*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Environment variables
 
@@ -41,7 +41,7 @@ yarn-error.log\*
 
 # TypeScript
 
-\*.tsbuildinfo
+*.tsbuildinfo
 next-env.d.ts
 
 # Data Curation Environment (DCE) specific ignores

@@ -8,20 +8,20 @@
   - **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
   - **Tags:** page design, mission, about us, vision, strategy, cognitive capitalism
 
-## 1\. Purpose and Goal
+## 1. Purpose and Goal
 
 The Mission page explains the "why" behind the Data Curation Environment. It goes beyond the technical features to articulate the strategic vision: the creation of "Citizen Architects" and the necessity of decentralized AI expertise (Cognitive Capitalism) as a countermeasure to centralized AI strategies (e.g., China's AI domination policy).
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Strategic thinkers, policymakers, developers interested in the broader implications of AI, and potential collaborators.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
   * **Aesthetic:** Serious, impactful, and visionary. The design should use bold typography, strong contrast, and potentially imagery that evokes themes of strategy, intelligence, and empowerment.
   * **Tone:** Urgent, visionary, and empowering.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 

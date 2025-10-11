@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C2 (Refine tasks based on C2 planning artifacts A15-A19)
+# Updated on: C3 (Mark T-3 complete, update T-5)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -20,37 +20,7 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 3+
-
-## T-3: Home Page Implementation (Cycle 3)
-
-  - **Files Involved:**
-        - `src/app/page.tsx`
-        - `src/components/layout/Header.tsx`
-        - `src/components/layout/Footer.tsx`
-- `src/components/home/HeroSection.tsx` (New)
-- `src/components/home/FeaturesSection.tsx` (New)
-- `src/components/home/WorkflowVisualization.tsx` (New)
-- `src/components/home/MissionSection.tsx` (New)
-- (Potentially dynamic components from `automationsaas` context, e.g., `ContainerScroll`, `SparklesCore`, `LampComponent`)
-
-  - **Total Tokens:** \~8,000+
-
-  - **More than one cycle?** Yes (Likely 2 cycles for full implementation and refinement)
-
-  - **Status:** To Do
-
-  - [ ] **Task (T-ID: 3.1):** Implement the `HeroSection.tsx` component based on A16 (Section 4.2). Integrate the hero image (using placeholder path from A15) and utilize dynamic components (e.g., `ContainerScroll`).
-  - [ ] **Task (T-ID: 3.2):** Implement the `FeaturesSection.tsx` component based on A16 (Section 4.3), utilizing the placeholder icons from A15.
-  - [ ] **Task (T-ID: 3.3):** Implement a basic version of the `WorkflowVisualization.tsx` component (A16, Section 4.4).
-  - [ ] **Task (T-ID: 3.4):** Implement the `MissionSection.tsx` component based on A16 (Section 4.5), potentially utilizing the `LampComponent` aesthetic.
-  - [ ] **Task (T-ID: 3.5):** Integrate these new components into `src/app/page.tsx`, replacing the C1 placeholder content.
-  - [ ] **Task (T-ID: 3.6):** Refine Header and Footer styling to align with the dark, sophisticated aesthetic defined in A16.
-
-### Verification Steps
-
-1.  Run the application (`npm run dev`).
-2.  **Expected:** The home page should display the new layout as defined in A16. The aesthetic should be dark, modern, and professional. All sections (Hero, Features, Workflow, Mission) should be present.
+## Task List for Cycle 4+
 
 ## T-4: Interactive Showcase Implementation (Cycle 4+)
 
@@ -59,7 +29,7 @@ This artifact provides a structured format for tracking development tasks for th
         - `src/app/showcase/page.tsx`
         - `src/data/whitepaperContent.json`
 
-  - **Total Tokens:** \~10,000+
+  - **Total Tokens:** ~10,000+
 
   - **More than one cycle?** Yes
 
@@ -74,29 +44,59 @@ This artifact provides a structured format for tracking development tasks for th
 1.  Navigate to `/showcase`.
 2.  **Expected:** The page layout should match A17. The interactive component should function correctly with the available data.
 
-## T-5: Plan for Next Cycle
+## T-5: Asset Integration and Refinement (Cycle 4)
+
+  - **Files Involved:**
+        - `src/components/home/FeaturesSection.tsx`
+        - `src/components/layout/Header.tsx`
+        - `public/assets/**/*`
+
+  - **Total Tokens:** ~5,000
+
+  - **More than one cycle?** No
+
+  - **Status:** To Do
+
+  - [ ] **Task (T-ID: 5.1):** (Curator Task) Generate the assets using the prompts in A15.X and place them in the `public/assets` directory, replacing the placeholders.
+  - [ ] **Task (T-ID: 5.2):** Update `Header.tsx` to use the new logo (AS-01).
+  - [ ] **Task (T-ID: 5.3):** Update `FeaturesSection.tsx` to correctly display the new SVG icons (AS-04, AS-05, AS-06). This may require configuring SVGR or adjusting how SVGs are imported and rendered.
+
+### Verification Steps
+
+1.  Run the application.
+2.  **Expected:** The header displays the new logo. The Features section displays the newly generated icons correctly.
+
+## T-6: Plan for Next Cycle
 
   - **Files Involved:**
         - `src/Artifacts/A4-Universal-Task-Checklist.md`
 
-  - [ ] **Task (T-ID: 5.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+  - [ ] **Task (T-ID: 6.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
 
+## T-3: Home Page Implementation (Cycle 3)
+
+  - **Status:** Completed (C3)
+
+  - [X] **Task (T-ID: 3.1):** Implement the `HeroSection.tsx` component based on A16. Integrate the hero image/gif and utilize `ContainerScroll`.
+  - [X] **Task (T-ID: 3.2):** Implement the `FeaturesSection.tsx` component based on A16, utilizing placeholder icons.
+  - [X] **Task (T-ID: 3.3):** Implement a basic version of the `WorkflowVisualization.tsx` (renamed `WorkflowSection.tsx`) component.
+  - [X] **Task (T-ID: 3.4):** Implement the `MissionSection.tsx` component based on A16, utilizing the `LampComponent`.
+  - [X] **Task (T-ID: 3.5):** Integrate these new components into `src/app/page.tsx`.
+  - [X] **Task (T-ID: 3.6):** Refine Header and Footer styling to align with the dark, sophisticated aesthetic.
+  - [X] **Task (T-ID: 3.7):** (AI Internal) Import necessary dynamic components from `automationsaas` and update `tailwind.config.ts`.
+
 ## T-2: Strategic Planning and Asset Management (Cycle 2)
 
-  - **Status:** Completed (C2)
-  - [X] **Task (T-ID: 2.1):** Create A15 (Asset Wishlist) and generate placeholder assets in `public/assets`.
-  - [X] **Task (T-ID: 2.2):** Create page design artifacts (A16-A19) incorporating creative direction and thematic goals (Citizen Architect, Cognitive Capitalism).
+  - **Status:** Completed (C2)
+  - [X] **Task (T-ID: 2.1):** Create A15 (Asset Wishlist) and generate placeholder assets in `public/assets`.
+  - [X] **Task (T-ID: 2.2):** Create page design artifacts (A16-A19).
 
 ## T-1: Project Scaffolding (Cycle 1)
 
   - **Status:** Completed (C1)
 
   - [X] **Task (T-ID: 1.1):** Generate the initial Next.js project structure.
-  - [X] **Task (T-ID: 1.2):** Configure TypeScript.
-  - [X] **Task (T-ID: 1.3):** Set up TailwindCSS integration.
-  - [X] **Task (T-ID: 1.4):** Create basic layout and placeholder pages.
-  - [X] **Task (T-ID: 1.5):** Ensure `.gitignore` is correctly configured.

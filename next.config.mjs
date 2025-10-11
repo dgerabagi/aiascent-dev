@@ -1,5 +1,5 @@
 // FILE: next.config.mjs
-/\*\* @type {import('next').NextConfig} \*/
+/** @type {import('next').NextConfig} */
 const nextConfig = {
 images: {
 // Add any domains you need to load images from here if necessary in the future

@@ -8,20 +8,20 @@
   - **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
   - **Tags:** page design, showcase, interactive whitepaper, ui, ux, dce
 
-## 1\. Purpose and Goal
+## 1. Purpose and Goal
 
 The Showcase page is the core demonstration of the DCE's capabilities. Its goal is to present a complex, interactive artifact (the Interactive Whitepaper) that was itself built using the DCE workflow. This page proves the value proposition by showing, not just telling.
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Developers and technical leads looking for concrete examples of what the DCE can achieve.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
   * **Aesthetic:** Clean, focused, and immersive. The design should minimize distractions and maximize the real estate dedicated to the interactive component.
   * **Tone:** Educational, demonstrative, and professional.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 

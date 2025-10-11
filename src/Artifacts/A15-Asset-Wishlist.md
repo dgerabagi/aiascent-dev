@@ -8,11 +8,11 @@
   - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
   - **Tags:** assets, wishlist, design, images, icons, file structure
 
-## 1\. Overview
+## 1. Overview
 
 This document outlines the visual assets required for the initial launch (Phase 1) of aiascent.dev. It also defines the directory structure within the `public/` folder where these assets should be placed. Placeholder files have been created in this cycle (C2) to establish this structure.
 
-## 2\. Asset Wishlist
+## 2. Asset Wishlist
 
 The aesthetic direction is modern, professional, and sophisticated, often utilizing a dark theme with vibrant accents (e.g., electric blue, cyan) to convey the power and precision of the DCE tool.
 
@@ -26,7 +26,7 @@ The aesthetic direction is modern, professional, and sophisticated, often utiliz
 | AS-06 | **Icon: Iterative Workflow** | An icon representing the cycle-based development process. (e.g., a circular arrow, or a gear turning). | SVG | Needed | `public/assets/icons/iterative-workflow.svg` |
 | AS-07 | **OG:Image** | The image used when the website is shared on social media. Often a combination of the logo and a compelling visual (like AS-03). | PNG (1200x630) | Needed | `public/assets/images/og-image.png` |
 
-## 3\. Public Directory Structure
+## 3. Public Directory Structure
 
 The following structure will be used to organize assets.
 

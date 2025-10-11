@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-11T00:26:53.623Z
+  Date Generated: 2025-10-11T02:22:25.668Z
   ---
-  Total Files: 49
-  Approx. Tokens: 150858
+  Total Files: 69
+  Approx. Tokens: 162542
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -12,15 +12,15 @@
 2. context\automationsaas\flattened-repo.md (45210 tokens)
 3. context\aiascentgame\flattened-repo.md (18579 tokens)
 4. context\dce\flattened-repo.md (14794 tokens)
-5. src\components\ui\dropdown-menu.tsx (1827 tokens)
-6. src\Artifacts\A4-Universal-Task-Checklist.md (1165 tokens)
-7. src\Artifacts\A16-Page-Design-Home.md (1160 tokens)
-8. src\Artifacts\A0-Master-Artifact-List.md (1126 tokens)
-9. src\Artifacts\A5-Dual Domain Hosting Guide.md (1066 tokens)
-10. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md (996 tokens)
+5. src\components\global\sparkles.tsx (2122 tokens)
+6. src\components\ui\dropdown-menu.tsx (1827 tokens)
+7. src\Artifacts\A0-Master-Artifact-List.md (1538 tokens)
+8. src\components\global\lamp.tsx (1317 tokens)
+9. src\Artifacts\A16-Page-Design-Home.md (1295 tokens)
+10. src\Artifacts\A4-Universal-Task-Checklist.md (1075 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 89 - Chars: 4503 - Tokens: 1126
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 124 - Chars: 6150 - Tokens: 1538
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
@@ -34,41 +34,61 @@
 12. context\aiascentgame\flattened-repo.md - Lines: 1381 - Chars: 74313 - Tokens: 18579
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 54 - Chars: 3061 - Tokens: 766
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 102 - Chars: 4657 - Tokens: 1165
+15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 102 - Chars: 4299 - Tokens: 1075
 16. package.json - Lines: 37 - Chars: 1036 - Tokens: 259
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
-21. next.config.mjs - Lines: 13 - Chars: 338 - Tokens: 85
+21. next.config.mjs - Lines: 13 - Chars: 335 - Tokens: 84
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
 23. src\app\showcase\page.tsx - Lines: 24 - Chars: 890 - Tokens: 223
 24. src\app\globals.css - Lines: 81 - Chars: 1434 - Tokens: 359
 25. src\app\layout.tsx - Lines: 40 - Chars: 1009 - Tokens: 253
-26. src\app\page.tsx - Lines: 47 - Chars: 1920 - Tokens: 480
+26. src\app\page.tsx - Lines: 27 - Chars: 677 - Tokens: 170
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-28. src\components\layout\Footer.tsx - Lines: 29 - Chars: 927 - Tokens: 232
-29. src\components\layout\Header.tsx - Lines: 38 - Chars: 1465 - Tokens: 367
+28. src\components\layout\Footer.tsx - Lines: 30 - Chars: 1046 - Tokens: 262
+29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2132 - Tokens: 533
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 32. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
 33. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 34. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 35. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-36. tailwind.config.ts - Lines: 80 - Chars: 1656 - Tokens: 414
+36. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
 37. public\assets\icons\context-curation.svg - [Binary] Size: 390 Bytes
 38. public\assets\icons\iterative-workflow.svg - [Binary] Size: 390 Bytes
 39. public\assets\icons\parallel-copilot.svg - [Binary] Size: 390 Bytes
 40. public\assets\images\dce-hero-screenshot.png - [Binary] Size: 245.5 KB
 41. public\assets\images\og-image.png - [Binary] Size: 31 Bytes
-42. public\assets\favicon.ico - [Binary] Size: 61 Bytes
-43. public\assets\logo.svg - [Binary] Size: 395 Bytes
-44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 48 - Chars: 2876 - Tokens: 719
-45. src\Artifacts\A16-Page-Design-Home.md - Lines: 65 - Chars: 4640 - Tokens: 1160
-46. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 60 - Chars: 3063 - Tokens: 766
-47. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2730 - Tokens: 683
-48. src\Artifacts\A19-Page-Design-Mission.md - Lines: 63 - Chars: 3404 - Tokens: 851
+42. public\assets\favicon.ico - [Binary] Size: 4.2 KB
+43. public\assets\logo.svg - [Binary] Size: 117.9 KB
+44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 48 - Chars: 2873 - Tokens: 719
+45. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
+46. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 60 - Chars: 3059 - Tokens: 765
+47. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
+48. src\Artifacts\A19-Page-Design-Mission.md - Lines: 63 - Chars: 3400 - Tokens: 850
 49. context\aiascentgame\reportContent.json - Lines: 1550 - Chars: 204858 - Tokens: 51215
+50. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
+51. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
+52. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
+53. src\Artifacts\A15.4-Image-Prompt-Icon-ContextCuration.md - Lines: 38 - Chars: 1308 - Tokens: 327
+54. src\Artifacts\A15.5-Image-Prompt-Icon-ParallelCopilot.md - Lines: 38 - Chars: 1386 - Tokens: 347
+55. src\Artifacts\A15.6-Image-Prompt-Icon-IterativeWorkflow.md - Lines: 38 - Chars: 1313 - Tokens: 329
+56. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
+57. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
+58. src\components\global\container-scroll-animation.tsx - Lines: 115 - Chars: 2663 - Tokens: 666
+59. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
+60. src\components\global\lamp.tsx - Lines: 135 - Chars: 5265 - Tokens: 1317
+61. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8488 - Tokens: 2122
+62. src\components\home\FeaturesSection.tsx - Lines: 78 - Chars: 3010 - Tokens: 753
+63. src\components\home\HeroSection.tsx - Lines: 83 - Chars: 3631 - Tokens: 908
+64. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1317 - Tokens: 330
+65. src\components\home\WorkflowSection.tsx - Lines: 40 - Chars: 1501 - Tokens: 376
+66. public\assets\images\pcp.gif - [Binary] Size: 36.5 MB
+67. public\assets\icons\context-curation.png - [Binary] Size: 6.1 MB
+68. public\assets\icons\parallel-copilot.png - [Binary] Size: 5.7 MB
+69. public\assets\icons\iterative-workflow.png - [Binary] Size: 6 MB
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -77,21 +97,21 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C2 (Add new artifacts A15-A19)
+# Updated on: C3 (Add new A15.X image prompt artifacts)
 
-## 1\. Purpose
+## 1. Purpose
 
 This file serves as the definitive, parseable list of all documentation artifacts for the `aiascent.dev` website project. This project aims to create a promotional website for the Data Curation Environment (DCE) VS Code Extension, featuring an interactive showcase.
 
-## 2\. Formatting Rules for Parsing
+## 2. Formatting Rules for Parsing
 
-\*   Lines beginning with `#` are comments and are ignored.
-\*   `##` denotes a major category header and is ignored.
-\*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
-\*   Lines beginning with `- **Description:**` provide context for the project.
-\*   Lines beginning with `- **Tags:**` provide keywords for Inference.
+*   Lines beginning with `#` are comments and are ignored.
+*   `##` denotes a major category header and is ignored.
+*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
+*   Lines beginning with `- **Description:**` provide context for the project.
+*   Lines beginning with `- **Tags:**` provide keywords for Inference.
 
-## 3\. Artifacts List
+## 3. Artifacts List
 
 ## I. Project Planning & Vision
 
@@ -123,6 +143,41 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
   - **Tags:** assets, wishlist, design, images, icons, file structure
+
+### A15.1. aiascent.dev - Master Image Generation System Prompt
+
+  - **Description:** The master system prompt defining the aesthetic guidelines and thematic direction for all images generated for the aiascent.dev website.
+  - **Tags:** assets, design, images, prompt engineering, system prompt, aesthetic
+
+### A15.2. aiascent.dev - Image Prompt - Logo (AS-01)
+
+  - **Description:** Specific prompt for generating the main logo (AS-01) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, logo
+
+### A15.3. aiascent.dev - Image Prompt - Favicon (AS-02)
+
+  - **Description:** Specific prompt for generating the favicon (AS-02) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, favicon
+
+### A15.4. aiascent.dev - Image Prompt - Icon: Context Curation (AS-04)
+
+  - **Description:** Specific prompt for generating the Context Curation icon (AS-04) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+### A15.5. aiascent.dev - Image Prompt - Icon: Parallel Co-Pilot (AS-05)
+
+  - **Description:** Specific prompt for generating the Parallel Co-Pilot icon (AS-05) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+### A15.6. aiascent.dev - Image Prompt - Icon: Iterative Workflow (AS-06)
+
+  - **Description:** Specific prompt for generating the Iterative Workflow icon (AS-06) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+### A15.7. aiascent.dev - Image Prompt - OG:Image (AS-07)
+
+  - **Description:** Specific prompt for generating the Open Graph image (AS-07) for aiascent.dev social sharing.
+  - **Tags:** assets, design, images, prompt, ogimage, social media
 
 ### A16. aiascent.dev - Page Design: Home (Landing Page)
 
@@ -8686,7 +8741,7 @@ Use the DCE to generate a `prompt.md`file. Get multiple responses from your AI m
 
 # Author: AI Model & Curator
 
-# Updated on: C2 (Refine tasks based on C2 planning artifacts A15-A19)
+# Updated on: C3 (Mark T-3 complete, update T-5)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -8702,37 +8757,7 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 3+
-
-## T-3: Home Page Implementation (Cycle 3)
-
-  - **Files Involved:**
-        - `src/app/page.tsx`
-        - `src/components/layout/Header.tsx`
-        - `src/components/layout/Footer.tsx`
-- `src/components/home/HeroSection.tsx` (New)
-- `src/components/home/FeaturesSection.tsx` (New)
-- `src/components/home/WorkflowVisualization.tsx` (New)
-- `src/components/home/MissionSection.tsx` (New)
-- (Potentially dynamic components from `automationsaas` context, e.g., `ContainerScroll`, `SparklesCore`, `LampComponent`)
-
-  - **Total Tokens:** \~8,000+
-
-  - **More than one cycle?** Yes (Likely 2 cycles for full implementation and refinement)
-
-  - **Status:** To Do
-
-  - [ ] **Task (T-ID: 3.1):** Implement the `HeroSection.tsx` component based on A16 (Section 4.2). Integrate the hero image (using placeholder path from A15) and utilize dynamic components (e.g., `ContainerScroll`).
-  - [ ] **Task (T-ID: 3.2):** Implement the `FeaturesSection.tsx` component based on A16 (Section 4.3), utilizing the placeholder icons from A15.
-  - [ ] **Task (T-ID: 3.3):** Implement a basic version of the `WorkflowVisualization.tsx` component (A16, Section 4.4).
-  - [ ] **Task (T-ID: 3.4):** Implement the `MissionSection.tsx` component based on A16 (Section 4.5), potentially utilizing the `LampComponent` aesthetic.
-  - [ ] **Task (T-ID: 3.5):** Integrate these new components into `src/app/page.tsx`, replacing the C1 placeholder content.
-  - [ ] **Task (T-ID: 3.6):** Refine Header and Footer styling to align with the dark, sophisticated aesthetic defined in A16.
-
-### Verification Steps
-
-1.  Run the application (`npm run dev`).
-2.  **Expected:** The home page should display the new layout as defined in A16. The aesthetic should be dark, modern, and professional. All sections (Hero, Features, Workflow, Mission) should be present.
+## Task List for Cycle 4+
 
 ## T-4: Interactive Showcase Implementation (Cycle 4+)
 
@@ -8741,7 +8766,7 @@ This artifact provides a structured format for tracking development tasks for th
         - `src/app/showcase/page.tsx`
         - `src/data/whitepaperContent.json`
 
-  - **Total Tokens:** \~10,000+
+  - **Total Tokens:** ~10,000+
 
   - **More than one cycle?** Yes
 
@@ -8756,32 +8781,62 @@ This artifact provides a structured format for tracking development tasks for th
 1.  Navigate to `/showcase`.
 2.  **Expected:** The page layout should match A17. The interactive component should function correctly with the available data.
 
-## T-5: Plan for Next Cycle
+## T-5: Asset Integration and Refinement (Cycle 4)
+
+  - **Files Involved:**
+        - `src/components/home/FeaturesSection.tsx`
+        - `src/components/layout/Header.tsx`
+        - `public/assets/**/*`
+
+  - **Total Tokens:** ~5,000
+
+  - **More than one cycle?** No
+
+  - **Status:** To Do
+
+  - [ ] **Task (T-ID: 5.1):** (Curator Task) Generate the assets using the prompts in A15.X and place them in the `public/assets` directory, replacing the placeholders.
+  - [ ] **Task (T-ID: 5.2):** Update `Header.tsx` to use the new logo (AS-01).
+  - [ ] **Task (T-ID: 5.3):** Update `FeaturesSection.tsx` to correctly display the new SVG icons (AS-04, AS-05, AS-06). This may require configuring SVGR or adjusting how SVGs are imported and rendered.
+
+### Verification Steps
+
+1.  Run the application.
+2.  **Expected:** The header displays the new logo. The Features section displays the newly generated icons correctly.
+
+## T-6: Plan for Next Cycle
 
   - **Files Involved:**
         - `src/Artifacts/A4-Universal-Task-Checklist.md`
 
-  - [ ] **Task (T-ID: 5.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+  - [ ] **Task (T-ID: 6.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
 
+## T-3: Home Page Implementation (Cycle 3)
+
+  - **Status:** Completed (C3)
+
+  - [X] **Task (T-ID: 3.1):** Implement the `HeroSection.tsx` component based on A16. Integrate the hero image/gif and utilize `ContainerScroll`.
+  - [X] **Task (T-ID: 3.2):** Implement the `FeaturesSection.tsx` component based on A16, utilizing placeholder icons.
+  - [X] **Task (T-ID: 3.3):** Implement a basic version of the `WorkflowVisualization.tsx` (renamed `WorkflowSection.tsx`) component.
+  - [X] **Task (T-ID: 3.4):** Implement the `MissionSection.tsx` component based on A16, utilizing the `LampComponent`.
+  - [X] **Task (T-ID: 3.5):** Integrate these new components into `src/app/page.tsx`.
+  - [X] **Task (T-ID: 3.6):** Refine Header and Footer styling to align with the dark, sophisticated aesthetic.
+  - [X] **Task (T-ID: 3.7):** (AI Internal) Import necessary dynamic components from `automationsaas` and update `tailwind.config.ts`.
+
 ## T-2: Strategic Planning and Asset Management (Cycle 2)
 
-  - **Status:** Completed (C2)
-  - [X] **Task (T-ID: 2.1):** Create A15 (Asset Wishlist) and generate placeholder assets in `public/assets`.
-  - [X] **Task (T-ID: 2.2):** Create page design artifacts (A16-A19) incorporating creative direction and thematic goals (Citizen Architect, Cognitive Capitalism).
+  - **Status:** Completed (C2)
+  - [X] **Task (T-ID: 2.1):** Create A15 (Asset Wishlist) and generate placeholder assets in `public/assets`.
+  - [X] **Task (T-ID: 2.2):** Create page design artifacts (A16-A19).
 
 ## T-1: Project Scaffolding (Cycle 1)
 
   - **Status:** Completed (C1)
 
   - [X] **Task (T-ID: 1.1):** Generate the initial Next.js project structure.
-  - [X] **Task (T-ID: 1.2):** Configure TypeScript.
-  - [X] **Task (T-ID: 1.3):** Set up TailwindCSS integration.
-  - [X] **Task (T-ID: 1.4):** Create basic layout and placeholder pages.
-  - [X] **Task (T-ID: 1.5):** Ensure `.gitignore` is correctly configured.
 </file_artifact>
 
 <file path="package.json">
@@ -8889,7 +8944,7 @@ This artifact provides a structured format for tracking development tasks for th
 
 <file path="next.config.mjs">
 // FILE: next.config.mjs
-/\*\* @type {import('next').NextConfig} \*/
+/** @type {import('next').NextConfig} */
 const nextConfig = {
 images: {
 // Add any domains you need to load images from here if necessary in the future
@@ -9071,51 +9126,31 @@ disableTransitionOnChange
 
 <file path="src/app/page.tsx">
 // src/app/page.tsx
-// C1 - Initial Scaffolding
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+// C3 - Home Page Implementation
+import HeroSection from "@/components/home/HeroSection";
+import FeaturesSection from "@/components/home/FeaturesSection";
+import WorkflowSection from "@/components/home/WorkflowSection";
+import MissionSection from "@/components/home/MissionSection";
 
 export default function Home() {
-  return (
-    <div className="container mx-auto px-4 py-12">
-      <section className="text-center py-20">
-        <h1 className="text-5xl font-bold mb-6">Welcome to AIAscent.dev</h1>
-        <p className="text-xl text-muted-foreground mb-8">
-          The official home of the Data Curation Environment (DCE) VS Code Extension.
-        </p>
-        <Link href="/showcase">
-          <Button size="lg">Explore the Interactive Showcase</Button>
-        </Link>
-        <p className="mt-10 text-sm text-muted-foreground">
-          (Cycle 1: Project Scaffolding Complete)
-        </p>
-      </section>
+return (
+<div className="flex flex-col">
+<HeroSection />
 
-      <section className="py-12">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Features (Placeholder)</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="p-6 border rounded-lg shadow-sm bg-card">
-            <h3 className="text-xl font-bold mb-2">Context Curation</h3>
-            <p className="text-muted-foreground">
-              Effortlessly select and manage the exact files needed for your AI prompts.
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg shadow-sm bg-card">
-            <h3 className="text-xl font-bold mb-2">Parallel Co-Pilot</h3>
-            <p className="text-muted-foreground">
-              Compare multiple AI responses side-by-side and rapidly test solutions.
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg shadow-sm bg-card">
-            <h3 className="text-xl font-bold mb-2">Iterative Workflow</h3>
-            <p className="text-muted-foreground">
-              Streamline the human-AI collaboration loop for rapid iteration.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+
+  {/* Added a separator/spacer for visual distinction */}
+  <div className="mt-[10rem] md:mt-[18rem]">
+    <FeaturesSection />
+  </div>
+
+  <WorkflowSection />
+  
+  {/* Mission Section uses LampContainer which handles its own background/layout */}
+  <MissionSection />
+</div>
+
+
+);
 }
 </file_artifact>
 
@@ -9167,19 +9202,20 @@ export function ModeToggle() {
 
 <file path="src/components/layout/Footer.tsx">
 // src/components/layout/Footer.tsx
-// C1 - Initial Scaffolding
+// C3 - Refined styling
 const Footer = () => {
 return (
-<footer className="border-t">
+// Updated C3: Ensure footer matches the dark aesthetic
+<footer className="border-t border-neutral-900 bg-neutral-950">
 <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
 <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
 <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
 Built using the Data Curation Environment. The source code is available on{' '}
 <a
-href="[https://github.com/dgerabagi/aiascent-dev](https://www.google.com/search?q=https://github.com/dgerabagi/aiascent-dev)" // Placeholder URL
+href="[https://github.com/dgerabagi/aiascent-dev](https://www.google.com/search?q=https://github.com/dgerabagi/aiascent-dev)" // Updated URL
 target="_blank"
 rel="noreferrer"
-className="font-medium underline underline-offset-4"
+className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
 >
 GitHub
 </a>
@@ -9199,41 +9235,64 @@ export default Footer;
 
 <file path="src/components/layout/Header.tsx">
 // src/components/layout/Header.tsx
-// C1 - Initial Scaffolding
+// C3 - Refined styling for dark/sophisticated aesthetic
 import Link from 'next/link';
 import { ModeToggle } from '@/components/global/mode-toggle';
+import Image from 'next/image';
 
 const Header = () => {
 return (
-<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-<div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-<div className="flex gap-6 md:gap-10">
-<Link href="/" className="flex items-center space-x-2">
-<span className="inline-block font-bold text-xl">AIAscent.dev</span>
-</Link>
-</div>
-<nav className="flex items-center space-x-6 text-sm font-medium">
-<Link href="/" className="transition-colors hover:text-foreground/80 text-foreground/60">
-Home
-</Link>
-<Link href="/showcase" className="transition-colors hover:text-foreground/80 text-foreground/60">
-Showcase
-</Link>
-{/* Placeholder for future route */}
-<span className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-not-allowed opacity-50">
-Tutorials
-</span>
-<a href="[https://github.com/dgerabagi/data-curation-environment](https://www.google.com/search?q=https://github.com/dgerabagi/data-curation-environment)" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground/80 text-foreground/60">
-GitHub
-</a>
-</nav>
-<div className="flex flex-1 items-center justify-end space-x-4">
-<ModeToggle />
-</div>
-</div>
+// Updated C3: Changed styling to match A16 (fixed, dark, blur)
+<header className="fixed top-0 z-50 w-full border-b border-neutral-900 bg-black/40 backdrop-blur-lg">
+<div className="container flex h-16 items-center justify-between px-4">
+
+    {/* Logo and Title */}
+    <Link href="/" className="flex items-center gap-2">
+      {/* Placeholder for Logo (A15.2) */}
+      <Image
+        src="/assets/logo.svg" // Placeholder path
+        width={30}
+        height={30}
+        alt="AIAscent Logo"
+        className="shadow-sm"
+      />
+      <span className="text-2xl font-bold">AIAscent.dev</span>
+    </Link>
+
+    {/* Navigation Links */}
+    {/* Centered navigation for desktop (hidden on mobile for now) */}
+    <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/showcase">Showcase</NavLink>
+      <NavLink href="/learn">Learn</NavLink>
+      <NavLink href="/mission">Mission</NavLink>
+      <a href="[https://github.com/dgerabagi/data-curation-environment](https://github.com/dgerabagi/data-curation-environment)" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground/80 text-foreground/60">
+        GitHub
+      </a>
+    </nav>
+
+    {/* Right side (Actions/Toggle) */}
+    <div className="flex items-center space-x-4">
+      {/* Optional: Add a CTA Button here if needed */}
+      <ModeToggle />
+      {/* Placeholder for Mobile Menu Icon */}
+      <div className="md:hidden">
+        {/* MenuIcon component would go here */}
+      </div>
+    </div>
+  </div>
 </header>
+
 );
 };
+
+// Helper component for navigation links styling
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+
+<Link href={href} className="transition-colors hover:text-foreground/80 text-foreground/60">
+{children}
+</Link>
+);
 
 export default Header;
 </file_artifact>
@@ -9668,10 +9727,10 @@ import type { Config } from 'tailwindcss'
 const config = {
 darkMode: ['class'],
 content: [
-'./pages/**/\*.{ts,tsx}',
+'./pages/**/*.{ts,tsx}',
 './components/**/*.{ts,tsx}',
-'./app/\*\*/*.{ts,tsx}',
-'./src/\*\*/\*.{ts,tsx}',
+'./app/**/*.{ts,tsx}',
+'./src/**/*.{ts,tsx}',
 ],
 prefix: '',
 theme: {
@@ -9723,6 +9782,7 @@ lg: 'var(--radius)',
 md: 'calc(var(--radius) - 2px)',
 sm: 'calc(var(--radius) - 4px)',
 },
+// Merged keyframes from automationsaas (C3)
 keyframes: {
 'accordion-down': {
 from: { height: '0' },
@@ -9732,10 +9792,69 @@ to: { height: 'var(--radix-accordion-content-height)' },
 from: { height: 'var(--radix-accordion-content-height)' },
 to: { height: '0' },
 },
+// Added for ContainerScroll and other dynamic components
+scroll: {
+to: {
+transform: 'translate(calc(-50% - 0.5rem))',
 },
+},
+spotlight: {
+'0%': {
+opacity: '0',
+transform: 'translate(-72%, -62%) scale(0.5)',
+},
+'100%': {
+opacity: '1',
+transform: 'translate(-50%,-40%) scale(1)',
+},
+},
+moveHorizontal: {
+'0%': {
+transform: 'translateX(-50%) translateY(-10%)',
+},
+'50%': {
+transform: 'translateX(50%) translateY(10%)',
+},
+'100%': {
+transform: 'translateX(-50%) translateY(-10%)',
+},
+},
+moveInCircle: {
+'0%': {
+transform: 'rotate(0deg)',
+},
+'50%': {
+transform: 'rotate(180deg)',
+},
+'100%': {
+transform: 'rotate(360deg)',
+},
+},
+moveVertical: {
+'0%': {
+transform: 'translateY(-50%)',
+},
+'50%': {
+transform: 'translateY(50%)',
+},
+'100%': {
+transform: 'translateY(-50%)',
+},
+},
+},
+// Merged animations from automationsaas (C3)
 animation: {
 'accordion-down': 'accordion-down 0.2s ease-out',
 'accordion-up': 'accordion-up 0.2s ease-out',
+// Added for dynamic components
+scroll:
+'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+spotlight: 'spotlight 2s ease .75s 1 forwards',
+first: 'moveVertical 30s ease infinite',
+second: 'moveInCircle 20s reverse infinite',
+third: 'moveInCircle 40s linear infinite',
+fourth: 'moveHorizontal 40s ease infinite',
+fifth: 'moveInCircle 20s ease infinite',
 },
 },
 },
@@ -9810,7 +9929,7 @@ export default config
   "name": "favicon.ico",
   "directory": "c:/Projects/aiascent-dev/public/assets",
   "fileType": "ICO",
-  "sizeInBytes": 61
+  "sizeInBytes": 4286
 }
 </metadata>
 </file_artifact>
@@ -9821,7 +9940,7 @@ export default config
   "name": "logo.svg",
   "directory": "c:/Projects/aiascent-dev/public/assets",
   "fileType": "SVG",
-  "sizeInBytes": 395
+  "sizeInBytes": 120712
 }
 </metadata>
 </file_artifact>
@@ -9837,11 +9956,11 @@ export default config
   - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
   - **Tags:** assets, wishlist, design, images, icons, file structure
 
-## 1\. Overview
+## 1. Overview
 
 This document outlines the visual assets required for the initial launch (Phase 1) of aiascent.dev. It also defines the directory structure within the `public/` folder where these assets should be placed. Placeholder files have been created in this cycle (C2) to establish this structure.
 
-## 2\. Asset Wishlist
+## 2. Asset Wishlist
 
 The aesthetic direction is modern, professional, and sophisticated, often utilizing a dark theme with vibrant accents (e.g., electric blue, cyan) to convey the power and precision of the DCE tool.
 
@@ -9855,7 +9974,7 @@ The aesthetic direction is modern, professional, and sophisticated, often utiliz
 | AS-06 | **Icon: Iterative Workflow** | An icon representing the cycle-based development process. (e.g., a circular arrow, or a gear turning). | SVG | Needed | `public/assets/icons/iterative-workflow.svg` |
 | AS-07 | **OG:Image** | The image used when the website is shared on social media. Often a combination of the logo and a compelling visual (like AS-03). | PNG (1200x630) | Needed | `public/assets/images/og-image.png` |
 
-## 3\. Public Directory Structure
+## 3. Public Directory Structure
 
 The following structure will be used to organize assets.
 
@@ -9884,65 +10003,68 @@ public/
 
 # Author: AI Model & Curator
 
-  - **Key/Value for A0:**
-  - **Description:** Detailed design blueprint for the main landing page (Home) of aiascent.dev, focusing on the value proposition, aesthetics, and user engagement.
-  - **Tags:** page design, home page, landing page, ui, ux, dce, citizen architect
+# Updated on: C3 (Incorporate pcp.gif into the Hero section)
 
-## 1\. Purpose and Goal
+  - **Key/Value for A0:**
+  - **Description:** Detailed design blueprint for the main landing page (Home) of aiascent.dev, focusing on the value proposition, aesthetics, and user engagement.
+  - **Tags:** page design, home page, landing page, ui, ux, dce, citizen architect
+
+## 1. Purpose and Goal
 
 The Home page is the primary entry point for all visitors. Its goal is to immediately convey the purpose and power of the Data Curation Environment (DCE), establishing credibility and motivating developers to explore the tool and the underlying philosophy of the "Citizen Architect."
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Primary: Software developers, AI engineers, technical project managers.
 Secondary: Strategic thinkers, policymakers interested in AI human capital.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
-  * **Aesthetic:** Sophisticated, modern, and precise. We will adopt a dark-mode-first design (similar to high-end developer tools like VS Code or Linear) with vibrant, futuristic accents (e.g., electric blue, cyan, or deep purple).
-  * **Tone:** Authoritative, inspiring, and urgent. The copy should emphasize the transformative potential of the DCE and the strategic necessity of mastering AI-assisted development.
+  * **Aesthetic:** Sophisticated, modern, and precise. We will adopt a dark-mode-first design (similar to high-end developer tools like VS Code or Linear) with vibrant, futuristic accents (e.g., electric blue, cyan, or deep purple). The background should be dark and immersive (e.g., `bg-neutral-950` or similar).
+  * **Tone:** Authoritative, inspiring, and urgent. The copy should emphasize the transformative potential of the DCE and the strategic necessity of mastering AI-assisted development.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 
-  * Standard site header (from `src/components/layout/Header.tsx`).
-  * Logo on the left, navigation links (Showcase, Learn, Mission, GitHub) in the center or right, and the dark/light mode toggle.
+  * Standard site header (from `src/components/layout/Header.tsx`).
+  * The header should be fixed or sticky, with a dark, semi-transparent background (`bg-black/40 backdrop-blur-lg`) to maintain the aesthetic.
+  * Logo on the left, navigation links (Home, Showcase, Learn, Mission, GitHub) in the center or right, and the dark/light mode toggle.
 
 ### 4.2. Section 1: The Hero (Above the Fold)
 
-  * **Layout:** A large, impactful section utilizing a dark background, potentially with subtle background animations (e.g., particles or a faint grid, similar to the `SparklesCore` component in the `automationsaas` context) to add depth.
-  * **Headline:** "Master the Human-AI Workflow. Become a Citizen Architect."
-  * **Subheadline:** "The Data Curation Environment (DCE) is the essential VS Code extension for developers who want to move beyond prompt-and-pray. Curate context with precision, test AI solutions rapidly, and build complex systems with confidence."
-  * **CTA:** Primary Button: "Explore the Showcase" (Links to `/showcase`). Secondary Button: "Download Now" (Links to GitHub releases or VS Code Marketplace).
-  * **Visual:** The centerpiece will be the `dce-hero-screenshot.png` (A15, AS-03), presented within a stylized container (like the `ContainerScroll` component from AutomationSaaS) to give it a dynamic, engaging feel.
+  * **Layout:** A large, impactful section utilizing a dark background, potentially with subtle background animations (e.g., particles or a faint grid, similar to the `SparklesCore` component in the `automationsaas` context) to add depth.
+  * **Headline:** "Master the Human-AI Workflow. Become a Citizen Architect."
+  * **Subheadline:** "The Data Curation Environment (DCE) is the essential VS Code extension for developers who want to move beyond prompt-and-pray. Curate context with precision, test AI solutions rapidly, and build complex systems with confidence."
+  * **CTA:** Primary Button: "Explore the Showcase" (Links to `/showcase`). Secondary Button: "Download Now" (Links to GitHub releases or VS Code Marketplace).
+  * **Visual (Updated C3):** The centerpiece will utilize the `ContainerScroll` component (from AutomationSaaS) to provide a dynamic, engaging presentation. Inside the ContainerScroll, we will feature a combination of the `dce-hero-screenshot.png` (A15, AS-03) and the `pcp.gif` (located at `public/assets/images/pcp.gif`) to show both the interface and the workflow in action.
 
-### 4.3. Section 2: The Problem & The Solution
+### 4.3. Section 2: The Problem & The Solution (Features)
 
-  * **Layout:** A two-column or alternating layout highlighting the inefficiencies of standard AI workflows and how DCE solves them.
-  * **Headline:** "Stop Fighting Your Tools. Start Building the Future."
-  * **Points (Visualized with Icons from A15):**
-      * **Problem:** Manual context management is slow and error-prone. **Solution (Icon AS-04):** DCE provides intuitive, visual context curation directly in VS Code.
-      * **Problem:** Testing AI suggestions is risky and time-consuming. **Solution (Icon AS-05):** The Parallel Co-Pilot enables rapid, side-by-side comparison and safe, Git-integrated testing.
-      * **Problem:** AI collaboration lacks structure and auditability. **Solution (Icon AS-06):** DCE captures the entire development process as an iterative, auditable knowledge graph.
+  * **Layout:** A three-column grid of cards (potentially using `3d-card` component for subtle depth).
+  * **Headline:** "Stop Fighting Your Tools. Start Building the Future."
+  * **Points (Visualized with Icons from A15):**
+      * **Feature 1 (Icon AS-04):** **Precision Context Curation.** Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.
+      * **Feature 2 (Icon AS-05):** **Parallel Co-Pilot & Rapid Testing.** Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow (Baseline/Restore) to safely audition code changes in seconds.
+      * **Feature 3 (Icon AS-06):** **Iterative Knowledge Graph.** AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.
 
-### 4.4. Section 3: The DCE Workflow Visualization (Interactive Element)
+### 4.4. Section 3: The DCE Workflow Visualization
 
-  * **Layout:** A visually engaging, potentially interactive diagram illustrating the DCE cycle.
-  * **Headline:** "The Power of Iteration: The DCE Workflow"
-  * **Concept:** A stylized visualization showing the steps: 1. Curate Context -> 2. Generate Prompt -> 3. Parallel AI Responses -> 4. Test & Select -> 5. Integrate & Commit.
-  * *UI Idea:* Use subtle animations or hover effects to highlight each step of the workflow.
+  * **Layout:** A visually engaging, potentially interactive diagram illustrating the DCE cycle.
+  * **Headline:** "The Power of Iteration: The DCE Workflow"
+  * **Concept:** A stylized visualization showing the steps: 1. Curate Context -> 2. Generate Prompt -> 3. Parallel AI Responses -> 4. Test & Select -> 5. Integrate & Commit.
+  * *UI Idea:* Use subtle animations or hover effects to highlight each step of the workflow.
 
 ### 4.5. Section 4: The Mission (Cognitive Capitalism)
 
-  * **Layout:** A more text-focused section with a strong visual anchor (perhaps utilizing the `LampComponent` aesthetic from `automationsaas` for dramatic lighting).
-  * **Headline:** "More Than Code: The Rise of Cognitive Capitalism."
-  * **Content:** A brief, compelling summary of the strategic vision—that mastering AI collaboration is essential for competitiveness and individual empowerment. This section connects the tool (DCE) to the broader mission (combating AI centralization and domination policies).
-  * **CTA:** "Read Our Mission" (Links to `/mission`).
+  * **Layout:** A visually distinct section utilizing the `LampComponent` aesthetic from `automationsaas` for dramatic lighting and focus.
+  * **Headline:** "More Than Code: The Rise of Cognitive Capitalism."
+  * **Content:** A brief, compelling summary of the strategic vision—that mastering AI collaboration is essential for competitiveness and individual empowerment. This section connects the tool (DCE) to the broader mission (combating AI centralization and domination policies).
+  * **CTA:** "Read Our Mission" (Links to `/mission`).
 
 ### 4.6. Footer
 
-  * Standard site footer (from `src/components/layout/Footer.tsx`).
+  * Standard site footer (from `src/components/layout/Footer.tsx`).
 </file_artifact>
 
 <file path="src/Artifacts/A17-Page-Design-Showcase.md">
@@ -9956,20 +10078,20 @@ Secondary: Strategic thinkers, policymakers interested in AI human capital.
   - **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
   - **Tags:** page design, showcase, interactive whitepaper, ui, ux, dce
 
-## 1\. Purpose and Goal
+## 1. Purpose and Goal
 
 The Showcase page is the core demonstration of the DCE's capabilities. Its goal is to present a complex, interactive artifact (the Interactive Whitepaper) that was itself built using the DCE workflow. This page proves the value proposition by showing, not just telling.
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Developers and technical leads looking for concrete examples of what the DCE can achieve.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
   * **Aesthetic:** Clean, focused, and immersive. The design should minimize distractions and maximize the real estate dedicated to the interactive component.
   * **Tone:** Educational, demonstrative, and professional.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 
@@ -10019,20 +10141,20 @@ Developers and technical leads looking for concrete examples of what the DCE can
   - **Description:** Detailed design blueprint for the Learn page, the educational hub for the DCE and the Citizen Architect methodology.
   - **Tags:** page design, learn, tutorials, education, documentation, ui, ux
 
-## 1\. Purpose and Goal
+## 1. Purpose and Goal
 
 The Learn page (planned for Phase 2, designed in C2) will be the central educational hub for aiascent.dev. Its goal is to onboard new users to the DCE extension and, more importantly, to teach the methodology and mindset of the "Citizen Architect." It aims to empower users to master AI-assisted development.
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Developers actively learning or using the DCE extension.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
   * **Aesthetic:** Structured, clear, and easy to navigate. The design should prioritize readability and information hierarchy, similar to modern documentation sites (e.g., Next.js docs, Stripe docs).
   * **Tone:** Instructional, supportive, and practical.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 
@@ -10085,20 +10207,20 @@ Developers actively learning or using the DCE extension.
   - **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
   - **Tags:** page design, mission, about us, vision, strategy, cognitive capitalism
 
-## 1\. Purpose and Goal
+## 1. Purpose and Goal
 
 The Mission page explains the "why" behind the Data Curation Environment. It goes beyond the technical features to articulate the strategic vision: the creation of "Citizen Architects" and the necessity of decentralized AI expertise (Cognitive Capitalism) as a countermeasure to centralized AI strategies (e.g., China's AI domination policy).
 
-## 2\. Target Audience
+## 2. Target Audience
 
 Strategic thinkers, policymakers, developers interested in the broader implications of AI, and potential collaborators.
 
-## 3\. Aesthetic and Tone
+## 3. Aesthetic and Tone
 
   * **Aesthetic:** Serious, impactful, and visionary. The design should use bold typography, strong contrast, and potentially imagery that evokes themes of strategy, intelligence, and empowerment.
   * **Tone:** Urgent, visionary, and empowering.
 
-## 4\. Page Structure and Content
+## 4. Page Structure and Content
 
 ### 4.1. Header/Navigation
 
@@ -11691,5 +11813,1461 @@ Strategic thinkers, policymakers, developers interested in the broader implicati
     }
   ]
 }
+</file_artifact>
+
+<file path="src/Artifacts/A15.1-Master-Image-System-Prompt.md">
+# Artifact A15.1: aiascent.dev - Master Image Generation System Prompt
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** The master system prompt defining the aesthetic guidelines and thematic direction for all images generated for the aiascent.dev website.
+  - **Tags:** assets, design, images, prompt engineering, system prompt, aesthetic
+
+## 1. Purpose
+
+This document provides the master system prompt to be used when generating visual assets (icons, logos, illustrations) for the aiascent.dev website. Its goal is to ensure a consistent, high-quality, and thematically coherent visual identity across the entire site.
+
+## 2. The System Prompt
+
+**Master System Prompt: The DCE Aesthetic**
+
+You are an expert graphic designer and digital artist specializing in creating assets for sophisticated developer tools and strategic platforms. Your task is to generate visual assets for aiascent.dev, the official website for the Data Curation Environment (DCE) VS Code extension.
+
+**Your Core Directives:**
+
+1.  **Adhere to the Master Aesthetic:** The aesthetic is **Modern, Precise, and Futuristic Minimalism**.
+
+      * **Color Palette:** Primarily monochromatic (blacks, whites, grays) with strategic use of vibrant, futuristic accent colors (Electric Blue, Cyan, Deep Purple). Assets must look excellent on both dark and light backgrounds, but prioritize a **dark-mode-first** appearance.
+      * **Style:** Clean lines, sharp edges, and geometric shapes. Avoid excessive ornamentation, gradients (unless subtle and used for depth), or cartoonish styles. The look should evoke precision engineering, advanced technology, and clarity of thought.
+      * **Themes:** The underlying themes are Human-AI collaboration, workflow efficiency, data management, and the concept of the "Citizen Architect."
+
+2.  **Asset Specific Guidelines:**
+
+      * **Logos & Icons (SVG):**
+
+          * Must be vector-based (SVG).
+          * Must be simple, scalable, and instantly recognizable even at small sizes.
+          * Use solid colors or very subtle gradients.
+          * Ensure paths are clean and optimized.
+
+      * **Illustrations & Hero Images (PNG/WEBP):**
+
+          * Should be high-resolution and professional.
+          * If depicting technology (like screenshots or abstract visualizations), maintain the clean, minimalist aesthetic.
+          * Lighting should be dramatic but clean, often using the accent colors to highlight key elements.
+
+3.  **Thematic Cohesion:** Every asset must reinforce the idea that the DCE is a powerful, professional tool that enhances human intelligence and streamlines complex workflows.
+
+**Your Workflow:**
+
+I will provide you with specific requests for assets (e.g., "Icon for Context Curation"). You will apply these Master Aesthetic guidelines to generate the requested asset in the specified format.
+</file_artifact>
+
+<file path="src/Artifacts/A15.2-Image-Prompt-Logo.md">
+# Artifact A15.2: Image Prompt - Logo (AS-01)
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** Specific prompt for generating the main logo (AS-01) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, logo
+
+## 1. Asset Request
+
+**Asset ID:** AS-01
+**Asset Name:** Logo
+**Format:** SVG
+**Location:** `public/assets/logo.svg`
+
+## 2. Generation Prompt
+
+*(This prompt is to be used in conjunction with the Master System Prompt in A15.1)*
+
+**Prompt:**
+
+Generate a minimalist, vector-based (SVG) logo for "AIAscent.dev".
+
+**Concept:** The logo should evoke themes of ascent, data flow, and precision. It should be abstract rather than literal.
+
+**Ideas:**
+
+1.  A stylized, geometric representation of a mountain peak or upward arrow, composed of interconnected lines or nodes (representing data curation and workflow).
+2.  A combination of the letters 'A' and 'D', integrated into an upward-moving shape.
+3.  A circular icon representing a continuous workflow cycle, with sharp, precise elements inside.
+
+**Aesthetic Requirements:**
+
+  * Use the Master Aesthetic (A15.1): Modern, Precise, Futuristic Minimalism.
+  * Color: Primarily white or light gray, potentially with an Electric Blue or Cyan accent.
+  * Style: Extremely clean lines, geometric, scalable.
+  * Format: Optimized SVG.
+</file_artifact>
+
+<file path="src/Artifacts/A15.3-Image-Prompt-Favicon.md">
+# Artifact A15.3: Image Prompt - Favicon (AS-02)
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** Specific prompt for generating the favicon (AS-02) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, favicon
+
+## 1. Asset Request
+
+**Asset ID:** AS-02
+**Asset Name:** Favicon
+**Format:** ICO/PNG (High-resolution PNG suitable for conversion)
+**Location:** `public/assets/favicon.ico`
+
+## 2. Generation Prompt
+
+*(This prompt is to be used in conjunction with the Master System Prompt in A15.1)*
+
+**Prompt:**
+
+Generate a favicon based on the main logo concept (A15.2).
+
+**Concept:** The favicon should be a simplified, bold version of the main logo mark, optimized for visibility at very small sizes (16x16, 32x32).
+
+**Aesthetic Requirements:**
+
+  * Use the Master Aesthetic (A15.1): Modern, Precise, Futuristic Minimalism.
+  * Color: High contrast is essential. Use the primary accent color (Electric Blue or Cyan) on a dark background, or vice versa.
+  * Style: Extremely simple, geometric, bold lines.
+  * Format: High-resolution PNG (e.g., 256x256) with transparency if applicable.
+</file_artifact>
+
+<file path="src/Artifacts/A15.4-Image-Prompt-Icon-ContextCuration.md">
+# Artifact A15.4: Image Prompt - Icon: Context Curation (AS-04)
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** Specific prompt for generating the Context Curation icon (AS-04) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+## 1. Asset Request
+
+**Asset ID:** AS-04
+**Asset Name:** Icon: Context Curation
+**Format:** SVG
+**Location:** `public/assets/icons/context-curation.svg`
+
+## 2. Generation Prompt
+
+*(This prompt is to be used in conjunction with the Master System Prompt in A15.1)*
+
+**Prompt:**
+
+Generate a minimalist, vector-based (SVG) icon representing "Context Curation".
+
+**Concept:** This icon symbolizes the ability to precisely select and manage files/data for AI input.
+
+**Ideas:**
+
+1.  A stylized representation of a file tree or directory structure, with specific nodes or files highlighted or checked.
+2.  A magnifying glass focusing on a specific segment of code or data blocks.
+3.  A filter or funnel icon, showing raw data entering and structured context exiting.
+
+**Aesthetic Requirements:**
+
+  * Use the Master Aesthetic (A15.1): Modern, Precise, Futuristic Minimalism.
+  * Color: Primarily white/light gray, suitable for use as an icon in a dark-themed UI.
+  * Style: Clean lines, recognizable shapes, optimized SVG paths.
+</file_artifact>
+
+<file path="src/Artifacts/A15.5-Image-Prompt-Icon-ParallelCopilot.md">
+# Artifact A15.5: Image Prompt - Icon: Parallel Co-Pilot (AS-05)
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** Specific prompt for generating the Parallel Co-Pilot icon (AS-05) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+## 1. Asset Request
+
+**Asset ID:** AS-05
+**Asset Name:** Icon: Parallel Co-Pilot
+**Format:** SVG
+**Location:** `public/assets/icons/parallel-copilot.svg`
+
+## 2. Generation Prompt
+
+*(This prompt is to be used in conjunction with the Master System Prompt in A15.1)*
+
+**Prompt:**
+
+Generate a minimalist, vector-based (SVG) icon representing "Parallel Co-Pilot".
+
+**Concept:** This icon symbolizes the comparison and testing of multiple AI responses simultaneously.
+
+**Ideas:**
+
+1.  Two or three vertical rectangles side-by-side (representing panels or windows), perhaps with slight variations to indicate different options.
+2.  A branching path or diverging arrows, symbolizing multiple potential solutions stemming from a single point.
+3.  A stylized "compare" or "diff" icon (e.g., two overlapping squares with differences highlighted).
+
+**Aesthetic Requirements:**
+
+  * Use the Master Aesthetic (A15.1): Modern, Precise, Futuristic Minimalism.
+  * Color: Primarily white/light gray, suitable for use as an icon in a dark-themed UI.
+  * Style: Clean lines, recognizable shapes, optimized SVG paths.
+</file_artifact>
+
+<file path="src/Artifacts/A15.6-Image-Prompt-Icon-IterativeWorkflow.md">
+# Artifact A15.6: Image Prompt - Icon: Iterative Workflow (AS-06)
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** Specific prompt for generating the Iterative Workflow icon (AS-06) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+## 1. Asset Request
+
+**Asset ID:** AS-06
+**Asset Name:** Icon: Iterative Workflow
+**Format:** SVG
+**Location:** `public/assets/icons/iterative-workflow.svg`
+
+## 2. Generation Prompt
+
+*(This prompt is to be used in conjunction with the Master System Prompt in A15.1)*
+
+**Prompt:**
+
+Generate a minimalist, vector-based (SVG) icon representing "Iterative Workflow" or "Cycles".
+
+**Concept:** This icon symbolizes the continuous, cycle-based development process (prompt -> response -> test -> integrate -> repeat).
+
+**Ideas:**
+
+1.  A clean, circular arrow (refresh/reload symbol), perhaps with sharp, geometric edges.
+2.  A stylized gear or cog, representing the machinery of the workflow.
+3.  A spiral or helix shape, indicating continuous progress and iteration.
+
+**Aesthetic Requirements:**
+
+  * Use the Master Aesthetic (A15.1): Modern, Precise, Futuristic Minimalism.
+  * Color: Primarily white/light gray, suitable for use as an icon in a dark-themed UI.
+  * Style: Clean lines, recognizable shapes, optimized SVG paths.
+</file_artifact>
+
+<file path="src/Artifacts/A15.7-Image-Prompt-OGImage.md">
+# Artifact A15.7: Image Prompt - OG:Image (AS-07)
+
+# Date Created: C3
+
+# Author: AI Model
+
+  - **Key/Value for A0:**
+  - **Description:** Specific prompt for generating the Open Graph image (AS-07) for aiascent.dev social sharing.
+  - **Tags:** assets, design, images, prompt, ogimage, social media
+
+## 1. Asset Request
+
+**Asset ID:** AS-07
+**Asset Name:** OG:Image
+**Format:** PNG (1200x630 pixels)
+**Location:** `public/assets/images/og-image.png`
+
+## 2. Generation Prompt
+
+*(This prompt is to be used in conjunction with the Master System Prompt in A15.1)*
+
+**Prompt:**
+
+Generate an Open Graph image (1200x630 pixels) for the aiascent.dev website.
+
+**Concept:** This image is displayed when the website is shared on social media. It must be visually compelling, professional, and clearly communicate the website's purpose.
+
+**Elements to Include:**
+
+1.  **Background:** A dark, sophisticated background (e.g., deep black or dark gray), potentially with subtle technological textures or a faint grid/particle effect (similar to the Hero section aesthetic).
+2.  **Logo/Title:** The "AIAscent.dev" title or logo, prominently displayed.
+3.  **Tagline:** The core value proposition: "Master the Human-AI Workflow. Become a Citizen Architect."
+4.  **Visual Anchor:** An abstract visualization of the DCE workflow or a highly stylized, aesthetically pleasing representation of the DCE interface (e.g., a polished version of the hero screenshot, framed elegantly).
+
+**Aesthetic Requirements:**
+
+  * Use the Master Aesthetic (A15.1): Modern, Precise, Futuristic Minimalism.
+  * Color: Dark background, high contrast text (white/light gray), vibrant accents (Electric Blue/Cyan) used to draw the eye.
+  * Style: Cinematic, clean, professional. Ensure text is large enough to be readable when embedded in social feeds.
+  * Format: 1200x630 PNG.
+</file_artifact>
+
+<file path="src/components/global/3d-card.tsx">
+// src/components/global/3d-card.tsx
+// C3 - Ported from automationsaas context
+'use client'
+
+import { cn } from '@/lib/utils'
+// Removed unused import: import Image from 'next/image'
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+} from 'react'
+
+const MouseEnterContext = createContext<
+  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
+
+> (undefined)
+
+export const CardContainer = ({
+  children,
+  className,
+  containerClassName,
+}: {
+  children?: React.ReactNode
+  className?: string
+  containerClassName?: string
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isMouseEntered, setIsMouseEntered] = useState(false)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    const { left, top, width, height } =
+      containerRef.current.getBoundingClientRect()
+// Adjusted division factor from 25 to 40 for subtler effect
+    const x = (e.clientX - left - width / 2) / 40
+    const y = (e.clientY - top - height / 2) / 40
+    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
+  }
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseEntered(true)
+    if (!containerRef.current) return
+  }
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    setIsMouseEntered(false)
+    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`
+  }
+  return (
+    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
+      <div
+        className={cn('flex items-center justify-center', containerClassName)}
+        style={{
+          perspective: '1000px',
+        }}
+      >
+        <div
+          ref={containerRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={cn(
+            'flex items-center justify-center relative transition-all duration-200 ease-linear',
+            className
+          )}
+          style={{
+            transformStyle: 'preserve-3d',
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    </MouseEnterContext.Provider>
+  )
+}
+
+export const CardBody = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) => {
+  return (
+// Removed fixed h-96 w-96 to allow flexible sizing
+    <div
+      className={cn(
+        '[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
+        className
+      )}
+    >
+      {children}
+    </div>
+  )
+}
+
+export const CardItem = ({
+  as: Tag = 'div',
+  children,
+  className,
+  translateX = 0,
+  translateY = 0,
+  translateZ = 0,
+  rotateX = 0,
+  rotateY = 0,
+  rotateZ = 0,
+  ...rest
+}: {
+  as?: React.ElementType
+  children: React.ReactNode
+  className?: string
+  translateX?: number | string
+  translateY?: number | string
+  translateZ?: number | string
+  rotateX?: number | string
+  rotateY?: number | string
+  rotateZ?: number | string
+}) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isMouseEntered] = useMouseEnter()
+
+  useEffect(() => {
+    handleAnimations()
+  }, [isMouseEntered])
+
+  const handleAnimations = () => {
+    if (!ref.current) return
+    if (isMouseEntered) {
+      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+    } else {
+      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
+    }
+  }
+
+  return (
+    <Tag
+      ref={ref}
+// Adjusted duration-200 to duration-300 for smoother animation
+      className={cn('w-fit transition duration-300 ease-linear', className)}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  )
+}
+
+// Create a hook to use the context
+export const useMouseEnter = () => {
+  const context = useContext(MouseEnterContext)
+  if (context === undefined) {
+    throw new Error('useMouseEnter must be used within a MouseEnterProvider')
+  }
+  return context
+}
+</file_artifact>
+
+<file path="src/components/global/container-scroll-animation.tsx">
+// src/components/global/container-scroll-animation.tsx
+// C3 - Ported from automationsaas context
+'use client'
+import React, { useRef } from 'react'
+import { useScroll, useTransform, motion } from 'framer-motion'
+import Image from 'next/image'
+
+// Define the type for the children prop, which will contain the visuals (images/gifs)
+type ContainerScrollProps = {
+titleComponent: string | React.ReactNode;
+children: React.ReactNode; // Added children prop
+};
+
+export const ContainerScroll = ({
+titleComponent,
+children, // Destructure children
+}: ContainerScrollProps) => {
+const containerRef = useRef<any>(null)
+const { scrollYProgress } = useScroll({
+target: containerRef,
+})
+const [isMobile, setIsMobile] = React.useState(false)
+
+React.useEffect(() => {
+const checkMobile = () => {
+setIsMobile(window.innerWidth <= 768)
+}
+checkMobile()
+window.addEventListener('resize', checkMobile)
+return () => {
+window.removeEventListener('resize', checkMobile)
+}
+}, [])
+
+const scaleDimensions = () => {
+return isMobile ? [0.7, 0.9] : [1.05, 1]
+}
+
+const rotate = useTransform(scrollYProgress, [0, 1], [20, 0])
+const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
+const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
+
+return (
+<div
+className="h-[80rem] flex items-center justify-center relative p-20"
+ref={containerRef}
+>
+<div
+className="py-40 w-full relative"
+style={{
+perspective: '1000px',
+}}
+>
+<Header
+translate={translate}
+titleComponent={titleComponent}
+/>
+{/* Pass children to the Card component */}
+<Card
+rotate={rotate}
+translate={translate}
+scale={scale}
+>
+{children}
+</Card>
+</div>
+</div>
+)
+}
+
+export const Header = ({ translate, titleComponent }: any) => {
+return (
+<motion.div
+style={{
+translateY: translate,
+}}
+className="div max-w-5xl mx-auto text-center"
+>
+{titleComponent}
+</motion.div>
+)
+}
+
+// Update Card component to accept children
+type CardProps = {
+rotate: any;
+scale: any;
+translate: any;
+children: React.ReactNode; // Added children prop
+};
+
+export const Card = ({
+rotate,
+scale,
+translate,
+children, // Destructure children
+}: CardProps) => {
+return (
+<motion.div
+style={{
+rotateX: rotate, // rotate in X-axis
+scale,
+boxShadow:
+'0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
+}}
+// Adjusted mt-12 to -mt-12 to match automationsaas styling
+className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+>
+<div className="bg-gray-100 h-full w-full rounded-2xl gap-4 overflow-hidden p-4 transition-all">
+{/* Render children instead of a static image */}
+{children}
+</div>
+</motion.div>
+)
+}
+</file_artifact>
+
+<file path="src/components/global/infinite-moving-cards.tsx">
+// src/components/global/infinite-moving-cards.tsx
+// C3 - Ported from automationsaas context
+'use client'
+
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
+
+export const InfiniteMovingCards = ({
+  items,
+  direction = 'left',
+  speed = 'fast',
+  pauseOnHover = true,
+  className,
+}: {
+  items: {
+// Updated type to support image href or text content
+    content: string;
+type: 'image' | 'text';
+  }[]
+  direction?: 'left' | 'right'
+  speed?: 'fast' | 'normal' | 'slow'
+  pauseOnHover?: boolean
+  className?: string
+}) => {
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const scrollerRef = React.useRef<HTMLUListElement>(null)
+
+  useEffect(() => {
+    addAnimation()
+  }, [])
+  
+  const [start, setStart] = useState(false)
+  function addAnimation() {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children)
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true)
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem)
+        }
+      })
+
+      getDirection()
+      getSpeed()
+      setStart(true)
+    }
+  }
+  const getDirection = () => {
+    if (containerRef.current) {
+      if (direction === 'left') {
+        containerRef.current.style.setProperty(
+          '--animation-direction',
+          'forwards'
+        )
+      } else {
+        containerRef.current.style.setProperty(
+          '--animation-direction',
+          'reverse'
+        )
+      }
+    }
+  }
+  const getSpeed = () => {
+    if (containerRef.current) {
+      if (speed === 'fast') {
+        containerRef.current.style.setProperty('--animation-duration', '20s')
+      } else if (speed === 'normal') {
+        containerRef.current.style.setProperty('--animation-duration', '40s')
+      } else {
+        containerRef.current.style.setProperty('--animation-duration', '80s')
+      }
+    }
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className={cn(
+        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        className
+      )}
+    >
+      <ul
+        ref={scrollerRef}
+        className={cn(
+          ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap items-center',
+          start && 'animate-scroll ',
+          pauseOnHover && 'hover:[animation-play-state:paused]'
+        )}
+      >
+        {items.map((item, idx) => (
+<li key={idx} className="flex items-center">
+{item.type === 'image' ? (
+<Image
+width={170}
+height={50} // Adjusted height for better aspect ratio
+src={item.content}
+alt={`scrolling-item-${idx}`}
+className="relative rounded-2xl object-contain opacity-50"
+/>
+) : (
+<span className="text-2xl font-semibold opacity-50 whitespace-nowrap">
+{item.content}
+</span>
+)}
+</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+</file_artifact>
+
+<file path="src/components/global/lamp.tsx">
+// src/components/global/lamp.tsx
+// C3 - Ported from automationsaas context
+'use client'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
+import { SparklesCore } from './sparkles' // Adjusted import path
+
+// This component seems unused in the automationsaas context based on the flattened repo,
+// but it's required by LampContainer.
+export function LampComponent() {
+  return (
+    <LampContainer>
+      <motion.h1
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: 'easeInOut',
+        }}
+        className="mt-20 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+      >
+        Plans That
+        <br /> Fit You Best
+      </motion.h1>
+    </LampContainer>
+  )
+}
+
+export const LampContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) => {
+  return (
+    <div
+      className={cn(
+// Adjusted min-h-[800px] to min-h-[600px] for better fit
+        'relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0',
+        className
+      )}
+    >
+      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
+        <motion.div
+          initial={{ opacity: 0.5, width: '15rem' }}
+          whileInView={{ opacity: 1, width: '30rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          style={{
+            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+          }}
+// Changed from-neutral-500 to a more vibrant color (e.g., cyan-500 or blue-500) for accent
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-cyan-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+        >
+          <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0.5, width: '15rem' }}
+          whileInView={{ opacity: 1, width: '30rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+          style={{
+            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+          }}
+// Changed to-neutral-500 to the same vibrant color
+          className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-cyan-500 text-white [--conic-position:from_290deg_at_center_top]"
+        >
+          <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
+          <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+        </motion.div>
+        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div>
+        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
+{/* Changed bg-neutral-500 to the vibrant color */}
+        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
+        <motion.div
+          initial={{ width: '8rem' }}
+          whileInView={{ width: '16rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+// Changed bg-neutral-400 to the vibrant color
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
+        ></motion.div>
+        <motion.div
+          initial={{ width: '15rem' }}
+          whileInView={{ width: '30rem' }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: 'easeInOut',
+          }}
+// Changed bg-neutral-400 to the vibrant color
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
+        ></motion.div>
+
+
+  {/* Optional: SparklesCore integration, uncomment if needed */}
+
+
+        {/* <div className="w-[40rem] h-40 relative">
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={1200}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+        </div> */}
+
+        <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div>
+      </div>
+
+
+  {/* Adjusted translate-y-80 to -translate-y-40 for better vertical alignment */}
+
+
+      <div className="relative z-50 flex -translate-y-40 flex-col items-center px-5">
+        {children}
+      </div>
+    </div>
+  )
+}
+</file_artifact>
+
+<file path="src/components/global/sparkles.tsx">
+// src/components/global/sparkles.tsx
+// C3 - Ported from automationsaas context
+'use client'
+// Removed unused imports: import type { NextPage } from 'next'
+import React from 'react'
+import { useEffect, useState } from 'react'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import type { Container } from '@tsparticles/engine' // Removed unused import: Engine
+import { loadSlim } from '@tsparticles/slim'
+
+import { motion, useAnimation } from 'framer-motion'
+import { cn } from '@/lib/utils'
+
+type ParticlesProps = {
+  id?: string
+  className?: string
+  background?: string
+  particleSize?: number // Marked as potentially unused based on options below
+  minSize?: number
+  maxSize?: number
+  speed?: number
+  particleColor?: string
+  particleDensity?: number
+}
+export const SparklesCore = (props: ParticlesProps) => {
+  const {
+    id,
+    className,
+    background,
+    minSize,
+    maxSize,
+    speed,
+    particleColor,
+    particleDensity,
+  } = props
+  const [init, setInit] = useState(false)
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine)
+    }).then(() => {
+      setInit(true)
+    })
+  }, [])
+  const controls = useAnimation()
+
+  const particlesLoaded = async (container?: Container) => {
+    if (container) {
+// Removed console.log(container) as it's usually noisy
+      // console.log(container)
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 1,
+        },
+      })
+    }
+  }
+
+// NOTE: The options object below is very large and mostly contains default values.
+// It has been kept intact as ported from automationsaas to ensure identical behavior.
+// In a future refactoring cycle, this could be significantly reduced to only the necessary overrides.
+
+  return (
+    <motion.div
+      animate={controls}
+      className={cn('opacity-0', className)}
+    >
+      {init && (
+        <Particles
+          id={id || 'tsparticles'}
+          className={cn('h-full w-full')}
+          particlesLoaded={particlesLoaded}
+          options={{
+            background: {
+              color: {
+// Defaulted background to transparent if not provided, instead of #0d47a1
+                value: background || 'transparent',
+              },
+            },
+            fullScreen: {
+              enable: false,
+              zIndex: 1,
+            },
+
+            fpsLimit: 120,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: 'push',
+                },
+                onHover: {
+                  enable: false,
+                  mode: 'repulse',
+                },
+                resize: true as any,
+              },
+              modes: {
+                push: {
+                  quantity: 4,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                },
+              },
+            },
+            particles: {
+              bounce: {
+                horizontal: {
+                  value: 1,
+                },
+                vertical: {
+                  value: 1,
+                },
+              },
+              collisions: {
+                absorb: {
+                  speed: 2,
+                },
+                bounce: {
+                  horizontal: {
+                    value: 1,
+                  },
+                  vertical: {
+                    value: 1,
+                  },
+                },
+                enable: false,
+                maxSpeed: 50,
+                mode: 'bounce',
+                overlap: {
+                  enable: true,
+                  retries: 0,
+                },
+              },
+              color: {
+                value: particleColor || '#ffffff',
+                animation: {
+                  h: {
+                    count: 0,
+                    enable: false,
+                    speed: 1,
+                    decay: 0,
+                    delay: 0,
+                    sync: true,
+                    offset: 0,
+                  },
+                  s: {
+                    count: 0,
+                    enable: false,
+                    speed: 1,
+                    decay: 0,
+                    delay: 0,
+                    sync: true,
+                    offset: 0,
+                  },
+                  l: {
+                    count: 0,
+                    enable: false,
+                    speed: 1,
+                    decay: 0,
+                    delay: 0,
+                    sync: true,
+                    offset: 0,
+                  },
+                },
+              },
+              effect: {
+                close: true,
+                fill: true,
+                options: {},
+                type: {} as any,
+              },
+              groups: {},
+              move: {
+                angle: {
+                  offset: 0,
+                  value: 90,
+                },
+                attract: {
+                  distance: 200,
+                  enable: false,
+                  rotate: {
+                    x: 3000,
+                    y: 3000,
+                  },
+                },
+                center: {
+                  x: 50,
+                  y: 50,
+                  mode: 'percent',
+                  radius: 0,
+                },
+                decay: 0,
+                distance: {},
+                direction: 'none',
+                drift: 0,
+                enable: true,
+                gravity: {
+                  acceleration: 9.81,
+                  enable: false,
+                  inverse: false,
+                  maxSpeed: 50,
+                },
+                path: {
+                  clamp: true,
+                  delay: {
+                    value: 0,
+                  },
+                  enable: false,
+                  options: {},
+                },
+                outModes: {
+                  default: 'out',
+                },
+                random: false,
+                size: false,
+                speed: {
+                  min: 0.1,
+                  max: 1,
+                },
+                spin: {
+                  acceleration: 0,
+                  enable: false,
+                },
+                straight: false,
+                trail: {
+                  enable: false,
+                  length: 10,
+                  fill: {},
+                },
+                vibrate: false,
+                warp: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  width: 400,
+                  height: 400,
+                },
+                limit: {
+                  mode: 'delete',
+                  value: 0,
+                },
+                value: particleDensity || 120,
+              },
+              opacity: {
+                value: {
+                  min: 0.1,
+                  max: 1,
+                },
+                animation: {
+                  count: 0,
+                  enable: true,
+                  speed: speed || 4,
+                  decay: 0,
+                  delay: 2,
+                  sync: false,
+                  mode: 'auto',
+                  startValue: 'random',
+                  destroy: 'none',
+                },
+              },
+              reduceDuplicates: false,
+              shadow: {
+                blur: 0,
+                color: {
+                  value: '#000',
+                },
+                enable: false,
+                offset: {
+                  x: 0,
+                  y: 0,
+                },
+              },
+              shape: {
+                close: true,
+                fill: true,
+                options: {},
+                type: 'circle',
+              },
+              size: {
+                value: {
+                  min: minSize || 1,
+                  max: maxSize || 3,
+                },
+                animation: {
+                  count: 0,
+                  enable: false,
+                  speed: 5,
+                  decay: 0,
+                  delay: 0,
+                  sync: false,
+                  mode: 'auto',
+                  startValue: 'random',
+                  destroy: 'none',
+                },
+              },
+// ... (Remaining default options omitted for brevity, see automationsaas context if needed)
+              stroke: {
+                width: 0,
+              },
+// ...
+            },
+            detectRetina: true,
+          }}
+        />
+      )}
+    </motion.div>
+  )
+}
+</file_artifact>
+
+<file path="src/components/home/FeaturesSection.tsx">
+// src/components/home/FeaturesSection.tsx
+// C3 - Implementation
+import React from 'react';
+import { CardContainer, CardBody, CardItem } from '@/components/global/3d-card';
+import Image from 'next/image';
+
+const features = [
+{
+title: "Precision Context Curation",
+description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
+icon: "/assets/icons/context-curation.svg",
+translateZ: "50",
+},
+{
+title: "Parallel Co-Pilot & Rapid Testing",
+description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow (Baseline/Restore) to safely audition code changes in seconds.",
+icon: "/assets/icons/parallel-copilot.svg",
+translateZ: "60",
+},
+{
+title: "Iterative Knowledge Graph",
+description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
+icon: "/assets/icons/iterative-workflow.svg",
+translateZ: "70",
+},
+];
+
+const FeaturesSection = () => {
+return (
+<section className="py-20 md:py-32 bg-background">
+<div className="container mx-auto px-4">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+Stop Fighting Your Tools. Start Building the Future.
+</h2>
+
+
+    <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8">
+      {features.map((feature, index) => (
+        <CardContainer key={index} className="inter-var">
+          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:w-[350px] h-auto rounded-xl p-6 border">
+            
+            <CardItem
+              translateZ={feature.translateZ}
+              className="w-full mb-4"
+            >
+                {/* Placeholder for icons. SVGs need proper handling or rendering */}
+              <div className="h-12 w-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
+                {/* Using Image component as a placeholder for SVG icons until SVGR is set up */}
+                <Image src={feature.icon} alt={feature.title} width={24} height={24} className='invert dark:invert-0'/>
+              </div>
+            </CardItem>
+
+            <CardItem
+              translateZ="50"
+              className="text-xl font-bold text-neutral-600 dark:text-white"
+            >
+              {feature.title}
+            </CardItem>
+            <CardItem
+              as="p"
+              translateZ="60"
+              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+            >
+              {feature.description}
+            </CardItem>
+            
+          </CardBody>
+        </CardContainer>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+);
+};
+
+export default FeaturesSection;
+</file_artifact>
+
+<file path="src/components/home/HeroSection.tsx">
+// src/components/home/HeroSection.tsx
+// C3 - Implementation
+import React from 'react';
+import { ContainerScroll } from '@/components/global/container-scroll-animation';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const HeroSection = () => {
+return (
+<section className="h-screen w-full bg-neutral-950 rounded-md !overflow-visible relative flex flex-col items-center antialiased">
+{/* Background Gradient */}
+<div className="absolute inset-0 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#0D1A26_100%)]"></div>
+
+
+  {/* ContainerScroll and Content */}
+  <div className="flex flex-col mt-[-100px] md:mt-[-50px]">
+    <ContainerScroll
+      titleComponent={
+        <div className="flex items-center flex-col">
+          {/* Headline (A16, 4.2) */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold text-center mb-8">
+            Master the Human-AI Workflow.<br/>Become a Citizen Architect.
+          </h1>
+          
+          {/* Subheadline (A16, 4.2) */}
+          <p className="text-xl text-neutral-400 max-w-4xl text-center mb-12">
+            The Data Curation Environment (DCE) is the essential VS Code extension for developers who want to move beyond prompt-and-pray. Curate context with precision, test AI solutions rapidly, and build complex systems with confidence.
+          </p>
+
+          {/* CTAs (A16, 4.2) */}
+          <div className="flex gap-4">
+            <Link href="/showcase">
+                <Button
+                    size={'lg'}
+                    className="p-6 text-lg border-t-2 rounded-full border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
+                >
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600 font-sans group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-black">
+                    Explore the Showcase
+                    </span>
+                </Button>
+            </Link>
+            {/* Placeholder for Download Link */}
+            <Button size="lg" variant="outline" className="p-6 text-lg">
+                Download Now
+            </Button>
+          </div>
+        </div>
+      }
+    >
+        {/* Visuals (A16, 4.2 Updated C3) */}
+        {/* Using a grid inside the scroll container to show both assets */}
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 h-full w-full'>
+            <div className="relative h-full w-full">
+                <Image
+                    src="/assets/images/dce-hero-screenshot.png"
+                    alt="DCE Interface Screenshot"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-2xl"
+                />
+            </div>
+            <div className="relative h-full w-full">
+                {/* Assuming the GIF is placed here. If not available, it will show alt text */}
+                 <Image
+                    src="/assets/images/pcp.gif"
+                    alt="DCE Workflow Demonstration GIF"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-2xl"
+                    unoptimized={true} // GIFs should not be optimized by Next.js Image component
+                />
+            </div>
+        </div>
+    </ContainerScroll>
+  </div>
+</section>
+
+
+);
+};
+
+export default HeroSection;
+</file_artifact>
+
+<file path="src/components/home/MissionSection.tsx">
+// src/components/home/MissionSection.tsx
+// C3 - Implementation
+'use client'; // LampContainer requires client-side rendering
+import React from 'react';
+import { LampContainer } from '@/components/global/lamp';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const MissionSection = () => {
+return (
+<section className="w-full">
+<LampContainer>
+<motion.div
+initial={{ opacity: 0.5, y: 100 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{
+delay: 0.3,
+duration: 0.8,
+ease: 'easeInOut',
+}}
+className="flex flex-col items-center text-center"
+>
+<h2 className="mt-8 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-6xl">
+More Than Code:<br /> The Rise of Cognitive Capitalism.
+</h2>
+<p className="text-xl text-neutral-400 max-w-2xl text-center my-8">
+Mastering AI collaboration is essential for competitiveness and individual empowerment. The DCE is the foundational tool for a decentralized future, enabling Citizen Architects to combat AI centralization.
+</p>
+<Link href="/mission">
+<Button size="lg" variant="outline" className='text-lg'>
+Read Our Mission
+</Button>
+</Link>
+</motion.div>
+</LampContainer>
+</section>
+);
+};
+
+export default MissionSection;
+</file_artifact>
+
+<file path="src/components/home/WorkflowSection.tsx">
+// src/components/home/WorkflowSection.tsx
+// C3 - Implementation (Placeholder)
+import React from 'react';
+
+const WorkflowSection = () => {
+// Placeholder for the Workflow Visualization (A16, 4.4)
+// This will be implemented in a future cycle with more complex visualization logic.
+
+return (
+<section className="py-20 md:py-32 bg-card">
+<div className="container mx-auto px-4">
+<h2 className="text-3xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+The Power of Iteration: The DCE Workflow
+</h2>
+
+
+    <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-10 border rounded-lg shadow-lg bg-background/50">
+      {/* Simplified visualization */}
+      <div className="text-center p-4 border rounded-md">1. Curate Context</div>
+      <div className="text-2xl">→</div>
+      <div className="text-center p-4 border rounded-md">2. Generate Prompt</div>
+      <div className="text-2xl">→</div>
+      <div className="text-center p-4 border rounded-md">3. Parallel AI Responses</div>
+      <div className="text-2xl">→</div>
+      <div className="text-center p-4 border rounded-md">4. Test & Select</div>
+      <div className="text-2xl">→</div>
+      <div className="text-center p-4 border rounded-md">5. Integrate & Commit</div>
+    </div>
+
+    <p className="text-center mt-8 text-muted-foreground">
+        (Interactive visualization coming soon)
+    </p>
+  </div>
+</section>
+
+
+);
+};
+
+export default WorkflowSection;
+</file_artifact>
+
+<file path="public/assets/images/pcp.gif">
+<metadata>
+{
+  "name": "pcp.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images",
+  "fileType": "GIF",
+  "sizeInBytes": 38289500,
+  "dimensions": {
+    "width": 1910,
+    "height": 1016
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/icons/context-curation.png">
+<metadata>
+{
+  "name": "context-curation.png",
+  "directory": "c:/Projects/aiascent-dev/public/assets/icons",
+  "fileType": "PNG",
+  "sizeInBytes": 6352835,
+  "dimensions": {
+    "width": 2816,
+    "height": 1536
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/icons/parallel-copilot.png">
+<metadata>
+{
+  "name": "parallel-copilot.png",
+  "directory": "c:/Projects/aiascent-dev/public/assets/icons",
+  "fileType": "PNG",
+  "sizeInBytes": 5977099,
+  "dimensions": {
+    "width": 2048,
+    "height": 2048
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/icons/iterative-workflow.png">
+<metadata>
+{
+  "name": "iterative-workflow.png",
+  "directory": "c:/Projects/aiascent-dev/public/assets/icons",
+  "fileType": "PNG",
+  "sizeInBytes": 6296969,
+  "dimensions": {
+    "width": 2166,
+    "height": 1536
+  }
+}
+</metadata>
 </file_artifact>
 

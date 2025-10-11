@@ -4,21 +4,21 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C2 (Add new artifacts A15-A19)
+# Updated on: C3 (Add new A15.X image prompt artifacts)
 
-## 1\. Purpose
+## 1. Purpose
 
 This file serves as the definitive, parseable list of all documentation artifacts for the `aiascent.dev` website project. This project aims to create a promotional website for the Data Curation Environment (DCE) VS Code Extension, featuring an interactive showcase.
 
-## 2\. Formatting Rules for Parsing
+## 2. Formatting Rules for Parsing
 
-\*   Lines beginning with `#` are comments and are ignored.
-\*   `##` denotes a major category header and is ignored.
-\*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
-\*   Lines beginning with `- **Description:**` provide context for the project.
-\*   Lines beginning with `- **Tags:**` provide keywords for Inference.
+*   Lines beginning with `#` are comments and are ignored.
+*   `##` denotes a major category header and is ignored.
+*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
+*   Lines beginning with `- **Description:**` provide context for the project.
+*   Lines beginning with `- **Tags:**` provide keywords for Inference.
 
-## 3\. Artifacts List
+## 3. Artifacts List
 
 ## I. Project Planning & Vision
 
@@ -50,6 +50,41 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
   - **Tags:** assets, wishlist, design, images, icons, file structure
+
+### A15.1. aiascent.dev - Master Image Generation System Prompt
+
+  - **Description:** The master system prompt defining the aesthetic guidelines and thematic direction for all images generated for the aiascent.dev website.
+  - **Tags:** assets, design, images, prompt engineering, system prompt, aesthetic
+
+### A15.2. aiascent.dev - Image Prompt - Logo (AS-01)
+
+  - **Description:** Specific prompt for generating the main logo (AS-01) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, logo
+
+### A15.3. aiascent.dev - Image Prompt - Favicon (AS-02)
+
+  - **Description:** Specific prompt for generating the favicon (AS-02) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, favicon
+
+### A15.4. aiascent.dev - Image Prompt - Icon: Context Curation (AS-04)
+
+  - **Description:** Specific prompt for generating the Context Curation icon (AS-04) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+### A15.5. aiascent.dev - Image Prompt - Icon: Parallel Co-Pilot (AS-05)
+
+  - **Description:** Specific prompt for generating the Parallel Co-Pilot icon (AS-05) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+### A15.6. aiascent.dev - Image Prompt - Icon: Iterative Workflow (AS-06)
+
+  - **Description:** Specific prompt for generating the Iterative Workflow icon (AS-06) for aiascent.dev.
+  - **Tags:** assets, design, images, prompt, icon
+
+### A15.7. aiascent.dev - Image Prompt - OG:Image (AS-07)
+
+  - **Description:** Specific prompt for generating the Open Graph image (AS-07) for aiascent.dev social sharing.
+  - **Tags:** assets, design, images, prompt, ogimage, social media
 
 ### A16. aiascent.dev - Page Design: Home (Landing Page)
 
