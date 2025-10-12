@@ -14,8 +14,8 @@ const ImageNavigator: React.FC = () => {
   const { prevPage, nextPage, prevImage, nextImage, toggleTreeNav, toggleChatPanel, togglePromptVisibility } = useReportStore.getState();
 
   const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-  const totalImages = currentPrompt?.images.length ?? 0;
+  const currentPrompt = currentPage?.imagePrompts;
+  const totalImages = currentPrompt?.[0]?.images.length ?? 0;
 
   return (
     <div className="flex items-center justify-between gap-4 text-xs text-muted-foreground w-full py-1">
@@ -33,14 +33,13 @@ const ImageNavigator: React.FC = () => {
           <span>Page {currentPageIndex + 1}/{allPages.length}</span>
           <button className="btn-report-lg" onClick={nextPage} title="Next Page (Down Arrow)"><FaChevronDown /></button>
         </div>
-        
-        {/* C22 Fix: Conditionally render image navigation */}
+        {/* Image Nav - C22 FIX: Conditionally render */}
         {totalImages > 1 && (
-          <div className="flex items-center gap-2">
-            <button className="btn-report-lg" onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
-            <span>Image {currentImageIndex + 1}/{totalImages}</span>
-            <button className="btn-report-lg" onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
-          </div>
+            <div className="flex items-center gap-2">
+                <button className="btn-report-lg" onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
+                <span>Image {currentImageIndex + 1}/{totalImages}</span>
+                <button className="btn-report-lg" onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
+            </div>
         )}
       </div>
 

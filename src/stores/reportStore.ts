@@ -202,10 +202,9 @@ export const useReportStore = create<ReportState & ReportActions>()(
             loadReport: async (reportName: string) => {
                 if (!reportName) {
                     console.error("loadReport called with undefined reportName.");
-                    set({ isLoading: false, allPages: [] }); // Set state to show error
+                    set({ isLoading: false });
                     return;
                 }
-
                 // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
                 set({ _hasHydrated: true, isLoading: true });
@@ -236,8 +235,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     const images: ReportImage[] = [];
                                     const imageBasePath = manifestData.basePath;
                                     
-                                    // C22 Fix: Handle single images vs sequences
-                                    if (groupMeta.imageCount === 1) {
+                                    // C22 Fix: Handle single, non-numbered images
+                                    if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
                                         images.push({
@@ -258,7 +257,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                             });
                                         }
                                     }
-
+                                    
                                     return {
                                         promptId: groupId,
                                         promptText: groupMeta.prompt,
@@ -289,7 +288,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                     get().setActiveExpansionPath(get().currentPageIndex);
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
-                    set({ isLoading: false, allPages: [] });
+                    set({ isLoading: false });
                 }
             },
             

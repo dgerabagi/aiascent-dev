@@ -3,11 +3,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStore';
 import { FaTimes, FaBroom } from 'react-icons/fa';
-import { Resizable } from 're-resizable';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
 const ReportChatPanel: React.FC = () => {
-    const { chatPanelWidth, setChatPanelWidth, toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
+    const { toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
     const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -38,13 +37,9 @@ const ReportChatPanel: React.FC = () => {
             return rawText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
-        // C18 Fix: Don't show an error for partial streams.
-        // Strip out analysis blocks and return whatever is left.
         const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*/g;
         const cleanedText = rawText.replace(analysisRegex, '').trim();
         
-        // If the only thing we've received is analysis blocks, cleanedText will be empty.
-        // In that case, we return an empty string and let the "Thinking..." status show.
         return cleanedText;
     };
 
@@ -122,49 +117,37 @@ const ReportChatPanel: React.FC = () => {
     };
 
     return (
-        <Resizable
-            size={{ width: chatPanelWidth, height: '100%' }}
-            minWidth={300}
-            maxWidth="60vw"
-            enable={{ left: true }}
-            onResizeStop={(e, direction, ref) => {
-                // C22 Fix: Use absolute width from the ref
-                setChatPanelWidth(parseInt(ref.style.width, 10));
-            }}
-            handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
-        >
-            <div className="h-full bg-background border-l flex flex-col flex-shrink-0">
-                <header className="flex justify-between items-center p-2 border-b flex-shrink-0">
-                    <h3 className="font-bold text-sm">Ask @Ascentia</h3>
-                    <div>
-                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => { clearReportChatHistory(currentPage?.pageTitle || "Report"); setTimeout(() => textareaRef.current?.focus(), 0); }} title="Clear Chat History"><FaBroom /></button>
-                        <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
-                    </div>
-                </header>
-                <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-4">
-                    {reportChatHistory.map((msg, index) => (
-                        <div key={msg.id || index}>
-                            <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
-                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <div className="prose prose-sm dark:prose-invert max-w-none"><MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer></div>}
-                            {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
-                        </div>
-                    ))}
-                    <div ref={messagesEndRef} />
+        <div className="h-full bg-background border-l flex flex-col flex-shrink-0">
+            <header className="flex justify-between items-center p-2 border-b flex-shrink-0">
+                <h3 className="font-bold text-sm">Ask @Ascentia</h3>
+                <div>
+                    <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => { clearReportChatHistory(currentPage?.pageTitle || "Report"); setTimeout(() => textareaRef.current?.focus(), 0); }} title="Clear Chat History"><FaBroom /></button>
+                    <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
                 </div>
-                <footer className="p-2 border-t flex-shrink-0">
-                    <textarea
-                        ref={textareaRef}
-                        className="w-full bg-muted border rounded p-2 text-sm resize-none"
-                        placeholder="Ask a question... (Shift+Enter for newline)"
-                        value={reportChatInput}
-                        onChange={(e) => setReportChatInput(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        disabled={isThinking}
-                        rows={3}
-                    />
-                </footer>
+            </header>
+            <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-4">
+                {reportChatHistory.map((msg, index) => (
+                    <div key={msg.id || index}>
+                        <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
+                        {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <div className="prose prose-sm dark:prose-invert max-w-none"><MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer></div>}
+                        {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
+                    </div>
+                ))}
+                <div ref={messagesEndRef} />
             </div>
-        </Resizable>
+            <footer className="p-2 border-t flex-shrink-0">
+                <textarea
+                    ref={textareaRef}
+                    className="w-full bg-muted border rounded p-2 text-sm resize-none"
+                    placeholder="Ask a question... (Shift+Enter for newline)"
+                    value={reportChatInput}
+                    onChange={(e) => setReportChatInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    disabled={isThinking}
+                    rows={3}
+                />
+            </footer>
+        </div>
     );
 };
 

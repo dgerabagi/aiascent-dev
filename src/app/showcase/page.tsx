@@ -8,7 +8,7 @@ export default function ShowcasePage() {
   return (
     // C15 Fix: Set explicit height to prevent window scrolling. 4rem = h-16 of the Header.
     <div className="h-[calc(100vh-4rem)] w-full">
-        <ReportViewer reportName="ai_ascent_report" />
+        <ReportViewer reportName="showcase" />
     </div>
   );
 }
