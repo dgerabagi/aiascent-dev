@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T15:09:15.377Z
+  Date Generated: 2025-10-12T15:34:03.482Z
   ---
-  Total Files: 107
-  Approx. Tokens: 249885
+  Total Files: 109
+  Approx. Tokens: 251349
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -35,7 +35,7 @@
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
 15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-16. package.json - Lines: 46 - Chars: 1366 - Tokens: 342
+16. package.json - Lines: 48 - Chars: 1381 - Tokens: 346
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -99,23 +99,23 @@
 77. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 78. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 79. src\app\learn\page.tsx - Lines: 27 - Chars: 1239 - Tokens: 310
-80. src\app\mission\page.tsx - Lines: 78 - Chars: 5610 - Tokens: 1403
+80. src\app\mission\page.tsx - Lines: 76 - Chars: 5834 - Tokens: 1459
 81. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
 82. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 83. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 84. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
-85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 168 - Chars: 8313 - Tokens: 2079
+85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 168 - Chars: 8526 - Tokens: 2132
 86. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 87. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 88. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 89. src\stores\reportStore.ts - Lines: 475 - Chars: 19998 - Tokens: 5000
 90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 91. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
-92. src\components\report-viewer\ReportViewer.tsx - Lines: 136 - Chars: 5999 - Tokens: 1500
+92. src\components\report-viewer\ReportViewer.tsx - Lines: 136 - Chars: 6024 - Tokens: 1506
 93. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 94. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 95. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-96. src\app\api\chat\route.ts - Lines: 102 - Chars: 4192 - Tokens: 1048
+96. src\app\api\chat\route.ts - Lines: 123 - Chars: 4917 - Tokens: 1230
 97. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 98. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 99. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -127,6 +127,8 @@
 105. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 106. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 107. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
+108. src\components\mission\MissionSectionBlock.tsx - Lines: 94 - Chars: 2758 - Tokens: 690
+109. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -8941,7 +8943,9 @@ This artifact provides a structured format for tracking development tasks for th
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "react-markdown": "^9.0.1",
     "re-resizable": "^6.9.11",
+    "remark-gfm": "^4.0.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.2"
@@ -14220,76 +14224,74 @@ export default LearnPage;
 <file path="src/app/mission/page.tsx">
 // src/app/mission/page.tsx
 import React from 'react';
+import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 
 const MissionPage = () => {
     return (
-        // C15 Fix: Added pt-16 here to compensate for its removal from the main layout
         <div className="bg-background text-foreground min-h-screen pt-16">
             <div className="container mx-auto px-4 py-16">
-
-                {/* Section 1: The Vision */}
                 <section className="text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">
-                        Empowering the Citizen Architect.
+                        The Mission
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mt-4">
-                        We are building the tools for a future where anyone with a vision can build complex systems. The "Citizen Architect" is an individual empowered by AI to create, analyze, and maintain digital infrastructure once only accessible to large institutions.
+                        Beyond a tool, the Data Curation Environment represents a strategic vision for a decentralized, empowered, and secure technological future.
                     </p>
                 </section>
 
-                {/* Section 2: The Strategic Imperative */}
-                <section className="max-w-5xl mx-auto mb-24">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">The Centralization of Cognitive Power</h2>
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h3 className="text-2xl font-semibold mb-4 text-primary">The "Fissured Workplace"</h3>
-                            <p className="text-lg text-muted-foreground">
-                                The current Western approach to AI labor is a strategic vulnerability. By relying on a fragmented, precarious global workforce—the "fissured workplace"—we create an unstable foundation for our most critical technology. This model is not just an ethical failing; it's a direct threat to data quality, security, and our long-term competitive advantage.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-semibold mb-4 text-primary">The Coherent Competitor</h3>
-                            <p className="text-lg text-muted-foreground">
-                                In stark contrast, state-sponsored AI strategies are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry that a laissez-faire approach cannot counter.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <div className="flex flex-col gap-24">
+                    <MissionSectionBlock
+                        title="Empowering the Citizen Architect"
+                        tldr="We are building the tools for a future where anyone with a vision can build complex systems."
+                        content="The 'Citizen Architect' is an individual empowered by AI to create, analyze, and maintain digital infrastructure once only accessible to large institutions. Our mission is to forge these architects."
+                        images={[
+                            'the-citizen-architect-has-arrived-p1-img-1.webp',
+                            'the-citizen-architect-has-arrived-p1-img-5.webp',
+                            'the-citizen-architect-has-arrived-p1-img-9.webp',
+                        ]}
+                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure..."
+                        imageSide="left"
+                    />
 
-                {/* Section 3: The Counter-Strategy */}
-                <section className="bg-card border rounded-lg p-8 md:p-12 mb-24">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Strategy: <strong>Cognitive Apprenticeship</strong></h2>
-                    <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-center">
-                        Our answer is not to imitate authoritarian control, but to unleash decentralized expertise. We believe in <strong>Cognitive Apprenticeship</strong>—a model where AI serves as a tireless mentor, guiding individuals from intuitive "vibe coding" to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship.
-                    </p>
-                </section>
+                    <MissionSectionBlock
+                        title="The Fissured Workplace"
+                        tldr="The current Western AI labor model is a strategic vulnerability, creating an unstable foundation for our most critical technology."
+                        content="The AI supply chain is a masterclass in obfuscation, deliberately fractured to distance valuable tech companies from the human labor that makes their products possible. This labyrinthine structure is not an accident; it is a design choice intended to suppress wages, prevent worker organization, and shed legal and ethical liability. In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry that a laissez-faire approach cannot counter."
+                        images={[
+                            'the-fissured-workplace-p1-img-1.webp',
+                            'the-fissured-workplace-p1-img-7.webp',
+                            'the-fissured-workplace-p1-img-11.webp',
+                        ]}
+                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers..."
+                        imageSide="right"
+                    />
 
-                {/* Section 4: The Role of the DCE */}
-                <section className="text-center mb-24">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-8">The Essential Toolkit</h2>
-                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                        The DCE is more than a productivity tool; it's the infrastructure for the Citizen Architect. It provides the structured workflow, precision context curation, and rapid testing capabilities needed for a decentralized community of creators to build the future. We are creating a community of "solarpunk prime" developers, the original vibe coders, sharing discoveries to build a better, more resilient digital world.
-                    </p>
-                </section>
+                    <MissionSectionBlock
+                        title="Our Strategy: Cognitive Apprenticeship"
+                        tldr="Our answer is not to imitate authoritarian control, but to unleash decentralized expertise through a model where AI serves as a tireless mentor."
+                        content="We believe in **Cognitive Apprenticeship**—a model where AI serves as a tireless mentor, guiding individuals from intuitive 'vibe coding' to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship, making the invisible 'hidden curriculum' of expert thinking visible and learnable."
+                        images={[
+                            'the-pedagogical-engine-cam-p1-img-1.webp',
+                            'the-pedagogical-engine-cam-p1-img-6.webp',
+                            'the-pedagogical-engine-cam-p1-img-12.webp',
+                        ]}
+                        imagePrompt="An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+                        imageSide="left"
+                    />
 
-                {/* Section 5: Call to Action */}
-                <section className="text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">Join the Ascent.</h2>
-                    <p className="text-xl text-muted-foreground mb-8">Adopt the tools. Teach the methodology. Support the vision.</p>
-                    <div className="flex justify-center gap-4">
-                        <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer">
-                            <button className="px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors">
-                                Download the DCE
-                            </button>
-                        </a>
-                        <a href="https://github.com/dgerabagi/aiascent-dev" target="_blank" rel="noopener noreferrer">
-                            <button className="px-8 py-3 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/90 transition-colors">
-                                Contribute on GitHub
-                            </button>
-                        </a>
-                    </div>
-                </section>
-
+                    <MissionSectionBlock
+                        title="The Role of the DCE: The Essential Toolkit"
+                        tldr="The DCE is more than a productivity tool; it's the infrastructure for the Citizen Architect."
+                        content="The DCE provides the structured workflow, precision context curation, and rapid testing capabilities needed for a decentralized community of creators to build the future. We are creating a community of 'solarpunk prime' developers, the original vibe coders, sharing discoveries to build a better, more resilient digital world."
+                        images={[
+                            'the-new-creative-partnership-p1-img-1.webp',
+                            'the-new-creative-partnership-p1-img-8.webp',
+                            'the-new-creative-partnership-p1-img-15.webp',
+                        ]}
+                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer... sitting cross-legged on a vast, glowing digital floor... thoughtfully placing one of these blocks into a complex, half-finished digital structure..."
+                        imageSide="right"
+                    />
+                </div>
             </div>
         </div>
     );
@@ -14666,6 +14668,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStore';
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import { Resizable } from 're-resizable';
+import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
 const ReportChatPanel: React.FC = () => {
     const { chatPanelWidth, setChatPanelWidth, toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
@@ -14687,27 +14690,26 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        // C15 Fix: Changed block to 'nearest' to avoid whole page scroll
         messagesEndRef.current?.scrollIntoView({ behavior: 'auto', block: 'nearest' });
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
-    // C17: Function to parse the raw LLM output and extract the final message
     const parseFinalMessage = (rawText: string): string => {
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
-
+    
         if (finalMessageIndex !== -1) {
             return rawText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
-        // Fallback for unexpected formats
-        const analysisMarker = '<|channel|>analysis<|message|>';
-        if (rawText.includes(analysisMarker)) {
-            return "Could not parse final message from response.";
-        }
-
-        return rawText;
+        // C18 Fix: Don't show an error for partial streams.
+        // Strip out analysis blocks and return whatever is left.
+        const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*/g;
+        const cleanedText = rawText.replace(analysisRegex, '').trim();
+        
+        // If the only thing we've received is analysis blocks, cleanedText will be empty.
+        // In that case, we return an empty string and let the "Thinking..." status show.
+        return cleanedText;
     };
 
     const handleSend = async () => {
@@ -14800,11 +14802,11 @@ const ReportChatPanel: React.FC = () => {
                         <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
                     </div>
                 </header>
-                <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-2">
+                <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-4">
                     {reportChatHistory.map((msg, index) => (
                         <div key={msg.id || index}>
                             <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
-                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{parseFinalMessage(msg.message)}</span>}
+                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <div className="prose prose-sm dark:prose-invert max-w-none"><MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer></div>}
                             {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
                         </div>
                     ))}
@@ -18243,6 +18245,7 @@ import ReportProgressBar from './ReportProgressBar';
 import AudioControls from './AudioControls';
 import { Resizable } from 're-resizable';
 import Image from 'next/image';
+import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
 const ReportViewer: React.FC = () => {
     const { loadReportData, handleKeyDown } = useReportStore.getState();
@@ -18302,7 +18305,7 @@ const ReportViewer: React.FC = () => {
         // C17 Fix: Add pt-16 to account for the fixed header and prevent content overlap.
         <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
                 </div>
             )}
@@ -18353,8 +18356,7 @@ const ReportViewer: React.FC = () => {
                             </div>
                         )}
                         {isContentVisible && (
-                            <div dangerouslySetInnerHTML={{ __html: currentPage.content.replace(/\n/g, '<br />') }}>
-                            </div>
+                            <MarkdownRenderer>{currentPage.content || ''}</MarkdownRenderer>
                         )}
                     </div>
                 </main>
@@ -18670,28 +18672,66 @@ This plan establishes a secure and extensible foundation for integrating LLM-pow
 
 <file path="src/app/api/chat/route.ts">
 import { NextResponse } from 'next/server';
+import { FaissStore } from '@langchain/community/vectorstores/faiss';
+import { OpenAIEmbeddings } from '@langchain/openai';
+import { promises as fs } from 'fs';
+import path from 'path';
 
-// This function is for streaming responses
+// C18 Fix: Re-implement RAG functionality
 export async function POST(request: Request) {
   const { prompt, pageContext } = await request.json();
 
-  // Determine the LLM endpoint from environment variables
-  const llmUrl = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL;
-  
-  if (!llmUrl) {
-    const errorMessage = 'LLM URL not configured. Set REMOTE_LLM_URL or LOCAL_LLM_URL in .env.local';
+  const llmUrl = process.env.REMOTE_LLM_URL;
+  const embeddingUrl = process.env.EMBEDDING_API_URL;
+
+  if (!llmUrl || !embeddingUrl) {
+    const errorMessage = 'AI endpoints not configured. Set REMOTE_LLM_URL and EMBEDDING_API_URL in .env.local';
     console.error(`[Chat API] ${errorMessage}`);
     return new NextResponse(errorMessage, { status: 500 });
   }
 
-  const completionsUrl = `${llmUrl}/v1/completions`;
+  let retrievedContext = '';
+  try {
+    const embeddings = new OpenAIEmbeddings({
+      openAIApiKey: 'not-needed',
+      configuration: {
+        baseURL: embeddingUrl,
+      },
+    });
 
-  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic. Do not invent information. If the answer is not in the context, say "That information is not available in the current context."`;
+    const publicPath = path.join(process.cwd(), 'public');
+    const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
+    const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
+
+    // Check if files exist before loading
+    await fs.access(faissPath);
+    await fs.access(chunksPath);
+
+    const vectorStore = await FaissStore.load(faissPath, embeddings);
+    const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
+
+    const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
+    const results = await retriever.invoke(prompt);
+    
+    retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
+
+  } catch (error) {
+    console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
+    retrievedContext = "RAG system failed: Could not retrieve relevant documents.";
+  }
+
+  const completionsUrl = `${llmUrl}/v1/completions`;
+  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic. First, consider the 'Retrieved Chunks' which have high relevance to the user's question, then consider the 'Current Page Context'. Do not invent information. If the answer is not in the context, say "That information is not available in the current context."`;
 
   const finalPrompt = `
 System: ${systemPrompt}
 
 --- START CONTEXT ---
+
+[Retrieved Chunks from Report]
+${retrievedContext}
+
+[Current Page Context]
 ${pageContext}
 --- END CONTEXT ---
 
@@ -18699,16 +18739,13 @@ User: ${prompt}
 
 Ascentia:`;
 
-  // C17 Fix: Increase timeout to 120 seconds (2 minutes) for model cold start
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 120000); 
+  const timeoutId = setTimeout(() => controller.abort(), 120000);
 
   try {
     const response = await fetch(completionsUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'unsloth/gpt-oss-20b',
         prompt: finalPrompt,
@@ -18731,9 +18768,7 @@ Ascentia:`;
       return new NextResponse("LLM response has no body", { status: 500 });
     }
 
-    const stream = response.body;
-
-    return new Response(stream, {
+    return new Response(response.body, {
         headers: { 
             'Content-Type': 'text/event-stream',
             'Cache-Control': 'no-cache',
@@ -18744,31 +18779,19 @@ Ascentia:`;
   } catch (error: any) {
     clearTimeout(timeoutId);
     if (error.name === 'AbortError') {
-        console.error(`[Chat API] Request to LLM server timed out after 120 seconds. URL: ${completionsUrl}`);
-        const debugMessage = `Connection timed out. 
-        TROUBLESHOOTING:
-        1. Verify the LMStudio server is running on the host machine.
-        2. Check the firewall on the host machine (${llmUrl}) to ensure port 1234 is open for incoming TCP connections.
-        3. Ensure the LMStudio server is started with '--host 0.0.0.0' to accept connections from other machines on the network.`;
-        console.error(debugMessage);
-        return new NextResponse(`Error: Connection to the AI service timed out. ${debugMessage}`, { status: 504 }); // Gateway Timeout
+        const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
+        console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
+        return new NextResponse(`Error: Connection to the AI service timed out. ${debugMessage}`, { status: 504 });
     }
 
-    // Check for connection refused error
     if (error instanceof TypeError && error.message.includes('fetch failed')) {
-        console.error(`[Chat API] Network error: Could not connect to the LLM server. URL: ${completionsUrl}. Cause: ${error.cause}`);
-        const debugMessage = `Network connection failed. This usually means the server at the specified address is not running or is unreachable.
-        TROUBLESHOOTING:
-        1. Verify the LMStudio server is running.
-        2. Double-check the IP address and port in your .env.local file for REMOTE_LLM_URL.
-        3. Check the firewall on the host machine (${llmUrl}) for port 1234.`;
-        console.error(debugMessage);
-        return new NextResponse(`Error: Could not connect to the AI service. ${debugMessage}`, { status: 502 }); // Bad Gateway
+        const debugMessage = `Network connection failed. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Double-check the IP/port in .env.local. 3. Check firewall on the host machine (${llmUrl}) for port 1234.`;
+        console.error(`[Chat API] Network error: Could not connect to LLM server. ${debugMessage}`);
+        return new NextResponse(`Error: Could not connect to the AI service. ${debugMessage}`, { status: 502 });
     }
 
     console.error('[Chat API] Error proxying chat request:', error);
-    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
-    return new NextResponse(`Error proxying chat request: ${errorMessage}`, { status: 500 });
+    return new NextResponse(`Error proxying chat request: ${error.message}`, { status: 500 });
   }
 }
 </file_artifact>
@@ -20074,5 +20097,151 @@ The following plan maps the existing narrative sections of the Mission page to s
 2.  **Implement Carousel:** Inside this component, implement a simple image carousel (e.g., using `framer-motion` or a lightweight library) to display the provided images.
 3.  **Refactor Mission Page:** Rebuild `src/app/mission/page.tsx` to be a container that renders a series of `<MissionSectionBlock />` components, passing in the data mapped out in this plan.
 4.  **Styling:** Ensure the styling of the new components is consistent with the `ReportViewer` to create a cohesive user experience.
+</file_artifact>
+
+<file path="src/components/mission/MissionSectionBlock.tsx">
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+
+interface MissionSectionBlockProps {
+  title: string;
+  tldr: string;
+  content: string;
+  images: string[];
+  imagePrompt: string;
+  imageSide?: 'left' | 'right';
+}
+
+const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
+  title,
+  tldr,
+  content,
+  images,
+  imagePrompt,
+  imageSide = 'left',
+}) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length > 1) {
+      const timer = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 5000); // Change image every 5 seconds
+      return () => clearInterval(timer);
+    }
+  }, [images.length]);
+
+  const variants = {
+    enter: { opacity: 0, x: 20 },
+    center: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20 },
+  };
+
+  const imageContent = (
+    <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
+      <div className="relative aspect-video rounded-lg overflow-hidden">
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={currentImageIndex}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            variants={variants}
+            transition={{ duration: 0.5 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={`/assets/images/report/${images[currentImageIndex]}`}
+              alt={title}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
+        <strong>Prompt:</strong> "{imagePrompt}"
+      </p>
+    </div>
+  );
+
+  const textContent = (
+    <div className="md:w-1/2 w-full">
+      <h3 className="text-3xl font-bold text-white light:text-black mb-4">{title}</h3>
+      <div className="p-3 border-l-4 border-primary bg-muted/20 rounded-r-lg mb-4">
+        <p className="italic text-muted-foreground">{tldr}</p>
+      </div>
+      <div className="prose prose-invert max-w-none">
+        <MarkdownRenderer>{content}</MarkdownRenderer>
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`flex flex-col md:flex-row items-start gap-12 ${
+        imageSide === 'right' ? 'md:flex-row-reverse' : ''
+      }`}
+    >
+      {imageContent}
+      {textContent}
+    </div>
+  );
+};
+
+export default MissionSectionBlock;
+</file_artifact>
+
+<file path="src/components/shared/MarkdownRenderer.tsx">
+'use client';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+interface MarkdownRendererProps {
+  children: string;
+}
+
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        p: ({ node, ...props }) => <p className="mb-4" {...props} />,
+        h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
+        h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
+        h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,
+        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4 space-y-1" {...props} />,
+        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4 space-y-1" {...props} />,
+        li: ({ node, ...props }) => <li className="ml-4" {...props} />,
+        strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
+        em: ({ node, ...props }) => <em className="italic" {...props} />,
+        code: ({ node, inline, className, children, ...props }: any) => {
+          const match = /language-(\w+)/.exec(className || '');
+          return !inline ? (
+            <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
+              <code className={className} {...props}>
+                {children}
+              </code>
+            </pre>
+          ) : (
+            <code className="bg-muted text-muted-foreground px-1.5 py-0.5 rounded-md text-sm" {...props}>
+              {children}
+            </code>
+          );
+        },
+        a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" {...props} />,
+      }}
+    >
+      {children}
+    </ReactMarkdown>
+  );
+};
+
+export default MarkdownRenderer;
 </file_artifact>
 

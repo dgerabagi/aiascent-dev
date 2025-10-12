@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStore';
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import { Resizable } from 're-resizable';
+import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
 const ReportChatPanel: React.FC = () => {
     const { chatPanelWidth, setChatPanelWidth, toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
@@ -25,27 +26,26 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        // C15 Fix: Changed block to 'nearest' to avoid whole page scroll
         messagesEndRef.current?.scrollIntoView({ behavior: 'auto', block: 'nearest' });
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
-    // C17: Function to parse the raw LLM output and extract the final message
     const parseFinalMessage = (rawText: string): string => {
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
-
+    
         if (finalMessageIndex !== -1) {
             return rawText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
-        // Fallback for unexpected formats
-        const analysisMarker = '<|channel|>analysis<|message|>';
-        if (rawText.includes(analysisMarker)) {
-            return "Could not parse final message from response.";
-        }
-
-        return rawText;
+        // C18 Fix: Don't show an error for partial streams.
+        // Strip out analysis blocks and return whatever is left.
+        const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*/g;
+        const cleanedText = rawText.replace(analysisRegex, '').trim();
+        
+        // If the only thing we've received is analysis blocks, cleanedText will be empty.
+        // In that case, we return an empty string and let the "Thinking..." status show.
+        return cleanedText;
     };
 
     const handleSend = async () => {
@@ -138,11 +138,11 @@ const ReportChatPanel: React.FC = () => {
                         <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
                     </div>
                 </header>
-                <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-2">
+                <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-4">
                     {reportChatHistory.map((msg, index) => (
                         <div key={msg.id || index}>
                             <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
-                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{parseFinalMessage(msg.message)}</span>}
+                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <div className="prose prose-sm dark:prose-invert max-w-none"><MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer></div>}
                             {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
                         </div>
                     ))}

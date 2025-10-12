@@ -12,6 +12,7 @@ import ReportProgressBar from './ReportProgressBar';
 import AudioControls from './AudioControls';
 import { Resizable } from 're-resizable';
 import Image from 'next/image';
+import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
 const ReportViewer: React.FC = () => {
     const { loadReportData, handleKeyDown } = useReportStore.getState();
@@ -71,7 +72,7 @@ const ReportViewer: React.FC = () => {
         // C17 Fix: Add pt-16 to account for the fixed header and prevent content overlap.
         <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
                 </div>
             )}
@@ -122,8 +123,7 @@ const ReportViewer: React.FC = () => {
                             </div>
                         )}
                         {isContentVisible && (
-                            <div dangerouslySetInnerHTML={{ __html: currentPage.content.replace(/\n/g, '<br />') }}>
-                            </div>
+                            <MarkdownRenderer>{currentPage.content || ''}</MarkdownRenderer>
                         )}
                     </div>
                 </main>
