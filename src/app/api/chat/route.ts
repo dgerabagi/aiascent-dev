@@ -34,9 +34,24 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
+// System prompts defined as per A27
+const systemPrompts = {
+    dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
+
+Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
+
+If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.`,
+    report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
+
+Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
+
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.`
+};
+
 
 export async function POST(request: Request) {
-  const { prompt, pageContext } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report' } = await request.json();
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;
@@ -50,65 +65,62 @@ export async function POST(request: Request) {
   let retrievedContext = '';
   let retrievedDocsLog = 'No documents retrieved.';
   try {
+    const faissFile = `${kbIdentifier}_faiss.index`;
+    const chunksFile = `${kbIdentifier}_chunks.json`;
+
     const publicPath = path.join(process.cwd(), 'public');
-    const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
-    const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
+    const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
+    const chunksPath = path.join(publicPath, 'data', 'embeddings', chunksFile);
 
     const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
     const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
 
     if (!faissExists || !chunksExist) {
-        const errorMessage = 'Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.';
+        const errorMessage = `Embedding files for knowledge base '${kbIdentifier}' not found. Please ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`;
         console.error(`[Chat API] RAG Error: ${errorMessage}`);
         retrievedContext = `RAG system failed: ${errorMessage}`;
     } else {
-        // Load index and chunks directly using faiss-node and fs
         const index = Index.read(faissPath);
         const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
         
         const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
 
         if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
-            // Search the index
-            const { labels, distances } = index.search(queryEmbedding, 10);
+            const { labels, distances } = index.search(queryEmbedding, 7);
             
             if (labels.length > 0) {
                 const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
                 retrievedContext = results.join('\n\n---\n\n');
-                retrievedDocsLog = `Retrieved ${results.length} documents:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
+                retrievedDocsLog = `Retrieved ${results.length} documents from '${kbIdentifier}' KB:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
             }
         } else if (!queryEmbedding) {
             retrievedContext = "RAG system failed: Could not generate embedding for the query.";
             retrievedDocsLog = "RAG Error: Could not generate embedding for the query.";
         } else {
-            const errorMessage = `Embedding dimension mismatch. Index dimension: ${index.getDimension()}, Query embedding dimension: ${queryEmbedding.length}. Please regenerate the embedding files.`;
+            const errorMessage = `Embedding dimension mismatch for '${kbIdentifier}' KB. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`;
             console.error(`[Chat API] RAG Error: ${errorMessage}`);
             retrievedContext = `RAG system failed: ${errorMessage}`;
             retrievedDocsLog = `RAG Error: ${errorMessage}`;
         }
     }
   } catch (error: any) {
-    console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
+    console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB: Could not load vector store or retrieve documents.`, error);
     retrievedContext = `RAG system failed: ${error.message}.`;
     retrievedDocsLog = `RAG Error: ${error.message}`;
   }
 
-  // C21: Enhanced logging to debug RAG
-  console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}"`);
+  console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
 
-
   const completionsUrl = `${llmUrl}/v1/completions`;
-  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic.
-First, consider the 'Retrieved Chunks' which have high relevance to the user's question. After that, consider the 'Current Page Context' for supplementary information.
-Do not invent information. If the answer is not in the context, clearly state "That information is not available in the provided context."`;
+  const systemPrompt = systemPrompts[kbIdentifier];
 
   const finalPrompt = `
 System: ${systemPrompt}
 
 --- START CONTEXT ---
 
-[Retrieved Chunks from Report]
+[Retrieved Chunks from Knowledge Base]
 ${retrievedContext}
 
 [Current Page Context]

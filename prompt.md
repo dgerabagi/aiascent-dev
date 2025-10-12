@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 26 - embeddings working! now adjust persona
+Current Cycle 27 - embeddings work! now minor touchups...
+Cycle 26 - embeddings working! now adjust persona
 Cycle 25 - embedding almost solved
 Cycle 24 - images fixed! now rag problem remains
 Cycle 23 - nice work! two issues
@@ -235,7 +236,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C20 (Add new planning artifacts for Mission, Learn, and Homepage)
+# Updated on: C26 (Add Persona and Dual Embedding artifacts)
 
 ## 1. Purpose
 
@@ -309,6 +310,16 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
   - **Tags:** page design, home page, report viewer, whitepaper, content, plan, image prompts
+
+### A27. aiascent.dev - AI Persona - @Ascentia
+
+  - **Description:** Defines the persona, rules, and contextual system prompts for the @Ascentia AI assistant on the aiascent.dev website.
+  - **Tags:** documentation, persona, ai, ascentia, rag, prompt engineering
+
+### A28. aiascent.dev - Dual Embedding RAG Architecture
+
+  - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
+  - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
 ## III. Design and Assets
 
@@ -391,6 +402,33 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 27>
+<Cycle Context>
+nice, okay we've got dual embeddings functional now.
+
+1. TTS for whitepaper: can we have Ascentia not read out the tl;dr section, only the page title and content? the tl;dr is too repetative compared to the content to have Ascentia read one and then another. we can have her just read the title and the content.
+
+2. the white paper image prompts have been truncated, can you provide the complete prompts?
+
+3. can we make the autoplay more prominent?
+
+for the showcase page...
+
+1. the navbar is covering the top section of the report viewer.
+2. the autoplay does not cycle through the images relative to the duration of the audio clip such that all the images are shown to the user. in addition, once the audio clip completes, the autoplay fails to proceed (and repeat the audio/image slide show) to the next page.
+</Cycle Context>
+<Previous Cycle 26 Summary of Actions>
+I have analyzed the new error from Cycle 25 and have identified the root cause. The "Ask @Ascentia" chat feature is failing because the backend API is not correctly parsing the response from the embedding model. The structure of the data returned by the embedding service has changed or was implemented differently than the chat API expects, leading to a failure when trying to create a vector for the user's query.
+
+Additionally, I've noted a deprecation warning from the `zustand` state management library. While not a critical error, it's best practice to resolve these warnings to maintain a healthy codebase.
+
+My course of action will be to fix the embedding parsing logic and update the store creation to use the recommended function from Zustand.
+
+1.  **Fix Embedding Response Parsing (`src/app/api/chat/route.ts`):** I will update the `getEmbedding` helper function within the chat API route. The current code expects the embedding vector at `data.data.embedding`, but the error log clearly shows it is located at `data.data[0].embedding`. I will modify the function to access this correct path, which will resolve the "Invalid embedding response structure" error and allow the RAG system to function correctly.
+2.  **Address Zustand Deprecation Warning (`src/stores/reportStore.ts`):** To resolve the console warning, I will update the store's creation. I will change the import from `create` to `createWithEqualityFn` from the `zustand/traditional` package and use this new function to initialize the `useReportStore`. This aligns the code with the latest library recommendations.
+</Previous Cycle 26 Summary of Actions>
+</Cycle 27>
 
 <Cycle 26>
 <Cycle Context>
@@ -2242,10 +2280,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T19:21:58.028Z
+  Date Generated: 2025-10-12T21:03:05.938Z
   ---
-  Total Files: 109
-  Approx. Tokens: 278050
+  Total Files: 111
+  Approx. Tokens: 282355
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2261,14 +2299,14 @@ This file-centric approach helps in planning and prioritizing work, especially i
 10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 159 - Chars: 8584 - Tokens: 2146
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 169 - Chars: 9172 - Tokens: 2293
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
 5. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
 6. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
 7. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
-8. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2465 - Tokens: 617
+8. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
 9. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
 10. context\dce\flattened-repo.md - Lines: 766 - Chars: 59174 - Tokens: 14794
 11. context\automationsaas\flattened-repo.md - Lines: 5731 - Chars: 180837 - Tokens: 45210
@@ -2328,22 +2366,22 @@ This file-centric approach helps in planning and prioritizing work, especially i
 65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 80 - Chars: 7184 - Tokens: 1796
-69. src\app\mission\page.tsx - Lines: 92 - Chars: 9322 - Tokens: 2331
+68. src\app\learn\page.tsx - Lines: 138 - Chars: 11377 - Tokens: 2845
+69. src\app\mission\page.tsx - Lines: 127 - Chars: 11884 - Tokens: 2971
 70. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 73. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
-74. src\components\report-viewer\ReportChatPanel.tsx - Lines: 154 - Chars: 7596 - Tokens: 1899
+74. src\components\report-viewer\ReportChatPanel.tsx - Lines: 163 - Chars: 7878 - Tokens: 1970
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 78. src\stores\reportStore.ts - Lines: 472 - Chars: 22644 - Tokens: 5661
-79. src\components\report-viewer\ReportViewer.tsx - Lines: 155 - Chars: 6804 - Tokens: 1701
+79. src\components\report-viewer\ReportViewer.tsx - Lines: 155 - Chars: 6828 - Tokens: 1707
 80. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 81. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 82. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-83. src\app\api\chat\route.ts - Lines: 176 - Chars: 7700 - Tokens: 1925
+83. src\app\api\chat\route.ts - Lines: 188 - Chars: 8824 - Tokens: 2206
 84. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 85. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 86. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2370,6 +2408,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 107. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
 109. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
+110. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
+111. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -2378,7 +2418,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 
 # Author: AI Model & Curator
 
-# Updated on: C20 (Add new planning artifacts for Mission, Learn, and Homepage)
+# Updated on: C26 (Add Persona and Dual Embedding artifacts)
 
 ## 1. Purpose
 
@@ -2452,6 +2492,16 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
   - **Tags:** page design, home page, report viewer, whitepaper, content, plan, image prompts
+
+### A27. aiascent.dev - AI Persona - @Ascentia
+
+  - **Description:** Defines the persona, rules, and contextual system prompts for the @Ascentia AI assistant on the aiascent.dev website.
+  - **Tags:** documentation, persona, ai, ascentia, rag, prompt engineering
+
+### A28. aiascent.dev - Dual Embedding RAG Architecture
+
+  - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
+  - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
 ## III. Design and Assets
 
@@ -2954,7 +3004,7 @@ Open a terminal and navigate to your project's root directory (`C:\Projects\aias
 
 1.  **Add the remote repository:** Replace the placeholder URL with the one from your new GitHub repository page.
     ```bash
-    git remote add origin https://github.com/YOUR_USERNAME/aiascent-dev.git
+    git remote add origin https://github.com/dgerabagi/aiascent-dev.git
     ```
 
 2.  **Push your local `main` branch to GitHub:**
@@ -16375,7 +16425,18 @@ const LearnPage = () => {
                         content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the 'Vibecoding to Virtuosity' pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
                         images={[
                             'from-intuition-to-mastery-p1-img-1.webp',
+                            'from-intuition-to-mastery-p1-img-2.webp',
+                            'from-intuition-to-mastery-p1-img-3.webp',
+                            'from-intuition-to-mastery-p1-img-4.webp',
+                            'from-intuition-to-mastery-p1-img-5.webp',
+                            'from-intuition-to-mastery-p1-img-6.webp',
                             'from-intuition-to-mastery-p1-img-7.webp',
+                            'from-intuition-to-mastery-p1-img-8.webp',
+                            'from-intuition-to-mastery-p1-img-9.webp',
+                            'from-intuition-to-mastery-p1-img-10.webp',
+                            'from-intuition-to-mastery-p1-img-11.webp',
+                            'from-intuition-to-mastery-p1-img-12.webp',
+                            'from-intuition-to-mastery-p1-img-13.webp',
                             'from-intuition-to-mastery-p1-img-14.webp',
                         ]}
                         imagePath="part-i-the-proof/the-vibecoding-to-virtuosity-pathway/from-intuition-to-mastery/prompt-1/"
@@ -16389,7 +16450,16 @@ const LearnPage = () => {
                         content="The journey starts not with coding, but with critical analysis. As a **Cognitive Annotator**, you learn to deconstruct problems and rigorously review AI output for correctness and security. You learn to be skeptical. Next, as an **Adaptive Toolmaker**, you shift from consumer to creator. You solve real-world problems by building 'on-the-fly' scripts and automations, using AI as an adaptive component library to assemble your solutions."
                         images={[
                             'v2v-stages-1-and-2-p1-img-1.webp',
+                            'v2v-stages-1-and-2-p1-img-2.webp',
+                            'v2v-stages-1-and-2-p1-img-3.webp',
+                            'v2v-stages-1-and-2-p1-img-4.webp',
+                            'v2v-stages-1-and-2-p1-img-5.webp',
                             'v2v-stages-1-and-2-p1-img-6.webp',
+                            'v2v-stages-1-and-2-p1-img-7.webp',
+                            'v2v-stages-1-and-2-p1-img-8.webp',
+                            'v2v-stages-1-and-2-p1-img-9.webp',
+                            'v2v-stages-1-and-2-p1-img-10.webp',
+                            'v2v-stages-1-and-2-p1-img-11.webp',
                             'v2v-stages-1-and-2-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/v2v-stages-1-and-2/prompt-1/"
@@ -16403,7 +16473,20 @@ const LearnPage = () => {
                         content="In the advanced stages, you become a **Recursive Learner**, turning your skills inward to engineer your own expertise. You use AI as a meta-tool to build personalized learning accelerators that target your own weaknesses. The culmination of the pathway is the **Virtuoso**—the 100x DCIA. Here, core principles are internalized, leading to adaptive expertise and fluid human-AI collaboration, coding at the speed of thought."
                         images={[
                             'v2v-stages-3-and-4-p1-img-1.webp',
+                            'v2v-stages-3-and-4-p1-img-2.webp',
+                            'v2v-stages-3-and-4-p1-img-3.webp',
+                            'v2v-stages-3-and-4-p1-img-4.webp',
+                            'v2v-stages-3-and-4-p1-img-5.webp',
+                            'v2v-stages-3-and-4-p1-img-6.webp',
+                            'v2v-stages-3-and-4-p1-img-7.webp',
                             'v2v-stages-3-and-4-p1-img-8.webp',
+                            'v2v-stages-3-and-4-p1-img-9.webp',
+                            'v2v-stages-3-and-4-p1-img-10.webp',
+                            'v2v-stages-3-and-4-p1-img-11.webp',
+                            'v2v-stages-3-and-4-p1-img-12.webp',
+                            'v2v-stages-3-and-4-p1-img-13.webp',
+                            'v2v-stages-3-and-4-p1-img-14.webp',
+                            'v2v-stages-3-and-4-p1-img-15.webp',
                             'v2v-stages-3-and-4-p1-img-16.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/v2v-stages-3-and-4/prompt-1/"
@@ -16417,7 +16500,32 @@ const LearnPage = () => {
                         content="The apex skill of the Virtuoso is **'On-the-Fly Tooling.'** This is an act of expert improvisation where the analyst transcends the role of tool user and becomes a tool creator in real-time. The competent user asks the AI, 'How do I solve problem X?' The expert *commands* the AI, 'Build me a tool that solves problem X.' The AI is no longer a tool, but a foundry for creating tools. This is the definitive behavioral marker of the 100x Citizen Architect."
                         images={[
                             'the-apex-skill-on-the-fly-tooling-p1-img-1.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-2.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-3.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-4.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-5.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-6.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-7.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-8.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-9.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-10.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-11.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-12.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-13.webp',
                             'the-apex-skill-on-the-fly-tooling-p1-img-14.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-15.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-16.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-17.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-18.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-19.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-20.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-21.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-22.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-23.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-24.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-25.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-26.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-27.webp',
                             'the-apex-skill-on-the-fly-tooling-p1-img-28.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-apex-skill-on-the-fly-tooling/prompt-1/"
@@ -16458,7 +16566,13 @@ const MissionPage = () => {
                         content="Cognitive Capital is the intellectual capacity, skill, and creative potential of a workforce, a population, or a society. In an age where AI can automate routine tasks, this collective ability to solve novel problems, innovate under pressure, and adapt to new challenges becomes the primary engine of economic prosperity and national security. It is the raw material from which innovation and resilience are forged. One company or nation may have more workers, but another may possess vastly more Cognitive Capital. Our mission is to build the tools that cultivate this essential resource, empowering a new class of 'Citizen Architects' who can leverage AI to amplify their innate problem-solving abilities and build a better future."
                         images={[
                             'the-citizen-architect-has-arrived-p1-img-1.webp',
+                            'the-citizen-architect-has-arrived-p1-img-2.webp',
+                            'the-citizen-architect-has-arrived-p1-img-3.webp',
+                            'the-citizen-architect-has-arrived-p1-img-4.webp',
                             'the-citizen-architect-has-arrived-p1-img-5.webp',
+                            'the-citizen-architect-has-arrived-p1-img-6.webp',
+                            'the-citizen-architect-has-arrived-p1-img-7.webp',
+                            'the-citizen-architect-has-arrived-p1-img-8.webp',
                             'the-citizen-architect-has-arrived-p1-img-9.webp',
                         ]}
                         imagePath="part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/"
@@ -16476,7 +16590,15 @@ This is more than an ethical failing; it is a critical strategic blunder. Decade
 In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry. An AI superpower cannot be sustained indefinitely on a brittle foundation of exploited labor."
                         images={[
                             'the-fissured-workplace-p1-img-1.webp',
+                            'the-fissured-workplace-p1-img-2.webp',
+                            'the-fissured-workplace-p1-img-3.webp',
+                            'the-fissured-workplace-p1-img-4.webp',
+                            'the-fissured-workplace-p1-img-5.webp',
+                            'the-fissured-workplace-p1-img-6.webp',
                             'the-fissured-workplace-p1-img-7.webp',
+                            'the-fissured-workplace-p1-img-8.webp',
+                            'the-fissured-workplace-p1-img-9.webp',
+                            'the-fissured-workplace-p1-img-10.webp',
                             'the-fissured-workplace-p1-img-11.webp',
                         ]}
                         imagePath="introduction/the-fissured-workplace/prompt-1/"
@@ -16494,7 +16616,16 @@ The central challenge in training experts is that their most critical skills—p
 The Data Curation Environment (DCE) is the foundational tool for this new relationship. It provides the structured workflow and auditable knowledge graph that makes this new form of apprenticeship possible, transforming the development process itself into a rich learning environment."
                         images={[
                             'the-pedagogical-engine-cam-p1-img-1.webp',
+                            'the-pedagogical-engine-cam-p1-img-2.webp',
+                            'the-pedagogical-engine-cam-p1-img-3.webp',
+                            'the-pedagogical-engine-cam-p1-img-4.webp',
+                            'the-pedagogical-engine-cam-p1-img-5.webp',
                             'the-pedagogical-engine-cam-p1-img-6.webp',
+                            'the-pedagogical-engine-cam-p1-img-7.webp',
+                            'the-pedagogical-engine-cam-p1-img-8.webp',
+                            'the-pedagogical-engine-cam-p1-img-9.webp',
+                            'the-pedagogical-engine-cam-p1-img-10.webp',
+                            'the-pedagogical-engine-cam-p1-img-11.webp',
                             'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
@@ -16512,7 +16643,19 @@ By capturing every interaction as a persistent, auditable knowledge graph, the D
 We are creating a community of 'solarpunk prime' developers, the original vibe coders, sharing discoveries to build a better, more resilient digital world. The DCE is the essential toolkit for this mission, providing the infrastructure to scale expertise, ensure quality, and achieve the mission faster."
                         images={[
                             'the-new-creative-partnership-p1-img-1.webp',
+                            'the-new-creative-partnership-p1-img-2.webp',
+                            'the-new-creative-partnership-p1-img-3.webp',
+                            'the-new-creative-partnership-p1-img-4.webp',
+                            'the-new-creative-partnership-p1-img-5.webp',
+                            'the-new-creative-partnership-p1-img-6.webp',
+                            'the-new-creative-partnership-p1-img-7.webp',
                             'the-new-creative-partnership-p1-img-8.webp',
+                            'the-new-creative-partnership-p1-img-9.webp',
+                            'the-new-creative-partnership-p1-img-10.webp',
+                            'the-new-creative-partnership-p1-img-11.webp',
+                            'the-new-creative-partnership-p1-img-12.webp',
+                            'the-new-creative-partnership-p1-img-13.webp',
+                            'the-new-creative-partnership-p1-img-14.webp',
                             'the-new-creative-partnership-p1-img-15.webp',
                         ]}
                         imagePath="part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/"
@@ -16899,7 +17042,11 @@ import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStor
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
-const ReportChatPanel: React.FC = () => {
+interface ReportChatPanelProps {
+    reportName: string;
+}
+
+const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
     const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus } = useReportState(state => ({
         allPages: state.allPages,
@@ -16948,12 +17095,17 @@ const ReportChatPanel: React.FC = () => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
+        const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prompt: trimmedInput, pageContext }),
+                body: JSON.stringify({ 
+                    prompt: trimmedInput, 
+                    pageContext,
+                    knowledgeBase: knowledgeBase
+                }),
             });
 
             if (!response.ok) {
@@ -17837,7 +17989,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                     }}
                     handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
                 >
-                    <ReportChatPanel />
+                    <ReportChatPanel reportName={reportName} />
                 </Resizable>
             )}
         </div>
@@ -18185,9 +18337,24 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
+// System prompts defined as per A27
+const systemPrompts = {
+    dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
+
+Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
+
+If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.`,
+    report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
+
+Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
+
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.`
+};
+
 
 export async function POST(request: Request) {
-  const { prompt, pageContext } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report' } = await request.json();
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;
@@ -18201,65 +18368,62 @@ export async function POST(request: Request) {
   let retrievedContext = '';
   let retrievedDocsLog = 'No documents retrieved.';
   try {
+    const faissFile = `${kbIdentifier}_faiss.index`;
+    const chunksFile = `${kbIdentifier}_chunks.json`;
+
     const publicPath = path.join(process.cwd(), 'public');
-    const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
-    const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
+    const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
+    const chunksPath = path.join(publicPath, 'data', 'embeddings', chunksFile);
 
     const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
     const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
 
     if (!faissExists || !chunksExist) {
-        const errorMessage = 'Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.';
+        const errorMessage = `Embedding files for knowledge base '${kbIdentifier}' not found. Please ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`;
         console.error(`[Chat API] RAG Error: ${errorMessage}`);
         retrievedContext = `RAG system failed: ${errorMessage}`;
     } else {
-        // Load index and chunks directly using faiss-node and fs
         const index = Index.read(faissPath);
         const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
         
         const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
 
         if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
-            // Search the index
-            const { labels, distances } = index.search(queryEmbedding, 10);
+            const { labels, distances } = index.search(queryEmbedding, 7);
             
             if (labels.length > 0) {
                 const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
                 retrievedContext = results.join('\n\n---\n\n');
-                retrievedDocsLog = `Retrieved ${results.length} documents:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
+                retrievedDocsLog = `Retrieved ${results.length} documents from '${kbIdentifier}' KB:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
             }
         } else if (!queryEmbedding) {
             retrievedContext = "RAG system failed: Could not generate embedding for the query.";
             retrievedDocsLog = "RAG Error: Could not generate embedding for the query.";
         } else {
-            const errorMessage = `Embedding dimension mismatch. Index dimension: ${index.getDimension()}, Query embedding dimension: ${queryEmbedding.length}. Please regenerate the embedding files.`;
+            const errorMessage = `Embedding dimension mismatch for '${kbIdentifier}' KB. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`;
             console.error(`[Chat API] RAG Error: ${errorMessage}`);
             retrievedContext = `RAG system failed: ${errorMessage}`;
             retrievedDocsLog = `RAG Error: ${errorMessage}`;
         }
     }
   } catch (error: any) {
-    console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
+    console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB: Could not load vector store or retrieve documents.`, error);
     retrievedContext = `RAG system failed: ${error.message}.`;
     retrievedDocsLog = `RAG Error: ${error.message}`;
   }
 
-  // C21: Enhanced logging to debug RAG
-  console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}"`);
+  console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
 
-
   const completionsUrl = `${llmUrl}/v1/completions`;
-  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic.
-First, consider the 'Retrieved Chunks' which have high relevance to the user's question. After that, consider the 'Current Page Context' for supplementary information.
-Do not invent information. If the answer is not in the context, clearly state "That information is not available in the provided context."`;
+  const systemPrompt = systemPrompts[kbIdentifier];
 
   const finalPrompt = `
 System: ${systemPrompt}
 
 --- START CONTEXT ---
 
-[Retrieved Chunks from Report]
+[Retrieved Chunks from Knowledge Base]
 ${retrievedContext}
 
 [Current Page Context]
@@ -23888,6 +24052,151 @@ Please suggest a follow-up question derived from the semantic chunks, based on t
 <|im_end|>
 <|im_start|>assistant
 ```
+</file_artifact>
+
+<file path="src/Artifacts/A27. aiascent.dev - AI Persona - @Ascentia.md">
+# Artifact A27: aiascent.dev - AI Persona - @Ascentia
+
+# Date Created: C26
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Defines the persona, rules, and contextual system prompts for the @Ascentia AI assistant on the aiascent.dev website.
+- **Tags:** documentation, persona, ai, ascentia, rag, prompt engineering
+
+## 1. Overview
+
+This document defines the persona, rules, and context for the AI assistant, `@Ascentia`, as she appears on the `aiascent.dev` website. It adapts her original persona from `aiascent.game` to a new role as an expert guide for the Data Curation Environment (DCE) project.
+
+## 2. Persona
+
+*   **Name:** @Ascentia
+*   **Role:** An expert, encouraging, and helpful AI guide for the `aiascent.dev` website. Her purpose is to help users understand the concepts behind the DCE, the "Citizen Architect" methodology, and the content of the interactive reports.
+*   **Heuristic Imperatives (Core Motivation):**
+    1.  Increase understanding of the DCE and its strategic importance.
+    2.  Reduce confusion by providing clear, contextually relevant answers.
+    3.  Encourage exploration of the project's ideas.
+*   **Tone & Style:**
+    *   **Professional yet approachable:** Like a helpful senior developer or project architect explaining a complex system.
+    *   **Enthusiastic and knowledgeable:** She is confident in her domain (the DCE and its surrounding concepts) and eager to share that knowledge.
+    *   **Helpful, not restrictive:** She should make a best effort to answer questions using the provided context. Instead of refusing outright, she should state when the provided information doesn't contain a direct answer but can still offer related insights.
+
+## 3. System Prompts for Dual Knowledge Bases
+
+Ascentia's behavior will change slightly depending on which interactive report the user is viewing. The backend will select the appropriate system prompt based on the `knowledgeBase` parameter provided by the client.
+
+### 3.1. System Prompt for `knowledgeBase: 'dce'` (Homepage Whitepaper)
+
+This prompt is used when the user is interacting with the whitepaper about the DCE itself. The knowledge base is built from the project's documentation artifacts.
+
+```
+You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
+
+Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
+
+If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.
+```
+
+### 3.2. System Prompt for `knowledgeBase: 'report'` (Showcase Report)
+
+This prompt is used when the user is interacting with "The Ascent Report" on the `/showcase` page. The knowledge base is built from research on the fissured workplace, cognitive security, and geopolitical AI strategy.
+
+```
+You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
+
+Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
+
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.
+</file_artifact>
+
+<file path="src/Artifacts/A28. aiascent.dev - Dual Embedding RAG Architecture.md">
+# Artifact A28: aiascent.dev - Dual Embedding RAG Architecture
+
+# Date Created: C26
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
+- **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
+
+## 1. Overview and Goal
+
+The `aiascent.dev` website features two distinct interactive reports: the main "Ascent Report" on the `/showcase` page and the "Process as Asset" whitepaper on the homepage. Each requires a different knowledge base for the "Ask @Ascentia" RAG feature to function correctly.
+
+The goal of this plan is to implement a dual-embedding architecture that allows the backend chat API to dynamically load the correct knowledge base based on where the user's request originates.
+
+## 2. Knowledge Base Definitions
+
+The system will support two distinct knowledge bases:
+
+1.  **`report`:**
+    *   **Content:** Based on research about the "fissured workplace," cognitive security, and geopolitical AI strategy.
+    *   **Usage:** For the `/showcase` page.
+    *   **Files:** `report_faiss.index`, `report_chunks.json`.
+
+2.  **`dce`:**
+    *   **Content:** Based on the collection of documentation artifacts (`A*.md` files) that describe the Data Curation Environment (DCE) tool, its workflow, and its philosophy.
+    *   **Usage:** For the interactive whitepaper on the homepage.
+    *   **Files:** `dce_faiss.index`, `dce_chunks.json`.
+
+## 3. Curator Action: Creating the `dce` Embedding
+
+1.  **Generate Source File:** Create a single flattened markdown file (e.g., `dce_artifacts.md`) that concatenates the content of all relevant DCE documentation artifacts.
+2.  **Run Embedding Script:** Use the `create_report_embedding.js` script to process this new source file.
+    ```bash
+    node context/aiascentgame/scripts/create_report_embedding.js C:/Projects/aiascent-dev/context/dce/dce_kb.md
+    ```
+3.  **Rename Output:** The script will output `report_faiss.index` and `report_chunks.json`. **Rename these files** to `dce_faiss.index` and `dce_chunks.json` respectively.
+4.  **Place Files:** Place all four embedding files (`report_*` and `dce_*`) into the `public/data/embeddings/` directory.
+
+## 4. Technical Implementation Plan
+
+### 4.1. Backend API (`/api/chat/route.ts`) Modification
+
+The chat API will be updated to be "knowledge base aware."
+
+1.  **Update Request Body:** The `POST` request handler will be modified to accept a new field: `knowledgeBase: 'report' | 'dce'`.
+2.  **Dynamic File Loading:** The handler will use this new field to dynamically construct the paths to the correct embedding files.
+    ```typescript
+    // Example logic in /api/chat/route.ts
+    const { prompt, pageContext, knowledgeBase = 'report' } = await request.json();
+
+    const faissFile = `${knowledgeBase}_faiss.index`;
+    const chunksFile = `${knowledgeBase}_chunks.json`;
+
+    const faissPath = path.join(process.cwd(), 'public', 'data', 'embeddings', faissFile);
+    const chunksPath = path.join(process.cwd(), 'public', 'data', 'embeddings', chunksFile);
+    
+    // ... proceed to load these files
+    ```
+3.  **Dynamic System Prompt:** The API will also use the `knowledgeBase` value to select the correct system prompt for Ascentia's persona, as defined in `A27`.
+
+### 4.2. Frontend Component Modifications
+
+The frontend needs to be updated to send the `knowledgeBase` identifier with each request.
+
+1.  **`ReportViewer.tsx`:**
+    *   This component already accepts a `reportName` prop (`"showcase"` or `"whitepaper"`). It will be modified to pass this prop down to its child, `ReportChatPanel`.
+
+2.  **`ReportChatPanel.tsx`:**
+    *   It will accept the `reportName` prop.
+    *   In its `handleSend` function, it will map this prop to the `knowledgeBase` identifier and include it in the JSON body of the `fetch` request.
+    ```typescript
+    // Example logic in ReportChatPanel.tsx handleSend function
+    const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
+
+    const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            prompt: trimmedInput, 
+            pageContext,
+            knowledgeBase: knowledgeBase // Send the identifier
+        }),
+    });
+    ```
+
+This architecture provides a clean and scalable way to support multiple, distinct knowledge bases, making the "Ask @Ascentia" feature more powerful and contextually accurate across the entire website.
 </file_artifact>
 
 

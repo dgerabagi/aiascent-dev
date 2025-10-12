@@ -22,7 +22,13 @@ const MissionPage = () => {
                         content="Cognitive Capital is the intellectual capacity, skill, and creative potential of a workforce, a population, or a society. In an age where AI can automate routine tasks, this collective ability to solve novel problems, innovate under pressure, and adapt to new challenges becomes the primary engine of economic prosperity and national security. It is the raw material from which innovation and resilience are forged. One company or nation may have more workers, but another may possess vastly more Cognitive Capital. Our mission is to build the tools that cultivate this essential resource, empowering a new class of 'Citizen Architects' who can leverage AI to amplify their innate problem-solving abilities and build a better future."
                         images={[
                             'the-citizen-architect-has-arrived-p1-img-1.webp',
+                            'the-citizen-architect-has-arrived-p1-img-2.webp',
+                            'the-citizen-architect-has-arrived-p1-img-3.webp',
+                            'the-citizen-architect-has-arrived-p1-img-4.webp',
                             'the-citizen-architect-has-arrived-p1-img-5.webp',
+                            'the-citizen-architect-has-arrived-p1-img-6.webp',
+                            'the-citizen-architect-has-arrived-p1-img-7.webp',
+                            'the-citizen-architect-has-arrived-p1-img-8.webp',
                             'the-citizen-architect-has-arrived-p1-img-9.webp',
                         ]}
                         imagePath="part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/"
@@ -40,7 +46,15 @@ This is more than an ethical failing; it is a critical strategic blunder. Decade
 In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry. An AI superpower cannot be sustained indefinitely on a brittle foundation of exploited labor."
                         images={[
                             'the-fissured-workplace-p1-img-1.webp',
+                            'the-fissured-workplace-p1-img-2.webp',
+                            'the-fissured-workplace-p1-img-3.webp',
+                            'the-fissured-workplace-p1-img-4.webp',
+                            'the-fissured-workplace-p1-img-5.webp',
+                            'the-fissured-workplace-p1-img-6.webp',
                             'the-fissured-workplace-p1-img-7.webp',
+                            'the-fissured-workplace-p1-img-8.webp',
+                            'the-fissured-workplace-p1-img-9.webp',
+                            'the-fissured-workplace-p1-img-10.webp',
                             'the-fissured-workplace-p1-img-11.webp',
                         ]}
                         imagePath="introduction/the-fissured-workplace/prompt-1/"
@@ -58,7 +72,16 @@ The central challenge in training experts is that their most critical skills—p
 The Data Curation Environment (DCE) is the foundational tool for this new relationship. It provides the structured workflow and auditable knowledge graph that makes this new form of apprenticeship possible, transforming the development process itself into a rich learning environment."
                         images={[
                             'the-pedagogical-engine-cam-p1-img-1.webp',
+                            'the-pedagogical-engine-cam-p1-img-2.webp',
+                            'the-pedagogical-engine-cam-p1-img-3.webp',
+                            'the-pedagogical-engine-cam-p1-img-4.webp',
+                            'the-pedagogical-engine-cam-p1-img-5.webp',
                             'the-pedagogical-engine-cam-p1-img-6.webp',
+                            'the-pedagogical-engine-cam-p1-img-7.webp',
+                            'the-pedagogical-engine-cam-p1-img-8.webp',
+                            'the-pedagogical-engine-cam-p1-img-9.webp',
+                            'the-pedagogical-engine-cam-p1-img-10.webp',
+                            'the-pedagogical-engine-cam-p1-img-11.webp',
                             'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
@@ -76,7 +99,19 @@ By capturing every interaction as a persistent, auditable knowledge graph, the D
 We are creating a community of 'solarpunk prime' developers, the original vibe coders, sharing discoveries to build a better, more resilient digital world. The DCE is the essential toolkit for this mission, providing the infrastructure to scale expertise, ensure quality, and achieve the mission faster."
                         images={[
                             'the-new-creative-partnership-p1-img-1.webp',
+                            'the-new-creative-partnership-p1-img-2.webp',
+                            'the-new-creative-partnership-p1-img-3.webp',
+                            'the-new-creative-partnership-p1-img-4.webp',
+                            'the-new-creative-partnership-p1-img-5.webp',
+                            'the-new-creative-partnership-p1-img-6.webp',
+                            'the-new-creative-partnership-p1-img-7.webp',
                             'the-new-creative-partnership-p1-img-8.webp',
+                            'the-new-creative-partnership-p1-img-9.webp',
+                            'the-new-creative-partnership-p1-img-10.webp',
+                            'the-new-creative-partnership-p1-img-11.webp',
+                            'the-new-creative-partnership-p1-img-12.webp',
+                            'the-new-creative-partnership-p1-img-13.webp',
+                            'the-new-creative-partnership-p1-img-14.webp',
                             'the-new-creative-partnership-p1-img-15.webp',
                         ]}
                         imagePath="part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/"

@@ -5,7 +5,11 @@ import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStor
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
-const ReportChatPanel: React.FC = () => {
+interface ReportChatPanelProps {
+    reportName: string;
+}
+
+const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
     const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus } = useReportState(state => ({
         allPages: state.allPages,
@@ -54,12 +58,17 @@ const ReportChatPanel: React.FC = () => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
+        const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prompt: trimmedInput, pageContext }),
+                body: JSON.stringify({ 
+                    prompt: trimmedInput, 
+                    pageContext,
+                    knowledgeBase: knowledgeBase
+                }),
             });
 
             if (!response.ok) {

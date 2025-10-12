@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C20 (Add new planning artifacts for Mission, Learn, and Homepage)
+# Updated on: C26 (Add Persona and Dual Embedding artifacts)
 
 ## 1. Purpose
 
@@ -78,6 +78,16 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
   - **Tags:** page design, home page, report viewer, whitepaper, content, plan, image prompts
+
+### A27. aiascent.dev - AI Persona - @Ascentia
+
+  - **Description:** Defines the persona, rules, and contextual system prompts for the @Ascentia AI assistant on the aiascent.dev website.
+  - **Tags:** documentation, persona, ai, ascentia, rag, prompt engineering
+
+### A28. aiascent.dev - Dual Embedding RAG Architecture
+
+  - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
+  - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
 ## III. Design and Assets
 

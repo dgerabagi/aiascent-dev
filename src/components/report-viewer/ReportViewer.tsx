@@ -145,7 +145,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                     }}
                     handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
                 >
-                    <ReportChatPanel />
+                    <ReportChatPanel reportName={reportName} />
                 </Resizable>
             )}
         </div>
