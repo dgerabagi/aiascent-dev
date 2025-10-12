@@ -14,8 +14,12 @@ import { Resizable } from 're-resizable';
 import Image from 'next/image';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
-const ReportViewer: React.FC = () => {
-    const { loadReportData, handleKeyDown } = useReportStore.getState();
+interface ReportViewerProps {
+    reportName: string;
+}
+
+const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
+    const { loadReport, handleKeyDown } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -40,8 +44,8 @@ const ReportViewer: React.FC = () => {
     }));
 
     useEffect(() => {
-        loadReportData();
-    }, [loadReportData]);
+        loadReport(reportName);
+    }, [loadReport, reportName]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -54,7 +58,7 @@ const ReportViewer: React.FC = () => {
 
     if (!_hasHydrated || isLoading) {
         return (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center h-full w-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
             </div>
         );
@@ -62,15 +66,13 @@ const ReportViewer: React.FC = () => {
 
     if (!currentPage) {
         return (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center h-full w-full">
                 <p className="text-2xl text-red-500">Could not load report data.</p>
             </div>
         );
     }
     
     return (
-        // C19 Fix: Removed pt-16. Page-level container is now responsible for this spacing.
-        // Curator note: the container must not be doing a good job, because its broken once again.
         <div className="h-full w-full bg-background text-foreground flex">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
@@ -105,6 +107,7 @@ const ReportViewer: React.FC = () => {
                                     layout="fill"
                                     className="object-contain cursor-pointer"
                                     onClick={openImageFullscreen}
+                                    unoptimized // Good for gifs, but also for webp from local
                                 />
                             ) : <p>No Image Available</p>}
                         </div>

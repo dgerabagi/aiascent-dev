@@ -7,17 +7,17 @@ const features = [
 {
 title: "Precision Context Curation",
 description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
-icon: "/assets/icons/context-curation.png",
+icon: "/assets/icons/context-curation.webp",
 },
 {
 title: "Parallel Co-Pilot & Rapid Testing",
 description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
-icon: "/assets/icons/parallel-copilot.png",
+icon: "/assets/icons/parallel-copilot.webp",
 },
 {
 title: "Iterative Knowledge Graph",
 description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
-icon: "/assets/icons/iterative-workflow.png",
+icon: "/assets/icons/iterative-workflow.webp",
 },
 ];
 

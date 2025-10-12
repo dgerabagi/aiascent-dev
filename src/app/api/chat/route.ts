@@ -17,6 +17,7 @@ export async function POST(request: Request) {
   }
 
   let retrievedContext = '';
+  let retrievedDocsLog = 'No documents retrieved.';
   try {
     const embeddings = new OpenAIEmbeddings({
       openAIApiKey: 'not-needed',
@@ -29,38 +30,42 @@ export async function POST(request: Request) {
     const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
     const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
 
-    // C19 Fix: Add more robust checks for file existence and size before loading
     try {
-      const faissStat = await fs.stat(faissPath);
-      const chunksStat = await fs.stat(chunksPath);
-      if (faissStat.size === 0 || chunksStat.size === 0) {
-        throw new Error("Embedding files are empty.");
-      }
+      await fs.stat(faissPath);
+      await fs.stat(chunksPath);
     } catch (e: any) {
         if (e.code === 'ENOENT') {
             console.error('[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.');
+            retrievedContext = "RAG system failed: Could not load embedding files.";
         } else {
             console.error(`[Chat API] RAG Error: Could not stat embedding files. Error: ${e.message}`);
+            retrievedContext = `RAG system failed: ${e.message}.`;
         }
-        // Proceed without RAG, but log the error clearly.
-        retrievedContext = "RAG system failed: Could not load embedding files.";
     }
 
-    if (!retrievedContext) { // Only attempt to load if the files were found and are not empty
+    if (!retrievedContext) {
         const vectorStore = await FaissStore.load(faissPath, embeddings);
-        const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
+        const retriever = vectorStore.asRetriever(3);
         const results = await retriever.invoke(prompt);
         retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
+        retrievedDocsLog = `Retrieved ${results.length} documents:\n${results.map((doc, i) => `  Doc ${i+1}: "${doc.pageContent.substring(0, 100)}..."`).join('\n')}`;
     }
 
   } catch (error: any) {
-    // This will catch errors from FaissStore.load itself, like the 'indexOf' error.
     console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
     retrievedContext = `RAG system failed: ${error.message}.`;
+    retrievedDocsLog = `RAG Error: ${error.message}`;
   }
 
+  // C21: Enhanced logging to debug RAG
+  console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}"`);
+  console.log(`[Chat API] ${retrievedDocsLog}`);
+
+
   const completionsUrl = `${llmUrl}/v1/completions`;
-  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic. First, consider the 'Retrieved Chunks' which have high relevance to the user's question, then consider the 'Current Page Context'. Do not invent information. If the answer is not in the context, say "That information is not available in the current context."`;
+  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic.
+First, consider the 'Retrieved Chunks' which have high relevance to the user's question. After that, consider the 'Current Page Context' for supplementary information.
+Do not invent information. If the answer is not in the context, clearly state "That information is not available in the provided context."`;
 
   const finalPrompt = `
 System: ${systemPrompt}

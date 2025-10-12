@@ -1,0 +1,63 @@
+{
+  "manifestId": "whitepaper-images-v1",
+  "basePath": "/assets/images/whitepaper/",
+  "imageGroups": {
+    "group_wp-01-cover": {
+      "path": "", "prompt": "A hyper-realistic, cinematic image of a male professional in a futuristic command center...", "alt": "Process as Asset Cover", "baseFileName": "wp-01-cover", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-02-executive-summary": {
+      "path": "", "prompt": "A futuristic, holographic dashboard displaying the 'EXECUTIVE SUMMARY'...", "alt": "Executive Summary", "baseFileName": "wp-02-executive-summary", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-03-challenge-ad-hoc-ai": {
+      "path": "", "prompt": "A depiction of a frustrated developer at their desk, viewed from behind, representing an 'EFFICIENCY DRAIN'...", "alt": "The Challenge: Ad-Hoc AI Interaction", "baseFileName": "wp-03-challenge-ad-hoc-ai", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-04-problem-bloated-context": {
+      "path": "", "prompt": "A powerful, industrial machine is shown spewing a massive, chaotic torrent of glowing red data labeled 'BLOATED CONTEXT'...", "alt": "The Context Problem", "baseFileName": "wp-04-problem-bloated-context", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-05-problem-collaboration-gap": {
+      "path": "", "prompt": "A split-panel image. On the left, a developer's digital 'ghost' is shown leaving their workstation...", "alt": "The Collaboration Gap", "baseFileName": "wp-05-problem-collaboration-gap", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-06-problem-iteration-overhead": {
+      "path": "", "prompt": "A modern depiction of the myth of Sisyphus. A developer is shown pushing a massive, glowing block of data up a digital mountain...", "alt": "The Iteration Overhead", "baseFileName": "wp-06-problem-iteration-overhead", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-07-problem-auditability-vacuum": {
+      "path": "", "prompt": "A massive, monolithic black cube, representing 'THE BLACK BOX OF COLLABORATION,' sits in a vast server room...", "alt": "The Auditability Vacuum", "baseFileName": "wp-07-problem-auditability-vacuum", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-08-solution-dce": {
+      "path": "", "prompt": "A female developer is working at a futuristic computer. A glowing blue data stream flows from her, representing 'THE NEXT EVOLUTION OF HUMAN-AI TEAMING.'...", "alt": "The Solution: The Data Curation Environment", "baseFileName": "wp-08-solution-dce", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-09-feature-precision-curation": {
+      "path": "", "prompt": "An operator interacts with a holographic file management interface. They are using simple checkboxes to select various file types...", "alt": "Precision Context Curation", "baseFileName": "wp-09-feature-precision-curation", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-10-feature-parallel-scrutiny": {
+      "path": "", "prompt": "An operator stands before a large, futuristic touch-screen panel labeled 'DCE's Parallel Co-Pilot Panel.'...", "alt": "Parallel AI Scrutiny", "baseFileName": "wp-10-feature-parallel-scrutiny", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-11-feature-knowledge-graph": {
+      "path": "", "prompt": "An operator stands in a vast, modern library-like space, representing 'The Architecture of Institutional Memory.'...", "alt": "Persistent Knowledge Graph", "baseFileName": "wp-11-feature-knowledge-graph", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-12-process-as-asset": {
+      "path": "", "prompt": "A central glowing orb labeled 'DCE' acts as a transformation engine...", "alt": "Transforming the Process into an Asset", "baseFileName": "wp-12-process-as-asset", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-13-benefit-shareable-context": {
+      "path": "", "prompt": "A seamless handoff between two professionals. One passes a glowing, versioned data package labeled 'Curated Context: Selection Set v4.2'...", "alt": "The Curated Context as a Shareable Asset", "baseFileName": "wp-13-benefit-shareable-context", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-14-benefit-accelerated-iteration": {
+      "path": "", "prompt": "A developer uses a futuristic interface labeled 'DCE' to perform 'Surgical Precision at Systemic Scale.'...", "alt": "Accelerating Iteration and Maintenance", "baseFileName": "wp-14-benefit-accelerated-iteration", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-15-benefit-scaling-expertise": {
+      "path": "", "prompt": "A manager and a new employee stand in a sustainable, solarpunk-style office. They are reviewing a 'PROJECT KNOWLEDGE GRAPH'...", "alt": "Scaling Expertise and Ensuring Auditability", "baseFileName": "wp-15-benefit-scaling-expertise", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-16-use-case-spotlight": {
+      "path": "", "prompt": "A split-screen comparison. On the left, 'TRADITIONAL WORKFLOW (WEEKS),' a frustrated analyst is buried in paperwork...", "alt": "Use Case Spotlight: Rapid Development", "baseFileName": "wp-16-use-case-spotlight", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-17-use-case-traditional": {
+      "path": "", "prompt": "A dark, cluttered office representing 'THE DRUDGERY OF MANUAL REVISION.'...", "alt": "The Traditional Workflow (Weeks)", "baseFileName": "wp-17-use-case-traditional", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-18-use-case-dce": {
+      "path": "", "prompt": "A clean, futuristic interface showing 'The Agility of Instant Feedback.'...", "alt": "The DCE Workflow (Hours)", "baseFileName": "wp-18-use-case-dce", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-19-conclusion": {
+      "path": "", "prompt": "A sleek, futuristic spacecraft, representing the organization's mission, is shown accelerating to light speed...", "alt": "Conclusion", "baseFileName": "wp-19-conclusion", "fileExtension": ".webp", "imageCount": 1
+    }
+  }
+}

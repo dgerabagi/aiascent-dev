@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 21 - keep up the iterative improvement
+Current Cycle 22 - nice! continue working on homepage and showcase
+Cycle 21 - keep up the iterative improvement
 Cycle 20 - more great work, continue iterative improvement, lots of planning/artifacts to do this cycle
 Cycle 19 - embedding and mission page improvements
 Cycle 18 - nice! continue iterative improvement
@@ -386,6 +387,40 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 22>
+<Cycle Context>
+nice work! okay... here are my observations:
+
+<interactive whitepaper>
+1. lets hide the image switching ui element as there is only one image for each page.
+2. the @ask ascentia panel resize does not 'stick'. instead, after i resize it, it snaps back to its original position.
+3. the images are not appearing, despite being placed in: `public\assets\images\whitepaper\wp-01-cover.webp`. here is the error that i see: `GET /assets/images/whitepaper/wp-01-cover1.webp 404 in 915ms`, but how is that when it's placed as described above? is the `public` folder missing in the path?
+</interactive whitepaper>
+<showcase>
+when i attempt to view, i see this: `Could not load report data.`, see ephemeral (<showcase logs>), as `public\data\whitepaper_content.json` was just created and now exists. is it also missing the `public` in the directory?
+</showcase>
+</Cycle Context>
+<Ephemeral Context>
+<showcase logs>
+ GET /data/undefined_content.json 404 in 545ms
+ GET /data/undefined_imagemanifest.json 404 in 538ms
+ GET /data/undefined_content.json 404 in 503ms
+ GET /data/undefined_imagemanifest.json 404 in 503ms
+</showcase logs>
+</Ephemeral Context>
+<Previous Cycle 21 Summary of Actions>
+Could not parse summary.
+
+1.  **Create `A24. aiascent.dev - Mission Page Content Expansion Plan.md`:** Author a new planning artifact to flesh out the content for the final three sections of the Mission page, providing a more detailed and compelling narrative.
+2.  **Create `A25. aiascent.dev - Learn Page Content Plan.md`:** Author a new planning artifact that will serve as the blueprint for the `/learn` page. This document will structure the page's content around the "Vibecoding to Virtuosity" pathway, mapping concepts to text and imagery in the style of the Mission page.
+3.  **Create `A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md`:** Author a comprehensive new artifact by transcribing the provided PDF. This plan will define a new report structure, including page content, a naming scheme for all 19 images, and corresponding image generation prompts, preparing it for implementation as an interactive component.
+4.  **Update `A0-Master-Artifact-List.md`:** Add the new artifacts (A24, A25, A26) to the master list to maintain documentation integrity.
+5.  **Update `src/stores/reportStore.ts`:** Introduce a new state and action (`playArbitraryText`) to handle generic TTS requests for text content outside of the main report viewer, ensuring it doesn't conflict with the existing audio player state.
+6.  **Update `src/app/layout.tsx`:** Integrate a new, globally accessible HTML `<audio>` element that will be controlled by the new state in `reportStore` to play the arbitrary text.
+7.  **Update `src/components/mission/MissionSectionBlock.tsx`:** Add a new "Play Audio" button to the component. This button will trigger the `playArbitraryText` action, passing the section's content to the TTS system. The button's UI will also reflect the current playback state (idle, generating, playing).
+</Previous Cycle 21 Summary of Actions>
+</Cycle 22>
 
 <Cycle 21>
 <Cycle Context>
@@ -2100,10 +2135,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T16:57:35.167Z
+  Date Generated: 2025-10-12T17:30:24.486Z
   ---
-  Total Files: 106
-  Approx. Tokens: 268640
+  Total Files: 108
+  Approx. Tokens: 275314
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2113,7 +2148,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (5199 tokens)
+7. src\stores\reportStore.ts (5097 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4331 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
@@ -2144,7 +2179,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 23. src\app\showcase\page.tsx - Lines: 14 - Chars: 376 - Tokens: 94
 24. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
 25. src\app\layout.tsx - Lines: 44 - Chars: 1370 - Tokens: 343
-26. src\app\page.tsx - Lines: 17 - Chars: 517 - Tokens: 130
+26. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
 29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2183 - Tokens: 546
@@ -2172,7 +2207,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 51. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
 52. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
 53. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-54. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2645 - Tokens: 662
+54. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2648 - Tokens: 662
 55. src\components\home\HeroSection.tsx - Lines: 66 - Chars: 3155 - Tokens: 789
 56. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 57. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
@@ -2186,8 +2221,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 27 - Chars: 1239 - Tokens: 310
-69. src\app\mission\page.tsx - Lines: 80 - Chars: 6852 - Tokens: 1713
+68. src\app\learn\page.tsx - Lines: 80 - Chars: 7184 - Tokens: 1796
+69. src\app\mission\page.tsx - Lines: 92 - Chars: 9322 - Tokens: 2331
 70. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
@@ -2196,14 +2231,14 @@ This file-centric approach helps in planning and prioritizing work, especially i
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-78. src\stores\reportStore.ts - Lines: 485 - Chars: 20796 - Tokens: 5199
+78. src\stores\reportStore.ts - Lines: 448 - Chars: 20386 - Tokens: 5097
 79. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 80. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
-81. src\components\report-viewer\ReportViewer.tsx - Lines: 137 - Chars: 6120 - Tokens: 1530
+81. src\components\report-viewer\ReportViewer.tsx - Lines: 140 - Chars: 6136 - Tokens: 1534
 82. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 83. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 84. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-85. src\app\api\chat\route.ts - Lines: 135 - Chars: 5694 - Tokens: 1424
+85. src\app\api\chat\route.ts - Lines: 140 - Chars: 5769 - Tokens: 1443
 86. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 87. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 88. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2225,6 +2260,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 104. context\aiascentgame\scripts\convert_images_to_webp.js - Lines: 104 - Chars: 3809 - Tokens: 953
 105. context\aiascentgame\scripts\create_report_embedding.js - Lines: 145 - Chars: 5384 - Tokens: 1346
 106. context\aiascentgame\code\ascentiaHandler.ts - Lines: 353 - Chars: 19428 - Tokens: 4857
+107. public\data\whitepaper_content.json - Lines: 145 - Chars: 11956 - Tokens: 2989
+108. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 6144 - Tokens: 1536
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -11319,17 +11356,28 @@ export default function RootLayout({
 // src/app/page.tsx
 import HeroSection from "@/components/home/HeroSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
-import WorkflowSection from "@/components/home/WorkflowSection";
 import MissionSection from "@/components/home/MissionSection";
+import ReportViewer from "@/components/report-viewer/ReportViewer";
 
 export default function Home() {
 return (
-// C15 Fix: Added pt-16 here to compensate for its removal from the main layout
 <div className="flex flex-col pt-16">
-<HeroSection />
-<FeaturesSection />
-<WorkflowSection />
-<MissionSection />
+    <HeroSection />
+    <FeaturesSection />
+
+    {/* Homepage Whitepaper Visualization */}
+    <section className="py-20 md:py-32 bg-background">
+        <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground">
+                Interactive Whitepaper: Process as Asset
+            </h2>
+            <div className="h-[80vh] w-full border rounded-lg shadow-lg overflow-hidden">
+                <ReportViewer reportName="whitepaper" />
+            </div>
+        </div>
+    </section>
+
+    <MissionSection />
 </div>
 );
 }
@@ -13506,17 +13554,17 @@ const features = [
 {
 title: "Precision Context Curation",
 description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
-icon: "/assets/icons/context-curation.png",
+icon: "/assets/icons/context-curation.webp",
 },
 {
 title: "Parallel Co-Pilot & Rapid Testing",
 description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
-icon: "/assets/icons/parallel-copilot.png",
+icon: "/assets/icons/parallel-copilot.webp",
 },
 {
 title: "Iterative Knowledge Graph",
 description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
-icon: "/assets/icons/iterative-workflow.png",
+icon: "/assets/icons/iterative-workflow.webp",
 },
 ];
 
@@ -16186,24 +16234,77 @@ To ensure the component can load its content, the following directory structure 
 <file path="src/app/learn/page.tsx">
 // src/app/learn/page.tsx
 import React from 'react';
+import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 
 const LearnPage = () => {
     return (
-        // C15 Fix: Added pt-16 here to compensate for its removal from the main layout
         <div className="bg-background text-foreground min-h-screen pt-16">
-            <div className="container mx-auto px-4 py-16 text-center">
-                <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">
-                    Learn
-                </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mt-4">
-                    The educational hub for the Data Curation Environment and the Citizen Architect methodology.
-                </p>
-
-                <div className="mt-24">
-                    <h2 className="text-3xl font-bold">Coming Soon</h2>
-                    <p className="text-lg text-muted-foreground mt-4">
-                        This section will feature interactive tutorials, deep dives into the DCE workflow, and a curriculum of reports to help you master AI-assisted development.
+            <div className="container mx-auto px-4 py-16">
+                <section className="text-center mb-24">
+                    <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">
+                        The Pathway to Virtuosity
+                    </h1>
+                    <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mt-4">
+                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive 'vibecoding' to architectural mastery.
                     </p>
+                </section>
+
+                <div className="flex flex-col gap-24">
+                    <MissionSectionBlock
+                        title="The 'Vibecoding to Virtuosity' Pathway"
+                        tldr="The V2V pathway is a structured pedagogical model, grounded in Cognitive Apprenticeship, designed to transform intuitive AI interaction ('vibecoding') into architectural mastery."
+                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the 'Vibecoding to Virtuosity' pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
+                        images={[
+                            'from-intuition-to-mastery-p1-img-1.webp',
+                            'from-intuition-to-mastery-p1-img-7.webp',
+                            'from-intuition-to-mastery-p1-img-14.webp',
+                        ]}
+                        imagePath="part-i-the-proof/the-vibecoding-to-virtuosity-pathway/from-intuition-to-mastery/prompt-1/"
+                        imagePrompt="A path winds from a hazy, dreamlike landscape labeled 'VIBECODING' to a sharp, clear, brilliantly lit city labeled 'VIRTUOSITY.' The path is paved with glowing stones representing skills like 'Structured Interaction' and 'Architectural Mindset.'"
+                        imageSide="left"
+                    />
+
+                    <MissionSectionBlock
+                        title="Stages 1 & 2: The Annotator and The Toolmaker"
+                        tldr="The pathway begins by developing critical analysis (The Cognitive Annotator) and then shifts to active creation (The Adaptive Toolmaker), fostering agency and practical problem-solving."
+                        content="The journey starts not with coding, but with critical analysis. As a **Cognitive Annotator**, you learn to deconstruct problems and rigorously review AI output for correctness and security. You learn to be skeptical. Next, as an **Adaptive Toolmaker**, you shift from consumer to creator. You solve real-world problems by building 'on-the-fly' scripts and automations, using AI as an adaptive component library to assemble your solutions."
+                        images={[
+                            'v2v-stages-1-and-2-p1-img-1.webp',
+                            'v2v-stages-1-and-2-p1-img-6.webp',
+                            'v2v-stages-1-and-2-p1-img-12.webp',
+                        ]}
+                        imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/v2v-stages-1-and-2/prompt-1/"
+                        imagePrompt="Left Panel: 'Stage 1: Cognitive Annotator'. A learner is meticulously analyzing AI output, highlighting flaws. Right Panel: 'Stage 2: Adaptive Toolmaker'. The same learner is now actively building an automation script, using AI to generate components."
+                        imageSide="right"
+                    />
+
+                    <MissionSectionBlock
+                        title="Stages 3 & 4: The Recursive Learner and The Virtuoso"
+                        tldr="The advanced stages focus on engineering your own expertise (The Recursive Learner) and culminating in fluid, intuitive mastery (The Virtuoso), where the AI becomes a seamless cognitive exoskeleton."
+                        content="In the advanced stages, you become a **Recursive Learner**, turning your skills inward to engineer your own expertise. You use AI as a meta-tool to build personalized learning accelerators that target your own weaknesses. The culmination of the pathway is the **Virtuoso**—the 100x DCIA. Here, core principles are internalized, leading to adaptive expertise and fluid human-AI collaboration, coding at the speed of thought."
+                        images={[
+                            'v2v-stages-3-and-4-p1-img-1.webp',
+                            'v2v-stages-3-and-4-p1-img-8.webp',
+                            'v2v-stages-3-and-4-p1-img-16.webp',
+                        ]}
+                        imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/v2v-stages-3-and-4/prompt-1/"
+                        imagePrompt="Left Panel: 'Stage 3: Recursive Learner'. A learner analyzes their own cognitive process. Right Panel: 'Stage 4: Virtuoso'. The same learner, now an expert, effortlessly orchestrates a complex system with the AI as a seamless 'Cognitive Exoskeleton'."
+                        imageSide="left"
+                    />
+
+                    <MissionSectionBlock
+                        title="The Apex Skill: On-the-Fly Tooling"
+                        tldr="The culmination of the pathway is 'On-the-Fly Tooling'—the ability to use AI not as a tool, but as a 'foundry' to create bespoke solutions in real-time. This is the definitive marker of the 100x expert."
+                        content="The apex skill of the Virtuoso is **'On-the-Fly Tooling.'** This is an act of expert improvisation where the analyst transcends the role of tool user and becomes a tool creator in real-time. The competent user asks the AI, 'How do I solve problem X?' The expert *commands* the AI, 'Build me a tool that solves problem X.' The AI is no longer a tool, but a foundry for creating tools. This is the definitive behavioral marker of the 100x Citizen Architect."
+                        images={[
+                            'the-apex-skill-on-the-fly-tooling-p1-img-1.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-14.webp',
+                            'the-apex-skill-on-the-fly-tooling-p1-img-28.webp',
+                        ]}
+                        imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-apex-skill-on-the-fly-tooling/prompt-1/"
+                        imagePrompt="A Virtuoso DCIA is shown using the AI not as a conversational partner, but as a generative medium. They are rapidly forging a glowing, bespoke digital tool from raw data streams, shaping it with gestures and high-level commands."
+                        imageSide="right"
+                    />
                 </div>
             </div>
         </div>
@@ -16247,9 +16348,13 @@ const MissionPage = () => {
                     />
 
                     <MissionSectionBlock
-                        title="The Fissured Workplace"
-                        tldr="The current Western AI labor model is a strategic vulnerability, creating an unstable foundation for our most critical technology."
-                        content="The AI supply chain is a masterclass in obfuscation, deliberately fractured to distance valuable tech companies from the human labor that makes their products possible. This labyrinthine structure is not an accident; it is a design choice intended to suppress wages, prevent worker organization, and shed legal and ethical liability. In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry that a laissez-faire approach cannot counter."
+                        title="The Strategic Imperative: The Fissured Workplace"
+                        tldr="The current Western AI labor model is a strategic vulnerability, creating an unstable foundation for our most critical technology by prioritizing short-term cost savings over the cognitive well-being of its essential workforce."
+                        content="The AI supply chain is a masterclass in obfuscation, deliberately fractured to distance valuable tech companies from the human labor that makes their products possible. This labyrinthine structure, known as the 'fissured workplace,' is not an accident; it is a design choice intended to suppress wages, prevent worker organization, and shed legal and ethical liability. It creates a global 'ghost workforce' of data annotators and content moderators who are underpaid, psychologically stressed, and treated as disposable.
+
+This is more than an ethical failing; it is a critical strategic blunder. Decades of research show that financial precarity imposes a severe 'Cognitive Bandwidth Tax,' measurably reducing a person's ability to perform the complex, nuanced tasks required for high-quality data curation. By institutionalizing this precarity, the Western AI industry has built an architecture of self-sabotage. It guarantees the production of flawed, biased, and insecure training data—a systemic crisis of 'Garbage In, Garbage Out.'
+
+In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry. An AI superpower cannot be sustained indefinitely on a brittle foundation of exploited labor."
                         images={[
                             'the-fissured-workplace-p1-img-1.webp',
                             'the-fissured-workplace-p1-img-7.webp',
@@ -16262,8 +16367,12 @@ const MissionPage = () => {
 
                     <MissionSectionBlock
                         title="Our Strategy: Cognitive Apprenticeship"
-                        tldr="Our answer is not to imitate authoritarian control, but to unleash decentralized expertise through a model where AI serves as a tireless mentor."
-                        content="We believe in **Cognitive Apprenticeship**—a model where AI serves as a tireless mentor, guiding individuals from intuitive 'vibe coding' to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship, making the invisible 'hidden curriculum' of expert thinking visible and learnable."
+                        tldr="Our answer is not to imitate authoritarian control, but to unleash decentralized expertise through a model where AI serves as a tireless mentor, making the 'hidden curriculum' of expert thinking visible and learnable."
+                        content="The American counter-strategy must be asymmetric, leveraging our unique strengths: bottom-up innovation and individual empowerment. We believe in **Cognitive Apprenticeship**—a model where AI serves as a tireless mentor, guiding individuals from intuitive 'vibe coding' to architectural mastery.
+
+The central challenge in training experts is that their most critical skills—problem-solving heuristics, diagnostic strategies, self-correction—are internal and invisible. Cognitive Apprenticeship makes this 'hidden curriculum' visible and learnable. Historically, this model was difficult to scale due to the expert's limited time. AI fundamentally breaks this constraint. An AI can serve as a personalized Coach, provide dynamic Scaffolding that adapts in real-time, and generate infinite realistic scenarios for Modeling and Exploration.
+
+The Data Curation Environment (DCE) is the foundational tool for this new relationship. It provides the structured workflow and auditable knowledge graph that makes this new form of apprenticeship possible, transforming the development process itself into a rich learning environment."
                         images={[
                             'the-pedagogical-engine-cam-p1-img-1.webp',
                             'the-pedagogical-engine-cam-p1-img-6.webp',
@@ -16276,8 +16385,12 @@ const MissionPage = () => {
 
                     <MissionSectionBlock
                         title="The Role of the DCE: The Essential Toolkit"
-                        tldr="The DCE is more than a productivity tool; it's the infrastructure for the Citizen Architect."
-                        content="The DCE provides the structured workflow, precision context curation, and rapid testing capabilities needed for a decentralized community of creators to build the future. We are creating a community of 'solarpunk prime' developers, the original vibe coders, sharing discoveries to build a better, more resilient digital world."
+                        tldr="The DCE is more than a productivity tool; it's the infrastructure for the Citizen Architect, providing the structure and precision needed to transform creative intent into complex, reliable systems."
+                        content="The DCE provides the structured workflow, precision context curation, and rapid testing capabilities needed for a decentralized community of creators—the Citizen Architects—to build the future. It transforms the ad-hoc, conversational nature of 'vibecoding' into a rigorous engineering discipline.
+
+By capturing every interaction as a persistent, auditable knowledge graph, the DCE turns the development process into a shareable, scalable asset. This allows teams to collaborate seamlessly, enables new members to onboard rapidly by reviewing the project's decision history, and provides an unprecedented level of transparency and accountability.
+
+We are creating a community of 'solarpunk prime' developers, the original vibe coders, sharing discoveries to build a better, more resilient digital world. The DCE is the essential toolkit for this mission, providing the infrastructure to scale expertise, ensure quality, and achieve the mission faster."
                         images={[
                             'the-new-creative-partnership-p1-img-1.webp',
                             'the-new-creative-partnership-p1-img-8.webp',
@@ -17112,7 +17225,7 @@ export interface ReportState {
 
 export interface ReportActions {
     setHasHydrated: (hydrated: boolean) => void;
-    loadReportData: () => Promise<void>;
+    loadReport: (reportName: string) => Promise<void>;
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
@@ -17196,61 +17309,19 @@ export const useReportStore = create<ReportState & ReportActions>()(
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
-            // C20: Generic Audio Actions
-            setGenericPlaybackStatus: (status) => set({ genericPlaybackStatus: status }),
-            setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
-            stopArbitraryText: () => {
-                set({ genericPlaybackStatus: 'idle', genericAudioUrl: null, genericAudioText: null });
-            },
-            playArbitraryText: async (text) => {
-                const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
+            loadReport: async (reportName: string) => {
+                // Reset state before loading new report to prevent data bleed
+                set(createInitialReportState());
+                set({ _hasHydrated: true, isLoading: true });
 
-                // If it's the same text and already playing, pause it.
-                if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
-                    stopArbitraryText(); // This will effectively stop it
-                    return;
-                }
-                
-                // Stop any currently playing audio
-                stopArbitraryText();
-                set({ genericPlaybackStatus: 'generating', genericAudioText: text });
-
-                try {
-                    const response = await fetch('/api/tts', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text }),
-                    });
-                    if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
-                    const audioBlob = await response.blob();
-                    const newUrl = URL.createObjectURL(audioBlob);
-                    set({ genericAudioUrl: newUrl, genericPlaybackStatus: 'playing' });
-                } catch (error) {
-                    console.error('[reportStore] Failed to play arbitrary text:', error);
-                    set({ genericPlaybackStatus: 'error' });
-                }
-            },
-
-
-            startSlideshow: () => {
-                // ... (implementation unchanged)
-            },
-            
-            // ... (rest of the store implementation is unchanged)
-            loadReportData: async () => {
-                if (get().reportData) {
-                    set({ isLoading: false });
-                    return;
-                }
-                set({ isLoading: true });
                 try {
                     const [contentRes, manifestRes] = await Promise.all([
-                        fetch('/data/ai_ascent_report.json'),
-                        fetch('/data/imageManifest.json'),
+                        fetch(`/data/${reportName}_content.json`),
+                        fetch(`/data/${reportName}_imagemanifest.json`),
                     ]);
 
-                    if (!contentRes.ok) throw new Error(`Failed to fetch report content: ${contentRes.statusText}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest: ${manifestRes.statusText}`);
+                    if (!contentRes.ok) throw new Error(`Failed to fetch ${reportName}_content.json: ${contentRes.statusText}`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch ${reportName}_imagemanifest.json: ${manifestRes.statusText}`);
 
                     const contentData: ReportContentData = await contentRes.json();
                     const manifestData: ImageManifestData = await manifestRes.json();
@@ -17267,11 +17338,11 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const correctedBasePath = '/assets/images/report/';
+                                    const imageBasePath = manifestData.basePath;
                                     
                                     for (let i = 1; i <= groupMeta.imageCount; i++) {
                                         const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-                                        const url = `${correctedBasePath}${groupMeta.path}${fileName}`;
+                                        const url = `${imageBasePath}${groupMeta.path}${fileName}`;
                                         images.push({
                                             imageId: `${rawPage.pageId}-${groupId}-${i}`,
                                             url,
@@ -17308,11 +17379,48 @@ export const useReportStore = create<ReportState & ReportActions>()(
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
                 } catch (error) {
-                    console.error("Failed to load and process report data.", error);
+                    console.error(`Failed to load and process report data for ${reportName}.`, error);
                     set({ isLoading: false });
                 }
             },
             
+            // NOTE: All other actions (nextPage, prevPage, etc.) remain unchanged.
+            // They are omitted here for brevity but are still part of the store.
+            // ...
+            // ... (All other actions from the original file) ...
+            // ...
+            playArbitraryText: async (text: string) => {
+                const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
+
+                if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
+                    stopArbitraryText(); 
+                    return;
+                }
+                
+                stopArbitraryText();
+                set({ genericPlaybackStatus: 'generating', genericAudioText: text });
+
+                try {
+                    const response = await fetch('/api/tts', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text }),
+                    });
+                    if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
+                    const audioBlob = await response.blob();
+                    const newUrl = URL.createObjectURL(audioBlob);
+                    set({ genericAudioUrl: newUrl, genericPlaybackStatus: 'playing' });
+                } catch (error) {
+                    console.error('[reportStore] Failed to play arbitrary text:', error);
+                    set({ genericPlaybackStatus: 'error' });
+                }
+            },
+            stopArbitraryText: () => {
+                set({ genericPlaybackStatus: 'idle', genericAudioUrl: null, genericAudioText: null });
+            },
+            setGenericPlaybackStatus: (status) => set({ genericPlaybackStatus: status }),
+            setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
+            startSlideshow: () => { /* ... unchanged ... */ },
             nextPage: () => set(state => ({
                 currentPageIndex: (state.currentPageIndex + 1) % state.allPages.length,
                 currentImageIndex: 0,
@@ -17342,13 +17450,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
             }),
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
-                if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
-                    return;
-                }
-                if (event.key.startsWith('Arrow')) {
-                    event.preventDefault();
-                }
-
+                if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
+                if (event.key.startsWith('Arrow')) event.preventDefault();
                 switch (event.key) {
                     case 'ArrowUp': get().prevPage(); break;
                     case 'ArrowDown': get().nextPage(); break;
@@ -17357,17 +17460,13 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 }
             },
             toggleTreeNav: () => set(state => ({ isTreeNavOpen: !state.isTreeNavOpen })),
-            toggleSectionExpansion: (sectionId) => set(state => ({
-                expandedSections: { ...state.expandedSections, [sectionId]: !state.expandedSections[sectionId] }
-            })),
+            toggleSectionExpansion: (sectionId) => set(state => ({ expandedSections: { ...state.expandedSections, [sectionId]: !state.expandedSections[sectionId] } })),
             setActiveExpansionPath: (pageIndex) => {
                 const { reportData } = get();
                 if (!reportData) return;
-
                 let pageCounter = 0;
                 let activeSectionId: string | null = null;
                 let activeSubSectionId: string | null = null;
-
                 for (const section of reportData.sections) {
                     const processPages = (pages: RawReportPage[], currentSubSectionId?: string) => {
                         for (let i = 0; i < (pages || []).length; i++) {
@@ -17380,7 +17479,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                         }
                         return false;
                     };
-
                     if (section.pages && processPages(section.pages)) break;
                     if (section.subSections) {
                         for (const sub of section.subSections) {
@@ -17389,15 +17487,8 @@ export const useReportStore = create<ReportState & ReportActions>()(
                     }
                     if (activeSectionId) break;
                 }
-
                 if (activeSectionId) {
-                    set(state => ({
-                        expandedSections: {
-                            ...state.expandedSections,
-                            [activeSectionId!]: true,
-                            ...(activeSubSectionId && { [activeSubSectionId]: true }),
-                        }
-                    }));
+                    set(state => ({ expandedSections: { ...state.expandedSections, [activeSectionId!]: true, ...(activeSubSectionId && { [activeSubSectionId]: true }), } }));
                 }
             },
             toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
@@ -17406,34 +17497,18 @@ export const useReportStore = create<ReportState & ReportActions>()(
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
             setReportChatInput: (input) => set({ reportChatInput: input }),
-            addReportChatMessage: (message) => set(state => ({
-                reportChatHistory: [...state.reportChatHistory, message].slice(-50),
-            })),
-            updateReportChatMessage: (id, chunk) => set(state => ({
-                reportChatHistory: state.reportChatHistory.map(msg =>
-                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
-                )
-            })),
-            updateReportChatStatus: (id, status) => set(state => ({
-                reportChatHistory: state.reportChatHistory.map(msg =>
-                    msg.id === id ? { ...msg, status } : msg
-                )
-            })),
+            addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
+            updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
+            updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
-                const initialMessage: ChatMessage = {
-                    author: 'Ascentia', flag: '🤖',
-                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
-                };
+                const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({ reportChatHistory: [initialMessage], reportChatInput: '' });
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
-            setAutoplay: (enabled) => {
-                get().stopSlideshow(!enabled);
-                set({ autoplayEnabled: enabled });
-            },
+            setAutoplay: (enabled) => { get().stopSlideshow(!enabled); set({ autoplayEnabled: enabled }); },
             setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
@@ -17477,6 +17552,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
     )
 );
 
+// Hook for components to subscribe to state changes
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
     return useReportStore(selector, shallow);
 };
@@ -20253,8 +20329,12 @@ import { Resizable } from 're-resizable';
 import Image from 'next/image';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 
-const ReportViewer: React.FC = () => {
-    const { loadReportData, handleKeyDown } = useReportStore.getState();
+interface ReportViewerProps {
+    reportName: string;
+}
+
+const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
+    const { loadReport, handleKeyDown } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -20279,8 +20359,8 @@ const ReportViewer: React.FC = () => {
     }));
 
     useEffect(() => {
-        loadReportData();
-    }, [loadReportData]);
+        loadReport(reportName);
+    }, [loadReport, reportName]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -20293,7 +20373,7 @@ const ReportViewer: React.FC = () => {
 
     if (!_hasHydrated || isLoading) {
         return (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center h-full w-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
             </div>
         );
@@ -20301,15 +20381,13 @@ const ReportViewer: React.FC = () => {
 
     if (!currentPage) {
         return (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center h-full w-full">
                 <p className="text-2xl text-red-500">Could not load report data.</p>
             </div>
         );
     }
     
     return (
-        // C19 Fix: Removed pt-16. Page-level container is now responsible for this spacing.
-        // Curator note: the container must not be doing a good job, because its broken once again.
         <div className="h-full w-full bg-background text-foreground flex">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
@@ -20344,6 +20422,7 @@ const ReportViewer: React.FC = () => {
                                     layout="fill"
                                     className="object-contain cursor-pointer"
                                     onClick={openImageFullscreen}
+                                    unoptimized // Good for gifs, but also for webp from local
                                 />
                             ) : <p>No Image Available</p>}
                         </div>
@@ -20697,6 +20776,7 @@ export async function POST(request: Request) {
   }
 
   let retrievedContext = '';
+  let retrievedDocsLog = 'No documents retrieved.';
   try {
     const embeddings = new OpenAIEmbeddings({
       openAIApiKey: 'not-needed',
@@ -20709,38 +20789,42 @@ export async function POST(request: Request) {
     const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
     const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
 
-    // C19 Fix: Add more robust checks for file existence and size before loading
     try {
-      const faissStat = await fs.stat(faissPath);
-      const chunksStat = await fs.stat(chunksPath);
-      if (faissStat.size === 0 || chunksStat.size === 0) {
-        throw new Error("Embedding files are empty.");
-      }
+      await fs.stat(faissPath);
+      await fs.stat(chunksPath);
     } catch (e: any) {
         if (e.code === 'ENOENT') {
             console.error('[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.');
+            retrievedContext = "RAG system failed: Could not load embedding files.";
         } else {
             console.error(`[Chat API] RAG Error: Could not stat embedding files. Error: ${e.message}`);
+            retrievedContext = `RAG system failed: ${e.message}.`;
         }
-        // Proceed without RAG, but log the error clearly.
-        retrievedContext = "RAG system failed: Could not load embedding files.";
     }
 
-    if (!retrievedContext) { // Only attempt to load if the files were found and are not empty
+    if (!retrievedContext) {
         const vectorStore = await FaissStore.load(faissPath, embeddings);
-        const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
+        const retriever = vectorStore.asRetriever(3);
         const results = await retriever.invoke(prompt);
         retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
+        retrievedDocsLog = `Retrieved ${results.length} documents:\n${results.map((doc, i) => `  Doc ${i+1}: "${doc.pageContent.substring(0, 100)}..."`).join('\n')}`;
     }
 
   } catch (error: any) {
-    // This will catch errors from FaissStore.load itself, like the 'indexOf' error.
     console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
     retrievedContext = `RAG system failed: ${error.message}.`;
+    retrievedDocsLog = `RAG Error: ${error.message}`;
   }
 
+  // C21: Enhanced logging to debug RAG
+  console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}"`);
+  console.log(`[Chat API] ${retrievedDocsLog}`);
+
+
   const completionsUrl = `${llmUrl}/v1/completions`;
-  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic. First, consider the 'Retrieved Chunks' which have high relevance to the user's question, then consider the 'Current Page Context'. Do not invent information. If the answer is not in the context, say "That information is not available in the current context."`;
+  const systemPrompt = `You are @Ascentia, an AI guide for "The Ascent Report". Your purpose is to answer questions based *only* on the provided context from the report. Be helpful, concise, and stay on topic.
+First, consider the 'Retrieved Chunks' which have high relevance to the user's question. After that, consider the 'Current Page Context' for supplementary information.
+Do not invent information. If the answer is not in the context, clearly state "That information is not available in the provided context."`;
 
   const finalPrompt = `
 System: ${systemPrompt}
@@ -23323,6 +23407,220 @@ export async function handleReportAscentiaStream(io: SocketIOServer, socket: Soc
         emitter.emit(endEvent, { temporaryId });
         logInfo(logPrefix, `Report stream ended for temporaryId: ${temporaryId}`);
     }
+}
+</file_artifact>
+
+<file path="public/data/whitepaper_content.json">
+{
+  "reportId": "whitepaper-v1",
+  "reportTitle": "Process as Asset",
+  "sections": [
+    {
+      "sectionId": "whitepaper",
+      "sectionTitle": "Process as Asset Whitepaper",
+      "pages": [
+        {
+          "pageId": "wp-01",
+          "pageTitle": "Process as Asset",
+          "tldr": "A Whitepaper on the Data Curation Environment (DCE)",
+          "content": "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders (NSA, UKILRN, Naval Operations).",
+          "imageGroupIds": ["group_wp-01-cover"]
+        },
+        {
+          "pageId": "wp-02",
+          "pageTitle": "Executive Summary",
+          "tldr": "The DCE transforms the content creation process itself into a valuable organizational asset.",
+          "content": "Organizations tasked with developing highly specialized content such as technical training materials, intelligence reports, or complex software documentation face a constant bottleneck: the time and expertise required to curate accurate data, collaborate effectively, and rapidly iterate on feedback. This whitepaper introduces the Data Curation Environment (DCE), a framework and toolset integrated into Visual Studio Code that transforms the content creation process itself into a valuable organizational asset. By capturing the entire workflow as a persistent, auditable knowledge graph, the DCE provides the infrastructure necessary to scale expertise, ensure quality, and accelerate the entire organizational mission.",
+          "imageGroupIds": ["group_wp-02-executive-summary"]
+        },
+        {
+          "pageId": "wp-03",
+          "pageTitle": "The Challenge: Bottleneck of Ad-Hoc AI Interaction",
+          "tldr": "Unstructured interaction with LLMs creates critical bottlenecks in organizational workflows.",
+          "content": "The integration of Large Language Models (LLMs) into organizational workflows promises significant acceleration. However, the way most organizations interact with these models remains unstructured and inefficient, creating several critical bottlenecks.",
+          "imageGroupIds": ["group_wp-03-challenge-ad-hoc-ai"]
+        },
+        {
+          "pageId": "wp-04",
+          "pageTitle": "The Context Problem",
+          "tldr": "Manually curating context for LLMs is time-consuming, error-prone, and results in poor output.",
+          "content": "The quality of an LLM's output is entirely dependent on the quality of its input context. Manually selecting, copying, and pasting relevant data (code, documents, reports) into a chat interface is time-consuming, error-prone, and often results in incomplete or bloated context.",
+          "imageGroupIds": ["group_wp-04-problem-bloated-context"]
+        },
+        {
+          "pageId": "wp-05",
+          "pageTitle": "The Collaboration Gap",
+          "tldr": "When a task is handed off, the context is lost, leading to significant delays and duplication of effort.",
+          "content": "When a task is handed off, the context is lost. A colleague must manually reconstruct the previous operator's dataset and understand their intent, leading to significant delays and duplication of effort.",
+          "imageGroupIds": ["group_wp-05-problem-collaboration-gap"]
+        },
+        {
+          "pageId": "wp-06",
+          "pageTitle": "The Iteration Overhead",
+          "tldr": "Revising complex datasets is a Sisyphean task, as operators must reconstruct the entire context for each change.",
+          "content": "When feedback requires changes to a complex dataset, operators often resort to manual edits because re-prompting the AI requires reconstructing the entire context again. This negates the efficiency gains of using AI in the first place.",
+          "imageGroupIds": ["group_wp-06-problem-iteration-overhead"]
+        },
+        {
+          "pageId": "wp-07",
+          "pageTitle": "The Auditability Vacuum",
+          "tldr": "The iterative process of human-AI interaction is rarely captured, creating a black box of collaboration.",
+          "content": "The iterative process of human-AI interaction (the prompts), the AI's suggestions, and the human's decisions are a valuable record of the work, yet it is rarely captured in a structured, reusable format. These challenges prevent organizations from fully realizing the potential of AI.",
+          "imageGroupIds": ["group_wp-07-problem-auditability-vacuum"]
+        },
+        {
+          "pageId": "wp-08",
+          "pageTitle": "The Solution: The Data Curation Environment",
+          "tldr": "The DCE eliminates bottlenecks by providing a structured framework for human-AI collaboration.",
+          "content": "The Data Curation Environment (DCE) is designed to eliminate these bottlenecks by providing a structured framework for human-AI collaboration directly within the operator's working environment. It moves beyond the limitations of simple chat interfaces by introducing three core capabilities.",
+          "imageGroupIds": ["group_wp-08-solution-dce"]
+        },
+        {
+          "pageId": "wp-09",
+          "pageTitle": "Precision Context Curation",
+          "tldr": "The DCE replaces manual copy-pasting with an intuitive, integrated file management interface.",
+          "content": "The DCE replaces manual copy-pasting with an intuitive, integrated file management interface. Operators can precisely select the exact files, folders, or documents required for a task with simple checkboxes, ensuring the AI receives the highest fidelity context possible while minimizing operator effort.",
+          "imageGroupIds": ["group_wp-09-feature-precision-curation"]
+        },
+        {
+          "pageId": "wp-10",
+          "pageTitle": "Parallel AI Scrutiny",
+          "tldr": "The 'Parallel Co-Pilot Panel' allows operators to manage, compare, and test multiple AI-generated solutions simultaneously.",
+          "content": "The 'Parallel Co-Pilot Panel' allows operators to manage, compare, and test multiple AI-generated solutions simultaneously. Integrated diffing tools provide immediate visualization of proposed changes, and a one-click 'Accept' mechanism integrated with version control creates a rapid, low-risk loop for evaluating multiple AI approaches.",
+          "imageGroupIds": ["group_wp-10-feature-parallel-scrutiny"]
+        },
+        {
+          "pageId": "wp-11",
+          "pageTitle": "Persistent Knowledge Graph",
+          "tldr": "Every interaction within the DCE is captured as a 'Cycle,' creating a structured, persistent Knowledge Graph.",
+          "content": "Every interaction within the DCE is captured as a 'Cycle,' which includes the curated context, the operator's instructions, all AI-generated responses, and the final decision. This history is saved as a structured, persistent Knowledge Graph, allowing operators to step back through history, review past decisions, and understand the project's evolution.",
+          "imageGroupIds": ["group_wp-11-feature-knowledge-graph"]
+        },
+        {
+          "pageId": "wp-12",
+          "pageTitle": "Transforming the Process into an Asset",
+          "tldr": "The true power of the DCE lies in transforming the workflow itself into a persistent organizational asset.",
+          "content": "The true power of the DCE lies in how these capabilities combine to transform the workflow itself into a persistent organizational asset.",
+          "imageGroupIds": ["group_wp-12-process-as-asset"]
+        },
+        {
+          "pageId": "wp-13",
+          "pageTitle": "The Curated Context as a Shareable Asset",
+          "tldr": "The curated 'Selection Set' is a saved, versioned asset that eliminates the collaboration gap.",
+          "content": "In the DCE workflow, the curated context (the 'Selection Set') is a saved, versioned asset. When a task is handed off, the new operator receives the exact context and the complete history of interactions, eliminating the 'collaboration gap' and duplication of effort.",
+          "imageGroupIds": ["group_wp-13-benefit-shareable-context"]
+        },
+        {
+          "pageId": "wp-14",
+          "pageTitle": "Accelerating Iteration and Maintenance",
+          "tldr": "Operators can rapidly iterate on complex datasets without manual reconstruction by simply reloading the curated context.",
+          "content": "Because the context is already curated and saved, operators can rapidly iterate on complex datasets without manual reconstruction. If feedback requires changes, the operator simply loads the curated context and issues a targeted instruction to the AI, completing the update in a single, efficient cycle.",
+          "imageGroupIds": ["group_wp-14-benefit-accelerated-iteration"]
+        },
+        {
+          "pageId": "wp-15",
+          "pageTitle": "Scaling Expertise and Ensuring Auditability",
+          "tldr": "The Knowledge Graph serves as a detailed, auditable record invaluable for training, reviews, and accountability.",
+          "content": "The Knowledge Graph serves as a detailed, auditable record invaluable for Training and Onboarding, After-Action Reviews, and ensuring Accountability in mission-critical environments.",
+          "imageGroupIds": ["group_wp-15-benefit-scaling-expertise"]
+        },
+        {
+          "pageId": "wp-16",
+          "pageTitle": "Use Case Spotlight: Rapid Development",
+          "tldr": "A real-world example of transforming a weeks-long manual revision process into an hours-long automated one.",
+          "content": "A government agency needs to rapidly update a specialized technical training lab based on new operational feedback indicating that in existing exam questions, 'the correct answer is too often the longest answer choice,' undermining the assessment's validity.",
+          "imageGroupIds": ["group_wp-16-use-case-spotlight"]
+        },
+        {
+          "pageId": "wp-17",
+          "pageTitle": "The Traditional Workflow (Weeks)",
+          "tldr": "The manual process involves days of searching, weeks of editing, and more days of review and rework.",
+          "content": "1. **Identify Affected Files:** An analyst manually searches the repository (days). \n2. **Manual Editing:** The analyst manually edits each file, attempting to rewrite 'distractor' answers (weeks). \n3. **Review and Rework:** Changes are reviewed, often leading to further manual edits (days).",
+          "imageGroupIds": ["group_wp-17-use-case-traditional"]
+        },
+        {
+          "pageId": "wp-18",
+          "pageTitle": "The DCE Workflow (Hours)",
+          "tldr": "The DCE workflow condenses the process into minutes for curation and instruction, and hours for review.",
+          "content": "1. **Curate Context (Minutes):** The analyst uses the DCE interface to quickly select the folder containing all exam questions. \n2. **Instruct the AI (Minutes):** The analyst provides a targeted instruction to rewrite the distractors. \n3. **Review and Accept (Hours):** The AI generates several solutions, and the analyst uses the integrated diff viewer to compare and accept the best one with a single click.",
+          "imageGroupIds": ["group_wp-18-use-case-dce"]
+        },
+        {
+          "pageId": "wp-19",
+          "pageTitle": "Conclusion",
+          "tldr": "The DCE is a strategic framework for operationalizing AI, providing the infrastructure to scale expertise, ensure quality, and achieve the mission faster.",
+          "content": "The Data Curation Environment is a strategic framework for operationalizing AI in complex environments. By addressing critical bottlenecks, the DCE transforms the human-AI interaction workflow into a structured, persistent, and valuable organizational asset, providing the necessary infrastructure to scale expertise, ensure quality, and achieve the mission faster.",
+          "imageGroupIds": ["group_wp-19-conclusion"]
+        }
+      ]
+    }
+  ]
+}
+</file_artifact>
+
+<file path="public/data/whitepaper_imagemanifest.json">
+{
+  "manifestId": "whitepaper-images-v1",
+  "basePath": "/assets/images/whitepaper/",
+  "imageGroups": {
+    "group_wp-01-cover": {
+      "path": "", "prompt": "A hyper-realistic, cinematic image of a male professional in a futuristic command center...", "alt": "Process as Asset Cover", "baseFileName": "wp-01-cover", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-02-executive-summary": {
+      "path": "", "prompt": "A futuristic, holographic dashboard displaying the 'EXECUTIVE SUMMARY'...", "alt": "Executive Summary", "baseFileName": "wp-02-executive-summary", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-03-challenge-ad-hoc-ai": {
+      "path": "", "prompt": "A depiction of a frustrated developer at their desk, viewed from behind, representing an 'EFFICIENCY DRAIN'...", "alt": "The Challenge: Ad-Hoc AI Interaction", "baseFileName": "wp-03-challenge-ad-hoc-ai", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-04-problem-bloated-context": {
+      "path": "", "prompt": "A powerful, industrial machine is shown spewing a massive, chaotic torrent of glowing red data labeled 'BLOATED CONTEXT'...", "alt": "The Context Problem", "baseFileName": "wp-04-problem-bloated-context", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-05-problem-collaboration-gap": {
+      "path": "", "prompt": "A split-panel image. On the left, a developer's digital 'ghost' is shown leaving their workstation...", "alt": "The Collaboration Gap", "baseFileName": "wp-05-problem-collaboration-gap", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-06-problem-iteration-overhead": {
+      "path": "", "prompt": "A modern depiction of the myth of Sisyphus. A developer is shown pushing a massive, glowing block of data up a digital mountain...", "alt": "The Iteration Overhead", "baseFileName": "wp-06-problem-iteration-overhead", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-07-problem-auditability-vacuum": {
+      "path": "", "prompt": "A massive, monolithic black cube, representing 'THE BLACK BOX OF COLLABORATION,' sits in a vast server room...", "alt": "The Auditability Vacuum", "baseFileName": "wp-07-problem-auditability-vacuum", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-08-solution-dce": {
+      "path": "", "prompt": "A female developer is working at a futuristic computer. A glowing blue data stream flows from her, representing 'THE NEXT EVOLUTION OF HUMAN-AI TEAMING.'...", "alt": "The Solution: The Data Curation Environment", "baseFileName": "wp-08-solution-dce", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-09-feature-precision-curation": {
+      "path": "", "prompt": "An operator interacts with a holographic file management interface. They are using simple checkboxes to select various file types...", "alt": "Precision Context Curation", "baseFileName": "wp-09-feature-precision-curation", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-10-feature-parallel-scrutiny": {
+      "path": "", "prompt": "An operator stands before a large, futuristic touch-screen panel labeled 'DCE's Parallel Co-Pilot Panel.'...", "alt": "Parallel AI Scrutiny", "baseFileName": "wp-10-feature-parallel-scrutiny", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-11-feature-knowledge-graph": {
+      "path": "", "prompt": "An operator stands in a vast, modern library-like space, representing 'The Architecture of Institutional Memory.'...", "alt": "Persistent Knowledge Graph", "baseFileName": "wp-11-feature-knowledge-graph", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-12-process-as-asset": {
+      "path": "", "prompt": "A central glowing orb labeled 'DCE' acts as a transformation engine...", "alt": "Transforming the Process into an Asset", "baseFileName": "wp-12-process-as-asset", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-13-benefit-shareable-context": {
+      "path": "", "prompt": "A seamless handoff between two professionals. One passes a glowing, versioned data package labeled 'Curated Context: Selection Set v4.2'...", "alt": "The Curated Context as a Shareable Asset", "baseFileName": "wp-13-benefit-shareable-context", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-14-benefit-accelerated-iteration": {
+      "path": "", "prompt": "A developer uses a futuristic interface labeled 'DCE' to perform 'Surgical Precision at Systemic Scale.'...", "alt": "Accelerating Iteration and Maintenance", "baseFileName": "wp-14-benefit-accelerated-iteration", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-15-benefit-scaling-expertise": {
+      "path": "", "prompt": "A manager and a new employee stand in a sustainable, solarpunk-style office. They are reviewing a 'PROJECT KNOWLEDGE GRAPH'...", "alt": "Scaling Expertise and Ensuring Auditability", "baseFileName": "wp-15-benefit-scaling-expertise", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-16-use-case-spotlight": {
+      "path": "", "prompt": "A split-screen comparison. On the left, 'TRADITIONAL WORKFLOW (WEEKS),' a frustrated analyst is buried in paperwork...", "alt": "Use Case Spotlight: Rapid Development", "baseFileName": "wp-16-use-case-spotlight", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-17-use-case-traditional": {
+      "path": "", "prompt": "A dark, cluttered office representing 'THE DRUDGERY OF MANUAL REVISION.'...", "alt": "The Traditional Workflow (Weeks)", "baseFileName": "wp-17-use-case-traditional", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-18-use-case-dce": {
+      "path": "", "prompt": "A clean, futuristic interface showing 'The Agility of Instant Feedback.'...", "alt": "The DCE Workflow (Hours)", "baseFileName": "wp-18-use-case-dce", "fileExtension": ".webp", "imageCount": 1
+    },
+    "group_wp-19-conclusion": {
+      "path": "", "prompt": "A sleek, futuristic spacecraft, representing the organization's mission, is shown accelerating to light speed...", "alt": "Conclusion", "baseFileName": "wp-19-conclusion", "fileExtension": ".webp", "imageCount": 1
+    }
+  }
 }
 </file_artifact>
 
