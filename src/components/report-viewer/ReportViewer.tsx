@@ -54,7 +54,7 @@ const ReportViewer: React.FC = () => {
 
     if (!_hasHydrated || isLoading) {
         return (
-            <div className="flex items-center justify-center h-full pt-16">
+            <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-muted-foreground animate-pulse">Loading Report...</p>
             </div>
         );
@@ -62,15 +62,16 @@ const ReportViewer: React.FC = () => {
 
     if (!currentPage) {
         return (
-            <div className="flex items-center justify-center h-full pt-16">
+            <div className="flex items-center justify-center h-full">
                 <p className="text-2xl text-red-500">Could not load report data.</p>
             </div>
         );
     }
     
     return (
-        // C19 Fix: Ensure pt-16 is present to prevent navbar overlap.
-        <div className="h-full w-full bg-background text-foreground flex pt-16">
+        // C19 Fix: Removed pt-16. Page-level container is now responsible for this spacing.
+        // Curator note: the container must not be doing a good job, because its broken once again.
+        <div className="h-full w-full bg-background text-foreground flex">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />

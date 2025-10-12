@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C17 (Add new A22 artifact for Mission Page Revamp)
+# Updated on: C19 (Add new A23 artifact for Cognitive Capital Definition)
 
 ## 1. Purpose
 
@@ -36,6 +36,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
   - **Tags:** roadmap, implementation plan, project management, development stages
+
+### A23. aiascent.dev - Cognitive Capital Definition
+
+  - **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
+  - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
 
 ## II. Technical Architecture & Implementation
 

@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C19 (Add note on layout requirements)
+# Updated on: C19 (Add technical note about header overlap)
 
   - **Key/Value for A0:**
   - **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
@@ -38,8 +38,7 @@ Developers and technical leads looking for concrete examples of what the DCE can
 
 ### 4.3. Section 2: The Interactive Whitepaper Component
 
-  * **Layout:** The main content area is dominated by the `ReportViewer.tsx` component.
-  * **CRITICAL LAYOUT NOTE (C19):** To prevent the fixed site header from overlapping the report viewer's UI, the main container within `ReportViewer.tsx` **must** have top padding applied (e.g., `pt-16`). This ensures content like buttons and navigation controls are fully visible and accessible.
+  * **Layout:** The main content area is dominated by the `ReportViewer.tsx` component. It should be housed within a visually distinct container (e.g., a large card or a bordered area) to separate it from the page shell.
   * **Component Features (as implemented in `ReportViewer.tsx`):**
       * Clear display of the current section and page title.
       * Prominent display of the "TL;DR" summary.
@@ -61,3 +60,7 @@ Developers and technical leads looking for concrete examples of what the DCE can
 ### 4.5. Footer
 
   * Standard site footer.
+
+## 5. Technical Implementation Notes
+
+*   **Header Overlap:** The main site header (`Header.tsx`) is a fixed-position element. The `ReportViewer` component on this page is designed to fill the remaining viewport height (`h-[calc(100vh-4rem)]`). To prevent the fixed header from obscuring the top of the report viewer, the root container of the `ReportViewer` component **must** have top padding applied (e.g., `pt-16` which corresponds to the header's height of `h-16` or `4rem`). This pushes the component's content down, making all UI elements fully visible. Failure to apply this padding will result in a visual regression where elements like the chat panel's "clear" button are hidden behind the header.

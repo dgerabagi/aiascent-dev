@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 19 - embedding and mission page improvements
+Current Cycle 20 - more great work, continue iterative improvement, lots of planning/artifacts to do this cycle
+Cycle 19 - embedding and mission page improvements
 Cycle 18 - nice! continue iterative improvement
 Cycle 17 - my mistake on vllm instruction, see corrections
 Cycle 16 - tts is working, now work on llm
@@ -228,7 +229,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C17 (Add new A22 artifact for Mission Page Revamp)
+# Updated on: C19 (Add new A23 artifact for Cognitive Capital Definition)
 
 ## 1. Purpose
 
@@ -260,6 +261,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
   - **Tags:** roadmap, implementation plan, project management, development stages
+
+### A23. aiascent.dev - Cognitive Capital Definition
+
+  - **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
+  - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
 
 ## II. Technical Architecture & Implementation
 
@@ -365,6 +371,46 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 20>
+<Cycle Context>
+nice, now on the mission page, i think it would be easy for us to make a button for each section that plays the text of that section. in other words, has af_sky read that paragraph.
+
+the mission page is almost perfect, the final two sections are about half as long as they could be. your approach where you created an artifact which defined that section of the mission page was superb. you were able to articualte out your thoughts there and then convert them into a compelling section. can you do that again also not only for each of the remaining 3 sections on the mission page, but then also for the following idea...
+
+lets replicate the approach for the mission page, but for the learn page, and have the learn page focus on the vibe coding to virtuosity angle. you know, all the stages, the apex skill, the deliberate practice, etc.
+
+and then also, we can deliver on the interactive visualization on the homepage. it will basically be a version of the existing white paper which is already primed to be converted in to a bite-sized report in that we've already got the content and the images created. the white paper is titled `Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration`, and ill provide a pdf version of it to you in this response. that will allow you to see the 19 images in order to:
+1. identify what i should name the images when i place them in to the new directory: `public\assets\images\whitepaper`
+2. see the image in order to create an image prompt for them
+3. see how the pages are already split up
+
+so create a planning artifact which will describe each element of each page, as well as what i should name the 19 images. then once we have our ducks in a row we can code it out easily.
+</Cycle Context>
+<Previous Cycle 19 Summary of Actions>
+I have analyzed the issues from the current cycle and formulated a comprehensive plan to address them. My course of action will resolve three distinct problems with the "Ask @Ascentia" chat feature: a temporary parsing error message, the lack of markdown rendering in responses, and a non-functional Retrieval-Augmented Generation (RAG) system. Additionally, I will fix the markdown rendering for the main report content and implement the planned revamp of the Mission page.
+
+First, I will fix the chat panel by modifying the response parsing logic to be more resilient to streaming data, which will eliminate the premature "could not parse" error. I will then introduce a dedicated markdown rendering component, leveraging `react-markdown`, and integrate it into both the chat panel and the main report viewer. This will ensure that all of Ascentia's responses and the report's content are correctly formatted.
+
+Next, I will restore the RAG functionality in the chat API backend. The current implementation only uses the context from the user's current page. I will re-implement the logic to load the vector database, perform a similarity search on the user's query, and inject the retrieved, relevant chunks from the entire report into the prompt. This will allow Ascentia to answer questions with full report context, as intended.
+
+Finally, I will execute the plan from artifact A22 to revamp the Mission page. This involves creating a new, reusable component to display sections in the style of the report viewer, complete with an image carousel, and rebuilding the Mission page to use this new component, creating a more engaging and visually consistent experience.
+
+1.  **Update `package.json`:** Add `react-markdown` and `remark-gfm` as new dependencies to support rich text formatting.
+2.  **Create `src/components/shared/MarkdownRenderer.tsx`:** Create a new, reusable component that takes a markdown string as a child and renders it as formatted HTML using the `react-markdown` library. This will be used across the application for consistent rendering.
+3.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:**
+    *   Modify the `parseFinalMessage` function to prevent it from showing a "could not parse" error when it receives an incomplete stream containing only analysis tags. It will now wait for the final message content.
+    *   Integrate the new `MarkdownRenderer` component to properly display formatted markdown from Ascentia's messages.
+4.  **Update `src/components/report-viewer/ReportViewer.tsx`:** Replace the current `dangerouslySetInnerHTML` logic used for rendering the main report content with the new `MarkdownRenderer` component. This will fix markdown rendering issues in the report itself.
+5.  **Update `src/app/api/chat/route.ts`:** Overhaul the chat API to re-implement the full RAG functionality. The handler will now:
+    *   Load the FAISS vector store and JSON chunk map from the `public` directory.
+    *   Create an embedding for the incoming user query.
+    *   Perform a similarity search to find relevant chunks from the entire report.
+    *   Inject both the retrieved chunks and the current page context into the system prompt before sending it to the LLM.
+6.  **Create `src/components/mission/MissionSectionBlock.tsx`:** Create a new component as specified in `A22` to display a single section of the revamped Mission page, including a title, an auto-playing image carousel using `framer-motion`, the image prompt, a TL;DR, and the main content.
+7.  **Update `src/app/mission/page.tsx`:** Completely refactor the Mission page to use a series of `MissionSectionBlock` components, populating them with the specific text and image paths outlined in the `A22` plan artifact. This will create the "mini-report" experience.
+</Previous Cycle 19 Summary of Actions>
+</Cycle 20>
+
 <Cycle 19>
 <Cycle Context>
 ah okay, i see an error with the embedding (see ephemeral).
@@ -375,134 +421,6 @@ im noticing that the nav bar is not actually aligned with the center. something 
 
 then when i go to the mission page, it looks like some of the folders are missing in the chain. after report there are additional folders that arent being reconstructed like the report viewer does it to find the image. can you correct? see ephemeral for the error logs. also i kind of wanted a more holistic explanation. i think cognitive capital is one of the most important things to understand, because from that frame of reference comes the need to cultivate such an asset. where did our specific definition of cognitive capital come from? because when i do a google search for that term, i find nothing like what we mean by the term, which is an individual, group, or societies collective ability to solve problems. one company/nation may have more individuals/workers, but another nation/company may have much more cognitive capital. lets consider fleshing out the mission page more.
 </Cycle Context>
-<Ephemeral Context>
-<embedding error>
-[Chat API] RAG Error: Could not load vector store or retrieve documents. Error: Could not import faiss-node. Please install faiss-node as a dependency with, e.g. `npm install -S faiss-node`.
-
-Error: Cannot read properties of undefined (reading 'indexOf')
-    at FaissStore.importFaiss (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:362:19)
-    at async readIndex (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:230:37)
-    at async Promise.all (index 1)
-    at async FaissStore.load (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:233:51)
-    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:43:29)
-    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
-    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
-    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
-    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
-    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
-    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
-    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
-    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
-    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
-    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
-    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
-    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
-    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
-    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
-    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
-    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
-    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
-    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
- POST /api/chat 200 in 2367ms
-</embedding error>
-<images error>
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp 404 in 396ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-1.webp 404 in 397ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp 404 in 398ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp 404 in 47ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-7.webp 404 in 49ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-7.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp 404 in 51ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp received text/html; charset=utf-8
- GET /assets/images/report/the-new-creative-partnership-p1-img-1.webp 404 in 57ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-new-creative-partnership-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-new-creative-partnership-p1-img-8.webp 404 in 65ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-new-creative-partnership-p1-img-8.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp 404 in 45ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-11.webp 404 in 46ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-11.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp 404 in 46ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp 404 in 34ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-1.webp 404 in 36ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp 404 in 37ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp 404 in 48ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-7.webp 404 in 53ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-7.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp 404 in 54ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp 404 in 29ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-11.webp 404 in 30ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-11.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp 404 in 40ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp 404 in 39ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-1.webp 404 in 41ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp 404 in 43ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp 404 in 26ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-7.webp 404 in 27ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-7.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp 404 in 28ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp 404 in 31ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-11.webp 404 in 32ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-11.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp 404 in 33ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp 404 in 43ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-1.webp 404 in 45ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp 404 in 46ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp 404 in 41ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-7.webp 404 in 43ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-7.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp 404 in 43ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp 404 in 41ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-11.webp 404 in 43ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-11.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp 404 in 44ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp 404 in 28ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-1.webp 404 in 28ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp 404 in 30ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-1.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp 404 in 31ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-5.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-7.webp 404 in 33ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-7.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp 404 in 34ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-6.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp 404 in 45ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-citizen-architect-has-arrived-p1-img-9.webp received text/html; charset=utf-8
- GET /assets/images/report/the-fissured-workplace-p1-img-11.webp 404 in 45ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-fissured-workplace-p1-img-11.webp received text/html; charset=utf-8
- GET /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp 404 in 46ms
- ⨯ The requested resource isn't a valid image for /assets/images/report/the-pedagogical-engine-cam-p1-img-12.webp received text/html; charset=utf-8
- GET /assets/images/report/the-citizen-architect-has-arrived-p1-img-1.w
-</images error>
-</Ephemeral Context>
 <Previous Cycle 18 Summary of Actions>
 I have analyzed the user feedback from Cycle 17 and formulated a comprehensive plan to address all issues, ranging from simple configuration changes to more involved bug fixes and planning for a future refactor.
 
@@ -2128,10 +2046,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T15:34:03.482Z
+  Date Generated: 2025-10-12T16:10:09.146Z
   ---
-  Total Files: 109
-  Approx. Tokens: 251349
+  Total Files: 110
+  Approx. Tokens: 253004
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2147,7 +2065,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 10. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 139 - Chars: 7215 - Tokens: 1804
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 144 - Chars: 7573 - Tokens: 1894
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
@@ -2175,7 +2093,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 26. src\app\page.tsx - Lines: 17 - Chars: 517 - Tokens: 130
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
-29. src\components\layout\Header.tsx - Lines: 60 - Chars: 2008 - Tokens: 502
+29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2183 - Tokens: 546
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 32. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
@@ -2192,9 +2110,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 43. public\assets\logo.svg - [Binary] Size: 117.9 KB
 44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3295 - Tokens: 824
 45. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
-46. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 60 - Chars: 3059 - Tokens: 765
+46. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
 47. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
-48. src\Artifacts\A19-Page-Design-Mission.md - Lines: 63 - Chars: 3400 - Tokens: 850
+48. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
 49. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
 50. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
 51. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
@@ -2226,7 +2144,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 77. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 78. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 79. src\app\learn\page.tsx - Lines: 27 - Chars: 1239 - Tokens: 310
-80. src\app\mission\page.tsx - Lines: 76 - Chars: 5834 - Tokens: 1459
+80. src\app\mission\page.tsx - Lines: 80 - Chars: 6852 - Tokens: 1713
 81. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
 82. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 83. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
@@ -2238,11 +2156,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 89. src\stores\reportStore.ts - Lines: 475 - Chars: 19998 - Tokens: 5000
 90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 91. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
-92. src\components\report-viewer\ReportViewer.tsx - Lines: 136 - Chars: 6024 - Tokens: 1506
+92. src\components\report-viewer\ReportViewer.tsx - Lines: 137 - Chars: 6120 - Tokens: 1530
 93. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 94. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 95. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-96. src\app\api\chat\route.ts - Lines: 123 - Chars: 4917 - Tokens: 1230
+96. src\app\api\chat\route.ts - Lines: 135 - Chars: 5694 - Tokens: 1424
 97. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 98. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 99. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2254,8 +2172,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 105. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 106. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 107. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-108. src\components\mission\MissionSectionBlock.tsx - Lines: 94 - Chars: 2758 - Tokens: 690
+108. src\components\mission\MissionSectionBlock.tsx - Lines: 97 - Chars: 2937 - Tokens: 735
 109. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
+110. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -2264,7 +2183,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 
 # Author: AI Model & Curator
 
-# Updated on: C17 (Add new A22 artifact for Mission Page Revamp)
+# Updated on: C19 (Add new A23 artifact for Cognitive Capital Definition)
 
 ## 1. Purpose
 
@@ -2296,6 +2215,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
   - **Tags:** roadmap, implementation plan, project management, development stages
+
+### A23. aiascent.dev - Cognitive Capital Definition
+
+  - **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
+  - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
 
 ## II. Technical Architecture & Implementation
 
@@ -11433,10 +11357,11 @@ const Header = () => {
 return (
 // Updated C3: Changed styling to match A16 (fixed, dark, blur)
 <header className="fixed top-0 z-50 w-full border-b border-neutral-900 bg-black/40 backdrop-blur-lg">
-<div className="container flex h-16 items-center px-4">
+  {/* C19 Fix: Changed to relative container to allow absolute positioning of nav */}
+  <div className="container relative flex h-16 items-center px-4">
 
-    {/* Logo and Title */}
-    <div className="flex items-center gap-2 flex-1">
+    {/* Logo and Title - Pushed to left */}
+    <div className="flex items-center gap-2">
       <Link href="/" className="flex items-center gap-2">
         {/* Placeholder for Logo (A15.2) */}
         <Image
@@ -11450,8 +11375,8 @@ return (
       </Link>
     </div>
 
-    {/* Navigation Links - Centered */}
-    <nav className="hidden md:flex flex-1 justify-center items-center space-x-6 text-sm font-medium">
+    {/* Navigation Links - Absolutely Centered */}
+    <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/showcase">Showcase</NavLink>
       <NavLink href="/learn">Learn</NavLink>
@@ -11461,8 +11386,8 @@ return (
       </a>
     </nav>
 
-    {/* Right side (Actions/Toggle) */}
-    <div className="flex items-center justify-end gap-4 flex-1">
+    {/* Right side (Actions/Toggle) - Pushed to right */}
+    <div className="flex items-center justify-end gap-4 ml-auto">
       <ModeToggle />
       {/* Placeholder for Mobile Menu Icon */}
       <div className="md:hidden">
@@ -12275,6 +12200,8 @@ Secondary: Strategic thinkers, policymakers interested in AI human capital.
 
 # Author: AI Model & Curator
 
+# Updated on: C19 (Add technical note about header overlap)
+
   - **Key/Value for A0:**
   - **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
   - **Tags:** page design, showcase, interactive whitepaper, ui, ux, dce
@@ -12307,14 +12234,14 @@ Developers and technical leads looking for concrete examples of what the DCE can
 
 ### 4.3. Section 2: The Interactive Whitepaper Component
 
-  * **Layout:** The main content area is dominated by the `InteractiveWhitepaper.tsx` component. It should be housed within a visually distinct container (e.g., a large card or a bordered area) to separate it from the page shell.
-  * **Component Features (as implemented in `InteractiveWhitepaper.tsx`):**
+  * **Layout:** The main content area is dominated by the `ReportViewer.tsx` component. It should be housed within a visually distinct container (e.g., a large card or a bordered area) to separate it from the page shell.
+  * **Component Features (as implemented in `ReportViewer.tsx`):**
       * Clear display of the current section and page title.
       * Prominent display of the "TL;DR" summary.
       * Scrollable main content area (for longer text).
       * Intuitive navigation controls (Previous/Next buttons, progress indicator).
-      * *(Future Enhancement)* Image gallery/viewer associated with the content.
-      * *(Future Enhancement)* Table of contents side panel.
+      * Image gallery/viewer associated with the content.
+      * Table of contents side panel.
 
 ### 4.4. Section 3: How It Was Built (The Meta-Commentary)
 
@@ -12329,6 +12256,10 @@ Developers and technical leads looking for concrete examples of what the DCE can
 ### 4.5. Footer
 
   * Standard site footer.
+
+## 5. Technical Implementation Notes
+
+*   **Header Overlap:** The main site header (`Header.tsx`) is a fixed-position element. The `ReportViewer` component on this page is designed to fill the remaining viewport height (`h-[calc(100vh-4rem)]`). To prevent the fixed header from obscuring the top of the report viewer, the root container of the `ReportViewer` component **must** have top padding applied (e.g., `pt-16` which corresponds to the header's height of `h-16` or `4rem`). This pushes the component's content down, making all UI elements fully visible. Failure to apply this padding will result in a visual regression where elements like the chat panel's "clear" button are hidden behind the header.
 </file_artifact>
 
 <file path="src/Artifacts/A18-Page-Design-Learn.md">
@@ -12404,6 +12335,8 @@ Developers actively learning or using the DCE extension.
 
 # Author: AI Model & Curator
 
+# Updated on: C19 (Add new section defining Cognitive Capital)
+
   - **Key/Value for A0:**
   - **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
   - **Tags:** page design, mission, about us, vision, strategy, cognitive capitalism
@@ -12427,38 +12360,43 @@ Strategic thinkers, policymakers, developers interested in the broader implicati
 
   * Standard site header.
 
-### 4.2. Section 1: The Vision
+### 4.2. Section 1: Defining Our Terms (New C19)
+  * **Layout:** A strong opening statement defining the core concept of the project.
+  * **Headline:** "What is Cognitive Capital?"
+  * **Content:** Explain the project's specific definition: "an individual, group, or society's collective ability to solve problems." Contrast this with other academic definitions which may focus on knowledge as a tradable resource or its sociological roots. Emphasize that in the context of aiascent.dev, Cognitive Capital is a practical, measurable capacity for innovation and resilience. One nation may have more workers, but another may have far more Cognitive Capital.
+
+### 4.3. Section 2: The Vision
 
   * **Layout:** A strong opening statement defining the core philosophy.
-  * **Headline:** "Empowering the Citizen Architect. Securing the Future."
+  * **Headline:** "Empowering the Citizen Architect."
   * **Content:** Introduce the concept of the "Citizen Architect"—individuals empowered by AI tools (like the DCE) to build, analyze, and maintain complex systems that were previously only accessible to large institutions.
 
-### 4.3. Section 2: The Strategic Imperative (The Threat)
+### 4.4. Section 3: The Strategic Imperative (The Threat)
 
   * **Layout:** A section detailing the context of global AI competition.
   * **Headline:** "The Centralization of Cognitive Power."
   * **Content:** Briefly explain the threat posed by centralized, state-sponsored AI strategies (like China's). Emphasize that the current Western approach to AI labor (the "fissured workplace" or reliance on opaque models) is a strategic vulnerability.
 
-### 4.4. Section 3: The Counter-Strategy (Cognitive Capitalism)
+### 4.5. Section 4: The Counter-Strategy (Cognitive Capitalism)
 
   * **Layout:** The core argument of the mission.
   * **Headline:** "Our Strategy: Decentralized Expertise and Cognitive Capitalism."
   * **Content:** Define "Cognitive Capitalism"—a system where the means of intellectual production are decentralized, and individuals are empowered to leverage AI to create value. Argue that an army of empowered Citizen Architects is the most viable counter-strategy to centralized AI power.
 
-### 4.5. Section 4: The Role of the DCE
+### 4.6. Section 5: The Role of the DCE
 
   * **Layout:** Connecting the strategy back to the product.
   * **Headline:** "The DCE: The Essential Toolkit for the Citizen Architect."
   * **Content:** Explain how the DCE is not just a productivity tool, but the foundational infrastructure for enabling this vision. It provides the structured workflow, auditability, and efficiency needed for decentralized AI development.
 
-### 4.6. Section 5: Call to Action
+### 4.7. Section 6: Call to Action
 
   * **Layout:** A concluding section inviting participation.
   * **Headline:** "Join the Ascent."
   * **Content:** Invite developers to adopt the tools, educators to teach the methodology, and leaders to support the vision.
   * **CTA:** "Download the DCE" and "Contribute on GitHub."
 
-### 4.7. Footer
+### 4.8. Footer
 
   * Standard site footer.
 </file_artifact>
@@ -16368,14 +16306,15 @@ const MissionPage = () => {
 
                 <div className="flex flex-col gap-24">
                     <MissionSectionBlock
-                        title="Empowering the Citizen Architect"
-                        tldr="We are building the tools for a future where anyone with a vision can build complex systems."
-                        content="The 'Citizen Architect' is an individual empowered by AI to create, analyze, and maintain digital infrastructure once only accessible to large institutions. Our mission is to forge these architects."
+                        title="The Strategic Imperative: Cognitive Capital"
+                        tldr="In the AI era, a nation's most valuable strategic asset is the collective problem-solving capacity of its people."
+                        content="Cognitive Capital is the intellectual capacity, skill, and creative potential of a workforce, a population, or a society. In an age where AI can automate routine tasks, this collective ability to solve novel problems, innovate under pressure, and adapt to new challenges becomes the primary engine of economic prosperity and national security. It is the raw material from which innovation and resilience are forged. One company or nation may have more workers, but another may possess vastly more Cognitive Capital. Our mission is to build the tools that cultivate this essential resource, empowering a new class of 'Citizen Architects' who can leverage AI to amplify their innate problem-solving abilities and build a better future."
                         images={[
                             'the-citizen-architect-has-arrived-p1-img-1.webp',
                             'the-citizen-architect-has-arrived-p1-img-5.webp',
                             'the-citizen-architect-has-arrived-p1-img-9.webp',
                         ]}
+                        imagePath="part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/"
                         imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure..."
                         imageSide="left"
                     />
@@ -16389,6 +16328,7 @@ const MissionPage = () => {
                             'the-fissured-workplace-p1-img-7.webp',
                             'the-fissured-workplace-p1-img-11.webp',
                         ]}
+                        imagePath="introduction/the-fissured-workplace/prompt-1/"
                         imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers..."
                         imageSide="right"
                     />
@@ -16402,6 +16342,7 @@ const MissionPage = () => {
                             'the-pedagogical-engine-cam-p1-img-6.webp',
                             'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
+                        imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
                         imagePrompt="An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
                         imageSide="left"
                     />
@@ -16415,6 +16356,7 @@ const MissionPage = () => {
                             'the-new-creative-partnership-p1-img-8.webp',
                             'the-new-creative-partnership-p1-img-15.webp',
                         ]}
+                        imagePath="part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/"
                         imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer... sitting cross-legged on a vast, glowing digital floor... thoughtfully placing one of these blocks into a complex, half-finished digital structure..."
                         imageSide="right"
                     />
@@ -20429,8 +20371,9 @@ const ReportViewer: React.FC = () => {
     }
     
     return (
-        // C17 Fix: Add pt-16 to account for the fixed header and prevent content overlap.
-        <div className="h-full w-full bg-background text-foreground flex pt-16">
+        // C19 Fix: Removed pt-16. Page-level container is now responsible for this spacing.
+        // Curator note: the container must not be doing a good job, because its broken once again.
+        <div className="h-full w-full bg-background text-foreground flex">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
@@ -20804,7 +20747,6 @@ import { OpenAIEmbeddings } from '@langchain/openai';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-// C18 Fix: Re-implement RAG functionality
 export async function POST(request: Request) {
   const { prompt, pageContext } = await request.json();
 
@@ -20830,21 +20772,34 @@ export async function POST(request: Request) {
     const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
     const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
 
-    // Check if files exist before loading
-    await fs.access(faissPath);
-    await fs.access(chunksPath);
+    // C19 Fix: Add more robust checks for file existence and size before loading
+    try {
+      const faissStat = await fs.stat(faissPath);
+      const chunksStat = await fs.stat(chunksPath);
+      if (faissStat.size === 0 || chunksStat.size === 0) {
+        throw new Error("Embedding files are empty.");
+      }
+    } catch (e: any) {
+        if (e.code === 'ENOENT') {
+            console.error('[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.');
+        } else {
+            console.error(`[Chat API] RAG Error: Could not stat embedding files. Error: ${e.message}`);
+        }
+        // Proceed without RAG, but log the error clearly.
+        retrievedContext = "RAG system failed: Could not load embedding files.";
+    }
 
-    const vectorStore = await FaissStore.load(faissPath, embeddings);
-    const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
+    if (!retrievedContext) { // Only attempt to load if the files were found and are not empty
+        const vectorStore = await FaissStore.load(faissPath, embeddings);
+        const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
+        const results = await retriever.invoke(prompt);
+        retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
+    }
 
-    const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
-    const results = await retriever.invoke(prompt);
-    
-    retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
-
-  } catch (error) {
+  } catch (error: any) {
+    // This will catch errors from FaissStore.load itself, like the 'indexOf' error.
     console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
-    retrievedContext = "RAG system failed: Could not retrieve relevant documents.";
+    retrievedContext = `RAG system failed: ${error.message}.`;
   }
 
   const completionsUrl = `${llmUrl}/v1/completions`;
@@ -22239,6 +22194,7 @@ interface MissionSectionBlockProps {
   tldr: string;
   content: string;
   images: string[];
+  imagePath: string; // C19: Added to handle subdirectories
   imagePrompt: string;
   imageSide?: 'left' | 'right';
 }
@@ -22248,6 +22204,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   tldr,
   content,
   images,
+  imagePath, // C19: Destructure new prop
   imagePrompt,
   imageSide = 'left',
 }) => {
@@ -22282,7 +22239,8 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
             className="absolute inset-0"
           >
             <Image
-              src={`/assets/images/report/${images[currentImageIndex]}`}
+              // C19 Fix: Construct the full, correct image path
+              src={`/assets/images/report/${imagePath}${images[currentImageIndex]}`}
               alt={title}
               fill
               className="object-cover"
@@ -22370,6 +22328,40 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
 };
 
 export default MarkdownRenderer;
+</file_artifact>
+
+<file path="src/Artifacts/A23. aiascent.dev - Cognitive Capital Definition.md">
+# Artifact A23: aiascent.dev - Cognitive Capital Definition
+
+# Date Created: C19
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
+- **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
+
+## 1. Purpose and Definition
+
+The term "Cognitive Capital" is central to the mission of aiascent.dev and the philosophy behind the Data Curation Environment (DCE). While the term exists in academic contexts, our project uses a specific, strategic definition.
+
+**Definition:**
+> **Cognitive Capital** is the collective problem-solving capacity of an individual, an organization, or a society. It represents the accumulated potential to understand complex challenges, innovate under pressure, and adapt to new environments.
+
+## 2. Core Concepts
+
+### 2.1. Beyond Human Capital
+
+Cognitive Capital is related to, but distinct from, "human capital."
+*   **Human Capital** often refers to the economic value of a worker's experience and skills. It is a measure of an individual's productive inputs.
+*   **Cognitive Capital** is a broader, more dynamic concept. It is not just the sum of individual skills, but the emergent capability of a group to synthesize those skills to solve novel problems. One company or nation may have more workers (human capital), but another may possess vastly more Cognitive Capital, enabling it to out-innovate and outperform its rival.
+
+### 2.2. The Primary Asset in the AI Era
+
+In an age where AI can automate routine cognitive tasks, the true differentiator is no longer the ability to perform known procedures, but the ability to solve unknown problems. Cognitive Capital, therefore, becomes the primary strategic asset for national power and economic prosperity. It is the raw material from which innovation, resilience, and progress are forged.
+
+### 2.3. Cultivating, Not Just Counting
+
+The mission of aiascent.dev is not just to acknowledge the importance of Cognitive Capital, but to build the tools that actively cultivate it. The DCE is designed to be an engine for amplifying this resource. By creating a structured, iterative, and transparent workflow for human-AI collaboration, the DCE allows individuals and teams to tackle problems of a scale and complexity that would otherwise be impossible. It transforms the user from a simple operator into a "Citizen Architect," directly increasing their contribution to the collective Cognitive Capital.
 </file_artifact>
 
 

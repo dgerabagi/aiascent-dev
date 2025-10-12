@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C19 (Add new section for Cognitive Capital)
+# Updated on: C19 (Add new section defining Cognitive Capital)
 
   - **Key/Value for A0:**
   - **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
@@ -20,7 +20,7 @@ Strategic thinkers, policymakers, developers interested in the broader implicati
 
 ## 3. Aesthetic and Tone
 
-  * **Aesthetic:** Serious, impactful, and visionary. The design should use bold typography, strong contrast, and imagery that evokes themes of strategy, intelligence, and empowerment, leveraging the "mini-report" format.
+  * **Aesthetic:** Serious, impactful, and visionary. The design should use bold typography, strong contrast, and potentially imagery that evokes themes of strategy, intelligence, and empowerment.
   * **Tone:** Urgent, visionary, and empowering.
 
 ## 4. Page Structure and Content
@@ -29,29 +29,28 @@ Strategic thinkers, policymakers, developers interested in the broader implicati
 
   * Standard site header.
 
-### 4.2. Section 1: What is Cognitive Capital? (New in C19)
-
-  * **Layout:** A strong opening section defining the core concept of the entire mission.
+### 4.2. Section 1: Defining Our Terms (New C19)
+  * **Layout:** A strong opening statement defining the core concept of the project.
   * **Headline:** "What is Cognitive Capital?"
-  * **Content:** Define Cognitive Capital as the collective problem-solving ability of an individual, organization, or nation. Explain that in the AI era, it is the most valuable strategic asset, surpassing traditional forms of capital. Emphasize that it must be cultivated through education and access to tools that amplify intellect.
+  * **Content:** Explain the project's specific definition: "an individual, group, or society's collective ability to solve problems." Contrast this with other academic definitions which may focus on knowledge as a tradable resource or its sociological roots. Emphasize that in the context of aiascent.dev, Cognitive Capital is a practical, measurable capacity for innovation and resilience. One nation may have more workers, but another may have far more Cognitive Capital.
 
 ### 4.3. Section 2: The Vision
 
-  * **Layout:** A section defining the core philosophy.
+  * **Layout:** A strong opening statement defining the core philosophy.
   * **Headline:** "Empowering the Citizen Architect."
   * **Content:** Introduce the concept of the "Citizen Architect"—individuals empowered by AI tools (like the DCE) to build, analyze, and maintain complex systems that were previously only accessible to large institutions.
 
 ### 4.4. Section 3: The Strategic Imperative (The Threat)
 
   * **Layout:** A section detailing the context of global AI competition.
-  * **Headline:** "The Fissured Workplace"
-  * **Content:** Briefly explain the threat posed by the current Western AI labor model, which creates a strategic vulnerability through its reliance on a precarious, globalized workforce.
+  * **Headline:** "The Centralization of Cognitive Power."
+  * **Content:** Briefly explain the threat posed by centralized, state-sponsored AI strategies (like China's). Emphasize that the current Western approach to AI labor (the "fissured workplace" or reliance on opaque models) is a strategic vulnerability.
 
-### 4.5. Section 4: The Counter-Strategy (Cognitive Apprenticeship)
+### 4.5. Section 4: The Counter-Strategy (Cognitive Capitalism)
 
   * **Layout:** The core argument of the mission.
-  * **Headline:** "Our Strategy: Cognitive Apprenticeship."
-  * **Content:** Define "Cognitive Apprenticeship" as the solution—a model where AI serves as a tireless mentor, guiding individuals from intuitive 'vibe coding' to architectural mastery, thereby cultivating Cognitive Capital.
+  * **Headline:** "Our Strategy: Decentralized Expertise and Cognitive Capitalism."
+  * **Content:** Define "Cognitive Capitalism"—a system where the means of intellectual production are decentralized, and individuals are empowered to leverage AI to create value. Argue that an army of empowered Citizen Architects is the most viable counter-strategy to centralized AI power.
 
 ### 4.6. Section 5: The Role of the DCE
 
