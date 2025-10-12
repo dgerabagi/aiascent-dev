@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 28 - continue excellent progress
+Current Cycle 29 - more incredible work
+Cycle 28 - continue excellent progress
 Cycle 27 - embeddings work! now minor touchups...
 Cycle 26 - embeddings working! now adjust persona
 Cycle 25 - embedding almost solved
@@ -237,7 +238,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C26 (Add Persona and Dual Embedding artifacts)
+# Updated on: C28 (Add GitHub and Showcase Expansion artifacts)
 
 ## 1. Purpose
 
@@ -322,6 +323,11 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
   - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
+### A30. aiascent.dev - Showcase Expansion Plan
+
+  - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
+  - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
 ## III. Design and Assets
 
 ### A15. aiascent.dev - Asset Wishlist and Directory Structure
@@ -400,9 +406,67 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A guide on setting up the aiascent.dev project with Git and GitHub, including the essential workflow for using Git alongside the Data Curation Environment (DCE).
   - **Tags:** git, github, version control, workflow, setup, dce
+
+### A29. aiascent.dev - GitHub Public Repository Guide
+
+  - **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
+  - **Tags:** git, github, version control, security, best practices, open source
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 29>
+<Cycle Context>
+hahaha wild! nice! oh man okay i can see my game's founder selection screen from within localhost:3000/showcase if i click on `AI Ascent Game`! fantastic! dang! a multiplayer game within a website! okay nice! okay now... i tried to log-in to the game (google sso/federation) but wasnt able to. i think i see suspcious logs in the browser console, ill provide those. let me know if you need me to surface the relevant login files from the aiascent game or not. great work this exceeds my expectations!
+
+ah, so the `AI Ascent Game` tab should have a refresh button within it, in the event that the user gets stuck in the game UI, they can just click that refresh and it would have the behavior of effectively refreshing their browser if they were at https://aiascent.game/ proper.
+
+can we center align these showcase tabs? The Ascent Report and AI Ascent Game?
+
+can you make a LICENSE file for us to add to the project? ill copy the same one into the DCE repo as well.
+</Cycle Context>
+<Ephemeral Context>
+[DEPRECATED] Use `createWithEqualityFn` instead of `create` or use `useStoreWithEqualityFn` instead of `useStore`. They can be imported from 'zustand/traditional'. https://github.com/pmndrs/zustand/discussions/1937 index.mjs:22:13
+Invalid URI. Load of media resource  failed. showcase
+Image with src "/assets/images/report/front-matter/cover-page/prompt-1/cover-page-p1-img-1.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13 warn-once.js:16:21
+Feature Policy: Skipping unsupported feature name “autoplay”. main-app.js:2545:10
+Feature Policy: Skipping unsupported feature name “autoplay”. main-app.js:35644:18
+Image with src "/assets/images/report/introduction/the-fissured-workplace/prompt-1/the-fissured-workplace-p1-img-1.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Image with src "/assets/images/report/part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/the-pedagogical-engine-cam-p1-img-1.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Image with src "/assets/images/report/part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/the-citizen-architect-has-arrived-p1-img-1.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Image with src "/assets/images/report/part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/the-citizen-architect-has-arrived-p1-img-2.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Image with src "/assets/images/report/part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/the-pedagogical-engine-cam-p1-img-2.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Image with src "/assets/images/report/introduction/the-fissured-workplace/prompt-1/the-fissured-workplace-p1-img-2.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Feature Policy: Skipping unsupported feature name “autoplay”. main-app.js:2545:10
+Feature Policy: Skipping unsupported feature name “autoplay”. main-app.js:35644:18
+Cookie “__Host-next-auth.csrf-token” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”. signin
+Cookie “__Secure-next-auth.callback-url” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”. signin
+Cookie “__Host-next-auth.csrf-token” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”. google
+Cookie “__Secure-next-auth.callback-url” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”. google
+Cookie “__Host-next-auth.csrf-token” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”. signin
+Cookie “__Secure-next-auth.callback-url” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”. signin
+
+</Ephemeral Context>
+<Previous Cycle 28 Summary of Actions>
+I have analyzed the user's feedback and will address all reported issues concerning the interactive report viewers. I will fix the TTS narration to skip the 'tl;dr' section, correct the broken autoplay logic on the showcase page by implementing a complete slideshow and next-page timer system, and fix the UI layout where the navbar obscures content. Additionally, I will restore the full, non-truncated image prompts for the homepage whitepaper to ensure content integrity.
+
+1.  **Update `src/components/report-viewer/AudioControls.tsx`:**
+    *   In the `generateAndPlayAudio` function, I will modify the `textToNarrate` payload to be `${currentPage.pageTitle}. ${currentPage.content}`, removing the `currentPage.tldr` part to prevent it from being read aloud.
+    *   I will update the JSX for the "Autoplay" label, applying button-like styling to make it more prominent and visually distinct.
+2.  **Update `src/stores/reportStore.ts`:**
+    *   I will replace the empty `startSlideshow` function with the complete, robust implementation from the `aiascentgame` context. This new logic will:
+        *   Correctly calculate image display durations by factoring in the `playbackSpeed`.
+        *   Create a `setTimeout` (`nextPageTimer`) that automatically calls `nextPage()` after the audio and a brief delay, enabling continuous playback across the report.
+    *   I will ensure the `stopSlideshow` function correctly clears both the `slideshowTimer` and the new `nextPageTimer`.
+3.  **Update `src/app/showcase/page.tsx`:**
+    *   I will refactor the root layout of the page to fix the navbar overlap. I will wrap the `<ReportViewer />` component in a structure that uses `pt-16` to offset the content from the top, ensuring it renders below the fixed header while still correctly filling the remaining viewport height.
+4.  **Update `public/data/whitepaper_imagemanifest.json`:**
+    *   I will go through each of the 19 `imageGroups` and replace the truncated `prompt` text with the full, complete image generation prompt derived from the `A26` artifact.
+5.  **Update `src/Artifacts/A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md`:**
+    *   I will similarly update the artifact itself, replacing all truncated image prompts with their full, unabridged versions for documentation consistency.
+</Previous Cycle 28 Summary of Actions>
+</Cycle 29>
 
 <Cycle 28>
 <Cycle Context>
@@ -2321,10 +2385,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T22:05:10.954Z
+  Date Generated: 2025-10-12T22:35:01.266Z
   ---
-  Total Files: 111
-  Approx. Tokens: 284440
+  Total Files: 114
+  Approx. Tokens: 287083
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2334,13 +2398,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (6259 tokens)
+7. src\stores\reportStore.ts (6162 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 169 - Chars: 9172 - Tokens: 2293
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 179 - Chars: 9800 - Tokens: 2450
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
@@ -2362,13 +2426,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
 21. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
-23. src\app\showcase\page.tsx - Lines: 19 - Chars: 660 - Tokens: 165
+23. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
 24. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
 25. src\app\layout.tsx - Lines: 44 - Chars: 1370 - Tokens: 343
 26. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
-29. src\components\layout\Header.tsx - Lines: 61 - Chars: 2183 - Tokens: 546
+29. src\components\layout\Header.tsx - Lines: 62 - Chars: 2240 - Tokens: 560
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 32. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
@@ -2409,7 +2473,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 68. src\app\learn\page.tsx - Lines: 138 - Chars: 11377 - Tokens: 2845
 69. src\app\mission\page.tsx - Lines: 127 - Chars: 11884 - Tokens: 2971
-70. src\components\report-viewer\AudioControls.tsx - Lines: 216 - Chars: 8549 - Tokens: 2138
+70. src\components\report-viewer\AudioControls.tsx - Lines: 218 - Chars: 8669 - Tokens: 2168
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 73. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
@@ -2417,7 +2481,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-78. src\stores\reportStore.ts - Lines: 541 - Chars: 25036 - Tokens: 6259
+78. src\stores\reportStore.ts - Lines: 536 - Chars: 24648 - Tokens: 6162
 79. src\components\report-viewer\ReportViewer.tsx - Lines: 165 - Chars: 7319 - Tokens: 1830
 80. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 81. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
@@ -2451,6 +2515,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 109. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
 110. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
 111. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
+112. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
+113. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 49 - Chars: 3369 - Tokens: 843
+114. src\components\showcase\ShowcaseTabs.tsx - Lines: 55 - Chars: 1638 - Tokens: 410
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -2459,7 +2526,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 
 # Author: AI Model & Curator
 
-# Updated on: C26 (Add Persona and Dual Embedding artifacts)
+# Updated on: C28 (Add GitHub and Showcase Expansion artifacts)
 
 ## 1. Purpose
 
@@ -2544,6 +2611,11 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
   - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
+### A30. aiascent.dev - Showcase Expansion Plan
+
+  - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
+  - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
 ## III. Design and Assets
 
 ### A15. aiascent.dev - Asset Wishlist and Directory Structure
@@ -2622,6 +2694,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A guide on setting up the aiascent.dev project with Git and GitHub, including the essential workflow for using Git alongside the Data Curation Environment (DCE).
   - **Tags:** git, github, version control, workflow, setup, dce
+
+### A29. aiascent.dev - GitHub Public Repository Guide
+
+  - **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
+  - **Tags:** git, github, version control, security, best practices, open source
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -11423,19 +11500,15 @@ export default config;
 // src/app/showcase/page.tsx
 'use client';
 
-import ReportViewer from "@/components/report-viewer/ReportViewer";
+import ShowcaseTabs from "@/components/showcase/ShowcaseTabs";
 import React from "react";
 
 export default function ShowcasePage() {
   return (
-    // C27 Fix: Add pt-16 to offset for the fixed header (h-16 or 4rem).
-    // The h-screen ensures it takes the full viewport height, and pt-16 pushes
-    // the content down, leaving the correct space for the ReportViewer.
-    <div className="h-screen w-full pt-16">
-        {/* This inner div will now fill the remaining space correctly */}
-        <div className="h-full w-full">
-            <ReportViewer reportName="showcase" />
-        </div>
+    // The pt-16 offsets for the fixed header. The h-screen and flex structure
+    // ensure the tab component fills the entire remaining viewport.
+    <div className="h-screen w-full pt-16 flex flex-col">
+        <ShowcaseTabs />
     </div>
   );
 }
@@ -11707,11 +11780,12 @@ return (
     </div>
 
     {/* Navigation Links - Absolutely Centered */}
+    {/* C28: Reordered links for better logical flow */}
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
-      <NavLink href="/showcase">Showcase</NavLink>
-      <NavLink href="/learn">Learn</NavLink>
       <NavLink href="/mission">Mission</NavLink>
+      <NavLink href="/learn">Learn</NavLink>
+      <NavLink href="/showcase">Showcase</NavLink>
       <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground/80 text-foreground/60">
         GitHub
       </a>
@@ -16724,7 +16798,7 @@ import React, { useRef, useEffect } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
 
-const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+const PLAYBACK_SPEEDS = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
 
 const AudioControls: React.FC = () => {
   const {
@@ -16762,7 +16836,6 @@ const AudioControls: React.FC = () => {
     };
 
     setPlaybackStatus('generating');
-    // C27 TTS Fix: Remove tldr from the narrated text.
     const textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
 
     try {
@@ -16799,6 +16872,8 @@ const AudioControls: React.FC = () => {
     if (currentAudioUrl && audio.src !== currentAudioUrl) {
       audio.src = currentAudioUrl;
       audio.load();
+      // C28 FIX: Force set playbackRate on new audio source to ensure it's not reset.
+      audio.playbackRate = useReportStore.getState().playbackSpeed;
       audio.play().catch(e => console.error('[AudioControls] Autoplay failed', e));
     }
   }, [currentAudioUrl]);
@@ -16874,6 +16949,13 @@ const AudioControls: React.FC = () => {
   return (
     <div className="flex items-center gap-2 px-1 py-1 text-xs text-muted-foreground w-full">
       <audio ref={audioRef} />
+      
+      {/* C28: Moved Autoplay checkbox to the left */}
+      <label className={`flex items-center gap-2 cursor-pointer border rounded-md px-3 py-1 text-xs font-semibold transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${autoplayEnabled ? 'bg-primary/20 border-primary' : 'border-border'}`}>
+        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} className="h-4 w-4 accent-primary" />
+        Autoplay
+      </label>
+
       <button className="btn-report-sm" onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
         {isPlaying ? <FaPause /> : <FaPlay />}
       </button>
@@ -16923,12 +17005,6 @@ const AudioControls: React.FC = () => {
           <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
         ))}
       </select>
-
-      {/* C27 Autoplay Prominence Fix */}
-      <label className={`flex items-center gap-2 cursor-pointer border rounded-md px-3 py-1 text-xs font-semibold transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${autoplayEnabled ? 'bg-primary/20 border-primary' : 'border-border'}`}>
-        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} className="h-4 w-4 accent-primary" />
-        Autoplay
-      </label>
     </div>
   );
 };
@@ -17580,7 +17656,8 @@ const createInitialReportState = (): ReportState => ({
     allPages: [],
     currentPageIndex: 0,
     currentImageIndex: 0,
-    isTreeNavOpen: true,
+    // C28: Set minimalist defaults
+    isTreeNavOpen: false,
     expandedSections: {},
     isChatPanelOpen: false,
     chatPanelWidth: 450,
@@ -17588,7 +17665,7 @@ const createInitialReportState = (): ReportState => ({
     isImageFullscreen: false,
     reportChatHistory: [],
     reportChatInput: '',
-    isPromptVisible: true,
+    isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
     isLoading: true,
@@ -17713,7 +17790,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 }
             },
             
-            // C27 Autoplay Fix: Implement full slideshow logic
             startSlideshow: () => {
                 const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
                 stopSlideshow(false);
@@ -17750,7 +17826,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
-                            // All images shown, stop this interval
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -17807,7 +17882,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 get().stopSlideshow(false); // Stop any timers before changing page
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
-                    // If autoplay reaches the end, turn it off.
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
@@ -17815,20 +17889,20 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 });
             },
             prevPage: () => {
-                get().stopSlideshow(true); // User initiated, so disable autoplay
+                get().stopSlideshow(true);
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
                 }));
             },
             goToPageByIndex: (pageIndex) => {
-                get().stopSlideshow(true); // User initiated
+                get().stopSlideshow(true);
                 if (pageIndex >= 0 && pageIndex < get().allPages.length) {
                     set({ currentPageIndex: pageIndex, currentImageIndex: 0 });
                 }
             },
             nextImage: () => {
-                get().stopSlideshow(true); // User initiated
+                get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
@@ -17837,7 +17911,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 });
             },
             prevImage: () => {
-                get().stopSlideshow(true); // User initiated
+                get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
@@ -17919,7 +17993,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });
-                // If currently playing, restart the slideshow with the new speed
                 if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
                     get().startSlideshow();
                 }
@@ -17951,8 +18024,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
     )
 );
 
-
-// Hook for components to subscribe to state changes
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
     return useReportStore(selector, shallow);
 };
@@ -24325,6 +24396,182 @@ The frontend needs to be updated to send the `knowledgeBase` identifier with eac
     ```
 
 This architecture provides a clean and scalable way to support multiple, distinct knowledge bases, making the "Ask @Ascentia" feature more powerful and contextually accurate across the entire website.
+</file_artifact>
+
+<file path="src/Artifacts/A29. aiascent.dev - GitHub Public Repository Guide.md">
+# Artifact A29: aiascent.dev - GitHub Public Repository Guide
+
+# Date Created: C28
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
+- **Tags:** git, github, version control, security, best practices, open source
+
+## 1. Overview
+
+You asked whether you should make the `data-curation-environment` and `aiascent-dev` repositories public. This is a common and important strategic decision for any project. This guide provides a balanced overview of the benefits and risks, along with a checklist of actions to take before making a repository public.
+
+## 2. The Strategic Choice: Public vs. Private
+
+### 2.1. Benefits of a Public Repository
+
+*   **Showcasing Your Work:** A public repository is a living portfolio. It's the most direct way to demonstrate your skills, methodologies (like the DCE workflow), and the quality of your code to potential collaborators, employers, or users.
+*   **Fostering Collaboration:** Open source is built on public repositories. It allows others to learn from your code, suggest improvements (via Issues), contribute fixes (via Pull Requests), and build upon your work.
+*   **Building Trust and Transparency:** Making your code public demonstrates confidence in your work and fosters trust with your user community. They can see exactly what the code does.
+*   **Version Control and Backup:** While private repos also do this, public repos on GitHub provide a robust, free, and globally accessible backup of your project's history.
+
+### 2.2. Risks of a Public Repository
+
+*   **Exposure of Sensitive Information:** This is the most significant risk. Accidentally committing secrets like API keys, passwords, or personal information can lead to immediate security breaches and financial loss.
+*   **Unfinished or "Ugly" Code:** Many developers are hesitant to make code public if it's not "perfect." While understandable, it's often better to share work in progress than to never share at all. The open-source community generally understands that projects are evolving.
+*   **Intellectual Property (IP):** If your project contains proprietary algorithms or business logic that you intend to commercialize in a specific way, making it public may require choosing a license that protects your rights, or keeping it private.
+*   **Increased Scrutiny:** Public code can be scrutinized by anyone, which can lead to unsolicited feedback or criticism.
+
+## 3. Pre-Public Audit Checklist
+
+Before changing a repository's visibility from Private to Public, it is **critical** to perform a thorough audit.
+
+**[✔] 1. Scan for Secrets in Current Code:**
+*   **Automated Scan:** Use a tool like **GitGuardian** or **TruffleHog**. Many of these have free tiers for public repositories and can be integrated directly into your GitHub account to scan your codebase for secrets. GitHub itself has secret scanning capabilities that may be enabled.
+*   **Manual Search:** Manually search your entire codebase for common keywords like `API_KEY`, `SECRET`, `PASSWORD`, `TOKEN`, `DATABASE_URL`. Pay close attention to configuration files, test files, and server-side code.
+
+**[✔] 2. Scan Your Entire Git History:**
+*   A secret committed months ago and then removed is still present in your Git history.
+*   Use a tool like `trufflehog` to scan the entire history of your repository from the command line:
+    ```bash
+    # Install trufflehog (one-time setup)
+    pip install trufflehog
+    # Run it on your repository
+    trufflehog git file:///c/path/to/your/repo
+    ```*   If you find a secret in your history, the only way to truly remove it is to rewrite the history (e.g., using `git filter-repo`). This is a complex and destructive operation. It's often easier to simply revoke the leaked secret (e.g., generate a new API key) and leave the history as is.
+
+**[✔] 3. Review Your `.gitignore` File:**
+*   Ensure your `.gitignore` is comprehensive. It **must** include files that contain secrets, such as `.env`, `.env.local`, and any cloud provider configuration files.
+*   A good `.gitignore` prevents secrets from being committed in the first place.
+
+**[✔] 4. Add a LICENSE File:**
+*   A license tells others what they can and cannot do with your code. Without a license, your code is under exclusive copyright by default, and no one can legally use, copy, or distribute it.
+*   Choose a license that fits your goals. For permissive open source, **MIT License** is a popular and simple choice. **Apache 2.0** is another good option. GitHub has a feature to easily add a license file.
+
+**[✔] 5. Add a `README.md` File:**
+*   Your README is the front door to your project. It should explain what the project is, why it exists, how to install it, and how to use it. A good README is essential for any public project.
+
+## 4. Recommendation
+
+Making your repositories public is the right thing to do if your goal is to showcase the DCE and build a community around it. The benefits of transparency and collaboration are immense.
+
+The nervousness is normal, but it can be managed with process. By performing the audit checklist above, you can significantly mitigate the risks. The most critical step is to scan for and revoke any exposed secrets *before* you make the repositories public.
+</file_artifact>
+
+<file path="src/Artifacts/A30. aiascent.dev - Showcase Expansion Plan.md">
+# Artifact A30: aiascent.dev - Showcase Expansion Plan
+
+# Date Created: C28
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
+- **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
+## 1. Overview and Goal
+
+The `/showcase` page currently serves as the home for the interactive "Ascent Report." To broaden the demonstration of what can be built with the Data Curation Environment (DCE), the user has requested an expansion to also showcase `aiascent.game`.
+
+The goal of this plan is to refactor the `/showcase` page into a tabbed interface. This design will allow users to easily switch between different showcased projects, starting with the report and the game, while creating an extensible pattern for adding more projects in the future.
+
+## 2. Design and UI/UX
+
+The page will be modified to include a simple, clean tab navigation bar at the top, directly below the main site header. The rest of the page content area will be dedicated to rendering the currently selected tab's content.
+
+### 2.1. Tab Navigation
+
+*   **Location:** At the top of the main content area on `/showcase`.
+*   **Tabs:**
+    1.  **The Ascent Report:** This will be the default active tab.
+    2.  **AI Ascent Game:** The second tab.
+*   **Styling:** The tabs will be styled to match the site's aesthetic. The active tab will be clearly indicated (e.g., with a bottom border in the primary color and bolder text).
+
+### 2.2. Tab Content
+
+*   **The Ascent Report:** This tab will render the existing `<ReportViewer reportName="showcase" />` component, filling the entire content area. The user experience for the report will remain unchanged.
+*   **AI Ascent Game:** This tab will render an `<iframe>` that fills the entire content area. The `src` of the iframe will be `https://aiascent.game/`. This will embed the live game directly into the showcase page, allowing users to interact with it seamlessly.
+
+## 3. Technical Implementation Plan
+
+1.  **Create `ShowcaseTabs.tsx` Component:**
+    *   A new client component will be created at `src/components/showcase/ShowcaseTabs.tsx`.
+    *   This component will use a `useState` hook to manage the `activeTab` (defaulting to `'report'`).
+    *   It will render the tab buttons and conditionally render the content for the active tab.
+    *   The `ReportViewer` will be rendered for the `'report'` tab.
+    *   An `<iframe>` will be rendered for the `'game'` tab. The iframe should be styled to be responsive and fill the available space (`className="w-full h-full border-0"`).
+
+2.  **Update `showcase/page.tsx`:**
+    *   The existing content of the showcase page will be replaced with the new `<ShowcaseTabs />` component.
+    *   The page will no longer render the `ReportViewer` directly.
+
+3.  **Extensibility (Future Consideration):**
+    *   The `ShowcaseTabs.tsx` component can be easily extended in the future by adding new objects to a `tabs` array configuration. Each object would define an `id`, `label`, and the component or content to render.
+
+This plan provides a clean, user-friendly, and technically straightforward path to expanding the showcase, making it a more comprehensive portfolio of projects built with the DCE.
+</file_artifact>
+
+<file path="src/components/showcase/ShowcaseTabs.tsx">
+'use client';
+
+import { useState } from 'react';
+import ReportViewer from '@/components/report-viewer/ReportViewer';
+
+const ShowcaseTabs = () => {
+  const [activeTab, setActiveTab] = useState('report');
+
+  const tabs = [
+    { id: 'report', label: 'The Ascent Report' },
+    { id: 'game', label: 'AI Ascent Game' },
+  ];
+
+  return (
+    <div className="flex flex-col h-full w-full">
+      {/* Tab Buttons */}
+      <div className="flex border-b border-border flex-shrink-0">
+        {tabs.map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-4 py-2 text-sm font-medium transition-colors focus:outline-none ${
+              activeTab === tab.id
+                ? 'border-b-2 border-primary text-primary'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Content */}
+      <div className="flex-grow overflow-hidden">
+        {activeTab === 'report' && (
+          // The ReportViewer itself handles scrolling, so we just give it the full space.
+          // The -16 for the header is handled by the parent page.
+          <div className="h-full w-full">
+            <ReportViewer reportName="showcase" />
+          </div>
+        )}
+        {activeTab === 'game' && (
+          <iframe
+            src="https://aiascent.game/"
+            title="AI Ascent Game"
+            className="w-full h-full border-0"
+            allow="autoplay; fullscreen"
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ShowcaseTabs;
 </file_artifact>
 
 
