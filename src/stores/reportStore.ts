@@ -163,7 +163,8 @@ const createInitialReportState = (): ReportState => ({
     allPages: [],
     currentPageIndex: 0,
     currentImageIndex: 0,
-    isTreeNavOpen: true,
+    // C28: Set minimalist defaults
+    isTreeNavOpen: false,
     expandedSections: {},
     isChatPanelOpen: false,
     chatPanelWidth: 450,
@@ -171,7 +172,7 @@ const createInitialReportState = (): ReportState => ({
     isImageFullscreen: false,
     reportChatHistory: [],
     reportChatInput: '',
-    isPromptVisible: true,
+    isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
     isLoading: true,
@@ -296,7 +297,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 }
             },
             
-            // C27 Autoplay Fix: Implement full slideshow logic
             startSlideshow: () => {
                 const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
                 stopSlideshow(false);
@@ -333,7 +333,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
-                            // All images shown, stop this interval
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -390,7 +389,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 get().stopSlideshow(false); // Stop any timers before changing page
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
-                    // If autoplay reaches the end, turn it off.
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
@@ -398,20 +396,20 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 });
             },
             prevPage: () => {
-                get().stopSlideshow(true); // User initiated, so disable autoplay
+                get().stopSlideshow(true);
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
                 }));
             },
             goToPageByIndex: (pageIndex) => {
-                get().stopSlideshow(true); // User initiated
+                get().stopSlideshow(true);
                 if (pageIndex >= 0 && pageIndex < get().allPages.length) {
                     set({ currentPageIndex: pageIndex, currentImageIndex: 0 });
                 }
             },
             nextImage: () => {
-                get().stopSlideshow(true); // User initiated
+                get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
@@ -420,7 +418,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 });
             },
             prevImage: () => {
-                get().stopSlideshow(true); // User initiated
+                get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
@@ -502,7 +500,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });
-                // If currently playing, restart the slideshow with the new speed
                 if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
                     get().startSlideshow();
                 }
@@ -534,8 +531,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
     )
 );
 
-
-// Hook for components to subscribe to state changes
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
     return useReportStore(selector, shallow);
 };

@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C26 (Add Persona and Dual Embedding artifacts)
+# Updated on: C28 (Add GitHub and Showcase Expansion artifacts)
 
 ## 1. Purpose
 
@@ -89,6 +89,11 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
   - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
+### A30. aiascent.dev - Showcase Expansion Plan
+
+  - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
+  - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
 ## III. Design and Assets
 
 ### A15. aiascent.dev - Asset Wishlist and Directory Structure
@@ -167,3 +172,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A guide on setting up the aiascent.dev project with Git and GitHub, including the essential workflow for using Git alongside the Data Curation Environment (DCE).
   - **Tags:** git, github, version control, workflow, setup, dce
+
+### A29. aiascent.dev - GitHub Public Repository Guide
+
+  - **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
+  - **Tags:** git, github, version control, security, best practices, open source

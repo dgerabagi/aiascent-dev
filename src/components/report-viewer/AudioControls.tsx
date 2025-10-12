@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
 
-const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+const PLAYBACK_SPEEDS = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
 
 const AudioControls: React.FC = () => {
   const {
@@ -42,7 +42,6 @@ const AudioControls: React.FC = () => {
     };
 
     setPlaybackStatus('generating');
-    // C27 TTS Fix: Remove tldr from the narrated text.
     const textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
 
     try {
@@ -79,6 +78,8 @@ const AudioControls: React.FC = () => {
     if (currentAudioUrl && audio.src !== currentAudioUrl) {
       audio.src = currentAudioUrl;
       audio.load();
+      // C28 FIX: Force set playbackRate on new audio source to ensure it's not reset.
+      audio.playbackRate = useReportStore.getState().playbackSpeed;
       audio.play().catch(e => console.error('[AudioControls] Autoplay failed', e));
     }
   }, [currentAudioUrl]);
@@ -154,6 +155,13 @@ const AudioControls: React.FC = () => {
   return (
     <div className="flex items-center gap-2 px-1 py-1 text-xs text-muted-foreground w-full">
       <audio ref={audioRef} />
+      
+      {/* C28: Moved Autoplay checkbox to the left */}
+      <label className={`flex items-center gap-2 cursor-pointer border rounded-md px-3 py-1 text-xs font-semibold transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${autoplayEnabled ? 'bg-primary/20 border-primary' : 'border-border'}`}>
+        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} className="h-4 w-4 accent-primary" />
+        Autoplay
+      </label>
+
       <button className="btn-report-sm" onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
         {isPlaying ? <FaPause /> : <FaPlay />}
       </button>
@@ -203,12 +211,6 @@ const AudioControls: React.FC = () => {
           <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
         ))}
       </select>
-
-      {/* C27 Autoplay Prominence Fix */}
-      <label className={`flex items-center gap-2 cursor-pointer border rounded-md px-3 py-1 text-xs font-semibold transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${autoplayEnabled ? 'bg-primary/20 border-primary' : 'border-border'}`}>
-        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} className="h-4 w-4 accent-primary" />
-        Autoplay
-      </label>
     </div>
   );
 };

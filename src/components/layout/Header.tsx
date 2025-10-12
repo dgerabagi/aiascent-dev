@@ -26,11 +26,12 @@ return (
     </div>
 
     {/* Navigation Links - Absolutely Centered */}
+    {/* C28: Reordered links for better logical flow */}
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
-      <NavLink href="/showcase">Showcase</NavLink>
-      <NavLink href="/learn">Learn</NavLink>
       <NavLink href="/mission">Mission</NavLink>
+      <NavLink href="/learn">Learn</NavLink>
+      <NavLink href="/showcase">Showcase</NavLink>
       <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground/80 text-foreground/60">
         GitHub
       </a>
