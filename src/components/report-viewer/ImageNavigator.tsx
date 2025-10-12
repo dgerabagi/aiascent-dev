@@ -33,12 +33,15 @@ const ImageNavigator: React.FC = () => {
           <span>Page {currentPageIndex + 1}/{allPages.length}</span>
           <button className="btn-report-lg" onClick={nextPage} title="Next Page (Down Arrow)"><FaChevronDown /></button>
         </div>
-        {/* Image Nav */}
-        <div className="flex items-center gap-2">
-          <button className="btn-report-lg" onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
-          <span>Image {currentImageIndex + 1}/{totalImages}</span>
-          <button className="btn-report-lg" onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
-        </div>
+        
+        {/* C22 Fix: Conditionally render image navigation */}
+        {totalImages > 1 && (
+          <div className="flex items-center gap-2">
+            <button className="btn-report-lg" onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
+            <span>Image {currentImageIndex + 1}/{totalImages}</span>
+            <button className="btn-report-lg" onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
+          </div>
+        )}
       </div>
 
       {/* Right Group */}

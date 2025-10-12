@@ -1,6 +1,6 @@
 {
   "manifestId": "ascent-report-images-v3",
-  "basePath": "/images/report-assets/report-3/",
+  "basePath": "/images/report/",
   "imageGroups": {
     "group_cover-page_prompt-1": {
       "path": "front-matter/cover-page/prompt-1/",

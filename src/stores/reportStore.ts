@@ -200,6 +200,12 @@ export const useReportStore = create<ReportState & ReportActions>()(
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
             loadReport: async (reportName: string) => {
+                if (!reportName) {
+                    console.error("loadReport called with undefined reportName.");
+                    set({ isLoading: false, allPages: [] }); // Set state to show error
+                    return;
+                }
+
                 // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
                 set({ _hasHydrated: true, isLoading: true });
@@ -230,16 +236,29 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     const images: ReportImage[] = [];
                                     const imageBasePath = manifestData.basePath;
                                     
-                                    for (let i = 1; i <= groupMeta.imageCount; i++) {
-                                        const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+                                    // C22 Fix: Handle single images vs sequences
+                                    if (groupMeta.imageCount === 1) {
+                                        const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
                                         images.push({
-                                            imageId: `${rawPage.pageId}-${groupId}-${i}`,
+                                            imageId: `${rawPage.pageId}-${groupId}-1`,
                                             url,
                                             prompt: groupMeta.prompt,
                                             alt: groupMeta.alt,
                                         });
+                                    } else {
+                                        for (let i = 1; i <= groupMeta.imageCount; i++) {
+                                            const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+                                            const url = `${imageBasePath}${groupMeta.path}${fileName}`;
+                                            images.push({
+                                                imageId: `${rawPage.pageId}-${groupId}-${i}`,
+                                                url,
+                                                prompt: groupMeta.prompt,
+                                                alt: groupMeta.alt,
+                                            });
+                                        }
                                     }
+
                                     return {
                                         promptId: groupId,
                                         promptText: groupMeta.prompt,
@@ -270,7 +289,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
                     get().setActiveExpansionPath(get().currentPageIndex);
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
-                    set({ isLoading: false });
+                    set({ isLoading: false, allPages: [] });
                 }
             },
             

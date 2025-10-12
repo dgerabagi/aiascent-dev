@@ -127,7 +127,10 @@ const ReportChatPanel: React.FC = () => {
             minWidth={300}
             maxWidth="60vw"
             enable={{ left: true }}
-            onResizeStop={(e, direction, ref, d) => setChatPanelWidth(chatPanelWidth + d.width)}
+            onResizeStop={(e, direction, ref) => {
+                // C22 Fix: Use absolute width from the ref
+                setChatPanelWidth(parseInt(ref.style.width, 10));
+            }}
             handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
         >
             <div className="h-full bg-background border-l flex flex-col flex-shrink-0">

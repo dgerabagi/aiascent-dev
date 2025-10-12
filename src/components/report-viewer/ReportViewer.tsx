@@ -19,11 +19,11 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setImagePanelHeight } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
-        imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
+        imagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
@@ -33,7 +33,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isTreeNavOpen: state.isTreeNavOpen,
         isChatPanelOpen: state.isChatPanelOpen,
         imagePanelHeight: state.imagePanelHeight,
-        setImagePanelHeight: state.setImagePanelHeight,
         isImageFullscreen: state.isImageFullscreen,
         openImageFullscreen: state.openImageFullscreen,
         closeImageFullscreen: state.closeImageFullscreen,
@@ -93,8 +92,9 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                         size={{ width: '100%', height: imagePanelHeight }}
                         minHeight={200}
                         maxHeight="60%"
-                        onResizeStop={(e, direction, ref, d) => {
-                            setImagePanelHeight(imagePanelHeight + d.height);
+                        onResizeStop={(e, direction, ref) => {
+                            // C22 Fix: Use absolute height from the ref
+                            setImagePanelHeight(parseInt(ref.style.height, 10));
                         }}
                         enable={{ bottom: true }}
                         className="relative mb-2 flex-shrink-0"
