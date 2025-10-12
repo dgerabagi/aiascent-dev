@@ -22,8 +22,9 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
             return null;
         }
         const data = await response.json();
-        if (data?.data?.embedding) {
-            return data.data.embedding;
+        // C25 FIX: The embedding is nested in the first element of the 'data' array.
+        if (data?.data?.[0]?.embedding) {
+            return data.data[0].embedding;
         }
         console.error('[Chat API] Invalid embedding response structure:', data);
         return null;
@@ -69,7 +70,7 @@ export async function POST(request: Request) {
 
         if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
             // Search the index
-            const { labels, distances } = index.search(queryEmbedding, 3);
+            const { labels, distances } = index.search(queryEmbedding, 10);
             
             if (labels.length > 0) {
                 const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
