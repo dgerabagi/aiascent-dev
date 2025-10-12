@@ -4,13 +4,15 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+import { FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import { useReportState, useReportStore } from '@/stores/reportStore';
 
 interface MissionSectionBlockProps {
   title: string;
   tldr: string;
   content: string;
   images: string[];
-  imagePath: string; // C19: Added to handle subdirectories
+  imagePath: string;
   imagePrompt: string;
   imageSide?: 'left' | 'right';
 }
@@ -20,17 +22,25 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   tldr,
   content,
   images,
-  imagePath, // C19: Destructure new prop
+  imagePath,
   imagePrompt,
   imageSide = 'left',
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { playArbitraryText } = useReportStore.getState();
+  const { genericPlaybackStatus, genericAudioText } = useReportState(state => ({
+    genericPlaybackStatus: state.genericPlaybackStatus,
+    genericAudioText: state.genericAudioText,
+  }));
+
+  const isPlayingThis = genericPlaybackStatus === 'playing' && genericAudioText === content;
+  const isGeneratingThis = genericPlaybackStatus === 'generating' && genericAudioText === content;
 
   useEffect(() => {
     if (images.length > 1) {
       const timer = setInterval(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 5000); // Change image every 5 seconds
+      }, 5000);
       return () => clearInterval(timer);
     }
   }, [images.length]);
@@ -41,8 +51,12 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
     exit: { opacity: 0, x: -20 },
   };
 
+  const handlePlayClick = () => {
+    playArbitraryText(content);
+  };
+
   const imageContent = (
-    <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
+    <div className="md:w-1/2 w-full p-4 border rounded-2xl bg-card shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
       <div className="relative aspect-video rounded-lg overflow-hidden">
         <AnimatePresence initial={false}>
           <motion.div
@@ -55,7 +69,6 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
             className="absolute inset-0"
           >
             <Image
-              // C19 Fix: Construct the full, correct image path
               src={`/assets/images/report/${imagePath}${images[currentImageIndex]}`}
               alt={title}
               fill
@@ -72,11 +85,21 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
 
   const textContent = (
     <div className="md:w-1/2 w-full">
-      <h3 className="text-3xl font-bold text-white light:text-black mb-4">{title}</h3>
+      <div className="flex items-center gap-4 mb-4">
+        <h3 className="text-3xl font-bold">{title}</h3>
+        <button
+          onClick={handlePlayClick}
+          className="p-2 border rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+          title={isPlayingThis ? "Pause narration" : "Play narration"}
+          disabled={isGeneratingThis}
+        >
+          {isGeneratingThis ? <FaSpinner className="animate-spin" /> : (isPlayingThis ? <FaPause /> : <FaPlay />)}
+        </button>
+      </div>
       <div className="p-3 border-l-4 border-primary bg-muted/20 rounded-r-lg mb-4">
         <p className="italic text-muted-foreground">{tldr}</p>
       </div>
-      <div className="prose prose-invert max-w-none">
+      <div className="prose prose-sm dark:prose-invert max-w-none">
         <MarkdownRenderer>{content}</MarkdownRenderer>
       </div>
     </div>

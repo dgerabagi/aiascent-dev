@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C19 (Add new A23 artifact for Cognitive Capital Definition)
+# Updated on: C20 (Add new planning artifacts for Mission, Learn, and Homepage)
 
 ## 1. Purpose
 
@@ -63,6 +63,21 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A plan to refactor the static Mission page into a smaller, digestible, static version of the interactive report viewer, showcasing key concepts with associated imagery.
   - **Tags:** page design, mission, report viewer, refactor, plan, ui, ux
+
+### A24. aiascent.dev - Mission Page Content Expansion Plan
+
+  - **Description:** Provides the expanded, finalized content for the last three sections of the Mission Page to create a more comprehensive and compelling narrative.
+  - **Tags:** page design, mission, content, refactor, plan
+
+### A25. aiascent.dev - Learn Page Content Plan
+
+  - **Description:** A blueprint for the `/learn` page, structuring its content around the "Vibecoding to Virtuosity" pathway to educate users on the methodology behind the DCE.
+  - **Tags:** page design, learn, content, plan, vibecoding, virtuosity, cognitive apprenticeship
+
+### A26. aiascent.dev - Homepage Whitepaper Visualization Plan
+
+  - **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
+  - **Tags:** page design, home page, report viewer, whitepaper, content, plan, image prompts
 
 ## III. Design and Assets
 

@@ -4,6 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { useReportStore } from "@/stores/reportStore";
+import React from "react";
+import GlobalAudioPlayer from "@/components/global/GlobalAudioPlayer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,12 +31,12 @@ export default function RootLayout({
         >
           <div className="flex flex-col min-h-screen">
             <Header />
-            {/* C15 Fix: Removed pt-16 to allow for full-height pages like the showcase */}
             <main className="flex-grow">
               {children}
             </main>
             <Footer />
           </div>
+          <GlobalAudioPlayer />
         </ThemeProvider>
       </body>
     </html>
