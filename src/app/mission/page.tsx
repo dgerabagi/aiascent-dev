@@ -38,9 +38,9 @@ const MissionPage = () => {
 
                 {/* Section 3: The Counter-Strategy */}
                 <section className="bg-card border rounded-lg p-8 md:p-12 mb-24">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Strategy: Cognitive Apprenticeship</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Strategy: <strong>Cognitive Apprenticeship</strong></h2>
                     <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-center">
-                        Our answer is not to imitate authoritarian control, but to unleash decentralized expertise. We believe in **Cognitive Apprenticeship**—a model where AI serves as a tireless mentor, guiding individuals from intuitive "vibe coding" to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship.
+                        Our answer is not to imitate authoritarian control, but to unleash decentralized expertise. We believe in <strong>Cognitive Apprenticeship</strong>—a model where AI serves as a tireless mentor, guiding individuals from intuitive "vibe coding" to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship.
                     </p>
                 </section>
 

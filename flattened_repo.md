@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T14:31:16.181Z
+  Date Generated: 2025-10-12T15:09:15.377Z
   ---
-  Total Files: 106
-  Approx. Tokens: 247981
+  Total Files: 107
+  Approx. Tokens: 249885
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,13 +14,13 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (4571 tokens)
+7. src\stores\reportStore.ts (5000 tokens)
 8. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
 9. context\dce\A90. AI Ascent - server.ts (Reference).md (4213 tokens)
 10. context\aiascentgame\report\ReportViewerModal.tsx (3518 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 134 - Chars: 7029 - Tokens: 1758
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 139 - Chars: 7215 - Tokens: 1804
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
@@ -63,7 +63,7 @@
 41. public\assets\images\og-image.png - [Binary] Size: 31 Bytes
 42. public\assets\favicon.ico - [Binary] Size: 4.2 KB
 43. public\assets\logo.svg - [Binary] Size: 117.9 KB
-44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 48 - Chars: 2873 - Tokens: 719
+44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3295 - Tokens: 824
 45. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
 46. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 60 - Chars: 3059 - Tokens: 765
 47. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
@@ -99,24 +99,24 @@
 77. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 78. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 79. src\app\learn\page.tsx - Lines: 27 - Chars: 1239 - Tokens: 310
-80. src\app\mission\page.tsx - Lines: 78 - Chars: 5580 - Tokens: 1395
+80. src\app\mission\page.tsx - Lines: 78 - Chars: 5610 - Tokens: 1403
 81. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
 82. src\components\report-viewer\ImageNavigator.tsx - Lines: 88 - Chars: 3598 - Tokens: 900
 83. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 84. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
-85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 162 - Chars: 8274 - Tokens: 2069
+85. src\components\report-viewer\ReportChatPanel.tsx - Lines: 168 - Chars: 8313 - Tokens: 2079
 86. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 87. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 88. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-89. src\stores\reportStore.ts - Lines: 433 - Chars: 18282 - Tokens: 4571
+89. src\stores\reportStore.ts - Lines: 475 - Chars: 19998 - Tokens: 5000
 90. public\data\ai_ascent_report.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 91. public\data\imageManifest.json - Lines: 1198 - Chars: 102064 - Tokens: 25516
-92. src\components\report-viewer\ReportViewer.tsx - Lines: 133 - Chars: 5993 - Tokens: 1499
+92. src\components\report-viewer\ReportViewer.tsx - Lines: 136 - Chars: 5999 - Tokens: 1500
 93. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 94. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 95. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-96. src\app\api\chat\route.ts - Lines: 102 - Chars: 4295 - Tokens: 1074
-97. src\app\api\tts\route.ts - Lines: 50 - Chars: 1825 - Tokens: 457
+96. src\app\api\chat\route.ts - Lines: 102 - Chars: 4192 - Tokens: 1048
+97. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 98. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 99. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
 100. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
@@ -126,6 +126,7 @@
 104. context\vcpg\ai.module.ts - Lines: 26 - Chars: 907 - Tokens: 227
 105. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 106. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
+107. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -134,7 +135,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C15 (Add new A21 artifact for RAG Integration)
+# Updated on: C17 (Add new A22 artifact for Mission Page Revamp)
 
 ## 1. Purpose
 
@@ -183,6 +184,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A guide explaining the implementation of the Retrieval-Augmented Generation (RAG) system for the "Ask @Ascentia" chat feature, including instructions for file placement and environment configuration.
   - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, langchain, architecture
+
+### A22. aiascent.dev - Mission Page Revamp Plan
+
+  - **Description:** A plan to refactor the static Mission page into a smaller, digestible, static version of the interactive report viewer, showcasing key concepts with associated imagery.
+  - **Tags:** page design, mission, report viewer, refactor, plan, ui, ux
 
 ## III. Design and Assets
 
@@ -10004,9 +10010,11 @@ export default config
 
 # Author: AI Model & Curator
 
+# Updated on: C17 (Add Downloadable Assets section)
+
   - **Key/Value for A0:**
   - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
-  - **Tags:** assets, wishlist, design, images, icons, file structure
+  - **Tags:** assets, wishlist, design, images, icons, file structure, downloads
 
 ## 1. Overview
 
@@ -10046,6 +10054,16 @@ public/
 │   └── favicon.ico
 │
 └── ... (other public files)
+```
+
+## 4. Downloadable Assets
+
+This section specifies the location for downloadable files, such as application installers.
+
+*   **Location:** `public/downloads/`
+*   **Purpose:** To host files that users can download directly from the website.
+*   **Current Files:**
+    *   `data-curation-environment-0.1.10.vsix`: The VS Code extension installer package.
 </file_artifact>
 
 <file path="src/Artifacts/A16-Page-Design-Home.md">
@@ -14240,9 +14258,9 @@ const MissionPage = () => {
 
                 {/* Section 3: The Counter-Strategy */}
                 <section className="bg-card border rounded-lg p-8 md:p-12 mb-24">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Strategy: Cognitive Apprenticeship</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">Our Strategy: <strong>Cognitive Apprenticeship</strong></h2>
                     <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-center">
-                        Our answer is not to imitate authoritarian control, but to unleash decentralized expertise. We believe in **Cognitive Apprenticeship**—a model where AI serves as a tireless mentor, guiding individuals from intuitive "vibe coding" to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship.
+                        Our answer is not to imitate authoritarian control, but to unleash decentralized expertise. We believe in <strong>Cognitive Apprenticeship</strong>—a model where AI serves as a tireless mentor, guiding individuals from intuitive "vibe coding" to architectural mastery. The Data Curation Environment (DCE) is the foundational tool for this new relationship.
                     </p>
                 </section>
 
@@ -14674,6 +14692,24 @@ const ReportChatPanel: React.FC = () => {
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
+    // C17: Function to parse the raw LLM output and extract the final message
+    const parseFinalMessage = (rawText: string): string => {
+        const finalMessageMarker = '<|channel|>final<|message|>';
+        const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
+
+        if (finalMessageIndex !== -1) {
+            return rawText.substring(finalMessageIndex + finalMessageMarker.length);
+        }
+        
+        // Fallback for unexpected formats
+        const analysisMarker = '<|channel|>analysis<|message|>';
+        if (rawText.includes(analysisMarker)) {
+            return "Could not parse final message from response.";
+        }
+
+        return rawText;
+    };
+
     const handleSend = async () => {
         const trimmedInput = reportChatInput.trim();
         if (!trimmedInput || isThinking) return;
@@ -14709,7 +14745,7 @@ const ReportChatPanel: React.FC = () => {
                 const { value, done: doneReading } = await reader.read();
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
-                // Simple SSE parsing
+                
                 const lines = chunk.split('\n');
                 for (const line of lines) {
                     if (line.startsWith('data: ')) {
@@ -14717,22 +14753,11 @@ const ReportChatPanel: React.FC = () => {
                         if (data.trim() === '[DONE]') continue;
                         try {
                             const parsed = JSON.parse(data);
-                            interface Choice {
-                                text: string;
-                            }
-
-                            interface ParsedData {
-                                choices?: Choice[];
-                            }
-                            const parsedData: ParsedData = parsed;
-                            const textChunk: string = parsedData.choices?.[0]?.text || '';
+                            const textChunk = parsed.choices?.[0]?.text || '';
                             if (textChunk) {
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
-                            // It might not be JSON, but raw text.
-                            // This can happen if the stream is not perfectly formatted SSE.
-                            // We will just append the raw data part if it's not JSON.
                             if (data) updateReportChatMessage(temporaryId, data);
                         }
                     }
@@ -14743,7 +14768,6 @@ const ReportChatPanel: React.FC = () => {
         } catch (error) {
             console.error("Error with chat stream:", error);
             const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-            // C16: Provide a more helpful error message in the UI.
             const userFriendlyError = `Sorry, I'm having trouble connecting to my core systems. The server logs may show a connection timeout error. Please ask the curator to check the vLLM server's status and firewall configuration. (Details: ${errorMessage})`;
             updateReportChatMessage(temporaryId, userFriendlyError);
             updateReportChatStatus(temporaryId, 'complete');
@@ -14780,7 +14804,7 @@ const ReportChatPanel: React.FC = () => {
                     {reportChatHistory.map((msg, index) => (
                         <div key={msg.id || index}>
                             <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
-                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{msg.message}</span>}
+                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{parseFinalMessage(msg.message)}</span>}
                             {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
                         </div>
                     ))}
@@ -15161,6 +15185,49 @@ export const useReportStore = create<ReportState & ReportActions>()(
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
+            startSlideshow: () => {
+                const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
+                stopSlideshow(false);
+
+                const currentPage = allPages[currentPageIndex];
+                if (!currentPage || !autoplayEnabled || duration <= 0) return;
+
+                // C17 Fix: Calculate actual duration based on playback speed
+                const actualDuration = duration / playbackSpeed;
+                const actualDurationMs = actualDuration * 1000;
+
+                const nextPageTimer = setTimeout(() => {
+                    if (get().autoplayEnabled) {
+                        nextPage();
+                    }
+                }, actualDurationMs + 2000); // 2-second pause before next page
+                set({ nextPageTimer });
+
+                const images = currentPage.imagePrompts?.[0]?.images;
+                if (!images || images.length <= 1) return;
+
+                const timePerImage = actualDurationMs / images.length;
+                let imageIdx = get().currentImageIndex;
+
+                const slideshowTimer = setInterval(() => {
+                    if (!get().autoplayEnabled) {
+                        clearInterval(slideshowTimer);
+                        return;
+                    }
+                    imageIdx = (get().currentImageIndex + 1);
+                    if (imageIdx < images.length) {
+                        set({ currentImageIndex: imageIdx });
+                    } else {
+                        clearInterval(slideshowTimer);
+                        set({ slideshowTimer: null });
+                    }
+                }, timePerImage);
+
+                set({ slideshowTimer });
+            },
+            
+            // ... other actions ...
+
             loadReportData: async () => {
                 if (get().reportData) {
                     set({ isLoading: false });
@@ -15364,7 +15431,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            startSlideshow: () => {/* Logic to be implemented in component */},
             stopSlideshow: (userInitiated = false) => {
                 const { slideshowTimer, nextPageTimer } = get();
                 if (slideshowTimer) clearInterval(slideshowTimer);
@@ -18176,6 +18242,7 @@ import ReportChatPanel from './ReportChatPanel';
 import ReportProgressBar from './ReportProgressBar';
 import AudioControls from './AudioControls';
 import { Resizable } from 're-resizable';
+import Image from 'next/image';
 
 const ReportViewer: React.FC = () => {
     const { loadReportData, handleKeyDown } = useReportStore.getState();
@@ -18232,10 +18299,11 @@ const ReportViewer: React.FC = () => {
     }
     
     return (
-        <div className="h-full w-full bg-background text-foreground flex">
+        // C17 Fix: Add pt-16 to account for the fixed header and prevent content overlap.
+        <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center" onClick={closeImageFullscreen}>
-                    <img src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" />
+                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center" onClick={closeImageFullscreen}>
+                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
                 </div>
             )}
 
@@ -18258,12 +18326,13 @@ const ReportViewer: React.FC = () => {
                         enable={{ bottom: true }}
                         className="relative mb-2 flex-shrink-0"
                     >
-                        <div className="w-full h-full bg-black/50 border rounded-lg flex items-center justify-center overflow-hidden">
+                        <div className="w-full h-full bg-black/50 border rounded-lg flex items-center justify-center overflow-hidden relative">
                             {currentImage?.url ? (
-                                <img
+                                <Image
                                     src={currentImage.url}
                                     alt={currentImage.alt}
-                                    className="w-full h-full object-contain cursor-pointer"
+                                    layout="fill"
+                                    className="object-contain cursor-pointer"
                                     onClick={openImageFullscreen}
                                 />
                             ) : <p>No Image Available</p>}
@@ -18275,16 +18344,16 @@ const ReportViewer: React.FC = () => {
                         <AudioControls />
                     </div>
 
-                    <div className="flex-1 overflow-y-auto p-2 mt-2 space-y-4">
+                    <div className="flex-1 overflow-y-auto p-2 mt-2 space-y-4 prose prose-sm dark:prose-invert max-w-none">
                         {isPromptVisible && <PromptNavigator />}
                         {isTldrVisible && (
-                            <div className="prose prose-sm dark:prose-invert max-w-none p-2 border-l-4 rounded bg-muted">
+                            <div className="p-2 border-l-4 rounded bg-muted">
                                 <p className="font-semibold">TL;DR:</p>
                                 <p className="italic">{currentPage.tldr}</p>
                             </div>
                         )}
                         {isContentVisible && (
-                            <div className="prose prose-sm dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: currentPage.content.replace(/\n/g, '<br />') }}>
+                            <div dangerouslySetInnerHTML={{ __html: currentPage.content.replace(/\n/g, '<br />') }}>
                             </div>
                         )}
                     </div>
@@ -18630,9 +18699,9 @@ User: ${prompt}
 
 Ascentia:`;
 
-  // C16: Add AbortController for robust timeout and cancellation handling
+  // C17 Fix: Increase timeout to 120 seconds (2 minutes) for model cold start
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 15000); // 15-second timeout
+  const timeoutId = setTimeout(() => controller.abort(), 120000); 
 
   try {
     const response = await fetch(completionsUrl, {
@@ -18675,12 +18744,12 @@ Ascentia:`;
   } catch (error: any) {
     clearTimeout(timeoutId);
     if (error.name === 'AbortError') {
-        console.error(`[Chat API] Request to LLM server timed out after 15 seconds. URL: ${completionsUrl}`);
+        console.error(`[Chat API] Request to LLM server timed out after 120 seconds. URL: ${completionsUrl}`);
         const debugMessage = `Connection timed out. 
         TROUBLESHOOTING:
-        1. Verify the vLLM server is running on the host machine.
+        1. Verify the LMStudio server is running on the host machine.
         2. Check the firewall on the host machine (${llmUrl}) to ensure port 1234 is open for incoming TCP connections.
-        3. Ensure the vLLM server is started with '--host 0.0.0.0' to accept connections from other machines on the network.`;
+        3. Ensure the LMStudio server is started with '--host 0.0.0.0' to accept connections from other machines on the network.`;
         console.error(debugMessage);
         return new NextResponse(`Error: Connection to the AI service timed out. ${debugMessage}`, { status: 504 }); // Gateway Timeout
     }
@@ -18690,7 +18759,7 @@ Ascentia:`;
         console.error(`[Chat API] Network error: Could not connect to the LLM server. URL: ${completionsUrl}. Cause: ${error.cause}`);
         const debugMessage = `Network connection failed. This usually means the server at the specified address is not running or is unreachable.
         TROUBLESHOOTING:
-        1. Verify the vLLM server is running.
+        1. Verify the LMStudio server is running.
         2. Double-check the IP address and port in your .env.local file for REMOTE_LLM_URL.
         3. Check the firewall on the host machine (${llmUrl}) for port 1234.`;
         console.error(debugMessage);
@@ -18732,7 +18801,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         model: 'kokoro',
-        voice: 'af_alloy', // C15 Fix: Changed from invalid 'en_us_001' to a valid voice
+        voice: 'af_sky', // C17 Fix: Changed from 'af_alloy' to user-requested 'af_sky'
         input: text,
         response_format: 'wav',
         speed: 1.0,
@@ -19912,5 +19981,98 @@ interface HarmonyJsonResponse {
     *   It will now instruct the AI to produce its output in the specified JSON format, providing the schema definition as an example. The instructions for using XML tags will be preserved as a fallback for the model.
 
 This migration to a structured JSON format will significantly improve the reliability of the extension's core parsing logic.
+</file_artifact>
+
+<file path="src/Artifacts/A22. aiascent.dev - Mission Page Revamp Plan.md">
+# Artifact A22: aiascent.dev - Mission Page Revamp Plan
+
+# Date Created: C17
+
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A plan to refactor the static Mission page into a smaller, digestible, static version of the interactive report viewer, showcasing key concepts with associated imagery.
+- **Tags:** page design, mission, report viewer, refactor, plan, ui, ux
+
+## 1. Overview and Goal
+
+The current Mission page (`/mission`) serves its purpose as a static text document but lacks the engaging, interactive quality of the main Showcase. The goal of this refactor is to transform the Mission page into a "mini-report" that leverages the bite-sized, visually-driven format of the `ReportViewer`.
+
+This will create a more thematically consistent and engaging experience for users, introducing them to the report viewer's UI concepts in a more digestible format before they dive into the full report on the Showcase page. This will be a static implementation, not a full port of the viewer, to keep the page lightweight.
+
+## 2. Design and Component Structure
+
+The page will be rebuilt as a series of content sections, each mimicking a "page" from the report viewer. Each section will contain:
+
+1.  **Title:** The main heading for the concept.
+2.  **Image Carousel:** A simple, auto-playing carousel of images relevant to the section's content.
+3.  **Image Prompt:** The text of the prompt used to generate the images.
+4.  **TL;DR:** A concise, one-sentence summary.
+5.  **Content:** The full descriptive text for the section.
+
+## 3. Content-to-Image Mapping
+
+The following plan maps the existing narrative sections of the Mission page to specific images from the `imageManifest.json`. This provides a clear blueprint for the static page's content.
+
+---
+
+### **Section 1: The Vision**
+
+*   **Title:** Empowering the Citizen Architect.
+*   **TL;DR:** We are building the tools for a future where anyone with a vision can build complex systems.
+*   **Images (from `group_the-citizen-architect-has-arrived_prompt-1`):**
+    *   `the-citizen-architect-has-arrived-p1-img-1.webp`
+    *   `the-citizen-architect-has-arrived-p1-img-5.webp`
+    *   `the-citizen-architect-has-arrived-p1-img-9.webp`
+*   **Image Prompt:** "A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure..."
+*   **Content:** The existing text from the "The Vision" section.
+
+---
+
+### **Section 2: The Strategic Imperative**
+
+*   **Title:** The Fissured Workplace
+*   **TL;DR:** The current Western AI labor model is a strategic vulnerability, creating an unstable foundation for our most critical technology.
+*   **Images (from `group_the-fissured-workplace_prompt-1`):**
+    *   `the-fissured-workplace-p1-img-1.webp`
+    *   `the-fissured-workplace-p1-img-7.webp`
+    *   `the-fissured-workplace-p1-img-11.webp`
+*   **Image Prompt:** "An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers..."
+*   **Content:** The existing text from "The Fissured Workplace" and "The Coherent Competitor" subsections.
+
+---
+
+### **Section 3: The Counter-Strategy**
+
+*   **Title:** Our Strategy: Cognitive Apprenticeship
+*   **TL;DR:** Our answer is not to imitate authoritarian control, but to unleash decentralized expertise through a model where AI serves as a tireless mentor.
+*   **Images (from `group_the-pedagogical-engine-cam_prompt-1`):**
+    *   `the-pedagogical-engine-cam-p1-img-1.webp`
+    *   `the-pedagogical-engine-cam-p1-img-6.webp`
+    *   `the-pedagogical-engine-cam-p1-img-12.webp`
+*   **Image Prompt:** "An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+*   **Content:** The existing text from the "Cognitive Apprenticeship" section.
+
+---
+
+### **Section 4: The Role of the DCE**
+
+*   **Title:** The Essential Toolkit
+*   **TL;DR:** The DCE is more than a productivity tool; it's the infrastructure for the Citizen Architect.
+*   **Images (from `group_the-new-creative-partnership_prompt-1`):**
+    *   `the-new-creative-partnership-p1-img-1.webp`
+    *   `the-new-creative-partnership-p1-img-8.webp`
+    *   `the-new-creative-partnership-p1-img-15.webp`
+*   **Image Prompt:** "A hyper-realistic, solarpunk cinematic image of a developer... sitting cross-legged on a vast, glowing digital floor... thoughtfully placing one of these blocks into a complex, half-finished digital structure..."
+*   **Content:** The existing text from "The Essential Toolkit" section.
+
+---
+
+## 4. Implementation Plan
+
+1.  **Create Section Component:** Develop a new reusable React component, e.g., `MissionSectionBlock.tsx`, that accepts `title`, `tldr`, `content`, `images`, and `imagePrompt` as props.
+2.  **Implement Carousel:** Inside this component, implement a simple image carousel (e.g., using `framer-motion` or a lightweight library) to display the provided images.
+3.  **Refactor Mission Page:** Rebuild `src/app/mission/page.tsx` to be a container that renders a series of `<MissionSectionBlock />` components, passing in the data mapped out in this plan.
+4.  **Styling:** Ensure the styling of the new components is consistent with the `ReportViewer` to create a cohesive user experience.
 </file_artifact>
 

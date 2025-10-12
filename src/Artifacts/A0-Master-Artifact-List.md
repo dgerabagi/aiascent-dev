@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C15 (Add new A21 artifact for RAG Integration)
+# Updated on: C17 (Add new A22 artifact for Mission Page Revamp)
 
 ## 1. Purpose
 
@@ -53,6 +53,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A guide explaining the implementation of the Retrieval-Augmented Generation (RAG) system for the "Ask @Ascentia" chat feature, including instructions for file placement and environment configuration.
   - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, langchain, architecture
+
+### A22. aiascent.dev - Mission Page Revamp Plan
+
+  - **Description:** A plan to refactor the static Mission page into a smaller, digestible, static version of the interactive report viewer, showcasing key concepts with associated imagery.
+  - **Tags:** page design, mission, report viewer, refactor, plan, ui, ux
 
 ## III. Design and Assets
 

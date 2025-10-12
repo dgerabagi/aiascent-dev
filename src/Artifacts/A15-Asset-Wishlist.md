@@ -4,9 +4,11 @@
 
 # Author: AI Model & Curator
 
+# Updated on: C17 (Add Downloadable Assets section)
+
   - **Key/Value for A0:**
   - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
-  - **Tags:** assets, wishlist, design, images, icons, file structure
+  - **Tags:** assets, wishlist, design, images, icons, file structure, downloads
 
 ## 1. Overview
 
@@ -46,3 +48,13 @@ public/
 │   └── favicon.ico
 │
 └── ... (other public files)
+```
+
+## 4. Downloadable Assets
+
+This section specifies the location for downloadable files, such as application installers.
+
+*   **Location:** `public/downloads/`
+*   **Purpose:** To host files that users can download directly from the website.
+*   **Current Files:**
+    *   `data-curation-environment-0.1.10.vsix`: The VS Code extension installer package.

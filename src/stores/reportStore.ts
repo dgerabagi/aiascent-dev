@@ -186,6 +186,49 @@ export const useReportStore = create<ReportState & ReportActions>()(
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
+            startSlideshow: () => {
+                const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
+                stopSlideshow(false);
+
+                const currentPage = allPages[currentPageIndex];
+                if (!currentPage || !autoplayEnabled || duration <= 0) return;
+
+                // C17 Fix: Calculate actual duration based on playback speed
+                const actualDuration = duration / playbackSpeed;
+                const actualDurationMs = actualDuration * 1000;
+
+                const nextPageTimer = setTimeout(() => {
+                    if (get().autoplayEnabled) {
+                        nextPage();
+                    }
+                }, actualDurationMs + 2000); // 2-second pause before next page
+                set({ nextPageTimer });
+
+                const images = currentPage.imagePrompts?.[0]?.images;
+                if (!images || images.length <= 1) return;
+
+                const timePerImage = actualDurationMs / images.length;
+                let imageIdx = get().currentImageIndex;
+
+                const slideshowTimer = setInterval(() => {
+                    if (!get().autoplayEnabled) {
+                        clearInterval(slideshowTimer);
+                        return;
+                    }
+                    imageIdx = (get().currentImageIndex + 1);
+                    if (imageIdx < images.length) {
+                        set({ currentImageIndex: imageIdx });
+                    } else {
+                        clearInterval(slideshowTimer);
+                        set({ slideshowTimer: null });
+                    }
+                }, timePerImage);
+
+                set({ slideshowTimer });
+            },
+            
+            // ... other actions ...
+
             loadReportData: async () => {
                 if (get().reportData) {
                     set({ isLoading: false });
@@ -389,7 +432,6 @@ export const useReportStore = create<ReportState & ReportActions>()(
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            startSlideshow: () => {/* Logic to be implemented in component */},
             stopSlideshow: (userInitiated = false) => {
                 const { slideshowTimer, nextPageTimer } = get();
                 if (slideshowTimer) clearInterval(slideshowTimer);

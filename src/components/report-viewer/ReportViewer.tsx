@@ -11,6 +11,7 @@ import ReportChatPanel from './ReportChatPanel';
 import ReportProgressBar from './ReportProgressBar';
 import AudioControls from './AudioControls';
 import { Resizable } from 're-resizable';
+import Image from 'next/image';
 
 const ReportViewer: React.FC = () => {
     const { loadReportData, handleKeyDown } = useReportStore.getState();
@@ -67,10 +68,11 @@ const ReportViewer: React.FC = () => {
     }
     
     return (
-        <div className="h-full w-full bg-background text-foreground flex">
+        // C17 Fix: Add pt-16 to account for the fixed header and prevent content overlap.
+        <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center" onClick={closeImageFullscreen}>
-                    <img src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" />
+                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center" onClick={closeImageFullscreen}>
+                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
                 </div>
             )}
 
@@ -93,12 +95,13 @@ const ReportViewer: React.FC = () => {
                         enable={{ bottom: true }}
                         className="relative mb-2 flex-shrink-0"
                     >
-                        <div className="w-full h-full bg-black/50 border rounded-lg flex items-center justify-center overflow-hidden">
+                        <div className="w-full h-full bg-black/50 border rounded-lg flex items-center justify-center overflow-hidden relative">
                             {currentImage?.url ? (
-                                <img
+                                <Image
                                     src={currentImage.url}
                                     alt={currentImage.alt}
-                                    className="w-full h-full object-contain cursor-pointer"
+                                    layout="fill"
+                                    className="object-contain cursor-pointer"
                                     onClick={openImageFullscreen}
                                 />
                             ) : <p>No Image Available</p>}
@@ -110,16 +113,16 @@ const ReportViewer: React.FC = () => {
                         <AudioControls />
                     </div>
 
-                    <div className="flex-1 overflow-y-auto p-2 mt-2 space-y-4">
+                    <div className="flex-1 overflow-y-auto p-2 mt-2 space-y-4 prose prose-sm dark:prose-invert max-w-none">
                         {isPromptVisible && <PromptNavigator />}
                         {isTldrVisible && (
-                            <div className="prose prose-sm dark:prose-invert max-w-none p-2 border-l-4 rounded bg-muted">
+                            <div className="p-2 border-l-4 rounded bg-muted">
                                 <p className="font-semibold">TL;DR:</p>
                                 <p className="italic">{currentPage.tldr}</p>
                             </div>
                         )}
                         {isContentVisible && (
-                            <div className="prose prose-sm dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: currentPage.content.replace(/\n/g, '<br />') }}>
+                            <div dangerouslySetInnerHTML={{ __html: currentPage.content.replace(/\n/g, '<br />') }}>
                             </div>
                         )}
                     </div>

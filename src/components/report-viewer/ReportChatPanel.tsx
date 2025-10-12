@@ -30,6 +30,24 @@ const ReportChatPanel: React.FC = () => {
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
+    // C17: Function to parse the raw LLM output and extract the final message
+    const parseFinalMessage = (rawText: string): string => {
+        const finalMessageMarker = '<|channel|>final<|message|>';
+        const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
+
+        if (finalMessageIndex !== -1) {
+            return rawText.substring(finalMessageIndex + finalMessageMarker.length);
+        }
+        
+        // Fallback for unexpected formats
+        const analysisMarker = '<|channel|>analysis<|message|>';
+        if (rawText.includes(analysisMarker)) {
+            return "Could not parse final message from response.";
+        }
+
+        return rawText;
+    };
+
     const handleSend = async () => {
         const trimmedInput = reportChatInput.trim();
         if (!trimmedInput || isThinking) return;
@@ -65,7 +83,7 @@ const ReportChatPanel: React.FC = () => {
                 const { value, done: doneReading } = await reader.read();
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
-                // Simple SSE parsing
+                
                 const lines = chunk.split('\n');
                 for (const line of lines) {
                     if (line.startsWith('data: ')) {
@@ -73,22 +91,11 @@ const ReportChatPanel: React.FC = () => {
                         if (data.trim() === '[DONE]') continue;
                         try {
                             const parsed = JSON.parse(data);
-                            interface Choice {
-                                text: string;
-                            }
-
-                            interface ParsedData {
-                                choices?: Choice[];
-                            }
-                            const parsedData: ParsedData = parsed;
-                            const textChunk: string = parsedData.choices?.[0]?.text || '';
+                            const textChunk = parsed.choices?.[0]?.text || '';
                             if (textChunk) {
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
-                            // It might not be JSON, but raw text.
-                            // This can happen if the stream is not perfectly formatted SSE.
-                            // We will just append the raw data part if it's not JSON.
                             if (data) updateReportChatMessage(temporaryId, data);
                         }
                     }
@@ -99,7 +106,6 @@ const ReportChatPanel: React.FC = () => {
         } catch (error) {
             console.error("Error with chat stream:", error);
             const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-            // C16: Provide a more helpful error message in the UI.
             const userFriendlyError = `Sorry, I'm having trouble connecting to my core systems. The server logs may show a connection timeout error. Please ask the curator to check the vLLM server's status and firewall configuration. (Details: ${errorMessage})`;
             updateReportChatMessage(temporaryId, userFriendlyError);
             updateReportChatStatus(temporaryId, 'complete');
@@ -136,7 +142,7 @@ const ReportChatPanel: React.FC = () => {
                     {reportChatHistory.map((msg, index) => (
                         <div key={msg.id || index}>
                             <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
-                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{msg.message}</span>}
+                            {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <span className="whitespace-pre-wrap">{parseFinalMessage(msg.message)}</span>}
                             {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
                         </div>
                     ))}
