@@ -4,6 +4,8 @@
 
 # Author: AI Model & Curator
 
+# Updated on: C19 (Add note on layout requirements)
+
   - **Key/Value for A0:**
   - **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
   - **Tags:** page design, showcase, interactive whitepaper, ui, ux, dce
@@ -36,14 +38,15 @@ Developers and technical leads looking for concrete examples of what the DCE can
 
 ### 4.3. Section 2: The Interactive Whitepaper Component
 
-  * **Layout:** The main content area is dominated by the `InteractiveWhitepaper.tsx` component. It should be housed within a visually distinct container (e.g., a large card or a bordered area) to separate it from the page shell.
-  * **Component Features (as implemented in `InteractiveWhitepaper.tsx`):**
+  * **Layout:** The main content area is dominated by the `ReportViewer.tsx` component.
+  * **CRITICAL LAYOUT NOTE (C19):** To prevent the fixed site header from overlapping the report viewer's UI, the main container within `ReportViewer.tsx` **must** have top padding applied (e.g., `pt-16`). This ensures content like buttons and navigation controls are fully visible and accessible.
+  * **Component Features (as implemented in `ReportViewer.tsx`):**
       * Clear display of the current section and page title.
       * Prominent display of the "TL;DR" summary.
       * Scrollable main content area (for longer text).
       * Intuitive navigation controls (Previous/Next buttons, progress indicator).
-      * *(Future Enhancement)* Image gallery/viewer associated with the content.
-      * *(Future Enhancement)* Table of contents side panel.
+      * Image gallery/viewer associated with the content.
+      * Table of contents side panel.
 
 ### 4.4. Section 3: How It Was Built (The Meta-Commentary)
 

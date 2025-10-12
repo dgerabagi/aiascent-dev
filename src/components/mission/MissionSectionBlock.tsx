@@ -11,6 +11,7 @@ interface MissionSectionBlockProps {
   content: string;
   images: string[];
   imagePrompt: string;
+  imageBasePath: string; // C19: New prop for the image subdirectory
   imageSide?: 'left' | 'right';
 }
 
@@ -20,6 +21,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   content,
   images,
   imagePrompt,
+  imageBasePath, // C19: Destructure new prop
   imageSide = 'left',
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -39,6 +41,9 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
     exit: { opacity: 0, x: -20 },
   };
 
+  // C19: Construct the full image path
+  const getImagePath = (fileName: string) => `/assets/images/report/${imageBasePath}${fileName}`;
+
   const imageContent = (
     <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
       <div className="relative aspect-video rounded-lg overflow-hidden">
@@ -53,7 +58,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
             className="absolute inset-0"
           >
             <Image
-              src={`/assets/images/report/${images[currentImageIndex]}`}
+              src={getImagePath(images[currentImageIndex])}
               alt={title}
               fill
               className="object-cover"

@@ -4,7 +4,6 @@ import { OpenAIEmbeddings } from '@langchain/openai';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-// C18 Fix: Re-implement RAG functionality
 export async function POST(request: Request) {
   const { prompt, pageContext } = await request.json();
 
@@ -30,21 +29,34 @@ export async function POST(request: Request) {
     const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
     const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
 
-    // Check if files exist before loading
-    await fs.access(faissPath);
-    await fs.access(chunksPath);
+    // C19 Fix: Add more robust checks for file existence and size before loading
+    try {
+      const faissStat = await fs.stat(faissPath);
+      const chunksStat = await fs.stat(chunksPath);
+      if (faissStat.size === 0 || chunksStat.size === 0) {
+        throw new Error("Embedding files are empty.");
+      }
+    } catch (e: any) {
+        if (e.code === 'ENOENT') {
+            console.error('[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.');
+        } else {
+            console.error(`[Chat API] RAG Error: Could not stat embedding files. Error: ${e.message}`);
+        }
+        // Proceed without RAG, but log the error clearly.
+        retrievedContext = "RAG system failed: Could not load embedding files.";
+    }
 
-    const vectorStore = await FaissStore.load(faissPath, embeddings);
-    const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
+    if (!retrievedContext) { // Only attempt to load if the files were found and are not empty
+        const vectorStore = await FaissStore.load(faissPath, embeddings);
+        const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
+        const results = await retriever.invoke(prompt);
+        retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
+    }
 
-    const retriever = vectorStore.asRetriever(3); // Retrieve top 3 chunks
-    const results = await retriever.invoke(prompt);
-    
-    retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
-
-  } catch (error) {
+  } catch (error: any) {
+    // This will catch errors from FaissStore.load itself, like the 'indexOf' error.
     console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
-    retrievedContext = "RAG system failed: Could not retrieve relevant documents.";
+    retrievedContext = `RAG system failed: ${error.message}.`;
   }
 
   const completionsUrl = `${llmUrl}/v1/completions`;
