@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 27 - embeddings work! now minor touchups...
+Current Cycle 28 - continue excellent progress
+Cycle 27 - embeddings work! now minor touchups...
 Cycle 26 - embeddings working! now adjust persona
 Cycle 25 - embedding almost solved
 Cycle 24 - images fixed! now rag problem remains
@@ -402,6 +403,46 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 28>
+<Cycle Context>
+nice! autoplay is now autoplaying! okay here is my observation on the interactive whitepaper...
+
+1. the time speed does not actually speed up the audio. it is still read at a normal (1.00x) pace. the autoplay does seem to respect it, however, so that part is functional.
+
+2. the github link is correctly sending to my data-curation-environment repo, but the repo is currently private. should i really make it public? same with the aiascent-dev website repo itself? im nervious about that but if its the right thing to do... can we somehow do an audit or does such a feature exist in github proper?
+
+3. in the showcase, we also wish to showcase https://aiascent.game/ itself, but also in the future as people make projects with the DCE and wish to showcase them i should be able to add them in here. perhaps tabs at the top? ill let you solve for X. it would be pretty wild if we are somehow able to make it so that the players can 'play the game' from 'within the website', even though the game is a website, too. haha what can be done?
+
+4. lets have the default view of the whitepaper be as minimalistic as possible. what that means is have the tree navigator hidden (tree icon), have the image prompt hidden (i icon), and the ask ascentia window closed. can you also place the autoplay checkbox to the left of the play icon? most folks read left to right, that way they will see the autoplay before the play, as we wish they just click autoplay and sit back, and can see the progress bar as they go through the whitepaper, and if they want to they should bea ble to change the audio speed (on the fly), such that if they are listening, but then decide that they would like the autoplay to play faster, then the only thing they should have to do is flip the audio speed, then, it should begin playing faster. if you need to regenerate and replay that audio file from scratch, thats fine, otherwise ideally the result would be it would just begin playing faster from that point on.
+
+5. now that we've got content on our pages should the nav bar tabs be reorganized? what makes more sense, what we have now, or to re-order it to be home - mission - learn - showcase - github?
+</Cycle Context>
+<Previous Cycle 27 Summary of Actions>
+I have analyzed the user's request to adjust the AI persona and implement a dual-embedding RAG system. My course of action is to create two new documentation artifacts to guide this process, then implement the necessary changes in the backend API and frontend components.
+
+First, I will create `A27. aiascent.dev - AI Persona - @Ascentia`, which adapts the existing persona from the `aiascentgame` context to the `aiascent.dev` website. This new persona will be less restrictive and more helpful, tailored to answering questions about the DCE and the site's content.
+
+Second, I will create `A28. aiascent.dev - Dual Embedding RAG Architecture`. This artifact will serve as a comprehensive guide for the curator on how to create and manage two separate knowledge bases: one for the main `/showcase` report (based on "fissured workplace" research) and a new one for the homepage's interactive whitepaper (based on DCE documentation). This guide will specify file naming conventions (`report_*.index` vs. `dce_*.index`), placement, and detail the required API and frontend modifications to dynamically select the correct knowledge base.
+
+Following the "documentation first" principle, I will then implement these changes. I will update the chat API (`/api/chat/route.ts`) to accept a `knowledgeBase` parameter, which will determine which set of `faiss-node` index and chunk files to load. The API will also dynamically select the appropriate system prompt based on this parameter.
+
+Finally, I will update the frontend `ReportViewer.tsx` component to pass its `reportName` prop down to the `ReportChatPanel.tsx`. The chat panel will then be modified to include the correct `knowledgeBase` identifier in its API requests, ensuring that questions asked from the homepage whitepaper use the new DCE embedding, while questions from the showcase page continue to use the main report embedding.
+
+1.  **Create `A27. aiascent.dev - AI Persona - @Ascentia.md`:** Author a new artifact by adapting `A160` from the `aiascentgame` context. The persona will be updated to be a guide for the `aiascent.dev` website, with a less restrictive tone and prompts tailored for two different knowledge bases (DCE documentation and the main report).
+2.  **Create `A28. aiascent.dev - Dual Embedding RAG Architecture.md`:** Author a new planning artifact to guide the curator in creating and implementing a second embedding. This document will detail the file naming conventions, API modifications, and frontend logic required to support two distinct RAG knowledge bases.
+3.  **Update `A0-Master-Artifact-List.md`:** Add the new `A27` and `A28` artifacts to the master list to maintain documentation integrity.
+4.  **Update `src/app/api/chat/route.ts`:**
+    *   Modify the `POST` handler to accept a new `knowledgeBase` field in the request body (e.g., `'report'` or `'dce'`).
+    *   Implement logic to dynamically determine the file paths for the FAISS index and chunks JSON based on the `knowledgeBase` value.
+    *   Incorporate the two different system prompts from the new `A27` persona artifact and select the appropriate one based on the `knowledgeBase`.
+5.  **Update `src/components/report-viewer/ReportViewer.tsx`:**
+    *   Modify the component to accept its `reportName` prop and pass it down to the `ReportChatPanel` component.
+6.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:**
+    *   Accept the `reportName` prop from its parent.
+    *   In the `handleSend` function, map the `reportName` (`'showcase'` or `'whitepaper'`) to a `knowledgeBase` identifier (`'report'` or `'dce'`) and include it in the body of the `fetch` request to the `/api/chat` endpoint.
+</Previous Cycle 27 Summary of Actions>
+</Cycle 28>
 
 <Cycle 27>
 <Cycle Context>
@@ -2280,10 +2321,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T21:03:05.938Z
+  Date Generated: 2025-10-12T22:05:10.954Z
   ---
   Total Files: 111
-  Approx. Tokens: 282355
+  Approx. Tokens: 284440
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2293,9 +2334,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (5661 tokens)
+7. src\stores\reportStore.ts (6259 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts (4857 tokens)
-9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4331 tokens)
+9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
 
 <!-- Full File List -->
@@ -2321,7 +2362,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
 21. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
-23. src\app\showcase\page.tsx - Lines: 14 - Chars: 398 - Tokens: 100
+23. src\app\showcase\page.tsx - Lines: 19 - Chars: 660 - Tokens: 165
 24. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
 25. src\app\layout.tsx - Lines: 44 - Chars: 1370 - Tokens: 343
 26. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
@@ -2368,7 +2409,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 68. src\app\learn\page.tsx - Lines: 138 - Chars: 11377 - Tokens: 2845
 69. src\app\mission\page.tsx - Lines: 127 - Chars: 11884 - Tokens: 2971
-70. src\components\report-viewer\AudioControls.tsx - Lines: 214 - Chars: 8213 - Tokens: 2054
+70. src\components\report-viewer\AudioControls.tsx - Lines: 216 - Chars: 8549 - Tokens: 2138
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 73. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
@@ -2376,8 +2417,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-78. src\stores\reportStore.ts - Lines: 472 - Chars: 22644 - Tokens: 5661
-79. src\components\report-viewer\ReportViewer.tsx - Lines: 155 - Chars: 6828 - Tokens: 1707
+78. src\stores\reportStore.ts - Lines: 541 - Chars: 25036 - Tokens: 6259
+79. src\components\report-viewer\ReportViewer.tsx - Lines: 165 - Chars: 7319 - Tokens: 1830
 80. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 81. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 82. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
@@ -2398,13 +2439,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 99. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
-100. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 174 - Chars: 17324 - Tokens: 4331
+100. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
 101. src\components\global\GlobalAudioPlayer.tsx - Lines: 80 - Chars: 2596 - Tokens: 649
 102. context\aiascentgame\scripts\convert_images_to_webp.js - Lines: 104 - Chars: 3809 - Tokens: 953
 103. context\aiascentgame\scripts\create_report_embedding.js - Lines: 145 - Chars: 5384 - Tokens: 1346
 104. context\aiascentgame\code\ascentiaHandler.ts - Lines: 353 - Chars: 19428 - Tokens: 4857
 105. public\data\whitepaper_content.json - Lines: 145 - Chars: 11924 - Tokens: 2981
-106. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 6144 - Tokens: 1536
+106. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
 107. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
 109. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
@@ -11387,9 +11428,14 @@ import React from "react";
 
 export default function ShowcasePage() {
   return (
-    // C15 Fix: Set explicit height to prevent window scrolling. 4rem = h-16 of the Header.
-    <div className="h-[calc(100vh-4rem)] w-full">
-        <ReportViewer reportName="showcase" />
+    // C27 Fix: Add pt-16 to offset for the fixed header (h-16 or 4rem).
+    // The h-screen ensures it takes the full viewport height, and pt-16 pushes
+    // the content down, leaving the correct space for the ReportViewer.
+    <div className="h-screen w-full pt-16">
+        {/* This inner div will now fill the remaining space correctly */}
+        <div className="h-full w-full">
+            <ReportViewer reportName="showcase" />
+        </div>
     </div>
   );
 }
@@ -16716,7 +16762,8 @@ const AudioControls: React.FC = () => {
     };
 
     setPlaybackStatus('generating');
-    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
+    // C27 TTS Fix: Remove tldr from the narrated text.
+    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
 
     try {
       const response = await fetch('/api/tts', {
@@ -16877,8 +16924,9 @@ const AudioControls: React.FC = () => {
         ))}
       </select>
 
-      <label className="flex items-center gap-1 cursor-pointer">
-        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
+      {/* C27 Autoplay Prominence Fix */}
+      <label className={`flex items-center gap-2 cursor-pointer border rounded-md px-3 py-1 text-xs font-semibold transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${autoplayEnabled ? 'bg-primary/20 border-primary' : 'border-border'}`}>
+        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} className="h-4 w-4 accent-primary" />
         Autoplay
       </label>
     </div>
@@ -17604,13 +17652,11 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     const images: ReportImage[] = [];
                                     let imageBasePath = manifestData.basePath;
                                     
-                                    // C24 FIX: Defensively ensure /assets/ prefix exists for showcase report
                                     if (reportName === 'showcase' && imageBasePath && !imageBasePath.startsWith('/assets/')) {
                                         console.warn(`[reportStore] Correcting image basePath for '${reportName}'. Path was missing '/assets' prefix. Original: "${manifestData.basePath}"`);
                                         imageBasePath = `/assets${manifestData.basePath.startsWith('/') ? '' : '/'}${manifestData.basePath}`;
                                     }
                                     
-                                    // C22 Fix: Handle single, non-numbered images
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
@@ -17667,11 +17713,64 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 }
             },
             
-            // NOTE: All other actions (nextPage, prevPage, etc.) remain unchanged.
-            // They are omitted here for brevity but are still part of the store.
-            // ...
-            // ... (All other actions from the original file) ...
-            // ...
+            // C27 Autoplay Fix: Implement full slideshow logic
+            startSlideshow: () => {
+                const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
+                stopSlideshow(false);
+
+                const currentPage = allPages[currentPageIndex];
+                if (!currentPage || !autoplayEnabled) return;
+
+                const actualDuration = duration / playbackSpeed;
+                const actualDurationMs = actualDuration * 1000;
+                if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
+
+                console.log(`[reportStore] Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
+
+                const nextPageTimer = setTimeout(() => {
+                    if (get().autoplayEnabled) {
+                        console.log(`[reportStore] Autoplay timer finished. Advancing to next page.`);
+                        nextPage();
+                    }
+                }, actualDurationMs + 2000); // 2-second pause before next page
+                set({ nextPageTimer });
+
+                const images = currentPage.imagePrompts[0]?.images;
+                if (!images || images.length <= 1) return;
+
+                const timePerImage = actualDurationMs / images.length;
+                
+                const slideshowTimer = setInterval(() => {
+                    if (!get().autoplayEnabled) {
+                        clearInterval(slideshowTimer);
+                        return;
+                    }
+                    set(state => {
+                        const nextImageIndex = state.currentImageIndex + 1;
+                        if (nextImageIndex < images.length) {
+                            return { currentImageIndex: nextImageIndex };
+                        } else {
+                            // All images shown, stop this interval
+                            clearInterval(slideshowTimer);
+                            return { slideshowTimer: null };
+                        }
+                    });
+                }, timePerImage);
+
+                set({ slideshowTimer });
+            },
+            
+            stopSlideshow: (userInitiated = false) => {
+                const { slideshowTimer, nextPageTimer } = get();
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (nextPageTimer) clearTimeout(nextPageTimer);
+                if (userInitiated) {
+                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
+                } else {
+                    set({ slideshowTimer: null, nextPageTimer: null });
+                }
+            },
+
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
@@ -17703,34 +17802,49 @@ export const useReportStore = create<ReportState & ReportActions>()(
             },
             setGenericPlaybackStatus: (status) => set({ genericPlaybackStatus: status }),
             setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
-            startSlideshow: () => { /* ... unchanged ... */ },
-            nextPage: () => set(state => ({
-                currentPageIndex: (state.currentPageIndex + 1) % state.allPages.length,
-                currentImageIndex: 0,
-            })),
-            prevPage: () => set(state => ({
-                currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
-                currentImageIndex: 0,
-            })),
+
+            nextPage: () => {
+                get().stopSlideshow(false); // Stop any timers before changing page
+                set(state => {
+                    const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
+                    // If autoplay reaches the end, turn it off.
+                    if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
+                        return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
+                    }
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
+                });
+            },
+            prevPage: () => {
+                get().stopSlideshow(true); // User initiated, so disable autoplay
+                set(state => ({
+                    currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
+                    currentImageIndex: 0,
+                }));
+            },
             goToPageByIndex: (pageIndex) => {
+                get().stopSlideshow(true); // User initiated
                 if (pageIndex >= 0 && pageIndex < get().allPages.length) {
                     set({ currentPageIndex: pageIndex, currentImageIndex: 0 });
                 }
             },
-            nextImage: () => set(state => {
-                const currentPage = state.allPages[state.currentPageIndex];
-                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
-                const totalImages = currentPrompt?.images?.length ?? 0;
-                if (totalImages <= 1) return state;
-                return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
-            }),
-            prevImage: () => set(state => {
-                const currentPage = state.allPages[state.currentPageIndex];
-                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
-                const totalImages = currentPrompt?.images?.length ?? 0;
-                if (totalImages <= 1) return state;
-                return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
-            }),
+            nextImage: () => {
+                get().stopSlideshow(true); // User initiated
+                set(state => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
+                    if (totalImages <= 1) return state;
+                    return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
+                });
+            },
+            prevImage: () => {
+                get().stopSlideshow(true); // User initiated
+                set(state => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
+                    if (totalImages <= 1) return state;
+                    return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
+                });
+            },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
@@ -17791,23 +17905,25 @@ export const useReportStore = create<ReportState & ReportActions>()(
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
-            setAutoplay: (enabled) => { get().stopSlideshow(!enabled); set({ autoplayEnabled: enabled }); },
+            setAutoplay: (enabled) => { 
+                get().stopSlideshow(!enabled); 
+                set({ autoplayEnabled: enabled }); 
+                if (enabled) {
+                    set({ currentImageIndex: 0 });
+                }
+            },
             setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            stopSlideshow: (userInitiated = false) => {
-                const { slideshowTimer, nextPageTimer } = get();
-                if (slideshowTimer) clearInterval(slideshowTimer);
-                if (nextPageTimer) clearTimeout(nextPageTimer);
-                if (userInitiated) {
-                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
-                } else {
-                    set({ slideshowTimer: null, nextPageTimer: null });
+            setPlaybackSpeed: (speed) => {
+                set({ playbackSpeed: speed });
+                // If currently playing, restart the slideshow with the new speed
+                if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
+                    get().startSlideshow();
                 }
             },
-            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -17834,6 +17950,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
         }
     )
 );
+
 
 // Hook for components to subscribe to state changes
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
@@ -17863,13 +17980,13 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
-        chatPanelWidth,
+        chatPanelWidth, playbackStatus, autoplayEnabled,
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
         allPages: state.allPages,
@@ -17887,6 +18004,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isContentVisible: state.isContentVisible,
         isLoading: state.isLoading,
         chatPanelWidth: state.chatPanelWidth,
+        playbackStatus: state.playbackStatus,
+        autoplayEnabled: state.autoplayEnabled,
     }));
 
     useEffect(() => {
@@ -17897,6 +18016,13 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
+
+    // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
+    useEffect(() => {
+        if (playbackStatus === 'playing' && autoplayEnabled) {
+            startSlideshow();
+        }
+    }, [playbackStatus, autoplayEnabled, startSlideshow]);
 
     const currentPage = allPages[currentPageIndex];
     const currentPrompt = currentPage?.imagePrompts?.[0];
@@ -17919,7 +18045,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     }
     
     return (
-        <div className="h-full w-full bg-background text-foreground flex">
+        // C27 Fix: Re-add pt-16 to prevent navbar overlap regression
+        <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
@@ -20136,6 +20263,7 @@ The following plan maps the core concepts of the V2V pathway to specific text an
 
 # Date Created: C20
 # Author: AI Model & Curator
+# Updated on: C27 (Restore full image prompts)
 
 - **Key/Value for A0:**
 - **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
@@ -21156,61 +21284,61 @@ export async function handleReportAscentiaStream(io: SocketIOServer, socket: Soc
   "basePath": "/assets/images/whitepaper/",
   "imageGroups": {
     "group_wp-01-cover": {
-      "path": "", "prompt": "A hyper-realistic, cinematic image of a male professional in a futuristic command center...", "alt": "Process as Asset Cover", "baseFileName": "wp-01-cover", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A hyper-realistic, cinematic image of a male professional in a futuristic command center. He stands in the center, orchestrating a complex, glowing blue data visualization that connects multiple team members at their workstations. The main title 'PROCESS AS ASSET' is prominently displayed in the foreground, with the subtitle 'Capturing Workflow, Accelerating Intelligence' below it. The environment is sleek, modern, and filled with holographic interfaces. Red, abstract data streams are visible in the background, representing raw, chaotic information being structured by the process.", "alt": "Process as Asset Cover", "baseFileName": "wp-01-cover", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-02-executive-summary": {
-      "path": "", "prompt": "A futuristic, holographic dashboard displaying the 'EXECUTIVE SUMMARY'...", "alt": "Executive Summary", "baseFileName": "wp-02-executive-summary", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A futuristic, holographic dashboard displaying the 'EXECUTIVE SUMMARY'. The dashboard shows a flowchart of the DCE Framework, starting from 'THE ORGANIZATIONAL BOTTLENECK' (represented by an hourglass), moving through 'DCE FRAMEWORK' (with icons for Rapid Curation, Seamless Sharing, Instant Iteration), and ending at 'MISSION STREAM'. The overall aesthetic is a clean, dark-themed UI with glowing cyan elements, representing 'ACCELERATING MISSION VELOCITY.'", "alt": "Executive Summary", "baseFileName": "wp-02-executive-summary", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-03-challenge-ad-hoc-ai": {
-      "path": "", "prompt": "A depiction of a frustrated developer at their desk, viewed from behind, representing an 'EFFICIENCY DRAIN'...", "alt": "The Challenge: Ad-Hoc AI Interaction", "baseFileName": "wp-03-challenge-ad-hoc-ai", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A depiction of a frustrated developer at their desk, viewed from behind, representing an 'EFFICIENCY DRAIN'. They are surrounded by multiple monitors displaying lines of code and AI chat interfaces. Glowing blue data streams flow into the desk from the floor but end in chaotic, tangled messes around sticky notes that say 'MAKE IT BETTER,' 'AGAIN,' and 'Try again.' The scene illustrates the friction and unstructured nature of ad-hoc AI interaction.", "alt": "The Challenge: Ad-Hoc AI Interaction", "baseFileName": "wp-03-challenge-ad-hoc-ai", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-04-problem-bloated-context": {
-      "path": "", "prompt": "A powerful, industrial machine is shown spewing a massive, chaotic torrent of glowing red data labeled 'BLOATED CONTEXT'...", "alt": "The Context Problem", "baseFileName": "wp-04-problem-bloated-context", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A powerful, industrial machine is shown spewing a massive, chaotic torrent of glowing red data labeled 'BLOATED CONTEXT'. A holographic screen nearby displays the message 'DROWNING IN DATA, STARVING FOR CONTEXT'. The image visualizes the problem of providing too much, or the wrong, information to an LLM, which is both time-consuming and results in poor output.", "alt": "The Context Problem", "baseFileName": "wp-04-problem-bloated-context", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-05-problem-collaboration-gap": {
-      "path": "", "prompt": "A split-panel image. On the left, a developer's digital 'ghost' is shown leaving their workstation...", "alt": "The Collaboration Gap", "baseFileName": "wp-05-problem-collaboration-gap", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A split-panel image. On the left, a developer's digital 'ghost' is shown leaving their workstation, with the context they were working on dissolving into disconnected particles. On the right, a new developer sits down at the same workstation, looking confused as they try to piece together the fragmented data. A glowing title above reads 'THE COLLABORATING GAP: REINVENTING YESTERDAY'S WORK, TODAY'.", "alt": "The Collaboration Gap", "baseFileName": "wp-05-problem-collaboration-gap", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-06-problem-iteration-overhead": {
-      "path": "", "prompt": "A modern depiction of the myth of Sisyphus. A developer is shown pushing a massive, glowing block of data up a digital mountain...", "alt": "The Iteration Overhead", "baseFileName": "wp-06-problem-iteration-overhead", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A modern depiction of the myth of Sisyphus. A developer is shown pushing a massive, glowing block of data up a digital mountain. The block represents a complex dataset. As they near the top, a piece of feedback causes the block to crumble and roll back to the bottom, forcing them to start the process of reconstructing the context all over again. The title 'The Sisyphean Task of Revision' floats in the starry sky above.", "alt": "The Iteration Overhead", "baseFileName": "wp-06-problem-iteration-overhead", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-07-problem-auditability-vacuum": {
-      "path": "", "prompt": "A massive, monolithic black cube, representing 'THE BLACK BOX OF COLLABORATION,' sits in a vast server room...", "alt": "The Auditability Vacuum", "baseFileName": "wp-07-problem-auditability-vacuum", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A massive, monolithic black cube, representing 'THE BLACK BOX OF COLLABORATION,' sits in a vast server room. A timeline of a project, composed of prompts and code, flows into the cube but becomes unreadable and unstructured inside. The image visualizes the lack of a structured, reusable record in typical human-AI interactions.", "alt": "The Auditability Vacuum", "baseFileName": "wp-07-problem-auditability-vacuum", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-08-solution-dce": {
-      "path": "", "prompt": "A female developer is working at a futuristic computer. A glowing blue data stream flows from her, representing 'THE NEXT EVOLUTION OF HUMAN-AI TEAMING.'...", "alt": "The Solution: The Data Curation Environment", "baseFileName": "wp-08-solution-dce", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A female developer is working at a futuristic computer. A glowing blue data stream flows from her, representing 'THE NEXT EVOLUTION OF HUMAN-AI TEAMING.' This stream interacts with three key capability icons: 'Precision Curation,' 'Parallel Scrutiny,' and 'Persistent Knowledge Graph,' before flowing into the main interface, showing a structured and efficient workflow.", "alt": "The Solution: The Data Curation Environment", "baseFileName": "wp-08-solution-dce", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-09-feature-precision-curation": {
-      "path": "", "prompt": "An operator interacts with a holographic file management interface. They are using simple checkboxes to select various file types...", "alt": "Precision Context Curation", "baseFileName": "wp-09-feature-precision-curation", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "An operator interacts with a holographic file management interface. They are using simple checkboxes to select various file types (PDF, code, spreadsheets). A clean, precise beam of light, representing the curated context, flows from the selected files towards a destination labeled 'Precision In, Perfection Out: The Art of Curation.'", "alt": "Precision Context Curation", "baseFileName": "wp-09-feature-precision-curation", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-10-feature-parallel-scrutiny": {
-      "path": "", "prompt": "An operator stands before a large, futuristic touch-screen panel labeled 'DCE's Parallel Co-Pilot Panel.'...", "alt": "Parallel AI Scrutiny", "baseFileName": "wp-10-feature-parallel-scrutiny", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "An operator stands before a large, futuristic touch-screen panel labeled 'DCE's Parallel Co-Pilot Panel.' The panel displays three different AI-generated solutions (A, B, C) side-by-side with an 'Integrated Diff Viewer' highlighting the changes. The operator is comparing the solutions before committing, illustrating a 'Rapid, Low-Risk Iteration Loop.'", "alt": "Parallel AI Scrutiny", "baseFileName": "wp-10-feature-parallel-scrutiny", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-11-feature-knowledge-graph": {
-      "path": "", "prompt": "An operator stands in a vast, modern library-like space, representing 'The Architecture of Institutional Memory.'...", "alt": "Persistent Knowledge Graph", "baseFileName": "wp-11-feature-knowledge-graph", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "An operator stands in a vast, modern library-like space, representing 'The Architecture of Institutional Memory.' They are interacting with a 'Cycle Navigator' to explore a massive, glowing 'Persistent Knowledge Graph.' Each node in the graph is a 'CAPTURED CYCLE' containing the curated context, user intent, and AI solutions for a step in the project's history.", "alt": "Persistent Knowledge Graph", "baseFileName": "wp-11-feature-knowledge-graph", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-12-process-as-asset": {
-      "path": "", "prompt": "A central glowing orb labeled 'DCE' acts as a transformation engine...", "alt": "Transforming the Process into an Asset", "baseFileName": "wp-12-process-as-asset", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A central glowing orb labeled 'DCE' acts as a transformation engine. On the left, chaotic, multi-colored data streams ('CAPTURE THE PROCESS') flow in. On the right, clean, structured, and valuable 'KNOWLEDGE ASSETS' flow out, branching off to empower various teams. The image visualizes the core theme of turning the workflow itself into a valuable asset.", "alt": "Transforming the Process into an Asset", "baseFileName": "wp-12-process-as-asset", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-13-benefit-shareable-context": {
-      "path": "", "prompt": "A seamless handoff between two professionals. One passes a glowing, versioned data package labeled 'Curated Context: Selection Set v4.2'...", "alt": "The Curated Context as a Shareable Asset", "baseFileName": "wp-13-benefit-shareable-context", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A seamless handoff between two professionals. One passes a glowing, versioned data package labeled 'Curated Context: Selection Set v4.2' to the other. A diagram in the background contrasts a 'Chaotic, Fragmented Workflow' with the 'Elimination of Duplication' achieved through this seamless handoff, highlighting the 'Continuity of Context.'", "alt": "The Curated Context as a Shareable Asset", "baseFileName": "wp-13-benefit-shareable-context", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-14-benefit-accelerated-iteration": {
-      "path": "", "prompt": "A developer uses a futuristic interface labeled 'DCE' to perform 'Surgical Precision at Systemic Scale.'...", "alt": "Accelerating Iteration and Maintenance", "baseFileName": "wp-14-benefit-accelerated-iteration", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A developer uses a futuristic interface labeled 'DCE' to perform 'Surgical Precision at Systemic Scale.' They are targeting a specific, glowing facet of a massive, complex crystal structure (representing a complex system) with a precise beam of energy, making a targeted change without affecting the rest of the structure.", "alt": "Accelerating Iteration and Maintenance", "baseFileName": "wp-14-benefit-accelerated-iteration", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-15-benefit-scaling-expertise": {
-      "path": "", "prompt": "A manager and a new employee stand in a sustainable, solarpunk-style office. They are reviewing a 'PROJECT KNOWLEDGE GRAPH'...", "alt": "Scaling Expertise and Ensuring Auditability", "baseFileName": "wp-15-benefit-scaling-expertise", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A manager and a new employee stand in a sustainable, solarpunk-style office. They are reviewing a 'PROJECT KNOWLEDGE GRAPH' on a large, transparent screen, specifically looking at 'CYCLE C-138: AFTER-ACTION REVIEW.' The tagline reads 'Every Decision, a Lesson. Every Action, an Asset.'", "alt": "Scaling Expertise and Ensuring Auditability", "baseFileName": "wp-15-benefit-scaling-expertise", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-16-use-case-spotlight": {
-      "path": "", "prompt": "A split-screen comparison. On the left, 'TRADITIONAL WORKFLOW (WEEKS),' a frustrated analyst is buried in paperwork...", "alt": "Use Case Spotlight: Rapid Development", "baseFileName": "wp-16-use-case-spotlight", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A split-screen comparison. On the left, 'TRADITIONAL WORKFLOW (WEEKS),' a frustrated analyst is buried in paperwork under dim lighting. On the right, 'DCE WORKFLOW (HOURS),' a confident professional uses a futuristic, glowing interface to complete the same task in a fraction of the time, with a timer showing '00:03:45'.", "alt": "Use Case Spotlight: Rapid Development", "baseFileName": "wp-16-use-case-spotlight", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-17-use-case-traditional": {
-      "path": "", "prompt": "A dark, cluttered office representing 'THE DRUDGERY OF MANUAL REVISION.'...", "alt": "The Traditional Workflow (Weeks)", "baseFileName": "wp-17-use-case-traditional", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A dark, cluttered office representing 'THE DRUDGERY OF MANUAL REVISION.' An analyst is surrounded by towering stacks of paper, manually searching and editing files under the oppressive flowchart of a 'BUREAUCRATIC REVIEW PROCESS' displayed on a monitor.", "alt": "The Traditional Workflow (Weeks)", "baseFileName": "wp-17-use-case-traditional", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-18-use-case-dce": {
-      "path": "", "prompt": "A clean, futuristic interface showing 'The Agility of Instant Feedback.'...", "alt": "The DCE Workflow (Hours)", "baseFileName": "wp-18-use-case-dce", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A clean, futuristic interface showing 'The Agility of Instant Feedback.' An operator touches a screen, progressing through a simple three-step process: '1. CURATE,' '2. AUTOMATE,' and '3. REVIEW & ACCEPT.' The final step shows a diff view with a green 'Accept' button being pressed.", "alt": "The DCE Workflow (Hours)", "baseFileName": "wp-18-use-case-dce", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-19-conclusion": {
-      "path": "", "prompt": "A sleek, futuristic spacecraft, representing the organization's mission, is shown accelerating to light speed...", "alt": "Conclusion", "baseFileName": "wp-19-conclusion", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A sleek, futuristic spacecraft, representing the organization's mission, is shown accelerating to light speed, leaving a trail of light. The tagline reads 'ACHIEVING THE MISSION AT THE SPEED OF THOUGHT.' A glowing 'PERSISTENT KNOWLEDGE GRAPH' is shown as the engine powering this acceleration.", "alt": "Conclusion", "baseFileName": "wp-19-conclusion", "fileExtension": ".webp", "imageCount": 1
     }
   }
 }

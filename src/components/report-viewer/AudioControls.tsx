@@ -42,7 +42,8 @@ const AudioControls: React.FC = () => {
     };
 
     setPlaybackStatus('generating');
-    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
+    // C27 TTS Fix: Remove tldr from the narrated text.
+    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
 
     try {
       const response = await fetch('/api/tts', {
@@ -203,8 +204,9 @@ const AudioControls: React.FC = () => {
         ))}
       </select>
 
-      <label className="flex items-center gap-1 cursor-pointer">
-        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
+      {/* C27 Autoplay Prominence Fix */}
+      <label className={`flex items-center gap-2 cursor-pointer border rounded-md px-3 py-1 text-xs font-semibold transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${autoplayEnabled ? 'bg-primary/20 border-primary' : 'border-border'}`}>
+        <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} className="h-4 w-4 accent-primary" />
         Autoplay
       </label>
     </div>

@@ -235,13 +235,11 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     const images: ReportImage[] = [];
                                     let imageBasePath = manifestData.basePath;
                                     
-                                    // C24 FIX: Defensively ensure /assets/ prefix exists for showcase report
                                     if (reportName === 'showcase' && imageBasePath && !imageBasePath.startsWith('/assets/')) {
                                         console.warn(`[reportStore] Correcting image basePath for '${reportName}'. Path was missing '/assets' prefix. Original: "${manifestData.basePath}"`);
                                         imageBasePath = `/assets${manifestData.basePath.startsWith('/') ? '' : '/'}${manifestData.basePath}`;
                                     }
                                     
-                                    // C22 Fix: Handle single, non-numbered images
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
@@ -298,11 +296,64 @@ export const useReportStore = create<ReportState & ReportActions>()(
                 }
             },
             
-            // NOTE: All other actions (nextPage, prevPage, etc.) remain unchanged.
-            // They are omitted here for brevity but are still part of the store.
-            // ...
-            // ... (All other actions from the original file) ...
-            // ...
+            // C27 Autoplay Fix: Implement full slideshow logic
+            startSlideshow: () => {
+                const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
+                stopSlideshow(false);
+
+                const currentPage = allPages[currentPageIndex];
+                if (!currentPage || !autoplayEnabled) return;
+
+                const actualDuration = duration / playbackSpeed;
+                const actualDurationMs = actualDuration * 1000;
+                if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
+
+                console.log(`[reportStore] Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
+
+                const nextPageTimer = setTimeout(() => {
+                    if (get().autoplayEnabled) {
+                        console.log(`[reportStore] Autoplay timer finished. Advancing to next page.`);
+                        nextPage();
+                    }
+                }, actualDurationMs + 2000); // 2-second pause before next page
+                set({ nextPageTimer });
+
+                const images = currentPage.imagePrompts[0]?.images;
+                if (!images || images.length <= 1) return;
+
+                const timePerImage = actualDurationMs / images.length;
+                
+                const slideshowTimer = setInterval(() => {
+                    if (!get().autoplayEnabled) {
+                        clearInterval(slideshowTimer);
+                        return;
+                    }
+                    set(state => {
+                        const nextImageIndex = state.currentImageIndex + 1;
+                        if (nextImageIndex < images.length) {
+                            return { currentImageIndex: nextImageIndex };
+                        } else {
+                            // All images shown, stop this interval
+                            clearInterval(slideshowTimer);
+                            return { slideshowTimer: null };
+                        }
+                    });
+                }, timePerImage);
+
+                set({ slideshowTimer });
+            },
+            
+            stopSlideshow: (userInitiated = false) => {
+                const { slideshowTimer, nextPageTimer } = get();
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (nextPageTimer) clearTimeout(nextPageTimer);
+                if (userInitiated) {
+                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
+                } else {
+                    set({ slideshowTimer: null, nextPageTimer: null });
+                }
+            },
+
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
@@ -334,34 +385,49 @@ export const useReportStore = create<ReportState & ReportActions>()(
             },
             setGenericPlaybackStatus: (status) => set({ genericPlaybackStatus: status }),
             setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
-            startSlideshow: () => { /* ... unchanged ... */ },
-            nextPage: () => set(state => ({
-                currentPageIndex: (state.currentPageIndex + 1) % state.allPages.length,
-                currentImageIndex: 0,
-            })),
-            prevPage: () => set(state => ({
-                currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
-                currentImageIndex: 0,
-            })),
+
+            nextPage: () => {
+                get().stopSlideshow(false); // Stop any timers before changing page
+                set(state => {
+                    const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
+                    // If autoplay reaches the end, turn it off.
+                    if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
+                        return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
+                    }
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
+                });
+            },
+            prevPage: () => {
+                get().stopSlideshow(true); // User initiated, so disable autoplay
+                set(state => ({
+                    currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
+                    currentImageIndex: 0,
+                }));
+            },
             goToPageByIndex: (pageIndex) => {
+                get().stopSlideshow(true); // User initiated
                 if (pageIndex >= 0 && pageIndex < get().allPages.length) {
                     set({ currentPageIndex: pageIndex, currentImageIndex: 0 });
                 }
             },
-            nextImage: () => set(state => {
-                const currentPage = state.allPages[state.currentPageIndex];
-                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
-                const totalImages = currentPrompt?.images?.length ?? 0;
-                if (totalImages <= 1) return state;
-                return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
-            }),
-            prevImage: () => set(state => {
-                const currentPage = state.allPages[state.currentPageIndex];
-                const currentPrompt = currentPage?.imagePrompts?.[0]; // Safely access first prompt
-                const totalImages = currentPrompt?.images?.length ?? 0;
-                if (totalImages <= 1) return state;
-                return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
-            }),
+            nextImage: () => {
+                get().stopSlideshow(true); // User initiated
+                set(state => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
+                    if (totalImages <= 1) return state;
+                    return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
+                });
+            },
+            prevImage: () => {
+                get().stopSlideshow(true); // User initiated
+                set(state => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
+                    if (totalImages <= 1) return state;
+                    return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
+                });
+            },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
@@ -422,23 +488,25 @@ export const useReportStore = create<ReportState & ReportActions>()(
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
-            setAutoplay: (enabled) => { get().stopSlideshow(!enabled); set({ autoplayEnabled: enabled }); },
+            setAutoplay: (enabled) => { 
+                get().stopSlideshow(!enabled); 
+                set({ autoplayEnabled: enabled }); 
+                if (enabled) {
+                    set({ currentImageIndex: 0 });
+                }
+            },
             setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            stopSlideshow: (userInitiated = false) => {
-                const { slideshowTimer, nextPageTimer } = get();
-                if (slideshowTimer) clearInterval(slideshowTimer);
-                if (nextPageTimer) clearTimeout(nextPageTimer);
-                if (userInitiated) {
-                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
-                } else {
-                    set({ slideshowTimer: null, nextPageTimer: null });
+            setPlaybackSpeed: (speed) => {
+                set({ playbackSpeed: speed });
+                // If currently playing, restart the slideshow with the new speed
+                if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
+                    get().startSlideshow();
                 }
             },
-            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -465,6 +533,7 @@ export const useReportStore = create<ReportState & ReportActions>()(
         }
     )
 );
+
 
 // Hook for components to subscribe to state changes
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {

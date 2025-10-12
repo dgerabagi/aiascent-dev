@@ -3,61 +3,61 @@
   "basePath": "/assets/images/whitepaper/",
   "imageGroups": {
     "group_wp-01-cover": {
-      "path": "", "prompt": "A hyper-realistic, cinematic image of a male professional in a futuristic command center...", "alt": "Process as Asset Cover", "baseFileName": "wp-01-cover", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A hyper-realistic, cinematic image of a male professional in a futuristic command center. He stands in the center, orchestrating a complex, glowing blue data visualization that connects multiple team members at their workstations. The main title 'PROCESS AS ASSET' is prominently displayed in the foreground, with the subtitle 'Capturing Workflow, Accelerating Intelligence' below it. The environment is sleek, modern, and filled with holographic interfaces. Red, abstract data streams are visible in the background, representing raw, chaotic information being structured by the process.", "alt": "Process as Asset Cover", "baseFileName": "wp-01-cover", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-02-executive-summary": {
-      "path": "", "prompt": "A futuristic, holographic dashboard displaying the 'EXECUTIVE SUMMARY'...", "alt": "Executive Summary", "baseFileName": "wp-02-executive-summary", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A futuristic, holographic dashboard displaying the 'EXECUTIVE SUMMARY'. The dashboard shows a flowchart of the DCE Framework, starting from 'THE ORGANIZATIONAL BOTTLENECK' (represented by an hourglass), moving through 'DCE FRAMEWORK' (with icons for Rapid Curation, Seamless Sharing, Instant Iteration), and ending at 'MISSION STREAM'. The overall aesthetic is a clean, dark-themed UI with glowing cyan elements, representing 'ACCELERATING MISSION VELOCITY.'", "alt": "Executive Summary", "baseFileName": "wp-02-executive-summary", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-03-challenge-ad-hoc-ai": {
-      "path": "", "prompt": "A depiction of a frustrated developer at their desk, viewed from behind, representing an 'EFFICIENCY DRAIN'...", "alt": "The Challenge: Ad-Hoc AI Interaction", "baseFileName": "wp-03-challenge-ad-hoc-ai", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A depiction of a frustrated developer at their desk, viewed from behind, representing an 'EFFICIENCY DRAIN'. They are surrounded by multiple monitors displaying lines of code and AI chat interfaces. Glowing blue data streams flow into the desk from the floor but end in chaotic, tangled messes around sticky notes that say 'MAKE IT BETTER,' 'AGAIN,' and 'Try again.' The scene illustrates the friction and unstructured nature of ad-hoc AI interaction.", "alt": "The Challenge: Ad-Hoc AI Interaction", "baseFileName": "wp-03-challenge-ad-hoc-ai", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-04-problem-bloated-context": {
-      "path": "", "prompt": "A powerful, industrial machine is shown spewing a massive, chaotic torrent of glowing red data labeled 'BLOATED CONTEXT'...", "alt": "The Context Problem", "baseFileName": "wp-04-problem-bloated-context", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A powerful, industrial machine is shown spewing a massive, chaotic torrent of glowing red data labeled 'BLOATED CONTEXT'. A holographic screen nearby displays the message 'DROWNING IN DATA, STARVING FOR CONTEXT'. The image visualizes the problem of providing too much, or the wrong, information to an LLM, which is both time-consuming and results in poor output.", "alt": "The Context Problem", "baseFileName": "wp-04-problem-bloated-context", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-05-problem-collaboration-gap": {
-      "path": "", "prompt": "A split-panel image. On the left, a developer's digital 'ghost' is shown leaving their workstation...", "alt": "The Collaboration Gap", "baseFileName": "wp-05-problem-collaboration-gap", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A split-panel image. On the left, a developer's digital 'ghost' is shown leaving their workstation, with the context they were working on dissolving into disconnected particles. On the right, a new developer sits down at the same workstation, looking confused as they try to piece together the fragmented data. A glowing title above reads 'THE COLLABORATING GAP: REINVENTING YESTERDAY'S WORK, TODAY'.", "alt": "The Collaboration Gap", "baseFileName": "wp-05-problem-collaboration-gap", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-06-problem-iteration-overhead": {
-      "path": "", "prompt": "A modern depiction of the myth of Sisyphus. A developer is shown pushing a massive, glowing block of data up a digital mountain...", "alt": "The Iteration Overhead", "baseFileName": "wp-06-problem-iteration-overhead", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A modern depiction of the myth of Sisyphus. A developer is shown pushing a massive, glowing block of data up a digital mountain. The block represents a complex dataset. As they near the top, a piece of feedback causes the block to crumble and roll back to the bottom, forcing them to start the process of reconstructing the context all over again. The title 'The Sisyphean Task of Revision' floats in the starry sky above.", "alt": "The Iteration Overhead", "baseFileName": "wp-06-problem-iteration-overhead", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-07-problem-auditability-vacuum": {
-      "path": "", "prompt": "A massive, monolithic black cube, representing 'THE BLACK BOX OF COLLABORATION,' sits in a vast server room...", "alt": "The Auditability Vacuum", "baseFileName": "wp-07-problem-auditability-vacuum", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A massive, monolithic black cube, representing 'THE BLACK BOX OF COLLABORATION,' sits in a vast server room. A timeline of a project, composed of prompts and code, flows into the cube but becomes unreadable and unstructured inside. The image visualizes the lack of a structured, reusable record in typical human-AI interactions.", "alt": "The Auditability Vacuum", "baseFileName": "wp-07-problem-auditability-vacuum", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-08-solution-dce": {
-      "path": "", "prompt": "A female developer is working at a futuristic computer. A glowing blue data stream flows from her, representing 'THE NEXT EVOLUTION OF HUMAN-AI TEAMING.'...", "alt": "The Solution: The Data Curation Environment", "baseFileName": "wp-08-solution-dce", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A female developer is working at a futuristic computer. A glowing blue data stream flows from her, representing 'THE NEXT EVOLUTION OF HUMAN-AI TEAMING.' This stream interacts with three key capability icons: 'Precision Curation,' 'Parallel Scrutiny,' and 'Persistent Knowledge Graph,' before flowing into the main interface, showing a structured and efficient workflow.", "alt": "The Solution: The Data Curation Environment", "baseFileName": "wp-08-solution-dce", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-09-feature-precision-curation": {
-      "path": "", "prompt": "An operator interacts with a holographic file management interface. They are using simple checkboxes to select various file types...", "alt": "Precision Context Curation", "baseFileName": "wp-09-feature-precision-curation", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "An operator interacts with a holographic file management interface. They are using simple checkboxes to select various file types (PDF, code, spreadsheets). A clean, precise beam of light, representing the curated context, flows from the selected files towards a destination labeled 'Precision In, Perfection Out: The Art of Curation.'", "alt": "Precision Context Curation", "baseFileName": "wp-09-feature-precision-curation", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-10-feature-parallel-scrutiny": {
-      "path": "", "prompt": "An operator stands before a large, futuristic touch-screen panel labeled 'DCE's Parallel Co-Pilot Panel.'...", "alt": "Parallel AI Scrutiny", "baseFileName": "wp-10-feature-parallel-scrutiny", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "An operator stands before a large, futuristic touch-screen panel labeled 'DCE's Parallel Co-Pilot Panel.' The panel displays three different AI-generated solutions (A, B, C) side-by-side with an 'Integrated Diff Viewer' highlighting the changes. The operator is comparing the solutions before committing, illustrating a 'Rapid, Low-Risk Iteration Loop.'", "alt": "Parallel AI Scrutiny", "baseFileName": "wp-10-feature-parallel-scrutiny", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-11-feature-knowledge-graph": {
-      "path": "", "prompt": "An operator stands in a vast, modern library-like space, representing 'The Architecture of Institutional Memory.'...", "alt": "Persistent Knowledge Graph", "baseFileName": "wp-11-feature-knowledge-graph", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "An operator stands in a vast, modern library-like space, representing 'The Architecture of Institutional Memory.' They are interacting with a 'Cycle Navigator' to explore a massive, glowing 'Persistent Knowledge Graph.' Each node in the graph is a 'CAPTURED CYCLE' containing the curated context, user intent, and AI solutions for a step in the project's history.", "alt": "Persistent Knowledge Graph", "baseFileName": "wp-11-feature-knowledge-graph", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-12-process-as-asset": {
-      "path": "", "prompt": "A central glowing orb labeled 'DCE' acts as a transformation engine...", "alt": "Transforming the Process into an Asset", "baseFileName": "wp-12-process-as-asset", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A central glowing orb labeled 'DCE' acts as a transformation engine. On the left, chaotic, multi-colored data streams ('CAPTURE THE PROCESS') flow in. On the right, clean, structured, and valuable 'KNOWLEDGE ASSETS' flow out, branching off to empower various teams. The image visualizes the core theme of turning the workflow itself into a valuable asset.", "alt": "Transforming the Process into an Asset", "baseFileName": "wp-12-process-as-asset", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-13-benefit-shareable-context": {
-      "path": "", "prompt": "A seamless handoff between two professionals. One passes a glowing, versioned data package labeled 'Curated Context: Selection Set v4.2'...", "alt": "The Curated Context as a Shareable Asset", "baseFileName": "wp-13-benefit-shareable-context", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A seamless handoff between two professionals. One passes a glowing, versioned data package labeled 'Curated Context: Selection Set v4.2' to the other. A diagram in the background contrasts a 'Chaotic, Fragmented Workflow' with the 'Elimination of Duplication' achieved through this seamless handoff, highlighting the 'Continuity of Context.'", "alt": "The Curated Context as a Shareable Asset", "baseFileName": "wp-13-benefit-shareable-context", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-14-benefit-accelerated-iteration": {
-      "path": "", "prompt": "A developer uses a futuristic interface labeled 'DCE' to perform 'Surgical Precision at Systemic Scale.'...", "alt": "Accelerating Iteration and Maintenance", "baseFileName": "wp-14-benefit-accelerated-iteration", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A developer uses a futuristic interface labeled 'DCE' to perform 'Surgical Precision at Systemic Scale.' They are targeting a specific, glowing facet of a massive, complex crystal structure (representing a complex system) with a precise beam of energy, making a targeted change without affecting the rest of the structure.", "alt": "Accelerating Iteration and Maintenance", "baseFileName": "wp-14-benefit-accelerated-iteration", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-15-benefit-scaling-expertise": {
-      "path": "", "prompt": "A manager and a new employee stand in a sustainable, solarpunk-style office. They are reviewing a 'PROJECT KNOWLEDGE GRAPH'...", "alt": "Scaling Expertise and Ensuring Auditability", "baseFileName": "wp-15-benefit-scaling-expertise", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A manager and a new employee stand in a sustainable, solarpunk-style office. They are reviewing a 'PROJECT KNOWLEDGE GRAPH' on a large, transparent screen, specifically looking at 'CYCLE C-138: AFTER-ACTION REVIEW.' The tagline reads 'Every Decision, a Lesson. Every Action, an Asset.'", "alt": "Scaling Expertise and Ensuring Auditability", "baseFileName": "wp-15-benefit-scaling-expertise", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-16-use-case-spotlight": {
-      "path": "", "prompt": "A split-screen comparison. On the left, 'TRADITIONAL WORKFLOW (WEEKS),' a frustrated analyst is buried in paperwork...", "alt": "Use Case Spotlight: Rapid Development", "baseFileName": "wp-16-use-case-spotlight", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A split-screen comparison. On the left, 'TRADITIONAL WORKFLOW (WEEKS),' a frustrated analyst is buried in paperwork under dim lighting. On the right, 'DCE WORKFLOW (HOURS),' a confident professional uses a futuristic, glowing interface to complete the same task in a fraction of the time, with a timer showing '00:03:45'.", "alt": "Use Case Spotlight: Rapid Development", "baseFileName": "wp-16-use-case-spotlight", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-17-use-case-traditional": {
-      "path": "", "prompt": "A dark, cluttered office representing 'THE DRUDGERY OF MANUAL REVISION.'...", "alt": "The Traditional Workflow (Weeks)", "baseFileName": "wp-17-use-case-traditional", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A dark, cluttered office representing 'THE DRUDGERY OF MANUAL REVISION.' An analyst is surrounded by towering stacks of paper, manually searching and editing files under the oppressive flowchart of a 'BUREAUCRATIC REVIEW PROCESS' displayed on a monitor.", "alt": "The Traditional Workflow (Weeks)", "baseFileName": "wp-17-use-case-traditional", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-18-use-case-dce": {
-      "path": "", "prompt": "A clean, futuristic interface showing 'The Agility of Instant Feedback.'...", "alt": "The DCE Workflow (Hours)", "baseFileName": "wp-18-use-case-dce", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A clean, futuristic interface showing 'The Agility of Instant Feedback.' An operator touches a screen, progressing through a simple three-step process: '1. CURATE,' '2. AUTOMATE,' and '3. REVIEW & ACCEPT.' The final step shows a diff view with a green 'Accept' button being pressed.", "alt": "The DCE Workflow (Hours)", "baseFileName": "wp-18-use-case-dce", "fileExtension": ".webp", "imageCount": 1
     },
     "group_wp-19-conclusion": {
-      "path": "", "prompt": "A sleek, futuristic spacecraft, representing the organization's mission, is shown accelerating to light speed...", "alt": "Conclusion", "baseFileName": "wp-19-conclusion", "fileExtension": ".webp", "imageCount": 1
+      "path": "", "prompt": "A sleek, futuristic spacecraft, representing the organization's mission, is shown accelerating to light speed, leaving a trail of light. The tagline reads 'ACHIEVING THE MISSION AT THE SPEED OF THOUGHT.' A glowing 'PERSISTENT KNOWLEDGE GRAPH' is shown as the engine powering this acceleration.", "alt": "Conclusion", "baseFileName": "wp-19-conclusion", "fileExtension": ".webp", "imageCount": 1
     }
   }
 }

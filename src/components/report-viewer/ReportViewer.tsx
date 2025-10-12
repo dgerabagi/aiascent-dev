@@ -19,13 +19,13 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
-        chatPanelWidth,
+        chatPanelWidth, playbackStatus, autoplayEnabled,
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
         allPages: state.allPages,
@@ -43,6 +43,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isContentVisible: state.isContentVisible,
         isLoading: state.isLoading,
         chatPanelWidth: state.chatPanelWidth,
+        playbackStatus: state.playbackStatus,
+        autoplayEnabled: state.autoplayEnabled,
     }));
 
     useEffect(() => {
@@ -53,6 +55,13 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
+
+    // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
+    useEffect(() => {
+        if (playbackStatus === 'playing' && autoplayEnabled) {
+            startSlideshow();
+        }
+    }, [playbackStatus, autoplayEnabled, startSlideshow]);
 
     const currentPage = allPages[currentPageIndex];
     const currentPrompt = currentPage?.imagePrompts?.[0];
@@ -75,7 +84,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     }
     
     return (
-        <div className="h-full w-full bg-background text-foreground flex">
+        // C27 Fix: Re-add pt-16 to prevent navbar overlap regression
+        <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
