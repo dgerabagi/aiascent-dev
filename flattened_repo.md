@@ -1,16 +1,16 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T17:51:54.196Z
+  Date Generated: 2025-10-12T18:13:36.222Z
   ---
   Total Files: 108
-  Approx. Tokens: 275561
+  Approx. Tokens: 275695
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. public\data\showcase_content.json (51202 tokens)
 2. context\automationsaas\flattened-repo.md (45210 tokens)
-3. public\data\showcase_imagemanifest.json (25512 tokens)
+3. public\data\showcase_imagemanifest.json (25514 tokens)
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
@@ -40,7 +40,7 @@
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
-21. next.config.mjs - Lines: 13 - Chars: 335 - Tokens: 84
+21. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
 23. src\app\showcase\page.tsx - Lines: 14 - Chars: 398 - Tokens: 100
 24. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
@@ -127,7 +127,7 @@
 105. public\data\whitepaper_content.json - Lines: 145 - Chars: 11956 - Tokens: 2989
 106. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 6144 - Tokens: 1536
 107. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
-108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102048 - Tokens: 25512
+108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -9051,13 +9051,24 @@ This artifact provides a structured format for tracking development tasks for th
 // FILE: next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-images: {
-// Add any domains you need to load images from here if necessary in the future
-remotePatterns: [
-// Example: { protocol: "https", hostname: "example.com" },
-],
-},
-// Add any other Next.js configuration here
+    images: {
+        // Add any domains you need to load images from here if necessary in the future
+        remotePatterns: [
+            // Example: { protocol: "https", hostname: "example.com" },
+        ],
+    },
+    webpack: (config, { isServer }) => {
+        // When building for the server, we don't want to bundle `faiss-node`
+        // because it's a native addon. Next.js/Webpack will try to bundle it,
+        // which fails. Marking it as external tells Webpack to leave it as a
+        // regular `require('faiss-node')` call, which will be resolved by Node.js
+        // at runtime on the server.
+        if (isServer) {
+            config.externals = [...config.externals, 'faiss-node'];
+        }
+
+        return config;
+    },
 };
 
 export default nextConfig;
@@ -20313,7 +20324,7 @@ export async function handleReportAscentiaStream(io: SocketIOServer, socket: Soc
 <file path="public/data/showcase_imagemanifest.json">
 {
   "manifestId": "ascent-report-images-v3",
-  "basePath": "/images/report/",
+  "basePath": "/assets/images/report/",
   "imageGroups": {
     "group_cover-page_prompt-1": {
       "path": "front-matter/cover-page/prompt-1/",

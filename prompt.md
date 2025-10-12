@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 23 - nice work! two issues
+Current Cycle 24 - images fixed! now rag problem remains
+Cycle 23 - nice work! two issues
 Cycle 22 - nice! continue working on homepage and showcase
 Cycle 21 - keep up the iterative improvement
 Cycle 20 - more great work, continue iterative improvement, lots of planning/artifacts to do this cycle
@@ -389,6 +390,75 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 24>
+<Cycle Context>
+nice! images fixed!
+
+so heres the deal with the rag though, when i try to message the AI, i get the first error, that it cannot find the `faiss.index`, so i simply remove the `report_` from the name, but then i get a second error, telling me to add the `report_` to the name.
+</Cycle Context>
+<Ephemeral Context>
+ ⚠ Found a change in next.config.mjs. Restarting the server to apply the changes...
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 1911ms
+ ○ Compiling /api/chat ...
+ ✓ Compiled /api/chat in 1995ms (476 modules)
+[Chat API] RAG Error: Could not load vector store or retrieve documents. Error: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-node\faiss-node\deps\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open C:\Projects\aiascent-dev\public\data\embeddings\report_faiss.index\faiss.index for reading: No such file or directory
+    at readIndex (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:231:32)     
+    at async Promise.all (index 1)
+    at async FaissStore.load (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:233:51)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:53:33)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446     
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)        
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)   
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API] RAG Diagnostic for prompt: "test"
+[Chat API] RAG Error: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-node\faiss-node\deps\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open C:\Projects\aiascent-dev\public\data\embeddings\report_faiss.index\faiss.index for reading: No such file or directory
+ POST /api/chat 200 in 4143ms
+[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.
+[Chat API] RAG Diagnostic for prompt: "test"
+[Chat API] No documents retrieved.
+ POST /api/chat 200 in 1503ms
+[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.
+[Chat API] RAG Diagnostic for prompt: "whats the solution"
+[Chat API] No documents retrieved.
+ POST /api/chat 200 in 886ms
+
+</Ephemeral Context>
+<Previous Cycle 23 Summary of Actions>
+I have analyzed the user's feedback from Cycle 22 and identified the root causes for all four reported issues. My course of action involves targeted fixes to the report viewer's UI components and data handling logic, as well as providing clear instructions for the curator to align the project's data files with the application's expectations.
+
+First, I will address the UI issues in the interactive whitepaper. I will modify the `ImageNavigator` to conditionally hide the image switching controls when there is only one image for a given page. To fix the chat panel resizer that snaps back, I will refactor the `ReportViewer` component to manage the resizable wrapper directly, mirroring the implementation of the horizontal resizer which is known to be stable.
+
+Next, I will correct the data-related bugs. The 404 error on whitepaper images is caused by an incorrect assumption in the `reportStore`'s URL generation logic; I will adjust it to correctly handle filenames for single-image groups. The "Could not load report data" error on the showcase page is due to the `ReportViewer` component being called without the necessary `reportName` prop and a mismatch between the expected and actual data filenames. I will fix the component call and provide instructions in a `<curator_activity>` block for the curator to rename the data files to match the convention the application expects.
+
+1.  **Fix Whitepaper Image 404s (`src/stores/reportStore.ts`):** I will modify the `loadReport` function's image processing loop. The new logic will check if an `imageGroup` has only one image and if its `baseFileName` doesn't end with a number-ready format (like a dash). If so, it will use the `baseFileName` as the complete filename, preventing the erroneous addition of "1" to the URL.
+2.  **Fix Showcase Data Loading (`src/app/showcase/page.tsx`):** I will update the component to correctly call `<ReportViewer />` with the prop `reportName="showcase"`. This will resolve the `GET /data/undefined_content.json` error.
+3.  **Hide Unnecessary UI (`src/components/report-viewer/ImageNavigator.tsx`):** I will add a condition to the image navigation controls (the left/right arrows and the "Image X of Y" text) so that they do not render if `totalImages` is less than or equal to 1.
+4.  **Fix Resizable Chat Panel (`src/components/report-viewer/ReportViewer.tsx` & `ReportChatPanel.tsx`):**
+    *   In `ReportViewer.tsx`, I will import the `Resizable` component and wrap the `<ReportChatPanel />` with it, controlling its width via the `chatPanelWidth` state from the Zustand store. This centralizes the resizer logic and makes its implementation identical to the working horizontal resizer.
+    *   In `ReportChatPanel.tsx`, I will remove the now-redundant `Resizable` wrapper from around the component's main `div`.
+5.  **Add Curator Activity:** I will include a `<curator_activity>` block instructing the curator to rename two files in the `public/data/` directory to match the new `reportName` for the showcase, ensuring the data can be loaded successfully.
+</Previous Cycle 23 Summary of Actions>
+</Cycle 24>
+
 <Cycle 23>
 <Cycle Context>
 still an issue with the images:
@@ -403,37 +473,6 @@ public\assets\images\report\front-matter\cover-page\prompt-1\cover-page-p1-img-2
 
 and then also still getting a rag error (see ephemeral)
 </Cycle Context>
-<Ephemeral Context>
-<rag error>
-[Chat API] RAG Error: Could not load vector store or retrieve documents. Error: Could not import faiss-node. Please install faiss-node as a dependency with, e.g. `npm install -S faiss-node`.
-
-Error: Cannot read properties of undefined (reading 'indexOf')
-    at FaissStore.importFaiss (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:362:19)
-    at async readIndex (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:230:37)
-    at async Promise.all (index 1)
-    at async FaissStore.load (webpack-internal:///(rsc)/./node_modules/@langchain/community/dist/vectorstores/faiss.js:233:51)
-    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:53:33)
-    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
-    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
-    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
-    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
-    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
-    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
-    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
-    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
-    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
-    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
-    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
-    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)        
-    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)   
-    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
-[Chat API] RAG Diagnostic for prompt: "test"
-[Chat API] RAG Error: Could not import faiss-node. Please install faiss-node as a dependency with, e.g. `npm install -S faiss-node`.
-
-Error: Cannot read properties of undefined (reading 'indexOf')
-
-</rag error>
-</Ephemeral Context>
 <Previous Cycle 22 Summary of Actions>
 I have analyzed the tasks for Cycle 21 and formulated a comprehensive plan to address all items. This cycle involves fixing the persistent RAG (Retrieval-Augmented Generation) issues, implementing the content plans for the Mission and Learn pages, and building the interactive whitepaper visualization for the homepage.
 
@@ -2200,16 +2239,16 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T17:51:54.196Z
+  Date Generated: 2025-10-12T18:13:36.222Z
   ---
   Total Files: 108
-  Approx. Tokens: 275561
+  Approx. Tokens: 275695
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. public\data\showcase_content.json (51202 tokens)
 2. context\automationsaas\flattened-repo.md (45210 tokens)
-3. public\data\showcase_imagemanifest.json (25512 tokens)
+3. public\data\showcase_imagemanifest.json (25514 tokens)
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
@@ -2239,7 +2278,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
-21. next.config.mjs - Lines: 13 - Chars: 335 - Tokens: 84
+21. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
 22. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
 23. src\app\showcase\page.tsx - Lines: 14 - Chars: 398 - Tokens: 100
 24. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
@@ -2326,7 +2365,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 105. public\data\whitepaper_content.json - Lines: 145 - Chars: 11956 - Tokens: 2989
 106. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 6144 - Tokens: 1536
 107. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
-108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102048 - Tokens: 25512
+108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -11250,13 +11289,24 @@ This artifact provides a structured format for tracking development tasks for th
 // FILE: next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-images: {
-// Add any domains you need to load images from here if necessary in the future
-remotePatterns: [
-// Example: { protocol: "https", hostname: "example.com" },
-],
-},
-// Add any other Next.js configuration here
+    images: {
+        // Add any domains you need to load images from here if necessary in the future
+        remotePatterns: [
+            // Example: { protocol: "https", hostname: "example.com" },
+        ],
+    },
+    webpack: (config, { isServer }) => {
+        // When building for the server, we don't want to bundle `faiss-node`
+        // because it's a native addon. Next.js/Webpack will try to bundle it,
+        // which fails. Marking it as external tells Webpack to leave it as a
+        // regular `require('faiss-node')` call, which will be resolved by Node.js
+        // at runtime on the server.
+        if (isServer) {
+            config.externals = [...config.externals, 'faiss-node'];
+        }
+
+        return config;
+    },
 };
 
 export default nextConfig;
@@ -22512,7 +22562,7 @@ export async function handleReportAscentiaStream(io: SocketIOServer, socket: Soc
 <file path="public/data/showcase_imagemanifest.json">
 {
   "manifestId": "ascent-report-images-v3",
-  "basePath": "/images/report/",
+  "basePath": "/assets/images/report/",
   "imageGroups": {
     "group_cover-page_prompt-1": {
       "path": "front-matter/cover-page/prompt-1/",
