@@ -233,7 +233,13 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const imageBasePath = manifestData.basePath;
+                                    let imageBasePath = manifestData.basePath;
+                                    
+                                    // C24 FIX: Defensively ensure /assets/ prefix exists for showcase report
+                                    if (reportName === 'showcase' && imageBasePath && !imageBasePath.startsWith('/assets/')) {
+                                        console.warn(`[reportStore] Correcting image basePath for '${reportName}'. Path was missing '/assets' prefix. Original: "${manifestData.basePath}"`);
+                                        imageBasePath = `/assets${manifestData.basePath.startsWith('/') ? '' : '/'}${manifestData.basePath}`;
+                                    }
                                     
                                     // C22 Fix: Handle single, non-numbered images
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {

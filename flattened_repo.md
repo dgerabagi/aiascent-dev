@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T18:13:36.222Z
+  Date Generated: 2025-10-12T18:52:07.811Z
   ---
   Total Files: 108
-  Approx. Tokens: 275695
+  Approx. Tokens: 276315
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (5383 tokens)
+7. src\stores\reportStore.ts (5544 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4331 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
@@ -97,12 +97,12 @@
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-78. src\stores\reportStore.ts - Lines: 466 - Chars: 21531 - Tokens: 5383
+78. src\stores\reportStore.ts - Lines: 472 - Chars: 22173 - Tokens: 5544
 79. src\components\report-viewer\ReportViewer.tsx - Lines: 155 - Chars: 6804 - Tokens: 1701
 80. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 81. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 82. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-83. src\app\api\chat\route.ts - Lines: 140 - Chars: 5769 - Tokens: 1443
+83. src\app\api\chat\route.ts - Lines: 175 - Chars: 7605 - Tokens: 1902
 84. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 85. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 86. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -15208,7 +15208,13 @@ export const useReportStore = create<ReportState & ReportActions>()(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const imageBasePath = manifestData.basePath;
+                                    let imageBasePath = manifestData.basePath;
+                                    
+                                    // C24 FIX: Defensively ensure /assets/ prefix exists for showcase report
+                                    if (reportName === 'showcase' && imageBasePath && !imageBasePath.startsWith('/assets/')) {
+                                        console.warn(`[reportStore] Correcting image basePath for '${reportName}'. Path was missing '/assets' prefix. Original: "${manifestData.basePath}"`);
+                                        imageBasePath = `/assets${manifestData.basePath.startsWith('/') ? '' : '/'}${manifestData.basePath}`;
+                                    }
                                     
                                     // C22 Fix: Handle single, non-numbered images
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
@@ -15902,10 +15908,40 @@ This plan establishes a secure and extensible foundation for integrating LLM-pow
 
 <file path="src/app/api/chat/route.ts">
 import { NextResponse } from 'next/server';
-import { FaissStore } from '@langchain/community/vectorstores/faiss';
-import { OpenAIEmbeddings } from '@langchain/openai';
+import { Index } from 'faiss-node';
 import { promises as fs } from 'fs';
 import path from 'path';
+
+/**
+ * Gets a vector embedding for a single text chunk from the local API.
+ */
+async function getEmbedding(text: string, embeddingUrl: string): Promise<number[] | null> {
+    try {
+        const response = await fetch(embeddingUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                model: 'text-embedding-granite-embedding-278m-multilingual',
+                input: text,
+            }),
+        });
+        if (!response.ok) {
+            const errorBody = await response.text();
+            console.error(`[Chat API] Embedding API error: ${response.status}`, errorBody);
+            return null;
+        }
+        const data = await response.json();
+        if (data?.data?.embedding) {
+            return data.data.embedding;
+        }
+        console.error('[Chat API] Invalid embedding response structure:', data);
+        return null;
+    } catch (error: any) {
+        console.error(`[Chat API] Failed to get embedding for query. Error: ${error.message}`);
+        return null;
+    }
+}
+
 
 export async function POST(request: Request) {
   const { prompt, pageContext } = await request.json();
@@ -15922,38 +15958,43 @@ export async function POST(request: Request) {
   let retrievedContext = '';
   let retrievedDocsLog = 'No documents retrieved.';
   try {
-    const embeddings = new OpenAIEmbeddings({
-      openAIApiKey: 'not-needed',
-      configuration: {
-        baseURL: embeddingUrl,
-      },
-    });
-
     const publicPath = path.join(process.cwd(), 'public');
     const faissPath = path.join(publicPath, 'data', 'embeddings', 'report_faiss.index');
     const chunksPath = path.join(publicPath, 'data', 'embeddings', 'report_chunks.json');
 
-    try {
-      await fs.stat(faissPath);
-      await fs.stat(chunksPath);
-    } catch (e: any) {
-        if (e.code === 'ENOENT') {
-            console.error('[Chat API] RAG Error: Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.');
-            retrievedContext = "RAG system failed: Could not load embedding files.";
+    const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
+    const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
+
+    if (!faissExists || !chunksExist) {
+        const errorMessage = 'Embedding files not found. Please place `report_faiss.index` and `report_chunks.json` in `public/data/embeddings/`.';
+        console.error(`[Chat API] RAG Error: ${errorMessage}`);
+        retrievedContext = `RAG system failed: ${errorMessage}`;
+    } else {
+        // Load index and chunks directly using faiss-node and fs
+        const index = Index.read(faissPath);
+        const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
+        
+        const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
+
+        if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
+            // Search the index
+            const { labels, distances } = index.search(queryEmbedding, 3);
+            
+            if (labels.length > 0) {
+                const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
+                retrievedContext = results.join('\n\n---\n\n');
+                retrievedDocsLog = `Retrieved ${results.length} documents:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
+            }
+        } else if (!queryEmbedding) {
+            retrievedContext = "RAG system failed: Could not generate embedding for the query.";
+            retrievedDocsLog = "RAG Error: Could not generate embedding for the query.";
         } else {
-            console.error(`[Chat API] RAG Error: Could not stat embedding files. Error: ${e.message}`);
-            retrievedContext = `RAG system failed: ${e.message}.`;
+            const errorMessage = `Embedding dimension mismatch. Index dimension: ${index.getDimension()}, Query embedding dimension: ${queryEmbedding.length}. Please regenerate the embedding files.`;
+            console.error(`[Chat API] RAG Error: ${errorMessage}`);
+            retrievedContext = `RAG system failed: ${errorMessage}`;
+            retrievedDocsLog = `RAG Error: ${errorMessage}`;
         }
     }
-
-    if (!retrievedContext) {
-        const vectorStore = await FaissStore.load(faissPath, embeddings);
-        const retriever = vectorStore.asRetriever(3);
-        const results = await retriever.invoke(prompt);
-        retrievedContext = results.map(doc => doc.pageContent).join('\n\n---\n\n');
-        retrievedDocsLog = `Retrieved ${results.length} documents:\n${results.map((doc, i) => `  Doc ${i+1}: "${doc.pageContent.substring(0, 100)}..."`).join('\n')}`;
-    }
-
   } catch (error: any) {
     console.error('[Chat API] RAG Error: Could not load vector store or retrieve documents.', error);
     retrievedContext = `RAG system failed: ${error.message}.`;
