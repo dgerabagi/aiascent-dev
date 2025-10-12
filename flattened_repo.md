@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T19:07:45.695Z
+  Date Generated: 2025-10-12T19:21:58.028Z
   ---
   Total Files: 109
-  Approx. Tokens: 278058
+  Approx. Tokens: 278050
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -124,7 +124,7 @@
 102. context\aiascentgame\scripts\convert_images_to_webp.js - Lines: 104 - Chars: 3809 - Tokens: 953
 103. context\aiascentgame\scripts\create_report_embedding.js - Lines: 145 - Chars: 5384 - Tokens: 1346
 104. context\aiascentgame\code\ascentiaHandler.ts - Lines: 353 - Chars: 19428 - Tokens: 4857
-105. public\data\whitepaper_content.json - Lines: 145 - Chars: 11956 - Tokens: 2989
+105. public\data\whitepaper_content.json - Lines: 145 - Chars: 11924 - Tokens: 2981
 106. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 6144 - Tokens: 1536
 107. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
@@ -18610,7 +18610,7 @@ export async function handleReportAscentiaStream(io: SocketIOServer, socket: Soc
           "pageId": "wp-01",
           "pageTitle": "Process as Asset",
           "tldr": "A Whitepaper on the Data Curation Environment (DCE)",
-          "content": "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders (NSA, UKILRN, Naval Operations).",
+          "content": "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.",
           "imageGroupIds": ["group_wp-01-cover"]
         },
         {

@@ -57,7 +57,7 @@ Open a terminal and navigate to your project's root directory (`C:\Projects\aias
 
 1.  **Add the remote repository:** Replace the placeholder URL with the one from your new GitHub repository page.
     ```bash
-    git remote add origin https://github.com/YOUR_USERNAME/aiascent-dev.git
+    git remote add origin https://github.com/dgerabagi/aiascent-dev.git
     ```
 
 2.  **Push your local `main` branch to GitHub:**
