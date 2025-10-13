@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T19:49:25.993Z
+  Date Generated: 2025-10-13T20:07:02.935Z
   ---
   Total Files: 120
-  Approx. Tokens: 296303
+  Approx. Tokens: 296283
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -84,7 +84,7 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 297 - Chars: 14063 - Tokens: 3516
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 303 - Chars: 14363 - Tokens: 3591
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -93,7 +93,7 @@
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 208 - Chars: 10431 - Tokens: 2608
+74. src\app\api\chat\route.ts - Lines: 207 - Chars: 9973 - Tokens: 2494
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -102,7 +102,7 @@
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 52 - Chars: 2430 - Tokens: 608
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 52 - Chars: 2506 - Tokens: 627
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -12627,34 +12627,40 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // C39: Make regex more flexible and add robust logging
+            // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
+            console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
             const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
-            console.log('[Chat Panel] Full message from LLM:\n---', fullMessage, '\n---');
-            
             const match = fullMessage.match(suggestionsRegex);
+            let finalSuggestions = DEFAULT_SUGGESTIONS;
+            let cleanedMessage = fullMessage;
+
             if (match && match[1]) {
-                console.log('[Chat Panel] Suggestions block found. Attempting to parse JSON.');
+                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(match[1].trim()));
                 try {
-                    const parsedSuggestions = JSON.parse(match[1]);
-                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string') && parsedSuggestions.length > 0) {
-                        console.log('[Chat Panel] Successfully parsed suggestions:', parsedSuggestions);
-                        setSuggestedPrompts(parsedSuggestions);
+                    const parsed = JSON.parse(match[1].trim());
+                    if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
+                        finalSuggestions = parsed;
+                        console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
                     } else {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
-                        setSuggestedPrompts(DEFAULT_SUGGESTIONS);
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON on stream end:", e);
-                    setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match[1]);
                 }
+                // Clean the suggestions block from the message regardless of successful parsing
+                cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions.');
-                setSuggestedPrompts(DEFAULT_SUGGESTIONS);
             }
 
-            const cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
-            setReportChatMessage(temporaryId, cleanedMessage);
+            setSuggestedPrompts(finalSuggestions);
+
+            // Now, perform final message cleaning (e.g., stripping analysis tags) on the already-suggestions-stripped message
+            const finalContent = parseFinalMessage(cleanedMessage);
+
+            setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
+            // --- END POST-STREAM PROCESSING ---
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -12734,7 +12740,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                <div className={`prose prose-sm max-w-none prose-p:mb-0 prose-li:my-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                <div className={`prose prose-sm max-w-none prose-p:my-1 prose-li:my-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
                                     <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
@@ -14036,22 +14042,23 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// Instruction for generating follow-up questions (C35)
+// C40: Hardened suggestion instruction.
 const suggestionInstruction = `
-Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this:
-:::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::
-Do not include any text outside of the JSON array within these delimiters.`;
+Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this, with no other text after the closing delimiter:
+:::suggestions:::[
+  "Question 1?",
+  "Question 2?"
+]:::end_suggestions:::`;
 
-// C38: New explicit markdown formatting instructions
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
-- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\n\n   More text.".
+- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\\n\\n   More text.".
 - For inline code, use single backticks, for example: \`DCE.vsix\`. Do not add blank lines before or after inline code.
 - For multi-line code blocks, use triple backticks with a language identifier.
+- For tables, use standard markdown table syntax with pipes and hyphens.
 - Avoid using HTML tags like <kbd>. Use markdown alternatives, like backticks for commands.
 `;
 
-// System prompts defined as per A27, updated in C35 for dynamic suggestions, and C38 for formatting
 const systemPrompts = {
     dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
 
@@ -14153,7 +14160,6 @@ User: ${prompt}
 Ascentia:`;
 
   const controller = new AbortController();
-  // C37: Increased timeout to 300 seconds (5 minutes) for model cold starts
   const timeoutId = setTimeout(() => controller.abort(), 300000);
 
   try {
@@ -14192,7 +14198,6 @@ Ascentia:`;
 
   } catch (error: any) {
     clearTimeout(timeoutId);
-    // C17: Enhanced error handling for connection issues
     if (error.name === 'AbortError') {
         const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
         console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
@@ -15093,16 +15098,16 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,
-        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4" {...props} />,
-        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4" {...props} />,
+        ul: ({ node, ...props }) => <ul className="list-disc list-inside my-2 space-y-1" {...props} />,
+        ol: ({ node, ...props }) => <ol className="list-decimal list-inside my-2 space-y-1" {...props} />,
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,
-        // C39 FIX: Add classes for table borders
-        table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-border" {...props} />,
+        // C40 FIX: Use more prominent borders for tables
+        table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-muted-foreground" {...props} />,
         thead: ({ node, ...props }) => <thead className="bg-muted/50" {...props} />,
-        th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-border" {...props} />,
-        td: ({ node, ...props }) => <td className="px-2 py-1 border border-border" {...props} />,
+        th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-muted-foreground" {...props} />,
+        td: ({ node, ...props }) => <td className="px-2 py-1 border border-muted-foreground" {...props} />,
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
           return !inline ? (
@@ -15112,8 +15117,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
               </code>
             </pre>
           ) : (
-            // C39 FIX: Ensure inline code has correct styling and spacing
-            <code className="bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
+            // C40 FIX: Explicitly add `inline` class to prevent block display issues
+            <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
               {children}
             </code>
           );

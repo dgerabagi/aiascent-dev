@@ -16,16 +16,16 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,
-        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4" {...props} />,
-        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4" {...props} />,
+        ul: ({ node, ...props }) => <ul className="list-disc list-inside my-2 space-y-1" {...props} />,
+        ol: ({ node, ...props }) => <ol className="list-decimal list-inside my-2 space-y-1" {...props} />,
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,
-        // C39 FIX: Add classes for table borders
-        table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-border" {...props} />,
+        // C40 FIX: Use more prominent borders for tables
+        table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-muted-foreground" {...props} />,
         thead: ({ node, ...props }) => <thead className="bg-muted/50" {...props} />,
-        th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-border" {...props} />,
-        td: ({ node, ...props }) => <td className="px-2 py-1 border border-border" {...props} />,
+        th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-muted-foreground" {...props} />,
+        td: ({ node, ...props }) => <td className="px-2 py-1 border border-muted-foreground" {...props} />,
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
           return !inline ? (
@@ -35,8 +35,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
               </code>
             </pre>
           ) : (
-            // C39 FIX: Ensure inline code has correct styling and spacing
-            <code className="bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
+            // C40 FIX: Explicitly add `inline` class to prevent block display issues
+            <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
               {children}
             </code>
           );

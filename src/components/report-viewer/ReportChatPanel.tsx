@@ -140,34 +140,40 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // C39: Make regex more flexible and add robust logging
+            // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
+            console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
             const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
-            console.log('[Chat Panel] Full message from LLM:\n---', fullMessage, '\n---');
-            
             const match = fullMessage.match(suggestionsRegex);
+            let finalSuggestions = DEFAULT_SUGGESTIONS;
+            let cleanedMessage = fullMessage;
+
             if (match && match[1]) {
-                console.log('[Chat Panel] Suggestions block found. Attempting to parse JSON.');
+                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(match[1].trim()));
                 try {
-                    const parsedSuggestions = JSON.parse(match[1]);
-                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string') && parsedSuggestions.length > 0) {
-                        console.log('[Chat Panel] Successfully parsed suggestions:', parsedSuggestions);
-                        setSuggestedPrompts(parsedSuggestions);
+                    const parsed = JSON.parse(match[1].trim());
+                    if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
+                        finalSuggestions = parsed;
+                        console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
                     } else {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
-                        setSuggestedPrompts(DEFAULT_SUGGESTIONS);
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON on stream end:", e);
-                    setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match[1]);
                 }
+                // Clean the suggestions block from the message regardless of successful parsing
+                cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions.');
-                setSuggestedPrompts(DEFAULT_SUGGESTIONS);
             }
 
-            const cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
-            setReportChatMessage(temporaryId, cleanedMessage);
+            setSuggestedPrompts(finalSuggestions);
+
+            // Now, perform final message cleaning (e.g., stripping analysis tags) on the already-suggestions-stripped message
+            const finalContent = parseFinalMessage(cleanedMessage);
+
+            setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
+            // --- END POST-STREAM PROCESSING ---
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -247,7 +253,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                <div className={`prose prose-sm max-w-none prose-p:mb-0 prose-li:my-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                <div className={`prose prose-sm max-w-none prose-p:my-1 prose-li:my-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
                                     <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}

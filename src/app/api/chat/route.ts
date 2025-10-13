@@ -33,22 +33,23 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// Instruction for generating follow-up questions (C35)
+// C40: Hardened suggestion instruction.
 const suggestionInstruction = `
-Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this:
-:::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::
-Do not include any text outside of the JSON array within these delimiters.`;
+Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this, with no other text after the closing delimiter:
+:::suggestions:::[
+  "Question 1?",
+  "Question 2?"
+]:::end_suggestions:::`;
 
-// C38: New explicit markdown formatting instructions
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
-- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\n\n   More text.".
+- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\\n\\n   More text.".
 - For inline code, use single backticks, for example: \`DCE.vsix\`. Do not add blank lines before or after inline code.
 - For multi-line code blocks, use triple backticks with a language identifier.
+- For tables, use standard markdown table syntax with pipes and hyphens.
 - Avoid using HTML tags like <kbd>. Use markdown alternatives, like backticks for commands.
 `;
 
-// System prompts defined as per A27, updated in C35 for dynamic suggestions, and C38 for formatting
 const systemPrompts = {
     dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
 
@@ -150,7 +151,6 @@ User: ${prompt}
 Ascentia:`;
 
   const controller = new AbortController();
-  // C37: Increased timeout to 300 seconds (5 minutes) for model cold starts
   const timeoutId = setTimeout(() => controller.abort(), 300000);
 
   try {
@@ -189,7 +189,6 @@ Ascentia:`;
 
   } catch (error: any) {
     clearTimeout(timeoutId);
-    // C17: Enhanced error handling for connection issues
     if (error.name === 'AbortError') {
         const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
         console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
