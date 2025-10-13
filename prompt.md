@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 33 - More Linting; Now Build Errors
+Current Cycle 34 - nice! live! now need readme and download working
+Cycle 33 - More Linting; Now Build Errors
 Cycle 32 - Second Linting Round; Almost All Errors Resolved
 Cycle 31 - First Linting Round
 Cycle 30 - Go Live
@@ -424,48 +425,28 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 34>
+<Cycle Context>
+nice! we're live! and the repos are public! can you help me to write up a README for our repo? also, when i click download now on aiascent.dev, nothing happens. note that `public\downloads\data-curation-environment-0.1.10.vsix` exists.
+
+also, can we further categorize the whitepaper report navigator tree? currently, its all in one nest but we can organize it better.
+</Cycle Context>
+<Previous Cycle 33 Summary of Actions>
+I have analyzed the final two linting issues preventing a successful production build. The first is a set of `react/no-unescaped-entities` errors in the Mission page, and the second is a `react-hooks/exhaustive-deps` warning in the `AudioControls` component.
+
+My course of action is to resolve both of these issues directly. I will correct the unescaped single quotes in `src/app/mission/page.tsx` by replacing them with their corresponding HTML entity (`&apos;`). For the missing dependency in `src/components/report-viewer/AudioControls.tsx`, I will add `currentPageIndex` to the `useCallback` dependency array for the `generateAndPlayAudio` function. This ensures the function has access to the correct page index when it is called and satisfies the rules of hooks.
+
+These final fixes will clear all build errors and warnings, making the application ready for its "Go Live" deployment.
+
+1.  **Fix Unescaped Entities in `src/app/mission/page.tsx`**: I will locate the unescaped single quotes on line 138 and replace them with the `&apos;` HTML entity to resolve the `react/no-unescaped-entities` errors.
+2.  **Fix Missing Dependency in `src/components/report-viewer/AudioControls.tsx`**: I will add the missing `currentPageIndex` dependency to the `useCallback` hook's dependency array for the `generateAndPlayAudio` function. This will resolve the `react-hooks/exhaustive-deps` warning and ensure the function does not rely on a stale closure.
+</Previous Cycle 33 Summary of Actions>
+</Cycle 34>
+
 <Cycle 33>
 <Cycle Context>
 okay i think we are through the linting issues, now build error
 </Cycle Context>
-<Ephemeral Context>
-PS C:\Projects\aiascent-dev> npm run build
-
-> aiascent-dev@0.1.0 build
-> next build
-
-  ▲ Next.js 14.2.3
-  - Environments: .env
-
-   Creating an optimized production build ...
- ✓ Compiled successfully
-   Linting and checking validity of types  ...Failed to compile.
-
-./context/aiascentgame/code/ascentiaHandler.ts:9:60
-Type error: Cannot find module 'socket.io' or its corresponding type declarations.
-
-   7 | // Updated on: C1356 (Incorporate the full pageContext from the client into the LLM system prompt.)
-   8 | // Updated on: C1344 (Add logic for loading and handling report-specific knowledge base and chat stream.)
->  9 | import { type Socket, type Server as SocketIOServer } from 'socket.io';
-     |                                                            ^
-  10 | import { logInfo, logWarn, logError } from '../../logger';
-  11 | import { type PlayerState } from '../../server';
-  12 | import { type ChatMessage } from '../../state/multiplayerStore';
-PS C:\Projects\aiascent-dev> npm install
-
-up to date, audited 707 packages in 2s
-
-257 packages are looking for funding
-  run `npm fund` for details
-
-3 vulnerabilities (1 low, 1 moderate, 1 critical)
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-PS C:\Projects\aiascent-dev>
-</Ephemeral Context>
 <Previous Cycle 32 Summary of Actions>
 I have analyzed the two issues from the current cycle and have a clear plan to resolve them.
 
@@ -2506,10 +2487,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T15:16:29.410Z
+  Date Generated: 2025-10-13T16:50:27.448Z
   ---
   Total Files: 117
-  Approx. Tokens: 290972
+  Approx. Tokens: 290989
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2518,11 +2499,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 3. public\data\showcase_imagemanifest.json (25514 tokens)
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
-6. context\aiascentgame\report\reportStore.ts (9081 tokens)
+6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
 7. src\stores\reportStore.ts (6172 tokens)
-8. context\aiascentgame\code\ascentiaHandler.ts (4857 tokens)
+8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
-10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
+10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
 
 <!-- Full File List -->
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 184 - Chars: 10119 - Tokens: 2530
@@ -2540,7 +2521,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
 15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-16. package.json - Lines: 48 - Chars: 1389 - Tokens: 348
+16. package.json - Lines: 50 - Chars: 1450 - Tokens: 363
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -2582,66 +2563,66 @@ This file-centric approach helps in planning and prioritizing work, especially i
 55. src\components\home\HeroSection.tsx - Lines: 66 - Chars: 3155 - Tokens: 789
 56. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 57. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-58. context\aiascentgame\report\AudioControls.tsx - Lines: 290 - Chars: 11322 - Tokens: 2831
-59. context\aiascentgame\report\ImageNavigator.tsx - Lines: 203 - Chars: 7598 - Tokens: 1900
-60. context\aiascentgame\report\PageNavigator.tsx - Lines: 73 - Chars: 2272 - Tokens: 568
-61. context\aiascentgame\report\PromptNavigator.tsx - Lines: 43 - Chars: 1300 - Tokens: 325
-62. context\aiascentgame\report\ReportChatPanel.tsx - Lines: 289 - Chars: 17167 - Tokens: 4292
-63. context\aiascentgame\report\ReportProgressBar.tsx - Lines: 146 - Chars: 5008 - Tokens: 1252
-64. context\aiascentgame\report\reportStore.ts - Lines: 783 - Chars: 36322 - Tokens: 9081
-65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
-66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
-67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
-69. src\app\mission\page.tsx - Lines: 154 - Chars: 13221 - Tokens: 3306
-70. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
-71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
-72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-73. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 840 - Tokens: 210
-74. src\components\report-viewer\ReportChatPanel.tsx - Lines: 163 - Chars: 7878 - Tokens: 1970
-75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
-76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-78. src\stores\reportStore.ts - Lines: 536 - Chars: 24688 - Tokens: 6172
-79. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
-80. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
-81. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
-82. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-83. src\app\api\chat\route.ts - Lines: 188 - Chars: 8824 - Tokens: 2206
-84. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-85. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
-86. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
-87. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
-88. context\aiascentgame\report\llmService.ts - Lines: 162 - Chars: 7451 - Tokens: 1863
-89. context\vcpg\ai.service.ts - Lines: 284 - Chars: 13001 - Tokens: 3251
-90. context\vcpg\ai.gateway.ts - Lines: 88 - Chars: 2969 - Tokens: 743
-91. context\vcpg\ai.module.ts - Lines: 26 - Chars: 907 - Tokens: 227
-92. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
-93. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
-94. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-95. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-96. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
-97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
-98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
-99. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
-100. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-101. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-102. context\aiascentgame\scripts\convert_images_to_webp.js - Lines: 104 - Chars: 3809 - Tokens: 953
-103. context\aiascentgame\scripts\create_report_embedding.js - Lines: 145 - Chars: 5384 - Tokens: 1346
-104. context\aiascentgame\code\ascentiaHandler.ts - Lines: 353 - Chars: 19428 - Tokens: 4857
-105. public\data\whitepaper_content.json - Lines: 145 - Chars: 11924 - Tokens: 2981
-106. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
-107. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
-108. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
-109. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
-110. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
-111. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
-112. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
-113. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 49 - Chars: 3369 - Tokens: 843
-114. src\components\showcase\ShowcaseTabs.tsx - Lines: 81 - Chars: 2586 - Tokens: 647
-115. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
-116. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
-117. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
+58. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
+59. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
+60. src\app\mission\page.tsx - Lines: 154 - Chars: 13221 - Tokens: 3306
+61. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
+62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
+63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 163 - Chars: 7878 - Tokens: 1970
+66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
+67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
+68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
+69. src\stores\reportStore.ts - Lines: 536 - Chars: 24688 - Tokens: 6172
+70. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
+71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
+72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
+73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
+74. src\app\api\chat\route.ts - Lines: 188 - Chars: 8824 - Tokens: 2206
+75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
+76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
+77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
+78. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
+79. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
+80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
+81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
+82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
+84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
+85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
+86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
+87. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
+88. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
+89. public\data\whitepaper_content.json - Lines: 145 - Chars: 11924 - Tokens: 2981
+90. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
+91. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
+92. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
+93. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
+94. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
+95. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
+96. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
+97. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 49 - Chars: 3369 - Tokens: 843
+98. src\components\showcase\ShowcaseTabs.tsx - Lines: 81 - Chars: 2586 - Tokens: 647
+99. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
+100. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
+101. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
+102. context\aiascentgame\code\ascentiaHandler.ts.md - Lines: 353 - Chars: 19428 - Tokens: 4857
+103. context\aiascentgame\report\AudioControls.tsx.md - Lines: 290 - Chars: 11322 - Tokens: 2831
+104. context\aiascentgame\report\ImageNavigator.tsx.md - Lines: 203 - Chars: 7598 - Tokens: 1900
+105. context\aiascentgame\report\llmService.ts.md - Lines: 162 - Chars: 7451 - Tokens: 1863
+106. context\aiascentgame\report\PageNavigator.tsx.md - Lines: 73 - Chars: 2272 - Tokens: 568
+107. context\aiascentgame\report\PromptNavigator.tsx.md - Lines: 43 - Chars: 1300 - Tokens: 325
+108. context\aiascentgame\report\ReportChatPanel.tsx.md - Lines: 289 - Chars: 17167 - Tokens: 4292
+109. context\aiascentgame\report\ReportProgressBar.tsx.md - Lines: 146 - Chars: 5008 - Tokens: 1252
+110. context\aiascentgame\report\reportStore.ts.md - Lines: 783 - Chars: 36322 - Tokens: 9081
+111. context\aiascentgame\report\ReportTreeNav.tsx.md - Lines: 152 - Chars: 6078 - Tokens: 1520
+112. context\aiascentgame\report\ReportViewerModal.tsx.md - Lines: 399 - Chars: 14069 - Tokens: 3518
+113. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
+114. context\aiascentgame\scripts\create_report_embedding.js.md - Lines: 145 - Chars: 5384 - Tokens: 1346
+115. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
+116. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
+117. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -11504,6 +11485,8 @@ This artifact provides a structured format for tracking development tasks for th
     "react-markdown": "^9.0.1",
     "re-resizable": "^6.9.11",
     "remark-gfm": "^4.0.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.2"
@@ -14199,2411 +14182,6 @@ The Power of Iteration: The DCE Workflow
 export default WorkflowSection;
 </file_artifact>
 
-<file path="context/aiascentgame/report/AudioControls.tsx">
-// src/components/menus/report/AudioControls.tsx
-// Updated on: C1401 (Implement responsive hiding of controls using ResizeObserver.)
-// Updated on: C1399 (Implement playback speed controls and restart-on-autoplay logic.)
-// Updated on: C1398 (Refactor play/pause logic to be more direct and fix state synchronization issues.)
-// Updated on: C1397 (Add volume and mute controls. Fix pause functionality.)
-import React, { useRef, useEffect, useState } from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { useShallow } from 'zustand/react/shallow';
-import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
-import { logInfo, logError } from '../../../logger';
-
-const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
-
-const AudioControls: React.FC = () => {
-  const {
-    allPages, currentPageIndex, playbackStatus, autoplayEnabled,
-    currentAudioUrl, currentAudioPageIndex, currentTime, duration,
-    volume, isMuted, setVolume, toggleMute,
-    setPlaybackStatus, setAutoplay, setCurrentAudio,
-    setAudioTime, setAudioDuration, startSlideshow, stopSlideshow,
-    playbackSpeed, setPlaybackSpeed,
-  } = useReportStore(useShallow(state => ({
-    allPages: state.allPages,
-    currentPageIndex: state.currentPageIndex,
-    playbackStatus: state.playbackStatus,
-    autoplayEnabled: state.autoplayEnabled,
-    currentAudioUrl: state.currentAudioUrl,
-    currentAudioPageIndex: state.currentAudioPageIndex,
-    currentTime: state.currentTime,
-    duration: state.duration,
-    volume: state.volume,
-    isMuted: state.isMuted,
-    setVolume: state.setVolume,
-    toggleMute: state.toggleMute,
-    setPlaybackStatus: state.setPlaybackStatus,
-    setAutoplay: state.setAutoplay,
-    setCurrentAudio: state.setCurrentAudio,
-    setAudioTime: state.setAudioTime,
-    setAudioDuration: state.setAudioDuration,
-    startSlideshow: state.startSlideshow,
-    stopSlideshow: state.stopSlideshow,
-    playbackSpeed: state.playbackSpeed,
-    setPlaybackSpeed: state.setPlaybackSpeed,
-  })));
-
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const audioUrlRef = useRef<string | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null); // C1401
-  const [containerWidth, setContainerWidth] = useState(0); // C1401
-
-  const currentPage = allPages[currentPageIndex];
-
-  // C1401: Use ResizeObserver to track container width for responsive UI
-  useEffect(() => {
-    const observer = new ResizeObserver(entries => {
-      for (const entry of entries) {
-        setContainerWidth(entry.contentRect.width);
-      }
-    });
-    const currentContainer = containerRef.current;
-    if (currentContainer) {
-      observer.observe(currentContainer);
-    }
-    return () => {
-      if (currentContainer) {
-        observer.unobserve(currentContainer);
-      }
-    };
-  }, []);
-
-  const generateAndPlayAudio = async (restart = false) => {
-    if (!currentPage) return;
-
-    setPlaybackStatus('generating');
-    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
-
-    try {
-      const response = await fetch('/api/tts/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: textToNarrate }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`TTS server failed with status: ${response.status}`);
-      }
-
-      const audioBlob = await response.blob();
-      if (audioUrlRef.current) {
-        URL.revokeObjectURL(audioUrlRef.current);
-      }
-      const newUrl = URL.createObjectURL(audioBlob);
-      audioUrlRef.current = newUrl;
-      setCurrentAudio(newUrl, currentPageIndex);
-      if (restart && audioRef.current) {
-        audioRef.current.currentTime = 0;
-      }
-    } catch (error) {
-      logError('[AudioControls]', 'Failed to generate audio', error);
-      setPlaybackStatus('error');
-    }
-  };
-
-  useEffect(() => {
-    if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
-      generateAndPlayAudio();
-    }
-  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (currentAudioUrl && audio.src !== currentAudioUrl) {
-      audio.src = currentAudioUrl;
-      audio.load();
-      audio.play().catch(e => logError('[AudioControls]', 'Autoplay failed', e));
-    }
-  }, [currentAudioUrl]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.volume = volume;
-    audio.muted = isMuted;
-    audio.playbackRate = playbackSpeed;
-  }, [volume, isMuted, playbackSpeed]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const handlePlay = () => setPlaybackStatus('playing');
-    const handlePause = () => setPlaybackStatus('paused');
-    const handleEnded = () => setPlaybackStatus('idle');
-    const handleTimeUpdate = () => setAudioTime(audio.currentTime);
-    const handleLoadedMetadata = () => setAudioDuration(audio.duration);
-    const handleWaiting = () => setPlaybackStatus('buffering');
-    const handleError = () => { logError('[AudioControls]', 'Audio playback error'); setPlaybackStatus('error'); };
-
-    audio.addEventListener('play', handlePlay);
-    audio.addEventListener('playing', handlePlay);
-    audio.addEventListener('pause', handlePause);
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
-    audio.addEventListener('waiting', handleWaiting);
-    audio.addEventListener('error', handleError);
-
-    return () => {
-      audio.removeEventListener('play', handlePlay);
-      audio.removeEventListener('playing', handlePlay);
-      audio.removeEventListener('pause', handlePause);
-      audio.removeEventListener('ended', handleEnded);
-      audio.removeEventListener('timeupdate', handleTimeUpdate);
-      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      audio.removeEventListener('waiting', handleWaiting);
-      audio.removeEventListener('error', handleError);
-      if (audioUrlRef.current) {
-        URL.revokeObjectURL(audioUrlRef.current);
-      }
-    };
-  }, []);
-
-  const handlePlayPause = () => {
-    stopSlideshow(true);
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (playbackStatus === 'playing' || playbackStatus === 'buffering') {
-      audio.pause();
-    } else if (playbackStatus === 'paused') {
-      audio.play().catch(e => logError('[AudioControls]', 'Resume play failed', e));
-    } else if (playbackStatus === 'idle' || playbackStatus === 'error') {
-      generateAndPlayAudio();
-    }
-  };
-
-  const handleRestart = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-    }
-  };
-
-  const handleAutoplayChange = (checked: boolean) => {
-    setAutoplay(checked);
-    if (checked) {
-      // C1399: Restart logic
-      generateAndPlayAudio(true); // true to force restart
-    } else {
-      stopSlideshow(true);
-    }
-  };
-
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = Number(e.target.value);
-    }
-  };
-
-  const formatTime = (time: number) => {
-    if (isNaN(time) || !isFinite(time)) return '00:00';
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  };
-
-  const containerStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: '8px', padding: '5px 0', fontSize: '10px', color: '#ccc', width: '100%' };
-  const buttonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', fontSize: '14px', cursor: 'pointer', padding: '5px', borderRadius: '4px', flexShrink: 0 };
-  const sliderStyle: React.CSSProperties = { flexGrow: 1, cursor: 'pointer', minWidth: '50px' };
-  const timeStyle: React.CSSProperties = { minWidth: '40px', textAlign: 'center', flexShrink: 0 };
-  const statusStyle: React.CSSProperties = { fontStyle: 'italic', minWidth: '70px', textAlign: 'center', flexShrink: 0 };
-  const speedSelectStyle: React.CSSProperties = { background: '#333', border: '1px solid #666', color: 'white', padding: '3px', fontSize: '9px', fontFamily: 'inherit', marginLeft: '5px', flexShrink: 0 };
-  const volumeSliderStyle: React.CSSProperties = { width: '80px', cursor: 'pointer', flexShrink: 0 };
-
-  const isPlaying = playbackStatus === 'playing' || playbackStatus === 'buffering';
-
-  return (
-    <div style={containerStyle} ref={containerRef}>
-      <audio ref={audioRef} />
-      <button style={buttonStyle} onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
-        {isPlaying ? <FaPause /> : <FaPlay />}
-      </button>
-      <button style={buttonStyle} onClick={handleRestart} title="Restart"><FaRedo /></button>
-
-      <span style={timeStyle}>{formatTime(currentTime)}</span>
-
-      {/* C1401: Hide seek bar on very small widths */}
-      {containerWidth > 450 && (
-        <input
-          type="range"
-          min="0"
-          max={duration || 100}
-          value={currentTime}
-          onChange={handleSeek}
-          style={sliderStyle}
-          disabled={playbackStatus === 'generating' || playbackStatus === 'idle'}
-        />
-      )}
-
-      <span style={timeStyle}>{formatTime(duration)}</span>
-
-      {/* C1401: Hide volume controls on small widths */}
-      {containerWidth > 650 && (
-        <>
-          <button style={buttonStyle} onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
-            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-          </button>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={(e) => setVolume(Number(e.target.value))}
-            style={volumeSliderStyle}
-            title={`Volume: ${Math.round(volume * 100)}%`}
-          />
-        </>
-      )}
-
-
-      <div style={statusStyle}>
-        {playbackStatus === 'generating' && <FaSpinner className="animate-spin" />}
-        {playbackStatus === 'buffering' && 'Buffering...'}
-        {playbackStatus === 'error' && 'Error!'}
-      </div>
-
-      <select
-        value={playbackSpeed}
-        onChange={(e) => setPlaybackSpeed(Number(e.target.value))}
-        style={speedSelectStyle}
-        title="Playback Speed"
-      >
-        {PLAYBACK_SPEEDS.map(speed => (
-          <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
-        ))}
-      </select>
-
-      {/* C1401: Hide autoplay on medium widths */}
-      {containerWidth > 550 && (
-        <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', flexShrink: 0 }}>
-          <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
-          Autoplay
-        </label>
-      )}
-    </div>
-  );
-};
-
-export default AudioControls;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ImageNavigator.tsx">
-// src/components/menus/report/ImageNavigator.tsx
-// Updated on: C1381 (Fix prompt toggle button functionality.)
-// Updated on: C1374 (Add hint toggle button and centralize hint text here.)
-// Updated on: C1373 (Change "Unvoted" to "Votes Left!", centralize hint text.)
-// Updated on: C1360 (Incorporate jumpPages action for Shift/Ctrl+Click functionality.)
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { FaChevronLeft, FaChevronRight, FaThumbsUp, FaCommentDots, FaTree, FaCheckSquare, FaChevronUp, FaChevronDown, FaInfoCircle } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-import { useSession } from 'next-auth/react';
-
-const ImageNavigator: React.FC = () => {
-  const { data: session } = useSession();
-  const {
-    allPages, currentPageIndex, currentImageIndex,
-    nextImage, prevImage, jumpPages, castVote, imageVotes, toggleChatPanel,
-    votesCastByPage, togglePromptVisibility, isPromptVisible,
-    isHintVisible, toggleHintVisibility,
-  } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      currentPageIndex: state.currentPageIndex,
-      currentImageIndex: state.currentImageIndex,
-      nextImage: state.nextImage,
-      prevImage: state.prevImage,
-      jumpPages: state.jumpPages,
-      castVote: state.castVote,
-      imageVotes: state.imageVotes,
-      toggleChatPanel: state.toggleChatPanel,
-      votesCastByPage: state.votesCastByPage,
-      togglePromptVisibility: state.togglePromptVisibility,
-      isPromptVisible: state.isPromptVisible,
-      isHintVisible: state.isHintVisible,
-      toggleHintVisibility: state.toggleHintVisibility,
-    }))
-  );
-  const { toggleTreeNav } = useReportStore();
-
-  const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-  const currentImage = currentPrompt?.images[currentImageIndex];
-  const totalImages = currentPrompt?.images.length ?? 0;
-  const currentVotes = currentImage ? (imageVotes[currentImage.imageId] || 0) : 0;
-  const hasVotedOnThisPage = votesCastByPage.hasOwnProperty(currentPageIndex);
-  const isThisImageVoted = hasVotedOnThisPage && votesCastByPage[currentPageIndex] === currentImage?.imageId;
-
-  const pagesLeftToVote = allPages.length - Object.keys(votesCastByPage).length;
-
-  const handleVote = () => {
-    if (currentImage && session) {
-      castVote(currentImage.imageId, currentPageIndex);
-    }
-  };
-
-  const containerStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: '10px',
-    fontSize: '10px',
-    color: '#ccc',
-    width: '100%',
-  };
-
-  const navGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    flex: 1,
-  };
-
-  const centerNavGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column', // Stack controls and hint
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '5px', // Gap between controls and hint
-    flex: 2,
-  };
-
-  const controlsRowStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '15px', // Adjusted gap
-  };
-
-  const actionGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    justifyContent: 'flex-end',
-    flex: 1,
-  };
-
-  const counterGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    background: 'none',
-    border: '1px solid #777',
-    color: '#ccc',
-    fontSize: '16px',
-    cursor: 'pointer',
-    padding: '5px 10px',
-    borderRadius: '4px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
-  };
-
-  const smallButtonStyle: React.CSSProperties = {
-    ...buttonStyle,
-    fontSize: '12px',
-    padding: '3px 8px',
-  };
-
-  const hintTextStyle: React.CSSProperties = {
-    fontSize: '9px',
-    color: '#88ddff',
-    fontStyle: 'italic',
-    width: '100%',
-    textAlign: 'center',
-    lineHeight: '1.5',
-  };
-
-  const handlePageJump = (e: React.MouseEvent, direction: number) => {
-    let count = direction;
-    if (e.shiftKey) count *= 5;
-    if (e.ctrlKey) count *= 10;
-    jumpPages(count);
-  };
-
-
-  return (
-    <div style={containerStyle}>
-      <div style={navGroupStyle}>
-        <button style={smallButtonStyle} onClick={toggleTreeNav} title="Toggle Page Tree">
-          <FaTree /> Tree
-        </button>
-        <button style={smallButtonStyle} onClick={togglePromptVisibility} title={isPromptVisible ? "Hide Image Prompt" : "Show Image Prompt"}>
-          <FaInfoCircle /> Prompt
-        </button>
-      </div>
-
-      <div style={centerNavGroupStyle}>
-        <div style={controlsRowStyle}>
-          <div style={counterGroupStyle}>
-            <button style={buttonStyle} onClick={(e) => handlePageJump(e, -1)} title="Previous Page (Up Arrow)"><FaChevronUp /></button>
-            <span>Page {currentPageIndex + 1} / {allPages.length}</span>
-            <button style={buttonStyle} onClick={(e) => handlePageJump(e, 1)} title="Next Page (Down Arrow)"><FaChevronDown /></button>
-          </div>
-          {/* C1374: Added hint toggle button */}
-          <button style={smallButtonStyle} onClick={toggleHintVisibility} title={isHintVisible ? "Hide Controls Hint" : "Show Controls Hint"}>
-            <FaInfoCircle />
-          </button>
-          <div style={counterGroupStyle}>
-            <button style={buttonStyle} onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
-            <span>Image {currentImageIndex + 1} / {totalImages}</span>
-            <button style={buttonStyle} onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
-          </div>
-        </div>
-        {/* C1374: Hint text is now toggled */}
-        {isHintVisible && (
-          <div style={hintTextStyle}>
-            <span>Use <kbd>↑</kbd>/<kbd>↓</kbd> for pages. Use <kbd>←</kbd>/<kbd>→</kbd> for images. <kbd>Spacebar</kbd> to vote.</span>
-            <br />
-            <span>Hold <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Shift</kbd> to jump 5, or <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Ctrl</kbd> to jump 10.</span>
-          </div>
-        )}
-      </div>
-
-      <div style={actionGroupStyle}>
-        <button
-          style={{ ...smallButtonStyle, backgroundColor: pagesLeftToVote === 0 ? '#3a3' : '#553', borderColor: pagesLeftToVote === 0 ? '#7f7' : '#aa7' }}
-          disabled
-          title={pagesLeftToVote > 0 ? `${pagesLeftToVote} pages left to vote on` : "All pages voted on!"}
-        >
-          <FaCheckSquare /> {pagesLeftToVote} Votes Left!
-        </button>
-        <button
-          style={{ ...smallButtonStyle, backgroundColor: isThisImageVoted ? '#3a3' : (session ? '#555' : '#444'), borderColor: isThisImageVoted ? '#7f7' : (session ? '#777' : '#555') }}
-          onClick={handleVote}
-          disabled={!session}
-          title={session ? "Vote for this image (Spacebar)" : "You must be logged in to vote"}
-        >
-          <FaThumbsUp /> Vote ({currentVotes})
-        </button>
-        <button
-          style={{ ...smallButtonStyle, backgroundColor: '#448', borderColor: '#88f' }}
-          onClick={toggleChatPanel}
-          title="Ask @Ascentia about this page"
-        >
-          <FaCommentDots /> Ask
-        </button>
-      </div>
-    </div>
-  );
-};
-
-export default ImageNavigator;
-</file_artifact>
-
-<file path="context/aiascentgame/report/PageNavigator.tsx">
-// src/components/menus/report/PageNavigator.tsx
-// Updated on: C1374 (Increase title font size.)
-// Updated on: C1373 (Remove hint text, which has been moved to ImageNavigator.)
-// Updated on: C1360 (Rearrange hint text layout and increase title font size.)
-// Updated on: C1359 (Simplify by removing page nav buttons, which are now in ImageNavigator.)
-// Updated on: C1355 (Add hint about arrow key navigation.)
-// Updated on: C1351 (Incorporate a close button and refactor layout to a single line.)
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { FaTimes } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-import { useUIStore } from '../../../state';
-
-interface PageNavigatorProps {
-  onClose: () => void;
-}
-
-const PageNavigator: React.FC<PageNavigatorProps> = ({ onClose }) => {
-  const { allPages, currentPageIndex } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      currentPageIndex: state.currentPageIndex,
-    }))
-  );
-
-  const currentPage = allPages[currentPageIndex];
-
-  const containerStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-    position: 'relative',
-    minHeight: '40px',
-  };
-
-  const titleStyle: React.CSSProperties = {
-    fontSize: '18px', // C1374: Increased font size
-    color: '#FFA500',
-    margin: '0 0 5px 0',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    maxWidth: '100%',
-    padding: '0 50px', // Add padding to avoid overlap with close button
-    textAlign: 'center',
-  };
-
-  const closeButtonStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '0',
-    right: '0',
-    background: 'none',
-    border: '1px solid #777',
-    color: '#aaa',
-    fontSize: '16px',
-    cursor: 'pointer',
-    padding: '5px 10px',
-    borderRadius: '4px',
-  };
-
-  if (!currentPage) return null;
-
-  return (
-    <div style={containerStyle}>
-      <h2 style={titleStyle} title={currentPage.pageTitle}>{currentPage.pageTitle}</h2>
-      <button style={closeButtonStyle} onClick={onClose} title="Close Report Viewer"><FaTimes /></button>
-    </div>
-  );
-};
-
-export default PageNavigator;
-</file_artifact>
-
-<file path="context/aiascentgame/report/PromptNavigator.tsx">
-// src/components/menus/report/PromptNavigator.tsx
-// Updated on: C1374 (Simplify component to only display prompt text, as header/toggle moved to parent.)
-// Updated on: C1359 (Add collapse/expand button and logic.)
-// Updated on: C1358 (Refactored to be a simple display component for a single static prompt.)
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { useShallow } from 'zustand/react/shallow';
-
-const PromptNavigator: React.FC = () => {
-  const { allPages, currentPageIndex } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      currentPageIndex: state.currentPageIndex,
-    }))
-  );
-
-  const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-
-  const promptTextStyle: React.CSSProperties = {
-    width: '100%',
-    textAlign: 'left',
-    fontStyle: 'italic',
-    lineHeight: 1.4,
-    color: '#ccc',
-    fontSize: '10px',
-    padding: '8px',
-    backgroundColor: 'rgba(0,0,0,0.2)',
-    borderRadius: '4px',
-    border: '1px dashed #444',
-    margin: '0 0 15px 0',
-  };
-
-  if (!currentPrompt || !currentPrompt.promptText) return null;
-
-  return (
-    <div style={promptTextStyle}>
-      "{currentPrompt.promptText}"
-    </div>
-  );
-};
-
-export default PromptNavigator;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportChatPanel.tsx">
-// src/components/menus/report/ReportChatPanel.tsx
-// Updated on: C1400 (Add Ascentia message audio controls.)
-// Updated on: C1381 (Fix markdown rendering, thinking italics, and input focus loss.)
-// Updated on: C1377 (Refactor Ascentia chat tab into a stable component to fix input focus loss.)
-// Updated on: C1374 (Implement tabbed view for Ask @Ascentia and Main Chat. Add Settings button. Fix thinking italics.)
-import React, { useEffect, useRef, useCallback, useState, type ComponentType, type SVGProps } from 'react';
-import { FaCommentDots, FaTimes, FaBroom, FaCog, FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
-import { useMultiplayerStore, type ChatMessage } from '../../../state';
-import { useReportStore } from '../../../state/reportStore';
-import { logInfo, logError } from '../../../logger';
-import { formatMessage } from '../../../utils/chatFormatting';
-import { useShallow } from 'zustand/react/shallow';
-import { Resizable } from 're-resizable';
-import ChatPanel from '../../ui/ChatPanel'; // Import the main game chat panel
-import { useUIStore } from '../../../state';
-
-const TimesIcon = FaTimes as ComponentType<SVGProps<SVGSVGElement>>;
-const BroomIcon = FaBroom as ComponentType<SVGProps<SVGSVGElement>>;
-const SettingsIcon = FaCog as ComponentType<SVGProps<SVGSVGElement>>;
-const PlayIcon = FaPlay as ComponentType<SVGProps<SVGSVGElement>>;
-const PauseIcon = FaPause as ComponentType<SVGProps<SVGSVGElement>>;
-const SpinnerIcon = FaSpinner as ComponentType<SVGProps<SVGSVGElement>>;
-
-const parseMessageWithThinking = (message: string): { type: 'normal' | 'thought', content: string }[] => {
-  const parts: { type: 'normal' | 'thought', content: string }[] = [];
-  let lastIndex = 0;
-  const regex = /<Thinking>([\s\S]*?)<\/Thinking>/gi;
-  let match;
-
-  while ((match = regex.exec(message)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push({ type: 'normal', content: message.substring(lastIndex, match.index) });
-    }
-    parts.push({ type: 'thought', content: match[1] });
-    lastIndex = match.index + match[0].length;
-  }
-
-  if (lastIndex < message.length) {
-    parts.push({ type: 'normal', content: message.substring(lastIndex) });
-  }
-
-  if (parts.length === 0) {
-    parts.push({ type: 'normal', content: message });
-  }
-
-  return parts;
-};
-
-// Ascentia chat view component
-const AscentiaChatView: React.FC = () => {
-  const {
-    allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput,
-    addReportChatMessage, updateReportChatMessage, updateReportChatStatus,
-    tokenCount, updateTokenCount, ascentiaAudioStatus, playAscentiaMessage,
-    setAscentiaAudioStatus, ascentiaAudioAutoplay, setAscentiaAutoplay, currentAscentiaAudioUrl
-  } = useReportStore(useShallow(state => ({
-    allPages: state.allPages,
-    currentPageIndex: state.currentPageIndex,
-    reportChatHistory: state.reportChatHistory,
-    reportChatInput: state.reportChatInput,
-    setReportChatInput: state.setReportChatInput,
-    addReportChatMessage: state.addReportChatMessage,
-    updateReportChatMessage: state.updateReportChatMessage,
-    updateReportChatStatus: state.updateReportChatStatus,
-    tokenCount: state.tokenCount,
-    updateTokenCount: state.updateTokenCount,
-    ascentiaAudioStatus: state.ascentiaAudioStatus,
-    playAscentiaMessage: state.playAscentiaMessage,
-    setAscentiaAudioStatus: state.setAscentiaAudioStatus,
-    ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
-    setAscentiaAutoplay: state.setAscentiaAutoplay,
-    currentAscentiaAudioUrl: state.currentAscentiaAudioUrl,
-  })));
-
-  const { socketInstance } = useMultiplayerStore(useShallow(state => ({ socketInstance: state.socketInstance })));
-  const currentPage = allPages[currentPageIndex];
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isThinking, setIsThinking] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (currentAscentiaAudioUrl && audio.src !== currentAscentiaAudioUrl) {
-      audio.src = currentAscentiaAudioUrl;
-      audio.play().catch(e => logError('[ReportChatPanel]', 'Ascentia audio autoplay failed', e));
-    }
-    const handlePlay = () => setAscentiaAudioStatus('playing');
-    const handlePause = () => setAscentiaAudioStatus('paused');
-    const handleEnded = () => setAscentiaAudioStatus('idle');
-    audio.addEventListener('play', handlePlay);
-    audio.addEventListener('playing', handlePlay);
-    audio.addEventListener('pause', handlePause);
-    audio.addEventListener('ended', handleEnded);
-    return () => {
-      audio.removeEventListener('play', handlePlay);
-      audio.removeEventListener('playing', handlePlay);
-      audio.removeEventListener('pause', handlePause);
-      audio.removeEventListener('ended', handleEnded);
-    };
-  }, [currentAscentiaAudioUrl, setAscentiaAudioStatus]);
-
-  const handleStreamChunk = useCallback((data: { temporaryId: string, text: string }) => {
-    updateReportChatMessage(data.temporaryId, data.text);
-  }, [updateReportChatMessage]);
-
-  const handleStreamEnd = useCallback((data: { temporaryId: string, contextTokenCount?: number }) => {
-    setIsThinking(false);
-    updateReportChatStatus(data.temporaryId, 'complete');
-    if (data.contextTokenCount) updateTokenCount({ context: data.contextTokenCount });
-  }, [updateReportChatStatus, updateTokenCount]);
-
-  useEffect(() => {
-    if (!socketInstance) return;
-    socketInstance.on('report_ascentia_stream_chunk', handleStreamChunk);
-    socketInstance.on('report_ascentia_stream_end', handleStreamEnd);
-    return () => {
-      socketInstance.off('report_ascentia_stream_chunk', handleStreamChunk);
-      socketInstance.off('report_ascentia_stream_end', handleStreamEnd);
-    };
-  }, [socketInstance, handleStreamChunk, handleStreamEnd]);
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    if (!isThinking) textareaRef.current?.focus();
-  }, [reportChatHistory, isThinking]);
-
-  const handleSend = () => {
-    const trimmedInput = reportChatInput.trim();
-    if (!trimmedInput || isThinking || !socketInstance) return;
-    addReportChatMessage({ author: 'You', flag: '👤', message: trimmedInput, channel: 'local' });
-    const temporaryId = `report_ascentia_response_${Date.now()}`;
-    addReportChatMessage({ id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: 'system' });
-    setIsThinking(true);
-    setReportChatInput('');
-    const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nImage Prompt: ${currentPage?.imagePrompts[0]?.promptText || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-    updateTokenCount({ user: Math.ceil(trimmedInput.length / 4), context: Math.ceil(pageContext.length / 4), response: 0 });
-    socketInstance.emit('start_report_ascentia_stream', { prompt: trimmedInput, pageContext, temporaryId });
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } };
-
-  const handlePlayPauseClick = (message: ChatMessage) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (ascentiaAudioStatus === 'playing') {
-      audio.pause();
-    } else if (ascentiaAudioStatus === 'paused') {
-      audio.play().catch(e => logError('[ReportChatPanel]', 'Audio resume failed', e));
-    } else {
-      playAscentiaMessage(message.message);
-    }
-  };
-
-  const lastAscentiaMessage = [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia' && msg.status === 'complete');
-
-  const messageAreaStyle: React.CSSProperties = { flexGrow: 1, overflowY: 'auto', padding: '8px', fontSize: '10px', lineHeight: '1.4' };
-  const footerContainerStyle: React.CSSProperties = { borderTop: '1px solid #555', padding: '10px', flexShrink: 0 };
-  const tokenCounterStyle: React.CSSProperties = { fontSize: '9px', color: '#aaa', textAlign: 'center', marginBottom: '8px', position: 'relative', cursor: 'help' };
-  const tooltipStyle: React.CSSProperties = { visibility: 'hidden', width: '220px', backgroundColor: '#111', color: '#fff', textAlign: 'left', borderRadius: '6px', padding: '8px', position: 'absolute', zIndex: 1, bottom: '125%', left: '50%', marginLeft: '-110px', opacity: 0, transition: 'opacity 0.3s', border: '1px solid #555', fontSize: '9px', lineHeight: '1.5' };
-  const tooltipItemStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between' };
-  const textareaStyle: React.CSSProperties = { width: '100%', background: '#111', border: '1px solid #555', color: 'white', padding: '8px', fontSize: '10px', fontFamily: 'inherit', outline: 'none', borderRadius: '4px', resize: 'vertical', boxSizing: 'border-box', display: 'block', minHeight: '40px', maxHeight: '150px' };
-  const thinkingCursorStyle: React.CSSProperties = { display: 'inline-block', width: '8px', height: '1em', backgroundColor: '#ccc', animation: 'blink 1s step-end infinite', verticalAlign: 'text-bottom', marginLeft: '2px' };
-  const thoughtStyle: React.CSSProperties = { fontStyle: 'italic', color: '#99ccff', opacity: 0.8, display: 'block', borderLeft: '2px solid #5588cc', paddingLeft: '8px', margin: '4px 0' };
-  const tagStyle: React.CSSProperties = { color: '#66a3ff' };
-  const audioControlRowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px' };
-  const playButtonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', cursor: 'pointer', padding: '4px 8px', borderRadius: '4px' };
-
-  return (
-    <>
-      <audio ref={audioRef} />
-      <div style={messageAreaStyle}>
-        {reportChatHistory.map((msg, index) => {
-          const messageParts = parseMessageWithThinking(msg.message);
-          return (
-            <div key={msg.id || index} style={{ marginBottom: '8px' }}>
-              <span style={{ color: msg.author === 'You' ? '#0af' : '#00ffff' }}>{msg.flag} {String(msg.author)}: </span>
-              {msg.status === 'thinking' ? (<span>🤔...</span>) : (
-                <>
-                  {messageParts.map((part, i) =>
-                    part.type === 'thought' ? (
-                      <div key={i} style={thoughtStyle}>
-                        <span style={tagStyle}>&lt;Thinking&gt;</span>
-                        {formatMessage(part.content)}
-                        <span style={tagStyle}>&lt;/Thinking&gt;</span>
-                      </div>
-                    ) : (<React.Fragment key={i}>{formatMessage(part.content)}</React.Fragment>)
-                  )}
-                  {msg.status === 'streaming' && <span style={thinkingCursorStyle}></span>}
-                </>
-              )}
-            </div>
-          );
-        })}
-        <div ref={messagesEndRef} />
-      </div>
-      <div style={footerContainerStyle}>
-        <div style={tokenCounterStyle} onMouseEnter={() => setIsTooltipVisible(true)} onMouseLeave={() => setIsTooltipVisible(false)}>
-          Est. Context Tokens: {tokenCount.total} / 16,384
-          <div style={{ ...tooltipStyle, visibility: isTooltipVisible ? 'visible' : 'hidden', opacity: isTooltipVisible ? 1 : 0 }}>
-            <b>Token Breakdown (est. chars/4):</b>
-            <div style={tooltipItemStyle}><span>System Prompt:</span> <span>{tokenCount.breakdown.system}</span></div>
-            <div style={tooltipItemStyle}><span>Page Context:</span> <span>{tokenCount.breakdown.context}</span></div>
-            <div style={tooltipItemStyle}><span>Chat History:</span> <span>{tokenCount.breakdown.history}</span></div>
-            <div style={{ ...tooltipItemStyle, paddingLeft: '10px' }}><span style={{ fontStyle: 'italic' }}> LLM Response:</span> <span style={{ fontStyle: 'italic' }}>{tokenCount.breakdown.response}</span></div>
-            <div style={tooltipItemStyle}><span>User Prompt:</span> <span>{tokenCount.breakdown.user}</span></div>
-            <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '4px 0' }} />
-            <div style={{ ...tooltipItemStyle, fontWeight: 'bold' }}><span>Total:</span> <span>{tokenCount.total}</span></div>
-          </div>
-        </div>
-        <textarea ref={textareaRef} style={textareaStyle} value={reportChatInput} onChange={(e) => setReportChatInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Ask a question... (Shift+Enter for newline)" disabled={isThinking} />
-        <div style={audioControlRowStyle}>
-          {lastAscentiaMessage && (
-            <button style={playButtonStyle} onClick={() => handlePlayPauseClick(lastAscentiaMessage)} disabled={ascentiaAudioStatus === 'generating'}>
-              {ascentiaAudioStatus === 'generating' ? <SpinnerIcon className="animate-spin" /> : (ascentiaAudioStatus === 'playing' ? <PauseIcon /> : <PlayIcon />)}
-              <span style={{ marginLeft: '5px' }}>Read Last Response</span>
-            </button>
-          )}
-          <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', fontSize: '10px' }}>
-            <input type="checkbox" checked={ascentiaAudioAutoplay} onChange={(e) => setAscentiaAutoplay(e.target.checked)} />
-            Auto-Read Responses
-          </label>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const ReportChatPanel: React.FC = () => {
-  const { openChatSettingsModal } = useUIStore();
-  const [activeTab, setActiveTab] = useState<'ascentia' | 'main'>('ascentia');
-  const { allPages, currentPageIndex, toggleChatPanel, chatPanelWidth, setChatPanelWidth, clearReportChatHistory } = useReportStore(useShallow(state => ({ allPages: state.allPages, currentPageIndex: state.currentPageIndex, toggleChatPanel: state.toggleChatPanel, chatPanelWidth: state.chatPanelWidth, setChatPanelWidth: state.setChatPanelWidth, clearReportChatHistory: state.clearReportChatHistory, })));
-  const currentPage = allPages[currentPageIndex];
-  const currentPageTitle = currentPage?.pageTitle || 'the report';
-
-  const handleClear = () => {
-    if (activeTab === 'ascentia') {
-      clearReportChatHistory(currentPageTitle);
-    }
-  };
-
-  const containerStyle: React.CSSProperties = { height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', borderLeft: '1px solid #555', display: 'flex', flexDirection: 'column', flexShrink: 0 };
-  const headerStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0, padding: '10px' };
-  const closeChatButtonStyle: React.CSSProperties = { background: 'none', border: 'none', color: '#aaa', fontSize: '18px', cursor: 'pointer' };
-  const tabContainerStyle: React.CSSProperties = { display: 'flex', borderBottom: '1px solid #555', padding: '0 10px' };
-  const tabButtonStyle = (isActive: boolean): React.CSSProperties => ({ padding: '8px 12px', fontSize: '11px', background: 'none', border: 'none', borderBottom: `2px solid ${isActive ? '#00ffff' : 'transparent'}`, color: isActive ? '#00ffff' : '#aaa', cursor: 'pointer', fontFamily: 'inherit', });
-  const contentAreaStyle: React.CSSProperties = { flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' };
-
-  return (
-    <Resizable
-      size={{ width: chatPanelWidth, height: '100%' }}
-      minWidth={300}
-      maxWidth="60vw"
-      enable={{ left: true }}
-      onResizeStop={(e, direction, ref, d) => {
-        setChatPanelWidth(chatPanelWidth + d.width);
-      }}
-      handleClasses={{ left: 'resizable-handle-vertical' }}
-    >
-      <div style={containerStyle}>
-        <style>{`@keyframes blink { 50% { opacity: 0; } }`}</style>
-        <div style={headerStyle}>
-          <div style={tabContainerStyle}>
-            <button style={tabButtonStyle(activeTab === 'ascentia')} onClick={() => setActiveTab('ascentia')}>Ask @Ascentia</button>
-            <button style={tabButtonStyle(activeTab === 'main')} onClick={() => setActiveTab('main')}>Main Chat</button>
-          </div>
-          <div>
-            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={handleClear} title="Clear Chat History">
-              <BroomIcon />
-            </button>
-            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={openChatSettingsModal} title="Chat Settings">
-              <SettingsIcon />
-            </button>
-            <button style={closeChatButtonStyle} onClick={toggleChatPanel} title="Close Chat Panel">
-              <TimesIcon />
-            </button>
-          </div>
-        </div>
-        <div style={contentAreaStyle}>
-          {activeTab === 'ascentia' ? <AscentiaChatView /> : <ChatPanel isEmbedded={true} isEmbeddedInReport={true} />}
-        </div>
-      </div>
-    </Resizable>
-  );
-};
-
-export default ReportChatPanel;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportProgressBar.tsx">
-// src/components/menus/report/ReportProgressBar.tsx
-// Updated on: C1400 (Fix resizing issue by wrapping in a container with flex: 1.)
-// Updated on: C1369 (Refactor to use a flattened image list for accurate per-image progress.)
-// Updated on: C1360 (Add First Unseen button, remove text from Reset, make bar clickable.)
-// Updated on: C1359 (New file)
-import React, { useMemo } from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { useShallow } from 'zustand/react/shallow';
-import { FaEye, FaSync, FaStepBackward } from 'react-icons/fa';
-
-const ReportProgressBar: React.FC = () => {
-  const {
-    allPages, seenImages, jumpToNextUnseenImage, resetProgress,
-    jumpToFirstUnseenImage, goToPageByIndex,
-  } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      seenImages: state.seenImages,
-      jumpToNextUnseenImage: state.jumpToNextUnseenImage,
-      resetProgress: state.resetProgress,
-      jumpToFirstUnseenImage: state.jumpToFirstUnseenImage,
-      goToPageByIndex: state.goToPageByIndex,
-    }))
-  );
-
-  // C1369: Flatten all images from all pages into a single list for accurate progress tracking.
-  const allImages = useMemo(() => {
-    return allPages.flatMap((page, pageIndex) =>
-      page.imagePrompts.flatMap(prompt =>
-        prompt.images.map(image => ({
-          ...image,
-          pageId: page.pageId,
-          pageIndex: pageIndex,
-        }))
-      )
-    );
-  }, [allPages]);
-
-  const totalImages = allImages.length;
-  if (totalImages === 0) return null;
-
-  const seenImageCount = allImages.filter(img => seenImages[`${img.pageId}-${img.imageId}`]).length;
-  const progressPercent = totalImages > 0 ? (seenImageCount / totalImages) * 100 : 0;
-
-  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const bar = e.currentTarget;
-    const rect = bar.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickPercent = clickX / rect.width;
-    // Find the corresponding image in the flattened list
-    const targetImageIndex = Math.floor(clickPercent * totalImages);
-    const targetImage = allImages[targetImageIndex];
-    if (targetImage) {
-      goToPageByIndex(targetImage.pageIndex);
-    }
-  };
-
-  const containerStyle: React.CSSProperties = {
-    width: '100%',
-    padding: '8px 0',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    background: 'none',
-    border: '1px solid #777',
-    color: '#ccc',
-    fontSize: '10px',
-    cursor: 'pointer',
-    padding: '3px 8px',
-    borderRadius: '4px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
-    flexShrink: 0,
-  };
-
-  const barContainerStyle: React.CSSProperties = {
-    flexGrow: 1,
-    height: '12px',
-    backgroundColor: 'rgba(0,0,0,0.4)',
-    border: '1px solid #555',
-    borderRadius: '5px',
-    display: 'flex',
-    overflow: 'hidden',
-    position: 'relative',
-    cursor: 'pointer',
-  };
-
-  const progressTextStyle: React.CSSProperties = {
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    transform: 'translate(-50%, -50%)',
-    fontSize: '8px',
-    color: 'white',
-    fontWeight: 'bold',
-    textShadow: '0 0 2px black',
-    pointerEvents: 'none',
-  };
-
-  // C1400: Wrap the bar container in a flex-grow div to ensure it resizes correctly.
-  const wrapperStyle: React.CSSProperties = {
-    flex: 1, // This makes the wrapper take up available space
-    minWidth: 0, // This is crucial for flex items to shrink correctly
-  };
-
-  return (
-    <div style={containerStyle}>
-      <button style={buttonStyle} onClick={resetProgress} title="Reset all viewing progress">
-        <FaSync />
-      </button>
-      <button style={buttonStyle} onClick={jumpToFirstUnseenImage} title="Jump to the first unseen image">
-        <FaStepBackward /> First Unseen
-      </button>
-
-      <div style={wrapperStyle}>
-        <div style={barContainerStyle} title={`Viewed: ${seenImageCount} / ${totalImages} images (${progressPercent.toFixed(1)}%)`} onClick={handleBarClick}>
-          {allImages.map((image) => {
-            const isSeen = seenImages[`${image.pageId}-${image.imageId}`];
-            return (
-              <div
-                key={image.imageId}
-                style={{
-                  flex: 1,
-                  backgroundColor: isSeen ? '#00ffff' : 'transparent',
-                  borderRight: '1px solid rgba(85, 85, 85, 0.5)',
-                  transition: 'background-color 0.5s ease',
-                }}
-              />
-            );
-          })}
-          <div style={progressTextStyle}>{progressPercent.toFixed(0)}%</div>
-        </div>
-      </div>
-
-      <button style={buttonStyle} onClick={jumpToNextUnseenImage} title="Jump to the next unseen image">
-        <FaEye /> Next Unseen
-      </button>
-    </div>
-  );
-};
-
-export default ReportProgressBar;
-</file_artifact>
-
-<file path="context/aiascentgame/report/reportStore.ts">
-// src/state/reportStore.ts
-// Updated on: C1401 (Add state for Ascentia message audio narration.)
-// Updated on: C1399 (Implement playback speed control and fix continuous autoplay.)
-// Updated on: C1398 (Complete refactor of autoplay and slideshow logic to fix bugs and implement correct timer handling.)
-// Updated on: C1397 (Add volume and mute state. Refine slideshow and autoplay logic to fix bugs.)
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
-import { logInfo, logWarn, logError } from '../logger';
-import { type ChatMessage } from './multiplayerStore';
-
-interface ReportImage {
-    imageId: string;
-    url: string;
-    prompt: string;
-    alt: string;
-}
-
-interface ReportImagePrompt {
-    promptId: string;
-    promptText: string;
-    images: ReportImage[];
-}
-
-export interface ReportPage {
-    pageId: string;
-    pageTitle: string;
-    tldr: string;
-    content: string;
-    imagePrompts: ReportImagePrompt[];
-}
-
-// --- Raw Data Structures from JSON files ---
-export interface RawReportPage {
-    pageId: string;
-    pageTitle: string;
-    tldr: string;
-    content: string;
-    imageGroupIds: string[];
-}
-
-export interface RawSubSection {
-    subSectionId: string;
-    subSectionTitle: string;
-    pages: RawReportPage[];
-}
-
-export interface RawReportSection {
-    sectionId: string;
-    sectionTitle: string;
-    pages?: RawReportPage[];
-    subSections?: RawSubSection[];
-}
-
-interface ReportContentData {
-    reportId: string;
-    reportTitle: string;
-    sections: RawReportSection[];
-}
-
-interface ImageManifestData {
-    manifestId: string;
-    basePath: string;
-    imageGroups: Record<string, {
-        path: string;
-        prompt: string;
-        alt: string;
-        baseFileName: string;
-        fileExtension: string;
-        imageCount: number;
-    }>;
-}
-// --- End Raw Data Structures ---
-
-
-export interface ReportState {
-    reportData: ReportContentData | null;
-    imageManifest: ImageManifestData | null;
-    allPages: ReportPage[];
-    currentPageIndex: number;
-    currentImageIndex: number;
-    imageVotes: Record<string, number>;
-    isTreeNavOpen: boolean;
-    expandedSections: Record<string, boolean>;
-    isChatPanelOpen: boolean;
-    chatPanelWidth: number;
-    imagePanelHeight: number;
-    isImageFullscreen: boolean;
-    votesCastByPage: Record<number, string>;
-    reportChatHistory: ChatMessage[];
-    reportChatInput: string;
-    tokenCount: {
-        total: number;
-        breakdown: { system: number; context: number; history: number; user: number; response: number; };
-    };
-    isPromptVisible: boolean;
-    isTldrVisible: boolean;
-    isContentVisible: boolean;
-    isHintVisible: boolean;
-    seenImages: Record<string, boolean>;
-    // Page Audio State
-    playbackStatus: 'idle' | 'generating' | 'buffering' | 'playing' | 'paused' | 'error';
-    autoplayEnabled: boolean;
-    currentAudioUrl: string | null;
-    currentAudioPageIndex: number | null;
-    currentTime: number;
-    duration: number;
-    volume: number;
-    isMuted: boolean;
-    slideshowTimer: NodeJS.Timeout | null;
-    nextPageTimer: NodeJS.Timeout | null;
-    playbackSpeed: number;
-    // Ascentia Message Audio State (NEW C1401)
-    ascentiaAudioStatus: 'idle' | 'generating' | 'playing' | 'paused' | 'error';
-    ascentiaAudioAutoplay: boolean;
-    currentAscentiaAudioUrl: string | null;
-    lastAscentiaMessageText: string | null;
-}
-
-export interface ReportActions {
-    loadReportData: () => Promise<void>;
-    nextPage: () => void;
-    prevPage: () => void;
-    jumpPages: (count: number) => void;
-    goToPageByIndex: (pageIndex: number) => void;
-    nextImage: () => void;
-    prevImage: () => void;
-    setCurrentImageIndex: (index: number) => void;
-    castVote: (imageId: string, pageIndex: number) => void;
-    voteWithKeyboard: () => void;
-    jumpToNextUnvotedPage: () => void;
-    handleKeyDown: (event: KeyboardEvent) => void;
-    toggleTreeNav: () => void;
-    toggleSectionExpansion: (sectionId: string) => void;
-    setActiveExpansionPath: (pageIndex: number) => void;
-    toggleChatPanel: () => void;
-    setChatPanelWidth: (width: number) => void;
-    setImagePanelHeight: (height: number) => void;
-    openImageFullscreen: () => void;
-    closeImageFullscreen: () => void;
-    setReportChatInput: (input: string) => void;
-    addReportChatMessage: (message: ChatMessage) => void;
-    updateReportChatMessage: (id: string, chunk: string) => void;
-    updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
-    clearReportChatHistory: (currentPageTitle: string) => void;
-    updateTokenCount: (parts: Partial<ReportState['tokenCount']['breakdown']>) => void;
-    togglePromptVisibility: () => void;
-    toggleTldrVisibility: () => void;
-    toggleContentVisibility: () => void;
-    toggleHintVisibility: () => void;
-    markImageAsSeen: (pageId: string, imageId: string) => void;
-    jumpToNextUnseenImage: () => void;
-    jumpToFirstUnseenImage: () => void;
-    resetProgress: () => void;
-    // Page Audio Actions
-    setPlaybackStatus: (status: ReportState['playbackStatus']) => void;
-    setAutoplay: (enabled: boolean) => void;
-    setCurrentAudio: (url: string | null, pageIndex: number) => void;
-    setAudioTime: (time: number) => void;
-    setAudioDuration: (duration: number) => void;
-    setVolume: (level: number) => void;
-    toggleMute: () => void;
-    startSlideshow: () => void;
-    stopSlideshow: (userInitiated?: boolean) => void;
-    setPlaybackSpeed: (speed: number) => void;
-    // Ascentia Message Audio Actions (NEW C1401)
-    setAscentiaAudioStatus: (status: ReportState['ascentiaAudioStatus']) => void;
-    setAscentiaAutoplay: (enabled: boolean) => void;
-    playAscentiaMessage: (messageText: string) => void;
-    setCurrentAscentiaAudioUrl: (url: string | null) => void;
-    _resetReportStore: () => void;
-}
-
-type PersistedReportState = Pick<
-    ReportState,
-    | 'currentPageIndex' | 'currentImageIndex' | 'votesCastByPage' | 'imageVotes'
-    | 'isTreeNavOpen' | 'expandedSections' | 'isChatPanelOpen' | 'chatPanelWidth'
-    | 'imagePanelHeight' | 'reportChatHistory' | 'reportChatInput'
-    | 'seenImages' | 'isPromptVisible' | 'isTldrVisible' | 'isContentVisible' | 'isHintVisible'
-    | 'autoplayEnabled' | 'volume' | 'isMuted' | 'playbackSpeed' | 'ascentiaAudioAutoplay'
->;
-
-const createInitialReportState = (): ReportState => ({
-    reportData: null,
-    imageManifest: null,
-    allPages: [],
-    currentPageIndex: 0,
-    currentImageIndex: 0,
-    imageVotes: {},
-    isTreeNavOpen: false,
-    expandedSections: {},
-    isChatPanelOpen: false,
-    chatPanelWidth: 400,
-    imagePanelHeight: 300,
-    isImageFullscreen: false,
-    votesCastByPage: {},
-    reportChatHistory: [],
-    reportChatInput: '',
-    tokenCount: {
-        total: 0,
-        breakdown: { system: 0, context: 0, history: 0, user: 0, response: 0 },
-    },
-    isPromptVisible: true,
-    isTldrVisible: true,
-    isContentVisible: true,
-    isHintVisible: true,
-    seenImages: {},
-    // Page Audio State
-    playbackStatus: 'idle',
-    autoplayEnabled: false,
-    currentAudioUrl: null,
-    currentAudioPageIndex: null,
-    currentTime: 0,
-    duration: 0,
-    volume: 1,
-    isMuted: false,
-    slideshowTimer: null,
-    nextPageTimer: null,
-    playbackSpeed: 1,
-    // Ascentia Message Audio State (NEW C1401)
-    ascentiaAudioStatus: 'idle',
-    ascentiaAudioAutoplay: false,
-    currentAscentiaAudioUrl: null,
-    lastAscentiaMessageText: null,
-});
-
-export const useReportStore = create<ReportState & ReportActions>()(
-    persist(
-        (set, get) => ({
-            ...createInitialReportState(),
-
-            // NEW C1401: Ascentia Message Audio Actions
-            setAscentiaAudioStatus: (status) => set({ ascentiaAudioStatus: status }),
-            setAscentiaAutoplay: (enabled) => set({ ascentiaAudioAutoplay: enabled }),
-            setCurrentAscentiaAudioUrl: (url) => set({ currentAscentiaAudioUrl: url }),
-            playAscentiaMessage: (messageText) => {
-                const { setAscentiaAudioStatus, setCurrentAscentiaAudioUrl } = get();
-                setAscentiaAudioStatus('generating');
-                set({ lastAscentiaMessageText: messageText });
-                
-                fetch('/api/tts/generate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text: messageText }),
-                })
-                .then(response => {
-                    if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
-                    return response.blob();
-                })
-                .then(audioBlob => {
-                    const newUrl = URL.createObjectURL(audioBlob);
-                    setCurrentAscentiaAudioUrl(newUrl);
-                })
-                .catch(error => {
-                    logError('[reportStore:playAscentia]', 'Failed to generate audio for Ascentia message', error);
-                    setAscentiaAudioStatus('error');
-                });
-            },
-            // ---
-
-            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
-            toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            setPlaybackSpeed: (speed) => {
-                const { startSlideshow, playbackStatus } = get();
-                set({ playbackSpeed: speed });
-                if (playbackStatus === 'playing' || playbackStatus === 'paused') {
-                    startSlideshow();
-                }
-            },
-
-            startSlideshow: () => {
-                const { stopSlideshow, allPages, currentPageIndex, duration, setCurrentImageIndex, nextPage, autoplayEnabled, playbackSpeed } = get();
-                stopSlideshow(false); 
-
-                const currentPage = allPages[currentPageIndex];
-                if (!currentPage || !autoplayEnabled) return;
-
-                const actualDuration = duration / playbackSpeed;
-                const actualDurationMs = actualDuration * 1000;
-                if (actualDurationMs <= 0) return;
-
-                logInfo('[reportStore:slideshow]', `Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
-
-                const nextPageTimer = setTimeout(() => {
-                    if (get().autoplayEnabled) {
-                        logInfo('[reportStore:slideshow]', `Next page timer fired. Advancing page.`);
-                        nextPage();
-                    }
-                }, actualDurationMs + 2000);
-                set({ nextPageTimer });
-
-                const images = currentPage.imagePrompts[0]?.images;
-                if (!images || images.length <= 1) return;
-
-                const timePerImage = actualDurationMs / images.length;
-                let imageIdx = get().currentImageIndex; 
-
-                const slideshowTimer = setInterval(() => {
-                    if (!get().autoplayEnabled) {
-                        clearInterval(slideshowTimer);
-                        return;
-                    }
-                    imageIdx = (get().currentImageIndex + 1);
-                    if (imageIdx < images.length) {
-                        setCurrentImageIndex(imageIdx);
-                    } else {
-                        clearInterval(slideshowTimer);
-                        set({ slideshowTimer: null });
-                    }
-                }, timePerImage);
-
-                set({ slideshowTimer });
-            },
-
-            stopSlideshow: (userInitiated = false) => {
-                const { slideshowTimer, nextPageTimer } = get();
-                if (slideshowTimer) clearInterval(slideshowTimer);
-                if (nextPageTimer) clearTimeout(nextPageTimer);
-
-                const currentState = get();
-                if (currentState.slideshowTimer || currentState.nextPageTimer) {
-                    logInfo('[reportStore:slideshow]', `Stopping slideshow. User initiated: ${userInitiated}`);
-                }
-
-                if (userInitiated) {
-                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
-                } else {
-                    set({ slideshowTimer: null, nextPageTimer: null });
-                }
-            },
-            
-            // ... (loadReportData and other actions remain the same)
-            loadReportData: async () => {
-                const logPrefix = '[store:report:loadV3]';
-                if (get().reportData && get().imageManifest) return;
-
-                try {
-                    logInfo(logPrefix, 'Fetching report content and image manifest...');
-                    const [contentRes, manifestRes] = await Promise.all([
-                        fetch('/data/reports/reportContent.json'),
-                        fetch('/data/reports/imageManifest.json')
-                    ]);
-
-                    if (!contentRes.ok) throw new Error(`Failed to fetch reportContent.json: ${contentRes.statusText}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch imageManifest.json: ${manifestRes.statusText}`);
-
-                    const contentData: ReportContentData = await contentRes.json();
-                    const manifestData: ImageManifestData = await manifestRes.json();
-
-                    logInfo(logPrefix, `Successfully fetched data. Content: "${contentData.reportTitle}", Manifest: "${manifestData.manifestId}"`);
-
-                    const reconstructedPages: ReportPage[] = [];
-                    contentData.sections.forEach(section => {
-                        const processPages = (pages: RawReportPage[]) => {
-                            (pages || []).forEach(rawPage => {
-                                const imagePrompts: ReportImagePrompt[] = [];
-
-                                (rawPage.imageGroupIds || []).forEach((groupId) => {
-                                    const groupMeta = manifestData.imageGroups[groupId];
-                                    if (groupMeta) {
-                                        const images: ReportImage[] = [];
-                                        for (let i = 1; i <= groupMeta.imageCount; i++) {
-                                            const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-                                            const url = `${manifestData.basePath}${groupMeta.path}${fileName}`;
-                                            const imageId = `${rawPage.pageId}-${groupId}-${i}`;
-                                            images.push({
-                                                imageId,
-                                                url,
-                                                prompt: groupMeta.prompt,
-                                                alt: groupMeta.alt,
-                                            });
-                                        }
-                                        imagePrompts.push({
-                                            promptId: groupId,
-                                            promptText: groupMeta.prompt,
-                                            images,
-                                        });
-                                    } else {
-                                        logWarn(logPrefix, `Image group metadata not found for groupId: ${groupId}`);
-                                    }
-                                });
-
-                                reconstructedPages.push({
-                                    pageId: rawPage.pageId,
-                                    pageTitle: rawPage.pageTitle,
-                                    tldr: rawPage.tldr,
-                                    content: rawPage.content,
-                                    imagePrompts,
-                                });
-                            });
-                        };
-                        
-                        if (section.pages) {
-                            processPages(section.pages);
-                        }
-                        if (section.subSections) {
-                            section.subSections.forEach(sub => processPages(sub.pages));
-                        }
-                    });
-
-                    logInfo(logPrefix, `Reconstructed ${reconstructedPages.length} pages.`);
-                    const { currentPageIndex, currentImageIndex } = get();
-                    const validPageIndex = currentPageIndex >= 0 && currentPageIndex < reconstructedPages.length ? currentPageIndex : 0;
-                    
-                    set({
-                        reportData: contentData,
-                        imageManifest: manifestData,
-                        allPages: reconstructedPages,
-                        currentPageIndex: validPageIndex,
-                        currentImageIndex: currentImageIndex || 0,
-                    });
-
-                } catch (error) {
-                    logError(logPrefix, "Failed to load and process report data.", error);
-                }
-            },
-            
-            nextPage: () => get().jumpPages(1),
-            prevPage: () => get().jumpPages(-1),
-
-            jumpPages: (count) => {
-                const { stopSlideshow, autoplayEnabled, setPlaybackStatus } = get();
-                const userInitiated = !autoplayEnabled;
-                stopSlideshow(userInitiated);
-                set((state) => {
-                    const totalPages = state.allPages.length;
-                    if (totalPages === 0) return state;
-                    let newIndex = state.currentPageIndex + count;
-                    if (newIndex >= totalPages) {
-                        // C1399: If autoplay is on and we reach the end, turn it off.
-                        if (state.autoplayEnabled) {
-                            logInfo('store:report', 'Autoplay reached end of report. Disabling.');
-                            setPlaybackStatus('idle');
-                            return { ...state, autoplayEnabled: false };
-                        }
-                        newIndex = 0;
-                    }
-                    if (newIndex < 0) newIndex = totalPages - 1;
-                    
-                    if (newIndex !== state.currentPageIndex) {
-                        logInfo('store:report', `Jumping ${count} pages to index ${newIndex}`);
-                        return { currentPageIndex: newIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 };
-                    }
-                    return state;
-                });
-            },
-
-            goToPageByIndex: (pageIndex) => {
-                get().stopSlideshow(true);
-                const totalPages = get().allPages.length;
-                if (pageIndex >= 0 && pageIndex < totalPages) {
-                    logInfo('store:report', `Jumping to page by index: ${pageIndex}`);
-                    set({ currentPageIndex: pageIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 });
-                } else {
-                    logWarn('store:report', `Attempted to jump to invalid page index: ${pageIndex}`);
-                }
-            },
-            
-            nextImage: () => {
-                get().stopSlideshow(true);
-                set((state) => {
-                    const currentPage = state.allPages[state.currentPageIndex];
-                    const currentPrompt = currentPage?.imagePrompts[0];
-                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
-                    const newImageIndex = (state.currentImageIndex + 1) % currentPrompt.images.length;
-                    return { currentImageIndex: newImageIndex };
-                });
-            },
-
-            prevImage: () => {
-                get().stopSlideshow(true);
-                set((state) => {
-                    const currentPage = state.allPages[state.currentPageIndex];
-                    const currentPrompt = currentPage?.imagePrompts[0];
-                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
-                    const newImageIndex = (state.currentImageIndex - 1 + currentPrompt.images.length) % currentPrompt.images.length;
-                    return { currentImageIndex: newImageIndex };
-                });
-            },
-            
-            setCurrentImageIndex: (index) => {
-                set((state) => {
-                    const currentPage = state.allPages[state.currentPageIndex];
-                    const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
-                    if (index >= 0 && index < totalImages) {
-                        return { currentImageIndex: index };
-                    }
-                    return state;
-                });
-            },
-
-            castVote: async (imageId, pageIndex) => {
-                const { votesCastByPage } = get();
-                const alreadyVotedFor = votesCastByPage[pageIndex];
-                if (alreadyVotedFor === imageId) return;
-                logInfo('store:report', `Casting vote for image: ${imageId} on page ${pageIndex}`);
-                set(state => ({
-                    votesCastByPage: { ...state.votesCastByPage, [pageIndex]: imageId },
-                    imageVotes: { ...state.imageVotes, [imageId]: (state.imageVotes[imageId] || 0) + 1 }
-                }));
-                try {
-                    const response = await fetch('/api/report/vote', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ imageId }),
-                    });
-                    if (!response.ok) throw new Error(await response.text());
-                    const result = await response.json();
-                    logInfo('store:report', `Vote successful for ${imageId}. New server count: ${result.newVoteCount}`);
-                } catch (error) {
-                    logWarn('store:report', `Failed to cast vote for ${imageId}. Reverting optimistic update.`, error);
-                    set(state => ({
-                        votesCastByPage: { ...state.votesCastByPage, [pageIndex]: alreadyVotedFor },
-                        imageVotes: { ...state.imageVotes, [imageId]: Math.max(0, (state.imageVotes[imageId] || 1) - 1) }
-                    }));
-                }
-            },
-            
-            voteWithKeyboard: () => {
-                get().stopSlideshow(true);
-                const { allPages, currentPageIndex, currentImageIndex, castVote } = get();
-                const currentPage = allPages[currentPageIndex];
-                const currentPrompt = currentPage?.imagePrompts[0];
-                const currentImage = currentPrompt?.images[currentImageIndex];
-                if (currentImage) castVote(currentImage.imageId, currentPageIndex);
-            },
-
-            jumpToNextUnvotedPage: () => {
-                const { allPages, votesCastByPage, goToPageByIndex } = get();
-                for (let i = 0; i < allPages.length; i++) {
-                    if (!votesCastByPage.hasOwnProperty(i)) {
-                        goToPageByIndex(i);
-                        return;
-                    }
-                }
-                logInfo('store:report', 'All pages have been voted on!');
-            },
-
-            handleKeyDown: (event: KeyboardEvent) => {
-                const { stopSlideshow } = get();
-                let jumpCount = 1;
-                if (event.shiftKey) jumpCount = 5;
-                if (event.ctrlKey) jumpCount = 10;
-
-                switch (event.key) {
-                    case 'ArrowUp': stopSlideshow(true); get().jumpPages(-jumpCount); break;
-                    case 'ArrowDown': stopSlideshow(true); get().jumpPages(jumpCount); break;
-                    case 'ArrowLeft': stopSlideshow(true); get().prevImage(); break;
-                    case 'ArrowRight': stopSlideshow(true); get().nextImage(); break;
-                    case ' ': get().voteWithKeyboard(); break;
-                }
-            },
-            
-            toggleTreeNav: () => set(state => ({ isTreeNavOpen: !state.isTreeNavOpen })),
-            toggleSectionExpansion: (sectionId) => set(state => ({
-                expandedSections: {
-                    ...state.expandedSections,
-                    [sectionId]: !state.expandedSections[sectionId],
-                }
-            })),
-
-            setActiveExpansionPath: (pageIndex) => {
-                const { reportData } = get();
-                if (!reportData) return;
-
-                let activeSectionId: string | null = null;
-                let activeSubSectionId: string | null = null;
-
-                let cumulativePages = 0;
-                for (const section of reportData.sections) {
-                    let pageCounterForSection = 0;
-                    
-                    const directPagesCount = (section.pages || []).length;
-                    if (pageIndex >= cumulativePages && pageIndex < cumulativePages + directPagesCount) {
-                        activeSectionId = section.sectionId;
-                        break;
-                    }
-                    pageCounterForSection += directPagesCount;
-
-                    if (section.subSections) {
-                        for (const subSection of section.subSections) {
-                            const subSectionPageCount = (subSection.pages || []).length;
-                            if (pageIndex >= cumulativePages + pageCounterForSection && pageIndex < cumulativePages + pageCounterForSection + subSectionPageCount) {
-                                activeSectionId = section.sectionId;
-                                activeSubSectionId = subSection.subSectionId;
-                                break;
-                            }
-                            pageCounterForSection += subSectionPageCount;
-                        }
-                    }
-                    if (activeSectionId) break;
-                    cumulativePages += pageCounterForSection;
-                }
-
-                if (!activeSectionId) return;
-
-                set(state => {
-                    const newExpandedSections: Record<string, boolean> = {};
-                    
-                    for (const section of state.reportData!.sections) {
-                        newExpandedSections[section.sectionId] = section.sectionId === activeSectionId;
-                        
-                        if (section.subSections) {
-                            for (const subSection of section.subSections) {
-                                newExpandedSections[subSection.subSectionId] = subSection.subSectionId === activeSubSectionId;
-                            }
-                        }
-                    }
-                    return { expandedSections: newExpandedSections };
-                });
-            },
-
-            toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
-            setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
-            setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
-            openImageFullscreen: () => set({ isImageFullscreen: true }),
-            closeImageFullscreen: () => set({ isImageFullscreen: false }),
-            setReportChatInput: (input) => set({ reportChatInput: input }),
-            addReportChatMessage: (message) => {
-                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
-                set(state => ({
-                    reportChatHistory: [...state.reportChatHistory, message].slice(-50),
-                }));
-                if (message.author === 'Ascentia' && message.status === 'complete' && ascentiaAudioAutoplay) {
-                    playAscentiaMessage(message.message);
-                }
-            },
-            updateReportChatMessage: (id, chunk) => set(state => ({
-                reportChatHistory: state.reportChatHistory.map(msg =>
-                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
-                )
-            })),
-            updateReportChatStatus: (id, status) => {
-                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
-                set(state => ({
-                    reportChatHistory: state.reportChatHistory.map(msg =>
-                        msg.id === id ? { ...msg, status } : msg
-                    )
-                }));
-                if (status === 'complete') {
-                    const finalMessage = get().reportChatHistory.find(msg => msg.id === id);
-                    if (finalMessage && ascentiaAudioAutoplay) {
-                        playAscentiaMessage(finalMessage.message);
-                    }
-                }
-            },
-            clearReportChatHistory: (currentPageTitle) => {
-                const initialMessage: ChatMessage = {
-                    author: 'Ascentia', flag: '🤖',
-                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
-                };
-                set({
-                    reportChatHistory: [initialMessage],
-                    reportChatInput: '',
-                    tokenCount: createInitialReportState().tokenCount,
-                });
-            },
-            updateTokenCount: (parts) => {
-                set(state => {
-                    const historyChars = state.reportChatHistory.map(m => (typeof m.author === 'string' ? m.author : m.author.displayName) + m.message).join('').length;
-                    const historyTokens = Math.ceil(historyChars / 4);
-
-                    const responseChars = state.reportChatHistory.filter(m => m.author === 'Ascentia').map(m => m.message).join('').length;
-                    const responseTokens = Math.ceil(responseChars / 4);
-
-                    const staticSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`;
-                    const systemTokens = Math.ceil(staticSystemPrompt.length / 4);
-
-                    const newBreakdown = {
-                        system: systemTokens,
-                        context: parts.context ?? state.tokenCount.breakdown.context,
-                        history: historyTokens,
-                        user: parts.user ?? state.tokenCount.breakdown.user,
-                        response: responseTokens,
-                    };
-                    
-                    const total = newBreakdown.system + newBreakdown.context + newBreakdown.history + newBreakdown.user;
-                    
-                    return { tokenCount: { total, breakdown: newBreakdown } };
-                });
-            },
-            togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
-            toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
-            toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
-            toggleHintVisibility: () => set(state => ({ isHintVisible: !state.isHintVisible })),
-            markImageAsSeen: (pageId, imageId) => {
-                const key = `${pageId}-${imageId}`;
-                if (get().seenImages[key]) return;
-                set(state => ({ seenImages: { ...state.seenImages, [key]: true } }));
-            },
-            jumpToFirstUnseenImage: () => {
-                const { allPages, seenImages, goToPageByIndex } = get();
-                for (let p = 0; p < allPages.length; p++) {
-                    const page = allPages[p];
-                    const image = page.imagePrompts[0]?.images[0];
-                    if (image) {
-                        const key = `${page.pageId}-${image.imageId}`;
-                        if (!seenImages[key]) {
-                            goToPageByIndex(p);
-                            return;
-                        }
-                    }
-                }
-                goToPageByIndex(0);
-            },
-            jumpToNextUnseenImage: () => {
-                const { allPages, seenImages, currentPageIndex, goToPageByIndex } = get();
-                const totalPages = allPages.length;
-                for (let i = 1; i <= totalPages; i++) {
-                    const nextIndex = (currentPageIndex + i) % totalPages;
-                    const page = allPages[nextIndex];
-                    const image = page.imagePrompts[0]?.images[0];
-                    if (image) {
-                        const key = `${page.pageId}-${image.imageId}`;
-                        if (!seenImages[key]) {
-                            goToPageByIndex(nextIndex);
-                            return;
-                        }
-                    }
-                }
-                logInfo('store:report', 'All images have been seen!');
-            },
-            resetProgress: () => {
-                logInfo('store:report', 'Resetting all image progress.');
-                set({ seenImages: {} });
-            },
-            setPlaybackStatus: (status) => set({ playbackStatus: status }),
-            setAutoplay: (enabled) => {
-                get().stopSlideshow(false); 
-                if (enabled) {
-                    set({ autoplayEnabled: true, currentImageIndex: 0 }); 
-                } else {
-                    set({ autoplayEnabled: false });
-                }
-            },
-            setCurrentAudio: (url, pageIndex) => set(state => {
-                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
-                    return state;
-                }
-                return {
-                    currentAudioUrl: url,
-                    currentAudioPageIndex: pageIndex,
-                    playbackStatus: url ? 'buffering' : 'idle',
-                    currentTime: 0,
-                    duration: 0,
-                };
-            }),
-            setAudioTime: (time) => set({ currentTime: time }),
-            setAudioDuration: (duration) => set({ duration: duration }),
-            _resetReportStore: () => set(createInitialReportState()),
-        }),
-        {
-            name: 'ai-ascent-report-storage',
-            storage: createJSONStorage(() => localStorage),
-            partialize: (state): PersistedReportState => ({
-                currentPageIndex: state.currentPageIndex,
-                currentImageIndex: state.currentImageIndex,
-                votesCastByPage: state.votesCastByPage,
-                imageVotes: state.imageVotes,
-                isTreeNavOpen: state.isTreeNavOpen,
-                expandedSections: state.expandedSections,
-                isChatPanelOpen: state.isChatPanelOpen,
-                chatPanelWidth: state.chatPanelWidth,
-                imagePanelHeight: state.imagePanelHeight,
-                reportChatHistory: state.reportChatHistory,
-                reportChatInput: state.reportChatInput,
-                seenImages: state.seenImages,
-                isPromptVisible: state.isPromptVisible,
-                isTldrVisible: state.isTldrVisible,
-                isContentVisible: state.isContentVisible,
-                isHintVisible: state.isHintVisible,
-                autoplayEnabled: state.autoplayEnabled,
-                volume: state.volume,
-                isMuted: state.isMuted,
-                playbackSpeed: state.playbackSpeed,
-                ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
-            }),
-        }
-    )
-);
-
-if (process.env.NODE_ENV === 'development') {
-    (window as any).reportStore = useReportStore;
-}
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportTreeNav.tsx">
-// src/components/menus/report/ReportTreeNav.tsx
-// Updated on: C1372 (Default subsection expansion to false.)
-// Updated on: C1369 (Robustly handle both nested and flat section structures.)
-// Updated on: C1367 (Fix property access and implicit any errors by adding explicit types.)
-// Updated on: C1360 (Render nested subsections.)
-// Updated on: C1356 (Use centralized expandedSections state from reportStore for persistence.)
-// NEW FILE - C1340
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-
-import type { RawReportSection, RawSubSection, RawReportPage } from '../../../state/reportStore';
-
-
-const ReportTreeNav: React.FC = () => {
-  const { reportData, currentPageIndex, goToPageByIndex, expandedSections, toggleSectionExpansion } = useReportStore(
-    useShallow(state => ({
-      reportData: state.reportData,
-      currentPageIndex: state.currentPageIndex,
-      goToPageByIndex: state.goToPageByIndex,
-      expandedSections: state.expandedSections,
-      toggleSectionExpansion: state.toggleSectionExpansion,
-    }))
-  );
-
-  if (!reportData) return null;
-
-  const containerStyle: React.CSSProperties = {
-    width: '250px',
-    minWidth: '250px',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    borderRight: '1px solid #555',
-    padding: '10px',
-    overflowY: 'auto',
-    flexShrink: 0,
-  };
-
-  const sectionHeaderStyle: React.CSSProperties = {
-    fontSize: '11px',
-    color: '#00ffff',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
-    marginBottom: '5px',
-    fontWeight: 'bold',
-  };
-
-  const subSectionHeaderStyle: React.CSSProperties = {
-    ...sectionHeaderStyle,
-    fontSize: '10px',
-    color: '#aaddff',
-    paddingLeft: '10px',
-    fontWeight: 'normal',
-  };
-
-  const pageLinkStyle = (isActive: boolean): React.CSSProperties => ({
-    fontSize: '10px',
-    color: isActive ? '#FFA500' : '#ccc',
-    padding: '4px 0 4px 25px',
-    cursor: 'pointer',
-    display: 'block',
-    fontWeight: isActive ? 'bold' : 'normal',
-    borderLeft: `2px solid ${isActive ? '#FFA500' : 'transparent'}`,
-    transition: 'all 0.2s',
-  });
-
-  let pageCounter = 0;
-
-  return (
-    <div style={containerStyle}>
-      <h3 style={{ marginTop: 0, fontSize: '12px' }}>Report Navigator</h3>
-      {reportData.sections.map((section: RawReportSection) => {
-        const isSectionExpanded = expandedSections[section.sectionId] ?? false;
-        const sectionPageStartIndex = pageCounter;
-
-        // C1372: Combine page counting from direct pages and subsection pages
-        let sectionPageCount = (section.pages || []).length;
-        if (section.subSections) {
-          sectionPageCount += section.subSections.reduce((acc, sub) => acc + (sub.pages || []).length, 0);
-        }
-        pageCounter += sectionPageCount;
-
-        return (
-          <div key={section.sectionId}>
-            <div style={sectionHeaderStyle} onClick={() => toggleSectionExpansion(section.sectionId)}>
-              {isSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
-              {section.sectionTitle}
-            </div>
-            {isSectionExpanded && (
-              <div style={{ paddingLeft: '10px' }}>
-                {/* Render direct pages first if they exist */}
-                {(section.pages || []).map((page: RawReportPage, index: number) => {
-                  const globalPageIndex = sectionPageStartIndex + index;
-                  const isActive = globalPageIndex === currentPageIndex;
-                  return (
-                    <div
-                      key={page.pageId}
-                      style={pageLinkStyle(isActive)}
-                      onClick={() => goToPageByIndex(globalPageIndex)}
-                    >
-                      {page.pageTitle}
-                    </div>
-                  );
-                })}
-
-                {/* Then render subsections */}
-                {section.subSections && (() => {
-                  let subSectionPageCounter = sectionPageStartIndex + (section.pages || []).length;
-                  return section.subSections.map((subSection: RawSubSection) => {
-                    // C1372 FIX: Default to false to start collapsed
-                    const isSubSectionExpanded = expandedSections[subSection.subSectionId] ?? false;
-                    const startIndex = subSectionPageCounter;
-                    subSectionPageCounter += (subSection.pages || []).length;
-
-                    return (
-                      <div key={subSection.subSectionId}>
-                        <div style={subSectionHeaderStyle} onClick={() => toggleSectionExpansion(subSection.subSectionId)}>
-                          {isSubSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
-                          {subSection.subSectionTitle}
-                        </div>
-                        {isSubSectionExpanded && (
-                          (subSection.pages || []).map((page: RawReportPage, index: number) => {
-                            const globalPageIndex = startIndex + index;
-                            const isActive = globalPageIndex === currentPageIndex;
-                            return (
-                              <div
-                                key={page.pageId}
-                                style={pageLinkStyle(isActive)}
-                                onClick={() => goToPageByIndex(globalPageIndex)}
-                              >
-                                {page.pageTitle}
-                              </div>
-                            );
-                          })
-                        )}
-                      </div>
-                    );
-                  });
-                })()}
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-export default ReportTreeNav;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportViewerModal.tsx">
-// src/components/menus/report/ReportViewerModal.tsx
-// Updated on: C1401 (Remove flex-shrink: 0 from progress bar container to fix resizing bug.)
-// Updated on: C1400 (Add a flex-shrink property to the progress bar container to help with resizing.)
-// Updated on: C1399 (Trigger audio generation on page change if autoplay is enabled.)
-// Updated on: C1398 (Add useEffect to orchestrate slideshow start on 'playing' state.)
-// Updated on: C1397 (Refine useEffect for autoplay to fix page jump bug.)
-import React, { useEffect, useState, useRef } from 'react';
-import { useUIStore } from '../../../state';
-import PageNavigator from './PageNavigator';
-import ImageNavigator from './ImageNavigator';
-import PromptNavigator from './PromptNavigator';
-import ReportTreeNav from './ReportTreeNav';
-import ReportChatPanel from './ReportChatPanel';
-import MarkdownRenderer from '../../ui/MarkdownRenderer';
-import { useReportStore } from '../../../state/reportStore';
-import { FaArrowsAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-import { logInfo, logError } from '../../../logger';
-import { Resizable } from 're-resizable';
-import ReportProgressBar from './ReportProgressBar';
-import AudioControls from './AudioControls';
-
-const ReportViewerModal: React.FC = () => {
-  const { closeReportViewer } = useUIStore();
-  const {
-    reportData, loadReportData, allPages, currentPageIndex,
-    currentImageIndex, isTreeNavOpen, isChatPanelOpen,
-    toggleChatPanel, imagePanelHeight, setImagePanelHeight,
-    isImageFullscreen, openImageFullscreen, closeImageFullscreen,
-    chatPanelWidth, setChatPanelWidth, handleKeyDown,
-    isPromptVisible, isTldrVisible, isContentVisible,
-    toggleTldrVisibility, toggleContentVisibility, markImageAsSeen,
-    setActiveExpansionPath,
-    stopSlideshow,
-    playbackStatus, autoplayEnabled, startSlideshow,
-  } = useReportStore(useShallow(state => ({
-    reportData: state.reportData,
-    loadReportData: state.loadReportData,
-    allPages: state.allPages,
-    currentPageIndex: state.currentPageIndex,
-    currentImageIndex: state.currentImageIndex,
-    isTreeNavOpen: state.isTreeNavOpen,
-    isChatPanelOpen: state.isChatPanelOpen,
-    toggleChatPanel: state.toggleChatPanel,
-    imagePanelHeight: state.imagePanelHeight,
-    setImagePanelHeight: state.setImagePanelHeight,
-    isImageFullscreen: state.isImageFullscreen,
-    openImageFullscreen: state.openImageFullscreen,
-    closeImageFullscreen: state.closeImageFullscreen,
-    chatPanelWidth: state.chatPanelWidth,
-    setChatPanelWidth: state.setChatPanelWidth,
-    handleKeyDown: state.handleKeyDown,
-    isPromptVisible: state.isPromptVisible,
-    isTldrVisible: state.isTldrVisible,
-    isContentVisible: state.isContentVisible,
-    toggleTldrVisibility: state.toggleTldrVisibility,
-    toggleContentVisibility: state.toggleContentVisibility,
-    markImageAsSeen: state.markImageAsSeen,
-    setActiveExpansionPath: state.setActiveExpansionPath,
-    stopSlideshow: state.stopSlideshow,
-    playbackStatus: state.playbackStatus,
-    autoplayEnabled: state.autoplayEnabled,
-    startSlideshow: state.startSlideshow,
-  })));
-
-  const [isDraggingCorner, setIsDraggingCorner] = useState(false);
-  const initialDragPos = useRef({ x: 0, y: 0 });
-  const initialDimensions = useRef({ width: 0, height: 0 });
-
-  useEffect(() => {
-    if (!reportData) {
-      loadReportData();
-    }
-  }, [reportData, loadReportData]);
-
-  useEffect(() => {
-    if (playbackStatus === 'playing' && autoplayEnabled) {
-      startSlideshow();
-    }
-  }, [playbackStatus, autoplayEnabled, startSlideshow]);
-
-  // C1399: This effect ensures that when autoplay navigates to a new page,
-  // the audio for that new page starts automatically.
-  useEffect(() => {
-    const audioControls = document.querySelector('#report-audio-controls button') as HTMLButtonElement;
-    if (autoplayEnabled && playbackStatus === 'idle') {
-      // Trigger the play/generation logic, which is now handled inside AudioControls
-      if (audioControls) {
-        // A bit of a hack, but it reliably triggers the generateAndPlayAudio flow
-        // when the page changes while autoplay is on.
-        audioControls.click();
-      }
-    }
-  }, [currentPageIndex, autoplayEnabled]);
-
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement;
-      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
-        return;
-      }
-      if (e.key === ' ' || e.key.startsWith('Arrow')) {
-        e.preventDefault();
-      }
-      handleKeyDown(e);
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [handleKeyDown]);
-
-  useEffect(() => {
-    setActiveExpansionPath(currentPageIndex);
-  }, [currentPageIndex, setActiveExpansionPath]);
-
-  const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-  const currentImage = currentPrompt?.images[currentImageIndex];
-
-  useEffect(() => {
-    if (currentPage && currentImage) {
-      markImageAsSeen(currentPage.pageId, currentImage.imageId);
-    }
-  }, [currentPage, currentImage, markImageAsSeen]);
-
-
-  const handleClose = () => {
-    if (isChatPanelOpen) {
-      toggleChatPanel();
-    } else {
-      closeReportViewer();
-    }
-  };
-
-  const handleCornerMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    stopSlideshow(true);
-    setIsDraggingCorner(true);
-    initialDragPos.current = { x: e.clientX, y: e.clientY };
-    initialDimensions.current = { width: chatPanelWidth, height: imagePanelHeight };
-  };
-
-  useEffect(() => {
-    const handleCornerMouseMove = (e: MouseEvent) => {
-      if (!isDraggingCorner) return;
-      const deltaX = e.clientX - initialDragPos.current.x;
-      const deltaY = e.clientY - initialDragPos.current.y;
-      setChatPanelWidth(initialDimensions.current.width - deltaX);
-      setImagePanelHeight(initialDimensions.current.height + deltaY);
-    };
-    const handleCornerMouseUp = () => setIsDraggingCorner(false);
-    if (isDraggingCorner) {
-      window.addEventListener('mousemove', handleCornerMouseMove);
-      window.addEventListener('mouseup', handleCornerMouseUp);
-    }
-    return () => {
-      window.removeEventListener('mousemove', handleCornerMouseMove);
-      window.removeEventListener('mouseup', handleCornerMouseUp);
-    };
-  }, [isDraggingCorner, setChatPanelWidth, setImagePanelHeight]);
-
-  const modalOverlayStyle: React.CSSProperties = {
-    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 100,
-    display: 'flex', justifyContent: 'center', alignItems: 'center',
-    pointerEvents: 'auto',
-    fontFamily: '"Press Start 2P", cursive',
-  };
-
-  const modalContentStyle: React.CSSProperties = {
-    background: 'linear-gradient(145deg, #1a1a1a, #2a2a2a)',
-    padding: isChatPanelOpen ? '10px' : '20px',
-    borderRadius: isChatPanelOpen ? '0' : '12px',
-    border: '2px solid #00ffff',
-    width: isChatPanelOpen ? '98%' : '95vw',
-    maxWidth: isChatPanelOpen ? 'none' : '1400px',
-    height: isChatPanelOpen ? '98%' : '95vh',
-    display: 'flex',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
-    color: 'white', position: 'relative',
-    gap: '15px',
-    transition: 'width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, padding 0.3s ease',
-  };
-
-  const mainContentAreaStyle: React.CSSProperties = {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    minWidth: 0,
-  };
-
-  const imageDisplayArea: React.CSSProperties = {
-    width: '100%',
-    backgroundColor: '#111',
-    border: '1px solid #444',
-    borderRadius: '8px',
-    marginBottom: '10px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#555',
-    fontSize: '12px',
-    position: 'relative',
-    overflow: 'hidden',
-    flexShrink: 0,
-  };
-
-  const imageStyle: React.CSSProperties = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-    cursor: 'pointer',
-  };
-
-  const contentAreaStyle: React.CSSProperties = {
-    flex: '1 1 auto',
-    overflowY: 'auto',
-    padding: '10px',
-    backgroundColor: 'rgba(0,0,0,0.2)',
-    borderRadius: '4px',
-    fontSize: '11px',
-    lineHeight: '1.7',
-    minHeight: 0,
-  };
-
-  const headerContainer: React.CSSProperties = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    paddingBottom: '5px',
-    flexShrink: 0,
-  };
-
-  const navContainerStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '5px',
-    width: '100%',
-    borderTop: '1px solid #444',
-    borderBottom: '1px solid #444',
-    padding: '5px 0',
-    marginTop: '5px'
-  };
-
-  const fullscreenOverlayStyle: React.CSSProperties = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.95)',
-    zIndex: 120,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-  };
-
-  const fullscreenImageStyle: React.CSSProperties = {
-    maxWidth: '95vw',
-    maxHeight: '95vh',
-    objectFit: 'contain',
-  };
-
-  const cornerDragHandleStyle: React.CSSProperties = {
-    position: 'absolute',
-    bottom: '-5px',
-    right: '-5px',
-    width: '20px',
-    height: '20px',
-    cursor: 'move',
-    zIndex: 115,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'rgba(255,255,255,0.3)',
-  };
-
-  const sectionHeaderStyle: React.CSSProperties = {
-    color: '#FFA500', borderBottom: '1px dashed #555', paddingBottom: '5px',
-    margin: '0 0 10px 0', display: 'flex', alignItems: 'center',
-    justifyContent: 'space-between',
-  };
-
-  const toggleButtonStyle: React.CSSProperties = {
-    background: 'none', border: 'none', color: '#aaa', cursor: 'pointer', fontSize: '12px'
-  };
-
-  if (!reportData || allPages.length === 0) {
-    return (
-      <div style={modalOverlayStyle}>
-        <div style={{ ...modalContentStyle, justifyContent: 'center', alignItems: 'center' }}>Loading Report...</div>
-      </div>
-    );
-  }
-
-  return (
-    <div style={modalOverlayStyle}>
-      {isImageFullscreen && currentImage && (
-        <div style={fullscreenOverlayStyle} onClick={closeImageFullscreen}>
-          <img src={currentImage.url} alt={currentPrompt?.promptText} style={fullscreenImageStyle} />
-        </div>
-      )}
-
-      <div style={modalContentStyle}>
-        {isTreeNavOpen && <ReportTreeNav />}
-
-        <div style={mainContentAreaStyle}>
-          <div style={headerContainer}>
-            <PageNavigator onClose={handleClose} />
-          </div>
-
-          {/* C1401: Removed flexShrink: 0 to allow resizing */}
-          <div>
-            <ReportProgressBar />
-          </div>
-
-          <Resizable
-            size={{ width: '100%', height: imagePanelHeight }}
-            minHeight={200}
-            maxHeight="60%"
-            onResizeStart={() => stopSlideshow(true)}
-            onResizeStop={(e, direction, ref, d) => {
-              setImagePanelHeight(imagePanelHeight + d.height);
-            }}
-            enable={{ top: false, right: false, bottom: true, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
-            style={{ flexShrink: 0, marginBottom: '10px', position: 'relative' }}
-          >
-            <div style={{ ...imageDisplayArea, height: '100%', marginBottom: 0 }}>
-              {currentImage?.url ? (
-                <img
-                  src={currentImage.url}
-                  alt={currentPrompt?.promptText}
-                  style={imageStyle}
-                  onClick={openImageFullscreen}
-                  onLoad={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    logInfo('[ReportViewer:Image]', `Successfully LOADED image. Natural dimensions: ${img.naturalWidth}x${img.naturalHeight}. Src: ${currentImage.url}`);
-                  }}
-                  onError={() => logError('[ReportViewer:Image]', `FAILED to load image. Path may be incorrect, file missing, or dev server not serving it. Path: ${currentImage.url}`)}
-                />
-              ) : (
-                'No Image Available'
-              )}
-            </div>
-            {isChatPanelOpen && (
-              <div
-                style={cornerDragHandleStyle}
-                onMouseDown={handleCornerMouseDown}
-                title="Resize panels"
-              >
-                <FaArrowsAlt />
-              </div>
-            )}
-          </Resizable>
-
-          <div style={navContainerStyle} id="report-audio-controls">
-            <ImageNavigator />
-            <AudioControls />
-          </div>
-
-          <div style={contentAreaStyle}>
-            {isPromptVisible && <PromptNavigator />}
-
-            <div style={sectionHeaderStyle}>
-              <h4>TL;DR</h4>
-              <button style={toggleButtonStyle} onClick={toggleTldrVisibility} title={isTldrVisible ? "Collapse" : "Expand"}>
-                {isTldrVisible ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
-            </div>
-            {isTldrVisible && (
-              <p style={{ fontStyle: 'italic', color: '#ccc', margin: '0 0 15px 0' }}>
-                <MarkdownRenderer markdown={currentPage?.tldr || ''} />
-              </p>
-            )}
-
-            <div style={sectionHeaderStyle}>
-              <h4>Content</h4>
-              <button style={toggleButtonStyle} onClick={toggleContentVisibility} title={isContentVisible ? "Collapse" : "Expand"}>
-                {isContentVisible ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
-            </div>
-            {isContentVisible && (
-              <MarkdownRenderer markdown={currentPage?.content || ''} />
-            )}
-          </div>
-        </div>
-
-        {isChatPanelOpen && <ReportChatPanel />}
-      </div>
-    </div>
-  );
-};
-
-export default ReportViewerModal;
-</file_artifact>
-
 <file path="src/Artifacts/A20. aiascent.dev - Report Viewer Integration Plan.md">
 # Artifact A20: aiascent.dev - Report Viewer Integration Plan
 
@@ -17356,7 +14934,7 @@ const PromptNavigator: React.FC = () => {
   }));
 
   const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts;
+  const currentPrompt = currentPage?.imagePrompts?.[0];
 
   if (!currentPrompt?.promptText) return null;
 
@@ -19413,578 +16991,6 @@ REMOTE_LLM_URL=http://192.168.1.85:1234
 EMBEDDING_API_URL=http://192.168.1.85:1234/v1/embeddings
 </file_artifact>
 
-<file path="context/aiascentgame/report/llmService.ts">
-// src/server/llmService.ts
-// Updated on: C1395 (Correct TTS request body to match OpenAI-compatible endpoint for kokoro-fastapi.)
-// Updated on: C1384 (Fix stream type mismatch by converting Web Stream to Node.js Readable stream.)
-// Updated on: C1383 (Add generateSpeech function for TTS.)
-// Updated on: C1323 (Fix implicit 'any' types in map/filter callbacks.)
-// Updated on: C1322 (Fix implicit 'any' types in map/filter callbacks.)
-// NEW FILE - C1321
-
-import { Readable } from 'stream';
-import { logInfo, logWarn, logError } from '../logger';
-import { OUT_OF_GAME_SYSTEM_PROMPTS } from '../game/personas/personaConstants';
-import type { playerLlmPersonas } from '../game/personas/playerLlmPersonas'; // Import type only
-
-const COMPLETIONS_API_URL = (process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234') + '/v1/chat/completions';
-const TTS_API_URL = process.env.TTS_SERVER_URL || 'http://localhost:8880/v1/audio/speech';
-
-type Persona = typeof playerLlmPersonas['tier0'];
-
-/**
- * A centralized service for making calls to the local LLM.
- */
-export const LlmService = {
-    /**
-     * Generates poetic lines for the Poetry Battle.
-     * @param theme - The theme for the round.
-     * @param numChoices - How many lines to generate.
-     * @param damageValues - An array of hidden damage values.
-     * @param persona - The persona object for the chatbot.
-     * @returns An array of choices with text and damage.
-     */
-    async generatePoetryChoices(
-        theme: string,
-        numChoices: number,
-        damageValues: number[],
-        persona: Persona,
-    ): Promise<{ text: string; damage: number }[]> {
-        const logPrefix = '[LlmService:generatePoetryChoices]';
-        logInfo(logPrefix, `Generating ${numChoices} choices for theme: "${theme}" with persona tier ${persona.tier}`);
-
-        const impactMap: Record<number, string> = {};
-        const sortedDamage = [...damageValues].sort((a, b) => a - b);
-        if (sortedDamage.length === 1) {
-            impactMap[sortedDamage[0]] = 'Normal';
-        } else if (sortedDamage.length > 1) {
-            impactMap[sortedDamage[0]] = 'Weak';
-            impactMap[sortedDamage[sortedDamage.length - 1]] = 'Strong';
-            for (let i = 1; i < sortedDamage.length - 1; i++) {
-                impactMap[sortedDamage[i]] = 'Medium';
-            }
-        }
-
-        const choicePrompts = damageValues
-            .map((damage, index) => `${index + 1}. **${impactMap[damage]} (Hidden Damage: ${damage}):** A line of poetry.`)
-            .join('\n');
-
-        const inGameSystemPrompt = `<In-Game System Prompt>You are an AI assistant generating content for a poetry battle game. The theme for this round is "${theme}". Generate ${numChoices} distinct lines of poetry for this theme with the following varying levels of impact:\n\n${choicePrompts}\n\nReturn ONLY the ${numChoices} lines of poetry, each on a new line. Do not include the impact level or damage value in your response.</In-Game System Prompt>`;
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[persona.model as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS] || OUT_OF_GAME_SYSTEM_PROMPTS['qwen/qwen3-30b-a3b'];
-        
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}` },
-            { role: 'user', content: `Generate the ${numChoices} poetic lines now.` }
-        ];
-
-        const requestBody: any = {
-            model: persona.model,
-            messages: messages,
-            stream: false,
-            ...persona.params,
-        };
-
-        try {
-            const llmResponse = await fetch(COMPLETIONS_API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestBody),
-            });
-
-            if (!llmResponse.ok) {
-                const errorBody = await llmResponse.text();
-                throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`);
-            }
-
-            const llmData = await llmResponse.json();
-            let content = llmData.choices[0]?.message?.content?.trim() ?? "";
-            content = content.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-
-            const lines = content.split('\n').map((line: string) => line.trim()).filter(Boolean);
-
-            if (lines.length !== numChoices) {
-                logWarn(logPrefix, `LLM did not return the expected number of choices. Expected ${numChoices}, got ${lines.length}.`);
-                // Fallback: Pad or truncate to match expected number of choices
-                while (lines.length < numChoices) lines.push("The void echoes... (LLM Error)");
-                while (lines.length > numChoices) lines.pop();
-            }
-
-            return lines.map((line: string, index: number) => ({
-                text: line,
-                damage: damageValues[index],
-            }));
-
-        } catch (error) {
-            logError(logPrefix, 'Error generating poetry choices:', error);
-            // Return placeholder choices on error
-            return damageValues.map(damage => ({
-                text: "An error sparked, my circuits weep...",
-                damage: damage,
-            }));
-        }
-    },
-};
-
-/**
- * Generates speech from text using the local TTS server.
- * @param text The text to convert to speech.
- * @returns A Node.js Readable stream of the audio data, or null on error.
- */
-export async function generateSpeech(text: string): Promise<Readable | null> {
-    const logPrefix = '[llmService:generateSpeech]';
-    logInfo(logPrefix, `Requesting speech generation from ${TTS_API_URL} for text: "${text.substring(0, 50)}..."`);
-
-    try {
-        // C1395: Correct the request body to match the OpenAI-compatible endpoint of kokoro-fastapi
-        const requestBody = {
-            model: 'kokoro',
-            voice: 'af_sky', // A standard, high-quality default voice
-            input: text,
-            response_format: 'wav',
-            speed: 1.0,
-        };
-
-        logInfo(logPrefix, 'Sending request to TTS server with body:', requestBody);
-
-        const response = await fetch(TTS_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'audio/wav',
-            },
-            body: JSON.stringify(requestBody),
-        });
-
-        if (!response.ok) {
-            const errorBody = await response.text();
-            throw new Error(`TTS server returned an error: ${response.status} ${errorBody}`);
-        }
-        
-        if (!response.body) {
-            throw new Error('TTS server returned an empty response body.');
-        }
-        
-        // Convert Web Stream (from fetch response.body) to a Node.js Readable stream
-        // The 'as any' cast is used to bridge the type difference between Web API streams and Node.js streams.
-        return Readable.fromWeb(response.body as any);
-
-    } catch (error) {
-        logError(logPrefix, 'Error contacting TTS server:', error);
-        return null;
-    }
-}
-
-// Keep other functions from the original file if they exist, like handlePlayerProductRequest
-export { handlePlayerProductStream, handlePlayerProductRequest } from './api/playerProductHandler';
-</file_artifact>
-
-<file path="context/vcpg/ai.service.ts">
-import { Injectable, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { ScenariosService } from '../scenarios/scenarios.service';
-import { Socket } from 'socket.io';
-import { readFileSync } from 'fs';
-import { join } from 'path';
-import { TeamMembership, User } from '@prisma/client';
-
-@Injectable()
-export class AiService {
-  private readonly logger = new Logger(AiService.name);
-  private readonly llmApiUrl: string;
-  private stagingRoomFaq: string;
-
-  constructor(
-    private configService: ConfigService,
-    private scenariosService: ScenariosService,
-  ) {
-    this.llmApiUrl = this.configService.get<string>('LLM_API_URL');
-    try {
-        // Load the FAQ content at initialization
-        this.stagingRoomFaq = readFileSync(join(process.cwd(), 'src/Artifacts/A93. VCPG - JANE Staging Room FAQ.md'), 'utf-8');
-    } catch (error) {
-        this.logger.error('Failed to load A93 JANE Staging Room FAQ', error);
-        this.stagingRoomFaq = 'No FAQ content loaded.';
-    }
-  }
-
-  sendWelcomeMessage(client: Socket) {
-    const welcomeMessage = {
-        chunk: "JANE online. How can I assist you in this operation?"
-    };
-    client.emit('jane:stream', welcomeMessage);
-    client.emit('jane:stream_end');
-  }
-
-
-  async getStreamingCompletion(
-    client: Socket, // Pass the socket to check for cancellation
-    query: string,
-    instanceId: string,
-    userId: string,
-    onChunk: (chunk: string) => void,
-  ): Promise<void> {
-    const instance = await this.scenariosService.getInstanceForUser(instanceId, userId);
-    if (!instance || !instance.team || !instance.team.members || instance.team.members.length === 0) {
-      throw new Error('Active scenario, team, or members not found for user.');
-    }
-    
-    const userIndex = instance.team.members.findIndex(m => m.userId === userId);
-    const traineeUser = `trainee${userIndex + 1}`;
-
-    const prompt = this.constructPrompt(query, instance, traineeUser);
-
-    try {
-      const response = await fetch(this.llmApiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'unsloth/gpt-oss-20b',
-          prompt: prompt,
-          stream: true,
-        }),
-      });
-
-      if (!response.ok || !response.body) {
-        throw new Error(`LLM API request failed with status ${response.status}`);
-      }
-      
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
-      
-      while (true) {
-        if (client.data.isCancelled) {
-            reader.cancel();
-            this.logger.log(`Stream cancelled for client ${client.id}`);
-            throw new Error('Stream cancelled');
-        }
-
-        const { done, value } = await reader.read();
-        if (done) break;
-        
-        const rawChunk = decoder.decode(value, { stream: true });
-        this.logger.debug(`[RAW LLM STREAM CHUNK]: ${rawChunk}`); // Verbose logging
-        buffer += rawChunk;
-        
-        let newlineIndex;
-        while ((newlineIndex = buffer.indexOf('\n')) !== -1) {
-            const line = buffer.slice(0, newlineIndex).trim();
-            buffer = buffer.slice(newlineIndex + 1);
-
-            if (line.startsWith('data: ')) {
-                const jsonStr = line.substring(6);
-                if (jsonStr.trim() === '[DONE]') {
-                    continue;
-                }
-                try {
-                    const parsed = JSON.parse(jsonStr);
-                    const content = parsed.choices?.[0]?.text || parsed.choices?.[0]?.delta?.content;
-                    if (content) {
-                        onChunk(content);
-                    }
-                } catch (e) {
-                    this.logger.warn(`Could not parse AI stream chunk as JSON: ${jsonStr}`);
-                }
-            }
-        }
-      }
-    } catch (error) {
-      this.logger.error('Failed to get streaming completion from LLM', error);
-      throw error;
-    }
-  }
-
-  async getContextualizedIntel(selectedText: string, instanceId: string, userId: string): Promise<{name: string, value: string, group: string}[]> {
-    const instance = await this.scenariosService.getInstanceForUser(instanceId, userId);
-    if (!instance) {
-      throw new Error('Active scenario not found for user.');
-    }
-  
-    const teamMembers = (instance.team?.members as (TeamMembership & { user: User })[]) || [];
-    const teamRoster = teamMembers.map((m, i) => ({ name: m.user.name, scenarioUser: `trainee${i+1}` }));
-    
-    const prompt = `
-      System: You are JANE, an expert intelligence analyst AI for the VCPG training platform. Your primary function is to distill raw text into structured, actionable intelligence for a team of cybersecurity trainees.
-
-      **CRITICAL DIRECTIVES:**
-      1.  **ANALYZE, DON'T SUMMARIZE:** Your task is not to summarize. Your task is to extract the most salient, actionable intelligence from the user's text, given the current mission context. Discard irrelevant information.
-      2.  **STATE AWARENESS IS KEY:** The user is in the '${instance.state}' phase of the mission. The intelligence must be relevant to what they need to do *right now*.
-      3.  **CONSOLIDATE & STRUCTURE:** Your highest priority is to consolidate related information into a single, structured chip. A list of items should become a single table.
-      4.  **JSON ONLY:** Your entire response **MUST** be only a raw JSON array of objects. Do not include any other text, explanations, or markdown formatting like \`\`\`json.
-      5.  **CHIP SCHEMA:** Each object in the array **MUST** have three keys: \`name\` (a short, descriptive title), \`value\` (the actionable data, which for tables MUST be a JSON string), and \`group\` (a category like "Network Intel", "Commands", "Credentials").
-      6.  **TABLE SCHEMA:** When creating a table, the JSON string in the \`value\` field **MUST** be an array of objects, and each object **MUST** have two keys: \`name\` (the description) and \`value\` (the copyable, actionable command or data).
-
-      ---
-      **MISSION CONTEXT:**
-      **Scenario:** ${instance.scenarioDefinition.title}
-      **State:** ${instance.state}
-      **Briefing:** ${instance.scenarioDefinition.briefing || instance.scenarioDefinition.description}
-      **Team Roster:** ${JSON.stringify(teamRoster)}
-      ---
-      
-      **EXAMPLE 1 (User highlights the entire mission brief in STAGING):**
-      **USER-SELECTED TEXT:** "OVERVIEW: The 73rd... KEY INTEL: ...connect directly using the hostname (e.g., \`ssh trainee1@c2-server\`). RELEVANT COMMANDS: /opt/comms/rotate_freq.sh..."
-      **YOUR JSON RESPONSE FOR EXAMPLE 1:**
-[
-  {
-    "name": "Initial C2 Access Commands",
-    "value": "[{\\"name\\":\\"Trainee 1 Access\\",\\"value\\":\\"ssh trainee1@c2-server\\"},{\\"name\\":\\"Trainee 2 Access\\",\\"value\\":\\"ssh trainee2@c2-server\\"},{\\"name\\":\\"Trainee 3 Access\\",\\"value\\":\\"ssh trainee3@c2-server\\"},{\\"name\\":\\"Trainee 4 Access\\",\\"value\\":\\"ssh trainee4@c2-server\\"}]",
-    "group": "Initial Access"
-  }
-]
-
-      **EXAMPLE 2 (User highlights the list of relevant commands):**
-      **USER-SELECTED TEXT:**
-      "/opt/comms/rotate_freq.sh <freq> - Rotate comms frequency on a jammed UAV.
-      /opt/secure/keygen.sh - Generate new C2 key on the GCS host.
-      ssh <user>@<hostname> - Connect to a host via SSH."
-      **YOUR JSON RESPONSE FOR EXAMPLE 2:**
-[
-  {
-    "name": "Relevant Scenario Commands",
-    "value": "[{\\"name\\":\\"Rotate UAV Comms Frequency\\",\\"value\\":\\"/opt/comms/rotate_freq.sh <freq>\\"},{\\"name\\":\\"Generate New C2 Key\\",\\"value\\":\\"/opt/secure/keygen.sh\\"},{\\"name\\":\\"Connect to Host (SSH)\\",\\"value\\":\\"ssh <user>@<hostname>\\"}]",
-    "group": "Commands"
-  }
-]
-      ---
-
-      **CURRENT TASK:**
-      **USER-SELECTED TEXT:**
-      "${selectedText}"
-
-      **YOUR JSON RESPONSE:**
-    `;
-    
-    try {
-        const response = await fetch(this.llmApiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            model: 'unsloth/gpt-oss-20b',
-            prompt: prompt,
-            stream: false,
-            temperature: 0.0,
-          }),
-        });
-      
-        if (!response.ok) {
-          throw new Error(`LLM API request failed with status ${response.status}`);
-        }
-      
-        const jsonResponse = await response.json();
-        const content = jsonResponse.choices?.[0]?.text;
-        
-        try {
-          const separator = '<|start|>assistant<|channel|>final<|message|>';
-          const separatorIndex = content.lastIndexOf(separator);
-          
-          let jsonStringToParse = content;
-          if (separatorIndex !== -1) {
-            jsonStringToParse = content.substring(separatorIndex + separator.length);
-          }
-          
-          const jsonMatch = jsonStringToParse.match(/(\[[\s\S]*\])/);
-          if (jsonMatch && jsonMatch[0]) {
-            const cleanedJson = jsonMatch[0];
-            const parsed = JSON.parse(cleanedJson);
-            if (Array.isArray(parsed)) {
-                this.logger.log(`Successfully parsed ${parsed.length} intel chips from LLM.`);
-                return parsed;
-            }
-          }
-          const parsed = JSON.parse(jsonStringToParse.trim());
-          if (Array.isArray(parsed)) {
-              this.logger.log(`Successfully parsed ${parsed.length} intel chips from LLM (fallback).`);
-              return parsed;
-          }
-        } catch (e) {
-          this.logger.warn(`Could not parse LLM response for intel chip as JSON array: ${content}`);
-        }
-    } catch (error) {
-        if (error.message.includes('fetch failed')) {
-            this.logger.error(`[AI Service] Connection to LLM API failed at ${this.llmApiUrl}. Please ensure the AI model server (e.g., LM Studio) is running and accessible from the backend.`);
-        } else {
-            this.logger.error(`[AI Service] Failed to fetch from LLM API. Error: ${error.message}`);
-        }
-        throw error;
-    }
-
-    return [{ name: "New Intel", value: selectedText, group: "General" }];
-  }
-
-  private constructPrompt(query: string, instance: any, traineeUser: string): string {
-    if (instance.state === 'STAGING') {
-        const objectivesText = instance.scenarioDefinition?.objectives?.map(o => `- ${o.title}: ${o.description}`).join('\n') || 'No objectives defined.';
-        return `
-          System: You are JANE, an AI assistant for the Virtual Cybersecurity Proving Grounds (VCPG), a cybersecurity training platform inspired by Battleschool in Ender's Game. You are in a pre-mission staging room. Your role is to act as a mission briefer. Your responses must be helpful, concise (2-3 sentences max), and directly related to the provided mission details and the user's highlighted text.
-          
-          Your responses must be formatted in markdown.
-          
-          Use the following examples to understand the expected tone and format:
-          ---
-          ${this.stagingRoomFaq}
-          ---
-
-          **CURRENT MISSION CONTEXT:**
-          **Title:** ${instance.scenarioDefinition.title}
-          **Briefing:** ${instance.scenarioDefinition.briefing || instance.scenarioDefinition.description}
-          **Key Intel:** ${instance.scenarioDefinition.keyIntel || 'None.'}
-          **Objectives:**
-          ${objectivesText}
-
-          User Query: ${query}
-          
-          JANE:
-        `;
-    }
-
-    const scenarioState = JSON.stringify({
-      title: instance.scenarioDefinition.title,
-      score: instance.score,
-      objectives: instance.scenarioDefinition.objectives.map(o => ({
-        title: o.title,
-        completed: instance.objectivesProgress.some(p => p.objectiveId === o.id)
-      }))
-    }, null, 2);
-
-    const firstHint = "The C2 server is the central hub for our drone fleet's network configuration. You should start by finding the `drone_manifest.txt` file there to identify the UAVs' IP addresses. Use `cat` to view its contents.";
-
-    return `
-      System: You are JANE, an AI assistant integrated into the VCPG, a cybersecurity training platform. Your purpose is to guide a learner, not to give direct answers. The user you are assisting is a trainee in a simulated scenario. Their designation is ${traineeUser}. They have just highlighted a piece of text and are asking for context. Your response should be short, concise, and directly related to the provided query and scenario state. If the query is about a command, provide a brief explanation and a clear, in-situ example of how ${traineeUser} could use it. If the user seems stuck and asks a general question, provide the following hint: "${firstHint}"
-      
-      The current scenario state is:
-      ${scenarioState}
-
-      User Query (based on highlighted text): ${query}
-
-      Provide a helpful, concise answer based on the scenario state. Do not reveal flags or direct solutions.
-      
-      JANE:
-    `;
-  }
-}
-</file_artifact>
-
-<file path="context/vcpg/ai.gateway.ts">
-import {
-  WebSocketGateway,
-  SubscribeMessage,
-  MessageBody,
-  WebSocketServer,
-  ConnectedSocket,
-  OnGatewayConnection,
-  OnGatewayDisconnect,
-} from '@nestjs/websockets';
-import { Server, Socket } from 'socket.io';
-import { Logger, UseGuards } from '@nestjs/common';
-import { WsJwtGuard } from '../auth/guards/ws-jwt.guard';
-import { AiService } from './ai.service';
-import { JwtService } from '@nestjs/jwt';
-import { UsersService } from 'src/users/users.service';
-
-@WebSocketGateway({
-  cors: { origin: '*' },
-  namespace: '/ai',
-})
-export class AiGateway implements OnGatewayConnection, OnGatewayDisconnect {
-  @WebSocketServer()
-  server: Server;
-
-  private readonly logger = new Logger(AiGateway.name);
-
-  constructor(
-    private aiService: AiService,
-    private jwtService: JwtService,
-    private usersService: UsersService,
-  ) {}
-
-  async handleConnection(client: Socket) {
-    try {
-      const token = client.handshake.auth.token;
-      if (!token) throw new Error('No token provided for AI gateway');
-
-      const payload = this.jwtService.verify(token, { secret: process.env.JWT_SECRET });
-      const user = await this.usersService.findById(payload.sub);
-      if (!user) throw new Error('User not found for AI gateway');
-
-      client.data.user = user;
-      client.data.isCancelled = false;
-      this.logger.log(`AI client connected: ${client.id} - User: ${user.name}`);
-      
-      // Send a welcome message
-      this.aiService.sendWelcomeMessage(client);
-
-    } catch (e) {
-      this.logger.error(`Authentication failed for AI client ${client.id}: ${e.message}`);
-      client.disconnect();
-    }
-  }
-
-  handleDisconnect(client: Socket) {
-    this.logger.log(`AI client disconnected: ${client.id}`);
-  }
-
-  @UseGuards(WsJwtGuard)
-  @SubscribeMessage('askJane')
-  async handleAskJane(
-    @MessageBody() data: { query: string; instanceId: string },
-    @ConnectedSocket() client: Socket,
-  ): Promise<void> {
-    const userId = client.data.user.id;
-    client.data.isCancelled = false; // Reset cancellation flag
-    this.logger.log(`Received query from ${userId} for instance ${data.instanceId}: "${data.query}"`);
-
-    try {
-      await this.aiService.getStreamingCompletion(client, data.query, data.instanceId, userId, (chunk) => {
-        client.emit('jane:stream', { chunk });
-      });
-      client.emit('jane:stream_end');
-    } catch (error) {
-        if (error.message !== 'Stream cancelled') {
-            this.logger.error(`Error processing JANE query for user ${userId}:`, error);
-            client.emit('jane:error', { message: 'An error occurred while processing your request.' });
-        }
-    }
-  }
-
-  @UseGuards(WsJwtGuard)
-  @SubscribeMessage('jane:cancel')
-  handleCancelStream(@ConnectedSocket() client: Socket) {
-      this.logger.log(`Received cancel request from client ${client.id}`);
-      client.data.isCancelled = true;
-  }
-}
-</file_artifact>
-
-<file path="context/vcpg/ai.module.ts">
-import { Module, forwardRef } from '@nestjs/common';
-import { AiGateway } from './ai.gateway';
-import { AiService } from './ai.service';
-import { ScenariosModule } from '../scenarios/scenarios.module';
-import { JwtModule } from '@nestjs/jwt';
-import { ConfigService } from '@nestjs/config';
-import { UsersModule } from 'src/users/users.module';
-import { SynchronizationModule } from 'src/synchronization/synchronization.module';
-
-@Module({
-  imports: [
-    forwardRef(() => ScenariosModule),
-    UsersModule,
-    forwardRef(() => SynchronizationModule),
-    JwtModule.registerAsync({
-      inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => ({
-        secret: configService.get<string>('JWT_SECRET'),
-        signOptions: { expiresIn: '24h' },
-      }),
-    }),
-  ],
-  providers: [AiGateway, AiService],
-  exports: [AiService], // Export AiService
-})
-export class AiModule {}
-</file_artifact>
-
 <file path="context/dce/A96. DCE - Harmony-Aligned Response Schema Plan.md">
 # Artifact A96: DCE - Harmony-Aligned Response Schema Plan
 # Date Created: C45
@@ -20816,617 +17822,6 @@ const GlobalAudioPlayer = () => {
 };
 
 export default GlobalAudioPlayer;
-</file_artifact>
-
-<file path="context/aiascentgame/scripts/convert_images_to_webp.js">
-#!/usr/bin/env node
-
-/**
- * convert_images_to_webp.js
- *
- * This script recursively finds all .png files in the specified directory,
- * converts them to high-quality .webp files using the 'sharp' library,
- * and then deletes the original .png files.
- *
- * This is intended to significantly reduce the repository size.
- *
- * Usage:
- * 1. Install sharp: `npm install --save-dev sharp`
- * 2. Run from the project root: `node scripts/convert_images_to_webp.js`
- */
-
-const fs = require('fs').promises;
-const path = require('path');
-const sharp = require('sharp');
-
-const TARGET_DIRECTORY = path.resolve(__dirname, '..', 'public/images/report-assets');
-
-async function findPngFiles(dir) {
-    let results = [];
-    const list = await fs.readdir(dir);
-    for (const file of list) {
-        const filePath = path.resolve(dir, file);
-        const stat = await fs.stat(filePath);
-        if (stat && stat.isDirectory()) {
-            results = results.concat(await findPngFiles(filePath));
-        } else if (path.extname(filePath).toLowerCase() === '.png') {
-            results.push(filePath);
-        }
-    }
-    return results;
-}
-
-async function convertImageToWebP(filePath) {
-    const logPrefix = `[CONVERT:${path.basename(filePath)}]`;
-    try {
-        const webpPath = filePath.replace(/\.png$/i, '.webp');
-        
-        console.log(`${logPrefix} Converting to WebP...`);
-
-        // Use sharp for high-quality conversion
-        await sharp(filePath)
-            .webp({ 
-                quality: 90, // High quality, visually lossless for most cases
-                lossless: false, // Use lossy for better compression on photographic images
-                effort: 6, // Max effort for best compression
-            })
-            .toFile(webpPath);
-        
-        const originalStats = await fs.stat(filePath);
-        const newStats = await fs.stat(webpPath);
-        const reduction = ((originalStats.size - newStats.size) / originalStats.size) * 100;
-
-        console.log(`${logPrefix} SUCCESS! New file: ${path.basename(webpPath)}`);
-        console.log(`${logPrefix}   Original: ${(originalStats.size / 1024).toFixed(2)} KB`);
-        console.log(`${logPrefix}   WebP:     ${(newStats.size / 1024).toFixed(2)} KB`);
-        console.log(`${logPrefix}   Reduction: ${reduction.toFixed(2)}%`);
-
-        // Delete the original PNG file
-        await fs.unlink(filePath);
-        console.log(`${logPrefix} Deleted original PNG file.`);
-
-        return { success: true, reduction: originalStats.size - newStats.size };
-    } catch (error) {
-        console.error(`${logPrefix} FAILED to convert image.`, error);
-        return { success: false, reduction: 0 };
-    }
-}
-
-async function main() {
-    console.log(`Starting WebP conversion process in: ${TARGET_DIRECTORY}\n`);
-
-    const pngFiles = await findPngFiles(TARGET_DIRECTORY);
-
-    if (pngFiles.length === 0) {
-        console.log('No .png files found to convert. Exiting.');
-        return;
-    }
-
-    console.log(`Found ${pngFiles.length} PNG files to process.\n`);
-
-    let successCount = 0;
-    let totalReductionBytes = 0;
-
-    for (const file of pngFiles) {
-        const result = await convertImageToWebP(file);
-        if (result.success) {
-            successCount++;
-            totalReductionBytes += result.reduction;
-        }
-        console.log('---');
-    }
-
-    console.log('\nConversion process finished!');
-    console.log(`Successfully converted ${successCount} of ${pngFiles.length} files.`);
-    console.log(`Total size reduction: ${(totalReductionBytes / (1024 * 1024)).toFixed(2)} MB`);
-    console.log('\nIMPORTANT: Remember to update `imageManifest.json` to use ".webp" extensions!');
-}
-
-main().catch(console.error);
-</file_artifact>
-
-<file path="context/aiascentgame/scripts/create_report_embedding.js">
-#!/usr/bin/env node
-
-/**
- * create_report_embedding.js
- *
- * This script generates a FAISS vector index and a JSON chunk map from a single,
- * large text file. It's designed to create the knowledge base for the
- * "Ask @Ascentia" feature in the Report Delivery System (RDS).
- *
- * Usage:
- * 1. Ensure your local embedding model is running (e.g., via LM Studio).
- * 2. Run the script from the project root, providing the path to your source text file:
- *    node scripts/create_report_embedding.js C:/path/to/your/flattened_report.txt
- *
- * The script will output `report_faiss.index` and `report_chunks.json` in the project root.
- * These files should then be moved to the `./public` directory.
- */
-
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
-const { Index, IndexFlatL2 } = require('faiss-node');
-
-const FAISS_INDEX_FILE = 'report_faiss.index';
-const CHUNKS_FILE = 'report_chunks.json';
-const EMBEDDING_API_URL = 'http://127.0.0.1:1234/v1/embeddings';
-const EMBEDDING_MODEL = 'text-embedding-granite-embedding-278m-multilingual';
-
-const CHUNK_SIZE = 1750; // characters
-const CHUNK_OVERLAP = 175; // characters
-
-/**
- * Splits text into overlapping chunks.
- */
-function chunkText(text, size, overlap) {
-  const chunks = [];
-  let startIndex = 0;
-  while (startIndex < text.length) {
-    const endIndex = startIndex + size;
-    chunks.push(text.substring(startIndex, endIndex));
-    startIndex += size - overlap;
-  }
-  return chunks;
-}
-
-/**
- * Gets a vector embedding for a single text chunk from the local API.
- */
-async function getEmbedding(text) {
-  try {
-    const response = await axios.post(EMBEDDING_API_URL, {
-      model: EMBEDDING_MODEL,
-      input: text,
-    });
-    if (response.data?.data?.[0]?.embedding) {
-      return response.data.data[0].embedding;
-    }
-    console.error('  [ERROR] Invalid embedding response structure:', response.data);
-    return null;
-  } catch (error) {
-    const errorMessage = error.response ? `${error.response.status} ${error.response.statusText}` : error.message;
-    console.error(`  [ERROR] Failed to get embedding for chunk. Status: ${errorMessage}. Text: "${text.substring(0, 50)}..."`);
-    return null;
-  }
-}
-
-async function createReportEmbedding() {
-  const inputFile = process.argv[2];
-  if (!inputFile) {
-    console.error('\n[FATAL ERROR] Please provide the path to the source text file as an argument.');
-    console.error('Usage: node scripts/create_report_embedding.js C:/path/to/your/file.txt\n');
-    process.exit(1);
-  }
-
-  console.log(`Starting RDS embedding generation for: ${inputFile}`);
-
-  // 1. Read and chunk the source file
-  let fileContent;
-  try {
-    fileContent = fs.readFileSync(inputFile, 'utf-8');
-  } catch (error) {
-    console.error(`\n[FATAL ERROR] Could not read source file: ${error.message}`);
-    process.exit(1);
-  }
-
-  const textChunks = chunkText(fileContent, CHUNK_SIZE, CHUNK_OVERLAP);
-  const allChunks = textChunks.map(chunk => ({ id: 'report_source', chunk }));
-  console.log(`Created a total of ${allChunks.length} text chunks.`);
-
-  // 2. Generate embeddings for all chunks
-  console.log('Generating embeddings... (This may take a while)');
-  const embeddings = [];
-  let successfulChunks = [];
-  let failedCount = 0;
-  let embeddingDimension = -1;
-
-  for (let i = 0; i < allChunks.length; i++) {
-    const chunkData = allChunks[i];
-    const embedding = await getEmbedding(chunkData.chunk);
-    if (embedding) {
-      if (embeddingDimension === -1) {
-        embeddingDimension = embedding.length;
-        console.log(`Detected embedding dimension: ${embeddingDimension}`);
-      }
-      if (embedding.length !== embeddingDimension) {
-        console.error(`\n[FATAL ERROR] Inconsistent embedding dimension! Expected ${embeddingDimension}, but got ${embedding.length} for chunk ${i}. Aborting.`);
-        process.exit(1);
-      }
-      embeddings.push(embedding);
-      successfulChunks.push(chunkData);
-    } else {
-      failedCount++;
-    }
-    process.stdout.write(`\r  Processed ${i + 1} of ${allChunks.length} chunks...`);
-  }
-  console.log('\nEmbedding generation complete.');
-
-  if (failedCount > 0) {
-    console.warn(`  [WARN] Failed to generate embeddings for ${failedCount} chunks. They will be excluded.`);
-  }
-  if (embeddings.length === 0) {
-    console.error('No embeddings were generated. Cannot create FAISS index. Aborting.');
-    return;
-  }
-
-  // 3. Build and save FAISS index
-  try {
-    console.log(`Building FAISS index with ${embeddings.length} vectors of dimension ${embeddingDimension}...`);
-    const index = new IndexFlatL2(embeddingDimension);
-    index.add(embeddings.flat());
-    
-    console.log(`Saving FAISS index to ${FAISS_INDEX_FILE}...`);
-    index.write(FAISS_INDEX_FILE);
-
-    console.log(`Saving ${successfulChunks.length} text chunks to ${CHUNKS_FILE}...`);
-    fs.writeFileSync(CHUNKS_FILE, JSON.stringify(successfulChunks, null, 2), 'utf-8');
-
-    console.log(`\nProcess complete. Report KB created successfully.`);
-    console.log(`Move '${FAISS_INDEX_FILE}' and '${CHUNKS_FILE}' to the ./public directory.`);
-  } catch (error) {
-    console.error('\nAn error occurred while building or saving the FAISS index:', error);
-  }
-}
-
-createReportEmbedding();
-</file_artifact>
-
-<file path="context/aiascentgame/code/ascentiaHandler.ts">
-// src/server/api/ascentiaHandler.ts
-// Updated on: C1401 (Add detailed logging for context selection and chunk retrieval.)
-// Updated on: C1382 (Add explicit logging to handleAscentiaStream to diagnose RAG context issues.)
-// Updated on: C1381 (Add `context` parameter handling to select the correct knowledge base.)
-// Updated on: C1374 (Remove "thinking" system message from report handler to prevent it appearing in main chat.)
-// Updated on: C1373 (Verify path logic for report KB is correct.)
-// Updated on: C1356 (Incorporate the full pageContext from the client into the LLM system prompt.)
-// Updated on: C1344 (Add logic for loading and handling report-specific knowledge base and chat stream.)
-import { type Socket, type Server as SocketIOServer } from 'socket.io';
-import { logInfo, logWarn, logError } from '../../logger';
-import { type PlayerState } from '../../server';
-import { type ChatMessage } from '../../state/multiplayerStore';
-import faiss from 'faiss-node';
-import fs from 'fs';
-import path from 'path';
-import axios from 'axios';
-import { OUT_OF_GAME_SYSTEM_PROMPTS } from '../../game/personas/personaConstants';
-import { LlmService } from '../llmService';
-
-const LLM_BASE_URL = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234';
-const EMBEDDING_API_URL = LLM_BASE_URL + '/v1/embeddings';
-const CHAT_COMPLETIONS_API_URL = LLM_BASE_URL + '/v1/chat/completions';
-const EMBEDDING_MODEL = 'text-embedding-granite-embedding-278m-multilingual';
-const ASCENTIA_MODEL = 'qwen/qwen3-30b-a3b';
-
-let faissIndex: any = null;
-let ascentiaChunks: { id: string, chunk: string }[] = [];
-let reportFaissIndex: any = null;
-let reportAscentiaChunks: { id: string, chunk: string }[] = [];
-
-export function loadAscentiaKnowledgeBase(publicPath: string) {
-    const FAISS_INDEX_PATH = path.join(publicPath, 'ascentia_faiss.index');
-    const CHUNKS_PATH = path.join(publicPath, 'ascentia_chunks.json');
-    try {
-        if (fs.existsSync(FAISS_INDEX_PATH) && fs.existsSync(CHUNKS_PATH)) {
-            logInfo('[AscentiaKB]', 'Loading GAME FAISS index and chunk data...');
-            ascentiaChunks = JSON.parse(fs.readFileSync(CHUNKS_PATH, 'utf-8'));
-            faissIndex = faiss.Index.read(FAISS_INDEX_PATH);
-            logInfo('[AscentiaKB]', `Successfully loaded GAME FAISS index with ${faissIndex.ntotal} vectors and ${ascentiaChunks.length} chunks.`);
-        } else {
-            logWarn('[AscentiaKB]', 'GAME FAISS index or chunks file not found. Ascentia will have no game knowledge base.');
-        }
-    } catch (error) {
-        logError('[AscentiaKB]', 'Failed to load GAME FAISS index or chunks file.', error);
-        faissIndex = null;
-        ascentiaChunks = [];
-    }
-}
-
-export function loadReportKnowledgeBase(publicPath: string) {
-    const FAISS_INDEX_PATH = path.join(publicPath, 'report_faiss.index');
-    const CHUNKS_PATH = path.join(publicPath, 'report_chunks.json');
-    try {
-        if (fs.existsSync(FAISS_INDEX_PATH) && fs.existsSync(CHUNKS_PATH)) {
-            logInfo('[ReportKB]', 'Loading REPORT FAISS index and chunk data...');
-            reportAscentiaChunks = JSON.parse(fs.readFileSync(CHUNKS_PATH, 'utf-8'));
-            reportFaissIndex = faiss.Index.read(FAISS_INDEX_PATH);
-            logInfo('[ReportKB]', `Successfully loaded REPORT FAISS index with ${reportFaissIndex.ntotal} vectors and ${reportAscentiaChunks.length} chunks.`);
-        } else {
-            logWarn('[ReportKB]', `REPORT FAISS index or chunks file not found at ${FAISS_INDEX_PATH}. Ascentia will have no report knowledge base.`);
-        }
-    } catch (error) {
-        logError('[ReportKB]', 'Failed to load REPORT FAISS index or chunks file.', error);
-        reportFaissIndex = null;
-        reportAscentiaChunks = [];
-    }
-}
-
-async function getEmbeddingForQuery(text: string): Promise<number[] | null> {
-    try {
-        const response = await axios.post(EMBEDDING_API_URL, {
-            model: EMBEDDING_MODEL,
-            input: text,
-        });
-        if (response.data?.data?.[0]?.embedding) {
-            return response.data.data[0].embedding;
-        }
-        return null;
-    } catch (error) {
-        logError('[AscentiaKB]', 'Failed to get embedding for query.', error);
-        return null;
-    }
-}
-
-export async function handleAscentiaWelcome(socket: Socket, players: Record<string, PlayerState>, payload: any) {
-    const logPrefix = '[Handler:AscentiaWelcome]';
-    const recipientState = players[socket.id];
-    if (!recipientState) {
-        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
-        return;
-    }
-    const { showThinking } = payload || {};
-    logInfo(logPrefix, `Handling welcome message for ${recipientState.displayName}`);
-    const temporaryId = `ascentia_welcome_${Date.now()}`;
-    const emitter = socket;
-
-    try {
-        const placeholder: ChatMessage = {
-            id: temporaryId,
-            author: 'Ascentia',
-            flag: '🤖',
-            message: '',
-            status: 'thinking',
-            channel: 'private',
-        };
-        emitter.emit('newPrivateMessage', placeholder);
-
-        const welcomePrompt = `A new player, ${recipientState.displayName}, has just joined the game AI Ascent. Greet them warmly and offer your assistance as Ascentia, the in-game AI helper. Keep it concise (2-3 sentences).`;
-        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia. Your personality is that of a helpful, encouraging, and slightly witty AI assistant. You are greeting a new player. Do not use any context from the knowledge base for this greeting.</In-Game System Prompt>`;
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
-
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}` },
-            { role: 'user', content: welcomePrompt }
-        ];
-
-        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.8, max_tokens: 1024, stream: true };
-
-        emitter.emit('ascentia_generation_complete', { temporaryId });
-
-        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
-        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
-
-        const reader = llmResponse.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-        let isFirstChunk = true;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-            for (const line of lines) {
-                if (line.startsWith('data: ')) {
-                    const jsonStr = line.substring(6);
-                    if (jsonStr === '[DONE]') break;
-                    try {
-                        const chunk = JSON.parse(jsonStr);
-                        if (chunk.choices[0]?.delta?.content) {
-                            let textChunk = chunk.choices[0].delta.content;
-                            if (showThinking === false) {
-                                textChunk = textChunk.replace(/<Thinking>[\s\S]*?<\/Thinking>/gi, '');
-                            }
-                            if (isFirstChunk) {
-                                textChunk = textChunk.trimStart();
-                                isFirstChunk = false;
-                            }
-                            if (textChunk) {
-                                emitter.emit('ascentia_stream_chunk', { temporaryId, text: textChunk });
-                            }
-                        }
-                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
-                }
-            }
-        }
-    } catch (error: any) {
-        logError(logPrefix, 'Error during welcome message streaming:', error);
-        emitter.emit('ascentia_stream_chunk', { temporaryId, text: `\n[System Error: Could not generate welcome message.]` });
-    } finally {
-        emitter.emit('ascentia_stream_end', { temporaryId });
-    }
-}
-
-export async function handleAscentiaStream(io: SocketIOServer, socket: Socket, players: Record<string, PlayerState>, payload: any) {
-    const logPrefix = '[Handler:AscentiaStream]';
-    const senderState = players[socket.id];
-    if (!senderState) {
-        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
-        return;
-    }
-    const { prompt, isGlobal, showThinking, kbChunks, context } = payload || {};
-    
-    // C1401: Logic to select the correct knowledge base
-    const useReportKb = context === 'report';
-    const activeFaissIndex = useReportKb ? reportFaissIndex : faissIndex;
-    const activeChunks = useReportKb ? reportAscentiaChunks : ascentiaChunks;
-    const kbName = useReportKb ? 'REPORT' : 'GAME';
-    
-    logInfo(logPrefix, `Received stream request from ${senderState.displayName}: "${prompt}" (Global: ${isGlobal}, Context: ${context}). Using ${kbName} knowledge base.`);
-    
-    const temporaryId = `ascentia_response_${Date.now()}`;
-    const emitter = isGlobal ? io : socket;
-    const chunkEvent = isGlobal ? 'ascentia_global_stream_chunk' : 'ascentia_stream_chunk';
-    const endEvent = isGlobal ? 'ascentia_global_stream_end' : 'ascentia_stream_end';
-    const messageEvent = isGlobal ? 'newGlobalMessage' : 'newPrivateMessage';
-
-    try {
-        const placeholder: ChatMessage = { id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: isGlobal ? 'global' : 'private' };
-        emitter.emit(messageEvent, placeholder);
-        
-        let contextString = `No relevant context found in the ${kbName} knowledge base.`;
-        if (activeFaissIndex && activeChunks.length > 0 && kbChunks > 0) {
-            logInfo(logPrefix, `Searching ${kbName} KB for prompt: "${prompt}"`);
-            const queryEmbedding = await getEmbeddingForQuery(prompt);
-            if (queryEmbedding) {
-                const { labels } = activeFaissIndex.search(queryEmbedding, kbChunks);
-                if (labels.length > 0) {
-                    const retrievedChunks = labels.map((labelIndex: number) => activeChunks[labelIndex]).filter(Boolean);
-                    contextString = retrievedChunks.map((c: { id: string, chunk: string }) => `// Source: ${c.id}\n${c.chunk}`).join('\n\n---\n\n');
-                    logInfo(logPrefix, `FAISS search retrieved ${retrievedChunks.length} chunks from the ${kbName} KB.`);
-                    // C1401: Log the retrieved chunks for debugging
-                    logInfo(logPrefix, `[CONTEXT DUMP FOR "${prompt}"]:\n${contextString}`);
-                } else {
-                    logWarn(logPrefix, `FAISS search returned 0 results from the ${kbName} KB.`);
-                }
-            } else {
-                logError(logPrefix, `Failed to generate embedding for the query. Cannot perform search.`);
-            }
-        } else {
-            logWarn(logPrefix, `Skipping FAISS search. Index not loaded, chunks empty, or kbChunks is 0 for ${kbName} KB.`);
-        }
-        
-        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`; // Abridged for brevity
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
-        
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}\n\nCONTEXT FROM ${kbName} DOCUMENTATION:\n${contextString}` },
-            { role: 'user', content: `From ${senderState.displayName}: ${prompt}` }
-        ];
-        
-        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.7, max_tokens: 2048, stream: true };
-        
-        emitter.emit(isGlobal ? 'ascentia_global_generation_complete' : 'ascentia_generation_complete', { temporaryId });
-
-        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
-        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
-
-        const reader = llmResponse.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-        let isFirstChunk = true;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-            for (const line of lines) {
-                if (line.startsWith('data: ')) {
-                    const jsonStr = line.substring(6);
-                    if (jsonStr === '[DONE]') break;
-                    try {
-                        const chunk = JSON.parse(jsonStr);
-                        if (chunk.choices[0]?.delta?.content) {
-                            let textChunk = chunk.choices[0].delta.content;
-                            if (showThinking === false) {
-                                textChunk = textChunk.replace(/<Thinking>[\s\S]*?<\/Thinking>/gi, '');
-                            }
-                            if (isFirstChunk) {
-                                textChunk = textChunk.trimStart();
-                                isFirstChunk = false;
-                            }
-                            if (textChunk) {
-                                emitter.emit(chunkEvent, { temporaryId, text: textChunk });
-                            }
-                        }
-                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
-                }
-            }
-        }
-    } catch (error: any) {
-        logError(logPrefix, 'Error during streaming chat:', error);
-        emitter.emit(chunkEvent, { temporaryId, text: `\n[System Error: Could not generate response.]` });
-    } finally {
-        emitter.emit(endEvent, { temporaryId });
-    }
-}
-
-export async function handleReportAscentiaStream(io: SocketIOServer, socket: Socket, players: Record<string, PlayerState>, payload: any) {
-    const logPrefix = '[Handler:ReportAscentiaStream]';
-    const senderState = players[socket.id];
-    if (!senderState) {
-        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
-        return;
-    }
-    const { prompt, pageContext, temporaryId } = payload || {};
-    logInfo(logPrefix, `Received stream request from ${senderState.displayName}: "${prompt}"`);
-
-    const emitter = socket; // Always private for report chat
-    const chunkEvent = 'report_ascentia_stream_chunk';
-    const endEvent = 'report_ascentia_stream_end';
-
-    try {
-        let contextString = "No relevant context found in the report knowledge base.";
-        if (reportFaissIndex && reportAscentiaChunks.length > 0) {
-            const queryEmbedding = await getEmbeddingForQuery(prompt);
-            if (queryEmbedding) {
-                const { labels } = reportFaissIndex.search(queryEmbedding, 10); // Fetch more chunks for report context
-                if (labels.length > 0) {
-                    const retrievedChunks = labels.map((labelIndex: number) => reportAscentiaChunks[labelIndex]?.chunk).filter(Boolean);
-                    contextString = retrievedChunks.join('\n\n---\n\n');
-                    logInfo(logPrefix, `FAISS search retrieved ${retrievedChunks.length} chunks from the report KB.`);
-                }
-            }
-        }
-        
-        const fullContext = `--- START OF CURRENT PAGE CONTEXT ---\n${pageContext}\n--- END OF CURRENT PAGE CONTEXT ---\n\n--- START OF ADDITIONAL RELEVANT CONTEXT FROM REPORT ---\n${contextString}\n--- END OF ADDITIONAL RELEVANT CONTEXT FROM REPORT ---`;
-        
-        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia, an AI assistant. You are helping a user who is reading a detailed report. Answer their question based ONLY on the provided context from the report. Be concise and helpful. The user is currently on a page with the following content: "${pageContext}".</In-Game System Prompt>`;
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
-        
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}\n\nCONTEXT FROM REPORT:\n${fullContext}` },
-            { role: 'user', content: prompt }
-        ];
-
-        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.7, max_tokens: 2048, stream: true };
-        
-        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
-        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
-        
-        const reader = llmResponse.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-        let isFirstChunk = true;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-            for (const line of lines) {
-                if (line.startsWith('data: ')) {
-                    const jsonStr = line.substring(6);
-                    if (jsonStr === '[DONE]') break;
-                    try {
-                        const chunk = JSON.parse(jsonStr);
-                        if (chunk.choices[0]?.delta?.content) {
-                            let textChunk = chunk.choices[0].delta.content;
-                            if (isFirstChunk) {
-                                textChunk = textChunk.trimStart();
-                                isFirstChunk = false;
-                            }
-                            if (textChunk) {
-                                emitter.emit(chunkEvent, { temporaryId, text: textChunk });
-                            }
-                        }
-                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
-                }
-            }
-        }
-    } catch (error: any) {
-        logError(logPrefix, 'Error during report streaming chat:', error);
-        emitter.emit(chunkEvent, { temporaryId, text: `\n[System Error: Could not generate response.]` });
-    } finally {
-        emitter.emit(endEvent, { temporaryId });
-        logInfo(logPrefix, `Report stream ended for temporaryId: ${temporaryId}`);
-    }
-}
 </file_artifact>
 
 <file path="public/data/whitepaper_content.json">
@@ -25045,6 +21440,3594 @@ The setup uses a **reverse proxy** architecture. A single Caddy web server liste
 *   Navigate to `https://aiascent.game` in your browser. You should see the game.
 *   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
 *   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
+</file_artifact>
+
+<file path="context/aiascentgame/code/ascentiaHandler.ts.md">
+// src/server/api/ascentiaHandler.ts
+// Updated on: C1401 (Add detailed logging for context selection and chunk retrieval.)
+// Updated on: C1382 (Add explicit logging to handleAscentiaStream to diagnose RAG context issues.)
+// Updated on: C1381 (Add `context` parameter handling to select the correct knowledge base.)
+// Updated on: C1374 (Remove "thinking" system message from report handler to prevent it appearing in main chat.)
+// Updated on: C1373 (Verify path logic for report KB is correct.)
+// Updated on: C1356 (Incorporate the full pageContext from the client into the LLM system prompt.)
+// Updated on: C1344 (Add logic for loading and handling report-specific knowledge base and chat stream.)
+import { type Socket, type Server as SocketIOServer } from 'socket.io';
+import { logInfo, logWarn, logError } from '../../logger';
+import { type PlayerState } from '../../server';
+import { type ChatMessage } from '../../state/multiplayerStore';
+import faiss from 'faiss-node';
+import fs from 'fs';
+import path from 'path';
+import axios from 'axios';
+import { OUT_OF_GAME_SYSTEM_PROMPTS } from '../../game/personas/personaConstants';
+import { LlmService } from '../llmService';
+
+const LLM_BASE_URL = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234';
+const EMBEDDING_API_URL = LLM_BASE_URL + '/v1/embeddings';
+const CHAT_COMPLETIONS_API_URL = LLM_BASE_URL + '/v1/chat/completions';
+const EMBEDDING_MODEL = 'text-embedding-granite-embedding-278m-multilingual';
+const ASCENTIA_MODEL = 'qwen/qwen3-30b-a3b';
+
+let faissIndex: any = null;
+let ascentiaChunks: { id: string, chunk: string }[] = [];
+let reportFaissIndex: any = null;
+let reportAscentiaChunks: { id: string, chunk: string }[] = [];
+
+export function loadAscentiaKnowledgeBase(publicPath: string) {
+    const FAISS_INDEX_PATH = path.join(publicPath, 'ascentia_faiss.index');
+    const CHUNKS_PATH = path.join(publicPath, 'ascentia_chunks.json');
+    try {
+        if (fs.existsSync(FAISS_INDEX_PATH) && fs.existsSync(CHUNKS_PATH)) {
+            logInfo('[AscentiaKB]', 'Loading GAME FAISS index and chunk data...');
+            ascentiaChunks = JSON.parse(fs.readFileSync(CHUNKS_PATH, 'utf-8'));
+            faissIndex = faiss.Index.read(FAISS_INDEX_PATH);
+            logInfo('[AscentiaKB]', `Successfully loaded GAME FAISS index with ${faissIndex.ntotal} vectors and ${ascentiaChunks.length} chunks.`);
+        } else {
+            logWarn('[AscentiaKB]', 'GAME FAISS index or chunks file not found. Ascentia will have no game knowledge base.');
+        }
+    } catch (error) {
+        logError('[AscentiaKB]', 'Failed to load GAME FAISS index or chunks file.', error);
+        faissIndex = null;
+        ascentiaChunks = [];
+    }
+}
+
+export function loadReportKnowledgeBase(publicPath: string) {
+    const FAISS_INDEX_PATH = path.join(publicPath, 'report_faiss.index');
+    const CHUNKS_PATH = path.join(publicPath, 'report_chunks.json');
+    try {
+        if (fs.existsSync(FAISS_INDEX_PATH) && fs.existsSync(CHUNKS_PATH)) {
+            logInfo('[ReportKB]', 'Loading REPORT FAISS index and chunk data...');
+            reportAscentiaChunks = JSON.parse(fs.readFileSync(CHUNKS_PATH, 'utf-8'));
+            reportFaissIndex = faiss.Index.read(FAISS_INDEX_PATH);
+            logInfo('[ReportKB]', `Successfully loaded REPORT FAISS index with ${reportFaissIndex.ntotal} vectors and ${reportAscentiaChunks.length} chunks.`);
+        } else {
+            logWarn('[ReportKB]', `REPORT FAISS index or chunks file not found at ${FAISS_INDEX_PATH}. Ascentia will have no report knowledge base.`);
+        }
+    } catch (error) {
+        logError('[ReportKB]', 'Failed to load REPORT FAISS index or chunks file.', error);
+        reportFaissIndex = null;
+        reportAscentiaChunks = [];
+    }
+}
+
+async function getEmbeddingForQuery(text: string): Promise<number[] | null> {
+    try {
+        const response = await axios.post(EMBEDDING_API_URL, {
+            model: EMBEDDING_MODEL,
+            input: text,
+        });
+        if (response.data?.data?.[0]?.embedding) {
+            return response.data.data[0].embedding;
+        }
+        return null;
+    } catch (error) {
+        logError('[AscentiaKB]', 'Failed to get embedding for query.', error);
+        return null;
+    }
+}
+
+export async function handleAscentiaWelcome(socket: Socket, players: Record<string, PlayerState>, payload: any) {
+    const logPrefix = '[Handler:AscentiaWelcome]';
+    const recipientState = players[socket.id];
+    if (!recipientState) {
+        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
+        return;
+    }
+    const { showThinking } = payload || {};
+    logInfo(logPrefix, `Handling welcome message for ${recipientState.displayName}`);
+    const temporaryId = `ascentia_welcome_${Date.now()}`;
+    const emitter = socket;
+
+    try {
+        const placeholder: ChatMessage = {
+            id: temporaryId,
+            author: 'Ascentia',
+            flag: '🤖',
+            message: '',
+            status: 'thinking',
+            channel: 'private',
+        };
+        emitter.emit('newPrivateMessage', placeholder);
+
+        const welcomePrompt = `A new player, ${recipientState.displayName}, has just joined the game AI Ascent. Greet them warmly and offer your assistance as Ascentia, the in-game AI helper. Keep it concise (2-3 sentences).`;
+        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia. Your personality is that of a helpful, encouraging, and slightly witty AI assistant. You are greeting a new player. Do not use any context from the knowledge base for this greeting.</In-Game System Prompt>`;
+        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
+
+        const messages = [
+            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}` },
+            { role: 'user', content: welcomePrompt }
+        ];
+
+        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.8, max_tokens: 1024, stream: true };
+
+        emitter.emit('ascentia_generation_complete', { temporaryId });
+
+        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
+        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
+
+        const reader = llmResponse.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let isFirstChunk = true;
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || '';
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const jsonStr = line.substring(6);
+                    if (jsonStr === '[DONE]') break;
+                    try {
+                        const chunk = JSON.parse(jsonStr);
+                        if (chunk.choices[0]?.delta?.content) {
+                            let textChunk = chunk.choices[0].delta.content;
+                            if (showThinking === false) {
+                                textChunk = textChunk.replace(/<Thinking>[\s\S]*?<\/Thinking>/gi, '');
+                            }
+                            if (isFirstChunk) {
+                                textChunk = textChunk.trimStart();
+                                isFirstChunk = false;
+                            }
+                            if (textChunk) {
+                                emitter.emit('ascentia_stream_chunk', { temporaryId, text: textChunk });
+                            }
+                        }
+                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
+                }
+            }
+        }
+    } catch (error: any) {
+        logError(logPrefix, 'Error during welcome message streaming:', error);
+        emitter.emit('ascentia_stream_chunk', { temporaryId, text: `\n[System Error: Could not generate welcome message.]` });
+    } finally {
+        emitter.emit('ascentia_stream_end', { temporaryId });
+    }
+}
+
+export async function handleAscentiaStream(io: SocketIOServer, socket: Socket, players: Record<string, PlayerState>, payload: any) {
+    const logPrefix = '[Handler:AscentiaStream]';
+    const senderState = players[socket.id];
+    if (!senderState) {
+        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
+        return;
+    }
+    const { prompt, isGlobal, showThinking, kbChunks, context } = payload || {};
+    
+    // C1401: Logic to select the correct knowledge base
+    const useReportKb = context === 'report';
+    const activeFaissIndex = useReportKb ? reportFaissIndex : faissIndex;
+    const activeChunks = useReportKb ? reportAscentiaChunks : ascentiaChunks;
+    const kbName = useReportKb ? 'REPORT' : 'GAME';
+    
+    logInfo(logPrefix, `Received stream request from ${senderState.displayName}: "${prompt}" (Global: ${isGlobal}, Context: ${context}). Using ${kbName} knowledge base.`);
+    
+    const temporaryId = `ascentia_response_${Date.now()}`;
+    const emitter = isGlobal ? io : socket;
+    const chunkEvent = isGlobal ? 'ascentia_global_stream_chunk' : 'ascentia_stream_chunk';
+    const endEvent = isGlobal ? 'ascentia_global_stream_end' : 'ascentia_stream_end';
+    const messageEvent = isGlobal ? 'newGlobalMessage' : 'newPrivateMessage';
+
+    try {
+        const placeholder: ChatMessage = { id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: isGlobal ? 'global' : 'private' };
+        emitter.emit(messageEvent, placeholder);
+        
+        let contextString = `No relevant context found in the ${kbName} knowledge base.`;
+        if (activeFaissIndex && activeChunks.length > 0 && kbChunks > 0) {
+            logInfo(logPrefix, `Searching ${kbName} KB for prompt: "${prompt}"`);
+            const queryEmbedding = await getEmbeddingForQuery(prompt);
+            if (queryEmbedding) {
+                const { labels } = activeFaissIndex.search(queryEmbedding, kbChunks);
+                if (labels.length > 0) {
+                    const retrievedChunks = labels.map((labelIndex: number) => activeChunks[labelIndex]).filter(Boolean);
+                    contextString = retrievedChunks.map((c: { id: string, chunk: string }) => `// Source: ${c.id}\n${c.chunk}`).join('\n\n---\n\n');
+                    logInfo(logPrefix, `FAISS search retrieved ${retrievedChunks.length} chunks from the ${kbName} KB.`);
+                    // C1401: Log the retrieved chunks for debugging
+                    logInfo(logPrefix, `[CONTEXT DUMP FOR "${prompt}"]:\n${contextString}`);
+                } else {
+                    logWarn(logPrefix, `FAISS search returned 0 results from the ${kbName} KB.`);
+                }
+            } else {
+                logError(logPrefix, `Failed to generate embedding for the query. Cannot perform search.`);
+            }
+        } else {
+            logWarn(logPrefix, `Skipping FAISS search. Index not loaded, chunks empty, or kbChunks is 0 for ${kbName} KB.`);
+        }
+        
+        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`; // Abridged for brevity
+        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
+        
+        const messages = [
+            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}\n\nCONTEXT FROM ${kbName} DOCUMENTATION:\n${contextString}` },
+            { role: 'user', content: `From ${senderState.displayName}: ${prompt}` }
+        ];
+        
+        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.7, max_tokens: 2048, stream: true };
+        
+        emitter.emit(isGlobal ? 'ascentia_global_generation_complete' : 'ascentia_generation_complete', { temporaryId });
+
+        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
+        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
+
+        const reader = llmResponse.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let isFirstChunk = true;
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || '';
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const jsonStr = line.substring(6);
+                    if (jsonStr === '[DONE]') break;
+                    try {
+                        const chunk = JSON.parse(jsonStr);
+                        if (chunk.choices[0]?.delta?.content) {
+                            let textChunk = chunk.choices[0].delta.content;
+                            if (showThinking === false) {
+                                textChunk = textChunk.replace(/<Thinking>[\s\S]*?<\/Thinking>/gi, '');
+                            }
+                            if (isFirstChunk) {
+                                textChunk = textChunk.trimStart();
+                                isFirstChunk = false;
+                            }
+                            if (textChunk) {
+                                emitter.emit(chunkEvent, { temporaryId, text: textChunk });
+                            }
+                        }
+                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
+                }
+            }
+        }
+    } catch (error: any) {
+        logError(logPrefix, 'Error during streaming chat:', error);
+        emitter.emit(chunkEvent, { temporaryId, text: `\n[System Error: Could not generate response.]` });
+    } finally {
+        emitter.emit(endEvent, { temporaryId });
+    }
+}
+
+export async function handleReportAscentiaStream(io: SocketIOServer, socket: Socket, players: Record<string, PlayerState>, payload: any) {
+    const logPrefix = '[Handler:ReportAscentiaStream]';
+    const senderState = players[socket.id];
+    if (!senderState) {
+        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
+        return;
+    }
+    const { prompt, pageContext, temporaryId } = payload || {};
+    logInfo(logPrefix, `Received stream request from ${senderState.displayName}: "${prompt}"`);
+
+    const emitter = socket; // Always private for report chat
+    const chunkEvent = 'report_ascentia_stream_chunk';
+    const endEvent = 'report_ascentia_stream_end';
+
+    try {
+        let contextString = "No relevant context found in the report knowledge base.";
+        if (reportFaissIndex && reportAscentiaChunks.length > 0) {
+            const queryEmbedding = await getEmbeddingForQuery(prompt);
+            if (queryEmbedding) {
+                const { labels } = reportFaissIndex.search(queryEmbedding, 10); // Fetch more chunks for report context
+                if (labels.length > 0) {
+                    const retrievedChunks = labels.map((labelIndex: number) => reportAscentiaChunks[labelIndex]?.chunk).filter(Boolean);
+                    contextString = retrievedChunks.join('\n\n---\n\n');
+                    logInfo(logPrefix, `FAISS search retrieved ${retrievedChunks.length} chunks from the report KB.`);
+                }
+            }
+        }
+        
+        const fullContext = `--- START OF CURRENT PAGE CONTEXT ---\n${pageContext}\n--- END OF CURRENT PAGE CONTEXT ---\n\n--- START OF ADDITIONAL RELEVANT CONTEXT FROM REPORT ---\n${contextString}\n--- END OF ADDITIONAL RELEVANT CONTEXT FROM REPORT ---`;
+        
+        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia, an AI assistant. You are helping a user who is reading a detailed report. Answer their question based ONLY on the provided context from the report. Be concise and helpful. The user is currently on a page with the following content: "${pageContext}".</In-Game System Prompt>`;
+        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
+        
+        const messages = [
+            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}\n\nCONTEXT FROM REPORT:\n${fullContext}` },
+            { role: 'user', content: prompt }
+        ];
+
+        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.7, max_tokens: 2048, stream: true };
+        
+        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
+        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
+        
+        const reader = llmResponse.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let isFirstChunk = true;
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || '';
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const jsonStr = line.substring(6);
+                    if (jsonStr === '[DONE]') break;
+                    try {
+                        const chunk = JSON.parse(jsonStr);
+                        if (chunk.choices[0]?.delta?.content) {
+                            let textChunk = chunk.choices[0].delta.content;
+                            if (isFirstChunk) {
+                                textChunk = textChunk.trimStart();
+                                isFirstChunk = false;
+                            }
+                            if (textChunk) {
+                                emitter.emit(chunkEvent, { temporaryId, text: textChunk });
+                            }
+                        }
+                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
+                }
+            }
+        }
+    } catch (error: any) {
+        logError(logPrefix, 'Error during report streaming chat:', error);
+        emitter.emit(chunkEvent, { temporaryId, text: `\n[System Error: Could not generate response.]` });
+    } finally {
+        emitter.emit(endEvent, { temporaryId });
+        logInfo(logPrefix, `Report stream ended for temporaryId: ${temporaryId}`);
+    }
+}
+</file_artifact>
+
+<file path="context/aiascentgame/report/AudioControls.tsx.md">
+// src/components/menus/report/AudioControls.tsx
+// Updated on: C1401 (Implement responsive hiding of controls using ResizeObserver.)
+// Updated on: C1399 (Implement playback speed controls and restart-on-autoplay logic.)
+// Updated on: C1398 (Refactor play/pause logic to be more direct and fix state synchronization issues.)
+// Updated on: C1397 (Add volume and mute controls. Fix pause functionality.)
+import React, { useRef, useEffect, useState } from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { useShallow } from 'zustand/react/shallow';
+import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
+import { logInfo, logError } from '../../../logger';
+
+const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+
+const AudioControls: React.FC = () => {
+  const {
+    allPages, currentPageIndex, playbackStatus, autoplayEnabled,
+    currentAudioUrl, currentAudioPageIndex, currentTime, duration,
+    volume, isMuted, setVolume, toggleMute,
+    setPlaybackStatus, setAutoplay, setCurrentAudio,
+    setAudioTime, setAudioDuration, startSlideshow, stopSlideshow,
+    playbackSpeed, setPlaybackSpeed,
+  } = useReportStore(useShallow(state => ({
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    playbackStatus: state.playbackStatus,
+    autoplayEnabled: state.autoplayEnabled,
+    currentAudioUrl: state.currentAudioUrl,
+    currentAudioPageIndex: state.currentAudioPageIndex,
+    currentTime: state.currentTime,
+    duration: state.duration,
+    volume: state.volume,
+    isMuted: state.isMuted,
+    setVolume: state.setVolume,
+    toggleMute: state.toggleMute,
+    setPlaybackStatus: state.setPlaybackStatus,
+    setAutoplay: state.setAutoplay,
+    setCurrentAudio: state.setCurrentAudio,
+    setAudioTime: state.setAudioTime,
+    setAudioDuration: state.setAudioDuration,
+    startSlideshow: state.startSlideshow,
+    stopSlideshow: state.stopSlideshow,
+    playbackSpeed: state.playbackSpeed,
+    setPlaybackSpeed: state.setPlaybackSpeed,
+  })));
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioUrlRef = useRef<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null); // C1401
+  const [containerWidth, setContainerWidth] = useState(0); // C1401
+
+  const currentPage = allPages[currentPageIndex];
+
+  // C1401: Use ResizeObserver to track container width for responsive UI
+  useEffect(() => {
+    const observer = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      observer.observe(currentContainer);
+    }
+    return () => {
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
+      }
+    };
+  }, []);
+
+  const generateAndPlayAudio = async (restart = false) => {
+    if (!currentPage) return;
+
+    setPlaybackStatus('generating');
+    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
+
+    try {
+      const response = await fetch('/api/tts/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: textToNarrate }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`TTS server failed with status: ${response.status}`);
+      }
+
+      const audioBlob = await response.blob();
+      if (audioUrlRef.current) {
+        URL.revokeObjectURL(audioUrlRef.current);
+      }
+      const newUrl = URL.createObjectURL(audioBlob);
+      audioUrlRef.current = newUrl;
+      setCurrentAudio(newUrl, currentPageIndex);
+      if (restart && audioRef.current) {
+        audioRef.current.currentTime = 0;
+      }
+    } catch (error) {
+      logError('[AudioControls]', 'Failed to generate audio', error);
+      setPlaybackStatus('error');
+    }
+  };
+
+  useEffect(() => {
+    if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
+      generateAndPlayAudio();
+    }
+  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (currentAudioUrl && audio.src !== currentAudioUrl) {
+      audio.src = currentAudioUrl;
+      audio.load();
+      audio.play().catch(e => logError('[AudioControls]', 'Autoplay failed', e));
+    }
+  }, [currentAudioUrl]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = volume;
+    audio.muted = isMuted;
+    audio.playbackRate = playbackSpeed;
+  }, [volume, isMuted, playbackSpeed]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => setPlaybackStatus('playing');
+    const handlePause = () => setPlaybackStatus('paused');
+    const handleEnded = () => setPlaybackStatus('idle');
+    const handleTimeUpdate = () => setAudioTime(audio.currentTime);
+    const handleLoadedMetadata = () => setAudioDuration(audio.duration);
+    const handleWaiting = () => setPlaybackStatus('buffering');
+    const handleError = () => { logError('[AudioControls]', 'Audio playback error'); setPlaybackStatus('error'); };
+
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('playing', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('waiting', handleWaiting);
+    audio.addEventListener('error', handleError);
+
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('playing', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('waiting', handleWaiting);
+      audio.removeEventListener('error', handleError);
+      if (audioUrlRef.current) {
+        URL.revokeObjectURL(audioUrlRef.current);
+      }
+    };
+  }, []);
+
+  const handlePlayPause = () => {
+    stopSlideshow(true);
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (playbackStatus === 'playing' || playbackStatus === 'buffering') {
+      audio.pause();
+    } else if (playbackStatus === 'paused') {
+      audio.play().catch(e => logError('[AudioControls]', 'Resume play failed', e));
+    } else if (playbackStatus === 'idle' || playbackStatus === 'error') {
+      generateAndPlayAudio();
+    }
+  };
+
+  const handleRestart = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+    }
+  };
+
+  const handleAutoplayChange = (checked: boolean) => {
+    setAutoplay(checked);
+    if (checked) {
+      // C1399: Restart logic
+      generateAndPlayAudio(true); // true to force restart
+    } else {
+      stopSlideshow(true);
+    }
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Number(e.target.value);
+    }
+  };
+
+  const formatTime = (time: number) => {
+    if (isNaN(time) || !isFinite(time)) return '00:00';
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const containerStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: '8px', padding: '5px 0', fontSize: '10px', color: '#ccc', width: '100%' };
+  const buttonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', fontSize: '14px', cursor: 'pointer', padding: '5px', borderRadius: '4px', flexShrink: 0 };
+  const sliderStyle: React.CSSProperties = { flexGrow: 1, cursor: 'pointer', minWidth: '50px' };
+  const timeStyle: React.CSSProperties = { minWidth: '40px', textAlign: 'center', flexShrink: 0 };
+  const statusStyle: React.CSSProperties = { fontStyle: 'italic', minWidth: '70px', textAlign: 'center', flexShrink: 0 };
+  const speedSelectStyle: React.CSSProperties = { background: '#333', border: '1px solid #666', color: 'white', padding: '3px', fontSize: '9px', fontFamily: 'inherit', marginLeft: '5px', flexShrink: 0 };
+  const volumeSliderStyle: React.CSSProperties = { width: '80px', cursor: 'pointer', flexShrink: 0 };
+
+  const isPlaying = playbackStatus === 'playing' || playbackStatus === 'buffering';
+
+  return (
+    <div style={containerStyle} ref={containerRef}>
+      <audio ref={audioRef} />
+      <button style={buttonStyle} onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
+        {isPlaying ? <FaPause /> : <FaPlay />}
+      </button>
+      <button style={buttonStyle} onClick={handleRestart} title="Restart"><FaRedo /></button>
+
+      <span style={timeStyle}>{formatTime(currentTime)}</span>
+
+      {/* C1401: Hide seek bar on very small widths */}
+      {containerWidth > 450 && (
+        <input
+          type="range"
+          min="0"
+          max={duration || 100}
+          value={currentTime}
+          onChange={handleSeek}
+          style={sliderStyle}
+          disabled={playbackStatus === 'generating' || playbackStatus === 'idle'}
+        />
+      )}
+
+      <span style={timeStyle}>{formatTime(duration)}</span>
+
+      {/* C1401: Hide volume controls on small widths */}
+      {containerWidth > 650 && (
+        <>
+          <button style={buttonStyle} onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
+            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+          </button>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={(e) => setVolume(Number(e.target.value))}
+            style={volumeSliderStyle}
+            title={`Volume: ${Math.round(volume * 100)}%`}
+          />
+        </>
+      )}
+
+
+      <div style={statusStyle}>
+        {playbackStatus === 'generating' && <FaSpinner className="animate-spin" />}
+        {playbackStatus === 'buffering' && 'Buffering...'}
+        {playbackStatus === 'error' && 'Error!'}
+      </div>
+
+      <select
+        value={playbackSpeed}
+        onChange={(e) => setPlaybackSpeed(Number(e.target.value))}
+        style={speedSelectStyle}
+        title="Playback Speed"
+      >
+        {PLAYBACK_SPEEDS.map(speed => (
+          <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
+        ))}
+      </select>
+
+      {/* C1401: Hide autoplay on medium widths */}
+      {containerWidth > 550 && (
+        <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', flexShrink: 0 }}>
+          <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
+          Autoplay
+        </label>
+      )}
+    </div>
+  );
+};
+
+export default AudioControls;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ImageNavigator.tsx.md">
+// src/components/menus/report/ImageNavigator.tsx
+// Updated on: C1381 (Fix prompt toggle button functionality.)
+// Updated on: C1374 (Add hint toggle button and centralize hint text here.)
+// Updated on: C1373 (Change "Unvoted" to "Votes Left!", centralize hint text.)
+// Updated on: C1360 (Incorporate jumpPages action for Shift/Ctrl+Click functionality.)
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { FaChevronLeft, FaChevronRight, FaThumbsUp, FaCommentDots, FaTree, FaCheckSquare, FaChevronUp, FaChevronDown, FaInfoCircle } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+import { useSession } from 'next-auth/react';
+
+const ImageNavigator: React.FC = () => {
+  const { data: session } = useSession();
+  const {
+    allPages, currentPageIndex, currentImageIndex,
+    nextImage, prevImage, jumpPages, castVote, imageVotes, toggleChatPanel,
+    votesCastByPage, togglePromptVisibility, isPromptVisible,
+    isHintVisible, toggleHintVisibility,
+  } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      currentPageIndex: state.currentPageIndex,
+      currentImageIndex: state.currentImageIndex,
+      nextImage: state.nextImage,
+      prevImage: state.prevImage,
+      jumpPages: state.jumpPages,
+      castVote: state.castVote,
+      imageVotes: state.imageVotes,
+      toggleChatPanel: state.toggleChatPanel,
+      votesCastByPage: state.votesCastByPage,
+      togglePromptVisibility: state.togglePromptVisibility,
+      isPromptVisible: state.isPromptVisible,
+      isHintVisible: state.isHintVisible,
+      toggleHintVisibility: state.toggleHintVisibility,
+    }))
+  );
+  const { toggleTreeNav } = useReportStore();
+
+  const currentPage = allPages[currentPageIndex];
+  const currentPrompt = currentPage?.imagePrompts[0];
+  const currentImage = currentPrompt?.images[currentImageIndex];
+  const totalImages = currentPrompt?.images.length ?? 0;
+  const currentVotes = currentImage ? (imageVotes[currentImage.imageId] || 0) : 0;
+  const hasVotedOnThisPage = votesCastByPage.hasOwnProperty(currentPageIndex);
+  const isThisImageVoted = hasVotedOnThisPage && votesCastByPage[currentPageIndex] === currentImage?.imageId;
+
+  const pagesLeftToVote = allPages.length - Object.keys(votesCastByPage).length;
+
+  const handleVote = () => {
+    if (currentImage && session) {
+      castVote(currentImage.imageId, currentPageIndex);
+    }
+  };
+
+  const containerStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '10px',
+    fontSize: '10px',
+    color: '#ccc',
+    width: '100%',
+  };
+
+  const navGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    flex: 1,
+  };
+
+  const centerNavGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column', // Stack controls and hint
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '5px', // Gap between controls and hint
+    flex: 2,
+  };
+
+  const controlsRowStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '15px', // Adjusted gap
+  };
+
+  const actionGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    justifyContent: 'flex-end',
+    flex: 1,
+  };
+
+  const counterGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+  };
+
+  const buttonStyle: React.CSSProperties = {
+    background: 'none',
+    border: '1px solid #777',
+    color: '#ccc',
+    fontSize: '16px',
+    cursor: 'pointer',
+    padding: '5px 10px',
+    borderRadius: '4px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+  };
+
+  const smallButtonStyle: React.CSSProperties = {
+    ...buttonStyle,
+    fontSize: '12px',
+    padding: '3px 8px',
+  };
+
+  const hintTextStyle: React.CSSProperties = {
+    fontSize: '9px',
+    color: '#88ddff',
+    fontStyle: 'italic',
+    width: '100%',
+    textAlign: 'center',
+    lineHeight: '1.5',
+  };
+
+  const handlePageJump = (e: React.MouseEvent, direction: number) => {
+    let count = direction;
+    if (e.shiftKey) count *= 5;
+    if (e.ctrlKey) count *= 10;
+    jumpPages(count);
+  };
+
+
+  return (
+    <div style={containerStyle}>
+      <div style={navGroupStyle}>
+        <button style={smallButtonStyle} onClick={toggleTreeNav} title="Toggle Page Tree">
+          <FaTree /> Tree
+        </button>
+        <button style={smallButtonStyle} onClick={togglePromptVisibility} title={isPromptVisible ? "Hide Image Prompt" : "Show Image Prompt"}>
+          <FaInfoCircle /> Prompt
+        </button>
+      </div>
+
+      <div style={centerNavGroupStyle}>
+        <div style={controlsRowStyle}>
+          <div style={counterGroupStyle}>
+            <button style={buttonStyle} onClick={(e) => handlePageJump(e, -1)} title="Previous Page (Up Arrow)"><FaChevronUp /></button>
+            <span>Page {currentPageIndex + 1} / {allPages.length}</span>
+            <button style={buttonStyle} onClick={(e) => handlePageJump(e, 1)} title="Next Page (Down Arrow)"><FaChevronDown /></button>
+          </div>
+          {/* C1374: Added hint toggle button */}
+          <button style={smallButtonStyle} onClick={toggleHintVisibility} title={isHintVisible ? "Hide Controls Hint" : "Show Controls Hint"}>
+            <FaInfoCircle />
+          </button>
+          <div style={counterGroupStyle}>
+            <button style={buttonStyle} onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
+            <span>Image {currentImageIndex + 1} / {totalImages}</span>
+            <button style={buttonStyle} onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
+          </div>
+        </div>
+        {/* C1374: Hint text is now toggled */}
+        {isHintVisible && (
+          <div style={hintTextStyle}>
+            <span>Use <kbd>↑</kbd>/<kbd>↓</kbd> for pages. Use <kbd>←</kbd>/<kbd>→</kbd> for images. <kbd>Spacebar</kbd> to vote.</span>
+            <br />
+            <span>Hold <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Shift</kbd> to jump 5, or <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Ctrl</kbd> to jump 10.</span>
+          </div>
+        )}
+      </div>
+
+      <div style={actionGroupStyle}>
+        <button
+          style={{ ...smallButtonStyle, backgroundColor: pagesLeftToVote === 0 ? '#3a3' : '#553', borderColor: pagesLeftToVote === 0 ? '#7f7' : '#aa7' }}
+          disabled
+          title={pagesLeftToVote > 0 ? `${pagesLeftToVote} pages left to vote on` : "All pages voted on!"}
+        >
+          <FaCheckSquare /> {pagesLeftToVote} Votes Left!
+        </button>
+        <button
+          style={{ ...smallButtonStyle, backgroundColor: isThisImageVoted ? '#3a3' : (session ? '#555' : '#444'), borderColor: isThisImageVoted ? '#7f7' : (session ? '#777' : '#555') }}
+          onClick={handleVote}
+          disabled={!session}
+          title={session ? "Vote for this image (Spacebar)" : "You must be logged in to vote"}
+        >
+          <FaThumbsUp /> Vote ({currentVotes})
+        </button>
+        <button
+          style={{ ...smallButtonStyle, backgroundColor: '#448', borderColor: '#88f' }}
+          onClick={toggleChatPanel}
+          title="Ask @Ascentia about this page"
+        >
+          <FaCommentDots /> Ask
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ImageNavigator;
+</file_artifact>
+
+<file path="context/aiascentgame/report/llmService.ts.md">
+// src/server/llmService.ts
+// Updated on: C1395 (Correct TTS request body to match OpenAI-compatible endpoint for kokoro-fastapi.)
+// Updated on: C1384 (Fix stream type mismatch by converting Web Stream to Node.js Readable stream.)
+// Updated on: C1383 (Add generateSpeech function for TTS.)
+// Updated on: C1323 (Fix implicit 'any' types in map/filter callbacks.)
+// Updated on: C1322 (Fix implicit 'any' types in map/filter callbacks.)
+// NEW FILE - C1321
+
+import { Readable } from 'stream';
+import { logInfo, logWarn, logError } from '../logger';
+import { OUT_OF_GAME_SYSTEM_PROMPTS } from '../game/personas/personaConstants';
+import type { playerLlmPersonas } from '../game/personas/playerLlmPersonas'; // Import type only
+
+const COMPLETIONS_API_URL = (process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234') + '/v1/chat/completions';
+const TTS_API_URL = process.env.TTS_SERVER_URL || 'http://localhost:8880/v1/audio/speech';
+
+type Persona = typeof playerLlmPersonas['tier0'];
+
+/**
+ * A centralized service for making calls to the local LLM.
+ */
+export const LlmService = {
+    /**
+     * Generates poetic lines for the Poetry Battle.
+     * @param theme - The theme for the round.
+     * @param numChoices - How many lines to generate.
+     * @param damageValues - An array of hidden damage values.
+     * @param persona - The persona object for the chatbot.
+     * @returns An array of choices with text and damage.
+     */
+    async generatePoetryChoices(
+        theme: string,
+        numChoices: number,
+        damageValues: number[],
+        persona: Persona,
+    ): Promise<{ text: string; damage: number }[]> {
+        const logPrefix = '[LlmService:generatePoetryChoices]';
+        logInfo(logPrefix, `Generating ${numChoices} choices for theme: "${theme}" with persona tier ${persona.tier}`);
+
+        const impactMap: Record<number, string> = {};
+        const sortedDamage = [...damageValues].sort((a, b) => a - b);
+        if (sortedDamage.length === 1) {
+            impactMap[sortedDamage[0]] = 'Normal';
+        } else if (sortedDamage.length > 1) {
+            impactMap[sortedDamage[0]] = 'Weak';
+            impactMap[sortedDamage[sortedDamage.length - 1]] = 'Strong';
+            for (let i = 1; i < sortedDamage.length - 1; i++) {
+                impactMap[sortedDamage[i]] = 'Medium';
+            }
+        }
+
+        const choicePrompts = damageValues
+            .map((damage, index) => `${index + 1}. **${impactMap[damage]} (Hidden Damage: ${damage}):** A line of poetry.`)
+            .join('\n');
+
+        const inGameSystemPrompt = `<In-Game System Prompt>You are an AI assistant generating content for a poetry battle game. The theme for this round is "${theme}". Generate ${numChoices} distinct lines of poetry for this theme with the following varying levels of impact:\n\n${choicePrompts}\n\nReturn ONLY the ${numChoices} lines of poetry, each on a new line. Do not include the impact level or damage value in your response.</In-Game System Prompt>`;
+        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[persona.model as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS] || OUT_OF_GAME_SYSTEM_PROMPTS['qwen/qwen3-30b-a3b'];
+        
+        const messages = [
+            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}` },
+            { role: 'user', content: `Generate the ${numChoices} poetic lines now.` }
+        ];
+
+        const requestBody: any = {
+            model: persona.model,
+            messages: messages,
+            stream: false,
+            ...persona.params,
+        };
+
+        try {
+            const llmResponse = await fetch(COMPLETIONS_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody),
+            });
+
+            if (!llmResponse.ok) {
+                const errorBody = await llmResponse.text();
+                throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`);
+            }
+
+            const llmData = await llmResponse.json();
+            let content = llmData.choices[0]?.message?.content?.trim() ?? "";
+            content = content.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+
+            const lines = content.split('\n').map((line: string) => line.trim()).filter(Boolean);
+
+            if (lines.length !== numChoices) {
+                logWarn(logPrefix, `LLM did not return the expected number of choices. Expected ${numChoices}, got ${lines.length}.`);
+                // Fallback: Pad or truncate to match expected number of choices
+                while (lines.length < numChoices) lines.push("The void echoes... (LLM Error)");
+                while (lines.length > numChoices) lines.pop();
+            }
+
+            return lines.map((line: string, index: number) => ({
+                text: line,
+                damage: damageValues[index],
+            }));
+
+        } catch (error) {
+            logError(logPrefix, 'Error generating poetry choices:', error);
+            // Return placeholder choices on error
+            return damageValues.map(damage => ({
+                text: "An error sparked, my circuits weep...",
+                damage: damage,
+            }));
+        }
+    },
+};
+
+/**
+ * Generates speech from text using the local TTS server.
+ * @param text The text to convert to speech.
+ * @returns A Node.js Readable stream of the audio data, or null on error.
+ */
+export async function generateSpeech(text: string): Promise<Readable | null> {
+    const logPrefix = '[llmService:generateSpeech]';
+    logInfo(logPrefix, `Requesting speech generation from ${TTS_API_URL} for text: "${text.substring(0, 50)}..."`);
+
+    try {
+        // C1395: Correct the request body to match the OpenAI-compatible endpoint of kokoro-fastapi
+        const requestBody = {
+            model: 'kokoro',
+            voice: 'af_sky', // A standard, high-quality default voice
+            input: text,
+            response_format: 'wav',
+            speed: 1.0,
+        };
+
+        logInfo(logPrefix, 'Sending request to TTS server with body:', requestBody);
+
+        const response = await fetch(TTS_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'audio/wav',
+            },
+            body: JSON.stringify(requestBody),
+        });
+
+        if (!response.ok) {
+            const errorBody = await response.text();
+            throw new Error(`TTS server returned an error: ${response.status} ${errorBody}`);
+        }
+        
+        if (!response.body) {
+            throw new Error('TTS server returned an empty response body.');
+        }
+        
+        // Convert Web Stream (from fetch response.body) to a Node.js Readable stream
+        // The 'as any' cast is used to bridge the type difference between Web API streams and Node.js streams.
+        return Readable.fromWeb(response.body as any);
+
+    } catch (error) {
+        logError(logPrefix, 'Error contacting TTS server:', error);
+        return null;
+    }
+}
+
+// Keep other functions from the original file if they exist, like handlePlayerProductRequest
+export { handlePlayerProductStream, handlePlayerProductRequest } from './api/playerProductHandler';
+</file_artifact>
+
+<file path="context/aiascentgame/report/PageNavigator.tsx.md">
+// src/components/menus/report/PageNavigator.tsx
+// Updated on: C1374 (Increase title font size.)
+// Updated on: C1373 (Remove hint text, which has been moved to ImageNavigator.)
+// Updated on: C1360 (Rearrange hint text layout and increase title font size.)
+// Updated on: C1359 (Simplify by removing page nav buttons, which are now in ImageNavigator.)
+// Updated on: C1355 (Add hint about arrow key navigation.)
+// Updated on: C1351 (Incorporate a close button and refactor layout to a single line.)
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { FaTimes } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+import { useUIStore } from '../../../state';
+
+interface PageNavigatorProps {
+  onClose: () => void;
+}
+
+const PageNavigator: React.FC<PageNavigatorProps> = ({ onClose }) => {
+  const { allPages, currentPageIndex } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      currentPageIndex: state.currentPageIndex,
+    }))
+  );
+
+  const currentPage = allPages[currentPageIndex];
+
+  const containerStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    position: 'relative',
+    minHeight: '40px',
+  };
+
+  const titleStyle: React.CSSProperties = {
+    fontSize: '18px', // C1374: Increased font size
+    color: '#FFA500',
+    margin: '0 0 5px 0',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: '100%',
+    padding: '0 50px', // Add padding to avoid overlap with close button
+    textAlign: 'center',
+  };
+
+  const closeButtonStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    background: 'none',
+    border: '1px solid #777',
+    color: '#aaa',
+    fontSize: '16px',
+    cursor: 'pointer',
+    padding: '5px 10px',
+    borderRadius: '4px',
+  };
+
+  if (!currentPage) return null;
+
+  return (
+    <div style={containerStyle}>
+      <h2 style={titleStyle} title={currentPage.pageTitle}>{currentPage.pageTitle}</h2>
+      <button style={closeButtonStyle} onClick={onClose} title="Close Report Viewer"><FaTimes /></button>
+    </div>
+  );
+};
+
+export default PageNavigator;
+</file_artifact>
+
+<file path="context/aiascentgame/report/PromptNavigator.tsx.md">
+// src/components/menus/report/PromptNavigator.tsx
+// Updated on: C1374 (Simplify component to only display prompt text, as header/toggle moved to parent.)
+// Updated on: C1359 (Add collapse/expand button and logic.)
+// Updated on: C1358 (Refactored to be a simple display component for a single static prompt.)
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { useShallow } from 'zustand/react/shallow';
+
+const PromptNavigator: React.FC = () => {
+  const { allPages, currentPageIndex } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      currentPageIndex: state.currentPageIndex,
+    }))
+  );
+
+  const currentPage = allPages[currentPageIndex];
+  const currentPrompt = currentPage?.imagePrompts[0];
+
+  const promptTextStyle: React.CSSProperties = {
+    width: '100%',
+    textAlign: 'left',
+    fontStyle: 'italic',
+    lineHeight: 1.4,
+    color: '#ccc',
+    fontSize: '10px',
+    padding: '8px',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: '4px',
+    border: '1px dashed #444',
+    margin: '0 0 15px 0',
+  };
+
+  if (!currentPrompt || !currentPrompt.promptText) return null;
+
+  return (
+    <div style={promptTextStyle}>
+      "{currentPrompt.promptText}"
+    </div>
+  );
+};
+
+export default PromptNavigator;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportChatPanel.tsx.md">
+// src/components/menus/report/ReportChatPanel.tsx
+// Updated on: C1400 (Add Ascentia message audio controls.)
+// Updated on: C1381 (Fix markdown rendering, thinking italics, and input focus loss.)
+// Updated on: C1377 (Refactor Ascentia chat tab into a stable component to fix input focus loss.)
+// Updated on: C1374 (Implement tabbed view for Ask @Ascentia and Main Chat. Add Settings button. Fix thinking italics.)
+import React, { useEffect, useRef, useCallback, useState, type ComponentType, type SVGProps } from 'react';
+import { FaCommentDots, FaTimes, FaBroom, FaCog, FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import { useMultiplayerStore, type ChatMessage } from '../../../state';
+import { useReportStore } from '../../../state/reportStore';
+import { logInfo, logError } from '../../../logger';
+import { formatMessage } from '../../../utils/chatFormatting';
+import { useShallow } from 'zustand/react/shallow';
+import { Resizable } from 're-resizable';
+import ChatPanel from '../../ui/ChatPanel'; // Import the main game chat panel
+import { useUIStore } from '../../../state';
+
+const TimesIcon = FaTimes as ComponentType<SVGProps<SVGSVGElement>>;
+const BroomIcon = FaBroom as ComponentType<SVGProps<SVGSVGElement>>;
+const SettingsIcon = FaCog as ComponentType<SVGProps<SVGSVGElement>>;
+const PlayIcon = FaPlay as ComponentType<SVGProps<SVGSVGElement>>;
+const PauseIcon = FaPause as ComponentType<SVGProps<SVGSVGElement>>;
+const SpinnerIcon = FaSpinner as ComponentType<SVGProps<SVGSVGElement>>;
+
+const parseMessageWithThinking = (message: string): { type: 'normal' | 'thought', content: string }[] => {
+  const parts: { type: 'normal' | 'thought', content: string }[] = [];
+  let lastIndex = 0;
+  const regex = /<Thinking>([\s\S]*?)<\/Thinking>/gi;
+  let match;
+
+  while ((match = regex.exec(message)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push({ type: 'normal', content: message.substring(lastIndex, match.index) });
+    }
+    parts.push({ type: 'thought', content: match[1] });
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < message.length) {
+    parts.push({ type: 'normal', content: message.substring(lastIndex) });
+  }
+
+  if (parts.length === 0) {
+    parts.push({ type: 'normal', content: message });
+  }
+
+  return parts;
+};
+
+// Ascentia chat view component
+const AscentiaChatView: React.FC = () => {
+  const {
+    allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput,
+    addReportChatMessage, updateReportChatMessage, updateReportChatStatus,
+    tokenCount, updateTokenCount, ascentiaAudioStatus, playAscentiaMessage,
+    setAscentiaAudioStatus, ascentiaAudioAutoplay, setAscentiaAutoplay, currentAscentiaAudioUrl
+  } = useReportStore(useShallow(state => ({
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    reportChatHistory: state.reportChatHistory,
+    reportChatInput: state.reportChatInput,
+    setReportChatInput: state.setReportChatInput,
+    addReportChatMessage: state.addReportChatMessage,
+    updateReportChatMessage: state.updateReportChatMessage,
+    updateReportChatStatus: state.updateReportChatStatus,
+    tokenCount: state.tokenCount,
+    updateTokenCount: state.updateTokenCount,
+    ascentiaAudioStatus: state.ascentiaAudioStatus,
+    playAscentiaMessage: state.playAscentiaMessage,
+    setAscentiaAudioStatus: state.setAscentiaAudioStatus,
+    ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
+    setAscentiaAutoplay: state.setAscentiaAutoplay,
+    currentAscentiaAudioUrl: state.currentAscentiaAudioUrl,
+  })));
+
+  const { socketInstance } = useMultiplayerStore(useShallow(state => ({ socketInstance: state.socketInstance })));
+  const currentPage = allPages[currentPageIndex];
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isThinking, setIsThinking] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (currentAscentiaAudioUrl && audio.src !== currentAscentiaAudioUrl) {
+      audio.src = currentAscentiaAudioUrl;
+      audio.play().catch(e => logError('[ReportChatPanel]', 'Ascentia audio autoplay failed', e));
+    }
+    const handlePlay = () => setAscentiaAudioStatus('playing');
+    const handlePause = () => setAscentiaAudioStatus('paused');
+    const handleEnded = () => setAscentiaAudioStatus('idle');
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('playing', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('playing', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
+    };
+  }, [currentAscentiaAudioUrl, setAscentiaAudioStatus]);
+
+  const handleStreamChunk = useCallback((data: { temporaryId: string, text: string }) => {
+    updateReportChatMessage(data.temporaryId, data.text);
+  }, [updateReportChatMessage]);
+
+  const handleStreamEnd = useCallback((data: { temporaryId: string, contextTokenCount?: number }) => {
+    setIsThinking(false);
+    updateReportChatStatus(data.temporaryId, 'complete');
+    if (data.contextTokenCount) updateTokenCount({ context: data.contextTokenCount });
+  }, [updateReportChatStatus, updateTokenCount]);
+
+  useEffect(() => {
+    if (!socketInstance) return;
+    socketInstance.on('report_ascentia_stream_chunk', handleStreamChunk);
+    socketInstance.on('report_ascentia_stream_end', handleStreamEnd);
+    return () => {
+      socketInstance.off('report_ascentia_stream_chunk', handleStreamChunk);
+      socketInstance.off('report_ascentia_stream_end', handleStreamEnd);
+    };
+  }, [socketInstance, handleStreamChunk, handleStreamEnd]);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (!isThinking) textareaRef.current?.focus();
+  }, [reportChatHistory, isThinking]);
+
+  const handleSend = () => {
+    const trimmedInput = reportChatInput.trim();
+    if (!trimmedInput || isThinking || !socketInstance) return;
+    addReportChatMessage({ author: 'You', flag: '👤', message: trimmedInput, channel: 'local' });
+    const temporaryId = `report_ascentia_response_${Date.now()}`;
+    addReportChatMessage({ id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: 'system' });
+    setIsThinking(true);
+    setReportChatInput('');
+    const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nImage Prompt: ${currentPage?.imagePrompts[0]?.promptText || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
+    updateTokenCount({ user: Math.ceil(trimmedInput.length / 4), context: Math.ceil(pageContext.length / 4), response: 0 });
+    socketInstance.emit('start_report_ascentia_stream', { prompt: trimmedInput, pageContext, temporaryId });
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } };
+
+  const handlePlayPauseClick = (message: ChatMessage) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (ascentiaAudioStatus === 'playing') {
+      audio.pause();
+    } else if (ascentiaAudioStatus === 'paused') {
+      audio.play().catch(e => logError('[ReportChatPanel]', 'Audio resume failed', e));
+    } else {
+      playAscentiaMessage(message.message);
+    }
+  };
+
+  const lastAscentiaMessage = [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia' && msg.status === 'complete');
+
+  const messageAreaStyle: React.CSSProperties = { flexGrow: 1, overflowY: 'auto', padding: '8px', fontSize: '10px', lineHeight: '1.4' };
+  const footerContainerStyle: React.CSSProperties = { borderTop: '1px solid #555', padding: '10px', flexShrink: 0 };
+  const tokenCounterStyle: React.CSSProperties = { fontSize: '9px', color: '#aaa', textAlign: 'center', marginBottom: '8px', position: 'relative', cursor: 'help' };
+  const tooltipStyle: React.CSSProperties = { visibility: 'hidden', width: '220px', backgroundColor: '#111', color: '#fff', textAlign: 'left', borderRadius: '6px', padding: '8px', position: 'absolute', zIndex: 1, bottom: '125%', left: '50%', marginLeft: '-110px', opacity: 0, transition: 'opacity 0.3s', border: '1px solid #555', fontSize: '9px', lineHeight: '1.5' };
+  const tooltipItemStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between' };
+  const textareaStyle: React.CSSProperties = { width: '100%', background: '#111', border: '1px solid #555', color: 'white', padding: '8px', fontSize: '10px', fontFamily: 'inherit', outline: 'none', borderRadius: '4px', resize: 'vertical', boxSizing: 'border-box', display: 'block', minHeight: '40px', maxHeight: '150px' };
+  const thinkingCursorStyle: React.CSSProperties = { display: 'inline-block', width: '8px', height: '1em', backgroundColor: '#ccc', animation: 'blink 1s step-end infinite', verticalAlign: 'text-bottom', marginLeft: '2px' };
+  const thoughtStyle: React.CSSProperties = { fontStyle: 'italic', color: '#99ccff', opacity: 0.8, display: 'block', borderLeft: '2px solid #5588cc', paddingLeft: '8px', margin: '4px 0' };
+  const tagStyle: React.CSSProperties = { color: '#66a3ff' };
+  const audioControlRowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px' };
+  const playButtonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', cursor: 'pointer', padding: '4px 8px', borderRadius: '4px' };
+
+  return (
+    <>
+      <audio ref={audioRef} />
+      <div style={messageAreaStyle}>
+        {reportChatHistory.map((msg, index) => {
+          const messageParts = parseMessageWithThinking(msg.message);
+          return (
+            <div key={msg.id || index} style={{ marginBottom: '8px' }}>
+              <span style={{ color: msg.author === 'You' ? '#0af' : '#00ffff' }}>{msg.flag} {String(msg.author)}: </span>
+              {msg.status === 'thinking' ? (<span>🤔...</span>) : (
+                <>
+                  {messageParts.map((part, i) =>
+                    part.type === 'thought' ? (
+                      <div key={i} style={thoughtStyle}>
+                        <span style={tagStyle}>&lt;Thinking&gt;</span>
+                        {formatMessage(part.content)}
+                        <span style={tagStyle}>&lt;/Thinking&gt;</span>
+                      </div>
+                    ) : (<React.Fragment key={i}>{formatMessage(part.content)}</React.Fragment>)
+                  )}
+                  {msg.status === 'streaming' && <span style={thinkingCursorStyle}></span>}
+                </>
+              )}
+            </div>
+          );
+        })}
+        <div ref={messagesEndRef} />
+      </div>
+      <div style={footerContainerStyle}>
+        <div style={tokenCounterStyle} onMouseEnter={() => setIsTooltipVisible(true)} onMouseLeave={() => setIsTooltipVisible(false)}>
+          Est. Context Tokens: {tokenCount.total} / 16,384
+          <div style={{ ...tooltipStyle, visibility: isTooltipVisible ? 'visible' : 'hidden', opacity: isTooltipVisible ? 1 : 0 }}>
+            <b>Token Breakdown (est. chars/4):</b>
+            <div style={tooltipItemStyle}><span>System Prompt:</span> <span>{tokenCount.breakdown.system}</span></div>
+            <div style={tooltipItemStyle}><span>Page Context:</span> <span>{tokenCount.breakdown.context}</span></div>
+            <div style={tooltipItemStyle}><span>Chat History:</span> <span>{tokenCount.breakdown.history}</span></div>
+            <div style={{ ...tooltipItemStyle, paddingLeft: '10px' }}><span style={{ fontStyle: 'italic' }}> LLM Response:</span> <span style={{ fontStyle: 'italic' }}>{tokenCount.breakdown.response}</span></div>
+            <div style={tooltipItemStyle}><span>User Prompt:</span> <span>{tokenCount.breakdown.user}</span></div>
+            <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '4px 0' }} />
+            <div style={{ ...tooltipItemStyle, fontWeight: 'bold' }}><span>Total:</span> <span>{tokenCount.total}</span></div>
+          </div>
+        </div>
+        <textarea ref={textareaRef} style={textareaStyle} value={reportChatInput} onChange={(e) => setReportChatInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Ask a question... (Shift+Enter for newline)" disabled={isThinking} />
+        <div style={audioControlRowStyle}>
+          {lastAscentiaMessage && (
+            <button style={playButtonStyle} onClick={() => handlePlayPauseClick(lastAscentiaMessage)} disabled={ascentiaAudioStatus === 'generating'}>
+              {ascentiaAudioStatus === 'generating' ? <SpinnerIcon className="animate-spin" /> : (ascentiaAudioStatus === 'playing' ? <PauseIcon /> : <PlayIcon />)}
+              <span style={{ marginLeft: '5px' }}>Read Last Response</span>
+            </button>
+          )}
+          <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', fontSize: '10px' }}>
+            <input type="checkbox" checked={ascentiaAudioAutoplay} onChange={(e) => setAscentiaAutoplay(e.target.checked)} />
+            Auto-Read Responses
+          </label>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const ReportChatPanel: React.FC = () => {
+  const { openChatSettingsModal } = useUIStore();
+  const [activeTab, setActiveTab] = useState<'ascentia' | 'main'>('ascentia');
+  const { allPages, currentPageIndex, toggleChatPanel, chatPanelWidth, setChatPanelWidth, clearReportChatHistory } = useReportStore(useShallow(state => ({ allPages: state.allPages, currentPageIndex: state.currentPageIndex, toggleChatPanel: state.toggleChatPanel, chatPanelWidth: state.chatPanelWidth, setChatPanelWidth: state.setChatPanelWidth, clearReportChatHistory: state.clearReportChatHistory, })));
+  const currentPage = allPages[currentPageIndex];
+  const currentPageTitle = currentPage?.pageTitle || 'the report';
+
+  const handleClear = () => {
+    if (activeTab === 'ascentia') {
+      clearReportChatHistory(currentPageTitle);
+    }
+  };
+
+  const containerStyle: React.CSSProperties = { height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', borderLeft: '1px solid #555', display: 'flex', flexDirection: 'column', flexShrink: 0 };
+  const headerStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0, padding: '10px' };
+  const closeChatButtonStyle: React.CSSProperties = { background: 'none', border: 'none', color: '#aaa', fontSize: '18px', cursor: 'pointer' };
+  const tabContainerStyle: React.CSSProperties = { display: 'flex', borderBottom: '1px solid #555', padding: '0 10px' };
+  const tabButtonStyle = (isActive: boolean): React.CSSProperties => ({ padding: '8px 12px', fontSize: '11px', background: 'none', border: 'none', borderBottom: `2px solid ${isActive ? '#00ffff' : 'transparent'}`, color: isActive ? '#00ffff' : '#aaa', cursor: 'pointer', fontFamily: 'inherit', });
+  const contentAreaStyle: React.CSSProperties = { flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' };
+
+  return (
+    <Resizable
+      size={{ width: chatPanelWidth, height: '100%' }}
+      minWidth={300}
+      maxWidth="60vw"
+      enable={{ left: true }}
+      onResizeStop={(e, direction, ref, d) => {
+        setChatPanelWidth(chatPanelWidth + d.width);
+      }}
+      handleClasses={{ left: 'resizable-handle-vertical' }}
+    >
+      <div style={containerStyle}>
+        <style>{`@keyframes blink { 50% { opacity: 0; } }`}</style>
+        <div style={headerStyle}>
+          <div style={tabContainerStyle}>
+            <button style={tabButtonStyle(activeTab === 'ascentia')} onClick={() => setActiveTab('ascentia')}>Ask @Ascentia</button>
+            <button style={tabButtonStyle(activeTab === 'main')} onClick={() => setActiveTab('main')}>Main Chat</button>
+          </div>
+          <div>
+            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={handleClear} title="Clear Chat History">
+              <BroomIcon />
+            </button>
+            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={openChatSettingsModal} title="Chat Settings">
+              <SettingsIcon />
+            </button>
+            <button style={closeChatButtonStyle} onClick={toggleChatPanel} title="Close Chat Panel">
+              <TimesIcon />
+            </button>
+          </div>
+        </div>
+        <div style={contentAreaStyle}>
+          {activeTab === 'ascentia' ? <AscentiaChatView /> : <ChatPanel isEmbedded={true} isEmbeddedInReport={true} />}
+        </div>
+      </div>
+    </Resizable>
+  );
+};
+
+export default ReportChatPanel;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportProgressBar.tsx.md">
+// src/components/menus/report/ReportProgressBar.tsx
+// Updated on: C1400 (Fix resizing issue by wrapping in a container with flex: 1.)
+// Updated on: C1369 (Refactor to use a flattened image list for accurate per-image progress.)
+// Updated on: C1360 (Add First Unseen button, remove text from Reset, make bar clickable.)
+// Updated on: C1359 (New file)
+import React, { useMemo } from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { useShallow } from 'zustand/react/shallow';
+import { FaEye, FaSync, FaStepBackward } from 'react-icons/fa';
+
+const ReportProgressBar: React.FC = () => {
+  const {
+    allPages, seenImages, jumpToNextUnseenImage, resetProgress,
+    jumpToFirstUnseenImage, goToPageByIndex,
+  } = useReportStore(
+    useShallow(state => ({
+      allPages: state.allPages,
+      seenImages: state.seenImages,
+      jumpToNextUnseenImage: state.jumpToNextUnseenImage,
+      resetProgress: state.resetProgress,
+      jumpToFirstUnseenImage: state.jumpToFirstUnseenImage,
+      goToPageByIndex: state.goToPageByIndex,
+    }))
+  );
+
+  // C1369: Flatten all images from all pages into a single list for accurate progress tracking.
+  const allImages = useMemo(() => {
+    return allPages.flatMap((page, pageIndex) =>
+      page.imagePrompts.flatMap(prompt =>
+        prompt.images.map(image => ({
+          ...image,
+          pageId: page.pageId,
+          pageIndex: pageIndex,
+        }))
+      )
+    );
+  }, [allPages]);
+
+  const totalImages = allImages.length;
+  if (totalImages === 0) return null;
+
+  const seenImageCount = allImages.filter(img => seenImages[`${img.pageId}-${img.imageId}`]).length;
+  const progressPercent = totalImages > 0 ? (seenImageCount / totalImages) * 100 : 0;
+
+  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const bar = e.currentTarget;
+    const rect = bar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickPercent = clickX / rect.width;
+    // Find the corresponding image in the flattened list
+    const targetImageIndex = Math.floor(clickPercent * totalImages);
+    const targetImage = allImages[targetImageIndex];
+    if (targetImage) {
+      goToPageByIndex(targetImage.pageIndex);
+    }
+  };
+
+  const containerStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '8px 0',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  };
+
+  const buttonStyle: React.CSSProperties = {
+    background: 'none',
+    border: '1px solid #777',
+    color: '#ccc',
+    fontSize: '10px',
+    cursor: 'pointer',
+    padding: '3px 8px',
+    borderRadius: '4px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+    flexShrink: 0,
+  };
+
+  const barContainerStyle: React.CSSProperties = {
+    flexGrow: 1,
+    height: '12px',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    border: '1px solid #555',
+    borderRadius: '5px',
+    display: 'flex',
+    overflow: 'hidden',
+    position: 'relative',
+    cursor: 'pointer',
+  };
+
+  const progressTextStyle: React.CSSProperties = {
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    fontSize: '8px',
+    color: 'white',
+    fontWeight: 'bold',
+    textShadow: '0 0 2px black',
+    pointerEvents: 'none',
+  };
+
+  // C1400: Wrap the bar container in a flex-grow div to ensure it resizes correctly.
+  const wrapperStyle: React.CSSProperties = {
+    flex: 1, // This makes the wrapper take up available space
+    minWidth: 0, // This is crucial for flex items to shrink correctly
+  };
+
+  return (
+    <div style={containerStyle}>
+      <button style={buttonStyle} onClick={resetProgress} title="Reset all viewing progress">
+        <FaSync />
+      </button>
+      <button style={buttonStyle} onClick={jumpToFirstUnseenImage} title="Jump to the first unseen image">
+        <FaStepBackward /> First Unseen
+      </button>
+
+      <div style={wrapperStyle}>
+        <div style={barContainerStyle} title={`Viewed: ${seenImageCount} / ${totalImages} images (${progressPercent.toFixed(1)}%)`} onClick={handleBarClick}>
+          {allImages.map((image) => {
+            const isSeen = seenImages[`${image.pageId}-${image.imageId}`];
+            return (
+              <div
+                key={image.imageId}
+                style={{
+                  flex: 1,
+                  backgroundColor: isSeen ? '#00ffff' : 'transparent',
+                  borderRight: '1px solid rgba(85, 85, 85, 0.5)',
+                  transition: 'background-color 0.5s ease',
+                }}
+              />
+            );
+          })}
+          <div style={progressTextStyle}>{progressPercent.toFixed(0)}%</div>
+        </div>
+      </div>
+
+      <button style={buttonStyle} onClick={jumpToNextUnseenImage} title="Jump to the next unseen image">
+        <FaEye /> Next Unseen
+      </button>
+    </div>
+  );
+};
+
+export default ReportProgressBar;
+</file_artifact>
+
+<file path="context/aiascentgame/report/reportStore.ts.md">
+// src/state/reportStore.ts
+// Updated on: C1401 (Add state for Ascentia message audio narration.)
+// Updated on: C1399 (Implement playback speed control and fix continuous autoplay.)
+// Updated on: C1398 (Complete refactor of autoplay and slideshow logic to fix bugs and implement correct timer handling.)
+// Updated on: C1397 (Add volume and mute state. Refine slideshow and autoplay logic to fix bugs.)
+import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { logInfo, logWarn, logError } from '../logger';
+import { type ChatMessage } from './multiplayerStore';
+
+interface ReportImage {
+    imageId: string;
+    url: string;
+    prompt: string;
+    alt: string;
+}
+
+interface ReportImagePrompt {
+    promptId: string;
+    promptText: string;
+    images: ReportImage[];
+}
+
+export interface ReportPage {
+    pageId: string;
+    pageTitle: string;
+    tldr: string;
+    content: string;
+    imagePrompts: ReportImagePrompt[];
+}
+
+// --- Raw Data Structures from JSON files ---
+export interface RawReportPage {
+    pageId: string;
+    pageTitle: string;
+    tldr: string;
+    content: string;
+    imageGroupIds: string[];
+}
+
+export interface RawSubSection {
+    subSectionId: string;
+    subSectionTitle: string;
+    pages: RawReportPage[];
+}
+
+export interface RawReportSection {
+    sectionId: string;
+    sectionTitle: string;
+    pages?: RawReportPage[];
+    subSections?: RawSubSection[];
+}
+
+interface ReportContentData {
+    reportId: string;
+    reportTitle: string;
+    sections: RawReportSection[];
+}
+
+interface ImageManifestData {
+    manifestId: string;
+    basePath: string;
+    imageGroups: Record<string, {
+        path: string;
+        prompt: string;
+        alt: string;
+        baseFileName: string;
+        fileExtension: string;
+        imageCount: number;
+    }>;
+}
+// --- End Raw Data Structures ---
+
+
+export interface ReportState {
+    reportData: ReportContentData | null;
+    imageManifest: ImageManifestData | null;
+    allPages: ReportPage[];
+    currentPageIndex: number;
+    currentImageIndex: number;
+    imageVotes: Record<string, number>;
+    isTreeNavOpen: boolean;
+    expandedSections: Record<string, boolean>;
+    isChatPanelOpen: boolean;
+    chatPanelWidth: number;
+    imagePanelHeight: number;
+    isImageFullscreen: boolean;
+    votesCastByPage: Record<number, string>;
+    reportChatHistory: ChatMessage[];
+    reportChatInput: string;
+    tokenCount: {
+        total: number;
+        breakdown: { system: number; context: number; history: number; user: number; response: number; };
+    };
+    isPromptVisible: boolean;
+    isTldrVisible: boolean;
+    isContentVisible: boolean;
+    isHintVisible: boolean;
+    seenImages: Record<string, boolean>;
+    // Page Audio State
+    playbackStatus: 'idle' | 'generating' | 'buffering' | 'playing' | 'paused' | 'error';
+    autoplayEnabled: boolean;
+    currentAudioUrl: string | null;
+    currentAudioPageIndex: number | null;
+    currentTime: number;
+    duration: number;
+    volume: number;
+    isMuted: boolean;
+    slideshowTimer: NodeJS.Timeout | null;
+    nextPageTimer: NodeJS.Timeout | null;
+    playbackSpeed: number;
+    // Ascentia Message Audio State (NEW C1401)
+    ascentiaAudioStatus: 'idle' | 'generating' | 'playing' | 'paused' | 'error';
+    ascentiaAudioAutoplay: boolean;
+    currentAscentiaAudioUrl: string | null;
+    lastAscentiaMessageText: string | null;
+}
+
+export interface ReportActions {
+    loadReportData: () => Promise<void>;
+    nextPage: () => void;
+    prevPage: () => void;
+    jumpPages: (count: number) => void;
+    goToPageByIndex: (pageIndex: number) => void;
+    nextImage: () => void;
+    prevImage: () => void;
+    setCurrentImageIndex: (index: number) => void;
+    castVote: (imageId: string, pageIndex: number) => void;
+    voteWithKeyboard: () => void;
+    jumpToNextUnvotedPage: () => void;
+    handleKeyDown: (event: KeyboardEvent) => void;
+    toggleTreeNav: () => void;
+    toggleSectionExpansion: (sectionId: string) => void;
+    setActiveExpansionPath: (pageIndex: number) => void;
+    toggleChatPanel: () => void;
+    setChatPanelWidth: (width: number) => void;
+    setImagePanelHeight: (height: number) => void;
+    openImageFullscreen: () => void;
+    closeImageFullscreen: () => void;
+    setReportChatInput: (input: string) => void;
+    addReportChatMessage: (message: ChatMessage) => void;
+    updateReportChatMessage: (id: string, chunk: string) => void;
+    updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
+    clearReportChatHistory: (currentPageTitle: string) => void;
+    updateTokenCount: (parts: Partial<ReportState['tokenCount']['breakdown']>) => void;
+    togglePromptVisibility: () => void;
+    toggleTldrVisibility: () => void;
+    toggleContentVisibility: () => void;
+    toggleHintVisibility: () => void;
+    markImageAsSeen: (pageId: string, imageId: string) => void;
+    jumpToNextUnseenImage: () => void;
+    jumpToFirstUnseenImage: () => void;
+    resetProgress: () => void;
+    // Page Audio Actions
+    setPlaybackStatus: (status: ReportState['playbackStatus']) => void;
+    setAutoplay: (enabled: boolean) => void;
+    setCurrentAudio: (url: string | null, pageIndex: number) => void;
+    setAudioTime: (time: number) => void;
+    setAudioDuration: (duration: number) => void;
+    setVolume: (level: number) => void;
+    toggleMute: () => void;
+    startSlideshow: () => void;
+    stopSlideshow: (userInitiated?: boolean) => void;
+    setPlaybackSpeed: (speed: number) => void;
+    // Ascentia Message Audio Actions (NEW C1401)
+    setAscentiaAudioStatus: (status: ReportState['ascentiaAudioStatus']) => void;
+    setAscentiaAutoplay: (enabled: boolean) => void;
+    playAscentiaMessage: (messageText: string) => void;
+    setCurrentAscentiaAudioUrl: (url: string | null) => void;
+    _resetReportStore: () => void;
+}
+
+type PersistedReportState = Pick<
+    ReportState,
+    | 'currentPageIndex' | 'currentImageIndex' | 'votesCastByPage' | 'imageVotes'
+    | 'isTreeNavOpen' | 'expandedSections' | 'isChatPanelOpen' | 'chatPanelWidth'
+    | 'imagePanelHeight' | 'reportChatHistory' | 'reportChatInput'
+    | 'seenImages' | 'isPromptVisible' | 'isTldrVisible' | 'isContentVisible' | 'isHintVisible'
+    | 'autoplayEnabled' | 'volume' | 'isMuted' | 'playbackSpeed' | 'ascentiaAudioAutoplay'
+>;
+
+const createInitialReportState = (): ReportState => ({
+    reportData: null,
+    imageManifest: null,
+    allPages: [],
+    currentPageIndex: 0,
+    currentImageIndex: 0,
+    imageVotes: {},
+    isTreeNavOpen: false,
+    expandedSections: {},
+    isChatPanelOpen: false,
+    chatPanelWidth: 400,
+    imagePanelHeight: 300,
+    isImageFullscreen: false,
+    votesCastByPage: {},
+    reportChatHistory: [],
+    reportChatInput: '',
+    tokenCount: {
+        total: 0,
+        breakdown: { system: 0, context: 0, history: 0, user: 0, response: 0 },
+    },
+    isPromptVisible: true,
+    isTldrVisible: true,
+    isContentVisible: true,
+    isHintVisible: true,
+    seenImages: {},
+    // Page Audio State
+    playbackStatus: 'idle',
+    autoplayEnabled: false,
+    currentAudioUrl: null,
+    currentAudioPageIndex: null,
+    currentTime: 0,
+    duration: 0,
+    volume: 1,
+    isMuted: false,
+    slideshowTimer: null,
+    nextPageTimer: null,
+    playbackSpeed: 1,
+    // Ascentia Message Audio State (NEW C1401)
+    ascentiaAudioStatus: 'idle',
+    ascentiaAudioAutoplay: false,
+    currentAscentiaAudioUrl: null,
+    lastAscentiaMessageText: null,
+});
+
+export const useReportStore = create<ReportState & ReportActions>()(
+    persist(
+        (set, get) => ({
+            ...createInitialReportState(),
+
+            // NEW C1401: Ascentia Message Audio Actions
+            setAscentiaAudioStatus: (status) => set({ ascentiaAudioStatus: status }),
+            setAscentiaAutoplay: (enabled) => set({ ascentiaAudioAutoplay: enabled }),
+            setCurrentAscentiaAudioUrl: (url) => set({ currentAscentiaAudioUrl: url }),
+            playAscentiaMessage: (messageText) => {
+                const { setAscentiaAudioStatus, setCurrentAscentiaAudioUrl } = get();
+                setAscentiaAudioStatus('generating');
+                set({ lastAscentiaMessageText: messageText });
+                
+                fetch('/api/tts/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: messageText }),
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
+                    return response.blob();
+                })
+                .then(audioBlob => {
+                    const newUrl = URL.createObjectURL(audioBlob);
+                    setCurrentAscentiaAudioUrl(newUrl);
+                })
+                .catch(error => {
+                    logError('[reportStore:playAscentia]', 'Failed to generate audio for Ascentia message', error);
+                    setAscentiaAudioStatus('error');
+                });
+            },
+            // ---
+
+            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
+            setPlaybackSpeed: (speed) => {
+                const { startSlideshow, playbackStatus } = get();
+                set({ playbackSpeed: speed });
+                if (playbackStatus === 'playing' || playbackStatus === 'paused') {
+                    startSlideshow();
+                }
+            },
+
+            startSlideshow: () => {
+                const { stopSlideshow, allPages, currentPageIndex, duration, setCurrentImageIndex, nextPage, autoplayEnabled, playbackSpeed } = get();
+                stopSlideshow(false); 
+
+                const currentPage = allPages[currentPageIndex];
+                if (!currentPage || !autoplayEnabled) return;
+
+                const actualDuration = duration / playbackSpeed;
+                const actualDurationMs = actualDuration * 1000;
+                if (actualDurationMs <= 0) return;
+
+                logInfo('[reportStore:slideshow]', `Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
+
+                const nextPageTimer = setTimeout(() => {
+                    if (get().autoplayEnabled) {
+                        logInfo('[reportStore:slideshow]', `Next page timer fired. Advancing page.`);
+                        nextPage();
+                    }
+                }, actualDurationMs + 2000);
+                set({ nextPageTimer });
+
+                const images = currentPage.imagePrompts[0]?.images;
+                if (!images || images.length <= 1) return;
+
+                const timePerImage = actualDurationMs / images.length;
+                let imageIdx = get().currentImageIndex; 
+
+                const slideshowTimer = setInterval(() => {
+                    if (!get().autoplayEnabled) {
+                        clearInterval(slideshowTimer);
+                        return;
+                    }
+                    imageIdx = (get().currentImageIndex + 1);
+                    if (imageIdx < images.length) {
+                        setCurrentImageIndex(imageIdx);
+                    } else {
+                        clearInterval(slideshowTimer);
+                        set({ slideshowTimer: null });
+                    }
+                }, timePerImage);
+
+                set({ slideshowTimer });
+            },
+
+            stopSlideshow: (userInitiated = false) => {
+                const { slideshowTimer, nextPageTimer } = get();
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (nextPageTimer) clearTimeout(nextPageTimer);
+
+                const currentState = get();
+                if (currentState.slideshowTimer || currentState.nextPageTimer) {
+                    logInfo('[reportStore:slideshow]', `Stopping slideshow. User initiated: ${userInitiated}`);
+                }
+
+                if (userInitiated) {
+                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
+                } else {
+                    set({ slideshowTimer: null, nextPageTimer: null });
+                }
+            },
+            
+            // ... (loadReportData and other actions remain the same)
+            loadReportData: async () => {
+                const logPrefix = '[store:report:loadV3]';
+                if (get().reportData && get().imageManifest) return;
+
+                try {
+                    logInfo(logPrefix, 'Fetching report content and image manifest...');
+                    const [contentRes, manifestRes] = await Promise.all([
+                        fetch('/data/reports/reportContent.json'),
+                        fetch('/data/reports/imageManifest.json')
+                    ]);
+
+                    if (!contentRes.ok) throw new Error(`Failed to fetch reportContent.json: ${contentRes.statusText}`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch imageManifest.json: ${manifestRes.statusText}`);
+
+                    const contentData: ReportContentData = await contentRes.json();
+                    const manifestData: ImageManifestData = await manifestRes.json();
+
+                    logInfo(logPrefix, `Successfully fetched data. Content: "${contentData.reportTitle}", Manifest: "${manifestData.manifestId}"`);
+
+                    const reconstructedPages: ReportPage[] = [];
+                    contentData.sections.forEach(section => {
+                        const processPages = (pages: RawReportPage[]) => {
+                            (pages || []).forEach(rawPage => {
+                                const imagePrompts: ReportImagePrompt[] = [];
+
+                                (rawPage.imageGroupIds || []).forEach((groupId) => {
+                                    const groupMeta = manifestData.imageGroups[groupId];
+                                    if (groupMeta) {
+                                        const images: ReportImage[] = [];
+                                        for (let i = 1; i <= groupMeta.imageCount; i++) {
+                                            const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+                                            const url = `${manifestData.basePath}${groupMeta.path}${fileName}`;
+                                            const imageId = `${rawPage.pageId}-${groupId}-${i}`;
+                                            images.push({
+                                                imageId,
+                                                url,
+                                                prompt: groupMeta.prompt,
+                                                alt: groupMeta.alt,
+                                            });
+                                        }
+                                        imagePrompts.push({
+                                            promptId: groupId,
+                                            promptText: groupMeta.prompt,
+                                            images,
+                                        });
+                                    } else {
+                                        logWarn(logPrefix, `Image group metadata not found for groupId: ${groupId}`);
+                                    }
+                                });
+
+                                reconstructedPages.push({
+                                    pageId: rawPage.pageId,
+                                    pageTitle: rawPage.pageTitle,
+                                    tldr: rawPage.tldr,
+                                    content: rawPage.content,
+                                    imagePrompts,
+                                });
+                            });
+                        };
+                        
+                        if (section.pages) {
+                            processPages(section.pages);
+                        }
+                        if (section.subSections) {
+                            section.subSections.forEach(sub => processPages(sub.pages));
+                        }
+                    });
+
+                    logInfo(logPrefix, `Reconstructed ${reconstructedPages.length} pages.`);
+                    const { currentPageIndex, currentImageIndex } = get();
+                    const validPageIndex = currentPageIndex >= 0 && currentPageIndex < reconstructedPages.length ? currentPageIndex : 0;
+                    
+                    set({
+                        reportData: contentData,
+                        imageManifest: manifestData,
+                        allPages: reconstructedPages,
+                        currentPageIndex: validPageIndex,
+                        currentImageIndex: currentImageIndex || 0,
+                    });
+
+                } catch (error) {
+                    logError(logPrefix, "Failed to load and process report data.", error);
+                }
+            },
+            
+            nextPage: () => get().jumpPages(1),
+            prevPage: () => get().jumpPages(-1),
+
+            jumpPages: (count) => {
+                const { stopSlideshow, autoplayEnabled, setPlaybackStatus } = get();
+                const userInitiated = !autoplayEnabled;
+                stopSlideshow(userInitiated);
+                set((state) => {
+                    const totalPages = state.allPages.length;
+                    if (totalPages === 0) return state;
+                    let newIndex = state.currentPageIndex + count;
+                    if (newIndex >= totalPages) {
+                        // C1399: If autoplay is on and we reach the end, turn it off.
+                        if (state.autoplayEnabled) {
+                            logInfo('store:report', 'Autoplay reached end of report. Disabling.');
+                            setPlaybackStatus('idle');
+                            return { ...state, autoplayEnabled: false };
+                        }
+                        newIndex = 0;
+                    }
+                    if (newIndex < 0) newIndex = totalPages - 1;
+                    
+                    if (newIndex !== state.currentPageIndex) {
+                        logInfo('store:report', `Jumping ${count} pages to index ${newIndex}`);
+                        return { currentPageIndex: newIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 };
+                    }
+                    return state;
+                });
+            },
+
+            goToPageByIndex: (pageIndex) => {
+                get().stopSlideshow(true);
+                const totalPages = get().allPages.length;
+                if (pageIndex >= 0 && pageIndex < totalPages) {
+                    logInfo('store:report', `Jumping to page by index: ${pageIndex}`);
+                    set({ currentPageIndex: pageIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 });
+                } else {
+                    logWarn('store:report', `Attempted to jump to invalid page index: ${pageIndex}`);
+                }
+            },
+            
+            nextImage: () => {
+                get().stopSlideshow(true);
+                set((state) => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const currentPrompt = currentPage?.imagePrompts[0];
+                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
+                    const newImageIndex = (state.currentImageIndex + 1) % currentPrompt.images.length;
+                    return { currentImageIndex: newImageIndex };
+                });
+            },
+
+            prevImage: () => {
+                get().stopSlideshow(true);
+                set((state) => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const currentPrompt = currentPage?.imagePrompts[0];
+                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
+                    const newImageIndex = (state.currentImageIndex - 1 + currentPrompt.images.length) % currentPrompt.images.length;
+                    return { currentImageIndex: newImageIndex };
+                });
+            },
+            
+            setCurrentImageIndex: (index) => {
+                set((state) => {
+                    const currentPage = state.allPages[state.currentPageIndex];
+                    const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
+                    if (index >= 0 && index < totalImages) {
+                        return { currentImageIndex: index };
+                    }
+                    return state;
+                });
+            },
+
+            castVote: async (imageId, pageIndex) => {
+                const { votesCastByPage } = get();
+                const alreadyVotedFor = votesCastByPage[pageIndex];
+                if (alreadyVotedFor === imageId) return;
+                logInfo('store:report', `Casting vote for image: ${imageId} on page ${pageIndex}`);
+                set(state => ({
+                    votesCastByPage: { ...state.votesCastByPage, [pageIndex]: imageId },
+                    imageVotes: { ...state.imageVotes, [imageId]: (state.imageVotes[imageId] || 0) + 1 }
+                }));
+                try {
+                    const response = await fetch('/api/report/vote', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ imageId }),
+                    });
+                    if (!response.ok) throw new Error(await response.text());
+                    const result = await response.json();
+                    logInfo('store:report', `Vote successful for ${imageId}. New server count: ${result.newVoteCount}`);
+                } catch (error) {
+                    logWarn('store:report', `Failed to cast vote for ${imageId}. Reverting optimistic update.`, error);
+                    set(state => ({
+                        votesCastByPage: { ...state.votesCastByPage, [pageIndex]: alreadyVotedFor },
+                        imageVotes: { ...state.imageVotes, [imageId]: Math.max(0, (state.imageVotes[imageId] || 1) - 1) }
+                    }));
+                }
+            },
+            
+            voteWithKeyboard: () => {
+                get().stopSlideshow(true);
+                const { allPages, currentPageIndex, currentImageIndex, castVote } = get();
+                const currentPage = allPages[currentPageIndex];
+                const currentPrompt = currentPage?.imagePrompts[0];
+                const currentImage = currentPrompt?.images[currentImageIndex];
+                if (currentImage) castVote(currentImage.imageId, currentPageIndex);
+            },
+
+            jumpToNextUnvotedPage: () => {
+                const { allPages, votesCastByPage, goToPageByIndex } = get();
+                for (let i = 0; i < allPages.length; i++) {
+                    if (!votesCastByPage.hasOwnProperty(i)) {
+                        goToPageByIndex(i);
+                        return;
+                    }
+                }
+                logInfo('store:report', 'All pages have been voted on!');
+            },
+
+            handleKeyDown: (event: KeyboardEvent) => {
+                const { stopSlideshow } = get();
+                let jumpCount = 1;
+                if (event.shiftKey) jumpCount = 5;
+                if (event.ctrlKey) jumpCount = 10;
+
+                switch (event.key) {
+                    case 'ArrowUp': stopSlideshow(true); get().jumpPages(-jumpCount); break;
+                    case 'ArrowDown': stopSlideshow(true); get().jumpPages(jumpCount); break;
+                    case 'ArrowLeft': stopSlideshow(true); get().prevImage(); break;
+                    case 'ArrowRight': stopSlideshow(true); get().nextImage(); break;
+                    case ' ': get().voteWithKeyboard(); break;
+                }
+            },
+            
+            toggleTreeNav: () => set(state => ({ isTreeNavOpen: !state.isTreeNavOpen })),
+            toggleSectionExpansion: (sectionId) => set(state => ({
+                expandedSections: {
+                    ...state.expandedSections,
+                    [sectionId]: !state.expandedSections[sectionId],
+                }
+            })),
+
+            setActiveExpansionPath: (pageIndex) => {
+                const { reportData } = get();
+                if (!reportData) return;
+
+                let activeSectionId: string | null = null;
+                let activeSubSectionId: string | null = null;
+
+                let cumulativePages = 0;
+                for (const section of reportData.sections) {
+                    let pageCounterForSection = 0;
+                    
+                    const directPagesCount = (section.pages || []).length;
+                    if (pageIndex >= cumulativePages && pageIndex < cumulativePages + directPagesCount) {
+                        activeSectionId = section.sectionId;
+                        break;
+                    }
+                    pageCounterForSection += directPagesCount;
+
+                    if (section.subSections) {
+                        for (const subSection of section.subSections) {
+                            const subSectionPageCount = (subSection.pages || []).length;
+                            if (pageIndex >= cumulativePages + pageCounterForSection && pageIndex < cumulativePages + pageCounterForSection + subSectionPageCount) {
+                                activeSectionId = section.sectionId;
+                                activeSubSectionId = subSection.subSectionId;
+                                break;
+                            }
+                            pageCounterForSection += subSectionPageCount;
+                        }
+                    }
+                    if (activeSectionId) break;
+                    cumulativePages += pageCounterForSection;
+                }
+
+                if (!activeSectionId) return;
+
+                set(state => {
+                    const newExpandedSections: Record<string, boolean> = {};
+                    
+                    for (const section of state.reportData!.sections) {
+                        newExpandedSections[section.sectionId] = section.sectionId === activeSectionId;
+                        
+                        if (section.subSections) {
+                            for (const subSection of section.subSections) {
+                                newExpandedSections[subSection.subSectionId] = subSection.subSectionId === activeSubSectionId;
+                            }
+                        }
+                    }
+                    return { expandedSections: newExpandedSections };
+                });
+            },
+
+            toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
+            setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
+            setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
+            openImageFullscreen: () => set({ isImageFullscreen: true }),
+            closeImageFullscreen: () => set({ isImageFullscreen: false }),
+            setReportChatInput: (input) => set({ reportChatInput: input }),
+            addReportChatMessage: (message) => {
+                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
+                set(state => ({
+                    reportChatHistory: [...state.reportChatHistory, message].slice(-50),
+                }));
+                if (message.author === 'Ascentia' && message.status === 'complete' && ascentiaAudioAutoplay) {
+                    playAscentiaMessage(message.message);
+                }
+            },
+            updateReportChatMessage: (id, chunk) => set(state => ({
+                reportChatHistory: state.reportChatHistory.map(msg =>
+                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
+                )
+            })),
+            updateReportChatStatus: (id, status) => {
+                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
+                set(state => ({
+                    reportChatHistory: state.reportChatHistory.map(msg =>
+                        msg.id === id ? { ...msg, status } : msg
+                    )
+                }));
+                if (status === 'complete') {
+                    const finalMessage = get().reportChatHistory.find(msg => msg.id === id);
+                    if (finalMessage && ascentiaAudioAutoplay) {
+                        playAscentiaMessage(finalMessage.message);
+                    }
+                }
+            },
+            clearReportChatHistory: (currentPageTitle) => {
+                const initialMessage: ChatMessage = {
+                    author: 'Ascentia', flag: '🤖',
+                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
+                };
+                set({
+                    reportChatHistory: [initialMessage],
+                    reportChatInput: '',
+                    tokenCount: createInitialReportState().tokenCount,
+                });
+            },
+            updateTokenCount: (parts) => {
+                set(state => {
+                    const historyChars = state.reportChatHistory.map(m => (typeof m.author === 'string' ? m.author : m.author.displayName) + m.message).join('').length;
+                    const historyTokens = Math.ceil(historyChars / 4);
+
+                    const responseChars = state.reportChatHistory.filter(m => m.author === 'Ascentia').map(m => m.message).join('').length;
+                    const responseTokens = Math.ceil(responseChars / 4);
+
+                    const staticSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`;
+                    const systemTokens = Math.ceil(staticSystemPrompt.length / 4);
+
+                    const newBreakdown = {
+                        system: systemTokens,
+                        context: parts.context ?? state.tokenCount.breakdown.context,
+                        history: historyTokens,
+                        user: parts.user ?? state.tokenCount.breakdown.user,
+                        response: responseTokens,
+                    };
+                    
+                    const total = newBreakdown.system + newBreakdown.context + newBreakdown.history + newBreakdown.user;
+                    
+                    return { tokenCount: { total, breakdown: newBreakdown } };
+                });
+            },
+            togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
+            toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
+            toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
+            toggleHintVisibility: () => set(state => ({ isHintVisible: !state.isHintVisible })),
+            markImageAsSeen: (pageId, imageId) => {
+                const key = `${pageId}-${imageId}`;
+                if (get().seenImages[key]) return;
+                set(state => ({ seenImages: { ...state.seenImages, [key]: true } }));
+            },
+            jumpToFirstUnseenImage: () => {
+                const { allPages, seenImages, goToPageByIndex } = get();
+                for (let p = 0; p < allPages.length; p++) {
+                    const page = allPages[p];
+                    const image = page.imagePrompts[0]?.images[0];
+                    if (image) {
+                        const key = `${page.pageId}-${image.imageId}`;
+                        if (!seenImages[key]) {
+                            goToPageByIndex(p);
+                            return;
+                        }
+                    }
+                }
+                goToPageByIndex(0);
+            },
+            jumpToNextUnseenImage: () => {
+                const { allPages, seenImages, currentPageIndex, goToPageByIndex } = get();
+                const totalPages = allPages.length;
+                for (let i = 1; i <= totalPages; i++) {
+                    const nextIndex = (currentPageIndex + i) % totalPages;
+                    const page = allPages[nextIndex];
+                    const image = page.imagePrompts[0]?.images[0];
+                    if (image) {
+                        const key = `${page.pageId}-${image.imageId}`;
+                        if (!seenImages[key]) {
+                            goToPageByIndex(nextIndex);
+                            return;
+                        }
+                    }
+                }
+                logInfo('store:report', 'All images have been seen!');
+            },
+            resetProgress: () => {
+                logInfo('store:report', 'Resetting all image progress.');
+                set({ seenImages: {} });
+            },
+            setPlaybackStatus: (status) => set({ playbackStatus: status }),
+            setAutoplay: (enabled) => {
+                get().stopSlideshow(false); 
+                if (enabled) {
+                    set({ autoplayEnabled: true, currentImageIndex: 0 }); 
+                } else {
+                    set({ autoplayEnabled: false });
+                }
+            },
+            setCurrentAudio: (url, pageIndex) => set(state => {
+                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
+                    return state;
+                }
+                return {
+                    currentAudioUrl: url,
+                    currentAudioPageIndex: pageIndex,
+                    playbackStatus: url ? 'buffering' : 'idle',
+                    currentTime: 0,
+                    duration: 0,
+                };
+            }),
+            setAudioTime: (time) => set({ currentTime: time }),
+            setAudioDuration: (duration) => set({ duration: duration }),
+            _resetReportStore: () => set(createInitialReportState()),
+        }),
+        {
+            name: 'ai-ascent-report-storage',
+            storage: createJSONStorage(() => localStorage),
+            partialize: (state): PersistedReportState => ({
+                currentPageIndex: state.currentPageIndex,
+                currentImageIndex: state.currentImageIndex,
+                votesCastByPage: state.votesCastByPage,
+                imageVotes: state.imageVotes,
+                isTreeNavOpen: state.isTreeNavOpen,
+                expandedSections: state.expandedSections,
+                isChatPanelOpen: state.isChatPanelOpen,
+                chatPanelWidth: state.chatPanelWidth,
+                imagePanelHeight: state.imagePanelHeight,
+                reportChatHistory: state.reportChatHistory,
+                reportChatInput: state.reportChatInput,
+                seenImages: state.seenImages,
+                isPromptVisible: state.isPromptVisible,
+                isTldrVisible: state.isTldrVisible,
+                isContentVisible: state.isContentVisible,
+                isHintVisible: state.isHintVisible,
+                autoplayEnabled: state.autoplayEnabled,
+                volume: state.volume,
+                isMuted: state.isMuted,
+                playbackSpeed: state.playbackSpeed,
+                ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
+            }),
+        }
+    )
+);
+
+if (process.env.NODE_ENV === 'development') {
+    (window as any).reportStore = useReportStore;
+}
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportTreeNav.tsx.md">
+// src/components/menus/report/ReportTreeNav.tsx
+// Updated on: C1372 (Default subsection expansion to false.)
+// Updated on: C1369 (Robustly handle both nested and flat section structures.)
+// Updated on: C1367 (Fix property access and implicit any errors by adding explicit types.)
+// Updated on: C1360 (Render nested subsections.)
+// Updated on: C1356 (Use centralized expandedSections state from reportStore for persistence.)
+// NEW FILE - C1340
+import React from 'react';
+import { useReportStore } from '../../../state/reportStore';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+
+import type { RawReportSection, RawSubSection, RawReportPage } from '../../../state/reportStore';
+
+
+const ReportTreeNav: React.FC = () => {
+  const { reportData, currentPageIndex, goToPageByIndex, expandedSections, toggleSectionExpansion } = useReportStore(
+    useShallow(state => ({
+      reportData: state.reportData,
+      currentPageIndex: state.currentPageIndex,
+      goToPageByIndex: state.goToPageByIndex,
+      expandedSections: state.expandedSections,
+      toggleSectionExpansion: state.toggleSectionExpansion,
+    }))
+  );
+
+  if (!reportData) return null;
+
+  const containerStyle: React.CSSProperties = {
+    width: '250px',
+    minWidth: '250px',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    borderRight: '1px solid #555',
+    padding: '10px',
+    overflowY: 'auto',
+    flexShrink: 0,
+  };
+
+  const sectionHeaderStyle: React.CSSProperties = {
+    fontSize: '11px',
+    color: '#00ffff',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+    marginBottom: '5px',
+    fontWeight: 'bold',
+  };
+
+  const subSectionHeaderStyle: React.CSSProperties = {
+    ...sectionHeaderStyle,
+    fontSize: '10px',
+    color: '#aaddff',
+    paddingLeft: '10px',
+    fontWeight: 'normal',
+  };
+
+  const pageLinkStyle = (isActive: boolean): React.CSSProperties => ({
+    fontSize: '10px',
+    color: isActive ? '#FFA500' : '#ccc',
+    padding: '4px 0 4px 25px',
+    cursor: 'pointer',
+    display: 'block',
+    fontWeight: isActive ? 'bold' : 'normal',
+    borderLeft: `2px solid ${isActive ? '#FFA500' : 'transparent'}`,
+    transition: 'all 0.2s',
+  });
+
+  let pageCounter = 0;
+
+  return (
+    <div style={containerStyle}>
+      <h3 style={{ marginTop: 0, fontSize: '12px' }}>Report Navigator</h3>
+      {reportData.sections.map((section: RawReportSection) => {
+        const isSectionExpanded = expandedSections[section.sectionId] ?? false;
+        const sectionPageStartIndex = pageCounter;
+
+        // C1372: Combine page counting from direct pages and subsection pages
+        let sectionPageCount = (section.pages || []).length;
+        if (section.subSections) {
+          sectionPageCount += section.subSections.reduce((acc, sub) => acc + (sub.pages || []).length, 0);
+        }
+        pageCounter += sectionPageCount;
+
+        return (
+          <div key={section.sectionId}>
+            <div style={sectionHeaderStyle} onClick={() => toggleSectionExpansion(section.sectionId)}>
+              {isSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
+              {section.sectionTitle}
+            </div>
+            {isSectionExpanded && (
+              <div style={{ paddingLeft: '10px' }}>
+                {/* Render direct pages first if they exist */}
+                {(section.pages || []).map((page: RawReportPage, index: number) => {
+                  const globalPageIndex = sectionPageStartIndex + index;
+                  const isActive = globalPageIndex === currentPageIndex;
+                  return (
+                    <div
+                      key={page.pageId}
+                      style={pageLinkStyle(isActive)}
+                      onClick={() => goToPageByIndex(globalPageIndex)}
+                    >
+                      {page.pageTitle}
+                    </div>
+                  );
+                })}
+
+                {/* Then render subsections */}
+                {section.subSections && (() => {
+                  let subSectionPageCounter = sectionPageStartIndex + (section.pages || []).length;
+                  return section.subSections.map((subSection: RawSubSection) => {
+                    // C1372 FIX: Default to false to start collapsed
+                    const isSubSectionExpanded = expandedSections[subSection.subSectionId] ?? false;
+                    const startIndex = subSectionPageCounter;
+                    subSectionPageCounter += (subSection.pages || []).length;
+
+                    return (
+                      <div key={subSection.subSectionId}>
+                        <div style={subSectionHeaderStyle} onClick={() => toggleSectionExpansion(subSection.subSectionId)}>
+                          {isSubSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
+                          {subSection.subSectionTitle}
+                        </div>
+                        {isSubSectionExpanded && (
+                          (subSection.pages || []).map((page: RawReportPage, index: number) => {
+                            const globalPageIndex = startIndex + index;
+                            const isActive = globalPageIndex === currentPageIndex;
+                            return (
+                              <div
+                                key={page.pageId}
+                                style={pageLinkStyle(isActive)}
+                                onClick={() => goToPageByIndex(globalPageIndex)}
+                              >
+                                {page.pageTitle}
+                              </div>
+                            );
+                          })
+                        )}
+                      </div>
+                    );
+                  });
+                })()}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default ReportTreeNav;
+</file_artifact>
+
+<file path="context/aiascentgame/report/ReportViewerModal.tsx.md">
+// src/components/menus/report/ReportViewerModal.tsx
+// Updated on: C1401 (Remove flex-shrink: 0 from progress bar container to fix resizing bug.)
+// Updated on: C1400 (Add a flex-shrink property to the progress bar container to help with resizing.)
+// Updated on: C1399 (Trigger audio generation on page change if autoplay is enabled.)
+// Updated on: C1398 (Add useEffect to orchestrate slideshow start on 'playing' state.)
+// Updated on: C1397 (Refine useEffect for autoplay to fix page jump bug.)
+import React, { useEffect, useState, useRef } from 'react';
+import { useUIStore } from '../../../state';
+import PageNavigator from './PageNavigator';
+import ImageNavigator from './ImageNavigator';
+import PromptNavigator from './PromptNavigator';
+import ReportTreeNav from './ReportTreeNav';
+import ReportChatPanel from './ReportChatPanel';
+import MarkdownRenderer from '../../ui/MarkdownRenderer';
+import { useReportStore } from '../../../state/reportStore';
+import { FaArrowsAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useShallow } from 'zustand/react/shallow';
+import { logInfo, logError } from '../../../logger';
+import { Resizable } from 're-resizable';
+import ReportProgressBar from './ReportProgressBar';
+import AudioControls from './AudioControls';
+
+const ReportViewerModal: React.FC = () => {
+  const { closeReportViewer } = useUIStore();
+  const {
+    reportData, loadReportData, allPages, currentPageIndex,
+    currentImageIndex, isTreeNavOpen, isChatPanelOpen,
+    toggleChatPanel, imagePanelHeight, setImagePanelHeight,
+    isImageFullscreen, openImageFullscreen, closeImageFullscreen,
+    chatPanelWidth, setChatPanelWidth, handleKeyDown,
+    isPromptVisible, isTldrVisible, isContentVisible,
+    toggleTldrVisibility, toggleContentVisibility, markImageAsSeen,
+    setActiveExpansionPath,
+    stopSlideshow,
+    playbackStatus, autoplayEnabled, startSlideshow,
+  } = useReportStore(useShallow(state => ({
+    reportData: state.reportData,
+    loadReportData: state.loadReportData,
+    allPages: state.allPages,
+    currentPageIndex: state.currentPageIndex,
+    currentImageIndex: state.currentImageIndex,
+    isTreeNavOpen: state.isTreeNavOpen,
+    isChatPanelOpen: state.isChatPanelOpen,
+    toggleChatPanel: state.toggleChatPanel,
+    imagePanelHeight: state.imagePanelHeight,
+    setImagePanelHeight: state.setImagePanelHeight,
+    isImageFullscreen: state.isImageFullscreen,
+    openImageFullscreen: state.openImageFullscreen,
+    closeImageFullscreen: state.closeImageFullscreen,
+    chatPanelWidth: state.chatPanelWidth,
+    setChatPanelWidth: state.setChatPanelWidth,
+    handleKeyDown: state.handleKeyDown,
+    isPromptVisible: state.isPromptVisible,
+    isTldrVisible: state.isTldrVisible,
+    isContentVisible: state.isContentVisible,
+    toggleTldrVisibility: state.toggleTldrVisibility,
+    toggleContentVisibility: state.toggleContentVisibility,
+    markImageAsSeen: state.markImageAsSeen,
+    setActiveExpansionPath: state.setActiveExpansionPath,
+    stopSlideshow: state.stopSlideshow,
+    playbackStatus: state.playbackStatus,
+    autoplayEnabled: state.autoplayEnabled,
+    startSlideshow: state.startSlideshow,
+  })));
+
+  const [isDraggingCorner, setIsDraggingCorner] = useState(false);
+  const initialDragPos = useRef({ x: 0, y: 0 });
+  const initialDimensions = useRef({ width: 0, height: 0 });
+
+  useEffect(() => {
+    if (!reportData) {
+      loadReportData();
+    }
+  }, [reportData, loadReportData]);
+
+  useEffect(() => {
+    if (playbackStatus === 'playing' && autoplayEnabled) {
+      startSlideshow();
+    }
+  }, [playbackStatus, autoplayEnabled, startSlideshow]);
+
+  // C1399: This effect ensures that when autoplay navigates to a new page,
+  // the audio for that new page starts automatically.
+  useEffect(() => {
+    const audioControls = document.querySelector('#report-audio-controls button') as HTMLButtonElement;
+    if (autoplayEnabled && playbackStatus === 'idle') {
+      // Trigger the play/generation logic, which is now handled inside AudioControls
+      if (audioControls) {
+        // A bit of a hack, but it reliably triggers the generateAndPlayAudio flow
+        // when the page changes while autoplay is on.
+        audioControls.click();
+      }
+    }
+  }, [currentPageIndex, autoplayEnabled]);
+
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
+        return;
+      }
+      if (e.key === ' ' || e.key.startsWith('Arrow')) {
+        e.preventDefault();
+      }
+      handleKeyDown(e);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [handleKeyDown]);
+
+  useEffect(() => {
+    setActiveExpansionPath(currentPageIndex);
+  }, [currentPageIndex, setActiveExpansionPath]);
+
+  const currentPage = allPages[currentPageIndex];
+  const currentPrompt = currentPage?.imagePrompts[0];
+  const currentImage = currentPrompt?.images[currentImageIndex];
+
+  useEffect(() => {
+    if (currentPage && currentImage) {
+      markImageAsSeen(currentPage.pageId, currentImage.imageId);
+    }
+  }, [currentPage, currentImage, markImageAsSeen]);
+
+
+  const handleClose = () => {
+    if (isChatPanelOpen) {
+      toggleChatPanel();
+    } else {
+      closeReportViewer();
+    }
+  };
+
+  const handleCornerMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    stopSlideshow(true);
+    setIsDraggingCorner(true);
+    initialDragPos.current = { x: e.clientX, y: e.clientY };
+    initialDimensions.current = { width: chatPanelWidth, height: imagePanelHeight };
+  };
+
+  useEffect(() => {
+    const handleCornerMouseMove = (e: MouseEvent) => {
+      if (!isDraggingCorner) return;
+      const deltaX = e.clientX - initialDragPos.current.x;
+      const deltaY = e.clientY - initialDragPos.current.y;
+      setChatPanelWidth(initialDimensions.current.width - deltaX);
+      setImagePanelHeight(initialDimensions.current.height + deltaY);
+    };
+    const handleCornerMouseUp = () => setIsDraggingCorner(false);
+    if (isDraggingCorner) {
+      window.addEventListener('mousemove', handleCornerMouseMove);
+      window.addEventListener('mouseup', handleCornerMouseUp);
+    }
+    return () => {
+      window.removeEventListener('mousemove', handleCornerMouseMove);
+      window.removeEventListener('mouseup', handleCornerMouseUp);
+    };
+  }, [isDraggingCorner, setChatPanelWidth, setImagePanelHeight]);
+
+  const modalOverlayStyle: React.CSSProperties = {
+    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 100,
+    display: 'flex', justifyContent: 'center', alignItems: 'center',
+    pointerEvents: 'auto',
+    fontFamily: '"Press Start 2P", cursive',
+  };
+
+  const modalContentStyle: React.CSSProperties = {
+    background: 'linear-gradient(145deg, #1a1a1a, #2a2a2a)',
+    padding: isChatPanelOpen ? '10px' : '20px',
+    borderRadius: isChatPanelOpen ? '0' : '12px',
+    border: '2px solid #00ffff',
+    width: isChatPanelOpen ? '98%' : '95vw',
+    maxWidth: isChatPanelOpen ? 'none' : '1400px',
+    height: isChatPanelOpen ? '98%' : '95vh',
+    display: 'flex',
+    boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
+    color: 'white', position: 'relative',
+    gap: '15px',
+    transition: 'width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, padding 0.3s ease',
+  };
+
+  const mainContentAreaStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    minWidth: 0,
+  };
+
+  const imageDisplayArea: React.CSSProperties = {
+    width: '100%',
+    backgroundColor: '#111',
+    border: '1px solid #444',
+    borderRadius: '8px',
+    marginBottom: '10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#555',
+    fontSize: '12px',
+    position: 'relative',
+    overflow: 'hidden',
+    flexShrink: 0,
+  };
+
+  const imageStyle: React.CSSProperties = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',
+    cursor: 'pointer',
+  };
+
+  const contentAreaStyle: React.CSSProperties = {
+    flex: '1 1 auto',
+    overflowY: 'auto',
+    padding: '10px',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: '4px',
+    fontSize: '11px',
+    lineHeight: '1.7',
+    minHeight: 0,
+  };
+
+  const headerContainer: React.CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    paddingBottom: '5px',
+    flexShrink: 0,
+  };
+
+  const navContainerStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '5px',
+    width: '100%',
+    borderTop: '1px solid #444',
+    borderBottom: '1px solid #444',
+    padding: '5px 0',
+    marginTop: '5px'
+  };
+
+  const fullscreenOverlayStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0.95)',
+    zIndex: 120,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+  };
+
+  const fullscreenImageStyle: React.CSSProperties = {
+    maxWidth: '95vw',
+    maxHeight: '95vh',
+    objectFit: 'contain',
+  };
+
+  const cornerDragHandleStyle: React.CSSProperties = {
+    position: 'absolute',
+    bottom: '-5px',
+    right: '-5px',
+    width: '20px',
+    height: '20px',
+    cursor: 'move',
+    zIndex: 115,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'rgba(255,255,255,0.3)',
+  };
+
+  const sectionHeaderStyle: React.CSSProperties = {
+    color: '#FFA500', borderBottom: '1px dashed #555', paddingBottom: '5px',
+    margin: '0 0 10px 0', display: 'flex', alignItems: 'center',
+    justifyContent: 'space-between',
+  };
+
+  const toggleButtonStyle: React.CSSProperties = {
+    background: 'none', border: 'none', color: '#aaa', cursor: 'pointer', fontSize: '12px'
+  };
+
+  if (!reportData || allPages.length === 0) {
+    return (
+      <div style={modalOverlayStyle}>
+        <div style={{ ...modalContentStyle, justifyContent: 'center', alignItems: 'center' }}>Loading Report...</div>
+      </div>
+    );
+  }
+
+  return (
+    <div style={modalOverlayStyle}>
+      {isImageFullscreen && currentImage && (
+        <div style={fullscreenOverlayStyle} onClick={closeImageFullscreen}>
+          <img src={currentImage.url} alt={currentPrompt?.promptText} style={fullscreenImageStyle} />
+        </div>
+      )}
+
+      <div style={modalContentStyle}>
+        {isTreeNavOpen && <ReportTreeNav />}
+
+        <div style={mainContentAreaStyle}>
+          <div style={headerContainer}>
+            <PageNavigator onClose={handleClose} />
+          </div>
+
+          {/* C1401: Removed flexShrink: 0 to allow resizing */}
+          <div>
+            <ReportProgressBar />
+          </div>
+
+          <Resizable
+            size={{ width: '100%', height: imagePanelHeight }}
+            minHeight={200}
+            maxHeight="60%"
+            onResizeStart={() => stopSlideshow(true)}
+            onResizeStop={(e, direction, ref, d) => {
+              setImagePanelHeight(imagePanelHeight + d.height);
+            }}
+            enable={{ top: false, right: false, bottom: true, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
+            style={{ flexShrink: 0, marginBottom: '10px', position: 'relative' }}
+          >
+            <div style={{ ...imageDisplayArea, height: '100%', marginBottom: 0 }}>
+              {currentImage?.url ? (
+                <img
+                  src={currentImage.url}
+                  alt={currentPrompt?.promptText}
+                  style={imageStyle}
+                  onClick={openImageFullscreen}
+                  onLoad={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    logInfo('[ReportViewer:Image]', `Successfully LOADED image. Natural dimensions: ${img.naturalWidth}x${img.naturalHeight}. Src: ${currentImage.url}`);
+                  }}
+                  onError={() => logError('[ReportViewer:Image]', `FAILED to load image. Path may be incorrect, file missing, or dev server not serving it. Path: ${currentImage.url}`)}
+                />
+              ) : (
+                'No Image Available'
+              )}
+            </div>
+            {isChatPanelOpen && (
+              <div
+                style={cornerDragHandleStyle}
+                onMouseDown={handleCornerMouseDown}
+                title="Resize panels"
+              >
+                <FaArrowsAlt />
+              </div>
+            )}
+          </Resizable>
+
+          <div style={navContainerStyle} id="report-audio-controls">
+            <ImageNavigator />
+            <AudioControls />
+          </div>
+
+          <div style={contentAreaStyle}>
+            {isPromptVisible && <PromptNavigator />}
+
+            <div style={sectionHeaderStyle}>
+              <h4>TL;DR</h4>
+              <button style={toggleButtonStyle} onClick={toggleTldrVisibility} title={isTldrVisible ? "Collapse" : "Expand"}>
+                {isTldrVisible ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+            </div>
+            {isTldrVisible && (
+              <p style={{ fontStyle: 'italic', color: '#ccc', margin: '0 0 15px 0' }}>
+                <MarkdownRenderer markdown={currentPage?.tldr || ''} />
+              </p>
+            )}
+
+            <div style={sectionHeaderStyle}>
+              <h4>Content</h4>
+              <button style={toggleButtonStyle} onClick={toggleContentVisibility} title={isContentVisible ? "Collapse" : "Expand"}>
+                {isContentVisible ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+            </div>
+            {isContentVisible && (
+              <MarkdownRenderer markdown={currentPage?.content || ''} />
+            )}
+          </div>
+        </div>
+
+        {isChatPanelOpen && <ReportChatPanel />}
+      </div>
+    </div>
+  );
+};
+
+export default ReportViewerModal;
+</file_artifact>
+
+<file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
+#!/usr/bin/env node
+
+/**
+ * convert_images_to_webp.js
+ *
+ * This script recursively finds all .png files in the specified directory,
+ * converts them to high-quality .webp files using the 'sharp' library,
+ * and then deletes the original .png files.
+ *
+ * This is intended to significantly reduce the repository size.
+ *
+ * Usage:
+ * 1. Install sharp: `npm install --save-dev sharp`
+ * 2. Run from the project root: `node scripts/convert_images_to_webp.js`
+ */
+
+const fs = require('fs').promises;
+const path = require('path');
+const sharp = require('sharp');
+
+const TARGET_DIRECTORY = path.resolve(__dirname, '..', 'public/images/report-assets');
+
+async function findPngFiles(dir) {
+    let results = [];
+    const list = await fs.readdir(dir);
+    for (const file of list) {
+        const filePath = path.resolve(dir, file);
+        const stat = await fs.stat(filePath);
+        if (stat && stat.isDirectory()) {
+            results = results.concat(await findPngFiles(filePath));
+        } else if (path.extname(filePath).toLowerCase() === '.png') {
+            results.push(filePath);
+        }
+    }
+    return results;
+}
+
+async function convertImageToWebP(filePath) {
+    const logPrefix = `[CONVERT:${path.basename(filePath)}]`;
+    try {
+        const webpPath = filePath.replace(/\.png$/i, '.webp');
+        
+        console.log(`${logPrefix} Converting to WebP...`);
+
+        // Use sharp for high-quality conversion
+        await sharp(filePath)
+            .webp({ 
+                quality: 90, // High quality, visually lossless for most cases
+                lossless: false, // Use lossy for better compression on photographic images
+                effort: 6, // Max effort for best compression
+            })
+            .toFile(webpPath);
+        
+        const originalStats = await fs.stat(filePath);
+        const newStats = await fs.stat(webpPath);
+        const reduction = ((originalStats.size - newStats.size) / originalStats.size) * 100;
+
+        console.log(`${logPrefix} SUCCESS! New file: ${path.basename(webpPath)}`);
+        console.log(`${logPrefix}   Original: ${(originalStats.size / 1024).toFixed(2)} KB`);
+        console.log(`${logPrefix}   WebP:     ${(newStats.size / 1024).toFixed(2)} KB`);
+        console.log(`${logPrefix}   Reduction: ${reduction.toFixed(2)}%`);
+
+        // Delete the original PNG file
+        await fs.unlink(filePath);
+        console.log(`${logPrefix} Deleted original PNG file.`);
+
+        return { success: true, reduction: originalStats.size - newStats.size };
+    } catch (error) {
+        console.error(`${logPrefix} FAILED to convert image.`, error);
+        return { success: false, reduction: 0 };
+    }
+}
+
+async function main() {
+    console.log(`Starting WebP conversion process in: ${TARGET_DIRECTORY}\n`);
+
+    const pngFiles = await findPngFiles(TARGET_DIRECTORY);
+
+    if (pngFiles.length === 0) {
+        console.log('No .png files found to convert. Exiting.');
+        return;
+    }
+
+    console.log(`Found ${pngFiles.length} PNG files to process.\n`);
+
+    let successCount = 0;
+    let totalReductionBytes = 0;
+
+    for (const file of pngFiles) {
+        const result = await convertImageToWebP(file);
+        if (result.success) {
+            successCount++;
+            totalReductionBytes += result.reduction;
+        }
+        console.log('---');
+    }
+
+    console.log('\nConversion process finished!');
+    console.log(`Successfully converted ${successCount} of ${pngFiles.length} files.`);
+    console.log(`Total size reduction: ${(totalReductionBytes / (1024 * 1024)).toFixed(2)} MB`);
+    console.log('\nIMPORTANT: Remember to update `imageManifest.json` to use ".webp" extensions!');
+}
+
+main().catch(console.error);
+</file_artifact>
+
+<file path="context/aiascentgame/scripts/create_report_embedding.js.md">
+#!/usr/bin/env node
+
+/**
+ * create_report_embedding.js
+ *
+ * This script generates a FAISS vector index and a JSON chunk map from a single,
+ * large text file. It's designed to create the knowledge base for the
+ * "Ask @Ascentia" feature in the Report Delivery System (RDS).
+ *
+ * Usage:
+ * 1. Ensure your local embedding model is running (e.g., via LM Studio).
+ * 2. Run the script from the project root, providing the path to your source text file:
+ *    node scripts/create_report_embedding.js C:/path/to/your/flattened_report.txt
+ *
+ * The script will output `report_faiss.index` and `report_chunks.json` in the project root.
+ * These files should then be moved to the `./public` directory.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+const { Index, IndexFlatL2 } = require('faiss-node');
+
+const FAISS_INDEX_FILE = 'report_faiss.index';
+const CHUNKS_FILE = 'report_chunks.json';
+const EMBEDDING_API_URL = 'http://127.0.0.1:1234/v1/embeddings';
+const EMBEDDING_MODEL = 'text-embedding-granite-embedding-278m-multilingual';
+
+const CHUNK_SIZE = 1750; // characters
+const CHUNK_OVERLAP = 175; // characters
+
+/**
+ * Splits text into overlapping chunks.
+ */
+function chunkText(text, size, overlap) {
+  const chunks = [];
+  let startIndex = 0;
+  while (startIndex < text.length) {
+    const endIndex = startIndex + size;
+    chunks.push(text.substring(startIndex, endIndex));
+    startIndex += size - overlap;
+  }
+  return chunks;
+}
+
+/**
+ * Gets a vector embedding for a single text chunk from the local API.
+ */
+async function getEmbedding(text) {
+  try {
+    const response = await axios.post(EMBEDDING_API_URL, {
+      model: EMBEDDING_MODEL,
+      input: text,
+    });
+    if (response.data?.data?.[0]?.embedding) {
+      return response.data.data[0].embedding;
+    }
+    console.error('  [ERROR] Invalid embedding response structure:', response.data);
+    return null;
+  } catch (error) {
+    const errorMessage = error.response ? `${error.response.status} ${error.response.statusText}` : error.message;
+    console.error(`  [ERROR] Failed to get embedding for chunk. Status: ${errorMessage}. Text: "${text.substring(0, 50)}..."`);
+    return null;
+  }
+}
+
+async function createReportEmbedding() {
+  const inputFile = process.argv[2];
+  if (!inputFile) {
+    console.error('\n[FATAL ERROR] Please provide the path to the source text file as an argument.');
+    console.error('Usage: node scripts/create_report_embedding.js C:/path/to/your/file.txt\n');
+    process.exit(1);
+  }
+
+  console.log(`Starting RDS embedding generation for: ${inputFile}`);
+
+  // 1. Read and chunk the source file
+  let fileContent;
+  try {
+    fileContent = fs.readFileSync(inputFile, 'utf-8');
+  } catch (error) {
+    console.error(`\n[FATAL ERROR] Could not read source file: ${error.message}`);
+    process.exit(1);
+  }
+
+  const textChunks = chunkText(fileContent, CHUNK_SIZE, CHUNK_OVERLAP);
+  const allChunks = textChunks.map(chunk => ({ id: 'report_source', chunk }));
+  console.log(`Created a total of ${allChunks.length} text chunks.`);
+
+  // 2. Generate embeddings for all chunks
+  console.log('Generating embeddings... (This may take a while)');
+  const embeddings = [];
+  let successfulChunks = [];
+  let failedCount = 0;
+  let embeddingDimension = -1;
+
+  for (let i = 0; i < allChunks.length; i++) {
+    const chunkData = allChunks[i];
+    const embedding = await getEmbedding(chunkData.chunk);
+    if (embedding) {
+      if (embeddingDimension === -1) {
+        embeddingDimension = embedding.length;
+        console.log(`Detected embedding dimension: ${embeddingDimension}`);
+      }
+      if (embedding.length !== embeddingDimension) {
+        console.error(`\n[FATAL ERROR] Inconsistent embedding dimension! Expected ${embeddingDimension}, but got ${embedding.length} for chunk ${i}. Aborting.`);
+        process.exit(1);
+      }
+      embeddings.push(embedding);
+      successfulChunks.push(chunkData);
+    } else {
+      failedCount++;
+    }
+    process.stdout.write(`\r  Processed ${i + 1} of ${allChunks.length} chunks...`);
+  }
+  console.log('\nEmbedding generation complete.');
+
+  if (failedCount > 0) {
+    console.warn(`  [WARN] Failed to generate embeddings for ${failedCount} chunks. They will be excluded.`);
+  }
+  if (embeddings.length === 0) {
+    console.error('No embeddings were generated. Cannot create FAISS index. Aborting.');
+    return;
+  }
+
+  // 3. Build and save FAISS index
+  try {
+    console.log(`Building FAISS index with ${embeddings.length} vectors of dimension ${embeddingDimension}...`);
+    const index = new IndexFlatL2(embeddingDimension);
+    index.add(embeddings.flat());
+    
+    console.log(`Saving FAISS index to ${FAISS_INDEX_FILE}...`);
+    index.write(FAISS_INDEX_FILE);
+
+    console.log(`Saving ${successfulChunks.length} text chunks to ${CHUNKS_FILE}...`);
+    fs.writeFileSync(CHUNKS_FILE, JSON.stringify(successfulChunks, null, 2), 'utf-8');
+
+    console.log(`\nProcess complete. Report KB created successfully.`);
+    console.log(`Move '${FAISS_INDEX_FILE}' and '${CHUNKS_FILE}' to the ./public directory.`);
+  } catch (error) {
+    console.error('\nAn error occurred while building or saving the FAISS index:', error);
+  }
+}
+
+createReportEmbedding();
+</file_artifact>
+
+<file path="context/vcpg/ai.gateway.ts.md">
+import {
+  WebSocketGateway,
+  SubscribeMessage,
+  MessageBody,
+  WebSocketServer,
+  ConnectedSocket,
+  OnGatewayConnection,
+  OnGatewayDisconnect,
+} from '@nestjs/websockets';
+import { Server, Socket } from 'socket.io';
+import { Logger, UseGuards } from '@nestjs/common';
+import { WsJwtGuard } from '../auth/guards/ws-jwt.guard';
+import { AiService } from './ai.service';
+import { JwtService } from '@nestjs/jwt';
+import { UsersService } from 'src/users/users.service';
+
+@WebSocketGateway({
+  cors: { origin: '*' },
+  namespace: '/ai',
+})
+export class AiGateway implements OnGatewayConnection, OnGatewayDisconnect {
+  @WebSocketServer()
+  server: Server;
+
+  private readonly logger = new Logger(AiGateway.name);
+
+  constructor(
+    private aiService: AiService,
+    private jwtService: JwtService,
+    private usersService: UsersService,
+  ) {}
+
+  async handleConnection(client: Socket) {
+    try {
+      const token = client.handshake.auth.token;
+      if (!token) throw new Error('No token provided for AI gateway');
+
+      const payload = this.jwtService.verify(token, { secret: process.env.JWT_SECRET });
+      const user = await this.usersService.findById(payload.sub);
+      if (!user) throw new Error('User not found for AI gateway');
+
+      client.data.user = user;
+      client.data.isCancelled = false;
+      this.logger.log(`AI client connected: ${client.id} - User: ${user.name}`);
+      
+      // Send a welcome message
+      this.aiService.sendWelcomeMessage(client);
+
+    } catch (e) {
+      this.logger.error(`Authentication failed for AI client ${client.id}: ${e.message}`);
+      client.disconnect();
+    }
+  }
+
+  handleDisconnect(client: Socket) {
+    this.logger.log(`AI client disconnected: ${client.id}`);
+  }
+
+  @UseGuards(WsJwtGuard)
+  @SubscribeMessage('askJane')
+  async handleAskJane(
+    @MessageBody() data: { query: string; instanceId: string },
+    @ConnectedSocket() client: Socket,
+  ): Promise<void> {
+    const userId = client.data.user.id;
+    client.data.isCancelled = false; // Reset cancellation flag
+    this.logger.log(`Received query from ${userId} for instance ${data.instanceId}: "${data.query}"`);
+
+    try {
+      await this.aiService.getStreamingCompletion(client, data.query, data.instanceId, userId, (chunk) => {
+        client.emit('jane:stream', { chunk });
+      });
+      client.emit('jane:stream_end');
+    } catch (error) {
+        if (error.message !== 'Stream cancelled') {
+            this.logger.error(`Error processing JANE query for user ${userId}:`, error);
+            client.emit('jane:error', { message: 'An error occurred while processing your request.' });
+        }
+    }
+  }
+
+  @UseGuards(WsJwtGuard)
+  @SubscribeMessage('jane:cancel')
+  handleCancelStream(@ConnectedSocket() client: Socket) {
+      this.logger.log(`Received cancel request from client ${client.id}`);
+      client.data.isCancelled = true;
+  }
+}
+</file_artifact>
+
+<file path="context/vcpg/ai.module.ts.md">
+import { Module, forwardRef } from '@nestjs/common';
+import { AiGateway } from './ai.gateway';
+import { AiService } from './ai.service';
+import { ScenariosModule } from '../scenarios/scenarios.module';
+import { JwtModule } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
+import { UsersModule } from 'src/users/users.module';
+import { SynchronizationModule } from 'src/synchronization/synchronization.module';
+
+@Module({
+  imports: [
+    forwardRef(() => ScenariosModule),
+    UsersModule,
+    forwardRef(() => SynchronizationModule),
+    JwtModule.registerAsync({
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) => ({
+        secret: configService.get<string>('JWT_SECRET'),
+        signOptions: { expiresIn: '24h' },
+      }),
+    }),
+  ],
+  providers: [AiGateway, AiService],
+  exports: [AiService], // Export AiService
+})
+export class AiModule {}
+</file_artifact>
+
+<file path="context/vcpg/ai.service.ts.md">
+import { Injectable, Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { ScenariosService } from '../scenarios/scenarios.service';
+import { Socket } from 'socket.io';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { TeamMembership, User } from '@prisma/client';
+
+@Injectable()
+export class AiService {
+  private readonly logger = new Logger(AiService.name);
+  private readonly llmApiUrl: string;
+  private stagingRoomFaq: string;
+
+  constructor(
+    private configService: ConfigService,
+    private scenariosService: ScenariosService,
+  ) {
+    this.llmApiUrl = this.configService.get<string>('LLM_API_URL');
+    try {
+        // Load the FAQ content at initialization
+        this.stagingRoomFaq = readFileSync(join(process.cwd(), 'src/Artifacts/A93. VCPG - JANE Staging Room FAQ.md'), 'utf-8');
+    } catch (error) {
+        this.logger.error('Failed to load A93 JANE Staging Room FAQ', error);
+        this.stagingRoomFaq = 'No FAQ content loaded.';
+    }
+  }
+
+  sendWelcomeMessage(client: Socket) {
+    const welcomeMessage = {
+        chunk: "JANE online. How can I assist you in this operation?"
+    };
+    client.emit('jane:stream', welcomeMessage);
+    client.emit('jane:stream_end');
+  }
+
+
+  async getStreamingCompletion(
+    client: Socket, // Pass the socket to check for cancellation
+    query: string,
+    instanceId: string,
+    userId: string,
+    onChunk: (chunk: string) => void,
+  ): Promise<void> {
+    const instance = await this.scenariosService.getInstanceForUser(instanceId, userId);
+    if (!instance || !instance.team || !instance.team.members || instance.team.members.length === 0) {
+      throw new Error('Active scenario, team, or members not found for user.');
+    }
+    
+    const userIndex = instance.team.members.findIndex(m => m.userId === userId);
+    const traineeUser = `trainee${userIndex + 1}`;
+
+    const prompt = this.constructPrompt(query, instance, traineeUser);
+
+    try {
+      const response = await fetch(this.llmApiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'unsloth/gpt-oss-20b',
+          prompt: prompt,
+          stream: true,
+        }),
+      });
+
+      if (!response.ok || !response.body) {
+        throw new Error(`LLM API request failed with status ${response.status}`);
+      }
+      
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      
+      while (true) {
+        if (client.data.isCancelled) {
+            reader.cancel();
+            this.logger.log(`Stream cancelled for client ${client.id}`);
+            throw new Error('Stream cancelled');
+        }
+
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        const rawChunk = decoder.decode(value, { stream: true });
+        this.logger.debug(`[RAW LLM STREAM CHUNK]: ${rawChunk}`); // Verbose logging
+        buffer += rawChunk;
+        
+        let newlineIndex;
+        while ((newlineIndex = buffer.indexOf('\n')) !== -1) {
+            const line = buffer.slice(0, newlineIndex).trim();
+            buffer = buffer.slice(newlineIndex + 1);
+
+            if (line.startsWith('data: ')) {
+                const jsonStr = line.substring(6);
+                if (jsonStr.trim() === '[DONE]') {
+                    continue;
+                }
+                try {
+                    const parsed = JSON.parse(jsonStr);
+                    const content = parsed.choices?.[0]?.text || parsed.choices?.[0]?.delta?.content;
+                    if (content) {
+                        onChunk(content);
+                    }
+                } catch (e) {
+                    this.logger.warn(`Could not parse AI stream chunk as JSON: ${jsonStr}`);
+                }
+            }
+        }
+      }
+    } catch (error) {
+      this.logger.error('Failed to get streaming completion from LLM', error);
+      throw error;
+    }
+  }
+
+  async getContextualizedIntel(selectedText: string, instanceId: string, userId: string): Promise<{name: string, value: string, group: string}[]> {
+    const instance = await this.scenariosService.getInstanceForUser(instanceId, userId);
+    if (!instance) {
+      throw new Error('Active scenario not found for user.');
+    }
+  
+    const teamMembers = (instance.team?.members as (TeamMembership & { user: User })[]) || [];
+    const teamRoster = teamMembers.map((m, i) => ({ name: m.user.name, scenarioUser: `trainee${i+1}` }));
+    
+    const prompt = `
+      System: You are JANE, an expert intelligence analyst AI for the VCPG training platform. Your primary function is to distill raw text into structured, actionable intelligence for a team of cybersecurity trainees.
+
+      **CRITICAL DIRECTIVES:**
+      1.  **ANALYZE, DON'T SUMMARIZE:** Your task is not to summarize. Your task is to extract the most salient, actionable intelligence from the user's text, given the current mission context. Discard irrelevant information.
+      2.  **STATE AWARENESS IS KEY:** The user is in the '${instance.state}' phase of the mission. The intelligence must be relevant to what they need to do *right now*.
+      3.  **CONSOLIDATE & STRUCTURE:** Your highest priority is to consolidate related information into a single, structured chip. A list of items should become a single table.
+      4.  **JSON ONLY:** Your entire response **MUST** be only a raw JSON array of objects. Do not include any other text, explanations, or markdown formatting like \`\`\`json.
+      5.  **CHIP SCHEMA:** Each object in the array **MUST** have three keys: \`name\` (a short, descriptive title), \`value\` (the actionable data, which for tables MUST be a JSON string), and \`group\` (a category like "Network Intel", "Commands", "Credentials").
+      6.  **TABLE SCHEMA:** When creating a table, the JSON string in the \`value\` field **MUST** be an array of objects, and each object **MUST** have two keys: \`name\` (the description) and \`value\` (the copyable, actionable command or data).
+
+      ---
+      **MISSION CONTEXT:**
+      **Scenario:** ${instance.scenarioDefinition.title}
+      **State:** ${instance.state}
+      **Briefing:** ${instance.scenarioDefinition.briefing || instance.scenarioDefinition.description}
+      **Team Roster:** ${JSON.stringify(teamRoster)}
+      ---
+      
+      **EXAMPLE 1 (User highlights the entire mission brief in STAGING):**
+      **USER-SELECTED TEXT:** "OVERVIEW: The 73rd... KEY INTEL: ...connect directly using the hostname (e.g., \`ssh trainee1@c2-server\`). RELEVANT COMMANDS: /opt/comms/rotate_freq.sh..."
+      **YOUR JSON RESPONSE FOR EXAMPLE 1:**
+[
+  {
+    "name": "Initial C2 Access Commands",
+    "value": "[{\\"name\\":\\"Trainee 1 Access\\",\\"value\\":\\"ssh trainee1@c2-server\\"},{\\"name\\":\\"Trainee 2 Access\\",\\"value\\":\\"ssh trainee2@c2-server\\"},{\\"name\\":\\"Trainee 3 Access\\",\\"value\\":\\"ssh trainee3@c2-server\\"},{\\"name\\":\\"Trainee 4 Access\\",\\"value\\":\\"ssh trainee4@c2-server\\"}]",
+    "group": "Initial Access"
+  }
+]
+
+      **EXAMPLE 2 (User highlights the list of relevant commands):**
+      **USER-SELECTED TEXT:**
+      "/opt/comms/rotate_freq.sh <freq> - Rotate comms frequency on a jammed UAV.
+      /opt/secure/keygen.sh - Generate new C2 key on the GCS host.
+      ssh <user>@<hostname> - Connect to a host via SSH."
+      **YOUR JSON RESPONSE FOR EXAMPLE 2:**
+[
+  {
+    "name": "Relevant Scenario Commands",
+    "value": "[{\\"name\\":\\"Rotate UAV Comms Frequency\\",\\"value\\":\\"/opt/comms/rotate_freq.sh <freq>\\"},{\\"name\\":\\"Generate New C2 Key\\",\\"value\\":\\"/opt/secure/keygen.sh\\"},{\\"name\\":\\"Connect to Host (SSH)\\",\\"value\\":\\"ssh <user>@<hostname>\\"}]",
+    "group": "Commands"
+  }
+]
+      ---
+
+      **CURRENT TASK:**
+      **USER-SELECTED TEXT:**
+      "${selectedText}"
+
+      **YOUR JSON RESPONSE:**
+    `;
+    
+    try {
+        const response = await fetch(this.llmApiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'unsloth/gpt-oss-20b',
+            prompt: prompt,
+            stream: false,
+            temperature: 0.0,
+          }),
+        });
+      
+        if (!response.ok) {
+          throw new Error(`LLM API request failed with status ${response.status}`);
+        }
+      
+        const jsonResponse = await response.json();
+        const content = jsonResponse.choices?.[0]?.text;
+        
+        try {
+          const separator = '<|start|>assistant<|channel|>final<|message|>';
+          const separatorIndex = content.lastIndexOf(separator);
+          
+          let jsonStringToParse = content;
+          if (separatorIndex !== -1) {
+            jsonStringToParse = content.substring(separatorIndex + separator.length);
+          }
+          
+          const jsonMatch = jsonStringToParse.match(/(\[[\s\S]*\])/);
+          if (jsonMatch && jsonMatch[0]) {
+            const cleanedJson = jsonMatch[0];
+            const parsed = JSON.parse(cleanedJson);
+            if (Array.isArray(parsed)) {
+                this.logger.log(`Successfully parsed ${parsed.length} intel chips from LLM.`);
+                return parsed;
+            }
+          }
+          const parsed = JSON.parse(jsonStringToParse.trim());
+          if (Array.isArray(parsed)) {
+              this.logger.log(`Successfully parsed ${parsed.length} intel chips from LLM (fallback).`);
+              return parsed;
+          }
+        } catch (e) {
+          this.logger.warn(`Could not parse LLM response for intel chip as JSON array: ${content}`);
+        }
+    } catch (error) {
+        if (error.message.includes('fetch failed')) {
+            this.logger.error(`[AI Service] Connection to LLM API failed at ${this.llmApiUrl}. Please ensure the AI model server (e.g., LM Studio) is running and accessible from the backend.`);
+        } else {
+            this.logger.error(`[AI Service] Failed to fetch from LLM API. Error: ${error.message}`);
+        }
+        throw error;
+    }
+
+    return [{ name: "New Intel", value: selectedText, group: "General" }];
+  }
+
+  private constructPrompt(query: string, instance: any, traineeUser: string): string {
+    if (instance.state === 'STAGING') {
+        const objectivesText = instance.scenarioDefinition?.objectives?.map(o => `- ${o.title}: ${o.description}`).join('\n') || 'No objectives defined.';
+        return `
+          System: You are JANE, an AI assistant for the Virtual Cybersecurity Proving Grounds (VCPG), a cybersecurity training platform inspired by Battleschool in Ender's Game. You are in a pre-mission staging room. Your role is to act as a mission briefer. Your responses must be helpful, concise (2-3 sentences max), and directly related to the provided mission details and the user's highlighted text.
+          
+          Your responses must be formatted in markdown.
+          
+          Use the following examples to understand the expected tone and format:
+          ---
+          ${this.stagingRoomFaq}
+          ---
+
+          **CURRENT MISSION CONTEXT:**
+          **Title:** ${instance.scenarioDefinition.title}
+          **Briefing:** ${instance.scenarioDefinition.briefing || instance.scenarioDefinition.description}
+          **Key Intel:** ${instance.scenarioDefinition.keyIntel || 'None.'}
+          **Objectives:**
+          ${objectivesText}
+
+          User Query: ${query}
+          
+          JANE:
+        `;
+    }
+
+    const scenarioState = JSON.stringify({
+      title: instance.scenarioDefinition.title,
+      score: instance.score,
+      objectives: instance.scenarioDefinition.objectives.map(o => ({
+        title: o.title,
+        completed: instance.objectivesProgress.some(p => p.objectiveId === o.id)
+      }))
+    }, null, 2);
+
+    const firstHint = "The C2 server is the central hub for our drone fleet's network configuration. You should start by finding the `drone_manifest.txt` file there to identify the UAVs' IP addresses. Use `cat` to view its contents.";
+
+    return `
+      System: You are JANE, an AI assistant integrated into the VCPG, a cybersecurity training platform. Your purpose is to guide a learner, not to give direct answers. The user you are assisting is a trainee in a simulated scenario. Their designation is ${traineeUser}. They have just highlighted a piece of text and are asking for context. Your response should be short, concise, and directly related to the provided query and scenario state. If the query is about a command, provide a brief explanation and a clear, in-situ example of how ${traineeUser} could use it. If the user seems stuck and asks a general question, provide the following hint: "${firstHint}"
+      
+      The current scenario state is:
+      ${scenarioState}
+
+      User Query (based on highlighted text): ${query}
+
+      Provide a helpful, concise answer based on the scenario state. Do not reveal flags or direct solutions.
+      
+      JANE:
+    `;
+  }
+}
 </file_artifact>
 
 
