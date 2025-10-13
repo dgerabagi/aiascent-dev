@@ -12,7 +12,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        p: ({ node, ...props }) => <p className="mb-4" {...props} />,
+        // C37 FIX: Removed hardcoded margin. Rely on parent `prose` class for correct spacing.
+        p: ({ node, ...props }) => <p {...props} />,
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,

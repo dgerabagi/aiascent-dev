@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C37 (Fix image path generation to use manifest's basePath.)
 // Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
 // Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
 // Updated on: C26 (Fix Zustand deprecation warning.)
@@ -244,10 +245,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // C23 Fix: Use hardcoded /assets/ path
-                                    const imageBasePath = '/assets/images/report/';
+                                    // C37 FIX: Use the basePath from the manifest file instead of a hardcoded path.
+                                    const imageBasePath = manifestData.basePath;
                                     
-                                    // C23 Fix: Check for single image with no dash
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
@@ -326,7 +326,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }, actualDurationMs + 500); // Small buffer
                 set({ nextPageTimer });
 
-                const images = currentPage.imagePrompts[0]?.images;
+                const images = currentPage.imagePrompts?.[0]?.images;
                 if (!images || images.length <= 1) return;
 
                 // C28 FIX: Calculate time per image based on adjusted duration

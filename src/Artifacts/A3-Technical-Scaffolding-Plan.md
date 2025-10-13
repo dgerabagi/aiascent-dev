@@ -4,6 +4,8 @@
 
 # Author: AI Model & Curator
 
+# Updated on: C37 (Clarify image directory structure)
+
   - **Key/Value for A0:**
   - **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
   - **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
@@ -28,27 +30,37 @@ The project will adhere to the modern Next.js App Router structure for optimal p
 ```
 aiascent-dev/
 ├── src/
-│   ├── app/                   # Next.js App Router
-│   │   ├── layout.tsx         # Root layout
-│   │   ├── page.tsx           # Landing page (/)
-│   │   ├── globals.css        # Global styles and Tailwind directives
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
 │   │   └── showcase/
-│   │       └── page.tsx       # Showcase page (/showcase)
+│   │       └── page.tsx
 │   │
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Header.tsx
 │   │   │   └── Footer.tsx
 │   │   ├── showcase/
-│   │   │   └── InteractiveWhitepaper.tsx  # The main interactive component
-│   │   └── ui/                # Shadcn/ui components (Button, Card)
+│   │   │   └── InteractiveWhitepaper.tsx
+│   │   └── ui/
 │   │
-│   ├── lib/                 # Utility functions and helpers
+│   ├── lib/
 │   │
 │   └── data/
-│       └── whitepaperContent.json  # Data source for the interactive showcase
+│       └── whitepaperContent.json
 │
-├── public/                 # Static assets (images, fonts, favicon)
+├── public/
+│   ├── assets/
+│   │   ├── icons/
+│   │   ├── images/
+│   │   │   ├── report/       # Images for the main 'showcase' report
+│   │   │   └── whitepaper/   # Images for the homepage 'whitepaper' report
+│   │   ├── logo.svg
+│   │   └── favicon.ico
+│   ├── data/                 # For JSON files, etc.
+│   │   └── embeddings/       # For RAG knowledge base files
+│   └── downloads/            # For downloadable files like the .vsix
 │
 ├── package.json
 ├── tsconfig.json

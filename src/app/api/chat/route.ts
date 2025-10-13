@@ -91,7 +91,7 @@ export async function POST(request: Request) {
         const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
 
         if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
-            const { labels, distances } = index.search(queryEmbedding, 7);
+            const { labels, distances } = index.search(queryEmbedding, 6);
             
             if (labels.length > 0) {
                 const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
@@ -137,8 +137,8 @@ User: ${prompt}
 Ascentia:`;
 
   const controller = new AbortController();
-  // C18: Increased timeout to 120 seconds for model loading
-  const timeoutId = setTimeout(() => controller.abort(), 120000);
+  // C37: Increased timeout to 300 seconds (5 minutes) for model cold starts
+  const timeoutId = setTimeout(() => controller.abort(), 300000);
 
   try {
     const response = await fetch(completionsUrl, {
@@ -147,7 +147,7 @@ Ascentia:`;
       body: JSON.stringify({
         model: 'unsloth/gpt-oss-20b',
         prompt: finalPrompt,
-        max_tokens: 512,
+        max_tokens: 4096,
         temperature: 0.7,
         stream: true,
       }),

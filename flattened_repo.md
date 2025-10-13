@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T17:29:08.899Z
+  Date Generated: 2025-10-13T18:55:28.429Z
   ---
   Total Files: 120
-  Approx. Tokens: 295869
+  Approx. Tokens: 295920
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (6671 tokens)
+7. src\stores\reportStore.ts (6679 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -23,7 +23,7 @@
 1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 189 - Chars: 10451 - Tokens: 2613
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
-4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
+4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
 5. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
 6. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
 7. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
@@ -84,16 +84,16 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14406 - Tokens: 3602
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14403 - Tokens: 3601
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 574 - Chars: 26682 - Tokens: 6671
+69. src\stores\reportStore.ts - Lines: 574 - Chars: 26713 - Tokens: 6679
 70. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 195 - Chars: 9414 - Tokens: 2354
+74. src\app\api\chat\route.ts - Lines: 195 - Chars: 9431 - Tokens: 2358
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -102,7 +102,7 @@
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 47 - Chars: 1970 - Tokens: 493
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -429,6 +429,8 @@ The implementation of Phase 1 will involve the following components:
 
 # Author: AI Model & Curator
 
+# Updated on: C37 (Clarify image directory structure)
+
   - **Key/Value for A0:**
   - **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
   - **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
@@ -453,27 +455,37 @@ The project will adhere to the modern Next.js App Router structure for optimal p
 ```
 aiascent-dev/
 ├── src/
-│   ├── app/                   # Next.js App Router
-│   │   ├── layout.tsx         # Root layout
-│   │   ├── page.tsx           # Landing page (/)
-│   │   ├── globals.css        # Global styles and Tailwind directives
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
 │   │   └── showcase/
-│   │       └── page.tsx       # Showcase page (/showcase)
+│   │       └── page.tsx
 │   │
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Header.tsx
 │   │   │   └── Footer.tsx
 │   │   ├── showcase/
-│   │   │   └── InteractiveWhitepaper.tsx  # The main interactive component
-│   │   └── ui/                # Shadcn/ui components (Button, Card)
+│   │   │   └── InteractiveWhitepaper.tsx
+│   │   └── ui/
 │   │
-│   ├── lib/                 # Utility functions and helpers
+│   ├── lib/
 │   │
 │   └── data/
-│       └── whitepaperContent.json  # Data source for the interactive showcase
+│       └── whitepaperContent.json
 │
-├── public/                 # Static assets (images, fonts, favicon)
+├── public/
+│   ├── assets/
+│   │   ├── icons/
+│   │   ├── images/
+│   │   │   ├── report/       # Images for the main 'showcase' report
+│   │   │   └── whitepaper/   # Images for the homepage 'whitepaper' report
+│   │   ├── logo.svg
+│   │   └── favicon.ico
+│   ├── data/                 # For JSON files, etc.
+│   │   └── embeddings/       # For RAG knowledge base files
+│   └── downloads/            # For downloadable files like the .vsix
 │
 ├── package.json
 ├── tsconfig.json
@@ -12592,7 +12604,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         try {
             // C17: Enhanced error handling in fetch
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s connection timeout
+            const timeoutId = setTimeout(() => controller.abort(), 300000); // C37: Increased to 5 minutes
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -12724,8 +12736,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C36 FIX: Changed from undefined parseMessageWithThinking to defined parseFinalMessage
-                                <div className={`prose prose-sm max-w-none ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                // C37 FIX: Add prose-p:mb-0 to remove extra space from paragraphs
+                                <div className={`prose prose-sm max-w-none prose-p:mb-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
                                     <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
@@ -12943,6 +12955,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C37 (Fix image path generation to use manifest's basePath.)
 // Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
 // Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
 // Updated on: C26 (Fix Zustand deprecation warning.)
@@ -13188,10 +13201,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // C23 Fix: Use hardcoded /assets/ path
-                                    const imageBasePath = '/assets/images/report/';
+                                    // C37 FIX: Use the basePath from the manifest file instead of a hardcoded path.
+                                    const imageBasePath = manifestData.basePath;
                                     
-                                    // C23 Fix: Check for single image with no dash
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
@@ -13270,7 +13282,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }, actualDurationMs + 500); // Small buffer
                 set({ nextPageTimer });
 
-                const images = currentPage.imagePrompts[0]?.images;
+                const images = currentPage.imagePrompts?.[0]?.images;
                 if (!images || images.length <= 1) return;
 
                 // C28 FIX: Calculate time per image based on adjusted duration
@@ -14082,7 +14094,7 @@ export async function POST(request: Request) {
         const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
 
         if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
-            const { labels, distances } = index.search(queryEmbedding, 7);
+            const { labels, distances } = index.search(queryEmbedding, 6);
             
             if (labels.length > 0) {
                 const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
@@ -14128,8 +14140,8 @@ User: ${prompt}
 Ascentia:`;
 
   const controller = new AbortController();
-  // C18: Increased timeout to 120 seconds for model loading
-  const timeoutId = setTimeout(() => controller.abort(), 120000);
+  // C37: Increased timeout to 300 seconds (5 minutes) for model cold starts
+  const timeoutId = setTimeout(() => controller.abort(), 300000);
 
   try {
     const response = await fetch(completionsUrl, {
@@ -14138,7 +14150,7 @@ Ascentia:`;
       body: JSON.stringify({
         model: 'unsloth/gpt-oss-20b',
         prompt: finalPrompt,
-        max_tokens: 512,
+        max_tokens: 4096,
         temperature: 0.7,
         stream: true,
       }),
@@ -15064,7 +15076,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        p: ({ node, ...props }) => <p className="mb-4" {...props} />,
+        // C37 FIX: Removed hardcoded margin. Rely on parent `prose` class for correct spacing.
+        p: ({ node, ...props }) => <p {...props} />,
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,

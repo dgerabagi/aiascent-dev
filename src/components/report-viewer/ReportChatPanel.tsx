@@ -118,7 +118,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         try {
             // C17: Enhanced error handling in fetch
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s connection timeout
+            const timeoutId = setTimeout(() => controller.abort(), 300000); // C37: Increased to 5 minutes
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -250,8 +250,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C36 FIX: Changed from undefined parseMessageWithThinking to defined parseFinalMessage
-                                <div className={`prose prose-sm max-w-none ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                // C37 FIX: Add prose-p:mb-0 to remove extra space from paragraphs
+                                <div className={`prose prose-sm max-w-none prose-p:mb-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
                                     <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
