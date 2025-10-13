@@ -1,6 +1,6 @@
 // src/components/report-viewer/ReportChatPanel.tsx
 'use client';
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
@@ -12,10 +12,17 @@ interface ReportChatPanelProps {
 
 // Regex to strip internal LLM thinking tags and content
 const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
+const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
-    const { toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown } = useReportStore.getState();
-    const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts } = useReportState(state => ({
+    const { 
+        toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown,
+        setReportChatMessage, // C38: Import new action
+    } = useReportStore.getState();
+    const { 
+        allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts 
+    } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         reportChatHistory: state.reportChatHistory,
@@ -34,8 +41,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C15 Fix: Prevent scrolling entire page on new messages.
-    // Use specific container ref for scrolling.
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -45,61 +50,26 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
-    // Stop propagation of keys to prevent report navigation
     const handlePanelKeyDown = (e: React.KeyboardEvent) => {
         e.stopPropagation();
     };
 
-    // C19: Beautify LLM output by stripping special tokens
+    // C38: Simplified parser, as suggestion block is now stripped before saving to state.
     const parseFinalMessage = (rawText: string): string => {
-        // C35: Strip out suggestions block before rendering
-        const suggestionsRegex = /:::suggestions:::[\s\S]*?:::end_suggestions:::/g;
-        let cleanedText = rawText.replace(suggestionsRegex, '').trim();
-
-        // C36 FIX: Strip out thinking tags
-        cleanedText = cleanedText.replace(thinkingRegex, '').trim();
+        let cleanedText = rawText.replace(thinkingRegex, '').trim();
 
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
     
         if (finalMessageIndex !== -1) {
-            // If marker exists, take everything after it
             return cleanedText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
-        // C19 Fix: If streaming, don't show "could not parse" yet.
-        // Just strip analysis tags if present to show raw stream cleanly.
         const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*?(?=<\|channel\|>|$)/g;
         cleanedText = cleanedText.replace(analysisRegex, '').trim();
         
         return cleanedText;
     };
-
-    // C35: Parse suggestions from the last Ascentia message
-    const lastAscentiaMessage = useMemo(() => {
-        return [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia');
-    }, [reportChatHistory]);
-
-    useEffect(() => {
-        if (lastAscentiaMessage && lastAscentiaMessage.status === 'complete') {
-            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
-            const match = lastAscentiaMessage.message.match(suggestionsRegex);
-            if (match && match[1]) {
-                try {
-                    const newSuggestions = JSON.parse(match[1]);
-                    if (Array.isArray(newSuggestions) && newSuggestions.every(s => typeof s === 'string')) {
-                        // Only update if different to prevent infinite loops
-                        if (JSON.stringify(newSuggestions) !== JSON.stringify(suggestedPrompts)) {
-                            setSuggestedPrompts(newSuggestions);
-                        }
-                    }
-                } catch (e) {
-                    console.warn("Failed to parse suggestions JSON:", e);
-                }
-            }
-        }
-    }, [lastAscentiaMessage, setSuggestedPrompts, suggestedPrompts]);
-
 
     const sendMessage = async (text: string) => {
         if (isThinking) return;
@@ -112,13 +82,11 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
         
-        // C27: Determine knowledge base based on report name
         const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
-            // C17: Enhanced error handling in fetch
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 300000); // C37: Increased to 5 minutes
+            const timeoutId = setTimeout(() => controller.abort(), 300000);
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -126,7 +94,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 body: JSON.stringify({ 
                     prompt: text, 
                     pageContext,
-                    knowledgeBase: knowledgeBase // C27: Send KB identifier
+                    knowledgeBase: knowledgeBase
                 }),
                 signal: controller.signal,
             });
@@ -143,6 +111,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let done = false;
+            let fullMessage = ''; // C38: Accumulate full message
             
             updateReportChatStatus(temporaryId, 'streaming');
             while (!done) {
@@ -150,7 +119,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
                 
-                // Parse SSE format (data: ...)
                 const lines = chunk.split('\n');
                 for (const line of lines) {
                     if (line.startsWith('data: ')) {
@@ -160,15 +128,40 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             const parsed = JSON.parse(data);
                             const textChunk = parsed.choices?.[0]?.text || '';
                             if (textChunk) {
+                                fullMessage += textChunk; // C38: Accumulate
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
-                            // If not JSON, append raw data (fallback)
-                            if (data) updateReportChatMessage(temporaryId, data);
+                            if (data) {
+                                fullMessage += data; // C38: Accumulate
+                                updateReportChatMessage(temporaryId, data);
+                            }
                         }
                     }
                 }
             }
+
+            // C38: Refactored suggestion parsing logic
+            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
+            const match = fullMessage.match(suggestionsRegex);
+            if (match && match[1]) {
+                try {
+                    const parsedSuggestions = JSON.parse(match[1]);
+                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string')) {
+                        setSuggestedPrompts(parsedSuggestions);
+                    } else {
+                        setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+                    }
+                } catch (e) {
+                    console.warn("Failed to parse suggestions JSON on stream end:", e);
+                    setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+                }
+            } else {
+                setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+            }
+
+            const cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
+            setReportChatMessage(temporaryId, cleanedMessage); // C38: Set final, cleaned message
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error: unknown) {
@@ -221,7 +214,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
                         onClick={() => { 
                             clearReportChatHistory(currentPage?.pageTitle || "Report"); 
-                            // C15 Fix: Don't scroll window on clear
                             setTimeout(() => textareaRef.current?.focus(), 0); 
                         }} 
                         title="Clear Chat History"
@@ -250,8 +242,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C37 FIX: Add prose-p:mb-0 to remove extra space from paragraphs
-                                <div className={`prose prose-sm max-w-none prose-p:mb-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                <div className={`prose prose-sm max-w-none prose-p:mb-0 prose-li:my-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
                                     <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
@@ -261,7 +252,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            {/* C35: Suggested Prompts (Chips) */}
+            {/* Suggested Prompts (Chips) */}
             {!isThinking && suggestedPrompts.length > 0 && (
                 <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap">
                     {suggestedPrompts.map((prompt, index) => (

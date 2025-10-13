@@ -17,8 +17,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,
-        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4 space-y-1" {...props} />,
-        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4 space-y-1" {...props} />,
+        // C38: Removed space-y-1 to make lists more compact. Spacing will be handled by prose.
+        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4" {...props} />,
+        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4" {...props} />,
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,

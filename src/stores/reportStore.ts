@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
 // Updated on: C37 (Fix image path generation to use manifest's basePath.)
 // Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
 // Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
@@ -143,6 +144,7 @@ export interface ReportActions {
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
+    setReportChatMessage: (id: string, message: string) => void; // C38: New action
     updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
     clearReportChatHistory: (currentPageTitle: string) => void;
     togglePromptVisibility: () => void;
@@ -502,6 +504,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
+            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };

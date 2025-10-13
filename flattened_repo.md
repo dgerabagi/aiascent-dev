@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T18:55:28.429Z
+  Date Generated: 2025-10-13T19:31:58.256Z
   ---
   Total Files: 120
-  Approx. Tokens: 295920
+  Approx. Tokens: 296053
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (6679 tokens)
+7. src\stores\reportStore.ts (6768 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -47,7 +47,7 @@
 25. src\app\layout.tsx - Lines: 44 - Chars: 1370 - Tokens: 343
 26. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 27. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-28. src\components\layout\Footer.tsx - Lines: 31 - Chars: 1006 - Tokens: 252
+28. src\components\layout\Footer.tsx - Lines: 32 - Chars: 1064 - Tokens: 266
 29. src\components\layout\Header.tsx - Lines: 62 - Chars: 2240 - Tokens: 560
 30. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 31. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
@@ -84,16 +84,16 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14403 - Tokens: 3601
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 292 - Chars: 13656 - Tokens: 3414
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 574 - Chars: 26713 - Tokens: 6679
+69. src\stores\reportStore.ts - Lines: 577 - Chars: 27069 - Tokens: 6768
 70. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 195 - Chars: 9431 - Tokens: 2358
+74. src\app\api\chat\route.ts - Lines: 208 - Chars: 10224 - Tokens: 2556
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -102,7 +102,7 @@
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 47 - Chars: 1970 - Tokens: 493
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 48 - Chars: 2046 - Tokens: 512
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -9374,7 +9374,12 @@ return (
 <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-4 md:py-0 text-center md:text-left">
 {/* Left-aligned text */}
 <p className="text-sm text-muted-foreground">
-Built using the Data Curation Environment. The source code is available on{' '}
+Built in three days using the Data Curation Environment, with the only cost to purchase a domain ($6).
+
+</p>
+{/* Right-aligned text */}
+<p className="text-sm text-muted-foreground mt-2 md:mt-0">
+&copy; 2025 aiascent.dev. All rights reserved. Source code is available on{' '}
 <a
 href="https://github.com/dgerabagi/aiascent-dev"
 target="_blank"
@@ -9384,10 +9389,6 @@ className="font-medium underline underline-offset-4 hover:text-primary transitio
 GitHub
 </a>
 .
-</p>
-{/* Right-aligned text */}
-<p className="text-sm text-muted-foreground mt-2 md:mt-0">
-&copy; 2025 aiascent.dev. All rights reserved.
 </p>
 </div>
 </footer>
@@ -12486,7 +12487,7 @@ export default PromptNavigator;
 <file path="src/components/report-viewer/ReportChatPanel.tsx">
 // src/components/report-viewer/ReportChatPanel.tsx
 'use client';
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
@@ -12498,10 +12499,17 @@ interface ReportChatPanelProps {
 
 // Regex to strip internal LLM thinking tags and content
 const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
+const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
-    const { toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown } = useReportStore.getState();
-    const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts } = useReportState(state => ({
+    const { 
+        toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown,
+        setReportChatMessage, // C38: Import new action
+    } = useReportStore.getState();
+    const { 
+        allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts 
+    } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         reportChatHistory: state.reportChatHistory,
@@ -12520,8 +12528,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C15 Fix: Prevent scrolling entire page on new messages.
-    // Use specific container ref for scrolling.
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -12531,61 +12537,26 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
-    // Stop propagation of keys to prevent report navigation
     const handlePanelKeyDown = (e: React.KeyboardEvent) => {
         e.stopPropagation();
     };
 
-    // C19: Beautify LLM output by stripping special tokens
+    // C38: Simplified parser, as suggestion block is now stripped before saving to state.
     const parseFinalMessage = (rawText: string): string => {
-        // C35: Strip out suggestions block before rendering
-        const suggestionsRegex = /:::suggestions:::[\s\S]*?:::end_suggestions:::/g;
-        let cleanedText = rawText.replace(suggestionsRegex, '').trim();
-
-        // C36 FIX: Strip out thinking tags
-        cleanedText = cleanedText.replace(thinkingRegex, '').trim();
+        let cleanedText = rawText.replace(thinkingRegex, '').trim();
 
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
     
         if (finalMessageIndex !== -1) {
-            // If marker exists, take everything after it
             return cleanedText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
-        // C19 Fix: If streaming, don't show "could not parse" yet.
-        // Just strip analysis tags if present to show raw stream cleanly.
         const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*?(?=<\|channel\|>|$)/g;
         cleanedText = cleanedText.replace(analysisRegex, '').trim();
         
         return cleanedText;
     };
-
-    // C35: Parse suggestions from the last Ascentia message
-    const lastAscentiaMessage = useMemo(() => {
-        return [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia');
-    }, [reportChatHistory]);
-
-    useEffect(() => {
-        if (lastAscentiaMessage && lastAscentiaMessage.status === 'complete') {
-            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
-            const match = lastAscentiaMessage.message.match(suggestionsRegex);
-            if (match && match[1]) {
-                try {
-                    const newSuggestions = JSON.parse(match[1]);
-                    if (Array.isArray(newSuggestions) && newSuggestions.every(s => typeof s === 'string')) {
-                        // Only update if different to prevent infinite loops
-                        if (JSON.stringify(newSuggestions) !== JSON.stringify(suggestedPrompts)) {
-                            setSuggestedPrompts(newSuggestions);
-                        }
-                    }
-                } catch (e) {
-                    console.warn("Failed to parse suggestions JSON:", e);
-                }
-            }
-        }
-    }, [lastAscentiaMessage, setSuggestedPrompts, suggestedPrompts]);
-
 
     const sendMessage = async (text: string) => {
         if (isThinking) return;
@@ -12598,13 +12569,11 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
         
-        // C27: Determine knowledge base based on report name
         const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
-            // C17: Enhanced error handling in fetch
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 300000); // C37: Increased to 5 minutes
+            const timeoutId = setTimeout(() => controller.abort(), 300000);
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -12612,7 +12581,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 body: JSON.stringify({ 
                     prompt: text, 
                     pageContext,
-                    knowledgeBase: knowledgeBase // C27: Send KB identifier
+                    knowledgeBase: knowledgeBase
                 }),
                 signal: controller.signal,
             });
@@ -12629,6 +12598,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let done = false;
+            let fullMessage = ''; // C38: Accumulate full message
             
             updateReportChatStatus(temporaryId, 'streaming');
             while (!done) {
@@ -12636,7 +12606,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
                 
-                // Parse SSE format (data: ...)
                 const lines = chunk.split('\n');
                 for (const line of lines) {
                     if (line.startsWith('data: ')) {
@@ -12646,15 +12615,40 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             const parsed = JSON.parse(data);
                             const textChunk = parsed.choices?.[0]?.text || '';
                             if (textChunk) {
+                                fullMessage += textChunk; // C38: Accumulate
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
-                            // If not JSON, append raw data (fallback)
-                            if (data) updateReportChatMessage(temporaryId, data);
+                            if (data) {
+                                fullMessage += data; // C38: Accumulate
+                                updateReportChatMessage(temporaryId, data);
+                            }
                         }
                     }
                 }
             }
+
+            // C38: Refactored suggestion parsing logic
+            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
+            const match = fullMessage.match(suggestionsRegex);
+            if (match && match[1]) {
+                try {
+                    const parsedSuggestions = JSON.parse(match[1]);
+                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string')) {
+                        setSuggestedPrompts(parsedSuggestions);
+                    } else {
+                        setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+                    }
+                } catch (e) {
+                    console.warn("Failed to parse suggestions JSON on stream end:", e);
+                    setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+                }
+            } else {
+                setSuggestedPrompts(DEFAULT_SUGGESTIONS);
+            }
+
+            const cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
+            setReportChatMessage(temporaryId, cleanedMessage); // C38: Set final, cleaned message
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error: unknown) {
@@ -12707,7 +12701,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
                         onClick={() => { 
                             clearReportChatHistory(currentPage?.pageTitle || "Report"); 
-                            // C15 Fix: Don't scroll window on clear
                             setTimeout(() => textareaRef.current?.focus(), 0); 
                         }} 
                         title="Clear Chat History"
@@ -12736,8 +12729,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C37 FIX: Add prose-p:mb-0 to remove extra space from paragraphs
-                                <div className={`prose prose-sm max-w-none prose-p:mb-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                <div className={`prose prose-sm max-w-none prose-p:mb-0 prose-li:my-0 ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
                                     <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
@@ -12747,7 +12739,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            {/* C35: Suggested Prompts (Chips) */}
+            {/* Suggested Prompts (Chips) */}
             {!isThinking && suggestedPrompts.length > 0 && (
                 <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap">
                     {suggestedPrompts.map((prompt, index) => (
@@ -12955,6 +12947,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
 // Updated on: C37 (Fix image path generation to use manifest's basePath.)
 // Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
 // Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
@@ -13099,6 +13092,7 @@ export interface ReportActions {
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
+    setReportChatMessage: (id: string, message: string) => void; // C38: New action
     updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
     clearReportChatHistory: (currentPageTitle: string) => void;
     togglePromptVisibility: () => void;
@@ -13458,6 +13452,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
+            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
@@ -14042,18 +14037,31 @@ Finally, after your main response, generate 2-4 short, relevant follow-up questi
 :::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::
 Do not include any text outside of the JSON array within these delimiters.`;
 
-// System prompts defined as per A27, updated in C35 for dynamic suggestions
+// C38: New explicit markdown formatting instructions
+const markdownFormattingInstruction = `
+Use standard GitHub Flavored Markdown for all formatting.
+- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\n\n   More text.".
+- For inline code, use single backticks, for example: \`DCE.vsix\`. Do not add blank lines before or after inline code.
+- For multi-line code blocks, use triple backticks with a language identifier.
+- Avoid using HTML tags like <kbd>. Use markdown alternatives, like backticks for commands.
+`;
+
+// System prompts defined as per A27, updated in C35 for dynamic suggestions, and C38 for formatting
 const systemPrompts = {
     dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
 
 Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
 
-If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.${suggestionInstruction}`,
+If the answer isn't directly in the context, state that, but still try to provide related information if available. Use markdown for formatting as described below to enhance clarity. Do not invent information.
+${markdownFormattingInstruction}
+${suggestionInstruction}`,
     report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
-If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.${suggestionInstruction}`
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use markdown for formatting as described below. Do not invent information or use outside knowledge.
+${markdownFormattingInstruction}
+${suggestionInstruction}`
 };
 
 
@@ -15081,8 +15089,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,
-        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4 space-y-1" {...props} />,
-        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4 space-y-1" {...props} />,
+        // C38: Removed space-y-1 to make lists more compact. Spacing will be handled by prose.
+        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4" {...props} />,
+        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4" {...props} />,
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,

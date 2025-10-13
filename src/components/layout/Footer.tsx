@@ -8,7 +8,12 @@ return (
 <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-4 md:py-0 text-center md:text-left">
 {/* Left-aligned text */}
 <p className="text-sm text-muted-foreground">
-Built using the Data Curation Environment. The source code is available on{' '}
+Built in three days using the Data Curation Environment, with the only cost to purchase a domain ($6).
+
+</p>
+{/* Right-aligned text */}
+<p className="text-sm text-muted-foreground mt-2 md:mt-0">
+&copy; 2025 aiascent.dev. All rights reserved. Source code is available on{' '}
 <a
 href="https://github.com/dgerabagi/aiascent-dev"
 target="_blank"
@@ -18,10 +23,6 @@ className="font-medium underline underline-offset-4 hover:text-primary transitio
 GitHub
 </a>
 .
-</p>
-{/* Right-aligned text */}
-<p className="text-sm text-muted-foreground mt-2 md:mt-0">
-&copy; 2025 aiascent.dev. All rights reserved.
 </p>
 </div>
 </footer>
