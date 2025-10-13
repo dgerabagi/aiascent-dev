@@ -6,8 +6,6 @@
 // Updated on: C1373 (Verify path logic for report KB is correct.)
 // Updated on: C1356 (Incorporate the full pageContext from the client into the LLM system prompt.)
 // Updated on: C1344 (Add logic for loading and handling report-specific knowledge base and chat stream.)
-
-/*typescript
 import { type Socket, type Server as SocketIOServer } from 'socket.io';
 import { logInfo, logWarn, logError } from '../../logger';
 import { type PlayerState } from '../../server';
@@ -353,4 +351,3 @@ export async function handleReportAscentiaStream(io: SocketIOServer, socket: Soc
         logInfo(logPrefix, `Report stream ended for temporaryId: ${temporaryId}`);
     }
 }
-/* End of TypeScript code */
