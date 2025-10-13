@@ -149,18 +149,26 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
+            // --- C44: ROBUST POST-STREAM PROCESSING FOR SUGGESTIONS ---
             console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            // C41 FIX: Make regex more robust by allowing 2 or more colons.
-            const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
-            const match = fullMessage.match(suggestionsRegex);
-            let finalSuggestions = defaultSuggestionsForReport; // C42: Use report-specific default
+            
+            const startSuggestionRegex = /:{2,}suggestions:{2,}/;
+            const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
+            const startMatch = fullMessage.match(startSuggestionRegex);
+            const endMatch = fullMessage.match(endSuggestionRegex);
+
+            let finalSuggestions = defaultSuggestionsForReport;
             let cleanedMessage = fullMessage;
 
-            if (match && match[1]) {
-                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(match[1].trim()));
+            if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
+                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
+                const jsonContentEndIndex = endMatch.index;
+                const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
+                
+                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(jsonContent));
+                
                 try {
-                    const parsed = JSON.parse(match[1].trim());
+                    const parsed = JSON.parse(jsonContent);
                     if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
                         finalSuggestions = parsed;
                         console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
@@ -168,18 +176,19 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", jsonContent);
                 }
-                // Clean the suggestions block from the message regardless of successful parsing
-                cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
+                
+                // Clean the suggestions block from the message
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
 
             setSuggestedPrompts(finalSuggestions);
 
-            // Now, perform final message cleaning (e.g., stripping analysis tags) on the already-suggestions-stripped message
-            const finalContent = parseFinalMessage(cleanedMessage);
+            // Now, perform final message cleaning on the already-suggestions-stripped message
+            const finalContent = parseFinalMessage(cleanedMessage.trim());
 
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');

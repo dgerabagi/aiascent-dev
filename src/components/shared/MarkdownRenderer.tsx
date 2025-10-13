@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 interface MarkdownRendererProps {
   children: string;
@@ -11,6 +12,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
       components={{
         p: ({ node, ...props }) => <p {...props} />,
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,

@@ -43,10 +43,11 @@ Finally, after your main response, generate 2-4 short, relevant follow-up questi
 
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
-- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\\n\\n   More text.".
+- For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
+First item".
 - For inline code, use single backticks, for example: \`DCE.vsix\`. Do not add blank lines before or after inline code.
 - For multi-line code blocks, use triple backticks with a language identifier.
-- For tables, use standard markdown table syntax with pipes and hyphens.
+- For tables, use standard markdown table syntax with pipes and hyphens. Do not use HTML tags like <br> inside tables; use markdown newlines if necessary and supported by the renderer.
 - Avoid using HTML tags like <kbd>. Use markdown alternatives, like backticks for commands.
 `;
 
@@ -124,7 +125,7 @@ Assistant:`;
         const content = data.choices?.[0]?.text || '[]';
         // Extract JSON array from the response, as the model might add extra text
         const jsonMatch = content.match(/\[[\s\S]*\]/);
-        const jsonString = jsonMatch ? jsonMatch : '[]';
+        const jsonString = jsonMatch ? jsonMatch[0] : '[]';
         
         const suggestions = JSON.parse(jsonString);
         return NextResponse.json(suggestions);

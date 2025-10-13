@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 44 - great! now improve parsing robustness
+Current Cycle 45 - continue working on parsing of suggestions/overall suggestions solution
+Cycle 44 - great! now improve parsing robustness
 Cycle 43 - nice! now lets enhance...
 Cycle 42 - noice! now tiny fix in the report viewer in showcase
 Cycle 41 - 2/3 solved!
@@ -440,6 +441,76 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 45>
+<Cycle Context>
+nice! can we make a way for users to go fullscreen <> current view with this interactive whitepaper? also can we set a fixed width and instead do word wrap for the chips? they currently can get kind of long.
+
+also its possible we arent fully robust yet in that sometimes we get failed to fetch suggestions. also, more importantly, after interacting with the whitepaper, i then switched to the showcase and to the ascent report. after seeming to cycle through a few choices of questions, as evident by a few failures in the console logs provided in ephemeral (very end of the logs) below, the questions that i see ended up being questions abotu the DCE, and no questions about the ascent report. it should never be the case that questions from one report can leak or seep in to another report. can this be resolved? do we have a high-level planning artifact yet for our suggestions approach? we ought to lest we get drift/regression across these cycles.
+</Cycle Context>
+<Ephemeral Context>
+Image with src "/assets/icons/iterative-workflow.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Invalid URI. Load of media resource  failed. localhost:3000
+Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. warn-once.mjs:9:13
+Failed to fetch dynamic suggestions: Error: Invalid suggestions format
+    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:101
+app-index.js:33:22
+    error app-index.tsx:25
+    error hydration-error-info.ts:72
+    fetchAndSetSuggestions reportStore.ts:253
+[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need answer based on context: It's about Process as Asset whitepaper. The user asks: \"What benefits do high-level stakeholders expect to gain from adopting this framework?\" We have TLDR: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. For High-Level Stakeholders.\n\nThe provided chunks include some discussion of DCE, bottlenecks, etc. Need to summarize benefits for high-level stakeholders. Use markdown. Provide answer only based on context; no invented info. We can mention:\n\n- Faster content creation\n- Scalable expertise\n- Auditability and quality control\n- Reduced manual effort\n- Structured human-AI collaboration\n- Better cost estimation\n- Structured workflows\n- Reusability of AI interactions\n- Improved collaboration across teams\n\nLet's craft answer.<|end|><|start|>assistant<|channel|>final<|message|>**Benefits for High‑Level Stakeholders**\n\n| Benefit | Why It Matters to Stakeholders |\n|---------|--------------------------------|\n| **Accelerated Content Delivery** | The DCE framework turns human‑AI interaction into a *structured, auditable workflow*. By automating the extraction, prompt construction, and result ingestion steps, stakeholders see content produced faster without sacrificing quality. |\n| **Scalable Expertise & Knowledge Reuse** | Every AI‑generated plan, code snippet, or data transformation is captured in a persistent graph. Teams can retrieve past work, avoid duplication, and scale expertise across projects—reducing the learning curve for new hires or cross‑functional teams. |\n| **Improved Collaboration & Transparency** | The *structured view* (plan + associated files + collapsible sections) keeps every participant on the same page. Stakeholders can review AI reasoning, approve “accept” actions, and track changes in a single source of truth. |\n| **Auditability & Compliance** | Every prompt, AI response, human decision, and file change is logged. This satisfies audit requirements for regulated industries and gives stakeholders confidence that processes are traceable and repeatable. |\n| **Cost‑Effective AI Use** | The framework includes cost estimation hooks (`requestCostEstimation()`). Stakeholders can see token usage in real‑time, optimize prompts, and avoid hidden fees—critical for budgeting large‑scale AI workloads. |\n| **Reduced Manual Overhead** | By eliminating manual copy‑paste of context and repetitive re‑prompting, the framework frees up human resources to focus on higher‑value tasks (e.g., strategy, design). |\n| **Enhanced Decision Confidence** | Structured AI outputs with syntax‑highlighted code blocks and associated file lists give stakeholders a clear view of what will be written or modified—reducing uncertainty in technical decisions. |\n\nIn short: the *Process as Asset* framework equips high‑level stakeholders with faster, more reliable content creation, transparent collaboration, and predictable AI costs—all while preserving auditability and reusability across the organization." ReportChatPanel.tsx:153:21
+[Chat Panel] No suggestions block found in the response. Using default suggestions for this report. ReportChatPanel.tsx:179:25
+Image with src "/assets/icons/parallel-copilot.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
+    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:93
+app-index.js:33:22
+    error app-index.tsx:25
+    error hydration-error-info.ts:72
+    fetchAndSetSuggestions reportStore.ts:253
+[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer the question. The context includes information about DCE benefits: capturing workflow as persistent knowledge graph, reducing bottlenecks like context problem, collaboration gap, iteration overhead, auditability vacuum. Also examples: rapid development of training materials; use case spotlight shows DCE workflow vs traditional. So measuring impact of DCE on quality and speed could involve metrics such as time to complete projects, number of iterations needed, error rate in final documents, audit trail completeness, consistency across documentation, reuse of curated context, reduction in manual editing effort, improved collaboration metrics like fewer duplicated efforts.\n\nWe need to answer based on provided context. Provide bullet points with explanation. Also mention that DCE's persistent Knowledge Graph allows reviewing cycle history for quality improvements. Also measuring speed: average time from start to finish, number of cycles, etc.\n\nAlso mention how the whitepaper and case study show hours vs weeks.\n\nWe should not add invented info but can extrapolate based on given content. Use markdown.\n\nAfter main answer produce suggestions JSON array with 2-4 follow-up questions.<|end|><|start|>assistant<|channel|>final<|message|>**Measuring DCE Impact: Quality & Speed**\n\n| Dimension | How to Measure | Why It Matters |\n|-----------|----------------|---------------|\n| **Time‑to‑Completion** | *Track the total elapsed time from Cycle 0 to final “Accept”.*<br>*Compare against the traditional manual workflow (weeks vs. hours).* | Shows the speed advantage that DCE promises. |\n| **Number of Iterations / Cycles** | *Count how many cycles are required before a document is accepted.*<br>*Fewer cycles imply less back‑and‑forth and faster decision making.* | Demonstrates reduced iteration overhead (Section 3.3). |\n| **Error / Defect Rate** | *Audit the final documents for factual or formatting errors.*<br>*Use the Knowledge Graph’s audit trail to trace any corrections.* | Confirms the quality gains from structured context curation and AI‑assisted review. |\n| **Reuse & Versioning of Curated Context** | *Measure how often a curated Selection Set is reused across projects.*<br>*Track version history for each asset.* | Highlights scalability: the same context can be shared without duplication (Section 4.1). |\n| **Collaboration Efficiency** | *Survey operators on time spent re‑constructing context when handing off tasks.*<br>*Measure the reduction in manual reconstruction effort.* | Addresses the “Collaboration Gap” bottleneck (Challenge 2). |\n| **Auditability Completeness** | *Count how many decisions and AI responses are captured in the Knowledge Graph.*<br>*Verify that all cycles have traceable provenance.* | Supports accountability, especially for mission‑critical work (Section 4.3). |\n| **User Satisfaction / Onboarding Speed** | *Measure time for new team members to understand project history via Cycle Navigator.* | Demonstrates training and onboarding benefits from the graph (Section 4.3). |\n\n### Practical Steps\n\n1. **Baseline Capture** – Before adopting DCE, record traditional metrics (time, cycles, errors).\n2. **Implement DCE Workflows** – Use the Parallel Co‑Pilot Panel to curate context, instruct AI, review diffs, and accept changes.\n3. **Collect DCE Metrics** – The built‑in cycle history automatically logs time stamps, version numbers, and diff statistics.\n4. **Compare & Analyze** – Plot before/after charts for each metric; use the Knowledge Graph to drill into specific cycles that caused quality regressions or delays.\n\n---\n\n### Suggested Next Questions\n\n:::suggestions:::[\n  \"How does the DCE handle large datasets that exceed memory limits?\",\n  \"What are common pitfalls when setting up the Parallel Co‑Pilot Panel?\",\n  \"Can the Knowledge Graph be exported for external audit tools?\"\n]:::end_suggestions:::" ReportChatPanel.tsx:153:21
+[Chat Panel] Suggestions block found. Raw content: "[\n  \"How does the DCE handle large datasets that exceed memory limits?\",\n  \"What are common pitfalls when setting up the Parallel Co‑Pilot Panel?\",\n  \"Can the Knowledge Graph be exported for external audit tools?\"\n]" ReportChatPanel.tsx:164:25
+[Chat Panel] Successfully parsed suggestions: 
+Array(3) [ "How does the DCE handle large datasets that exceed memory limits?", "What are common pitfalls when setting up the Parallel Co‑Pilot Panel?", "Can the Knowledge Graph be exported for external audit tools?" ]
+ReportChatPanel.tsx:169:33
+[Fast Refresh] rebuilding hot-reloader-client.js:187:25
+[Fast Refresh] done in 1416ms hot-reloader-client.js:44:13
+[Fast Refresh] rebuilding hot-reloader-client.js:187:25
+[Fast Refresh] done in 771ms hot-reloader-client.js:44:13
+XHRPOST
+http://localhost:3000/api/chat
+[HTTP/1.1 500 Internal Server Error 4148ms]
+
+Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
+    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:93
+    ReportViewer webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportViewer.tsx:66
+    React 19
+    workLoop webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256
+    flushWork webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225
+    performWorkUntilDeadline webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534
+app-index.js:33:22
+Failed to fetch dynamic suggestions: Error: Invalid suggestions format
+    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:101
+    ReportViewer webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportViewer.tsx:66
+    React 5
+app-index.js:33:22
+
+</Ephemeral Context>
+<Previous Cycle 44 Summary of Actions>
+I have analyzed the request to evolve the "prompt chips" from being static or based on the last AI response to being dynamically generated based on the static content of the currently viewed report page. This is an excellent enhancement that will make the "Ask @Ascentia" feature feel more intelligent and context-aware from the very first interaction.
+
+My proposed course of action is to implement this by creating a new, specialized mode for our backend chat API. This mode will be triggered by a new flag and will be responsible only for generating suggestions based on the page content, returning a clean JSON array. I will then update the frontend state management and UI components to call this new API endpoint whenever the user navigates to a new page, manage the loading state, and display the dynamically generated suggestions.
+
+This approach is robust, reuses our existing RAG infrastructure efficiently, and provides a clear separation of concerns, leading to a more engaging and intuitive user experience.
+
+1.  **Modify Backend API (`src/app/api/chat/route.ts`):** I will enhance the `POST` handler to recognize a new boolean flag, `generateSuggestionsOnly`. When this flag is true, the API will perform its standard RAG lookup but will use a specialized, non-streaming prompt that instructs the LLM to *only* generate a JSON array of 3-4 relevant questions based on the provided context. The API will then parse this response and return the JSON array directly, bypassing the streaming logic.
+
+2.  **Enhance State Management (`src/stores/reportStore.ts`):** I will introduce a new state variable, `suggestionsStatus: 'idle' | 'loading' | 'success' | 'error'`, to track the fetching process. I will create a new asynchronous action, `fetchPageSuggestions`, which will set the loading state, call our modified chat API with the `generateSuggestionsOnly` flag, and update the `suggestedPrompts` state with the result upon success or handle errors appropriately.
+
+3.  **Trigger Suggestions on Page Change (`src/components/report-viewer/ReportViewer.tsx`):** I will add a `useEffect` hook that listens for changes to the `currentPageIndex`. When the user navigates to a new page, this effect will trigger the new `fetchPageSuggestions` action, initiating the process of generating context-aware chips for the new page content.
+
+4.  **Update UI for Loading State (`src/components/report-viewer/ReportChatPanel.tsx`):** I will update the `ReportChatPanel` to observe the new `suggestionsStatus`. While the status is `'loading'`, it will display a "Generating suggestions..." message or a spinner animation in place of the chips, providing clear feedback to the user that new, relevant prompts are being created.
+</Previous Cycle 44 Summary of Actions>
+</Cycle 45>
+
 <Cycle 44>
 <Cycle Context>
 great work! however i think we still need to improve upon the robusness/parsing.
@@ -448,62 +519,6 @@ great work! however i think we still need to improve upon the robusness/parsing.
 2. in the second response (second screenshot), there are two issues, first the bullets are on their own line rather than having the bullets content immediately following the bullet, as per usual.
 3. the suggestions once again missed parsing by a missing `:`, this time, the missing colon is the final character: `:::end_suggestions::`, in that theres three colons on the left side, but only two on the right, throwing off the parsing.
 </Cycle Context>
-<Ephemeral Context>
-<browser console>
-Invalid URI. Load of media resource  failed. aiascent.dev
-GET
-https://aiascent.dev/favicon.ico
-[HTTP/2 404  125ms]
-
-XHRPOST
-https://aiascent.dev/api/chat
-[HTTP/2 500  2391ms]
-
-Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
-    NextJS 32
-23-879d931dc9a45e27.js:1:3948
-Failed to fetch dynamic suggestions: Error: Invalid suggestions format
-    NextJS 12
-23-879d931dc9a45e27.js:1:3948
-XHRPOST
-https://aiascent.dev/api/chat
-[HTTP/2 500  5227ms]
-
-XHRPOST
-https://aiascent.dev/api/chat
-[HTTP/2 500  7588ms]
-
-Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
-    NextJS 32
-23-879d931dc9a45e27.js:1:3948
-Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
-    NextJS 12
-23-879d931dc9a45e27.js:1:3948
-Failed to fetch dynamic suggestions: Error: Invalid suggestions format
-    NextJS 12
-23-879d931dc9a45e27.js:1:3948
-XHRPOST
-https://aiascent.dev/api/chat
-[HTTP/2 500  2421ms]
-
-Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
-    NextJS 12
-23-879d931dc9a45e27.js:1:3948
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer based on context only. The given chunks mention U.S., China, China has integrated model, US fissured model. Also mention \"Great Cognitive Capital Transfer\" and that the U.S. is outsourcing annotation leading to transfer of cognitive capital.\n\nThe question: examples of countries that successfully leveraged cognitive capital for economic growth? Context mentions China as a success. The US is struggling. No other country mentioned explicitly in context. So we can only say China, maybe mention U.S. failing but not example. Provide concise answer referencing China as integrated model, and possibly note lack of others in provided context.\n\nWe should be careful: \"Based on the provided context\" means only from chunks given. Only countries referenced: United States, China. So answer that China successfully leveraged cognitive capital; US hasn't yet. Possibly mention other examples not in context? We must not invent. So we can say: In the report, China is highlighted as leveraging cognitive capital for growth. No other country explicitly mentioned.\n\nProvide markdown bullet list, short.\n\nThen follow-up suggestions.<|end|><|start|>assistant<|channel|>final<|message|>**Examples from the report**\n\n| Country | How it leveraged cognitive capital |\n| :--- | :--- |\n| **China** | • State‑led professionalization of AI talent through integrated curricula and professional identity.<br>• Built a “Cognitive Capital” pipeline that gave China a 5.5‑year head start over the United States.<br>• The Integrated Model is described as strategically durable, enabling sustained economic growth driven by human intellectual capacity. |\n| **United States** | • Not highlighted as a success; the report describes it as “fissured” and strategically unsustainable in building its own cognitive capital. |\n\nNo other countries are mentioned in the provided context.  \n\n---\n\n:::suggestions:::[\n  \"What specific policies did China implement to build its integrated model?\",\n  \"How does the report define the difference between a fissured and an integrated model?\"\n]:::end_suggestions::" 90-8f995d15749d06dd.js:1:9652
-[Chat Panel] Suggestions block found. Raw content: "[\n  \"What specific policies did China implement to build its integrated model?\",\n  \"How does the report define the difference between a fissured and an integrated model?\"\n]" 90-8f995d15749d06dd.js:1:9843
-[Chat Panel] Successfully parsed suggestions: 
-Array [ "What specific policies did China implement to build its integrated model?", "How does the report define the difference between a fissured and an integrated model?" ]
-90-8f995d15749d06dd.js:1:10037
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer based on context chunks.\n\nWe have info about China's integrated model. Specific policies mentioned: inland-sourcing (内陆外包) strategy, data annotation industry in interior provinces; \"precision poverty alleviation\" campaign; local governments subsidizing and tax breaks for data labeling companies; state-guided industrial placement; creating data labeling factories in rural counties; integration of AI workforce into national strategy; professionalized, state-sanctioned training. Also mention directive policy integrated into national strategy; proactive industrial policy; mandatory AI education and vocational training.\n\nWe should cite those from context: inland-sourcing, precision poverty alleviation, subsidies, tax breaks, data labeling factories, etc.\n\nAlso mention \"professionalized, state-sanctioned\" workforce, \"mandatory AI education\", \"vocational training\". Provide answer concisely with bullet list of specific policies. Use markdown formatting. Then after main response we need to generate follow-up questions as JSON array inside delimiters. Format: :::suggestions:::[ ... ]:::end_suggestions:::\n\nLet's craft.\n\n<|end|><|start|>assistant<|channel|>final<|message|>China’s integrated AI model rests on a handful of concrete, state‑led policy pillars that turn domestic labour and education into national assets:\n\n- **Inland‑Sourcing (内陆外包)** – the government directs data‑annotation work to interior provinces rather than coastal hubs.  This shifts the supply chain inward, reduces dependence on foreign talent, and keeps critical skills within a controlled domestic ecosystem.\n\n- **Precision Poverty Alleviation (精准扶贫)** – data‑labeling factories are established in historically impoverished counties (e.g., Guizhou, Shanxi, Henan).  Local governments offer subsidies, tax breaks, and other incentives to attract annotation firms, turning low‑cost labour into high‑value AI work.\n\n- **Professionalized Workforce Standards** – the state sets mandatory AI education and vocational training pathways, ensuring that workers receive formal, structured instruction rather than informal or outsourced “ghost” roles.  This builds a deep, K‑PhD talent pipeline with clear career progression.\n\n- **State‑Sanctioned Industrial Policy** – unlike the U.S.’s laissez‑faire approach, China embeds AI development into national strategy documents and industrial plans, providing proactive support for research institutions and companies alike.\n\n- **Data Integrity & Security Controls** – by keeping annotation and model fine‑tuning on‑premises, the policy limits exposure to data poisoning, espionage, or IP theft that would otherwise arise from offshore outsourcing.\n\nThese policies together create a “national learning machine” that continuously feeds high‑quality data into models, reinforcing China’s long‑term AI competitiveness.  \n\n:::suggestions:::[\n  \"How does inland‑sourcing impact the quality of AI models?\",\n  \"What are the key differences between U.S. and Chinese approaches to workforce training?\",\n  \"Can these policies be replicated in other countries?\"\n]:::end_suggestions::" 90-8f995d15749d06dd.js:1:9652
-[Chat Panel] Suggestions block found. Raw content: "[ ... ]" 90-8f995d15749d06dd.js:1:9843
-[Chat Panel] Failed to parse suggestions JSON: SyntaxError: JSON.parse: unexpected character at line 1 column 3 of the JSON data
-    NextJS 32
- Raw content was: 
-Array [ ":::suggestions:::[ ... ]:::end_suggestions:::", "[ ... ]" ]
-23-879d931dc9a45e27.js:1:3948
-
-</browser console>
-</Ephemeral Context>
 <Previous Cycle 43 Summary of Actions>
 I have analyzed the request to implement different default chat questions for the two interactive reports. My course of action is to make the state management and chat panel components "report-aware" to handle this context-specific requirement.
 
@@ -2775,10 +2790,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T20:52:03.104Z
+  Date Generated: 2025-10-13T21:18:34.263Z
   ---
   Total Files: 120
-  Approx. Tokens: 298116
+  Approx. Tokens: 298259
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2809,7 +2824,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
 15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-16. package.json - Lines: 50 - Chars: 1450 - Tokens: 363
+16. package.json - Lines: 51 - Chars: 1478 - Tokens: 370
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -2858,7 +2873,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 317 - Chars: 15229 - Tokens: 3808
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15667 - Tokens: 3917
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -2867,7 +2882,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 261 - Chars: 12038 - Tokens: 3010
+74. src\app\api\chat\route.ts - Lines: 262 - Chars: 12078 - Tokens: 3020
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2876,7 +2891,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 64 - Chars: 2974 - Tokens: 744
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -11792,6 +11807,7 @@ This artifact provides a structured format for tracking development tasks for th
     "react-icons": "^5.2.1",
     "react-markdown": "^9.0.1",
     "re-resizable": "^6.9.11",
+    "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
@@ -15410,18 +15426,26 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
+            // --- C44: ROBUST POST-STREAM PROCESSING FOR SUGGESTIONS ---
             console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            // C41 FIX: Make regex more robust by allowing 2 or more colons.
-            const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
-            const match = fullMessage.match(suggestionsRegex);
-            let finalSuggestions = defaultSuggestionsForReport; // C42: Use report-specific default
+            
+            const startSuggestionRegex = /:{2,}suggestions:{2,}/;
+            const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
+            const startMatch = fullMessage.match(startSuggestionRegex);
+            const endMatch = fullMessage.match(endSuggestionRegex);
+
+            let finalSuggestions = defaultSuggestionsForReport;
             let cleanedMessage = fullMessage;
 
-            if (match && match[1]) {
-                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(match[1].trim()));
+            if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
+                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
+                const jsonContentEndIndex = endMatch.index;
+                const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
+                
+                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(jsonContent));
+                
                 try {
-                    const parsed = JSON.parse(match[1].trim());
+                    const parsed = JSON.parse(jsonContent);
                     if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
                         finalSuggestions = parsed;
                         console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
@@ -15429,18 +15453,19 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", jsonContent);
                 }
-                // Clean the suggestions block from the message regardless of successful parsing
-                cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
+                
+                // Clean the suggestions block from the message
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
 
             setSuggestedPrompts(finalSuggestions);
 
-            // Now, perform final message cleaning (e.g., stripping analysis tags) on the already-suggestions-stripped message
-            const finalContent = parseFinalMessage(cleanedMessage);
+            // Now, perform final message cleaning on the already-suggestions-stripped message
+            const finalContent = parseFinalMessage(cleanedMessage.trim());
 
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
@@ -16917,10 +16942,11 @@ Finally, after your main response, generate 2-4 short, relevant follow-up questi
 
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
-- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\\n\\n   More text.".
+- For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
+First item".
 - For inline code, use single backticks, for example: \`DCE.vsix\`. Do not add blank lines before or after inline code.
 - For multi-line code blocks, use triple backticks with a language identifier.
-- For tables, use standard markdown table syntax with pipes and hyphens.
+- For tables, use standard markdown table syntax with pipes and hyphens. Do not use HTML tags like <br> inside tables; use markdown newlines if necessary and supported by the renderer.
 - Avoid using HTML tags like <kbd>. Use markdown alternatives, like backticks for commands.
 `;
 
@@ -16998,7 +17024,7 @@ Assistant:`;
         const content = data.choices?.[0]?.text || '[]';
         // Extract JSON array from the response, as the model might add extra text
         const jsonMatch = content.match(/\[[\s\S]*\]/);
-        const jsonString = jsonMatch ? jsonMatch : '[]';
+        const jsonString = jsonMatch ? jsonMatch[0] : '[]';
         
         const suggestions = JSON.parse(jsonString);
         return NextResponse.json(suggestions);
@@ -18003,6 +18029,7 @@ export default MissionSectionBlock;
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 interface MarkdownRendererProps {
   children: string;
@@ -18012,6 +18039,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
       components={{
         p: ({ node, ...props }) => <p {...props} />,
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,

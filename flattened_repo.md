@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T20:52:03.104Z
+  Date Generated: 2025-10-13T21:18:34.263Z
   ---
   Total Files: 120
-  Approx. Tokens: 298116
+  Approx. Tokens: 298259
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -35,7 +35,7 @@
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
 15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-16. package.json - Lines: 50 - Chars: 1450 - Tokens: 363
+16. package.json - Lines: 51 - Chars: 1478 - Tokens: 370
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -84,7 +84,7 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 317 - Chars: 15229 - Tokens: 3808
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15667 - Tokens: 3917
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -93,7 +93,7 @@
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 261 - Chars: 12038 - Tokens: 3010
+74. src\app\api\chat\route.ts - Lines: 262 - Chars: 12078 - Tokens: 3020
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -102,7 +102,7 @@
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 64 - Chars: 2974 - Tokens: 744
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -9018,6 +9018,7 @@ This artifact provides a structured format for tracking development tasks for th
     "react-icons": "^5.2.1",
     "react-markdown": "^9.0.1",
     "re-resizable": "^6.9.11",
+    "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
@@ -12636,18 +12637,26 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
+            // --- C44: ROBUST POST-STREAM PROCESSING FOR SUGGESTIONS ---
             console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            // C41 FIX: Make regex more robust by allowing 2 or more colons.
-            const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
-            const match = fullMessage.match(suggestionsRegex);
-            let finalSuggestions = defaultSuggestionsForReport; // C42: Use report-specific default
+            
+            const startSuggestionRegex = /:{2,}suggestions:{2,}/;
+            const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
+            const startMatch = fullMessage.match(startSuggestionRegex);
+            const endMatch = fullMessage.match(endSuggestionRegex);
+
+            let finalSuggestions = defaultSuggestionsForReport;
             let cleanedMessage = fullMessage;
 
-            if (match && match[1]) {
-                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(match[1].trim()));
+            if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
+                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
+                const jsonContentEndIndex = endMatch.index;
+                const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
+                
+                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(jsonContent));
+                
                 try {
-                    const parsed = JSON.parse(match[1].trim());
+                    const parsed = JSON.parse(jsonContent);
                     if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
                         finalSuggestions = parsed;
                         console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
@@ -12655,18 +12664,19 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", jsonContent);
                 }
-                // Clean the suggestions block from the message regardless of successful parsing
-                cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
+                
+                // Clean the suggestions block from the message
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
 
             setSuggestedPrompts(finalSuggestions);
 
-            // Now, perform final message cleaning (e.g., stripping analysis tags) on the already-suggestions-stripped message
-            const finalContent = parseFinalMessage(cleanedMessage);
+            // Now, perform final message cleaning on the already-suggestions-stripped message
+            const finalContent = parseFinalMessage(cleanedMessage.trim());
 
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
@@ -14143,10 +14153,11 @@ Finally, after your main response, generate 2-4 short, relevant follow-up questi
 
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
-- For lists, use compact formatting. Each list item should be a single, compact line without extra blank lines between items or within a single item. For example, write "1. First item" instead of "1. First item\\n\\n   More text.".
+- For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
+First item".
 - For inline code, use single backticks, for example: \`DCE.vsix\`. Do not add blank lines before or after inline code.
 - For multi-line code blocks, use triple backticks with a language identifier.
-- For tables, use standard markdown table syntax with pipes and hyphens.
+- For tables, use standard markdown table syntax with pipes and hyphens. Do not use HTML tags like <br> inside tables; use markdown newlines if necessary and supported by the renderer.
 - Avoid using HTML tags like <kbd>. Use markdown alternatives, like backticks for commands.
 `;
 
@@ -14224,7 +14235,7 @@ Assistant:`;
         const content = data.choices?.[0]?.text || '[]';
         // Extract JSON array from the response, as the model might add extra text
         const jsonMatch = content.match(/\[[\s\S]*\]/);
-        const jsonString = jsonMatch ? jsonMatch : '[]';
+        const jsonString = jsonMatch ? jsonMatch[0] : '[]';
         
         const suggestions = JSON.parse(jsonString);
         return NextResponse.json(suggestions);
@@ -15229,6 +15240,7 @@ export default MissionSectionBlock;
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 interface MarkdownRendererProps {
   children: string;
@@ -15238,6 +15250,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
       components={{
         p: ({ node, ...props }) => <p {...props} />,
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
