@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 46 - final solution
+Current Cycle 47 - continue working on robustness
+Cycle 46 - final solution
 Cycle 45 - continue working on parsing of suggestions/overall suggestions solution
 Cycle 44 - great! now improve parsing robustness
 Cycle 43 - nice! now lets enhance...
@@ -447,6 +448,215 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 47>
+<Cycle Context>
+while in darkmode, against the gray background of uncompleted progress on the progress bar of a report, the black text color of the number percent indication is hard to read. once the blue progress bar reaches it, the color changes to another hard to read blue against the blue background. can these color tones be corrected?
+
+okay i think i see part of the issue with how we are parsing... what the ai will do often is in its thinking, it will write out the syntax of how it needs to produce its output to fit the parsing. the accidental net effect of that is that, if we dont understand (algorithmically) that we need to not parse the `analysis` part of the message, and instead parse on the `assistant` portion, we are going to have a better time.
+
+
+</Cycle Context>
+<Ephemeral Context>
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions that a user might ask to learn more about the document. The assistant should output only JSON array of strings, no other text. Let's think what would be good insightful follow-up questions related to this interactive report interface, navigation, features.\n\nPossible questions: \"What kinds of visual interpretations can I cycle through?\" \"How does the autoplay feature handle pauses or resume?\" \"Can I customize which pages are included in autoplay?\" \"What is Ascentia's role beyond narration?\" \"Does the Report Navigator support filtering by topic?\" \"Are there any interactive elements besides navigation?\" etc.\n\nWe need 2-4 questions. Let's produce 4.\n\nReturn JSON array: [\"How does the left/right arrow key cycle through visual interpretations?\",\"Can I pause and resume autoplay at any point?\",\"What kind of content can I interact with via the Report Navigator tree?\",\"Does Ascentia provide additional context or explanations beyond reading text?\"] Ensure valid JSON.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"How does the left/right arrow key cycle through visual interpretations?\",\"Can I pause and resume autoplay at any point?\",\"What kind of content can I interact with via the Report Navigator tree?\",\"Does As"
+[Chat API - Suggestions] Extracted JSON string: ["How does the left/right arrow key cycle through visual interpretations?","Can I pause and resume autoplay at any point?","What kind of content can I interact with via the Report Navigator tree?","Does Ascentia provide additional context or explanations beyond reading text?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'How does the left/right arrow key cycle through visual interpretations?',
+  'Can I pause and resume autoplay at any point?',
+  'What kind of content can I interact with via the Report Navigator tree?',
+  'Does Ascentia provide additional context or explanations beyond reading text?'
+]
+ POST /api/chat 200 in 2879ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>The user wants follow-up questions based on the document. We need 2-4 insightful follow-up questions a user might ask to learn more. Output must be JSON array of strings. No other text. So produce something like:\n\n[\"What is the purpose of the Report Navigator?\", \"How does Autoplay affect the reading experience?\", ...] Ensure they are relevant.\n\nWe should generate 3 or 4 questions. Let's craft: 1) How can I navigate to specific sections? 2) What visual interpretations available? 3) How does Autoplay work? 4) What is Ask Ascentia? That seems good.\n\nReturn JSON array.<|end|><|start|>assistant<|channel|>final<|message|>[\"What are the main features of the Report Navigator tree?\", \"How do the left and right arrow keys cycle through visual interpretations for each page?\", \"In what ways does Autoplay enhance the reading experience, and how can I pause or resume it?\", \"What kind of assistance can I expect from the 'Ask Ascentia' button?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["What are the main features of the Report Navigator tree?", "How do the left and right arrow keys cycle through visual interpretations for each page?", "In what ways does Autoplay enhance the reading experience, and how can I pause or resume it?", "What kind of assistance can I expect from the 'Ask Ascentia' button?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What are the main features of the Report Navigator tree?',
+  'How do the left and right arrow keys cycle through visual interpretations for each page?',
+  'In what ways does Autoplay enhance the reading experience, and how can I pause or resume it?',
+  "What kind of assistance can I expect from the 'Ask Ascentia' button?"
+]
+ POST /api/chat 200 in 4961ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions about the text. The text is a page title \"Process as Asset\" and TL;DR: A Whitepaper on the Data Curation Environment (DCE). Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\n\nWe need to generate 2-4 insightful follow-up questions a user might ask to learn more. So we produce array of strings like [\"What is the Data Curation Environment (DCE) and how does it support Process as Asset?\",\"How does Structured Human-AI Collaboration accelerate specialized content creation in this whitepaper?\",\"Can you explain the main benefits highlighted for high-level stakeholders?\",\"What specific processes are considered 'assets' in this framework?\"].\n\nWe need to output JSON array only. No explanation or markdown. So final answer: [\"Question1\", \"Question2\", ...]. Ensure valid JSON. Let's produce 4 questions.<|end|><|start|>assistant<|channel|>final<|message|>[\"What is the Data Curation Environment (DCE) and how does it support Process as Asset?\",\"How does Structured Human-AI Collaboration accelerate specialized content creation in this whitepaper?\",\""   
+[Chat API - Suggestions] Extracted JSON string: ["What is the Data Curation Environment (DCE) and how does it support Process as Asset?","How does Structured Human-AI Collaboration accelerate specialized content creation in this whitepaper?","Can you explain the main benefits highlighted for high-level stakeholders?","What specific processes are considered 'assets' in this framework?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What is the Data Curation Environment (DCE) and how does it support Process as Asset?',
+  'How does Structured Human-AI Collaboration accelerate specialized content creation in this whitepaper?',
+  'Can you explain the main benefits highlighted for high-level stakeholders?',
+  "What specific processes are considered 'assets' in this framework?"
+]
+ POST /api/chat 200 in 7328ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions a user might ask about this whitepaper. The content is minimal: title, TL;DR, and page title. We should generate insightful questions like \"What are the key components of Process as Asset?\" etc. Provide JSON array of strings.\n\nLet's craft 3 or 4 questions. Ensure they reflect the content: Data Curation Environment (DCE), Structured Human-AI Collaboration, Accelerating Specialized Content Creation, High-Level Stakeholders.\n\nPossible questions:\n\n1. What specific processes are considered assets in the Data Curation Environment?\n2. How does Process as Asset accelerate specialized content creation compared to traditional methods?\n3. In what ways does structured human‑AI collaboration manifest within the DCE framework?\n4. Who are identified as high-level stakeholders and how do they benefit from this approach?\n\nReturn JSON array accordingly.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"What specific processes are considered assets in the Data Curation Environment?\", \"How does Process as Asset accelerate specialized content creation compared to traditional methods?\", \"In what ways does structured human‑AI collaboration manifest within the DCE framework?\", \"Who are identified as high-level stakeholders and how do they benefit from this approach?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["What specific processes are considered assets in the Data Curation Environment?", "How does Process as Asset accelerate specialized content creation compared to traditional methods?", "In what ways does structured human‑AI collaboration manifest within the DCE framework?", "Who are identified as high-level stakeholders and how do they benefit from this approach?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What specific processes are considered assets in the Data Curation Environment?',
+  'How does Process as Asset accelerate specialized content creation compared to traditional methods?',
+  'In what ways does structured human‑AI collaboration manifest within the DCE framework?',
+  'Who are identified as high-level stakeholders and how do they benefit from this approach?'
+]
+ POST /api/chat 200 in 9777ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>The user wants \"Generate questions based on the text above.\" The system instruction says: \"Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings.\"\n\nWe need to produce between 2 and 4 questions. They should be insightful follow-up questions about the whitepaper, DCE, Process as Asset, etc.\n\nExamples: \"What is the main benefit of this feature?\" \"How does this compare to other methods?\"\n\nSo we need to output a JSON array of strings with 2-4 items.\n\nLet's craft them:\n\nPossible questions:\n1. \"What specific use cases are targeted by the Data Curation Environment (DCE) in specialized content creation?\"\n2. \"How does Process as Asset differ from traditional data curation approaches, and what advantages does it provide for stakeholders?\"\n3. \"Can you explain how structured human-AI collaboration is achieved within the DCE framework?\"\n4. \"What metrics or evidence support the claim that Process as Asset accelerates specialized content creation?\"\n\nWe need 2-4 questions; we can give 4.\n\nReturn JSON array: [\"Question1\", \"Question2\", ..."
+[Chat API - Suggestions] Extracted JSON string: null
+[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>The user wants "Generate questions based on the text above." The system instruction says: "Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings."
+
+We need to produce between 2 and 4 questions. They should be insightful follow-up questions about the whitepaper, DCE, Process as Asset, etc.
+
+Examples: "What is the main benefit of this feature?" "How does this compare to other methods?"
+
+So we need to output a JSON array of strings with 2-4 items.
+
+Let's craft them:
+
+Possible questions:
+1. "What specific use cases are targeted by the Data Curation Environment (DCE) in specialized content creation?"
+2. "How does Process as Asset differ from traditional data curation approaches, and what advantages does it provide for stakeholders?"
+3. "Can you explain how structured human-AI collaboration is achieved within the DCE framework?"
+4. "What metrics or evidence support the claim that Process as Asset accelerates specialized content creation?"
+
+We need 2-4 questions; we can give 4.
+
+Return JSON array: ["Question1", "Question2", ...
+[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
+ POST /api/chat 500 in 12045ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>The user wants to generate follow-up questions about the document text. We must output a JSON array of strings with 2-4 insightful follow-up questions. The content is short. Should ask about what is DCE, how it works, benefits, etc. Must respond only with JSON array, no other explanation.\n\nLet's produce maybe 3 or 4 questions: e.g., \"What are the key components of the Data Curation Environment?\" \"How does Process as Asset accelerate specialized content creation?\" \"Can you explain the role of structured human-AI collaboration in this approach?\" \"What kind of stakeholders would benefit most from this whitepaper?\"\n\nReturn array.<|end|><|start|>assistant<|channel|>final <|constrain|>[\"What are the core principles behind the Data Curation Environment (DCE)?\", \"In what ways does Process as Asset accelerate specialized content creation?\",\"How is structured human‑AI collaboration implemented in the DCE framework?\",\"Which stakeholders stand to gain the most from this whitepaper and why?\"]}"
+[Chat API - Suggestions] Extracted JSON string: ["What are the core principles behind the Data Curation Environment (DCE)?", "In what ways does Process as Asset accelerate specialized content creation?","How is structured human‑AI collaboration implemented in the DCE framework?","Which stakeholders stand to gain the most from this whitepaper and why?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What are the core principles behind the Data Curation Environment (DCE)?',
+  'In what ways does Process as Asset accelerate specialized content creation?',
+  'How is structured human‑AI collaboration implemented in the DCE framework?',
+  'Which stakeholders stand to gain the most from this whitepaper and why?'
+]
+ POST /api/chat 200 in 14074ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions. The user wants questions based on the text. We must provide 2-4 insightful follow-up questions a user might ask to learn more about the content. So we should generate maybe 3 or 4 questions. They should be relevant: \"What is the Data Curation Environment (DCE) and how does it differ from other data curation tools?\", \"How does Process as Asset accelerate specialized content creation?\" etc.\n\nWe must output only JSON array of strings, no explanation. Let's produce 4 questions:\n\n1. What specific challenges in specialized content creation does the Process as Asset approach aim to solve?\n\n2. How does the Data Curation Environment (DCE) integrate human and AI contributions during the curation workflow?\n\n3. In what ways can stakeholders measure the acceleration benefits of using Process as Asset compared to traditional methods?\n\n4. Are there any case studies or pilot projects that demonstrate the effectiveness of this framework in real-world scenarios?\n\nReturn array accordingly.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"What specific challenges in specialized content creation does the Process as Asset approach aim to solve?\", \"How does the Data Curation Environment (DCE) integrate human and AI contributions during the"
+[Chat API - Suggestions] Extracted JSON string: null
+[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions. The user wants questions based on the text. We must provide 2-4 insightful follow-up questions a user might ask to learn more about the content. So we should generate maybe 3 or 4 questions. They should be relevant: "What is the Data Curation Environment (DCE) and how does it differ from other data curation tools?", "How does Process as Asset accelerate specialized content creation?" etc.
+
+We must output only JSON array of strings, no explanation. Let's produce 4 questions:
+
+1. What specific challenges in specialized content creation does the Process as Asset approach aim to solve?
+
+2. How does the Data Curation Environment (DCE) integrate human and AI contributions during the curation workflow?
+
+3. In what ways can stakeholders measure the acceleration benefits of using Process as Asset compared to traditional methods?
+
+4. Are there any case studies or pilot projects that demonstrate the effectiveness of this framework in real-world scenarios?
+
+Return array accordingly.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>["What specific challenges in specialized content creation does the Process as Asset approach aim to solve?", "How does the Data Curation Environment (DCE) integrate human and AI contributions during the
+[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
+ POST /api/chat 500 in 14368ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce a JSON array of strings with follow-up questions. The user wants \"Generate questions based on the text above.\" We should provide 2-4 insightful follow-up questions a user might ask to learn more about the content. The document is minimal: Page Title: Process as Asset, TL;DR: A Whitepaper on the Data Curation Environment (DCE), Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\n\nThus potential questions:\n\n- What are the key components of the Data Curation Environment described in the whitepaper?\n- How does the \"Process as Asset\" framework accelerate specialized content creation compared to traditional methods?\n- In what ways does structured Human-AI collaboration manifest within the DCE, and what roles do humans play?\n- What potential challenges or risks were identified for high-level stakeholders when adopting this approach?\n\nWe need 2-4. Provide JSON array of strings.\n\nReturn: [\"What are the key components of the Data Curation Environment (DCE) described in the whitepaper?\", \"How does the 'Process as Asset' framework accelerate specialized content creation compared to traditional methods?\", \"In what ways does structured"
+[Chat API - Suggestions] Extracted JSON string: null
+[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>We need to produce a JSON array of strings with follow-up questions. The user wants "Generate questions based on the text above." We should provide 2-4 insightful follow-up questions a user might ask to learn more about the content. The document is minimal: Page Title: Process as Asset, TL;DR: A Whitepaper on the Data Curation Environment (DCE), Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.
+
+Thus potential questions:
+
+- What are the key components of the Data Curation Environment described in the whitepaper?
+- How does the "Process as Asset" framework accelerate specialized content creation compared to traditional methods?
+- In what ways does structured Human-AI collaboration manifest within the DCE, and what roles do humans play?
+- What potential challenges or risks were identified for high-level stakeholders when adopting this approach?
+
+We need 2-4. Provide JSON array of strings.
+
+Return: ["What are the key components of the Data Curation Environment (DCE) described in the whitepaper?", "How does the 'Process as Asset' framework accelerate specialized content creation compared to traditional methods?", "In what ways does structured
+[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
+ POST /api/chat 500 in 14722ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions a user might ask to learn more about Process as Asset whitepaper. The content is minimal. Need insightful questions. Provide JSON array of strings. No other output. Let's craft 3 or 4 questions.\n\nPossible:\n\n1. What specific processes are considered assets in the Data Curation Environment?\n2. How does structured human-AI collaboration accelerate specialized content creation according to the whitepaper?\n3. Can you provide examples of industries where Process as Asset has been implemented successfully?\n4. What metrics or KPIs does the whitepaper suggest for measuring the effectiveness of this approach?\n\nReturn array.\n\n<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"What specific processes are considered assets in the Data Curation Environment?\", \"How does structured human‑AI collaboration accelerate specialized content creation according to the whitepaper?\", \"Can you provide examples of industries where Process as Asset has been implemented successfully?\", \"What metrics or KPIs does the whitepaper suggest for measuring the effectiveness of this approach?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["What specific processes are considered assets in the Data Curation Environment?", "How does structured human‑AI collaboration accelerate specialized content creation according to the whitepaper?", "Can you provide examples of industries where Process as Asset has been implemented successfully?", "What metrics or KPIs does the whitepaper suggest for measuring the effectiveness of this approach?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What specific processes are considered assets in the Data Curation Environment?',
+  'How does structured human‑AI collaboration accelerate specialized content creation according to the whitepaper?',
+  'Can you provide examples of industries where Process as Asset has been implemented successfully?',
+  'What metrics or KPIs does the whitepaper suggest for measuring the effectiveness of this approach?'
+]
+ POST /api/chat 200 in 7900ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>The user wants follow-up questions about the text: \"Page Title: Process as Asset TL;DR: A Whitepaper... Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\"\n\nWe need to generate 2-4 insightful follow-up questions a user might ask to learn more.\n\nSo produce JSON array of strings with such questions.\n\nExamples: \"What is the Data Curation Environment (DCE) and how does it facilitate structured human-AI collaboration?\" etc.\n\nShould be 2-4. We'll provide maybe 3 or 4.\n\nMake sure JSON format correct, no markdown.<|end|><|start|>assistant<|channel|>final<|message|>[\"What specific processes are considered 'as assets' in the DCE framework?\", \"How does the whitepaper define and measure 'accelerating specialized content creation'?\", \"Can you explain how structured human-AI collaboration is implemented within the Data Curation Environment?\", \"Who are the intended high-level stakeholders, and what benefits do they gain from this approach?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["What specific processes are considered 'as assets' in the DCE framework?", "How does the whitepaper define and measure 'accelerating specialized content creation'?", "Can you explain how structured human-AI collaboration is implemented within the Data Curation Environment?", "Who are the intended high-level stakeholders, and what benefits do they gain from this approach?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  "What specific processes are considered 'as assets' in the DCE framework?",
+  "How does the whitepaper define and measure 'accelerating specialized content creation'?",
+  'Can you explain how structured human-AI collaboration is implemented within the Data Curation Environment?',
+  'Who are the intended high-level stakeholders, and what benefits do they gain from this approach?'
+]
+ POST /api/chat 200 in 5628ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions a user might ask about this whitepaper. The content is minimal. We can ask about DCE, structured collaboration, benefits etc. Provide 2-4 questions. Must be valid JSON array. No extra text. Let's craft: [\"What are the key components of the Data Curation Environment (DCE)?\", \"How does Process as Asset accelerate specialized content creation?\", \"Can you explain how structured human-AI collaboration works in this context?\", \"What are the expected outcomes for high-level stakeholders?\"] 4 questions. Ensure JSON array.<|end|><|start|>assistant<|channel|>final<|message|>[\"What are the key components of the Data Curation Environment (DCE)?\", \"How does Process as Asset accelerate specialized content creation?\", \"Can you explain how structured human‑AI collaboration works in this context?\", \"What are the expected outcomes for high‑level stakeholders?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["What are the key components of the Data Curation Environment (DCE)?", "How does Process as Asset accelerate specialized content creation?", "Can you explain how structured human-AI collaboration works in this context?", "What are the expected outcomes for high-level stakeholders?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What are the key components of the Data Curation Environment (DCE)?',
+  'How does Process as Asset accelerate specialized content creation?',
+  'Can you explain how structured human-AI collaboration works in this context?',
+  'What are the expected outcomes for high-level stakeholders?'
+]
+ POST /api/chat 200 in 5010ms
+ GET / 200 in 457ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions. The user wants \"Generate questions based on the text above.\" We must provide 2-4 insightful follow-up questions a user might ask to learn more about the content. The text includes: Page Title: Process as Asset, TL;DR: A Whitepaper on the Data Curation Environment (DCE). Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\n\nSo we can ask about \"Process as Asset\", \"Data Curation Environment\", \"Structured Human-AI Collaboration\", \"Accelerating Specialized Content Creation\". Also the date and audience. So produce questions like:\n\n- What are the key components of the Data Curation Environment described in the whitepaper?\n\n- How does Process as Asset framework accelerate specialized content creation through structured human-AI collaboration?\n\n- What specific use cases or industries were targeted for stakeholders?\n\n- What metrics or KPIs are used to evaluate success?\n\nWe need 2-4. Provide JSON array with strings.\n\nLet's produce 4 questions.\n\nReturn only JSON array.<|end|><|start|>assistant<|channel|>final<|message|>[\"What are the key components of the Data Curation Environment (D"
+[Chat API - Suggestions] Extracted JSON string: null
+[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions. The user wants "Generate questions based on the text above." We must provide 2-4 insightful follow-up questions a user might ask to learn more about the content. The text includes: Page Title: Process as Asset, TL;DR: A Whitepaper on the Data Curation Environment (DCE). Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.
+
+So we can ask about "Process as Asset", "Data Curation Environment", "Structured Human-AI Collaboration", "Accelerating Specialized Content Creation". Also the date and audience. So produce questions like:
+
+- What are the key components of the Data Curation Environment described in the whitepaper?
+
+- How does Process as Asset framework accelerate specialized content creation through structured human-AI collaboration?
+
+- What specific use cases or industries were targeted for stakeholders?
+
+- What metrics or KPIs are used to evaluate success?
+
+We need 2-4. Provide JSON array with strings.
+
+Let's produce 4 questions.
+
+Return only JSON array.<|end|><|start|>assistant<|channel|>final<|message|>["What are the key components of the Data Curation Environment (D
+[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
+ POST /api/chat 500 in 2780ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to output JSON array of strings with follow-up questions about the content. The document is a whitepaper title and TL;DR. So we can ask about what DCE is, how it works, benefits, use cases, etc. Provide 2-4 insightful questions.\n\nReturn as JSON array: e.g. [\"What are the key components of the Data Curation Environment (DCE)?\", \"How does Process as Asset accelerate specialized content creation?\"] etc.\n\nMake sure no extra text.<|end|><|start|>assistant<|channel|>final<|message|>[\"What is the Data Curation Environment (DCE) and how does it fit into the broader context of data management?\", \"In what ways does the Process as Asset approach accelerate specialized content creation, and can you give examples of its impact on real-world projects?\", \"How do structured human–AI collaborations differ from traditional AI or human-only workflows in terms of efficiency, accuracy, and scalability?\", \"What are some potential challenges or limitations associated with implementing the DCE framework for stakeholders?\" ]"
+[Chat API - Suggestions] Extracted JSON string: ["What are the key components of the Data Curation Environment (DCE)?", "How does Process as Asset accelerate specialized content creation?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What are the key components of the Data Curation Environment (DCE)?',
+  'How does Process as Asset accelerate specialized content creation?'
+]
+ POST /api/chat 200 in 4802ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>The user wants follow-up questions to learn more about the whitepaper. We need 2-4 insightful questions. Output JSON array of strings. No other text. Let's craft 3 or 4. Ensure they are insightful: e.g., \"What specific AI techniques are employed?\" etc.\n\nReturn as JSON array.<|end|><|start|>assistant<|channel|>final<|message|>[\"What specific AI techniques and models does the whitepaper highlight for accelerating content creation?\", \"How does the Data Curation Environment (DCE) differ from traditional data pipelines in terms of structure and human-AI collaboration?\", \"Can you provide examples or case studies where Process as Asset has been applied successfully?\" ]" 
+[Chat API - Suggestions] Extracted JSON string: ["What specific AI techniques and models does the whitepaper highlight for accelerating content creation?", "How does the Data Curation Environment (DCE) differ from traditional data pipelines in terms of structure and human-AI collaboration?", "Can you provide examples or case studies where Process as Asset has been applied successfully?" ]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What specific AI techniques and models does the whitepaper highlight for accelerating content creation?',
+  'How does the Data Curation Environment (DCE) differ from traditional data pipelines in terms of structure and human-AI collaboration?',
+  'Can you provide examples or case studies where Process as Asset has been applied successfully?'
+]
+ POST /api/chat 200 in 6080ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions a user might ask to learn more about the whitepaper. Should be JSON array of strings. No other output. Let's craft relevant insightful questions:\n\n1. What specific types of specialized content does the Data Curation Environment aim to accelerate?\n2. How does Process as Asset differ from traditional data curation workflows in terms of human-AI collaboration?\n3. Can you provide examples of industries or use cases where this whitepaper's approach has been applied successfully?\n4. What are the key performance metrics used to evaluate the effectiveness of the structured Human‑AI collaboration framework?\n\nReturn array.<|end|><|start|>assistant<|channel|>final <|constrain|>json<|message|>[\"What specific types of specialized content does the Data Curation Environment aim to accelerate?\", \"How does Process as Asset differ from traditional data curation workflows in terms of human-AI collaboration?\", \"Can you provide examples of industries or use cases where this whitepaper's approach has been applied successfully?\", \"What are the key performance metrics used to evaluate the effectiveness of the structured Human‑AI collaboration framework?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["What specific types of specialized content does the Data Curation Environment aim to accelerate?", "How does Process as Asset differ from traditional data curation workflows in terms of human-AI collaboration?", "Can you provide examples of industries or use cases where this whitepaper's approach has been applied successfully?", "What are the key performance metrics used to evaluate the effectiveness of the structured Human‑AI collaboration framework?"]
+[Chat API - Suggestions] Successfully parsed suggestions: [
+  'What specific types of specialized content does the Data Curation Environment aim to accelerate?',
+  'How does Process as Asset differ from traditional data curation workflows in terms of human-AI collaboration?',
+  "Can you provide examples of industries or use cases where this whitepaper's approach has been applied successfully?",
+  'What are the key performance metrics used to evaluate the effectiveness of the structured Human‑AI collaboration framework?'
+]
+ POST /api/chat 200 in 8187ms
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce a JSON array of strings with follow-up questions. The user wants \"Generate questions based on the text above.\" We should generate 2-4 insightful follow-up questions that a user might ask to learn more about the content described: Process as Asset, Data Curation Environment, structured human-AI collaboration, specialized content creation, etc.\n\nWe need to produce only JSON array. Let's think of good questions:\n\n1. \"What specific processes are being treated as assets in this framework?\" \n2. \"How does the Data Curation Environment support structured human-AI collaboration?\"\n3. \"Can you provide examples of specialized content that has benefited from this approach?\"\n4. \"What metrics or indicators are used to measure acceleration in content creation?\"\n\nWe need 2-4 questions, so we can give these four.\n\nReturn as JSON array: [\"...\",\"...\",\"...\",\"...\"].\n\nMake sure no extra text.<|end|><|start|>assistant<|channel|>final<|message|>[\"What specific processes are being treated as assets in this framework?\", \"How does the Data Curation Environment support structured human-AI collaboration?\", \"Can you provide examples of specialized content that has benefited from this approach?\", \"What metrics or indicators are used to measure acceleration in content creation?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["...","...","...","..."]
+[Chat API - Suggestions] Successfully parsed suggestions: [ '...', '...', '...', '...' ]
+ POST /api/chat 200 in 6982ms
+
+</Ephemeral Context>
+<Previous Cycle 46 Summary of Actions>
+Could not parse summary.
+
+1.  **Update `src/Artifacts/A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md`:** I will update this artifact to formally document the architecture for multi-report context isolation. This will include detailing the state management strategy for ensuring that suggestions for one report are never shown for another and codifying the page-by-page generation logic.
+
+2.  **Fix Context Leakage in `src/stores/reportStore.ts`:** To fix the critical bug where suggestions from one report leak to another, I will introduce a check within the `fetchAndSetSuggestions` action. Before setting the new suggestions, the action will verify that the `reportName` it was initiated with still matches the current `reportName` in the store. This will prevent race conditions where a slow-resolving request from a previous report overwrites the state of the newly loaded report.
+
+3.  **Implement Fullscreen Mode:**
+    *   **`src/stores/reportStore.ts`:** I will add a new `isFullscreen: boolean` state and actions `toggleFullscreen(element: HTMLElement | null)` to manage the fullscreen state.
+    *   **`src/components/report-viewer/ReportViewer.tsx`:** I will add a `ref` to the main container element of the report viewer. I will also add a `useEffect` hook to listen for the browser's `fullscreenchange` event to keep the store's state synchronized if the user exits fullscreen using the 'Escape' key.
+    *   **`src/components/report-viewer/ImageNavigator.tsx`:** I will add a new "Fullscreen" button that, when clicked, calls the `toggleFullscreen` action from the store, passing it the `ref` of the main report viewer container.
+
+4.  **Fix Suggestion Chip Styling in `src/components/report-viewer/ReportChatPanel.tsx`:** I will update the CSS for the suggestion chips. I will remove the `truncate` class from the `Badge` components and apply `whitespace-normal`, `text-left`, and a `max-w-xs` (or similar fixed-width class) to allow the text to wrap neatly. The container will also be updated to ensure it handles wrapped content correctly.
+
+5.  **Improve Suggestion Robustness:**
+    *   **`src/app/api/chat/route.ts`:** I will make the backend parsing for suggestions more robust. The logic that extracts the JSON array from the LLM's response will be enhanced to better handle minor formatting inconsistencies from the model.
+    *   **`src/stores/reportStore.ts`:** I will add more detailed error logging to the `catch` block of the `fetchAndSetSuggestions` action to provide more insight when a fetch fails, which will aid in future debugging.
+</Previous Cycle 46 Summary of Actions>
+</Cycle 47>
+
 <Cycle 46>
 <Cycle Context>
 nice, can we center-justify the text within the suggestion chips? also, the chips themselves, can they be centered? right now they're left-aligned.
@@ -456,31 +666,6 @@ next, if we get a 500 fail, can we just like... not show this to the user and in
 also, one of your responses provided valuable backend logs, lets be extra thorough in our logs that way i can run a few test and then provide you with multiple. currently it would be too difficult for me to parse together good test results, when you could just produce good test results in the form of purpose-built backend logs to devise a robust parsing solution given multiple examples of how the AI is responding to the request. for now ill go ahead and copy-paste the logs i do have into the 
 
 </Cycle Context>
-<Ephemeral Context>
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>The user asks: \"How can organizations capture the iterative human-AI interaction process?\" They want answer based on context. The relevant chunk says that DCE captures entire workflow as persistent knowledge graph, includes curated context, operator's instructions, AI responses, decisions; each interaction is a cycle saved to Knowledge Graph. So answer explaining how DCE does it: use precise context curation, parallel co-pilot panel, diff viewer, accept mechanism integrated with git, cycle navigator, knowledge graph storing cycles, versioned assets. Also mention auditability and shareable asset.\n\nNeed to provide markdown formatting. Provide bullet points compact. Then produce JSON suggestions at end.<|end|><|start|>assistant<|channel|>final<|message|>Organizations can capture the full human‑AI interaction loop by **structuring every step into a persistent, auditable record**—the core idea behind the Data Curation Environment (DCE).  Here’s how it works in practice:\n\n| What | How DCE Captures It |\n|------|--------------------|\n| **Curated Context** | Operators select exact files/folders via check‑boxes; the system extracts relevant text automatically and stores this “Selection Set” as a versioned asset. |\n| **Operator Prompt / Instruction** | Every instruction typed into the Parallel Co‑Pilot Panel is logged with a timestamp, user ID, and context reference. |\n| **AI Response(s)** | The LLM’s replies (one or many) are stored verbatim in the cycle record. Diff tools automatically show changes against the original content. |\n| **Human Decision** | When an operator clicks “Accept,” the chosen AI suggestion is committed to Git, marked as approved, and the cycle is finalized. Rejections are logged too—so every path is traceable. |\n| **Cycle Navigator & Knowledge Graph** | All cycles form a graph where nodes are files or code snippets, edges represent transformations. The navigator lets you step back through history, compare versions, and see who did what and why. |\n\n### Key Benefits\n\n- **Auditability** – Every prompt, AI output, and operator action is time‑stamped and versioned.\n- **Collaboration Gap Closure** – New team members receive the exact curated context *plus* the full decision trail.\n- **Rapid Iteration** – Since the context is already stored, operators can issue new prompts without re‑curating data, saving hours on repetitive tasks.\n\nIn short, DCE turns the otherwise opaque human‑AI loop into a structured “Cycle” that’s automatically saved in a Knowledge Graph and fully integrated with your existing Git workflow. This turns the process itself into an auditable, reusable organizational asset.  \n\n:::suggestions:::[\n  \"What are the core components of the Data Curation Environment?\",\n  \"How does DCE integrate with Visual Studio Code?\",\n  \"Can you explain how the Parallel Co‑Pilot Panel works?\"\n]:::end_suggestions::" ReportChatPanel.tsx:153:21
-[Chat Panel] Suggestions block found. Raw content: "::suggestions:::[\n  \"What are the core components of the Data Curation Environment?\",\n  \"How does DCE integrate with Visual Studio Code?\",\n  \"Can you explain how the Parallel Co‑Pilot Panel works?\"\n]" ReportChatPanel.tsx:164:25
-[Chat Panel] Failed to parse suggestions JSON: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
-    sendMessage webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:166
-    handleChipClick webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:216
-    onClick webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:402
-    React 21
-    hydrateRoot webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/client.js:17
-    hydrate webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:197
-    startTransition React
-    hydrate webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:197
-    <anonymous> webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-next-dev.js:10
-    appBootstrap webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-bootstrap.js:57
-    loadScriptsInSequence webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-bootstrap.js:23
-    appBootstrap webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-bootstrap.js:56
-    <anonymous> webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-next-dev.js:8
-    NextJS 7
- Raw content was: ::suggestions:::[
-  "What are the core components of the Data Curation Environment?",
-  "How does DCE integrate with Visual Studio Code?",
-  "Can you explain how the Parallel Co‑Pilot Panel works?"
-] app-index.js:33:22
-
-</Ephemeral Context>
 <Previous Cycle 45 Summary of Actions>
 I have analyzed the parsing and formatting issues from the last cycle. My course of action is to implement a series of robustness improvements across the frontend and backend to handle LLM formatting inconsistencies more gracefully.
 
@@ -2802,10 +2987,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T21:45:55.436Z
+  Date Generated: 2025-10-13T21:56:14.843Z
   ---
   Total Files: 121
-  Approx. Tokens: 300156
+  Approx. Tokens: 300567
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2815,7 +3000,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (8072 tokens)
+7. src\stores\reportStore.ts (8347 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -2885,16 +3070,16 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15678 - Tokens: 3920
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15701 - Tokens: 3926
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 675 - Chars: 32286 - Tokens: 8072
+69. src\stores\reportStore.ts - Lines: 693 - Chars: 33385 - Tokens: 8347
 70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8212 - Tokens: 2053
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 267 - Chars: 12346 - Tokens: 3087
+74. src\app\api\chat\route.ts - Lines: 275 - Chars: 12868 - Tokens: 3217
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -15464,7 +15649,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             let cleanedMessage = fullMessage;
 
             if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch.length;
+                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
                 const jsonContentEndIndex = endMatch.index;
                 const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
                 
@@ -15483,7 +15668,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
                 
                 // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
@@ -15586,7 +15771,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             </div>
 
             {/* Suggested Prompts (Chips) */}
-            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center min-h-[40px]">
+            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
                 {suggestionsStatus === 'loading' && (
                     <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
                         <FaSpinner className="animate-spin" />
@@ -15597,7 +15782,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     <Badge
                         key={index}
                         variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-left"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
                         onClick={() => handleChipClick(prompt)}
                         title={prompt} // Tooltip on hover
                     >
@@ -15797,6 +15982,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C46 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
@@ -16032,42 +16218,59 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
-                try {
-                    const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
-                    
-                    const response = await fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            task: 'generate_suggestions',
-                            pageContext,
-                        }),
-                    });
+                const MAX_RETRIES = 3;
+                for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+                    try {
+                        const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                        
+                        const response = await fetch('/api/chat', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                task: 'generate_suggestions',
+                                pageContext,
+                            }),
+                        });
 
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
-                        throw new Error('Failed to fetch suggestions');
-                    }
+                        // C46: Only retry on 5xx server errors
+                        if (response.status >= 500) {
+                            console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
+                            if (attempt === MAX_RETRIES) {
+                                throw new Error(`Failed to fetch suggestions after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
+                            }
+                            await new Promise(res => setTimeout(res, 1000 * attempt)); // Basic backoff
+                            continue; // Go to next attempt
+                        }
 
-                    const suggestions = await response.json();
-                    
-                    // C45: RACE CONDITION FIX - Only update state if the report context hasn't changed.
-                    if (get().reportName !== reportName) {
-                        console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
-                        return;
-                    }
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
+                            throw new Error('Failed to fetch suggestions');
+                        }
 
-                    if (Array.isArray(suggestions) && suggestions.length > 0) {
-                        set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
-                    } else {
-                        throw new Error('Invalid suggestions format');
-                    }
-                } catch (error) {
-                    console.error("[reportStore] Failed to fetch dynamic suggestions:", error);
-                    // C45: RACE CONDITION FIX - Check context before setting error state.
-                    if (get().reportName === reportName) {
-                        set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                        const suggestions = await response.json();
+                        
+                        if (get().reportName !== reportName) {
+                            console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
+                            return;
+                        }
+
+                        if (Array.isArray(suggestions) && suggestions.length > 0) {
+                            set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                        } else {
+                            throw new Error('Invalid suggestions format');
+                        }
+                        return; // Success, exit loop
+
+                    } catch (error) {
+                        console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
+                        if (attempt === MAX_RETRIES) {
+                            console.error("[reportStore] Failed to fetch dynamic suggestions after all retries.");
+                            if (get().reportName === reportName) {
+                                set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                            }
+                            return;
+                        }
                     }
                 }
             },
@@ -16430,7 +16633,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
-            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            setVolume: (level) => set({ volume: level }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });
@@ -17089,20 +17292,28 @@ Assistant:`;
 
         const data = await response.json();
         const content = data.choices?.[0]?.text || '[]';
-        // C45: Make JSON extraction more robust
+        console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
+
         const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
         const jsonString = jsonMatch ? jsonMatch[0] : null;
+        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
 
         if (!jsonString) {
-            console.warn(`[Chat API] Could not extract valid JSON array from suggestion response: ${content}`);
+            console.warn(`[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: ${content}`);
             throw new Error('Invalid suggestions format from LLM');
         }
-
-        const suggestions = JSON.parse(jsonString);
-        return NextResponse.json(suggestions);
+        
+        try {
+            const suggestions = JSON.parse(jsonString);
+            console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions);
+            return NextResponse.json(suggestions);
+        } catch (parseError: any) {
+            console.error(`[Chat API - Suggestions] JSON parsing failed: ${parseError.message}. Raw extracted string was: ${jsonString}`);
+            throw new Error('JSON parsing failed');
+        }
 
     } catch (error: any) {
-        console.error('[Chat API] Error generating suggestions:', error.message);
+        console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
         return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
     }
   }

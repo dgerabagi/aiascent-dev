@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T21:45:55.436Z
+  Date Generated: 2025-10-13T21:56:14.843Z
   ---
   Total Files: 121
-  Approx. Tokens: 300156
+  Approx. Tokens: 300567
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (8072 tokens)
+7. src\stores\reportStore.ts (8347 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -84,16 +84,16 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15678 - Tokens: 3920
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15701 - Tokens: 3926
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 675 - Chars: 32286 - Tokens: 8072
+69. src\stores\reportStore.ts - Lines: 693 - Chars: 33385 - Tokens: 8347
 70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8212 - Tokens: 2053
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 267 - Chars: 12346 - Tokens: 3087
+74. src\app\api\chat\route.ts - Lines: 275 - Chars: 12868 - Tokens: 3217
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -12663,7 +12663,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             let cleanedMessage = fullMessage;
 
             if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch.length;
+                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
                 const jsonContentEndIndex = endMatch.index;
                 const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
                 
@@ -12682,7 +12682,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
                 
                 // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
@@ -12785,7 +12785,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             </div>
 
             {/* Suggested Prompts (Chips) */}
-            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center min-h-[40px]">
+            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
                 {suggestionsStatus === 'loading' && (
                     <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
                         <FaSpinner className="animate-spin" />
@@ -12796,7 +12796,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     <Badge
                         key={index}
                         variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-left"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
                         onClick={() => handleChipClick(prompt)}
                         title={prompt} // Tooltip on hover
                     >
@@ -12996,6 +12996,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C46 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
@@ -13231,42 +13232,59 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
-                try {
-                    const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
-                    
-                    const response = await fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            task: 'generate_suggestions',
-                            pageContext,
-                        }),
-                    });
+                const MAX_RETRIES = 3;
+                for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+                    try {
+                        const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                        
+                        const response = await fetch('/api/chat', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                task: 'generate_suggestions',
+                                pageContext,
+                            }),
+                        });
 
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
-                        throw new Error('Failed to fetch suggestions');
-                    }
+                        // C46: Only retry on 5xx server errors
+                        if (response.status >= 500) {
+                            console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
+                            if (attempt === MAX_RETRIES) {
+                                throw new Error(`Failed to fetch suggestions after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
+                            }
+                            await new Promise(res => setTimeout(res, 1000 * attempt)); // Basic backoff
+                            continue; // Go to next attempt
+                        }
 
-                    const suggestions = await response.json();
-                    
-                    // C45: RACE CONDITION FIX - Only update state if the report context hasn't changed.
-                    if (get().reportName !== reportName) {
-                        console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
-                        return;
-                    }
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
+                            throw new Error('Failed to fetch suggestions');
+                        }
 
-                    if (Array.isArray(suggestions) && suggestions.length > 0) {
-                        set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
-                    } else {
-                        throw new Error('Invalid suggestions format');
-                    }
-                } catch (error) {
-                    console.error("[reportStore] Failed to fetch dynamic suggestions:", error);
-                    // C45: RACE CONDITION FIX - Check context before setting error state.
-                    if (get().reportName === reportName) {
-                        set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                        const suggestions = await response.json();
+                        
+                        if (get().reportName !== reportName) {
+                            console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
+                            return;
+                        }
+
+                        if (Array.isArray(suggestions) && suggestions.length > 0) {
+                            set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                        } else {
+                            throw new Error('Invalid suggestions format');
+                        }
+                        return; // Success, exit loop
+
+                    } catch (error) {
+                        console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
+                        if (attempt === MAX_RETRIES) {
+                            console.error("[reportStore] Failed to fetch dynamic suggestions after all retries.");
+                            if (get().reportName === reportName) {
+                                set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                            }
+                            return;
+                        }
                     }
                 }
             },
@@ -13629,7 +13647,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
-            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            setVolume: (level) => set({ volume: level }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });
@@ -14288,20 +14306,28 @@ Assistant:`;
 
         const data = await response.json();
         const content = data.choices?.[0]?.text || '[]';
-        // C45: Make JSON extraction more robust
+        console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
+
         const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
         const jsonString = jsonMatch ? jsonMatch[0] : null;
+        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
 
         if (!jsonString) {
-            console.warn(`[Chat API] Could not extract valid JSON array from suggestion response: ${content}`);
+            console.warn(`[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: ${content}`);
             throw new Error('Invalid suggestions format from LLM');
         }
-
-        const suggestions = JSON.parse(jsonString);
-        return NextResponse.json(suggestions);
+        
+        try {
+            const suggestions = JSON.parse(jsonString);
+            console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions);
+            return NextResponse.json(suggestions);
+        } catch (parseError: any) {
+            console.error(`[Chat API - Suggestions] JSON parsing failed: ${parseError.message}. Raw extracted string was: ${jsonString}`);
+            throw new Error('JSON parsing failed');
+        }
 
     } catch (error: any) {
-        console.error('[Chat API] Error generating suggestions:', error.message);
+        console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
         return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
     }
   }

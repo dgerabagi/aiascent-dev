@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C46 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
@@ -234,42 +235,59 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
-                try {
-                    const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
-                    
-                    const response = await fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            task: 'generate_suggestions',
-                            pageContext,
-                        }),
-                    });
+                const MAX_RETRIES = 3;
+                for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+                    try {
+                        const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                        
+                        const response = await fetch('/api/chat', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                task: 'generate_suggestions',
+                                pageContext,
+                            }),
+                        });
 
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
-                        throw new Error('Failed to fetch suggestions');
-                    }
+                        // C46: Only retry on 5xx server errors
+                        if (response.status >= 500) {
+                            console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
+                            if (attempt === MAX_RETRIES) {
+                                throw new Error(`Failed to fetch suggestions after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
+                            }
+                            await new Promise(res => setTimeout(res, 1000 * attempt)); // Basic backoff
+                            continue; // Go to next attempt
+                        }
 
-                    const suggestions = await response.json();
-                    
-                    // C45: RACE CONDITION FIX - Only update state if the report context hasn't changed.
-                    if (get().reportName !== reportName) {
-                        console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
-                        return;
-                    }
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
+                            throw new Error('Failed to fetch suggestions');
+                        }
 
-                    if (Array.isArray(suggestions) && suggestions.length > 0) {
-                        set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
-                    } else {
-                        throw new Error('Invalid suggestions format');
-                    }
-                } catch (error) {
-                    console.error("[reportStore] Failed to fetch dynamic suggestions:", error);
-                    // C45: RACE CONDITION FIX - Check context before setting error state.
-                    if (get().reportName === reportName) {
-                        set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                        const suggestions = await response.json();
+                        
+                        if (get().reportName !== reportName) {
+                            console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
+                            return;
+                        }
+
+                        if (Array.isArray(suggestions) && suggestions.length > 0) {
+                            set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                        } else {
+                            throw new Error('Invalid suggestions format');
+                        }
+                        return; // Success, exit loop
+
+                    } catch (error) {
+                        console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
+                        if (attempt === MAX_RETRIES) {
+                            console.error("[reportStore] Failed to fetch dynamic suggestions after all retries.");
+                            if (get().reportName === reportName) {
+                                set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                            }
+                            return;
+                        }
                     }
                 }
             },
@@ -632,7 +650,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
-            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
+            setVolume: (level) => set({ volume: level }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });

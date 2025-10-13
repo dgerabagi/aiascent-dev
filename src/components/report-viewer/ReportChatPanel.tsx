@@ -161,7 +161,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             let cleanedMessage = fullMessage;
 
             if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch.length;
+                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
                 const jsonContentEndIndex = endMatch.index;
                 const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
                 
@@ -180,7 +180,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
                 
                 // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
@@ -283,7 +283,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             </div>
 
             {/* Suggested Prompts (Chips) */}
-            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center min-h-[40px]">
+            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
                 {suggestionsStatus === 'loading' && (
                     <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
                         <FaSpinner className="animate-spin" />
@@ -294,7 +294,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     <Badge
                         key={index}
                         variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-left"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
                         onClick={() => handleChipClick(prompt)}
                         title={prompt} // Tooltip on hover
                     >

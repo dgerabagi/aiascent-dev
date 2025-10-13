@@ -123,20 +123,28 @@ Assistant:`;
 
         const data = await response.json();
         const content = data.choices?.[0]?.text || '[]';
-        // C45: Make JSON extraction more robust
+        console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
+
         const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
         const jsonString = jsonMatch ? jsonMatch[0] : null;
+        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
 
         if (!jsonString) {
-            console.warn(`[Chat API] Could not extract valid JSON array from suggestion response: ${content}`);
+            console.warn(`[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: ${content}`);
             throw new Error('Invalid suggestions format from LLM');
         }
-
-        const suggestions = JSON.parse(jsonString);
-        return NextResponse.json(suggestions);
+        
+        try {
+            const suggestions = JSON.parse(jsonString);
+            console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions);
+            return NextResponse.json(suggestions);
+        } catch (parseError: any) {
+            console.error(`[Chat API - Suggestions] JSON parsing failed: ${parseError.message}. Raw extracted string was: ${jsonString}`);
+            throw new Error('JSON parsing failed');
+        }
 
     } catch (error: any) {
-        console.error('[Chat API] Error generating suggestions:', error.message);
+        console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
         return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
     }
   }
