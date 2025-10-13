@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 30 - Go Live
+Current Cycle 31 - First Linting Round
+Cycle 30 - Go Live
 Cycle 29 - more incredible work
 Cycle 28 - continue excellent progress
 Cycle 27 - embeddings work! now minor touchups...
@@ -421,60 +422,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
-<Cycle 30>
+<Cycle 31>
 <Cycle Context>
-magnificent! lets place a learn more button at the bottom of the mission page that just navigates to the learn page. and then also lets place a button to See Showcase at the bottom of the learn page. 
-
-also, now we are making the server go live. to that end, ive been working in the aiascent-game context to build out the caddy reverse proxy pm2 solution (see a188). now however during the npm run build phase, im encountering linting issues. see ephemeral
+for some reason, when on the showcase, when viewing the ascent report tab, when i switch to the ai ascent game tab, my screen scrolls down. can we leave it scrolled to the top? next, stilll getting some linting errors when running npm run build on the closet pc (see ephemeral)
 </Cycle Context>
 <Ephemeral Context>
-<closet pc console logs>
-PS C:\Projects\aiascent-dev> npm install
-npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
-npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
-npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
-npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
-npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
-
-added 706 packages, and audited 707 packages in 24s
-
-257 packages are looking for funding
-  run `npm fund` for details
-
-3 vulnerabilities (1 low, 1 moderate, 1 critical)
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-PS C:\Projects\aiascent-dev> git pull
-remote: Enumerating objects: 9, done.
-remote: Counting objects: 100% (9/9), done.
-remote: Compressing objects: 100% (1/1), done.
-remote: Total 5 (delta 3), reused 5 (delta 3), pack-reused 0 (from 0)
-Unpacking objects: 100% (5/5), 704 bytes | 3.00 KiB/s, done.
-From https://github.com/dgerabagi/aiascent-dev
-   ec8ebe8..a9dfa51  main       -> origin/main
-Updating ec8ebe8..a9dfa51
-Fast-forward
- .vscode/dce_history.json | 4 ++--
- package.json             | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
-PS C:\Projects\aiascent-dev> npm install
-
-up to date, audited 707 packages in 2s
-
-257 packages are looking for funding
-  run `npm fund` for details
-
-3 vulnerabilities (1 low, 1 moderate, 1 critical)
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
 PS C:\Projects\aiascent-dev> npm run build
 
 > aiascent-dev@0.1.0 build
@@ -484,41 +436,94 @@ PS C:\Projects\aiascent-dev> npm run build
   - Environments: .env
 
    Creating an optimized production build ...
-(node:15404) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-(Use `node --trace-deprecation ...` to show where the warning was created)
- ✓ Compiled successfully
-
 Failed to compile.
 
-./src/app/learn/page.tsx
-14:143  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-14:154  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-
-./src/components/global/3d-card.tsx
-127:6  Warning: React Hook useEffect has a missing dependency: 'handleAnimations'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-
-./src/components/global/GlobalAudioPlayer.tsx
-62:8  Warning: React Hook useEffect has a missing dependency: 'setGenericPlaybackStatus'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-
-./src/components/global/infinite-moving-cards.tsx
-31:6  Warning: React Hook useEffect has a missing dependency: 'addAnimation'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-
 ./src/components/mission/MissionSectionBlock.tsx
-82:34  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-82:48  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+Error:
+  × The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
+   ╭─[C:\Projects\aiascent-dev\src\components\mission\MissionSectionBlock.tsx:4:1]
+ 4 │   - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
+ 5 │   */
+ 6 │ }
+ 7 │ 'use client';
+   · ─────────────
+ 8 │
+ 9 │ import React, { useState, useEffect } from 'react';
+ 9 │ import Image from 'next/image';
+   ╰────
 
-./src/components/report-viewer/AudioControls.tsx
-73:6  Warning: React Hook useEffect has a missing dependency: 'generateAndPlayAudio'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
-127:6  Warning: React Hook useEffect has missing dependencies: 'setAudioDuration', 'setAudioTime', and 'setPlaybackStatus'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+  × You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+  │ Learn more: https://nextjs.org/docs/getting-started/react-essentials
+  │
+  │
+    ╭─[C:\Projects\aiascent-dev\src\components\mission\MissionSectionBlock.tsx:6:1]
+  6 │ }
+  7 │ 'use client';
+  8 │
+  9 │ import React, { useState, useEffect } from 'react';
+    ·                 ────────
+ 10 │ import Image from 'next/image';
+ 11 │ import { motion, AnimatePresence } from 'framer-motion';
+ 11 │ import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+    ╰────
 
-./src/components/report-viewer/PromptNavigator.tsx
-18:7  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-18:34  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+  × You're importing a component that needs useEffect. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+  │ Learn more: https://nextjs.org/docs/getting-started/react-essentials
+  │
+  │
+    ╭─[C:\Projects\aiascent-dev\src\components\mission\MissionSectionBlock.tsx:6:1]
+  6 │ }
+  7 │ 'use client';
+  8 │
+  9 │ import React, { useState, useEffect } from 'react';
+    ·                           ─────────
+ 10 │ import Image from 'next/image';
+ 11 │ import { motion, AnimatePresence } from 'framer-motion';
+ 11 │ import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+    ╰────
 
-info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+Import trace for requested module:
+./src/components/mission/MissionSectionBlock.tsx
+./src/app/learn/page.tsx
+
+
+> Build failed because of webpack errors
 PS C:\Projects\aiascent-dev>
-</closet pc console logs>
 </Ephemeral Context>
+<Previous Cycle 30 Summary of Actions>
+I have analyzed the requests from Cycle 29 and formulated a comprehensive plan.
+
+First, I will address the `aiascent.game` login issue. The console logs clearly indicate that the browser is rejecting authentication cookies because of a `SameSite` policy conflict. This happens because the game is running in an `iframe` on a different domain, which modern browsers treat as a "cross-site" or "third-party" context, blocking cookies that are set to `Lax` or `Strict`. This is a security feature to prevent cross-site request forgery. The fix requires changes within the `aiascent.game` project's NextAuth configuration to set the cookies to `SameSite=None` and `Secure=true`. Since I cannot modify that project, I will create a new documentation artifact (`A31`) to explain the root cause and the necessary solution for you to implement in that codebase.
+
+Next, I will implement the requested UI improvements for the `/showcase` page. I will center-align the tab buttons and add a "Refresh" button to the "AI Ascent Game" tab. This button will allow users to easily reload the `iframe` content if the game state becomes stuck.
+
+I will also create the requested `LICENSE` file for the project, using the standard MIT License, which is a permissive and popular choice for open-source projects.
+
+Finally, I will address the `next/image` warnings appearing in the console. These warnings are caused by using the `fill` prop without a corresponding `sizes` prop, which hurts performance. I will add the appropriate `sizes` prop to the `Image` components in `ReportViewer.tsx` and `MissionSectionBlock.tsx` to resolve these warnings and improve image loading performance.
+
+1.  **Create `A31. aiascent.dev - iframe Integration Guide.md`:** Author a new documentation artifact to explain the root cause of the cross-domain cookie issue preventing login within the `iframe`. This guide will detail the necessary `SameSite=None` and `Secure=true` cookie configuration changes required in the `aiascent.game` project's NextAuth setup.
+2.  **Update `A0-Master-Artifact-List.md`:** Add the new `A31` artifact to the master list under the "Process & Workflow" section.
+3.  **Create `LICENSE` file:** Create a new file named `LICENSE` in the project's root directory and populate it with the standard MIT License text.
+4.  **Update `src/components/showcase/ShowcaseTabs.tsx`:**
+    *   Add `justify-center` to the tab button container's class list to center-align the tabs.
+    *   Add a `useRef` to get a handle on the `iframe` element.
+    *   Add a "Refresh" button that is conditionally rendered only when the "AI Ascent Game" tab is active.
+    *   Implement the `onClick` handler for the refresh button to call `iframeRef.current.contentWindow.location.reload()`, effectively refreshing the game inside the `iframe`.
+5.  **Update `src/components/report-viewer/ReportViewer.tsx`:**
+    *   Locate the `<Image>` component used for displaying the main report visuals.
+    *   Add a `sizes="100vw"` prop to this component to resolve the console warning regarding missing sizes with the `fill` prop.
+6.  **Update `src/components/mission/MissionSectionBlock.tsx`:**
+    *   Locate the `<Image>` component within this component.
+    *   Add `sizes="(max-width: 768px) 100vw, 50vw"` to provide more accurate information to the browser about the image size at different breakpoints, resolving the console warning.
+</Previous Cycle 30 Summary of Actions>
+</Cycle 31>
+
+<Cycle 30>
+<Cycle Context>
+magnificent! lets place a learn more button at the bottom of the mission page that just navigates to the learn page. and then also lets place a button to See Showcase at the bottom of the learn page. 
+
+also, now we are making the server go live. to that end, ive been working in the aiascent-game context to build out the caddy reverse proxy pm2 solution (see a188). now however during the npm run build phase, im encountering linting issues. see ephemeral
+</Cycle Context>
 <Previous Cycle 29 Summary of Actions>
 I have analyzed the five points from your latest feedback and have formulated a comprehensive plan to address them all. This cycle will focus on fixing the audio playback speed controls, implementing a more minimalist default view for the report viewers, reorganizing the main navigation, expanding the showcase page with a tabbed interface to include `aiascent.game`, and providing guidance on managing public GitHub repositories.
 
@@ -2485,10 +2490,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T14:22:40.191Z
+  Date Generated: 2025-10-13T14:54:37.734Z
   ---
   Total Files: 117
-  Approx. Tokens: 289699
+  Approx. Tokens: 290526
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2552,9 +2557,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 46. src\Artifacts\A15.5-Image-Prompt-Icon-ParallelCopilot.md - Lines: 38 - Chars: 1386 - Tokens: 347
 47. src\Artifacts\A15.6-Image-Prompt-Icon-IterativeWorkflow.md - Lines: 38 - Chars: 1313 - Tokens: 329
 48. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
-49. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
+49. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
 50. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-51. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
+51. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
 52. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
 53. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
 54. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2648 - Tokens: 662
@@ -2571,12 +2576,12 @@ This file-centric approach helps in planning and prioritizing work, especially i
 65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 138 - Chars: 11377 - Tokens: 2845
-69. src\app\mission\page.tsx - Lines: 127 - Chars: 11884 - Tokens: 2971
-70. src\components\report-viewer\AudioControls.tsx - Lines: 218 - Chars: 8669 - Tokens: 2168
+68. src\app\learn\page.tsx - Lines: 160 - Chars: 12404 - Tokens: 3101
+69. src\app\mission\page.tsx - Lines: 148 - Chars: 12803 - Tokens: 3201
+70. src\components\report-viewer\AudioControls.tsx - Lines: 225 - Chars: 9075 - Tokens: 2269
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-73. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
+73. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 840 - Tokens: 210
 74. src\components\report-viewer\ReportChatPanel.tsx - Lines: 163 - Chars: 7878 - Tokens: 1970
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
@@ -2598,13 +2603,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 92. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 93. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 94. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-95. src\components\mission\MissionSectionBlock.tsx - Lines: 121 - Chars: 3870 - Tokens: 968
+95. src\components\mission\MissionSectionBlock.tsx - Lines: 127 - Chars: 4007 - Tokens: 1002
 96. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
 97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 99. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
 100. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-101. src\components\global\GlobalAudioPlayer.tsx - Lines: 80 - Chars: 2596 - Tokens: 649
+101. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
 102. context\aiascentgame\scripts\convert_images_to_webp.js - Lines: 104 - Chars: 3809 - Tokens: 953
 103. context\aiascentgame\scripts\create_report_embedding.js - Lines: 145 - Chars: 5384 - Tokens: 1346
 104. context\aiascentgame\code\ascentiaHandler.ts - Lines: 353 - Chars: 19428 - Tokens: 4857
@@ -13129,162 +13134,167 @@ Generate an Open Graph image (1200x630 pixels) for the aiascent.dev website.
 </file_artifact>
 
 <file path="src/components/global/3d-card.tsx">
-// src/components/global/3d-card.tsx
-// C3 - Ported from automationsaas context
+{
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Wrapped `handleAnimations` in `useCallback` to stabilize its reference.
+  - Added `handleAnimations` to the `useEffect` dependency array.
+  */
+}
 'use client'
 
 import { cn } from '@/lib/utils'
 // Removed unused import: import Image from 'next/image'
 import React, {
-  createContext,
-  useState,
-  useContext,
-  useRef,
-  useEffect,
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+  useCallback,
 } from 'react'
 
 const MouseEnterContext = createContext<
-  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
-
+  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 > (undefined)
 
 export const CardContainer = ({
-  children,
-  className,
-  containerClassName,
+  children,
+  className,
+  containerClassName,
 }: {
-  children?: React.ReactNode
-  className?: string
-  containerClassName?: string
+  children?: React.ReactNode
+  className?: string
+  containerClassName?: string
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [isMouseEntered, setIsMouseEntered] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isMouseEntered, setIsMouseEntered] = useState(false)
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect()
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    const { left, top, width, height } =
+      containerRef.current.getBoundingClientRect()
 // Adjusted division factor from 25 to 40 for subtler effect
-    const x = (e.clientX - left - width / 2) / 40
-    const y = (e.clientY - top - height / 2) / 40
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
-  }
+    const x = (e.clientX - left - width / 2) / 40
+    const y = (e.clientY - top - height / 2) / 40
+    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
+  }
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsMouseEntered(true)
-    if (!containerRef.current) return
-  }
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseEntered(true)
+    if (!containerRef.current) return
+  }
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    setIsMouseEntered(false)
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`
-  }
-  return (
-    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
-      <div
-        className={cn('flex items-center justify-center', containerClassName)}
-        style={{
-          perspective: '1000px',
-        }}
-      >
-        <div
-          ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className={cn(
-            'flex items-center justify-center relative transition-all duration-200 ease-linear',
-            className
-          )}
-          style={{
-            transformStyle: 'preserve-3d',
-          }}
-        >
-          {children}
-        </div>
-      </div>
-    </MouseEnterContext.Provider>
-  )
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    setIsMouseEntered(false)
+    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`
+  }
+  return (
+    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
+      <div
+        className={cn('flex items-center justify-center', containerClassName)}
+        style={{
+          perspective: '1000px',
+        }}
+      >
+        <div
+          ref={containerRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={cn(
+            'flex items-center justify-center relative transition-all duration-200 ease-linear',
+            className
+          )}
+          style={{
+            transformStyle: 'preserve-3d',
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    </MouseEnterContext.Provider>
+  )
 }
 
 export const CardBody = ({
-  children,
-  className,
+  children,
+  className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode
+  className?: string
 }) => {
-  return (
+  return (
 // Removed fixed h-96 w-96 to allow flexible sizing
-    <div
-      className={cn(
-        '[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
+    <div
+      className={cn(
+        '[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
+        className
+      )}
+    >
+      {children}
+    </div>
+  )
 }
 
 export const CardItem = ({
-  as: Tag = 'div',
-  children,
-  className,
-  translateX = 0,
-  translateY = 0,
-  translateZ = 0,
-  rotateX = 0,
-  rotateY = 0,
-  rotateZ = 0,
-  ...rest
+  as: Tag = 'div',
+  children,
+  className,
+  translateX = 0,
+  translateY = 0,
+  translateZ = 0,
+  rotateX = 0,
+  rotateY = 0,
+  rotateZ = 0,
+  ...rest
 }: {
-  as?: React.ElementType
-  children: React.ReactNode
-  className?: string
-  translateX?: number | string
-  translateY?: number | string
-  translateZ?: number | string
-  rotateX?: number | string
-  rotateY?: number | string
-  rotateZ?: number | string
+  as?: React.ElementType
+  children: React.ReactNode
+  className?: string
+  translateX?: number | string
+  translateY?: number | string
+  translateZ?: number | string
+  rotateX?: number | string
+  rotateY?: number | string
+  rotateZ?: number | string
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isMouseEntered] = useMouseEnter()
+  const ref = useRef<HTMLDivElement>(null)
+  const [isMouseEntered] = useMouseEnter()
 
-  useEffect(() => {
-    handleAnimations()
-  }, [isMouseEntered])
+  const handleAnimations = useCallback(() => {
+    if (!ref.current) return
+    if (isMouseEntered) {
+      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+    } else {
+      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
+    }
+  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
-  const handleAnimations = () => {
-    if (!ref.current) return
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
-    }
-  }
+  useEffect(() => {
+    handleAnimations()
+  }, [isMouseEntered, handleAnimations])
 
-  return (
-    <Tag
-      ref={ref}
+  return (
+    <Tag
+      ref={ref}
 // Adjusted duration-200 to duration-300 for smoother animation
-      className={cn('w-fit transition duration-300 ease-linear', className)}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  )
+      className={cn('w-fit transition duration-300 ease-linear', className)}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  )
 }
 
 // Create a hook to use the context
 export const useMouseEnter = () => {
-  const context = useContext(MouseEnterContext)
-  if (context === undefined) {
-    throw new Error('useMouseEnter must be used within a MouseEnterProvider')
-  }
-  return context
+  const context = useContext(MouseEnterContext)
+  if (context === undefined) {
+    throw new Error('useMouseEnter must be used within a MouseEnterProvider')
+  }
+  return context
 }
 </file_artifact>
 
@@ -13406,99 +13416,108 @@ export const Card = ({
 </file_artifact>
 
 <file path="src/components/global/infinite-moving-cards.tsx">
+{
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Wrapped `addAnimation` in `useCallback` to stabilize its reference.
+  - Added `addAnimation` to the `useEffect` dependency array.
+  */
+}
 // src/components/global/infinite-moving-cards.tsx
 // C3 - Ported from automationsaas context
 'use client'
 
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 
 export const InfiniteMovingCards = ({
-  items,
-  direction = 'left',
-  speed = 'fast',
-  pauseOnHover = true,
-  className,
+  items,
+  direction = 'left',
+  speed = 'fast',
+  pauseOnHover = true,
+  className,
 }: {
-  items: {
+  items: {
 // Updated type to support image href or text content
-    content: string;
+    content: string;
 type: 'image' | 'text';
-  }[]
-  direction?: 'left' | 'right'
-  speed?: 'fast' | 'normal' | 'slow'
-  pauseOnHover?: boolean
-  className?: string
+  }[]
+  direction?: 'left' | 'right'
+  speed?: 'fast' | 'normal' | 'slow'
+  pauseOnHover?: boolean
+  className?: string
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const scrollerRef = React.useRef<HTMLUListElement>(null)
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const scrollerRef = React.useRef<HTMLUListElement>(null)
+  const [start, setStart] = useState(false)
 
-  useEffect(() => {
-    addAnimation()
-  }, [])
-  
-  const [start, setStart] = useState(false)
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children)
+  const getDirection = useCallback(() => {
+    if (containerRef.current) {
+      if (direction === 'left') {
+        containerRef.current.style.setProperty(
+          '--animation-direction',
+          'forwards'
+        )
+      } else {
+        containerRef.current.style.setProperty(
+          '--animation-direction',
+          'reverse'
+        )
+      }
+    }
+  }, [direction]);
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true)
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem)
-        }
-      })
+  const getSpeed = useCallback(() => {
+    if (containerRef.current) {
+      if (speed === 'fast') {
+        containerRef.current.style.setProperty('--animation-duration', '20s')
+      } else if (speed === 'normal') {
+        containerRef.current.style.setProperty('--animation-duration', '40s')
+      } else {
+        containerRef.current.style.setProperty('--animation-duration', '80s')
+      }
+    }
+  }, [speed]);
 
-      getDirection()
-      getSpeed()
-      setStart(true)
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === 'left') {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'forwards'
-        )
-      } else {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'reverse'
-        )
-      }
-    }
-  }
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === 'fast') {
-        containerRef.current.style.setProperty('--animation-duration', '20s')
-      } else if (speed === 'normal') {
-        containerRef.current.style.setProperty('--animation-duration', '40s')
-      } else {
-        containerRef.current.style.setProperty('--animation-duration', '80s')
-      }
-    }
-  }
+  const addAnimation = useCallback(() => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children)
 
-  return (
-    <div
-      ref={containerRef}
-      className={cn(
-        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
-        className
-      )}
-    >
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap items-center',
-          start && 'animate-scroll ',
-          pauseOnHover && 'hover:[animation-play-state:paused]'
-        )}
-      >
-        {items.map((item, idx) => (
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true)
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem)
+        }
+      })
+
+      getDirection()
+      getSpeed()
+      setStart(true)
+    }
+  }, [getDirection, getSpeed]);
+
+  useEffect(() => {
+    addAnimation()
+  }, [addAnimation])
+
+  return (
+    <div
+      ref={containerRef}
+      className={cn(
+        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        className
+      )}
+    >
+      <ul
+        ref={scrollerRef}
+        className={cn(
+          ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap items-center',
+          start && 'animate-scroll ',
+          pauseOnHover && 'hover:[animation-play-state:paused]'
+        )}
+      >
+        {items.map((item, idx) => (
 <li key={idx} className="flex items-center">
 {item.type === 'image' ? (
 <Image
@@ -13514,10 +13533,10 @@ className="relative rounded-2xl object-contain opacity-50"
 </span>
 )}
 </li>
-        ))}
-      </ul>
-    </div>
-  )
+        ))}
+      </ul>
+    </div>
+  )
 }
 </file_artifact>
 
@@ -16629,9 +16648,18 @@ To ensure the component can load its content, the following directory structure 
 </file_artifact>
 
 <file path="src/app/learn/page.tsx">
+{
+  /*
+  Cycle 30: Fix unescaped entities and add "See Showcase" button.
+  - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
+  - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
+  */
+}
 // src/app/learn/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const LearnPage = () => {
     return (
@@ -16642,7 +16670,7 @@ const LearnPage = () => {
                         The Pathway to Virtuosity
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mt-4">
-                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive 'vibecoding' to architectural mastery.
+                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive &apos;vibecoding&apos; to architectural mastery.
                     </p>
                 </section>
 
@@ -16650,7 +16678,7 @@ const LearnPage = () => {
                     <MissionSectionBlock
                         title="The 'Vibecoding to Virtuosity' Pathway"
                         tldr="The V2V pathway is a structured pedagogical model, grounded in Cognitive Apprenticeship, designed to transform intuitive AI interaction ('vibecoding') into architectural mastery."
-                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the 'Vibecoding to Virtuosity' pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
+                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the &apos;Vibecoding to Virtuosity&apos; pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
                         images={[
                             'from-intuition-to-mastery-p1-img-1.webp',
                             'from-intuition-to-mastery-p1-img-2.webp',
@@ -16761,6 +16789,19 @@ const LearnPage = () => {
                         imageSide="right"
                     />
                 </div>
+
+                <section className="text-center mt-24 py-16">
+                    <h2 className="text-3xl font-bold mb-4">See It in Action</h2>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Explore our showcase to see a complex, interactive report built entirely with the Data Curation Environment.
+                    </p>
+                    <Link href="/showcase" passHref>
+                        <Button size="lg" variant="outline">
+                            See The Showcase
+                        </Button>
+                    </Link>
+                </section>
+
             </div>
         </div>
     );
@@ -16770,9 +16811,17 @@ export default LearnPage;
 </file_artifact>
 
 <file path="src/app/mission/page.tsx">
+{
+  /*
+  Cycle 30: Add a "Learn More" button to the bottom of the page.
+  - Added a new section at the end with a Link and Button component to navigate to the /learn page.
+  */
+}
 // src/app/mission/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const MissionPage = () => {
     return (
@@ -16891,6 +16940,19 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                         imageSide="right"
                     />
                 </div>
+                
+                <section className="text-center mt-24 py-16">
+                    <h2 className="text-3xl font-bold mb-4">Ready to Build the Future?</h2>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Continue to our Learn page to discover the 'Vibecoding to Virtuosity' pathway—the curriculum for the Citizen Architect.
+                    </p>
+                    <Link href="/learn" passHref>
+                        <Button size="lg" variant="outline">
+                            Learn More
+                        </Button>
+                    </Link>
+                </section>
+
             </div>
         </div>
     );
@@ -16900,9 +16962,16 @@ export default MissionPage;
 </file_artifact>
 
 <file path="src/components/report-viewer/AudioControls.tsx">
+
+  /*
+  Cycle 30: Fix exhaustive-deps warnings.
+  - Wrapped `generateAndPlayAudio` in `useCallback` and added it to the dependency array.
+  - Added `setAudioDuration`, `setAudioTime`, and `setPlaybackStatus` to the second `useEffect` dependency array.
+  */
+
 // src/components/report-viewer/AudioControls.tsx
 'use client';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
 
@@ -16937,7 +17006,7 @@ const AudioControls: React.FC = () => {
   const audioUrlRef = useRef<string | null>(null);
   const currentPage = allPages[currentPageIndex];
 
-  const generateAndPlayAudio = async (restart = false) => {
+  const generateAndPlayAudio = useCallback(async (restart = false) => {
     if (!currentPage || !currentPage.pageTitle) {
       console.warn('[AudioControls] Attempted to generate audio with no current page or title.');
       return;
@@ -16966,13 +17035,13 @@ const AudioControls: React.FC = () => {
       console.error('[AudioControls] Failed to generate audio', error);
       setPlaybackStatus('error');
     }
-  };
+  }, [currentPage, setCurrentAudio, setPlaybackStatus]);
 
   useEffect(() => {
     if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
       generateAndPlayAudio();
     }
-  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
+  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex, generateAndPlayAudio]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -17026,7 +17095,7 @@ const AudioControls: React.FC = () => {
       audio.removeEventListener('error', handleError);
       if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
     };
-  }, []);
+  }, [setAudioDuration, setAudioTime, setPlaybackStatus]);
 
   const handlePlayPause = () => {
     stopSlideshow(true);
@@ -17241,6 +17310,12 @@ export default PageNavigator;
 </file_artifact>
 
 <file path="src/components/report-viewer/PromptNavigator.tsx">
+{
+  /*
+  Cycle 30: Fix unescaped entities.
+  - Replaced double quotes with &quot; to fix linting errors.
+  */
+}
 // src/components/report-viewer/PromptNavigator.tsx
 import React from 'react';
 import { useReportState } from '@/stores/reportStore';
@@ -17252,13 +17327,13 @@ const PromptNavigator: React.FC = () => {
   }));
 
   const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
+  const currentPrompt = currentPage?.imagePrompts;
 
   if (!currentPrompt?.promptText) return null;
 
   return (
     <div className="w-full text-left italic leading-relaxed text-muted-foreground text-xs p-2 bg-muted/50 rounded border-dashed border mb-4">
-      "{currentPrompt.promptText}"
+      &quot;{currentPrompt.promptText}&quot;
     </div>
   );
 };
@@ -20102,6 +20177,12 @@ The following plan maps the existing narrative sections of the Mission page to s
 </file_artifact>
 
 <file path="src/components/mission/MissionSectionBlock.tsx">
+{
+  /*
+  Cycle 30: Fix unescaped entities.
+  - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
+  */
+}
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -20183,7 +20264,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
         </AnimatePresence>
       </div>
       <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
-        <strong>Prompt:</strong> "{imagePrompt}"
+        <strong>Prompt:</strong> &quot;{imagePrompt}&quot;
       </p>
     </div>
   );
@@ -20618,6 +20699,12 @@ This plan will be the source of truth for creating the `whitepaper_report.json` 
 </file_artifact>
 
 <file path="src/components/global/GlobalAudioPlayer.tsx">
+
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Added `setGenericPlaybackStatus` to the `useEffect` dependency array.
+  */
+
 // src/components/global/GlobalAudioPlayer.tsx
 
 'use client';
@@ -20679,7 +20766,7 @@ const GlobalAudioPlayer = () => {
             audio.pause();
             audio.src = '';
         }
-    }, [genericAudioUrl]);
+    }, [genericAudioUrl, setGenericPlaybackStatus]);
     
     useEffect(() => {
         const audio = audioRef.current;

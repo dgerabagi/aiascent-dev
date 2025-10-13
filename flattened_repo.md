@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T14:22:40.191Z
+  Date Generated: 2025-10-13T14:54:37.734Z
   ---
   Total Files: 117
-  Approx. Tokens: 289699
+  Approx. Tokens: 290526
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -68,9 +68,9 @@
 46. src\Artifacts\A15.5-Image-Prompt-Icon-ParallelCopilot.md - Lines: 38 - Chars: 1386 - Tokens: 347
 47. src\Artifacts\A15.6-Image-Prompt-Icon-IterativeWorkflow.md - Lines: 38 - Chars: 1313 - Tokens: 329
 48. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
-49. src\components\global\3d-card.tsx - Lines: 157 - Chars: 4111 - Tokens: 1028
+49. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
 50. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-51. src\components\global\infinite-moving-cards.tsx - Lines: 113 - Chars: 2935 - Tokens: 734
+51. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
 52. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
 53. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
 54. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2648 - Tokens: 662
@@ -87,12 +87,12 @@
 65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 138 - Chars: 11377 - Tokens: 2845
-69. src\app\mission\page.tsx - Lines: 127 - Chars: 11884 - Tokens: 2971
-70. src\components\report-viewer\AudioControls.tsx - Lines: 218 - Chars: 8669 - Tokens: 2168
+68. src\app\learn\page.tsx - Lines: 160 - Chars: 12404 - Tokens: 3101
+69. src\app\mission\page.tsx - Lines: 148 - Chars: 12803 - Tokens: 3201
+70. src\components\report-viewer\AudioControls.tsx - Lines: 225 - Chars: 9075 - Tokens: 2269
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-73. src\components\report-viewer\PromptNavigator.tsx - Lines: 23 - Chars: 721 - Tokens: 181
+73. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 840 - Tokens: 210
 74. src\components\report-viewer\ReportChatPanel.tsx - Lines: 163 - Chars: 7878 - Tokens: 1970
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
@@ -114,13 +114,13 @@
 92. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 93. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 94. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-95. src\components\mission\MissionSectionBlock.tsx - Lines: 121 - Chars: 3870 - Tokens: 968
+95. src\components\mission\MissionSectionBlock.tsx - Lines: 127 - Chars: 4007 - Tokens: 1002
 96. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
 97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 99. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
 100. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-101. src\components\global\GlobalAudioPlayer.tsx - Lines: 80 - Chars: 2596 - Tokens: 649
+101. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
 102. context\aiascentgame\scripts\convert_images_to_webp.js - Lines: 104 - Chars: 3809 - Tokens: 953
 103. context\aiascentgame\scripts\create_report_embedding.js - Lines: 145 - Chars: 5384 - Tokens: 1346
 104. context\aiascentgame\code\ascentiaHandler.ts - Lines: 353 - Chars: 19428 - Tokens: 4857
@@ -10645,162 +10645,167 @@ Generate an Open Graph image (1200x630 pixels) for the aiascent.dev website.
 </file_artifact>
 
 <file path="src/components/global/3d-card.tsx">
-// src/components/global/3d-card.tsx
-// C3 - Ported from automationsaas context
+{
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Wrapped `handleAnimations` in `useCallback` to stabilize its reference.
+  - Added `handleAnimations` to the `useEffect` dependency array.
+  */
+}
 'use client'
 
 import { cn } from '@/lib/utils'
 // Removed unused import: import Image from 'next/image'
 import React, {
-  createContext,
-  useState,
-  useContext,
-  useRef,
-  useEffect,
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+  useCallback,
 } from 'react'
 
 const MouseEnterContext = createContext<
-  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
-
+  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 > (undefined)
 
 export const CardContainer = ({
-  children,
-  className,
-  containerClassName,
+  children,
+  className,
+  containerClassName,
 }: {
-  children?: React.ReactNode
-  className?: string
-  containerClassName?: string
+  children?: React.ReactNode
+  className?: string
+  containerClassName?: string
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [isMouseEntered, setIsMouseEntered] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isMouseEntered, setIsMouseEntered] = useState(false)
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect()
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    const { left, top, width, height } =
+      containerRef.current.getBoundingClientRect()
 // Adjusted division factor from 25 to 40 for subtler effect
-    const x = (e.clientX - left - width / 2) / 40
-    const y = (e.clientY - top - height / 2) / 40
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
-  }
+    const x = (e.clientX - left - width / 2) / 40
+    const y = (e.clientY - top - height / 2) / 40
+    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
+  }
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsMouseEntered(true)
-    if (!containerRef.current) return
-  }
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseEntered(true)
+    if (!containerRef.current) return
+  }
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    setIsMouseEntered(false)
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`
-  }
-  return (
-    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
-      <div
-        className={cn('flex items-center justify-center', containerClassName)}
-        style={{
-          perspective: '1000px',
-        }}
-      >
-        <div
-          ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className={cn(
-            'flex items-center justify-center relative transition-all duration-200 ease-linear',
-            className
-          )}
-          style={{
-            transformStyle: 'preserve-3d',
-          }}
-        >
-          {children}
-        </div>
-      </div>
-    </MouseEnterContext.Provider>
-  )
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return
+    setIsMouseEntered(false)
+    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`
+  }
+  return (
+    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
+      <div
+        className={cn('flex items-center justify-center', containerClassName)}
+        style={{
+          perspective: '1000px',
+        }}
+      >
+        <div
+          ref={containerRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={cn(
+            'flex items-center justify-center relative transition-all duration-200 ease-linear',
+            className
+          )}
+          style={{
+            transformStyle: 'preserve-3d',
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    </MouseEnterContext.Provider>
+  )
 }
 
 export const CardBody = ({
-  children,
-  className,
+  children,
+  className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode
+  className?: string
 }) => {
-  return (
+  return (
 // Removed fixed h-96 w-96 to allow flexible sizing
-    <div
-      className={cn(
-        '[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
+    <div
+      className={cn(
+        '[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
+        className
+      )}
+    >
+      {children}
+    </div>
+  )
 }
 
 export const CardItem = ({
-  as: Tag = 'div',
-  children,
-  className,
-  translateX = 0,
-  translateY = 0,
-  translateZ = 0,
-  rotateX = 0,
-  rotateY = 0,
-  rotateZ = 0,
-  ...rest
+  as: Tag = 'div',
+  children,
+  className,
+  translateX = 0,
+  translateY = 0,
+  translateZ = 0,
+  rotateX = 0,
+  rotateY = 0,
+  rotateZ = 0,
+  ...rest
 }: {
-  as?: React.ElementType
-  children: React.ReactNode
-  className?: string
-  translateX?: number | string
-  translateY?: number | string
-  translateZ?: number | string
-  rotateX?: number | string
-  rotateY?: number | string
-  rotateZ?: number | string
+  as?: React.ElementType
+  children: React.ReactNode
+  className?: string
+  translateX?: number | string
+  translateY?: number | string
+  translateZ?: number | string
+  rotateX?: number | string
+  rotateY?: number | string
+  rotateZ?: number | string
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isMouseEntered] = useMouseEnter()
+  const ref = useRef<HTMLDivElement>(null)
+  const [isMouseEntered] = useMouseEnter()
 
-  useEffect(() => {
-    handleAnimations()
-  }, [isMouseEntered])
+  const handleAnimations = useCallback(() => {
+    if (!ref.current) return
+    if (isMouseEntered) {
+      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+    } else {
+      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
+    }
+  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
-  const handleAnimations = () => {
-    if (!ref.current) return
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
-    }
-  }
+  useEffect(() => {
+    handleAnimations()
+  }, [isMouseEntered, handleAnimations])
 
-  return (
-    <Tag
-      ref={ref}
+  return (
+    <Tag
+      ref={ref}
 // Adjusted duration-200 to duration-300 for smoother animation
-      className={cn('w-fit transition duration-300 ease-linear', className)}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  )
+      className={cn('w-fit transition duration-300 ease-linear', className)}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  )
 }
 
 // Create a hook to use the context
 export const useMouseEnter = () => {
-  const context = useContext(MouseEnterContext)
-  if (context === undefined) {
-    throw new Error('useMouseEnter must be used within a MouseEnterProvider')
-  }
-  return context
+  const context = useContext(MouseEnterContext)
+  if (context === undefined) {
+    throw new Error('useMouseEnter must be used within a MouseEnterProvider')
+  }
+  return context
 }
 </file_artifact>
 
@@ -10922,99 +10927,108 @@ export const Card = ({
 </file_artifact>
 
 <file path="src/components/global/infinite-moving-cards.tsx">
+{
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Wrapped `addAnimation` in `useCallback` to stabilize its reference.
+  - Added `addAnimation` to the `useEffect` dependency array.
+  */
+}
 // src/components/global/infinite-moving-cards.tsx
 // C3 - Ported from automationsaas context
 'use client'
 
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 
 export const InfiniteMovingCards = ({
-  items,
-  direction = 'left',
-  speed = 'fast',
-  pauseOnHover = true,
-  className,
+  items,
+  direction = 'left',
+  speed = 'fast',
+  pauseOnHover = true,
+  className,
 }: {
-  items: {
+  items: {
 // Updated type to support image href or text content
-    content: string;
+    content: string;
 type: 'image' | 'text';
-  }[]
-  direction?: 'left' | 'right'
-  speed?: 'fast' | 'normal' | 'slow'
-  pauseOnHover?: boolean
-  className?: string
+  }[]
+  direction?: 'left' | 'right'
+  speed?: 'fast' | 'normal' | 'slow'
+  pauseOnHover?: boolean
+  className?: string
 }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const scrollerRef = React.useRef<HTMLUListElement>(null)
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const scrollerRef = React.useRef<HTMLUListElement>(null)
+  const [start, setStart] = useState(false)
 
-  useEffect(() => {
-    addAnimation()
-  }, [])
-  
-  const [start, setStart] = useState(false)
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children)
+  const getDirection = useCallback(() => {
+    if (containerRef.current) {
+      if (direction === 'left') {
+        containerRef.current.style.setProperty(
+          '--animation-direction',
+          'forwards'
+        )
+      } else {
+        containerRef.current.style.setProperty(
+          '--animation-direction',
+          'reverse'
+        )
+      }
+    }
+  }, [direction]);
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true)
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem)
-        }
-      })
+  const getSpeed = useCallback(() => {
+    if (containerRef.current) {
+      if (speed === 'fast') {
+        containerRef.current.style.setProperty('--animation-duration', '20s')
+      } else if (speed === 'normal') {
+        containerRef.current.style.setProperty('--animation-duration', '40s')
+      } else {
+        containerRef.current.style.setProperty('--animation-duration', '80s')
+      }
+    }
+  }, [speed]);
 
-      getDirection()
-      getSpeed()
-      setStart(true)
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === 'left') {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'forwards'
-        )
-      } else {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'reverse'
-        )
-      }
-    }
-  }
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === 'fast') {
-        containerRef.current.style.setProperty('--animation-duration', '20s')
-      } else if (speed === 'normal') {
-        containerRef.current.style.setProperty('--animation-duration', '40s')
-      } else {
-        containerRef.current.style.setProperty('--animation-duration', '80s')
-      }
-    }
-  }
+  const addAnimation = useCallback(() => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children)
 
-  return (
-    <div
-      ref={containerRef}
-      className={cn(
-        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
-        className
-      )}
-    >
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap items-center',
-          start && 'animate-scroll ',
-          pauseOnHover && 'hover:[animation-play-state:paused]'
-        )}
-      >
-        {items.map((item, idx) => (
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true)
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem)
+        }
+      })
+
+      getDirection()
+      getSpeed()
+      setStart(true)
+    }
+  }, [getDirection, getSpeed]);
+
+  useEffect(() => {
+    addAnimation()
+  }, [addAnimation])
+
+  return (
+    <div
+      ref={containerRef}
+      className={cn(
+        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        className
+      )}
+    >
+      <ul
+        ref={scrollerRef}
+        className={cn(
+          ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap items-center',
+          start && 'animate-scroll ',
+          pauseOnHover && 'hover:[animation-play-state:paused]'
+        )}
+      >
+        {items.map((item, idx) => (
 <li key={idx} className="flex items-center">
 {item.type === 'image' ? (
 <Image
@@ -11030,10 +11044,10 @@ className="relative rounded-2xl object-contain opacity-50"
 </span>
 )}
 </li>
-        ))}
-      </ul>
-    </div>
-  )
+        ))}
+      </ul>
+    </div>
+  )
 }
 </file_artifact>
 
@@ -14145,9 +14159,18 @@ To ensure the component can load its content, the following directory structure 
 </file_artifact>
 
 <file path="src/app/learn/page.tsx">
+{
+  /*
+  Cycle 30: Fix unescaped entities and add "See Showcase" button.
+  - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
+  - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
+  */
+}
 // src/app/learn/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const LearnPage = () => {
     return (
@@ -14158,7 +14181,7 @@ const LearnPage = () => {
                         The Pathway to Virtuosity
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mt-4">
-                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive 'vibecoding' to architectural mastery.
+                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive &apos;vibecoding&apos; to architectural mastery.
                     </p>
                 </section>
 
@@ -14166,7 +14189,7 @@ const LearnPage = () => {
                     <MissionSectionBlock
                         title="The 'Vibecoding to Virtuosity' Pathway"
                         tldr="The V2V pathway is a structured pedagogical model, grounded in Cognitive Apprenticeship, designed to transform intuitive AI interaction ('vibecoding') into architectural mastery."
-                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the 'Vibecoding to Virtuosity' pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
+                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the &apos;Vibecoding to Virtuosity&apos; pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
                         images={[
                             'from-intuition-to-mastery-p1-img-1.webp',
                             'from-intuition-to-mastery-p1-img-2.webp',
@@ -14277,6 +14300,19 @@ const LearnPage = () => {
                         imageSide="right"
                     />
                 </div>
+
+                <section className="text-center mt-24 py-16">
+                    <h2 className="text-3xl font-bold mb-4">See It in Action</h2>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Explore our showcase to see a complex, interactive report built entirely with the Data Curation Environment.
+                    </p>
+                    <Link href="/showcase" passHref>
+                        <Button size="lg" variant="outline">
+                            See The Showcase
+                        </Button>
+                    </Link>
+                </section>
+
             </div>
         </div>
     );
@@ -14286,9 +14322,17 @@ export default LearnPage;
 </file_artifact>
 
 <file path="src/app/mission/page.tsx">
+{
+  /*
+  Cycle 30: Add a "Learn More" button to the bottom of the page.
+  - Added a new section at the end with a Link and Button component to navigate to the /learn page.
+  */
+}
 // src/app/mission/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const MissionPage = () => {
     return (
@@ -14407,6 +14451,19 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                         imageSide="right"
                     />
                 </div>
+                
+                <section className="text-center mt-24 py-16">
+                    <h2 className="text-3xl font-bold mb-4">Ready to Build the Future?</h2>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Continue to our Learn page to discover the 'Vibecoding to Virtuosity' pathway—the curriculum for the Citizen Architect.
+                    </p>
+                    <Link href="/learn" passHref>
+                        <Button size="lg" variant="outline">
+                            Learn More
+                        </Button>
+                    </Link>
+                </section>
+
             </div>
         </div>
     );
@@ -14416,9 +14473,16 @@ export default MissionPage;
 </file_artifact>
 
 <file path="src/components/report-viewer/AudioControls.tsx">
+
+  /*
+  Cycle 30: Fix exhaustive-deps warnings.
+  - Wrapped `generateAndPlayAudio` in `useCallback` and added it to the dependency array.
+  - Added `setAudioDuration`, `setAudioTime`, and `setPlaybackStatus` to the second `useEffect` dependency array.
+  */
+
 // src/components/report-viewer/AudioControls.tsx
 'use client';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
 
@@ -14453,7 +14517,7 @@ const AudioControls: React.FC = () => {
   const audioUrlRef = useRef<string | null>(null);
   const currentPage = allPages[currentPageIndex];
 
-  const generateAndPlayAudio = async (restart = false) => {
+  const generateAndPlayAudio = useCallback(async (restart = false) => {
     if (!currentPage || !currentPage.pageTitle) {
       console.warn('[AudioControls] Attempted to generate audio with no current page or title.');
       return;
@@ -14482,13 +14546,13 @@ const AudioControls: React.FC = () => {
       console.error('[AudioControls] Failed to generate audio', error);
       setPlaybackStatus('error');
     }
-  };
+  }, [currentPage, setCurrentAudio, setPlaybackStatus]);
 
   useEffect(() => {
     if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
       generateAndPlayAudio();
     }
-  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
+  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex, generateAndPlayAudio]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -14542,7 +14606,7 @@ const AudioControls: React.FC = () => {
       audio.removeEventListener('error', handleError);
       if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
     };
-  }, []);
+  }, [setAudioDuration, setAudioTime, setPlaybackStatus]);
 
   const handlePlayPause = () => {
     stopSlideshow(true);
@@ -14757,6 +14821,12 @@ export default PageNavigator;
 </file_artifact>
 
 <file path="src/components/report-viewer/PromptNavigator.tsx">
+{
+  /*
+  Cycle 30: Fix unescaped entities.
+  - Replaced double quotes with &quot; to fix linting errors.
+  */
+}
 // src/components/report-viewer/PromptNavigator.tsx
 import React from 'react';
 import { useReportState } from '@/stores/reportStore';
@@ -14768,13 +14838,13 @@ const PromptNavigator: React.FC = () => {
   }));
 
   const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
+  const currentPrompt = currentPage?.imagePrompts;
 
   if (!currentPrompt?.promptText) return null;
 
   return (
     <div className="w-full text-left italic leading-relaxed text-muted-foreground text-xs p-2 bg-muted/50 rounded border-dashed border mb-4">
-      "{currentPrompt.promptText}"
+      &quot;{currentPrompt.promptText}&quot;
     </div>
   );
 };
@@ -17618,6 +17688,12 @@ The following plan maps the existing narrative sections of the Mission page to s
 </file_artifact>
 
 <file path="src/components/mission/MissionSectionBlock.tsx">
+{
+  /*
+  Cycle 30: Fix unescaped entities.
+  - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
+  */
+}
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -17699,7 +17775,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
         </AnimatePresence>
       </div>
       <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
-        <strong>Prompt:</strong> "{imagePrompt}"
+        <strong>Prompt:</strong> &quot;{imagePrompt}&quot;
       </p>
     </div>
   );
@@ -18134,6 +18210,12 @@ This plan will be the source of truth for creating the `whitepaper_report.json` 
 </file_artifact>
 
 <file path="src/components/global/GlobalAudioPlayer.tsx">
+
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Added `setGenericPlaybackStatus` to the `useEffect` dependency array.
+  */
+
 // src/components/global/GlobalAudioPlayer.tsx
 
 'use client';
@@ -18195,7 +18277,7 @@ const GlobalAudioPlayer = () => {
             audio.pause();
             audio.src = '';
         }
-    }, [genericAudioUrl]);
+    }, [genericAudioUrl, setGenericPlaybackStatus]);
     
     useEffect(() => {
         const audio = audioRef.current;
