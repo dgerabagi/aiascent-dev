@@ -10,6 +10,9 @@ interface ReportChatPanelProps {
     reportName: string;
 }
 
+// Regex to strip internal LLM thinking tags and content
+const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
+
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown } = useReportStore.getState();
     const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts } = useReportState(state => ({
@@ -52,6 +55,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         // C35: Strip out suggestions block before rendering
         const suggestionsRegex = /:::suggestions:::[\s\S]*?:::end_suggestions:::/g;
         let cleanedText = rawText.replace(suggestionsRegex, '').trim();
+
+        // C36 FIX: Strip out thinking tags
+        cleanedText = cleanedText.replace(thinkingRegex, '').trim();
 
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
@@ -244,9 +250,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C19: Use MarkdownRenderer
+                                // C36 FIX: Changed from undefined parseMessageWithThinking to defined parseFinalMessage
                                 <div className={`prose prose-sm max-w-none ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
-                                    <MarkdownRenderer>{parseMessageWithThinking(msg.message)}</MarkdownRenderer>
+                                    <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
                         </div>

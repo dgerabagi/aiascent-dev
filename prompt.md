@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 36 - nice! almost working!
+Current Cycle 37 - great work! minor changes
+Cycle 36 - nice! almost working!
 Cycle 35 - massive. lets continue to build
 Cycle 34 - nice! live! now need readme and download working
 Cycle 33 - More Linting; Now Build Errors
@@ -432,48 +433,53 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 37>
+<Cycle Context>
+nice! okay can you ensure theres no extra /newline of any type at the end of the chat messages? they seem to (both user and agent) seem to have an extra line worth of space below the chat bubble. in other words, the top margin of the bubble from the start of the bubble to the start of the text should be the same on the top and the bottom of the text.
+
+next, the images are no longer working, and the ai is no longer responding. the reason why it is no lonegr responding is you are not giving the AI enough time. it takes just a bit longer than you're allowing before the timeout to load up and respond. 
+
+for the images, it appears you are looking for the whitepaper images in the report image directory. see ephemeral and match it to this: `public\assets\images\whitepaper\wp-02-executive-summary.webp`. make sure our documentation (technical scaffold or otherwise) is aligned such that this is a known location.
+</Cycle Context>
+<Ephemeral Context>
+<browser console log>
+Image with src "/assets/icons/iterative-workflow.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Invalid URI. Load of media resource  failed. localhost:3000
+Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. warn-once.mjs:9:13
+Error with chat stream: DOMException: The operation was aborted. 
+    timeoutId webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:131
+app-index.js:33:22
+Error with chat stream: DOMException: The operation was aborted. 
+    timeoutId webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:131
+app-index.js:33:22
+Error with chat stream: DOMException: The operation was aborted. 
+    timeoutId webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:131
+app-index.js:33:22
+GET
+http://localhost:3000/assets/images/report/wp-02-executive-summary.webp
+[HTTP/1.1 404 Not Found 44ms]
+
+
+</browser console log>
+</Ephemeral Context>
+<Previous Cycle 36 Summary of Actions>
+I have analyzed the request to implement dynamic prompt suggestions ("chips") for the "Ask @Ascentia" chat feature. Following the "Documentation First" principle, I will first create a planning artifact outlining the architecture for this feature. Then, I will implement the changes across the backend API (to generate suggestions), the state store (to manage them), and the frontend UI (to display and interact with them).
+
+1.  **Create `A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md`:** Author a new artifact detailing the technical implementation for generating, parsing, and displaying dynamic follow-up questions in the chat interface.
+2.  **Update `A0-Master-Artifact-List.md`:** Add the new `A32` artifact to the master list.
+3.  **Update `src/app/api/chat/route.ts`:** Modify the system prompts to instruct the LLM to generate 2-4 relevant follow-up questions at the end of its response, formatted as a JSON array within specific delimiters for easy parsing.
+4.  **Update `src/stores/reportStore.ts`:** Add `suggestedPrompts` to the `ReportState` to store the current list of suggestions, defaulting to the requested static prompts. Add an action to update this state.
+5.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:**
+    *   Implement parsing logic to extract the JSON suggestions from the LLM's response stream, update the store, and clean the message text for display.
+    *   Add a UI section at the bottom of the panel to render the suggested prompts as clickable buttons.
+    *   Implement the click handler to automatically submit the selected prompt.
+</Previous Cycle 36 Summary of Actions>
+</Cycle 37>
+
 <Cycle 36>
 <Cycle Context>
 nice!!!! okay so it seems to work in the backend, however the frontend gives an error... see ephemeral below.
 </Cycle Context>
-<Ephemeral Context>
-<backend>
-[Chat API] RAG Diagnostic for prompt: "How does DCE work?" using KB: 'dce'
-[Chat API] Retrieved 7 documents from 'dce' KB:
-  Doc 1 (Dist: 0.4148): "rsion control, allowing operators to instantly apply an AI's suggestion to the l..."
-  Doc 2 (Dist: 0.4577): "anual Editing:** The analyst manually edits each file, attempting to rewrite the..."
-  Doc 3 (Dist: 0.4970): " multiple AI responses, and the developer's final choice—is itself a valuable, a..."
-  Doc 4 (Dist: 0.4973): "text problem" by automating the tedious and error-prone process of manually prep..."
-  Doc 5 (Dist: 0.5097): "pidly iterate on complex datasets without manual reconstruction.
-
-If feedback ..."
-  Doc 6 (Dist: 0.5190): "f the target file structure for the DCE extension, outlining the layout of direc..."
-  Doc 7 (Dist: 0.5461): " DCE - Phase 2 - Advanced Diff Viewer Plan
-- **Description:** Details the plan ..."
- POST /api/chat 200 in 10031ms
-
-</backend>
-
-<frontend>
-1 of 1 error
-Next.js (14.2.3) is outdated (learn more)
-Unhandled Runtime Error
-
-ReferenceError: parseMessageWithThinking is not defined
-Source
-
-src\components\report-viewer\ReportChatPanel.tsx (237:36) @ map
-
-  235 |             {/* Chat History */}
-  236 |             <div ref={chatContainerRef} className="flex-1 p-3 overflow-y-auto text-sm space-y-4 scroll-smooth">
-> 237 |                 {reportChatHistory.map((msg, index) => (
-      |                                    ^
-  238 |                     <div key={msg.id || index} className={`flex flex-col ${msg.author === 'You' ? 'items-end' : 'items-start'}`}>
-  239 |                         <div className={`flex items-center gap-1 text-xs mb-1 ${msg.author === 'You' ? 'text-primary' : 'text-cyan-500'}`}>
-  240 |                             <span>{msg.flag}</span>
-
-Call Stack</frontend>
-</Ephemeral Context>
 <Previous Cycle 35 Summary of Actions>
 I have analyzed the requests for Cycle 34. My course of action is to create a professional `README.md` for the newly public repository, fix the non-functional "Download Now" button on the homepage, and improve the organization of the interactive whitepaper by categorizing its content into a nested structure.
 
@@ -2572,10 +2578,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T17:13:31.522Z
+  Date Generated: 2025-10-13T17:29:08.899Z
   ---
   Total Files: 120
-  Approx. Tokens: 295798
+  Approx. Tokens: 295869
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2655,7 +2661,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 295 - Chars: 14123 - Tokens: 3531
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14406 - Tokens: 3602
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -15055,6 +15061,9 @@ interface ReportChatPanelProps {
     reportName: string;
 }
 
+// Regex to strip internal LLM thinking tags and content
+const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
+
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown } = useReportStore.getState();
     const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts } = useReportState(state => ({
@@ -15097,6 +15106,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         // C35: Strip out suggestions block before rendering
         const suggestionsRegex = /:::suggestions:::[\s\S]*?:::end_suggestions:::/g;
         let cleanedText = rawText.replace(suggestionsRegex, '').trim();
+
+        // C36 FIX: Strip out thinking tags
+        cleanedText = cleanedText.replace(thinkingRegex, '').trim();
 
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
@@ -15289,9 +15301,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C19: Use MarkdownRenderer
+                                // C36 FIX: Changed from undefined parseMessageWithThinking to defined parseFinalMessage
                                 <div className={`prose prose-sm max-w-none ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
-                                    <MarkdownRenderer>{parseMessageWithThinking(msg.message)}</MarkdownRenderer>
+                                    <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
                         </div>

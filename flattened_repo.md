@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T17:13:31.522Z
+  Date Generated: 2025-10-13T17:29:08.899Z
   ---
   Total Files: 120
-  Approx. Tokens: 295798
+  Approx. Tokens: 295869
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -84,7 +84,7 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 295 - Chars: 14123 - Tokens: 3531
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14406 - Tokens: 3602
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -12484,6 +12484,9 @@ interface ReportChatPanelProps {
     reportName: string;
 }
 
+// Regex to strip internal LLM thinking tags and content
+const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
+
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown } = useReportStore.getState();
     const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts } = useReportState(state => ({
@@ -12526,6 +12529,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         // C35: Strip out suggestions block before rendering
         const suggestionsRegex = /:::suggestions:::[\s\S]*?:::end_suggestions:::/g;
         let cleanedText = rawText.replace(suggestionsRegex, '').trim();
+
+        // C36 FIX: Strip out thinking tags
+        cleanedText = cleanedText.replace(thinkingRegex, '').trim();
 
         const finalMessageMarker = '<|channel|>final<|message|>';
         const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
@@ -12718,9 +12724,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             {msg.status === 'thinking' ? (
                                 <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
                             ) : (
-                                // C19: Use MarkdownRenderer
+                                // C36 FIX: Changed from undefined parseMessageWithThinking to defined parseFinalMessage
                                 <div className={`prose prose-sm max-w-none ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
-                                    <MarkdownRenderer>{parseMessageWithThinking(msg.message)}</MarkdownRenderer>
+                                    <MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer>
                                 </div>
                             )}
                         </div>
