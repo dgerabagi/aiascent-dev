@@ -67,9 +67,15 @@ ${markdownFormattingInstruction}
 ${suggestionInstruction}`
 };
 
+// C43: New system prompt for suggestion generation
+const suggestionSystemPrompt = `You are an AI assistant. Your task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting.
+
+Example response:
+["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
+
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report' } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', task } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -81,6 +87,55 @@ export async function POST(request: Request) {
     return new NextResponse(errorMessage, { status: 500 });
   }
 
+  const completionsUrl = `${llmUrl}/v1/completions`;
+
+  // C43: Handle suggestion generation task
+  if (task === 'generate_suggestions') {
+    try {
+        const suggestionPrompt = `
+System: ${suggestionSystemPrompt}
+
+--- START DOCUMENT TEXT ---
+${pageContext}
+--- END DOCUMENT TEXT ---
+
+User: Generate questions based on the text above.
+
+Assistant:`;
+
+        const response = await fetch(completionsUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                model: 'unsloth/gpt-oss-20b',
+                prompt: suggestionPrompt,
+                max_tokens: 256,
+                temperature: 0.5,
+                stream: false, // Non-streaming for this task
+            }),
+        });
+
+        if (!response.ok) {
+            const errorBody = await response.text();
+            throw new Error(`LLM server error for suggestions: ${response.status} ${errorBody}`);
+        }
+
+        const data = await response.json();
+        const content = data.choices?.[0]?.text || '[]';
+        // Extract JSON array from the response, as the model might add extra text
+        const jsonMatch = content.match(/\[[\s\S]*\]/);
+        const jsonString = jsonMatch ? jsonMatch : '[]';
+        
+        const suggestions = JSON.parse(jsonString);
+        return NextResponse.json(suggestions);
+
+    } catch (error: any) {
+        console.error('[Chat API] Error generating suggestions:', error.message);
+        return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
+    }
+  }
+
+  // --- Existing RAG and Chat Logic ---
   let retrievedContext = '';
   let retrievedDocsLog = 'No documents retrieved.';
   try {
@@ -131,7 +186,6 @@ export async function POST(request: Request) {
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
 
-  const completionsUrl = `${llmUrl}/v1/completions`;
   const systemPrompt = systemPrompts[kbIdentifier];
 
   const finalPrompt = `

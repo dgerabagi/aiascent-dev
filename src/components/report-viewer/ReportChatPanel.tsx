@@ -2,7 +2,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
-import { FaTimes, FaBroom } from 'react-icons/fa';
+import { FaTimes, FaBroom, FaSpinner } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
 
@@ -18,12 +18,13 @@ const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
-        toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown,
+        toggleChatPanel, clearReportChatHistory,
         setReportChatMessage,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
-        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts 
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts,
+        suggestionsStatus // C43: Get new status
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -35,6 +36,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
         setSuggestedPrompts: state.setSuggestedPrompts,
+        suggestionsStatus: state.suggestionsStatus, // C43
     }));
     
     const [isThinking, setIsThinking] = useState(false);
@@ -272,21 +274,25 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             </div>
 
             {/* Suggested Prompts (Chips) */}
-            {!isThinking && suggestedPrompts.length > 0 && (
-                <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap">
-                    {suggestedPrompts.map((prompt, index) => (
-                        <Badge
-                            key={index}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
-                            onClick={() => handleChipClick(prompt)}
-                            title={prompt} // Tooltip on hover
-                        >
-                            {prompt}
-                        </Badge>
-                    ))}
-                </div>
-            )}
+            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center min-h-[40px]">
+                {suggestionsStatus === 'loading' && (
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                        <FaSpinner className="animate-spin" />
+                        Generating suggestions...
+                    </div>
+                )}
+                {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                    <Badge
+                        key={index}
+                        variant="secondary"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
+                        onClick={() => handleChipClick(prompt)}
+                        title={prompt} // Tooltip on hover
+                    >
+                        {prompt}
+                    </Badge>
+                ))}
+            </div>
 
             {/* Input Area */}
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">

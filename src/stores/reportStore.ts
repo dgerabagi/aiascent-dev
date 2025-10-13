@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
 // Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
 // Updated on: C37 (Fix image path generation to use manifest's basePath.)
@@ -104,6 +105,7 @@ export interface ReportState {
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
+    suggestionsStatus: 'idle' | 'loading' | 'error'; // C43: New state for suggestion generation
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -145,6 +147,7 @@ export interface ReportActions {
     closeImageFullscreen: () => void;
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
+    fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     setReportChatMessage: (id: string, message: string) => void; // C38: New action
@@ -189,6 +192,7 @@ const createInitialReportState = (): ReportState => ({
     reportChatHistory: [],
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
+    suggestionsStatus: 'idle', // C43
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -216,6 +220,40 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
         (set, get) => ({
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
+
+            fetchAndSetSuggestions: async (page: ReportPage, reportName: string) => {
+                if (!page) return;
+                set({ suggestionsStatus: 'loading' });
+                
+                const defaultSuggestions = reportName === 'whitepaper' 
+                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+
+                try {
+                    const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                    
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            task: 'generate_suggestions',
+                            pageContext,
+                        }),
+                    });
+
+                    if (!response.ok) throw new Error('Failed to fetch suggestions');
+
+                    const suggestions = await response.json();
+                    if (Array.isArray(suggestions) && suggestions.length > 0) {
+                        set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                    } else {
+                        throw new Error('Invalid suggestions format');
+                    }
+                } catch (error) {
+                    console.error("Failed to fetch dynamic suggestions:", error);
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
             loadReport: async (reportName: string) => {
                 if (!reportName) {
@@ -315,6 +353,10 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         isLoading: false,
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
+                    // C43: Fetch suggestions for the initial page
+                    if (reconstructedPages.length > 0) {
+                        get().fetchAndSetSuggestions(reconstructedPages[0], reportName);
+                    }
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
                     set({ isLoading: false });
@@ -523,7 +565,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
                 // C42: Use report-specific defaults when clearing chat.
-                const { reportName } = get();
+                const { reportName, fetchAndSetSuggestions, allPages, currentPageIndex } = get();
                 const defaultSuggestions = reportName === 'whitepaper' 
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
@@ -532,8 +574,14 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
-                    suggestedPrompts: defaultSuggestions,
                 });
+                // C43: Re-fetch dynamic suggestions for the current page after clearing.
+                const currentPage = allPages[currentPageIndex];
+                if (currentPage && reportName) {
+                    fetchAndSetSuggestions(currentPage, reportName);
+                } else {
+                    set({ suggestedPrompts: defaultSuggestions });
+                }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),

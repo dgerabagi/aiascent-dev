@@ -19,7 +19,7 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -51,6 +51,15 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         loadReport(reportName);
     }, [loadReport, reportName]);
 
+    const currentPage = allPages[currentPageIndex];
+
+    // C43: Fetch suggestions when the current page changes.
+    useEffect(() => {
+        if (currentPage) {
+            fetchAndSetSuggestions(currentPage, reportName);
+        }
+    }, [currentPage, reportName, fetchAndSetSuggestions]);
+
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
@@ -62,10 +71,9 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
             startSlideshow();
         }
     }, [playbackStatus, autoplayEnabled, startSlideshow]);
-
-    const currentPage = allPages[currentPageIndex];
+    
     const currentPrompt = currentPage?.imagePrompts?.[0];
-    const currentImage = currentPrompt?.images[currentImageIndex];
+    const currentImage = currentPrompt?.images?.[currentImageIndex];
 
     if (!_hasHydrated || isLoading) {
         return (
