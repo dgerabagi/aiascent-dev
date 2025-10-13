@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 31 - First Linting Round
+Current Cycle 32 - Second Linting Round; Almost All Errors Resolved
+Cycle 31 - First Linting Round
 Cycle 30 - Go Live
 Cycle 29 - more incredible work
 Cycle 28 - continue excellent progress
@@ -422,9 +423,9 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
-<Cycle 31>
+<Cycle 32>
 <Cycle Context>
-for some reason, when on the showcase, when viewing the ascent report tab, when i switch to the ai ascent game tab, my screen scrolls down. can we leave it scrolled to the top? next, stilll getting some linting errors when running npm run build on the closet pc (see ephemeral)
+nice work, now it seems only two files with issues remaining!
 </Cycle Context>
 <Ephemeral Context>
 PS C:\Projects\aiascent-dev> npm run build
@@ -436,60 +437,40 @@ PS C:\Projects\aiascent-dev> npm run build
   - Environments: .env
 
    Creating an optimized production build ...
+ ✓ Compiled successfully
+
 Failed to compile.
 
-./src/components/mission/MissionSectionBlock.tsx
-Error:
-  × The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
-   ╭─[C:\Projects\aiascent-dev\src\components\mission\MissionSectionBlock.tsx:4:1]
- 4 │   - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
- 5 │   */
- 6 │ }
- 7 │ 'use client';
-   · ─────────────
- 8 │
- 9 │ import React, { useState, useEffect } from 'react';
- 9 │ import Image from 'next/image';
-   ╰────
+./src/app/mission/page.tsx
+138:68  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+138:93  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
 
-  × You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
-  │ Learn more: https://nextjs.org/docs/getting-started/react-essentials
-  │
-  │
-    ╭─[C:\Projects\aiascent-dev\src\components\mission\MissionSectionBlock.tsx:6:1]
-  6 │ }
-  7 │ 'use client';
-  8 │
-  9 │ import React, { useState, useEffect } from 'react';
-    ·                 ────────
- 10 │ import Image from 'next/image';
- 11 │ import { motion, AnimatePresence } from 'framer-motion';
- 11 │ import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
-    ╰────
+./src/components/report-viewer/AudioControls.tsx
+74:6  Warning: React Hook useCallback has a missing dependency: 'currentPageIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
 
-  × You're importing a component that needs useEffect. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
-  │ Learn more: https://nextjs.org/docs/getting-started/react-essentials
-  │
-  │
-    ╭─[C:\Projects\aiascent-dev\src\components\mission\MissionSectionBlock.tsx:6:1]
-  6 │ }
-  7 │ 'use client';
-  8 │
-  9 │ import React, { useState, useEffect } from 'react';
-    ·                           ─────────
- 10 │ import Image from 'next/image';
- 11 │ import { motion, AnimatePresence } from 'framer-motion';
- 11 │ import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
-    ╰────
-
-Import trace for requested module:
-./src/components/mission/MissionSectionBlock.tsx
-./src/app/learn/page.tsx
-
-
-> Build failed because of webpack errors
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
 PS C:\Projects\aiascent-dev>
 </Ephemeral Context>
+<Previous Cycle 31 Summary of Actions>
+I have analyzed the request to add navigation buttons and fix the linting issues preventing a successful production build. My course of action is to address all reported errors and warnings, which will make the application build-ready for its "Go Live" deployment. I will also add the requested "Learn More" and "See Showcase" buttons to the Mission and Learn pages, respectively, to improve inter-page navigation.
+
+This cycle is focused on hardening the codebase by resolving all outstanding linting issues, which primarily consist of unescaped characters in JSX and missing dependencies in `useEffect` hooks. By fixing these, we ensure the application is stable and adheres to React's best practices.
+
+1.  **Update `src/app/mission/page.tsx`**: I will add a "Learn More" button at the bottom of the page, wrapped in a `Link` component, that navigates the user to the `/learn` page.
+2.  **Update `src/app/learn/page.tsx`**: I will fix the `react/no-unescaped-entities` errors by replacing the problematic single quotes with their HTML entity equivalent (`&apos;`). Additionally, I will add a "See The Showcase" button at the bottom of this page to guide users to the `/showcase` page.
+3.  **Fix Unescaped Entities**: I will correct the `react/no-unescaped-entities` errors in `src/components/mission/MissionSectionBlock.tsx` and `src/components/report-viewer/PromptNavigator.tsx` by replacing double quotes with `&quot;`.
+4.  **Fix Missing `useEffect` Dependencies**: I will resolve all `react-hooks/exhaustive-deps` warnings across the following files by adding the missing dependencies to the dependency arrays. For function dependencies defined within the components, I will wrap them in `useCallback` to prevent unnecessary re-renders.
+    *   `src/components/global/3d-card.tsx`
+    *   `src/components/global/GlobalAudioPlayer.tsx`
+    *   `src/components/global/infinite-moving-cards.tsx`
+    *   `src/components/report-viewer/AudioControls.tsx`
+</Previous Cycle 31 Summary of Actions>
+</Cycle 32>
+
+<Cycle 31>
+<Cycle Context>
+for some reason, when on the showcase, when viewing the ascent report tab, when i switch to the ai ascent game tab, my screen scrolls down. can we leave it scrolled to the top? next, stilll getting some linting errors when running npm run build on the closet pc (see ephemeral)
+</Cycle Context>
 <Previous Cycle 30 Summary of Actions>
 I have analyzed the requests from Cycle 29 and formulated a comprehensive plan.
 
@@ -2490,10 +2471,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T14:54:37.734Z
+  Date Generated: 2025-10-13T15:04:36.304Z
   ---
   Total Files: 117
-  Approx. Tokens: 290526
+  Approx. Tokens: 290887
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2576,8 +2557,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 160 - Chars: 12404 - Tokens: 3101
-69. src\app\mission\page.tsx - Lines: 148 - Chars: 12803 - Tokens: 3201
+68. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
+69. src\app\mission\page.tsx - Lines: 152 - Chars: 13039 - Tokens: 3260
 70. src\components\report-viewer\AudioControls.tsx - Lines: 225 - Chars: 9075 - Tokens: 2269
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
@@ -2603,7 +2584,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 92. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 93. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 94. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-95. src\components\mission\MissionSectionBlock.tsx - Lines: 127 - Chars: 4007 - Tokens: 1002
+95. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
 96. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
 97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
@@ -2622,7 +2603,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 111. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
 112. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
 113. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 49 - Chars: 3369 - Tokens: 843
-114. src\components\showcase\ShowcaseTabs.tsx - Lines: 56 - Chars: 1745 - Tokens: 437
+114. src\components\showcase\ShowcaseTabs.tsx - Lines: 81 - Chars: 2586 - Tokens: 647
 115. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
 116. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
 117. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
@@ -16648,8 +16629,12 @@ To ensure the component can load its content, the following directory structure 
 </file_artifact>
 
 <file path="src/app/learn/page.tsx">
+'use client';
 {
   /*
+  Cycle 31: Add 'use client' directive.
+  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
+  - Therefore, this page must also be a Client Component to be used in the App Router.
   Cycle 30: Fix unescaped entities and add "See Showcase" button.
   - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
   - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
@@ -16811,8 +16796,12 @@ export default LearnPage;
 </file_artifact>
 
 <file path="src/app/mission/page.tsx">
+'use client';
 {
   /*
+  Cycle 31: Add 'use client' directive.
+  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
+  - Therefore, this page must also be a Client Component to be used in the App Router.
   Cycle 30: Add a "Learn More" button to the bottom of the page.
   - Added a new section at the end with a Link and Button component to navigate to the /learn page.
   */
@@ -20177,13 +20166,15 @@ The following plan maps the existing narrative sections of the Mission page to s
 </file_artifact>
 
 <file path="src/components/mission/MissionSectionBlock.tsx">
+'use client';
 {
   /*
+  Cycle 31: Fix "use client" directive placement.
+  - Moved 'use client' to line 1, before any other expressions including comments.
   Cycle 30: Fix unescaped entities.
   - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
   */
 }
-'use client';
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -24716,17 +24707,30 @@ This plan provides a clean, user-friendly, and technically straightforward path 
 <file path="src/components/showcase/ShowcaseTabs.tsx">
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
 import { FaSync } from 'react-icons/fa';
 
 const ShowcaseTabs = () => {
   const [activeTab, setActiveTab] = useState('report');
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // C31: Fix scrolling issue when switching tabs
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
 
   const tabs = [
     { id: 'report', label: 'The Ascent Report' },
     { id: 'game', label: 'AI Ascent Game' },
   ];
+
+  const handleRefresh = () => {
+    if (iframeRef.current?.contentWindow) {
+      iframeRef.current.contentWindow.location.reload();
+    }
+  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -24745,6 +24749,17 @@ const ShowcaseTabs = () => {
             {tab.label}
           </button>
         ))}
+        {/* C29: Add Refresh button, conditionally rendered */}
+        {activeTab === 'game' && (
+          <button
+            onClick={handleRefresh}
+            className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 px-3 py-1.5 text-xs border rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+            title="Refresh game frame"
+          >
+            <FaSync />
+            Refresh
+          </button>
+        )}
       </div>
 
       {/* Tab Content */}
@@ -24758,6 +24773,7 @@ const ShowcaseTabs = () => {
         )}
         {activeTab === 'game' && (
           <iframe
+            ref={iframeRef}
             src="https://aiascent.game/"
             title="AI Ascent Game"
             className="w-full h-full border-0"

@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T14:54:37.734Z
+  Date Generated: 2025-10-13T15:04:36.304Z
   ---
   Total Files: 117
-  Approx. Tokens: 290526
+  Approx. Tokens: 290887
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -87,8 +87,8 @@
 65. context\aiascentgame\report\ReportTreeNav.tsx - Lines: 152 - Chars: 6078 - Tokens: 1520
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-68. src\app\learn\page.tsx - Lines: 160 - Chars: 12404 - Tokens: 3101
-69. src\app\mission\page.tsx - Lines: 148 - Chars: 12803 - Tokens: 3201
+68. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
+69. src\app\mission\page.tsx - Lines: 152 - Chars: 13039 - Tokens: 3260
 70. src\components\report-viewer\AudioControls.tsx - Lines: 225 - Chars: 9075 - Tokens: 2269
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
@@ -114,7 +114,7 @@
 92. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 93. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 94. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-95. src\components\mission\MissionSectionBlock.tsx - Lines: 127 - Chars: 4007 - Tokens: 1002
+95. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
 96. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
 97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
@@ -133,7 +133,7 @@
 111. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
 112. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
 113. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 49 - Chars: 3369 - Tokens: 843
-114. src\components\showcase\ShowcaseTabs.tsx - Lines: 56 - Chars: 1745 - Tokens: 437
+114. src\components\showcase\ShowcaseTabs.tsx - Lines: 81 - Chars: 2586 - Tokens: 647
 115. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
 116. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
 117. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
@@ -14159,8 +14159,12 @@ To ensure the component can load its content, the following directory structure 
 </file_artifact>
 
 <file path="src/app/learn/page.tsx">
+'use client';
 {
   /*
+  Cycle 31: Add 'use client' directive.
+  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
+  - Therefore, this page must also be a Client Component to be used in the App Router.
   Cycle 30: Fix unescaped entities and add "See Showcase" button.
   - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
   - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
@@ -14322,8 +14326,12 @@ export default LearnPage;
 </file_artifact>
 
 <file path="src/app/mission/page.tsx">
+'use client';
 {
   /*
+  Cycle 31: Add 'use client' directive.
+  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
+  - Therefore, this page must also be a Client Component to be used in the App Router.
   Cycle 30: Add a "Learn More" button to the bottom of the page.
   - Added a new section at the end with a Link and Button component to navigate to the /learn page.
   */
@@ -17688,13 +17696,15 @@ The following plan maps the existing narrative sections of the Mission page to s
 </file_artifact>
 
 <file path="src/components/mission/MissionSectionBlock.tsx">
+'use client';
 {
   /*
+  Cycle 31: Fix "use client" directive placement.
+  - Moved 'use client' to line 1, before any other expressions including comments.
   Cycle 30: Fix unescaped entities.
   - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
   */
 }
-'use client';
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -22227,17 +22237,30 @@ This plan provides a clean, user-friendly, and technically straightforward path 
 <file path="src/components/showcase/ShowcaseTabs.tsx">
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
 import { FaSync } from 'react-icons/fa';
 
 const ShowcaseTabs = () => {
   const [activeTab, setActiveTab] = useState('report');
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // C31: Fix scrolling issue when switching tabs
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
 
   const tabs = [
     { id: 'report', label: 'The Ascent Report' },
     { id: 'game', label: 'AI Ascent Game' },
   ];
+
+  const handleRefresh = () => {
+    if (iframeRef.current?.contentWindow) {
+      iframeRef.current.contentWindow.location.reload();
+    }
+  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -22256,6 +22279,17 @@ const ShowcaseTabs = () => {
             {tab.label}
           </button>
         ))}
+        {/* C29: Add Refresh button, conditionally rendered */}
+        {activeTab === 'game' && (
+          <button
+            onClick={handleRefresh}
+            className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 px-3 py-1.5 text-xs border rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+            title="Refresh game frame"
+          >
+            <FaSync />
+            Refresh
+          </button>
+        )}
       </div>
 
       {/* Tab Content */}
@@ -22269,6 +22303,7 @@ const ShowcaseTabs = () => {
         )}
         {activeTab === 'game' && (
           <iframe
+            ref={iframeRef}
             src="https://aiascent.game/"
             title="AI Ascent Game"
             className="w-full h-full border-0"
