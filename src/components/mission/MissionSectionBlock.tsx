@@ -1,3 +1,9 @@
+{
+  /*
+  Cycle 30: Fix unescaped entities.
+  - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
+  */
+}
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -79,7 +85,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
         </AnimatePresence>
       </div>
       <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
-        <strong>Prompt:</strong> "{imagePrompt}"
+        <strong>Prompt:</strong> &quot;{imagePrompt}&quot;
       </p>
     </div>
   );

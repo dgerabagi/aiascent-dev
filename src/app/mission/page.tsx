@@ -1,6 +1,14 @@
+{
+  /*
+  Cycle 30: Add a "Learn More" button to the bottom of the page.
+  - Added a new section at the end with a Link and Button component to navigate to the /learn page.
+  */
+}
 // src/app/mission/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const MissionPage = () => {
     return (
@@ -119,6 +127,19 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                         imageSide="right"
                     />
                 </div>
+                
+                <section className="text-center mt-24 py-16">
+                    <h2 className="text-3xl font-bold mb-4">Ready to Build the Future?</h2>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Continue to our Learn page to discover the 'Vibecoding to Virtuosity' pathway—the curriculum for the Citizen Architect.
+                    </p>
+                    <Link href="/learn" passHref>
+                        <Button size="lg" variant="outline">
+                            Learn More
+                        </Button>
+                    </Link>
+                </section>
+
             </div>
         </div>
     );

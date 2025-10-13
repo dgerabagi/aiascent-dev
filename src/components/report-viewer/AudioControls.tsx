@@ -1,6 +1,13 @@
+
+  /*
+  Cycle 30: Fix exhaustive-deps warnings.
+  - Wrapped `generateAndPlayAudio` in `useCallback` and added it to the dependency array.
+  - Added `setAudioDuration`, `setAudioTime`, and `setPlaybackStatus` to the second `useEffect` dependency array.
+  */
+
 // src/components/report-viewer/AudioControls.tsx
 'use client';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
 
@@ -35,7 +42,7 @@ const AudioControls: React.FC = () => {
   const audioUrlRef = useRef<string | null>(null);
   const currentPage = allPages[currentPageIndex];
 
-  const generateAndPlayAudio = async (restart = false) => {
+  const generateAndPlayAudio = useCallback(async (restart = false) => {
     if (!currentPage || !currentPage.pageTitle) {
       console.warn('[AudioControls] Attempted to generate audio with no current page or title.');
       return;
@@ -64,13 +71,13 @@ const AudioControls: React.FC = () => {
       console.error('[AudioControls] Failed to generate audio', error);
       setPlaybackStatus('error');
     }
-  };
+  }, [currentPage, setCurrentAudio, setPlaybackStatus]);
 
   useEffect(() => {
     if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
       generateAndPlayAudio();
     }
-  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
+  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex, generateAndPlayAudio]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -124,7 +131,7 @@ const AudioControls: React.FC = () => {
       audio.removeEventListener('error', handleError);
       if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
     };
-  }, []);
+  }, [setAudioDuration, setAudioTime, setPlaybackStatus]);
 
   const handlePlayPause = () => {
     stopSlideshow(true);

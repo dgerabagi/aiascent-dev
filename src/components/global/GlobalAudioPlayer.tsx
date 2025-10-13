@@ -1,3 +1,9 @@
+
+  /*
+  Cycle 30: Fix exhaustive-deps warning.
+  - Added `setGenericPlaybackStatus` to the `useEffect` dependency array.
+  */
+
 // src/components/global/GlobalAudioPlayer.tsx
 
 'use client';
@@ -59,7 +65,7 @@ const GlobalAudioPlayer = () => {
             audio.pause();
             audio.src = '';
         }
-    }, [genericAudioUrl]);
+    }, [genericAudioUrl, setGenericPlaybackStatus]);
     
     useEffect(() => {
         const audio = audioRef.current;

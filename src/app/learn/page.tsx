@@ -1,6 +1,15 @@
+{
+  /*
+  Cycle 30: Fix unescaped entities and add "See Showcase" button.
+  - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
+  - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
+  */
+}
 // src/app/learn/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const LearnPage = () => {
     return (
@@ -11,7 +20,7 @@ const LearnPage = () => {
                         The Pathway to Virtuosity
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mt-4">
-                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive 'vibecoding' to architectural mastery.
+                        Learn the methodology of the Citizen Architect. Master the art and science of AI-assisted development, from intuitive &apos;vibecoding&apos; to architectural mastery.
                     </p>
                 </section>
 
@@ -19,7 +28,7 @@ const LearnPage = () => {
                     <MissionSectionBlock
                         title="The 'Vibecoding to Virtuosity' Pathway"
                         tldr="The V2V pathway is a structured pedagogical model, grounded in Cognitive Apprenticeship, designed to transform intuitive AI interaction ('vibecoding') into architectural mastery."
-                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the 'Vibecoding to Virtuosity' pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
+                        content="The creation of complex systems with AI is a journey. It begins with intuition and culminates in architectural mastery. This is the &apos;Vibecoding to Virtuosity&apos; pathway, a new model for creative development that redefines technical literacy. It is the curriculum for the Citizen Architect."
                         images={[
                             'from-intuition-to-mastery-p1-img-1.webp',
                             'from-intuition-to-mastery-p1-img-2.webp',
@@ -130,6 +139,19 @@ const LearnPage = () => {
                         imageSide="right"
                     />
                 </div>
+
+                <section className="text-center mt-24 py-16">
+                    <h2 className="text-3xl font-bold mb-4">See It in Action</h2>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Explore our showcase to see a complex, interactive report built entirely with the Data Curation Environment.
+                    </p>
+                    <Link href="/showcase" passHref>
+                        <Button size="lg" variant="outline">
+                            See The Showcase
+                        </Button>
+                    </Link>
+                </section>
+
             </div>
         </div>
     );
