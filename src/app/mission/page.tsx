@@ -1,5 +1,9 @@
+'use client';
 {
   /*
+  Cycle 31: Add 'use client' directive.
+  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
+  - Therefore, this page must also be a Client Component to be used in the App Router.
   Cycle 30: Add a "Learn More" button to the bottom of the page.
   - Added a new section at the end with a Link and Button component to navigate to the /learn page.
   */

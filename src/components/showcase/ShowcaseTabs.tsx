@@ -1,16 +1,29 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
 import { FaSync } from 'react-icons/fa';
 
 const ShowcaseTabs = () => {
   const [activeTab, setActiveTab] = useState('report');
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // C31: Fix scrolling issue when switching tabs
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
 
   const tabs = [
     { id: 'report', label: 'The Ascent Report' },
     { id: 'game', label: 'AI Ascent Game' },
   ];
+
+  const handleRefresh = () => {
+    if (iframeRef.current?.contentWindow) {
+      iframeRef.current.contentWindow.location.reload();
+    }
+  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -29,6 +42,17 @@ const ShowcaseTabs = () => {
             {tab.label}
           </button>
         ))}
+        {/* C29: Add Refresh button, conditionally rendered */}
+        {activeTab === 'game' && (
+          <button
+            onClick={handleRefresh}
+            className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 px-3 py-1.5 text-xs border rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+            title="Refresh game frame"
+          >
+            <FaSync />
+            Refresh
+          </button>
+        )}
       </div>
 
       {/* Tab Content */}
@@ -42,6 +66,7 @@ const ShowcaseTabs = () => {
         )}
         {activeTab === 'game' && (
           <iframe
+            ref={iframeRef}
             src="https://aiascent.game/"
             title="AI Ascent Game"
             className="w-full h-full border-0"

@@ -1,10 +1,12 @@
+'use client';
 {
   /*
+  Cycle 31: Fix "use client" directive placement.
+  - Moved 'use client' to line 1, before any other expressions including comments.
   Cycle 30: Fix unescaped entities.
   - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
   */
 }
-'use client';
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';

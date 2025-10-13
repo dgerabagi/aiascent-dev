@@ -1,5 +1,9 @@
+'use client';
 {
   /*
+  Cycle 31: Add 'use client' directive.
+  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
+  - Therefore, this page must also be a Client Component to be used in the App Router.
   Cycle 30: Fix unescaped entities and add "See Showcase" button.
   - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
   - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
