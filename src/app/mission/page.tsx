@@ -1,6 +1,8 @@
 'use client';
 {
   /*
+  Cycle 32: Fix unescaped entities.
+  - Replaced ' with &apos; in the content for "The Strategic Imperative: The Fissured Workplace" to fix linting error.
   Cycle 31: Add 'use client' directive.
   - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
   - Therefore, this page must also be a Client Component to be used in the App Router.
@@ -53,7 +55,7 @@ const MissionPage = () => {
                         tldr="The current Western AI labor model is a strategic vulnerability, creating an unstable foundation for our most critical technology by prioritizing short-term cost savings over the cognitive well-being of its essential workforce."
                         content="The AI supply chain is a masterclass in obfuscation, deliberately fractured to distance valuable tech companies from the human labor that makes their products possible. This labyrinthine structure, known as the 'fissured workplace,' is not an accident; it is a design choice intended to suppress wages, prevent worker organization, and shed legal and ethical liability. It creates a global 'ghost workforce' of data annotators and content moderators who are underpaid, psychologically stressed, and treated as disposable.
 
-This is more than an ethical failing; it is a critical strategic blunder. Decades of research show that financial precarity imposes a severe 'Cognitive Bandwidth Tax,' measurably reducing a person's ability to perform the complex, nuanced tasks required for high-quality data curation. By institutionalizing this precarity, the Western AI industry has built an architecture of self-sabotage. It guarantees the production of flawed, biased, and insecure training data—a systemic crisis of 'Garbage In, Garbage Out.'
+This is more than an ethical failing; it is a critical strategic blunder. Decades of research show that financial precarity imposes a severe 'Cognitive Bandwidth Tax,' measurably reducing a person&apos;s ability to perform the complex, nuanced tasks required for high-quality data curation. By institutionalizing this precarity, the Western AI industry has built an architecture of self-sabotage. It guarantees the production of flawed, biased, and insecure training data—a systemic crisis of &apos;Garbage In, Garbage Out.&apos;
 
 In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry. An AI superpower cannot be sustained indefinitely on a brittle foundation of exploited labor."
                         images={[

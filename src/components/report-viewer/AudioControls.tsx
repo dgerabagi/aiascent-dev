@@ -1,10 +1,12 @@
-
+{
   /*
+  Cycle 32: Fix exhaustive-deps warning.
+  - Added `currentPageIndex` to the `useCallback` dependency array for `generateAndPlayAudio`.
   Cycle 30: Fix exhaustive-deps warnings.
   - Wrapped `generateAndPlayAudio` in `useCallback` and added it to the dependency array.
   - Added `setAudioDuration`, `setAudioTime`, and `setPlaybackStatus` to the second `useEffect` dependency array.
   */
-
+}
 // src/components/report-viewer/AudioControls.tsx
 'use client';
 import React, { useRef, useEffect, useCallback } from 'react';
@@ -71,7 +73,7 @@ const AudioControls: React.FC = () => {
       console.error('[AudioControls] Failed to generate audio', error);
       setPlaybackStatus('error');
     }
-  }, [currentPage, setCurrentAudio, setPlaybackStatus]);
+  }, [currentPage, setCurrentAudio, setPlaybackStatus, currentPageIndex]);
 
   useEffect(() => {
     if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
