@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 43 - nice! now lets enhance...
+Current Cycle 44 - great! now improve parsing robustness
+Cycle 43 - nice! now lets enhance...
 Cycle 42 - noice! now tiny fix in the report viewer in showcase
 Cycle 41 - 2/3 solved!
 Cycle 40 - neither issue resolved
@@ -438,6 +439,91 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 44>
+<Cycle Context>
+great work! however i think we still need to improve upon the robusness/parsing.
+
+1. in the first response (first screenshot), that gives the `examples from the report` table, there are `<br>`'s that appear towards the user rather than being treated as newlines.
+2. in the second response (second screenshot), there are two issues, first the bullets are on their own line rather than having the bullets content immediately following the bullet, as per usual.
+3. the suggestions once again missed parsing by a missing `:`, this time, the missing colon is the final character: `:::end_suggestions::`, in that theres three colons on the left side, but only two on the right, throwing off the parsing.
+</Cycle Context>
+<Ephemeral Context>
+<browser console>
+Invalid URI. Load of media resource  failed. aiascent.dev
+GET
+https://aiascent.dev/favicon.ico
+[HTTP/2 404  125ms]
+
+XHRPOST
+https://aiascent.dev/api/chat
+[HTTP/2 500  2391ms]
+
+Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
+    NextJS 32
+23-879d931dc9a45e27.js:1:3948
+Failed to fetch dynamic suggestions: Error: Invalid suggestions format
+    NextJS 12
+23-879d931dc9a45e27.js:1:3948
+XHRPOST
+https://aiascent.dev/api/chat
+[HTTP/2 500  5227ms]
+
+XHRPOST
+https://aiascent.dev/api/chat
+[HTTP/2 500  7588ms]
+
+Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
+    NextJS 32
+23-879d931dc9a45e27.js:1:3948
+Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
+    NextJS 12
+23-879d931dc9a45e27.js:1:3948
+Failed to fetch dynamic suggestions: Error: Invalid suggestions format
+    NextJS 12
+23-879d931dc9a45e27.js:1:3948
+XHRPOST
+https://aiascent.dev/api/chat
+[HTTP/2 500  2421ms]
+
+Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
+    NextJS 12
+23-879d931dc9a45e27.js:1:3948
+[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer based on context only. The given chunks mention U.S., China, China has integrated model, US fissured model. Also mention \"Great Cognitive Capital Transfer\" and that the U.S. is outsourcing annotation leading to transfer of cognitive capital.\n\nThe question: examples of countries that successfully leveraged cognitive capital for economic growth? Context mentions China as a success. The US is struggling. No other country mentioned explicitly in context. So we can only say China, maybe mention U.S. failing but not example. Provide concise answer referencing China as integrated model, and possibly note lack of others in provided context.\n\nWe should be careful: \"Based on the provided context\" means only from chunks given. Only countries referenced: United States, China. So answer that China successfully leveraged cognitive capital; US hasn't yet. Possibly mention other examples not in context? We must not invent. So we can say: In the report, China is highlighted as leveraging cognitive capital for growth. No other country explicitly mentioned.\n\nProvide markdown bullet list, short.\n\nThen follow-up suggestions.<|end|><|start|>assistant<|channel|>final<|message|>**Examples from the report**\n\n| Country | How it leveraged cognitive capital |\n| :--- | :--- |\n| **China** | • State‑led professionalization of AI talent through integrated curricula and professional identity.<br>• Built a “Cognitive Capital” pipeline that gave China a 5.5‑year head start over the United States.<br>• The Integrated Model is described as strategically durable, enabling sustained economic growth driven by human intellectual capacity. |\n| **United States** | • Not highlighted as a success; the report describes it as “fissured” and strategically unsustainable in building its own cognitive capital. |\n\nNo other countries are mentioned in the provided context.  \n\n---\n\n:::suggestions:::[\n  \"What specific policies did China implement to build its integrated model?\",\n  \"How does the report define the difference between a fissured and an integrated model?\"\n]:::end_suggestions::" 90-8f995d15749d06dd.js:1:9652
+[Chat Panel] Suggestions block found. Raw content: "[\n  \"What specific policies did China implement to build its integrated model?\",\n  \"How does the report define the difference between a fissured and an integrated model?\"\n]" 90-8f995d15749d06dd.js:1:9843
+[Chat Panel] Successfully parsed suggestions: 
+Array [ "What specific policies did China implement to build its integrated model?", "How does the report define the difference between a fissured and an integrated model?" ]
+90-8f995d15749d06dd.js:1:10037
+[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer based on context chunks.\n\nWe have info about China's integrated model. Specific policies mentioned: inland-sourcing (内陆外包) strategy, data annotation industry in interior provinces; \"precision poverty alleviation\" campaign; local governments subsidizing and tax breaks for data labeling companies; state-guided industrial placement; creating data labeling factories in rural counties; integration of AI workforce into national strategy; professionalized, state-sanctioned training. Also mention directive policy integrated into national strategy; proactive industrial policy; mandatory AI education and vocational training.\n\nWe should cite those from context: inland-sourcing, precision poverty alleviation, subsidies, tax breaks, data labeling factories, etc.\n\nAlso mention \"professionalized, state-sanctioned\" workforce, \"mandatory AI education\", \"vocational training\". Provide answer concisely with bullet list of specific policies. Use markdown formatting. Then after main response we need to generate follow-up questions as JSON array inside delimiters. Format: :::suggestions:::[ ... ]:::end_suggestions:::\n\nLet's craft.\n\n<|end|><|start|>assistant<|channel|>final<|message|>China’s integrated AI model rests on a handful of concrete, state‑led policy pillars that turn domestic labour and education into national assets:\n\n- **Inland‑Sourcing (内陆外包)** – the government directs data‑annotation work to interior provinces rather than coastal hubs.  This shifts the supply chain inward, reduces dependence on foreign talent, and keeps critical skills within a controlled domestic ecosystem.\n\n- **Precision Poverty Alleviation (精准扶贫)** – data‑labeling factories are established in historically impoverished counties (e.g., Guizhou, Shanxi, Henan).  Local governments offer subsidies, tax breaks, and other incentives to attract annotation firms, turning low‑cost labour into high‑value AI work.\n\n- **Professionalized Workforce Standards** – the state sets mandatory AI education and vocational training pathways, ensuring that workers receive formal, structured instruction rather than informal or outsourced “ghost” roles.  This builds a deep, K‑PhD talent pipeline with clear career progression.\n\n- **State‑Sanctioned Industrial Policy** – unlike the U.S.’s laissez‑faire approach, China embeds AI development into national strategy documents and industrial plans, providing proactive support for research institutions and companies alike.\n\n- **Data Integrity & Security Controls** – by keeping annotation and model fine‑tuning on‑premises, the policy limits exposure to data poisoning, espionage, or IP theft that would otherwise arise from offshore outsourcing.\n\nThese policies together create a “national learning machine” that continuously feeds high‑quality data into models, reinforcing China’s long‑term AI competitiveness.  \n\n:::suggestions:::[\n  \"How does inland‑sourcing impact the quality of AI models?\",\n  \"What are the key differences between U.S. and Chinese approaches to workforce training?\",\n  \"Can these policies be replicated in other countries?\"\n]:::end_suggestions::" 90-8f995d15749d06dd.js:1:9652
+[Chat Panel] Suggestions block found. Raw content: "[ ... ]" 90-8f995d15749d06dd.js:1:9843
+[Chat Panel] Failed to parse suggestions JSON: SyntaxError: JSON.parse: unexpected character at line 1 column 3 of the JSON data
+    NextJS 32
+ Raw content was: 
+Array [ ":::suggestions:::[ ... ]:::end_suggestions:::", "[ ... ]" ]
+23-879d931dc9a45e27.js:1:3948
+
+</browser console>
+</Ephemeral Context>
+<Previous Cycle 43 Summary of Actions>
+I have analyzed the request to implement different default chat questions for the two interactive reports. My course of action is to make the state management and chat panel components "report-aware" to handle this context-specific requirement.
+
+First, I will update the `reportStore` to store the name of the currently active report (`whitepaper` or `showcase`). This will allow actions within the store to know which set of default questions to use. I will modify the `loadReport` action to set the correct default questions when a report is first loaded, and update the `clearReportChatHistory` action to reset to the appropriate defaults for the active report.
+
+Second, I will update the `ReportChatPanel` component. This component has logic to parse dynamic suggestions from the AI's response. I will modify its fallback mechanism so that if the AI fails to provide new suggestions, the panel will revert to the correct default questions for the current report, rather than a hardcoded list.
+
+This will ensure that the "Interactive Whitepaper" on the homepage defaults to questions about the DCE, while "The Ascent Report" on the showcase page will default to questions relevant to its content, such as "What is the 'fissured workplace'?".
+
+1.  **Update `src/stores/reportStore.ts`:**
+    *   I will add a new `reportName: string | null` property to the `ReportState` interface to track the currently loaded report.
+    *   I will define two new constants, `WHITEPAPER_DEFAULT_SUGGESTIONS` and `SHOWCASE_DEFAULT_SUGGESTIONS`, containing the respective sets of questions.
+    *   In the `loadReport` action, I will set the `reportName` in the state and use it to select and set the correct array of default `suggestedPrompts` for the newly loaded report.
+    *   I will refactor the `clearReportChatHistory` action to read the `reportName` from the state and reset the `suggestedPrompts` to the correct report-specific defaults.
+
+2.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:**
+    *   I will define the same `WHITEPAPER_DEFAULT_SUGGESTIONS` and `SHOWCASE_DEFAULT_SUGGESTIONS` constants.
+    *   Within the `sendMessage` function, I will update the fallback logic. When an AI response does not contain a `:::suggestions:::` block, the component will now use the `reportName` prop to select the correct set of default questions to display, ensuring context is maintained.
+</Previous Cycle 43 Summary of Actions>
+</Cycle 44>
 
 <Cycle 43>
 <Cycle Context>
@@ -2689,10 +2775,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T20:29:50.097Z
+  Date Generated: 2025-10-13T20:52:03.104Z
   ---
   Total Files: 120
-  Approx. Tokens: 296859
+  Approx. Tokens: 298116
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2702,7 +2788,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (7042 tokens)
+7. src\stores\reportStore.ts (7683 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -2772,16 +2858,16 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 311 - Chars: 14900 - Tokens: 3725
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 317 - Chars: 15229 - Tokens: 3808
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 598 - Chars: 28166 - Tokens: 7042
-70. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
+69. src\stores\reportStore.ts - Lines: 646 - Chars: 30731 - Tokens: 7683
+70. src\components\report-viewer\ReportViewer.tsx - Lines: 174 - Chars: 7637 - Tokens: 1910
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 207 - Chars: 10179 - Tokens: 2545
+74. src\app\api\chat\route.ts - Lines: 261 - Chars: 12038 - Tokens: 3010
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -15177,7 +15263,7 @@ export default PromptNavigator;
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
-import { FaTimes, FaBroom } from 'react-icons/fa';
+import { FaTimes, FaBroom, FaSpinner } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
 
@@ -15193,12 +15279,13 @@ const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
-        toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown,
+        toggleChatPanel, clearReportChatHistory,
         setReportChatMessage,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
-        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts 
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts,
+        suggestionsStatus // C43: Get new status
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -15210,6 +15297,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
         setSuggestedPrompts: state.setSuggestedPrompts,
+        suggestionsStatus: state.suggestionsStatus, // C43
     }));
     
     const [isThinking, setIsThinking] = useState(false);
@@ -15447,21 +15535,25 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             </div>
 
             {/* Suggested Prompts (Chips) */}
-            {!isThinking && suggestedPrompts.length > 0 && (
-                <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap">
-                    {suggestedPrompts.map((prompt, index) => (
-                        <Badge
-                            key={index}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
-                            onClick={() => handleChipClick(prompt)}
-                            title={prompt} // Tooltip on hover
-                        >
-                            {prompt}
-                        </Badge>
-                    ))}
-                </div>
-            )}
+            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center min-h-[40px]">
+                {suggestionsStatus === 'loading' && (
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                        <FaSpinner className="animate-spin" />
+                        Generating suggestions...
+                    </div>
+                )}
+                {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                    <Badge
+                        key={index}
+                        variant="secondary"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
+                        onClick={() => handleChipClick(prompt)}
+                        title={prompt} // Tooltip on hover
+                    >
+                        {prompt}
+                    </Badge>
+                ))}
+            </div>
 
             {/* Input Area */}
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">
@@ -15654,6 +15746,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
 // Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
 // Updated on: C37 (Fix image path generation to use manifest's basePath.)
@@ -15759,6 +15852,7 @@ export interface ReportState {
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
+    suggestionsStatus: 'idle' | 'loading' | 'error'; // C43: New state for suggestion generation
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -15800,6 +15894,7 @@ export interface ReportActions {
     closeImageFullscreen: () => void;
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
+    fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     setReportChatMessage: (id: string, message: string) => void; // C38: New action
@@ -15844,6 +15939,7 @@ const createInitialReportState = (): ReportState => ({
     reportChatHistory: [],
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
+    suggestionsStatus: 'idle', // C43
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -15871,6 +15967,40 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
         (set, get) => ({
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
+
+            fetchAndSetSuggestions: async (page: ReportPage, reportName: string) => {
+                if (!page) return;
+                set({ suggestionsStatus: 'loading' });
+                
+                const defaultSuggestions = reportName === 'whitepaper' 
+                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+
+                try {
+                    const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                    
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            task: 'generate_suggestions',
+                            pageContext,
+                        }),
+                    });
+
+                    if (!response.ok) throw new Error('Failed to fetch suggestions');
+
+                    const suggestions = await response.json();
+                    if (Array.isArray(suggestions) && suggestions.length > 0) {
+                        set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                    } else {
+                        throw new Error('Invalid suggestions format');
+                    }
+                } catch (error) {
+                    console.error("Failed to fetch dynamic suggestions:", error);
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
             loadReport: async (reportName: string) => {
                 if (!reportName) {
@@ -15970,6 +16100,10 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         isLoading: false,
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
+                    // C43: Fetch suggestions for the initial page
+                    if (reconstructedPages.length > 0) {
+                        get().fetchAndSetSuggestions(reconstructedPages[0], reportName);
+                    }
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
                     set({ isLoading: false });
@@ -16178,7 +16312,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
                 // C42: Use report-specific defaults when clearing chat.
-                const { reportName } = get();
+                const { reportName, fetchAndSetSuggestions, allPages, currentPageIndex } = get();
                 const defaultSuggestions = reportName === 'whitepaper' 
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
@@ -16187,8 +16321,14 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
-                    suggestedPrompts: defaultSuggestions,
                 });
+                // C43: Re-fetch dynamic suggestions for the current page after clearing.
+                const currentPage = allPages[currentPageIndex];
+                if (currentPage && reportName) {
+                    fetchAndSetSuggestions(currentPage, reportName);
+                } else {
+                    set({ suggestedPrompts: defaultSuggestions });
+                }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
@@ -16275,7 +16415,7 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -16307,6 +16447,15 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         loadReport(reportName);
     }, [loadReport, reportName]);
 
+    const currentPage = allPages[currentPageIndex];
+
+    // C43: Fetch suggestions when the current page changes.
+    useEffect(() => {
+        if (currentPage) {
+            fetchAndSetSuggestions(currentPage, reportName);
+        }
+    }, [currentPage, reportName, fetchAndSetSuggestions]);
+
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
@@ -16318,10 +16467,9 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
             startSlideshow();
         }
     }, [playbackStatus, autoplayEnabled, startSlideshow]);
-
-    const currentPage = allPages[currentPageIndex];
+    
     const currentPrompt = currentPage?.imagePrompts?.[0];
-    const currentImage = currentPrompt?.images[currentImageIndex];
+    const currentImage = currentPrompt?.images?.[currentImageIndex];
 
     if (!_hasHydrated || isLoading) {
         return (
@@ -16793,9 +16941,15 @@ ${markdownFormattingInstruction}
 ${suggestionInstruction}`
 };
 
+// C43: New system prompt for suggestion generation
+const suggestionSystemPrompt = `You are an AI assistant. Your task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting.
+
+Example response:
+["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
+
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report' } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', task } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -16807,6 +16961,55 @@ export async function POST(request: Request) {
     return new NextResponse(errorMessage, { status: 500 });
   }
 
+  const completionsUrl = `${llmUrl}/v1/completions`;
+
+  // C43: Handle suggestion generation task
+  if (task === 'generate_suggestions') {
+    try {
+        const suggestionPrompt = `
+System: ${suggestionSystemPrompt}
+
+--- START DOCUMENT TEXT ---
+${pageContext}
+--- END DOCUMENT TEXT ---
+
+User: Generate questions based on the text above.
+
+Assistant:`;
+
+        const response = await fetch(completionsUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                model: 'unsloth/gpt-oss-20b',
+                prompt: suggestionPrompt,
+                max_tokens: 256,
+                temperature: 0.5,
+                stream: false, // Non-streaming for this task
+            }),
+        });
+
+        if (!response.ok) {
+            const errorBody = await response.text();
+            throw new Error(`LLM server error for suggestions: ${response.status} ${errorBody}`);
+        }
+
+        const data = await response.json();
+        const content = data.choices?.[0]?.text || '[]';
+        // Extract JSON array from the response, as the model might add extra text
+        const jsonMatch = content.match(/\[[\s\S]*\]/);
+        const jsonString = jsonMatch ? jsonMatch : '[]';
+        
+        const suggestions = JSON.parse(jsonString);
+        return NextResponse.json(suggestions);
+
+    } catch (error: any) {
+        console.error('[Chat API] Error generating suggestions:', error.message);
+        return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
+    }
+  }
+
+  // --- Existing RAG and Chat Logic ---
   let retrievedContext = '';
   let retrievedDocsLog = 'No documents retrieved.';
   try {
@@ -16857,7 +17060,6 @@ export async function POST(request: Request) {
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
 
-  const completionsUrl = `${llmUrl}/v1/completions`;
   const systemPrompt = systemPrompts[kbIdentifier];
 
   const finalPrompt = `
