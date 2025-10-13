@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 39 - almost fixed
+Current Cycle 40 - neither issue resolved
+Cycle 39 - almost fixed
 Cycle 38 - such good progress keep it up
 Cycle 37 - great work! minor changes
 Cycle 36 - nice! almost working!
@@ -434,6 +435,112 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 40>
+<Cycle Context>
+neither issue was resolved in the previous cycle. the `inline code` snippets still are messing up the chat bubble. and the suggestions are still appearing in the actual response and are not appearing as updated chips for the user to select. i do see the output log in browser console logs so ill provide that in ephemeral below
+</Cycle Context>
+<Ephemeral Context>
+GET
+http://localhost:3000/favicon.ico
+[HTTP/1.1 404 Not Found 0ms]
+
+Image with src "/assets/icons/iterative-workflow.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+Invalid URI. Load of media resource  failed. localhost:3000
+Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. warn-once.mjs:9:13
+Image with src "/assets/icons/parallel-copilot.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
+[Fast Refresh] rebuilding hot-reloader-client.js:187:25
+[Fast Refresh] done in 910ms hot-reloader-client.js:44:13
+[Chat Panel] Full message from LLM:
+--- <|channel|>analysis<|message|>We need to answer "How does DCE work?" Based on context.
+
+Key points:
+
+- DCE is Data Curation Environment. It helps with context curation, parallel co-pilot panel, cycle navigator, persistent knowledge graph, curated context as shareable asset.
+
+- Workflow: Curate context (select folder), instruct AI via Parallel Co-Pilot Panel, get multiple responses, review and accept changes, verification.
+
+- DCE captures each interaction as a "Cycle" including context, instructions, AI responses, final decision; saves as structured persistent Knowledge Graph. Cycle Navigator allows stepping back through history.
+
+- Process transforms into asset: curated context saved, versioned, shareable; reduces collaboration gap; iterative maintenance efficient.
+
+- It uses VS Code extension (.vsix). No API key needed in manual mode; can generate prompt.md for external AI services.
+
+- DCE is free and works best when project is a Git repo.
+
+- The "Process as Asset" philosophy: process itself is valuable asset captured by DCE.
+
+So answer should describe how DCE works, summarizing these aspects. Use markdown formatting. After main answer, produce 2-4 follow-up question suggestions in JSON array within delimiters. Ensure no extra text outside the array. No invented info. Provide relevant information only from context.<|end|><|start|>assistant<|channel|>final<|message|>## How DCE Works
+
+DCE (Data Curation Environment) is a VS Code extension that turns **human‑AI collaboration** into a structured, auditable workflow. Its core idea is that *the process*—not just the final code or data—is itself an asset.
+
+### 1. Curate Context  
+- Open any folder in VS Code.  
+- Use DCE’s “Selection Set” UI to pick the exact files you want the AI to see.  
+- The tool automatically collects those files, counts tokens, and shows live metadata (total files, total tokens).  
+- The curated context is **saved** as a versioned asset; future operators can load it exactly as it was.
+
+### 2. Parallel Co‑Pilot Panel  
+- Once the context is ready, open the panel.  
+- Provide a concise instruction (e.g., *“Rewrite distractors so all answer choices are similar length.”*).  
+- DCE sends that prompt to the AI and **spawns multiple parallel responses**.  
+- Each response appears in its own tab; you can compare them side‑by‑side, use the built‑in diff viewer, and pick the best one.
+
+### 3. Accept & Verify  
+- After reviewing, click “Accept” on the chosen response.  
+- DCE applies the changes to your files automatically.  
+- A quick verification step shows that the new content is ready for final QA.
+
+### 4. Cycle Capture & Knowledge Graph  
+- Every interaction (curated context, instruction, AI outputs, operator decisions) is stored as a **Cycle**.  
+- These Cycles build a **persistent Knowledge Graph**: a searchable history of how the project evolved.  
+- The **Cycle Navigator** lets you step back through this graph, review past choices, and understand why something was done.
+
+### 5. Process‑as‑Asset Philosophy  
+- Because every Cycle is recorded, the entire workflow becomes an auditable asset.  
+- New team members can load a previous operator’s context and see the exact history—eliminating the “collaboration gap.”  
+- Maintenance loops are short: reload a curated context and issue a new instruction; DCE handles the rest.
+
+### 6. Practical Deployment  
+
+| Step | What to do |
+|------|------------|
+| **Install** | Download `aiascent.dev/.vsix`, open VS Code → Extensions → `…` → *Install from VSIX...* |
+| **Prerequisites** | Visual Studio Code + git (project should be a Git repo for baseline/restore features). |
+| **Manual Mode** | No API key needed; DCE generates a `prompt.md` you can paste into any AI service (e.g., Google AI Studio). |
+
+---
+
+In short, *DCE curates the files you care about, lets you send the same instruction to multiple AIs at once, captures everything as a structured record, and saves that record so anyone can pick up where you left off.*
+
+:::suggestions::["What are the main benefits of using DCE for large projects?", "How does the Cycle Navigator help in reviewing past decisions?", "Can I use DCE with any Git repository or are there specific requirements?", "How does DCE handle token limits when curating context?"]:::end_suggestions::: 
+--- ReportChatPanel.tsx:145:21
+[Chat Panel] No suggestions block found in the response. Using default suggestions. ReportChatPanel.tsx:163:25
+
+</Ephemeral Context>
+<Previous Cycle 39 Summary of Actions>
+I have analyzed the user feedback from Cycle 38 and identified two main issues with the "Ask @Ascentia" chat feature: flawed markdown rendering and broken dynamic prompt suggestions (chips).
+
+My course of action is to address both issues comprehensively.
+
+First, to fix the markdown formatting, I will update the system prompts in the backend chat API (`route.ts`). I will add explicit instructions for the LLM on how to correctly format lists and code, telling it to avoid extra newlines and to use standard markdown syntax consistently. This will prevent the malformed list items and incorrect code block usage reported by the user. I will also adjust the styling in our `MarkdownRenderer` component to ensure lists are rendered more compactly.
+
+Second, I will completely refactor the logic for handling the dynamic prompt suggestions. The current implementation, which parses the suggestions from the final message in a `useEffect` hook, has a race condition causing it to fail. I will move this logic directly into the `sendMessage` function. The function will now accumulate the full streaming response, and once the stream is complete, it will parse the suggestions, update the suggestion "chips" state, strip the suggestion data from the message, and then save the cleaned message to the chat history. This makes the process atomic and robust, ensuring the UI displays the correct, dynamically generated questions and that the raw suggestion data is never visible to the user. This also involves adding a new state action to our `reportStore` to allow setting the final content of a message.
+
+These changes will resolve the visual artifacts in the chat, make the dynamic prompt suggestions fully functional, and improve the overall reliability and polish of the Ask @Ascentia feature.
+
+1.  **Update `src/app/api/chat/route.ts`:** I will add a new constant containing explicit markdown formatting rules (for compact lists, inline code, etc.) and append it to both the `dce` and `report` system prompts. This will guide the LLM to produce cleaner, more compliant markdown.
+2.  **Update `src/stores/reportStore.ts`:** I will add a new action, `setReportChatMessage`, which will allow for the complete replacement of a message's content by its ID. This is crucial for the refactored suggestion parsing logic.
+3.  **Refactor `src/components/report-viewer/ReportChatPanel.tsx`:**
+    *   I will modify the `sendMessage` function to accumulate the full streaming response from the AI.
+    *   After the stream completes, I will add logic to parse the `:::suggestions:::[...]:::end_suggestions:::` block from the accumulated text.
+    *   I will call `setSuggestedPrompts` with the parsed questions or reset to the default prompts if parsing fails.
+    *   Using the new `setReportChatMessage` action, I will update the final message in the store with the cleaned content (suggestion block removed).
+    *   I will remove the old `useEffect` hook that was previously responsible for parsing suggestions, thus eliminating the race condition.
+    *   I will simplify the `parseFinalMessage` function, as it no longer needs to handle stripping the suggestion block at render time.
+4.  **Update `src/components/shared/MarkdownRenderer.tsx`:** I will make minor adjustments to the styling for list elements (`ul`, `ol`) to ensure they render more compactly, addressing the extra newline issue.
+</Previous Cycle 39 Summary of Actions>
+</Cycle 40>
 
 <Cycle 39>
 <Cycle Context>
@@ -2590,10 +2697,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T19:31:58.256Z
+  Date Generated: 2025-10-13T19:49:25.993Z
   ---
   Total Files: 120
-  Approx. Tokens: 296053
+  Approx. Tokens: 296303
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2673,7 +2780,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 292 - Chars: 13656 - Tokens: 3414
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 297 - Chars: 14063 - Tokens: 3516
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -2682,7 +2789,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 208 - Chars: 10224 - Tokens: 2556
+74. src\app\api\chat\route.ts - Lines: 208 - Chars: 10431 - Tokens: 2608
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2691,7 +2798,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 48 - Chars: 2046 - Tokens: 512
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 52 - Chars: 2430 - Tokens: 608
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -15093,7 +15200,7 @@ const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
         toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown,
-        setReportChatMessage, // C38: Import new action
+        setReportChatMessage,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
@@ -15130,7 +15237,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         e.stopPropagation();
     };
 
-    // C38: Simplified parser, as suggestion block is now stripped before saving to state.
     const parseFinalMessage = (rawText: string): string => {
         let cleanedText = rawText.replace(thinkingRegex, '').trim();
 
@@ -15187,7 +15293,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let done = false;
-            let fullMessage = ''; // C38: Accumulate full message
+            let fullMessage = '';
             
             updateReportChatStatus(temporaryId, 'streaming');
             while (!done) {
@@ -15204,12 +15310,12 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             const parsed = JSON.parse(data);
                             const textChunk = parsed.choices?.[0]?.text || '';
                             if (textChunk) {
-                                fullMessage += textChunk; // C38: Accumulate
+                                fullMessage += textChunk;
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
                             if (data) {
-                                fullMessage += data; // C38: Accumulate
+                                fullMessage += data;
                                 updateReportChatMessage(temporaryId, data);
                             }
                         }
@@ -15217,27 +15323,33 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // C38: Refactored suggestion parsing logic
-            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
+            // C39: Make regex more flexible and add robust logging
+            const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
+            console.log('[Chat Panel] Full message from LLM:\n---', fullMessage, '\n---');
+            
             const match = fullMessage.match(suggestionsRegex);
             if (match && match[1]) {
+                console.log('[Chat Panel] Suggestions block found. Attempting to parse JSON.');
                 try {
                     const parsedSuggestions = JSON.parse(match[1]);
-                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string')) {
+                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string') && parsedSuggestions.length > 0) {
+                        console.log('[Chat Panel] Successfully parsed suggestions:', parsedSuggestions);
                         setSuggestedPrompts(parsedSuggestions);
                     } else {
+                        console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                         setSuggestedPrompts(DEFAULT_SUGGESTIONS);
                     }
                 } catch (e) {
-                    console.warn("Failed to parse suggestions JSON on stream end:", e);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON on stream end:", e);
                     setSuggestedPrompts(DEFAULT_SUGGESTIONS);
                 }
             } else {
+                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions.');
                 setSuggestedPrompts(DEFAULT_SUGGESTIONS);
             }
 
             const cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
-            setReportChatMessage(temporaryId, cleanedMessage); // C38: Set final, cleaned message
+            setReportChatMessage(temporaryId, cleanedMessage);
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error: unknown) {
@@ -17673,17 +17785,20 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        // C37 FIX: Removed hardcoded margin. Rely on parent `prose` class for correct spacing.
         p: ({ node, ...props }) => <p {...props} />,
         h1: ({ node, ...props }) => <h1 className="text-2xl font-bold my-4" {...props} />,
         h2: ({ node, ...props }) => <h2 className="text-xl font-bold my-3" {...props} />,
         h3: ({ node, ...props }) => <h3 className="text-lg font-bold my-2" {...props} />,
-        // C38: Removed space-y-1 to make lists more compact. Spacing will be handled by prose.
         ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-4" {...props} />,
         ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-4" {...props} />,
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,
+        // C39 FIX: Add classes for table borders
+        table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-border" {...props} />,
+        thead: ({ node, ...props }) => <thead className="bg-muted/50" {...props} />,
+        th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-border" {...props} />,
+        td: ({ node, ...props }) => <td className="px-2 py-1 border border-border" {...props} />,
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
           return !inline ? (
@@ -17693,7 +17808,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
               </code>
             </pre>
           ) : (
-            <code className="bg-muted text-muted-foreground px-1.5 py-0.5 rounded-md text-sm" {...props}>
+            // C39 FIX: Ensure inline code has correct styling and spacing
+            <code className="bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
               {children}
             </code>
           );

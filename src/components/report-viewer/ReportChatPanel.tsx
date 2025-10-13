@@ -17,7 +17,7 @@ const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
         toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown,
-        setReportChatMessage, // C38: Import new action
+        setReportChatMessage,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
@@ -54,7 +54,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         e.stopPropagation();
     };
 
-    // C38: Simplified parser, as suggestion block is now stripped before saving to state.
     const parseFinalMessage = (rawText: string): string => {
         let cleanedText = rawText.replace(thinkingRegex, '').trim();
 
@@ -111,7 +110,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let done = false;
-            let fullMessage = ''; // C38: Accumulate full message
+            let fullMessage = '';
             
             updateReportChatStatus(temporaryId, 'streaming');
             while (!done) {
@@ -128,12 +127,12 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                             const parsed = JSON.parse(data);
                             const textChunk = parsed.choices?.[0]?.text || '';
                             if (textChunk) {
-                                fullMessage += textChunk; // C38: Accumulate
+                                fullMessage += textChunk;
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
                             if (data) {
-                                fullMessage += data; // C38: Accumulate
+                                fullMessage += data;
                                 updateReportChatMessage(temporaryId, data);
                             }
                         }
@@ -141,27 +140,33 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // C38: Refactored suggestion parsing logic
-            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
+            // C39: Make regex more flexible and add robust logging
+            const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
+            console.log('[Chat Panel] Full message from LLM:\n---', fullMessage, '\n---');
+            
             const match = fullMessage.match(suggestionsRegex);
             if (match && match[1]) {
+                console.log('[Chat Panel] Suggestions block found. Attempting to parse JSON.');
                 try {
                     const parsedSuggestions = JSON.parse(match[1]);
-                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string')) {
+                    if (Array.isArray(parsedSuggestions) && parsedSuggestions.every(s => typeof s === 'string') && parsedSuggestions.length > 0) {
+                        console.log('[Chat Panel] Successfully parsed suggestions:', parsedSuggestions);
                         setSuggestedPrompts(parsedSuggestions);
                     } else {
+                        console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                         setSuggestedPrompts(DEFAULT_SUGGESTIONS);
                     }
                 } catch (e) {
-                    console.warn("Failed to parse suggestions JSON on stream end:", e);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON on stream end:", e);
                     setSuggestedPrompts(DEFAULT_SUGGESTIONS);
                 }
             } else {
+                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions.');
                 setSuggestedPrompts(DEFAULT_SUGGESTIONS);
             }
 
             const cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
-            setReportChatMessage(temporaryId, cleanedMessage); // C38: Set final, cleaned message
+            setReportChatMessage(temporaryId, cleanedMessage);
             updateReportChatStatus(temporaryId, 'complete');
 
         } catch (error: unknown) {
