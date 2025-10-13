@@ -6,18 +6,11 @@ import { FaSync } from 'react-icons/fa';
 
 const ShowcaseTabs = () => {
   const [activeTab, setActiveTab] = useState('report');
-  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const tabs = [
     { id: 'report', label: 'The Ascent Report' },
     { id: 'game', label: 'AI Ascent Game' },
   ];
-
-  const handleRefresh = () => {
-    if (iframeRef.current) {
-      iframeRef.current.contentWindow?.location.reload();
-    }
-  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -36,31 +29,23 @@ const ShowcaseTabs = () => {
             {tab.label}
           </button>
         ))}
-         {activeTab === 'game' && (
-          <button
-            onClick={handleRefresh}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-muted-foreground hover:text-foreground transition-colors"
-            title="Refresh Game"
-          >
-            <FaSync />
-          </button>
-        )}
       </div>
 
       {/* Tab Content */}
       <div className="flex-grow overflow-hidden">
         {activeTab === 'report' && (
+          // The ReportViewer itself handles scrolling, so we just give it the full space.
+          // The -16 for the header is handled by the parent page.
           <div className="h-full w-full">
             <ReportViewer reportName="showcase" />
           </div>
         )}
         {activeTab === 'game' && (
           <iframe
-            ref={iframeRef}
             src="https://aiascent.game/"
             title="AI Ascent Game"
             className="w-full h-full border-0"
-            allow="autoplay; fullscreen; gamepad;"
+            allow="autoplay; fullscreen; popups; popups-to-escape-sandbox"
           />
         )}
       </div>
