@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 35 - massive. lets continue to build
+Current Cycle 36 - nice! almost working!
+Cycle 35 - massive. lets continue to build
 Cycle 34 - nice! live! now need readme and download working
 Cycle 33 - More Linting; Now Build Errors
 Cycle 32 - Second Linting Round; Almost All Errors Resolved
@@ -244,7 +245,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C29 (Add iframe Integration Guide)
+# Updated on: C35 (Add Dynamic Chat Prompt Suggestions Plan)
 
 ## 1. Purpose
 
@@ -333,6 +334,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
   - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
+### A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan
+
+  - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
+  - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
 
 ## III. Design and Assets
 
@@ -425,6 +431,63 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 36>
+<Cycle Context>
+nice!!!! okay so it seems to work in the backend, however the frontend gives an error... see ephemeral below.
+</Cycle Context>
+<Ephemeral Context>
+<backend>
+[Chat API] RAG Diagnostic for prompt: "How does DCE work?" using KB: 'dce'
+[Chat API] Retrieved 7 documents from 'dce' KB:
+  Doc 1 (Dist: 0.4148): "rsion control, allowing operators to instantly apply an AI's suggestion to the l..."
+  Doc 2 (Dist: 0.4577): "anual Editing:** The analyst manually edits each file, attempting to rewrite the..."
+  Doc 3 (Dist: 0.4970): " multiple AI responses, and the developer's final choice—is itself a valuable, a..."
+  Doc 4 (Dist: 0.4973): "text problem" by automating the tedious and error-prone process of manually prep..."
+  Doc 5 (Dist: 0.5097): "pidly iterate on complex datasets without manual reconstruction.
+
+If feedback ..."
+  Doc 6 (Dist: 0.5190): "f the target file structure for the DCE extension, outlining the layout of direc..."
+  Doc 7 (Dist: 0.5461): " DCE - Phase 2 - Advanced Diff Viewer Plan
+- **Description:** Details the plan ..."
+ POST /api/chat 200 in 10031ms
+
+</backend>
+
+<frontend>
+1 of 1 error
+Next.js (14.2.3) is outdated (learn more)
+Unhandled Runtime Error
+
+ReferenceError: parseMessageWithThinking is not defined
+Source
+
+src\components\report-viewer\ReportChatPanel.tsx (237:36) @ map
+
+  235 |             {/* Chat History */}
+  236 |             <div ref={chatContainerRef} className="flex-1 p-3 overflow-y-auto text-sm space-y-4 scroll-smooth">
+> 237 |                 {reportChatHistory.map((msg, index) => (
+      |                                    ^
+  238 |                     <div key={msg.id || index} className={`flex flex-col ${msg.author === 'You' ? 'items-end' : 'items-start'}`}>
+  239 |                         <div className={`flex items-center gap-1 text-xs mb-1 ${msg.author === 'You' ? 'text-primary' : 'text-cyan-500'}`}>
+  240 |                             <span>{msg.flag}</span>
+
+Call Stack</frontend>
+</Ephemeral Context>
+<Previous Cycle 35 Summary of Actions>
+I have analyzed the requests for Cycle 34. My course of action is to create a professional `README.md` for the newly public repository, fix the non-functional "Download Now" button on the homepage, and improve the organization of the interactive whitepaper by categorizing its content into a nested structure.
+
+First, I will author a `README.md` file. This is crucial for any public project to explain its purpose, how to set it up, and its core technologies.
+
+Next, I will fix the download button. The issue is that the `Button` component is not wrapped in an anchor (`<a>`) tag that points to the VSIX file. I will update `HeroSection.tsx` to include the correct `<a>` tag with the `href` to the downloadable file and a `download` attribute.
+
+Finally, I will restructure the `whitepaper_content.json` data file. Currently, all 19 pages are in a single list. I will group them into logical subsections (e.g., "The Problem," "The Solution," "Use Case") to make the `ReportTreeNav` component more organized and user-friendly. The tree navigation component is already designed to handle this nested structure, so only the data file needs modification.
+
+1.  **Create `README.md`:** Author a new `README.md` file for the project root. This file will introduce the `aiascent.dev` project, explain its purpose as a showcase for the Data Curation Environment (DCE), list the technologies used, and provide instructions for local setup and development.
+2.  **Fix Download Button in `src/components/home/HeroSection.tsx`:** I will wrap the "Download Now" button component in an `<a>` tag. The `href` will point to `/downloads/data-curation-environment-0.1.10.vsix`, and I will add the `download` attribute to ensure the browser prompts a download.
+3.  **Restructure `public/data/whitepaper_content.json`:** I will edit this file to introduce a `subSections` array within the main section. I will then group the existing pages into logical subsections like "The Problem," "The Solution," and "Use Case," which will automatically create a more organized, multi-level tree view in the report navigator.
+</Previous Cycle 35 Summary of Actions>
+</Cycle 36>
 
 <Cycle 35>
 <Cycle Context>
@@ -2509,10 +2572,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T17:00:58.762Z
+  Date Generated: 2025-10-13T17:13:31.522Z
   ---
-  Total Files: 118
-  Approx. Tokens: 292246
+  Total Files: 120
+  Approx. Tokens: 295798
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2522,13 +2585,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (6172 tokens)
+7. src\stores\reportStore.ts (6671 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 184 - Chars: 10119 - Tokens: 2530
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 189 - Chars: 10451 - Tokens: 2613
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
@@ -2592,16 +2655,16 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 163 - Chars: 7878 - Tokens: 1970
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 295 - Chars: 14123 - Tokens: 3531
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 536 - Chars: 24688 - Tokens: 6172
+69. src\stores\reportStore.ts - Lines: 574 - Chars: 26682 - Tokens: 6671
 70. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 188 - Chars: 8824 - Tokens: 2206
+74. src\app\api\chat\route.ts - Lines: 195 - Chars: 9414 - Tokens: 2354
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2646,6 +2709,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 116. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 117. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
 118. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
+119. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 65 - Chars: 3916 - Tokens: 979
+120. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -2654,7 +2719,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 
 # Author: AI Model & Curator
 
-# Updated on: C29 (Add iframe Integration Guide)
+# Updated on: C35 (Add Dynamic Chat Prompt Suggestions Plan)
 
 ## 1. Purpose
 
@@ -2743,6 +2808,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
   - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
+### A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan
+
+  - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
+  - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
 
 ## III. Design and Assets
 
@@ -14975,18 +15045,19 @@ export default PromptNavigator;
 <file path="src/components/report-viewer/ReportChatPanel.tsx">
 // src/components/report-viewer/ReportChatPanel.tsx
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import { useReportStore, useReportState, ChatMessage } from '@/stores/reportStore';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaTimes, FaBroom } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+import { Badge } from '@/components/ui/badge';
 
 interface ReportChatPanelProps {
     reportName: string;
 }
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
-    const { toggleChatPanel, clearReportChatHistory } = useReportStore.getState();
-    const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus } = useReportState(state => ({
+    const { toggleChatPanel, clearReportChatHistory, handleKeyDown: handleStoreKeyDown } = useReportStore.getState();
+    const { allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         reportChatHistory: state.reportChatHistory,
@@ -14995,6 +15066,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         addReportChatMessage: state.addReportChatMessage,
         updateReportChatMessage: state.updateReportChatMessage,
         updateReportChatStatus: state.updateReportChatStatus,
+        suggestedPrompts: state.suggestedPrompts,
+        setSuggestedPrompts: state.setSuggestedPrompts,
     }));
     
     const [isThinking, setIsThinking] = useState(false);
@@ -15003,52 +15076,105 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
+    // C15 Fix: Prevent scrolling entire page on new messages.
+    // Use specific container ref for scrolling.
+    const chatContainerRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
         if (!isThinking) textareaRef.current?.focus();
     }, [reportChatHistory, isThinking]);
 
+    // Stop propagation of keys to prevent report navigation
+    const handlePanelKeyDown = (e: React.KeyboardEvent) => {
+        e.stopPropagation();
+    };
+
+    // C19: Beautify LLM output by stripping special tokens
     const parseFinalMessage = (rawText: string): string => {
+        // C35: Strip out suggestions block before rendering
+        const suggestionsRegex = /:::suggestions:::[\s\S]*?:::end_suggestions:::/g;
+        let cleanedText = rawText.replace(suggestionsRegex, '').trim();
+
         const finalMessageMarker = '<|channel|>final<|message|>';
-        const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
+        const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
     
         if (finalMessageIndex !== -1) {
-            return rawText.substring(finalMessageIndex + finalMessageMarker.length);
+            // If marker exists, take everything after it
+            return cleanedText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
-        const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*/g;
-        const cleanedText = rawText.replace(analysisRegex, '').trim();
+        // C19 Fix: If streaming, don't show "could not parse" yet.
+        // Just strip analysis tags if present to show raw stream cleanly.
+        const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*?(?=<\|channel\|>|$)/g;
+        cleanedText = cleanedText.replace(analysisRegex, '').trim();
         
         return cleanedText;
     };
 
-    const handleSend = async () => {
-        const trimmedInput = reportChatInput.trim();
-        if (!trimmedInput || isThinking) return;
+    // C35: Parse suggestions from the last Ascentia message
+    const lastAscentiaMessage = useMemo(() => {
+        return [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia');
+    }, [reportChatHistory]);
 
-        addReportChatMessage({ author: 'You', flag: '👤', message: trimmedInput, channel: 'local' });
+    useEffect(() => {
+        if (lastAscentiaMessage && lastAscentiaMessage.status === 'complete') {
+            const suggestionsRegex = /:::suggestions:::([\s\S]*?):::end_suggestions:::/;
+            const match = lastAscentiaMessage.message.match(suggestionsRegex);
+            if (match && match[1]) {
+                try {
+                    const newSuggestions = JSON.parse(match[1]);
+                    if (Array.isArray(newSuggestions) && newSuggestions.every(s => typeof s === 'string')) {
+                        // Only update if different to prevent infinite loops
+                        if (JSON.stringify(newSuggestions) !== JSON.stringify(suggestedPrompts)) {
+                            setSuggestedPrompts(newSuggestions);
+                        }
+                    }
+                } catch (e) {
+                    console.warn("Failed to parse suggestions JSON:", e);
+                }
+            }
+        }
+    }, [lastAscentiaMessage, setSuggestedPrompts, suggestedPrompts]);
+
+
+    const sendMessage = async (text: string) => {
+        if (isThinking) return;
+
+        addReportChatMessage({ author: 'You', flag: '👤', message: text, channel: 'local' });
         const temporaryId = `report_ascentia_response_${Date.now()}`;
         addReportChatMessage({ id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: 'system' });
         setIsThinking(true);
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
+        
+        // C27: Determine knowledge base based on report name
         const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
+            // C17: Enhanced error handling in fetch
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s connection timeout
+
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    prompt: trimmedInput, 
+                    prompt: text, 
                     pageContext,
-                    knowledgeBase: knowledgeBase
+                    knowledgeBase: knowledgeBase // C27: Send KB identifier
                 }),
+                signal: controller.signal,
             });
+
+            clearTimeout(timeoutId);
 
             if (!response.ok) {
                 const errorText = await response.text();
-                throw new Error(`Proxy error: ${response.status} ${errorText}`);
+                throw new Error(`${response.status} ${errorText}`);
             }
 
             if (!response.body) throw new Error("No response body");
@@ -15063,6 +15189,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 done = doneReading;
                 const chunk = decoder.decode(value, { stream: true });
                 
+                // Parse SSE format (data: ...)
                 const lines = chunk.split('\n');
                 for (const line of lines) {
                     if (line.startsWith('data: ')) {
@@ -15075,6 +15202,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                                 updateReportChatMessage(temporaryId, textChunk);
                             }
                         } catch (e) {
+                            // If not JSON, append raw data (fallback)
                             if (data) updateReportChatMessage(temporaryId, data);
                         }
                     }
@@ -15082,10 +15210,20 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             }
             updateReportChatStatus(temporaryId, 'complete');
 
-        } catch (error) {
+        } catch (error: unknown) {
             console.error("Error with chat stream:", error);
-            const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-            const userFriendlyError = `Sorry, I'm having trouble connecting to my core systems. The server logs may show a connection timeout error. Please ask the curator to check the vLLM server's status and firewall configuration. (Details: ${errorMessage})`;
+            let userFriendlyError = "An unknown error occurred.";
+
+            if (error instanceof Error) {
+                if (error.name === 'AbortError') {
+                    userFriendlyError = "Connection timed out. The AI server might be waking up or offline.";
+                } else if (error.message.includes('502') || error.message.includes('Failed to fetch')) {
+                    userFriendlyError = "Could not connect to the AI server. Please check your network connection or firewall.";
+                } else {
+                    userFriendlyError = `Error: ${error.message}`;
+                }
+            }
+            
             updateReportChatMessage(temporaryId, userFriendlyError);
             updateReportChatStatus(temporaryId, 'complete');
         } finally {
@@ -15093,43 +15231,107 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         }
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    const handleInputKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        e.stopPropagation(); // Prevent report navigation
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
-            handleSend();
+            const trimmedInput = reportChatInput.trim();
+            if (trimmedInput) {
+                sendMessage(trimmedInput);
+            }
         }
     };
 
+    const handleChipClick = (prompt: string) => {
+        sendMessage(prompt);
+    };
+
     return (
-        <div className="h-full bg-background border-l flex flex-col flex-shrink-0">
-            <header className="flex justify-between items-center p-2 border-b flex-shrink-0">
-                <h3 className="font-bold text-sm">Ask @Ascentia</h3>
+        <div className="h-full bg-background border-l border-border flex flex-col flex-shrink-0" onKeyDown={handlePanelKeyDown}>
+            <header className="flex justify-between items-center p-2 border-b border-border flex-shrink-0 bg-muted/30">
+                <h3 className="font-bold text-sm flex items-center gap-2">
+                    Ask @Ascentia
+                    <Badge variant="outline" className="text-[10px] px-1 py-0 border-primary/50 text-primary">
+                        {reportName === 'whitepaper' ? 'DCE Docs' : 'Report KB'}
+                    </Badge>
+                </h3>
                 <div>
-                    <button className="p-2 text-muted-foreground hover:text-foreground" onClick={() => { clearReportChatHistory(currentPage?.pageTitle || "Report"); setTimeout(() => textareaRef.current?.focus(), 0); }} title="Clear Chat History"><FaBroom /></button>
-                    <button className="p-2 text-muted-foreground hover:text-foreground" onClick={toggleChatPanel} title="Close Chat Panel"><FaTimes /></button>
+                    <button 
+                        className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+                        onClick={() => { 
+                            clearReportChatHistory(currentPage?.pageTitle || "Report"); 
+                            // C15 Fix: Don't scroll window on clear
+                            setTimeout(() => textareaRef.current?.focus(), 0); 
+                        }} 
+                        title="Clear Chat History"
+                    >
+                        <FaBroom />
+                    </button>
+                    <button 
+                        className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+                        onClick={toggleChatPanel} 
+                        title="Close Chat Panel"
+                    >
+                        <FaTimes />
+                    </button>
                 </div>
             </header>
-            <div className="flex-1 p-2 overflow-y-auto text-sm text-foreground space-y-4">
+            
+            {/* Chat History */}
+            <div ref={chatContainerRef} className="flex-1 p-3 overflow-y-auto text-sm space-y-4 scroll-smooth">
                 {reportChatHistory.map((msg, index) => (
-                    <div key={msg.id || index}>
-                        <span className={`font-bold ${msg.author === 'You' ? 'text-blue-400' : 'text-cyan-400'}`}>{msg.flag} {msg.author}: </span>
-                        {msg.status === 'thinking' ? <span className="italic">Thinking...</span> : <div className="prose prose-sm dark:prose-invert max-w-none"><MarkdownRenderer>{parseFinalMessage(msg.message)}</MarkdownRenderer></div>}
-                        {msg.status === 'streaming' && <span className="inline-block w-2 h-4 bg-foreground animate-pulse ml-1"></span>}
+                    <div key={msg.id || index} className={`flex flex-col ${msg.author === 'You' ? 'items-end' : 'items-start'}`}>
+                        <div className={`flex items-center gap-1 text-xs mb-1 ${msg.author === 'You' ? 'text-primary' : 'text-cyan-500'}`}>
+                            <span>{msg.flag}</span>
+                            <span className="font-bold">{msg.author}</span>
+                        </div>
+                        <div className={`rounded-lg p-2 max-w-[90%] ${msg.author === 'You' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                            {msg.status === 'thinking' ? (
+                                <span className="italic flex items-center gap-1 text-muted-foreground">Thinking <span className="animate-pulse">...</span></span>
+                            ) : (
+                                // C19: Use MarkdownRenderer
+                                <div className={`prose prose-sm max-w-none ${msg.author === 'You' ? 'prose-invert' : 'dark:prose-invert'}`}>
+                                    <MarkdownRenderer>{parseMessageWithThinking(msg.message)}</MarkdownRenderer>
+                                </div>
+                            )}
+                        </div>
+                        {msg.status === 'streaming' && <span className="text-[10px] text-muted-foreground animate-pulse mt-1">Typing...</span>}
                     </div>
                 ))}
-                <div ref={messagesEndRef} />
             </div>
-            <footer className="p-2 border-t flex-shrink-0">
+
+            {/* C35: Suggested Prompts (Chips) */}
+            {!isThinking && suggestedPrompts.length > 0 && (
+                <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap">
+                    {suggestedPrompts.map((prompt, index) => (
+                        <Badge
+                            key={index}
+                            variant="secondary"
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
+                            onClick={() => handleChipClick(prompt)}
+                            title={prompt} // Tooltip on hover
+                        >
+                            {prompt}
+                        </Badge>
+                    ))}
+                </div>
+            )}
+
+            {/* Input Area */}
+            <footer className="p-3 border-t border-border bg-background flex-shrink-0">
                 <textarea
                     ref={textareaRef}
-                    className="w-full bg-muted border rounded p-2 text-sm resize-none"
-                    placeholder="Ask a question... (Shift+Enter for newline)"
+                    className="w-full bg-muted border border-input rounded-md p-2 text-sm resize-none focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
+                    placeholder={isThinking ? "Ascentia is thinking..." : "Ask a question... (Enter to send, Shift+Enter for newline)"}
                     value={reportChatInput}
                     onChange={(e) => setReportChatInput(e.target.value)}
-                    onKeyDown={handleKeyDown}
+                    onKeyDown={handleInputKeyDown}
                     disabled={isThinking}
                     rows={3}
                 />
+                <div className="text-[10px] text-muted-foreground text-right mt-1">
+                    Powered by local LLM (RAG)
+                </div>
             </footer>
         </div>
     );
@@ -15306,6 +15508,11 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
+// Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
+// Updated on: C26 (Fix Zustand deprecation warning.)
+// Updated on: C23 (Fix image URL generation for single-image groups.)
+// Updated on: C22 (Refactor for reusability with reportName prop.)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -15383,6 +15590,8 @@ export type ChatMessage = {
     status?: 'thinking' | 'streaming' | 'complete';
 };
 
+const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+
 export interface ReportState {
     _hasHydrated: boolean; // Flag for rehydration
     reportData: ReportContentData | null;
@@ -15398,6 +15607,7 @@ export interface ReportState {
     isImageFullscreen: boolean;
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
+    suggestedPrompts: string[]; // C35: New state for dynamic suggestions
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -15414,7 +15624,7 @@ export interface ReportState {
     slideshowTimer: NodeJS.Timeout | null;
     nextPageTimer: NodeJS.Timeout | null;
     playbackSpeed: number;
-    // C20: Generic/Arbitrary Audio State
+    // Generic/Arbitrary Audio State
     genericPlaybackStatus: 'idle' | 'generating' | 'playing' | 'paused' | 'error';
     genericAudioUrl: string | null;
     genericAudioText: string | null; // The text being played
@@ -15438,6 +15648,7 @@ export interface ReportActions {
     openImageFullscreen: () => void;
     closeImageFullscreen: () => void;
     setReportChatInput: (input: string) => void;
+    setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
@@ -15456,7 +15667,7 @@ export interface ReportActions {
     startSlideshow: () => void;
     stopSlideshow: (userInitiated?: boolean) => void;
     setPlaybackSpeed: (speed: number) => void;
-    // C20: Generic/Arbitrary Audio Actions
+    // Generic/Arbitrary Audio Actions
     playArbitraryText: (text: string) => void;
     setGenericPlaybackStatus: (status: ReportState['genericPlaybackStatus']) => void;
     setGenericAudioUrl: (url: string | null) => void;
@@ -15479,6 +15690,7 @@ const createInitialReportState = (): ReportState => ({
     isImageFullscreen: false,
     reportChatHistory: [],
     reportChatInput: '',
+    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Initialize with defaults
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -15495,7 +15707,7 @@ const createInitialReportState = (): ReportState => ({
     slideshowTimer: null,
     nextPageTimer: null,
     playbackSpeed: 1,
-    // C20: Generic/Arbitrary Audio State
+    // Generic/Arbitrary Audio State
     genericPlaybackStatus: 'idle',
     genericAudioUrl: null,
     genericAudioText: null,
@@ -15541,13 +15753,10 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    let imageBasePath = manifestData.basePath;
+                                    // C23 Fix: Use hardcoded /assets/ path
+                                    const imageBasePath = '/assets/images/report/';
                                     
-                                    if (reportName === 'showcase' && imageBasePath && !imageBasePath.startsWith('/assets/')) {
-                                        console.warn(`[reportStore] Correcting image basePath for '${reportName}'. Path was missing '/assets' prefix. Original: "${manifestData.basePath}"`);
-                                        imageBasePath = `/assets${manifestData.basePath.startsWith('/') ? '' : '/'}${manifestData.basePath}`;
-                                    }
-                                    
+                                    // C23 Fix: Check for single image with no dash
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
@@ -15606,28 +15815,30 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             
             startSlideshow: () => {
                 const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
-                stopSlideshow(false);
+                stopSlideshow(false); // Stop any existing timers
 
                 const currentPage = allPages[currentPageIndex];
                 if (!currentPage || !autoplayEnabled) return;
 
+                // C28 FIX: Adjust durations based on playback speed
                 const actualDuration = duration / playbackSpeed;
                 const actualDurationMs = actualDuration * 1000;
+
+                // Guard against zero or infinite duration which causes rapid cycling
                 if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
 
-                console.log(`[reportStore] Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
-
+                // Set timer for next page
                 const nextPageTimer = setTimeout(() => {
                     if (get().autoplayEnabled) {
-                        console.log(`[reportStore] Autoplay timer finished. Advancing to next page.`);
                         nextPage();
                     }
-                }, actualDurationMs + 2000); // 2-second pause before next page
+                }, actualDurationMs + 500); // Small buffer
                 set({ nextPageTimer });
 
                 const images = currentPage.imagePrompts[0]?.images;
                 if (!images || images.length <= 1) return;
 
+                // C28 FIX: Calculate time per image based on adjusted duration
                 const timePerImage = actualDurationMs / images.length;
                 
                 const slideshowTimer = setInterval(() => {
@@ -15640,6 +15851,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
+                            // Stop slideshow, nextPageTimer will handle page transition
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -15654,8 +15866,10 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (slideshowTimer) clearInterval(slideshowTimer);
                 if (nextPageTimer) clearTimeout(nextPageTimer);
                 if (userInitiated) {
+                    // If user interacted, disable autoplay completely
                     set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
                 } else {
+                    // Just clear timers (e.g. between pages)
                     set({ slideshowTimer: null, nextPageTimer: null });
                 }
             },
@@ -15663,11 +15877,13 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
+                // If already playing this text, stop it (toggle behavior)
                 if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
                     stopArbitraryText(); 
                     return;
                 }
                 
+                // Stop any current playback
                 stopArbitraryText();
                 set({ genericPlaybackStatus: 'generating', genericAudioText: text });
 
@@ -15677,7 +15893,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ text }),
                     });
+
                     if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
+
                     const audioBlob = await response.blob();
                     const newUrl = URL.createObjectURL(audioBlob);
                     set({ genericAudioUrl: newUrl, genericPlaybackStatus: 'playing' });
@@ -15687,6 +15905,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
             },
             stopArbitraryText: () => {
+                const { genericAudioUrl } = get();
+                if (genericAudioUrl) URL.revokeObjectURL(genericAudioUrl);
                 set({ genericPlaybackStatus: 'idle', genericAudioUrl: null, genericAudioText: null });
             },
             setGenericPlaybackStatus: (status) => set({ genericPlaybackStatus: status }),
@@ -15696,10 +15916,11 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(false); // Stop any timers before changing page
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
+                    // If wrapping around to start, disable autoplay
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
-                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' }; // Reset audio status
                 });
             },
             prevPage: () => {
@@ -15707,18 +15928,20 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
+                    playbackStatus: 'idle', // Reset audio status
                 }));
             },
             goToPageByIndex: (pageIndex) => {
                 get().stopSlideshow(true);
                 if (pageIndex >= 0 && pageIndex < get().allPages.length) {
-                    set({ currentPageIndex: pageIndex, currentImageIndex: 0 });
+                    set({ currentPageIndex: pageIndex, currentImageIndex: 0, playbackStatus: 'idle' });
                 }
             },
             nextImage: () => {
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
+                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
@@ -15728,6 +15951,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
+                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
@@ -15735,7 +15959,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
+                // C15 Fix: prevent hijacking inputs
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
+                
                 if (event.key.startsWith('Arrow')) event.preventDefault();
                 switch (event.key) {
                     case 'ArrowUp': get().prevPage(); break;
@@ -15782,31 +16008,43 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
             setReportChatInput: (input) => set({ reportChatInput: input }),
+            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
-                set({ reportChatHistory: [initialMessage], reportChatInput: '' });
+                set({
+                    reportChatHistory: [initialMessage],
+                    reportChatInput: '',
+                    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Reset suggestions on clear
+                });
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
+            // Main Report Audio Actions
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
             setAutoplay: (enabled) => { 
-                get().stopSlideshow(!enabled); 
+                get().stopSlideshow(!enabled); // If disabling, stop. If enabling, don't stop yet.
                 set({ autoplayEnabled: enabled }); 
                 if (enabled) {
+                    // Reset image index when enabling autoplay to start slideshow from beginning
                     set({ currentImageIndex: 0 });
                 }
             },
-            setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
+            setCurrentAudio: (url, pageIndex) => {
+                const currentUrl = get().currentAudioUrl;
+                if (currentUrl) URL.revokeObjectURL(currentUrl);
+                set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 });
+            },
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });
+                // C28 FIX: Restart slideshow with new speed if playing
                 if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
                     get().startSlideshow();
                 }
@@ -15818,6 +16056,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             onRehydrateStorage: () => (state) => {
                 if (state) state.setHasHydrated(true);
             },
+            // C26: Use createWithEqualityFn for Zustand 4.5+ compatibility
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,
@@ -15833,6 +16072,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 volume: state.volume,
                 isMuted: state.isMuted,
                 playbackSpeed: state.playbackSpeed,
+                // Do not persist chat history or suggestions to keep session fresh
             }),
         }
     )
@@ -16338,7 +16578,6 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
             return null;
         }
         const data = await response.json();
-        // C25 FIX: The embedding is nested in the first element of the 'data' array.
         if (data?.data?.[0]?.embedding) {
             return data.data[0].embedding;
         }
@@ -16350,18 +16589,24 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// System prompts defined as per A27
+// Instruction for generating follow-up questions (C35)
+const suggestionInstruction = `
+Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this:
+:::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::
+Do not include any text outside of the JSON array within these delimiters.`;
+
+// System prompts defined as per A27, updated in C35 for dynamic suggestions
 const systemPrompts = {
     dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
 
 Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
 
-If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.`,
+If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.${suggestionInstruction}`,
     report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
-If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.`
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.${suggestionInstruction}`
 };
 
 
@@ -16448,6 +16693,7 @@ User: ${prompt}
 Ascentia:`;
 
   const controller = new AbortController();
+  // C18: Increased timeout to 120 seconds for model loading
   const timeoutId = setTimeout(() => controller.abort(), 120000);
 
   try {
@@ -16486,6 +16732,7 @@ Ascentia:`;
 
   } catch (error: any) {
     clearTimeout(timeoutId);
+    // C17: Enhanced error handling for connection issues
     if (error.name === 'AbortError') {
         const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
         console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
@@ -25172,6 +25419,113 @@ To learn more about the DCE, visit the [official repository](https://github.com/
 
 ---
 *This README was generated with the assistance of the Data Curation Environment.*
+</file_artifact>
+
+<file path="src/Artifacts/A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md">
+# Artifact A32: aiascent.dev - Dynamic Chat Prompt Suggestions Plan
+
+# Date Created: C35
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
+- **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
+
+## 1. Overview and Goal
+
+To improve user engagement and guide the conversation within the "Ask @Ascentia" feature, we will implement dynamic prompt suggestions. These will appear as clickable "chips" below the chat history.
+
+*   **Default State:** When the chat is empty or cleared, default prompts will be shown to help the user get started.
+*   **Dynamic State:** After every response from Ascentia, the LLM will generate 2-4 relevant follow-up questions based on the conversation context.
+*   **Interaction:** Clicking a chip automatically submits that question as a user message. Hovering over a chip shows the full text of the prompt in a tooltip.
+
+## 2. Technical Implementation
+
+### 2.1. Backend: Prompt Engineering (`/api/chat/route.ts`)
+
+The system prompts for Ascentia (defined in `A27` and implemented in the API route) must be updated. We will instruct the LLM to output suggestions at the very end of its response in a structured, machine-parseable format.
+
+To ensure reliable parsing from a streaming response, we will use distinct delimiters.
+
+**Updated Instruction to LLM:**
+> "Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this: `:::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::`."
+
+### 2.2. State Management (`src/stores/reportStore.ts`)
+
+The `ReportState` needs to store the current set of suggested prompts.
+
+*   **New State:** `suggestedPrompts: string[]`
+*   **Default Value:** `['How does DCE work?', 'How do I install DCE?']`
+*   **New Action:** `setSuggestedPrompts(prompts: string[])`
+*   **Reset Logic:** When chat history is cleared via `clearReportChatHistory`, the `suggestedPrompts` should be reset to the default value.
+
+### 2.3. Frontend: Parsing and UI (`ReportChatPanel.tsx`)
+
+The frontend component handles parsing the stream and rendering the UI.
+
+1.  **Parsing:** As the response streams in, or once it completes, the frontend must detect the `:::suggestions:::` block.
+    *   Extract the JSON array string.
+    *   Parse it into a string array.
+    *   Call `setSuggestedPrompts` to update the store.
+    *   **Crucially**, remove the entire `:::suggestions:::...:::end_suggestions:::` block from the message text before rendering it to the user, so they never see the raw data structure.
+
+2.  **UI Rendering:**
+    *   Create a new container below the chat history but above the input textarea.
+    *   Map through the `suggestedPrompts` array.
+    *   Render each prompt as a compact button or badge. CSS text-overflow with ellipsis should be used to keep them small.
+    *   Use a standard HTML `title` attribute or a UI Tooltip component to show the full prompt text on hover.
+
+3.  **Interaction:**
+    *   Add an `onClick` handler to each chip that calls the existing `handleSend` logic with the chip's text payload.
+
+## 3. User Experience Flow
+
+1.  User opens chat. Sees default chips: "How does DCE work?", "How do I install DCE?".
+2.  User clicks "How does DCE work?".
+3.  The question is added to chat history.
+4.  Ascentia streams a response explaining DCE.
+5.  Hidden at the end of the stream is: `:::suggestions:::["What is context curation?", "Tell me about the workflow."]::end_suggestions:::`.
+6.  Frontend parses this, hides it from the chat bubble, and updates the chips.
+7.  User now sees new chips: "What is context curation?", "Tell me about the workflow.".
+</file_artifact>
+
+<file path="src/components/ui/badge.tsx">
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default:
+          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+        outline: "text-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  )
+}
+
+export { Badge, badgeVariants }
 </file_artifact>
 
 

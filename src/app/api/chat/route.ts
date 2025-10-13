@@ -22,7 +22,6 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
             return null;
         }
         const data = await response.json();
-        // C25 FIX: The embedding is nested in the first element of the 'data' array.
         if (data?.data?.[0]?.embedding) {
             return data.data[0].embedding;
         }
@@ -34,18 +33,24 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// System prompts defined as per A27
+// Instruction for generating follow-up questions (C35)
+const suggestionInstruction = `
+Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this:
+:::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::
+Do not include any text outside of the JSON array within these delimiters.`;
+
+// System prompts defined as per A27, updated in C35 for dynamic suggestions
 const systemPrompts = {
     dce: `You are @Ascentia, an AI guide for the aiascent.dev website. Your purpose is to answer questions about the Data Curation Environment (DCE), the 'Citizen Architect' methodology, and the 'Process as Asset' whitepaper.
 
 Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
 
-If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.`,
+If the answer isn't directly in the context, state that, but still try to provide related information if available. Use simple markdown for formatting to enhance clarity. Do not invent information.${suggestionInstruction}`,
     report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
-If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.`
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting. Do not invent information or use outside knowledge.${suggestionInstruction}`
 };
 
 
@@ -132,6 +137,7 @@ User: ${prompt}
 Ascentia:`;
 
   const controller = new AbortController();
+  // C18: Increased timeout to 120 seconds for model loading
   const timeoutId = setTimeout(() => controller.abort(), 120000);
 
   try {
@@ -170,6 +176,7 @@ Ascentia:`;
 
   } catch (error: any) {
     clearTimeout(timeoutId);
+    // C17: Enhanced error handling for connection issues
     if (error.name === 'AbortError') {
         const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
         console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);

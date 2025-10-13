@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C29 (Add iframe Integration Guide)
+# Updated on: C35 (Add Dynamic Chat Prompt Suggestions Plan)
 
 ## 1. Purpose
 
@@ -93,6 +93,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
   - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+
+### A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan
+
+  - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
+  - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
 
 ## III. Design and Assets
 

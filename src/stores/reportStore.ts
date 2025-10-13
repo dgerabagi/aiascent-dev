@@ -1,4 +1,9 @@
 // src/stores/reportStore.ts
+// Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
+// Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
+// Updated on: C26 (Fix Zustand deprecation warning.)
+// Updated on: C23 (Fix image URL generation for single-image groups.)
+// Updated on: C22 (Refactor for reusability with reportName prop.)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -76,6 +81,8 @@ export type ChatMessage = {
     status?: 'thinking' | 'streaming' | 'complete';
 };
 
+const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+
 export interface ReportState {
     _hasHydrated: boolean; // Flag for rehydration
     reportData: ReportContentData | null;
@@ -91,6 +98,7 @@ export interface ReportState {
     isImageFullscreen: boolean;
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
+    suggestedPrompts: string[]; // C35: New state for dynamic suggestions
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -107,7 +115,7 @@ export interface ReportState {
     slideshowTimer: NodeJS.Timeout | null;
     nextPageTimer: NodeJS.Timeout | null;
     playbackSpeed: number;
-    // C20: Generic/Arbitrary Audio State
+    // Generic/Arbitrary Audio State
     genericPlaybackStatus: 'idle' | 'generating' | 'playing' | 'paused' | 'error';
     genericAudioUrl: string | null;
     genericAudioText: string | null; // The text being played
@@ -131,6 +139,7 @@ export interface ReportActions {
     openImageFullscreen: () => void;
     closeImageFullscreen: () => void;
     setReportChatInput: (input: string) => void;
+    setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
@@ -149,7 +158,7 @@ export interface ReportActions {
     startSlideshow: () => void;
     stopSlideshow: (userInitiated?: boolean) => void;
     setPlaybackSpeed: (speed: number) => void;
-    // C20: Generic/Arbitrary Audio Actions
+    // Generic/Arbitrary Audio Actions
     playArbitraryText: (text: string) => void;
     setGenericPlaybackStatus: (status: ReportState['genericPlaybackStatus']) => void;
     setGenericAudioUrl: (url: string | null) => void;
@@ -172,6 +181,7 @@ const createInitialReportState = (): ReportState => ({
     isImageFullscreen: false,
     reportChatHistory: [],
     reportChatInput: '',
+    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Initialize with defaults
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -188,7 +198,7 @@ const createInitialReportState = (): ReportState => ({
     slideshowTimer: null,
     nextPageTimer: null,
     playbackSpeed: 1,
-    // C20: Generic/Arbitrary Audio State
+    // Generic/Arbitrary Audio State
     genericPlaybackStatus: 'idle',
     genericAudioUrl: null,
     genericAudioText: null,
@@ -234,13 +244,10 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    let imageBasePath = manifestData.basePath;
+                                    // C23 Fix: Use hardcoded /assets/ path
+                                    const imageBasePath = '/assets/images/report/';
                                     
-                                    if (reportName === 'showcase' && imageBasePath && !imageBasePath.startsWith('/assets/')) {
-                                        console.warn(`[reportStore] Correcting image basePath for '${reportName}'. Path was missing '/assets' prefix. Original: "${manifestData.basePath}"`);
-                                        imageBasePath = `/assets${manifestData.basePath.startsWith('/') ? '' : '/'}${manifestData.basePath}`;
-                                    }
-                                    
+                                    // C23 Fix: Check for single image with no dash
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
                                         const url = `${imageBasePath}${groupMeta.path}${fileName}`;
@@ -299,28 +306,30 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             
             startSlideshow: () => {
                 const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
-                stopSlideshow(false);
+                stopSlideshow(false); // Stop any existing timers
 
                 const currentPage = allPages[currentPageIndex];
                 if (!currentPage || !autoplayEnabled) return;
 
+                // C28 FIX: Adjust durations based on playback speed
                 const actualDuration = duration / playbackSpeed;
                 const actualDurationMs = actualDuration * 1000;
+
+                // Guard against zero or infinite duration which causes rapid cycling
                 if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
 
-                console.log(`[reportStore] Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
-
+                // Set timer for next page
                 const nextPageTimer = setTimeout(() => {
                     if (get().autoplayEnabled) {
-                        console.log(`[reportStore] Autoplay timer finished. Advancing to next page.`);
                         nextPage();
                     }
-                }, actualDurationMs + 2000); // 2-second pause before next page
+                }, actualDurationMs + 500); // Small buffer
                 set({ nextPageTimer });
 
                 const images = currentPage.imagePrompts[0]?.images;
                 if (!images || images.length <= 1) return;
 
+                // C28 FIX: Calculate time per image based on adjusted duration
                 const timePerImage = actualDurationMs / images.length;
                 
                 const slideshowTimer = setInterval(() => {
@@ -333,6 +342,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
+                            // Stop slideshow, nextPageTimer will handle page transition
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -347,8 +357,10 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (slideshowTimer) clearInterval(slideshowTimer);
                 if (nextPageTimer) clearTimeout(nextPageTimer);
                 if (userInitiated) {
+                    // If user interacted, disable autoplay completely
                     set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
                 } else {
+                    // Just clear timers (e.g. between pages)
                     set({ slideshowTimer: null, nextPageTimer: null });
                 }
             },
@@ -356,11 +368,13 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
+                // If already playing this text, stop it (toggle behavior)
                 if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
                     stopArbitraryText(); 
                     return;
                 }
                 
+                // Stop any current playback
                 stopArbitraryText();
                 set({ genericPlaybackStatus: 'generating', genericAudioText: text });
 
@@ -370,7 +384,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ text }),
                     });
+
                     if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
+
                     const audioBlob = await response.blob();
                     const newUrl = URL.createObjectURL(audioBlob);
                     set({ genericAudioUrl: newUrl, genericPlaybackStatus: 'playing' });
@@ -380,6 +396,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
             },
             stopArbitraryText: () => {
+                const { genericAudioUrl } = get();
+                if (genericAudioUrl) URL.revokeObjectURL(genericAudioUrl);
                 set({ genericPlaybackStatus: 'idle', genericAudioUrl: null, genericAudioText: null });
             },
             setGenericPlaybackStatus: (status) => set({ genericPlaybackStatus: status }),
@@ -389,10 +407,11 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(false); // Stop any timers before changing page
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
+                    // If wrapping around to start, disable autoplay
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
-                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' }; // Reset audio status
                 });
             },
             prevPage: () => {
@@ -400,18 +419,20 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
+                    playbackStatus: 'idle', // Reset audio status
                 }));
             },
             goToPageByIndex: (pageIndex) => {
                 get().stopSlideshow(true);
                 if (pageIndex >= 0 && pageIndex < get().allPages.length) {
-                    set({ currentPageIndex: pageIndex, currentImageIndex: 0 });
+                    set({ currentPageIndex: pageIndex, currentImageIndex: 0, playbackStatus: 'idle' });
                 }
             },
             nextImage: () => {
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
+                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
@@ -421,6 +442,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
+                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
@@ -428,7 +450,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
+                // C15 Fix: prevent hijacking inputs
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
+                
                 if (event.key.startsWith('Arrow')) event.preventDefault();
                 switch (event.key) {
                     case 'ArrowUp': get().prevPage(); break;
@@ -475,31 +499,43 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
             setReportChatInput: (input) => set({ reportChatInput: input }),
+            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
-                set({ reportChatHistory: [initialMessage], reportChatInput: '' });
+                set({
+                    reportChatHistory: [initialMessage],
+                    reportChatInput: '',
+                    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Reset suggestions on clear
+                });
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
+            // Main Report Audio Actions
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
             setAutoplay: (enabled) => { 
-                get().stopSlideshow(!enabled); 
+                get().stopSlideshow(!enabled); // If disabling, stop. If enabling, don't stop yet.
                 set({ autoplayEnabled: enabled }); 
                 if (enabled) {
+                    // Reset image index when enabling autoplay to start slideshow from beginning
                     set({ currentImageIndex: 0 });
                 }
             },
-            setCurrentAudio: (url, pageIndex) => set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 }),
+            setCurrentAudio: (url, pageIndex) => {
+                const currentUrl = get().currentAudioUrl;
+                if (currentUrl) URL.revokeObjectURL(currentUrl);
+                set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 });
+            },
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
             setPlaybackSpeed: (speed) => {
                 set({ playbackSpeed: speed });
+                // C28 FIX: Restart slideshow with new speed if playing
                 if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
                     get().startSlideshow();
                 }
@@ -511,6 +547,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             onRehydrateStorage: () => (state) => {
                 if (state) state.setHasHydrated(true);
             },
+            // C26: Use createWithEqualityFn for Zustand 4.5+ compatibility
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,
@@ -526,6 +563,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 volume: state.volume,
                 isMuted: state.isMuted,
                 playbackSpeed: state.playbackSpeed,
+                // Do not persist chat history or suggestions to keep session fresh
             }),
         }
     )
