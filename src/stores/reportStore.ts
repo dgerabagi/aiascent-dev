@@ -1,5 +1,5 @@
 // src/stores/reportStore.ts
-import { create } from 'zustand';
+import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 
@@ -194,7 +194,7 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
-export const useReportStore = create<ReportState & ReportActions>()(
+export const useReportStore = createWithEqualityFn<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),

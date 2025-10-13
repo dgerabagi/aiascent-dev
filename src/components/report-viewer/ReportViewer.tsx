@@ -88,7 +88,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
-                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
+                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
                 </div>
             )}
 
@@ -116,7 +116,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                                 <Image
                                     src={currentImage.url}
                                     alt={currentImage.alt}
-                                    layout="fill"
+                                    fill
+                                    sizes="100vw"
                                     className="object-contain cursor-pointer"
                                     onClick={openImageFullscreen}
                                     unoptimized // Good for gifs, but also for webp from local

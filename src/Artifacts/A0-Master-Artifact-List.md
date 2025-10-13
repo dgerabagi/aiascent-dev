@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C28 (Add GitHub and Showcase Expansion artifacts)
+# Updated on: C29 (Add iframe Integration Guide)
 
 ## 1. Purpose
 
@@ -177,3 +177,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
   - **Tags:** git, github, version control, security, best practices, open source
+
+### A31. aiascent.dev - iframe Integration Guide
+
+  - **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
+  - **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
