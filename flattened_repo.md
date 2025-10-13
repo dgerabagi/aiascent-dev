@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-12T22:35:01.266Z
+  Date Generated: 2025-10-13T14:22:40.191Z
   ---
-  Total Files: 114
-  Approx. Tokens: 287083
+  Total Files: 117
+  Approx. Tokens: 289699
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,13 +14,13 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts (9081 tokens)
-7. src\stores\reportStore.ts (6162 tokens)
+7. src\stores\reportStore.ts (6172 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx (4292 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 179 - Chars: 9800 - Tokens: 2450
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 184 - Chars: 10119 - Tokens: 2530
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 65 - Chars: 2835 - Tokens: 709
@@ -35,7 +35,7 @@
 13. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
 15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-16. package.json - Lines: 48 - Chars: 1381 - Tokens: 346
+16. package.json - Lines: 48 - Chars: 1389 - Tokens: 348
 17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -97,8 +97,8 @@
 75. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 76. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 77. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-78. src\stores\reportStore.ts - Lines: 536 - Chars: 24648 - Tokens: 6162
-79. src\components\report-viewer\ReportViewer.tsx - Lines: 165 - Chars: 7319 - Tokens: 1830
+78. src\stores\reportStore.ts - Lines: 536 - Chars: 24688 - Tokens: 6172
+79. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
 80. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 81. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 82. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
@@ -114,7 +114,7 @@
 92. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 93. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 94. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
-95. src\components\mission\MissionSectionBlock.tsx - Lines: 120 - Chars: 3817 - Tokens: 955
+95. src\components\mission\MissionSectionBlock.tsx - Lines: 121 - Chars: 3870 - Tokens: 968
 96. src\components\shared\MarkdownRenderer.tsx - Lines: 46 - Chars: 1891 - Tokens: 473
 97. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 98. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
@@ -133,7 +133,10 @@
 111. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
 112. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
 113. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 49 - Chars: 3369 - Tokens: 843
-114. src\components\showcase\ShowcaseTabs.tsx - Lines: 55 - Chars: 1638 - Tokens: 410
+114. src\components\showcase\ShowcaseTabs.tsx - Lines: 56 - Chars: 1745 - Tokens: 437
+115. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
+116. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
+117. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -142,7 +145,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C28 (Add GitHub and Showcase Expansion artifacts)
+# Updated on: C29 (Add iframe Integration Guide)
 
 ## 1. Purpose
 
@@ -315,6 +318,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
   - **Tags:** git, github, version control, security, best practices, open source
+
+### A31. aiascent.dev - iframe Integration Guide
+
+  - **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
+  - **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -8967,7 +8975,7 @@ This artifact provides a structured format for tracking development tasks for th
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3002",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15108,7 +15116,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-import { create } from 'zustand';
+import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 
@@ -15303,7 +15311,7 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
-export const useReportStore = create<ReportState & ReportActions>()(
+export const useReportStore = createWithEqualityFn<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
@@ -15736,7 +15744,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         <div className="h-full w-full bg-background text-foreground flex pt-16">
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
-                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" layout="fill" />
+                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
                 </div>
             )}
 
@@ -15764,7 +15772,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                                 <Image
                                     src={currentImage.url}
                                     alt={currentImage.alt}
-                                    layout="fill"
+                                    fill
+                                    sizes="100vw"
                                     className="object-contain cursor-pointer"
                                     onClick={openImageFullscreen}
                                     unoptimized // Good for gifs, but also for webp from local
@@ -17683,6 +17692,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
               src={`/assets/images/report/${imagePath}${images[currentImageIndex]}`}
               alt={title}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </motion.div>
@@ -22135,8 +22145,9 @@ This plan provides a clean, user-friendly, and technically straightforward path 
 <file path="src/components/showcase/ShowcaseTabs.tsx">
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
+import { FaSync } from 'react-icons/fa';
 
 const ShowcaseTabs = () => {
   const [activeTab, setActiveTab] = useState('report');
@@ -22149,7 +22160,7 @@ const ShowcaseTabs = () => {
   return (
     <div className="flex flex-col h-full w-full">
       {/* Tab Buttons */}
-      <div className="flex border-b border-border flex-shrink-0">
+      <div className="flex justify-center border-b border-border flex-shrink-0 relative">
         {tabs.map(tab => (
           <button
             key={tab.id}
@@ -22179,7 +22190,7 @@ const ShowcaseTabs = () => {
             src="https://aiascent.game/"
             title="AI Ascent Game"
             className="w-full h-full border-0"
-            allow="autoplay; fullscreen"
+            allow="autoplay; fullscreen; popups; popups-to-escape-sandbox"
           />
         )}
       </div>
@@ -22188,5 +22199,224 @@ const ShowcaseTabs = () => {
 };
 
 export default ShowcaseTabs;
+</file_artifact>
+
+<file path="LICENSE">
+MIT License
+
+Copyright (c) 2025 The aiascent.dev Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</file_artifact>
+
+<file path="src/Artifacts/A31. aiascent.dev - iframe Integration Guide.md">
+# Artifact A31: aiascent.dev - iframe Integration Guide
+
+# Date Created: C29
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
+- **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
+
+## 1. Overview
+
+This guide addresses the login failure observed when embedding `aiascent.game` within an `iframe` on the `aiascent.dev/showcase` page. The root cause is a browser security feature related to how cookies are handled in cross-site contexts.
+
+## 2. The Problem: Cross-Site Cookie Rejection
+
+Modern browsers have implemented stricter security policies to prevent Cross-Site Request Forgery (CSRF) attacks. A key part of this is the `SameSite` attribute on cookies.
+
+*   **The Console Error:** You observed errors like `Cookie “__Host-next-auth.csrf-token” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”.`
+*   **Root Cause:** The `aiascent.game` website (which uses NextAuth.js) sets authentication cookies with a `SameSite` policy of `Lax` by default. This policy means the browser will only send the cookie if the request originates from the *same site* (`aiascent.game`). When the game is loaded in an `iframe` on `aiascent.dev`, the browser correctly identifies this as a "cross-site" context and refuses to send the `Lax` cookies, causing the authentication to fail.
+
+## 3. The Solution: `SameSite=None` and `Secure`
+
+To fix this, the `aiascent.game` application must be configured to tell browsers that its authentication cookies are *intended* to be used in a cross-site context. This requires making two specific changes to the cookie configuration within the `aiascent.game` project.
+
+1.  **`SameSite='none'`:** This attribute explicitly tells the browser that the cookie can be sent with cross-site requests (like from an `iframe`).
+2.  **`Secure=true`:** Using `SameSite='none'` is only allowed if the cookie is also marked as `Secure`. This ensures the cookie is only ever sent over an HTTPS connection, which is a critical security measure.
+
+### 3.1. Required Code Change in `aiascent.game`
+
+The following change needs to be made in the NextAuth configuration file within the `aiascent.game` project (likely located at `src/pages/api/auth/[...nextauth].ts` or a similar path).
+
+```typescript
+// In the aiascent.game project's NextAuth options...
+
+export const authOptions: NextAuthOptions = {
+  // ... your other providers (Google, etc.)
+  providers: [
+    // ...
+  ],
+  
+  // ADD OR MODIFY THIS COOKIES SECTION
+  cookies: {
+    sessionToken: {
+      name: `__Secure-next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'none', // <--- CRITICAL CHANGE
+        path: '/',
+        secure: true,   // <--- CRITICAL CHANGE
+        // If you have a custom domain, you might also need:
+        // domain: ".aiascent.game", 
+      },
+    },
+    // You may need to apply similar settings for other NextAuth cookies
+    // like csrfToken, callbackUrl, etc., if issues persist.
+  },
+
+  // ... rest of your configuration
+};
+```
+
+**Important Note:** This change must be deployed with the `aiascent.game` application. It cannot be fixed from the `aiascent.dev` side, as the cookie-setting behavior is controlled by the embedded site.
+
+## 4. Refresh Button Implementation
+
+To improve the user experience of the embedded game, a refresh button has been added to the showcase tab. This allows the user to reload the `iframe`'s content without reloading the entire `aiascent.dev` page.
+
+This is implemented in `ShowcaseTabs.tsx` using a React `ref` to access the `iframe`'s `contentWindow` and trigger a reload.
+
+```typescript
+// Example from ShowcaseTabs.tsx
+
+const iframeRef = useRef<HTMLIFrameElement>(null);
+
+const handleRefresh = () => {
+  if (iframeRef.current) {
+    iframeRef.current.contentWindow?.location.reload();
+  }
+};
+
+// ... in the JSX ...
+<button onClick={handleRefresh}>Refresh Game</button>
+<iframe ref={iframeRef} src="https://aiascent.game/" />
+</file_artifact>
+
+<file path="context/aiascentgame/A188. Dual Domain Hosting Guide.md">
+# Artifact A188: Dual Domain Hosting Guide
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive guide for setting up a single server to host both `aiascent.game` and `aiascent.dev` using Caddy as a reverse proxy and PM2 as a process manager.
+- **Tags:** guide, hosting, deployment, server, v1.0, caddy, reverse proxy, pm2, multi-domain
+
+## 1. Purpose
+
+This guide provides a complete, step-by-step process for deploying both the `aiascent.game` and `aiascent.dev` applications onto a single server. It covers cloning the new repository, building both applications for production, configuring the Caddy reverse proxy to handle both domains, and using the PM2 process manager to keep both applications running reliably.
+
+## 2. Architecture Overview
+
+The setup uses a **reverse proxy** architecture. A single Caddy web server listens for all public web traffic on ports 80 and 443. Based on the domain name requested by the user (`aiascent.game` or `aiascent.dev`), Caddy forwards the request to the correct application running on a separate, internal port.
+
+*   `aiascent.game` will run on port **3001**.
+*   `aiascent.dev` will run on port **3002**.
+*   **PM2**, a process manager for Node.js, will be used to run both applications as background services, ensuring they restart automatically if they crash.
+
+## 3. Step-by-Step Deployment on the Server
+
+### Step 3.1: Prepare the `aiascent-dev` Application
+
+1.  **Clone the Repository:**
+    *   Navigate to your main projects directory (e.g., `C:\Projects\`).
+    *   Clone the `aiascent-dev` repository from GitHub.
+    ```bash
+    git clone https://github.com/dgerabagi/aiascent-dev.git
+    ```
+
+2.  **Install Dependencies:**
+    *   Navigate into the new directory: `cd aiascent-dev`.
+    *   Install all required packages: `npm install`.
+
+3.  **Create `.env` File:**
+    *   Create a `.env` file in the root of the `aiascent-dev` project. This file is for production secrets.
+    *   Add the necessary environment variables. For this project, it's primarily for the RAG and TTS features.
+    ```
+    # .env for aiascent-dev
+    TTS_SERVER_URL=http://<IP_OF_TTS_SERVER>:8880/v1/audio/speech
+    REMOTE_LLM_URL=http://<IP_OF_LLM_SERVER>:1234
+    EMBEDDING_API_URL=http://<IP_OF_LLM_SERVER>:1234/v1/embeddings
+    ```
+
+4.  **Build for Production:**
+    *   Run the build script to create an optimized production version of the Next.js site.
+    ```bash
+    npm run build
+    ```
+
+### Step 3.2: Prepare the `ai-ascent` Application
+
+1.  **Navigate to Project:** Go to your `ai-ascent` project directory.
+2.  **Update Caddyfile:** Ensure the `Caddyfile` in the root of this project has been updated with the configuration for both domains as specified in this cycle's changes.
+3.  **Build for Production:**
+    *   Run the main build script to compile the server and client.
+    ```bash
+    npm run build
+    ```
+
+### Step 3.3: Install and Configure PM2
+
+1.  **Install PM2 Globally:** PM2 is a powerful process manager that will keep your applications online.
+    ```bash
+    npm install pm2 -g
+    ```
+
+2.  **Start the Applications with PM2:**
+    *   From the `ai-ascent-dev` directory, start the website:
+    ```bash
+    pm2 start npm --name "aiascent-dev" -- run start
+    ```
+    *   From the `ai-ascent` directory, start the game server:
+    ```bash
+    pm2 start npm --name "ai-ascent" -- run start
+    ```
+
+3.  **Verify PM2 Status:** Check that both applications are running and online.
+    ```bash
+    pm2 list
+    ```
+    You should see `aiascent-dev` and `ai-ascent` with a green "online" status.
+
+4.  **Save the PM2 Process List:** This command saves the current list of running applications so they will automatically restart when the server reboots.
+    ```bash
+    pm2 save
+    ```
+    *(You may need to run `pm2 startup` one time to configure the startup script for your OS.)*
+
+### Step 3.4: Run Caddy
+
+1.  **Navigate to `ai-ascent` Project:** Caddy should be run from the directory containing the `Caddyfile`.
+    ```bash
+    cd C:\Projects\ai-ascent
+    ```
+
+2.  **Start Caddy:** Run Caddy. It will automatically find the `Caddyfile` in the current directory.
+    ```bash
+    caddy run
+    ```
+    *   Caddy will now handle incoming requests for both domains, automatically provision SSL certificates, and route traffic to the correct application running under PM2.
+
+## 4. Final Verification
+
+*   Navigate to `https://aiascent.game` in your browser. You should see the game.
+*   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
+*   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
 </file_artifact>
 
