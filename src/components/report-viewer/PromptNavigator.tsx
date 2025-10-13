@@ -15,7 +15,7 @@ const PromptNavigator: React.FC = () => {
   }));
 
   const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts;
+  const currentPrompt = currentPage?.imagePrompts?.[0];
 
   if (!currentPrompt?.promptText) return null;
 
