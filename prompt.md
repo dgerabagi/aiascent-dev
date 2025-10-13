@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 41 - 2/3 solved!
+Current Cycle 42 - noice! now tiny fix in the report viewer in showcase
+Cycle 41 - 2/3 solved!
 Cycle 40 - neither issue resolved
 Cycle 39 - almost fixed
 Cycle 38 - such good progress keep it up
@@ -437,6 +438,31 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 42>
+<Cycle Context>
+perfect! i think we're good! okay now can we make sure we have different default questions for `The Ascent Report` in the showcase page than in the `Interactive Whitepaper` in the homepage? right now, on the report in the showcase, i see `How does DCE work?` and `How do I install DCE?`, instead, lets have appropriate starting questions for this report viewer interface.
+</Cycle Context>
+<Previous Cycle 41 Summary of Actions>
+I have analyzed the two persistent issues from the previous cycle: the failure to parse dynamic prompt suggestions and the incorrect rendering of markdown for inline code and tables in the "Ask @Ascentia" chat panel. Based on the console logs, the suggestion-parsing logic is failing to find the specially formatted suggestion block in the AI's response, and the markdown rendering issues point to styling conflicts.
+
+My course of action is to implement a robust fix for both problems. First, I will overhaul the suggestion parsing logic within `ReportChatPanel.tsx`. The current implementation fails to find the suggestion block, so I will add more detailed logging to inspect the raw response from the AI just before parsing. I will then re-implement the logic to reliably find the `:::suggestions:::` block, parse the JSON content within it, update the suggestion chips, and then strip the block from the final message shown to the user. This ensures the process is atomic and prevents raw suggestion data from ever appearing in the chat.
+
+Second, I will correct the markdown styling in `MarkdownRenderer.tsx`. To fix the table border issue, I will apply more prominent border styles to `table`, `th`, and `td` elements to ensure they are clearly visible. To resolve the `inline code` rendering bug where it behaves like a block element, I will explicitly add the `inline` display class to its styles. This will override any conflicting parent styles (likely from a `prose` class) and ensure it renders correctly within the flow of text.
+
+These changes will resolve all reported bugs, making the chat feature fully functional and visually polished.
+
+1.  **Refactor `src/components/report-viewer/ReportChatPanel.tsx`:**
+    *   In the `sendMessage` function, after the full streaming response from the AI is accumulated, I will add detailed console logging to output the complete, raw message string.
+    *   I will implement logic to match the `:::suggestions:::[...]:::end_suggestions:::` block using a regular expression.
+    *   If a match is found, I will parse the JSON content inside it within a `try...catch` block.
+    *   On successful parsing, I will update the UI state with the new suggestions by calling `setSuggestedPrompts`. If parsing fails or no block is found, I will log the issue and fall back to the default suggestions.
+    *   I will then strip the entire suggestions block from the message content before updating the final message in the chat history using `setReportChatMessage`, ensuring the raw data is never displayed.
+2.  **Update `src/components/shared/MarkdownRenderer.tsx`:**
+    *   I will modify the component rendering `table`, `th`, and `td` elements to use a more visible border class, such as `border-muted-foreground`, to ensure all tables have clear borders.
+    *   I will update the component rendering the inline `<code>` element by explicitly adding the `inline` class to its `className` string. This will force it to render as an inline element and fix the layout bug where it was expanding like a block.
+</Previous Cycle 41 Summary of Actions>
+</Cycle 42>
+
 <Cycle 41>
 <Cycle Context>
 fantastic! you've knocked out 2/3 of the issues! we have borders on the tables, and the chips are working. the only remaining issue is with the code block <> inline code. i have actually not seen an inline code, all im seeing are code blocks. instead of using the interchangably, you are only using code blocks. this is causing an issue in instances where we should be using inline code, and the issue is especially apparent when the code block has trailing punctuation. a code block wouldnt need punctuation, but inline code would, because its inline and therefore part of the sentence, and sentences need punctuation. 
@@ -446,134 +472,6 @@ this is the final remaining issue, to be able to treat inline code as inline cod
 ah im noticing a pattern also, if any of the 3 colons are missing in the front or end of these `:::suggestions:::` or `:::end_suggestions:::` (such as in the second case in ephemeral), then it doesnt work. how can this be more robust?
 
 </Cycle Context>
-<Ephemeral Context>
-[Fast Refresh] rebuilding hot-reloader-client.js:187:25
-[Fast Refresh] done in 731ms hot-reloader-client.js:44:13
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer based on context. Provide explanation of DCE workflow, mention curated context selection set, parallel co-pilot panel, cycle navigator, persistent knowledge graph, process as asset. Use markdown, no invented info.\n\nAlso produce follow-up suggestions JSON.<|end|><|start|>assistant<|channel|>final<|message|>### How Data Curation Environment (DCE) Works\n\n| Step | What Happens | Why It Matters |\n|------|---------------|----------------|\n| 1️⃣ **Curate Context** | You select a folder or specific files in VS Code via the DCE panel. The system creates a *Selection Set* – a snapshot of the exact files you want the AI to see. | Keeps prompts focused, reduces token waste, and eliminates “copy‑paste” errors. |\n| 2️⃣ **Parallel Co‑Pilot Panel** | One prompt is sent to multiple LLM instances at once (or you can run them sequentially). Each instance returns a response that appears in its own pane. | Lets you compare answers side‑by‑side, speeding up the search for the best output. |\n| 3️⃣ **Diff Viewer & Accept** | You review AI outputs with VS Code’s built‑in diff viewer, choose the best version, and click **Accept**. The accepted text is written back into your files. | Makes the human decision explicit and auditable; no hidden “best guess” remains in a note. |\n| 4️⃣ **Cycle Creation** | Each interaction (prompt → responses → final choice) becomes a *Cycle* – a structured record that includes: curated context, operator instructions, AI outputs, and the operator’s final action. | Captures the full history for later review or hand‑off. |\n| 5️⃣ **Persistent Knowledge Graph** | All Cycles are stored in a graph database. The **Cycle Navigator** lets you jump back through that graph to see why past decisions were made. | Removes the “collaboration gap” – teammates can pick up where someone left off without re‑discovering context. |\n| 6️⃣ **Process as Asset** | Because every step is saved, the *process itself* (not just the final code) becomes a reusable asset. You can replay it, audit it, or hand it to another team member. | Turns what used to be a one‑off workflow into a continuous, traceable organizational capability. |\n\n---\n\n#### Quick Recap\n\n1. **Select files →** DCE creates a *Selection Set* (curated context).  \n2. **Send prompt →** Parallel Co‑Pilot Panel shows multiple AI responses.  \n3. **Review & Accept →** Diff viewer lets you pick the best one, writes it back.  \n4. **Record Cycle →** All details are stored in a Knowledge Graph.  \n5. **Navigate history →** Cycle Navigator lets you revisit past decisions.\n\n---\n\n#### Why It Helps\n\n- **Speed:**  AI can be evaluated and accepted with a single click; no manual prompt crafting each time.  \n- **Accuracy:**  The graph records every decision, making it easy to audit or roll back.  \n- **Collaboration:**  New operators receive the exact context and history, eliminating re‑learning.  \n\n---\n\n#### Next Steps\n\n* Try installing the extension from a `.vsix` file (see “Installation & Setup” in the docs).  \n* Open a Git repo; DCE will automatically use your repository’s state for baseline/restore features.  \n* Experiment with a simple prompt and watch how the Parallel Co‑Pilot Panel populates responses.\n\n---\n\n:::suggestions:::[\n  \"How do I install the DCE extension from the .vsix file?\",\n  \"What is the difference between Manual Mode and API mode in DCE?\",\n  \"Can I use DCE with a non‑Git project?\"\n]:::end_suggestions:::" ReportChatPanel.tsx:144:21
-[Chat Panel] Suggestions block found. Raw content: "[\n  \"How do I install the DCE extension from the .vsix file?\",\n  \"What is the difference between Manual Mode and API mode in DCE?\",\n  \"Can I use DCE with a non‑Git project?\"\n]" ReportChatPanel.tsx:150:25
-[Chat Panel] Successfully parsed suggestions: 
-Array(3) [ "How do I install the DCE extension from the .vsix file?", "What is the difference between Manual Mode and API mode in DCE?", "Can I use DCE with a non‑Git project?" ]
-ReportChatPanel.tsx:155:33
-Warning: In HTML, <pre> cannot be a descendant of <p>.
-This will cause a hydration error.
-pre
-code@webpack-internal:///(app-pages-browser)/./src/components/shared/MarkdownRenderer.tsx:162:71
-p
-p@webpack-internal:///(app-pages-browser)/./src/components/shared/MarkdownRenderer.tsx:19:42
-Markdown@webpack-internal:///(app-pages-browser)/./node_modules/react-markdown/lib/index.js:181:36
-MarkdownRenderer@webpack-internal:///(app-pages-browser)/./src/components/shared/MarkdownRenderer.tsx:12:24
-div
-div
-div
-div
-div
-ReportChatPanel@webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:24:26
-div
-Resizable@webpack-internal:///(app-pages-browser)/./node_modules/re-resizable/lib/index.js:169:28
-div
-ReportViewer@webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportViewer.tsx:32:26
-div
-div
-section
-div
-Home (Server)
-InnerLayoutRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:244:18
-RedirectErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9
-RedirectBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:24
-NotFoundErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9
-NotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:62
-LoadingBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:348:76
-ErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:67
-InnerScrollAndFocusHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9
-ScrollAndFocusHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:37
-RenderFromTemplateContext@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44
-OuterLayoutRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:369:157
-main
-div
-O@webpack-internal:///(app-pages-browser)/./node_modules/next-themes/dist/index.mjs:28:258
-z@webpack-internal:///(app-pages-browser)/./node_modules/next-themes/dist/index.mjs:21:47
-ThemeProvider@webpack-internal:///(app-pages-browser)/./src/providers/theme-provider.tsx:13:34
-body
-html
-RootLayout (Server)
-RedirectErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9
-RedirectBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:24
-NotFoundErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9
-NotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:62
-DevRootNotFoundBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:24
-ReactDevOverlay@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9
-HotReload@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:37
-Router@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:134
-ErrorBoundaryHandler@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9
-ErrorBoundary@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:67
-AppRouter@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:577:47
-ServerRoot@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27
-Root@webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:24 app-index.js:33:22
-    error app-index.tsx:25
-    error hydration-error-info.ts:72
-    printWarning react-dom.development.js:94
-    error react-dom.development.js:68
-    validateDOMNesting react-dom.development.js:4284
-    createInstance react-dom.development.js:35403
-    completeWork react-dom.development.js:19773
-    completeUnitOfWork react-dom.development.js:25963
-    performUnitOfWork react-dom.development.js:25759
-    workLoopSync react-dom.development.js:25464
-    renderRootSync react-dom.development.js:25419
-    performSyncWorkOnRoot react-dom.development.js:24887
-    flushSyncWorkAcrossRoots_impl react-dom.development.js:7758
-    flushSyncWorkOnAllRoots react-dom.development.js:7718
-    processRootScheduleInMicrotask react-dom.development.js:7863
-    scheduleImmediateTask react-dom.development.js:8034
-    (Async: VoidFunction)
-    scheduleImmediateTask react-dom.development.js:8016
-    ensureRootIsScheduled react-dom.development.js:7706
-    scheduleUpdateOnFiber react-dom.development.js:24425
-    forceStoreRerender react-dom.development.js:12052
-    handleStoreChange react-dom.development.js:12028
-    setState vanilla.mjs:9
-    setState vanilla.mjs:9
-    configResult middleware.mjs:479
-    updateReportChatMessage reportStore.ts:506
-    sendMessage ReportChatPanel.tsx:131
-    handleChipClick ReportChatPanel.tsx:211
-    onClick ReportChatPanel.tsx:274
-    callCallback react-dom.development.js:20565
-    invokeGuardedCallbackImpl react-dom.development.js:20614
-    invokeGuardedCallback react-dom.development.js:20689
-    invokeGuardedCallbackAndCatchFirstError react-dom.development.js:20703
-    executeDispatch react-dom.development.js:32128
-    processDispatchQueueItemsInOrder react-dom.development.js:32160
-    processDispatchQueue react-dom.development.js:32173
-    dispatchEventsForPlugins react-dom.development.js:32184
-    dispatchEventForPluginEventSystem react-dom.development.js:32374
-    batchedUpdates$1 react-dom.development.js:24953
-    batchedUpdates react-dom.development.js:28844
-    dispatchEventForPluginEventSystem react-dom.development.js:32373
-    dispatchEvent react-dom.development.js:30141
-    dispatchDiscreteEvent react-dom.development.js:30112
-    (Async: EventListener.handleEvent)
-    addEventBubbleListener react-dom.development.js:30361
-    addTrappedEventListener react-dom.development.js:32277
-    listenToNativeEvent react-dom.development.js:32216
-    listenToAllSupportedEvents react-dom.development.js:32227
-    listenToAllSupportedEvents react-dom.development.js:32222
-    hydrateRoot$1 react-dom.development.js:37940
-    hydrateRoot react-dom.development.js:38526
-    hydrateRoot client.js:20
-    hydrate app-index.tsx:245
-    startTransition react.development.js:2596
-    hydrate app-index.tsx:244
-    <anonymous> app-next-dev.ts:8
-    appBootstrap app-bootstrap.ts:61
-    loadScriptsInSequence app-bootstrap.ts:20
-    appBootstrap app-bootstrap.ts:60
-    <anonymous> app-next-dev.ts:6
-    NextJS 7
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>The user asks how to install the DCE extension from a .vsix file. The context includes instructions under \"4. Sharing and Installing the `.vsix` File\" with steps for beta testers. We should provide that answer, referencing the relevant text. Also mention VS Code interface. Provide steps: open VS Code, go to Extensions view (Ctrl+Shift+X), click ... > Install from VSIX..., navigate to file, confirm install. Also maybe mention reloading window.\n\nWe need to use markdown formatting. Use list with compact formatting. Also we might include a note that you can also install via command line: `code --install-extension path/to/file.vsix`. But context didn't include that but may be okay? The instructions in the guide don't mention CLI. We should stick to provided context. So only give UI steps.\n\nAfter main response, we need to generate 2-4 follow-up questions as JSON array inside delimiters like :::suggestions::: [...]. Provide them.\n\nLet's produce answer.<|end|><|start|>assistant<|channel|>final<|message|>**Installing the DCE extension from a `.vsix` file**\n\n1. **Open Visual Studio Code**  \n   - Launch VS Code normally (e.g., double‑click the icon or run `code`).\n\n2. **Go to the Extensions view**  \n   - Press `Ctrl+Shift+X`, or click the “Extensions” icon in the left‑hand Activity Bar.\n\n3. **Open the Install‑from‑VSIX menu**  \n   - In the top right of the Extensions pane, click the three‑dot button (`…`).  \n   - Choose **“Install from VSIX…”** from the dropdown list.\n\n4. **Select your `.vsix` file**  \n   - In the file dialog that appears, navigate to the folder where you saved the `data-curation-environment‑X.X.X.vsix` file (the one created by `vsce package`).  \n   - Click the file and then click **“Open”**.\n\n5. **Confirm installation**  \n   - VS Code will show a progress bar while it installs the extension.  \n   - Once finished, you’ll see the DCE extension in your installed extensions list, and its icon will appear in the Activity Bar (e.g., a spiral or custom panel).\n\n6. **Reload if prompted**  \n   - Some extensions require a window reload. If VS Code asks to “Reload”, click that button so the DCE extension fully activates.\n\nThat’s it—your DCE extension is now installed and ready for use!  \n\n:::suggestions:::[\n  \"How can I update the DCE extension after installing it?\",\n  \"What do I do if the installation fails or shows an error?\",\n  \"Can I install the .vsix file via command line instead of the UI?\"\n]:::end_suggestions::" ReportChatPanel.tsx:144:21
-[Chat Panel] No suggestions block found in the response. Using default suggestions. ReportChatPanel.tsx:165:25
-
-</Ephemeral Context>
 <Previous Cycle 40 Summary of Actions>
 I have analyzed the feedback from the last cycle and will address the three main issues: markdown table styling, inline code formatting, and the failing dynamic prompt suggestions.
 
@@ -2774,10 +2672,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T20:07:02.935Z
+  Date Generated: 2025-10-13T20:17:03.263Z
   ---
   Total Files: 120
-  Approx. Tokens: 296283
+  Approx. Tokens: 296470
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2857,7 +2755,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 303 - Chars: 14363 - Tokens: 3591
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 304 - Chars: 14440 - Tokens: 3610
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -2866,7 +2764,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 207 - Chars: 9973 - Tokens: 2494
+74. src\app\api\chat\route.ts - Lines: 207 - Chars: 10179 - Tokens: 2545
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2875,7 +2773,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 52 - Chars: 2506 - Tokens: 627
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 64 - Chars: 2974 - Tokens: 744
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -15402,7 +15300,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
             // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
             console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
+            // C41 FIX: Make regex more robust by allowing 2 or more colons.
+            const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
             const match = fullMessage.match(suggestionsRegex);
             let finalSuggestions = DEFAULT_SUGGESTIONS;
             let cleanedMessage = fullMessage;
@@ -17876,25 +17775,37 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,
-        // C40 FIX: Use more prominent borders for tables
         table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-muted-foreground" {...props} />,
         thead: ({ node, ...props }) => <thead className="bg-muted/50" {...props} />,
         th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-muted-foreground" {...props} />,
         td: ({ node, ...props }) => <td className="px-2 py-1 border border-muted-foreground" {...props} />,
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
-          return !inline ? (
-            <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
-              <code className={className} {...props}>
+          const childrenStr = String(children);
+
+          // Force single-line code snippets to be rendered inline.
+          // This prevents the markdown parser from wrapping them in a <pre> tag,
+          // which is a block element and causes invalid HTML nesting (<p><pre>...)</pre></p>),
+          // leading to hydration errors and layout breaks.
+          const isLikelyInline = !childrenStr.includes('\n');
+
+          if (inline || isLikelyInline) {
+            // This is an inline code snippet.
+            return (
+              <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
                 {children}
               </code>
-            </pre>
-          ) : (
-            // C40 FIX: Explicitly add `inline` class to prevent block display issues
-            <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
-              {children}
-            </code>
-          );
+            );
+          } else {
+            // This is a fenced code block.
+            return (
+              <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              </pre>
+            );
+          }
         },
         a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" {...props} />,
       }}

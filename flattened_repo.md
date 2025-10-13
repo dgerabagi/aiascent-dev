@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T20:07:02.935Z
+  Date Generated: 2025-10-13T20:17:03.263Z
   ---
   Total Files: 120
-  Approx. Tokens: 296283
+  Approx. Tokens: 296470
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -84,7 +84,7 @@
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 303 - Chars: 14363 - Tokens: 3591
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 304 - Chars: 14440 - Tokens: 3610
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
@@ -93,7 +93,7 @@
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 207 - Chars: 9973 - Tokens: 2494
+74. src\app\api\chat\route.ts - Lines: 207 - Chars: 10179 - Tokens: 2545
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -102,7 +102,7 @@
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
 81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
-83. src\components\shared\MarkdownRenderer.tsx - Lines: 52 - Chars: 2506 - Tokens: 627
+83. src\components\shared\MarkdownRenderer.tsx - Lines: 64 - Chars: 2974 - Tokens: 744
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 85. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
@@ -12629,7 +12629,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
             // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
             console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
+            // C41 FIX: Make regex more robust by allowing 2 or more colons.
+            const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
             const match = fullMessage.match(suggestionsRegex);
             let finalSuggestions = DEFAULT_SUGGESTIONS;
             let cleanedMessage = fullMessage;
@@ -15103,25 +15104,37 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,
-        // C40 FIX: Use more prominent borders for tables
         table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-muted-foreground" {...props} />,
         thead: ({ node, ...props }) => <thead className="bg-muted/50" {...props} />,
         th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-muted-foreground" {...props} />,
         td: ({ node, ...props }) => <td className="px-2 py-1 border border-muted-foreground" {...props} />,
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
-          return !inline ? (
-            <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
-              <code className={className} {...props}>
+          const childrenStr = String(children);
+
+          // Force single-line code snippets to be rendered inline.
+          // This prevents the markdown parser from wrapping them in a <pre> tag,
+          // which is a block element and causes invalid HTML nesting (<p><pre>...)</pre></p>),
+          // leading to hydration errors and layout breaks.
+          const isLikelyInline = !childrenStr.includes('\n');
+
+          if (inline || isLikelyInline) {
+            // This is an inline code snippet.
+            return (
+              <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
                 {children}
               </code>
-            </pre>
-          ) : (
-            // C40 FIX: Explicitly add `inline` class to prevent block display issues
-            <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
-              {children}
-            </code>
-          );
+            );
+          } else {
+            // This is a fenced code block.
+            return (
+              <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              </pre>
+            );
+          }
         },
         a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" {...props} />,
       }}

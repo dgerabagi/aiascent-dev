@@ -21,25 +21,37 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         li: ({ node, ...props }) => <li className="ml-4" {...props} />,
         strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
         em: ({ node, ...props }) => <em className="italic" {...props} />,
-        // C40 FIX: Use more prominent borders for tables
         table: ({ node, ...props }) => <table className="w-full my-4 text-sm border-collapse border border-muted-foreground" {...props} />,
         thead: ({ node, ...props }) => <thead className="bg-muted/50" {...props} />,
         th: ({ node, ...props }) => <th className="px-2 py-1 text-left font-semibold border border-muted-foreground" {...props} />,
         td: ({ node, ...props }) => <td className="px-2 py-1 border border-muted-foreground" {...props} />,
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
-          return !inline ? (
-            <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
-              <code className={className} {...props}>
+          const childrenStr = String(children);
+
+          // Force single-line code snippets to be rendered inline.
+          // This prevents the markdown parser from wrapping them in a <pre> tag,
+          // which is a block element and causes invalid HTML nesting (<p><pre>...)</pre></p>),
+          // leading to hydration errors and layout breaks.
+          const isLikelyInline = !childrenStr.includes('\n');
+
+          if (inline || isLikelyInline) {
+            // This is an inline code snippet.
+            return (
+              <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
                 {children}
               </code>
-            </pre>
-          ) : (
-            // C40 FIX: Explicitly add `inline` class to prevent block display issues
-            <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
-              {children}
-            </code>
-          );
+            );
+          } else {
+            // This is a fenced code block.
+            return (
+              <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              </pre>
+            );
+          }
         },
         a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" {...props} />,
       }}

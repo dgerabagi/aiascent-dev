@@ -142,7 +142,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
             // --- POST-STREAM PROCESSING FOR SUGGESTIONS ---
             console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            const suggestionsRegex = /:{3,}suggestions:{3,}([\s\S]*?):{3,}end_suggestions:{3,}/;
+            // C41 FIX: Make regex more robust by allowing 2 or more colons.
+            const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
             const match = fullMessage.match(suggestionsRegex);
             let finalSuggestions = DEFAULT_SUGGESTIONS;
             let cleanedMessage = fullMessage;
