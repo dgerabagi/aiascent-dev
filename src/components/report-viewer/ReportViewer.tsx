@@ -1,7 +1,7 @@
 // src/components/report-viewer/ReportViewer.tsx
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import PageNavigator from './PageNavigator';
 import ImageNavigator from './ImageNavigator';
@@ -19,13 +19,13 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions, setIsFullscreen } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
-        chatPanelWidth, playbackStatus, autoplayEnabled,
+        chatPanelWidth, playbackStatus, autoplayEnabled, isFullscreen
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
         allPages: state.allPages,
@@ -45,7 +45,10 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         chatPanelWidth: state.chatPanelWidth,
         playbackStatus: state.playbackStatus,
         autoplayEnabled: state.autoplayEnabled,
+        isFullscreen: state.isFullscreen,
     }));
+
+    const viewerRef = useRef<HTMLDivElement>(null); // C45
 
     useEffect(() => {
         loadReport(reportName);
@@ -64,6 +67,15 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
+
+    // C45: Fullscreen event listener
+    useEffect(() => {
+        const handleFullscreenChange = () => {
+            setIsFullscreen(!!document.fullscreenElement);
+        };
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    }, [setIsFullscreen]);
 
     // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
     useEffect(() => {
@@ -92,8 +104,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     }
     
     return (
-        // C27 Fix: Re-add pt-16 to prevent navbar overlap regression
-        <div className="h-full w-full bg-background text-foreground flex pt-16">
+        // C45: Added ref and dynamic classes for fullscreen
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? '' : 'pt-16'}`}>
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
@@ -135,7 +147,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                     </Resizable>
                     
                     <div className="border-y p-1 flex-shrink-0">
-                        <ImageNavigator />
+                        <ImageNavigator viewerRef={viewerRef} />
                         <AudioControls />
                     </div>
 

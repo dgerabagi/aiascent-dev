@@ -1,17 +1,22 @@
 // src/components/report-viewer/ImageNavigator.tsx
 import React from 'react';
 import { useReportState, useReportStore } from '@/stores/reportStore';
-import { FaChevronLeft, FaChevronRight, FaCommentDots, FaTree, FaInfoCircle, FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaCommentDots, FaTree, FaInfoCircle, FaChevronUp, FaChevronDown, FaExpand, FaCompress } from 'react-icons/fa';
 
-const ImageNavigator: React.FC = () => {
-  const { allPages, currentPageIndex, currentImageIndex, isPromptVisible } = useReportState(state => ({
+interface ImageNavigatorProps {
+  viewerRef: React.RefObject<HTMLDivElement>;
+}
+
+const ImageNavigator: React.FC<ImageNavigatorProps> = ({ viewerRef }) => {
+  const { allPages, currentPageIndex, currentImageIndex, isPromptVisible, isFullscreen } = useReportState(state => ({
     allPages: state.allPages,
     currentPageIndex: state.currentPageIndex,
     currentImageIndex: state.currentImageIndex,
     isPromptVisible: state.isPromptVisible,
+    isFullscreen: state.isFullscreen,
   }));
   
-  const { prevPage, nextPage, prevImage, nextImage, toggleTreeNav, toggleChatPanel, togglePromptVisibility } = useReportStore.getState();
+  const { prevPage, nextPage, prevImage, nextImage, toggleTreeNav, toggleChatPanel, togglePromptVisibility, toggleFullscreen } = useReportStore.getState();
 
   const currentPage = allPages[currentPageIndex];
   const currentPrompt = currentPage?.imagePrompts;
@@ -23,6 +28,9 @@ const ImageNavigator: React.FC = () => {
       <div className="flex items-center gap-2">
         <button className="btn-report" onClick={toggleTreeNav} title="Toggle Page Tree"><FaTree /></button>
         <button className="btn-report" onClick={togglePromptVisibility} title={isPromptVisible ? "Hide Image Prompt" : "Show Image Prompt"}><FaInfoCircle /></button>
+        <button className="btn-report" onClick={() => toggleFullscreen(viewerRef.current)} title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}>
+          {isFullscreen ? <FaCompress /> : <FaExpand />}
+        </button>
       </div>
 
       {/* Center Group */}

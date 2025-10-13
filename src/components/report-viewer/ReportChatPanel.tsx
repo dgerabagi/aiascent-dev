@@ -161,7 +161,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             let cleanedMessage = fullMessage;
 
             if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
+                const jsonContentStartIndex = startMatch.index + startMatch.length;
                 const jsonContentEndIndex = endMatch.index;
                 const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
                 
@@ -180,7 +180,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
                 
                 // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
@@ -294,7 +294,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     <Badge
                         key={index}
                         variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-left"
                         onClick={() => handleChipClick(prompt)}
                         title={prompt} // Tooltip on hover
                     >

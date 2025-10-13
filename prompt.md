@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 45 - continue working on parsing of suggestions/overall suggestions solution
+Current Cycle 46 - final solution
+Cycle 45 - continue working on parsing of suggestions/overall suggestions solution
 Cycle 44 - great! now improve parsing robustness
 Cycle 43 - nice! now lets enhance...
 Cycle 42 - noice! now tiny fix in the report viewer in showcase
@@ -254,7 +255,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C35 (Add Dynamic Chat Prompt Suggestions Plan)
+# Updated on: C45 (Add Report Viewer Fullscreen Plan)
 
 ## 1. Purpose
 
@@ -349,6 +350,11 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
   - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
 
+### A33. aiascent.dev - Report Viewer Fullscreen Plan
+
+  - **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
+  - **Tags:** plan, ui, ux, report viewer, fullscreen, feature
+
 ## III. Design and Assets
 
 ### A15. aiascent.dev - Asset Wishlist and Directory Structure
@@ -441,59 +447,65 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 46>
+<Cycle Context>
+nice, can we center-justify the text within the suggestion chips? also, the chips themselves, can they be centered? right now they're left-aligned.
+
+next, if we get a 500 fail, can we just like... not show this to the user and instead keep showing the generation animation and just run another attempt in the back and if we get a good parseable set of suggestion chips we then display?
+
+also, one of your responses provided valuable backend logs, lets be extra thorough in our logs that way i can run a few test and then provide you with multiple. currently it would be too difficult for me to parse together good test results, when you could just produce good test results in the form of purpose-built backend logs to devise a robust parsing solution given multiple examples of how the AI is responding to the request. for now ill go ahead and copy-paste the logs i do have into the 
+
+</Cycle Context>
+<Ephemeral Context>
+[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>The user asks: \"How can organizations capture the iterative human-AI interaction process?\" They want answer based on context. The relevant chunk says that DCE captures entire workflow as persistent knowledge graph, includes curated context, operator's instructions, AI responses, decisions; each interaction is a cycle saved to Knowledge Graph. So answer explaining how DCE does it: use precise context curation, parallel co-pilot panel, diff viewer, accept mechanism integrated with git, cycle navigator, knowledge graph storing cycles, versioned assets. Also mention auditability and shareable asset.\n\nNeed to provide markdown formatting. Provide bullet points compact. Then produce JSON suggestions at end.<|end|><|start|>assistant<|channel|>final<|message|>Organizations can capture the full human‑AI interaction loop by **structuring every step into a persistent, auditable record**—the core idea behind the Data Curation Environment (DCE).  Here’s how it works in practice:\n\n| What | How DCE Captures It |\n|------|--------------------|\n| **Curated Context** | Operators select exact files/folders via check‑boxes; the system extracts relevant text automatically and stores this “Selection Set” as a versioned asset. |\n| **Operator Prompt / Instruction** | Every instruction typed into the Parallel Co‑Pilot Panel is logged with a timestamp, user ID, and context reference. |\n| **AI Response(s)** | The LLM’s replies (one or many) are stored verbatim in the cycle record. Diff tools automatically show changes against the original content. |\n| **Human Decision** | When an operator clicks “Accept,” the chosen AI suggestion is committed to Git, marked as approved, and the cycle is finalized. Rejections are logged too—so every path is traceable. |\n| **Cycle Navigator & Knowledge Graph** | All cycles form a graph where nodes are files or code snippets, edges represent transformations. The navigator lets you step back through history, compare versions, and see who did what and why. |\n\n### Key Benefits\n\n- **Auditability** – Every prompt, AI output, and operator action is time‑stamped and versioned.\n- **Collaboration Gap Closure** – New team members receive the exact curated context *plus* the full decision trail.\n- **Rapid Iteration** – Since the context is already stored, operators can issue new prompts without re‑curating data, saving hours on repetitive tasks.\n\nIn short, DCE turns the otherwise opaque human‑AI loop into a structured “Cycle” that’s automatically saved in a Knowledge Graph and fully integrated with your existing Git workflow. This turns the process itself into an auditable, reusable organizational asset.  \n\n:::suggestions:::[\n  \"What are the core components of the Data Curation Environment?\",\n  \"How does DCE integrate with Visual Studio Code?\",\n  \"Can you explain how the Parallel Co‑Pilot Panel works?\"\n]:::end_suggestions::" ReportChatPanel.tsx:153:21
+[Chat Panel] Suggestions block found. Raw content: "::suggestions:::[\n  \"What are the core components of the Data Curation Environment?\",\n  \"How does DCE integrate with Visual Studio Code?\",\n  \"Can you explain how the Parallel Co‑Pilot Panel works?\"\n]" ReportChatPanel.tsx:164:25
+[Chat Panel] Failed to parse suggestions JSON: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+    sendMessage webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:166
+    handleChipClick webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:216
+    onClick webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportChatPanel.tsx:402
+    React 21
+    hydrateRoot webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/client.js:17
+    hydrate webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:197
+    startTransition React
+    hydrate webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:197
+    <anonymous> webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-next-dev.js:10
+    appBootstrap webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-bootstrap.js:57
+    loadScriptsInSequence webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-bootstrap.js:23
+    appBootstrap webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-bootstrap.js:56
+    <anonymous> webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-next-dev.js:8
+    NextJS 7
+ Raw content was: ::suggestions:::[
+  "What are the core components of the Data Curation Environment?",
+  "How does DCE integrate with Visual Studio Code?",
+  "Can you explain how the Parallel Co‑Pilot Panel works?"
+] app-index.js:33:22
+
+</Ephemeral Context>
+<Previous Cycle 45 Summary of Actions>
+I have analyzed the parsing and formatting issues from the last cycle. My course of action is to implement a series of robustness improvements across the frontend and backend to handle LLM formatting inconsistencies more gracefully.
+
+First, to fix the issue of `<br>` tags appearing as plain text in markdown tables, I will enhance our `MarkdownRenderer` component. By adding the `rehype-raw` plugin, it will be able to correctly interpret and render simple HTML tags like `<br>` as newlines, making table content more readable. This requires adding a new dependency to the project.
+
+Second, to address the malformed bulleted lists where content appears on a new line, I will update the system prompt in the backend chat API. I will add a more explicit instruction for the LLM, with an example, on how to correctly format bullet points to prevent this from recurring.
+
+Finally, to permanently solve the recurring issue of suggestion parsing failures due to minor typos in the delimiters (e.g., `:::end_suggestions::`), I will completely refactor the parsing logic in the `ReportChatPanel`. Instead of relying on a single, complex regular expression, I will use a more resilient two-step approach. The new logic will independently find the start and end suggestion markers, extract the content between them, and then clean the message. This method is far less brittle and will reliably parse the suggestions even if the delimiters have typos like a missing colon.
+
+These changes will significantly improve the reliability and visual polish of the "Ask @Ascentia" chat feature.
+
+1.  **Update `package.json`:** I will add the `rehype-raw` package as a new dependency to enable HTML rendering within the markdown component.
+2.  **Add `<curator_activity>` block:** I will include instructions for you to run `npm install` to download and install this new dependency.
+3.  **Update `src/components/shared/MarkdownRenderer.tsx`:** I will import `rehype-raw` and add it to the `rehypePlugins` prop of the `ReactMarkdown` component. This will allow it to correctly process `<br>` tags and other simple HTML, fixing the table formatting issue.
+4.  **Update `src/app/api/chat/route.ts`:** I will refine the `markdownFormattingInstruction` constant within the system prompts. I will add a specific rule for bulleted lists, instructing the model to place content on the same line as the bullet point to prevent incorrect list formatting.
+5.  **Refactor `src/components/report-viewer/ReportChatPanel.tsx`:** I will overhaul the dynamic suggestion parsing logic within the `sendMessage` function. I will replace the single, brittle regex with a more robust two-part matching process that finds the start (`:::suggestions:::`) and end (`:::end_suggestions:::`) delimiters separately, extracts the JSON content between them for parsing, and then strips the entire block from the final message. This will prevent parsing failures caused by minor typos in the delimiters.
+</Previous Cycle 45 Summary of Actions>
+</Cycle 46>
+
 <Cycle 45>
 <Cycle Context>
 nice! can we make a way for users to go fullscreen <> current view with this interactive whitepaper? also can we set a fixed width and instead do word wrap for the chips? they currently can get kind of long.
 
 also its possible we arent fully robust yet in that sometimes we get failed to fetch suggestions. also, more importantly, after interacting with the whitepaper, i then switched to the showcase and to the ascent report. after seeming to cycle through a few choices of questions, as evident by a few failures in the console logs provided in ephemeral (very end of the logs) below, the questions that i see ended up being questions abotu the DCE, and no questions about the ascent report. it should never be the case that questions from one report can leak or seep in to another report. can this be resolved? do we have a high-level planning artifact yet for our suggestions approach? we ought to lest we get drift/regression across these cycles.
 </Cycle Context>
-<Ephemeral Context>
-Image with src "/assets/icons/iterative-workflow.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
-Invalid URI. Load of media resource  failed. localhost:3000
-Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. warn-once.mjs:9:13
-Failed to fetch dynamic suggestions: Error: Invalid suggestions format
-    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:101
-app-index.js:33:22
-    error app-index.tsx:25
-    error hydration-error-info.ts:72
-    fetchAndSetSuggestions reportStore.ts:253
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need answer based on context: It's about Process as Asset whitepaper. The user asks: \"What benefits do high-level stakeholders expect to gain from adopting this framework?\" We have TLDR: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. For High-Level Stakeholders.\n\nThe provided chunks include some discussion of DCE, bottlenecks, etc. Need to summarize benefits for high-level stakeholders. Use markdown. Provide answer only based on context; no invented info. We can mention:\n\n- Faster content creation\n- Scalable expertise\n- Auditability and quality control\n- Reduced manual effort\n- Structured human-AI collaboration\n- Better cost estimation\n- Structured workflows\n- Reusability of AI interactions\n- Improved collaboration across teams\n\nLet's craft answer.<|end|><|start|>assistant<|channel|>final<|message|>**Benefits for High‑Level Stakeholders**\n\n| Benefit | Why It Matters to Stakeholders |\n|---------|--------------------------------|\n| **Accelerated Content Delivery** | The DCE framework turns human‑AI interaction into a *structured, auditable workflow*. By automating the extraction, prompt construction, and result ingestion steps, stakeholders see content produced faster without sacrificing quality. |\n| **Scalable Expertise & Knowledge Reuse** | Every AI‑generated plan, code snippet, or data transformation is captured in a persistent graph. Teams can retrieve past work, avoid duplication, and scale expertise across projects—reducing the learning curve for new hires or cross‑functional teams. |\n| **Improved Collaboration & Transparency** | The *structured view* (plan + associated files + collapsible sections) keeps every participant on the same page. Stakeholders can review AI reasoning, approve “accept” actions, and track changes in a single source of truth. |\n| **Auditability & Compliance** | Every prompt, AI response, human decision, and file change is logged. This satisfies audit requirements for regulated industries and gives stakeholders confidence that processes are traceable and repeatable. |\n| **Cost‑Effective AI Use** | The framework includes cost estimation hooks (`requestCostEstimation()`). Stakeholders can see token usage in real‑time, optimize prompts, and avoid hidden fees—critical for budgeting large‑scale AI workloads. |\n| **Reduced Manual Overhead** | By eliminating manual copy‑paste of context and repetitive re‑prompting, the framework frees up human resources to focus on higher‑value tasks (e.g., strategy, design). |\n| **Enhanced Decision Confidence** | Structured AI outputs with syntax‑highlighted code blocks and associated file lists give stakeholders a clear view of what will be written or modified—reducing uncertainty in technical decisions. |\n\nIn short: the *Process as Asset* framework equips high‑level stakeholders with faster, more reliable content creation, transparent collaboration, and predictable AI costs—all while preserving auditability and reusability across the organization." ReportChatPanel.tsx:153:21
-[Chat Panel] No suggestions block found in the response. Using default suggestions for this report. ReportChatPanel.tsx:179:25
-Image with src "/assets/icons/parallel-copilot.webp" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes warn-once.js:16:21
-Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
-    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:93
-app-index.js:33:22
-    error app-index.tsx:25
-    error hydration-error-info.ts:72
-    fetchAndSetSuggestions reportStore.ts:253
-[Chat Panel] Stream complete. Full raw message for parsing: "<|channel|>analysis<|message|>We need to answer the question. The context includes information about DCE benefits: capturing workflow as persistent knowledge graph, reducing bottlenecks like context problem, collaboration gap, iteration overhead, auditability vacuum. Also examples: rapid development of training materials; use case spotlight shows DCE workflow vs traditional. So measuring impact of DCE on quality and speed could involve metrics such as time to complete projects, number of iterations needed, error rate in final documents, audit trail completeness, consistency across documentation, reuse of curated context, reduction in manual editing effort, improved collaboration metrics like fewer duplicated efforts.\n\nWe need to answer based on provided context. Provide bullet points with explanation. Also mention that DCE's persistent Knowledge Graph allows reviewing cycle history for quality improvements. Also measuring speed: average time from start to finish, number of cycles, etc.\n\nAlso mention how the whitepaper and case study show hours vs weeks.\n\nWe should not add invented info but can extrapolate based on given content. Use markdown.\n\nAfter main answer produce suggestions JSON array with 2-4 follow-up questions.<|end|><|start|>assistant<|channel|>final<|message|>**Measuring DCE Impact: Quality & Speed**\n\n| Dimension | How to Measure | Why It Matters |\n|-----------|----------------|---------------|\n| **Time‑to‑Completion** | *Track the total elapsed time from Cycle 0 to final “Accept”.*<br>*Compare against the traditional manual workflow (weeks vs. hours).* | Shows the speed advantage that DCE promises. |\n| **Number of Iterations / Cycles** | *Count how many cycles are required before a document is accepted.*<br>*Fewer cycles imply less back‑and‑forth and faster decision making.* | Demonstrates reduced iteration overhead (Section 3.3). |\n| **Error / Defect Rate** | *Audit the final documents for factual or formatting errors.*<br>*Use the Knowledge Graph’s audit trail to trace any corrections.* | Confirms the quality gains from structured context curation and AI‑assisted review. |\n| **Reuse & Versioning of Curated Context** | *Measure how often a curated Selection Set is reused across projects.*<br>*Track version history for each asset.* | Highlights scalability: the same context can be shared without duplication (Section 4.1). |\n| **Collaboration Efficiency** | *Survey operators on time spent re‑constructing context when handing off tasks.*<br>*Measure the reduction in manual reconstruction effort.* | Addresses the “Collaboration Gap” bottleneck (Challenge 2). |\n| **Auditability Completeness** | *Count how many decisions and AI responses are captured in the Knowledge Graph.*<br>*Verify that all cycles have traceable provenance.* | Supports accountability, especially for mission‑critical work (Section 4.3). |\n| **User Satisfaction / Onboarding Speed** | *Measure time for new team members to understand project history via Cycle Navigator.* | Demonstrates training and onboarding benefits from the graph (Section 4.3). |\n\n### Practical Steps\n\n1. **Baseline Capture** – Before adopting DCE, record traditional metrics (time, cycles, errors).\n2. **Implement DCE Workflows** – Use the Parallel Co‑Pilot Panel to curate context, instruct AI, review diffs, and accept changes.\n3. **Collect DCE Metrics** – The built‑in cycle history automatically logs time stamps, version numbers, and diff statistics.\n4. **Compare & Analyze** – Plot before/after charts for each metric; use the Knowledge Graph to drill into specific cycles that caused quality regressions or delays.\n\n---\n\n### Suggested Next Questions\n\n:::suggestions:::[\n  \"How does the DCE handle large datasets that exceed memory limits?\",\n  \"What are common pitfalls when setting up the Parallel Co‑Pilot Panel?\",\n  \"Can the Knowledge Graph be exported for external audit tools?\"\n]:::end_suggestions:::" ReportChatPanel.tsx:153:21
-[Chat Panel] Suggestions block found. Raw content: "[\n  \"How does the DCE handle large datasets that exceed memory limits?\",\n  \"What are common pitfalls when setting up the Parallel Co‑Pilot Panel?\",\n  \"Can the Knowledge Graph be exported for external audit tools?\"\n]" ReportChatPanel.tsx:164:25
-[Chat Panel] Successfully parsed suggestions: 
-Array(3) [ "How does the DCE handle large datasets that exceed memory limits?", "What are common pitfalls when setting up the Parallel Co‑Pilot Panel?", "Can the Knowledge Graph be exported for external audit tools?" ]
-ReportChatPanel.tsx:169:33
-[Fast Refresh] rebuilding hot-reloader-client.js:187:25
-[Fast Refresh] done in 1416ms hot-reloader-client.js:44:13
-[Fast Refresh] rebuilding hot-reloader-client.js:187:25
-[Fast Refresh] done in 771ms hot-reloader-client.js:44:13
-XHRPOST
-http://localhost:3000/api/chat
-[HTTP/1.1 500 Internal Server Error 4148ms]
-
-Failed to fetch dynamic suggestions: Error: Failed to fetch suggestions
-    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:93
-    ReportViewer webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportViewer.tsx:66
-    React 19
-    workLoop webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256
-    flushWork webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225
-    performWorkUntilDeadline webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534
-app-index.js:33:22
-Failed to fetch dynamic suggestions: Error: Invalid suggestions format
-    fetchAndSetSuggestions webpack-internal:///(app-pages-browser)/./src/stores/reportStore.ts:101
-    ReportViewer webpack-internal:///(app-pages-browser)/./src/components/report-viewer/ReportViewer.tsx:66
-    React 5
-app-index.js:33:22
-
-</Ephemeral Context>
 <Previous Cycle 44 Summary of Actions>
 I have analyzed the request to evolve the "prompt chips" from being static or based on the last AI response to being dynamically generated based on the static content of the currently viewed report page. This is an excellent enhancement that will make the "Ask @Ascentia" feature feel more intelligent and context-aware from the very first interaction.
 
@@ -2790,10 +2802,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T21:18:34.263Z
+  Date Generated: 2025-10-13T21:45:55.436Z
   ---
-  Total Files: 120
-  Approx. Tokens: 298259
+  Total Files: 121
+  Approx. Tokens: 300156
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2803,13 +2815,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (7683 tokens)
+7. src\stores\reportStore.ts (8072 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
 
 <!-- Full File List -->
-1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 189 - Chars: 10451 - Tokens: 2613
+1. src\Artifacts\A0-Master-Artifact-List.md - Lines: 194 - Chars: 10722 - Tokens: 2681
 2. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 3. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 4. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -2870,19 +2882,19 @@ This file-centric approach helps in planning and prioritizing work, especially i
 59. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
 60. src\app\mission\page.tsx - Lines: 154 - Chars: 13221 - Tokens: 3306
 61. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
-62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
+62. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15667 - Tokens: 3917
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15678 - Tokens: 3920
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 646 - Chars: 30731 - Tokens: 7683
-70. src\components\report-viewer\ReportViewer.tsx - Lines: 174 - Chars: 7637 - Tokens: 1910
+69. src\stores\reportStore.ts - Lines: 675 - Chars: 32286 - Tokens: 8072
+70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8212 - Tokens: 2053
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 262 - Chars: 12078 - Tokens: 3020
+74. src\app\api\chat\route.ts - Lines: 267 - Chars: 12346 - Tokens: 3087
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -2927,8 +2939,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 116. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 117. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
 118. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
-119. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 65 - Chars: 3916 - Tokens: 979
+119. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
 120. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
+121. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -2937,7 +2950,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 
 # Author: AI Model & Curator
 
-# Updated on: C35 (Add Dynamic Chat Prompt Suggestions Plan)
+# Updated on: C45 (Add Report Viewer Fullscreen Plan)
 
 ## 1. Purpose
 
@@ -3031,6 +3044,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
   - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
+
+### A33. aiascent.dev - Report Viewer Fullscreen Plan
+
+  - **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
+  - **Tags:** plan, ui, ux, report viewer, fullscreen, feature
 
 ## III. Design and Assets
 
@@ -15126,17 +15144,22 @@ export default AudioControls;
 // src/components/report-viewer/ImageNavigator.tsx
 import React from 'react';
 import { useReportState, useReportStore } from '@/stores/reportStore';
-import { FaChevronLeft, FaChevronRight, FaCommentDots, FaTree, FaInfoCircle, FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaCommentDots, FaTree, FaInfoCircle, FaChevronUp, FaChevronDown, FaExpand, FaCompress } from 'react-icons/fa';
 
-const ImageNavigator: React.FC = () => {
-  const { allPages, currentPageIndex, currentImageIndex, isPromptVisible } = useReportState(state => ({
+interface ImageNavigatorProps {
+  viewerRef: React.RefObject<HTMLDivElement>;
+}
+
+const ImageNavigator: React.FC<ImageNavigatorProps> = ({ viewerRef }) => {
+  const { allPages, currentPageIndex, currentImageIndex, isPromptVisible, isFullscreen } = useReportState(state => ({
     allPages: state.allPages,
     currentPageIndex: state.currentPageIndex,
     currentImageIndex: state.currentImageIndex,
     isPromptVisible: state.isPromptVisible,
+    isFullscreen: state.isFullscreen,
   }));
   
-  const { prevPage, nextPage, prevImage, nextImage, toggleTreeNav, toggleChatPanel, togglePromptVisibility } = useReportStore.getState();
+  const { prevPage, nextPage, prevImage, nextImage, toggleTreeNav, toggleChatPanel, togglePromptVisibility, toggleFullscreen } = useReportStore.getState();
 
   const currentPage = allPages[currentPageIndex];
   const currentPrompt = currentPage?.imagePrompts;
@@ -15148,6 +15171,9 @@ const ImageNavigator: React.FC = () => {
       <div className="flex items-center gap-2">
         <button className="btn-report" onClick={toggleTreeNav} title="Toggle Page Tree"><FaTree /></button>
         <button className="btn-report" onClick={togglePromptVisibility} title={isPromptVisible ? "Hide Image Prompt" : "Show Image Prompt"}><FaInfoCircle /></button>
+        <button className="btn-report" onClick={() => toggleFullscreen(viewerRef.current)} title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}>
+          {isFullscreen ? <FaCompress /> : <FaExpand />}
+        </button>
       </div>
 
       {/* Center Group */}
@@ -15438,7 +15464,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             let cleanedMessage = fullMessage;
 
             if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
+                const jsonContentStartIndex = startMatch.index + startMatch.length;
                 const jsonContentEndIndex = endMatch.index;
                 const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
                 
@@ -15457,7 +15483,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
                 
                 // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
             } else {
                 console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
@@ -15571,7 +15597,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     <Badge
                         key={index}
                         variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-full truncate"
+                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-left"
                         onClick={() => handleChipClick(prompt)}
                         title={prompt} // Tooltip on hover
                     >
@@ -15771,6 +15797,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
 // Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
@@ -15874,6 +15901,7 @@ export interface ReportState {
     chatPanelWidth: number;
     imagePanelHeight: number;
     isImageFullscreen: boolean;
+    isFullscreen: boolean; // C45: For fullscreen mode
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
@@ -15917,6 +15945,8 @@ export interface ReportActions {
     setImagePanelHeight: (height: number) => void;
     openImageFullscreen: () => void;
     closeImageFullscreen: () => void;
+    toggleFullscreen: (element: HTMLElement | null) => void; // C45
+    setIsFullscreen: (isFullscreen: boolean) => void; // C45
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
@@ -15961,6 +15991,7 @@ const createInitialReportState = (): ReportState => ({
     chatPanelWidth: 450,
     imagePanelHeight: 400,
     isImageFullscreen: false,
+    isFullscreen: false, // C45
     reportChatHistory: [],
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
@@ -16013,17 +16044,31 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         }),
                     });
 
-                    if (!response.ok) throw new Error('Failed to fetch suggestions');
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
+                        throw new Error('Failed to fetch suggestions');
+                    }
 
                     const suggestions = await response.json();
+                    
+                    // C45: RACE CONDITION FIX - Only update state if the report context hasn't changed.
+                    if (get().reportName !== reportName) {
+                        console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
+                        return;
+                    }
+
                     if (Array.isArray(suggestions) && suggestions.length > 0) {
                         set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                     } else {
                         throw new Error('Invalid suggestions format');
                     }
                 } catch (error) {
-                    console.error("Failed to fetch dynamic suggestions:", error);
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    console.error("[reportStore] Failed to fetch dynamic suggestions:", error);
+                    // C45: RACE CONDITION FIX - Check context before setting error state.
+                    if (get().reportName === reportName) {
+                        set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    }
                 }
             },
 
@@ -16329,6 +16374,16 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
+            setIsFullscreen: (isFullscreen) => set({ isFullscreen }),
+            toggleFullscreen: (element) => {
+                if (!document.fullscreenElement) {
+                    element?.requestFullscreen().catch(err => {
+                      console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                    });
+                  } else {
+                    document.exitFullscreen();
+                  }
+            },
             setReportChatInput: (input) => set({ reportChatInput: input }),
             setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
@@ -16422,7 +16477,7 @@ export const useReportState = <T>(selector: (state: ReportState & ReportActions)
 // src/components/report-viewer/ReportViewer.tsx
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import PageNavigator from './PageNavigator';
 import ImageNavigator from './ImageNavigator';
@@ -16440,13 +16495,13 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions, setIsFullscreen } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
         imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
         closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
-        chatPanelWidth, playbackStatus, autoplayEnabled,
+        chatPanelWidth, playbackStatus, autoplayEnabled, isFullscreen
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
         allPages: state.allPages,
@@ -16466,7 +16521,10 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         chatPanelWidth: state.chatPanelWidth,
         playbackStatus: state.playbackStatus,
         autoplayEnabled: state.autoplayEnabled,
+        isFullscreen: state.isFullscreen,
     }));
+
+    const viewerRef = useRef<HTMLDivElement>(null); // C45
 
     useEffect(() => {
         loadReport(reportName);
@@ -16485,6 +16543,15 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
+
+    // C45: Fullscreen event listener
+    useEffect(() => {
+        const handleFullscreenChange = () => {
+            setIsFullscreen(!!document.fullscreenElement);
+        };
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    }, [setIsFullscreen]);
 
     // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
     useEffect(() => {
@@ -16513,8 +16580,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     }
     
     return (
-        // C27 Fix: Re-add pt-16 to prevent navbar overlap regression
-        <div className="h-full w-full bg-background text-foreground flex pt-16">
+        // C45: Added ref and dynamic classes for fullscreen
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? '' : 'pt-16'}`}>
             {isImageFullscreen && currentImage && (
                 <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
@@ -16556,7 +16623,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                     </Resizable>
                     
                     <div className="border-y p-1 flex-shrink-0">
-                        <ImageNavigator />
+                        <ImageNavigator viewerRef={viewerRef} />
                         <AudioControls />
                     </div>
 
@@ -16962,15 +17029,15 @@ ${suggestionInstruction}`,
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
-If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use markdown for formatting as described below. Do not invent information or use outside knowledge.
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
 ${markdownFormattingInstruction}
 ${suggestionInstruction}`
 };
 
 // C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `You are an AI assistant. Your task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting.
+const suggestionSystemPrompt = `You are an AI assistant. Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
-Example response:
+Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
 
 
@@ -17022,10 +17089,15 @@ Assistant:`;
 
         const data = await response.json();
         const content = data.choices?.[0]?.text || '[]';
-        // Extract JSON array from the response, as the model might add extra text
-        const jsonMatch = content.match(/\[[\s\S]*\]/);
-        const jsonString = jsonMatch ? jsonMatch[0] : '[]';
-        
+        // C45: Make JSON extraction more robust
+        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
+        const jsonString = jsonMatch ? jsonMatch[0] : null;
+
+        if (!jsonString) {
+            console.warn(`[Chat API] Could not extract valid JSON array from suggestion response: ${content}`);
+            throw new Error('Invalid suggestions format from LLM');
+        }
+
         const suggestions = JSON.parse(jsonString);
         return NextResponse.json(suggestions);
 
@@ -25857,6 +25929,8 @@ To learn more about the DCE, visit the [official repository](https://github.com/
 # Date Created: C35
 # Author: AI Model & Curator
 
+# Updated on: C45 (Add multi-report context isolation and page-by-page generation strategy)
+
 - **Key/Value for A0:**
 - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
 - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
@@ -25865,58 +25939,60 @@ To learn more about the DCE, visit the [official repository](https://github.com/
 
 To improve user engagement and guide the conversation within the "Ask @Ascentia" feature, we will implement dynamic prompt suggestions. These will appear as clickable "chips" below the chat history.
 
-*   **Default State:** When the chat is empty or cleared, default prompts will be shown to help the user get started.
-*   **Dynamic State:** After every response from Ascentia, the LLM will generate 2-4 relevant follow-up questions based on the conversation context.
-*   **Interaction:** Clicking a chip automatically submits that question as a user message. Hovering over a chip shows the full text of the prompt in a tooltip.
+*   **Page-Specific Generation:** When a user navigates to a new page within a report, a request is made to the backend to generate suggestions based on that specific page's content. This ensures suggestions are relevant from the very first interaction.
+*   **Dynamic Generation:** After every response from Ascentia, the LLM will also generate 2-4 relevant follow-up questions based on the conversation context.
+*   **Interaction:** Clicking a chip automatically submits that question as a user message.
 
 ## 2. Technical Implementation
 
-### 2.1. Backend: Prompt Engineering (`/api/chat/route.ts`)
+### 2.1. Backend: Dual-Mode API (`/api/chat/route.ts`)
 
-The system prompts for Ascentia (defined in `A27` and implemented in the API route) must be updated. We will instruct the LLM to output suggestions at the very end of its response in a structured, machine-parseable format.
+The chat API route supports two modes for handling suggestions:
 
-To ensure reliable parsing from a streaming response, we will use distinct delimiters.
+1.  **`task: 'generate_suggestions'`:** A specialized, non-streaming mode for pre-generating suggestions.
+    *   **Trigger:** Called by the frontend when a new report page is loaded.
+    *   **Input:** Receives only the `pageContext`.
+    *   **Prompt:** Uses a dedicated system prompt that instructs the LLM to *only* generate a JSON array of questions based on the provided text.
+    *   **Output:** Returns a clean JSON array `["Question 1?", "Question 2?"]`.
+    *   **Robustness:** The backend parsing logic must be resilient to minor LLM formatting errors, extracting the JSON array even if it's embedded in other text.
 
-**Updated Instruction to LLM:**
-> "Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this: `:::suggestions:::["Question 1?", "Question 2?"]:::end_suggestions:::`."
+2.  **Standard Chat Mode:**
+    *   **Trigger:** Called for a normal user chat query.
+    *   **Prompt Engineering:** The main system prompts are updated to instruct the LLM to append suggestions to the end of its response in a structured, machine-parseable format, using distinct delimiters.
+    *   **Updated Instruction:** "Finally, after your main response, generate 2-4 short, relevant follow-up questions... Output them strictly as a JSON array of strings wrapped in specific delimiters: `:::suggestions:::[\"Question 1?\", \"Question 2?\"]:::end_suggestions:::`."
 
-### 2.2. State Management (`src/stores/reportStore.ts`)
+### 2.2. State Management and Context Isolation (`src/stores/reportStore.ts`)
 
-The `ReportState` needs to store the current set of suggested prompts.
+The `ReportState` is the source of truth for suggestions and their status.
 
-*   **New State:** `suggestedPrompts: string[]`
-*   **Default Value:** `['How does DCE work?', 'How do I install DCE?']`
-*   **New Action:** `setSuggestedPrompts(prompts: string[])`
-*   **Reset Logic:** When chat history is cleared via `clearReportChatHistory`, the `suggestedPrompts` should be reset to the default value.
+*   **State:**
+    *   `suggestedPrompts: string[]`: Stores the current list of suggestions.
+    *   `suggestionsStatus: 'idle' | 'loading' | 'error'`: Tracks the status of the on-demand suggestion fetching.
+    *   `reportName: string | null`: Tracks the currently active report (`'whitepaper'` or `'showcase'`). This is critical for context isolation.
+*   **Actions:**
+    *   `loadReport(reportName)`: **CRITICAL:** This action must completely reset the entire report state, including `suggestedPrompts` and `suggestionsStatus`, to their initial defaults *before* fetching new data. This prevents state from one report leaking to another.
+    *   `fetchAndSetSuggestions(page, reportName)`:
+        *   Sets `suggestionsStatus` to `'loading'`.
+        *   Calls the backend API with `task: 'generate_suggestions'`.
+        *   **Race Condition Prevention:** Before updating the state with the fetched suggestions, it must check if the `reportName` passed to it still matches the *current* `reportName` in the store. If they don't match (i.e., the user has already navigated to a different report), the action must abort and not update the state.
+        *   On failure, it sets `suggestionsStatus` to `'error'` and populates `suggestedPrompts` with the correct default questions for the current `reportName`.
 
-### 2.3. Frontend: Parsing and UI (`ReportChatPanel.tsx`)
+### 2.3. Frontend: UI and Logic (`ReportViewer.tsx`, `ReportChatPanel.tsx`)
 
-The frontend component handles parsing the stream and rendering the UI.
+1.  **Triggering Suggestions (`ReportViewer.tsx`):**
+    *   A `useEffect` hook listens for changes to `currentPageIndex`.
+    *   When the page changes, it calls the `fetchAndSetSuggestions` action, providing the new page's content and the current `reportName`.
 
-1.  **Parsing:** As the response streams in, or once it completes, the frontend must detect the `:::suggestions:::` block.
-    *   Extract the JSON array string.
-    *   Parse it into a string array.
-    *   Call `setSuggestedPrompts` to update the store.
-    *   **Crucially**, remove the entire `:::suggestions:::...:::end_suggestions:::` block from the message text before rendering it to the user, so they never see the raw data structure.
+2.  **UI Rendering (`ReportChatPanel.tsx`):**
+    *   A new container below the chat history renders the suggestions.
+    *   It observes `suggestionsStatus`:
+        *   If `'loading'`, it displays a "Generating suggestions..." message or spinner.
+        *   If `'idle'` or `'error'`, it maps through the `suggestedPrompts` array and renders each as a `Badge` component.
+    *   **Styling:** The `Badge` components should use word-wrapping and have a maximum width to handle longer questions gracefully.
 
-2.  **UI Rendering:**
-    *   Create a new container below the chat history but above the input textarea.
-    *   Map through the `suggestedPrompts` array.
-    *   Render each prompt as a compact button or badge. CSS text-overflow with ellipsis should be used to keep them small.
-    *   Use a standard HTML `title` attribute or a UI Tooltip component to show the full prompt text on hover.
-
-3.  **Interaction:**
-    *   Add an `onClick` handler to each chip that calls the existing `handleSend` logic with the chip's text payload.
-
-## 3. User Experience Flow
-
-1.  User opens chat. Sees default chips: "How does DCE work?", "How do I install DCE?".
-2.  User clicks "How does DCE work?".
-3.  The question is added to chat history.
-4.  Ascentia streams a response explaining DCE.
-5.  Hidden at the end of the stream is: `:::suggestions:::["What is context curation?", "Tell me about the workflow."]::end_suggestions:::`.
-6.  Frontend parses this, hides it from the chat bubble, and updates the chips.
-7.  User now sees new chips: "What is context curation?", "Tell me about the workflow.".
+3.  **Parsing In-Chat Suggestions (`ReportChatPanel.tsx`):**
+    *   After a normal chat response is fully streamed, the `sendMessage` function must perform a robust search for the `:::suggestions:::` block.
+    *   It extracts and parses the JSON content, calls `setSuggestedPrompts`, and then strips the entire block from the message before saving the final, clean content to the chat history.
 </file_artifact>
 
 <file path="src/components/ui/badge.tsx">
@@ -25956,6 +26032,57 @@ function Badge({ className, variant, ...props }: BadgeProps) {
 }
 
 export { Badge, badgeVariants }
+</file_artifact>
+
+<file path="src/Artifacts/A33. aiascent.dev - Report Viewer Fullscreen Plan.md">
+# Artifact A33: aiascent.dev - Report Viewer Fullscreen Plan
+
+# Date Created: C45
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
+- **Tags:** plan, ui, ux, report viewer, fullscreen, feature
+
+## 1. Overview and Goal
+
+To provide a more immersive and focused reading experience, users have requested the ability to view the interactive reports in a fullscreen mode. The goal of this feature is to allow users to expand the `ReportViewer` component to fill the entire browser viewport with a single click, hiding the main website's header and footer.
+
+## 2. User Experience Flow
+
+1.  **Entry Point:** A new "Fullscreen" icon button will be added to the report viewer's control area (specifically, within `ImageNavigator.tsx`).
+2.  **Activation:** Clicking the "Fullscreen" button will cause the `ReportViewer` component to smoothly expand and cover the entire viewport. The main site header and footer will disappear. The icon on the button will change to an "Exit Fullscreen" icon.
+3.  **Interaction:** The report viewer will remain fully functional in fullscreen mode.
+4.  **Deactivation:** Clicking the "Exit Fullscreen" button (or pressing the `Esc` key) will return the `ReportViewer` to its original size within the page layout, and the site header and footer will reappear.
+
+## 3. Technical Implementation Plan
+
+### 3.1. State Management (`src/stores/reportStore.ts`)
+
+A new state and action will be added to manage the fullscreen status globally.
+
+*   **New State:** `isReportFullscreen: boolean` (defaulting to `false`).
+*   **New Action:** `toggleReportFullscreen: () => void`. This action will simply invert the boolean value of `isReportFullscreen`.
+
+### 3.2. UI Components
+
+1.  **`ImageNavigator.tsx`:**
+    *   A new icon button (e.g., using `FaExpand` and `FaCompress` from `react-icons`) will be added to one of the control groups.
+    *   The button's `onClick` handler will call the `toggleReportFullscreen` action from the store.
+    *   The icon will change based on the `isReportFullscreen` state.
+
+2.  **`ReportViewer.tsx`:**
+    *   The root `div` of the component will have its `className` determined conditionally.
+    *   When `isReportFullscreen` is `true`, it will apply classes for fixed positioning, covering the viewport, and ensuring a high z-index (e.g., `fixed inset-0 z-[100] bg-background`).
+    *   When `false`, it will use its standard classes for embedding within the page layout.
+
+3.  **`app/layout.tsx`:**
+    *   The root layout will need to conditionally render the `<Header />` and `<Footer />` based on the `isReportFullscreen` state.
+    *   This will require converting the layout to a client component so it can subscribe to the `reportStore`.
+
+### 3.3. Keyboard Shortcut
+
+*   An `useEffect` hook will be added to `ReportViewer.tsx` to listen for the `Escape` key press. When detected, it will check if `isReportFullscreen` is true and, if so, call `toggleReportFullscreen` to exit the mode.
 </file_artifact>
 
 

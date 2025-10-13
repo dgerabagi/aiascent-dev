@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C35 (Add Dynamic Chat Prompt Suggestions Plan)
+# Updated on: C45 (Add Report Viewer Fullscreen Plan)
 
 ## 1. Purpose
 
@@ -98,6 +98,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
   - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
+
+### A33. aiascent.dev - Report Viewer Fullscreen Plan
+
+  - **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
+  - **Tags:** plan, ui, ux, report viewer, fullscreen, feature
 
 ## III. Design and Assets
 

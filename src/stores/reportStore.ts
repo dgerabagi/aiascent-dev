@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
 // Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
@@ -102,6 +103,7 @@ export interface ReportState {
     chatPanelWidth: number;
     imagePanelHeight: number;
     isImageFullscreen: boolean;
+    isFullscreen: boolean; // C45: For fullscreen mode
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
@@ -145,6 +147,8 @@ export interface ReportActions {
     setImagePanelHeight: (height: number) => void;
     openImageFullscreen: () => void;
     closeImageFullscreen: () => void;
+    toggleFullscreen: (element: HTMLElement | null) => void; // C45
+    setIsFullscreen: (isFullscreen: boolean) => void; // C45
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
@@ -189,6 +193,7 @@ const createInitialReportState = (): ReportState => ({
     chatPanelWidth: 450,
     imagePanelHeight: 400,
     isImageFullscreen: false,
+    isFullscreen: false, // C45
     reportChatHistory: [],
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
@@ -241,17 +246,31 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         }),
                     });
 
-                    if (!response.ok) throw new Error('Failed to fetch suggestions');
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
+                        throw new Error('Failed to fetch suggestions');
+                    }
 
                     const suggestions = await response.json();
+                    
+                    // C45: RACE CONDITION FIX - Only update state if the report context hasn't changed.
+                    if (get().reportName !== reportName) {
+                        console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
+                        return;
+                    }
+
                     if (Array.isArray(suggestions) && suggestions.length > 0) {
                         set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                     } else {
                         throw new Error('Invalid suggestions format');
                     }
                 } catch (error) {
-                    console.error("Failed to fetch dynamic suggestions:", error);
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    console.error("[reportStore] Failed to fetch dynamic suggestions:", error);
+                    // C45: RACE CONDITION FIX - Check context before setting error state.
+                    if (get().reportName === reportName) {
+                        set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    }
                 }
             },
 
@@ -557,6 +576,16 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
             openImageFullscreen: () => set({ isImageFullscreen: true }),
             closeImageFullscreen: () => set({ isImageFullscreen: false }),
+            setIsFullscreen: (isFullscreen) => set({ isFullscreen }),
+            toggleFullscreen: (element) => {
+                if (!document.fullscreenElement) {
+                    element?.requestFullscreen().catch(err => {
+                      console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                    });
+                  } else {
+                    document.exitFullscreen();
+                  }
+            },
             setReportChatInput: (input) => set({ reportChatInput: input }),
             setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),

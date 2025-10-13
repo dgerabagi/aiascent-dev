@@ -63,15 +63,15 @@ ${suggestionInstruction}`,
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
-If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use markdown for formatting as described below. Do not invent information or use outside knowledge.
+If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
 ${markdownFormattingInstruction}
 ${suggestionInstruction}`
 };
 
 // C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `You are an AI assistant. Your task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting.
+const suggestionSystemPrompt = `You are an AI assistant. Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
-Example response:
+Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
 
 
@@ -123,10 +123,15 @@ Assistant:`;
 
         const data = await response.json();
         const content = data.choices?.[0]?.text || '[]';
-        // Extract JSON array from the response, as the model might add extra text
-        const jsonMatch = content.match(/\[[\s\S]*\]/);
-        const jsonString = jsonMatch ? jsonMatch[0] : '[]';
-        
+        // C45: Make JSON extraction more robust
+        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
+        const jsonString = jsonMatch ? jsonMatch[0] : null;
+
+        if (!jsonString) {
+            console.warn(`[Chat API] Could not extract valid JSON array from suggestion response: ${content}`);
+            throw new Error('Invalid suggestions format from LLM');
+        }
+
         const suggestions = JSON.parse(jsonString);
         return NextResponse.json(suggestions);
 
