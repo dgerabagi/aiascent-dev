@@ -1,3 +1,4 @@
+'use client';
 {
   /*
   Cycle 32: Fix exhaustive-deps warning.
@@ -8,7 +9,7 @@
   */
 }
 // src/components/report-viewer/AudioControls.tsx
-'use client';
+
 import React, { useRef, useEffect, useCallback } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
