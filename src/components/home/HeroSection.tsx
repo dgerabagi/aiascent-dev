@@ -1,5 +1,4 @@
 // src/components/home/HeroSection.tsx
-// C11 - Adjustments for GIF sizing
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -39,10 +38,12 @@ return (
                     </span>
                 </Button>
             </Link>
-            {/* Placeholder for Download Link */}
-            <Button size="lg" variant="outline" className="p-6 text-lg">
-                Download Now
-            </Button>
+            {/* C34 Fix: Wrap button in an anchor tag to make it downloadable */}
+            <a href="/downloads/data-curation-environment-0.1.10.vsix" download="data-curation-environment-0.1.10.vsix">
+                <Button size="lg" variant="outline" className="p-6 text-lg">
+                    Download Now
+                </Button>
+            </a>
           </div>
         </div>
       }

@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 34 - nice! live! now need readme and download working
+Current Cycle 35 - massive. lets continue to build
+Cycle 34 - nice! live! now need readme and download working
 Cycle 33 - More Linting; Now Build Errors
 Cycle 32 - Second Linting Round; Almost All Errors Resolved
 Cycle 31 - First Linting Round
@@ -424,6 +425,27 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 35>
+<Cycle Context>
+great work, okay in the interactive report, can we place some little prompt chips? suggested questions that the user could ask? the default two can be:
+
+1. how does dce work?
+2. how do i install dce?
+
+then, depending on the conversation, they can update. they can remain small, and when the user hovers over one, they can get a tooltip which shows the entire prompt/question. when they click it, it automatically submits that question as if it was from the user to the LLM. we can have ascentia create up to four at a time at any given input/output cycle. i did something similar to this by simply adding into the system prompt with my slack bot for palo alto networks xsiam training something like this: `please always generate three follow up questions based on the current completion in the following manner:` and then gave it the vernacular to use, and it worked great. suers could manually copy/paste and create their own prompts. here i would like to go one step further. id like it to be a tool code call. something that happens automatically. they can appear after the response completes, because we can take that response that was just genreated, and based on the conversation, create up to four tiles to display. see what i mean? just one additoinal step in the conversation for the inetarctive whitepaper.
+
+first, document this out as an artifact, then lets deliver on it.
+</Cycle Context>
+<Previous Cycle 34 Summary of Actions>
+I have analyzed the build error from Cycle 33. The error message, `Type error: Cannot find module 'socket.io' or its corresponding type declarations`, indicates that the `socket.io` package, which is being imported by a file included in the build process (`context/aiascentgame/code/ascentiaHandler.ts`), is not listed as a dependency in the project's `package.json`.
+
+While it's unusual for a file in the `context` directory to be part of the build, the most direct solution to resolve the immediate build failure is to add the missing dependency. I will add both `socket.io` (for the server-side types that are causing the error) and `socket.io-client` (which is typically used on the client-side in such applications) to the `package.json` file. This will make the necessary modules available to the TypeScript compiler, resolving the error and allowing the build to proceed.
+
+1.  **Update `package.json`:** Add `socket.io` and `socket.io-client` to the `dependencies` section to make the missing modules available to the project.
+2.  **Add `<curator_activity>` block:** Include instructions for you to run `npm install` to download and install the newly added dependencies.
+</Previous Cycle 34 Summary of Actions>
+</Cycle 35>
 
 <Cycle 34>
 <Cycle Context>
@@ -2487,10 +2509,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T16:50:27.448Z
+  Date Generated: 2025-10-13T17:00:58.762Z
   ---
-  Total Files: 117
-  Approx. Tokens: 290989
+  Total Files: 118
+  Approx. Tokens: 292246
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2560,7 +2582,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 52. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
 53. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
 54. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2648 - Tokens: 662
-55. src\components\home\HeroSection.tsx - Lines: 66 - Chars: 3155 - Tokens: 789
+55. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
 56. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 57. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 58. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
@@ -2594,7 +2616,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 86. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
 87. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
 88. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-89. public\data\whitepaper_content.json - Lines: 145 - Chars: 11924 - Tokens: 2981
+89. public\data\whitepaper_content.json - Lines: 175 - Chars: 13319 - Tokens: 3330
 90. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
 91. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
 92. public\data\showcase_imagemanifest.json - Lines: 1198 - Chars: 102055 - Tokens: 25514
@@ -2623,6 +2645,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 115. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 116. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 117. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
+118. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
 
 <file path="src/Artifacts/A0-Master-Artifact-List.md">
 # Artifact A0: aiascent.dev - Master Artifact List
@@ -14026,7 +14049,6 @@ export default FeaturesSection;
 
 <file path="src/components/home/HeroSection.tsx">
 // src/components/home/HeroSection.tsx
-// C11 - Adjustments for GIF sizing
 import React from 'react';
 import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
@@ -14066,10 +14088,12 @@ return (
                     </span>
                 </Button>
             </Link>
-            {/* Placeholder for Download Link */}
-            <Button size="lg" variant="outline" className="p-6 text-lg">
-                Download Now
-            </Button>
+            {/* C34 Fix: Wrap button in an anchor tag to make it downloadable */}
+            <a href="/downloads/data-curation-environment-0.1.10.vsix" download="data-curation-environment-0.1.10.vsix">
+                <Button size="lg" variant="outline" className="p-6 text-lg">
+                    Download Now
+                </Button>
+            </a>
           </div>
         </div>
       }
@@ -17832,139 +17856,169 @@ export default GlobalAudioPlayer;
     {
       "sectionId": "whitepaper",
       "sectionTitle": "Process as Asset Whitepaper",
-      "pages": [
+      "subSections": [
         {
-          "pageId": "wp-01",
-          "pageTitle": "Process as Asset",
-          "tldr": "A Whitepaper on the Data Curation Environment (DCE)",
-          "content": "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.",
-          "imageGroupIds": ["group_wp-01-cover"]
+          "subSectionId": "intro",
+          "subSectionTitle": "Introduction",
+          "pages": [
+            {
+              "pageId": "wp-01",
+              "pageTitle": "Process as Asset",
+              "tldr": "A Whitepaper on the Data Curation Environment (DCE)",
+              "content": "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.",
+              "imageGroupIds": ["group_wp-01-cover"]
+            },
+            {
+              "pageId": "wp-02",
+              "pageTitle": "Executive Summary",
+              "tldr": "The DCE transforms the content creation process itself into a valuable organizational asset.",
+              "content": "Organizations tasked with developing highly specialized content such as technical training materials, intelligence reports, or complex software documentation face a constant bottleneck: the time and expertise required to curate accurate data, collaborate effectively, and rapidly iterate on feedback. This whitepaper introduces the Data Curation Environment (DCE), a framework and toolset integrated into Visual Studio Code that transforms the content creation process itself into a valuable organizational asset. By capturing the entire workflow as a persistent, auditable knowledge graph, the DCE provides the infrastructure necessary to scale expertise, ensure quality, and accelerate the entire organizational mission.",
+              "imageGroupIds": ["group_wp-02-executive-summary"]
+            }
+          ]
         },
         {
-          "pageId": "wp-02",
-          "pageTitle": "Executive Summary",
-          "tldr": "The DCE transforms the content creation process itself into a valuable organizational asset.",
-          "content": "Organizations tasked with developing highly specialized content such as technical training materials, intelligence reports, or complex software documentation face a constant bottleneck: the time and expertise required to curate accurate data, collaborate effectively, and rapidly iterate on feedback. This whitepaper introduces the Data Curation Environment (DCE), a framework and toolset integrated into Visual Studio Code that transforms the content creation process itself into a valuable organizational asset. By capturing the entire workflow as a persistent, auditable knowledge graph, the DCE provides the infrastructure necessary to scale expertise, ensure quality, and accelerate the entire organizational mission.",
-          "imageGroupIds": ["group_wp-02-executive-summary"]
+          "subSectionId": "the-problem",
+          "subSectionTitle": "The Problem",
+          "pages": [
+            {
+              "pageId": "wp-03",
+              "pageTitle": "The Challenge: Bottleneck of Ad-Hoc AI Interaction",
+              "tldr": "Unstructured interaction with LLMs creates critical bottlenecks in organizational workflows.",
+              "content": "The integration of Large Language Models (LLMs) into organizational workflows promises significant acceleration. However, the way most organizations interact with these models remains unstructured and inefficient, creating several critical bottlenecks.",
+              "imageGroupIds": ["group_wp-03-challenge-ad-hoc-ai"]
+            },
+            {
+              "pageId": "wp-04",
+              "pageTitle": "The Context Problem",
+              "tldr": "Manually curating context for LLMs is time-consuming, error-prone, and results in poor output.",
+              "content": "The quality of an LLM's output is entirely dependent on the quality of its input context. Manually selecting, copying, and pasting relevant data (code, documents, reports) into a chat interface is time-consuming, error-prone, and often results in incomplete or bloated context.",
+              "imageGroupIds": ["group_wp-04-problem-bloated-context"]
+            },
+            {
+              "pageId": "wp-05",
+              "pageTitle": "The Collaboration Gap",
+              "tldr": "When a task is handed off, the context is lost, leading to significant delays and duplication of effort.",
+              "content": "When a task is handed off, the context is lost. A colleague must manually reconstruct the previous operator's dataset and understand their intent, leading to significant delays and duplication of effort.",
+              "imageGroupIds": ["group_wp-05-problem-collaboration-gap"]
+            },
+            {
+              "pageId": "wp-06",
+              "pageTitle": "The Iteration Overhead",
+              "tldr": "Revising complex datasets is a Sisyphean task, as operators must reconstruct the entire context for each change.",
+              "content": "When feedback requires changes to a complex dataset, operators often resort to manual edits because re-prompting the AI requires reconstructing the entire context again. This negates the efficiency gains of using AI in the first place.",
+              "imageGroupIds": ["group_wp-06-problem-iteration-overhead"]
+            },
+            {
+              "pageId": "wp-07",
+              "pageTitle": "The Auditability Vacuum",
+              "tldr": "The iterative process of human-AI interaction is rarely captured, creating a black box of collaboration.",
+              "content": "The iterative process of human-AI interaction (the prompts), the AI's suggestions, and the human's decisions are a valuable record of the work, yet it is rarely captured in a structured, reusable format. These challenges prevent organizations from fully realizing the potential of AI.",
+              "imageGroupIds": ["group_wp-07-problem-auditability-vacuum"]
+            }
+          ]
         },
         {
-          "pageId": "wp-03",
-          "pageTitle": "The Challenge: Bottleneck of Ad-Hoc AI Interaction",
-          "tldr": "Unstructured interaction with LLMs creates critical bottlenecks in organizational workflows.",
-          "content": "The integration of Large Language Models (LLMs) into organizational workflows promises significant acceleration. However, the way most organizations interact with these models remains unstructured and inefficient, creating several critical bottlenecks.",
-          "imageGroupIds": ["group_wp-03-challenge-ad-hoc-ai"]
+          "subSectionId": "the-solution",
+          "subSectionTitle": "The Solution",
+          "pages": [
+            {
+              "pageId": "wp-08",
+              "pageTitle": "The Solution: The Data Curation Environment",
+              "tldr": "The DCE eliminates bottlenecks by providing a structured framework for human-AI collaboration.",
+              "content": "The Data Curation Environment (DCE) is designed to eliminate these bottlenecks by providing a structured framework for human-AI collaboration directly within the operator's working environment. It moves beyond the limitations of simple chat interfaces by introducing three core capabilities.",
+              "imageGroupIds": ["group_wp-08-solution-dce"]
+            },
+            {
+              "pageId": "wp-09",
+              "pageTitle": "Precision Context Curation",
+              "tldr": "The DCE replaces manual copy-pasting with an intuitive, integrated file management interface.",
+              "content": "The DCE replaces manual copy-pasting with an intuitive, integrated file management interface. Operators can precisely select the exact files, folders, or documents required for a task with simple checkboxes, ensuring the AI receives the highest fidelity context possible while minimizing operator effort.",
+              "imageGroupIds": ["group_wp-09-feature-precision-curation"]
+            },
+            {
+              "pageId": "wp-10",
+              "pageTitle": "Parallel AI Scrutiny",
+              "tldr": "The 'Parallel Co-Pilot Panel' allows operators to manage, compare, and test multiple AI-generated solutions simultaneously.",
+              "content": "The 'Parallel Co-Pilot Panel' allows operators to manage, compare, and test multiple AI-generated solutions simultaneously. Integrated diffing tools provide immediate visualization of proposed changes, and a one-click 'Accept' mechanism integrated with version control creates a rapid, low-risk loop for evaluating multiple AI approaches.",
+              "imageGroupIds": ["group_wp-10-feature-parallel-scrutiny"]
+            },
+            {
+              "pageId": "wp-11",
+              "pageTitle": "Persistent Knowledge Graph",
+              "tldr": "Every interaction within the DCE is captured as a 'Cycle,' creating a structured, persistent Knowledge Graph.",
+              "content": "Every interaction within the DCE is captured as a 'Cycle,' which includes the curated context, the operator's instructions, all AI-generated responses, and the final decision. This history is saved as a structured, persistent Knowledge Graph, allowing operators to step back through history, review past decisions, and understand the project's evolution.",
+              "imageGroupIds": ["group_wp-11-feature-knowledge-graph"]
+            }
+          ]
         },
         {
-          "pageId": "wp-04",
-          "pageTitle": "The Context Problem",
-          "tldr": "Manually curating context for LLMs is time-consuming, error-prone, and results in poor output.",
-          "content": "The quality of an LLM's output is entirely dependent on the quality of its input context. Manually selecting, copying, and pasting relevant data (code, documents, reports) into a chat interface is time-consuming, error-prone, and often results in incomplete or bloated context.",
-          "imageGroupIds": ["group_wp-04-problem-bloated-context"]
+            "subSectionId": "the-benefits",
+            "subSectionTitle": "The Benefits",
+            "pages": [
+                {
+                    "pageId": "wp-12",
+                    "pageTitle": "Transforming the Process into an Asset",
+                    "tldr": "The true power of the DCE lies in transforming the workflow itself into a persistent organizational asset.",
+                    "content": "The true power of the DCE lies in how these capabilities combine to transform the workflow itself into a persistent organizational asset.",
+                    "imageGroupIds": ["group_wp-12-process-as-asset"]
+                  },
+                  {
+                    "pageId": "wp-13",
+                    "pageTitle": "The Curated Context as a Shareable Asset",
+                    "tldr": "The curated 'Selection Set' is a saved, versioned asset that eliminates the collaboration gap.",
+                    "content": "In the DCE workflow, the curated context (the 'Selection Set') is a saved, versioned asset. When a task is handed off, the new operator receives the exact context and the complete history of interactions, eliminating the 'collaboration gap' and duplication of effort.",
+                    "imageGroupIds": ["group_wp-13-benefit-shareable-context"]
+                  },
+                  {
+                    "pageId": "wp-14",
+                    "pageTitle": "Accelerating Iteration and Maintenance",
+                    "tldr": "Operators can rapidly iterate on complex datasets without manual reconstruction by simply reloading the curated context.",
+                    "content": "Because the context is already curated and saved, operators can rapidly iterate on complex datasets without manual reconstruction. If feedback requires changes, the operator simply loads the curated context and issues a targeted instruction to the AI, completing the update in a single, efficient cycle.",
+                    "imageGroupIds": ["group_wp-14-benefit-accelerated-iteration"]
+                  },
+                  {
+                    "pageId": "wp-15",
+                    "pageTitle": "Scaling Expertise and Ensuring Auditability",
+                    "tldr": "The Knowledge Graph serves as a detailed, auditable record invaluable for training, reviews, and accountability.",
+                    "content": "The Knowledge Graph serves as a detailed, auditable record invaluable for Training and Onboarding, After-Action Reviews, and ensuring Accountability in mission-critical environments.",
+                    "imageGroupIds": ["group_wp-15-benefit-scaling-expertise"]
+                  }
+            ]
         },
         {
-          "pageId": "wp-05",
-          "pageTitle": "The Collaboration Gap",
-          "tldr": "When a task is handed off, the context is lost, leading to significant delays and duplication of effort.",
-          "content": "When a task is handed off, the context is lost. A colleague must manually reconstruct the previous operator's dataset and understand their intent, leading to significant delays and duplication of effort.",
-          "imageGroupIds": ["group_wp-05-problem-collaboration-gap"]
-        },
-        {
-          "pageId": "wp-06",
-          "pageTitle": "The Iteration Overhead",
-          "tldr": "Revising complex datasets is a Sisyphean task, as operators must reconstruct the entire context for each change.",
-          "content": "When feedback requires changes to a complex dataset, operators often resort to manual edits because re-prompting the AI requires reconstructing the entire context again. This negates the efficiency gains of using AI in the first place.",
-          "imageGroupIds": ["group_wp-06-problem-iteration-overhead"]
-        },
-        {
-          "pageId": "wp-07",
-          "pageTitle": "The Auditability Vacuum",
-          "tldr": "The iterative process of human-AI interaction is rarely captured, creating a black box of collaboration.",
-          "content": "The iterative process of human-AI interaction (the prompts), the AI's suggestions, and the human's decisions are a valuable record of the work, yet it is rarely captured in a structured, reusable format. These challenges prevent organizations from fully realizing the potential of AI.",
-          "imageGroupIds": ["group_wp-07-problem-auditability-vacuum"]
-        },
-        {
-          "pageId": "wp-08",
-          "pageTitle": "The Solution: The Data Curation Environment",
-          "tldr": "The DCE eliminates bottlenecks by providing a structured framework for human-AI collaboration.",
-          "content": "The Data Curation Environment (DCE) is designed to eliminate these bottlenecks by providing a structured framework for human-AI collaboration directly within the operator's working environment. It moves beyond the limitations of simple chat interfaces by introducing three core capabilities.",
-          "imageGroupIds": ["group_wp-08-solution-dce"]
-        },
-        {
-          "pageId": "wp-09",
-          "pageTitle": "Precision Context Curation",
-          "tldr": "The DCE replaces manual copy-pasting with an intuitive, integrated file management interface.",
-          "content": "The DCE replaces manual copy-pasting with an intuitive, integrated file management interface. Operators can precisely select the exact files, folders, or documents required for a task with simple checkboxes, ensuring the AI receives the highest fidelity context possible while minimizing operator effort.",
-          "imageGroupIds": ["group_wp-09-feature-precision-curation"]
-        },
-        {
-          "pageId": "wp-10",
-          "pageTitle": "Parallel AI Scrutiny",
-          "tldr": "The 'Parallel Co-Pilot Panel' allows operators to manage, compare, and test multiple AI-generated solutions simultaneously.",
-          "content": "The 'Parallel Co-Pilot Panel' allows operators to manage, compare, and test multiple AI-generated solutions simultaneously. Integrated diffing tools provide immediate visualization of proposed changes, and a one-click 'Accept' mechanism integrated with version control creates a rapid, low-risk loop for evaluating multiple AI approaches.",
-          "imageGroupIds": ["group_wp-10-feature-parallel-scrutiny"]
-        },
-        {
-          "pageId": "wp-11",
-          "pageTitle": "Persistent Knowledge Graph",
-          "tldr": "Every interaction within the DCE is captured as a 'Cycle,' creating a structured, persistent Knowledge Graph.",
-          "content": "Every interaction within the DCE is captured as a 'Cycle,' which includes the curated context, the operator's instructions, all AI-generated responses, and the final decision. This history is saved as a structured, persistent Knowledge Graph, allowing operators to step back through history, review past decisions, and understand the project's evolution.",
-          "imageGroupIds": ["group_wp-11-feature-knowledge-graph"]
-        },
-        {
-          "pageId": "wp-12",
-          "pageTitle": "Transforming the Process into an Asset",
-          "tldr": "The true power of the DCE lies in transforming the workflow itself into a persistent organizational asset.",
-          "content": "The true power of the DCE lies in how these capabilities combine to transform the workflow itself into a persistent organizational asset.",
-          "imageGroupIds": ["group_wp-12-process-as-asset"]
-        },
-        {
-          "pageId": "wp-13",
-          "pageTitle": "The Curated Context as a Shareable Asset",
-          "tldr": "The curated 'Selection Set' is a saved, versioned asset that eliminates the collaboration gap.",
-          "content": "In the DCE workflow, the curated context (the 'Selection Set') is a saved, versioned asset. When a task is handed off, the new operator receives the exact context and the complete history of interactions, eliminating the 'collaboration gap' and duplication of effort.",
-          "imageGroupIds": ["group_wp-13-benefit-shareable-context"]
-        },
-        {
-          "pageId": "wp-14",
-          "pageTitle": "Accelerating Iteration and Maintenance",
-          "tldr": "Operators can rapidly iterate on complex datasets without manual reconstruction by simply reloading the curated context.",
-          "content": "Because the context is already curated and saved, operators can rapidly iterate on complex datasets without manual reconstruction. If feedback requires changes, the operator simply loads the curated context and issues a targeted instruction to the AI, completing the update in a single, efficient cycle.",
-          "imageGroupIds": ["group_wp-14-benefit-accelerated-iteration"]
-        },
-        {
-          "pageId": "wp-15",
-          "pageTitle": "Scaling Expertise and Ensuring Auditability",
-          "tldr": "The Knowledge Graph serves as a detailed, auditable record invaluable for training, reviews, and accountability.",
-          "content": "The Knowledge Graph serves as a detailed, auditable record invaluable for Training and Onboarding, After-Action Reviews, and ensuring Accountability in mission-critical environments.",
-          "imageGroupIds": ["group_wp-15-benefit-scaling-expertise"]
-        },
-        {
-          "pageId": "wp-16",
-          "pageTitle": "Use Case Spotlight: Rapid Development",
-          "tldr": "A real-world example of transforming a weeks-long manual revision process into an hours-long automated one.",
-          "content": "A government agency needs to rapidly update a specialized technical training lab based on new operational feedback indicating that in existing exam questions, 'the correct answer is too often the longest answer choice,' undermining the assessment's validity.",
-          "imageGroupIds": ["group_wp-16-use-case-spotlight"]
-        },
-        {
-          "pageId": "wp-17",
-          "pageTitle": "The Traditional Workflow (Weeks)",
-          "tldr": "The manual process involves days of searching, weeks of editing, and more days of review and rework.",
-          "content": "1. **Identify Affected Files:** An analyst manually searches the repository (days). \n2. **Manual Editing:** The analyst manually edits each file, attempting to rewrite 'distractor' answers (weeks). \n3. **Review and Rework:** Changes are reviewed, often leading to further manual edits (days).",
-          "imageGroupIds": ["group_wp-17-use-case-traditional"]
-        },
-        {
-          "pageId": "wp-18",
-          "pageTitle": "The DCE Workflow (Hours)",
-          "tldr": "The DCE workflow condenses the process into minutes for curation and instruction, and hours for review.",
-          "content": "1. **Curate Context (Minutes):** The analyst uses the DCE interface to quickly select the folder containing all exam questions. \n2. **Instruct the AI (Minutes):** The analyst provides a targeted instruction to rewrite the distractors. \n3. **Review and Accept (Hours):** The AI generates several solutions, and the analyst uses the integrated diff viewer to compare and accept the best one with a single click.",
-          "imageGroupIds": ["group_wp-18-use-case-dce"]
-        },
-        {
-          "pageId": "wp-19",
-          "pageTitle": "Conclusion",
-          "tldr": "The DCE is a strategic framework for operationalizing AI, providing the infrastructure to scale expertise, ensure quality, and achieve the mission faster.",
-          "content": "The Data Curation Environment is a strategic framework for operationalizing AI in complex environments. By addressing critical bottlenecks, the DCE transforms the human-AI interaction workflow into a structured, persistent, and valuable organizational asset, providing the necessary infrastructure to scale expertise, ensure quality, and achieve the mission faster.",
-          "imageGroupIds": ["group_wp-19-conclusion"]
+          "subSectionId": "use-case",
+          "subSectionTitle": "Use Case",
+          "pages": [
+            {
+              "pageId": "wp-16",
+              "pageTitle": "Use Case Spotlight: Rapid Development",
+              "tldr": "A real-world example of transforming a weeks-long manual revision process into an hours-long automated one.",
+              "content": "A government agency needs to rapidly update a specialized technical training lab based on new operational feedback indicating that in existing exam questions, 'the correct answer is too often the longest answer choice,' undermining the assessment's validity.",
+              "imageGroupIds": ["group_wp-16-use-case-spotlight"]
+            },
+            {
+              "pageId": "wp-17",
+              "pageTitle": "The Traditional Workflow (Weeks)",
+              "tldr": "The manual process involves days of searching, weeks of editing, and more days of review and rework.",
+              "content": "1. **Identify Affected Files:** An analyst manually searches the repository (days). \n2. **Manual Editing:** The analyst manually edits each file, attempting to rewrite 'distractor' answers (weeks). \n3. **Review and Rework:** Changes are reviewed, often leading to further manual edits (days).",
+              "imageGroupIds": ["group_wp-17-use-case-traditional"]
+            },
+            {
+              "pageId": "wp-18",
+              "pageTitle": "The DCE Workflow (Hours)",
+              "tldr": "The DCE workflow condenses the process into minutes for curation and instruction, and hours for review.",
+              "content": "1. **Curate Context (Minutes):** The analyst uses the DCE interface to quickly select the folder containing all exam questions. \n2. **Instruct the AI (Minutes):** The analyst provides a targeted instruction to rewrite the distractors. \n3. **Review and Accept (Hours):** The AI generates several solutions, and the analyst uses the integrated diff viewer to compare and accept the best one with a single click.",
+              "imageGroupIds": ["group_wp-18-use-case-dce"]
+            },
+            {
+              "pageId": "wp-19",
+              "pageTitle": "Conclusion",
+              "tldr": "The DCE is a strategic framework for operationalizing AI, providing the infrastructure to scale expertise, ensure quality, and achieve the mission faster.",
+              "content": "The Data Curation Environment is a strategic framework for operationalizing AI in complex environments. By addressing critical bottlenecks, the DCE transforms the human-AI interaction workflow into a structured, persistent, and valuable organizational asset, providing the necessary infrastructure to scale expertise, ensure quality, and achieve the mission faster.",
+              "imageGroupIds": ["group_wp-19-conclusion"]
+            }
+          ]
         }
       ]
     }
@@ -25028,6 +25082,96 @@ export class AiService {
     `;
   }
 }
+</file_artifact>
+
+<file path="README.md">
+# aiascent.dev - Home of the Data Curation Environment
+
+![AIAscent.dev OG Image](public/assets/images/og-image.webp)
+
+## 1. Overview
+
+Welcome to the official repository for **aiascent.dev**, the promotional and educational website for the **Data Curation Environment (DCE)**, a VS Code extension designed to revolutionize the human-AI development workflow.
+
+This website serves two primary purposes:
+1.  **To Explain:** It clearly articulates the value proposition of the DCE, the "Citizen Architect" methodology, and the strategic importance of mastering AI-assisted development.
+2.  **To Demonstrate:** It is a living testament to the power of the DCE. The complex, interactive components of this website, including the report viewers, were themselves built using the DCE.
+
+The project is live at [https://aiascent.dev](https://aiascent.dev).
+
+## 2. Core Technologies
+
+This project is built with a modern, performant, and developer-friendly technology stack:
+
+*   **Framework:** [Next.js](https://nextjs.org/) (App Router)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components:** [shadcn/ui](https://ui.shadcn.com/), [Framer Motion](https://www.framer.com/motion/) for animations.
+*   **State Management:** [Zustand](https://zustand-demo.pmnd.rs/)
+*   **AI Integration (RAG):** The "Ask @Ascentia" feature uses a custom Retrieval-Augmented Generation (RAG) backend built with [Faiss-node](https://github.com/facebookresearch/faiss) for vector search, demonstrating how to integrate local LLMs.
+
+## 3. Getting Started Locally
+
+To run this project on your local machine, follow these steps.
+
+### 3.1. Prerequisites
+
+*   Node.js (v18.x or later recommended)
+*   npm or yarn
+
+### 3.2. Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/dgerabagi/aiascent-dev.git
+    cd aiascent-dev
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+### 3.3. Running the Development Server
+
+1.  **Start the server:**
+    ```bash
+    npm run dev
+    ```
+
+2.  **Open your browser:** Navigate to [http://localhost:3000](http://localhost:3000).
+
+The site should now be running in development mode with hot-reloading enabled.
+
+## 4. Project Structure
+
+The project follows the standard Next.js App Router structure:
+
+```
+.
+├── public/                 # Static assets (images, fonts, data files)
+│   ├── assets/
+│   ├── data/
+│   └── downloads/
+├── src/
+│   ├── app/                # Next.js App Router pages and API routes
+│   ├── components/         # Reusable React components
+│   ├── stores/             # Zustand state management stores
+│   ├── lib/                # Utility functions
+│   ├── providers/          # React Context providers
+│   └── Artifacts/          # Project documentation and planning files (DCE)
+├── README.md               # This file
+└── ... (config files)
+```
+
+## 5. The Data Curation Environment (DCE)
+
+This project is deeply integrated with the DCE workflow. The `src/Artifacts/` directory contains all the planning documents, design blueprints, and strategic memos that guided the AI-assisted development of this website. This repository serves as a real-world example of the "Documentation First" principle in action.
+
+To learn more about the DCE, visit the [official repository](https://github.com/dgerabagi/data-curation-environment).
+
+---
+*This README was generated with the assistance of the Data Curation Environment.*
 </file_artifact>
 
 
