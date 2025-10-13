@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 32 - Second Linting Round; Almost All Errors Resolved
+Current Cycle 33 - More Linting; Now Build Errors
+Cycle 32 - Second Linting Round; Almost All Errors Resolved
 Cycle 31 - First Linting Round
 Cycle 30 - Go Live
 Cycle 29 - more incredible work
@@ -423,9 +424,9 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
-<Cycle 32>
+<Cycle 33>
 <Cycle Context>
-nice work, now it seems only two files with issues remaining!
+okay i think we are through the linting issues, now build error
 </Cycle Context>
 <Ephemeral Context>
 PS C:\Projects\aiascent-dev> npm run build
@@ -438,19 +439,53 @@ PS C:\Projects\aiascent-dev> npm run build
 
    Creating an optimized production build ...
  ✓ Compiled successfully
+   Linting and checking validity of types  ...Failed to compile.
 
-Failed to compile.
+./context/aiascentgame/code/ascentiaHandler.ts:9:60
+Type error: Cannot find module 'socket.io' or its corresponding type declarations.
 
-./src/app/mission/page.tsx
-138:68  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-138:93  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+   7 | // Updated on: C1356 (Incorporate the full pageContext from the client into the LLM system prompt.)
+   8 | // Updated on: C1344 (Add logic for loading and handling report-specific knowledge base and chat stream.)
+>  9 | import { type Socket, type Server as SocketIOServer } from 'socket.io';
+     |                                                            ^
+  10 | import { logInfo, logWarn, logError } from '../../logger';
+  11 | import { type PlayerState } from '../../server';
+  12 | import { type ChatMessage } from '../../state/multiplayerStore';
+PS C:\Projects\aiascent-dev> npm install
 
-./src/components/report-viewer/AudioControls.tsx
-74:6  Warning: React Hook useCallback has a missing dependency: 'currentPageIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+up to date, audited 707 packages in 2s
 
-info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+257 packages are looking for funding
+  run `npm fund` for details
+
+3 vulnerabilities (1 low, 1 moderate, 1 critical)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
 PS C:\Projects\aiascent-dev>
 </Ephemeral Context>
+<Previous Cycle 32 Summary of Actions>
+I have analyzed the two issues from the current cycle and have a clear plan to resolve them.
+
+First, I will address the unwanted scrolling behavior on the `/showcase` page. When switching to the tab containing the `aiascent.game` iframe, the browser's focus likely shifts to the iframe, causing the main window to scroll down. I will fix this by adding a `useEffect` hook to the `ShowcaseTabs.tsx` component. This hook will trigger whenever the active tab changes and will programmatically scroll the window back to the top, ensuring a smooth and stationary tab-switching experience.
+
+Second, I will fix the linting errors that are preventing a successful production build. The build logs indicate two distinct problems originating from `MissionSectionBlock.tsx`.
+1.  The `"use client"` directive is not at the top of the file. The Next.js App Router requires this directive to be the very first line of code, before any comments or imports. I will move it to line 1 to resolve this.
+2.  The component uses client-side hooks (`useState`, `useEffect`), but it is being imported by Server Components (`learn/page.tsx` and `mission/page.tsx`). A component that needs browser-only features must be a Client Component, and any parent page that imports it must also be a Client Component. I will resolve this by adding the `"use client"` directive to the top of both `learn/page.tsx` and `mission/page.tsx`, converting them into Client Components and satisfying the build requirements.
+
+1.  **Update `src/components/mission/MissionSectionBlock.tsx`:** Move the `'use client';` directive to the absolute first line of the file, before the block comment, to fix the primary build error.
+2.  **Update `src/app/learn/page.tsx`:** Add `'use client';` as the first line of the file. This page imports `MissionSectionBlock`, which uses client-side hooks, so the page itself must also be a client component.
+3.  **Update `src/app/mission/page.tsx`:** Add `'use client';` as the first line of the file for the same reason as the learn page, as it also uses `MissionSectionBlock`.
+4.  **Update `src/components/showcase/ShowcaseTabs.tsx`:** Add a `useEffect` hook that listens for changes to the `activeTab` state. Inside the hook, call `window.scrollTo(0, 0)` to prevent the page from scrolling down when the user switches to the `iframe` tab.
+</Previous Cycle 32 Summary of Actions>
+</Cycle 33>
+
+<Cycle 32>
+<Cycle Context>
+nice work, now it seems only two files with issues remaining!
+</Cycle Context>
 <Previous Cycle 31 Summary of Actions>
 I have analyzed the request to add navigation buttons and fix the linting issues preventing a successful production build. My course of action is to address all reported errors and warnings, which will make the application build-ready for its "Go Live" deployment. I will also add the requested "Learn More" and "See Showcase" buttons to the Mission and Learn pages, respectively, to improve inter-page navigation.
 
@@ -2471,10 +2506,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T15:04:36.304Z
+  Date Generated: 2025-10-13T15:16:29.410Z
   ---
   Total Files: 117
-  Approx. Tokens: 290887
+  Approx. Tokens: 290972
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2558,8 +2593,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 66. context\aiascentgame\report\ReportViewerModal.tsx - Lines: 399 - Chars: 14069 - Tokens: 3518
 67. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 68. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
-69. src\app\mission\page.tsx - Lines: 152 - Chars: 13039 - Tokens: 3260
-70. src\components\report-viewer\AudioControls.tsx - Lines: 225 - Chars: 9075 - Tokens: 2269
+69. src\app\mission\page.tsx - Lines: 154 - Chars: 13221 - Tokens: 3306
+70. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
 71. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 72. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 73. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 840 - Tokens: 210
@@ -16799,6 +16834,8 @@ export default LearnPage;
 'use client';
 {
   /*
+  Cycle 32: Fix unescaped entities.
+  - Replaced ' with &apos; in the content for "The Strategic Imperative: The Fissured Workplace" to fix linting error.
   Cycle 31: Add 'use client' directive.
   - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
   - Therefore, this page must also be a Client Component to be used in the App Router.
@@ -16851,7 +16888,7 @@ const MissionPage = () => {
                         tldr="The current Western AI labor model is a strategic vulnerability, creating an unstable foundation for our most critical technology by prioritizing short-term cost savings over the cognitive well-being of its essential workforce."
                         content="The AI supply chain is a masterclass in obfuscation, deliberately fractured to distance valuable tech companies from the human labor that makes their products possible. This labyrinthine structure, known as the 'fissured workplace,' is not an accident; it is a design choice intended to suppress wages, prevent worker organization, and shed legal and ethical liability. It creates a global 'ghost workforce' of data annotators and content moderators who are underpaid, psychologically stressed, and treated as disposable.
 
-This is more than an ethical failing; it is a critical strategic blunder. Decades of research show that financial precarity imposes a severe 'Cognitive Bandwidth Tax,' measurably reducing a person's ability to perform the complex, nuanced tasks required for high-quality data curation. By institutionalizing this precarity, the Western AI industry has built an architecture of self-sabotage. It guarantees the production of flawed, biased, and insecure training data—a systemic crisis of 'Garbage In, Garbage Out.'
+This is more than an ethical failing; it is a critical strategic blunder. Decades of research show that financial precarity imposes a severe 'Cognitive Bandwidth Tax,' measurably reducing a person&apos;s ability to perform the complex, nuanced tasks required for high-quality data curation. By institutionalizing this precarity, the Western AI industry has built an architecture of self-sabotage. It guarantees the production of flawed, biased, and insecure training data—a systemic crisis of &apos;Garbage In, Garbage Out.&apos;
 
 In stark contrast, coherent competitors are professionalizing their data workforce, treating human capital as a core national asset. This creates a profound strategic asymmetry. An AI superpower cannot be sustained indefinitely on a brittle foundation of exploited labor."
                         images={[
@@ -16933,7 +16970,7 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                 <section className="text-center mt-24 py-16">
                     <h2 className="text-3xl font-bold mb-4">Ready to Build the Future?</h2>
                     <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                        Continue to our Learn page to discover the 'Vibecoding to Virtuosity' pathway—the curriculum for the Citizen Architect.
+                        Continue to our Learn page to discover the &lsquo;Vibecoding to Virtuosity&rsquo; pathway—the curriculum for the Citizen Architect.
                     </p>
                     <Link href="/learn" passHref>
                         <Button size="lg" variant="outline">
@@ -16951,15 +16988,18 @@ export default MissionPage;
 </file_artifact>
 
 <file path="src/components/report-viewer/AudioControls.tsx">
-
+'use client';
+{
   /*
+  Cycle 32: Fix exhaustive-deps warning.
+  - Added `currentPageIndex` to the `useCallback` dependency array for `generateAndPlayAudio`.
   Cycle 30: Fix exhaustive-deps warnings.
   - Wrapped `generateAndPlayAudio` in `useCallback` and added it to the dependency array.
   - Added `setAudioDuration`, `setAudioTime`, and `setPlaybackStatus` to the second `useEffect` dependency array.
   */
-
+}
 // src/components/report-viewer/AudioControls.tsx
-'use client';
+
 import React, { useRef, useEffect, useCallback } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
 import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
@@ -17024,7 +17064,7 @@ const AudioControls: React.FC = () => {
       console.error('[AudioControls] Failed to generate audio', error);
       setPlaybackStatus('error');
     }
-  }, [currentPage, setCurrentAudio, setPlaybackStatus]);
+  }, [currentPage, setCurrentAudio, setPlaybackStatus, currentPageIndex]);
 
   useEffect(() => {
     if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
