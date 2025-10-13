@@ -12,7 +12,9 @@ interface ReportChatPanelProps {
 
 // Regex to strip internal LLM thinking tags and content
 const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
-const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+// C42: Define report-specific default suggestions
+const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
@@ -42,6 +44,11 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     const chatContainerRef = useRef<HTMLDivElement>(null);
+
+    // C42: Determine which default suggestions to use for this instance
+    const defaultSuggestionsForReport = reportName === 'whitepaper' 
+        ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+        : SHOWCASE_DEFAULT_SUGGESTIONS;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -145,7 +152,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             // C41 FIX: Make regex more robust by allowing 2 or more colons.
             const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
             const match = fullMessage.match(suggestionsRegex);
-            let finalSuggestions = DEFAULT_SUGGESTIONS;
+            let finalSuggestions = defaultSuggestionsForReport; // C42: Use report-specific default
             let cleanedMessage = fullMessage;
 
             if (match && match[1]) {
@@ -159,12 +166,12 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match[1]);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match);
                 }
                 // Clean the suggestions block from the message regardless of successful parsing
                 cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
             } else {
-                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions.');
+                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
 
             setSuggestedPrompts(finalSuggestions);

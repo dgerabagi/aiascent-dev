@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 42 - noice! now tiny fix in the report viewer in showcase
+Current Cycle 43 - nice! now lets enhance...
+Cycle 42 - noice! now tiny fix in the report viewer in showcase
 Cycle 41 - 2/3 solved!
 Cycle 40 - neither issue resolved
 Cycle 39 - almost fixed
@@ -437,6 +438,22 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 43>
+<Cycle Context>
+magnificent! can we go one layer deeper? can we please make it such that, for these chips, for both the whitepaper and for the ascent report, can we make it such that instead of these initial chips being static, can they instead be based on the content of the page? i see two approaches to do this... one is on each page load, an api call could be made to the LLM to generate new chips. the benefit is each time itll be unique questions, the downside is each time, they have to be generated. we could make static questions, but like a new json file that stores 2-3 pre-written questions based on the content, and they are still static but they are unique to that page, making it more interactive.
+
+what do you think? i think if we can go with the first option, it will be way better... my only concern is the initial generation time, but if we display a generating... animation of some kind in that area of the UI, then it should be fine.
+
+heres how we can do it, we can just package the page content, send that to the llm and ask to make the suggestions as the preloading step whenever a page is viewed. what i mean is, package the page content, send it through the rag, let the rag provide chunks, have the suggestions then generated from that. do you see what i mean? so while the user reads whats on the page, those chips may very well be already digging deeper into the research for the user, and all they need to do is pick the one that looks interesting to them.
+</Cycle Context>
+<Previous Cycle 42 Summary of Actions>
+Could not parse summary.
+
+1.  **Update `src/components/shared/MarkdownRenderer.tsx`**: I will modify the custom `code` component override. The new logic will inspect the content of the code snippet. If the snippet does not contain any newline characters, it will be programmatically treated as an inline `<code>` element. This prevents the markdown parser from incorrectly wrapping it in a `<pre>` tag, which is the root cause of the layout-breaking behavior and the React hydration error.
+2.  **Update `src/components/report-viewer/ReportChatPanel.tsx`**: I will adjust the `suggestionsRegex` used for parsing dynamic prompt suggestions. I will change the quantifier for the colon delimiters from `{3,}` (three or more) to `{2,}` (two or more). This will make the parsing logic more flexible and robust, allowing it to correctly handle variations like `::suggestions::` or `::::end_suggestions::::`.
+</Previous Cycle 42 Summary of Actions>
+</Cycle 43>
 
 <Cycle 42>
 <Cycle Context>
@@ -2672,10 +2689,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T20:17:03.263Z
+  Date Generated: 2025-10-13T20:29:50.097Z
   ---
   Total Files: 120
-  Approx. Tokens: 296470
+  Approx. Tokens: 296859
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2685,7 +2702,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (6768 tokens)
+7. src\stores\reportStore.ts (7042 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -2755,11 +2772,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 90 - Chars: 3699 - Tokens: 925
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 304 - Chars: 14440 - Tokens: 3610
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 311 - Chars: 14900 - Tokens: 3725
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 577 - Chars: 27069 - Tokens: 6768
+69. src\stores\reportStore.ts - Lines: 598 - Chars: 28166 - Tokens: 7042
 70. src\components\report-viewer\ReportViewer.tsx - Lines: 166 - Chars: 7365 - Tokens: 1842
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
@@ -15170,7 +15187,9 @@ interface ReportChatPanelProps {
 
 // Regex to strip internal LLM thinking tags and content
 const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
-const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+// C42: Define report-specific default suggestions
+const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
@@ -15200,6 +15219,11 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     const chatContainerRef = useRef<HTMLDivElement>(null);
+
+    // C42: Determine which default suggestions to use for this instance
+    const defaultSuggestionsForReport = reportName === 'whitepaper' 
+        ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+        : SHOWCASE_DEFAULT_SUGGESTIONS;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -15303,7 +15327,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             // C41 FIX: Make regex more robust by allowing 2 or more colons.
             const suggestionsRegex = /:{2,}suggestions:{2,}([\s\S]*?):{2,}end_suggestions:{2,}/;
             const match = fullMessage.match(suggestionsRegex);
-            let finalSuggestions = DEFAULT_SUGGESTIONS;
+            let finalSuggestions = defaultSuggestionsForReport; // C42: Use report-specific default
             let cleanedMessage = fullMessage;
 
             if (match && match[1]) {
@@ -15317,12 +15341,12 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                         console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
                     }
                 } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match[1]);
+                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", match);
                 }
                 // Clean the suggestions block from the message regardless of successful parsing
                 cleanedMessage = fullMessage.replace(suggestionsRegex, '').trim();
             } else {
-                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions.');
+                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
             }
 
             setSuggestedPrompts(finalSuggestions);
@@ -15630,6 +15654,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C42 (Implement report-specific default suggestions.)
 // Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
 // Updated on: C37 (Fix image path generation to use manifest's basePath.)
 // Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
@@ -15714,9 +15739,11 @@ export type ChatMessage = {
     status?: 'thinking' | 'streaming' | 'complete';
 };
 
-const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
 export interface ReportState {
+    reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
     reportData: ReportContentData | null;
     imageManifest: ImageManifestData | null;
@@ -15800,6 +15827,7 @@ export interface ReportActions {
 }
 
 const createInitialReportState = (): ReportState => ({
+    reportName: null,
     _hasHydrated: false,
     reportData: null,
     imageManifest: null,
@@ -15815,7 +15843,7 @@ const createInitialReportState = (): ReportState => ({
     isImageFullscreen: false,
     reportChatHistory: [],
     reportChatInput: '',
-    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Initialize with defaults
+    suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -15852,7 +15880,18 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
                 // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
-                set({ _hasHydrated: true, isLoading: true });
+
+                // C42: Determine and set the correct default suggestions for the report being loaded.
+                const defaultSuggestions = reportName === 'whitepaper' 
+                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+
+                set({ 
+                    reportName: reportName, // C42: Store the report name
+                    _hasHydrated: true, 
+                    isLoading: true,
+                    suggestedPrompts: defaultSuggestions, // C42: Override the initial default
+                });
 
                 try {
                     const [contentRes, manifestRes] = await Promise.all([
@@ -16138,11 +16177,17 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
+                // C42: Use report-specific defaults when clearing chat.
+                const { reportName } = get();
+                const defaultSuggestions = reportName === 'whitepaper' 
+                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
-                    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Reset suggestions on clear
+                    suggestedPrompts: defaultSuggestions,
                 });
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),

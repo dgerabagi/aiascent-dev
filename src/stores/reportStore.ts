@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C42 (Implement report-specific default suggestions.)
 // Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
 // Updated on: C37 (Fix image path generation to use manifest's basePath.)
 // Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
@@ -83,9 +84,11 @@ export type ChatMessage = {
     status?: 'thinking' | 'streaming' | 'complete';
 };
 
-const DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
+const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
 export interface ReportState {
+    reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
     reportData: ReportContentData | null;
     imageManifest: ImageManifestData | null;
@@ -169,6 +172,7 @@ export interface ReportActions {
 }
 
 const createInitialReportState = (): ReportState => ({
+    reportName: null,
     _hasHydrated: false,
     reportData: null,
     imageManifest: null,
@@ -184,7 +188,7 @@ const createInitialReportState = (): ReportState => ({
     isImageFullscreen: false,
     reportChatHistory: [],
     reportChatInput: '',
-    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Initialize with defaults
+    suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -221,7 +225,18 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
                 // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
-                set({ _hasHydrated: true, isLoading: true });
+
+                // C42: Determine and set the correct default suggestions for the report being loaded.
+                const defaultSuggestions = reportName === 'whitepaper' 
+                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+
+                set({ 
+                    reportName: reportName, // C42: Store the report name
+                    _hasHydrated: true, 
+                    isLoading: true,
+                    suggestedPrompts: defaultSuggestions, // C42: Override the initial default
+                });
 
                 try {
                     const [contentRes, manifestRes] = await Promise.all([
@@ -507,11 +522,17 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
+                // C42: Use report-specific defaults when clearing chat.
+                const { reportName } = get();
+                const defaultSuggestions = reportName === 'whitepaper' 
+                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
+                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
-                    suggestedPrompts: DEFAULT_SUGGESTIONS, // C35: Reset suggestions on clear
+                    suggestedPrompts: defaultSuggestions,
                 });
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
