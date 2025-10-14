@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T22:39:57.962Z
+  Date Generated: 2025-10-14T12:37:58.386Z
   ---
   Total Files: 121
-  Approx. Tokens: 300684
+  Approx. Tokens: 300791
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (8347 tokens)
+7. src\stores\reportStore.ts (8366 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -79,28 +79,28 @@
 57. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 58. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 59. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
-60. src\app\mission\page.tsx - Lines: 154 - Chars: 13221 - Tokens: 3306
+60. src\app\mission\page.tsx - Lines: 154 - Chars: 14761 - Tokens: 3691
 61. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15701 - Tokens: 3926
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 693 - Chars: 33385 - Tokens: 8347
-70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8212 - Tokens: 2053
+69. src\stores\reportStore.ts - Lines: 724 - Chars: 33462 - Tokens: 8366
+70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8287 - Tokens: 2072
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 282 - Chars: 13199 - Tokens: 3300
+74. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
 78. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
 79. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
-81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
+81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
 83. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
@@ -12001,7 +12001,7 @@ const MissionPage = () => {
                             'the-citizen-architect-has-arrived-p1-img-9.webp',
                         ]}
                         imagePath="part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/"
-                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure..."
+                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure. The person is not coding line-by-line but acting as a conductor, guiding the AI with gestures and high-level commands."
                         imageSide="left"
                     />
 
@@ -12027,7 +12027,7 @@ In stark contrast, coherent competitors are professionalizing their data workfor
                             'the-fissured-workplace-p1-img-11.webp',
                         ]}
                         imagePath="introduction/the-fissured-workplace/prompt-1/"
-                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers..."
+                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers of subcontractors. The legal and financial responsibilities, visualized as heavy weights, are shown being passed down through the cracks, ultimately crushing the individual workers at the very bottom."
                         imageSide="right"
                     />
 
@@ -12054,7 +12054,7 @@ The Data Curation Environment (DCE) is the foundational tool for this new relati
                             'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
-                        imagePrompt="An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+                        imagePrompt="A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is 'The Hidden Curriculum Revealed'."
                         imageSide="left"
                     />
 
@@ -12084,7 +12084,7 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                             'the-new-creative-partnership-p1-img-15.webp',
                         ]}
                         imagePath="part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/"
-                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer... sitting cross-legged on a vast, glowing digital floor... thoughtfully placing one of these blocks into a complex, half-finished digital structure..."
+                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer, the 'Citizen Architect,' sitting cross-legged on a vast, glowing digital floor, reminiscent of a child playing with blocks. In front of them is a large, disorganized pile of glowing, translucent 'digital legos,' each block representing a different piece of technology (some with subtle code snippets or tech logos visible within). The Architect is thoughtfully placing one of these blocks into a complex, half-finished digital structure—the 'aiascent.game.' In one hand, they hold a faint, holographic blueprint labeled 'VISION.' Assisting them are one or more ethereal, glowing AI companions, who are actively sorting through the disorganized pile, finding the perfect 'lego' piece, and bringing it to the Architect's hand just as they need it. The scene is a seamless, intuitive dance between the human's architectural vision and the AI's tireless, organizational power. The lighting is dramatic, with the primary glow coming from the digital floor and the blocks, creating a futuristic and wondrous atmosphere."
                         imageSide="right"
                     />
                 </div>
@@ -12505,29 +12505,25 @@ export default PromptNavigator;
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
-import { FaTimes, FaBroom, FaSpinner } from 'react-icons/fa';
+import { FaTimes, FaBroom, FaSpinner, FaSync } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
+import type { ChatMessage } from '@/stores/reportStore';
 
 interface ReportChatPanelProps {
     reportName: string;
 }
 
-// Regex to strip internal LLM thinking tags and content
-const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
-// C42: Define report-specific default suggestions
-const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
-const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
-
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
         toggleChatPanel, clearReportChatHistory,
-        setReportChatMessage,
+        setReportChatMessage, fetchConversationSuggestions,
+        regenerateSuggestions,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
-        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts,
-        suggestionsStatus // C43: Get new status
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts,
+        suggestionsStatus
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -12539,21 +12535,14 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
         setSuggestedPrompts: state.setSuggestedPrompts,
-        suggestionsStatus: state.suggestionsStatus, // C43
+        suggestionsStatus: state.suggestionsStatus,
     }));
     
     const [isThinking, setIsThinking] = useState(false);
-    const messagesEndRef = useRef<HTMLDivElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     const currentPage = allPages[currentPageIndex];
-
     const chatContainerRef = useRef<HTMLDivElement>(null);
-
-    // C42: Determine which default suggestions to use for this instance
-    const defaultSuggestionsForReport = reportName === 'whitepaper' 
-        ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-        : SHOWCASE_DEFAULT_SUGGESTIONS;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -12567,17 +12556,15 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     };
 
     const parseFinalMessage = (rawText: string): string => {
-        let cleanedText = rawText.replace(thinkingRegex, '').trim();
-
         const finalMessageMarker = '<|channel|>final<|message|>';
-        const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
+        const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
     
         if (finalMessageIndex !== -1) {
-            return cleanedText.substring(finalMessageIndex + finalMessageMarker.length);
+            return rawText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
         const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*?(?=<\|channel\|>|$)/g;
-        cleanedText = cleanedText.replace(analysisRegex, '').trim();
+        let cleanedText = rawText.replace(analysisRegex, '').trim();
         
         return cleanedText;
     };
@@ -12592,7 +12579,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-        
         const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
@@ -12652,50 +12638,16 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- C44: ROBUST POST-STREAM PROCESSING FOR SUGGESTIONS ---
-            console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            
-            const startSuggestionRegex = /:{2,}suggestions:{2,}/;
-            const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
-            const startMatch = fullMessage.match(startSuggestionRegex);
-            const endMatch = fullMessage.match(endSuggestionRegex);
-
-            let finalSuggestions = defaultSuggestionsForReport;
-            let cleanedMessage = fullMessage;
-
-            if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
-                const jsonContentEndIndex = endMatch.index;
-                const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
-                
-                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(jsonContent));
-                
-                try {
-                    const parsed = JSON.parse(jsonContent);
-                    if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
-                        finalSuggestions = parsed;
-                        console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
-                    } else {
-                        console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
-                    }
-                } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", jsonContent);
-                }
-                
-                // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
-            } else {
-                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
-            }
-
-            setSuggestedPrompts(finalSuggestions);
-
-            // Now, perform final message cleaning on the already-suggestions-stripped message
-            const finalContent = parseFinalMessage(cleanedMessage.trim());
-
+            const finalContent = parseFinalMessage(fullMessage.trim());
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
-            // --- END POST-STREAM PROCESSING ---
+
+            // C49: After message is complete, trigger suggestion generation based on conversation
+            const finalHistory = [
+                ...useReportStore.getState().reportChatHistory, 
+                { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
+            ];
+            fetchConversationSuggestions(finalHistory, reportName);
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -12763,7 +12715,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 </div>
             </header>
             
-            {/* Chat History */}
             <div ref={chatContainerRef} className="flex-1 p-3 overflow-y-auto text-sm space-y-4 scroll-smooth">
                 {reportChatHistory.map((msg, index) => (
                     <div key={msg.id || index} className={`flex flex-col ${msg.author === 'You' ? 'items-end' : 'items-start'}`}>
@@ -12785,28 +12736,39 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            {/* Suggested Prompts (Chips) */}
-            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
-                {suggestionsStatus === 'loading' && (
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
-                        <FaSpinner className="animate-spin" />
-                        Generating suggestions...
-                    </div>
-                )}
-                {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
-                    <Badge
-                        key={index}
-                        variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
-                        onClick={() => handleChipClick(prompt)}
-                        title={prompt} // Tooltip on hover
+            <div className="p-2 border-t border-border bg-muted/20">
+                <div className="flex justify-between items-center mb-2 px-1">
+                    <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
+                    <button
+                        onClick={regenerateSuggestions}
+                        className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
+                        title="Generate new suggestions"
+                        disabled={suggestionsStatus === 'loading'}
                     >
-                        {prompt}
-                    </Badge>
-                ))}
+                        <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
+                    </button>
+                </div>
+                <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
+                    {suggestionsStatus === 'loading' && (
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                            <FaSpinner className="animate-spin" />
+                            Generating suggestions...
+                        </div>
+                    )}
+                    {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                        <Badge
+                            key={index}
+                            variant="secondary"
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
+                            onClick={() => handleChipClick(prompt)}
+                            title={prompt}
+                        >
+                            {prompt}
+                        </Badge>
+                    ))}
+                </div>
             </div>
 
-            {/* Input Area */}
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">
                 <textarea
                     ref={textareaRef}
@@ -12998,6 +12960,8 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
+// Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
 // Updated on: C47 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
@@ -13089,6 +13053,14 @@ export type ChatMessage = {
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
+type LastSuggestionRequest = {
+    type: 'page' | 'conversation';
+    payload: {
+        reportName: string;
+        context: string;
+    };
+} | null;
+
 export interface ReportState {
     reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
@@ -13108,6 +13080,7 @@ export interface ReportState {
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
     suggestionsStatus: 'idle' | 'loading' | 'error'; // C43: New state for suggestion generation
+    lastSuggestionRequest: LastSuggestionRequest; // C49: For refresh button
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -13151,7 +13124,9 @@ export interface ReportActions {
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
-    fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
+    fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
+    fetchConversationSuggestions: (history: ChatMessage[], reportName: string) => Promise<void>; // C49: New
+    regenerateSuggestions: () => Promise<void>; // C49: New
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     setReportChatMessage: (id: string, message: string) => void; // C38: New action
@@ -13198,6 +13173,7 @@ const createInitialReportState = (): ReportState => ({
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
     suggestionsStatus: 'idle', // C43
+    lastSuggestionRequest: null, // C49
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -13220,74 +13196,121 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
+const _fetchSuggestions = async (
+    suggestionType: 'page' | 'conversation',
+    context: string,
+    reportName: string
+): Promise<string[] | null> => {
+    const MAX_RETRIES = 3;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    task: 'generate_suggestions',
+                    suggestionType,
+                    context,
+                }),
+            });
+
+            if (response.status >= 500) {
+                console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
+                if (attempt === MAX_RETRIES) throw new Error(`Failed after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
+                await new Promise(res => setTimeout(res, 1000 * attempt));
+                continue;
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`API error: ${response.status} ${errorText}`);
+            }
+
+            const suggestions = await response.json();
+            if (Array.isArray(suggestions) && suggestions.length > 0) {
+                return suggestions;
+            } else {
+                throw new Error('Invalid suggestions format');
+            }
+        } catch (error) {
+            console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
+            if (attempt === MAX_RETRIES) return null;
+        }
+    }
+    return null;
+};
+
 export const useReportStore = createWithEqualityFn<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
-            fetchAndSetSuggestions: async (page: ReportPage, reportName: string) => {
-                if (!page) return;
-                set({ suggestionsStatus: 'loading' });
+            fetchPageSuggestions: async (page: ReportPage, reportName: string) => {
+                if (get().suggestionsStatus === 'loading' || !page) return;
+
+                const context = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                const payload = { reportName, context };
+                set({ suggestionsStatus: 'loading', lastSuggestionRequest: { type: 'page', payload } });
+
+                const suggestions = await _fetchSuggestions('page', context, reportName);
                 
-                const defaultSuggestions = reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+                if (get().reportName !== reportName) {
+                    console.log(`[reportStore] Stale page suggestions for "${reportName}" ignored.`);
+                    return;
+                }
 
-                const MAX_RETRIES = 3;
-                for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-                    try {
-                        const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
-                        
-                        const response = await fetch('/api/chat', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                task: 'generate_suggestions',
-                                pageContext,
-                            }),
-                        });
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
-                        // C47: Only retry on 5xx server errors
-                        if (response.status >= 500) {
-                            console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
-                            if (attempt === MAX_RETRIES) {
-                                throw new Error(`Failed to fetch suggestions after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
-                            }
-                            await new Promise(res => setTimeout(res, 1000 * attempt)); // Basic backoff
-                            continue; // Go to next attempt
-                        }
+            fetchConversationSuggestions: async (history: ChatMessage[], reportName: string) => {
+                if (get().suggestionsStatus === 'loading' || history.length === 0) return;
+                
+                // Take the last 2 messages (user + assistant)
+                const relevantHistory = history.slice(-2);
+                const context = relevantHistory.map(m => `${m.author}: ${m.message}`).join('\n\n');
+                const payload = { reportName, context };
+                set({ suggestionsStatus: 'loading', lastSuggestionRequest: { type: 'conversation', payload } });
 
-                        if (!response.ok) {
-                            const errorText = await response.text();
-                            console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
-                            throw new Error('Failed to fetch suggestions');
-                        }
+                const suggestions = await _fetchSuggestions('conversation', context, reportName);
 
-                        const suggestions = await response.json();
-                        
-                        if (get().reportName !== reportName) {
-                            console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
-                            return;
-                        }
+                if (get().reportName !== reportName) {
+                    console.log(`[reportStore] Stale conversation suggestions for "${reportName}" ignored.`);
+                    return;
+                }
 
-                        if (Array.isArray(suggestions) && suggestions.length > 0) {
-                            set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
-                        } else {
-                            throw new Error('Invalid suggestions format');
-                        }
-                        return; // Success, exit loop
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
-                    } catch (error) {
-                        console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
-                        if (attempt === MAX_RETRIES) {
-                            console.error("[reportStore] Failed to fetch dynamic suggestions after all retries.");
-                            if (get().reportName === reportName) {
-                                set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
-                            }
-                            return;
-                        }
-                    }
+            regenerateSuggestions: async () => {
+                const { lastSuggestionRequest } = get();
+                if (!lastSuggestionRequest || get().suggestionsStatus === 'loading') return;
+
+                const { type, payload } = lastSuggestionRequest;
+                set({ suggestionsStatus: 'loading' });
+
+                const suggestions = await _fetchSuggestions(type, payload.context, payload.reportName);
+
+                if (get().reportName !== payload.reportName) {
+                    console.log(`[reportStore] Stale regenerated suggestions for "${payload.reportName}" ignored.`);
+                    return;
+                }
+                
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = payload.reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
                 }
             },
 
@@ -13297,19 +13320,17 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     set({ isLoading: false });
                     return;
                 }
-                // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
 
-                // C42: Determine and set the correct default suggestions for the report being loaded.
                 const defaultSuggestions = reportName === 'whitepaper' 
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
                 set({ 
-                    reportName: reportName, // C42: Store the report name
+                    reportName: reportName,
                     _hasHydrated: true, 
                     isLoading: true,
-                    suggestedPrompts: defaultSuggestions, // C42: Override the initial default
+                    suggestedPrompts: defaultSuggestions,
                 });
 
                 try {
@@ -13336,7 +13357,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // C37 FIX: Use the basePath from the manifest file instead of a hardcoded path.
                                     const imageBasePath = manifestData.basePath;
                                     
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
@@ -13389,10 +13409,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         isLoading: false,
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
-                    // C43: Fetch suggestions for the initial page
-                    if (reconstructedPages.length > 0) {
-                        get().fetchAndSetSuggestions(reconstructedPages[0], reportName);
-                    }
+                    // C49 FIX: Removed initial suggestion fetch. It will now be triggered by the useEffect in ReportViewer.
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
                     set({ isLoading: false });
@@ -13406,25 +13423,21 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 const currentPage = allPages[currentPageIndex];
                 if (!currentPage || !autoplayEnabled) return;
 
-                // C28 FIX: Adjust durations based on playback speed
                 const actualDuration = duration / playbackSpeed;
                 const actualDurationMs = actualDuration * 1000;
 
-                // Guard against zero or infinite duration which causes rapid cycling
                 if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
 
-                // Set timer for next page
                 const nextPageTimer = setTimeout(() => {
                     if (get().autoplayEnabled) {
                         nextPage();
                     }
-                }, actualDurationMs + 500); // Small buffer
+                }, actualDurationMs + 500);
                 set({ nextPageTimer });
 
                 const images = currentPage.imagePrompts?.[0]?.images;
                 if (!images || images.length <= 1) return;
 
-                // C28 FIX: Calculate time per image based on adjusted duration
                 const timePerImage = actualDurationMs / images.length;
                 
                 const slideshowTimer = setInterval(() => {
@@ -13437,7 +13450,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
-                            // Stop slideshow, nextPageTimer will handle page transition
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -13452,10 +13464,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (slideshowTimer) clearInterval(slideshowTimer);
                 if (nextPageTimer) clearTimeout(nextPageTimer);
                 if (userInitiated) {
-                    // If user interacted, disable autoplay completely
                     set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
                 } else {
-                    // Just clear timers (e.g. between pages)
                     set({ slideshowTimer: null, nextPageTimer: null });
                 }
             },
@@ -13463,13 +13473,11 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
-                // If already playing this text, stop it (toggle behavior)
                 if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
                     stopArbitraryText(); 
                     return;
                 }
                 
-                // Stop any current playback
                 stopArbitraryText();
                 set({ genericPlaybackStatus: 'generating', genericAudioText: text });
 
@@ -13499,14 +13507,13 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
 
             nextPage: () => {
-                get().stopSlideshow(false); // Stop any timers before changing page
+                get().stopSlideshow(false);
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
-                    // If wrapping around to start, disable autoplay
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
-                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' }; // Reset audio status
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
                 });
             },
             prevPage: () => {
@@ -13514,7 +13521,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
-                    playbackStatus: 'idle', // Reset audio status
+                    playbackStatus: 'idle',
                 }));
             },
             goToPageByIndex: (pageIndex) => {
@@ -13527,7 +13534,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
-                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
@@ -13537,7 +13543,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
-                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
@@ -13545,7 +13550,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
-                // C15 Fix: prevent hijacking inputs
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
                 
                 if (event.key.startsWith('Arrow')) event.preventDefault();
@@ -13604,60 +13608,51 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                   }
             },
             setReportChatInput: (input) => set({ reportChatInput: input }),
-            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
+            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }),
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
-            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
+            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
-                // C42: Use report-specific defaults when clearing chat.
-                const { reportName, fetchAndSetSuggestions, allPages, currentPageIndex } = get();
-                const defaultSuggestions = reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
-
+                const { reportName, fetchPageSuggestions, allPages, currentPageIndex } = get();
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
                 });
-                // C43: Re-fetch dynamic suggestions for the current page after clearing.
                 const currentPage = allPages[currentPageIndex];
                 if (currentPage && reportName) {
-                    fetchAndSetSuggestions(currentPage, reportName);
-                } else {
-                    set({ suggestedPrompts: defaultSuggestions });
+                    fetchPageSuggestions(currentPage, reportName);
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
-            // Main Report Audio Actions
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
             setAutoplay: (enabled) => { 
-                get().stopSlideshow(!enabled); // If disabling, stop. If enabling, don't stop yet.
+                get().stopSlideshow(!enabled);
                 set({ autoplayEnabled: enabled }); 
                 if (enabled) {
-                    // Reset image index when enabling autoplay to start slideshow from beginning
                     set({ currentImageIndex: 0 });
                 }
             },
-            setCurrentAudio: (url, pageIndex) => {
-                const currentUrl = get().currentAudioUrl;
-                if (currentUrl) URL.revokeObjectURL(currentUrl);
-                set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 });
-            },
+            setCurrentAudio: (url, pageIndex) => set(state => {
+                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
+                    return state;
+                }
+                return {
+                    currentAudioUrl: url,
+                    currentAudioPageIndex: pageIndex,
+                    playbackStatus: url ? 'buffering' : 'idle',
+                    currentTime: 0,
+                    duration: 0,
+                };
+            }),
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: level }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            setPlaybackSpeed: (speed) => {
-                set({ playbackSpeed: speed });
-                // C28 FIX: Restart slideshow with new speed if playing
-                if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
-                    get().startSlideshow();
-                }
-            },
+            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -13665,7 +13660,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             onRehydrateStorage: () => (state) => {
                 if (state) state.setHasHydrated(true);
             },
-            // C26: Use createWithEqualityFn for Zustand 4.5+ compatibility
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,
@@ -13681,7 +13675,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 volume: state.volume,
                 isMuted: state.isMuted,
                 playbackSpeed: state.playbackSpeed,
-                // Do not persist chat history or suggestions to keep session fresh
             }),
         }
     )
@@ -13714,7 +13707,7 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions, setIsFullscreen } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -13751,12 +13744,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C43: Fetch suggestions when the current page changes.
+    // C49: Fetch suggestions when the current page changes. This is now the single source of truth for page-based suggestions.
     useEffect(() => {
         if (currentPage) {
-            fetchAndSetSuggestions(currentPage, reportName);
+            fetchPageSuggestions(currentPage, reportName);
         }
-    }, [currentPage, reportName, fetchAndSetSuggestions]);
+    }, [currentPage, reportName, fetchPageSuggestions]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -13800,9 +13793,9 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     
     return (
         // C45: Added ref and dynamic classes for fullscreen
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? '' : 'pt-16'}`}>
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
                 </div>
             )}
@@ -14218,14 +14211,6 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// C40: Hardened suggestion instruction.
-const suggestionInstruction = `
-Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this, with no other text after the closing delimiter:
-:::suggestions:::[
-  "Question 1?",
-  "Question 2?"
-]:::end_suggestions:::`;
-
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
 - For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
@@ -14242,26 +14227,30 @@ const systemPrompts = {
 Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
 
 If the answer isn't directly in the context, state that, but still try to provide related information if available. Use markdown for formatting as described below to enhance clarity. Do not invent information.
-${markdownFormattingInstruction}
-${suggestionInstruction}`,
+${markdownFormattingInstruction}`,
     report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
 If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
-${markdownFormattingInstruction}
-${suggestionInstruction}`
+${markdownFormattingInstruction}`
 };
 
-// C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+// C49: New prompts for decoupled suggestion generation
+const suggestionSystemPrompts = {
+    page: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
-["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
+["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
+    conversation: `Your ONLY task is to analyze the following conversation history and generate 2-4 insightful follow-up questions the user might ask next. The goal is to continue the current conversational thread. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+
+Example of a PERFECT response:
+["Can you elaborate on the second point?", "How does that concept apply to a real-world scenario?"]`
+};
 
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report', task } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -14275,15 +14264,19 @@ export async function POST(request: Request) {
 
   const completionsUrl = `${llmUrl}/v1/completions`;
 
-  // C43: Handle suggestion generation task
+  // C49: Refactored suggestion generation task
   if (task === 'generate_suggestions') {
+    const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
+    const systemPrompt = suggestionSystemPrompts[suggestionPromptType as keyof typeof suggestionSystemPrompts];
+    const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
+
     try {
         const suggestionPrompt = `
-System: ${suggestionSystemPrompt}
+System: ${systemPrompt}
 
---- START DOCUMENT TEXT ---
-${pageContext}
---- END DOCUMENT TEXT ---
+--- START ${contextTypeLabel} ---
+${context}
+--- END ${contextTypeLabel} ---
 
 User: Generate questions based on the text above.
 
@@ -14295,9 +14288,9 @@ Assistant:`;
             body: JSON.stringify({
                 model: 'unsloth/gpt-oss-20b',
                 prompt: suggestionPrompt,
-                max_tokens: 256,
+                max_tokens: 512,
                 temperature: 0.5,
-                stream: false, // Non-streaming for this task
+                stream: false,
             }),
         });
 
@@ -14310,21 +14303,22 @@ Assistant:`;
         let content = data.choices?.[0]?.text || '[]';
         console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
 
-        // C47: Isolate the assistant's final message to avoid parsing the analysis block.
         const assistantMarker = '<|start|>assistant';
         const assistantPartIndex = content.lastIndexOf(assistantMarker);
         if (assistantPartIndex !== -1) {
             content = content.substring(assistantPartIndex);
         }
 
-        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/s); // 's' flag for multiline
-        const jsonString = jsonMatch ? jsonMatch[0] : null;
-        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
-
-        if (!jsonString) {
-            console.warn(`[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: ${content}`);
-            throw new Error('Invalid suggestions format from LLM');
+        const firstBracket = content.indexOf('[');
+        const lastBracket = content.lastIndexOf(']');
+        
+        if (firstBracket === -1 || lastBracket === -1 || lastBracket < firstBracket) {
+            console.warn(`[Chat API - Suggestions] Could not find a valid JSON array structure in response: ${content}`);
+            throw new Error('Invalid suggestions format from LLM: No array found.');
         }
+
+        const jsonString = content.substring(firstBracket, lastBracket + 1);
+        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
         
         try {
             const suggestions = JSON.parse(jsonString);
@@ -15172,7 +15166,7 @@ The following plan maps the existing narrative sections of the Mission page to s
     *   `the-pedagogical-engine-cam-p1-img-1.webp`
     *   `the-pedagogical-engine-cam-p1-img-6.webp`
     *   `the-pedagogical-engine-cam-p1-img-12.webp`
-*   **Image Prompt:** "An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+*   **Image Prompt:** "A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is \"The Hidden Curriculum Revealed\"."
 *   **Content:** The existing text from the "Cognitive Apprenticeship" section.
 
 ---

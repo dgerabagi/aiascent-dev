@@ -11,7 +11,9 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 48 - still not robust enough. do better logging (or make a test case?)
+Current Cycle 50 - suggestion chips are working! great work! now lets enhance overall content and plan the community
+Cycle 49 - refactoring question chip solution out of the chat response
+Cycle 48 - still not robust enough.
 Cycle 47 - continue working on robustness
 Cycle 46 - final solution
 Cycle 45 - continue working on parsing of suggestions/overall suggestions solution
@@ -449,6 +451,104 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 50>
+<Cycle Context>
+fantastic! okay great... okay... now... lets spend a little time on the content itself. for instance, we focused a cycle on the mission page and the result was a doubling in the length of the perceived short paragraphs in that section, but also those sections were enriched immensely in the process, relative to the information they conveyed before and after. lets do the same to the learn page. what we did was we first created an artifact (or artifacts) for each of the sections on that page, and then articulated out our description or definition of that (eg. cognitive capital) and then from that we were able to construct a much more impactful narrative. let us now do the same for the learn page as those are also in the same situation, all of the paragraphs are relatively short and could stand to be doubled in length, and i would be beside myself if i didnt ensure that we did our best with those extra paragraphs.
+
+within the whitepaper, lets make the following change:
+<whitepaper change>
+process as asset page - lets add a better tl;dr and content. that was just ported over language from the original but for our new interactive whitepaper use case we can do something like we did on the ascent report. introduce ascentia, the controls, etc. and also what the white paper is discussing. if you can just create an artifact which contains this, you wont have to reproduce the entire whitepaper json.
+</whitepaper change>
+
+there is a bit of a cognitive/associative disconnect on the `Our Strategy: Cognitive Apprenticeship`. i recall that when i was making these images, the image prompt was what i started with, but when i saw those images produced, i asked for slight changes. i had asked for instead of it be the DCIA (me, basically) personified as the expert teaching, in my view, it really was the AI who taught me, and so what I learned could be learned by others. if i am teaching them anything, i'm teaching them that. in other words, i shouldnt be what basicaly amounts to the first thing described in the image, (`An expert DCIA...`, but rather, it should be the AI that the user is interacting with, and its in that interaction that the pedagogical engine can churn, with the hidden curriculum being built within the apprentice as they're learning. thats ultimately what the images have shifted to, but i had never gone back within the reports content itself to update that, and so now we have a bit of a disconnect in the central themes of this particular narrative, with regards to the image prompt. in this prompt ill provide with some of the images for this section so that you can write an updated image prompt.
+
+finally, i have gotten a discord setup and would like to add links to it throughout the site, where appropriate. here is the invite link url: https://discord.gg/HYurQXDWPm
+
+below i will write out my thoughts to my friend who will be managing the discord community. i would like for you to put my thoughts into words in the form of an artifact which would be a good plan of how we, given the DCE and what we are up to after on about, how best to manage/maintain/grow the discord community. 
+</Cycle Context>
+<Ephemeral Context>
+<discord convo>
+im going to add an invite link url to the discord, can you continue to develop the discord community?
+[7:31 AM]
+just drop the website repo in your discord bot project as context (C:\Projects\Discord-Bot\context\aiascent-dev-website\flattened-repo.md)
+[7:31 AM]
+note: rename the flattened_repo.md to flattened-repo.md so that you can select it as context
+[7:31 AM]
+then, for instance, say okay now lets make an artifact for the discord rules
+[7:32 AM]
+and then when it makes rules
+[7:32 AM]
+itll be rules for our dce and not basic generic discord rules
+[7:32 AM]
+then just go through the discord and build it out piece by piece, as you see things are missing or can be improved
+[7:33 AM]
+i think the way we can monetize this is we can do this, i can commit to weekly sessions where i show how to use the DCE
+[7:33 AM]
+but people who want to learn more faster or have issues/problems with their project can get consulting
+[7:34 AM]
+you could devise an entire solution within discord to manage and maintain such a system
+[7:35 AM]
+and i would commit to whatever people request, we can monetize together, you also have plenty of knowledge that can be shared to people as well, you'd be just as valuable to connect with people, because you can then take those questions u cant answer to me and get them the answers u see?
+[7:35 AM]
+like thats what id like for you to manage with the discord community, thats what i envision
+</discord convo>
+</Ephemeral Context>
+<Previous Cycle 49 Summary of Actions>
+I have analyzed the two primary issues from the latest cycle. The first issue, where suggestion chips "cycle" upon opening the chat panel, appears to be caused by multiple concurrent fetch requests being fired, likely due to component re-renders, which then trigger our retry logic and create a flashing effect in the UI. The second issue, where dynamic suggestions are not appearing after a chat response, is due to the LLM not returning the expected `:::suggestions:::` block, and a lack of detailed logs makes it difficult to diagnose why.
+
+My course of action is to address both issues by improving state management, making the backend parsing more robust, and adding the detailed "play-by-play" logging you requested to both the frontend and backend.
+
+First, to fix the "cycling" behavior, I will add a guard to the `fetchAndSetSuggestions` action in our state store. This will prevent a new suggestion request from being initiated if one is already in progress, effectively debouncing the calls and stabilizing the UI.
+
+Second, to improve the reliability of the initial suggestion generation, I will adjust the backend API. I will increase the `max_tokens` allocated for the suggestion generation task to prevent the LLM's response from being truncated, which is the likely cause of the parsing failures. I will also make the JSON extraction logic more resilient to handle cases where the LLM response is still slightly malformed.
+
+Finally, to address the lack of diagnostics for why dynamic suggestions fail after a chat interaction, I will add comprehensive logging to the `ReportChatPanel`. This new logging will provide a clear, step-by-step trace of the parsing process, showing the raw message, the results of the regex matching for the suggestion delimiters, the extracted content, and the outcome of the JSON parsing attempt. This will give you the precise information needed to diagnose future parsing failures.
+
+1.  **Update `src/stores/reportStore.ts`:** I will add a guard at the beginning of the `fetchAndSetSuggestions` action. This guard will check if `suggestionsStatus` is already `'loading'` and, if so, it will log that a fetch is in progress and exit, preventing multiple concurrent requests.
+2.  **Update `src/app/api/chat/route.ts`:** In the handler for the `task: 'generate_suggestions'`, I will increase the `max_tokens` from 256 to 512 to reduce the chance of the LLM response being cut off. I will also replace the current JSON-matching regex with a simpler, more robust method that finds the first `[` and last `]` in the assistant's final message block to extract the JSON array, which is less likely to fail on unterminated strings.
+3.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:** Within the `sendMessage` function, after the response stream is complete, I will inject a series of detailed `console.log` statements. These logs will create a "play-by-play" of the dynamic suggestion parsing logic, documenting the attempt to find the `:::suggestions:::` and `:::end_suggestions:::` delimiters, the content extracted between them, and the success or failure of the subsequent JSON parsing.
+</Previous Cycle 49 Summary of Actions>
+</Cycle 50>
+
+<Cycle 49>
+<Cycle Context>
+great! now here is how i would like to adjust the current functionality... we need to generate chips after two different events. the first one is when the user changes to a new page. we simply send that pages content through the RAG with the instruction to generate the questions on the results. then, we need to have a second generation method, one which occurs after the AI responds to the user. in that case, it needs to be the latest bits of the conversation that should go through the RAG, with the same instruction to generate the questions on the results. in order to do this, we need to fully 'de-couple' the question generation from out of the response instructions. right now, what we are currently trying to do amounts to us asking the AI nicely to write out the questions such that our parser can produce them. instead, we can just make tht its own tool code call and that way make the input/output much more controlled and easier for both sides, us on the parsing and the AI on the generation.
+
+then, in addition, while using the tool i had these improvement ideas
+
+1. lets give a title to the suggestion chip section. 
+2. let us also add a refresh button which will reload and generate new questions. whatever the last request was, whether it was a request for `questions after a response`, or a request for `questions after a page load`, we would just re-run that and re-generate new responses for the user.
+
+finally, i am noticing a behavior where the question chips will get produced, ill see them populate, but then a moment (few seconds) later, i see them update to a new set of questions. im not sure why we would refresh a successfully parsed/created list of questions? in ephemeral ill place logs of the following actions:
+1. starting up server.
+2. going to homepage.
+3. opening the Ask Ascentia.
+4. observing the refresh bug
+5. switching to showcase, then the ascent report.
+6. opening the Ask Ascentia.
+7. observing the refresh bug
+
+in both cases, i can see two sets of suggested questions, which is the issue itself, see if you can correct that.
+</Cycle Context>
+<Previous Cycle 48 Summary of Actions>
+I have analyzed the feedback from the previous cycle and the provided backend logs. My course of action is to address the UI issue with the progress bar's text visibility and to implement significant robustness improvements for the dynamic suggestion generation feature, both on the backend and frontend.
+
+First, I will fix the text contrast on the report progress bar. In dark mode, the percentage text is currently difficult to read against both the filled and unfilled portions of the bar. I will adjust the text color class in the `ReportProgressBar` component to ensure it has proper contrast regardless of the progress percentage or the selected theme.
+
+Second, I will enhance the suggestion parsing logic in the backend. Based on your analysis of the raw LLM responses, the model separates its "thinking" process from its final output using specific markers. I will update the API to only parse the content from the final `assistant` block, ignoring the `analysis` block. This will prevent parsing errors caused by example or malformed JSON in the model's thought process.
+
+Finally, to improve the user experience when the suggestion generation fails, I will implement the requested retry mechanism. The frontend state management will be updated to catch server-side errors (like the ones caused by truncated LLM responses) and automatically retry the request a few times in the background. This will keep the "Generating suggestions..." animation active and hide transient failures from the user, presenting a more seamless experience.
+
+These changes will resolve the visual bug in the report viewer and make the dynamic suggestion feature significantly more resilient and user-friendly.
+
+1.  **Fix Progress Bar Contrast in `src/components/report-viewer/ReportProgressBar.tsx`:** I will modify the `<span>` element that displays the percentage. I will change the `text-primary-foreground` class to `text-foreground`. In conjunction with the existing `mix-blend-difference` style, this will ensure the text color inverts correctly to a high-contrast color against both the dark gray unfilled bar and the bright blue filled bar in dark mode, and function correctly in light mode as well.
+
+2.  **Improve Backend Parsing in `src/app/api/chat/route.ts`:** I will update the suggestion generation logic. Before attempting to extract the JSON array, I will first process the raw response from the LLM to isolate only the content produced by the `assistant`. This will be done by finding the last occurrence of the `<|start|>assistant` marker and parsing only the text that follows it, making the extraction immune to malformed JSON within the model's preceding `analysis` block.
+
+3.  **Implement Frontend Retry Logic in `src/stores/reportStore.ts`:** I will refactor the `fetchAndSetSuggestions` action. I will wrap the `fetch` call in a retry loop (e.g., up to 3 attempts). This loop will only trigger for 5xx server-side errors, which are common with transient LLM issues. For the duration of these retries, the `suggestionsStatus` will remain `'loading'`, providing a seamless experience for the user. If all retries fail, it will then transition to the `'error'` state.
+</Previous Cycle 48 Summary of Actions>
+</Cycle 49>
+
 <Cycle 48>
 <Cycle Context>
 okay, here is the behavior im observing:
@@ -457,130 +557,6 @@ ill open up the chat panel, and the suggestion chips will cycle a few times. tha
 
 once it settled down, i selected one, got a response, and it seems that i did not get valid suggestions back, im only seeing the default chips. again, you need to create a play-by-play in the logs such that you can diagnose this clearly. there are missing gaps in whats really going on that im having to explain to you, when you really could just be making the appropriate logs.
 </Cycle Context>
-<Ephemeral Context>
-<console logs>
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce a JSON array of strings (questions). The user wants follow-up questions about the document content. The document is minimal: Page Title: Process as Asset, TL;DR: A Whitepaper on Data Curation Environment, Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\n\nWe need to generate 2-4 insightful follow-up questions a user might ask to learn more. So we can ask about what is DCE, how it works, benefits, challenges, etc. Provide array of strings in JSON. No other text. Let's produce maybe 3 or 4 questions.\n\nPossible questions:\n\n1. What specific human-AI collaboration strategies are proposed in the Process as Asset framework?\n2. How does the Data Curation Environment (DCE) accelerate specialized content creation compared to traditional methods?\n3. Can you provide examples of industries that would benefit most from implementing the DCE?\n4. What metrics or KPIs are recommended for measuring success when adopting this approach?\n\nReturn array: [\"What specific human-AI collaboration strategies are proposed in the Process as Asset framework?\", \"How does the Data Curation Environment (DCE) accelerate"    
-[Chat API - Suggestions] Extracted JSON string: null
-[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>We need to produce a JSON array of strings (questions). The user wants follow-up questions about the document content. The document is minimal: Page Title: Process as Asset, TL;DR: A Whitepaper on Data Curation Environment, Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.
-
-We need to generate 2-4 insightful follow-up questions a user might ask to learn more. So we can ask about what is DCE, how it works, benefits, challenges, etc. Provide array of strings in JSON. No other text. Let's produce maybe 3 or 4 questions.
-
-Possible questions:
-
-1. What specific human-AI collaboration strategies are proposed in the Process as Asset framework?
-2. How does the Data Curation Environment (DCE) accelerate specialized content creation compared to traditional methods?
-3. Can you provide examples of industries that would benefit most from implementing the DCE?
-4. What metrics or KPIs are recommended for measuring success when adopting this approach?
-
-Return array: ["What specific human-AI collaboration strategies are proposed in the Process as Asset framework?", "How does the Data Curation Environment (DCE) accelerate
-[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
- POST /api/chat 500 in 3491ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to output a JSON array of strings with 2-4 insightful follow-up questions that a user might ask to learn more about the document. The content is minimal: It's a whitepaper titled \"Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration.\" Date September 4, 2025. For High-Level Stakeholders.\n\nWe need to produce 2-4 follow-up questions. They should be insightful, relevant to the topic: Data Curation Environment (DCE), Process as Asset, specialized content creation, structured human-AI collaboration. Could ask about what is DCE? How does Process as Asset accelerate content creation? What are key benefits for stakeholders? etc.\n\nReturn JSON array of strings. No other text.\n\nLet's produce 4 questions.\n\nExamples:\n\n- \"What specific processes within the Data Curation Environment are treated as assets, and how do they contribute to accelerated content creation?\"\n- \"Can you explain the role of structured human-AI collaboration in this framework and provide examples of its application?\"\n- \"How does the 'Process as Asset' approach differ from traditional content creation workflows, especially for high-level stakeholders?\"\n- \"What measurable outcomes or metrics were used to evaluate the effectiveness of this whitepaper's proposed"
-[Chat API - Suggestions] Extracted JSON string: null
-[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>We need to output a JSON array of strings with 2-4 insightful follow-up questions that a user might ask to learn more about the document. The content is minimal: It's a whitepaper titled "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration." Date September 4, 2025. For High-Level Stakeholders.
-
-We need to produce 2-4 follow-up questions. They should be insightful, relevant to the topic: Data Curation Environment (DCE), Process as Asset, specialized content creation, structured human-AI collaboration. Could ask about what is DCE? How does Process as Asset accelerate content creation? What are key benefits for stakeholders? etc.
-
-Return JSON array of strings. No other text.
-
-Let's produce 4 questions.
-
-Examples:
-
-- "What specific processes within the Data Curation Environment are treated as assets, and how do they contribute to accelerated content creation?"
-- "Can you explain the role of structured human-AI collaboration in this framework and provide examples of its application?"
-- "How does the 'Process as Asset' approach differ from traditional content creation workflows, especially for high-level stakeholders?"
-- "What measurable outcomes or metrics were used to evaluate the effectiveness of this whitepaper's proposed
-[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
- POST /api/chat 500 in 6157ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions a user might ask to learn more about the document content. The document is minimal: title \"Process as Asset\", TL;DR: whitepaper on Data Curation Environment (DCE). Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\n\nSo we want insightful follow-up questions about the whitepaper's content, methodology, implications, etc.\n\nWe need 2-4 questions. Provide them in JSON array of strings. No other text. Let's craft:\n\n1. \"What specific processes are considered as assets within the Data Curation Environment?\"\n2. \"How does structured Human-AI collaboration accelerate specialized content creation according to the whitepaper?\"\n3. \"Which industries or use cases were targeted for high-level stakeholders in this whitepaper?\"\n4. \"Can you explain the key metrics used to evaluate success of the DCE implementation?\"\n\nReturn array.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"What specific processes are considered as assets within the Data Curation Environment?\", \"How does structured Human‑AI collaboration accelerate specialized content creation according to the whitepaper?\", \"Which industries or use cases were"
-[Chat API - Suggestions] Extracted JSON string: null
-[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|start|>assistant<|channel|>final <|constrain|>JSON<|message|>["What specific processes are considered as assets within the Data Curation Environment?", "How does structured Human‑AI collaboration accelerate specialized content creation according to the whitepaper?", "Which industries or use cases were
-[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
- POST /api/chat 500 in 8710ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions a user might ask to learn more about the content. The document is minimal: \"Page Title: Process as Asset. TL;DR: A Whitepaper on the Data Curation Environment (DCE). Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\"\n\nWe need to produce 2-4 insightful follow-up questions.\n\nPossible questions:\n\n1. What are the key components of the Data Curation Environment (DCE) described in the whitepaper?\n2. How does the \"Process as Asset\" approach differ from traditional content creation methodologies?\n3. In what ways does structured human-AI collaboration accelerate specialized content creation according to the paper?\n4. Who are the intended high-level stakeholders and how can they implement this framework?\n\nWe need JSON array of strings, no other text.\n\nReturn something like:\n\n[\"What are the main components of the Data Curation Environment (DCE) described in the whitepaper?\", \"How does the 'Process as Asset' approach differ from traditional content creation methods?\", \"In what ways does structured human-AI collaboration accelerate specialized content creation according to the paper?\","
-[Chat API - Suggestions] Extracted JSON string: null
-[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions a user might ask to learn more about the content. The document is minimal: "Page Title: Process as Asset. TL;DR: A Whitepaper on the Data Curation Environment (DCE). Content: Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders."
-
-We need to produce 2-4 insightful follow-up questions.
-
-Possible questions:
-
-1. What are the key components of the Data Curation Environment (DCE) described in the whitepaper?
-2. How does the "Process as Asset" approach differ from traditional content creation methodologies?
-3. In what ways does structured human-AI collaboration accelerate specialized content creation according to the paper?
-4. Who are the intended high-level stakeholders and how can they implement this framework?
-
-We need JSON array of strings, no other text.
-
-Return something like:
-
-["What are the main components of the Data Curation Environment (DCE) described in the whitepaper?", "How does the 'Process as Asset' approach differ from traditional content creation methods?", "In what ways does structured human-AI collaboration accelerate specialized content creation according to the paper?",
-[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
- POST /api/chat 500 in 10959ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions. Should be 2-4 questions. Based on content: \"Process as Asset\", \"Data Curation Environment (DCE)\", \"Accelerating Specialized Content Creation through Structured Human-AI Collaboration.\" So possible questions:\n\n1. How does the Data Curation Environment facilitate structured human-AI collaboration?\n2. What specific specialized content types benefit most from the Process as Asset approach?\n3. Can you explain how 'Process as Asset' differs from traditional process management frameworks?\n4. What metrics or KPIs are used to evaluate acceleration of content creation in this model?\n\nReturn array.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"How does the Data Curation Environment facilitate structured human‑AI collaboration?\", \"What specific specialized content types benefit most from the Process as Asset approach?\", \"Can you explain how 'Process as Asset' differs from traditional process management frameworks?\", \"What metrics or KPIs are used to evaluate acceleration of content creation in this model?\"]"
-[Chat API - Suggestions] Extracted JSON string: ["How does the Data Curation Environment facilitate structured human‑AI collaboration?", "What specific specialized content types benefit most from the Process as Asset approach?", "Can you explain how 'Process as Asset' differs from traditional process management frameworks?", "What metrics or KPIs are used to evaluate acceleration of content creation in this model?"]
-[Chat API - Suggestions] Successfully parsed suggestions: [
-  'How does the Data Curation Environment facilitate structured human‑AI collaboration?',
-  'What specific specialized content types benefit most from the Process as Asset approach?',
-  "Can you explain how 'Process as Asset' differs from traditional process management frameworks?",
-  'What metrics or KPIs are used to evaluate acceleration of content creation in this model?'
-]
- POST /api/chat 200 in 8436ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to generate 2-4 insightful follow-up questions a user might ask to learn more about the content. The content is minimal: \"Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\" So we can ask:\n\n- What specific specialized content types does the DCE target?\n- How does Process as Asset differ from traditional content creation workflows?\n- Can you explain how structured human-AI collaboration is implemented in the DCE?\n- What are the expected ROI or benefits for stakeholders?\n\nWe need to output JSON array of strings. No other text.\n\nLet's produce 4 questions.<|end|><|start|>assistant<|channel|>final <|constrain|>json<|message|>[\"What specific types of specialized content does the Data Curation Environment target?\", \"How does Process as Asset differ from traditional content creation workflows?\", \"Can you explain how structured human–AI collaboration is implemented in the DCE?\", \"What ROI or benefits can high-level stakeholders expect from adopting this approach?\"]"
-[Chat API - Suggestions] Extracted JSON string: ["What specific types of specialized content does the Data Curation Environment target?", "How does Process as Asset differ from traditional content creation workflows?", "Can you explain how structured human–AI collaboration is implemented in the DCE?", "What ROI or benefits can high-level stakeholders expect from adopting this approach?"]
-[Chat API - Suggestions] Successfully parsed suggestions: [
-  'What specific types of specialized content does the Data Curation Environment target?',
-  'How does Process as Asset differ from traditional content creation workflows?',
-  'Can you explain how structured human–AI collaboration is implemented in the DCE?',
-  'What ROI or benefits can high-level stakeholders expect from adopting this approach?'
-]
- POST /api/chat 200 in 8024ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions about the document. The content is minimal: \"Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration.\" It's a whitepaper for high-level stakeholders, titled Process as Asset: A Whitepaper on the Data Curation Environment (DCE). So potential questions: What are key benefits? How does DCE differ from other data curation tools? What is the role of structured human-AI collaboration? What specific processes become assets? Implementation challenges? ROI? Use cases. Also ask about timeline, adoption.\n\nWe need 2-4 insightful follow-up questions. Provide JSON array of strings. Let's produce maybe 3 or 4. Ensure they are relevant and not too generic. Provide them as strings in an array. No other text.<|end|><|start|>assistant<|channel|>final<|message|>[\"What specific processes within the Data Curation Environment (DCE) are being treated as assets, and how does that shift impact organizational value?\", \"How does the whitepaper define and operationalize 'structured human‑AI collaboration' to accelerate specialized content creation, and what best practices are recommended for high-level stakeholders?\", \"Can you provide case studies or quantitative evidence demonstrating ROI or performance gains from adopting Process as"
-[Chat API - Suggestions] Extracted JSON string: null
-[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|start|>assistant<|channel|>final<|message|>["What specific processes within the Data Curation Environment (DCE) are being treated as assets, and how does that shift impact organizational value?", "How does the whitepaper define and operationalize 'structured human‑AI collaboration' to accelerate specialized content creation, and what best practices are recommended for high-level stakeholders?", "Can you provide case studies or quantitative evidence demonstrating ROI or performance gains from adopting Process as
-[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
- POST /api/chat 500 in 8025ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with follow-up questions a user might ask to learn more about this whitepaper. Provide 2-4 insightful follow-up questions. The content is minimal. We can ask about what DCE is, how Process as Asset differs from other methods, what specialized content creation means, structured human-AI collaboration details, benefits for stakeholders, etc.\n\nWe should output JSON array of strings only. No explanation. Ensure valid JSON. Let's craft 3-4 questions:\n\n1. \"What specific problems in content creation does the Data Curation Environment aim to solve?\"\n2. \"Can you explain how 'Process as Asset' transforms traditional workflows into structured human-AI collaboration?\"\n3. \"What are the key benefits for high-level stakeholders when adopting this approach?\"\n4. \"How does the whitepaper define and measure 'specialized content creation' in practice?\"\n\nReturn array of these strings.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"What specific problems in content creation does the Data Curation Environment aim to solve?\", \"Can you explain how 'Process as Asset' transforms traditional workflows into structured human-AI collaboration?\", \"What are the key benefits for high-level stakeholders when adopting this approach?\", \"How does the whitepaper define"
-[Chat API - Suggestions] Extracted JSON string: null
-[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: <|start|>assistant<|channel|>final <|constrain|>JSON<|message|>["What specific problems in content creation does the Data Curation Environment aim to solve?", "Can you explain how 'Process as Asset' transforms traditional workflows into structured human-AI collaboration?", "What are the key benefits for high-level stakeholders when adopting this approach?", "How does the whitepaper define
-[Chat API - Suggestions] Error generating suggestions: Invalid suggestions format from LLM
- POST /api/chat 500 in 8017ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce JSON array of strings with 2-4 insightful follow-up questions a user might ask to learn more. The content is minimal: \"Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.\" So we can ask about what is Process as Asset? What does DCE entail? How structured collaboration works? etc.\n\nReturn JSON array of strings. Let's produce maybe 3-4 questions.<|end|><|start|>assistant<|channel|>final<|message|>[\"What specific benefits does 'Process as Asset' bring to specialized content creation?\", \"How does the Data Curation Environment (DCE) support structured Human-AI collaboration in this context?\", \"Can you explain how stakeholders can leverage these processes for higher-level decision making?\", \"What are the key challenges and solutions identified in the whitepaper regarding AI integration?\" ]"
-[Chat API - Suggestions] Extracted JSON string: ["What specific benefits does 'Process as Asset' bring to specialized content creation?", "How does the Data Curation Environment (DCE) support structured Human-AI collaboration in this context?", "Can you explain how stakeholders can leverage these processes for higher-level decision making?", "What are the key challenges and solutions identified in the whitepaper regarding AI integration?" ]
-[Chat API - Suggestions] Successfully parsed suggestions: [
-  "What specific benefits does 'Process as Asset' bring to specialized content creation?",
-  'How does the Data Curation Environment (DCE) support structured Human-AI collaboration in this context?',
-  'Can you explain how stakeholders can leverage these processes for higher-level decision making?',
-  'What are the key challenges and solutions identified in the whitepaper regarding AI integration?'
-]
- POST /api/chat 200 in 2444ms
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>The user wants follow-up questions to learn more about the whitepaper content. We need 2-4 insightful follow-up questions. Must output JSON array of strings. No other text.\n\nPossible questions:\n1. What are the key components of the Data Curation Environment (DCE) described in the whitepaper?\n2. How does Process as Asset accelerate specialized content creation compared to traditional methods?\n3. Can you explain the role of structured human-AI collaboration within the DCE framework?\n4. What specific use cases or industries were highlighted as benefiting from this approach?\n\nMake sure they are strings in array.\n\nReturn JSON array.<|end|><|start|>assistant<|channel|>final <|constrain|>JSON<|message|>[\"What are the key components of the Data Curation Environment (DCE) described in the whitepaper?\", \"How does Process as Asset accelerate specialized content creation compared to traditional methods?\", \"Can you explain the role of structured human‑AI collaboration within the DCE framework?\", \"What specific use cases or industries were highlighted as benefiting from this approach?\"]"
-[Chat API - Suggestions] Extracted JSON string: ["What are the key components of the Data Curation Environment (DCE) described in the whitepaper?", "How does Process as Asset accelerate specialized content creation compared to traditional methods?", "Can you explain the role of structured human‑AI collaboration within the DCE framework?", "What specific use cases or industries were highlighted as benefiting from this approach?"]
-[Chat API - Suggestions] Successfully parsed suggestions: [
-  'What are the key components of the Data Curation Environment (DCE) described in the whitepaper?',
-  'How does Process as Asset accelerate specialized content creation compared to traditional methods?',
-  'Can you explain the role of structured human‑AI collaboration within the DCE framework?',
-  'What specific use cases or industries were highlighted as benefiting from this approach?'
-]
- POST /api/chat 200 in 2032ms
-[Chat API] RAG Diagnostic for prompt: "How does Process as Asset accelerate specialized content creation compared to traditional methods?" using KB: 'dce'
-[Chat API] Retrieved 6 documents from 'dce' KB:
-  Doc 1 (Dist: 0.6228): "e editor that powers VS Code itself, though it's much heavier).
-    *   These c..."
-  Doc 2 (Dist: 0.6519): "& Curator
-
-  - **Key/Value for A0:**
-  - **Description:** A whitepaper target..."
-  Doc 3 (Dist: 0.6521): "initialized and loses its transient `isGenerating` state.
-
-## 2. The New Workf..."
-  Doc 4 (Dist: 0.6649): "ss, it will also create a `DCE_README.md` file within the `src/Artifacts` direct..."
-  Doc 5 (Dist: 0.6685): "rsion control, allowing operators to instantly apply an AI's suggestion to the l..."
-  Doc 6 (Dist: 0.6822): "eatures of VS Code's own diffing engine (e.g., syntax highlighting, minimap, inl..."
- POST /api/chat 200 in 17217ms
-</console logs>
-</Ephemeral Context>
 <Previous Cycle 47 Summary of Actions>
 I have analyzed the request and will implement the three requested features. My course of action is to enhance the suggestion chips' UI, make the suggestion generation more resilient to server errors, and improve backend logging for easier debugging.
 
@@ -2954,10 +2930,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T22:39:57.962Z
+  Date Generated: 2025-10-14T12:37:58.386Z
   ---
   Total Files: 121
-  Approx. Tokens: 300684
+  Approx. Tokens: 300791
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -2967,7 +2943,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. context\aiascentgame\flattened-repo.md (18579 tokens)
 5. context\dce\flattened-repo.md (14794 tokens)
 6. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-7. src\stores\reportStore.ts (8347 tokens)
+7. src\stores\reportStore.ts (8366 tokens)
 8. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 9. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 10. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -3032,28 +3008,28 @@ This file-centric approach helps in planning and prioritizing work, especially i
 57. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 58. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
 59. src\app\learn\page.tsx - Lines: 164 - Chars: 12640 - Tokens: 3160
-60. src\app\mission\page.tsx - Lines: 154 - Chars: 13221 - Tokens: 3306
+60. src\app\mission\page.tsx - Lines: 154 - Chars: 14761 - Tokens: 3691
 61. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
 62. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15701 - Tokens: 3926
+65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
 66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-69. src\stores\reportStore.ts - Lines: 693 - Chars: 33385 - Tokens: 8347
-70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8212 - Tokens: 2053
+69. src\stores\reportStore.ts - Lines: 724 - Chars: 33462 - Tokens: 8366
+70. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8287 - Tokens: 2072
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 282 - Chars: 13199 - Tokens: 3300
+74. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
 78. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
 79. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
 80. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
-81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5373 - Tokens: 1344
+81. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
 82. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4140 - Tokens: 1035
 83. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 84. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
@@ -14954,7 +14930,7 @@ const MissionPage = () => {
                             'the-citizen-architect-has-arrived-p1-img-9.webp',
                         ]}
                         imagePath="part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/"
-                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure..."
+                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure. The person is not coding line-by-line but acting as a conductor, guiding the AI with gestures and high-level commands."
                         imageSide="left"
                     />
 
@@ -14980,7 +14956,7 @@ In stark contrast, coherent competitors are professionalizing their data workfor
                             'the-fissured-workplace-p1-img-11.webp',
                         ]}
                         imagePath="introduction/the-fissured-workplace/prompt-1/"
-                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers..."
+                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers of subcontractors. The legal and financial responsibilities, visualized as heavy weights, are shown being passed down through the cracks, ultimately crushing the individual workers at the very bottom."
                         imageSide="right"
                     />
 
@@ -15007,7 +14983,7 @@ The Data Curation Environment (DCE) is the foundational tool for this new relati
                             'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
-                        imagePrompt="An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+                        imagePrompt="A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is 'The Hidden Curriculum Revealed'."
                         imageSide="left"
                     />
 
@@ -15037,7 +15013,7 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                             'the-new-creative-partnership-p1-img-15.webp',
                         ]}
                         imagePath="part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/"
-                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer... sitting cross-legged on a vast, glowing digital floor... thoughtfully placing one of these blocks into a complex, half-finished digital structure..."
+                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer, the 'Citizen Architect,' sitting cross-legged on a vast, glowing digital floor, reminiscent of a child playing with blocks. In front of them is a large, disorganized pile of glowing, translucent 'digital legos,' each block representing a different piece of technology (some with subtle code snippets or tech logos visible within). The Architect is thoughtfully placing one of these blocks into a complex, half-finished digital structure—the 'aiascent.game.' In one hand, they hold a faint, holographic blueprint labeled 'VISION.' Assisting them are one or more ethereal, glowing AI companions, who are actively sorting through the disorganized pile, finding the perfect 'lego' piece, and bringing it to the Architect's hand just as they need it. The scene is a seamless, intuitive dance between the human's architectural vision and the AI's tireless, organizational power. The lighting is dramatic, with the primary glow coming from the digital floor and the blocks, creating a futuristic and wondrous atmosphere."
                         imageSide="right"
                     />
                 </div>
@@ -15458,29 +15434,25 @@ export default PromptNavigator;
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
-import { FaTimes, FaBroom, FaSpinner } from 'react-icons/fa';
+import { FaTimes, FaBroom, FaSpinner, FaSync } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
+import type { ChatMessage } from '@/stores/reportStore';
 
 interface ReportChatPanelProps {
     reportName: string;
 }
 
-// Regex to strip internal LLM thinking tags and content
-const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
-// C42: Define report-specific default suggestions
-const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
-const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
-
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
         toggleChatPanel, clearReportChatHistory,
-        setReportChatMessage,
+        setReportChatMessage, fetchConversationSuggestions,
+        regenerateSuggestions,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
-        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts,
-        suggestionsStatus // C43: Get new status
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts,
+        suggestionsStatus
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -15492,21 +15464,14 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
         setSuggestedPrompts: state.setSuggestedPrompts,
-        suggestionsStatus: state.suggestionsStatus, // C43
+        suggestionsStatus: state.suggestionsStatus,
     }));
     
     const [isThinking, setIsThinking] = useState(false);
-    const messagesEndRef = useRef<HTMLDivElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     const currentPage = allPages[currentPageIndex];
-
     const chatContainerRef = useRef<HTMLDivElement>(null);
-
-    // C42: Determine which default suggestions to use for this instance
-    const defaultSuggestionsForReport = reportName === 'whitepaper' 
-        ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-        : SHOWCASE_DEFAULT_SUGGESTIONS;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -15520,17 +15485,15 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     };
 
     const parseFinalMessage = (rawText: string): string => {
-        let cleanedText = rawText.replace(thinkingRegex, '').trim();
-
         const finalMessageMarker = '<|channel|>final<|message|>';
-        const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
+        const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
     
         if (finalMessageIndex !== -1) {
-            return cleanedText.substring(finalMessageIndex + finalMessageMarker.length);
+            return rawText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
         const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*?(?=<\|channel\|>|$)/g;
-        cleanedText = cleanedText.replace(analysisRegex, '').trim();
+        let cleanedText = rawText.replace(analysisRegex, '').trim();
         
         return cleanedText;
     };
@@ -15545,7 +15508,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-        
         const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
@@ -15605,50 +15567,16 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- C44: ROBUST POST-STREAM PROCESSING FOR SUGGESTIONS ---
-            console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
-            
-            const startSuggestionRegex = /:{2,}suggestions:{2,}/;
-            const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
-            const startMatch = fullMessage.match(startSuggestionRegex);
-            const endMatch = fullMessage.match(endSuggestionRegex);
-
-            let finalSuggestions = defaultSuggestionsForReport;
-            let cleanedMessage = fullMessage;
-
-            if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
-                const jsonContentEndIndex = endMatch.index;
-                const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
-                
-                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(jsonContent));
-                
-                try {
-                    const parsed = JSON.parse(jsonContent);
-                    if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
-                        finalSuggestions = parsed;
-                        console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
-                    } else {
-                        console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
-                    }
-                } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", jsonContent);
-                }
-                
-                // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
-            } else {
-                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
-            }
-
-            setSuggestedPrompts(finalSuggestions);
-
-            // Now, perform final message cleaning on the already-suggestions-stripped message
-            const finalContent = parseFinalMessage(cleanedMessage.trim());
-
+            const finalContent = parseFinalMessage(fullMessage.trim());
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
-            // --- END POST-STREAM PROCESSING ---
+
+            // C49: After message is complete, trigger suggestion generation based on conversation
+            const finalHistory = [
+                ...useReportStore.getState().reportChatHistory, 
+                { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
+            ];
+            fetchConversationSuggestions(finalHistory, reportName);
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -15716,7 +15644,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 </div>
             </header>
             
-            {/* Chat History */}
             <div ref={chatContainerRef} className="flex-1 p-3 overflow-y-auto text-sm space-y-4 scroll-smooth">
                 {reportChatHistory.map((msg, index) => (
                     <div key={msg.id || index} className={`flex flex-col ${msg.author === 'You' ? 'items-end' : 'items-start'}`}>
@@ -15738,28 +15665,39 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            {/* Suggested Prompts (Chips) */}
-            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
-                {suggestionsStatus === 'loading' && (
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
-                        <FaSpinner className="animate-spin" />
-                        Generating suggestions...
-                    </div>
-                )}
-                {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
-                    <Badge
-                        key={index}
-                        variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
-                        onClick={() => handleChipClick(prompt)}
-                        title={prompt} // Tooltip on hover
+            <div className="p-2 border-t border-border bg-muted/20">
+                <div className="flex justify-between items-center mb-2 px-1">
+                    <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
+                    <button
+                        onClick={regenerateSuggestions}
+                        className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
+                        title="Generate new suggestions"
+                        disabled={suggestionsStatus === 'loading'}
                     >
-                        {prompt}
-                    </Badge>
-                ))}
+                        <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
+                    </button>
+                </div>
+                <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
+                    {suggestionsStatus === 'loading' && (
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                            <FaSpinner className="animate-spin" />
+                            Generating suggestions...
+                        </div>
+                    )}
+                    {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                        <Badge
+                            key={index}
+                            variant="secondary"
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
+                            onClick={() => handleChipClick(prompt)}
+                            title={prompt}
+                        >
+                            {prompt}
+                        </Badge>
+                    ))}
+                </div>
             </div>
 
-            {/* Input Area */}
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">
                 <textarea
                     ref={textareaRef}
@@ -15951,6 +15889,8 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
+// Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
 // Updated on: C47 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
@@ -16042,6 +15982,14 @@ export type ChatMessage = {
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
+type LastSuggestionRequest = {
+    type: 'page' | 'conversation';
+    payload: {
+        reportName: string;
+        context: string;
+    };
+} | null;
+
 export interface ReportState {
     reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
@@ -16061,6 +16009,7 @@ export interface ReportState {
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
     suggestionsStatus: 'idle' | 'loading' | 'error'; // C43: New state for suggestion generation
+    lastSuggestionRequest: LastSuggestionRequest; // C49: For refresh button
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -16104,7 +16053,9 @@ export interface ReportActions {
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
-    fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
+    fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
+    fetchConversationSuggestions: (history: ChatMessage[], reportName: string) => Promise<void>; // C49: New
+    regenerateSuggestions: () => Promise<void>; // C49: New
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     setReportChatMessage: (id: string, message: string) => void; // C38: New action
@@ -16151,6 +16102,7 @@ const createInitialReportState = (): ReportState => ({
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
     suggestionsStatus: 'idle', // C43
+    lastSuggestionRequest: null, // C49
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -16173,74 +16125,121 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
+const _fetchSuggestions = async (
+    suggestionType: 'page' | 'conversation',
+    context: string,
+    reportName: string
+): Promise<string[] | null> => {
+    const MAX_RETRIES = 3;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    task: 'generate_suggestions',
+                    suggestionType,
+                    context,
+                }),
+            });
+
+            if (response.status >= 500) {
+                console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
+                if (attempt === MAX_RETRIES) throw new Error(`Failed after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
+                await new Promise(res => setTimeout(res, 1000 * attempt));
+                continue;
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`API error: ${response.status} ${errorText}`);
+            }
+
+            const suggestions = await response.json();
+            if (Array.isArray(suggestions) && suggestions.length > 0) {
+                return suggestions;
+            } else {
+                throw new Error('Invalid suggestions format');
+            }
+        } catch (error) {
+            console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
+            if (attempt === MAX_RETRIES) return null;
+        }
+    }
+    return null;
+};
+
 export const useReportStore = createWithEqualityFn<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
-            fetchAndSetSuggestions: async (page: ReportPage, reportName: string) => {
-                if (!page) return;
-                set({ suggestionsStatus: 'loading' });
+            fetchPageSuggestions: async (page: ReportPage, reportName: string) => {
+                if (get().suggestionsStatus === 'loading' || !page) return;
+
+                const context = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                const payload = { reportName, context };
+                set({ suggestionsStatus: 'loading', lastSuggestionRequest: { type: 'page', payload } });
+
+                const suggestions = await _fetchSuggestions('page', context, reportName);
                 
-                const defaultSuggestions = reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+                if (get().reportName !== reportName) {
+                    console.log(`[reportStore] Stale page suggestions for "${reportName}" ignored.`);
+                    return;
+                }
 
-                const MAX_RETRIES = 3;
-                for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-                    try {
-                        const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
-                        
-                        const response = await fetch('/api/chat', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                task: 'generate_suggestions',
-                                pageContext,
-                            }),
-                        });
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
-                        // C47: Only retry on 5xx server errors
-                        if (response.status >= 500) {
-                            console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
-                            if (attempt === MAX_RETRIES) {
-                                throw new Error(`Failed to fetch suggestions after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
-                            }
-                            await new Promise(res => setTimeout(res, 1000 * attempt)); // Basic backoff
-                            continue; // Go to next attempt
-                        }
+            fetchConversationSuggestions: async (history: ChatMessage[], reportName: string) => {
+                if (get().suggestionsStatus === 'loading' || history.length === 0) return;
+                
+                // Take the last 2 messages (user + assistant)
+                const relevantHistory = history.slice(-2);
+                const context = relevantHistory.map(m => `${m.author}: ${m.message}`).join('\n\n');
+                const payload = { reportName, context };
+                set({ suggestionsStatus: 'loading', lastSuggestionRequest: { type: 'conversation', payload } });
 
-                        if (!response.ok) {
-                            const errorText = await response.text();
-                            console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
-                            throw new Error('Failed to fetch suggestions');
-                        }
+                const suggestions = await _fetchSuggestions('conversation', context, reportName);
 
-                        const suggestions = await response.json();
-                        
-                        if (get().reportName !== reportName) {
-                            console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
-                            return;
-                        }
+                if (get().reportName !== reportName) {
+                    console.log(`[reportStore] Stale conversation suggestions for "${reportName}" ignored.`);
+                    return;
+                }
 
-                        if (Array.isArray(suggestions) && suggestions.length > 0) {
-                            set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
-                        } else {
-                            throw new Error('Invalid suggestions format');
-                        }
-                        return; // Success, exit loop
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
-                    } catch (error) {
-                        console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
-                        if (attempt === MAX_RETRIES) {
-                            console.error("[reportStore] Failed to fetch dynamic suggestions after all retries.");
-                            if (get().reportName === reportName) {
-                                set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
-                            }
-                            return;
-                        }
-                    }
+            regenerateSuggestions: async () => {
+                const { lastSuggestionRequest } = get();
+                if (!lastSuggestionRequest || get().suggestionsStatus === 'loading') return;
+
+                const { type, payload } = lastSuggestionRequest;
+                set({ suggestionsStatus: 'loading' });
+
+                const suggestions = await _fetchSuggestions(type, payload.context, payload.reportName);
+
+                if (get().reportName !== payload.reportName) {
+                    console.log(`[reportStore] Stale regenerated suggestions for "${payload.reportName}" ignored.`);
+                    return;
+                }
+                
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = payload.reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
                 }
             },
 
@@ -16250,19 +16249,17 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     set({ isLoading: false });
                     return;
                 }
-                // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
 
-                // C42: Determine and set the correct default suggestions for the report being loaded.
                 const defaultSuggestions = reportName === 'whitepaper' 
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
                 set({ 
-                    reportName: reportName, // C42: Store the report name
+                    reportName: reportName,
                     _hasHydrated: true, 
                     isLoading: true,
-                    suggestedPrompts: defaultSuggestions, // C42: Override the initial default
+                    suggestedPrompts: defaultSuggestions,
                 });
 
                 try {
@@ -16289,7 +16286,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // C37 FIX: Use the basePath from the manifest file instead of a hardcoded path.
                                     const imageBasePath = manifestData.basePath;
                                     
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
@@ -16342,10 +16338,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         isLoading: false,
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
-                    // C43: Fetch suggestions for the initial page
-                    if (reconstructedPages.length > 0) {
-                        get().fetchAndSetSuggestions(reconstructedPages[0], reportName);
-                    }
+                    // C49 FIX: Removed initial suggestion fetch. It will now be triggered by the useEffect in ReportViewer.
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
                     set({ isLoading: false });
@@ -16359,25 +16352,21 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 const currentPage = allPages[currentPageIndex];
                 if (!currentPage || !autoplayEnabled) return;
 
-                // C28 FIX: Adjust durations based on playback speed
                 const actualDuration = duration / playbackSpeed;
                 const actualDurationMs = actualDuration * 1000;
 
-                // Guard against zero or infinite duration which causes rapid cycling
                 if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
 
-                // Set timer for next page
                 const nextPageTimer = setTimeout(() => {
                     if (get().autoplayEnabled) {
                         nextPage();
                     }
-                }, actualDurationMs + 500); // Small buffer
+                }, actualDurationMs + 500);
                 set({ nextPageTimer });
 
                 const images = currentPage.imagePrompts?.[0]?.images;
                 if (!images || images.length <= 1) return;
 
-                // C28 FIX: Calculate time per image based on adjusted duration
                 const timePerImage = actualDurationMs / images.length;
                 
                 const slideshowTimer = setInterval(() => {
@@ -16390,7 +16379,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
-                            // Stop slideshow, nextPageTimer will handle page transition
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -16405,10 +16393,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (slideshowTimer) clearInterval(slideshowTimer);
                 if (nextPageTimer) clearTimeout(nextPageTimer);
                 if (userInitiated) {
-                    // If user interacted, disable autoplay completely
                     set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
                 } else {
-                    // Just clear timers (e.g. between pages)
                     set({ slideshowTimer: null, nextPageTimer: null });
                 }
             },
@@ -16416,13 +16402,11 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
-                // If already playing this text, stop it (toggle behavior)
                 if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
                     stopArbitraryText(); 
                     return;
                 }
                 
-                // Stop any current playback
                 stopArbitraryText();
                 set({ genericPlaybackStatus: 'generating', genericAudioText: text });
 
@@ -16452,14 +16436,13 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
 
             nextPage: () => {
-                get().stopSlideshow(false); // Stop any timers before changing page
+                get().stopSlideshow(false);
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
-                    // If wrapping around to start, disable autoplay
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
-                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' }; // Reset audio status
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
                 });
             },
             prevPage: () => {
@@ -16467,7 +16450,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
-                    playbackStatus: 'idle', // Reset audio status
+                    playbackStatus: 'idle',
                 }));
             },
             goToPageByIndex: (pageIndex) => {
@@ -16480,7 +16463,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
-                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
@@ -16490,7 +16472,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
-                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
@@ -16498,7 +16479,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
-                // C15 Fix: prevent hijacking inputs
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
                 
                 if (event.key.startsWith('Arrow')) event.preventDefault();
@@ -16557,60 +16537,51 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                   }
             },
             setReportChatInput: (input) => set({ reportChatInput: input }),
-            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
+            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }),
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
-            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
+            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
-                // C42: Use report-specific defaults when clearing chat.
-                const { reportName, fetchAndSetSuggestions, allPages, currentPageIndex } = get();
-                const defaultSuggestions = reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
-
+                const { reportName, fetchPageSuggestions, allPages, currentPageIndex } = get();
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
                 });
-                // C43: Re-fetch dynamic suggestions for the current page after clearing.
                 const currentPage = allPages[currentPageIndex];
                 if (currentPage && reportName) {
-                    fetchAndSetSuggestions(currentPage, reportName);
-                } else {
-                    set({ suggestedPrompts: defaultSuggestions });
+                    fetchPageSuggestions(currentPage, reportName);
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
-            // Main Report Audio Actions
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
             setAutoplay: (enabled) => { 
-                get().stopSlideshow(!enabled); // If disabling, stop. If enabling, don't stop yet.
+                get().stopSlideshow(!enabled);
                 set({ autoplayEnabled: enabled }); 
                 if (enabled) {
-                    // Reset image index when enabling autoplay to start slideshow from beginning
                     set({ currentImageIndex: 0 });
                 }
             },
-            setCurrentAudio: (url, pageIndex) => {
-                const currentUrl = get().currentAudioUrl;
-                if (currentUrl) URL.revokeObjectURL(currentUrl);
-                set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 });
-            },
+            setCurrentAudio: (url, pageIndex) => set(state => {
+                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
+                    return state;
+                }
+                return {
+                    currentAudioUrl: url,
+                    currentAudioPageIndex: pageIndex,
+                    playbackStatus: url ? 'buffering' : 'idle',
+                    currentTime: 0,
+                    duration: 0,
+                };
+            }),
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: level }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            setPlaybackSpeed: (speed) => {
-                set({ playbackSpeed: speed });
-                // C28 FIX: Restart slideshow with new speed if playing
-                if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
-                    get().startSlideshow();
-                }
-            },
+            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -16618,7 +16589,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             onRehydrateStorage: () => (state) => {
                 if (state) state.setHasHydrated(true);
             },
-            // C26: Use createWithEqualityFn for Zustand 4.5+ compatibility
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,
@@ -16634,7 +16604,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 volume: state.volume,
                 isMuted: state.isMuted,
                 playbackSpeed: state.playbackSpeed,
-                // Do not persist chat history or suggestions to keep session fresh
             }),
         }
     )
@@ -16667,7 +16636,7 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions, setIsFullscreen } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -16704,12 +16673,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C43: Fetch suggestions when the current page changes.
+    // C49: Fetch suggestions when the current page changes. This is now the single source of truth for page-based suggestions.
     useEffect(() => {
         if (currentPage) {
-            fetchAndSetSuggestions(currentPage, reportName);
+            fetchPageSuggestions(currentPage, reportName);
         }
-    }, [currentPage, reportName, fetchAndSetSuggestions]);
+    }, [currentPage, reportName, fetchPageSuggestions]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -16753,9 +16722,9 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     
     return (
         // C45: Added ref and dynamic classes for fullscreen
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? '' : 'pt-16'}`}>
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
                 </div>
             )}
@@ -17171,14 +17140,6 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// C40: Hardened suggestion instruction.
-const suggestionInstruction = `
-Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this, with no other text after the closing delimiter:
-:::suggestions:::[
-  "Question 1?",
-  "Question 2?"
-]:::end_suggestions:::`;
-
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
 - For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
@@ -17195,26 +17156,30 @@ const systemPrompts = {
 Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
 
 If the answer isn't directly in the context, state that, but still try to provide related information if available. Use markdown for formatting as described below to enhance clarity. Do not invent information.
-${markdownFormattingInstruction}
-${suggestionInstruction}`,
+${markdownFormattingInstruction}`,
     report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
 If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
-${markdownFormattingInstruction}
-${suggestionInstruction}`
+${markdownFormattingInstruction}`
 };
 
-// C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+// C49: New prompts for decoupled suggestion generation
+const suggestionSystemPrompts = {
+    page: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
-["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
+["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
+    conversation: `Your ONLY task is to analyze the following conversation history and generate 2-4 insightful follow-up questions the user might ask next. The goal is to continue the current conversational thread. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+
+Example of a PERFECT response:
+["Can you elaborate on the second point?", "How does that concept apply to a real-world scenario?"]`
+};
 
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report', task } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -17228,15 +17193,19 @@ export async function POST(request: Request) {
 
   const completionsUrl = `${llmUrl}/v1/completions`;
 
-  // C43: Handle suggestion generation task
+  // C49: Refactored suggestion generation task
   if (task === 'generate_suggestions') {
+    const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
+    const systemPrompt = suggestionSystemPrompts[suggestionPromptType as keyof typeof suggestionSystemPrompts];
+    const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
+
     try {
         const suggestionPrompt = `
-System: ${suggestionSystemPrompt}
+System: ${systemPrompt}
 
---- START DOCUMENT TEXT ---
-${pageContext}
---- END DOCUMENT TEXT ---
+--- START ${contextTypeLabel} ---
+${context}
+--- END ${contextTypeLabel} ---
 
 User: Generate questions based on the text above.
 
@@ -17248,9 +17217,9 @@ Assistant:`;
             body: JSON.stringify({
                 model: 'unsloth/gpt-oss-20b',
                 prompt: suggestionPrompt,
-                max_tokens: 256,
+                max_tokens: 512,
                 temperature: 0.5,
-                stream: false, // Non-streaming for this task
+                stream: false,
             }),
         });
 
@@ -17263,21 +17232,22 @@ Assistant:`;
         let content = data.choices?.[0]?.text || '[]';
         console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
 
-        // C47: Isolate the assistant's final message to avoid parsing the analysis block.
         const assistantMarker = '<|start|>assistant';
         const assistantPartIndex = content.lastIndexOf(assistantMarker);
         if (assistantPartIndex !== -1) {
             content = content.substring(assistantPartIndex);
         }
 
-        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/s); // 's' flag for multiline
-        const jsonString = jsonMatch ? jsonMatch[0] : null;
-        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
-
-        if (!jsonString) {
-            console.warn(`[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: ${content}`);
-            throw new Error('Invalid suggestions format from LLM');
+        const firstBracket = content.indexOf('[');
+        const lastBracket = content.lastIndexOf(']');
+        
+        if (firstBracket === -1 || lastBracket === -1 || lastBracket < firstBracket) {
+            console.warn(`[Chat API - Suggestions] Could not find a valid JSON array structure in response: ${content}`);
+            throw new Error('Invalid suggestions format from LLM: No array found.');
         }
+
+        const jsonString = content.substring(firstBracket, lastBracket + 1);
+        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
         
         try {
             const suggestions = JSON.parse(jsonString);
@@ -18125,7 +18095,7 @@ The following plan maps the existing narrative sections of the Mission page to s
     *   `the-pedagogical-engine-cam-p1-img-1.webp`
     *   `the-pedagogical-engine-cam-p1-img-6.webp`
     *   `the-pedagogical-engine-cam-p1-img-12.webp`
-*   **Image Prompt:** "An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+*   **Image Prompt:** "A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is \"The Hidden Curriculum Revealed\"."
 *   **Content:** The existing text from the "Cognitive Apprenticeship" section.
 
 ---

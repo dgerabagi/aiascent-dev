@@ -33,14 +33,6 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
-// C40: Hardened suggestion instruction.
-const suggestionInstruction = `
-Finally, after your main response, generate 2-4 short, relevant follow-up questions the user might want to ask next based on this conversation. Output them strictly as a JSON array of strings wrapped in specific delimiters like this, with no other text after the closing delimiter:
-:::suggestions:::[
-  "Question 1?",
-  "Question 2?"
-]:::end_suggestions:::`;
-
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
 - For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
@@ -57,26 +49,30 @@ const systemPrompts = {
 Your answers should be based *only* on the provided context chunks from the project's official documentation. Be helpful, encouraging, and aim to increase the user's understanding of the project.
 
 If the answer isn't directly in the context, state that, but still try to provide related information if available. Use markdown for formatting as described below to enhance clarity. Do not invent information.
-${markdownFormattingInstruction}
-${suggestionInstruction}`,
+${markdownFormattingInstruction}`,
     report: `You are @Ascentia, an AI guide for "The Ascent Report" on the aiascent.dev website. Your purpose is to act as a subject matter expert, answering questions based *only* on the provided context from the report. The report covers topics like the AI industry's labor model, the 'fissured workplace,' cognitive security (COGSEC), and geopolitical strategy.
 
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
 If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
-${markdownFormattingInstruction}
-${suggestionInstruction}`
+${markdownFormattingInstruction}`
 };
 
-// C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+// C49: New prompts for decoupled suggestion generation
+const suggestionSystemPrompts = {
+    page: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
-["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
+["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
+    conversation: `Your ONLY task is to analyze the following conversation history and generate 2-4 insightful follow-up questions the user might ask next. The goal is to continue the current conversational thread. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+
+Example of a PERFECT response:
+["Can you elaborate on the second point?", "How does that concept apply to a real-world scenario?"]`
+};
 
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report', task } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -90,15 +86,19 @@ export async function POST(request: Request) {
 
   const completionsUrl = `${llmUrl}/v1/completions`;
 
-  // C43: Handle suggestion generation task
+  // C49: Refactored suggestion generation task
   if (task === 'generate_suggestions') {
+    const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
+    const systemPrompt = suggestionSystemPrompts[suggestionPromptType as keyof typeof suggestionSystemPrompts];
+    const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
+
     try {
         const suggestionPrompt = `
-System: ${suggestionSystemPrompt}
+System: ${systemPrompt}
 
---- START DOCUMENT TEXT ---
-${pageContext}
---- END DOCUMENT TEXT ---
+--- START ${contextTypeLabel} ---
+${context}
+--- END ${contextTypeLabel} ---
 
 User: Generate questions based on the text above.
 
@@ -110,9 +110,9 @@ Assistant:`;
             body: JSON.stringify({
                 model: 'unsloth/gpt-oss-20b',
                 prompt: suggestionPrompt,
-                max_tokens: 512, // C48: Increased from 256
+                max_tokens: 512,
                 temperature: 0.5,
-                stream: false, // Non-streaming for this task
+                stream: false,
             }),
         });
 
@@ -125,14 +125,12 @@ Assistant:`;
         let content = data.choices?.[0]?.text || '[]';
         console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
 
-        // C47: Isolate the assistant's final message to avoid parsing the analysis block.
         const assistantMarker = '<|start|>assistant';
         const assistantPartIndex = content.lastIndexOf(assistantMarker);
         if (assistantPartIndex !== -1) {
             content = content.substring(assistantPartIndex);
         }
 
-        // C48: More robust JSON extraction. Find the first '[' and last ']'
         const firstBracket = content.indexOf('[');
         const lastBracket = content.lastIndexOf(']');
         

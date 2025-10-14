@@ -46,7 +46,7 @@ const MissionPage = () => {
                             'the-citizen-architect-has-arrived-p1-img-9.webp',
                         ]}
                         imagePath="part-i-the-proof/section-1-the-hook/the-citizen-architect-has-arrived/prompt-1/"
-                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure..."
+                        imagePrompt="A single individual is shown orchestrating a swarm of small, glowing AI bots to construct a complex and beautiful digital structure. The person is not coding line-by-line but acting as a conductor, guiding the AI with gestures and high-level commands."
                         imageSide="left"
                     />
 
@@ -72,7 +72,7 @@ In stark contrast, coherent competitors are professionalizing their data workfor
                             'the-fissured-workplace-p1-img-11.webp',
                         ]}
                         imagePath="introduction/the-fissured-workplace/prompt-1/"
-                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers..."
+                        imagePrompt="An architectural blueprint of a corporation. At the top is a solid, gleaming headquarters. Below it, the structure fractures into multiple, disconnected layers of subcontractors. The legal and financial responsibilities, visualized as heavy weights, are shown being passed down through the cracks, ultimately crushing the individual workers at the very bottom."
                         imageSide="right"
                     />
 
@@ -99,7 +99,7 @@ The Data Curation Environment (DCE) is the foundational tool for this new relati
                             'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
-                        imagePrompt="An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum')..."
+                        imagePrompt="A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is 'The Hidden Curriculum Revealed'."
                         imageSide="left"
                     />
 
@@ -129,7 +129,7 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                             'the-new-creative-partnership-p1-img-15.webp',
                         ]}
                         imagePath="part-i-the-proof/section-2-the-origin/the-new-creative-partnership/prompt-1/"
-                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer... sitting cross-legged on a vast, glowing digital floor... thoughtfully placing one of these blocks into a complex, half-finished digital structure..."
+                        imagePrompt="A hyper-realistic, solarpunk cinematic image of a developer, the 'Citizen Architect,' sitting cross-legged on a vast, glowing digital floor, reminiscent of a child playing with blocks. In front of them is a large, disorganized pile of glowing, translucent 'digital legos,' each block representing a different piece of technology (some with subtle code snippets or tech logos visible within). The Architect is thoughtfully placing one of these blocks into a complex, half-finished digital structure—the 'aiascent.game.' In one hand, they hold a faint, holographic blueprint labeled 'VISION.' Assisting them are one or more ethereal, glowing AI companions, who are actively sorting through the disorganized pile, finding the perfect 'lego' piece, and bringing it to the Architect's hand just as they need it. The scene is a seamless, intuitive dance between the human's architectural vision and the AI's tireless, organizational power. The lighting is dramatic, with the primary glow coming from the digital floor and the blocks, creating a futuristic and wondrous atmosphere."
                         imageSide="right"
                     />
                 </div>

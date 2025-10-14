@@ -19,7 +19,7 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchAndSetSuggestions, setIsFullscreen } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
@@ -56,12 +56,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C43: Fetch suggestions when the current page changes.
+    // C49: Fetch suggestions when the current page changes. This is now the single source of truth for page-based suggestions.
     useEffect(() => {
         if (currentPage) {
-            fetchAndSetSuggestions(currentPage, reportName);
+            fetchPageSuggestions(currentPage, reportName);
         }
-    }, [currentPage, reportName, fetchAndSetSuggestions]);
+    }, [currentPage, reportName, fetchPageSuggestions]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -105,9 +105,9 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     
     return (
         // C45: Added ref and dynamic classes for fullscreen
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? '' : 'pt-16'}`}>
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
+                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
                     <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
                 </div>
             )}

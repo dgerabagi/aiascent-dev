@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
 // Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
 // Updated on: C47 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
@@ -91,6 +92,14 @@ export type ChatMessage = {
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 
+type LastSuggestionRequest = {
+    type: 'page' | 'conversation';
+    payload: {
+        reportName: string;
+        context: string;
+    };
+} | null;
+
 export interface ReportState {
     reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
@@ -110,6 +119,7 @@ export interface ReportState {
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
     suggestionsStatus: 'idle' | 'loading' | 'error'; // C43: New state for suggestion generation
+    lastSuggestionRequest: LastSuggestionRequest; // C49: For refresh button
     isPromptVisible: boolean;
     isTldrVisible: boolean;
     isContentVisible: boolean;
@@ -153,7 +163,9 @@ export interface ReportActions {
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
-    fetchAndSetSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C43: New action
+    fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
+    fetchConversationSuggestions: (history: ChatMessage[], reportName: string) => Promise<void>; // C49: New
+    regenerateSuggestions: () => Promise<void>; // C49: New
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
     setReportChatMessage: (id: string, message: string) => void; // C38: New action
@@ -200,6 +212,7 @@ const createInitialReportState = (): ReportState => ({
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
     suggestionsStatus: 'idle', // C43
+    lastSuggestionRequest: null, // C49
     isPromptVisible: false,
     isTldrVisible: true,
     isContentVisible: true,
@@ -222,79 +235,121 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
+const _fetchSuggestions = async (
+    suggestionType: 'page' | 'conversation',
+    context: string,
+    reportName: string
+): Promise<string[] | null> => {
+    const MAX_RETRIES = 3;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    task: 'generate_suggestions',
+                    suggestionType,
+                    context,
+                }),
+            });
+
+            if (response.status >= 500) {
+                console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
+                if (attempt === MAX_RETRIES) throw new Error(`Failed after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
+                await new Promise(res => setTimeout(res, 1000 * attempt));
+                continue;
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`API error: ${response.status} ${errorText}`);
+            }
+
+            const suggestions = await response.json();
+            if (Array.isArray(suggestions) && suggestions.length > 0) {
+                return suggestions;
+            } else {
+                throw new Error('Invalid suggestions format');
+            }
+        } catch (error) {
+            console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
+            if (attempt === MAX_RETRIES) return null;
+        }
+    }
+    return null;
+};
+
 export const useReportStore = createWithEqualityFn<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
-            fetchAndSetSuggestions: async (page: ReportPage, reportName: string) => {
-                // C48: Add guard to prevent concurrent fetches
-                if (get().suggestionsStatus === 'loading') {
-                    console.log('[reportStore] Suggestion fetch already in progress. Ignoring new request.');
+            fetchPageSuggestions: async (page: ReportPage, reportName: string) => {
+                if (get().suggestionsStatus === 'loading' || !page) return;
+
+                const context = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
+                const payload = { reportName, context };
+                set({ suggestionsStatus: 'loading', lastSuggestionRequest: { type: 'page', payload } });
+
+                const suggestions = await _fetchSuggestions('page', context, reportName);
+                
+                if (get().reportName !== reportName) {
+                    console.log(`[reportStore] Stale page suggestions for "${reportName}" ignored.`);
                     return;
                 }
-                if (!page) return;
-                set({ suggestionsStatus: 'loading' });
+
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
+
+            fetchConversationSuggestions: async (history: ChatMessage[], reportName: string) => {
+                if (get().suggestionsStatus === 'loading' || history.length === 0) return;
                 
-                const defaultSuggestions = reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+                // Take the last 2 messages (user + assistant)
+                const relevantHistory = history.slice(-2);
+                const context = relevantHistory.map(m => `${m.author}: ${m.message}`).join('\n\n');
+                const payload = { reportName, context };
+                set({ suggestionsStatus: 'loading', lastSuggestionRequest: { type: 'conversation', payload } });
 
-                const MAX_RETRIES = 3;
-                for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-                    try {
-                        const pageContext = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
-                        
-                        const response = await fetch('/api/chat', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                task: 'generate_suggestions',
-                                pageContext,
-                            }),
-                        });
+                const suggestions = await _fetchSuggestions('conversation', context, reportName);
 
-                        // C47: Only retry on 5xx server errors
-                        if (response.status >= 500) {
-                            console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
-                            if (attempt === MAX_RETRIES) {
-                                throw new Error(`Failed to fetch suggestions after ${MAX_RETRIES} attempts. Last status: ${response.status}`);
-                            }
-                            await new Promise(res => setTimeout(res, 1000 * attempt)); // Basic backoff
-                            continue; // Go to next attempt
-                        }
+                if (get().reportName !== reportName) {
+                    console.log(`[reportStore] Stale conversation suggestions for "${reportName}" ignored.`);
+                    return;
+                }
 
-                        if (!response.ok) {
-                            const errorText = await response.text();
-                            console.error(`[reportStore] Failed to fetch suggestions from API: ${response.status} ${errorText}`);
-                            throw new Error('Failed to fetch suggestions');
-                        }
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                }
+            },
 
-                        const suggestions = await response.json();
-                        
-                        if (get().reportName !== reportName) {
-                            console.log(`[reportStore] Stale suggestions for "${reportName}" ignored.`);
-                            return;
-                        }
+            regenerateSuggestions: async () => {
+                const { lastSuggestionRequest } = get();
+                if (!lastSuggestionRequest || get().suggestionsStatus === 'loading') return;
 
-                        if (Array.isArray(suggestions) && suggestions.length > 0) {
-                            set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
-                        } else {
-                            throw new Error('Invalid suggestions format');
-                        }
-                        return; // Success, exit loop
+                const { type, payload } = lastSuggestionRequest;
+                set({ suggestionsStatus: 'loading' });
 
-                    } catch (error) {
-                        console.error(`[reportStore] Error on suggestion fetch attempt ${attempt}:`, error);
-                        if (attempt === MAX_RETRIES) {
-                            console.error("[reportStore] Failed to fetch dynamic suggestions after all retries.");
-                            if (get().reportName === reportName) {
-                                set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
-                            }
-                            return;
-                        }
-                    }
+                const suggestions = await _fetchSuggestions(type, payload.context, payload.reportName);
+
+                if (get().reportName !== payload.reportName) {
+                    console.log(`[reportStore] Stale regenerated suggestions for "${payload.reportName}" ignored.`);
+                    return;
+                }
+                
+                if (suggestions) {
+                    set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
+                } else {
+                    const defaultSuggestions = payload.reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
+                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
                 }
             },
 
@@ -304,19 +359,17 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     set({ isLoading: false });
                     return;
                 }
-                // Reset state before loading new report to prevent data bleed
                 set(createInitialReportState());
 
-                // C42: Determine and set the correct default suggestions for the report being loaded.
                 const defaultSuggestions = reportName === 'whitepaper' 
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
                 set({ 
-                    reportName: reportName, // C42: Store the report name
+                    reportName: reportName,
                     _hasHydrated: true, 
                     isLoading: true,
-                    suggestedPrompts: defaultSuggestions, // C42: Override the initial default
+                    suggestedPrompts: defaultSuggestions,
                 });
 
                 try {
@@ -343,7 +396,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                                     }
 
                                     const images: ReportImage[] = [];
-                                    // C37 FIX: Use the basePath from the manifest file instead of a hardcoded path.
                                     const imageBasePath = manifestData.basePath;
                                     
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
@@ -396,10 +448,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         isLoading: false,
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
-                    // C43: Fetch suggestions for the initial page
-                    if (reconstructedPages.length > 0) {
-                        get().fetchAndSetSuggestions(reconstructedPages[0], reportName);
-                    }
+                    // C49 FIX: Removed initial suggestion fetch. It will now be triggered by the useEffect in ReportViewer.
                 } catch (error) {
                     console.error(`Failed to load and process report data for ${reportName}.`, error);
                     set({ isLoading: false });
@@ -413,25 +462,21 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 const currentPage = allPages[currentPageIndex];
                 if (!currentPage || !autoplayEnabled) return;
 
-                // C28 FIX: Adjust durations based on playback speed
                 const actualDuration = duration / playbackSpeed;
                 const actualDurationMs = actualDuration * 1000;
 
-                // Guard against zero or infinite duration which causes rapid cycling
                 if (actualDurationMs <= 0 || !isFinite(actualDurationMs)) return;
 
-                // Set timer for next page
                 const nextPageTimer = setTimeout(() => {
                     if (get().autoplayEnabled) {
                         nextPage();
                     }
-                }, actualDurationMs + 500); // Small buffer
+                }, actualDurationMs + 500);
                 set({ nextPageTimer });
 
                 const images = currentPage.imagePrompts?.[0]?.images;
                 if (!images || images.length <= 1) return;
 
-                // C28 FIX: Calculate time per image based on adjusted duration
                 const timePerImage = actualDurationMs / images.length;
                 
                 const slideshowTimer = setInterval(() => {
@@ -444,7 +489,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                         if (nextImageIndex < images.length) {
                             return { currentImageIndex: nextImageIndex };
                         } else {
-                            // Stop slideshow, nextPageTimer will handle page transition
                             clearInterval(slideshowTimer);
                             return { slideshowTimer: null };
                         }
@@ -459,10 +503,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (slideshowTimer) clearInterval(slideshowTimer);
                 if (nextPageTimer) clearTimeout(nextPageTimer);
                 if (userInitiated) {
-                    // If user interacted, disable autoplay completely
                     set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
                 } else {
-                    // Just clear timers (e.g. between pages)
                     set({ slideshowTimer: null, nextPageTimer: null });
                 }
             },
@@ -470,13 +512,11 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             playArbitraryText: async (text: string) => {
                 const { genericPlaybackStatus, genericAudioText, stopArbitraryText } = get();
 
-                // If already playing this text, stop it (toggle behavior)
                 if (genericPlaybackStatus === 'playing' && genericAudioText === text) {
                     stopArbitraryText(); 
                     return;
                 }
                 
-                // Stop any current playback
                 stopArbitraryText();
                 set({ genericPlaybackStatus: 'generating', genericAudioText: text });
 
@@ -506,14 +546,13 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setGenericAudioUrl: (url) => set({ genericAudioUrl: url }),
 
             nextPage: () => {
-                get().stopSlideshow(false); // Stop any timers before changing page
+                get().stopSlideshow(false);
                 set(state => {
                     const newIndex = (state.currentPageIndex + 1) % state.allPages.length;
-                    // If wrapping around to start, disable autoplay
                     if (newIndex === 0 && state.currentPageIndex === state.allPages.length - 1 && state.autoplayEnabled) {
                         return { currentPageIndex: newIndex, currentImageIndex: 0, autoplayEnabled: false, playbackStatus: 'idle' };
                     }
-                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' }; // Reset audio status
+                    return { currentPageIndex: newIndex, currentImageIndex: 0, playbackStatus: 'idle' };
                 });
             },
             prevPage: () => {
@@ -521,7 +560,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 set(state => ({
                     currentPageIndex: (state.currentPageIndex - 1 + state.allPages.length) % state.allPages.length,
                     currentImageIndex: 0,
-                    playbackStatus: 'idle', // Reset audio status
+                    playbackStatus: 'idle',
                 }));
             },
             goToPageByIndex: (pageIndex) => {
@@ -534,7 +573,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
-                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex + 1) % totalImages };
@@ -544,7 +582,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 get().stopSlideshow(true);
                 set(state => {
                     const currentPage = state.allPages[state.currentPageIndex];
-                    // C15 Fix: Access correct path for images
                     const totalImages = currentPage?.imagePrompts?.[0]?.images.length ?? 0;
                     if (totalImages <= 1) return state;
                     return { currentImageIndex: (state.currentImageIndex - 1 + totalImages) % totalImages };
@@ -552,7 +589,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             },
             handleKeyDown: (event: KeyboardEvent) => {
                 const target = event.target as HTMLElement;
-                // C15 Fix: prevent hijacking inputs
                 if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) return;
                 
                 if (event.key.startsWith('Arrow')) event.preventDefault();
@@ -611,60 +647,51 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                   }
             },
             setReportChatInput: (input) => set({ reportChatInput: input }),
-            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }), // C35
+            setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }),
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
             updateReportChatMessage: (id, chunk) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg) })),
-            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })), // C38: New action
+            setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
-                // C42: Use report-specific defaults when clearing chat.
-                const { reportName, fetchAndSetSuggestions, allPages, currentPageIndex } = get();
-                const defaultSuggestions = reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
-
+                const { reportName, fetchPageSuggestions, allPages, currentPageIndex } = get();
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
                 });
-                // C43: Re-fetch dynamic suggestions for the current page after clearing.
                 const currentPage = allPages[currentPageIndex];
                 if (currentPage && reportName) {
-                    fetchAndSetSuggestions(currentPage, reportName);
-                } else {
-                    set({ suggestedPrompts: defaultSuggestions });
+                    fetchPageSuggestions(currentPage, reportName);
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
             toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
             toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
-            // Main Report Audio Actions
             setPlaybackStatus: (status) => set({ playbackStatus: status }),
             setAutoplay: (enabled) => { 
-                get().stopSlideshow(!enabled); // If disabling, stop. If enabling, don't stop yet.
+                get().stopSlideshow(!enabled);
                 set({ autoplayEnabled: enabled }); 
                 if (enabled) {
-                    // Reset image index when enabling autoplay to start slideshow from beginning
                     set({ currentImageIndex: 0 });
                 }
             },
-            setCurrentAudio: (url, pageIndex) => {
-                const currentUrl = get().currentAudioUrl;
-                if (currentUrl) URL.revokeObjectURL(currentUrl);
-                set({ currentAudioUrl: url, currentAudioPageIndex: pageIndex, playbackStatus: url ? 'buffering' : 'idle', currentTime: 0, duration: 0 });
-            },
+            setCurrentAudio: (url, pageIndex) => set(state => {
+                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
+                    return state;
+                }
+                return {
+                    currentAudioUrl: url,
+                    currentAudioPageIndex: pageIndex,
+                    playbackStatus: url ? 'buffering' : 'idle',
+                    currentTime: 0,
+                    duration: 0,
+                };
+            }),
             setAudioTime: (time) => set({ currentTime: time }),
             setAudioDuration: (duration) => set({ duration: duration }),
             setVolume: (level) => set({ volume: level }),
             toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            setPlaybackSpeed: (speed) => {
-                set({ playbackSpeed: speed });
-                // C28 FIX: Restart slideshow with new speed if playing
-                if (get().playbackStatus === 'playing' || get().playbackStatus === 'paused') {
-                    get().startSlideshow();
-                }
-            },
+            setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
         }),
         {
             name: 'aiascent-dev-report-storage',
@@ -672,7 +699,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             onRehydrateStorage: () => (state) => {
                 if (state) state.setHasHydrated(true);
             },
-            // C26: Use createWithEqualityFn for Zustand 4.5+ compatibility
             partialize: (state) => ({
                 currentPageIndex: state.currentPageIndex,
                 currentImageIndex: state.currentImageIndex,
@@ -688,7 +714,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 volume: state.volume,
                 isMuted: state.isMuted,
                 playbackSpeed: state.playbackSpeed,
-                // Do not persist chat history or suggestions to keep session fresh
             }),
         }
     )

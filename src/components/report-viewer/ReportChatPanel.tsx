@@ -2,29 +2,25 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { useReportStore, useReportState } from '@/stores/reportStore';
-import { FaTimes, FaBroom, FaSpinner } from 'react-icons/fa';
+import { FaTimes, FaBroom, FaSpinner, FaSync } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
+import type { ChatMessage } from '@/stores/reportStore';
 
 interface ReportChatPanelProps {
     reportName: string;
 }
 
-// Regex to strip internal LLM thinking tags and content
-const thinkingRegex = /<Thinking>[\s\S]*?<\/Thinking>/gi;
-// C42: Define report-specific default suggestions
-const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
-const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
-
 const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const { 
         toggleChatPanel, clearReportChatHistory,
-        setReportChatMessage,
+        setReportChatMessage, fetchConversationSuggestions,
+        regenerateSuggestions,
     } = useReportStore.getState();
     const { 
         allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
-        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts, setSuggestedPrompts,
-        suggestionsStatus // C43: Get new status
+        addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts,
+        suggestionsStatus
     } = useReportState(state => ({
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
@@ -36,21 +32,14 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
         setSuggestedPrompts: state.setSuggestedPrompts,
-        suggestionsStatus: state.suggestionsStatus, // C43
+        suggestionsStatus: state.suggestionsStatus,
     }));
     
     const [isThinking, setIsThinking] = useState(false);
-    const messagesEndRef = useRef<HTMLDivElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     const currentPage = allPages[currentPageIndex];
-
     const chatContainerRef = useRef<HTMLDivElement>(null);
-
-    // C42: Determine which default suggestions to use for this instance
-    const defaultSuggestionsForReport = reportName === 'whitepaper' 
-        ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-        : SHOWCASE_DEFAULT_SUGGESTIONS;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -64,17 +53,15 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     };
 
     const parseFinalMessage = (rawText: string): string => {
-        let cleanedText = rawText.replace(thinkingRegex, '').trim();
-
         const finalMessageMarker = '<|channel|>final<|message|>';
-        const finalMessageIndex = cleanedText.lastIndexOf(finalMessageMarker);
+        const finalMessageIndex = rawText.lastIndexOf(finalMessageMarker);
     
         if (finalMessageIndex !== -1) {
-            return cleanedText.substring(finalMessageIndex + finalMessageMarker.length);
+            return rawText.substring(finalMessageIndex + finalMessageMarker.length);
         }
         
         const analysisRegex = /<\|channel\|>analysis<\|message\|>[\s\S]*?(?=<\|channel\|>|$)/g;
-        cleanedText = cleanedText.replace(analysisRegex, '').trim();
+        let cleanedText = rawText.replace(analysisRegex, '').trim();
         
         return cleanedText;
     };
@@ -89,7 +76,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-        
         const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
 
         try {
@@ -149,55 +135,16 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- C48: ENHANCED POST-STREAM LOGGING FOR SUGGESTIONS ---
-            console.log('--- [Chat Panel] Suggestion Parsing Play-by-Play ---');
-            console.log('1. Full raw message from stream:', JSON.stringify(fullMessage));
-            
-            const startSuggestionRegex = /:{2,}suggestions:{2,}/;
-            const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
-            const startMatch = fullMessage.match(startSuggestionRegex);
-            const endMatch = fullMessage.match(endSuggestionRegex);
-
-            console.log(`2. Start delimiter ':::suggestions:::' found: ${!!startMatch}`);
-            console.log(`3. End delimiter ':::end_suggestions:::' found: ${!!endMatch}`);
-
-            let finalSuggestions = defaultSuggestionsForReport;
-            let cleanedMessage = fullMessage;
-
-            if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch.length;
-                const jsonContentEndIndex = endMatch.index;
-                const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
-                
-                console.log('4. Extracted raw JSON content:', JSON.stringify(jsonContent));
-                
-                try {
-                    const parsed = JSON.parse(jsonContent);
-                    if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
-                        finalSuggestions = parsed;
-                        console.log('5. PARSE SUCCESS. Applying dynamic suggestions:', finalSuggestions);
-                    } else {
-                        console.warn('5. PARSE FAILED: Parsed content is not a valid array of strings or is empty. Using defaults.');
-                    }
-                } catch (e: any) {
-                    console.error("5. PARSE FAILED: JSON.parse error:", e.message, "Raw content was:", jsonContent);
-                }
-                
-                // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
-            } else {
-                console.log('4. No valid suggestion block found. Applying default suggestions for this report.');
-            }
-            console.log('--- End Play-by-Play ---');
-
-            setSuggestedPrompts(finalSuggestions);
-            // --- END C48 LOGGING ---
-
-            // Now, perform final message cleaning on the already-suggestions-stripped message
-            const finalContent = parseFinalMessage(cleanedMessage.trim());
-
+            const finalContent = parseFinalMessage(fullMessage.trim());
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
+
+            // C49: After message is complete, trigger suggestion generation based on conversation
+            const finalHistory = [
+                ...useReportStore.getState().reportChatHistory, 
+                { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
+            ];
+            fetchConversationSuggestions(finalHistory, reportName);
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -265,7 +212,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 </div>
             </header>
             
-            {/* Chat History */}
             <div ref={chatContainerRef} className="flex-1 p-3 overflow-y-auto text-sm space-y-4 scroll-smooth">
                 {reportChatHistory.map((msg, index) => (
                     <div key={msg.id || index} className={`flex flex-col ${msg.author === 'You' ? 'items-end' : 'items-start'}`}>
@@ -287,28 +233,39 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            {/* Suggested Prompts (Chips) */}
-            <div className="p-2 border-t border-border bg-muted/20 flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
-                {suggestionsStatus === 'loading' && (
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
-                        <FaSpinner className="animate-spin" />
-                        Generating suggestions...
-                    </div>
-                )}
-                {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
-                    <Badge
-                        key={index}
-                        variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
-                        onClick={() => handleChipClick(prompt)}
-                        title={prompt} // Tooltip on hover
+            <div className="p-2 border-t border-border bg-muted/20">
+                <div className="flex justify-between items-center mb-2 px-1">
+                    <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
+                    <button
+                        onClick={regenerateSuggestions}
+                        className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
+                        title="Generate new suggestions"
+                        disabled={suggestionsStatus === 'loading'}
                     >
-                        {prompt}
-                    </Badge>
-                ))}
+                        <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
+                    </button>
+                </div>
+                <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
+                    {suggestionsStatus === 'loading' && (
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                            <FaSpinner className="animate-spin" />
+                            Generating suggestions...
+                        </div>
+                    )}
+                    {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                        <Badge
+                            key={index}
+                            variant="secondary"
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
+                            onClick={() => handleChipClick(prompt)}
+                            title={prompt}
+                        >
+                            {prompt}
+                        </Badge>
+                    ))}
+                </div>
             </div>
 
-            {/* Input Area */}
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">
                 <textarea
                     ref={textareaRef}
