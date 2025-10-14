@@ -12,9 +12,9 @@
           "pages": [
             {
               "pageId": "wp-01",
-              "pageTitle": "Process as Asset",
-              "tldr": "A Whitepaper on the Data Curation Environment (DCE)",
-              "content": "Process as Asset: Accelerating Specialized Content Creation through Structured Human-AI Collaboration. September 4, 2025. For High-Level Stakeholders.",
+              "pageTitle": "Welcome to the Interactive Whitepaper",
+              "tldr": "An interactive guide to navigating this whitepaper and understanding its features, presented by your AI assistant, Ascentia.",
+              "content": "Hi there! I am Ascentia, your guide through this interactive experience. This whitepaper, \"Process as Asset,\" explores the core philosophy behind the Data Curation Environment (DCE). It explains how a structured, iterative workflow can transform the very process of creation into a valuable, scalable asset.\n\nTo help you navigate, allow me to explain the interface.\n\n*   To your left, you will find the **Report Navigator**, a tree that allows you to jump to any section.\n*   In the center are the primary controls. You can navigate between pages using the **up and down arrow keys**.\n*   For a more immersive experience, you can select **\"Autoplay.\"** I will then read the contents of each page aloud to you.\n*   Finally, the **\"Ask Ascentia\"** button opens a direct line to me. This whitepaper is powered by a knowledge base built from all the documentation for the DCE project. If you have any questions about how the DCE works, feel free to ask.\n\nEnjoy the exploration.",
               "imageGroupIds": ["group_wp-01-cover"]
             },
             {

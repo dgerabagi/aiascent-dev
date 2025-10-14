@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C45 (Add Report Viewer Fullscreen Plan)
+# Updated on: C50 (Add Learn Page and Discord artifacts)
 
 ## 1. Purpose
 
@@ -104,6 +104,31 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
   - **Tags:** plan, ui, ux, report viewer, fullscreen, feature
 
+### A34. aiascent.dev - Whitepaper Introduction Content
+
+  - **Description:** Provides the new introductory content for the homepage's interactive whitepaper, "Process as Asset," designed to welcome users and explain the interface.
+  - **Tags:** page design, home page, report viewer, whitepaper, content, user guide
+
+### A36. aiascent.dev - Learn Page - V2V Pathway Definition
+
+  - **Description:** Provides the expanded definitional content for the "Vibecoding to Virtuosity Pathway" section of the Learn page.
+  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+
+### A37. aiascent.dev - Learn Page - Annotator and Toolmaker
+
+  - **Description:** Provides the expanded definitional content for the "Stages 1 & 2: The Annotator and The Toolmaker" section of the Learn page.
+  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+
+### A38. aiascent.dev - Learn Page - Recursive Learner and Virtuoso
+
+  - **Description:** Provides the expanded definitional content for the "Stages 3 & 4: The Recursive Learner and The Virtuoso" section of the Learn page.
+  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+
+### A39. aiascent.dev - Learn Page - Apex Skill Definition
+
+  - **Description:** Provides the expanded definitional content for "The Apex Skill: On-the-Fly Tooling" section of the Learn page.
+  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+
 ## III. Design and Assets
 
 ### A15. aiascent.dev - Asset Wishlist and Directory Structure
@@ -192,3 +217,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
   - **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
+
+### A35. aiascent.dev - Discord Community Management Plan
+
+  - **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
+  - **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship

@@ -1,4 +1,5 @@
 // src/components/layout/Footer.tsx
+// C50 - Add Discord link
 // C7 - Refactor to position text in corners
 const Footer = () => {
 return (
@@ -12,18 +13,28 @@ Built in three days using the Data Curation Environment, with the only cost to p
 
 </p>
 {/* Right-aligned text */}
-<p className="text-sm text-muted-foreground mt-2 md:mt-0">
-&copy; 2025 aiascent.dev. All rights reserved. Source code is available on{' '}
-<a
-href="https://github.com/dgerabagi/aiascent-dev"
-target="_blank"
-rel="noreferrer"
-className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
->
-GitHub
-</a>
-.
-</p>
+<div className="flex items-center gap-4 mt-2 md:mt-0">
+    <a
+        href="https://discord.gg/HYurQXDWPm"
+        target="_blank"
+        rel="noreferrer"
+        className="text-sm font-medium underline underline-offset-4 hover:text-primary transition-colors text-muted-foreground"
+    >
+        Join our Discord
+    </a>
+    <p className="text-sm text-muted-foreground">
+        &copy; 2025 aiascent.dev. All rights reserved. Source code is available on{' '}
+        <a
+        href="https://github.com/dgerabagi/aiascent-dev"
+        target="_blank"
+        rel="noreferrer"
+        className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
+        >
+        GitHub
+        </a>
+        .
+    </p>
+</div>
 </div>
 </footer>
 );

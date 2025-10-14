@@ -1,6 +1,7 @@
 'use client';
 {
   /*
+  Cycle 50: Update Cognitive Apprenticeship content and image prompt.
   Cycle 32: Fix unescaped entities.
   - Replaced ' with &apos; in the content for "The Strategic Imperative: The Fissured Workplace" to fix linting error.
   Cycle 31: Add 'use client' directive.
@@ -79,27 +80,19 @@ In stark contrast, coherent competitors are professionalizing their data workfor
                     <MissionSectionBlock
                         title="Our Strategy: Cognitive Apprenticeship"
                         tldr="Our answer is not to imitate authoritarian control, but to unleash decentralized expertise through a model where AI serves as a tireless mentor, making the 'hidden curriculum' of expert thinking visible and learnable."
-                        content="The American counter-strategy must be asymmetric, leveraging our unique strengths: bottom-up innovation and individual empowerment. We believe in **Cognitive Apprenticeship**—a model where AI serves as a tireless mentor, guiding individuals from intuitive 'vibe coding' to architectural mastery.
+                        content="The American counter-strategy must be asymmetric, leveraging our unique strengths: bottom-up innovation and individual empowerment. We believe in **Cognitive Apprenticeship**—a model where an AI expert serves as a tireless mentor, guiding individuals from intuitive 'vibe coding' to architectural mastery.
 
-The central challenge in training experts is that their most critical skills—problem-solving heuristics, diagnostic strategies, self-correction—are internal and invisible. Cognitive Apprenticeship makes this 'hidden curriculum' visible and learnable. Historically, this model was difficult to scale due to the expert's limited time. AI fundamentally breaks this constraint. An AI can serve as a personalized Coach, provide dynamic Scaffolding that adapts in real-time, and generate infinite realistic scenarios for Modeling and Exploration.
+The central challenge in training experts is that their most critical skills—problem-solving heuristics, diagnostic strategies, self-correction—are internal and invisible. Cognitive Apprenticeship makes this 'hidden curriculum' visible and learnable. Historically, this model was difficult to scale due to a human expert's limited time. AI fundamentally breaks this constraint. A single expert AI can serve as a personalized Coach for thousands of apprentices simultaneously, provide dynamic Scaffolding that adapts in real-time, and generate infinite realistic scenarios for Modeling and Exploration.
 
-The Data Curation Environment (DCE) is the foundational tool for this new relationship. It provides the structured workflow and auditable knowledge graph that makes this new form of apprenticeship possible, transforming the development process itself into a rich learning environment."
+The Data Curation Environment (DCE) is the foundational tool for this new relationship. It provides the structured workflow and auditable knowledge graph that makes this new form of apprenticeship possible, transforming the development process itself into a rich learning environment where the AI's expertise is made visible to all."
                         images={[
                             'the-pedagogical-engine-cam-p1-img-1.webp',
                             'the-pedagogical-engine-cam-p1-img-2.webp',
                             'the-pedagogical-engine-cam-p1-img-3.webp',
                             'the-pedagogical-engine-cam-p1-img-4.webp',
-                            'the-pedagogical-engine-cam-p1-img-5.webp',
-                            'the-pedagogical-engine-cam-p1-img-6.webp',
-                            'the-pedagogical-engine-cam-p1-img-7.webp',
-                            'the-pedagogical-engine-cam-p1-img-8.webp',
-                            'the-pedagogical-engine-cam-p1-img-9.webp',
-                            'the-pedagogical-engine-cam-p1-img-10.webp',
-                            'the-pedagogical-engine-cam-p1-img-11.webp',
-                            'the-pedagogical-engine-cam-p1-img-12.webp',
                         ]}
                         imagePath="part-v-the-american-counter-strategy/from-vibecoding-to-virtuosity/the-pedagogical-engine-cam/prompt-1/"
-                        imagePrompt="A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship'. An expert DCIA (human) is working alongside an apprentice. The expert's thought process is visualized as a glowing, structured blueprint ('The Hidden Curriculum') projected holographically above their head. The apprentice is observing and absorbing this blueprint. The setting is a bright, solarpunk training facility. The image captures the moment of insight as the invisible becomes visible. The message conveyed is 'The Hidden Curriculum Revealed'."
+                        imagePrompt="A hyper-realistic, cinematic image illustrating 'Cognitive Apprenticeship in the AI Era'. A glowing blue AI robot, representing the 'Expert', stands beside a human 'Apprentice' at a workstation. The AI is projecting a holographic blueprint of its 'thought process' (The Hidden Curriculum) for the human to see and learn from. The setting is a bright, solarpunk training facility filled with lush greenery. The image captures the moment of insight as the AI makes its invisible expertise visible, enabling a single expert AI to teach a thousand apprentices. The message conveyed is 'Making the invisible visible.'"
                         imageSide="left"
                     />
 

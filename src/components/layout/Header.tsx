@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ModeToggle } from '@/components/global/mode-toggle';
 import Image from 'next/image';
+import { FaDiscord } from 'react-icons/fa';
 
 const Header = () => {
 return (
@@ -39,6 +40,9 @@ return (
 
     {/* Right side (Actions/Toggle) - Pushed to right */}
     <div className="flex items-center justify-end gap-4 ml-auto">
+      <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
+        <FaDiscord size={22} />
+      </a>
       <ModeToggle />
       {/* Placeholder for Mobile Menu Icon */}
       <div className="md:hidden">
