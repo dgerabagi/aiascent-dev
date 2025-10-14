@@ -1,5 +1,5 @@
 // src/stores/reportStore.ts
-// Updated on: C46 (Add retry logic for suggestion fetching.)
+// Updated on: C47 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
@@ -249,7 +249,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                             }),
                         });
 
-                        // C46: Only retry on 5xx server errors
+                        // C47: Only retry on 5xx server errors
                         if (response.status >= 500) {
                             console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
                             if (attempt === MAX_RETRIES) {

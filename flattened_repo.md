@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-13T21:56:14.843Z
+  Date Generated: 2025-10-13T22:39:57.962Z
   ---
   Total Files: 121
-  Approx. Tokens: 300567
+  Approx. Tokens: 300684
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -36,7 +36,7 @@
 14. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
 15. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
 16. package.json - Lines: 51 - Chars: 1478 - Tokens: 370
-17. tsconfig.json - Lines: 26 - Chars: 479 - Tokens: 120
+17. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
 18. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 19. components.json - Lines: 17 - Chars: 370 - Tokens: 93
 20. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
@@ -85,7 +85,7 @@
 63. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 64. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
 65. src\components\report-viewer\ReportChatPanel.tsx - Lines: 326 - Chars: 15701 - Tokens: 3926
-66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 48 - Chars: 1725 - Tokens: 432
+66. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 67. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 68. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 69. src\stores\reportStore.ts - Lines: 693 - Chars: 33385 - Tokens: 8347
@@ -93,7 +93,7 @@
 71. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
 72. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
 73. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-74. src\app\api\chat\route.ts - Lines: 275 - Chars: 12868 - Tokens: 3217
+74. src\app\api\chat\route.ts - Lines: 282 - Chars: 13199 - Tokens: 3300
 75. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 76. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 77. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
@@ -9050,6 +9050,7 @@ This artifact provides a structured format for tracking development tasks for th
 <file path="tsconfig.json">
 {
 "compilerOptions": {
+"target": "es2018",
 "lib": ["dom", "dom.iterable", "esnext"],
 "allowJs": true,
 "skipLibCheck": true,
@@ -12867,7 +12868,8 @@ const ReportProgressBar: React.FC = () => {
           style={{ width: `${progressPercent}%` }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xs font-bold text-primary-foreground mix-blend-difference">
+            {/* C47 FIX: Changed text-primary-foreground to text-foreground for better contrast with mix-blend-difference */}
+            <span className="text-xs font-bold text-foreground mix-blend-difference">
                 {progressPercent.toFixed(0)}%
             </span>
         </div>
@@ -12996,7 +12998,7 @@ export default ReportViewer;
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C46 (Add retry logic for suggestion fetching.)
+// Updated on: C47 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
 // Updated on: C42 (Implement report-specific default suggestions.)
@@ -13246,7 +13248,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                             }),
                         });
 
-                        // C46: Only retry on 5xx server errors
+                        // C47: Only retry on 5xx server errors
                         if (response.status >= 500) {
                             console.warn(`[reportStore] Suggestion fetch attempt ${attempt} failed with status ${response.status}. Retrying...`);
                             if (attempt === MAX_RETRIES) {
@@ -14252,7 +14254,7 @@ ${suggestionInstruction}`
 };
 
 // C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `You are an AI assistant. Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+const suggestionSystemPrompt = `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
@@ -14305,10 +14307,17 @@ Assistant:`;
         }
 
         const data = await response.json();
-        const content = data.choices?.[0]?.text || '[]';
+        let content = data.choices?.[0]?.text || '[]';
         console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
 
-        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
+        // C47: Isolate the assistant's final message to avoid parsing the analysis block.
+        const assistantMarker = '<|start|>assistant';
+        const assistantPartIndex = content.lastIndexOf(assistantMarker);
+        if (assistantPartIndex !== -1) {
+            content = content.substring(assistantPartIndex);
+        }
+
+        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/s); // 's' flag for multiline
         const jsonString = jsonMatch ? jsonMatch[0] : null;
         console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
 

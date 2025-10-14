@@ -36,7 +36,8 @@ const ReportProgressBar: React.FC = () => {
           style={{ width: `${progressPercent}%` }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xs font-bold text-primary-foreground mix-blend-difference">
+            {/* C47 FIX: Changed text-primary-foreground to text-foreground for better contrast with mix-blend-difference */}
+            <span className="text-xs font-bold text-foreground mix-blend-difference">
                 {progressPercent.toFixed(0)}%
             </span>
         </div>

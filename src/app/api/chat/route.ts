@@ -69,7 +69,7 @@ ${suggestionInstruction}`
 };
 
 // C43: New system prompt for suggestion generation
-const suggestionSystemPrompt = `You are an AI assistant. Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+const suggestionSystemPrompt = `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`;
@@ -122,10 +122,17 @@ Assistant:`;
         }
 
         const data = await response.json();
-        const content = data.choices?.[0]?.text || '[]';
+        let content = data.choices?.[0]?.text || '[]';
         console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
 
-        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/);
+        // C47: Isolate the assistant's final message to avoid parsing the analysis block.
+        const assistantMarker = '<|start|>assistant';
+        const assistantPartIndex = content.lastIndexOf(assistantMarker);
+        if (assistantPartIndex !== -1) {
+            content = content.substring(assistantPartIndex);
+        }
+
+        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/s); // 's' flag for multiline
         const jsonString = jsonMatch ? jsonMatch[0] : null;
         console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
 
