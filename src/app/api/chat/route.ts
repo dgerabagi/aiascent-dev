@@ -110,7 +110,7 @@ Assistant:`;
             body: JSON.stringify({
                 model: 'unsloth/gpt-oss-20b',
                 prompt: suggestionPrompt,
-                max_tokens: 256,
+                max_tokens: 512, // C48: Increased from 256
                 temperature: 0.5,
                 stream: false, // Non-streaming for this task
             }),
@@ -132,14 +132,17 @@ Assistant:`;
             content = content.substring(assistantPartIndex);
         }
 
-        const jsonMatch = content.match(/\[\s*".*?"\s*(,\s*".*?"\s*)*\]/s); // 's' flag for multiline
-        const jsonString = jsonMatch ? jsonMatch[0] : null;
-        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
-
-        if (!jsonString) {
-            console.warn(`[Chat API - Suggestions] Could not extract valid JSON array from suggestion response: ${content}`);
-            throw new Error('Invalid suggestions format from LLM');
+        // C48: More robust JSON extraction. Find the first '[' and last ']'
+        const firstBracket = content.indexOf('[');
+        const lastBracket = content.lastIndexOf(']');
+        
+        if (firstBracket === -1 || lastBracket === -1 || lastBracket < firstBracket) {
+            console.warn(`[Chat API - Suggestions] Could not find a valid JSON array structure in response: ${content}`);
+            throw new Error('Invalid suggestions format from LLM: No array found.');
         }
+
+        const jsonString = content.substring(firstBracket, lastBracket + 1);
+        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
         
         try {
             const suggestions = JSON.parse(jsonString);

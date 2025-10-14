@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
 // Updated on: C47 (Add retry logic for suggestion fetching.)
 // Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
 // Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
@@ -228,6 +229,11 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
             fetchAndSetSuggestions: async (page: ReportPage, reportName: string) => {
+                // C48: Add guard to prevent concurrent fetches
+                if (get().suggestionsStatus === 'loading') {
+                    console.log('[reportStore] Suggestion fetch already in progress. Ignoring new request.');
+                    return;
+                }
                 if (!page) return;
                 set({ suggestionsStatus: 'loading' });
                 

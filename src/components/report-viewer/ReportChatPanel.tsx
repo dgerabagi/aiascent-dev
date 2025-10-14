@@ -149,50 +149,55 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 }
             }
 
-            // --- C44: ROBUST POST-STREAM PROCESSING FOR SUGGESTIONS ---
-            console.log('[Chat Panel] Stream complete. Full raw message for parsing:', JSON.stringify(fullMessage));
+            // --- C48: ENHANCED POST-STREAM LOGGING FOR SUGGESTIONS ---
+            console.log('--- [Chat Panel] Suggestion Parsing Play-by-Play ---');
+            console.log('1. Full raw message from stream:', JSON.stringify(fullMessage));
             
             const startSuggestionRegex = /:{2,}suggestions:{2,}/;
             const endSuggestionRegex = /:{2,}end_suggestions:{2,}/;
             const startMatch = fullMessage.match(startSuggestionRegex);
             const endMatch = fullMessage.match(endSuggestionRegex);
 
+            console.log(`2. Start delimiter ':::suggestions:::' found: ${!!startMatch}`);
+            console.log(`3. End delimiter ':::end_suggestions:::' found: ${!!endMatch}`);
+
             let finalSuggestions = defaultSuggestionsForReport;
             let cleanedMessage = fullMessage;
 
             if (startMatch && endMatch && startMatch.index !== undefined && endMatch.index !== undefined && endMatch.index > startMatch.index) {
-                const jsonContentStartIndex = startMatch.index + startMatch[0].length;
+                const jsonContentStartIndex = startMatch.index + startMatch.length;
                 const jsonContentEndIndex = endMatch.index;
                 const jsonContent = fullMessage.substring(jsonContentStartIndex, jsonContentEndIndex).trim();
                 
-                console.log('[Chat Panel] Suggestions block found. Raw content:', JSON.stringify(jsonContent));
+                console.log('4. Extracted raw JSON content:', JSON.stringify(jsonContent));
                 
                 try {
                     const parsed = JSON.parse(jsonContent);
                     if (Array.isArray(parsed) && parsed.length > 0 && parsed.every(s => typeof s === 'string')) {
                         finalSuggestions = parsed;
-                        console.log('[Chat Panel] Successfully parsed suggestions:', finalSuggestions);
+                        console.log('5. PARSE SUCCESS. Applying dynamic suggestions:', finalSuggestions);
                     } else {
-                        console.warn('[Chat Panel] Parsed suggestions content is not a valid array of strings or is empty. Using defaults.');
+                        console.warn('5. PARSE FAILED: Parsed content is not a valid array of strings or is empty. Using defaults.');
                     }
-                } catch (e) {
-                    console.error("[Chat Panel] Failed to parse suggestions JSON:", e, "Raw content was:", jsonContent);
+                } catch (e: any) {
+                    console.error("5. PARSE FAILED: JSON.parse error:", e.message, "Raw content was:", jsonContent);
                 }
                 
                 // Clean the suggestions block from the message
-                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch[0].length);
+                cleanedMessage = fullMessage.substring(0, startMatch.index) + fullMessage.substring(endMatch.index + endMatch.length);
             } else {
-                console.log('[Chat Panel] No suggestions block found in the response. Using default suggestions for this report.');
+                console.log('4. No valid suggestion block found. Applying default suggestions for this report.');
             }
+            console.log('--- End Play-by-Play ---');
 
             setSuggestedPrompts(finalSuggestions);
+            // --- END C48 LOGGING ---
 
             // Now, perform final message cleaning on the already-suggestions-stripped message
             const finalContent = parseFinalMessage(cleanedMessage.trim());
 
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
-            // --- END POST-STREAM PROCESSING ---
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
