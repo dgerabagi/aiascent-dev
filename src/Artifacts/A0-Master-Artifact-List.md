@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C50 (Add Learn Page and Discord artifacts)
+# Updated on: C51 (Add DCE Page artifact)
 
 ## 1. Purpose
 
@@ -190,6 +190,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
   - **Tags:** page design, mission, about us, vision, strategy, cognitive capitalism
+
+### A40. aiascent.dev - Page Design DCE
+
+  - **Description:** A blueprint for the `/dce` page, dedicated to explaining the core features of the Data Curation Environment VS Code extension with visual aids.
+  - **Tags:** page design, dce, features, plan, ui, ux
 
 ## IV. Process & Workflow
 

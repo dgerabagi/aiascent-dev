@@ -56,7 +56,16 @@ const ShowcaseTabs = () => {
       </div>
 
       {/* Tab Content */}
-      <div className="flex-grow overflow-hidden">
+      <div className="flex-grow overflow-hidden relative">
+        {/* C51: Add informational banner for game login */}
+        {activeTab === 'game' && (
+            <div className="absolute top-0 left-0 right-0 p-2 bg-blue-950/80 backdrop-blur-sm text-center text-xs text-blue-200 z-10">
+                Note: Login and multiplayer features are disabled in this embedded view. For the full experience, please visit{' '}
+                <a href="https://aiascent.game" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-white">
+                    aiascent.game
+                </a>.
+            </div>
+        )}
         {activeTab === 'report' && (
           // The ReportViewer itself handles scrolling, so we just give it the full space.
           // The -16 for the header is handled by the parent page.

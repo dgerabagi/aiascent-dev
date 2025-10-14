@@ -1,6 +1,7 @@
 'use client';
 {
   /*
+  Cycle 51: Replace bottom button with NextPageSection component.
   Cycle 50: Update Cognitive Apprenticeship content and image prompt.
   Cycle 32: Fix unescaped entities.
   - Replaced ' with &apos; in the content for "The Strategic Imperative: The Fissured Workplace" to fix linting error.
@@ -14,8 +15,7 @@
 // src/app/mission/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import NextPageSection from '@/components/global/NextPageSection';
 
 const MissionPage = () => {
     return (
@@ -127,17 +127,12 @@ We are creating a community of 'solarpunk prime' developers, the original vibe c
                     />
                 </div>
                 
-                <section className="text-center mt-24 py-16">
-                    <h2 className="text-3xl font-bold mb-4">Ready to Build the Future?</h2>
-                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                        Continue to our Learn page to discover the &lsquo;Vibecoding to Virtuosity&rsquo; pathway—the curriculum for the Citizen Architect.
-                    </p>
-                    <Link href="/learn" passHref>
-                        <Button size="lg" variant="outline">
-                            Learn More
-                        </Button>
-                    </Link>
-                </section>
+                <NextPageSection
+                    href="/learn"
+                    buttonText="Learn More"
+                    title="Ready to Build the Future?"
+                    description="Continue to our Learn page to discover the ‘Vibecoding to Virtuosity’ pathway—the curriculum for the Citizen Architect."
+                />
 
             </div>
         </div>

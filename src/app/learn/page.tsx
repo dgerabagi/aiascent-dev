@@ -1,6 +1,7 @@
 'use client';
 {
   /*
+  Cycle 51: Replace bottom button with NextPageSection and update content.
   Cycle 50: Expand content for all sections based on A34.
   Cycle 31: Add 'use client' directive.
   - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
@@ -13,8 +14,7 @@
 // src/app/learn/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import NextPageSection from '@/components/global/NextPageSection';
 
 const LearnPage = () => {
     return (
@@ -155,17 +155,12 @@ The cognitive shift is profound: The competent user asks the AI, 'How do I solve
                     />
                 </div>
 
-                <section className="text-center mt-24 py-16">
-                    <h2 className="text-3xl font-bold mb-4">See It in Action</h2>
-                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                        Explore our showcase to see a complex, interactive report built entirely with the Data Curation Environment.
-                    </p>
-                    <Link href="/showcase" passHref>
-                        <Button size="lg" variant="outline">
-                            See The Showcase
-                        </Button>
-                    </Link>
-                </section>
+                <NextPageSection
+                    href="/showcase"
+                    buttonText="See The Showcase"
+                    title="Ready to See It in Action?"
+                    description="Explore our showcase to see a complex, interactive report and the AI Ascent game, both built entirely with the Data Curation Environment."
+                />
 
             </div>
         </div>
