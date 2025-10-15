@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C59 (Add CUDA on WSL Guide)
+# Updated on: C61 (Update Whisper guide description for PowerShell)
 
 ## 1. Purpose
 
@@ -256,8 +256,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** source material, research, workflow, development process, vibe coding
 
 ### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing a simple, Docker-based setup for using OpenAI's Whisper to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing
+- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, powershell
 
 ### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.

@@ -1,57 +1,106 @@
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
+# Updated on: C61 (Add PowerShell command for downloading models)
+# Updated on: C60 (Pivot to whisper.cpp for CPU/AMD users and add hardware compatibility section)
 # Updated on: C59 (Add link to new CUDA on WSL guide)
 # Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
 
 - **Key/Value for A0:**
-- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu
+- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, nvidia, powershell
 
 ## 1. Overview & Goal
 
 To build our training curriculum from recorded 1-on-1 sessions, we need an efficient and reliable way to transcribe audio files into text. You requested a simple, Docker-based solution.
 
-The goal of this guide is to provide a step-by-step process for running a powerful, GPU-accelerated Whisper model via Docker that exposes a simple API for programmatic transcription. The recommended solution is the **`insanely-fast-whisper-api`** project, which provides a ready-to-use, high-performance API server. The full documentation for this tool can be found in artifact `A47`.
+This guide provides step-by-step processes for running a powerful Whisper model via Docker that exposes a simple API for programmatic transcription. We offer two primary paths based on your hardware.
 
-## 2. Prerequisites
+---
 
-*   **Docker:** You must have Docker Desktop installed and running on your machine.
-*   **NVIDIA GPU (Strongly Recommended):** For acceptable performance, running Whisper on a CUDA-enabled NVIDIA GPU is advised. You will need the NVIDIA Container Toolkit installed and properly configured with your OS.
-*   **Audio Files:** Your audio recordings should be in a common format (MP3, WAV, M4A, etc.) and located in a single directory that you can mount into the Docker container.
+## 2. Hardware Compatibility: Which Path Should You Choose?
 
-## 3. Step-by-Step Setup
+The performance of Whisper is highly dependent on your computer's hardware, specifically the Graphics Processing Unit (GPU).
 
-### Step 1: Prepare Your Audio Directory
+*   **Path A: For NVIDIA GPUs (High Performance):** If you have a modern NVIDIA GPU (RTX 20-series or newer), the `insanely-fast-whisper-api` provides the best performance by leveraging NVIDIA's CUDA technology and optimizations like FlashAttention 2. Choose this path for the fastest possible transcription speeds.
 
-Create a dedicated directory on your machine to hold the audio files you want to transcribe. For this example, we'll use `C:\Projects\v2v-transcripts\audio-to-process`.
+*   **Path B: For AMD GPUs or CPU-Only (Recommended for Compatibility):** If you have an AMD GPU, an Intel GPU, or do not have a powerful dedicated GPU, this is the recommended path. We will use a Docker image based on **`whisper.cpp`**, a highly efficient C++ port of Whisper that runs exceptionally well on CPUs. This method is slower than the dedicated NVIDIA path but is far more compatible and reliable across different types of hardware.
 
-### Step 2: Run the Whisper API Docker Container
+---
 
-Open your terminal (PowerShell or Command Prompt) and run the following command. This command will download the Docker image (which is quite large, ~18.7 GB) and start the Whisper API server.
+## 3. Path B: CPU-Based Transcription with whisper.cpp (Recommended for AMD/CPU)
+
+This solution is hardware-agnostic and provides excellent performance on a CPU.
+
+### Step 1: Create a Directory for Models
+
+On your local machine, create a directory where you will store the downloaded Whisper model files. For this guide, we'll assume you create it at `C:\Projects\v2v-transcripts\models`.
+
+### Step 2: Download the Whisper Model
+
+Next, download the pre-converted `ggml` model file. We recommend the `large-v3` model for the best balance of accuracy. Open a terminal and run the command that matches your environment.
+
+**For PowerShell (Windows):**
+In PowerShell, `curl` is an alias for `Invoke-WebRequest`, which uses different parameters. Use this command:
+```powershell
+# Ensure you are in the C:\Projects\v2v-transcripts directory
+Invoke-WebRequest -Uri "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin" -OutFile "./models/ggml-large-v3.bin"
+```
+
+**For Bash (Linux, macOS, WSL):**
+```bash
+# Ensure you are in your project directory
+# This command downloads the file into a 'models' subdirectory
+curl -L -o ./models/ggml-large-v3.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin
+```
+
+### Step 3: Run the whisper.cpp Docker Container
+
+Now, run the Docker container. This command will start the `whisper.cpp` server, making it accessible on your machine.
+
+```bash
+docker run -d -p 8080:8080 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" -v "C:\Projects\v2v-transcripts\models:/models" ghcr.io/ggerganov/whisper.cpp:main ./server -m /models/ggml-large-v3.bin --host 0.0.0.0 --port 8080
+```
+
+Let's break down this command:
+*   `-d`: Runs the container in the background.
+*   `-p 8080:8080`: Maps port 8080 on your machine to port 8080 in the container.
+*   `-v "C:\...\audio-to-process:/data"`: Mounts your audio files directory into the container at `/data`. **Replace the path with your actual audio directory.**
+*   `-v "C:\...\models:/models"`: Mounts your models directory into the container at `/models`. **Replace the path with your actual models directory.**
+*   `ghcr.io/ggerganov/whisper.cpp:main`: The official Docker image for `whisper.cpp`.
+*   `./server ...`: This is the command that runs *inside* the container. It starts the web server, tells it which model file to load (`-m /models/...`), and to listen on all network interfaces inside the container (`--host 0.0.0.0`).
+
+### Step 4: Transcribe a File
+
+You can now send a `POST` request to the `/inference` endpoint to transcribe a file. Open a new terminal and use `curl`.
+
+```bash
+curl --request POST \
+  --url http://localhost:8080/inference \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@/data/your-audio-file.mp3"
+```
+
+**Explanation:**
+*   The path `@/data/your-audio-file.mp3` refers to the file's location *inside the container*. You must use the `/data/` prefix.
+*   The server will process the file and return a JSON object containing the transcription.
+
+---
+
+## 4. Path A: GPU-Accelerated Transcription with `insanely-fast-whisper-api` (NVIDIA Only)
+
+Use this path only if you have a compatible NVIDIA GPU.
+
+### Step 1: Run the Whisper API Docker Container
 
 ```bash
 docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 ```
-
-Let's break down this command:
-*   `-d`: Runs the container in detached mode (in the background).
 *   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors, see the Troubleshooting section below.
-*   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
-*   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
-*   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
+*   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container.
+*   `-v "C:\...:/data"`: Mounts your local audio directory into the container at the `/data` path.
 
-### Step 3: Verify the Server is Running
-
-After a minute or two for the model to load, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see a FastAPI documentation page. This confirms the server is up and ready to accept requests.
-
-## 4. How to Transcribe a File
-
-You can now send `POST` requests to the API to transcribe your audio files. This is most easily done by uploading the file directly from the volume you mounted into the container.
-
-### Example using `curl`
-
-Open a new terminal and run the following command, replacing `your-audio-file.mp3` with the name of your audio file.
+### Step 2: Transcribe a File
 
 ```bash
 curl -X 'POST' \
@@ -61,44 +110,6 @@ curl -X 'POST' \
   -F 'file=@/data/your-audio-file.mp3;type=audio/mpeg'
 ```
 
-**Explanation:**
-*   We are sending a `POST` request to the `/transcribe` endpoint.
-*   The `-F 'file=@/data/your-audio-file.mp3...'` part tells `curl` to upload a file.
-*   **Important:** The path `/data/your-audio-file.mp3` is the path *inside the Docker container*, which we mapped from our local directory. You must always use `/data/` as the prefix for the file path in your API call.
+### Step 3: Troubleshooting NVIDIA GPU Issues
 
-### Example Response
-
-The API will respond with a JSON object containing the full transcription.
-
-```json
-{
-  "text": "Imagine that you had a very smart engineer show up on your doorstep. They have no context, no background...",
-  "language": "en",
-  "segments": [
-    {
-      "id": 0,
-      "seek": 0,
-      "start": 0,
-      "end": 4.8,
-      "text": " Imagine that you had a very smart engineer show up on your doorstep.",
-      // ... other segment data
-    }
-  ]
-}
-```
-
-You can copy the value of the `"text"` field to get the full transcript. This provides a simple and powerful pipeline for converting your recorded sessions into the raw material for the V2V Academy curriculum.
-
-## 5. Troubleshooting
-
-### Error: `docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].` OR `nvidia-smi` command not found in WSL.
-
-This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers, WSL, and the CUDA toolkit.
-
-For a comprehensive, step-by-step solution, please refer to the dedicated guide: **`A48 - NVIDIA CUDA on WSL Setup Guide.md`**. That artifact provides a straightforward process for correctly installing the drivers and toolkit to resolve this issue.
-
-### Fallback to CPU Mode (for testing)
-If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
-*   Remove the `--gpus all` flag from the `docker run` command:
-    ```bash
-    docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+If you are using Windows with WSL 2 and encounter errors like `docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]]`, it means Docker cannot access your GPU. For a comprehensive solution, refer to the dedicated guide: **`A48 - NVIDIA CUDA on WSL Setup Guide.md`**.

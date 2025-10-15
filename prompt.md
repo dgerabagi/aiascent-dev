@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 60 - readjust approach given hardware
+Current Cycle 61 - trying to start container
+Cycle 60 - readjust approach given hardware
 Cycle 59 - provide more guidance
 Cycle 58 - whisper error
 Cycle 57 - minor tweaks
@@ -269,7 +270,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C59 (Add CUDA on WSL Guide)
+# Updated on: C61 (Update Whisper guide description for PowerShell)
 
 ## 1. Purpose
 
@@ -521,8 +522,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** source material, research, workflow, development process, vibe coding
 
 ### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing a simple, Docker-based setup for using OpenAI's Whisper to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing
+- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, powershell
 
 ### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
@@ -531,125 +532,54 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 61>
+<Cycle Context>
+okay on my laptop with the 7700S i ran the following, it installed the container, but the container doesnt start. i pasted the errors in ephemeral below.
+</Cycle Context>
+<Ephemeral Context>
+<laptop console>
+PS C:\Projects\v2v-transcripts> docker run -d -p 8080:8080 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" -v "C:\Projects\v2v-transcripts\models:/models" ghcr.io/ggerganov/whisper.cpp:main ./server -m /models/ggml-large-v3.bin --host 0.0.0.0 --port 8080
+Unable to find image 'ghcr.io/ggerganov/whisper.cpp:main' locally
+main: Pulling from ggerganov/whisper.cpp
+9cb31e2e37ea: Pull complete
+70d9dadc8f5f: Pull complete
+b382293e0c17: Pull complete
+054bd1db823d: Pull complete
+Digest: sha256:13d0e7c873c59a262dca621b57ad28de40e9927ac883d936dfd8459142c90db4
+Status: Downloaded newer image for ghcr.io/ggerganov/whisper.cpp:main
+89a2bbef7f1b649dc1d42dec078ae28ca9c2882a9d633268ba2fac4b8896efab
+PS C:\Projects\v2v-transcripts> docker run -d -p 8080:8080 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" -v "C:\Projects\v2v-transcripts\models:/models" ghcr.io/ggerganov/whisper.cpp:main ./server -m /models/ggml-large-v3.bin --host 0.0.0.0 --port 8080
+dc6e5d655b2ce33ade5ed0fbef0b67f2c99792a7a54c1b2b92ffab51830daca5
+PS C:\Projects\v2v-transcripts> 
+</laptop console>
+<in the container>
+2025-10-15 15:47:05 -m: line 1: ./server: No such file or directory
+</in the container>
+</Ephemeral Context>
+<Previous Cycle 60 Summary of Actions>
+I understand you're having trouble getting `nvidia-smi` to work within your WSL environment, which is a necessary step for enabling GPU acceleration in Docker. This is a common setup issue, and I can provide a clear, step-by-step guide to resolve it.
+
+My course of action is to create a new artifact that will serve as a definitive guide for setting up NVIDIA CUDA on WSL 2 for Docker. This guide will be more straightforward than NVIDIA's official documentation and will consolidate the necessary steps into one place. I will also update the existing Whisper transcription guide to reference this new, more detailed document.
+
+1.  **Create a New Artifact (`A48 - NVIDIA CUDA on WSL Setup Guide.md`):** I will author a new, comprehensive guide detailing the precise steps to enable NVIDIA GPU support within WSL 2 for Docker containers.
+2.  **Structure the Guide:** The new artifact will be organized into the following sections:
+    *   **Prerequisites:** List the necessary components (Windows 11, NVIDIA GPU, WSL 2, Docker Desktop).
+    *   **Step 1: Install/Update Windows NVIDIA Driver:** Emphasize that the latest driver for the *Windows host* is the critical first step.
+    *   **Step 2: Install/Update WSL & Kernel:** Provide the command `wsl --update` and explain its importance.
+    *   **Step 3: Install CUDA Toolkit within WSL:** Provide the specific commands to install the CUDA toolkit *inside the WSL distribution* (e.g., Ubuntu), which is a step often missed. This makes commands like `nvcc` available.
+    *   **Step 4: Verification:** Detail the steps to verify the installation by running `nvidia-smi` and `nvcc --version` from the WSL terminal and explain what the expected output should be.
+    *   **Step 5: Docker Desktop Configuration:** Include instructions on how to ensure Docker Desktop's WSL integration is enabled for the correct Linux distribution.
+3.  **Update `A0 - Master Artifact List.md`:** I will add the new `A48` artifact to the master list under a new "Technical Guides" or similar section to ensure it is properly cataloged.
+4.  **Update `A46 - Whisper Transcription Setup Guide.md`:** I will revise the troubleshooting section of the existing Whisper guide. It will now provide a brief summary of the `nvidia-smi` issue and then link directly to the new, more comprehensive `A48` guide for the detailed solution.
+</Previous Cycle 60 Summary of Actions>
+</Cycle 61>
+
 <Cycle 60>
 <Cycle Context>
 okay, also so you know, ive got a AMD Radeon RX 7700S, i forgot, i think thats the reason why. please advise accordingly. note i tried without the gpu flag and i see this result in the container:
 
 
 </Cycle Context>
-<Ephemeral Context>
-<command>
-PS C:\Projects\aiascent-dev> docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest           
-9c1789adbe81680f7c3de45d417d1fccde64a38943cc886c760b7c5aa0ae2a48
-PS C:\Projects\aiascent-dev> 
-</command>
-
-<console logs>
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 =============
-2025-10-15 14:39:32 == PyTorch ==
-2025-10-15 14:39:32 =============
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 NVIDIA Release 24.01 (build 80741402)
-2025-10-15 14:39:32 PyTorch Version 2.2.0a0+81ea7a4
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 Container image Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 Copyright (c) 2014-2023 Facebook Inc.
-2025-10-15 14:39:32 Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
-2025-10-15 14:39:32 Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
-2025-10-15 14:39:32 Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
-2025-10-15 14:39:32 Copyright (c) 2011-2013 NYU                      (Clement Farabet)
-2025-10-15 14:39:32 Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
-2025-10-15 14:39:32 Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
-2025-10-15 14:39:32 Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
-2025-10-15 14:39:32 Copyright (c) 2015      Google Inc.
-2025-10-15 14:39:32 Copyright (c) 2015      Yangqing Jia
-2025-10-15 14:39:32 Copyright (c) 2013-2016 The Caffe contributors
-2025-10-15 14:39:32 All rights reserved.
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 This container image and its contents are governed by the NVIDIA Deep Learning Container License.
-2025-10-15 14:39:32 By pulling and using the container, you accept the terms and conditions of this license:
-2025-10-15 14:39:32 https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
-2025-10-15 14:39:32    Use the NVIDIA Container Toolkit to start this container with GPU support; see
-2025-10-15 14:39:32    https://docs.nvidia.com/datacenter/cloud-native/ .
-2025-10-15 14:39:32 
-2025-10-15 14:39:32 NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
-2025-10-15 14:39:32    insufficient for PyTorch.  NVIDIA recommends the use of the following flags:
-2025-10-15 14:39:32    docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 ...
-2025-10-15 14:39:32 
-2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [1] [INFO] Starting gunicorn 21.2.0
-2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [1] [INFO] Listening at: http://0.0.0.0:9000 (1)
-2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
-2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [66] [INFO] Booting worker with pid: 66
-2025-10-15 14:39:46 /app/.venv/lib/python3.10/site-packages/pyannote/audio/core/io.py:43: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
-2025-10-15 14:39:46   torchaudio.set_audio_backend("soundfile")
-2025-10-15 14:39:48 
-config.json: 0.00B [00:00, ?B/s]
-config.json: 1.27kB [00:00, 7.58MB/s]
-2025-10-15 14:40:35 
-model.safetensors:   0%|          | 0.00/3.09G [00:00<?, ?B/s]
-model.safetensors:   0%|          | 10.5M/3.09G [00:00<01:13, 41.6MB/s]
-model.safetensors:   1%|          | 21.0M/3.09G [00:00<01:09, 44.2MB/s]
-model.safetensors:   1%|          | 31.5M/3.09G [00:00<01:12, 42.0MB/s]
-[...]
-model.safetensors:  99%|█████████▉| 3.05G/3.09G [01:06<00:00, 46.2MB/s]
-model.safetensors:  99%|█████████▉| 3.06G/3.09G [01:06<00:00, 47.3MB/s]
-model.safetensors: 100%|█████████▉| 3.07G/3.09G [01:06<00:00, 48.2MB/s]
-model.safetensors: 100%|█████████▉| 3.08G/3.09G [01:06<00:00, 48.6MB/s]
-model.safetensors: 100%|██████████| 3.09G/3.09G [01:06<00:00, 46.2MB/s]
-2025-10-15 14:40:56 [2025-10-15 19:40:56 +0000] [66] [ERROR] Exception in worker process
-2025-10-15 14:40:56 Traceback (most recent call last):
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-2025-10-15 14:40:56     worker.init_process()
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/uvicorn/workers.py", line 66, in init_process
-2025-10-15 14:40:56     super(UvicornWorker, self).init_process()
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
-2025-10-15 14:40:56     self.load_wsgi()
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-2025-10-15 14:40:56     self.wsgi = self.app.wsgi()
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2025-10-15 14:40:56     self.callable = self.load()
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-2025-10-15 14:40:56     return self.load_wsgiapp()
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-2025-10-15 14:40:56     return util.import_app(self.app_uri)
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
-2025-10-15 14:40:56     mod = importlib.import_module(module)
-2025-10-15 14:40:56   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-2025-10-15 14:40:56     return _bootstrap._gcd_import(name[level:], package, level)
-2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-2025-10-15 14:40:56   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
-2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2025-10-15 14:40:56   File "/app/app/app.py", line 33, in <module>
-2025-10-15 14:40:56     pipe = pipeline(
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/pipelines/__init__.py", line 870, in pipeline
-2025-10-15 14:40:56     framework, model = infer_framework_load_model(
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/pipelines/base.py", line 278, in infer_framework_load_model
-2025-10-15 14:40:56     model = model_class.from_pretrained(model, **kwargs)
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 566, in from_pretrained
-2025-10-15 14:40:56     return model_class.from_pretrained(
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3588, in from_pretrained
-2025-10-15 14:40:56     config = cls._autoset_attn_implementation(
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1387, in _autoset_attn_implementation
-2025-10-15 14:40:56     cls._check_and_enable_flash_attn_2(
-2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1487, in _check_and_enable_flash_attn_2
-2025-10-15 14:40:56     raise ImportError(f"{preface} Flash Attention 2 is not available. {install_message}")
-2025-10-15 14:40:56 ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: Flash Attention 2 is not available. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-2025-10-15 14:40:56 [2025-10-15 19:40:56 +0000] [66] [INFO] Worker exiting (pid: 66)
-2025-10-15 14:40:57 [2025-10-15 19:40:57 +0000] [1] [ERROR] Worker (pid:66) exited with code 3
-2025-10-15 14:40:57 [2025-10-15 19:40:57 +0000] [1] [ERROR] Shutting down: Master
-2025-10-15 14:40:57 [2025-10-15 19:40:57 +0000] [1] [ERROR] Reason: Worker failed to boot.
-
-</console logs>
-</Ephemeral Context>
 <Previous Cycle 59 Summary of Actions>
 I have analyzed the error message you provided. The issue stems from a misconfiguration between Docker Desktop, the Windows Subsystem for Linux (WSL), and your NVIDIA GPU drivers, which prevents Docker from accessing the GPU.
 
@@ -3450,10 +3380,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T19:43:13.672Z
+  Date Generated: 2025-10-15T20:48:08.755Z
   ---
   Total Files: 156
-  Approx. Tokens: 551900
+  Approx. Tokens: 552001
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3506,7 +3436,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 264 - Chars: 15243 - Tokens: 3811
+38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 264 - Chars: 15313 - Tokens: 3829
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 40. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 41. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -3599,7 +3529,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 104 - Chars: 6070 - Tokens: 1518
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 115 - Chars: 6403 - Tokens: 1601
 132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -24901,7 +24831,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C59 (Add CUDA on WSL Guide)
+# Updated on: C61 (Update Whisper guide description for PowerShell)
 
 ## 1. Purpose
 
@@ -25153,8 +25083,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** source material, research, workflow, development process, vibe coding
 
 ### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing a simple, Docker-based setup for using OpenAI's Whisper to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing
+- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, powershell
 
 ### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
@@ -33353,57 +33283,106 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
+# Updated on: C61 (Add PowerShell command for downloading models)
+# Updated on: C60 (Pivot to whisper.cpp for CPU/AMD users and add hardware compatibility section)
 # Updated on: C59 (Add link to new CUDA on WSL guide)
 # Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
 
 - **Key/Value for A0:**
-- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu
+- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, nvidia, powershell
 
 ## 1. Overview & Goal
 
 To build our training curriculum from recorded 1-on-1 sessions, we need an efficient and reliable way to transcribe audio files into text. You requested a simple, Docker-based solution.
 
-The goal of this guide is to provide a step-by-step process for running a powerful, GPU-accelerated Whisper model via Docker that exposes a simple API for programmatic transcription. The recommended solution is the **`insanely-fast-whisper-api`** project, which provides a ready-to-use, high-performance API server. The full documentation for this tool can be found in artifact `A47`.
+This guide provides step-by-step processes for running a powerful Whisper model via Docker that exposes a simple API for programmatic transcription. We offer two primary paths based on your hardware.
 
-## 2. Prerequisites
+---
 
-*   **Docker:** You must have Docker Desktop installed and running on your machine.
-*   **NVIDIA GPU (Strongly Recommended):** For acceptable performance, running Whisper on a CUDA-enabled NVIDIA GPU is advised. You will need the NVIDIA Container Toolkit installed and properly configured with your OS.
-*   **Audio Files:** Your audio recordings should be in a common format (MP3, WAV, M4A, etc.) and located in a single directory that you can mount into the Docker container.
+## 2. Hardware Compatibility: Which Path Should You Choose?
 
-## 3. Step-by-Step Setup
+The performance of Whisper is highly dependent on your computer's hardware, specifically the Graphics Processing Unit (GPU).
 
-### Step 1: Prepare Your Audio Directory
+*   **Path A: For NVIDIA GPUs (High Performance):** If you have a modern NVIDIA GPU (RTX 20-series or newer), the `insanely-fast-whisper-api` provides the best performance by leveraging NVIDIA's CUDA technology and optimizations like FlashAttention 2. Choose this path for the fastest possible transcription speeds.
 
-Create a dedicated directory on your machine to hold the audio files you want to transcribe. For this example, we'll use `C:\Projects\v2v-transcripts\audio-to-process`.
+*   **Path B: For AMD GPUs or CPU-Only (Recommended for Compatibility):** If you have an AMD GPU, an Intel GPU, or do not have a powerful dedicated GPU, this is the recommended path. We will use a Docker image based on **`whisper.cpp`**, a highly efficient C++ port of Whisper that runs exceptionally well on CPUs. This method is slower than the dedicated NVIDIA path but is far more compatible and reliable across different types of hardware.
 
-### Step 2: Run the Whisper API Docker Container
+---
 
-Open your terminal (PowerShell or Command Prompt) and run the following command. This command will download the Docker image (which is quite large, ~18.7 GB) and start the Whisper API server.
+## 3. Path B: CPU-Based Transcription with whisper.cpp (Recommended for AMD/CPU)
+
+This solution is hardware-agnostic and provides excellent performance on a CPU.
+
+### Step 1: Create a Directory for Models
+
+On your local machine, create a directory where you will store the downloaded Whisper model files. For this guide, we'll assume you create it at `C:\Projects\v2v-transcripts\models`.
+
+### Step 2: Download the Whisper Model
+
+Next, download the pre-converted `ggml` model file. We recommend the `large-v3` model for the best balance of accuracy. Open a terminal and run the command that matches your environment.
+
+**For PowerShell (Windows):**
+In PowerShell, `curl` is an alias for `Invoke-WebRequest`, which uses different parameters. Use this command:
+```powershell
+# Ensure you are in the C:\Projects\v2v-transcripts directory
+Invoke-WebRequest -Uri "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin" -OutFile "./models/ggml-large-v3.bin"
+```
+
+**For Bash (Linux, macOS, WSL):**
+```bash
+# Ensure you are in your project directory
+# This command downloads the file into a 'models' subdirectory
+curl -L -o ./models/ggml-large-v3.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin
+```
+
+### Step 3: Run the whisper.cpp Docker Container
+
+Now, run the Docker container. This command will start the `whisper.cpp` server, making it accessible on your machine.
+
+```bash
+docker run -d -p 8080:8080 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" -v "C:\Projects\v2v-transcripts\models:/models" ghcr.io/ggerganov/whisper.cpp:main ./server -m /models/ggml-large-v3.bin --host 0.0.0.0 --port 8080
+```
+
+Let's break down this command:
+*   `-d`: Runs the container in the background.
+*   `-p 8080:8080`: Maps port 8080 on your machine to port 8080 in the container.
+*   `-v "C:\...\audio-to-process:/data"`: Mounts your audio files directory into the container at `/data`. **Replace the path with your actual audio directory.**
+*   `-v "C:\...\models:/models"`: Mounts your models directory into the container at `/models`. **Replace the path with your actual models directory.**
+*   `ghcr.io/ggerganov/whisper.cpp:main`: The official Docker image for `whisper.cpp`.
+*   `./server ...`: This is the command that runs *inside* the container. It starts the web server, tells it which model file to load (`-m /models/...`), and to listen on all network interfaces inside the container (`--host 0.0.0.0`).
+
+### Step 4: Transcribe a File
+
+You can now send a `POST` request to the `/inference` endpoint to transcribe a file. Open a new terminal and use `curl`.
+
+```bash
+curl --request POST \
+  --url http://localhost:8080/inference \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@/data/your-audio-file.mp3"
+```
+
+**Explanation:**
+*   The path `@/data/your-audio-file.mp3` refers to the file's location *inside the container*. You must use the `/data/` prefix.
+*   The server will process the file and return a JSON object containing the transcription.
+
+---
+
+## 4. Path A: GPU-Accelerated Transcription with `insanely-fast-whisper-api` (NVIDIA Only)
+
+Use this path only if you have a compatible NVIDIA GPU.
+
+### Step 1: Run the Whisper API Docker Container
 
 ```bash
 docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 ```
-
-Let's break down this command:
-*   `-d`: Runs the container in detached mode (in the background).
 *   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors, see the Troubleshooting section below.
-*   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
-*   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
-*   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
+*   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container.
+*   `-v "C:\...:/data"`: Mounts your local audio directory into the container at the `/data` path.
 
-### Step 3: Verify the Server is Running
-
-After a minute or two for the model to load, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see a FastAPI documentation page. This confirms the server is up and ready to accept requests.
-
-## 4. How to Transcribe a File
-
-You can now send `POST` requests to the API to transcribe your audio files. This is most easily done by uploading the file directly from the volume you mounted into the container.
-
-### Example using `curl`
-
-Open a new terminal and run the following command, replacing `your-audio-file.mp3` with the name of your audio file.
+### Step 2: Transcribe a File
 
 ```bash
 curl -X 'POST' \
@@ -33413,47 +33392,9 @@ curl -X 'POST' \
   -F 'file=@/data/your-audio-file.mp3;type=audio/mpeg'
 ```
 
-**Explanation:**
-*   We are sending a `POST` request to the `/transcribe` endpoint.
-*   The `-F 'file=@/data/your-audio-file.mp3...'` part tells `curl` to upload a file.
-*   **Important:** The path `/data/your-audio-file.mp3` is the path *inside the Docker container*, which we mapped from our local directory. You must always use `/data/` as the prefix for the file path in your API call.
+### Step 3: Troubleshooting NVIDIA GPU Issues
 
-### Example Response
-
-The API will respond with a JSON object containing the full transcription.
-
-```json
-{
-  "text": "Imagine that you had a very smart engineer show up on your doorstep. They have no context, no background...",
-  "language": "en",
-  "segments": [
-    {
-      "id": 0,
-      "seek": 0,
-      "start": 0,
-      "end": 4.8,
-      "text": " Imagine that you had a very smart engineer show up on your doorstep.",
-      // ... other segment data
-    }
-  ]
-}
-```
-
-You can copy the value of the `"text"` field to get the full transcript. This provides a simple and powerful pipeline for converting your recorded sessions into the raw material for the V2V Academy curriculum.
-
-## 5. Troubleshooting
-
-### Error: `docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].` OR `nvidia-smi` command not found in WSL.
-
-This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers, WSL, and the CUDA toolkit.
-
-For a comprehensive, step-by-step solution, please refer to the dedicated guide: **`A48 - NVIDIA CUDA on WSL Setup Guide.md`**. That artifact provides a straightforward process for correctly installing the drivers and toolkit to resolve this issue.
-
-### Fallback to CPU Mode (for testing)
-If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
-*   Remove the `--gpus all` flag from the `docker run` command:
-    ```bash
-    docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+If you are using Windows with WSL 2 and encounter errors like `docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]]`, it means Docker cannot access your GPU. For a comprehensive solution, refer to the dedicated guide: **`A48 - NVIDIA CUDA on WSL Setup Guide.md`**.
 </file_artifact>
 
 <file path="src/components/global/SplashCursor.jsx">
