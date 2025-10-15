@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 59 - provide more guidance
+Current Cycle 60 - readjust approach given hardware
+Cycle 59 - provide more guidance
 Cycle 58 - whisper error
 Cycle 57 - minor tweaks
 Cycle 56 - minor feedback and adjustments, but good work
@@ -268,7 +269,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C55 (Add V2V Academy Artifacts)
+# Updated on: C59 (Add CUDA on WSL Guide)
 
 ## 1. Purpose
 
@@ -497,6 +498,10 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
   - **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship
 
+### A48. NVIDIA CUDA on WSL Setup Guide
+- **Description:** A straightforward guide for setting up NVIDIA CUDA on Windows Subsystem for Linux (WSL) 2 to enable GPU acceleration for Docker containers.
+- **Tags:** guide, setup, cuda, wsl, docker, gpu, nvidia, troubleshooting
+
 ## V. V2V Online Academy
 
 ### A42. V2V Academy - Master Artifact List
@@ -526,23 +531,151 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 60>
+<Cycle Context>
+okay, also so you know, ive got a AMD Radeon RX 7700S, i forgot, i think thats the reason why. please advise accordingly. note i tried without the gpu flag and i see this result in the container:
+
+
+</Cycle Context>
+<Ephemeral Context>
+<command>
+PS C:\Projects\aiascent-dev> docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest           
+9c1789adbe81680f7c3de45d417d1fccde64a38943cc886c760b7c5aa0ae2a48
+PS C:\Projects\aiascent-dev> 
+</command>
+
+<console logs>
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 =============
+2025-10-15 14:39:32 == PyTorch ==
+2025-10-15 14:39:32 =============
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 NVIDIA Release 24.01 (build 80741402)
+2025-10-15 14:39:32 PyTorch Version 2.2.0a0+81ea7a4
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 Container image Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 Copyright (c) 2014-2023 Facebook Inc.
+2025-10-15 14:39:32 Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+2025-10-15 14:39:32 Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+2025-10-15 14:39:32 Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+2025-10-15 14:39:32 Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+2025-10-15 14:39:32 Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+2025-10-15 14:39:32 Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+2025-10-15 14:39:32 Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+2025-10-15 14:39:32 Copyright (c) 2015      Google Inc.
+2025-10-15 14:39:32 Copyright (c) 2015      Yangqing Jia
+2025-10-15 14:39:32 Copyright (c) 2013-2016 The Caffe contributors
+2025-10-15 14:39:32 All rights reserved.
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+2025-10-15 14:39:32 By pulling and using the container, you accept the terms and conditions of this license:
+2025-10-15 14:39:32 https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+2025-10-15 14:39:32    Use the NVIDIA Container Toolkit to start this container with GPU support; see
+2025-10-15 14:39:32    https://docs.nvidia.com/datacenter/cloud-native/ .
+2025-10-15 14:39:32 
+2025-10-15 14:39:32 NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
+2025-10-15 14:39:32    insufficient for PyTorch.  NVIDIA recommends the use of the following flags:
+2025-10-15 14:39:32    docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 ...
+2025-10-15 14:39:32 
+2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [1] [INFO] Listening at: http://0.0.0.0:9000 (1)
+2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
+2025-10-15 14:39:33 [2025-10-15 19:39:33 +0000] [66] [INFO] Booting worker with pid: 66
+2025-10-15 14:39:46 /app/.venv/lib/python3.10/site-packages/pyannote/audio/core/io.py:43: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+2025-10-15 14:39:46   torchaudio.set_audio_backend("soundfile")
+2025-10-15 14:39:48 
+config.json: 0.00B [00:00, ?B/s]
+config.json: 1.27kB [00:00, 7.58MB/s]
+2025-10-15 14:40:35 
+model.safetensors:   0%|          | 0.00/3.09G [00:00<?, ?B/s]
+model.safetensors:   0%|          | 10.5M/3.09G [00:00<01:13, 41.6MB/s]
+model.safetensors:   1%|          | 21.0M/3.09G [00:00<01:09, 44.2MB/s]
+model.safetensors:   1%|          | 31.5M/3.09G [00:00<01:12, 42.0MB/s]
+[...]
+model.safetensors:  99%|█████████▉| 3.05G/3.09G [01:06<00:00, 46.2MB/s]
+model.safetensors:  99%|█████████▉| 3.06G/3.09G [01:06<00:00, 47.3MB/s]
+model.safetensors: 100%|█████████▉| 3.07G/3.09G [01:06<00:00, 48.2MB/s]
+model.safetensors: 100%|█████████▉| 3.08G/3.09G [01:06<00:00, 48.6MB/s]
+model.safetensors: 100%|██████████| 3.09G/3.09G [01:06<00:00, 46.2MB/s]
+2025-10-15 14:40:56 [2025-10-15 19:40:56 +0000] [66] [ERROR] Exception in worker process
+2025-10-15 14:40:56 Traceback (most recent call last):
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-15 14:40:56     worker.init_process()
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/uvicorn/workers.py", line 66, in init_process
+2025-10-15 14:40:56     super(UvicornWorker, self).init_process()
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-15 14:40:56     self.load_wsgi()
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-15 14:40:56     self.wsgi = self.app.wsgi()
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-15 14:40:56     self.callable = self.load()
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-15 14:40:56     return self.load_wsgiapp()
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-15 14:40:56     return util.import_app(self.app_uri)
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-15 14:40:56     mod = importlib.import_module(module)
+2025-10-15 14:40:56   File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+2025-10-15 14:40:56     return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2025-10-15 14:40:56   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2025-10-15 14:40:56   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-15 14:40:56   File "/app/app/app.py", line 33, in <module>
+2025-10-15 14:40:56     pipe = pipeline(
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/pipelines/__init__.py", line 870, in pipeline
+2025-10-15 14:40:56     framework, model = infer_framework_load_model(
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/pipelines/base.py", line 278, in infer_framework_load_model
+2025-10-15 14:40:56     model = model_class.from_pretrained(model, **kwargs)
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 566, in from_pretrained
+2025-10-15 14:40:56     return model_class.from_pretrained(
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3588, in from_pretrained
+2025-10-15 14:40:56     config = cls._autoset_attn_implementation(
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1387, in _autoset_attn_implementation
+2025-10-15 14:40:56     cls._check_and_enable_flash_attn_2(
+2025-10-15 14:40:56   File "/app/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1487, in _check_and_enable_flash_attn_2
+2025-10-15 14:40:56     raise ImportError(f"{preface} Flash Attention 2 is not available. {install_message}")
+2025-10-15 14:40:56 ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: Flash Attention 2 is not available. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
+2025-10-15 14:40:56 [2025-10-15 19:40:56 +0000] [66] [INFO] Worker exiting (pid: 66)
+2025-10-15 14:40:57 [2025-10-15 19:40:57 +0000] [1] [ERROR] Worker (pid:66) exited with code 3
+2025-10-15 14:40:57 [2025-10-15 19:40:57 +0000] [1] [ERROR] Shutting down: Master
+2025-10-15 14:40:57 [2025-10-15 19:40:57 +0000] [1] [ERROR] Reason: Worker failed to boot.
+
+</console logs>
+</Ephemeral Context>
+<Previous Cycle 59 Summary of Actions>
+I have analyzed the error message you provided. The issue stems from a misconfiguration between Docker Desktop, the Windows Subsystem for Linux (WSL), and your NVIDIA GPU drivers, which prevents Docker from accessing the GPU.
+
+To resolve this, I will update the `A46 - Whisper Transcription Setup Guide.md` artifact with a new, detailed "Troubleshooting" section. This new section will provide a step-by-step guide to diagnose and fix the specific `WSL environment detected but no adapters were found` error.
+
+Additionally, I have identified an opportunity to simplify the transcription process outlined in the previous version of the guide. I will remove the section that required setting up a Python server to serve local audio files. Instead, I will replace it with a more direct and efficient method that uses a simple `curl` command to upload files directly from the directory you've mounted into the Docker container. This will make the entire transcription workflow much simpler once the initial GPU configuration issue is resolved.
+
+1.  **Update `src/Artifacts/A46 - Whisper Transcription Setup Guide.md`:**
+    *   Add a new "Troubleshooting" section to the guide.
+    *   In this section, specifically address the `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown` error.
+    *   Provide a clear, step-by-step diagnostic process for the user:
+        1.  **Verify Host Drivers:** Instruct the user to run `nvidia-smi` in Windows PowerShell to confirm the NVIDIA drivers are installed correctly on the host machine.
+        2.  **Verify WSL GPU Access:** Instruct the user to run `nvidia-smi` within their WSL 2 terminal. Explain that if this fails, the issue is with the WSL 2 and NVIDIA driver integration, and provide a link to NVIDIA's official "CUDA on WSL" setup guide.
+        3.  **Verify Docker Desktop Settings:** Guide the user to check Docker Desktop's settings (under Resources > WSL Integration) to ensure it is configured to use the correct WSL 2 distribution.
+        4.  **Provide a Fallback:** Add instructions for running the container in CPU-only mode by removing the `--gpus all` flag, including a strong warning that performance will be significantly degraded.
+    *   **Simplify Transcription Workflow:**
+        1.  Remove the entire section about setting up a Python HTTP server to serve local audio files via a URL.
+        2.  Replace it with the simpler, more direct method of uploading a file using a `curl` command with `multipart/form-data`, referencing the file from the container's mounted `/data` volume.
+        3.  Provide a clear, copy-pasteable `curl` example for the `/transcribe` endpoint.
+</Previous Cycle 59 Summary of Actions>
+</Cycle 60>
+
 <Cycle 59>
 <Cycle Context>
 okay, it looks like i need the CUDA on WSL step, at least when i type nvidia-smi it doesnt work. i dont want to follow the nvidia guide its too convoluted, i want to follow your guidance.
 </Cycle Context>
-<Ephemeral Context>
-PS C:\Projects\aiascent-dev> nvidia-smi
-nvidia-smi : The term 'nvidia-smi' is not recognized as the name of a cmdlet, function, script file, or 
-operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
-and try again.
-At line:1 char:1
-+ nvidia-smi
-+ ~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (nvidia-smi:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
- 
-PS C:\Projects\aiascent-dev> 
-</Ephemeral Context>
 <Previous Cycle 58 Summary of Actions>
 I will address the two main requests for this cycle. First, I will fix the bug with the interactive whitepaper's fullscreen mode by unifying its behavior with the rest of the site. Second, I will disable and remove the experimental "Splash Cursor" feature to reduce project complexity.
 
@@ -3317,10 +3450,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T19:29:27.412Z
+  Date Generated: 2025-10-15T19:43:13.672Z
   ---
-  Total Files: 155
-  Approx. Tokens: 550816
+  Total Files: 156
+  Approx. Tokens: 551900
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3373,7 +3506,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 260 - Chars: 14973 - Tokens: 3744
+38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 264 - Chars: 15243 - Tokens: 3811
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 40. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 41. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -3466,7 +3599,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 122 - Chars: 7273 - Tokens: 1819
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 104 - Chars: 6070 - Tokens: 1518
 132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -3491,6 +3624,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 153. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
 154. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
 155. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
+156. src\Artifacts\A48 - NVIDIA CUDA on WSL Setup Guide.md - Lines: 99 - Chars: 5270 - Tokens: 1318
 
 <file path="context/aiascentgame/code/ascentiaHandler.ts.md">
 // src/server/api/ascentiaHandler.ts
@@ -24767,7 +24901,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C55 (Add V2V Academy Artifacts)
+# Updated on: C59 (Add CUDA on WSL Guide)
 
 ## 1. Purpose
 
@@ -24995,6 +25129,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
   - **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship
+
+### A48. NVIDIA CUDA on WSL Setup Guide
+- **Description:** A straightforward guide for setting up NVIDIA CUDA on Windows Subsystem for Linux (WSL) 2 to enable GPU acceleration for Docker containers.
+- **Tags:** guide, setup, cuda, wsl, docker, gpu, nvidia, troubleshooting
 
 ## V. V2V Online Academy
 
@@ -33215,6 +33353,7 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
+# Updated on: C59 (Add link to new CUDA on WSL guide)
 # Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
 
 - **Key/Value for A0:**
@@ -33249,7 +33388,7 @@ docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-p
 
 Let's break down this command:
 *   `-d`: Runs the container in detached mode (in the background).
-*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors or are on a CPU-only machine, see the Troubleshooting section.
+*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors, see the Troubleshooting section below.
 *   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
 *   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
 *   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
@@ -33304,32 +33443,13 @@ You can copy the value of the `"text"` field to get the full transcript. This pr
 
 ## 5. Troubleshooting
 
-### Error: `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.`
+### Error: `docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].` OR `nvidia-smi` command not found in WSL.
 
-This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers and WSL.
+This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers, WSL, and the CUDA toolkit.
 
-Follow these steps to diagnose the issue:
+For a comprehensive, step-by-step solution, please refer to the dedicated guide: **`A48 - NVIDIA CUDA on WSL Setup Guide.md`**. That artifact provides a straightforward process for correctly installing the drivers and toolkit to resolve this issue.
 
-**Step 1: Verify Host NVIDIA Drivers**
-First, ensure your NVIDIA drivers are installed correctly on your main Windows operating system.
-*   Open **PowerShell** (not the WSL terminal).
-*   Run the command: `nvidia-smi`
-*   If this command runs successfully and shows your GPU details, your Windows drivers are likely fine. If it fails, you must install the latest NVIDIA drivers for your GPU from the official NVIDIA website before proceeding.
-
-**Step 2: Verify GPU Access Inside WSL**
-Next, check if WSL itself can see the GPU.
-*   Open your WSL terminal (e.g., Ubuntu).
-*   Run the command: `nvidia-smi`
-*   If this command works, WSL can access your GPU. If it fails with an error like "command not found" or another GPU error, it means your WSL environment is not correctly configured for GPU passthrough.
-*   **Solution:** You must follow NVIDIA's official guide for setting up **CUDA on WSL**. This is the most reliable way to fix this layer. You can find the guide here: [https://docs.nvidia.com/cuda/wsl-user-guide/index.html](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
-
-**Step 3: Verify Docker Desktop Settings**
-Ensure Docker Desktop is configured to use your WSL 2 distribution and provide it with GPU access.
-*   Open Docker Desktop.
-*   Go to **Settings > Resources > WSL Integration**.
-*   Make sure that "Enable integration with my default WSL distro" is checked, and that the toggle for your specific Linux distribution (e.g., `Ubuntu-22.04`) is turned on.
-
-**Step 4: Fallback to CPU Mode (for testing)**
+### Fallback to CPU Mode (for testing)
 If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
 *   Remove the `--gpus all` flag from the `docker run` command:
     ```bash
@@ -37291,6 +37411,108 @@ export default function ConditionalSplash() {
     // Render the splash cursor with faster dissipation
     return <SplashCursor DENSITY_DISSIPATION={4.375} />;
 }
+</file_artifact>
+
+<file path="src/Artifacts/A48 - NVIDIA CUDA on WSL Setup Guide.md">
+# Artifact A48: NVIDIA CUDA on WSL Setup Guide
+# Date Created: C59
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A straightforward guide for setting up NVIDIA CUDA on Windows Subsystem for Linux (WSL) 2 to enable GPU acceleration for Docker containers.
+- **Tags:** guide, setup, cuda, wsl, docker, gpu, nvidia, troubleshooting
+
+## 1. Overview & Goal
+
+The `nvidia-smi` command not being found inside your WSL terminal is a classic sign that the environment is not correctly configured to access your NVIDIA GPU. This guide provides a clear, step-by-step process to properly install and configure CUDA on WSL 2, which is a prerequisite for GPU-accelerated Docker containers.
+
+The goal is to provide a simpler, more direct path than the official NVIDIA documentation, focusing only on the essential steps to get you up and running.
+
+## 2. Prerequisites
+
+Before you begin, ensure your system meets these requirements:
+*   Windows 11 or Windows 10 (version 21H2 or later).
+*   An NVIDIA GPU (GeForce RTX 20-series / Quadro RTX or newer recommended).
+*   Windows Subsystem for Linux (WSL) 2 enabled with a Linux distribution installed (e.g., Ubuntu).
+*   Docker Desktop installed and configured to use the WSL 2 backend.
+
+## 3. Step-by-Step Installation
+
+Follow these steps in order. The first two steps are performed on your **Windows host**, and the third is performed **inside your WSL terminal**.
+
+### Step 1: Install the Latest NVIDIA Driver for Windows
+
+This is the most critical step. The Windows driver is what enables WSL to access the GPU.
+
+1.  **Download:** Go to the official NVIDIA Driver Downloads page: [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx)
+2.  **Select Driver:** Choose the correct driver series for your GPU (e.g., GeForce Game Ready Driver or NVIDIA RTX / Quadro).
+3.  **Install:** Download and install the driver on your Windows system. Reboot your machine after installation is complete.
+4.  **Verify on Windows:** Open **PowerShell** or **Command Prompt** (not WSL) and run `nvidia-smi`. You should see your GPU details. If this command fails, you must resolve your Windows driver installation before proceeding.
+
+### Step 2: Update the WSL Kernel
+
+Ensure you have the latest WSL kernel, which includes the necessary GPU support.
+
+1.  Open **PowerShell** as an administrator.
+2.  Run the following command:
+    ```powershell
+    wsl --update
+    ```
+3.  If it downloads and installs an update, restart your machine.
+
+### Step 3: Install the CUDA Toolkit inside WSL
+
+This step installs the necessary CUDA compiler and libraries *within your Linux distribution*, which makes commands like `nvcc` available and ensures Docker containers can find the toolkit.
+
+1.  **Open your WSL terminal** (e.g., Ubuntu).
+2.  Run the following commands one by one to install the NVIDIA CUDA repository and the toolkit. This example is for Ubuntu 22.04 with CUDA 12.x; adjust the URL if you are using a different version.
+
+    ```bash
+    # Add NVIDIA's GPG key and repository
+    wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+    sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+    wget https://developer.download.nvidia.com/compute/cuda/12.5.0/local_installers/cuda-repo-wsl-ubuntu-12-5-local_12.5.0-1_amd64.deb
+    sudo dpkg -i cuda-repo-wsl-ubuntu-12-5-local_12.5.0-1_amd64.deb
+    sudo cp /var/cuda-repo-wsl-ubuntu-12-5-local/cuda-*-keyring.gpg /usr/share/keyrings/
+    sudo apt-get update
+    
+    # Install the CUDA toolkit
+    sudo apt-get -y install cuda-toolkit-12-5
+    ```
+
+3.  **Update PATH (Important):** The CUDA tools are installed in `/usr/local/cuda-12.5/bin`. You need to add this to your PATH to run commands like `nvcc`. Add the following lines to the end of your `~/.bashrc` file:
+
+    ```bash
+    echo 'export PATH=/usr/local/cuda-12.5/bin:$PATH' >> ~/.bashrc
+    echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+    *Note: You will need to close and reopen your WSL terminal for this change to take full effect.*
+
+## 4. Verification
+
+After completing the steps, verify that everything is working correctly from **inside your WSL terminal**.
+
+1.  **Check `nvidia-smi`:**
+    ```bash
+    nvidia-smi
+    ```
+    You should now see the same output as you did on Windows, showing your GPU, driver version, and CUDA version. If the command is not found, it might mean `/usr/lib/wsl/lib` is not in your PATH, but the CUDA installation should resolve this.
+
+2.  **Check `nvcc`:**
+    ```bash
+    nvcc --version
+    ```
+    This command verifies that the CUDA Toolkit compiler is installed and accessible. You should see output detailing the compiler version.
+
+3.  **Check Docker GPU Access:**
+    Run a sample CUDA container to confirm Docker can access the GPU.
+    ```bash
+    docker run --rm --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+    ```
+    If this runs successfully and shows benchmark results, your entire stack—Windows Driver, WSL, CUDA Toolkit, and Docker—is correctly configured for GPU workloads.
+
+You can now run GPU-enabled containers, such as the Whisper API, with the `--gpus all` flag.
 </file_artifact>
 
 

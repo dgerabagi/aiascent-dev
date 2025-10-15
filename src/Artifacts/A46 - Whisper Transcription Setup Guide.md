@@ -1,6 +1,7 @@
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
+# Updated on: C59 (Add link to new CUDA on WSL guide)
 # Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
 
 - **Key/Value for A0:**
@@ -35,7 +36,7 @@ docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-p
 
 Let's break down this command:
 *   `-d`: Runs the container in detached mode (in the background).
-*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors or are on a CPU-only machine, see the Troubleshooting section.
+*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors, see the Troubleshooting section below.
 *   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
 *   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
 *   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
@@ -90,32 +91,13 @@ You can copy the value of the `"text"` field to get the full transcript. This pr
 
 ## 5. Troubleshooting
 
-### Error: `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.`
+### Error: `docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].` OR `nvidia-smi` command not found in WSL.
 
-This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers and WSL.
+This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers, WSL, and the CUDA toolkit.
 
-Follow these steps to diagnose the issue:
+For a comprehensive, step-by-step solution, please refer to the dedicated guide: **`A48 - NVIDIA CUDA on WSL Setup Guide.md`**. That artifact provides a straightforward process for correctly installing the drivers and toolkit to resolve this issue.
 
-**Step 1: Verify Host NVIDIA Drivers**
-First, ensure your NVIDIA drivers are installed correctly on your main Windows operating system.
-*   Open **PowerShell** (not the WSL terminal).
-*   Run the command: `nvidia-smi`
-*   If this command runs successfully and shows your GPU details, your Windows drivers are likely fine. If it fails, you must install the latest NVIDIA drivers for your GPU from the official NVIDIA website before proceeding.
-
-**Step 2: Verify GPU Access Inside WSL**
-Next, check if WSL itself can see the GPU.
-*   Open your WSL terminal (e.g., Ubuntu).
-*   Run the command: `nvidia-smi`
-*   If this command works, WSL can access your GPU. If it fails with an error like "command not found" or another GPU error, it means your WSL environment is not correctly configured for GPU passthrough.
-*   **Solution:** You must follow NVIDIA's official guide for setting up **CUDA on WSL**. This is the most reliable way to fix this layer. You can find the guide here: [https://docs.nvidia.com/cuda/wsl-user-guide/index.html](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
-
-**Step 3: Verify Docker Desktop Settings**
-Ensure Docker Desktop is configured to use your WSL 2 distribution and provide it with GPU access.
-*   Open Docker Desktop.
-*   Go to **Settings > Resources > WSL Integration**.
-*   Make sure that "Enable integration with my default WSL distro" is checked, and that the toggle for your specific Linux distribution (e.g., `Ubuntu-22.04`) is turned on.
-
-**Step 4: Fallback to CPU Mode (for testing)**
+### Fallback to CPU Mode (for testing)
 If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
 *   Remove the `--gpus all` flag from the `docker run` command:
     ```bash

@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C55 (Add V2V Academy Artifacts)
+# Updated on: C59 (Add CUDA on WSL Guide)
 
 ## 1. Purpose
 
@@ -232,6 +232,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
   - **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship
+
+### A48. NVIDIA CUDA on WSL Setup Guide
+- **Description:** A straightforward guide for setting up NVIDIA CUDA on Windows Subsystem for Linux (WSL) 2 to enable GPU acceleration for Docker containers.
+- **Tags:** guide, setup, cuda, wsl, docker, gpu, nvidia, troubleshooting
 
 ## V. V2V Online Academy
 
