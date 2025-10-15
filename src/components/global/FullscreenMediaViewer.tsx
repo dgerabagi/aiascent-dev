@@ -24,7 +24,7 @@ const FullscreenMediaViewer = () => {
                     onClick={closeFullscreenMedia}
                 >
                     <div
-                        className="relative bg-card border border-border rounded-lg shadow-2xl w-full h-full max-w-6xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+                        className="relative bg-card border border-border rounded-lg shadow-2xl w-full h-full max-w-[90vw] max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button

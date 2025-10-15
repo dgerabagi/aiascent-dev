@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C53 (Add DCE Artifacts as Source of Truth artifact)
+# Updated on: C55 (Add V2V Academy Artifacts)
 
 ## 1. Purpose
 
@@ -232,3 +232,29 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
   - **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship
+
+## V. V2V Online Academy
+
+### A42. V2V Academy - Master Artifact List
+- **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
+- **Tags:** documentation, v2v, training, artifact list, index
+
+### A43. V2V Academy - Project Vision and Roadmap
+- **Description:** High-level overview of the online training platform, its purpose, target audience, technical approach (including user authentication), and a phased development plan.
+- **Tags:** project vision, goals, scope, v2v, training, roadmap, user authentication
+
+### A44. V2V Academy - Content Research Proposal
+- **Description:** A formal proposal outlining a research plan to discover, analyze, and synthesize existing public content related to the "prompt engineering to context engineering" paradigm and other V2V methodologies.
+- **Tags:** research, content strategy, curriculum, prompt engineering, context engineering
+
+### A45. V2V Academy - Key Learnings from Ryan Carson
+- **Description:** A summary of the key concepts from Ryan Carson's "3-file system to vibe code production apps" video, which serves as an inspiration for structuring the AI development process.
+- **Tags:** source material, research, workflow, development process, vibe coding
+
+### A46. Whisper Transcription Setup Guide
+- **Description:** A technical guide detailing a simple, Docker-based setup for using OpenAI's Whisper to transcribe audio recordings into text for curriculum development.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing
+
+### A47. David Gerabagi Resume (DCE Update)
+- **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
+- **Tags:** resume, branding, professional profile, dce
