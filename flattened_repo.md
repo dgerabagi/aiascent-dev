@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T18:40:01.906Z
+  Date Generated: 2025-10-15T19:06:09.149Z
   ---
-  Total Files: 154
-  Approx. Tokens: 550006
+  Total Files: 155
+  Approx. Tokens: 550483
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -54,8 +54,8 @@
 32. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
 33. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
 34. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
-35. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
-36. src\app\layout.tsx - Lines: 47 - Chars: 1518 - Tokens: 380
+35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
+36. src\app\layout.tsx - Lines: 47 - Chars: 1564 - Tokens: 391
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 260 - Chars: 14973 - Tokens: 3744
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
@@ -150,8 +150,8 @@
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 92 - Chars: 4583 - Tokens: 1146
-132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 34685 - Tokens: 8672
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 89 - Chars: 4876 - Tokens: 1219
+132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
 135. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -174,6 +174,7 @@
 152. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
 153. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
 154. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
+155. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
 
 <file path="context/aiascentgame/code/ascentiaHandler.ts.md">
 // src/server/api/ascentiaHandler.ts
@@ -29913,72 +29914,73 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
+# Updated on: C56 (Replace entire guide with `insanely-fast-whisper-api` Docker solution from A47)
 
 - **Key/Value for A0:**
-- **Description:** A technical guide detailing a simple, Docker-based setup for using OpenAI's Whisper to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing
+- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api
 
 ## 1. Overview & Goal
 
-To build our training curriculum from recorded 1-on-1 sessions, we need an efficient and reliable way to transcribe audio files into text. You requested a simple, Docker-based solution for OpenAI's Whisper, similar to our `kokoro-fastapi` TTS setup.
+To build our training curriculum from recorded 1-on-1 sessions, we need an efficient and reliable way to transcribe audio files into text. You requested a simple, Docker-based solution.
 
-The goal of this guide is to provide a step-by-step process for running a powerful Whisper model via Docker that exposes an API, allowing for easy, programmatic transcription. The recommended solution is a container from `purton-tech/whisper-api`, which provides a ready-to-use API server for this purpose.
+The goal of this guide is to provide a step-by-step process for running a powerful, GPU-accelerated Whisper model via Docker that exposes a simple API for programmatic transcription. The recommended solution is the **`insanely-fast-whisper-api`** project, which provides a ready-to-use, high-performance API server. The full documentation for this tool can be found in artifact `A47`.
 
 ## 2. Prerequisites
 
 *   **Docker:** You must have Docker Desktop installed and running on your machine (the one with the GPU is highly recommended).
-*   **NVIDIA GPU (Recommended):** For acceptable performance, running Whisper on a CUDA-enabled NVIDIA GPU is strongly advised. You will need the NVIDIA Container Toolkit installed.
-*   **Audio Files:** Your audio recordings should be in a common format (MP3, WAV, M4A, etc.) and located in a single directory.
+*   **NVIDIA GPU (Strongly Recommended):** For acceptable performance, running Whisper on a CUDA-enabled NVIDIA GPU is advised. You will need the NVIDIA Container Toolkit installed.
+*   **Audio Files:** Your audio recordings should be in a common format (MP3, WAV, M4A, etc.) and located in a single directory that you can mount into the Docker container.
 
 ## 3. Step-by-Step Setup
 
 ### Step 1: Prepare Your Audio Directory
 
-Create a dedicated directory on your machine to hold the audio files you want to transcribe. For this example, we'll use `C:\Projects\v2v-transcripts\1-on-1-training`.
+Create a dedicated directory on your machine to hold the audio files you want to transcribe. For this example, we'll use `C:\Projects\v2v-transcripts\audio-to-process`.
 
 ### Step 2: Run the Whisper API Docker Container
 
-Open your terminal (PowerShell or Command Prompt) and run the following command. This command will download the Docker image and start the Whisper API server.
+Open your terminal (PowerShell or Command Prompt) and run the following command. This command will download the Docker image (which is quite large, ~18.7 GB) and start the Whisper API server.
 
 ```bash
-docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\1-on-1-training:/data" purton-tech/whisper-api:latest
+docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 ```
 
 Let's break down this command:
 *   `-d`: Runs the container in detached mode (in the background).
-*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you are on a CPU-only machine, you can remove this flag, but transcription will be very slow.
+*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you are on a CPU-only machine, you can remove this flag, but transcription will be extremely slow.
 *   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
-*   `-v "C:\Projects\v2v-transcripts:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **Replace the path with the actual path to your audio files.**
-*   `purton-tech/whisper-api:latest`: The name of the Docker image to use.
+*   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
+*   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
 
 ### Step 3: Verify the Server is Running
 
-After a minute or two, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see the FastAPI documentation page for the Whisper API. This confirms the server is up and ready to accept requests.
+After a minute or two for the model to load, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see a FastAPI documentation page. This confirms the server is up and ready to accept requests.
 
 ## 4. How to Transcribe a File
 
-You can now send requests to the API to transcribe your audio files. You can use a tool like Postman, Insomnia, or a simple `curl` command.
+You can now send `POST` requests to the API to transcribe your audio files. You can use a tool like Postman, Insomnia, or a simple `curl` command.
 
 ### Example using `curl`
 
-Open a new terminal and run the following command, replacing `transcript-1.mp3` with the name of your audio file.
+Open a new terminal and run the following command, replacing `your-audio-file.mp3` with the name of your audio file.
 
 ```bash
 curl -X 'POST' \
   'http://localhost:9000/transcribe' \
   -H 'accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
-  -F 'file=@/data/transcript-1.mp3;type=audio/mpeg'
+  -F 'file=@/data/your-audio-file.mp3;type=audio/mpeg'
 ```
 
 **Explanation:**
 *   We are sending a `POST` request to the `/transcribe` endpoint.
-*   The `-F 'file=@/data/transcript-1.mp3...'` part tells `curl` to upload a file.
-*   **Important:** The path `/data/transcript-1.mp3` is the path *inside the Docker container*, which we mapped from our local directory. You always use `/data/` as the prefix.
+*   The `-F 'file=@/data/your-audio-file.mp3...'` part tells `curl` to upload a file.
+*   **Important:** The path `/data/your-audio-file.mp3` is the path *inside the Docker container*, which we mapped from our local directory. You must always use `/data/` as the prefix for the file path in your API call.
 
 ### Example Response
 
-The API will respond with a JSON object containing the transcription.
+The API will respond with a JSON object containing the full transcription.
 
 ```json
 {
@@ -29998,9 +30000,6 @@ The API will respond with a JSON object containing the transcription.
 ```
 
 You can copy the value of the `"text"` field to get the full transcript. This provides a simple and powerful pipeline for converting your recorded sessions into the raw material for the V2V Academy curriculum.
-
-
-
 </file_artifact>
 
 <file path="src/components/global/SplashCursor.jsx">
@@ -33939,5 +33938,24 @@ The preceding analysis of the technical landscape, pedagogical market, and theor
 38. arxiv.org, accessed October 15, 2025, [https://arxiv.org/abs/2501.06527](https://arxiv.org/abs/2501.06527)  
 39. Scaffolding Creativity: Integrating Generative AI Tools and Real-world Experiences in Business Education \- arXiv, accessed October 15, 2025, [https://arxiv.org/html/2501.06527v2](https://arxiv.org/html/2501.06527v2)  
 40. Scaffolding Creativity: Integrating Generative AI Tools and Real-world Experiences in Business Education \- arXiv, accessed October 15, 2025, [https://arxiv.org/html/2501.06527v1](https://arxiv.org/html/2501.06527v1)
+</file_artifact>
+
+<file path="src/components/global/ConditionalSplash.tsx">
+'use client';
+
+import { usePathname } from 'next/navigation';
+import SplashCursor from './SplashCursor';
+
+export default function ConditionalSplash() {
+    const pathname = usePathname();
+
+    // Disable the splash effect on the /showcase page
+    if (pathname === '/showcase') {
+        return null;
+    }
+
+    // Render the splash cursor with faster dissipation
+    return <SplashCursor DENSITY_DISSIPATION={4.375} />;
+}
 </file_artifact>
 
