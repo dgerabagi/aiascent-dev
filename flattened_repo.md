@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T19:06:09.149Z
+  Date Generated: 2025-10-15T19:20:27.217Z
   ---
   Total Files: 155
-  Approx. Tokens: 550483
+  Approx. Tokens: 550216
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -55,7 +55,7 @@
 33. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
 34. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
 35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
-36. src\app\layout.tsx - Lines: 47 - Chars: 1564 - Tokens: 391
+36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 260 - Chars: 14973 - Tokens: 3744
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
@@ -117,7 +117,7 @@
 95. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
 96. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 97. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-98. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8287 - Tokens: 2072
+98. src\components\report-viewer\ReportViewer.tsx - Lines: 178 - Chars: 7544 - Tokens: 1886
 99. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 100. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 101. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -128,7 +128,7 @@
 106. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 107. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 108. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-109. src\stores\reportStore.ts - Lines: 736 - Chars: 33967 - Tokens: 8492
+109. src\stores\reportStore.ts - Lines: 731 - Chars: 33774 - Tokens: 8444
 110. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 111. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 112. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -21375,7 +21375,6 @@ import Footer from "@/components/layout/Footer";
 import React from "react";
 import GlobalAudioPlayer from "@/components/global/GlobalAudioPlayer";
 import FullscreenMediaViewer from "@/components/global/FullscreenMediaViewer";
-import SplashCursor from "@/components/global/SplashCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21398,7 +21397,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SplashCursor />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
@@ -26555,12 +26553,11 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen, openFullscreenMedia } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
-        imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
-        closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
+        imagePanelHeight, setImagePanelHeight, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
         chatPanelWidth, playbackStatus, autoplayEnabled, isFullscreen
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
@@ -26571,9 +26568,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isChatPanelOpen: state.isChatPanelOpen,
         imagePanelHeight: state.imagePanelHeight,
         setImagePanelHeight: state.setImagePanelHeight,
-        isImageFullscreen: state.isImageFullscreen,
-        openImageFullscreen: state.openImageFullscreen,
-        closeImageFullscreen: state.closeImageFullscreen,
         isPromptVisible: state.isPromptVisible,
         isTldrVisible: state.isTldrVisible,
         isContentVisible: state.isContentVisible,
@@ -26584,7 +26578,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isFullscreen: state.isFullscreen,
     }));
 
-    const viewerRef = useRef<HTMLDivElement>(null); // C45
+    const viewerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         loadReport(reportName);
@@ -26592,7 +26586,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C49: Fetch suggestions when the current page changes. This is now the single source of truth for page-based suggestions.
     useEffect(() => {
         if (currentPage) {
             fetchPageSuggestions(currentPage, reportName);
@@ -26604,7 +26597,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
 
-    // C45: Fullscreen event listener
     useEffect(() => {
         const handleFullscreenChange = () => {
             setIsFullscreen(!!document.fullscreenElement);
@@ -26613,7 +26605,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
     }, [setIsFullscreen]);
 
-    // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
     useEffect(() => {
         if (playbackStatus === 'playing' && autoplayEnabled) {
             startSlideshow();
@@ -26639,15 +26630,14 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         );
     }
     
-    return (
-        // C45: Added ref and dynamic classes for fullscreen
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
-            {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
-                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
-                </div>
-            )}
+    const handleImageClick = () => {
+        if (currentImage) {
+            openFullscreenMedia({ src: currentImage.url, description: currentImage.prompt });
+        }
+    };
 
+    return (
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
                 <header className="p-2 border-b flex-shrink-0">
@@ -26675,7 +26665,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                                     fill
                                     sizes="100vw"
                                     className="object-contain cursor-pointer"
-                                    onClick={openImageFullscreen}
+                                    onClick={handleImageClick}
                                     unoptimized // Good for gifs, but also for webp from local
                                 />
                             ) : <p>No Image Available</p>}
@@ -27360,6 +27350,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C57 (Remove isImageFullscreen and related actions to unify fullscreen logic)
 // Updated on: C54 (Add state for fullscreen media viewer)
 // Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
 // Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
@@ -27480,7 +27471,6 @@ export interface ReportState {
     isChatPanelOpen: boolean;
     chatPanelWidth: number;
     imagePanelHeight: number;
-    isImageFullscreen: boolean;
     isFullscreen: boolean; // C45: For fullscreen mode
     fullscreenMedia: FullscreenMedia | null; // C54: For fullscreen GIF viewer
     reportChatHistory: ChatMessage[];
@@ -27525,8 +27515,6 @@ export interface ReportActions {
     toggleChatPanel: () => void;
     setChatPanelWidth: (width: number) => void;
     setImagePanelHeight: (height: number) => void;
-    openImageFullscreen: () => void;
-    closeImageFullscreen: () => void;
     toggleFullscreen: (element: HTMLElement | null) => void; // C45
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
     openFullscreenMedia: (media: FullscreenMedia) => void; // C54
@@ -27576,7 +27564,6 @@ const createInitialReportState = (): ReportState => ({
     isChatPanelOpen: false,
     chatPanelWidth: 450,
     imagePanelHeight: 400,
-    isImageFullscreen: false,
     isFullscreen: false, // C45
     fullscreenMedia: null, // C54
     reportChatHistory: [],
@@ -28005,8 +27992,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
             setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
-            openImageFullscreen: () => set({ isImageFullscreen: true }),
-            closeImageFullscreen: () => set({ isImageFullscreen: false }),
             setIsFullscreen: (isFullscreen) => set({ isFullscreen }),
             toggleFullscreen: (element) => {
                 if (!document.fullscreenElement) {

@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 57 - minor tweaks
+Current Cycle 58 - whisper error
+Cycle 57 - minor tweaks
 Cycle 56 - minor feedback and adjustments, but good work
 Cycle 55 - begin planning for online training, help with transcription solution
 Cycle 54 - re-attempt cycle 53 with planning already completed
@@ -523,6 +524,41 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 58>
+<Cycle Context>
+nice great work. okay whisper finished downloading, got an error (see ephemeral)
+</Cycle Context>
+<Ephemeral Context>
+PS C:\Projects\aiascent-dev> docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+6503545a933e21cf23358a25fe7672f1a8248d10399489a2285b5470bb9fead7
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error running hook #0: error running hook: exit status 1, stdout: , stderr: Auto-detected mode as 'legacy'
+nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.      
+PS C:\Projects\aiascent-dev> 
+</Ephemeral Context>
+<Previous Cycle 57 Summary of Actions>
+I will address the user's requests by implementing the modified splash cursor effect and updating the Whisper transcription guide.
+
+First, I will modify the `SplashCursor.jsx` component to make the dissipation effect 25% faster and disable the splash effect that occurs on mouse clicks. Then, I will update the root `layout.tsx` to conditionally render this component on all pages except for `/showcase`, ensuring it appears on a layer just above the background so it does not interfere with UI elements.
+
+Second, I will rewrite the `A46 - Whisper Transcription Setup Guide.md`. The user has indicated that the previous library is incorrect and has provided `A47`, a README for `insanely-fast-whisper-api`, as the new source of truth. I will update the guide to use the new Docker image, port, and API endpoint specified in `A47`. Since the new API primarily works with URLs, I will add a new section to the guide explaining a simple method for users to serve their local audio files over their network, making them accessible to the API and fulfilling the user's core need to transcribe local files.
+
+1.  **Update `src/components/global/SplashCursor.jsx`:**
+    *   Increase the `DENSITY_DISSIPATION` value by 25% (from `3.5` to `4.375`) to make the effect fade faster.
+    *   Remove the `window.addEventListener('mousedown', ...)` to disable the splash that occurs on click.
+
+2.  **Update `src/app/layout.tsx`:**
+    *   Convert the component to a client component (`'use client'`) to use the `usePathname` hook.
+    *   Conditionally render the `<SplashCursor />` component, excluding it when the `pathname` is `/showcase`.
+    *   Adjust the z-index of the main content layout and the splash cursor to ensure the splash effect renders underneath all interactive UI elements.
+
+3.  **Update `src/Artifacts/A46 - Whisper Transcription Setup Guide.md`:**
+    *   Rewrite the guide to be based on the `insanely-fast-whisper-api` as detailed in artifact `A47`.
+    *   Update the `docker run` command with the new image (`yoeven/insanely-fast-whisper-api:latest`), the correct port (`9000`), and instructions for adding a Hugging Face token for diarization.
+    *   Add a new section explaining how to serve local audio files over the network using a simple Python HTTP server, as the new API requires a URL.
+    *   Update the example `curl` command to use the new API endpoint (`/`) and a JSON payload containing the local file URL.
+</Previous Cycle 57 Summary of Actions>
+</Cycle 58>
 
 <Cycle 57>
 <Cycle Context>
@@ -3250,10 +3286,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T19:06:09.149Z
+  Date Generated: 2025-10-15T19:20:27.217Z
   ---
   Total Files: 155
-  Approx. Tokens: 550483
+  Approx. Tokens: 550216
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3304,7 +3340,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
 34. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
 35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
-36. src\app\layout.tsx - Lines: 47 - Chars: 1564 - Tokens: 391
+36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 260 - Chars: 14973 - Tokens: 3744
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
@@ -3366,7 +3402,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 95. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
 96. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 97. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-98. src\components\report-viewer\ReportViewer.tsx - Lines: 186 - Chars: 8287 - Tokens: 2072
+98. src\components\report-viewer\ReportViewer.tsx - Lines: 178 - Chars: 7544 - Tokens: 1886
 99. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 100. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 101. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -3377,7 +3413,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 106. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 107. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 108. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-109. src\stores\reportStore.ts - Lines: 736 - Chars: 33967 - Tokens: 8492
+109. src\stores\reportStore.ts - Lines: 731 - Chars: 33774 - Tokens: 8444
 110. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 111. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 112. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -24624,7 +24660,6 @@ import Footer from "@/components/layout/Footer";
 import React from "react";
 import GlobalAudioPlayer from "@/components/global/GlobalAudioPlayer";
 import FullscreenMediaViewer from "@/components/global/FullscreenMediaViewer";
-import SplashCursor from "@/components/global/SplashCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24647,7 +24682,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SplashCursor />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
@@ -29804,12 +29838,11 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen, openFullscreenMedia } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
-        imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
-        closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
+        imagePanelHeight, setImagePanelHeight, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
         chatPanelWidth, playbackStatus, autoplayEnabled, isFullscreen
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
@@ -29820,9 +29853,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isChatPanelOpen: state.isChatPanelOpen,
         imagePanelHeight: state.imagePanelHeight,
         setImagePanelHeight: state.setImagePanelHeight,
-        isImageFullscreen: state.isImageFullscreen,
-        openImageFullscreen: state.openImageFullscreen,
-        closeImageFullscreen: state.closeImageFullscreen,
         isPromptVisible: state.isPromptVisible,
         isTldrVisible: state.isTldrVisible,
         isContentVisible: state.isContentVisible,
@@ -29833,7 +29863,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isFullscreen: state.isFullscreen,
     }));
 
-    const viewerRef = useRef<HTMLDivElement>(null); // C45
+    const viewerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         loadReport(reportName);
@@ -29841,7 +29871,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C49: Fetch suggestions when the current page changes. This is now the single source of truth for page-based suggestions.
     useEffect(() => {
         if (currentPage) {
             fetchPageSuggestions(currentPage, reportName);
@@ -29853,7 +29882,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
 
-    // C45: Fullscreen event listener
     useEffect(() => {
         const handleFullscreenChange = () => {
             setIsFullscreen(!!document.fullscreenElement);
@@ -29862,7 +29890,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
     }, [setIsFullscreen]);
 
-    // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
     useEffect(() => {
         if (playbackStatus === 'playing' && autoplayEnabled) {
             startSlideshow();
@@ -29888,15 +29915,14 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         );
     }
     
-    return (
-        // C45: Added ref and dynamic classes for fullscreen
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
-            {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
-                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
-                </div>
-            )}
+    const handleImageClick = () => {
+        if (currentImage) {
+            openFullscreenMedia({ src: currentImage.url, description: currentImage.prompt });
+        }
+    };
 
+    return (
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
                 <header className="p-2 border-b flex-shrink-0">
@@ -29924,7 +29950,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                                     fill
                                     sizes="100vw"
                                     className="object-contain cursor-pointer"
-                                    onClick={openImageFullscreen}
+                                    onClick={handleImageClick}
                                     unoptimized // Good for gifs, but also for webp from local
                                 />
                             ) : <p>No Image Available</p>}
@@ -30609,6 +30635,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C57 (Remove isImageFullscreen and related actions to unify fullscreen logic)
 // Updated on: C54 (Add state for fullscreen media viewer)
 // Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
 // Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
@@ -30729,7 +30756,6 @@ export interface ReportState {
     isChatPanelOpen: boolean;
     chatPanelWidth: number;
     imagePanelHeight: number;
-    isImageFullscreen: boolean;
     isFullscreen: boolean; // C45: For fullscreen mode
     fullscreenMedia: FullscreenMedia | null; // C54: For fullscreen GIF viewer
     reportChatHistory: ChatMessage[];
@@ -30774,8 +30800,6 @@ export interface ReportActions {
     toggleChatPanel: () => void;
     setChatPanelWidth: (width: number) => void;
     setImagePanelHeight: (height: number) => void;
-    openImageFullscreen: () => void;
-    closeImageFullscreen: () => void;
     toggleFullscreen: (element: HTMLElement | null) => void; // C45
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
     openFullscreenMedia: (media: FullscreenMedia) => void; // C54
@@ -30825,7 +30849,6 @@ const createInitialReportState = (): ReportState => ({
     isChatPanelOpen: false,
     chatPanelWidth: 450,
     imagePanelHeight: 400,
-    isImageFullscreen: false,
     isFullscreen: false, // C45
     fullscreenMedia: null, // C54
     reportChatHistory: [],
@@ -31254,8 +31277,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
             setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
-            openImageFullscreen: () => set({ isImageFullscreen: true }),
-            closeImageFullscreen: () => set({ isImageFullscreen: false }),
             setIsFullscreen: (isFullscreen) => set({ isFullscreen }),
             toggleFullscreen: (element) => {
                 if (!document.fullscreenElement) {

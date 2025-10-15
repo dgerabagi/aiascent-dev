@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C57 (Remove isImageFullscreen and related actions to unify fullscreen logic)
 // Updated on: C54 (Add state for fullscreen media viewer)
 // Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
 // Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
@@ -119,7 +120,6 @@ export interface ReportState {
     isChatPanelOpen: boolean;
     chatPanelWidth: number;
     imagePanelHeight: number;
-    isImageFullscreen: boolean;
     isFullscreen: boolean; // C45: For fullscreen mode
     fullscreenMedia: FullscreenMedia | null; // C54: For fullscreen GIF viewer
     reportChatHistory: ChatMessage[];
@@ -164,8 +164,6 @@ export interface ReportActions {
     toggleChatPanel: () => void;
     setChatPanelWidth: (width: number) => void;
     setImagePanelHeight: (height: number) => void;
-    openImageFullscreen: () => void;
-    closeImageFullscreen: () => void;
     toggleFullscreen: (element: HTMLElement | null) => void; // C45
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
     openFullscreenMedia: (media: FullscreenMedia) => void; // C54
@@ -215,7 +213,6 @@ const createInitialReportState = (): ReportState => ({
     isChatPanelOpen: false,
     chatPanelWidth: 450,
     imagePanelHeight: 400,
-    isImageFullscreen: false,
     isFullscreen: false, // C45
     fullscreenMedia: null, // C54
     reportChatHistory: [],
@@ -644,8 +641,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
             setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
             setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
-            openImageFullscreen: () => set({ isImageFullscreen: true }),
-            closeImageFullscreen: () => set({ isImageFullscreen: false }),
             setIsFullscreen: (isFullscreen) => set({ isFullscreen }),
             toggleFullscreen: (element) => {
                 if (!document.fullscreenElement) {

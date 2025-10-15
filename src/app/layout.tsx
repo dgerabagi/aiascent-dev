@@ -7,7 +7,6 @@ import Footer from "@/components/layout/Footer";
 import React from "react";
 import GlobalAudioPlayer from "@/components/global/GlobalAudioPlayer";
 import FullscreenMediaViewer from "@/components/global/FullscreenMediaViewer";
-import SplashCursor from "@/components/global/SplashCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +29,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SplashCursor />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">

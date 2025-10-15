@@ -19,12 +19,11 @@ interface ReportViewerProps {
 }
 
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
-    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen } = useReportStore.getState();
+    const { loadReport, handleKeyDown, setChatPanelWidth, startSlideshow, fetchPageSuggestions, setIsFullscreen, openFullscreenMedia } = useReportStore.getState();
     const {
         _hasHydrated,
         allPages, currentPageIndex, currentImageIndex, isTreeNavOpen, isChatPanelOpen,
-        imagePanelHeight, setImagePanelHeight, isImageFullscreen, openImageFullscreen,
-        closeImageFullscreen, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
+        imagePanelHeight, setImagePanelHeight, isPromptVisible, isTldrVisible, isContentVisible, isLoading,
         chatPanelWidth, playbackStatus, autoplayEnabled, isFullscreen
     } = useReportState(state => ({
         _hasHydrated: state._hasHydrated,
@@ -35,9 +34,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isChatPanelOpen: state.isChatPanelOpen,
         imagePanelHeight: state.imagePanelHeight,
         setImagePanelHeight: state.setImagePanelHeight,
-        isImageFullscreen: state.isImageFullscreen,
-        openImageFullscreen: state.openImageFullscreen,
-        closeImageFullscreen: state.closeImageFullscreen,
         isPromptVisible: state.isPromptVisible,
         isTldrVisible: state.isTldrVisible,
         isContentVisible: state.isContentVisible,
@@ -48,7 +44,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         isFullscreen: state.isFullscreen,
     }));
 
-    const viewerRef = useRef<HTMLDivElement>(null); // C45
+    const viewerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         loadReport(reportName);
@@ -56,7 +52,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     const currentPage = allPages[currentPageIndex];
 
-    // C49: Fetch suggestions when the current page changes. This is now the single source of truth for page-based suggestions.
     useEffect(() => {
         if (currentPage) {
             fetchPageSuggestions(currentPage, reportName);
@@ -68,7 +63,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [handleKeyDown]);
 
-    // C45: Fullscreen event listener
     useEffect(() => {
         const handleFullscreenChange = () => {
             setIsFullscreen(!!document.fullscreenElement);
@@ -77,7 +71,6 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
     }, [setIsFullscreen]);
 
-    // C27 Autoplay Fix: Trigger slideshow when audio starts playing in autoplay mode.
     useEffect(() => {
         if (playbackStatus === 'playing' && autoplayEnabled) {
             startSlideshow();
@@ -103,15 +96,14 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         );
     }
     
-    return (
-        // C45: Added ref and dynamic classes for fullscreen
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
-            {isImageFullscreen && currentImage && (
-                <div className="fixed inset-0 bg-black/90 z- flex justify-center items-center cursor-pointer" onClick={closeImageFullscreen}>
-                    <Image src={currentImage.url} alt={currentImage.alt} className="max-w-[95vw] max-h-[95vh] object-contain" fill sizes="100vw" />
-                </div>
-            )}
+    const handleImageClick = () => {
+        if (currentImage) {
+            openFullscreenMedia({ src: currentImage.url, description: currentImage.prompt });
+        }
+    };
 
+    return (
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
                 <header className="p-2 border-b flex-shrink-0">
@@ -139,7 +131,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                                     fill
                                     sizes="100vw"
                                     className="object-contain cursor-pointer"
-                                    onClick={openImageFullscreen}
+                                    onClick={handleImageClick}
                                     unoptimized // Good for gifs, but also for webp from local
                                 />
                             ) : <p>No Image Available</p>}
