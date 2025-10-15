@@ -1,6 +1,7 @@
 'use client';
 {
   /*
+  Cycle 54: Make image clickable to open fullscreen viewer.
   Cycle 31: Fix "use client" directive placement.
   - Moved 'use client' to line 1, before any other expressions including comments.
   Cycle 30: Fix unescaped entities.
@@ -12,7 +13,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
-import { FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import { FaPlay, FaPause, FaSpinner, FaExpand } from 'react-icons/fa';
 import { useReportState, useReportStore } from '@/stores/reportStore';
 
 interface MissionSectionBlockProps {
@@ -35,7 +36,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   imageSide = 'left',
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { playArbitraryText } = useReportStore.getState();
+  const { playArbitraryText, openFullscreenMedia } = useReportStore.getState();
   const { genericPlaybackStatus, genericAudioText } = useReportState(state => ({
     genericPlaybackStatus: state.genericPlaybackStatus,
     genericAudioText: state.genericAudioText,
@@ -63,9 +64,17 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
     playArbitraryText(content);
   };
 
+  const handleImageClick = () => {
+    const fullImagePath = `/assets/images/report/${imagePath}${images[currentImageIndex]}`;
+    openFullscreenMedia({ src: fullImagePath, description: imagePrompt });
+  };
+
   const imageContent = (
     <div className="md:w-1/2 w-full p-4 border rounded-2xl bg-card shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
-      <div className="relative aspect-video rounded-lg overflow-hidden">
+      <div 
+        className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer"
+        onClick={handleImageClick}
+      >
         <AnimatePresence initial={false}>
           <motion.div
             key={currentImageIndex}
@@ -82,9 +91,13 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
+              unoptimized={images[currentImageIndex].endsWith('.gif')}
             />
           </motion.div>
         </AnimatePresence>
+        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <FaExpand size={32} className="text-white/80" />
+        </div>
       </div>
       <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
         <strong>Prompt:</strong> &quot;{imagePrompt}&quot;

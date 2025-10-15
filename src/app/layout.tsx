@@ -4,9 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { useReportStore } from "@/stores/reportStore";
 import React from "react";
 import GlobalAudioPlayer from "@/components/global/GlobalAudioPlayer";
+import FullscreenMediaViewer from "@/components/global/FullscreenMediaViewer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +37,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <GlobalAudioPlayer />
+          <FullscreenMediaViewer />
         </ThemeProvider>
       </body>
     </html>

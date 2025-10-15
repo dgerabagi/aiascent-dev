@@ -17,17 +17,23 @@ const ShowcaseTabs = () => {
       iframeRef.current.src = iframeRef.current.src;
     }
   };
-
+  
+  // C54: Fix scroll bug
   useEffect(() => {
-    // When switching to the iframe tab, ensure the loading state is reset
     if (activeTab === 'game') {
       setIsGameLoading(true);
+      window.scrollTo(0, 0);
     }
   }, [activeTab]);
 
+  const handleIframeLoad = () => {
+    setIsGameLoading(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <div className="w-full">
-      <div className="flex justify-center border-b border-muted mb-4">
+    <div className="w-full h-full flex flex-col">
+      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0">
         <Button
           variant={activeTab === 'report' ? 'secondary' : 'ghost'}
           onClick={() => setActiveTab('report')}
@@ -43,22 +49,30 @@ const ShowcaseTabs = () => {
         </Button>
       </div>
 
-      <div>
+      <div className="flex-grow">
         {activeTab === 'report' && <ReportViewer reportName="showcase" />}
         {activeTab === 'game' && (
-          <div className="relative w-full h-[calc(100vh-10rem)]">
-            <div className="absolute top-2 right-2 z-10">
-              <Button onClick={handleRefresh} variant="outline" size="icon">
-                <FaSync className={isGameLoading ? 'animate-spin' : ''} />
-              </Button>
+          <div className="relative w-full h-full flex flex-col items-center">
+             <p className="text-sm text-muted-foreground mb-4 p-2 border rounded-md bg-muted/50 max-w-4xl text-center">
+              You are viewing an embedded version of AI Ascent. For the full experience, including login, chat, and multiplayer features, please visit the main site: {' '}
+              <a href="https://aiascent.game/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                aiascent.game
+              </a>.
+            </p>
+            <div className="relative w-full flex-grow">
+                <div className="absolute top-2 right-2 z-10">
+                <Button onClick={handleRefresh} variant="outline" size="icon">
+                    <FaSync className={isGameLoading ? 'animate-spin' : ''} />
+                </Button>
+                </div>
+                <iframe
+                ref={iframeRef}
+                src="https://aiascent.game/"
+                className="w-full h-full border-0"
+                title="AI Ascent Game"
+                onLoad={handleIframeLoad}
+                ></iframe>
             </div>
-            <iframe
-              ref={iframeRef}
-              src="https://aiascent.game/"
-              className="w-full h-full border-0"
-              title="AI Ascent Game"
-              onLoad={() => setIsGameLoading(false)}
-            ></iframe>
           </div>
         )}
       </div>

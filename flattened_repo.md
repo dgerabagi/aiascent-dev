@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T02:38:09.014Z
+  Date Generated: 2025-10-15T14:22:15.296Z
   ---
-  Total Files: 125
-  Approx. Tokens: 369203
+  Total Files: 138
+  Approx. Tokens: 370061
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -13,7 +13,7 @@
 3. context\aiascentgame\flattened-repo.md (18579 tokens)
 4. context\dce\flattened-repo.md (14794 tokens)
 5. context\aiascentgame\report\reportStore.ts.md (9081 tokens)
-6. src\stores\reportStore.ts (8547 tokens)
+6. src\stores\reportStore.ts (8492 tokens)
 7. context\aiascentgame\code\ascentiaHandler.ts.md (4857 tokens)
 8. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 9. context\aiascentgame\report\ReportChatPanel.tsx.md (4292 tokens)
@@ -50,12 +50,12 @@
 28. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
 29. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
 30. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-31. src\app\dce\page.tsx - Lines: 72 - Chars: 5470 - Tokens: 1368
-32. src\app\learn\page.tsx - Lines: 170 - Chars: 15663 - Tokens: 3916
-33. src\app\mission\page.tsx - Lines: 142 - Chars: 14194 - Tokens: 3549
+31. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
+32. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
+33. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
 34. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
 35. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
-36. src\app\layout.tsx - Lines: 44 - Chars: 1413 - Tokens: 354
+36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 234 - Chars: 13118 - Tokens: 3280
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
@@ -103,13 +103,13 @@
 81. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 82. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
 83. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-84. src\components\home\FeaturesSection.tsx - Lines: 62 - Chars: 2709 - Tokens: 678
+84. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
 85. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
 86. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 87. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 88. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
 89. src\components\layout\Header.tsx - Lines: 67 - Chars: 2598 - Tokens: 650
-90. src\components\mission\MissionSectionBlock.tsx - Lines: 129 - Chars: 4268 - Tokens: 1067
+90. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
 91. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
 92. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 93. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
@@ -121,14 +121,14 @@
 99. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 100. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 101. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-102. src\components\showcase\ShowcaseTabs.tsx - Lines: 69 - Chars: 2297 - Tokens: 575
+102. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
 103. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
 104. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 105. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
 106. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 107. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 108. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-109. src\stores\reportStore.ts - Lines: 724 - Chars: 34185 - Tokens: 8547
+109. src\stores\reportStore.ts - Lines: 736 - Chars: 33967 - Tokens: 8492
 110. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
 111. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 112. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -140,11 +140,24 @@
 118. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
 119. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
 120. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
-121. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
-122. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
-123. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
-124. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2627 - Tokens: 657
-125. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+121. public\assets\images\report\dce\dce-feature-artifacts.gif - [Binary] Size: 36.5 MB
+122. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
+123. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
+124. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
+125. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2629 - Tokens: 658
+126. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+127. context\v2v\transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
+128. context\v2v\transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
+129. context\v2v\transcripts\1-on-1-training\transcript-11.md - Lines: 1 - Chars: 0 - Tokens: 0
+130. context\v2v\transcripts\1-on-1-training\transcript-12.md - Lines: 1 - Chars: 0 - Tokens: 0
+131. context\v2v\transcripts\1-on-1-training\transcript-2.md - Lines: 1 - Chars: 0 - Tokens: 0
+132. context\v2v\transcripts\1-on-1-training\transcript-3.md - Lines: 1 - Chars: 0 - Tokens: 0
+133. context\v2v\transcripts\1-on-1-training\transcript-4.md - Lines: 1 - Chars: 0 - Tokens: 0
+134. context\v2v\transcripts\1-on-1-training\transcript-5.md - Lines: 1 - Chars: 0 - Tokens: 0
+135. context\v2v\transcripts\1-on-1-training\transcript-6.md - Lines: 1 - Chars: 0 - Tokens: 0
+136. context\v2v\transcripts\1-on-1-training\transcript-7.md - Lines: 1 - Chars: 0 - Tokens: 0
+137. context\v2v\transcripts\1-on-1-training\transcript-8.md - Lines: 1 - Chars: 0 - Tokens: 0
+138. context\v2v\transcripts\1-on-1-training\transcript-9.md - Lines: 1 - Chars: 0 - Tokens: 0
 
 <file path="context/aiascentgame/code/ascentiaHandler.ts.md">
 // src/server/api/ascentiaHandler.ts
@@ -20869,10 +20882,19 @@ const DcePage = () => {
             imagePrompt: 'A GIF named `dce-feature-cycles.gif` showing the user clicking the back and forward arrows in the "Cycle History" view, with the cycle title, context, and response tabs all updating to reflect the historical state.',
             images: ['dce-feature-cycles.gif'],
         },
+        {
+            title: 'Artifacts as the Source of Truth',
+            tldr: "The DCE workflow inverts the traditional development process. By instructing the AI to create planning and documentation artifacts first, the process itself becomes a transparent, auditable, and durable asset.",
+            content: "A core feature of the DCE is its \"documentation-first\" methodology. Instead of asking an AI to simply write code, the workflow begins by instructing it to create artifacts: project plans, design documents, and strategic memos that define the \"why\" and \"how\" of a task. These artifacts become the immutable \"source of truth\" that guides all subsequent code generation. This process ensures that human intent is clearly captured and that the AI's work is always aligned with the project's strategic goals. It transforms the development process from a series of ephemeral prompts into a permanent, auditable knowledge graph where every decision is traceable and every line of code has a documented purpose.",
+            imageSide: 'right',
+            imagePath: 'dce/',
+            imagePrompt: 'A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.',
+            images: ['dce-feature-artifacts.gif'], // Placeholder, assuming gif will be created.
+        },
     ];
 
     return (
-        <div className="bg-background text-foreground">
+        <div className="bg-background text-foreground pt-16">
             <div className="container mx-auto px-4 py-16">
                 <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
                     The Data Curation Environment
@@ -20898,7 +20920,7 @@ const DcePage = () => {
             </div>
             <NextPageSection
                 title="Ready to See the Results?"
-                description="The DCE is the engine behind complex, real-world projects. The Showcase features an interactive whitepaper and a multiplayer game, both built using the iterative workflow you've just learned about. Explore the showcase to see the tangible results of this methodology."
+                description="The DCE is the engine behind complex, real-world projects. The Showcase features an interactive whitepaper and a multiplayer game, `aiascent.game`, both built using the iterative workflow you've just learned about. Explore the showcase to see the tangible results of this methodology."
                 buttonText="Explore the Showcase"
                 href="/showcase"
             />
@@ -20913,6 +20935,7 @@ export default DcePage;
 'use client';
 {
   /*
+  Cycle 54: Add top padding for header consistency.
   Cycle 51: Replace bottom button with NextPageSection and update content.
   Cycle 50: Expand content for all sections based on A34.
   Cycle 31: Add 'use client' directive.
@@ -21086,6 +21109,7 @@ export default LearnPage;
 'use client';
 {
   /*
+  Cycle 54: Add top padding for header consistency.
   Cycle 51: Replace bottom button with NextPageSection component.
   Cycle 50: Update Cognitive Apprenticeship content and image prompt.
   Cycle 32: Fix unescaped entities.
@@ -21331,9 +21355,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { useReportStore } from "@/stores/reportStore";
 import React from "react";
 import GlobalAudioPlayer from "@/components/global/GlobalAudioPlayer";
+import FullscreenMediaViewer from "@/components/global/FullscreenMediaViewer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21364,6 +21388,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <GlobalAudioPlayer />
+          <FullscreenMediaViewer />
         </ThemeProvider>
       </body>
     </html>
@@ -25125,10 +25150,14 @@ export const SparklesCore = (props: ParticlesProps) => {
 </file_artifact>
 
 <file path="src/components/home/FeaturesSection.tsx">
+'use client';
 // src/components/home/FeaturesSection.tsx
+// C54 - Add audio play buttons
 // C11 - Add light mode variants
 import React from 'react';
 import Image from 'next/image';
+import { useReportState, useReportStore } from '@/stores/reportStore';
+import { FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
 
 const features = [
 {
@@ -25149,6 +25178,12 @@ icon: "/assets/icons/iterative-workflow.webp",
 ];
 
 const FeaturesSection = () => {
+    const { playArbitraryText } = useReportStore.getState();
+    const { genericPlaybackStatus, genericAudioText } = useReportState(state => ({
+        genericPlaybackStatus: state.genericPlaybackStatus,
+        genericAudioText: state.genericAudioText,
+    }));
+
 return (
 <section className="py-20 md:py-32 bg-background">
 <div className="container mx-auto px-4">
@@ -25156,9 +25191,12 @@ return (
 Stop Fighting Your Tools. Start Building the Future.
 </h2>
 
-    {/* Refactored to a vertical stacking layout with alternating image/text */}
     <div className="flex flex-col gap-24">
-      {features.map((feature, index) => (
+      {features.map((feature, index) => {
+        const isPlayingThis = genericPlaybackStatus === 'playing' && genericAudioText === feature.description;
+        const isGeneratingThis = genericPlaybackStatus === 'generating' && genericAudioText === feature.description;
+
+        return (
         <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
           {/* Image Container */}
           <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
@@ -25173,13 +25211,23 @@ Stop Fighting Your Tools. Start Building the Future.
           </div>
           {/* Text Content */}
           <div className="md:w-1/2 w-full">
-            <h3 className="text-3xl font-bold text-white light:text-black mb-4">{feature.title}</h3>
+            <div className="flex items-center gap-4 mb-4">
+                <h3 className="text-3xl font-bold text-white light:text-black">{feature.title}</h3>
+                <button
+                    onClick={() => playArbitraryText(feature.description)}
+                    className="p-2 border rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                    title={isPlayingThis ? "Pause narration" : "Play narration"}
+                    disabled={isGeneratingThis}
+                >
+                    {isGeneratingThis ? <FaSpinner className="animate-spin" /> : (isPlayingThis ? <FaPause /> : <FaPlay />)}
+                </button>
+            </div>
             <p className="text-lg text-neutral-400 light:text-neutral-600">
               {feature.description}
             </p>
           </div>
         </div>
-      ))}
+      )})}
     </div>
   </div>
 </section>
@@ -25468,6 +25516,7 @@ export default Header;
 'use client';
 {
   /*
+  Cycle 54: Make image clickable to open fullscreen viewer.
   Cycle 31: Fix "use client" directive placement.
   - Moved 'use client' to line 1, before any other expressions including comments.
   Cycle 30: Fix unescaped entities.
@@ -25479,7 +25528,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
-import { FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import { FaPlay, FaPause, FaSpinner, FaExpand } from 'react-icons/fa';
 import { useReportState, useReportStore } from '@/stores/reportStore';
 
 interface MissionSectionBlockProps {
@@ -25502,7 +25551,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   imageSide = 'left',
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { playArbitraryText } = useReportStore.getState();
+  const { playArbitraryText, openFullscreenMedia } = useReportStore.getState();
   const { genericPlaybackStatus, genericAudioText } = useReportState(state => ({
     genericPlaybackStatus: state.genericPlaybackStatus,
     genericAudioText: state.genericAudioText,
@@ -25530,9 +25579,17 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
     playArbitraryText(content);
   };
 
+  const handleImageClick = () => {
+    const fullImagePath = `/assets/images/report/${imagePath}${images[currentImageIndex]}`;
+    openFullscreenMedia({ src: fullImagePath, description: imagePrompt });
+  };
+
   const imageContent = (
     <div className="md:w-1/2 w-full p-4 border rounded-2xl bg-card shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
-      <div className="relative aspect-video rounded-lg overflow-hidden">
+      <div 
+        className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer"
+        onClick={handleImageClick}
+      >
         <AnimatePresence initial={false}>
           <motion.div
             key={currentImageIndex}
@@ -25549,9 +25606,13 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
+              unoptimized={images[currentImageIndex].endsWith('.gif')}
             />
           </motion.div>
         </AnimatePresence>
+        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <FaExpand size={32} className="text-white/80" />
+        </div>
       </div>
       <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
         <strong>Prompt:</strong> &quot;{imagePrompt}&quot;
@@ -26825,17 +26886,23 @@ const ShowcaseTabs = () => {
       iframeRef.current.src = iframeRef.current.src;
     }
   };
-
+  
+  // C54: Fix scroll bug
   useEffect(() => {
-    // When switching to the iframe tab, ensure the loading state is reset
     if (activeTab === 'game') {
       setIsGameLoading(true);
+      window.scrollTo(0, 0);
     }
   }, [activeTab]);
 
+  const handleIframeLoad = () => {
+    setIsGameLoading(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <div className="w-full">
-      <div className="flex justify-center border-b border-muted mb-4">
+    <div className="w-full h-full flex flex-col">
+      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0">
         <Button
           variant={activeTab === 'report' ? 'secondary' : 'ghost'}
           onClick={() => setActiveTab('report')}
@@ -26851,22 +26918,30 @@ const ShowcaseTabs = () => {
         </Button>
       </div>
 
-      <div>
+      <div className="flex-grow">
         {activeTab === 'report' && <ReportViewer reportName="showcase" />}
         {activeTab === 'game' && (
-          <div className="relative w-full h-[calc(100vh-10rem)]">
-            <div className="absolute top-2 right-2 z-10">
-              <Button onClick={handleRefresh} variant="outline" size="icon">
-                <FaSync className={isGameLoading ? 'animate-spin' : ''} />
-              </Button>
+          <div className="relative w-full h-full flex flex-col items-center">
+             <p className="text-sm text-muted-foreground mb-4 p-2 border rounded-md bg-muted/50 max-w-4xl text-center">
+              You are viewing an embedded version of AI Ascent. For the full experience, including login, chat, and multiplayer features, please visit the main site: {' '}
+              <a href="https://aiascent.game/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                aiascent.game
+              </a>.
+            </p>
+            <div className="relative w-full flex-grow">
+                <div className="absolute top-2 right-2 z-10">
+                <Button onClick={handleRefresh} variant="outline" size="icon">
+                    <FaSync className={isGameLoading ? 'animate-spin' : ''} />
+                </Button>
+                </div>
+                <iframe
+                ref={iframeRef}
+                src="https://aiascent.game/"
+                className="w-full h-full border-0"
+                title="AI Ascent Game"
+                onLoad={handleIframeLoad}
+                ></iframe>
             </div>
-            <iframe
-              ref={iframeRef}
-              src="https://aiascent.game/"
-              className="w-full h-full border-0"
-              title="AI Ascent Game"
-              onLoad={() => setIsGameLoading(false)}
-            ></iframe>
           </div>
         )}
       </div>
@@ -27240,6 +27315,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C54 (Add state for fullscreen media viewer)
 // Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
 // Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
 // Updated on: C47 (Add retry logic for suggestion fetching.)
@@ -27341,6 +27417,11 @@ type LastSuggestionRequest = {
     };
 } | null;
 
+interface FullscreenMedia {
+    src: string;
+    description: string;
+}
+
 export interface ReportState {
     reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
@@ -27356,6 +27437,7 @@ export interface ReportState {
     imagePanelHeight: number;
     isImageFullscreen: boolean;
     isFullscreen: boolean; // C45: For fullscreen mode
+    fullscreenMedia: FullscreenMedia | null; // C54: For fullscreen GIF viewer
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
@@ -27402,6 +27484,8 @@ export interface ReportActions {
     closeImageFullscreen: () => void;
     toggleFullscreen: (element: HTMLElement | null) => void; // C45
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
+    openFullscreenMedia: (media: FullscreenMedia) => void; // C54
+    closeFullscreenMedia: () => void; // C54
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
@@ -27449,6 +27533,7 @@ const createInitialReportState = (): ReportState => ({
     imagePanelHeight: 400,
     isImageFullscreen: false,
     isFullscreen: false, // C45
+    fullscreenMedia: null, // C54
     reportChatHistory: [],
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
@@ -27887,6 +27972,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     document.exitFullscreen();
                   }
             },
+            openFullscreenMedia: (media) => set({ fullscreenMedia: media }),
+            closeFullscreenMedia: () => set({ fullscreenMedia: null }),
             setReportChatInput: (input) => set({ reportChatInput: input }),
             setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }),
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),
@@ -28392,6 +28479,21 @@ export default config
 }
 </file_artifact>
 
+<file path="public/assets/images/report/dce/dce-feature-artifacts.gif">
+<metadata>
+{
+  "name": "dce-feature-artifacts.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/dce",
+  "fileType": "GIF",
+  "sizeInBytes": 38289500,
+  "dimensions": {
+    "width": 1910,
+    "height": 1016
+  }
+}
+</metadata>
+</file_artifact>
+
 <file path="public/assets/images/report/dce/dce-feature-curation.gif">
 <metadata>
 {
@@ -28460,7 +28562,7 @@ const FullscreenMediaViewer = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 bg-black/80 backdrop-blur-sm z- flex items-center justify-center p-4"
+                    className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
                     onClick={closeFullscreenMedia}
                 >
                     <div
@@ -28531,5 +28633,41 @@ This new section will be added to `src/app/dce/page.tsx` as the fourth `MissionS
 *   **Asset Wishlist:** A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.
 
 ---
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-1.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-10.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-11.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-12.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-2.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-3.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-4.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-5.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-6.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-7.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-8.md">
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/transcript-9.md">
 </file_artifact>
 

@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C54 (Add state for fullscreen media viewer)
 // Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
 // Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
 // Updated on: C47 (Add retry logic for suggestion fetching.)
@@ -100,6 +101,11 @@ type LastSuggestionRequest = {
     };
 } | null;
 
+interface FullscreenMedia {
+    src: string;
+    description: string;
+}
+
 export interface ReportState {
     reportName: string | null; // C42: To track current report context
     _hasHydrated: boolean; // Flag for rehydration
@@ -115,6 +121,7 @@ export interface ReportState {
     imagePanelHeight: number;
     isImageFullscreen: boolean;
     isFullscreen: boolean; // C45: For fullscreen mode
+    fullscreenMedia: FullscreenMedia | null; // C54: For fullscreen GIF viewer
     reportChatHistory: ChatMessage[];
     reportChatInput: string;
     suggestedPrompts: string[]; // C35: New state for dynamic suggestions
@@ -161,6 +168,8 @@ export interface ReportActions {
     closeImageFullscreen: () => void;
     toggleFullscreen: (element: HTMLElement | null) => void; // C45
     setIsFullscreen: (isFullscreen: boolean) => void; // C45
+    openFullscreenMedia: (media: FullscreenMedia) => void; // C54
+    closeFullscreenMedia: () => void; // C54
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
     fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
@@ -208,6 +217,7 @@ const createInitialReportState = (): ReportState => ({
     imagePanelHeight: 400,
     isImageFullscreen: false,
     isFullscreen: false, // C45
+    fullscreenMedia: null, // C54
     reportChatHistory: [],
     reportChatInput: '',
     suggestedPrompts: WHITEPAPER_DEFAULT_SUGGESTIONS, // C42: Default to whitepaper, will be overridden on load
@@ -646,6 +656,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     document.exitFullscreen();
                   }
             },
+            openFullscreenMedia: (media) => set({ fullscreenMedia: media }),
+            closeFullscreenMedia: () => set({ fullscreenMedia: null }),
             setReportChatInput: (input) => set({ reportChatInput: input }),
             setSuggestedPrompts: (prompts) => set({ suggestedPrompts: prompts }),
             addReportChatMessage: (message) => set(state => ({ reportChatHistory: [...state.reportChatHistory, message].slice(-50), })),

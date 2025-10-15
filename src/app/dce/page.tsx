@@ -32,10 +32,19 @@ const DcePage = () => {
             imagePrompt: 'A GIF named `dce-feature-cycles.gif` showing the user clicking the back and forward arrows in the "Cycle History" view, with the cycle title, context, and response tabs all updating to reflect the historical state.',
             images: ['dce-feature-cycles.gif'],
         },
+        {
+            title: 'Artifacts as the Source of Truth',
+            tldr: "The DCE workflow inverts the traditional development process. By instructing the AI to create planning and documentation artifacts first, the process itself becomes a transparent, auditable, and durable asset.",
+            content: "A core feature of the DCE is its \"documentation-first\" methodology. Instead of asking an AI to simply write code, the workflow begins by instructing it to create artifacts: project plans, design documents, and strategic memos that define the \"why\" and \"how\" of a task. These artifacts become the immutable \"source of truth\" that guides all subsequent code generation. This process ensures that human intent is clearly captured and that the AI's work is always aligned with the project's strategic goals. It transforms the development process from a series of ephemeral prompts into a permanent, auditable knowledge graph where every decision is traceable and every line of code has a documented purpose.",
+            imageSide: 'right',
+            imagePath: 'dce/',
+            imagePrompt: 'A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.',
+            images: ['dce-feature-artifacts.gif'], // Placeholder, assuming gif will be created.
+        },
     ];
 
     return (
-        <div className="bg-background text-foreground">
+        <div className="bg-background text-foreground pt-16">
             <div className="container mx-auto px-4 py-16">
                 <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
                     The Data Curation Environment
@@ -61,7 +70,7 @@ const DcePage = () => {
             </div>
             <NextPageSection
                 title="Ready to See the Results?"
-                description="The DCE is the engine behind complex, real-world projects. The Showcase features an interactive whitepaper and a multiplayer game, both built using the iterative workflow you've just learned about. Explore the showcase to see the tangible results of this methodology."
+                description="The DCE is the engine behind complex, real-world projects. The Showcase features an interactive whitepaper and a multiplayer game, `aiascent.game`, both built using the iterative workflow you've just learned about. Explore the showcase to see the tangible results of this methodology."
                 buttonText="Explore the Showcase"
                 href="/showcase"
             />
