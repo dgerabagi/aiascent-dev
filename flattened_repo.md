@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T14:22:15.296Z
+  Date Generated: 2025-10-15T14:49:15.193Z
   ---
-  Total Files: 138
-  Approx. Tokens: 370061
+  Total Files: 139
+  Approx. Tokens: 370098
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -55,7 +55,7 @@
 33. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
 34. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
 35. src\app\globals.css - Lines: 76 - Chars: 1583 - Tokens: 396
-36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
+36. src\app\layout.tsx - Lines: 45 - Chars: 1474 - Tokens: 369
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
 38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 234 - Chars: 13118 - Tokens: 3280
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
@@ -135,7 +135,7 @@
 113. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
 114. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
 115. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
-116. package.json - Lines: 51 - Chars: 1478 - Tokens: 370
+116. package.json - Lines: 51 - Chars: 1528 - Tokens: 382
 117. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
 118. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
 119. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
@@ -144,20 +144,21 @@
 122. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
 123. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
 124. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
-125. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2629 - Tokens: 658
+125. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2688 - Tokens: 672
 126. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
-127. context\v2v\transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
-128. context\v2v\transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
-129. context\v2v\transcripts\1-on-1-training\transcript-11.md - Lines: 1 - Chars: 0 - Tokens: 0
-130. context\v2v\transcripts\1-on-1-training\transcript-12.md - Lines: 1 - Chars: 0 - Tokens: 0
-131. context\v2v\transcripts\1-on-1-training\transcript-2.md - Lines: 1 - Chars: 0 - Tokens: 0
-132. context\v2v\transcripts\1-on-1-training\transcript-3.md - Lines: 1 - Chars: 0 - Tokens: 0
-133. context\v2v\transcripts\1-on-1-training\transcript-4.md - Lines: 1 - Chars: 0 - Tokens: 0
-134. context\v2v\transcripts\1-on-1-training\transcript-5.md - Lines: 1 - Chars: 0 - Tokens: 0
-135. context\v2v\transcripts\1-on-1-training\transcript-6.md - Lines: 1 - Chars: 0 - Tokens: 0
-136. context\v2v\transcripts\1-on-1-training\transcript-7.md - Lines: 1 - Chars: 0 - Tokens: 0
-137. context\v2v\transcripts\1-on-1-training\transcript-8.md - Lines: 1 - Chars: 0 - Tokens: 0
-138. context\v2v\transcripts\1-on-1-training\transcript-9.md - Lines: 1 - Chars: 0 - Tokens: 0
+127. context\v2v\transcripts\1-on-1-training\DGerabagi_Resume_07212025-1.pdf - Lines: 0 - Chars: 0 - Tokens: 0
+128. context\v2v\transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
+129. context\v2v\transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
+130. context\v2v\transcripts\1-on-1-training\transcript-11.md - Lines: 1 - Chars: 0 - Tokens: 0
+131. context\v2v\transcripts\1-on-1-training\transcript-12.md - Lines: 1 - Chars: 0 - Tokens: 0
+132. context\v2v\transcripts\1-on-1-training\transcript-2.md - Lines: 1 - Chars: 0 - Tokens: 0
+133. context\v2v\transcripts\1-on-1-training\transcript-3.md - Lines: 1 - Chars: 0 - Tokens: 0
+134. context\v2v\transcripts\1-on-1-training\transcript-4.md - Lines: 1 - Chars: 0 - Tokens: 0
+135. context\v2v\transcripts\1-on-1-training\transcript-5.md - Lines: 1 - Chars: 0 - Tokens: 0
+136. context\v2v\transcripts\1-on-1-training\transcript-6.md - Lines: 1 - Chars: 0 - Tokens: 0
+137. context\v2v\transcripts\1-on-1-training\transcript-7.md - Lines: 1 - Chars: 0 - Tokens: 0
+138. context\v2v\transcripts\1-on-1-training\transcript-8.md - Lines: 1 - Chars: 0 - Tokens: 0
+139. context\v2v\transcripts\1-on-1-training\transcript-9.md - Lines: 1 - Chars: 0 - Tokens: 0
 
 <file path="context/aiascentgame/code/ascentiaHandler.ts.md">
 // src/server/api/ascentiaHandler.ts
@@ -28633,6 +28634,10 @@ This new section will be added to `src/app/dce/page.tsx` as the fourth `MissionS
 *   **Asset Wishlist:** A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.
 
 ---
+</file_artifact>
+
+<file path="context/v2v/transcripts/1-on-1-training/DGerabagi_Resume_07212025-1.pdf">
+<!-- PDF content not processed or cached -->
 </file_artifact>
 
 <file path="context/v2v/transcripts/1-on-1-training/transcript-1.md">
