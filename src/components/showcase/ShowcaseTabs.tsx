@@ -1,86 +1,65 @@
 'use client';
-
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
 import { FaSync } from 'react-icons/fa';
 
 const ShowcaseTabs = () => {
   const [activeTab, setActiveTab] = useState('report');
   const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    // C31: Fix scrolling issue when switching tabs
-    window.scrollTo(0, 0);
-  }, [activeTab]);
-
-
-  const tabs = [
-    { id: 'report', label: 'The Ascent Report' },
-    { id: 'game', label: 'AI Ascent Game' },
-  ];
+  const [isGameLoading, setIsGameLoading] = useState(true);
 
   const handleRefresh = () => {
-    if (iframeRef.current?.contentWindow) {
-      iframeRef.current.contentWindow.location.reload();
+    if (iframeRef.current) {
+      setIsGameLoading(true);
+      // Resetting the src attribute is a safe way to force an iframe to reload its content
+      // without running into cross-origin security issues.
+      iframeRef.current.src = iframeRef.current.src;
     }
   };
 
+  useEffect(() => {
+    // When switching to the iframe tab, ensure the loading state is reset
+    if (activeTab === 'game') {
+      setIsGameLoading(true);
+    }
+  }, [activeTab]);
+
   return (
-    <div className="flex flex-col h-full w-full">
-      {/* Tab Buttons */}
-      <div className="flex justify-center border-b border-border flex-shrink-0 relative">
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-2 text-sm font-medium transition-colors focus:outline-none ${
-              activeTab === tab.id
-                ? 'border-b-2 border-primary text-primary'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-        {/* C29: Add Refresh button, conditionally rendered */}
-        {activeTab === 'game' && (
-          <button
-            onClick={handleRefresh}
-            className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 px-3 py-1.5 text-xs border rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-            title="Refresh game frame"
-          >
-            <FaSync />
-            Refresh
-          </button>
-        )}
+    <div className="w-full">
+      <div className="flex justify-center border-b border-muted mb-4">
+        <Button
+          variant={activeTab === 'report' ? 'secondary' : 'ghost'}
+          onClick={() => setActiveTab('report')}
+          className="mr-2"
+        >
+          The Ascent Report
+        </Button>
+        <Button
+          variant={activeTab === 'game' ? 'secondary' : 'ghost'}
+          onClick={() => setActiveTab('game')}
+        >
+          AI Ascent Game
+        </Button>
       </div>
 
-      {/* Tab Content */}
-      <div className="flex-grow overflow-hidden relative">
-        {/* C51: Add informational banner for game login */}
+      <div>
+        {activeTab === 'report' && <ReportViewer reportName="showcase" />}
         {activeTab === 'game' && (
-            <div className="absolute top-0 left-0 right-0 p-2 bg-blue-950/80 backdrop-blur-sm text-center text-xs text-blue-200 z-10">
-                Note: Login and multiplayer features are disabled in this embedded view. For the full experience, please visit{' '}
-                <a href="https://aiascent.game" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-white">
-                    aiascent.game
-                </a>.
+          <div className="relative w-full h-[calc(100vh-10rem)]">
+            <div className="absolute top-2 right-2 z-10">
+              <Button onClick={handleRefresh} variant="outline" size="icon">
+                <FaSync className={isGameLoading ? 'animate-spin' : ''} />
+              </Button>
             </div>
-        )}
-        {activeTab === 'report' && (
-          // The ReportViewer itself handles scrolling, so we just give it the full space.
-          // The -16 for the header is handled by the parent page.
-          <div className="h-full w-full">
-            <ReportViewer reportName="showcase" />
+            <iframe
+              ref={iframeRef}
+              src="https://aiascent.game/"
+              className="w-full h-full border-0"
+              title="AI Ascent Game"
+              onLoad={() => setIsGameLoading(false)}
+            ></iframe>
           </div>
-        )}
-        {activeTab === 'game' && (
-          <iframe
-            ref={iframeRef}
-            src="https://aiascent.game/"
-            title="AI Ascent Game"
-            className="w-full h-full border-0"
-            allow="autoplay; fullscreen; popups; popups-to-escape-sandbox"
-          />
         )}
       </div>
     </div>
