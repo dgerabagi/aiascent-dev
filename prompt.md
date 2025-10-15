@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 58 - whisper error
+Current Cycle 59 - provide more guidance
+Cycle 58 - whisper error
 Cycle 57 - minor tweaks
 Cycle 56 - minor feedback and adjustments, but good work
 Cycle 55 - begin planning for online training, help with transcription solution
@@ -525,17 +526,47 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 59>
+<Cycle Context>
+okay, it looks like i need the CUDA on WSL step, at least when i type nvidia-smi it doesnt work. i dont want to follow the nvidia guide its too convoluted, i want to follow your guidance.
+</Cycle Context>
+<Ephemeral Context>
+PS C:\Projects\aiascent-dev> nvidia-smi
+nvidia-smi : The term 'nvidia-smi' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct 
+and try again.
+At line:1 char:1
++ nvidia-smi
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (nvidia-smi:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Projects\aiascent-dev> 
+</Ephemeral Context>
+<Previous Cycle 58 Summary of Actions>
+I will address the two main requests for this cycle. First, I will fix the bug with the interactive whitepaper's fullscreen mode by unifying its behavior with the rest of the site. Second, I will disable and remove the experimental "Splash Cursor" feature to reduce project complexity.
+
+My course of action is to first refactor the fullscreen functionality. I will modify the `ReportViewer` component to use the global `FullscreenMediaViewer`, which is already used by other components on the site. This involves changing the `onClick` handler on the main image to call the `openFullscreenMedia` action from the `reportStore` and passing the image URL and its associated prompt as the description. To complete this refactor and avoid future confusion, I will remove the now-redundant, special-purpose fullscreen logic (`isImageFullscreen` state and related actions) from both the `ReportViewer` component and the `reportStore`.
+
+Next, to address the request to remove the splash cursor, I will modify the root `layout.tsx` file to remove the `<SplashCursor />` and `<ConditionalSplash />` components and their imports. I will also include a curator activity block with instructions to delete the corresponding component files (`SplashCursor.jsx` and `ConditionalSplash.tsx`) from the project, ensuring the feature is completely removed to simplify the codebase.
+
+1.  **Disable Splash Cursor:**
+    *   Update `src/app/layout.tsx` to remove the `<SplashCursor />` component and its associated import. I will also remove the `ConditionalSplash.tsx` component that was likely added in a previous cycle, though it's not present in the current `layout.tsx`.
+    *   Create a `<curator_activity>` block to instruct the curator to delete the `src/components/global/SplashCursor.jsx` and `src/components/global/ConditionalSplash.tsx` files.
+2.  **Unify Fullscreen Viewer Logic:**
+    *   Update `src/components/report-viewer/ReportViewer.tsx`:
+        *   Import the `openFullscreenMedia` action from the `reportStore`.
+        *   Change the `onClick` handler on the main `<Image>` component. Instead of calling `openImageFullscreen`, it will now call `openFullscreenMedia({ src: currentImage.url, description: currentImage.prompt })`.
+        *   Remove all code related to the old `isImageFullscreen` state, including the conditional rendering of the fullscreen `div`.
+    *   Update `src/stores/reportStore.ts`:
+        *   Remove the `isImageFullscreen`, `openImageFullscreen`, and `closeImageFullscreen` state and actions from the `ReportState` and `ReportActions` interfaces and their implementations. This will make the `fullscreenMedia` state the single source of truth for this feature across the entire application.
+</Previous Cycle 58 Summary of Actions>
+</Cycle 59>
+
 <Cycle 58>
 <Cycle Context>
 nice great work. okay whisper finished downloading, got an error (see ephemeral)
 </Cycle Context>
-<Ephemeral Context>
-PS C:\Projects\aiascent-dev> docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
-6503545a933e21cf23358a25fe7672f1a8248d10399489a2285b5470bb9fead7
-docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error running hook #0: error running hook: exit status 1, stdout: , stderr: Auto-detected mode as 'legacy'
-nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.      
-PS C:\Projects\aiascent-dev> 
-</Ephemeral Context>
 <Previous Cycle 57 Summary of Actions>
 I will address the user's requests by implementing the modified splash cursor effect and updating the Whisper transcription guide.
 
@@ -3286,10 +3317,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-15T19:20:27.217Z
+  Date Generated: 2025-10-15T19:29:27.412Z
   ---
   Total Files: 155
-  Approx. Tokens: 550216
+  Approx. Tokens: 550816
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3435,7 +3466,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 89 - Chars: 4876 - Tokens: 1219
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 122 - Chars: 7273 - Tokens: 1819
 132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -33184,11 +33215,11 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C56 (Replace entire guide with `insanely-fast-whisper-api` Docker solution from A47)
+# Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
 
 - **Key/Value for A0:**
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu
 
 ## 1. Overview & Goal
 
@@ -33198,8 +33229,8 @@ The goal of this guide is to provide a step-by-step process for running a powerf
 
 ## 2. Prerequisites
 
-*   **Docker:** You must have Docker Desktop installed and running on your machine (the one with the GPU is highly recommended).
-*   **NVIDIA GPU (Strongly Recommended):** For acceptable performance, running Whisper on a CUDA-enabled NVIDIA GPU is advised. You will need the NVIDIA Container Toolkit installed.
+*   **Docker:** You must have Docker Desktop installed and running on your machine.
+*   **NVIDIA GPU (Strongly Recommended):** For acceptable performance, running Whisper on a CUDA-enabled NVIDIA GPU is advised. You will need the NVIDIA Container Toolkit installed and properly configured with your OS.
 *   **Audio Files:** Your audio recordings should be in a common format (MP3, WAV, M4A, etc.) and located in a single directory that you can mount into the Docker container.
 
 ## 3. Step-by-Step Setup
@@ -33218,7 +33249,7 @@ docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-p
 
 Let's break down this command:
 *   `-d`: Runs the container in detached mode (in the background).
-*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you are on a CPU-only machine, you can remove this flag, but transcription will be extremely slow.
+*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors or are on a CPU-only machine, see the Troubleshooting section.
 *   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
 *   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
 *   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
@@ -33229,7 +33260,7 @@ After a minute or two for the model to load, you can verify that the server is r
 
 ## 4. How to Transcribe a File
 
-You can now send `POST` requests to the API to transcribe your audio files. You can use a tool like Postman, Insomnia, or a simple `curl` command.
+You can now send `POST` requests to the API to transcribe your audio files. This is most easily done by uploading the file directly from the volume you mounted into the container.
 
 ### Example using `curl`
 
@@ -33270,6 +33301,39 @@ The API will respond with a JSON object containing the full transcription.
 ```
 
 You can copy the value of the `"text"` field to get the full transcript. This provides a simple and powerful pipeline for converting your recorded sessions into the raw material for the V2V Academy curriculum.
+
+## 5. Troubleshooting
+
+### Error: `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.`
+
+This is a common error on Windows systems using Docker Desktop with the WSL 2 backend. It means that the Docker container, running inside WSL, cannot access your NVIDIA GPU. This is almost always a configuration issue between your Windows NVIDIA drivers and WSL.
+
+Follow these steps to diagnose the issue:
+
+**Step 1: Verify Host NVIDIA Drivers**
+First, ensure your NVIDIA drivers are installed correctly on your main Windows operating system.
+*   Open **PowerShell** (not the WSL terminal).
+*   Run the command: `nvidia-smi`
+*   If this command runs successfully and shows your GPU details, your Windows drivers are likely fine. If it fails, you must install the latest NVIDIA drivers for your GPU from the official NVIDIA website before proceeding.
+
+**Step 2: Verify GPU Access Inside WSL**
+Next, check if WSL itself can see the GPU.
+*   Open your WSL terminal (e.g., Ubuntu).
+*   Run the command: `nvidia-smi`
+*   If this command works, WSL can access your GPU. If it fails with an error like "command not found" or another GPU error, it means your WSL environment is not correctly configured for GPU passthrough.
+*   **Solution:** You must follow NVIDIA's official guide for setting up **CUDA on WSL**. This is the most reliable way to fix this layer. You can find the guide here: [https://docs.nvidia.com/cuda/wsl-user-guide/index.html](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
+
+**Step 3: Verify Docker Desktop Settings**
+Ensure Docker Desktop is configured to use your WSL 2 distribution and provide it with GPU access.
+*   Open Docker Desktop.
+*   Go to **Settings > Resources > WSL Integration**.
+*   Make sure that "Enable integration with my default WSL distro" is checked, and that the toggle for your specific Linux distribution (e.g., `Ubuntu-22.04`) is turned on.
+
+**Step 4: Fallback to CPU Mode (for testing)**
+If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
+*   Remove the `--gpus all` flag from the `docker run` command:
+    ```bash
+    docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 </file_artifact>
 
 <file path="src/components/global/SplashCursor.jsx">
