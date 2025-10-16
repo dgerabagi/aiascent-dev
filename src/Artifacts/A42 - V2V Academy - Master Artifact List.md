@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C73 (Add A73)
+# Updated on: C74 (Add A74)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -34,6 +34,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A60. V2V Academy - Assessment Philosophy
 - **Description:** Documents the V2V Academy's philosophy on student assessment, emphasizing tangible outcomes and self-evaluation over traditional, high-overhead testing.
 - **Tags:** v2v, curriculum design, assessment, project-based learning, self-assessment
+
+#### A74. V2V Academy - Interactive Curriculum Plan
+- **Description:** A plan for a new, interactive curriculum page on aiascent.dev. It details a persona-based selection screen that leads to a tailored version of the entire V2V Academy curriculum presented within the interactive report viewer.
+- **Tags:** v2v, curriculum, interactive learning, plan, ui, ux, report viewer, persona
 
 ### II. Research & Synthesis
 

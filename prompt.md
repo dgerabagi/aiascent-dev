@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 74 - implement new page to contain the report viewer with our curriculum
+Current Cycle 75 - check first report, finish remaining reports
+Cycle 74 - implement new page to contain the report viewer with our curriculum
 Cycle 73 - build out final lesson
 Cycle 72 - build out lesson 4.2
 Cycle 71 - fantastic! now module 4!
@@ -283,7 +284,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C73 (Add A73)
+# Updated on: C74 (Add A74)
 
 ## 1. Purpose
 
@@ -685,9 +686,41 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A73. V2V Academy - Lesson 4.3 - Architecting Your MVP
 - **Description:** The detailed content for Lesson 4.3 of the V2V Academy, "Architecting Your MVP," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, project scope, architecture, planning, interactive learning, persona
+
+### A74. V2V Academy - Interactive Curriculum Plan
+- **Description:** A plan for a new, interactive curriculum page on aiascent.dev. It details a persona-based selection screen that leads to a tailored version of the entire V2V Academy curriculum presented within the interactive report viewer.
+- **Tags:** v2v, curriculum, interactive learning, plan, ui, ux, report viewer, persona
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 75>
+<Cycle Context>
+great! the cards are loading and i can select the career transitioner. please review that json for completion then seek to deliver the remaining reports.
+</Cycle Context>
+<Previous Cycle 74 Summary of Actions>
+I will continue building the V2V Academy curriculum by creating Lesson 4.3, "Architecting Your MVP." This new artifact will be structured for the interactive report viewer and will include three distinct versions tailored to our defined learner personas. This lesson will teach students how to translate their `Project Scope` artifact into a more detailed architectural plan that an AI can use to generate the initial project scaffolding. Concurrently, I will enrich the `A55 - V2V Academy - Glossary of Terms.md` with new, essential definitions for "Technical Debt" and "Architectural Blueprint." Finally, I will update all master artifact lists to incorporate this new lesson, ensuring the project's documentation remains synchronized and comprehensive.
+
+1.  **Create `A73 - V2V Academy - Lesson 4.3 - Architecting Your MVP.md`:**
+    *   Author a new lesson artifact for the third lesson of Module 4.
+    *   Structure the lesson with four pages for each persona: 1) What is an MVP Architecture?, 2) The AI as Your Architect, 3) Writing the Architectural Prompt, and 4) Kicking Off Cycle 1.
+    *   Write three complete and parallel versions of the content for each page, tailored to the "Career Transitioner," "Underequipped Graduate," and "Young Precocious" personas.
+    *   Emphasize that the goal is to create a clear architectural blueprint that an AI can use to generate the initial file structure and boilerplate code for the project.
+
+2.  **Update `A55 - V2V Academy - Glossary of Terms.md`:**
+    *   Add a new, detailed entry for **"Technical Debt"** to explain the long-term costs of choosing an easy solution now over using a better approach that would take longer.
+    *   Add a new entry for **"Architectural Blueprint"** to define it as the high-level plan or design document for a software system.
+
+3.  **Update `A53 - V2V Academy - Curriculum Outline.md`:**
+    *   Modify the curriculum outline to add the new artifact number `A73` for Lesson 4.3.
+
+4.  **Update `A42 - V2V Academy - Master Artifact List.md`:**
+    *   Add the new entry for `A73` to the V2V-specific master artifact list.
+
+5.  **Update `A0 - aiascent.dev - Master Artifact List.md`:**
+    *   Add the new entry for `A73` to the main project's master artifact list to ensure global discoverability.
+</Previous Cycle 74 Summary of Actions>
+</Cycle 75>
 
 <Cycle 74>
 <Cycle Context>
@@ -3855,10 +3888,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T15:20:57.386Z
+  Date Generated: 2025-10-16T15:46:17.692Z
   ---
-  Total Files: 182
-  Approx. Tokens: 757824
+  Total Files: 186
+  Approx. Tokens: 767453
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3909,7 +3942,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 34. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 35. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 408 - Chars: 26531 - Tokens: 6633
+36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 412 - Chars: 26915 - Tokens: 6729
 37. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 38. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 39. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -3940,122 +3973,126 @@ This file-centric approach helps in planning and prioritizing work, especially i
 64. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
 65. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
 66. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
-67. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
-68. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
-69. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
-70. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
-71. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
-72. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
-73. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
-74. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
-75. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-76. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-77. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
-78. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
-79. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-80. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
-81. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-82. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
-83. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
-84. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
-85. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-86. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
-87. src\components\layout\Header.tsx - Lines: 67 - Chars: 2598 - Tokens: 650
-88. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
-89. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
-90. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
-91. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-92. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-93. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
-94. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
-95. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-96. src\components\report-viewer\ReportViewer.tsx - Lines: 178 - Chars: 7544 - Tokens: 1886
-97. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-98. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
-99. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-100. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
-101. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
-102. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
-103. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
-104. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-105. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
-106. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-107. src\stores\reportStore.ts - Lines: 731 - Chars: 33774 - Tokens: 8444
-108. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
-109. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
-110. components.json - Lines: 17 - Chars: 370 - Tokens: 93
-111. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
-112. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
-113. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
-114. package.json - Lines: 51 - Chars: 1528 - Tokens: 382
-115. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
-116. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
-117. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
-118. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
-119. public\assets\images\report\dce\dce-feature-artifacts.gif - [Binary] Size: 36.5 MB
-120. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
-121. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
-122. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
-123. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
-124. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
-125. src\Artifacts\A42 - V2V Academy - Master Artifact List.md - Lines: 192 - Chars: 13861 - Tokens: 3466
-126. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
-127. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
-128. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-129. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 131 - Chars: 6936 - Tokens: 1734
-130. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 354 - Chars: 33508 - Tokens: 8377
-131. context\v2v\audio-transcripts\1-on-1-training\transcript-2.md - Lines: 504 - Chars: 50152 - Tokens: 12538
-132. context\v2v\audio-transcripts\1-on-1-training\transcript-3.md - Lines: 1256 - Chars: 131611 - Tokens: 32903
-133. context\v2v\audio-transcripts\1-on-1-training\transcript-4.md - Lines: 130 - Chars: 17890 - Tokens: 4473
-134. context\v2v\audio-transcripts\1-on-1-training\transcript-6.md - Lines: 858 - Chars: 78046 - Tokens: 19512
-135. context\v2v\audio-transcripts\1-on-1-training\transcript-7.md - Lines: 1008 - Chars: 122887 - Tokens: 30722
-136. context\v2v\audio-transcripts\1-on-1-training\transcript-9.md - Lines: 818 - Chars: 65770 - Tokens: 16443
-137. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 704 - Chars: 89232 - Tokens: 22308
-138. src\Artifacts\A47 - insanely-fast-whisper-api-README.md - Lines: 178 - Chars: 8372 - Tokens: 2093
-139. context\v2v\research-proposals\01-V2V Academy Content Research Plan.md - Lines: 246 - Chars: 52667 - Tokens: 13167
-140. context\v2v\research-proposals\02-V2V Context Engineering Research Plan.md - Lines: 266 - Chars: 61311 - Tokens: 15328
-141. context\v2v\research-proposals\03-AI Research Proposal_ V2V Pathway.md - Lines: 217 - Chars: 61407 - Tokens: 15352
-142. context\v2v\research-proposals\04-AI Research Proposal_ V2V Pathway.md - Lines: 388 - Chars: 80971 - Tokens: 20243
-143. context\v2v\research-proposals\05-V2V Pathway Research Proposal Execution.md - Lines: 309 - Chars: 77291 - Tokens: 19323
-144. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md - Lines: 419 - Chars: 76982 - Tokens: 19246
-145. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
-146. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
-147. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
-148. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
-149. src\Artifacts\A47 - David Gerabagi Resume (DCE Update).md - Lines: 78 - Chars: 6900 - Tokens: 1725
-150. src\Artifacts\A49 - V2V Academy - Research & Synthesis Plan.md - Lines: 58 - Chars: 4851 - Tokens: 1213
-151. src\Artifacts\A50 - V2V Academy - Core Principles & Philosophy.md - Lines: 42 - Chars: 5240 - Tokens: 1310
-152. src\Artifacts\A51 - V2V Academy - The Virtuoso's Workflow.md - Lines: 50 - Chars: 4630 - Tokens: 1158
-153. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
-154. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 106 - Chars: 8072 - Tokens: 2018
-155. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 130 - Chars: 18402 - Tokens: 4601
-156. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 153 - Chars: 21591 - Tokens: 5398
-157. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
-158. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
-159. src\Artifacts\A58 - V2V Academy - Target Learner Personas.md - Lines: 64 - Chars: 5141 - Tokens: 1286
-160. src\Artifacts\A59 - V2V Academy - Student Environment Guide.md - Lines: 45 - Chars: 3728 - Tokens: 932
-161. src\Artifacts\A60 - V2V Academy - Assessment Philosophy.md - Lines: 35 - Chars: 2940 - Tokens: 735
-162. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
-163. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
-164. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
-165. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
-166. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
-167. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
-168. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
-169. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
-170. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
-171. src\Artifacts\A62 - V2V Academy - Synthesis of Research Proposals.md - Lines: 33 - Chars: 4303 - Tokens: 1076
-172. src\Artifacts\A63 - V2V Academy - Lesson 1.2 - The Philosophy of V2V.md - Lines: 94 - Chars: 15137 - Tokens: 3785
-173. src\Artifacts\A64 - V2V Academy - Lesson 1.3 - The Citizen Architect.md - Lines: 94 - Chars: 15236 - Tokens: 3809
-174. src\Artifacts\A65 - V2V Academy - Lesson 2.1 - Introduction to Data Curation.md - Lines: 93 - Chars: 15186 - Tokens: 3797
-175. src\Artifacts\A66 - V2V Academy - Lesson 2.2 - The Art of Annotation.md - Lines: 93 - Chars: 15214 - Tokens: 3804
-176. src\Artifacts\A67 - V2V Academy - Lesson 2.3 - Critical Analysis of AI Output.md - Lines: 93 - Chars: 15975 - Tokens: 3994
-177. src\Artifacts\A68 - V2V Academy - Lesson 3.1 - From Conversation to Command.md - Lines: 126 - Chars: 16242 - Tokens: 4061
-178. src\Artifacts\A69 - V2V Academy - Lesson 3.2 - The Feedback Loop in Practice.md - Lines: 93 - Chars: 15947 - Tokens: 3987
-179. src\Artifacts\A70 - V2V Academy - Lesson 3.3 - The Test-and-Revert Workflow.md - Lines: 93 - Chars: 16374 - Tokens: 4094
-180. src\Artifacts\A71 - V2V Academy - Lesson 4.1 - Defining Your Vision.md - Lines: 108 - Chars: 15323 - Tokens: 3831
-181. src\Artifacts\A72 - V2V Academy - Lesson 4.2 - The Blank Page Problem.md - Lines: 93 - Chars: 15303 - Tokens: 3826
-182. src\Artifacts\A73 - V2V Academy - Lesson 4.3 - Architecting Your MVP.md - Lines: 93 - Chars: 15757 - Tokens: 3940
+67. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
+68. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
+69. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
+70. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
+71. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
+72. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
+73. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
+74. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
+75. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
+76. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
+77. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
+78. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
+79. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
+80. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
+81. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
+82. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
+83. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
+84. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
+85. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
+86. src\components\layout\Header.tsx - Lines: 68 - Chars: 2651 - Tokens: 663
+87. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
+88. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
+89. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
+90. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+91. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
+92. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
+93. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
+94. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
+95. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8767 - Tokens: 2192
+96. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
+97. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
+98. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
+99. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
+100. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
+101. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
+102. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
+103. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
+104. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
+105. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
+106. src\stores\reportStore.ts - Lines: 712 - Chars: 32427 - Tokens: 8107
+107. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
+108. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
+109. components.json - Lines: 17 - Chars: 370 - Tokens: 93
+110. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
+111. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
+112. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
+113. package.json - Lines: 51 - Chars: 1528 - Tokens: 382
+114. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
+115. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
+116. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
+117. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
+118. public\assets\images\report\dce\dce-feature-artifacts.gif - [Binary] Size: 36.5 MB
+119. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
+120. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
+121. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
+122. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
+123. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+124. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
+125. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
+126. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
+127. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 354 - Chars: 33508 - Tokens: 8377
+128. context\v2v\audio-transcripts\1-on-1-training\transcript-2.md - Lines: 504 - Chars: 50152 - Tokens: 12538
+129. context\v2v\audio-transcripts\1-on-1-training\transcript-3.md - Lines: 1256 - Chars: 131611 - Tokens: 32903
+130. context\v2v\audio-transcripts\1-on-1-training\transcript-4.md - Lines: 130 - Chars: 17890 - Tokens: 4473
+131. context\v2v\audio-transcripts\1-on-1-training\transcript-6.md - Lines: 858 - Chars: 78046 - Tokens: 19512
+132. context\v2v\audio-transcripts\1-on-1-training\transcript-7.md - Lines: 1008 - Chars: 122887 - Tokens: 30722
+133. context\v2v\audio-transcripts\1-on-1-training\transcript-9.md - Lines: 818 - Chars: 65770 - Tokens: 16443
+134. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 704 - Chars: 89232 - Tokens: 22308
+135. context\v2v\research-proposals\01-V2V Academy Content Research Plan.md - Lines: 246 - Chars: 52667 - Tokens: 13167
+136. context\v2v\research-proposals\02-V2V Context Engineering Research Plan.md - Lines: 266 - Chars: 61311 - Tokens: 15328
+137. context\v2v\research-proposals\03-AI Research Proposal_ V2V Pathway.md - Lines: 217 - Chars: 61407 - Tokens: 15352
+138. context\v2v\research-proposals\04-AI Research Proposal_ V2V Pathway.md - Lines: 388 - Chars: 80971 - Tokens: 20243
+139. context\v2v\research-proposals\05-V2V Pathway Research Proposal Execution.md - Lines: 309 - Chars: 77291 - Tokens: 19323
+140. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md - Lines: 419 - Chars: 76982 - Tokens: 19246
+141. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
+142. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
+143. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
+144. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
+145. src\Artifacts\A47 - David Gerabagi Resume (DCE Update).md - Lines: 78 - Chars: 6900 - Tokens: 1725
+146. src\Artifacts\A49 - V2V Academy - Research & Synthesis Plan.md - Lines: 58 - Chars: 4851 - Tokens: 1213
+147. src\Artifacts\A50 - V2V Academy - Core Principles & Philosophy.md - Lines: 42 - Chars: 5240 - Tokens: 1310
+148. src\Artifacts\A51 - V2V Academy - The Virtuoso's Workflow.md - Lines: 50 - Chars: 4630 - Tokens: 1158
+149. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
+150. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 106 - Chars: 8072 - Tokens: 2018
+151. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 130 - Chars: 18402 - Tokens: 4601
+152. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 153 - Chars: 21591 - Tokens: 5398
+153. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
+154. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
+155. src\Artifacts\A58 - V2V Academy - Target Learner Personas.md - Lines: 64 - Chars: 5141 - Tokens: 1286
+156. src\Artifacts\A59 - V2V Academy - Student Environment Guide.md - Lines: 45 - Chars: 3728 - Tokens: 932
+157. src\Artifacts\A60 - V2V Academy - Assessment Philosophy.md - Lines: 35 - Chars: 2940 - Tokens: 735
+158. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
+159. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
+160. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
+161. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
+162. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
+163. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
+164. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
+165. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
+166. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
+167. src\Artifacts\A62 - V2V Academy - Synthesis of Research Proposals.md - Lines: 33 - Chars: 4303 - Tokens: 1076
+168. src\Artifacts\A63 - V2V Academy - Lesson 1.2 - The Philosophy of V2V.md - Lines: 94 - Chars: 15137 - Tokens: 3785
+169. src\Artifacts\A64 - V2V Academy - Lesson 1.3 - The Citizen Architect.md - Lines: 94 - Chars: 15236 - Tokens: 3809
+170. src\Artifacts\A65 - V2V Academy - Lesson 2.1 - Introduction to Data Curation.md - Lines: 93 - Chars: 15186 - Tokens: 3797
+171. src\Artifacts\A66 - V2V Academy - Lesson 2.2 - The Art of Annotation.md - Lines: 93 - Chars: 15214 - Tokens: 3804
+172. src\Artifacts\A67 - V2V Academy - Lesson 2.3 - Critical Analysis of AI Output.md - Lines: 93 - Chars: 15975 - Tokens: 3994
+173. src\Artifacts\A68 - V2V Academy - Lesson 3.1 - From Conversation to Command.md - Lines: 126 - Chars: 16242 - Tokens: 4061
+174. src\Artifacts\A69 - V2V Academy - Lesson 3.2 - The Feedback Loop in Practice.md - Lines: 93 - Chars: 15947 - Tokens: 3987
+175. src\Artifacts\A70 - V2V Academy - Lesson 3.3 - The Test-and-Revert Workflow.md - Lines: 93 - Chars: 16374 - Tokens: 4094
+176. src\Artifacts\A71 - V2V Academy - Lesson 4.1 - Defining Your Vision.md - Lines: 108 - Chars: 15323 - Tokens: 3831
+177. src\Artifacts\A72 - V2V Academy - Lesson 4.2 - The Blank Page Problem.md - Lines: 93 - Chars: 15303 - Tokens: 3826
+178. src\Artifacts\A73 - V2V Academy - Lesson 4.3 - Architecting Your MVP.md - Lines: 93 - Chars: 15757 - Tokens: 3940
+179. public\data\v2v_content_career_transitioner.json - Lines: 380 - Chars: 54890 - Tokens: 13723
+180. public\data\v2v_content_underequipped_graduate.json - Lines: 5 - Chars: 130 - Tokens: 33
+181. public\data\v2v_content_young_precocious.json - Lines: 5 - Chars: 120 - Tokens: 30
+182. public\data\v2v_imagemanifest.json - Lines: 54 - Chars: 3884 - Tokens: 971
+183. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
+184. src\app\academy\page.tsx - Lines: 61 - Chars: 2375 - Tokens: 594
+185. src\components\academy\PersonaSelector.tsx - Lines: 77 - Chars: 3610 - Tokens: 903
+186. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -24190,7 +24227,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C73 (Add A73)
+# Updated on: C74 (Add A74)
 
 ## 1. Purpose
 
@@ -24592,6 +24629,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A73. V2V Academy - Lesson 4.3 - Architecting Your MVP
 - **Description:** The detailed content for Lesson 4.3 of the V2V Academy, "Architecting Your MVP," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, project scope, architecture, planning, interactive learning, persona
+
+### A74. V2V Academy - Interactive Curriculum Plan
+- **Description:** A plan for a new, interactive curriculum page on aiascent.dev. It details a persona-based selection screen that leads to a tailored version of the entire V2V Academy curriculum presented within the interactive report viewer.
+- **Tags:** v2v, curriculum, interactive learning, plan, ui, ux, report viewer, persona
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -26657,92 +26698,6 @@ The page will be modified to include a simple, clean tab navigation bar at the t
 This plan provides a clean, user-friendly, and technically straightforward path to expanding the showcase, making it a more comprehensive portfolio of projects built with the DCE.
 </file_artifact>
 
-<file path="src/Artifacts/A31. aiascent.dev - iframe Integration Guide.md">
-# Artifact A31: aiascent.dev - iframe Integration Guide
-
-# Date Created: C29
-# Author: AI Model & Curator
-
-- **Key/Value for A0:**
-- **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
-- **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
-
-## 1. Overview
-
-This guide addresses the login failure observed when embedding `aiascent.game` within an `iframe` on the `aiascent.dev/showcase` page. The root cause is a browser security feature related to how cookies are handled in cross-site contexts.
-
-## 2. The Problem: Cross-Site Cookie Rejection
-
-Modern browsers have implemented stricter security policies to prevent Cross-Site Request Forgery (CSRF) attacks. A key part of this is the `SameSite` attribute on cookies.
-
-*   **The Console Error:** You observed errors like `Cookie “__Host-next-auth.csrf-token” has been rejected because it is in a cross-site context and its “SameSite” is “Lax” or “Strict”.`
-*   **Root Cause:** The `aiascent.game` website (which uses NextAuth.js) sets authentication cookies with a `SameSite` policy of `Lax` by default. This policy means the browser will only send the cookie if the request originates from the *same site* (`aiascent.game`). When the game is loaded in an `iframe` on `aiascent.dev`, the browser correctly identifies this as a "cross-site" context and refuses to send the `Lax` cookies, causing the authentication to fail.
-
-## 3. The Solution: `SameSite=None` and `Secure`
-
-To fix this, the `aiascent.game` application must be configured to tell browsers that its authentication cookies are *intended* to be used in a cross-site context. This requires making two specific changes to the cookie configuration within the `aiascent.game` project.
-
-1.  **`SameSite='none'`:** This attribute explicitly tells the browser that the cookie can be sent with cross-site requests (like from an `iframe`).
-2.  **`Secure=true`:** Using `SameSite='none'` is only allowed if the cookie is also marked as `Secure`. This ensures the cookie is only ever sent over an HTTPS connection, which is a critical security measure.
-
-### 3.1. Required Code Change in `aiascent.game`
-
-The following change needs to be made in the NextAuth configuration file within the `aiascent.game` project (likely located at `src/pages/api/auth/[...nextauth].ts` or a similar path).
-
-```typescript
-// In the aiascent.game project's NextAuth options...
-
-export const authOptions: NextAuthOptions = {
-  // ... your other providers (Google, etc.)
-  providers: [
-    // ...
-  ],
-  
-  // ADD OR MODIFY THIS COOKIES SECTION
-  cookies: {
-    sessionToken: {
-      name: `__Secure-next-auth.session-token`,
-      options: {
-        httpOnly: true,
-        sameSite: 'none', // <--- CRITICAL CHANGE
-        path: '/',
-        secure: true,   // <--- CRITICAL CHANGE
-        // If you have a custom domain, you might also need:
-        // domain: ".aiascent.game", 
-      },
-    },
-    // You may need to apply similar settings for other NextAuth cookies
-    // like csrfToken, callbackUrl, etc., if issues persist.
-  },
-
-  // ... rest of your configuration
-};
-```
-
-**Important Note:** This change must be deployed with the `aiascent.game` application. It cannot be fixed from the `aiascent.dev` side, as the cookie-setting behavior is controlled by the embedded site.
-
-## 4. Refresh Button Implementation
-
-To improve the user experience of the embedded game, a refresh button has been added to the showcase tab. This allows the user to reload the `iframe`'s content without reloading the entire `aiascent.dev` page.
-
-This is implemented in `ShowcaseTabs.tsx` using a React `ref` to access the `iframe`'s `contentWindow` and trigger a reload.
-
-```typescript
-// Example from ShowcaseTabs.tsx
-
-const iframeRef = useRef<HTMLIFrameElement>(null);
-
-const handleRefresh = () => {
-  if (iframeRef.current) {
-    iframeRef.current.contentWindow?.location.reload();
-  }
-};
-
-// ... in the JSX ...
-<button onClick={handleRefresh}>Refresh Game</button>
-<iframe ref={iframeRef} src="https://aiascent.game/" />
-</file_artifact>
-
 <file path="src/Artifacts/A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md">
 # Artifact A32: aiascent.dev - Dynamic Chat Prompt Suggestions Plan
 
@@ -28402,11 +28357,12 @@ return (
     </div>
 
     {/* Navigation Links - Absolutely Centered */}
-    {/* C51: Added DCE link */}
+    {/* C74: Added Academy link */}
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/mission">Mission</NavLink>
       <NavLink href="/learn">Learn</NavLink>
+      <NavLink href="/academy">Academy</NavLink>
       <NavLink href="/dce">DCE</NavLink>
       <NavLink href="/showcase">Showcase</NavLink>
     </nav>
@@ -29434,6 +29390,8 @@ import AudioControls from './AudioControls';
 import { Resizable } from 're-resizable';
 import Image from 'next/image';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+import type { ReportContentData, ImageManifestData } from '@/stores/reportStore';
+
 
 interface ReportViewerProps {
     reportName: string;
@@ -29468,13 +29426,38 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const viewerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        loadReport(reportName);
+        // C74: Fetch data within the component for static reports
+        if (reportName !== 'whitepaper' && reportName !== 'showcase') {
+            return; // Data for V2V is loaded by the parent /academy page
+        }
+        
+        const loadStaticReport = async () => {
+            try {
+                const [contentRes, manifestRes] = await Promise.all([
+                    fetch(`/data/${reportName}_content.json`),
+                    fetch(`/data/${reportName}_imagemanifest.json`),
+                ]);
+
+                if (!contentRes.ok) throw new Error(`Failed to fetch ${reportName}_content.json`);
+                if (!manifestRes.ok) throw new Error(`Failed to fetch ${reportName}_imagemanifest.json`);
+
+                const reportData: ReportContentData = await contentRes.json();
+                const imageManifest: ImageManifestData = await manifestRes.json();
+                
+                loadReport(reportData, imageManifest);
+
+            } catch (error) {
+                console.error(`Failed to load static report data for ${reportName}:`, error);
+            }
+        };
+
+        loadStaticReport();
     }, [loadReport, reportName]);
 
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        if (currentPage) {
+        if (currentPage && !reportName.startsWith('v2v')) {
             fetchPageSuggestions(currentPage, reportName);
         }
     }, [currentPage, reportName, fetchPageSuggestions]);
@@ -30237,34 +30220,22 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
 // Updated on: C57 (Remove isImageFullscreen and related actions to unify fullscreen logic)
-// Updated on: C54 (Add state for fullscreen media viewer)
-// Updated on: C49 (Decouple suggestion generation, fix refresh bug, add regeneration logic)
-// Updated on: C48 (Add guard to prevent concurrent suggestion fetches.)
-// Updated on: C47 (Add retry logic for suggestion fetching.)
-// Updated on: C45 (Add fullscreen state. Add race-condition check to suggestion fetching.)
-// Updated on: C43 (Add state and actions for dynamic, on-demand suggestion generation.)
-// Updated on: C42 (Implement report-specific default suggestions.)
-// Updated on: C38 (Add setReportChatMessage action for robust suggestion parsing.)
-// Updated on: C37 (Fix image path generation to use manifest's basePath.)
-// Updated on: C35 (Add support for dynamic prompt suggestions in chat.)
-// Updated on: C28 (Implement minimalist default view and fix slideshow logic.)
-// Updated on: C26 (Fix Zustand deprecation warning.)
-// Updated on: C23 (Fix image URL generation for single-image groups.)
-// Updated on: C22 (Refactor for reusability with reportName prop.)
+// ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 
-// Define interfaces for our data structures
-interface ReportImage {
+// ... (interfaces ommitted for brevity)
+export interface ReportImage {
     imageId: string;
     url: string;
     prompt: string;
     alt: string;
 }
 
-interface ReportImagePrompt {
+export interface ReportImagePrompt {
     promptId: string;
     promptText: string;
     images: ReportImage[];
@@ -30300,13 +30271,13 @@ export interface RawReportSection {
     subSections?: RawSubSection[];
 }
 
-interface ReportContentData {
+export interface ReportContentData {
     reportId: string;
     reportTitle: string;
     sections: RawReportSection[];
 }
 
-interface ImageManifestData {
+export interface ImageManifestData {
     manifestId: string;
     basePath: string;
     imageGroups: Record<string, {
@@ -30318,8 +30289,6 @@ interface ImageManifestData {
         imageCount: number;
     }>;
 }
-// --- End Raw Data Structures ---
-
 export type ChatMessage = {
     id?: string;
     author: string;
@@ -30389,7 +30358,7 @@ export interface ReportState {
 
 export interface ReportActions {
     setHasHydrated: (hydrated: boolean) => void;
-    loadReport: (reportName: string) => Promise<void>;
+    loadReport: (reportData: ReportContentData, imageManifest: ImageManifestData) => Promise<void>;
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
@@ -30437,6 +30406,8 @@ export interface ReportActions {
     stopArbitraryText: () => void;
 }
 
+
+// ... (createInitialReportState and _fetchSuggestions ommitted for brevity)
 const createInitialReportState = (): ReportState => ({
     reportName: null,
     _hasHydrated: false,
@@ -30524,12 +30495,14 @@ const _fetchSuggestions = async (
     return null;
 };
 
+
 export const useReportStore = createWithEqualityFn<ReportState & ReportActions>()(
     persist(
         (set, get) => ({
             ...createInitialReportState(),
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
+            // ... (fetchPageSuggestions, fetchConversationSuggestions, regenerateSuggestions ommitted for brevity)
             fetchPageSuggestions: async (page: ReportPage, reportName: string) => {
                 if (get().suggestionsStatus === 'loading' || !page) return;
 
@@ -30598,15 +30571,19 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
             },
 
-            loadReport: async (reportName: string) => {
-                if (!reportName) {
-                    console.error("loadReport called with undefined reportName.");
+            loadReport: async (contentData: ReportContentData, imageManifest: ImageManifestData) => {
+                if (!contentData || !imageManifest) {
+                    console.error("loadReport called with undefined data.");
                     set({ isLoading: false });
                     return;
                 }
+                const reportName = contentData.reportId;
+                
                 set(createInitialReportState());
 
-                const defaultSuggestions = reportName === 'whitepaper' 
+                const defaultSuggestions = reportName.startsWith('v2v')
+                    ? []
+                    : reportName === 'whitepaper' 
                     ? WHITEPAPER_DEFAULT_SUGGESTIONS 
                     : SHOWCASE_DEFAULT_SUGGESTIONS;
 
@@ -30618,30 +30595,19 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 });
 
                 try {
-                    const [contentRes, manifestRes] = await Promise.all([
-                        fetch(`/data/${reportName}_content.json`),
-                        fetch(`/data/${reportName}_imagemanifest.json`),
-                    ]);
-
-                    if (!contentRes.ok) throw new Error(`Failed to fetch ${reportName}_content.json: ${contentRes.statusText}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch ${reportName}_imagemanifest.json: ${manifestRes.statusText}`);
-
-                    const contentData: ReportContentData = await contentRes.json();
-                    const manifestData: ImageManifestData = await manifestRes.json();
-                    
                     const reconstructedPages: ReportPage[] = [];
                     contentData.sections.forEach(section => {
                         const processPages = (pages: RawReportPage[]) => {
                             (pages || []).forEach(rawPage => {
                                 const imagePrompts: ReportImagePrompt[] = (rawPage.imageGroupIds || []).map(groupId => {
-                                    const groupMeta = manifestData.imageGroups[groupId];
+                                    const groupMeta = imageManifest.imageGroups[groupId];
                                     if (!groupMeta) {
                                         console.warn(`Image group metadata not found for groupId: ${groupId}`);
                                         return null;
                                     }
 
                                     const images: ReportImage[] = [];
-                                    const imageBasePath = manifestData.basePath;
+                                    const imageBasePath = imageManifest.basePath;
                                     
                                     if (groupMeta.imageCount === 1 && !groupMeta.baseFileName.endsWith('-')) {
                                         const fileName = `${groupMeta.baseFileName}${groupMeta.fileExtension}`;
@@ -30688,18 +30654,18 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     
                     set({
                         reportData: contentData,
-                        imageManifest: manifestData,
+                        imageManifest: imageManifest,
                         allPages: reconstructedPages,
                         isLoading: false,
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
-                    // C49 FIX: Removed initial suggestion fetch. It will now be triggered by the useEffect in ReportViewer.
                 } catch (error) {
-                    console.error(`Failed to load and process report data for ${reportName}.`, error);
+                    console.error(`Failed to process report data for ${reportName}.`, error);
                     set({ isLoading: false });
                 }
             },
             
+            // ... (rest of actions ommitted for brevity)
             startSlideshow: () => {
                 const { stopSlideshow, allPages, currentPageIndex, duration, nextPage, autoplayEnabled, playbackSpeed } = get();
                 stopSlideshow(false); // Stop any existing timers
@@ -30945,8 +30911,6 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (state) state.setHasHydrated(true);
             },
             partialize: (state) => ({
-                currentPageIndex: state.currentPageIndex,
-                currentImageIndex: state.currentImageIndex,
                 isTreeNavOpen: state.isTreeNavOpen,
                 expandedSections: state.expandedSections,
                 isChatPanelOpen: state.isChatPanelOpen,
@@ -31550,201 +31514,6 @@ This new section will be added to `src/app/dce/page.tsx` as the fourth `MissionS
 *   **Asset Wishlist:** A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.
 
 ---
-</file_artifact>
-
-<file path="src/Artifacts/A42 - V2V Academy - Master Artifact List.md">
-# Artifact A42: V2V Academy - Master Artifact List
-# Date Created: C55
-# Author: AI Model & Curator
-# Updated on: C73 (Add A73)
-
-- **Key/Value for A0:**
-- **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
-- **Tags:** documentation, v2v, training, artifact list, index
-
-## 1. Purpose
-
-This file serves as the definitive, parseable list of all documentation artifacts for the `Vibecoding to Virtuosity Academy`. This sub-project aims to create an online training platform on `aiascent.dev` to teach the methodology of the Citizen Architect, leveraging transcribed 1-on-1 coaching sessions as source material.
-
-## 2. Formatting Rules
-
-*   Standard artifact formatting rules apply.
-
-## 3. Artifacts List
-
-### I. Project Planning & Vision
-
-#### A43. V2V Academy - Project Vision and Roadmap
-- **Description:** High-level overview of the online training platform, its purpose, target audience, technical approach (including user authentication), and a phased development plan.
-- **Tags:** project vision, goals, scope, v2v, training, roadmap, user authentication
-
-#### A58. V2V Academy - Target Learner Personas
-- **Description:** Defines the three primary target learner personas for the V2V Academy, outlining their backgrounds, motivations, and learning goals.
-- **Tags:** v2v, curriculum design, learner persona, target audience
-
-#### A59. V2V Academy - Student Environment Guide
-- **Description:** A guide for V2V Academy students, explaining the required software setup and the pedagogical model for interacting with the AI cognitive tutor during exercises.
-- **Tags:** v2v, curriculum design, student guide, setup, cognitive tutor, vscode
-
-#### A60. V2V Academy - Assessment Philosophy
-- **Description:** Documents the V2V Academy's philosophy on student assessment, emphasizing tangible outcomes and self-evaluation over traditional, high-overhead testing.
-- **Tags:** v2v, curriculum design, assessment, project-based learning, self-assessment
-
-### II. Research & Synthesis
-
-#### A44. V2V Academy - Content Research Proposal
-- **Description:** A formal proposal outlining a research plan to discover, analyze, and synthesize existing public content related to the "prompt engineering to context engineering" paradigm and other V2V methodologies.
-- **Tags:** research, content strategy, curriculum, prompt engineering, context engineering
-
-#### A45. V2V Academy - Key Learnings from Ryan Carson
-- **Description:** A summary of the key concepts from Ryan Carson's "3-file system to vibe code production apps" video, which serves as an inspiration for structuring the AI development process.
-- **Tags:** source material, research, workflow, development process, vibe coding
-
-#### A49. V2V Academy - Research & Synthesis Plan
-- **Description:** A formal plan for analyzing the provided coaching transcripts and project artifacts to reverse-engineer the curator's expert workflow and synthesize a curriculum for the V2V Academy.
-- **Tags:** research, analysis, synthesis, curriculum design, v2v, cognitive apprenticeship
-
-#### A50. V2V Academy - Core Principles & Philosophy
-- **Description:** Synthesizes the core principles and philosophical underpinnings of the "Vibecoding to Virtuosity" pathway, extracted from the curator's coaching transcripts.
-- **Tags:** v2v, philosophy, principles, cognitive apprenticeship, mental models
-
-#### A51. V2V Academy - The Virtuoso's Workflow
-- **Description:** A detailed, reverse-engineered breakdown of the curator's expert workflow, codifying the practical steps of the "Vibecoding to Virtuosity" pathway.
-- **Tags:** v2v, workflow, process, cognitive apprenticeship, reverse engineering
-
-#### A52. V2V Academy - Foundational Skills Analysis
-- **Description:** An analysis of the foundational skills required for the V2V pathway, derived by working backward from the Virtuoso's workflow. It prioritizes cognitive skills over traditional programming syntax.
-- **Tags:** v2v, curriculum design, foundational skills, data curation, critical thinking
-
-#### A57. V2V Academy - C58 Response Analysis and Strategic Gaps
-- **Description:** An analysis of the artifacts created in Cycle 58, showing their alignment with the source transcripts and identifying strategic gaps in the V2V Academy's planning.
-- **Tags:** v2v, curriculum design, analysis, strategy, self-reflection
-
-#### A61.1. Transcript 1 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-1.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.2. Transcript 2 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-2.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.3. Transcript 3 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-3.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.4. Transcript 4 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-4.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.5. Transcript 5 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-5.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.6. Transcript 6 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-6.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.7. Transcript 7 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-7.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.8. Transcript 8 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-8.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.9. Transcript 9 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-9.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.10. Transcript 10 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-10.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.11. Transcript 11 Summary
-- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-11.md`.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A61.12. Transcript 12 Summary (Cycle 58 Context)
-- **Description:** A high-level summary and synthesis of the key insights from the partial coaching transcript provided in the context for Cycle 58.
-- **Tags:** v2v, research, synthesis, transcript analysis
-
-#### A62. V2V Academy - Synthesis of Research Proposals
-- **Description:** A meta-reflection on the provided research proposals, summarizing key themes, strategic insights, and recurring patterns.
-- **Tags:** v2v, research, synthesis, meta-analysis, strategy
-
-### III. Curriculum Design & Content
-
-#### A53. V2V Academy - Curriculum Outline
-- **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
-- **Tags:** v2v, curriculum design, instructional design, learning pathway, cognitive apprenticeship, persona
-
-#### A54. V2V Academy - Lesson 1.1 - The Virtuoso's Loop
-- **Description:** The detailed content for Lesson 1.1 of the V2V Academy, "The Virtuoso's Loop," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, workflow, interactive learning, persona
-
-#### A55. V2V Academy - Glossary of Terms
-- **Description:** A comprehensive glossary of key terms and concepts related to the "Vibecoding to Virtuosity" (V2V) pathway and the Data Curation Environment (DCE).
-- **Tags:** v2v, documentation, glossary, definitions, cognitive apprenticeship
-
-#### A56. V2V Academy - Practical Exercises Plan
-- **Description:** Outlines the plan for the practical exercises within the V2V Academy, centered on the project of incrementally building a fully functional, AI-powered interactive report viewer.
-- **Tags:** v2v, curriculum, exercises, project-based learning, report viewer, rag
-
-#### A63. V2V Academy - Lesson 1.2 - The Philosophy of V2V
-- **Description:** The detailed content for Lesson 1.2 of the V2V Academy, "The Philosophy of V2V," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, philosophy, interactive learning, persona
-
-#### A64. V2V Academy - Lesson 1.3 - The Citizen Architect
-- **Description:** The detailed content for Lesson 1.3 of the V2V Academy, "The Citizen Architect," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, citizen architect, interactive learning, persona
-
-#### A65. V2V Academy - Lesson 2.1 - Introduction to Data Curation
-- **Description:** The detailed content for Lesson 2.1 of the V2V Academy, "Introduction to Data Curation," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, data curation, context engineering, interactive learning, persona
-
-#### A66. V2V Academy - Lesson 2.2 - The Art of Annotation
-- **Description:** The detailed content for Lesson 2.2 of the V2V Academy, "The Art of Annotation," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, data annotation, metadata, context engineering, interactive learning, persona
-
-#### A67. V2V Academy - Lesson 2.3 - Critical Analysis of AI Output
-- **Description:** The detailed content for Lesson 2.3 of the V2V Academy, "Critical Analysis of AI Output," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, critical thinking, ai literacy, validation, interactive learning, persona
-
-#### A68. V2V Academy - Lesson 3.1 - From Conversation to Command
-- **Description:** The detailed content for Lesson 3.1 of the V2V Academy, "From Conversation to Command," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, structured interaction, prompt engineering, context engineering, interactive learning, persona
-
-#### A69. V2V Academy - Lesson 3.2 - The Feedback Loop in Practice
-- **Description:** The detailed content for Lesson 3.2 of the V2V Academy, "The Feedback Loop in Practice," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, feedback loop, debugging, cognitive apprenticeship, interactive learning, persona
-
-#### A70. V2V Academy - Lesson 3.3 - The Test-and-Revert Workflow
-- **Description:** The detailed content for Lesson 3.3 of the V2V Academy, "The Test-and-Revert Workflow," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, git, version control, testing, cognitive apprenticeship, interactive learning, persona
-
-#### A71. V2V Academy - Lesson 4.1 - Defining Your Vision
-- **Description:** The detailed content for Lesson 4.1 of the V2V Academy, "Defining Your Vision," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, project scope, mvp, planning, interactive learning, persona
-
-#### A72. V2V Academy - Lesson 4.2 - The Blank Page Problem
-- **Description:** The detailed content for Lesson 4.2 of the V2V Academy, "The Blank Page Problem," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, project scope, scaffolding, planning, interactive learning, persona
-
-#### A73. V2V Academy - Lesson 4.3 - Architecting Your MVP
-- **Description:** The detailed content for Lesson 4.3 of the V2V Academy, "Architecting Your MVP," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
-- **Tags:** v2v, curriculum, lesson plan, project scope, architecture, planning, interactive learning, persona
-
-### IV. Technical Implementation & Guides
-
-#### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing
-
-### V. Personal & Professional Branding
-
-#### A47. David Gerabagi Resume (DCE Update)
-- **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
-- **Tags:** resume, branding, professional profile, dce
 </file_artifact>
 
 <file path="src/Artifacts/A43 - V2V Academy - Project Vision and Roadmap.md">
@@ -32927,140 +32696,6 @@ kind of like a lovehate ratio of X, but you know, it's good to see you on there 
 51:50
 everything. It's super p practical. Thanks, Peter. Appreciate it.
 ```
-</file_artifact>
-
-<file path="src/Artifacts/A46 - Whisper Transcription Setup Guide.md">
-# Artifact A46: Whisper Transcription Setup Guide
-# Date Created: C55
-# Author: AI Model & Curator
-# Updated on: C65 (Provide definitive and final working solution)
-
-- **Key/Value for A0:**
-- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
-
-## 1. Overview & Goal
-
-To build our training curriculum from recorded 1-on-1 sessions, we need an efficient and reliable way to transcribe audio files into text. You requested a simple, Docker-based solution.
-
-The goal of this guide is to provide a step-by-step process for running a powerful, GPU-accelerated Whisper model via Docker that exposes a simple API for programmatic transcription. The recommended solution is the **`insanely-fast-whisper-api`** project, which provides a ready-to-use, high-performance API server. The full documentation for this tool can be found in artifact `A47`.
-
-## 2. Root Cause of Previous Failures (Cycles 59-64)
-
-My previous guidance was incorrect and is the reason for the persistent failures. The core issue has been the complex and unreliable way PowerShell handles nested quotes when passing command arguments to `docker exec`. This resulted in the `curl` command inside the container receiving a corrupted JSON string, which the API server then rejected with a `JSON decode error`.
-
-The solution below is the definitive and most robust method. It constructs the command in a way that preserves the JSON payload as a literal string, which is the standard and correct way to interact with `curl`.
-
-## 3. Step-by-Step Setup
-
-### Step 1: Prepare Your Audio Directory
-
-Create a dedicated directory on your machine to hold the audio files you want to transcribe. For this guide, we will use the path `C:\Projects\v2v-transcripts\audio-to-process`. Place all your `.wav` files in this folder.
-
-### Step 2: Run the Whisper API Docker Container
-
-Open your terminal (PowerShell is recommended) and run the following command. This will download the Docker image (which is quite large, ~18.7 GB) and start the Whisper API server.
-
-```powershell
-docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -p 9000:9000 --name whisper-api -v "C:\Projects\v2v-transcripts\audio-to-process:/data" -d yoeven/insanely-fast-whisper-api:latest
-```
-
-*   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container.
-*   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container.
-*   `--name whisper-api`: Gives the container a simple, predictable name for easier scripting.
-*   `-v "C:\...:/data"`: **(Critical)** Mounts your local audio directory into the container at the `/data` path. This allows the API to access the files directly.
-*   `-d`: Runs the container in the background (detached mode).
-
-### Step 3: Verify the API Server is Running
-
-After a minute or two for the model to load into the GPU, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see a FastAPI documentation page. This confirms the server is up and ready to accept requests.
-
-## 4. Transcribing Your Files: The Definitive Method
-
-The following PowerShell script provides the final, correct, and most reliable method for transcribing your files. It automates the process of calling the API for each of your audio files using the correct `curl` command structure.
-
-**Instructions:**
-1.  Open a new PowerShell terminal.
-2.  Copy and paste the entire script below into your terminal and press Enter.
-
-```powershell
-# --- PowerShell Script for Transcription via `docker exec` (JSON Payload Method) ---
-# This is the definitive and most reliable method based on the API's requirements.
-
-# 1. Set the name of your running container. We use the name specified in the `docker run` command.
-$containerName = "elated_lewin"
-
-# 2. List of files to transcribe. These names must match the files in your audio folder.
-$filesToTranscribe = @(
-    "Lesson 1.5.wav",
-    "Lesson 2.wav",
-    "My recording 2.wav",
-    "My recording 5.wav",
-    "My recording 6.wav",
-    "My recording 7.wav",
-    "My recording 8.wav",
-    "My recording 9.wav",
-    "My recording 10.wav",
-    "My recording 11.wav",
-    "My recording 12.wav",
-    "My recording 13.wav"
-)
-
-# 3. Loop through each file and execute the transcription command inside the container.
-foreach ($fileName in $filesToTranscribe) {
-    $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($fileName) + ".json"
-    
-    Write-Host "Initiating transcription for '$fileName'..."
-
-    # Construct the JSON payload object. This is the most reliable way to create JSON.
-    # Note the 'file://' URI to reference the file inside the container's filesystem.
-    $payload = @{
-        url = "file:///data/$fileName"
-        task = "transcribe"
-        language = $null
-        batch_size = 64
-        timestamp = "chunk"
-        diarise_audio = $false
-    }
-    
-    # Convert the PowerShell object to a compact JSON string.
-    $jsonString = $payload | ConvertTo-Json -Compress
-
-    # This command tells Docker to run 'curl' inside the container.
-    # CRITICAL: The JSON data is passed inside SINGLE QUOTES (`-d '$jsonString'`).
-    # This prevents PowerShell from misinterpreting the inner double quotes and ensures
-    # curl receives a valid, literal JSON string. This is the key to the fix.
-    $command = "docker exec `"$containerName`" curl -s -X POST `"http://localhost:9000/`" -H `"Content-Type: application/json`" -d '$jsonString' -o `"/data/$outputFileName`""
-    
-    Write-Host "Executing command..."
-
-    try {
-        Invoke-Expression -Command $command
-        Write-Host "Successfully initiated transcription for '$fileName'. Output will be in '$outputFileName'." -ForegroundColor Green
-    }
-    catch {
-        Write-Host "Error transcribing '$fileName': $_" -ForegroundColor Red
-    }
-    Write-Host "---------------------------------"
-}
-
-Write-Host "All transcription jobs initiated. Please check your folder for the output .json files. This may take some time."
-```
-
-## 5. Extracting the Text
-
-After running the script, you will see `.json` files appear in your `audio-to-process` directory as each transcription completes. The API responds with a JSON object containing the full transcription. The text is located in the `"text"` field.
-
-**Example Response (`Lesson 1.5.json`):**
-```json
-{
-  "text": "This is the full transcribed text from the audio file...",
-  "language": "en",
-  "segments": [ ... ]
-}
-```
-
-You can now copy the value of the `"text"` field from each JSON file to create your markdown transcript artifacts. When you are finished, you can stop the Docker container by running `docker stop whisper-api` in your terminal.
 </file_artifact>
 
 <file path="context/v2v/audio-transcripts/1-on-1-training/transcript-1.md">
@@ -38711,187 +38346,6 @@ I'm glad we got to connect like this. Yeah. Cool, man. All right. Have a good ni
 Transcribed with Cockatoo
 </file_artifact>
 
-<file path="src/Artifacts/A47 - insanely-fast-whisper-api-README.md">
-# Insanely Fast Whisper API
-An API to transcribe audio with [OpenAI's Whisper Large v3](https://huggingface.co/openai/whisper-large-v3)! Powered by 🤗 Transformers, Optimum & flash-attn
-
-Features:
-* 🎤 Transcribe audio to text at blazing fast speeds
-* 📖 Fully open source and deployable on any GPU cloud provider
-* 🗣️ Built-in speaker diarization
-* ⚡ Easy to use and Fast API layer
-* 📃 Async background tasks and webhooks
-* 🔥 Optimized for concurrency and parallel processing
-* ✅ Task management, cancel and status endpoints
-* 🔒 Admin authentication for secure API access
-* 🧩 Fully managed API available on [JigsawStack](https://jigsawstack.com/speech-to-text)
-
-Based on [Insanely Fast Whisper CLI](https://github.com/Vaibhavs10/insanely-fast-whisper) project. Check it out if you like to set up this project locally or understand the background of insanely-fast-whisper.
-
-This project is focused on providing a deployable blazing fast whisper API with docker on cloud infrastructure with GPUs for scalable production use cases.
-
-With [Fly.io recent GPU service launch](https://fly.io/docs/gpus/gpu-quickstart/), I've set up the fly config file to easily deploy on fly machines! However, you can deploy this on any other VM environment that supports GPUs and docker.
-
-
-Here are some benchmarks we ran on Nvidia A100 - 80GB and fly.io GPU infra👇
-| Optimization type    | Time to Transcribe (150 mins of Audio) |
-|------------------|------------------|
-| **large-v3 (Transformers) (`fp16` + `batching [24]` + `Flash Attention 2`)** | **~2 (*1 min 38 sec*)**            |
-| **large-v3 (Transformers) (`fp16` + `batching [24]` + `Flash Attention 2` + `diarization`)** | **~2 (*3 min 16 sec*)**            |
-| **large-v3 (Transformers) (`fp16` + `batching [24]` + `Flash Attention 2` + `fly machine startup`)** | **~2 (*1 min 58 sec*)**            |
-| **large-v3 (Transformers) (`fp16` + `batching [24]` + `Flash Attention 2` + `diarization + fly machine startup`)** | **~2 (*3 min 36 sec*)**|
-
-The estimated startup time for the Fly machine with GPU and loading up the model is around ~20 seconds. The rest of the time is spent on the actual computation.
-
-## Docker image
-```
-yoeven/insanely-fast-whisper-api:latest
-```
-Docker hub: [yoeven/insanely-fast-whisper-api](https://hub.docker.com/r/yoeven/insanely-fast-whisper-api)
-
-## Deploying to Fly
-- Make sure you already have access to Fly GPUs.
-- Clone the project locally and open a terminal in the root
-- Rename the `app` name in the `fly.toml` if you like
-- Remove `image = 'yoeven/insanely-fast-whisper-api:latest'` in `fly.toml` only if you want to rebuild the image from the `Dockerfile`
-
-[Install fly cli](https://fly.io/docs/hands-on/install-flyctl/) if don't already have it
-
-Only need to run this the first time you launch a new fly app
-```bash
-fly launch
-```
-
-- Fly will prompt: `Would you like to copy its configuration to the new app? (y/N)`. Yes (`y`) to copy configuration from the repo.
-
-- Fly will prompt: `Do you want to tweak these settings before proceeding` if you have nothing to adjust. Most of the required settings are already configured in the `fly.toml` file. No `n` to proceed and deploy.
-
-The first time you deploy it will take some time since the image is huge. Subsequent deploys will be a lot faster.
-
-Run the following if you want to set up speaker diarization or an auth token to secure your API:
-
-```bash
-fly secrets set ADMIN_KEY=<your_token> HF_TOKEN=<your_hf_key>
-```
-Run `fly secrets list` to check if the secrets exist.
-
-To get the Hugging face token for speaker diarization you need to do the following:
-1. Accept [`pyannote/segmentation-3.0`](https://hf.co/pyannote/segmentation-3.0) user conditions
-2. Accept [`pyannote/speaker-diarization-3.1`](https://hf.co/pyannote/speaker-diarization-3.1) user conditions
-3. Create an access token at [`hf.co/settings/tokens`](https://hf.co/settings/tokens).
-
-
-Your API should look something like this:
-
-```
-https://insanely-fast-whisper-api.fly.dev
-```
-
-Run `fly logs -a insanely-fast-whisper-api` to view logs in real time of your fly machine.
-
-## Deploying to other cloud providers
-Since this is a dockerized app, you can deploy it to any cloud provider that supports docker and GPUs with a few config tweaks.
-
-## Fully managed and scalable API 
-[JigsawStack](https://jigsawstack.com) provides a bunch of powerful APIs for various use cases while keeping costs low. This project is available as a fully managed API [here](https://jigsawstack.com/speech-to-text) with enhanced cloud scalability for cost efficiency and high uptime. Sign up [here](https://jigsawstack.com) for free!
-
-
-## API usage
-
-### Authentication
-If you had set up the `ADMIN_KEY` environment secret. You'll need to pass `x-admin-api-key` in the header with the value of the key you previously set.
-
-
-### Endpoints
-#### Base URL
-If deployed on Fly, the base URL should look something like this:
-```
-https://{app_name}.fly.dev/{path}
-```
-Depending on the cloud provider you deploy to, the base URL will be different.
-
-#### **POST** `/`
-Transcribe or translate audio into text
-##### Body params (JSON)
-| Name    | value |
-|------------------|------------------|
-| url (Required) |  url of audio |
-| task | `transcribe`, `translate`  default: `transcribe` |
-| language | `None`, `en`, [other languages](https://huggingface.co/openai/whisper-large-v3) default: `None` Auto detects language
-| batch_size | Number of parallel batches you want to compute. Reduce if you face OOMs. default: `64` |
-| timestamp | `chunk`, `word`  default: `chunk` |
-| diarise_audio | Diarise the audio clips by speaker. You will need to set hf_token. default:`false` |
-| webhook | Webhook `POST` call on completion or error. default: `None` |
-| webhook.url | URL to send the webhook |
-| webhook.header | Headers to send with the webhook |
-| is_async | Run task in background and sends results to webhook URL. `true`, `false` default: `false` |
-| managed_task_id | Custom Task ID used to reference ongoing task. default: `uuid() v4 will be generated for each transcription task` |
-
-#### **GET** `/tasks`
-Get all active transcription tasks, both async background tasks and ongoing tasks
-
-#### **GET** `/status/{task_id}`
-Get the status of a task, completed tasks will be removed from the list which may throw an error
-
-#### **DELETE** `/cancel/{task_id}`
-Cancel async background task. Only transcription jobs created with `is_async` set to `true` can be cancelled.
-
-
-## Running locally
-```bash
-# clone the repo
-$ git clone https://github.com/jigsawstack/insanely-fast-whisper-api.git
-
-# change the working directory
-$ cd insanely-fast-whisper-api
-
-# install torch
-$ pip3 install torch torchvision torchaudio
-
-# upgrade wheel and install required packages for FlashAttention
-$ pip3 install -U wheel && pip install ninja packaging
-
-# install FlashAttention
-$ pip3 install flash-attn --no-build-isolation
-
-# generate updated requirements.txt if you want to use other management tools (Optional)
-$ poetry export --output requirements.txt
-
-# get the path of python
-$ which python3
-
-# setup virtual environment 
-$ poetry env use /full/path/to/python
-
-# install the requirements
-$ poetry install
-
-# run the app
-$ uvicorn app.app:app --reload
-```
-
-## Extra
-### Shutting down fly machine programmatically
-Fly machines are charged by the second and might take up to 15mins of idling before it decides to shut it self down. You can shut down the machine when you're done with the API to save costs. You can do this by sending a `POST` request to the following endpoint:
-```
-https://api.machines.dev/v1/apps/<app_name>/machines/<machine_id>/stop
-```
-Authorization header:
-```
-Authorization Bearer <fly_token>
-```
-Lear more [here](https://fly.io/docs/machines/api/machines-resource/)
-
-## Acknowledgements
-
-1. [Vaibhav Srivastav](https://github.com/Vaibhavs10) for writing a huge chunk of the code and the CLI version of this project.
-2. [OpenAI Whisper](https://huggingface.co/openai/whisper-large-v3) 
-
-
-## JigsawStack
-This project is part of [JigsawStack](https://jigsawstack.com) - A suite of powerful and developer friendly APIs for various use cases while keeping costs low. Sign up [here](https://jigsawstack.com) for free!
-</file_artifact>
-
 <file path="context/v2v/research-proposals/01-V2V Academy Content Research Plan.md">
 
 
@@ -43988,6 +43442,747 @@ This document provides a high-level synthesis of the key insights gleaned from t
 *   **Image Prompt:** The newly generated project structure is shown inside the DCE. The hero clicks "Accept," and the files materialize in their world. The final shot shows them taking their first steps into the newly created world, which is now live and running.
 *   **TL;DR:** The AI's creation spell will fill your world with its foundational structures. You'll accept this creation, breathe life into it with a command, and begin your first true adventure in a world you designed.
 *   **Content:** The AI's response to your incantation will be the skeleton of your new world. In the DCE, you'll see all the new files and folders it has forged. You'll choose the best creation and click "Accept." With that one click, your world is born. Your next step is to perform the Ritual of Awakening: open the terminal, type `npm install` and `npm run dev`. This will breathe life into your creation. You have officially gone from a blank canvas to a living, running world. This is the start of Cycle 1. Your adventure has begun.
+</file_artifact>
+
+<file path="public/data/v2v_content_career_transitioner.json">
+{
+  "reportId": "v2v-academy-career-transitioner",
+  "reportTitle": "V2V Academy: The Professional's Pathway",
+  "sections": [
+    {
+      "sectionId": "module-1",
+      "sectionTitle": "Module 1: The Virtuoso's Loop - Charting the Destination",
+      "pages": [
+        {
+          "pageId": "lesson-1.1-p1",
+          "pageTitle": "The Professional's Playbook: Mastering an Expert AI Workflow",
+          "tldr": "This lesson introduces the complete, end-to-end expert workflow for AI-assisted development. This is the professional playbook for leveraging AI as a strategic partner.",
+          "content": "Welcome to the V2V Academy. Your journey to becoming an AI-powered leader begins here. Before we build the foundational skills, it's crucial to understand the destination: a state of fluid, powerful, and repeatable collaboration with AI. This expert workflow is the \"Virtuoso's Loop.\" It is a systematic process that transforms development from a series of tactical guesses into a disciplined engineering practice. In this lesson, we will walk through each step of this professional playbook.",
+          "imageGroupIds": ["lesson-1.1-p1-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p2",
+          "pageTitle": "Step 1: Curation & Documentation",
+          "tldr": "A successful initiative begins not with a command, but with planning and data. You must first build the AI's \"library\" and write its \"instructions\" before tasking it with execution.",
+          "content": "Every successful cycle starts with preparation. This is the \"Documentation First\" principle. 1. **Curate the Knowledge Base:** You act as a strategist, gathering all relevant files—code, research, business requirements—into your project. 2. **Define the Goal in an Artifact:** You act as an architect, creating a planning document that defines the objective for the current cycle. 3. **Select Context:** Finally, you act as a curator, selecting only the specific files relevant to the objective, creating a focused, high-signal context for the AI.",
+          "imageGroupIds": ["lesson-1.1-p2-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p3",
+          "pageTitle": "Step 2: Exploring the Solution Space",
+          "tldr": "Never rely on a single AI-generated strategy. By prompting multiple instances in parallel, you can evaluate a diverse set of solutions and select the most robust path forward.",
+          "content": "LLMs are non-deterministic. The Virtuoso leverages this. 1. **Generate `prompt.md`:** The DCE automates the creation of a complete prompt file. 2. **Execute in Parallel:** You send this identical prompt to multiple AI instances. 3. **Parse and Sort:** The responses are brought into the DCE's Parallel Co-Pilot Panel, parsed, and sorted by size. Your review starts with the most detailed strategic option.",
+          "imageGroupIds": ["lesson-1.1-p3-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p4",
+          "pageTitle": "Step 3: The Executive Decision",
+          "tldr": "The human's most important role is judgment. You must critically review the AI's proposed plan and its tactical implementation before committing resources.",
+          "content": "This is where your expertise as the \"Navigator\" is critical. The AI provides options; you provide the judgment. 1. **Review the Plan:** Read the AI's \"Course of Action.\" Is the strategy sound and complete? 2. **Diff the Changes:** Use the integrated diff viewer to see the exact changes the AI is proposing. Does the execution align with the strategy? 3. **Select the Best Path:** Based on your analysis, you select the single best response to move forward with.",
+          "imageGroupIds": ["lesson-1.1-p4-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p5",
+          "pageTitle": "Step 4: Risk Mitigation & Rapid Validation",
+          "tldr": "The Virtuoso's Loop uses Git to create a safe, low-risk environment for testing AI-generated solutions.",
+          "content": "Never trust, always verify. This is the rapid validation phase. 1. **Create a Baseline:** Click \"Baseline (Commit)\" to create a Git commit. This is your safety net. 2. **Accept Changes:** Select which files you want to test and click \"Accept Selected.\" 3. **Test:** Run your application or test suite. 4. **Decide:** If the test fails, click \"Restore Baseline\" to instantly revert. If it succeeds, proceed.",
+          "imageGroupIds": ["lesson-1.1-p5-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p6",
+          "pageTitle": "Step 5: Capture Learnings & Iterate",
+          "tldr": "The loop completes by capturing institutional knowledge and preparing the context for the next strategic iteration.",
+          "content": "A successful test sets the stage for the next initiative. 1. **Update Context:** You document what you've learned or define the next objective in the \"Cycle Context\" and \"Cycle Title\" fields. This becomes part of the permanent, auditable history. 2. **Start a New Cycle:** Click the `+` button to create a new cycle, and the Virtuoso's Loop begins again.",
+          "imageGroupIds": ["lesson-1.1-p6-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p1",
+            "pageTitle": "Strategic Principle 1: The AI is a Feedback Loop for Your Expertise",
+            "tldr": "The most powerful way to use AI is not as an instruction-taker, but as a feedback mechanism that amplifies your own cognitive and professional skills.",
+            "content": "In the V2V pathway, the AI is more than a tool; it's a mirror that creates a feedback loop for your own thought processes. To guide an AI effectively on complex tasks, you must provide \"expert feedback.\" But what if you're not an expert in a new domain, like coding? The system itself provides the feedback. A compiler error, for instance, is an objective, expert critique of the AI's code. By taking that error and feeding it back to the AI with the instruction to \"fix it,\" you enter the loop. You are now directing the AI toward a correct solution while simultaneously learning from the process. This transforms you from a passive user into an active director, using the AI to build and validate your own growing expertise.",
+            "imageGroupIds": ["lesson-1.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p2",
+            "pageTitle": "Strategic Principle 2: Data Curation is the New Apex Skill",
+            "tldr": "In the AI era, the most valuable professional skill is not knowing how to code, but knowing how to curate the high-quality data that enables an AI to code for you.",
+            "content": "The V2V methodology posits that traditional programming syntax is becoming a secondary, tactical skill. The new strategic apex skill is **Data Curation**, which is the foundational practice of **Context Engineering**. Why? Because the quality of an AI's output is a direct function of the quality of its input context. The most leveraged activity is not perfecting the command (the prompt), but perfecting the data ecosystem (the context). Your ability to identify, gather, organize, and label relevant information—to build a clean \"source of truth\"—is what will differentiate you as a high-impact professional. It is the art of knowing what the AI needs to know.",
+            "imageGroupIds": ["lesson-1.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p3",
+            "pageTitle": "The Strategic Vision: Solving Problems of Abundance",
+            "tldr": "The ultimate goal of mastering this workflow is to accelerate human progress, enabling us to solve major world problems and focus on a future of exploration and abundance.",
+            "content": "The driving philosophy behind this work is deeply aspirational. We are building these tools and teaching these skills to accelerate human progress. In a world with seemingly infinite challenges, the V2V pathway provides a methodology to create an abundance of solutions. By empowering individuals to become \"Citizen Architects,\" we can tackle major societal problems from the bottom up. The ultimate motivation is to help create a \"Star Trek\" future—a world where our collective energy is focused on exploration, discovery, and solving the grand challenges of science and society, rather than being mired in conflicts born of scarcity.",
+            "imageGroupIds": ["lesson-1.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p4",
+            "pageTitle": "Pedagogical Model: The AI as a Cognitive Mentor",
+            "tldr": "The V2V pathway is built on the Cognitive Apprenticeship model, where the AI serves as a tireless expert who makes their implicit thought processes explicit and learnable for you.",
+            "content": "The V2V curriculum is structured around a powerful pedagogical model: Cognitive Apprenticeship. The central challenge in acquiring any new expertise is that an expert's most critical skills—their intuition, their problem-solving heuristics—are often internal and invisible. Cognitive Apprenticeship makes this \"hidden curriculum\" visible. In our model, the AI acts as the expert. By prompting it to explain its reasoning, or by analyzing the code it produces, you are observing an expert's thought process. By critiquing its output and guiding it to a better solution, you are actively engaging in a dialogue that forces both you and the AI to articulate your reasoning. This process, facilitated by the AI mentor, is the engine of your skill development.",
+            "imageGroupIds": ["lesson-1.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p1",
+            "pageTitle": "The New Archetype: The Citizen Architect",
+            "tldr": "The Citizen Architect is a new professional archetype: a domain expert who leverages AI and structured workflows to design and build complex systems, contributing meaningfully to their community and profession.",
+            "content": "The V2V pathway prepares you for a new and powerful role in the modern economy: the Citizen Architect. This is not a \"citizen developer\" who builds simple apps from templates. The Citizen Architect is a strategic thinker who combines their deep domain expertise with the power of AI to orchestrate the creation of sophisticated, mission-critical systems. They are the \"Navigators\" who provide the vision, the context, and the critical judgment, while the AI acts as the \"Driver,\" handling the tactical implementation. This role transcends traditional job titles, empowering you to become a creator and a systems builder within your field, using your unique talents to improve the community and human condition.",
+            "imageGroupIds": ["lesson-1.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p2",
+            "pageTitle": "Your Core Asset: Cultivating Cognitive Capital",
+            "tldr": "The primary function of the Citizen Architect is to generate and apply Cognitive Capital—the collective problem-solving capacity of a team or organization.",
+            "content": "As a Citizen Architect, your most valuable contribution is your ability to generate Cognitive Capital. This is the collective skill and creative potential of your team. In an age where AI can automate routine tasks, the ability to solve novel problems, innovate under pressure, and adapt to new challenges becomes the primary engine of value. The V2V workflow is a system for cultivating this asset. By learning to structure problems, curate data, and critically validate AI outputs, you are not just completing tasks—you are building your organization's most important strategic resource.",
+            "imageGroupIds": ["lesson-1.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p3",
+            "pageTitle": "The Architect's Role: Storyteller and Collaborator",
+            "tldr": "A Citizen Architect coordinates the social and design processes that lead to creation; communication and storytelling are fundamental to this collaborative process.",
+            "content": "The term \"Citizen Architect\" has deep roots in the field of architecture, where it describes a professional who is not just a builder, but a community leader engaged in civic advocacy. This broader role emphasizes that architects do not simply build things; they coordinate the complex social and design processes that lead to building. As a Citizen Architect in the digital realm, your role is the same. Your ability to communicate a vision, engage with stakeholders, and tell a compelling story about the \"why\" behind your project is as important as your technical skill. The V2V pathway teaches you to be both a builder and a storyteller, enabling you to lead collaborative change.",
+            "imageGroupIds": ["lesson-1.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p4",
+            "pageTitle": "The Strategic Impact of the Citizen Architect",
+            "tldr": "By empowering domain experts to build their own solutions, the Citizen Architect model creates more agile, resilient, and innovative organizations that can better serve society.",
+            "content": "The rise of the Citizen Architect has profound strategic implications. It represents a shift from centralized, top-down innovation to a decentralized model where the individuals closest to a problem are empowered to solve it. This creates organizations that are faster, more agile, and more resilient. Citizen Architects are called to be aware of the social and ecological impacts of their design choices, ensuring that what they build serves the greater good. By mastering the V2V pathway, you are not just upgrading your personal skillset; you are becoming a catalyst for organizational transformation, equipped to lead with care and social responsibility in an era defined by rapid technological change.",
+            "imageGroupIds": ["lesson-1.3-p4-ig1"]
+        }
+      ]
+    },
+    {
+      "sectionId": "module-2",
+      "sectionTitle": "Module 2: The Curator's Toolkit - Mastering the Foundations",
+      "pages": [
+        {
+            "pageId": "lesson-2.1-p1",
+            "pageTitle": "From Information Overload to Strategic Asset: The Principles of Data Curation",
+            "tldr": "Data Curation is the professional discipline of transforming raw, disorganized information into a high-signal, structured asset that empowers AI to perform complex tasks with precision and reliability.",
+            "content": "In the age of AI, the ability to manage information is the ultimate strategic advantage. Data Curation is the process of transforming the chaotic flood of raw data that surrounds us into a focused, high-quality asset. It's the art and science of identifying what information is relevant, organizing it logically, and structuring it in a way that an AI can understand. For the professional, this is not a technical chore; it is a high-leverage activity. By mastering data curation, you move from being a consumer of AI to its director, ensuring that the AI's power is always aligned with your strategic intent.",
+            "imageGroupIds": ["lesson-2.1-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-2.1-p2",
+            "pageTitle": "The \"Garbage In, Garbage Out\" Principle",
+            "tldr": "An AI is only as good as the data you give it. Mastering data curation is the single most effective way to guarantee high-quality, reliable, and valuable AI outputs.",
+            "content": "The oldest rule in computing is \"Garbage In, Garbage Out\" (GIGO), and it has never been more relevant than in the age of AI. An LLM, no matter how powerful, cannot produce a brilliant analysis from incomplete, incorrect, or irrelevant information. Its output is a direct reflection of its input. This is why Data Curation has become the new apex skill. While others focus on the tactical art of \"prompting,\" the Virtuoso focuses on the strategic discipline of building a superior context. By ensuring the AI receives a clean, well-organized, and highly relevant set of information, you eliminate the root cause of most AI failures and guarantee a higher quality of work.",
+            "imageGroupIds": ["lesson-2.1-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-2.1-p3",
+            "pageTitle": "The Curator's Method: Gather, Organize, Label",
+            "tldr": "The core process of data curation can be broken down into three simple steps: gathering all relevant information, organizing it into a logical structure, and labeling it for clarity.",
+            "content": "The practice of data curation follows a straightforward, three-step process. First, you **Gather**. Think like an archivist: collect all the source materials relevant to your task—documents, code files, spreadsheets, research papers. Second, you **Organize**. Think like a librarian: arrange these materials into a logical folder structure that makes sense to both you and the AI. Group related items together. Third, you **Label**. Think like a cataloger: give your files and folders clear, descriptive names. This process of creating a well-structured and clearly labeled \"library\" of information is the foundational act of building a high-quality context.",
+            "imageGroupIds": ["lesson-2.1-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-2.1-p4",
+            "pageTitle": "The Right Tool for the Job: The Data Curation Environment (DCE)",
+            "tldr": "The Data Curation Environment (DCE) is a specialized toolset built directly into VS Code, designed to make the process of gathering, organizing, and using curated data seamless and efficient.",
+            "content": "To practice a professional discipline, you need professional tools. The Data Curation Environment (DCE) is the purpose-built toolkit for the Citizen Architect. It integrates the entire curation workflow directly into your development environment. Its File Tree View allows you to visually select your context with simple checkboxes, eliminating manual copy-pasting. Its Parallel Co-Pilot Panel allows you to manage and test the AI's output. The rest of this course will be dedicated to mastering this toolkit and applying it to build powerful, AI-driven solutions.",
+            "imageGroupIds": ["lesson-2.1-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p1",
+            "pageTitle": "Increasing Signal: The Professional's Guide to Data Annotation",
+            "tldr": "Data annotation is the professional practice of adding descriptive metadata—labels, tags, and structure—to raw information, transforming it into a high-signal asset that an AI can understand and act upon with precision.",
+            "content": "Having gathered your data, the next critical step is to give it meaning. This is the discipline of **Data Annotation**, the process of adding a layer of descriptive information, or **metadata**, to your raw data. This metadata isn't the data itself, but data *about* the data: file names, dates, categories, and descriptive tags. For the professional, this is a high-leverage activity. Without clear annotation, an AI sees a folder of documents as a flat, undifferentiated wall of text. With annotation, it understands that one document is an approved project plan, another is an outdated draft, and a third is a client's feedback. This is how you increase the signal-to-noise ratio of your context and ensure the AI's actions are aligned with your strategic intent.",
+            "imageGroupIds": ["lesson-2.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p2",
+            "pageTitle": "The Cost of Ambiguity",
+            "tldr": "An AI cannot read your mind or infer your intent. Without explicit labels, the AI is forced to guess, leading to costly errors, wasted time, and unreliable outputs.",
+            "content": "In a professional environment, ambiguity is a liability. An AI, no matter how advanced, cannot infer the context, relevance, or purpose of a piece of data on its own. A file named `report.docx` could be the final version or a draft from six months ago. Without metadata, the AI has no way to know. Relying on it to guess is a recipe for disaster, leading to it referencing outdated information or applying the wrong logic. Proper annotation removes this ambiguity. It provides the explicit, machine-readable context the AI needs to make correct, reliable decisions every time. It is the primary mechanism for de-risking AI collaboration.",
+            "imageGroupIds": ["lesson-2.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p3",
+            "pageTitle": "Practical Annotation: Naming, Structuring, Tagging",
+            "tldr": "Effective annotation doesn't require complex tools. It starts with disciplined habits: using clear, descriptive file names, organizing files into a logical folder structure, and applying consistent tags.",
+            "content": "You can begin practicing professional-grade annotation immediately. The process starts with simple, disciplined habits. 1. **Use Descriptive Names:** Name your files and folders with clarity and consistency. `Q3-Marketing-Strategy-v2.1-APPROVED.docx` is infinitely more valuable as a piece of context than `draft_final_2.docx`. 2. **Structure Your Folders:** Your folder hierarchy is a form of metadata. A file in `/Proposals/Active/` has a clear context that a file sitting on your desktop does not. 3. **Apply Tags:** When possible, use systems that allow for explicit tagging. Even in a simple file system, you can embed tags in your filenames. This structured approach is the foundation of building a reliable \"source of truth\" for your AI partner.",
+            "imageGroupIds": ["lesson-2.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p4",
+            "pageTitle": "The Payoff: AI with Intent",
+            "tldr": "The result of diligent annotation is an AI that operates with a deep understanding of your intent, transforming it from a simple tool into a true strategic partner.",
+            "content": "The return on investment for data annotation is immense. When your data is well-annotated, you unlock a new level of human-AI collaboration. You can issue high-level, strategic commands with confidence, knowing the AI has the context to execute them correctly. For example, you can say, \"Summarize the key findings from all *approved* Q3 client reports,\" and trust that the AI can identify the correct files based on their metadata. This transforms the AI from a simple text generator into a genuine partner in knowledge work, capable of understanding and acting upon your strategic intent.",
+            "imageGroupIds": ["lesson-2.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p1",
+            "pageTitle": "Quality Control: Vetting AI Output for Business-Critical Applications",
+            "tldr": "In a professional setting, the human is the ultimate guarantor of quality. This lesson teaches the systematic process of critically analyzing AI output to ensure it is correct, reliable, and aligned with business objectives before deployment.",
+            "content": "As you move into a role where you direct AI, you also assume responsibility for its output. An AI is a powerful but imperfect tool; it can generate code that contains subtle bugs, produce analyses based on flawed logic, or misinterpret key requirements. The most critical function of the human in the loop is to serve as the final checkpoint for quality and correctness. Critical analysis is the disciplined process of \"trusting, but verifying\" every AI output. It is the professional practice that transforms a promising AI-generated draft into a reliable, production-ready asset, mitigating risks and ensuring that all work aligns with strategic goals.",
+            "imageGroupIds": ["lesson-2.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p2",
+            "pageTitle": "Know Your Enemy: Common AI Failure Modes",
+            "tldr": "To effectively critique AI output, you must be able to recognize its common failure patterns, including factual hallucinations, logical errors, security vulnerabilities, and stylistic misalignments.",
+            "content": "An AI doesn't make mistakes like a human, so it's important to learn its unique failure patterns. **Hallucinations** are the most well-known issue, where the AI confidently invents facts, functions, or even entire libraries that don't exist. **Logical Errors** are more subtle; the code might run without crashing but produce the wrong result because of a flawed algorithm. **Security Vulnerabilities** can be introduced if the AI reproduces insecure coding patterns from its training data. Finally, **Stylistic & Architectural Misalignment** occurs when the AI's code works but doesn't follow your project's specific design patterns or coding standards. Recognizing these patterns is the first step in a professional code review process.",
+            "imageGroupIds": ["lesson-2.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p3",
+            "pageTitle": "The Analysis Workflow: From Diff to Decision",
+            "tldr": "The primary tool for critical analysis is the diff viewer. The method involves a top-down review, starting with the overall plan, then examining the code's structure, and finally scrutinizing the line-by-line changes.",
+            "content": "A systematic approach is key to an effective review. 1. **Review the Plan:** Start by re-reading the AI's \"Course of Action.\" Does the high-level strategy still make sense? 2. **Analyze the Diff:** Open the diff viewer. Don't just look at the highlighted lines; understand the *context* of the changes. Does the new code fit logically within the existing architecture? 3. **Scrutinize the Logic:** Read the new code carefully. Does the algorithm correctly solve the problem? Are there any obvious edge cases that have been missed? 4. **Validate Against Requirements:** Finally, test the code against the original requirements. Does it actually do what you asked it to do? This structured process ensures a thorough and efficient review.",
+            "imageGroupIds": ["lesson-2.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p4",
+            "pageTitle": "From Critique to Correction: Closing the Loop",
+            "tldr": "Finding a flaw is not a failure; it is an opportunity. A skilled architect uses their critique to create a more precise prompt for the next cycle, continuously improving the AI's performance.",
+            "content": "The goal of critical analysis is not just to find errors, but to improve the system. Every flaw you identify is a valuable data point. Instead of manually fixing the AI's code, the Virtuoso's method is to use your critique to refine your instructions. Document the error you found and include it in the \"Ephemeral Context\" for your next cycle. For example: \"In the last cycle, you used a deprecated function. Please refactor this to use the new `processDataV2` API.\" This turns every error into a lesson for the AI, making the entire collaborative system smarter and more reliable over time.",
+            "imageGroupIds": ["lesson-2.3-p4-ig1"]
+        }
+      ]
+    },
+    {
+      "sectionId": "module-3",
+      "sectionTitle": "Module 3: The Apprentice's Forge - Structured Interaction",
+      "pages": [
+        {
+            "pageId": "lesson-3.1-p1",
+            "pageTitle": "Driving Outcomes: The Principles of Structured AI Interaction",
+            "tldr": "Structured interaction is the practice of moving beyond casual conversation with an AI to giving it clear, explicit, and repeatable commands. It is the professional's method for ensuring reliability, reducing ambiguity, and driving predictable outcomes.",
+            "content": "As a professional, your goal is to achieve reliable and predictable results. When collaborating with an AI, this requires a shift in communication style—from casual conversation to **Structured Interaction**. This is the practice of formalizing your requests into clear, unambiguous commands, much like writing a technical specification or a project brief. Instead of a vague, conversational prompt, you provide the AI with a structured set of instructions that define its role, the context, the required steps, and the expected output format. This discipline is the key to transforming the AI from a creative but sometimes unreliable brainstorming partner into a dependable execution engine for your strategic vision.",
+            "imageGroupIds": ["lesson-3.1-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-3.1-p2",
+            "pageTitle": "The Briefing Document: Your Interaction Schema",
+            "tldr": "An Interaction Schema is a template for your commands. It's a formal structure that ensures you provide the AI with all the critical information it needs to execute a task correctly and consistently.",
+            "content": "The core of structured interaction is the **Interaction Schema**. Think of this as your standard operating procedure or briefing document for the AI. A robust schema ensures you never miss critical information. While it can be customized, a professional schema typically includes: 1. **Role & Goal:** Explicitly state the AI's persona and the high-level objective. 2. **Context:** Provide all necessary background information, data, or source files. 3. **Step-by-Step Instructions:** Break down the task into a clear, logical sequence of actions. 4. **Constraints & Rules:** Define any \"guardrails\" or rules the AI must follow. 5. **Output Format:** Specify the exact format for the response (e.g., Markdown, JSON, a specific code structure). Using a consistent schema drastically reduces errors and ensures the output is always in a usable format.",
+            "imageGroupIds": ["lesson-3.1-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-3.1-p3",
+            "pageTitle": "The Business Case: Repeatability, Reliability, Scalability",
+            "tldr": "An unstructured process is a business liability. A structured process is a scalable asset. Adopting this discipline ensures your AI-driven workflows are reliable enough for mission-critical applications.",
+            "content": "In a business context, results cannot be left to chance. The reason to adopt structured interaction is purely strategic. **Repeatability:** A structured command can be run again and again, producing consistent results. **Reliability:** By removing ambiguity, you dramatically reduce the rate of AI errors and hallucinations. **Scalability:** A structured process can be documented, shared, and scaled across a team. It transforms an individual's \"prompting trick\" into a reliable, enterprise-grade workflow. While conversational AI is excellent for exploration, structured interaction is the required methodology for execution.",
+            "imageGroupIds": ["lesson-3.1-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-3.1-p4",
+            "pageTitle": "From Request to Command: A Practical Example",
+            "tldr": "Let's translate a vague business request into a precise, structured command that guarantees a better result.",
+            "content": "Consider this common but ineffective prompt: \"Review our project files and improve the user profile page.\" The AI has to guess what \"improve\" means. Now, consider a structured command: \n```\n// ROLE: You are a senior UX designer and React developer.\n// TASK: Refactor the user profile page to improve layout and add a password reset feature.\n// CONTEXT: The relevant files are `ProfilePage.tsx` and `user-api.ts`. The current design lacks mobile responsiveness.\n// INSTRUCTIONS:\n// 1. Update `ProfilePage.tsx` to use a two-column responsive layout.\n// 2. Add a 'Reset Password' button to the page.\n// 3. Create a new function in `user-api.ts` to handle the password reset API call.\n// OUTPUT_FORMAT: Provide the complete, updated content for both files in separate blocks.\n```\nThis command leaves no room for guessing. It is a professional directive that ensures the AI's output will be directly aligned with the specific business need. This is the V2V way.",
+            "imageGroupIds": ["lesson-3.1-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p1",
+            "pageTitle": "Leveraging Errors as Data Points for AI Refinement",
+            "tldr": "The most powerful way to use AI is not as an instruction-taker, but as a feedback mechanism that amplifies your own cognitive and professional skills. Errors are the fuel for this mechanism.",
+            "content": "In the V2V pathway, the AI is more than a tool; it's a mirror that creates a feedback loop for your own thought processes. To guide an AI effectively on complex tasks, you must provide \"expert feedback.\" But what if you're not an expert in a new domain, like coding? The system itself provides the feedback. A compiler error, for instance, is an objective, expert critique of the AI's code. By taking that error and feeding it back to the AI with the instruction to \"fix it,\" you enter the loop. You are now directing the AI toward a correct solution while simultaneously learning from the process. This transforms you from a passive user into an active director, using the AI to build and validate your own growing expertise.",
+            "imageGroupIds": ["lesson-3.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p2",
+            "pageTitle": "Decoding System Feedback: A Professional's Guide to Errors",
+            "tldr": "To effectively manage an AI, you must understand the feedback it generates. This means learning to distinguish between syntax errors, runtime errors, and subtle logical flaws.",
+            "content": "System feedback primarily comes in the form of errors. Understanding the type of error is key to providing the right guidance to your AI partner. **Compiler/Syntax Errors** are like grammatical mistakes; the AI wrote code that violates the language's rules. **Runtime Errors** occur when the code is grammatically correct but tries to do something impossible during execution, like dividing by zero. **Logical Errors** are the most subtle and require the most human oversight. The code runs without crashing but produces an incorrect result because the underlying strategy is flawed. As a Citizen Architect, your role is to interpret these signals and translate them into clear, corrective instructions.",
+            "imageGroupIds": ["lesson-3.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p3",
+            "pageTitle": "The Debugging Cycle: A Practical Workflow",
+            "tldr": "The practical workflow is simple: run the AI's code, capture the full error message when it fails, and provide that error back to the AI as context for the next iteration.",
+            "content": "Let's walk through a real-world scenario. The AI generates a Python script. You run it, and the terminal returns a `TypeError`. The key is not to be intimidated by the technical jargon. Your task is to act as a conduit. You copy the *entire* error message, from top to bottom. You then paste this into the \"Ephemeral Context\" field in the DCE. Your prompt for the next cycle is simple and direct: \"The previous code produced the error included in the ephemeral context. Analyze the error and provide the corrected code.\" The AI, now armed with precise, expert feedback from the system, can diagnose and fix its own mistake.",
+            "imageGroupIds": ["lesson-3.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p4",
+            "pageTitle": "The Strategic Advantage: Accelerating Your Learning Curve",
+            "tldr": "This feedback loop is the single fastest way to learn a new technical domain. Every error is a micro-lesson that builds your expertise and your mental model of the system.",
+            "content": "This iterative feedback loop is more than just a debugging technique; it is a powerful engine for accelerated learning. Each time you witness the cycle of an error and its resolution, you internalize a new pattern. Your \"mental model of the model\"—and of the programming language itself—becomes more sophisticated. You begin to anticipate common errors and understand their root causes. This is the essence of Cognitive Apprenticeship in practice. The AI is not just fixing code for you; it is modeling an expert's debugging process, and you are learning by observation. This transforms you from someone who *manages* an AI into someone who *understands* the work at a deep, technical level.",
+            "imageGroupIds": ["lesson-3.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p1",
+            "pageTitle": "Risk Mitigation: A Framework for Safely Testing AI-Generated Solutions",
+            "tldr": "The Test-and-Revert workflow is a professional risk management strategy. It uses version control (Git) to create a safety net, allowing you to test potentially risky AI-generated solutions with the absolute confidence that you can instantly undo any negative consequences.",
+            "content": "When integrating AI-generated code or content into a business-critical project, managing risk is paramount. The AI is a powerful but non-deterministic partner; its solutions can introduce unforeseen bugs or misalignments. The **Test-and-Revert Workflow** is a disciplined framework for mitigating this risk. It leverages a version control system called **Git** to create a \"baseline,\" or a safe snapshot of your project, before you introduce any changes. This allows you to freely experiment with the AI's output, and if it proves to be flawed, you can revert your entire project back to that clean baseline with a single command. This is the professional's method for enabling rapid innovation without compromising stability.",
+            "imageGroupIds": ["lesson-3.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p2",
+            "pageTitle": "Managing Non-Determinism: Why You Need a Safety Net",
+            "tldr": "AI is not deterministic; the same prompt can yield different results, some of which may be flawed. The Test-and-Revert loop is the essential safety protocol for navigating this unpredictability.",
+            "content": "Unlike traditional software, which is deterministic (the same input always produces the same output), LLMs are probabilistic. An AI might give you a perfect solution one minute and a buggy one the next, even for the same problem. This inherent unpredictability is a significant risk in a professional environment. You cannot afford to spend hours untangling a flawed solution that has been merged into your codebase. The Test-and-Revert workflow is the industry-standard solution to this problem. By creating a baseline before every test, you isolate the AI's changes in a temporary state, ensuring that any negative impacts are fully contained and easily reversible.",
+            "imageGroupIds": ["lesson-3.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p3",
+            "pageTitle": "The Four-Step Validation Process",
+            "tldr": "The workflow consists of four simple steps: create a safe restore point (Baseline), apply the AI's changes (Accept), check for issues (Test), and decide whether to keep or discard the changes (Proceed or Restore).",
+            "content": "The Test-and-Revert loop is a straightforward but powerful four-step process integrated directly into the DCE. 1. **Baseline:** After selecting a promising AI response, you click the \"Baseline (Commit)\" button. This uses Git to save a snapshot of your project's current, working state. 2. **Accept:** You select the AI-generated files you wish to test and click \"Accept Selected,\" which overwrites your local files. 3. **Test:** You run your application's test suite or perform a manual functional test. 4. **Decide:** If the test fails or the changes are undesirable, you click \"Restore Baseline.\" This instantly discards all the AI's changes. If the test passes, you simply proceed to the next cycle, your successful changes now part of the project's history.",
+            "imageGroupIds": ["lesson-3.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p4",
+            "pageTitle": "The Advantage: Innovation with Confidence",
+            "tldr": "This workflow removes the fear of breaking things, empowering you to experiment with more ambitious, innovative AI solutions and dramatically accelerating your development velocity.",
+            "content": "The strategic advantage of the Test-and-Revert workflow cannot be overstated. By removing the fear of catastrophic failure, it fundamentally changes your relationship with the AI. You are no longer limited to accepting only the safest, most conservative suggestions. You are free to experiment with bold, creative, or highly complex solutions, knowing that the worst-case scenario is a single click away from being undone. This confidence enables a much higher tempo of innovation and experimentation, allowing you to find better solutions faster. It is the core mechanism that makes rapid, AI-driven development not just possible, but professionally responsible.",
+            "imageGroupIds": ["lesson-3.3-p4-ig1"]
+        }
+      ]
+    },
+    {
+      "sectionId": "module-4",
+      "sectionTitle": "Module 4: The Vibecoder's Canvas - Intuitive Exploration",
+      "pages": [
+        {
+            "pageId": "lesson-4.1-p1",
+            "pageTitle": "From Business Need to Project Scope: Architecting Your Solution",
+            "tldr": "Before execution comes architecture. This lesson teaches you how to translate a raw business idea into a formal Project Scope—the foundational blueprint that guides all successful AI-driven development.",
+            "content": "In any professional endeavor, a clear plan is the prerequisite for success. This is doubly true when collaborating with AI. An AI can execute complex tasks with incredible speed, but it cannot read your mind or infer your strategic intent. The first step of any project, therefore, is to create a **Project Scope**. This document is your architectural blueprint. It's where you define the problem you're solving, the audience you're serving, and the specific, measurable outcomes you intend to achieve. It is the ultimate \"source of truth\" that aligns both your efforts and the AI's, ensuring that every action taken is a step toward a well-defined goal.",
+            "imageGroupIds": ["lesson-4.1-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-4.1-p2",
+            "pageTitle": "The Discovery Phase: Answering the Three Core Questions",
+            "tldr": "A strong project scope is built by answering three fundamental questions: What is the problem? Who has this problem? And what is the core function of my solution?",
+            "content": "A powerful project scope doesn't need to be long, but it must be precise. The process of writing it forces you to deconstruct your idea by answering three core strategic questions. 1. **What is the core problem?** Articulate the specific pain point you are addressing in one or two clear sentences. 2. **Who is the target user?** Define your **User Persona**. Are you building this for expert analysts, for new hires, for an entire department? Be specific. 3. **What is the core solution?** Describe the single most important function your solution will perform to solve the user's problem. Answering these questions provides the foundational clarity needed for a successful project.",
+            "imageGroupIds": ["lesson-4.1-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-4.1-p3",
+            "pageTitle": "The Principle of the MVP: Start Small, Scale Smart",
+            "tldr": "Don't try to build the entire system at once. Define the Minimum Viable Product (MVP)—the smallest, simplest version of your idea that still solves the core problem for your target user.",
+            "content": "The most common point of failure for ambitious projects is trying to do too much, too soon. The professional approach is to define a **Minimum Viable Product (MVP)**. The MVP is not a weak or incomplete version of your idea; it is the most focused version. Ask yourself: \"What is the absolute minimum set of features required to solve the core problem for my user?\" This is your MVP. By starting with a tightly defined scope, you can build, test, and deliver value quickly. This iterative approach—building and refining in small, manageable cycles—is far more effective and less risky than attempting a large, monolithic build.",
+            "imageGroupIds": ["lesson-4.1-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-4.1-p4",
+            "pageTitle": "Your First Artifact: The Project Scope Document",
+            "tldr": "It's time to create your first and most important artifact. Use a simple template to document your vision, problem, user, and MVP, creating the \"source of truth\" for your project.",
+            "content": "Let's put these principles into practice. Your first task in the V2V workflow is to create your Project Scope artifact. Use a simple structure to document your answers to the core questions. This document will become the primary context you provide to the AI in your first development cycle. A good starting template includes:\n*   **Vision Statement:** A one-sentence, aspirational goal for your project.\n*   **Problem Statement:** A clear description of the pain point you are solving.\n*   **Target User Persona:** A brief description of who you are building this for.\n*   **MVP Feature List:** A short, bulleted list of the core features for your first version.\nThis artifact is your contract with the AI. It is the blueprint that will guide every subsequent step.",
+            "imageGroupIds": ["lesson-4.1-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p1",
+            "pageTitle": "Overcoming Inertia: The Challenge of Project Initiation",
+            "tldr": "The \"Blank Page Problem\" is the initial hurdle of translating a well-defined vision into the first tangible steps of a project. This lesson provides a systematic, AI-driven approach to overcome this inertia.",
+            "content": "You have a clear vision and a defined project scope. Now comes one of the most challenging phases in any project: starting. The \"Blank Page Problem\" is a well-known phenomenon in creative and technical fields. It's the psychological and practical inertia we face when converting a plan into the first lines of code, the first document, or the first directory structure. An unstructured approach at this stage can lead to a poorly organized foundation, creating technical debt before a single feature is built. The V2V pathway addresses this challenge head-on with a structured, AI-driven methodology for project scaffolding.",
+            "imageGroupIds": ["lesson-4.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p2",
+            "pageTitle": "AI as a Strategic Partner for Project Scaffolding",
+            "tldr": "The V2V workflow leverages AI as a \"scaffolding engine.\" By providing your Project Scope artifact as context, you can command the AI to generate the entire foundational structure of your project automatically.",
+            "content": "The solution to the blank page is to never start with one. In the V2V workflow, your first step is not to write code, but to delegate the initial setup to your AI partner. By providing the AI with your `Project Scope` artifact (created in Lesson 4.1), you give it the blueprint it needs to act as a scaffolding engine. You can instruct it to perform the foundational tasks that consume significant time and effort: creating a logical directory structure, generating initial boilerplate code for your chosen tech stack, and even producing a starter set of more detailed planning artifacts based on your high-level vision. This transforms the daunting first step into a simple, automated process.",
+            "imageGroupIds": ["lesson-4.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p3",
+            "pageTitle": "Case Study: The DCE's Own Onboarding Workflow",
+            "tldr": "The DCE itself is the perfect example of this principle. Its \"Cycle 0\" onboarding experience is a built-in scaffolding engine that takes your high-level vision and automatically generates the foundational artifacts for your project.",
+            "content": "The best evidence for this workflow is the tool you are using. The Data Curation Environment's \"Cycle 0\" onboarding is a real-world implementation of AI-driven scaffolding. When you first open a new workspace, the DCE prompts you for your project scope. When you click \"Generate Initial Artifacts Prompt,\" it doesn't just create an empty file; it uses your input to construct a complex prompt that instructs an AI to create a full suite of starter documentation—a Master Artifact List, a Project Vision document, a Technical Scaffolding Plan, and more. It solves the blank page problem by ensuring you never have to face one.",
+            "imageGroupIds": ["lesson-4.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p4",
+            "pageTitle": "Your First Command: \"Architect the Foundation\"",
+            "tldr": "Your first practical step is to use your Project Scope artifact to command your AI partner to build the project's foundation, creating the initial set of files and folders for your MVP.",
+            "content": "Now it's your turn to apply this principle. Take the `Project Scope` artifact you developed in the previous lesson. This document is the high-quality context you need. Your task for the next cycle is to craft a prompt that instructs your AI to act as a project architect. A powerful prompt would be: \"You are a senior software architect. Based on the attached Project Scope artifact, please generate the complete directory structure and create placeholder files for the Minimum Viable Product. Additionally, create a more detailed technical plan as a new artifact.\" This command delegates the foundational work, allowing you to begin your project with a clean, well-structured, and AI-generated starting point.",
+            "imageGroupIds": ["lesson-4.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p1",
+            "pageTitle": "From Scope to Structure: Generating Your Architectural Blueprint",
+            "tldr": "An architectural blueprint translates your strategic \"why\" (the scope) into a technical \"how\" (the structure). This lesson teaches you to command an AI to act as your lead architect, generating the foundational structure for your MVP.",
+            "content": "You've defined your project's vision and scope. The next step is to translate that strategic plan into a technical one. This is your **Architectural Blueprint**. It's the high-level design that outlines your project's file structure, technology stack, and core components. A clear blueprint is essential for building a maintainable and scalable application. It prevents the accumulation of **Technical Debt**—the long-term cost of short-term shortcuts. In the V2V workflow, you don't have to create this blueprint from scratch; you will command your AI partner to create it for you.",
+            "imageGroupIds": ["lesson-4.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p2",
+            "pageTitle": "The AI as Your Technical Architect",
+            "tldr": "Leverage your AI partner's vast knowledge of software design patterns and best practices. It can act as your senior architect, taking your project scope and generating an optimal, professional-grade project structure in seconds.",
+            "content": "Your AI partner has been trained on millions of open-source projects. It has a deep, implicit understanding of software architecture, design patterns, and best practices for virtually any technology stack. By providing it with your clear Project Scope, you can leverage this expertise. The AI's role in this phase is to act as your lead technical architect. It will take your high-level requirements and translate them into a concrete file structure and the initial \"boilerplate\" code needed to get the project running. This saves you hours of setup time and ensures your project is built on a solid, professional foundation from day one.",
+            "imageGroupIds": ["lesson-4.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p3",
+            "pageTitle": "The Architect's Command: Writing the Scaffolding Prompt",
+            "tldr": "The key to this step is a precise prompt that assigns the AI the role of an architect and clearly specifies the technology stack and the desired output (a file structure and initial code).",
+            "content": "To get a high-quality architectural blueprint from your AI, your prompt needs to be specific and role-oriented. This is a perfect application of the Structured Interaction principles you've learned. A powerful architectural prompt includes: 1. **The Role:** \"You are an expert software architect specializing in [Your Tech Stack].\" 2. **The Context:** \"Using the provided Project Scope artifact...\" 3. **The Task:** \"...generate the complete file and folder structure for the MVP.\" 4. **The Deliverables:** \"Create the initial boilerplate code for the main components, including configuration files, the main server file, and placeholder UI components.\" This command gives the AI a clear mandate and a well-defined set of deliverables.",
+            "imageGroupIds": ["lesson-4.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p4",
+            "pageTitle": "Cycle 1: From Blueprint to Live Application",
+            "tldr": "The AI's architectural output becomes the basis for your first development cycle. You accept the generated files, run the application, and begin the iterative process of building out your vision.",
+            "content": "The AI's response to your architectural prompt will be a set of new files and folders. This is the starting point for your first true development cycle. Using the DCE's Parallel Co-Pilot Panel, you will review the proposed structure, select the response you like best, and \"Accept\" the new files into your workspace. With that single click, your project is born. You can then install any dependencies and run the application for the first time. You have successfully overcome the Blank Page Problem and established a solid, scalable foundation upon which you will build your MVP, one cycle at a time.",
+            "imageGroupIds": ["lesson-4.3-p4-ig1"]
+        }
+      ]
+    }
+  ]
+}
+</file_artifact>
+
+<file path="public/data/v2v_content_underequipped_graduate.json">
+{
+  "reportId": "v2v-academy-underequipped-graduate",
+  "reportTitle": "V2V Academy: The Graduate's Advantage",
+  "sections": []
+}
+</file_artifact>
+
+<file path="public/data/v2v_content_young_precocious.json">
+{
+  "reportId": "v2v-academy-young-precocious",
+  "reportTitle": "V2V Academy: The Virtuoso's Quest",
+  "sections": []
+}
+</file_artifact>
+
+<file path="public/data/v2v_imagemanifest.json">
+{
+  "manifestId": "v2v-academy-images-v1",
+  "basePath": "/assets/images/report/",
+  "imageGroups": {
+    "lesson-1.1-p1-ig1": {
+      "path": "part-i-the-proof/the-virtuosos-loop/the-professionals-playbook/prompt-1/",
+      "prompt": "A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office. They stand at a holographic interface, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: \"Curation,\" \"Parallel Prompting,\" \"Validation,\" and \"Integration.\" The professional is calm and in control, conducting the flow with strategic intent.",
+      "alt": "An expert orchestrating a complex AI workflow.",
+      "baseFileName": "the-professionals-playbook-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p2-ig1": {
+      "path": "part-i-the-proof/the-virtuosos-loop/curation-and-documentation/prompt-1/",
+      "prompt": "An image depicting the \"Curation\" phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled \"Curated Context.\"",
+      "alt": "The process of curating data from chaos to clarity.",
+      "baseFileName": "curation-and-documentation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p3-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/exploring-the-solution-space/prompt-1/",
+        "prompt": "A visualization of \"Parallel Prompting.\" A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts. The pathways return eight distinct, varied strategic proposals.",
+        "alt": "Parallel prompting to get multiple AI solutions.",
+        "baseFileName": "exploring-the-solution-space-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    },
+    "lesson-1.1-p4-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/the-executive-decision/prompt-1/",
+        "prompt": "A close-up of a leader's face, focused and analytical. They are reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing \"Select This Response\" button.",
+        "alt": "A leader making a critical decision based on AI-generated options.",
+        "baseFileName": "the-executive-decision-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    },
+    "lesson-1.1-p5-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/risk-mitigation-and-rapid-validation/prompt-1/",
+        "prompt": "A simple, clear flowchart showing a Git-based workflow. A \"Baseline (Commit)\" button creates a \"Safe Restore Point.\" An \"Accept Selected\" arrow applies the AI code to a \"Staging Environment.\" A \"Test\" phase follows. An arrow labeled \"Failure\" leads to a \"Restore Baseline\" button. An arrow labeled \"Success\" moves forward.",
+        "alt": "The Test-and-Revert workflow using Git.",
+        "baseFileName": "risk-mitigation-and-rapid-validation-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    },
+    "lesson-1.1-p6-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/capture-learnings-and-iterate/prompt-1/",
+        "prompt": "A shot of the DCE's Panel. The user is typing notes into the \"Cycle Context\" field, summarizing the key takeaways from the completed cycle. The \"Generate prompt.md\" button is highlighted, leading to a `+` (New Cycle) button.",
+        "alt": "Finalizing a development cycle and preparing for the next one.",
+        "baseFileName": "capture-learnings-and-iterate-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    }
+  }
+}
+</file_artifact>
+
+<file path="src/Artifacts/A74 - V2V Academy - Interactive Curriculum Page Plan.md">
+# Artifact A74: V2V Academy - Interactive Curriculum Page Plan
+# Date Created: C74
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Outlines the plan for a new, dedicated page to host the interactive V2V Academy curriculum. The page will first prompt users to select a learner persona and then dynamically load the corresponding curriculum into the `ReportViewer` component.
+- **Tags:** v2v, curriculum, page design, plan, interactive learning, persona, report viewer
+
+## 1. Overview and Goal
+
+The V2V Academy curriculum has been developed across numerous artifacts, with content tailored for three distinct learner personas. The goal of this plan is to create a unified, interactive hub on `aiascent.dev` where users can access and navigate this curriculum.
+
+A new page, `/academy`, will be created. This page will first present a simple interface for users to self-select the persona that best fits them. Based on their selection, the page will dynamically load the appropriate comprehensive curriculum data and display it using the existing, powerful `ReportViewer` component. This provides a personalized and seamless learning experience.
+
+## 2. User Flow
+
+1.  **Navigation:** The user clicks a new "Academy" link in the main site header and navigates to `/academy`.
+2.  **Persona Selection:** The user is presented with a screen showing the three learner personas ("The Career Transitioner," "The Underequipped Graduate," "The Young Precocious") with brief descriptions.
+3.  **Selection:** The user clicks on the persona that best represents them.
+4.  **Content Loading:** The persona selection screen fades out, and the page dynamically fetches the `content.json` file specific to that persona.
+5.  **Interactive Learning:** The `ReportViewer` component appears, now populated with the full, multi-module curriculum for the selected persona, ready for the user to explore.
+
+## 3. Technical Implementation Plan
+
+### 3.1. New Page and Components
+
+*   **`src/app/academy/page.tsx`:**
+    *   A new client component that will serve as the main container for the academy.
+    *   It will use a `useState` hook to manage the `selectedPersona`.
+    *   It will conditionally render either the `PersonaSelector` component (if no persona is selected) or the `ReportViewer` component (if a persona is selected).
+    *   When a persona is selected, it will be responsible for fetching the correct curriculum JSON file (e.g., `v2v_content_career_transitioner.json`) and the shared `v2v_imagemanifest.json`.
+*   **`src/components/academy/PersonaSelector.tsx`:**
+    *   A new UI component that displays the three personas as clickable cards.
+    *   Each card will contain the persona's title and a brief description (from `A58`).
+    *   It will accept an `onSelectPersona` callback prop, which it will call with the selected persona's identifier when a card is clicked.
+
+### 3.2. State Management Refactor (`reportStore.ts`)
+
+To support dynamic content, the `reportStore` will be refactored to be more of a generic "data viewer" store.
+
+*   **`loadReport` Action:** The existing `loadReport` action will be modified. Instead of fetching data based on a `reportName`, it will now accept the fully-formed `reportData` and `imageManifest` JSON objects as arguments.
+*   **Data Fetching Responsibility:** The responsibility for fetching the JSON data will move *out* of the store and *into* the components that use it.
+    *   The `/academy/page.tsx` component will fetch the appropriate curriculum data based on the selected persona.
+    *   The `ReportViewer.tsx` component will be updated to fetch its own static data for the "whitepaper" and "showcase" reports.
+    *   After fetching, these components will call the new `loadReport` action, passing in the loaded data to populate the store.
+
+### 3.3. Curriculum Data Files
+
+*   **Consolidated Content:** Three new comprehensive JSON files will be created in `public/data/`:
+    1.  `v2v_content_career_transitioner.json`
+    2.  `v2v_content_underequipped_graduate.json`
+    3.  `v2v_content_young_precocious.json`
+*   **Structure:** Each file will contain the complete, structured curriculum for that persona, combining the content from all existing lesson artifacts (`A54`, `A63`-`A73`) into the `ReportContentData` format.
+*   **Shared Image Manifest:** A single `v2v_imagemanifest.json` will be created to serve all three persona curricula, as the image paths are consistent across versions. This avoids data duplication.
+
+This plan creates a scalable and personalized learning hub, leveraging our existing interactive components while providing a clear path for future content expansion.
+</file_artifact>
+
+<file path="src/app/academy/page.tsx">
+'use client';
+import React, { useState, useEffect } from 'react';
+import PersonaSelector from '@/components/academy/PersonaSelector';
+import ReportViewer from '@/components/report-viewer/ReportViewer';
+import { useReportStore } from '@/stores/reportStore';
+import type { ReportContentData, ImageManifestData } from '@/stores/reportStore';
+
+const AcademyPage = () => {
+    const [selectedPersona, setSelectedPersona] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const { loadReport } = useReportStore.getState();
+
+    useEffect(() => {
+        if (selectedPersona) {
+            const loadCurriculumData = async () => {
+                setIsLoading(true);
+                try {
+                    const [contentRes, manifestRes] = await Promise.all([
+                        fetch(`/data/v2v_content_${selectedPersona}.json`),
+                        fetch(`/data/v2v_imagemanifest.json`) // Shared manifest
+                    ]);
+
+                    if (!contentRes.ok) throw new Error(`Failed to fetch content for ${selectedPersona}`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest`);
+
+                    const reportData: ReportContentData = await contentRes.json();
+                    const imageManifest: ImageManifestData = await manifestRes.json();
+
+                    // Pass the fetched data directly to the store
+                    loadReport(reportData, imageManifest);
+
+                } catch (error) {
+                    console.error("Failed to load curriculum data:", error);
+                } finally {
+                    setIsLoading(false);
+                }
+            };
+            loadCurriculumData();
+        }
+    }, [selectedPersona, loadReport]);
+
+    if (isLoading) {
+        return (
+            <div className="flex items-center justify-center h-screen w-full pt-16">
+                <p className="text-2xl text-muted-foreground animate-pulse">Loading Curriculum...</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="h-screen w-full pt-16 flex flex-col">
+            {!selectedPersona ? (
+                <PersonaSelector onSelectPersona={setSelectedPersona} />
+            ) : (
+                <ReportViewer reportName={`v2v_${selectedPersona}`} />
+            )}
+        </div>
+    );
+};
+
+export default AcademyPage;
+</file_artifact>
+
+<file path="src/components/academy/PersonaSelector.tsx">
+'use client';
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+
+interface PersonaSelectorProps {
+    onSelectPersona: (persona: string) => void;
+}
+
+const personas = [
+    {
+        id: 'career_transitioner',
+        title: 'The Career Transitioner',
+        description: 'You have established expertise in a non-technical field and want to augment your skills with AI to future-proof your career and become a strategic leader.',
+        icon: ' briefcase', // Placeholder icon class
+    },
+    {
+        id: 'underequipped_graduate',
+        title: 'The Underequipped Graduate',
+        description: 'You have a traditional degree but feel unprepared for the AI-driven job market. You want to gain a competitive edge with practical, in-demand skills.',
+        icon: ' graduation-cap', // Placeholder icon class
+    },
+    {
+        id: 'young_precocious',
+        title: 'The Young Precocious',
+        description: 'You are a digitally native, self-taught creator, driven by curiosity. You want to channel your raw talent into a disciplined, powerful engineering practice.',
+        icon: ' rocket', // Placeholder icon class
+    },
+];
+
+const PersonaSelector: React.FC<PersonaSelectorProps> = ({ onSelectPersona }) => {
+    return (
+        <div className="flex flex-col items-center justify-center h-full container mx-auto px-4">
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-12"
+            >
+                <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+                    Welcome to the V2V Academy
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    To personalize your learning journey, please choose the path that best describes you.
+                </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+                {personas.map((persona, index) => (
+                    <motion.div
+                        key={persona.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 * (index + 1) }}
+                    >
+                        <Card
+                            className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer"
+                            onClick={() => onSelectPersona(persona.id)}
+                        >
+                            <CardHeader className="items-center text-center">
+                                {/* <div className="p-4 bg-primary/10 rounded-full mb-4">
+                                    <i className={`fas fa-${persona.icon} text-primary text-3xl`}></i>
+                                </div> */}
+                                <CardTitle>{persona.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex-grow text-center">
+                                <CardDescription>{persona.description}</CardDescription>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default PersonaSelector;
+</file_artifact>
+
+<file path="src/components/ui/card.tsx">
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      className
+    )}
+    {...props}
+  />
+))
+Card.displayName = "Card"
+
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+))
+CardHeader.displayName = "CardHeader"
+
+const CardTitle = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "text-2xl font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+))
+CardTitle.displayName = "CardTitle"
+
+const CardDescription = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardDescription.displayName = "CardDescription"
+
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+))
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 </file_artifact>
 
 

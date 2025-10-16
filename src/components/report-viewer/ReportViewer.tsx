@@ -13,6 +13,8 @@ import AudioControls from './AudioControls';
 import { Resizable } from 're-resizable';
 import Image from 'next/image';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
+import type { ReportContentData, ImageManifestData } from '@/stores/reportStore';
+
 
 interface ReportViewerProps {
     reportName: string;
@@ -47,13 +49,38 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const viewerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        loadReport(reportName);
+        // C74: Fetch data within the component for static reports
+        if (reportName !== 'whitepaper' && reportName !== 'showcase') {
+            return; // Data for V2V is loaded by the parent /academy page
+        }
+        
+        const loadStaticReport = async () => {
+            try {
+                const [contentRes, manifestRes] = await Promise.all([
+                    fetch(`/data/${reportName}_content.json`),
+                    fetch(`/data/${reportName}_imagemanifest.json`),
+                ]);
+
+                if (!contentRes.ok) throw new Error(`Failed to fetch ${reportName}_content.json`);
+                if (!manifestRes.ok) throw new Error(`Failed to fetch ${reportName}_imagemanifest.json`);
+
+                const reportData: ReportContentData = await contentRes.json();
+                const imageManifest: ImageManifestData = await manifestRes.json();
+                
+                loadReport(reportData, imageManifest);
+
+            } catch (error) {
+                console.error(`Failed to load static report data for ${reportName}:`, error);
+            }
+        };
+
+        loadStaticReport();
     }, [loadReport, reportName]);
 
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        if (currentPage) {
+        if (currentPage && !reportName.startsWith('v2v')) {
             fetchPageSuggestions(currentPage, reportName);
         }
     }, [currentPage, reportName, fetchPageSuggestions]);

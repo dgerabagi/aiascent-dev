@@ -1,0 +1,54 @@
+{
+  "manifestId": "v2v-academy-images-v1",
+  "basePath": "/assets/images/report/",
+  "imageGroups": {
+    "lesson-1.1-p1-ig1": {
+      "path": "part-i-the-proof/the-virtuosos-loop/the-professionals-playbook/prompt-1/",
+      "prompt": "A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office. They stand at a holographic interface, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: \"Curation,\" \"Parallel Prompting,\" \"Validation,\" and \"Integration.\" The professional is calm and in control, conducting the flow with strategic intent.",
+      "alt": "An expert orchestrating a complex AI workflow.",
+      "baseFileName": "the-professionals-playbook-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p2-ig1": {
+      "path": "part-i-the-proof/the-virtuosos-loop/curation-and-documentation/prompt-1/",
+      "prompt": "An image depicting the \"Curation\" phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled \"Curated Context.\"",
+      "alt": "The process of curating data from chaos to clarity.",
+      "baseFileName": "curation-and-documentation-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p3-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/exploring-the-solution-space/prompt-1/",
+        "prompt": "A visualization of \"Parallel Prompting.\" A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts. The pathways return eight distinct, varied strategic proposals.",
+        "alt": "Parallel prompting to get multiple AI solutions.",
+        "baseFileName": "exploring-the-solution-space-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    },
+    "lesson-1.1-p4-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/the-executive-decision/prompt-1/",
+        "prompt": "A close-up of a leader's face, focused and analytical. They are reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing \"Select This Response\" button.",
+        "alt": "A leader making a critical decision based on AI-generated options.",
+        "baseFileName": "the-executive-decision-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    },
+    "lesson-1.1-p5-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/risk-mitigation-and-rapid-validation/prompt-1/",
+        "prompt": "A simple, clear flowchart showing a Git-based workflow. A \"Baseline (Commit)\" button creates a \"Safe Restore Point.\" An \"Accept Selected\" arrow applies the AI code to a \"Staging Environment.\" A \"Test\" phase follows. An arrow labeled \"Failure\" leads to a \"Restore Baseline\" button. An arrow labeled \"Success\" moves forward.",
+        "alt": "The Test-and-Revert workflow using Git.",
+        "baseFileName": "risk-mitigation-and-rapid-validation-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    },
+    "lesson-1.1-p6-ig1": {
+        "path": "part-i-the-proof/the-virtuosos-loop/capture-learnings-and-iterate/prompt-1/",
+        "prompt": "A shot of the DCE's Panel. The user is typing notes into the \"Cycle Context\" field, summarizing the key takeaways from the completed cycle. The \"Generate prompt.md\" button is highlighted, leading to a `+` (New Cycle) button.",
+        "alt": "Finalizing a development cycle and preparing for the next one.",
+        "baseFileName": "capture-learnings-and-iterate-p1-img-",
+        "fileExtension": ".webp",
+        "imageCount": 1
+    }
+  }
+}
