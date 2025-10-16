@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C65 (Update Whisper guide with definitive fix)
+# Updated on: C58 (Add new V2V curriculum planning artifacts)
 
 ## 1. Purpose
 
@@ -259,6 +259,30 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
 - **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
 
-#### A47. David Gerabagi Resume (DCE Update)
+### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
 - **Tags:** resume, branding, professional profile, dce
+
+### A49. V2V Academy - Research & Synthesis Plan
+- **Description:** A formal plan for analyzing the provided coaching transcripts and project artifacts to reverse-engineer the curator's expert workflow and synthesize a curriculum for the V2V Academy.
+- **Tags:** research, analysis, synthesis, curriculum design, v2v, cognitive apprenticeship
+
+### A50. V2V Academy - Core Principles & Philosophy
+- **Description:** Synthesizes the core principles and philosophical underpinnings of the "Vibecoding to Virtuosity" pathway, extracted from the curator's coaching transcripts.
+- **Tags:** v2v, philosophy, principles, cognitive apprenticeship, mental models
+
+### A51. V2V Academy - The Virtuoso's Workflow
+- **Description:** A detailed, reverse-engineered breakdown of the curator's expert workflow, codifying the practical steps of the "Vibecoding to Virtuosity" pathway.
+- **Tags:** v2v, workflow, process, cognitive apprenticeship, reverse engineering
+
+### A52. V2V Academy - Foundational Skills Analysis
+- **Description:** An analysis of the foundational skills required for the V2V pathway, derived by working backward from the Virtuoso's workflow. It prioritizes cognitive skills over traditional programming syntax.
+- **Tags:** v2v, curriculum design, foundational skills, data curation, critical thinking
+
+### A53. V2V Academy - Curriculum Outline
+- **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow."
+- **Tags:** v2v, curriculum design, instructional design, learning pathway, cognitive apprenticeship
+
+### A54. V2V Academy - Lesson 1.1 - The Virtuoso's Loop
+- **Description:** The detailed content for Lesson 1.1 of the V2V Academy, "The Virtuoso's Loop," designed for the interactive report viewer.
+- **Tags:** v2v, curriculum, lesson plan, workflow, interactive learning
