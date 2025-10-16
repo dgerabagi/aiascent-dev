@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C58 (Add new curriculum planning artifacts)
+# Updated on: C59 (Add new glossary and planning artifacts)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -49,6 +49,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Description:** An analysis of the foundational skills required for the V2V pathway, derived by working backward from the Virtuoso's workflow. It prioritizes cognitive skills over traditional programming syntax.
 - **Tags:** v2v, curriculum design, foundational skills, data curation, critical thinking
 
+#### A57. V2V Academy - C58 Response Analysis and Strategic Gaps
+- **Description:** An analysis of the artifacts created in Cycle 58, showing their alignment with the source transcripts and identifying strategic gaps in the V2V Academy's planning.
+- **Tags:** v2v, curriculum design, analysis, strategy, self-reflection
+
 ### III. Curriculum Design & Content
 
 #### A53. V2V Academy - Curriculum Outline
@@ -58,6 +62,14 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A54. V2V Academy - Lesson 1.1 - The Virtuoso's Loop
 - **Description:** The detailed content for Lesson 1.1 of the V2V Academy, "The Virtuoso's Loop," designed for the interactive report viewer.
 - **Tags:** v2v, curriculum, lesson plan, workflow, interactive learning
+
+#### A55. V2V Academy - Glossary of Terms
+- **Description:** A comprehensive glossary of key terms and concepts related to the "Vibecoding to Virtuosity" (V2V) pathway and the Data Curation Environment (DCE).
+- **Tags:** v2v, documentation, glossary, definitions, cognitive apprenticeship, context engineering
+
+#### A56. V2V Academy - Practical Exercises Plan
+- **Description:** Outlines the plan for the practical exercises within the V2V Academy, centered on the project of incrementally building a fully functional, AI-powered interactive report viewer.
+- **Tags:** v2v, curriculum, exercises, project-based learning, report viewer, rag
 
 ### IV. Technical Implementation & Guides
 

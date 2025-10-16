@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C58 (Add new V2V curriculum planning artifacts)
+# Updated on: C59 (Add new V2V glossary and planning artifacts)
 
 ## 1. Purpose
 
@@ -286,3 +286,15 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A54. V2V Academy - Lesson 1.1 - The Virtuoso's Loop
 - **Description:** The detailed content for Lesson 1.1 of the V2V Academy, "The Virtuoso's Loop," designed for the interactive report viewer.
 - **Tags:** v2v, curriculum, lesson plan, workflow, interactive learning
+
+### A55. V2V Academy - Glossary of Terms
+- **Description:** A comprehensive glossary of key terms and concepts related to the "Vibecoding to Virtuosity" (V2V) pathway and the Data Curation Environment (DCE).
+- **Tags:** v2v, documentation, glossary, definitions, cognitive apprenticeship, context engineering
+
+### A56. V2V Academy - Practical Exercises Plan
+- **Description:** Outlines the plan for the practical exercises within the V2V Academy, centered on the project of incrementally building a fully functional, AI-powered interactive report viewer.
+- **Tags:** v2v, curriculum, exercises, project-based learning, report viewer, rag
+
+### A57. V2V Academy - C58 Response Analysis and Strategic Gaps
+- **Description:** An analysis of the artifacts created in Cycle 58, showing their alignment with the source transcripts and identifying strategic gaps in the V2V Academy's planning.
+- **Tags:** v2v, curriculum design, analysis, strategy, self-reflection
