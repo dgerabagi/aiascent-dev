@@ -44,6 +44,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Data Curation Environment (DCE):** A VS Code extension designed to streamline the workflow of AI-assisted development. It provides tools for selecting context, managing parallel AI responses, and iterating on projects in a structured, auditable manner.
 *   **Data Labeling:** A specific type of annotation that focuses on classifying data by assigning predefined tags or categories to data points. It primarily answers the question "What is this?" (e.g., this image contains a "cat").
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
+*   **Debugging (V2V Context):** The process of orchestrating the feedback loop between a human, an AI, and a computer system. The human's role is to execute the AI's code, capture any system-generated errors, and feed those errors back to the AI as context for the next corrective iteration.
 *   **Deliberate Practice:** A highly structured form of practice aimed at improving performance. It involves setting specific goals, maintaining intense focus, receiving immediate feedback, and constant refinement.
 *   **Diffing:** The process of comparing two versions of a file or text to see the exact differences (additions, deletions, modifications). A "diff viewer" is the tool used to visualize these changes, and it is a primary tool for the critical analysis of AI-generated code.
 
@@ -70,6 +71,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 *   **Information Architecture:** The art and science of organizing and structuring shared information environments to support usability and findability. In the V2V curriculum, this refers to the practice of designing a logical and intuitive folder and file structure for a project repository.
 *   **Interaction Schema:** A template or a set of rules that defines a structured format for communicating with an AI. It ensures that all necessary information (like role, context, and output format) is provided in a clear, consistent, and machine-readable way, reducing ambiguity and improving the reliability of the AI's response.
+*   **Iterative Refinement:** A core principle of the V2V workflow where a solution is developed through repeated cycles of action, feedback, and improvement. Instead of aiming for a perfect solution on the first try, developers make small, incremental changes and use the results to guide their next step.
 
 ### **K**
 
