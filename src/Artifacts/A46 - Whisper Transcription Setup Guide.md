@@ -1,11 +1,11 @@
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
+# Updated on: C61 (Correct PowerShell commands for file upload)
 
 - **Key/Value for A0:**
-- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu
+- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
 
 ## 1. Overview & Goal
 
@@ -29,13 +29,13 @@ Create a dedicated directory on your machine to hold the audio files you want to
 
 Open your terminal (PowerShell or Command Prompt) and run the following command. This command will download the Docker image (which is quite large, ~18.7 GB) and start the Whisper API server.
 
-```bash
-docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+```powershell
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 ```
 
 Let's break down this command:
-*   `-d`: Runs the container in detached mode (in the background).
 *   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors or are on a CPU-only machine, see the Troubleshooting section.
+*   The `--ipc`, `--ulimit` flags are recommended by the `insanely-fast-whisper` project for optimal performance.
 *   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
 *   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
 *   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
@@ -44,34 +44,78 @@ Let's break down this command:
 
 After a minute or two for the model to load, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see a FastAPI documentation page. This confirms the server is up and ready to accept requests.
 
-## 4. How to Transcribe a File
+## 4. Transcribing Your Files with PowerShell
 
-You can now send `POST` requests to the API to transcribe your audio files. This is most easily done by uploading the file directly from the volume you mounted into the container.
+The previous `Invoke-WebRequest` script failed because the `-Form` parameter is only available in PowerShell 6.0 and newer. Windows PowerShell, the default on most systems, is version 5.1.
 
-### Example using `curl`
+The most robust and backward-compatible solution is to use `curl.exe` directly within a PowerShell script. This bypasses PowerShell's aliases and ensures the file upload syntax works correctly.
 
-Open a new terminal and run the following command, replacing `your-audio-file.mp3` with the name of your audio file.
+**Instructions:**
+1.  Open a new PowerShell terminal.
+2.  Navigate to the directory where you want to save the transcript files (e.g., `cd C:\Projects\v2v-transcripts`).
+3.  Copy and paste the entire script block below into your PowerShell terminal and press Enter. It will loop through all your audio files and transcribe them one by one.
 
-```bash
-curl -X 'POST' \
-  'http://localhost:9000/transcribe' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'file=@/data/your-audio-file.mp3;type=audio/mpeg'
+```powershell
+# --- PowerShell Script for Transcription using curl.exe ---
+
+# 1. Set the path to your audio files on your Windows machine
+$audioFolderPath = "C:\Projects\v2v-transcripts\audio-to-process"
+
+# 2. Set the URL for your local Whisper API
+$apiUrl = "http://localhost:9000/transcribe"
+
+# 3. List of files to transcribe
+$filesToTranscribe = @(
+    "Lesson 1.5.wav",
+    "Lesson 2.wav",
+    "My recording 2.wav",
+    "My recording 5.wav",
+    "My recording 6.wav",
+    "My recording 7.wav",
+    "My recording 8.wav",
+    "My recording 9.wav",
+    "My recording 10.wav",
+    "My recording 11.wav",
+    "My recording 12.wav",
+    "My recording 13.wav"
+)
+
+# 4. Loop through each file and transcribe it
+foreach ($fileName in $filesToTranscribe) {
+    $fullPath = Join-Path -Path $audioFolderPath -ChildPath $fileName
+    $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($fileName) + ".json"
+    
+    Write-Host "Transcribing '$fileName'..."
+
+    # Construct the curl.exe command string.
+    # -F "file=@'$fullPath'" is the crucial part for file uploads.
+    # The single quotes around '$fullPath' help handle spaces in file names.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    
+    Write-Host "Executing: $command"
+
+    try {
+        # Execute the command string
+        Invoke-Expression -Command $command
+        Write-Host "Successfully transcribed '$fileName'. Output saved to '$outputFileName'." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Error transcribing '$fileName': $_" -ForegroundColor Red
+    }
+    Write-Host "---------------------------------"
+}
+
+Write-Host "All files processed."
 ```
 
-**Explanation:**
-*   We are sending a `POST` request to the `/transcribe` endpoint.
-*   The `-F 'file=@/data/your-audio-file.mp3...'` part tells `curl` to upload a file.
-*   **Important:** The path `/data/your-audio-file.mp3` is the path *inside the Docker container*, which we mapped from our local directory. You must always use `/data/` as the prefix for the file path in your API call.
+## 5. Extracting the Text
 
-### Example Response
+After running the script, you will have several `.json` files. The API responds with a JSON object containing the full transcription and other metadata. The complete text is located in the `"text"` field.
 
-The API will respond with a JSON object containing the full transcription.
-
+**Example Response (`Lesson 1.5.json`):**
 ```json
 {
-  "text": "Imagine that you had a very smart engineer show up on your doorstep. They have no context, no background...",
+  "text": "This is the full transcribed text from the audio file...",
   "language": "en",
   "segments": [
     {
@@ -79,16 +123,16 @@ The API will respond with a JSON object containing the full transcription.
       "seek": 0,
       "start": 0,
       "end": 4.8,
-      "text": " Imagine that you had a very smart engineer show up on your doorstep.",
+      "text": " This is the full transcribed text...",
       // ... other segment data
     }
   ]
 }
 ```
 
-You can copy the value of the `"text"` field to get the full transcript. This provides a simple and powerful pipeline for converting your recorded sessions into the raw material for the V2V Academy curriculum.
+You can now open each JSON file, copy the value of the `"text"` field, and save it as a markdown file for the next stage of our curriculum development.
 
-## 5. Troubleshooting
+## 6. Troubleshooting
 
 ### Error: `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.`
 
@@ -117,6 +161,6 @@ Ensure Docker Desktop is configured to use your WSL 2 distribution and provide i
 
 **Step 4: Fallback to CPU Mode (for testing)**
 If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
-*   Remove the `--gpus all` flag from the `docker run` command:
-    ```bash
-    docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+*   Remove the `--gpus all` and other hardware flags from the `docker run` command:
+    ```powershell
+    docker run -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest

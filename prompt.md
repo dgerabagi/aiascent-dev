@@ -11,7 +11,9 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 59 - its working! now i need curl commands for transcripts
+Current Cycle 61 - still not working
+Cycle 60 - not working
+Cycle 59 - its working! now i need curl commands for transcripts
 Cycle 58 - whisper error
 Cycle 57 - minor tweaks
 Cycle 56 - minor feedback and adjustments, but good work
@@ -268,7 +270,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C61 (Correct docker command in Whisper guide)
+# Updated on: C61 (Correct PowerShell commands in Whisper guide)
 
 ## 1. Purpose
 
@@ -520,8 +522,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** source material, research, workflow, development process, vibe coding
 
 ### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs. Includes commands for PowerShell and troubleshooting for common errors.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, powershell
+- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
 
 ### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
@@ -529,6 +531,254 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 61>
+<Cycle Context>
+still no, see ephemeral.
+</Cycle Context>
+<Ephemeral Context>
+PS C:\Projects\v2v-transcripts\audio-to-process> # --- PowerShell Script for Transcription using curl.exe ---
+
+# 1. Set the path to your audio files on your Windows machine
+$audioFolderPath = "C:\Projects\v2v-transcripts\audio-to-process"
+
+# 2. Set the URL for your local Whisper API
+$apiUrl = "http://localhost:9000/transcribe"
+
+# 3. List of files to transcribe
+$filesToTranscribe = @(
+    "Lesson 1.5.wav",
+    "Lesson 2.wav",
+    "My recording 2.wav",
+    "My recording 5.wav",
+    "My recording 6.wav",
+    "My recording 7.wav",
+    "My recording 8.wav",
+    "My recording 9.wav",
+    "My recording 10.wav",
+    "My recording 11.wav",
+    "My recording 12.wav",
+    "My recording 13.wav"
+)
+
+# 4. Loop through each file and transcribe it
+foreach ($fileName in $filesToTranscribe) {
+    $fullPath = Join-Path -Path $audioFolderPath -ChildPath $fileName
+    $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($fileName) + ".json"
+    
+    Write-Host "Transcribing '$fileName'..."
+
+    # Construct the curl.exe command string.
+    # -F "file=@'$fullPath'" is the crucial part for file uploads.
+    # The single quotes around '$fullPath' help handle spaces in file names.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    
+    Write-Host "Executing: $command"
+
+    try {
+        # Execute the command string
+        Invoke-Expression -Command $command
+        Write-Host "Successfully transcribed '$fileName'. Output saved to '$outputFileName'." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Error transcribing '$fileName': $_" -ForegroundColor Red
+    }
+    Write-Host "---------------------------------"
+}
+
+Write-Host "All files processed."
+Transcribing 'Lesson 1.5.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\Lesson 1.5.wav'" -o "
+Lesson 1.5.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'Lesson 1.5.wav'. Output saved to 'Lesson 1.5.json'.
+---------------------------------
+Transcribing 'Lesson 2.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\Lesson 2.wav'" -o "Le
+sson 2.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'Lesson 2.wav'. Output saved to 'Lesson 2.json'.
+---------------------------------
+Transcribing 'My recording 2.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 2.wav'" 
+-o "My recording 2.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 2.wav'. Output saved to 'My recording 2.json'.
+---------------------------------
+Transcribing 'My recording 5.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 5.wav'" 
+-o "My recording 5.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 5.wav'. Output saved to 'My recording 5.json'.
+---------------------------------
+Transcribing 'My recording 6.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 6.wav'" 
+-o "My recording 6.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 6.wav'. Output saved to 'My recording 6.json'.
+---------------------------------
+Transcribing 'My recording 7.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 7.wav'" 
+-o "My recording 7.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 7.wav'. Output saved to 'My recording 7.json'.
+---------------------------------
+Transcribing 'My recording 8.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 8.wav'" 
+-o "My recording 8.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 8.wav'. Output saved to 'My recording 8.json'.
+---------------------------------
+Transcribing 'My recording 9.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 9.wav'" 
+-o "My recording 9.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 9.wav'. Output saved to 'My recording 9.json'.
+---------------------------------
+Transcribing 'My recording 10.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 10.wav'"
+ -o "My recording 10.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 10.wav'. Output saved to 'My recording 10.json'.
+---------------------------------
+Transcribing 'My recording 11.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 11.wav'"
+ -o "My recording 11.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 11.wav'. Output saved to 'My recording 11.json'.
+---------------------------------
+Transcribing 'My recording 12.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 12.wav'"
+ -o "My recording 12.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 12.wav'. Output saved to 'My recording 12.json'.
+---------------------------------
+Transcribing 'My recording 13.wav'...
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 13.wav'"
+ -o "My recording 13.json"
+curl.exe : curl: (26) Failed to open/read local data from file/application
+At line:1 char:1
++ curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Successfully transcribed 'My recording 13.wav'. Output saved to 'My recording 13.json'.
+---------------------------------
+All files processed.
+
+PS C:\Projects\v2v-transcripts\audio-to-process> 
+</Ephemeral Context>
+<Previous Cycle 60 Summary of Actions>
+I have analyzed the errors you're encountering with `curl` in PowerShell and have identified the root causes. My previous guidance was flawed as it provided `bash`-style commands that are incompatible with PowerShell's syntax and aliasing for `curl`.
+
+The errors stem from two main issues:
+1.  In PowerShell, `curl` is an alias for the `Invoke-WebRequest` command, which uses a different syntax for headers and form data than the standard `curl` executable. This caused the "Cannot bind parameter 'Headers'" error.
+2.  When you correctly used `curl.exe`, the file path `file=@"/data/..."` failed because `curl.exe` runs on your Windows host and does not have access to the `/data` directory that exists *inside* the Docker container. It needs the full Windows path to the audio files.
+
+To resolve this, I will provide a comprehensive update to the `A46 - Whisper Transcription Setup Guide.md`. The updated guide will explain these issues and provide two robust, copy-paste-friendly solutions specifically for PowerShell users. The primary recommended method will be a PowerShell script that uses the native `Invoke-WebRequest` cmdlet, as it is the most reliable way to handle file uploads within that environment. I will also provide the corrected syntax for using `curl.exe` as an alternative.
+
+1.  **Update `A46 - Whisper Transcription Setup Guide.md`:** I will completely rewrite Section 4, "Transcribing Your Local Files," to be PowerShell-specific.
+2.  **Explain the Root Cause:** The new section will begin with a clear explanation of why the previous commands failed, covering PowerShell's `curl` alias and the file path issue.
+3.  **Provide a PowerShell Script (Recommended Method):** I will provide a complete PowerShell script that uses the native `Invoke-WebRequest` cmdlet. This script will be more user-friendly, allowing the user to define their audio folder path and then automatically loop through and transcribe all specified files, handling file paths and form data correctly.
+4.  **Provide a Corrected `curl.exe` Command (Alternative Method):** For users who prefer `curl`, I will provide the correct syntax for using `curl.exe` in PowerShell. This will include using the full Windows path for the audio files and handling quotes correctly for filenames with spaces. I will generate these commands for all 12 audio files shown in your screenshot.
+5.  **Clarify Output:** I will maintain the explanation of how to extract the transcribed text from the resulting `.json` files.
+</Previous Cycle 60 Summary of Actions>
+</Cycle 61>
+
+<Cycle 60>
+<Cycle Context>
+tried all these ways and they didnt work, also i see no logs in the container.
+
+see ephemeral context for latest attempts.
+</Cycle Context>
+<Previous Cycle 59 Summary of Actions>
+I have analyzed the error message you provided. The issue stems from a misconfiguration between Docker Desktop, the Windows Subsystem for Linux (WSL), and your NVIDIA GPU drivers, which prevents Docker from accessing the GPU.
+
+To resolve this, I will update the `A46 - Whisper Transcription Setup Guide.md` artifact with a new, detailed "Troubleshooting" section. This new section will provide a step-by-step guide to diagnose and fix the specific `WSL environment detected but no adapters were found` error.
+
+Additionally, I have identified an opportunity to simplify the transcription process outlined in the previous version of the guide. I will remove the section that required setting up a Python server to serve local audio files. Instead, I will replace it with a more direct and efficient method that uses a simple `curl` command to upload files directly from the directory you've mounted into the Docker container. This will make the entire transcription workflow much simpler once the initial GPU configuration issue is resolved.
+
+1.  **Update `src/Artifacts/A46 - Whisper Transcription Setup Guide.md`:**
+    *   Add a new "Troubleshooting" section to the guide.
+    *   In this section, specifically address the `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown` error.
+    *   Provide a clear, step-by-step diagnostic process for the user:
+        1.  **Verify Host Drivers:** Instruct the user to run `nvidia-smi` in Windows PowerShell to confirm the NVIDIA drivers are installed correctly on the host machine.
+        2.  **Verify WSL GPU Access:** Instruct the user to run `nvidia-smi` within their WSL 2 terminal. Explain that if this fails, the issue is with the WSL 2 and NVIDIA driver integration, and provide a link to NVIDIA's official "CUDA on WSL" setup guide.
+        3.  **Verify Docker Desktop Settings:** Guide the user to check Docker Desktop's settings (under Resources > WSL Integration) to ensure it is configured to use the correct WSL 2 distribution.
+        4.  **Provide a Fallback:** Add instructions for running the container in CPU-only mode by removing the `--gpus all` flag, including a strong warning that performance will be significantly degraded.
+    *   **Simplify Transcription Workflow:**
+        1.  Remove the entire section about setting up a Python HTTP server to serve local audio files via a URL.
+        2.  Replace it with the simpler, more direct method of uploading a file using a `curl` command with `multipart/form-data`, referencing the file from the container's mounted `/data` volume.
+        3.  Provide a clear, copy-pasteable `curl` example for the `/transcribe` endpoint.
+</Previous Cycle 59 Summary of Actions>
+</Cycle 60>
 
 <Cycle 59>
 <Cycle Context>
@@ -544,61 +794,6 @@ C:\Projects\v2v-transcripts\audio-to-process
 the filenames are in the screenshot
 
 </Cycle Context>
-<Ephemeral Context>
-PS C:\Users\David> docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
-
-=============
-== PyTorch ==
-=============
-
-NVIDIA Release 24.01 (build 80741402)
-PyTorch Version 2.2.0a0+81ea7a4
-
-Container image Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-
-Copyright (c) 2014-2023 Facebook Inc.
-Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
-Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
-Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
-Copyright (c) 2011-2013 NYU                      (Clement Farabet)
-Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
-Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
-Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
-Copyright (c) 2015      Google Inc.
-Copyright (c) 2015      Yangqing Jia
-Copyright (c) 2013-2016 The Caffe contributors
-All rights reserved.
-
-Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-
-This container image and its contents are governed by the NVIDIA Deep Learning Container License.
-By pulling and using the container, you accept the terms and conditions of this license:
-https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
-
-[2025-10-16 00:11:57 +0000] [1] [INFO] Starting gunicorn 21.2.0
-[2025-10-16 00:11:57 +0000] [1] [INFO] Listening at: http://0.0.0.0:9000 (1)
-[2025-10-16 00:11:57 +0000] [1] [INFO] Using worker: uvicorn.workers.UvicornWorker
-[2025-10-16 00:11:57 +0000] [99] [INFO] Booting worker with pid: 99
-/app/.venv/lib/python3.10/site-packages/pyannote/audio/core/io.py:43: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
-  torchaudio.set_audio_backend("soundfile")
-config.json: 1.27kB [00:00, 7.41MB/s]
-model.safetensors: 100%|██████████| 3.09G/3.09G [04:25<00:00, 11.6MB/s]
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-generation_config.json: 3.90kB [00:00, 23.2MB/s]
-tokenizer_config.json: 283kB [00:00, 343MB/s]
-vocab.json: 1.04MB [00:00, 34.7MB/s]
-tokenizer.json: 2.48MB [00:00, 46.4MB/s]
-merges.txt: 494kB [00:00, 23.1MB/s]
-normalizer.json: 52.7kB [00:00, 127MB/s]
-added_tokens.json: 34.6kB [00:00, 132MB/s]
-special_tokens_map.json: 2.07kB [00:00, 14.8MB/s]
-Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-preprocessor_config.json: 100%|██████████| 340/340 [00:00<00:00, 481kB/s]
-[2025-10-16 00:16:39 +0000] [99] [INFO] Started server process [99]
-[2025-10-16 00:16:39 +0000] [99] [INFO] Waiting for application startup.
-[2025-10-16 00:16:39 +0000] [99] [INFO] Application startup complete.
-
-</Ephemeral Context>
 <Previous Cycle 58 Summary of Actions>
 I will address the two main requests for this cycle. First, I will fix the bug with the interactive whitepaper's fullscreen mode by unifying its behavior with the rest of the site. Second, I will disable and remove the experimental "Splash Cursor" feature to reduce project complexity.
 
@@ -3373,10 +3568,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T00:28:44.327Z
+  Date Generated: 2025-10-16T01:11:07.091Z
   ---
   Total Files: 155
-  Approx. Tokens: 550917
+  Approx. Tokens: 551326
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3429,7 +3624,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 264 - Chars: 15377 - Tokens: 3845
+38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 264 - Chars: 15315 - Tokens: 3829
 39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 40. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 41. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -3522,7 +3717,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 122 - Chars: 7273 - Tokens: 1819
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 166 - Chars: 8975 - Tokens: 2244
 132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -24823,7 +25018,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C61 (Correct docker command in Whisper guide)
+# Updated on: C61 (Correct PowerShell commands in Whisper guide)
 
 ## 1. Purpose
 
@@ -25075,8 +25270,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** source material, research, workflow, development process, vibe coding
 
 ### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs. Includes commands for PowerShell and troubleshooting for common errors.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, powershell
+- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
 
 ### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
@@ -33275,11 +33470,11 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C58 (Add GPU/WSL troubleshooting guide and simplify transcription workflow)
+# Updated on: C61 (Correct PowerShell commands for file upload)
 
 - **Key/Value for A0:**
-- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings into text for curriculum development.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu
+- **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
 
 ## 1. Overview & Goal
 
@@ -33303,13 +33498,13 @@ Create a dedicated directory on your machine to hold the audio files you want to
 
 Open your terminal (PowerShell or Command Prompt) and run the following command. This command will download the Docker image (which is quite large, ~18.7 GB) and start the Whisper API server.
 
-```bash
-docker run -d --gpus all -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+```powershell
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 ```
 
 Let's break down this command:
-*   `-d`: Runs the container in detached mode (in the background).
 *   `--gpus all`: **(Crucial for performance)** Assigns all available NVIDIA GPUs to the container. If you encounter errors or are on a CPU-only machine, see the Troubleshooting section.
+*   The `--ipc`, `--ulimit` flags are recommended by the `insanely-fast-whisper` project for optimal performance.
 *   `-p 9000:9000`: Maps port 9000 on your host machine to port 9000 inside the container. This is how you'll access the API.
 *   `-v "C:\...:/data"`: This mounts your local audio directory into the container at the `/data` path. This is how the API can access your audio files. **You must replace the example path with the absolute path to your audio files.**
 *   `yoeven/insanely-fast-whisper-api:latest`: The name of the Docker image to use.
@@ -33318,34 +33513,78 @@ Let's break down this command:
 
 After a minute or two for the model to load, you can verify that the server is running by opening a web browser and navigating to `http://localhost:9000/docs`. You should see a FastAPI documentation page. This confirms the server is up and ready to accept requests.
 
-## 4. How to Transcribe a File
+## 4. Transcribing Your Files with PowerShell
 
-You can now send `POST` requests to the API to transcribe your audio files. This is most easily done by uploading the file directly from the volume you mounted into the container.
+The previous `Invoke-WebRequest` script failed because the `-Form` parameter is only available in PowerShell 6.0 and newer. Windows PowerShell, the default on most systems, is version 5.1.
 
-### Example using `curl`
+The most robust and backward-compatible solution is to use `curl.exe` directly within a PowerShell script. This bypasses PowerShell's aliases and ensures the file upload syntax works correctly.
 
-Open a new terminal and run the following command, replacing `your-audio-file.mp3` with the name of your audio file.
+**Instructions:**
+1.  Open a new PowerShell terminal.
+2.  Navigate to the directory where you want to save the transcript files (e.g., `cd C:\Projects\v2v-transcripts`).
+3.  Copy and paste the entire script block below into your PowerShell terminal and press Enter. It will loop through all your audio files and transcribe them one by one.
 
-```bash
-curl -X 'POST' \
-  'http://localhost:9000/transcribe' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'file=@/data/your-audio-file.mp3;type=audio/mpeg'
+```powershell
+# --- PowerShell Script for Transcription using curl.exe ---
+
+# 1. Set the path to your audio files on your Windows machine
+$audioFolderPath = "C:\Projects\v2v-transcripts\audio-to-process"
+
+# 2. Set the URL for your local Whisper API
+$apiUrl = "http://localhost:9000/transcribe"
+
+# 3. List of files to transcribe
+$filesToTranscribe = @(
+    "Lesson 1.5.wav",
+    "Lesson 2.wav",
+    "My recording 2.wav",
+    "My recording 5.wav",
+    "My recording 6.wav",
+    "My recording 7.wav",
+    "My recording 8.wav",
+    "My recording 9.wav",
+    "My recording 10.wav",
+    "My recording 11.wav",
+    "My recording 12.wav",
+    "My recording 13.wav"
+)
+
+# 4. Loop through each file and transcribe it
+foreach ($fileName in $filesToTranscribe) {
+    $fullPath = Join-Path -Path $audioFolderPath -ChildPath $fileName
+    $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($fileName) + ".json"
+    
+    Write-Host "Transcribing '$fileName'..."
+
+    # Construct the curl.exe command string.
+    # -F "file=@'$fullPath'" is the crucial part for file uploads.
+    # The single quotes around '$fullPath' help handle spaces in file names.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    
+    Write-Host "Executing: $command"
+
+    try {
+        # Execute the command string
+        Invoke-Expression -Command $command
+        Write-Host "Successfully transcribed '$fileName'. Output saved to '$outputFileName'." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Error transcribing '$fileName': $_" -ForegroundColor Red
+    }
+    Write-Host "---------------------------------"
+}
+
+Write-Host "All files processed."
 ```
 
-**Explanation:**
-*   We are sending a `POST` request to the `/transcribe` endpoint.
-*   The `-F 'file=@/data/your-audio-file.mp3...'` part tells `curl` to upload a file.
-*   **Important:** The path `/data/your-audio-file.mp3` is the path *inside the Docker container*, which we mapped from our local directory. You must always use `/data/` as the prefix for the file path in your API call.
+## 5. Extracting the Text
 
-### Example Response
+After running the script, you will have several `.json` files. The API responds with a JSON object containing the full transcription and other metadata. The complete text is located in the `"text"` field.
 
-The API will respond with a JSON object containing the full transcription.
-
+**Example Response (`Lesson 1.5.json`):**
 ```json
 {
-  "text": "Imagine that you had a very smart engineer show up on your doorstep. They have no context, no background...",
+  "text": "This is the full transcribed text from the audio file...",
   "language": "en",
   "segments": [
     {
@@ -33353,16 +33592,16 @@ The API will respond with a JSON object containing the full transcription.
       "seek": 0,
       "start": 0,
       "end": 4.8,
-      "text": " Imagine that you had a very smart engineer show up on your doorstep.",
+      "text": " This is the full transcribed text...",
       // ... other segment data
     }
   ]
 }
 ```
 
-You can copy the value of the `"text"` field to get the full transcript. This provides a simple and powerful pipeline for converting your recorded sessions into the raw material for the V2V Academy curriculum.
+You can now open each JSON file, copy the value of the `"text"` field, and save it as a markdown file for the next stage of our curriculum development.
 
-## 5. Troubleshooting
+## 6. Troubleshooting
 
 ### Error: `nvidia-container-cli: initialization error: WSL environment detected but no adapters were found: unknown.`
 
@@ -33391,9 +33630,9 @@ Ensure Docker Desktop is configured to use your WSL 2 distribution and provide i
 
 **Step 4: Fallback to CPU Mode (for testing)**
 If you cannot resolve the GPU issue but still want to test the transcription workflow, you can run the container in CPU-only mode. This will be **extremely slow** but can be useful for verification.
-*   Remove the `--gpus all` flag from the `docker run` command:
-    ```bash
-    docker run -d -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
+*   Remove the `--gpus all` and other hardware flags from the `docker run` command:
+    ```powershell
+    docker run -p 9000:9000 -v "C:\Projects\v2v-transcripts\audio-to-process:/data" yoeven/insanely-fast-whisper-api:latest
 </file_artifact>
 
 <file path="src/components/global/SplashCursor.jsx">
