@@ -1,7 +1,7 @@
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C61 (Correct PowerShell commands for file upload)
+# Updated on: C62 (Correct PowerShell commands for file upload)
 
 - **Key/Value for A0:**
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
@@ -46,9 +46,9 @@ After a minute or two for the model to load, you can verify that the server is r
 
 ## 4. Transcribing Your Files with PowerShell
 
-The previous `Invoke-WebRequest` script failed because the `-Form` parameter is only available in PowerShell 6.0 and newer. Windows PowerShell, the default on most systems, is version 5.1.
+The previous `curl` commands failed because of a common quoting issue when calling native executables like `curl.exe` from within PowerShell, especially when using `Invoke-Expression`. The single quotes around the file path were being treated as part of the filename, causing the "Failed to open/read" error.
 
-The most robust and backward-compatible solution is to use `curl.exe` directly within a PowerShell script. This bypasses PowerShell's aliases and ensures the file upload syntax works correctly.
+The corrected script below resolves this by ensuring only the necessary double quotes are used to handle paths with spaces.
 
 **Instructions:**
 1.  Open a new PowerShell terminal.
@@ -87,10 +87,12 @@ foreach ($fileName in $filesToTranscribe) {
     
     Write-Host "Transcribing '$fileName'..."
 
-    # Construct the curl.exe command string.
-    # -F "file=@'$fullPath'" is the crucial part for file uploads.
-    # The single quotes around '$fullPath' help handle spaces in file names.
-    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    # CORRECTED: The file path for the -F argument should not be wrapped in single quotes.
+    # The double quotes around the entire argument are sufficient for Invoke-Expression to handle spaces.
+    $fileArgument = "file=@$fullPath"
+
+    # Construct the command string using backticks to escape quotes for Invoke-Expression.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"$fileArgument`" -o `"$outputFileName`""
     
     Write-Host "Executing: $command"
 

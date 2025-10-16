@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T01:11:07.091Z
+  Date Generated: 2025-10-16T01:15:18.866Z
   ---
   Total Files: 155
-  Approx. Tokens: 551326
+  Approx. Tokens: 551372
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -150,7 +150,7 @@
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 166 - Chars: 8975 - Tokens: 2244
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 168 - Chars: 9159 - Tokens: 2290
 132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -29903,7 +29903,7 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C61 (Correct PowerShell commands for file upload)
+# Updated on: C62 (Correct PowerShell commands for file upload)
 
 - **Key/Value for A0:**
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
@@ -29948,9 +29948,9 @@ After a minute or two for the model to load, you can verify that the server is r
 
 ## 4. Transcribing Your Files with PowerShell
 
-The previous `Invoke-WebRequest` script failed because the `-Form` parameter is only available in PowerShell 6.0 and newer. Windows PowerShell, the default on most systems, is version 5.1.
+The previous `curl` commands failed because of a common quoting issue when calling native executables like `curl.exe` from within PowerShell, especially when using `Invoke-Expression`. The single quotes around the file path were being treated as part of the filename, causing the "Failed to open/read" error.
 
-The most robust and backward-compatible solution is to use `curl.exe` directly within a PowerShell script. This bypasses PowerShell's aliases and ensures the file upload syntax works correctly.
+The corrected script below resolves this by ensuring only the necessary double quotes are used to handle paths with spaces.
 
 **Instructions:**
 1.  Open a new PowerShell terminal.
@@ -29989,10 +29989,12 @@ foreach ($fileName in $filesToTranscribe) {
     
     Write-Host "Transcribing '$fileName'..."
 
-    # Construct the curl.exe command string.
-    # -F "file=@'$fullPath'" is the crucial part for file uploads.
-    # The single quotes around '$fullPath' help handle spaces in file names.
-    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    # CORRECTED: The file path for the -F argument should not be wrapped in single quotes.
+    # The double quotes around the entire argument are sufficient for Invoke-Expression to handle spaces.
+    $fileArgument = "file=@$fullPath"
+
+    # Construct the command string using backticks to escape quotes for Invoke-Expression.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"$fileArgument`" -o `"$outputFileName`""
     
     Write-Host "Executing: $command"
 

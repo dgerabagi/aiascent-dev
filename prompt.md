@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 61 - still not working
+Current Cycle 62 - still not working
+Cycle 61 - still not working
 Cycle 60 - not working
 Cycle 59 - its working! now i need curl commands for transcripts
 Cycle 58 - whisper error
@@ -532,11 +533,339 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
-<Cycle 61>
+<Cycle 62>
 <Cycle Context>
-still no, see ephemeral.
+this time i tried 3 attempts. all 3 failed. see below. why is this difficult? the stt model has one fucking job. how can we not do this? whats going on? this is stupid. please get this working. 
 </Cycle Context>
 <Ephemeral Context>
+PS C:\Projects\v2v-transcripts\audio-to-process> # --- PowerShell Script for Transcription using Invoke-WebRequest ---
+# This is the recommended method for reliability in PowerShell.
+
+# 1. Set the path to your audio files on your Windows machine
+$audioFolderPath = "C:\Projects\v2v-transcripts\audio-to-process"
+
+# 2. Set the URL for your local Whisper API
+$apiUrl = "http://localhost:9000/transcribe"
+
+# 3. List of files to transcribe
+$filesToTranscribe = @(
+    "Lesson 1.5.wav",
+    "Lesson 2.wav",
+    "My recording 2.wav",
+    "My recording 5.wav",
+    "My recording 6.wav",
+    "My recording 7.wav",
+    "My recording 8.wav",
+    "My recording 9.wav",
+    "My recording 10.wav",
+    "My recording 11.wav",
+    "My recording 12.wav",
+    "My recording 13.wav"
+)
+
+# 4. Loop through each file and transcribe it
+foreach ($fileName in $filesToTranscribe) {
+    $fullPath = Join-Path -Path $audioFolderPath -ChildPath $fileName
+    $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($fileName) + ".json"
+    
+    Write-Host "Transcribing '$fileName'..."
+
+    # Check if the file exists before attempting to send it
+    if (-not (Test-Path -Path $fullPath -PathType Leaf)) {
+        Write-Host "Error: File not found at '$fullPath'" -ForegroundColor Red
+        Write-Host "---------------------------------"
+        continue
+    }
+
+    try {
+        # The -Form parameter handles the multipart/form-data encoding.
+        # Get-Item creates a file object that Invoke-WebRequest can process.
+        $form = @{
+            file = Get-Item -Path $fullPath
+        }
+
+        # Use -TimeoutSec to prevent long-running transcriptions from timing out
+        Invoke-WebRequest -Uri $apiUrl -Method POST -Form $form -OutFile $outputFileName -TimeoutSec 300
+        
+        Write-Host "Successfully transcribed '$fileName'. Output saved to '$outputFileName'." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Error transcribing '$fileName': $_.Exception.Message" -ForegroundColor Red
+    }
+    Write-Host "---------------------------------"
+}
+
+Write-Host "All files processed."
+Transcribing 'Lesson 1.5.wav'...
+Error transcribing 'Lesson 1.5.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'Lesson 2.wav'...
+Error transcribing 'Lesson 2.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 2.wav'...
+Error transcribing 'My recording 2.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 5.wav'...
+Error transcribing 'My recording 5.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 6.wav'...
+Error transcribing 'My recording 6.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 7.wav'...
+Error transcribing 'My recording 7.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 8.wav'...
+Error transcribing 'My recording 8.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 9.wav'...
+Error transcribing 'My recording 9.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 10.wav'...
+Error transcribing 'My recording 10.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 11.wav'...
+Error transcribing 'My recording 11.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 12.wav'...
+Error transcribing 'My recording 12.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+Transcribing 'My recording 13.wav'...
+Error transcribing 'My recording 13.wav': A parameter cannot be found that matches parameter name 'Form'..Exception.Message
+---------------------------------
+All files processed.
+
+PS C:\Projects\v2v-transcripts\audio-to-process> # --- PowerShell Script for Transcription (Robust Version) ---
+
+# 1. Set the path to your audio files on your Windows machine
+$audioFolderPath = "C:\Projects\v2v-transcripts\audio-to-process"
+
+# 2. Set the URL for your local Whisper API
+$apiUrl = "http://localhost:9000/transcribe"
+
+# 3. List of files to transcribe
+$filesToTranscribe = @(
+    "Lesson 1.5.wav",
+    "Lesson 2.wav",
+    "My recording 2.wav",
+    "My recording 5.wav",
+    "My recording 6.wav",
+    "My recording 7.wav",
+    "My recording 8.wav",
+    "My recording 9.wav",
+    "My recording 10.wav",
+    "My recording 11.wav",
+    "My recording 12.wav",
+    "My recording 13.wav"
+)
+
+# 4. Loop through each file and transcribe it
+foreach ($fileName in $filesToTranscribe) {
+    $fullPath = Join-Path -Path $audioFolderPath -ChildPath $fileName
+    $outputFileName = [System.IO.Path]::GetFileNameWithoutExtension($fileName) + ".json"
+    
+    Write-Host "Transcribing '$fileName'..."
+
+    # Construct the file argument for curl.exe.
+    # The format must be file=@"C:\path\to your\file.wav" with literal double quotes if the path has spaces.
+    # In PowerShell, we create this string by escaping the inner quotes with a backtick (`).
+    $fileArgument = "file=@`"$fullPath`""
+    
+    Write-Host "Executing: curl.exe -X POST $apiUrl -H `"accept: application/json`" -F $fileArgument -o `"$outputFileName`""
+
+    try {
+        # Execute curl.exe directly. PowerShell correctly passes the $fileArgument as a single token.
+        curl.exe -X POST $apiUrl -H "accept: application/json" -F $fileArgument -o "$outputFileName"
+        Write-Host "Successfully transcribed '$fileName'. Output saved to '$outputFileName'." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Error transcribing '$fileName': $_" -ForegroundColor Red
+    }
+    Write-Host "---------------------------------"
+}
+
+Write-Host "All files processed."
+Transcribing 'Lesson 1.5.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\Lesson 1.5.wav" -o "Less
+on 1.5.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  198M  100    22    0     0   4263      0 --:--:-- --:--:-- --:--:--  4400
+Successfully transcribed 'Lesson 1.5.wav'. Output saved to 'Lesson 1.5.json'.
+---------------------------------
+Transcribing 'Lesson 2.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\Lesson 2.wav" -o "Lesson
+ 2.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  283M  100    22    0     0   5520      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'Lesson 2.wav'. Output saved to 'Lesson 2.json'.
+---------------------------------
+Transcribing 'My recording 2.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 2.wav" -o "
+My recording 2.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1765k  100    22    0     0   5425      0 --:--:-- --:--:-- --:--:--  5500
+Successfully transcribed 'My recording 2.wav'. Output saved to 'My recording 2.json'.
+---------------------------------
+Transcribing 'My recording 5.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 5.wav" -o "
+My recording 5.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  706M  100    22    0     0   6030      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 5.wav'. Output saved to 'My recording 5.json'.
+---------------------------------
+Transcribing 'My recording 6.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 6.wav" -o "
+My recording 6.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  641M  100    22    0     0   6440      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 6.wav'. Output saved to 'My recording 6.json'.
+---------------------------------
+Transcribing 'My recording 7.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 7.wav" -o "
+My recording 7.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  570M  100    22    0     0   6109      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 7.wav'. Output saved to 'My recording 7.json'.
+---------------------------------
+Transcribing 'My recording 8.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 8.wav" -o "
+My recording 8.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1178M  100    22    0     0   1207      0 --:--:-- --:--:-- --:--:--  1222
+Successfully transcribed 'My recording 8.wav'. Output saved to 'My recording 8.json'.
+---------------------------------
+Transcribing 'My recording 9.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 9.wav" -o "
+My recording 9.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1185M  100    22    0     0   6518      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 9.wav'. Output saved to 'My recording 9.json'.
+---------------------------------
+Transcribing 'My recording 10.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 10.wav" -o 
+"My recording 10.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  501M  100    22    0     0   5950      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 10.wav'. Output saved to 'My recording 10.json'.
+---------------------------------
+Transcribing 'My recording 11.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 11.wav" -o 
+"My recording 11.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  334M  100    22    0     0    881      0 --:--:-- --:--:-- --:--:--   916
+Successfully transcribed 'My recording 11.wav'. Output saved to 'My recording 11.json'.
+---------------------------------
+Transcribing 'My recording 12.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 12.wav" -o 
+"My recording 12.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  160M  100    22    0     0   5851      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 12.wav'. Output saved to 'My recording 12.json'.
+---------------------------------
+Transcribing 'My recording 13.wav'...
+Executing: curl.exe -X POST http://localhost:9000/transcribe -H "accept: application/json" -F file=@"C:\Projects\v2v-transcripts\audio-to-process\My recording 13.wav" -o 
+"My recording 13.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+At line:41 char:9
++         curl.exe -X POST $apiUrl -H "accept: application/json" -F $fi ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  854M  100    22    0     0   5978      0 --:--:-- --:--:-- --:--:--  7333
+Successfully transcribed 'My recording 13.wav'. Output saved to 'My recording 13.json'.
+---------------------------------
+All files processed.
+
 PS C:\Projects\v2v-transcripts\audio-to-process> # --- PowerShell Script for Transcription using curl.exe ---
 
 # 1. Set the path to your audio files on your Windows machine
@@ -568,10 +897,12 @@ foreach ($fileName in $filesToTranscribe) {
     
     Write-Host "Transcribing '$fileName'..."
 
-    # Construct the curl.exe command string.
-    # -F "file=@'$fullPath'" is the crucial part for file uploads.
-    # The single quotes around '$fullPath' help handle spaces in file names.
-    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    # CORRECTED: The file path for the -F argument should not be wrapped in single quotes.
+    # The double quotes around the entire argument are sufficient for Invoke-Expression to handle spaces.
+    $fileArgument = "file=@$fullPath"
+
+    # Construct the command string using backticks to escape quotes for Invoke-Expression.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"$fileArgument`" -o `"$outputFileName`""
     
     Write-Host "Executing: $command"
 
@@ -588,153 +919,211 @@ foreach ($fileName in $filesToTranscribe) {
 
 Write-Host "All files processed."
 Transcribing 'Lesson 1.5.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\Lesson 1.5.wav'" -o "
-Lesson 1.5.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\Lesson 1.5.wav" -o "Le
+sson 1.5.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  198M  100    22    0     0   4859      0 --:--:-- --:--:-- --:--:--  5500
 Successfully transcribed 'Lesson 1.5.wav'. Output saved to 'Lesson 1.5.json'.
 ---------------------------------
 Transcribing 'Lesson 2.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\Lesson 2.wav'" -o "Le
-sson 2.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\Lesson 2.wav" -o "Less
+on 2.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  283M  100    22    0     0   6376      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'Lesson 2.wav'. Output saved to 'Lesson 2.json'.
 ---------------------------------
 Transcribing 'My recording 2.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 2.wav'" 
--o "My recording 2.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 2.wav" -o
+ "My recording 2.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1765k  100    22    0     0   6330      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'My recording 2.wav'. Output saved to 'My recording 2.json'.
 ---------------------------------
 Transcribing 'My recording 5.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 5.wav'" 
--o "My recording 5.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 5.wav" -o
+ "My recording 5.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  706M  100    22    0     0   6048      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'My recording 5.wav'. Output saved to 'My recording 5.json'.
 ---------------------------------
 Transcribing 'My recording 6.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 6.wav'" 
--o "My recording 6.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 6.wav" -o
+ "My recording 6.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  641M  100    22    0     0   6354      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'My recording 6.wav'. Output saved to 'My recording 6.json'.
 ---------------------------------
 Transcribing 'My recording 7.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 7.wav'" 
--o "My recording 7.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 7.wav" -o
+ "My recording 7.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  570M  100    22    0     0   5909      0 --:--:-- --:--:-- --:--:--  5500
+  0  570M  100    22    0     0   5766      0 --:--:-- --:--:-- --:--:--  5500
 Successfully transcribed 'My recording 7.wav'. Output saved to 'My recording 7.json'.
 ---------------------------------
 Transcribing 'My recording 8.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 8.wav'" 
--o "My recording 8.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 8.wav" -o
+ "My recording 8.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1178M  100    22    0     0   6253      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'My recording 8.wav'. Output saved to 'My recording 8.json'.
 ---------------------------------
 Transcribing 'My recording 9.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 9.wav'" 
--o "My recording 9.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 9.wav" -o
+ "My recording 9.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1185M  100    22    0     0   5876      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'My recording 9.wav'. Output saved to 'My recording 9.json'.
 ---------------------------------
 Transcribing 'My recording 10.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 10.wav'"
- -o "My recording 10.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 10.wav" -
+o "My recording 10.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  501M  100    22    0     0   6314      0 --:--:-- --:--:-- --:--:--  7333
 Successfully transcribed 'My recording 10.wav'. Output saved to 'My recording 10.json'.
 ---------------------------------
 Transcribing 'My recording 11.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 11.wav'"
- -o "My recording 11.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 11.wav" -
+o "My recording 11.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  334M  100    22    0     0   1186      0 --:--:-- --:--:-- --:--:--  1222
 Successfully transcribed 'My recording 11.wav'. Output saved to 'My recording 11.json'.
 ---------------------------------
 Transcribing 'My recording 12.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 12.wav'"
- -o "My recording 12.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 12.wav" -
+o "My recording 12.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  160M  100    22    0     0   1707      0 --:--:-- --:--:-- --:--:--  1833
 Successfully transcribed 'My recording 12.wav'. Output saved to 'My recording 12.json'.
 ---------------------------------
 Transcribing 'My recording 13.wav'...
-Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@'C:\Projects\v2v-transcripts\audio-to-process\My recording 13.wav'"
- -o "My recording 13.json"
-curl.exe : curl: (26) Failed to open/read local data from file/application
+Executing: curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: application/json" -F "file=@C:\Projects\v2v-transcripts\audio-to-process\My recording 13.wav" -
+o "My recording 13.json"
+curl.exe :   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 At line:1 char:1
 + curl.exe -X POST "http://localhost:9000/transcribe" -H "accept: appli ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (curl: (26) Fail...ile/application:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (  % Total    % ...  Time  Current:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0  854M  100    22    0     0   1048      0 --:--:-- --:--:-- --:--:--  1100
 Successfully transcribed 'My recording 13.wav'. Output saved to 'My recording 13.json'.
 ---------------------------------
 All files processed.
 
 PS C:\Projects\v2v-transcripts\audio-to-process> 
 </Ephemeral Context>
+<Previous Cycle 61 Summary of Actions>
+I have analyzed the PowerShell errors from the last cycle. The issue is that the `Invoke-WebRequest` command you attempted to use included the `-Form` parameter, which is only available in PowerShell version 6 and later. Your system is likely running an older version, such as the default Windows PowerShell 5.1, which does not recognize this parameter.
+
+To resolve this, I will provide a more robust and backward-compatible solution. I will update the `A46 - Whisper Transcription Setup Guide` with a corrected PowerShell script. Instead of relying on the version-dependent `Invoke-WebRequest` parameters, the new script will use `curl.exe`. This command explicitly calls the `curl` executable, bypassing PowerShell's aliases and ensuring the syntax for file uploads (`-F "file=@'path/to/file'"`) is interpreted correctly across different environments.
+
+This updated script will loop through your list of audio files, construct the correct `curl.exe` command for each one, execute it to perform the transcription, and save the resulting JSON output, providing a reliable workflow for your transcription needs.
+
+1.  **Update `A46 - Whisper Transcription Setup Guide.md`:**
+    *   Rewrite the "Transcribing Your Files with PowerShell" section to explain the root cause of the previous errors (PowerShell version incompatibility with the `-Form` parameter).
+    *   Replace the previous script with a new, more robust PowerShell script that uses `curl.exe` for maximum compatibility.
+    *   The new script will programmatically loop through the list of audio files, construct the correct `curl.exe` command for each file upload using the `-F "file=@'path'"` syntax, and execute the transcription.
+    *   This will provide a complete, copy-pasteable solution that works on standard Windows PowerShell.
+2.  **Update `A0-Master-Artifact-List.md`:**
+    *   Update the "Updated on" field for artifact A46 to reflect the changes made in this cycle.
+</Previous Cycle 61 Summary of Actions>
+</Cycle 62>
+
+<Cycle 61>
+<Cycle Context>
+still no, see ephemeral.
+</Cycle Context>
 <Previous Cycle 60 Summary of Actions>
 I have analyzed the errors you're encountering with `curl` in PowerShell and have identified the root causes. My previous guidance was flawed as it provided `bash`-style commands that are incompatible with PowerShell's syntax and aliasing for `curl`.
 
@@ -3568,10 +3957,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T01:11:07.091Z
+  Date Generated: 2025-10-16T01:15:18.866Z
   ---
   Total Files: 155
-  Approx. Tokens: 551326
+  Approx. Tokens: 551372
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3717,7 +4106,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
 130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 166 - Chars: 8975 - Tokens: 2244
+131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 168 - Chars: 9159 - Tokens: 2290
 132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
 133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 1 - Chars: 0 - Tokens: 0
 134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 1 - Chars: 0 - Tokens: 0
@@ -33470,7 +33859,7 @@ everything. It's super p practical. Thanks, Peter. Appreciate it.
 # Artifact A46: Whisper Transcription Setup Guide
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C61 (Correct PowerShell commands for file upload)
+# Updated on: C62 (Correct PowerShell commands for file upload)
 
 - **Key/Value for A0:**
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
@@ -33515,9 +33904,9 @@ After a minute or two for the model to load, you can verify that the server is r
 
 ## 4. Transcribing Your Files with PowerShell
 
-The previous `Invoke-WebRequest` script failed because the `-Form` parameter is only available in PowerShell 6.0 and newer. Windows PowerShell, the default on most systems, is version 5.1.
+The previous `curl` commands failed because of a common quoting issue when calling native executables like `curl.exe` from within PowerShell, especially when using `Invoke-Expression`. The single quotes around the file path were being treated as part of the filename, causing the "Failed to open/read" error.
 
-The most robust and backward-compatible solution is to use `curl.exe` directly within a PowerShell script. This bypasses PowerShell's aliases and ensures the file upload syntax works correctly.
+The corrected script below resolves this by ensuring only the necessary double quotes are used to handle paths with spaces.
 
 **Instructions:**
 1.  Open a new PowerShell terminal.
@@ -33556,10 +33945,12 @@ foreach ($fileName in $filesToTranscribe) {
     
     Write-Host "Transcribing '$fileName'..."
 
-    # Construct the curl.exe command string.
-    # -F "file=@'$fullPath'" is the crucial part for file uploads.
-    # The single quotes around '$fullPath' help handle spaces in file names.
-    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"file=@'$fullPath'`" -o `"$outputFileName`""
+    # CORRECTED: The file path for the -F argument should not be wrapped in single quotes.
+    # The double quotes around the entire argument are sufficient for Invoke-Expression to handle spaces.
+    $fileArgument = "file=@$fullPath"
+
+    # Construct the command string using backticks to escape quotes for Invoke-Expression.
+    $command = "curl.exe -X POST `"$apiUrl`" -H `"accept: application/json`" -F `"$fileArgument`" -o `"$outputFileName`""
     
     Write-Host "Executing: $command"
 

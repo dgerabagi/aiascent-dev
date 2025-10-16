@@ -258,7 +258,3 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A46. Whisper Transcription Setup Guide
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
 - **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
-
-### A47. David Gerabagi Resume (DCE Update)
-- **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
-- **Tags:** resume, branding, professional profile, dce
