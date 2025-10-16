@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C66 (Add Annotation, Labeling, Metadata)
+# Updated on: C67 (Add Source of Truth, Information Architecture)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -19,18 +19,22 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Annotation:** The process of adding descriptive metadata (labels, tags, names) to raw data to make it machine-readable and provide clear context to an AI. This is a core practice of Data Curation.
 *   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems.
 *   **Artifact:** A formal, written document (e.g., project plan, requirements document, source code file) that serves as a "source of truth" for a specific part of a project. In the DCE workflow, artifacts are the primary medium for instructing and aligning with an AI.
+*   **Automation Bias:** The cognitive tendency for humans to over-trust and favor suggestions from automated systems, often ignoring contradictory information or failing to apply critical thinking to the system's output. In the V2V context, it's the dangerous trap of blindly accepting AI-generated code without rigorous validation.
 
 ### **C**
 
-*   **Citizen Architect:** A professional archetype who combines deep domain expertise with AI collaboration skills to design, build, and lead the development of complex systems. They act as a strategic thinker and community leader, using their talents to solve problems and contribute meaningfully to society.
+*   **Citizen Architect:** A professional archetype who combines deep domain expertise with AI collaboration skills to design, build, and lead the development of complex systems, contributing meaningfully to their community and profession.
 *   **Cognitive Apprenticeship:** A pedagogical model where an expert (human or AI) makes their internal, tacit thought processes visible to a novice. The V2V curriculum is built on this model, using AI to model expert workflows, provide coaching, and offer scaffolding.
 *   **Cognitive Bandwidth Tax:** A concept from behavioral science describing how financial precarity or other stressors consume mental resources, measurably reducing a person's ability to perform complex cognitive tasks. The "fissured workplace" imposes this tax on its data annotators.
+*   **Cognitive Bias:** A systematic pattern of deviation from norm or rationality in judgment. In the V2V context, this refers to the human tendency to, for example, trust a confident-sounding AI (automation bias) or interpret its output in a way that confirms one's pre-existing beliefs (confirmation bias). Acknowledging these biases is crucial for objective validation.
 *   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation.
 *   **Cognitive Security (COGSEC):** The practice of defending human perception and decision-making from online manipulation, propaganda, and deceptive information. It also refers to using AI modeled on human cognition to detect cybersecurity threats.
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
 *   **Context Rot:** The degradation of an AI's performance over a long conversation as the context window becomes filled with irrelevant, outdated, or contradictory information, reducing the signal-to-noise ratio.
 *   **Context Window:** The finite amount of information (measured in tokens) that an LLM can "see" and process at any given time. Effective management of this "working memory" is a core challenge of Context Engineering.
+*   **Critical Analysis:** The disciplined process of evaluating information (particularly AI-generated output) for its accuracy, logic, security, and alignment with project goals. It is the core "human-in-the-loop" skill that ensures quality and reliability.
+*   **Critical Thinking:** In the V2V context, this is the essential skill of evaluating AI-generated output for its accuracy, logic, relevance, and potential flaws. It is the core of the "Don't Trust, Verify" principle.
 *   **Cycle:** A single, complete iteration of the development workflow within the DCE. A cycle includes the curated context, the user's instructions, all AI-generated responses, and the user's final decision, all of which are saved to a persistent knowledge graph.
 
 ### **D**
@@ -40,6 +44,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Data Labeling:** A specific type of annotation that focuses on classifying data by assigning predefined tags or categories to data points. It primarily answers the question "What is this?" (e.g., this image contains a "cat").
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
 *   **Deliberate Practice:** A highly structured form of practice aimed at improving performance. It involves setting specific goals, maintaining intense focus, receiving immediate feedback, and constant refinement.
+*   **Diffing:** The process of comparing two versions of a file or text to see the exact differences (additions, deletions, modifications). A "diff viewer" is the tool used to visualize these changes, and it is a primary tool for the critical analysis of AI-generated code.
 
 ### **E**
 
@@ -56,9 +61,13 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 *   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
 
+### **H**
+
+*   **Hallucination:** A phenomenon where an AI model generates information that sounds plausible but is factually incorrect, nonsensical, or entirely fabricated. This can include inventing functions, libraries, API endpoints, or making up facts to complete a response.
+
 ### **I**
 
-*   **Information Architecture:** The practice of designing the structure and organization of an information space to be intuitive and understandable. In V2V, this refers to the design of the project repository's folder structure and the logical organization of artifacts.
+*   **Information Architecture:** The art and science of organizing and structuring shared information environments to support usability and findability. In the V2V curriculum, this refers to the practice of designing a logical and intuitive folder and file structure for a project repository.
 
 ### **K**
 
@@ -92,7 +101,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **S**
 
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
-*   **Source of Truth:** A canonical document, artifact, or collection of data that is treated as the definitive, authoritative reference for a project or task. A well-curated Source of Truth is essential for preventing AI hallucinations and ensuring consistent, high-quality outputs.
+*   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
 
 ### **T**
 
@@ -100,6 +109,8 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **V**
 
+*   **Validation:** The process of confirming that an AI-generated output is correct, functional, and meets the specified requirements. This can involve running tests, performing a code review, or fact-checking generated text against reliable sources.
+*   **Verification:** The process of checking that an AI's output is factually correct and free of errors. It answers the question: "Did we build the thing right?"
 *   **Vibecoding:** The intuitive, conversational, and often imprecise starting point for interacting with generative AI. It is the process of translating a high-level goal or "vibe" into a functional output using natural language. It is the first stage on the pathway to Virtuosity.
 *   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
 *   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization.
