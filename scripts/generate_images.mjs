@@ -53,8 +53,8 @@ function constructFinalPrompt(systemPrompt, pageContent, imagePrompt) {
     return `${systemPrompt}\n\n${trainingContent}\n\n<Image Prompt>\n${imagePrompt}\n</Image Prompt>`;
 }
 
-async function generateAndSaveImage(persona, pageId) {
-    console.log(`🚀 Processing page: '${pageId}' for persona: '${persona}'`);
+async function generateAndSaveImages(persona, pageId, imageCount = 1) {
+    console.log(`🚀 Processing page: '${pageId}' for persona: '${persona}' (${imageCount} image(s))`);
 
     // 1. Load all necessary data
     const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
@@ -71,7 +71,7 @@ async function generateAndSaveImage(persona, pageId) {
         throw new Error(`Could not find page content for pageId '${pageId}'.`);
     }
 
-    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page
+    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page for now
     if (!imageGroupId) {
         throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
     }
@@ -84,34 +84,41 @@ async function generateAndSaveImage(persona, pageId) {
     // 3. Construct the final prompt
     const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
 
-    // 4. Initialize AI client and make the API call
-    console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
+    // 4. Initialize AI client
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-    
-    const result = await model.generateContent(finalPrompt);
-    const response = result.response;
-    
-    const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
 
-    if (!base64ImageData) {
-        console.error('API Response:', JSON.stringify(response, null, 2));
-        throw new Error('No image data found in the API response.');
+    // 5. Loop to generate the requested number of images
+    for (let i = 1; i <= imageCount; i++) {
+        console.log(`   Generating image ${i} of ${imageCount} for '${pageId}'...`);
+        console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
+        
+        const result = await model.generateContent(finalPrompt);
+        const response = result.response;
+        
+        const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+
+        if (!base64ImageData) {
+            console.error('API Response:', JSON.stringify(response, null, 2));
+            throw new Error(`No image data found in the API response for image ${i}.`);
+        }
+
+        // 6. Define output path and save the image, using the loop index
+        const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
+        const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+        const outputPath = path.join(outputDirPath, outputFileName);
+
+        console.log(`   Ensuring output directory exists: ${outputDirPath}`);
+        await fs.mkdir(outputDirPath, { recursive: true });
+
+        console.log(`   Saving image to: ${outputPath}`);
+        await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
+
+        console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
     }
-
-    // 5. Define output path and save the image
-    const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
-    const outputFileName = `${groupMeta.baseFileName}1${groupMeta.fileExtension}`;
-    const outputPath = path.join(outputDirPath, outputFileName);
-
-    console.log(`   Ensuring output directory exists: ${outputDirPath}`);
-    await fs.mkdir(outputDirPath, { recursive: true });
-
-    console.log(`   Saving image to: ${outputPath}`);
-    await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
-
-    console.log(`✅ Image for '${pageId}' saved successfully!`);
+    console.log(`✅ All ${imageCount} images for '${pageId}' saved successfully!`);
 }
+
 
 // --- MAIN EXECUTION LOGIC ---
 
@@ -124,13 +131,13 @@ async function main() {
     const args = process.argv.slice(2);
     if (args.length < 2) {
         console.error('Usage:');
-        console.error('  node scripts/generate_images.mjs <persona> <pageId>              (for a single image)');
-        console.error('  node scripts/generate_images.mjs <persona> --module <number>    (for a whole module)');
-        console.error('Example: node scripts/generate_images.mjs career_transitioner lesson-1.1-p1');
+        console.error('  node scripts/generate_images.mjs <persona> <pageId> [image_count]   (for one or more images)');
+        console.error('  node scripts/generate_images.mjs <persona> --module <number>       (for a whole module, 1 image per page)');
+        console.error('Example: node scripts/generate_images.mjs career_transitioner lesson-1.1-p1 5');
         process.exit(1);
     }
 
-    const persona = args;
+    const persona = args; // FIX: Correctly assign the first argument
     const isModuleMode = args === '--module';
 
     try {
@@ -154,15 +161,18 @@ async function main() {
             console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
 
             for (const pageId of pageIds) {
-                await generateAndSaveImage(persona, pageId);
-                // Optional: Add a small delay between API calls
+                await generateAndSaveImages(persona, pageId, 1); // Generate 1 image per page in module mode
                 await new Promise(resolve => setTimeout(resolve, 1000)); 
             }
             console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
 
         } else {
             const pageId = args;
-            await generateAndSaveImage(persona, pageId);
+            const imageCount = args ? parseInt(args, 10) : 1;
+            if (isNaN(imageCount) || imageCount < 1) {
+                throw new Error('Invalid image_count. Must be a positive number.');
+            }
+            await generateAndSaveImages(persona, pageId, imageCount);
         }
     } catch (error) {
         console.error('❌ An error occurred during image generation:', error.message);

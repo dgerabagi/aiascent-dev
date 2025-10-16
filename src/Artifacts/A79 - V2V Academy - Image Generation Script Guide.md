@@ -1,6 +1,7 @@
 # Artifact A79: V2V Academy - Image Generation Script Guide
 # Date Created: C81
 # Author: AI Model & Curator
+# Updated on: C82 (Add image_count argument and update file naming)
 
 - **Key/Value for A0:**
 - **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
@@ -29,17 +30,16 @@ Before running the script, ensure you have the following set up:
 
 ## 3. Usage
 
-The script has two primary modes of operation: generating a single image for testing and generating a full batch of images for an entire module.
+The script has two primary modes of operation: generating one or more images for a single page, and generating a full batch of images for an entire module.
 
-### 3.1. Mode 1: Generating a Single Image (For Quality Control)
+### 3.1. Mode 1: Generating One or More Images for a Single Page
 
-This mode is ideal for testing a prompt or verifying the output quality before committing to a full batch run.
+This mode is ideal for testing a prompt or generating a set of variations for a specific page.
 
 **Command:**
 ```bash
-node scripts/generate_images.mjs <persona> <pageId>
+node scripts/generate_images.mjs <persona> <pageId> [image_count]
 ```
-node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
 
 **Arguments:**
 *   `<persona>`: The identifier for the learner persona. Must be one of:
@@ -47,18 +47,24 @@ node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
     *   `underequipped_graduate`
     *   `young_precocious`
 *   `<pageId>`: The unique ID for the page you want to generate an image for. You can find these IDs in the corresponding `public/data/v2v_content_*.json` files (e.g., `lesson-1.1-p1`).
+*   `[image_count]` (Optional): The number of images to generate for this page. If omitted, it defaults to 1.
 
-**Example:**
-To generate the image for the first page of Lesson 1.1 for the Career Transitioner:
+**Example 1: Generate a single image**
 ```bash
 node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
 ```
 
+**Example 2: Generate 5 images**
+```bash
+node scripts/generate_images.mjs career_transitioner lesson-1.1-p1 5
+```
+
 ### 3.2. Mode 2: Generating a Full Module (Batch Mode)
 
-This mode allows you to "set it loose" and generate all images for every page within a specific module for a given persona.
+This mode allows you to "set it loose" and generate all images (one per page) for every page within a specific module for a given persona.
 
-**Command:**```bash
+**Command:**
+```bash
 node scripts/generate_images.mjs <persona> --module <module_number>
 ```
 
@@ -70,13 +76,14 @@ node scripts/generate_images.mjs <persona> --module <module_number>
 To generate all images for Module 2 for the Underequipped Graduate:
 ```bash
 node scripts/generate_images.mjs underequipped_graduate --module 2
-```The script will process each page in the module sequentially and log its progress in the console.
+```
+The script will process each page in the module sequentially and log its progress in the console.
 
 ## 4. How It Works: File Output
 
 The script is designed to work seamlessly with the `ReportViewer` component. It automatically creates, names, and places the generated images in the correct directory so that the application can find them without any manual configuration.
 
-Based on the persona, module, and page, the script will save the image to a path like:
+Based on the persona, module, and page, the script will save the images to a path like:
 `public/assets/images/v2v/<persona>/module-<X>/lesson-X.X/lesson-X.X-pX-img-1.webp`
-
-This matches the structure expected by the image manifest files, ensuring that once the script is run, the images will appear correctly in the interactive curriculum.
+`public/assets/images/v2v/<persona>/module-<X>/lesson-X.X/lesson-X.X-pX-img-2.webp`
+...and so on, incrementing the number for each image generated. This matches the structure expected by the image manifest files, ensuring that once the script is run, the images will appear correctly in the interactive curriculum.
