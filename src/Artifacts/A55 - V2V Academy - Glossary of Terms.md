@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C72 (Add Blank Page Problem, Scaffolding, and Boilerplate Code)
+# Updated on: C73 (Add Technical Debt and Architectural Blueprint)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -18,6 +18,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Agentic Workflow:** A development process where an AI agent can autonomously plan, reason, and execute complex, multi-step tasks, often involving the use of tools and memory.
 *   **Annotation:** The process of adding descriptive metadata (labels, tags, names) to raw data to make it machine-readable and provide clear context to an AI. This is a core practice of Data Curation.
 *   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems.
+*   **Architectural Blueprint:** A high-level plan or design document that outlines the structure, components, and interactions of a software system. It serves as a guide for the development team, similar to how a building's blueprint guides construction.
 *   **Artifact:** A formal, written document (e.g., project plan, requirements document, source code file) that serves as a "source of truth" for a specific part of a project. In the DCE workflow, artifacts are the primary medium for instructing and aligning with an AI.
 *   **Automation Bias:** The cognitive tendency for humans to over-trust and favor suggestions from automated systems, often ignoring contradictory information or failing to apply critical thinking to the system's output. In the V2V context, it's the dangerous trap of blindly accepting AI-generated code without rigorous validation.
 
@@ -77,6 +78,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **I**
 
+*   **Ideation:** The creative process of forming, entertaining, and developing new ideas. In the V2V curriculum, AI is used as a partner in the ideation phase to brainstorm potential project concepts and features.
 *   **Information Architecture:** The art and science of organizing and structuring shared information environments to support usability and findability. In the V2V curriculum, this refers to the practice of designing a logical and intuitive folder and file structure for a project repository.
 *   **Interaction Schema:** A template or a set of rules that defines a structured format for communicating with an AI. It ensures that all necessary information (like role, context, and output format) is provided in a clear, consistent, and machine-readable way, reducing ambiguity and improving the reliability of the AI's response.
 *   **Iterative Refinement:** A core principle of the V2V workflow where a solution is developed through repeated cycles of action, feedback, and improvement. Instead of aiming for a perfect solution on the first try, developers make small, incremental changes and use the results to guide their next step.
@@ -125,6 +127,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **T**
 
+*   **Technical Debt:** The implied future cost of rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. Over time, this "debt" accumulates "interest," making future changes more difficult and costly.
 *   **Test-and-Revert Workflow:** A core practice of the Virtuoso's Loop where a developer creates a safe restore point (Baseline), applies AI-generated code, tests it, and then either keeps the changes or instantly discards them (Revert) if they are faulty. This enables rapid, low-risk experimentation.
 *   **Test-Driven Development (TDD):** A software development methodology where developers write a failing test *before* they write the functional code to make that test pass. This "test-first" approach follows a simple "Red-Green-Refactor" cycle and helps ensure code quality, correctness, and maintainability from the start.
 *   **Token:** The basic unit of text that an LLM processes. A token can be a word, part of a word, or a punctuation mark. The number of tokens in a prompt is a key metric for cost and performance.

@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C72 (Add A72)
+# Updated on: C73 (Add A73)
 
 ## 1. Purpose
 
@@ -402,3 +402,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A72. V2V Academy - Lesson 4.2 - The Blank Page Problem
 - **Description:** The detailed content for Lesson 4.2 of the V2V Academy, "The Blank Page Problem," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, project scope, scaffolding, planning, interactive learning, persona
+
+### A73. V2V Academy - Lesson 4.3 - Architecting Your MVP
+- **Description:** The detailed content for Lesson 4.3 of the V2V Academy, "Architecting Your MVP," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, project scope, architecture, planning, interactive learning, persona
