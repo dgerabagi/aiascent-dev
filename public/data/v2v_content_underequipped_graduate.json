@@ -1,5 +1,380 @@
 {
   "reportId": "v2v-academy-underequipped-graduate",
   "reportTitle": "V2V Academy: The Graduate's Advantage",
-  "sections": []
+  "sections": [
+    {
+      "sectionId": "module-1",
+      "sectionTitle": "Module 1: The Virtuoso's Loop - Charting the Destination",
+      "pages": [
+        {
+          "pageId": "lesson-1.1-p1",
+          "pageTitle": "The Unfair Advantage: Learning the Workflow That Gets You Hired",
+          "tldr": "This lesson teaches you the complete, end-to-end expert workflow for AI-assisted development that employers are looking for. This is your new playbook for a successful tech career.",
+          "content": "Welcome to the V2V Academy. Your journey to landing a great tech job starts now. The skills you learned in school are important, but the real world requires something more: the ability to partner with AI to build amazing things, fast. This expert workflow is called the \"Virtuoso's Loop,\" and it's your unfair advantage. It’s a systematic process that will make you stand out. In this lesson, we'll break down every step.",
+          "imageGroupIds": ["lesson-1.1-p1-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p2",
+          "pageTitle": "Step 1: Plan Before You Prompt",
+          "tldr": "Great projects start with a great plan. Before you ask an AI to code, you need to give it a clear blueprint and the right materials.",
+          "content": "Every successful project starts with preparation. 1. **Gather Your Files:** Collect all the relevant code, notes, and requirements for your task. 2. **Write a Plan:** Create a new document that clearly explains your goal for the current task. This is your blueprint. 3. **Select Context:** Using the DCE, select only the specific files that are relevant to your plan. This creates a focused, high-signal context for the AI.",
+          "imageGroupIds": ["lesson-1.1-p2-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p3",
+          "pageTitle": "Step 2: Get Multiple Options",
+          "tldr": "Don't settle for the first answer. By getting multiple AI responses at once, you can compare different coding approaches and pick the cleanest, most efficient solution.",
+          "content": "A single prompt can have many right answers. The Virtuoso's Loop helps you find the best one. 1. **Generate `prompt.md`:** The DCE automatically creates a complete prompt file for you. 2. **Run in Parallel:** You send this prompt to multiple AI instances. 3. **Parse and Sort:** The responses are loaded into the DCE. With one click, they are parsed and sorted by size. Your review starts with the most detailed code.",
+          "imageGroupIds": ["lesson-1.1-p3-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p4",
+          "pageTitle": "Step 3: You're the Code Reviewer",
+          "tldr": "The AI writes the code, but you are the lead engineer. Your most important job is to review the AI's work for quality and correctness.",
+          "content": "This is where you apply your engineering judgment. 1. **Review the Plan:** Does the AI's proposed plan make sense? 2. **Diff the Code:** Use the diff viewer to see the exact code changes. Is it clean? Are there any obvious bugs? 3. **Select the Best Code:** Based on your review, you select the best solution to test.",
+          "imageGroupIds": ["lesson-1.1-p4-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p5",
+          "pageTitle": "Step 4: Test Without Fear",
+          "tldr": "The Virtuoso's Loop uses Git to let you test AI-generated code without any risk. If it breaks, you can go back to your last save point in one click.",
+          "content": "Never trust, always verify. 1. **Create a Baseline:** Click \"Baseline (Commit)\" to create a Git commit. This is your safety net. 2. **Accept Changes:** Click \"Accept Selected\" to apply the AI's code to your project. 3. **Test:** Run your application or tests. 4. **Decide:** If it fails, click \"Restore Baseline\" to instantly undo the changes. If it works, you're ready for the next step.",
+          "imageGroupIds": ["lesson-1.1-p5-ig1"]
+        },
+        {
+          "pageId": "lesson-1.1-p6",
+          "pageTitle": "Step 5: Document and Repeat",
+          "tldr": "The loop finishes by documenting your work and preparing for the next task on your project plan.",
+          "content": "A successful test sets up the next iteration. 1. **Update Context:** Document what you did or define the next task in the \"Cycle Context\" field. This builds your project's history. 2. **Start a New Cycle:** Click the `+` button to create a new cycle, and the Virtuoso's Loop begins again.",
+          "imageGroupIds": ["lesson-1.1-p6-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p1",
+            "pageTitle": "Your Secret Weapon: The AI is a Feedback Loop for Learning",
+            "tldr": "Don't fear errors—they are your most powerful learning tool. The V2V method teaches you to use AI as a partner that turns your mistakes into immediate, practical lessons.",
+            "content": "The V2V pathway redefines how you learn technical skills. The AI is your personal 24/7 tutor. Its most important function is to create a feedback loop that accelerates your learning. You don't need to be an expert to start. When the AI generates code that produces an error, that error message *is* a form of expert feedback. Your job is to take that feedback and give it back to the AI. By doing this, you enter a powerful learning loop where you guide the AI to the right answer and, in the process, learn exactly why the initial code was wrong. This is the fastest way to bridge the gap between academic knowledge and real-world skill.",
+            "imageGroupIds": ["lesson-1.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p2",
+            "pageTitle": "The Skill That Gets You Hired: Data Curation",
+            "tldr": "The job market is changing. Employers are looking for people who can direct AI, and the most important skill for that is the ability to curate high-quality data.",
+            "content": "The V2V curriculum is designed to teach you the skills employers are actually looking for in the AI era. While coding is still important, the new apex skill is **Data Curation**, also known as **Context Engineering**. Why? Because an AI is only as good as the data you give it. Your ability to find, organize, and structure the right information for a task is what will make you a highly effective—and highly hirable—developer. This course focuses on making you an expert curator, the person who builds the \"source of truth\" that enables powerful AI performance and demonstrates a level of strategic thinking that will make your portfolio stand out.",
+            "imageGroupIds": ["lesson-1.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p3",
+            "pageTitle": "The Big Picture: Building a Better Future",
+            "tldr": "The skills you are learning aren't just for a job; they are the tools that will empower you and your generation to solve major world problems.",
+            "content": "The V2V pathway is about more than just coding. It's about empowering you to build a better future. The ultimate vision is to accelerate human progress so we can tackle the big challenges—from climate change to space exploration. By mastering these skills, you become part of a new generation of \"Citizen Architects\" who have the power to turn ambitious ideas into reality. This isn't just about building a career; it's about building a portfolio of impactful work that contributes to the world.",
+            "imageGroupIds": ["lesson-1.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-1.2-p4",
+            "pageTitle": "Your Unfair Advantage: The AI as a Cognitive Mentor",
+            "tldr": "The V2V curriculum uses the Cognitive Apprenticeship model, where the AI acts as an expert mentor who can show you exactly how a professional thinks and solves problems.",
+            "content": "The V2V curriculum is built on a powerful learning secret: Cognitive Apprenticeship. When you learn from an expert, the hardest part is understanding *how* they think. Their best skills are often invisible. This is where the AI comes in. It acts as your expert mentor, and its biggest advantage is that it can make its thought process visible. By asking it to explain its code, or by analyzing why it made a certain choice, you get a direct look into an expert's mind. This process, where the AI models expert behavior and coaches you through your mistakes, is the fastest way to go from graduate to a sought-after professional.",
+            "imageGroupIds": ["lesson-1.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p1",
+            "pageTitle": "Your New Job Title: The Citizen Architect",
+            "tldr": "The Citizen Architect is the job title of the future. It's a role for developers who can think strategically, direct AI partners, and build complex systems, making them far more valuable than traditional coders.",
+            "content": "The V2V Academy trains you for the jobs that will define the next decade of tech. The \"Citizen Architect\" is a new kind of developer—one who combines technical skills with architectural vision and civic purpose. They are the ones who can lead a human-AI team, translating a high-level goal into a functional, robust application. They understand that their primary job is not just to write code, but to design the systems and curate the context that allows an AI to write *better* code. This is the role that commands a premium salary and offers a path to leadership by applying your talents to improve the community around you.",
+            "imageGroupIds": ["lesson-1.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p2",
+            "pageTitle": "Your Killer Skill: Generating Cognitive Capital",
+            "tldr": "Your real value isn't just what you know—it's your ability to solve new, hard problems. This skill, called Cognitive Capital, is what you'll master in the V2V Academy.",
+            "content": "As a Citizen Architect, your most valuable asset is your Cognitive Capital. This is your personal capacity to solve novel problems and innovate. In a world where AI can handle routine coding, employers are looking for people who can tackle the tough, unstructured challenges. The V2V workflow is a system for building this skill. By learning to structure problems, curate data, and critically validate AI outputs, you are building a powerful problem-solving engine that will make you indispensable to any team.",
+            "imageGroupIds": ["lesson-1.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p3",
+            "pageTitle": "More Than a Coder: The Architect as Storyteller",
+            "tldr": "Top-tier architects are not just builders; they are great communicators who can coordinate the social and design processes that lead to a final product.",
+            "content": "The most successful professionals in any field are effective communicators. In the traditional definition, a Citizen Architect is a storyteller—someone who can engage and converse with the world to coordinate the complex process of creation. As you build your career, your ability to articulate a technical vision to non-technical stakeholders will be a massive advantage. The V2V pathway doesn't just teach you how to build with AI; it teaches you how to think and communicate like an architect. You'll learn to document your process and justify your design decisions, skills that are fundamental to leading projects and teams.",
+            "imageGroupIds": ["lesson-1.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-1.3-p4",
+            "pageTitle": "Why This Role Matters: Your Impact on the Future",
+            "tldr": "Citizen Architects are the new innovators. By mastering this workflow, you move from being a task-taker to a value-creator, the person who builds the solutions that drive a company forward.",
+            "content": "The Citizen Architect is at the center of modern innovation. They are the ones who can bridge the gap between a business need and a technical solution, using AI as a force multiplier. By mastering the V2V pathway, you position yourself not as someone who just closes tickets, but as someone who creates new products and new value. You become the engine of progress for your team and your company. This is about more than just getting a job; it's about building a career with real impact, where you are recognized for your insights and your ability to lead.",
+            "imageGroupIds": ["lesson-1.3-p4-ig1"]
+        }
+      ]
+    },
+    {
+      "sectionId": "module-2",
+      "sectionTitle": "Module 2: The Curator's Toolkit - Mastering the Foundations",
+      "pages": [
+        {
+            "pageId": "lesson-2.1-p1",
+            "pageTitle": "Skill #1: How to Build the High-Quality Context Employers Want",
+            "tldr": "Data Curation is the skill of organizing raw information into a clean, structured package that an AI can understand. It's one of the most in-demand skills in the new tech job market.",
+            "content": "Welcome to the first and most important skill you'll learn in the V2V Academy: Data Curation. Think of it as preparing the ultimate \"cheat sheet\" for an AI. It’s the process of taking a messy pile of project files, notes, and requirements and turning it into a perfectly organized, easy-to-understand package of information. In the real world, this is called \"Context Engineering,\" and it's what separates a junior developer from a high-impact engineer. Companies need people who can make their AI tools work effectively, and that all starts with building high-quality context.",
+            "imageGroupIds": ["lesson-2.1-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-2.1-p2",
+            "pageTitle": "The \"Garbage In, Garbage Out\" Rule",
+            "tldr": "An AI can't give you \"A+\" work if you give it \"C-\" materials. Learning data curation is the fastest way to ensure you get high-quality, impressive results from your AI partner every time.",
+            "content": "There's a golden rule in tech: \"Garbage In, Garbage Out\" (GIGO). It means that if you put bad data into a system, you'll get bad results out. This is especially true for AI. An LLM can't write brilliant code if you give it a confusing, disorganized, or incomplete project description. Most AI failures aren't the AI's fault; they're the result of a poorly curated context. By mastering data curation, you learn how to control the quality of the input, which gives you control over the quality of the output. This is the key to building a portfolio of impressive, working projects.",
+            "imageGroupIds": ["lesson-2.1-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-2.1-p3",
+            "pageTitle": "The Curator's Method: Gather, Organize, Label",
+            "tldr": "The process is simple and follows three steps you already know: gather all your files, organize them into logical folders, and give everything a clear name.",
+            "content": "The good news is that you already have the basic skills for data curation. The process follows three simple steps. First, **Gather**. Collect all the files and resources you need for your project into one place. Second, **Organize**. Create a clean folder structure. Group your source code, your documentation, and your reference materials into separate, logical folders. Third, **Label**. Use clear, descriptive names for your files and folders. Don't use generic names like `file1.js`. A name like `user-authentication-service.js` provides valuable context to both you and your AI partner.",
+            "imageGroupIds": ["lesson-2.1-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-2.1-p4",
+            "pageTitle": "Your New Favorite Tool: The Data Curation Environment (DCE)",
+            "tldr": "The Data Curation Environment (DCE) is a VS Code extension that makes the process of gathering, organizing, and using your curated data fast, easy, and professional.",
+            "content": "To do a professional job, you need professional tools. The Data Curation Environment (DCE) is the toolkit you'll use throughout this course. It's a VS Code extension that brings the entire curation workflow into your code editor. Its File Tree View lets you select your context with simple checkboxes. Its Parallel Co-Pilot Panel lets you manage and test the AI's code. This course is designed to make you an expert user of this powerful tool, giving you a tangible, in-demand skill for your resume.",
+            "imageGroupIds": ["lesson-2.1-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p1",
+            "pageTitle": "Making Your Context Machine-Readable: An Intro to Annotation",
+            "tldr": "Data annotation is the process of adding labels and tags to your data. It’s like adding helpful notes to your files that a computer can read, which is essential for getting an AI to understand what you want it to do.",
+            "content": "You've learned how to gather your data. Now, you need to make it understandable to your AI partner. This is called **Data Annotation**. It's the process of adding descriptive \"labels\" or \"tags\"—also known as **metadata**—to your files and information. Think of it like this: a photo of a cat is just pixels to a computer. An annotation adds the label \"cat,\" which is what teaches the AI to recognize it. In your projects, this means giving your files clear names and organizing them in a way that tells the AI what they are and why they're important.",
+            "imageGroupIds": ["lesson-2.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p2",
+            "pageTitle": "Don't Make the AI Guess",
+            "tldr": "If you give an AI a messy, unlabeled pile of files, it has to guess what's important. This leads to mistakes. Clear annotations are like a perfect set of instructions that guarantee better results.",
+            "content": "In any team project, clear communication is key. It's the same when your teammate is an AI. If you just dump a folder of files with names like `doc1.js` and `final.txt` into your context, the AI has no idea what it's looking at. It's forced to guess, and its guesses are often wrong. This is where most junior developers fail when using AI. They blame the AI for being \"dumb\" when the real problem is that they provided a low-quality, ambiguous context. Learning to annotate your data properly is the skill that will prevent these errors and make you look like a pro.",
+            "imageGroupIds": ["lesson-2.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p3",
+            "pageTitle": "The Annotation Starter Pack: Naming & Structuring",
+            "tldr": "You can start annotating right now with two simple habits: give your files clear, descriptive names, and organize your project into a logical folder structure.",
+            "content": "You don't need fancy tools to be a great data annotator. It starts with two foundational habits that will make your projects instantly more professional. 1. **Use Descriptive Names:** Always name your files based on what they do. `user-login-api.js` tells a story; `script.js` tells you nothing. 2. **Structure Your Folders:** Don't leave all your files in one giant folder. Create a logical structure. A common pattern is to have separate folders for your source code (`/src`), your documentation (`/docs`), and your images or other assets (`/assets`). This simple organization is a powerful form of annotation that provides immediate clarity.",
+            "imageGroupIds": ["lesson-2.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-2.2-p4",
+            "pageTitle": "The Payoff: Building a Killer Portfolio",
+            "tldr": "When you master annotation, you get an AI partner that understands your vision. This allows you to build more complex, impressive, and bug-free projects for your portfolio, faster.",
+            "content": "The time you invest in annotating your data pays off massively. When your context is clean and well-structured, the AI understands your intent. It stops making dumb mistakes. It starts generating code that is more accurate, more relevant, and better organized. This means you spend less time debugging and more time building. For a graduate building a portfolio, this is a game-changer. It allows you to tackle more ambitious projects and produce higher-quality work, which is exactly what hiring managers want to see.",
+            "imageGroupIds": ["lesson-2.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p1",
+            "pageTitle": "Don't Trust, Verify: The Skill That Makes You a Senior Dev",
+            "tldr": "Junior developers trust AI-generated code. Senior developers verify it. This lesson teaches you how to develop the critical eye for quality that will accelerate your career.",
+            "content": "One of the biggest mistakes junior developers make is blindly trusting AI-generated code. They copy, paste, and hope for the best. This is a recipe for introducing bugs and looking unprofessional. A senior developer, in contrast, treats every piece of AI-generated code as a suggestion to be rigorously verified. Critical analysis is the skill of looking at code and asking, \"Is this correct? Is this secure? Is this well-written?\" By mastering this skill, you move beyond being a simple \"coder\" and start thinking like an architect and a quality lead—the exact qualities that companies look for in senior talent.",
+            "imageGroupIds": ["lesson-2.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p2",
+            "pageTitle": "Spot the Bug: A Field Guide to AI Errors",
+            "tldr": "To find bugs, you need to know what they look like. AI makes specific kinds of mistakes, like inventing functions, creating flawed logic, or introducing security holes.",
+            "content": "AI doesn't get tired or make typos like humans, but it makes its own unique kinds of mistakes. Learning to spot them is a superpower. **Hallucinations** are the most common: the AI will confidently invent a function or library that sounds real but doesn't actually exist. **Flawed Logic** is trickier: the code runs, but it has a bug in its reasoning that makes it fail on certain inputs. **Security Flaws** are dangerous: the AI might use an outdated, insecure coding pattern it learned from old training data. Finally, you'll see **Style Mismatches**, where the code works but doesn't follow the formatting rules or design patterns of your project. Learning to spot these \"tells\" is the key to an effective code review.",
+            "imageGroupIds": ["lesson-2.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p3",
+            "pageTitle": "How to Review Code You Didn't Write",
+            "tldr": "Reviewing AI code is a skill. The best method is to start with the big picture, then zoom in: first understand the goal, then review the overall changes with a diff, then read the code line-by-line.",
+            "content": "It can be intimidating to critique code from a super-intelligent AI, but a structured process makes it manageable. 1. **Understand the Goal:** Before you look at the code, re-read the AI's plan. What was it *trying* to do? 2. **See the Changes:** Use a \"diff\" tool. This is the most important step. A diff tool shows you exactly which lines were added or removed, letting you focus only on what's new. 3. **Read the Logic:** Now, read the new code blocks carefully. Follow the logic from top to bottom. Does it make sense? Can you spot any of the common AI errors? 4. **Test It:** The ultimate test is to run the code. Does it work as expected? Does it pass its tests? This simple, top-down process will turn you into a confident and effective code reviewer.",
+            "imageGroupIds": ["lesson-2.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-2.3-p4",
+            "pageTitle": "Turn Bugs into Better Prompts",
+            "tldr": "When you find a bug in the AI's code, don't just fix it yourself. Use the bug to write a better prompt. This is how you train the AI to become a better partner.",
+            "content": "Every bug you find is a learning opportunity—for you and for the AI. A junior dev might just manually fix the AI's mistake. A pro uses the mistake to improve the process. When you find a flaw, your next step should be to articulate that flaw in your next prompt. Add it to the \"Ephemeral Context\" in the DCE. For example: \"In the last attempt, the code failed because it didn't handle negative numbers. Please update the function to include a check for negative inputs.\" This does two things: it gets the AI to fix the bug for you, and it documents the requirement, making the entire system smarter for the next iteration.",
+            "imageGroupIds": ["lesson-2.3-p4-ig1"]
+        }
+      ]
+    },
+    {
+      "sectionId": "module-3",
+      "sectionTitle": "Module 3: The Apprentice's Forge - Structured Interaction",
+      "pages": [
+        {
+            "pageId": "lesson-3.1-p1",
+            "pageTitle": "Writing Prompts That Work: An Introduction to Interaction Schemas",
+            "tldr": "Stop getting bad results from the AI. The secret to getting the code you want is to stop chatting and start giving clear, structured commands using a template called an Interaction Schema.",
+            "content": "If you're frustrated with getting unpredictable or wrong answers from an AI, this lesson is for you. The problem isn't the AI; it's the way you're asking. The shift from \"vibecoding\" to professional development is the shift from casual conversation to **Structured Interaction**. This means treating your prompts not as chat messages, but as technical commands. You give the AI a clear, step-by-step set of instructions, just like you would write a function. This method eliminates guesswork and forces the AI to give you the precise output you need.",
+            "imageGroupIds": ["lesson-3.1-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-3.1-p2",
+            "pageTitle": "The Template for Perfect Prompts: The Interaction Schema",
+            "tldr": "An Interaction Schema is a simple template for your prompts. Using it ensures you never forget to include the critical information the AI needs to do its job properly.",
+            "content": "The best way to ensure your prompts are structured is to use a template. We call this an **Interaction Schema**. It's a checklist that guarantees you give the AI everything it needs. A good schema always includes: 1. **Role & Goal:** Tell the AI what its job is (e.g., \"You are a Python developer fixing a bug\"). 2. **Context:** List the exact files it needs to look at. 3. **Instructions:** Provide a numbered list of the steps you want it to take. 4. **Output Format:** Tell it exactly how you want the final code formatted. Using this simple template will instantly improve the quality of your results.",
+            "imageGroupIds": ["lesson-3.1-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-3.1-p3",
+            "pageTitle": "Why This Gets You Hired: Reliability and Predictability",
+            "tldr": "Companies hire engineers who produce reliable, predictable work. A developer who uses a structured workflow is seen as more professional and dependable than one who just \"wings it.\"",
+            "content": "Why is this so important for your career? Because companies value reliability. A \"vibecoder\" who gets a cool result one time but can't reproduce it is a liability. An engineer who uses a structured process to get a correct result every time is an asset. By learning structured interaction, you are demonstrating a professional engineering mindset. It shows that you can think systematically, communicate clearly, and produce work that is dependable and easy for others to understand. This is a massive differentiator in the job market.",
+            "imageGroupIds": ["lesson-3.1-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-3.1-p4",
+            "pageTitle": "Before and After: From Vague Request to Pro Command",
+            "tldr": "Let's see the difference between a junior-level prompt and a professional-level command.",
+            "content": "Let's look at a real-world example. A junior-level prompt might be: \"My login page isn't working, can you fix it?\" The AI has no idea what's wrong. Now, look at a professional, structured command:\n```\n// ROLE: You are a full-stack developer debugging a Next.js application.\n// TASK: Fix the user login functionality.\n// CONTEXT: The login form is in `LoginPage.tsx`. It calls an API route at `api/auth/login.ts`. I am getting a '401 Unauthorized' error.\n// INSTRUCTIONS:\n// 1. Analyze `api/auth/login.ts` to check the password validation logic.\n// 2. Ensure the `LoginPage.tsx` is sending the email and password in the correct format.\n// 3. Provide the corrected code for both files.\n// OUTPUT_FORMAT: Full file content for each file in separate blocks.\n```\nThis command gives the AI everything it needs. It's clear, specific, and actionable. This is the level of quality you should aim for in every interaction.",
+            "imageGroupIds": ["lesson-3.1-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p1",
+            "pageTitle": "Your First AI Debugging Session: Turning Errors into Progress",
+            "tldr": "Don't fear errors—they are your most powerful learning tool. The V2V method teaches you to use AI as a partner that turns your mistakes into immediate, practical lessons.",
+            "content": "One of the most intimidating parts of learning to code is seeing a screen full of red error messages. The V2V pathway teaches you to see those errors not as a failure, but as progress. The AI is your 24/7 pair programming partner, and its most important job is to help you learn from mistakes. When AI-generated code fails, the error message is a free piece of \"expert feedback.\" Your job is to take that feedback and give it right back to the AI. This creates a powerful learning loop where you guide the AI to the right answer, and in the process, you learn exactly what the error means and how to fix it.",
+            "imageGroupIds": ["lesson-3.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p2",
+            "pageTitle": "A Field Guide to Code Bugs",
+            "tldr": "To get good at debugging with an AI, you need to know the different kinds of bugs. The three main types are syntax errors, runtime errors, and logic errors.",
+            "content": "Not all bugs are created equal. Learning to spot the different types will help you give the AI better instructions. **Compiler/Syntax Errors** are the easiest; they're like spelling or grammar mistakes in the code. The AI used a \"word\" the computer doesn't understand. **Runtime Errors** happen when the code is trying to run. It's grammatically correct, but it tries to do something impossible, like dividing a number by zero. **Logical Errors** are the sneakiest. The code runs without any errors, but it gives you the wrong answer. This means the AI's *idea* was wrong, and this is where your critical thinking is most needed.",
+            "imageGroupIds": ["lesson-3.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p3",
+            "pageTitle": "The Debugging Cycle: A Step-by-Step Guide",
+            "tldr": "The workflow is simple: run the code, copy the *entire* error message when it breaks, and paste that error back into the context for your next prompt to the AI.",
+            "content": "Let's walk through your first debugging cycle. It's a simple but powerful process. 1. **Run the Code:** The AI gives you a script. You run it. 2. **Get the Error:** The terminal shows a `TypeError` and a bunch of other lines. Don't worry if you don't understand it. 3. **Copy Everything:** This is the key step. Highlight and copy the *entire* error message, from the first line to the last. This is called the \"stack trace,\" and it's a map that tells the AI exactly where the problem is. 4. **Feed it Back:** Paste the full error into the \"Ephemeral Context\" field in the DCE. Your new prompt is as simple as: \"The last code you gave me produced this error. Please analyze it and provide the corrected code.\" That's it! You've just completed a professional debugging loop.",
+            "imageGroupIds": ["lesson-3.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-3.2-p4",
+            "pageTitle": "Why This is the Fastest Way to Learn",
+            "tldr": "This feedback loop is a learning hack. Every bug you and your AI partner fix together is a mini-lesson that builds your real-world coding skills faster than any textbook.",
+            "content": "This iterative feedback loop is the ultimate learning accelerator. Textbooks can teach you theory, but the V2V workflow throws you right into real-world problem-solving. Every error you encounter is a practical, in-context lesson. By seeing the AI identify a bug, explain the fix, and implement the solution, you learn faster than you would by just reading. This process builds your \"mental model\" of how code works and how to fix it when it breaks. It's the skill that separates a graduate with a degree from an engineer with experience, and this method helps you get that experience faster than any other.",
+            "imageGroupIds": ["lesson-3.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p1",
+            "pageTitle": "How to Test Code You Didn't Write: The Git-Integrated Workflow",
+            "tldr": "The Test-and-Revert workflow is a professional developer's secret weapon. It uses a tool called Git to create a \"save point\" for your code, letting you test any AI suggestion without the fear of messing up your project.",
+            "content": "One of the biggest challenges when starting out is being afraid to break things, especially when using code you didn't write yourself. The **Test-and-Revert Workflow** is the solution. It's a professional technique that uses a version control system called **Git** to create a \"baseline\"—a safe \"save point\" for your project—before you try out any of the AI's code. This gives you a powerful safety net. You can accept any change, no matter how big, and if it causes a bug, you can press a single \"Restore\" button to go right back to the moment before the change was made. This is a core skill that shows employers you know how to work safely and efficiently.",
+            "imageGroupIds": ["lesson-3.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p2",
+            "pageTitle": "Why You Need a Safety Net: The AI is Unpredictable",
+            "tldr": "AI doesn't always give you the same answer, and sometimes its answers have bugs. The Test-and-Revert loop is your shield, protecting your project from the AI's occasional mistakes.",
+            "content": "Unlike the code you write, which does the same thing every time, an AI's output can be unpredictable. It might give you a perfect solution, or it might give you one with a hidden bug. You can't know until you test it. This is why a safety net is essential. Trying to manually undo a complex, multi-file change from an AI is a nightmare. The Test-and-Revert workflow makes this process trivial. By creating a baseline before you test, you ensure that any bugs or problems introduced by the AI are completely isolated and can be wiped away in an instant.",
+            "imageGroupIds": ["lesson-3.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p3",
+            "pageTitle": "The Four-Step Validation Process",
+            "tldr": "The workflow is a simple four-step combo: save your progress (Baseline), apply the AI's changes (Accept), see if it works (Test), and decide to keep it or go back (Proceed or Restore).",
+            "content": "The Test-and-Revert loop is a simple but powerful process built right into the DCE. 1. **Baseline:** After you've picked an AI response you want to try, you click the \"Baseline (Commit)\" button. This uses Git to create a save point of your project. 2. **Accept:** You select the files the AI generated and click \"Accept Selected.\" 3. **Test:** You run your app and see if the new feature works or if anything broke. 4. **Decide:** If it's buggy, just click \"Restore Baseline\" to go back to your save point. It's that easy. If it works, you're all set to start the next cycle.",
+            "imageGroupIds": ["lesson-3.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-3.3-p4",
+            "pageTitle": "The Advantage: Build Faster, Learn Faster",
+            "tldr": "This workflow lets you experiment fearlessly. You'll be able to try out more ambitious ideas, learn from mistakes instantly, and build your skills and your portfolio much faster.",
+            "content": "The real advantage of this workflow is speed—not just in coding, but in learning. When you're not afraid of breaking your project, you're free to experiment. You can try the AI's most creative or complex suggestions just to see what happens. This fearless experimentation is the fastest way to learn. Every reverted failure is a quick, low-cost lesson. This high tempo of \"experiment -> validate -> learn\" will dramatically accelerate your development speed and, more importantly, your growth as an engineer. It's a skill that will set you apart.",
+            "imageGroupIds": ["lesson-3.3-p4-ig1"]
+        }
+      ]
+    },
+    {
+      "sectionId": "module-4",
+      "sectionTitle": "Module 4: The Vibecoder's Canvas - Intuitive Exploration",
+      "pages": [
+        {
+            "pageId": "lesson-4.1-p1",
+            "pageTitle": "Your Portfolio Starts Here: Creating a Professional Project Scope",
+            "tldr": "The difference between a student project and a professional portfolio piece is a clear plan. This lesson teaches you how to write a Project Scope—the document that shows employers you can think like a real engineer.",
+            "content": "Welcome to the first step of building a project that will get you hired. In the professional world, development doesn't start with code; it starts with a plan. A **Project Scope** is the formal document that outlines what you're building, for whom, and why. It's the blueprint that guides the entire project. Learning to write a clear and concise project scope is a critical skill. It proves to potential employers that you can think strategically, communicate clearly, and manage a project from concept to completion. It's the first and most important piece of any professional portfolio.",
+            "imageGroupIds": ["lesson-4.1-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-4.1-p2",
+            "pageTitle": "From Cool Idea to Concrete Plan",
+            "tldr": "A great idea isn't enough. You need to be able to answer three key questions: What is the problem? Who has this problem? And what is the core function of your solution?",
+            "content": "A great portfolio piece starts with a great idea, but a great *project* starts with a great plan. The process of writing a project scope forces you to get specific about your idea by answering three core questions. 1. **What is the problem?** What specific pain point are you trying to solve? Be precise. 2. **Who is your user?** Define your **User Persona**. Who are you building this for? A \"user persona\" is a short description of your ideal user. 3. **What is the core solution?** What is the one key thing your project will do to solve the problem for that user? Answering these questions is how you turn a vague idea into an actionable engineering plan.",
+            "imageGroupIds": ["lesson-4.1-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-4.1-p3",
+            "pageTitle": "The MVP Strategy: How to Actually Finish Your Projects",
+            "tldr": "The secret to finishing projects is to start small. Define the Minimum Viable Product (MVP)—the simplest version of your app that still works and provides value.",
+            "content": "The biggest reason personal projects fail is because their scope is too big. The professional solution is to build a **Minimum Viable Product (MVP)**. The MVP isn't your dream version of the app with every feature you can imagine; it's the simplest, most focused version that solves the core problem. Ask yourself: \"What's the smallest thing I can build that is still useful?\" That's your MVP. This approach is powerful because it's achievable. It allows you to get a finished, polished piece for your portfolio quickly. You can always add more features later.",
+            "imageGroupIds": ["lesson-4.1-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-4.1-p4",
+            "pageTitle": "Your First Artifact: The Project Scope Document",
+            "tldr": "Let's create your first portfolio document. Use this simple template to write down your vision, problem, user, and MVP. This will be the blueprint you give to your AI partner.",
+            "content": "It's time to create the first official document for your portfolio. This Project Scope artifact is what you'll use to guide your AI partner in the next lessons. Create a new file and use this simple template:\n*   **Vision Statement:** A single, exciting sentence about your project's goal.\n*   **Problem Statement:** What pain point are you solving?\n*   **Target User Persona:** Who are you building this for?\n*   **MVP Feature List:** A short, bulleted list of the essential features for your first version.\nCompleting this document is a huge step. You now have a professional plan that will guide you and your AI toward a finished, portfolio-ready project.",
+            "imageGroupIds": ["lesson-4.1-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p1",
+            "pageTitle": "How to Start a Project When You Don't Know Where to Start",
+            "tldr": "Facing a \"blank page\" is one of the most intimidating parts of starting a new project. This lesson gives you a powerful technique to use AI to build your project's foundation for you, so you always start with a clear structure.",
+            "content": "You've got a great idea for your portfolio and you've written a solid project scope. So, what's next? For many new developers, this is the hardest part. Staring at an empty folder and a blank code editor can be paralyzing. Where do you even begin? What should the folder structure look like? What's the first file you should create? This is the \"Blank Page Problem,\" and it's a major hurdle. The good news is that as a V2V developer, you have a partner who can solve this for you.",
+            "imageGroupIds": ["lesson-4.2-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p2",
+            "pageTitle": "Using AI to Build Your Project's Skeleton",
+            "tldr": "You can use the Project Scope you already wrote to command the AI to build the entire \"skeleton\" of your project—the folders, the initial files, the configuration—automatically.",
+            "content": "The secret to overcoming the blank page problem is to use your AI partner as a \"scaffolding engine.\" \"Scaffolding\" is the initial structure that holds a project together. Instead of trying to figure out the \"right\" way to structure your project from scratch, you can delegate that task to the AI. You provide it with your `Project Scope` artifact as the blueprint, and you command it to create the foundational structure. This includes creating all the necessary folders and generating the initial \"boilerplate\" code—the standard, repetitive code that every project needs.",
+            "imageGroupIds": ["lesson-4.2-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p3",
+            "pageTitle": "Case Study: How the DCE Does it for You",
+            "tldr": "The DCE tool itself uses this exact technique. Its \"Cycle 0\" feature takes your high-level idea and uses it to prompt an AI to create all the initial planning documents for your project.",
+            "content": "The V2V workflow has this powerful principle built right into its core tool. Think back to when you started your first project with the Data Curation Environment. The \"Cycle 0\" onboarding experience is a perfect example of AI-driven scaffolding. You provided a high-level description of your project. The DCE then used that description to generate a prompt that told an AI to create a full suite of professional planning documents for you. It automatically created your Master Artifact List, your Project Vision, your Technical Plan, and more. It solved the blank page problem for you from the very beginning.",
+            "imageGroupIds": ["lesson-4.2-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-4.2-p4",
+            "pageTitle": "Your First Command: \"Build Me a Starter Project\"",
+            "tldr": "Your next step is to take your Project Scope and use it to prompt your AI partner to build the starter files for your portfolio project.",
+            "content": "It's time to put this into practice. Your `Project Scope` artifact is the key. Your task for the next cycle is to write a prompt that uses this artifact to get the AI to build your project's foundation. A great prompt would be: \"You are a senior developer setting up a new project. Based on my attached Project Scope, please generate the complete folder structure and all the initial configuration files for a Next.js and TypeScript application. Create placeholder files for the main components described in the MVP.\" This command gets the AI to do the boring setup work, giving you a clean, professional, and ready-to-code project structure from the start.",
+            "imageGroupIds": ["lesson-4.2-p4-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p1",
+            "pageTitle": "Creating the Blueprint: How to Get an AI to Build Your Starter Code",
+            "tldr": "A project scope tells you *what* to build. An architectural blueprint tells you *how* to build it. This lesson teaches you how to use your scope to get an AI to create a professional blueprint and starter code for your project.",
+            "content": "You've created a professional Project Scope. Now, it's time to turn that plan into a real project. The next step is to create an **Architectural Blueprint**. This is the technical plan that maps out your project's folder structure, files, and core components. A good blueprint is what prevents your project from becoming a messy, unmanageable tangle of code, a problem known as **Technical Debt**. The best part is, you don't have to guess how to do this. Your AI partner can act as your senior developer, creating a perfect project structure for you based on your scope.",
+            "imageGroupIds": ["lesson-4.3-p1-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p2",
+            "pageTitle": "The AI as Your Senior Dev Partner",
+            "tldr": "Your AI partner knows the best practices for structuring a professional-grade application. Let it do the boring setup work for you, so you can focus on building the cool features.",
+            "content": "Why should you let an AI build your initial project structure? Because it knows best practices you haven't learned yet. It has analyzed millions of professional projects and understands the optimal way to organize files for different technology stacks. By giving it your Project Scope, you're essentially asking a senior developer to set up the project for you. The AI will create a clean, logical directory structure and generate the \"boilerplate\" code—all the initial config files and startup scripts—that every project needs. This saves you a massive amount of time and ensures your project is built on a solid foundation that will impress any hiring manager.",
+            "imageGroupIds": ["lesson-4.3-p2-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p3",
+            "pageTitle": "The \"Build My Project\" Prompt",
+            "tldr": "The prompt for this step is straightforward. You tell the AI to act as an expert in your chosen technology, give it your scope, and ask it to build the \"scaffolding\" for your project.",
+            "content": "To get your AI to act as your architect, you need to give it a clear and specific command. This is a great time to practice the Structured Interaction skills you've learned. A powerful prompt for this task would look something like this: 1. **The Role:** \"You are an expert full-stack developer specializing in Next.js, TypeScript, and TailwindCSS.\" 2. **The Context:** \"Using the Project Scope I've provided...\" 3. **The Task:** \"...scaffold the complete initial project structure for the MVP.\" 4. **The Deliverables:** \"Generate all necessary configuration files (`package.json`, `tailwind.config.ts`, etc.) and create placeholder component files for the main features.\" This tells the AI exactly what you need to get started.",
+            "imageGroupIds": ["lesson-4.3-p3-ig1"]
+        },
+        {
+            "pageId": "lesson-4.3-p4",
+            "pageTitle": "Cycle 1: Your Project is Born",
+            "tldr": "The AI's response will be a complete set of starter files. You'll accept them into your project, run the installation command, and officially begin your first development cycle on a real, working application.",
+            "content": "The AI's response to your architectural prompt will be your complete starter project. Inside the DCE, you'll review the files it generated, select the best response, and click \"Accept Selected.\" Just like that, your empty folder will be populated with a professional, well-organized project structure. Your next step is to open the terminal, run `npm install` to get all the necessary packages, and then `npm run dev` to start your application for the first time. You have now successfully gone from a simple idea to a running application. This is the start of your first real development cycle and the next major piece for your portfolio.",
+            "imageGroupIds": ["lesson-4.3-p4-ig1"]
+        }
+      ]
+    }
+  ]
 }
