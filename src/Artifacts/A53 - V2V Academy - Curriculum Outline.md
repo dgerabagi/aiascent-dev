@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C69 (Add Lesson 3.2)
+# Updated on: C70 (Add Lesson 3.3)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -79,7 +79,7 @@ The curriculum is divided into four core modules, each representing a stage in t
         *   **Career Transitioner:** "Leveraging Errors as Data Points for AI Refinement"
         *   **Underequipped Graduate:** "Your First AI Debugging Session: Turning Errors into Progress"
         *   **Young Precocious:** "Respawning with a Purpose: Using Errors to Level Up Your AI"
-    *   **3.3: The Test-and-Revert Workflow**
+    *   **3.3: The Test-and-Revert Workflow** (See `A70`)
         *   **Career Transitioner:** "Risk Mitigation: A Framework for Safely Testing AI-Generated Solutions"
         *   **Underequipped Graduate:** "How to Test Code You Didn't Write: A Guide to the Git-Integrated Workflow"
         *   **Young Precocious:** "Save Scumming for Coders: Mastering the Test-and-Revert Loop"

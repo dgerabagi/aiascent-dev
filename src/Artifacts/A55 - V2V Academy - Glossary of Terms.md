@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C69 (Add Feedback Loop and Error Types)
+# Updated on: C70 (Add TDD, Git, and Version Control)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -21,6 +21,10 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Artifact:** A formal, written document (e.g., project plan, requirements document, source code file) that serves as a "source of truth" for a specific part of a project. In the DCE workflow, artifacts are the primary medium for instructing and aligning with an AI.
 *   **Automation Bias:** The cognitive tendency for humans to over-trust and favor suggestions from automated systems, often ignoring contradictory information or failing to apply critical thinking to the system's output. In the V2V context, it's the dangerous trap of blindly accepting AI-generated code without rigorous validation.
 
+### **B**
+
+*   **Baseline (V2V Context):** The act of creating a safe restore point of a project using version control (`git commit`) before introducing new, potentially unstable code from an AI. This is the "save" step in the **Test-and-Revert Workflow**.
+
 ### **C**
 
 *   **Citizen Architect:** A professional archetype who combines deep domain expertise with AI collaboration skills to design, build, and lead the development of complex systems, contributing meaningfully to their community and profession.
@@ -30,6 +34,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation.
 *   **Cognitive Security (COGSEC):** The practice of defending human perception and decision-making from online manipulation, propaganda, and deceptive information. It also refers to using AI modeled on human cognition to detect cybersecurity threats.
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
+*   **Commit:** A fundamental operation in Git that saves a snapshot of the current state of all tracked files in the repository. Each commit has a unique ID and a message describing the changes, creating a permanent part of the project's history.
 *   **Compiler Error:** An error detected by a compiler before a program is run, typically because the code violates the syntax or grammar rules of the programming language. It's like a spell-check for code.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
 *   **Context Rot:** The degradation of an AI's performance over a long conversation as the context window becomes filled with irrelevant, outdated, or contradictory information, reducing the signal-to-noise ratio.
@@ -62,6 +67,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **G**
 
 *   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
+*   **Git:** A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It is the underlying technology that powers the **Test-and-Revert Workflow**.
 
 ### **H**
 
@@ -101,6 +107,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **R**
 
+*   **Restore (V2V Context):** The act of instantly discarding all changes made by an AI and reverting the project to the last saved "Baseline" using version control (`git restore`). This is the "revert" step in the **Test-and-Revert Workflow**.
 *   **Retrieval-Augmented Generation (RAG):** A technique that enhances an LLM's response by dynamically retrieving relevant information from an external knowledge base and including it in the context provided to the model. This grounds the AI's answer in factual, up-to-date, or proprietary data.
 *   **Runtime Error:** An error that occurs while a program is actively running. It happens when the program encounters an unexpected condition or tries to perform an operation that is impossible to execute, such as dividing by zero or accessing a file that doesn't exist.
 
@@ -112,12 +119,15 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **T**
 
+*   **Test-and-Revert Workflow:** A core practice of the Virtuoso's Loop where a developer creates a safe restore point (Baseline), applies AI-generated code, tests it, and then either keeps the changes or instantly discards them (Revert) if they are faulty. This enables rapid, low-risk experimentation.
+*   **Test-Driven Development (TDD):** A software development methodology where developers write a failing test *before* they write the functional code to make that test pass. This "test-first" approach follows a simple "Red-Green-Refactor" cycle and helps ensure code quality, correctness, and maintainability from the start.
 *   **Token:** The basic unit of text that an LLM processes. A token can be a word, part of a word, or a punctuation mark. The number of tokens in a prompt is a key metric for cost and performance.
 
 ### **V**
 
 *   **Validation:** The process of confirming that an AI-generated output is correct, functional, and meets the specified requirements. This can involve running tests, performing a code review, or fact-checking generated text against reliable sources.
 *   **Verification:** The process of checking that an AI's output is factually correct and free of errors. It answers the question: "Did we build the thing right?"
+*   **Version Control:** A system that records changes to a file or set of files over time so that you can recall specific versions later. It allows developers to track project history, collaborate, and revert to previous stable states. **Git** is the most popular version control system.
 *   **Vibecoding:** The intuitive, conversational, and often imprecise starting point for interacting with generative AI. It is the process of translating a high-level goal or "vibe" into a functional output using natural language. It is the first stage on the pathway to Virtuosity.
 *   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
 *   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization.
