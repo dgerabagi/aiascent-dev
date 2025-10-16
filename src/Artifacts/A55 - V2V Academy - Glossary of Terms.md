@@ -54,10 +54,12 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
 *   **Debugging (V2V Context):** The process of orchestrating the feedback loop between a human, an AI, and a computer system. The human's role is to execute the AI's code, capture any system-generated errors, and feed those errors back to the AI as context for the next corrective iteration.
 *   **Deliberate Practice:** A highly structured form of practice aimed at improving performance. It involves setting specific goals, maintaining intense focus, receiving immediate feedback, and constant refinement.
+*   **Development Cycle:** The core iterative loop of the V2V workflow. It consists of a sequence of phases: Curation & Documentation, Parallel Prompting & Triage, Critical Analysis & Selection, Test-and-Revert, and Finalization.
 *   **Diffing:** The process of comparing two versions of a file or text to see the exact differences (additions, deletions, modifications). A "diff viewer" is the tool used to visualize these changes, and it is a primary tool for the critical analysis of AI-generated code.
 
 ### **E**
 
+*   **Execution:** The act of carrying out a plan, order, or course of action. In the V2V workflow, this refers to the phase where a developer takes a selected AI response and applies it to their project to test its validity.
 *   **Experiential Blindness:** A state of not knowing what is possible or how to solve a problem due to a lack of relevant experience. The V2V pathway aims to cure this by providing a structured path to gaining experience in partnership with an AI.
 *   **External Brain:** A metaphor for the role of a well-curated project repository in the V2V workflow. The repository acts as a persistent, organized collection of knowledge that augments the developer's own memory and provides the AI with a comprehensive understanding of the project.
 
@@ -70,6 +72,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **G**
 
 *   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
+*   **Genesis Prompt:** A specific, structured command given to an AI at the very beginning of a project (Cycle 0). Its purpose is to take a high-level `Project Scope` and generate the initial set of foundational planning artifacts and technical scaffolding, bootstrapping the entire project structure.
 *   **Git:** A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It is the underlying technology that powers the **Test-and-Revert Workflow**.
 
 ### **H**
@@ -82,6 +85,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Information Architecture:** The art and science of organizing and structuring shared information environments to support usability and findability. In the V2V curriculum, this refers to the practice of designing a logical and intuitive folder and file structure for a project repository.
 *   **Interaction Schema:** A template or a set of rules that defines a structured format for communicating with an AI. It ensures that all necessary information (like role, context, and output format) is provided in a clear, consistent, and machine-readable way, reducing ambiguity and improving the reliability of the AI's response.
 *   **Iterative Refinement:** A core principle of the V2V workflow where a solution is developed through repeated cycles of action, feedback, and improvement. Instead of aiming for a perfect solution on the first try, developers make small, incremental changes and use the results to guide their next step.
+*   **Iterative Development:** A software development methodology where a project is built through repeated cycles (iterations) of planning, building, testing, and refining. Instead of trying to build the entire system at once, features are developed and released in small, incremental pieces, allowing for flexibility and continuous feedback.
 
 ### **K**
 
@@ -122,6 +126,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Scaffolding (Pedagogical Context):** Temporary support structures provided to a learner to help them complete a task that would otherwise be beyond their current capabilities. In the V2V workflow, AI is used as a scaffolding engine to generate boilerplate code, offer hints, or provide templates, with the support being gradually removed as the learner's skills grow.
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
 *   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
+*   **Specification (Software):** A detailed document that outlines the requirements, objectives, design, and constraints of a software project. It serves as a comprehensive blueprint for the development team, ensuring everyone has a consistent understanding of what needs to be built.
 *   **Stakeholder:** Any person, group, or organization that has an interest in, or is affected by, a project's outcome. This includes team members, customers, investors, and users.
 *   **Structured Interaction:** The practice of moving beyond casual, conversational prompts to providing the AI with clear, explicit, and repeatable commands, often using a template or "Interaction Schema." This is a core skill for achieving reliable and predictable results from an AI.
 
