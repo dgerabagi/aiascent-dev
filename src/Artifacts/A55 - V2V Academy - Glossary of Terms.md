@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C64 (Add Citizen Architect definition)
+# Updated on: C65 (Add Data Curation and GIGO)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -28,11 +28,13 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Cognitive Security (COGSEC):** The practice of defending human perception and decision-making from online manipulation, propaganda, and deceptive information. It also refers to using AI modeled on human cognition to detect cybersecurity threats.
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
+*   **Context Rot:** The degradation of an AI's performance over a long conversation as the context window becomes filled with irrelevant, outdated, or contradictory information, reducing the signal-to-noise ratio.
 *   **Context Window:** The finite amount of information (measured in tokens) that an LLM can "see" and process at any given time. Effective management of this "working memory" is a core challenge of Context Engineering.
 *   **Cycle:** A single, complete iteration of the development workflow within the DCE. A cycle includes the curated context, the user's instructions, all AI-generated responses, and the user's final decision, all of which are saved to a persistent knowledge graph.
 
 ### **D**
 
+*   **Data Curation:** The professional discipline of identifying, gathering, organizing, and structuring raw information to create a high-signal, machine-readable asset (context) that empowers an AI to perform complex tasks with precision and reliability. It is the foundational practice of Context Engineering.
 *   **Data Curation Environment (DCE):** A VS Code extension designed to streamline the workflow of AI-assisted development. It provides tools for selecting context, managing parallel AI responses, and iterating on projects in a structured, auditable manner.
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
 *   **Deliberate Practice:** A highly structured form of practice aimed at improving performance. It involves setting specific goals, maintaining intense focus, receiving immediate feedback, and constant refinement.
@@ -40,13 +42,25 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **E**
 
 *   **Experiential Blindness:** A state of not knowing what is possible or how to solve a problem due to a lack of relevant experience. The V2V pathway aims to cure this by providing a structured path to gaining experience in partnership with an AI.
+*   **External Brain:** A metaphor for the role of a well-curated project repository in the V2V workflow. The repository acts as a persistent, organized collection of knowledge that augments the developer's own memory and provides the AI with a comprehensive understanding of the project.
 
 ### **F**
 
 *   **Feedback Loop:** A core concept in V2V where the AI's output is used as a basis for human critique and refinement. For a non-coder, a compiler error is a form of "expert feedback" that can be fed back to the AI to guide it toward a correct solution.
 *   **Fissured Workplace:** An economic structure where large corporations distance themselves from their labor force by using layers of contractors and subcontractors. In the AI industry, this has led to a deprofessionalized and underpaid "ghost workforce" of data annotators.
+*   **Flattening:** The process of taking a selection of files (code, PDFs, etc.) and concatenating their content into a single, flat text file (e.g., `flattened_repo.md`) to be used as context for an AI.
+
+### **G**
+
+*   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
+
+### **I**
+
+*   **Information Architecture:** The practice of designing the structure and organization of an information space to be intuitive and understandable. In V2V, this refers to the design of the project repository's folder structure and the logical organization of artifacts.
 
 ### **K**
+
+*   **Knowledge Base (KB):** A curated collection of documents, data, and other information used to ground an AI model in a specific domain. In the V2V workflow, your curated project repository becomes the knowledge base.
 
 *   **Knowledge Graph:** A structured representation of a project's development history, as captured by the DCE. Each "Cycle" is a node in the graph, containing the context, prompts, AI responses, and developer decisions for that iteration.
 
@@ -69,7 +83,8 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **S**
 
-*   **Source of Truth:** A canonical document or artifact that is treated as the definitive blueprint for a project or feature. In the V2V workflow, documentation artifacts are created *before* code to serve as this source of truth.
+*   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
+*   **Source of Truth:** A canonical document, artifact, or collection of data that is treated as the definitive, authoritative reference for a project or task. A well-curated Source of Truth is essential for preventing AI hallucinations and ensuring consistent, high-quality outputs.
 
 ### **T**
 

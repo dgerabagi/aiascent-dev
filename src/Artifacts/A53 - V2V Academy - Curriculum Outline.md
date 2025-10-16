@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C62 (Update artifact references for lessons 1.2 and 1.3)
+# Updated on: C65 (Add artifact reference for lesson 2.1)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -51,7 +51,7 @@ The curriculum is divided into four core modules, each representing a stage in t
 
 *   **Objective:** To build the foundational, data-centric skills identified in `A52`. This module focuses on teaching learners how to think like data architects and critical analysts.
 *   **Lessons:**
-    *   **2.1: Introduction to Data Curation**
+    *   **2.1: Introduction to Data Curation** (See `A65`)
         *   **Career Transitioner:** "From Information Overload to Strategic Asset: The Principles of Data Curation"
         *   **Underequipped Graduate:** "Skill #1: How to Build the High-Quality Context Employers Want"
         *   **Young Precocious:** "The Ultimate Inventory Management: Mastering Your Data"
