@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C60 (Expand with additional terms from transcripts and research)
+# Updated on: C62 (Expand with additional terms from transcripts and research)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -16,14 +16,15 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **A**
 
 *   **Agentic Workflow:** A development process where an AI agent can autonomously plan, reason, and execute complex, multi-step tasks, often involving the use of tools and memory.
-*   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems. [cite: A39, A51]
+*   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems.
 *   **Artifact:** A formal, written document (e.g., project plan, requirements document, source code file) that serves as a "source of truth" for a specific part of a project. In the DCE workflow, artifacts are the primary medium for instructing and aligning with an AI.
 
 ### **C**
 
 *   **Citizen Architect:** An individual empowered by AI tools (like the DCE) and the V2V methodology to build, analyze, and maintain complex systems that were previously only accessible to large institutions or highly specialized teams.
-*   **Cognitive Apprenticeship:** A pedagogical model where an expert (human or AI) makes their internal, tacit thought processes visible to a novice. The V2V curriculum is built on this model, using AI to model expert workflows, provide coaching, and offer scaffolding. [cite: A36, A50, A53]
-*   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation. [cite: A23]
+*   **Cognitive Apprenticeship:** A pedagogical model where an expert (human or AI) makes their internal, tacit thought processes visible to a novice. The V2V curriculum is built on this model, using AI to model expert workflows, provide coaching, and offer scaffolding.
+*   **Cognitive Bandwidth Tax:** A concept from behavioral science describing how financial precarity or other stressors consume mental resources, measurably reducing a person's ability to perform complex cognitive tasks. The "fissured workplace" imposes this tax on its data annotators.
+*   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation.
 *   **Cognitive Security (COGSEC):** The practice of defending human perception and decision-making from online manipulation, propaganda, and deceptive information. It also refers to using AI modeled on human cognition to detect cybersecurity threats.
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
@@ -78,5 +79,5 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 *   **Vibecoding:** The intuitive, conversational, and often imprecise starting point for interacting with generative AI. It is the process of translating a high-level goal or "vibe" into a functional output using natural language. It is the first stage on the pathway to Virtuosity.
 *   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
-*   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization. [cite: A51, A54]
-*   **V2V (Vibecoding to Virtuosity):** The name of the pedagogical pathway and curriculum designed to guide learners from novice, intuitive AI interaction to expert-level mastery in human-AI collaboration. [cite: A25, A53]
+*   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization.
+*   **V2V (Vibecoding to Virtuosity):** The name of the pedagogical pathway and curriculum designed to guide learners from novice, intuitive AI interaction to expert-level mastery in human-AI collaboration.

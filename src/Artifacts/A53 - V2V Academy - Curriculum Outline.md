@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C61 (Restructure to include three versions of each lesson tailored to learner personas)
+# Updated on: C62 (Update artifact references for lessons 1.2 and 1.3)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -31,15 +31,15 @@ The curriculum is divided into four core modules, each representing a stage in t
 
 *   **Objective:** To introduce the learner to the complete, end-to-end expert workflow as the "north star" for their journey. This corresponds to the **Modeling** phase of Cognitive Apprenticeship, where the expert's process is made visible.
 *   **Lessons:**
-    *   **1.1: The Virtuoso's Workflow**
+    *   **1.1: The Virtuoso's Workflow** (See `A54`)
         *   **Career Transitioner:** "The Professional's Playbook: Mastering an Expert AI Workflow"
         *   **Underequipped Graduate:** "The Unfair Advantage: Learning the Workflow That Gets You Hired"
         *   **Young Precocious:** "Level Up Your Dev Game: Mastering the Virtuoso's Loop"
-    *   **1.2: The Philosophy of V2V**
+    *   **1.2: The Philosophy of V2V** (See `A63`)
         *   **Career Transitioner:** "Strategic Principles of Human-AI Collaboration"
         *   **Underequipped Graduate:** "The Mindset for the Modern Tech Career"
         *   **Young Precocious:** "The Secret Lore: Unlocking the V2V Philosophy"
-    *   **1.3: The Citizen Architect**
+    *   **1.3: The Citizen Architect** (See `A64`)
         *   **Career Transitioner:** "Becoming an AI-Powered Strategic Leader"
         *   **Underequipped Graduate:** "Defining Your Role in the Future of Tech"
         *   **Young Precocious:** "The End Game: Becoming a Citizen Architect"

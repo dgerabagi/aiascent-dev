@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C61 (Update curriculum artifacts to reflect multi-persona approach)
+# Updated on: C62 (Add new V2V lesson artifacts)
 
 ## 1. Purpose
 
@@ -362,3 +362,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A62. V2V Academy - Synthesis of Research Proposals
 - **Description:** A meta-reflection on the provided research proposals, summarizing key themes, strategic insights, and recurring patterns.
 - **Tags:** v2v, research, synthesis, meta-analysis, strategy
+
+### A63. V2V Academy - Lesson 1.2 - The Philosophy of V2V
+- **Description:** The detailed content for Lesson 1.2 of the V2V Academy, "The Philosophy of V2V," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, philosophy, interactive learning, persona
+
+### A64. V2V Academy - Lesson 1.3 - The Citizen Architect
+- **Description:** The detailed content for Lesson 1.3 of the V2V Academy, "The Citizen Architect," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, citizen architect, interactive learning, persona

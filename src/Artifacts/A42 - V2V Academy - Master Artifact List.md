@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C61 (Update curriculum artifacts to reflect multi-persona approach)
+# Updated on: C62 (Add new lesson artifacts)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -134,6 +134,14 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A56. V2V Academy - Practical Exercises Plan
 - **Description:** Outlines the plan for the practical exercises within the V2V Academy, centered on the project of incrementally building a fully functional, AI-powered interactive report viewer.
 - **Tags:** v2v, curriculum, exercises, project-based learning, report viewer, rag
+
+#### A63. V2V Academy - Lesson 1.2 - The Philosophy of V2V
+- **Description:** The detailed content for Lesson 1.2 of the V2V Academy, "The Philosophy of V2V," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, philosophy, interactive learning, persona
+
+#### A64. V2V Academy - Lesson 1.3 - The Citizen Architect
+- **Description:** The detailed content for Lesson 1.3 of the V2V Academy, "The Citizen Architect," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, citizen architect, interactive learning, persona
 
 ### IV. Technical Implementation & Guides
 
