@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C67 (Add A67)
+# Updated on: C69 (Add A69)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -154,6 +154,14 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A67. V2V Academy - Lesson 2.3 - Critical Analysis of AI Output
 - **Description:** The detailed content for Lesson 2.3 of the V2V Academy, "Critical Analysis of AI Output," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, critical thinking, ai literacy, validation, interactive learning, persona
+
+#### A68. V2V Academy - Lesson 3.1 - From Conversation to Command
+- **Description:** The detailed content for Lesson 3.1 of the V2V Academy, "From Conversation to Command," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, structured interaction, prompt engineering, context engineering, interactive learning, persona
+
+#### A69. V2V Academy - Lesson 3.2 - The Feedback Loop in Practice
+- **Description:** The detailed content for Lesson 3.2 of the V2V Academy, "The Feedback Loop in Practice," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, feedback loop, debugging, cognitive apprenticeship, interactive learning, persona
 
 ### IV. Technical Implementation & Guides
 

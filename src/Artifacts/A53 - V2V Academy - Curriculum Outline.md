@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C67 (Add Lesson 2.3)
+# Updated on: C69 (Add Lesson 3.2)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -71,11 +71,11 @@ The curriculum is divided into four core modules, each representing a stage in t
 
 *   **Objective:** To transition the learner from passive analysis to active, structured collaboration with the AI. This corresponds to the **Coaching and Scaffolding** phases of Cognitive Apprenticeship.
 *   **Lessons:**
-    *   **3.1: From Conversation to Command**
+    *   **3.1: From Conversation to Command** (See `A68`)
         *   **Career Transitioner:** "Driving Outcomes: The Principles of Structured AI Interaction"
         *   **Underequipped Graduate:** "Writing Prompts That Work: An Introduction to Interaction Schemas"
         *   **Young Precocious:** "Casting Spells: Mastering the Syntax of Power"
-    *   **3.2: The Feedback Loop in Practice**
+    *   **3.2: The Feedback Loop in Practice** (See `A69`)
         *   **Career Transitioner:** "Leveraging Errors as Data Points for AI Refinement"
         *   **Underequipped Graduate:** "Your First AI Debugging Session: Turning Errors into Progress"
         *   **Young Precocious:** "Respawning with a Purpose: Using Errors to Level Up Your AI"

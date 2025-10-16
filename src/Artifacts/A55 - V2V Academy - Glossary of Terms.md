@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C67 (Add Source of Truth, Information Architecture)
+# Updated on: C69 (Add Feedback Loop and Error Types)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -30,6 +30,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation.
 *   **Cognitive Security (COGSEC):** The practice of defending human perception and decision-making from online manipulation, propaganda, and deceptive information. It also refers to using AI modeled on human cognition to detect cybersecurity threats.
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
+*   **Compiler Error:** An error detected by a compiler before a program is run, typically because the code violates the syntax or grammar rules of the programming language. It's like a spell-check for code.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
 *   **Context Rot:** The degradation of an AI's performance over a long conversation as the context window becomes filled with irrelevant, outdated, or contradictory information, reducing the signal-to-noise ratio.
 *   **Context Window:** The finite amount of information (measured in tokens) that an LLM can "see" and process at any given time. Effective management of this "working memory" is a core challenge of Context Engineering.
@@ -53,7 +54,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **F**
 
-*   **Feedback Loop:** A core concept in V2V where the AI's output is used as a basis for human critique and refinement. For a non-coder, a compiler error is a form of "expert feedback" that can be fed back to the AI to guide it toward a correct solution.
+*   **Feedback Loop:** The iterative process where the output of a system (e.g., an AI's code) is tested, the results (e.g., errors) are captured as feedback, and that feedback is used as input to guide the next iteration and improve the system.
 *   **Fissured Workplace:** An economic structure where large corporations distance themselves from their labor force by using layers of contractors and subcontractors. In the AI industry, this has led to a deprofessionalized and underpaid "ghost workforce" of data annotators.
 *   **Flattening:** The process of taking a selection of files (code, PDFs, etc.) and concatenating their content into a single, flat text file (e.g., `flattened_repo.md`) to be used as context for an AI.
 
@@ -68,6 +69,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **I**
 
 *   **Information Architecture:** The art and science of organizing and structuring shared information environments to support usability and findability. In the V2V curriculum, this refers to the practice of designing a logical and intuitive folder and file structure for a project repository.
+*   **Interaction Schema:** A template or a set of rules that defines a structured format for communicating with an AI. It ensures that all necessary information (like role, context, and output format) is provided in a clear, consistent, and machine-readable way, reducing ambiguity and improving the reliability of the AI's response.
 
 ### **K**
 
@@ -78,6 +80,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **L**
 
 *   **Labeling:** See **Annotation**.
+*   **Logical Error:** A bug in a program that causes it to operate correctly but does not produce the intended result. The code runs without crashing, but its output is wrong because the underlying algorithm or strategy is flawed.
 
 ### **M**
 
@@ -97,11 +100,13 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **R**
 
 *   **Retrieval-Augmented Generation (RAG):** A technique that enhances an LLM's response by dynamically retrieving relevant information from an external knowledge base and including it in the context provided to the model. This grounds the AI's answer in factual, up-to-date, or proprietary data.
+*   **Runtime Error:** An error that occurs while a program is actively running. It happens when the program encounters an unexpected condition or tries to perform an operation that is impossible to execute, such as dividing by zero or accessing a file that doesn't exist.
 
 ### **S**
 
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
 *   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
+*   **Structured Interaction:** The practice of moving beyond casual, conversational prompts to providing the AI with clear, explicit, and repeatable commands, often using a template or "Interaction Schema." This is a core skill for achieving reliable and predictable results from an AI.
 
 ### **T**
 
