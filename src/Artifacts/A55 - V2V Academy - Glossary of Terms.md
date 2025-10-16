@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C71 (Add Project Scope and Vision Document)
+# Updated on: C72 (Add Blank Page Problem, Scaffolding, and Boilerplate Code)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -24,6 +24,8 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **B**
 
 *   **Baseline (V2V Context):** The act of creating a safe restore point of a project using version control (`git commit`) before introducing new, potentially unstable code from an AI. This is the "save" step in the **Test-and-Revert Workflow**.
+*   **Blank Page Problem:** The psychological and practical difficulty of starting a creative or technical project from a completely empty state. It represents the initial inertia that must be overcome to translate a plan into a tangible product.
+*   **Boilerplate Code:** Standardized, reusable sections of code that are included in many places with little or no alteration (e.g., configuration files, initial component skeletons). AI is excellent at generating this foundational code.
 
 ### **C**
 
@@ -96,6 +98,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Mental Model of the Model:** The intuitive understanding a developer builds over time of an AI's capabilities, limitations, and "thought processes." Developing this mental model is key to effective collaboration and is a primary outcome of the V2V pathway.
 *   **Metacognition:** The ability to "think about one's own thinking." In the V2V context, this involves critically analyzing one's own learning gaps and using AI as a "meta-tool" to build personalized learning accelerators.
 *   **Metadata:** Data that provides information about other data. In the V2V workflow, metadata includes descriptive file names, folder structures, and explicit tags that give context and meaning to raw information.
+*   **Minimum Viable Product (MVP):** A version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort. It is the simplest version of a product that can be released to the market.
 
 ### **O**
 
@@ -114,6 +117,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **S**
 
+*   **Scaffolding (Pedagogical Context):** Temporary support structures provided to a learner to help them complete a task that would otherwise be beyond their current capabilities. In the V2V workflow, AI is used as a scaffolding engine to generate boilerplate code, offer hints, or provide templates, with the support being gradually removed as the learner's skills grow.
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
 *   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
 *   **Stakeholder:** Any person, group, or organization that has an interest in, or is affected by, a project's outcome. This includes team members, customers, investors, and users.

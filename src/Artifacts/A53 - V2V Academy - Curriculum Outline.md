@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C71 (Add Lesson 4.1)
+# Updated on: C72 (Add Lesson 4.2)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -95,9 +95,9 @@ The curriculum is divided into four core modules, each representing a stage in t
         *   **Career Transitioner:** "From Business Need to Project Scope: Architecting Your Solution"
         *   **Underequipped Graduate:** "Your Portfolio Starts Here: Creating a Professional Project Scope"
         *   **Young Precocious:** "The Hero's Journey: Defining Your Quest"
-    *   **4.2: The Blank Page Problem**
-        *   **Career Transitioner:** "Using AI for Strategic Brainstorming and Initial Planning"
-        *   **Underequipped Graduate:** "How to Start a Project When You Don't Know Where to Start"
+    *   **4.2: The Blank Page Problem** (See `A72`)
+        *   **Career Transitioner:** "Overcoming Inertia: AI-Powered Project Scaffolding"
+        *   **Underequipped Graduate:** "How to Start When You Don't Know Where to Start"
         *   **Young Precocious:** "World-Building 101: Using AI to Generate Your Project's Lore"
     *   **4.3: Your First Project**
         *   **Career Transitioner:** "Executing a Pilot Project with the DCE Onboarding Workflow"

@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C71 (Add A71)
+# Updated on: C72 (Add A72)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -170,6 +170,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A71. V2V Academy - Lesson 4.1 - Defining Your Vision
 - **Description:** The detailed content for Lesson 4.1 of the V2V Academy, "Defining Your Vision," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, project scope, mvp, planning, interactive learning, persona
+
+#### A72. V2V Academy - Lesson 4.2 - The Blank Page Problem
+- **Description:** The detailed content for Lesson 4.2 of the V2V Academy, "The Blank Page Problem," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, project scope, scaffolding, planning, interactive learning, persona
 
 ### IV. Technical Implementation & Guides
 
