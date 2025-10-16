@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C81 (Add A79)
+# Updated on: C84 (Add A80)
 
 ## 1. Purpose
 
@@ -426,3 +426,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A79. V2V Academy - Image Generation Script Guide
 - **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
 - **Tags:** v2v, curriculum, images, script, automation, guide, tooling
+
+### A80. V2V Academy - Image Generation Test Harness Guide
+- **Description:** A guide for using the `image_harness.mjs` script to test static prompts with the Imagen 4 model, helping to diagnose prompt engineering issues and find an optimal prompt structure.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen
