@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C65 (Add A65)
+# Updated on: C66 (Add A66)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -146,6 +146,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A65. V2V Academy - Lesson 2.1 - Introduction to Data Curation
 - **Description:** The detailed content for Lesson 2.1 of the V2V Academy, "Introduction to Data Curation," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, data curation, context engineering, interactive learning, persona
+
+#### A66. V2V Academy - Lesson 2.2 - The Art of Annotation
+- **Description:** The detailed content for Lesson 2.2 of the V2V Academy, "The Art of Annotation," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, data annotation, metadata, context engineering, interactive learning, persona
 
 ### IV. Technical Implementation & Guides
 

@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C65 (Add artifact reference for lesson 2.1)
+# Updated on: C66 (Add Lesson 2.2)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -55,7 +55,7 @@ The curriculum is divided into four core modules, each representing a stage in t
         *   **Career Transitioner:** "From Information Overload to Strategic Asset: The Principles of Data Curation"
         *   **Underequipped Graduate:** "Skill #1: How to Build the High-Quality Context Employers Want"
         *   **Young Precocious:** "The Ultimate Inventory Management: Mastering Your Data"
-    *   **2.2: The Art of Annotation**
+    *   **2.2: The Art of Annotation** (See `A66`)
         *   **Career Transitioner:** "Increasing Signal: How to Label Data for Maximum AI Leverage"
         *   **Underequipped Graduate:** "Making Your Context Machine-Readable: A Guide to Annotation"
         *   **Young Precocious:** "Enchanting Your Data: The Power of Labeling and Metadata"

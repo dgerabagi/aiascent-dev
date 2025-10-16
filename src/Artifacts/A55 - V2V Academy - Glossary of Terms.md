@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C65 (Add Data Curation and GIGO)
+# Updated on: C66 (Add Annotation, Labeling, Metadata)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -16,6 +16,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **A**
 
 *   **Agentic Workflow:** A development process where an AI agent can autonomously plan, reason, and execute complex, multi-step tasks, often involving the use of tools and memory.
+*   **Annotation:** The process of adding descriptive metadata (labels, tags, names) to raw data to make it machine-readable and provide clear context to an AI. This is a core practice of Data Curation.
 *   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems.
 *   **Artifact:** A formal, written document (e.g., project plan, requirements document, source code file) that serves as a "source of truth" for a specific part of a project. In the DCE workflow, artifacts are the primary medium for instructing and aligning with an AI.
 
@@ -36,6 +37,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 *   **Data Curation:** The professional discipline of identifying, gathering, organizing, and structuring raw information to create a high-signal, machine-readable asset (context) that empowers an AI to perform complex tasks with precision and reliability. It is the foundational practice of Context Engineering.
 *   **Data Curation Environment (DCE):** A VS Code extension designed to streamline the workflow of AI-assisted development. It provides tools for selecting context, managing parallel AI responses, and iterating on projects in a structured, auditable manner.
+*   **Data Labeling:** A specific type of annotation that focuses on classifying data by assigning predefined tags or categories to data points. It primarily answers the question "What is this?" (e.g., this image contains a "cat").
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
 *   **Deliberate Practice:** A highly structured form of practice aimed at improving performance. It involves setting specific goals, maintaining intense focus, receiving immediate feedback, and constant refinement.
 
@@ -64,10 +66,16 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 *   **Knowledge Graph:** A structured representation of a project's development history, as captured by the DCE. Each "Cycle" is a node in the graph, containing the context, prompts, AI responses, and developer decisions for that iteration.
 
+### **L**
+
+*   **Labeling:** See **Annotation**.
+
 ### **M**
 
+*   **Machine-Readable Context:** Information that is structured and labeled in such a way that a machine (like an AI) can easily parse and understand its meaning, purpose, and relationship to other data.
 *   **Mental Model of the Model:** The intuitive understanding a developer builds over time of an AI's capabilities, limitations, and "thought processes." Developing this mental model is key to effective collaboration and is a primary outcome of the V2V pathway.
 *   **Metacognition:** The ability to "think about one's own thinking." In the V2V context, this involves critically analyzing one's own learning gaps and using AI as a "meta-tool" to build personalized learning accelerators.
+*   **Metadata:** Data that provides information about other data. In the V2V workflow, metadata includes descriptive file names, folder structures, and explicit tags that give context and meaning to raw information.
 
 ### **O**
 
