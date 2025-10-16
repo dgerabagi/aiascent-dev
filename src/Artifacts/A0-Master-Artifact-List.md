@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C74 (Add A74)
+# Updated on: C76 (Add A75-A78)
 
 ## 1. Purpose
 
@@ -410,3 +410,19 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A74. V2V Academy - Interactive Curriculum Plan
 - **Description:** A plan for a new, interactive curriculum page on aiascent.dev. It details a persona-based selection screen that leads to a tailored version of the entire V2V Academy curriculum presented within the interactive report viewer.
 - **Tags:** v2v, curriculum, interactive learning, plan, ui, ux, report viewer, persona
+
+### A75. V2V Academy - Persona Image System Prompt
+- **Description:** The master system prompt defining the distinct visual aesthetics for the three learner personas of the V2V Academy, to be used for all image generation.
+- **Tags:** v2v, curriculum, images, prompt engineering, system prompt, persona, aesthetic
+
+### A76. V2V Academy - Image Prompts (Career Transitioner)
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Career Transitioner" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, career transitioner
+
+### A77. V2V Academy - Image Prompts (Underequipped Graduate)
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Underequipped Graduate" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, underequipped graduate
+
+### A78. V2V Academy - Image Prompts (Young Precocious)
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Young Precocious" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, young precocious

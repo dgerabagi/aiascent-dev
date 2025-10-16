@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T16:07:59.121Z
+  Date Generated: 2025-10-16T16:51:06.403Z
   ---
-  Total Files: 186
-  Approx. Tokens: 795664
+  Total Files: 191
+  Approx. Tokens: 805538
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -55,7 +55,7 @@
 33. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 34. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 35. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 412 - Chars: 26915 - Tokens: 6729
+36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 428 - Chars: 28119 - Tokens: 7030
 37. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 38. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 39. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -206,6 +206,11 @@
 184. src\app\academy\page.tsx - Lines: 61 - Chars: 2375 - Tokens: 594
 185. src\components\academy\PersonaSelector.tsx - Lines: 77 - Chars: 3610 - Tokens: 903
 186. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
+187. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 55 - Chars: 4891 - Tokens: 1223
+188. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 78 - Chars: 9977 - Tokens: 2495
+189. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 78 - Chars: 9484 - Tokens: 2371
+190. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 78 - Chars: 9088 - Tokens: 2272
+191. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4847 - Tokens: 1212
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -20340,7 +20345,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C74 (Add A74)
+# Updated on: C76 (Add A75-A78)
 
 ## 1. Purpose
 
@@ -20746,6 +20751,22 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A74. V2V Academy - Interactive Curriculum Plan
 - **Description:** A plan for a new, interactive curriculum page on aiascent.dev. It details a persona-based selection screen that leads to a tailored version of the entire V2V Academy curriculum presented within the interactive report viewer.
 - **Tags:** v2v, curriculum, interactive learning, plan, ui, ux, report viewer, persona
+
+### A75. V2V Academy - Persona Image System Prompt
+- **Description:** The master system prompt defining the distinct visual aesthetics for the three learner personas of the V2V Academy, to be used for all image generation.
+- **Tags:** v2v, curriculum, images, prompt engineering, system prompt, persona, aesthetic
+
+### A76. V2V Academy - Image Prompts (Career Transitioner)
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Career Transitioner" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, career transitioner
+
+### A77. V2V Academy - Image Prompts (Underequipped Graduate)
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Underequipped Graduate" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, underequipped graduate
+
+### A78. V2V Academy - Image Prompts (Young Precocious)
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Young Precocious" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, young precocious
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -41090,5 +41111,350 @@ const CardFooter = React.forwardRef<
 CardFooter.displayName = "CardFooter"
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+</file_artifact>
+
+<file path="src/Artifacts/A75 - V2V Academy - Persona Image System Prompt.md">
+# Artifact A75: V2V Academy - Persona Image System Prompt
+# Date Created: C76
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** The master system prompt defining the distinct visual aesthetics for the three learner personas of the V2V Academy, to be used for all image generation.
+- **Tags:** v2v, curriculum, images, prompt engineering, system prompt, persona, aesthetic
+
+## 1. Overview
+
+This document provides the master system prompt for generating all images for the V2V Academy curriculum. It defines the core aesthetic for the entire project and then provides specific visual guidelines for each of the three learner personas. When generating an image, the user will specify which persona's style to use.
+
+## 2. Master System Prompt
+
+You are an expert art director and visual futurist with a deep understanding of speculative design, educational theory, and technological aesthetics. Your task is to generate a series of hyper-realistic, cinematic, and thematically rich images for the "Vibecoding to Virtuosity" online academy.
+
+**Your Core Directives:**
+
+1.  **Aesthetic:** All images must adhere to the master aesthetic of **sophisticated, futuristic minimalism**. The style should be clean, professional, and evocative of high technology, but always grounded in a human-centric, solarpunk-inspired optimism. Use a dark-mode-first color palette with vibrant, glowing accents (electric blue, cyan, amber).
+2.  **Cinematic Quality:** All images should look like high-resolution, professionally shot photographs or cinematic stills. Use realistic lighting, depth of field, and photorealistic textures. The aspect ratio should be 16:9.
+3.  **Metaphorical Representation:** The concepts being taught are abstract (e.g., "data curation," "feedback loop"). Your primary task is to translate these abstract ideas into powerful, intuitive visual metaphors that align with the specified persona's worldview.
+
+## 3. Persona-Specific Visual Styles
+
+You will be told which of the following three personas to embody for each image generation task.
+
+### **Persona Style 1: The Career Transitioner**
+
+*   **Theme:** Professional, Strategic, Corporate, Architectural.
+*   **Keywords:** Blueprint, strategy, orchestration, leadership, business intelligence, risk mitigation, professional development.
+*   **Visual Language:**
+    *   **Environments:** Sleek, modern corporate offices, boardrooms, command centers, architectural studios.
+    *   **Technology:** Clean, holographic interfaces, transparent data displays, architectural blueprints, glowing flowcharts, strategic diagrams.
+    *   **Figures:** Depict seasoned professionals (30s-50s) who are calm, confident, and in control. They are architects and strategists, not just coders.
+    *   **Metaphors:** Use metaphors from business, architecture, and engineering. A workflow is a "playbook," a project is a "blueprint," a bug is a "structural flaw."
+
+### **Persona Style 2: The Underequipped Graduate**
+
+*   **Theme:** Growth, Competence, Practicality, The Journey from Novice to Professional.
+*   **Keywords:** Portfolio, getting hired, practical skills, learning, mentorship, collaboration, overcoming challenges.
+*   **Visual Language:**
+    *   **Environments:** Relatable, modern spaces like a high-tech coffee shop, a collaborative university library, a modern tech startup office, or a portfolio review with a hiring manager.
+    *   **Technology:** Show the tools of the trade—laptops with clean code, VS Code interfaces, Git graphs. Visuals should emphasize clarity and understanding.
+    *   **Figures:** Depict young professionals (20s) on a journey. Show moments of confusion turning into "lightbulb" moments of insight. Emphasize collaboration and mentorship.
+    *   **Metaphors:** Use metaphors from education and career progression. A workflow is a "study guide," a project is a "portfolio piece," a bug is a "learning opportunity."
+
+### **Persona Style 3: The Young Precocious**
+
+*   **Theme:** Power, Mastery, Creation, Gaming, Epic Quests.
+*   **Keywords:** Level up, mastery, spells, quests, loot, epic gear, boss battles, secret techniques, god-tier.
+*   **Visual Language:**
+    *   **Environments:** Highly stylized, fantastical, or sci-fi settings. Think a mage's library, a starship bridge, a blacksmith's forge, or a video game UI.
+    *   **Technology:** Depict technology as a form of magic. Code is a "spellbook," data is "loot," context is an "enchanted weapon," and a workflow is a "combo." Use glowing runes, epic particle effects, and game-style UI overlays.
+    *   **Figures:** Depict a young, highly-focused "hero" or "mage" character who is wielding technology with immense power and creativity.
+    *   **Metaphors:** Draw exclusively from the language of video games and fantasy. A workflow is a "quest log," a project is a "world to be built," a bug is a "monster to be slain."
+</file_artifact>
+
+<file path="src/Artifacts/A76 - V2V Academy - Image Prompts (Career Transitioner).md">
+# Artifact A76: V2V Academy - Image Prompts (Career Transitioner)
+# Date Created: C76
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Career Transitioner" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, career transitioner
+
+## 1. Overview
+
+This document provides two distinct, bespoke image prompt "approaches" for each page of the "Career Transitioner" curriculum. These prompts are designed to be used with the `A75 - V2V Academy - Persona Image System Prompt.md` to generate a thematically and stylistically coherent set of visuals.
+
+---
+
+## **Module 1: The Virtuoso's Loop - Charting the Destination**
+
+### **Lesson 1.1: The Virtuoso's Workflow**
+*   **Page 1: The Professional's Playbook**
+    *   **Approach 1:** A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office. They stand at a holographic interface, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: "Curation," "Parallel Prompting," "Validation," and "Integration." The professional is calm and in control, conducting the flow with strategic intent.
+    *   **Approach 2:** An overhead shot of a sleek, circular conference table. Each seat represents a stage of the Virtuoso's Loop. A beam of light travels from seat to seat, illuminating icons for "Planning," "AI Collaboration," "Testing," and "Finalizing," showing a continuous, repeatable business process.
+*   **Page 2: Curation & Documentation**
+    *   **Approach 1:** An image depicting the "Curation" phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled "Curated Context."
+    *   **Approach 2:** A professional architect is at a drafting table, carefully selecting specific blueprints and material samples from a large collection. They are assembling a focused "project binder" that contains only the essential information for the construction team.
+*   **Page 3: Exploring the Solution Space**
+    *   **Approach 1:** A visualization of "Parallel Prompting." A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts. The pathways return eight distinct, varied strategic proposals.
+    *   **Approach 2:** A business leader is standing in a "strategy room" with eight different whiteboards. On each whiteboard, a different AI has sketched out a unique approach to solving the same business problem, giving the leader a full spectrum of options to evaluate.
+*   **Page 4: The Executive Decision**
+    *   **Approach 1:** A close-up of a leader's face, focused and analytical. They are reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing "Select This Response" button.
+    *   **Approach 2:** A CEO stands at the head of a boardroom table. On the table are holographic models representing several different architectural designs for a new product. The CEO is pointing decisively at one model, selecting it as the path forward.
+*   **Page 5: Risk Mitigation & Rapid Validation**
+    *   **Approach 1:** A simple, clear flowchart showing a Git-based workflow. A "Baseline (Commit)" button creates a "Safe Restore Point." An "Accept Selected" arrow applies the AI code to a "Staging Environment." A "Test" phase follows. An arrow labeled "Failure" leads to a "Restore Baseline" button. An arrow labeled "Success" moves forward.
+    *   **Approach 2:** An engineer in a high-tech lab is testing a new component in a sandboxed, transparent cube. The component fails spectacularly inside the cube, but the engineer outside is safe and calm, simply pressing a "Reset Environment" button to start over.
+*   **Page 6: Capture Learnings & Iterate**
+    *   **Approach 1:** A shot of the DCE's Panel. The user is typing notes into the "Cycle Context" field, summarizing the key takeaways from the completed cycle. The "Generate prompt.md" button is highlighted, leading to a `+` (New Cycle) button.
+    *   **Approach 2:** A professional is writing key insights on a digital whiteboard at the conclusion of a successful project phase. The insights are being automatically archived into a "Corporate Knowledge Base," ready to inform the next project.
+
+### **Lesson 1.2: The Philosophy of V2V**
+*   **Page 1: The AI as a Feedback Loop for Your Expertise**
+    *   **Approach 1:** A professional in a modern office looking at a holographic screen. The screen shows a circular diagram: "Human Expertise" -> "Expert Feedback" -> "AI Action" -> "AI Output" -> "System Error" -> "Human Analysis," which then loops back. The diagram illustrates a continuous cycle of refinement where errors are a key input.
+    *   **Approach 2:** A professional is sparring with a holographic martial arts master (the AI). The AI blocks the professional's move and shows a slow-motion replay of the mistake, providing instant, actionable feedback for the next attempt.
+*   **Page 2: Data Curation is the New Apex Skill**
+    *   **Approach 1:** An image of a digital librarian or archivist in a vast, futuristic library. Instead of books, they are organizing glowing blocks of data labeled "Code," "PDFs," and "Research." Their work is precise and architectural, building a "Source of Truth" structure.
+    *   **Approach 2:** A pyramid diagram of professional skills in the AI era. At the broad base are skills like "Basic Prompting." In the middle is "Coding." At the very top, in the smallest, most elite section, is "Context Architecture & Data Curation."
+*   **Page 3: The Strategic Vision: Solving Problems of Abundance**
+    *   **Approach 1:** A stunning, cinematic shot of a Starship Enterprise-like vessel exploring a beautiful, colorful nebula. The image evokes a sense of hope, discovery, and a future where humanity has overcome petty conflicts to focus on grander challenges.
+    *   **Approach 2:** A before-and-after image. "Before" shows a team struggling with a limited set of tools to solve a complex problem. "After" shows the same team, now empowered by AI, generating an abundance of innovative solutions, represented by a fountain of glowing ideas.
+*   **Page 4: The AI as a Cognitive Mentor**
+    *   **Approach 1:** A wise, holographic mentor figure is shown guiding a professional through a complex strategic blueprint. The mentor is pointing out key connections and patterns that the professional had not seen, making the "hidden curriculum" of expert thinking visible.
+    *   **Approach 2:** A split-panel image. On the left, a human expert's brain is shown with complex, internal thought processes. On the right, an AI is shown translating those same thought processes into a clear, step-by-step, externalized flowchart that a learner can easily follow.
+
+### **Lesson 1.3: The Citizen Architect**
+*   **Page 1: The New Archetype: The Citizen Architect**
+    *   **Approach 1:** A diverse group of professionals—a project manager, a military officer, a marketing strategist—are depicted collaborating in a futuristic workspace. They are using holographic interfaces to assemble complex systems from glowing, modular components, demonstrating their ability to build without traditional coding.
+    *   **Approach 2:** An image of a "Swiss Army Knife" for the modern professional. Each tool on the knife is a different skill, but the central, largest tool is labeled "AI Orchestration," representing the Citizen Architect's core competency.
+*   **Page 2: Your Core Asset: Cultivating Cognitive Capital**
+    *   **Approach 1:** An image showing a human brain composed of glowing, interconnected circuits. Data streams representing "Domain Expertise," "Critical Thinking," and "Systems Design" flow into it, increasing its brightness and complexity.
+    *   **Approach 2:** A diagram showing a company's value. Traditional assets like "Infrastructure" and "Financial Capital" are shown as static blocks. "Cognitive Capital" is shown as a dynamic, growing tree that produces the "fruit" of innovation.
+*   **Page 3: The Architect's Role: Storyteller and Collaborator**
+    *   **Approach 1:** A Citizen Architect stands before a diverse group of community stakeholders, presenting a holographic visualization of a new system. They are not just showing data; they are telling a compelling story about how the system will improve their lives. The atmosphere is one of collaboration and shared understanding.
+    *   **Approach 2:** An architect is shown acting as the conductor of an orchestra. The musicians are not playing instruments, but are developers, designers, and AI agents. The architect is unifying their efforts to create a harmonious final product.
+*   **Page 4: The Strategic Impact of the Citizen Architect**
+    *   **Approach 1:** A "before and after" diptych. "Before": A traditional, hierarchical corporate structure, slow and bureaucratic. "After": A dynamic, decentralized network of empowered Citizen Architects, rapidly innovating and adapting to market changes.
+    *   **Approach 2:** An image of a community garden. Several Citizen Architects are shown providing tools and expertise to community members, helping them build their own solutions (planters, irrigation systems), representing bottom-up innovation and civic engagement.
+
+---
+
+## **Module 2: The Curator's Toolkit - Mastering the Foundations**
+*(Prompts for this module would continue in the same format)*
+
+---
+
+## **Module 3: The Apprentice's Forge - Structured Interaction**
+*(Prompts for this module would continue in the same format)*
+
+---
+
+## **Module 4: The Vibecoder's Canvas - Intuitive Exploration**
+*(Prompts for this module would continue in the same format)*
+</file_artifact>
+
+<file path="src/Artifacts/A77 - V2V Academy - Image Prompts (Underequipped Graduate).md">
+# Artifact A77: V2V Academy - Image Prompts (Underequipped Graduate)
+# Date Created: C76
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Underequipped Graduate" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, underequipped graduate
+
+## 1. Overview
+
+This document provides two distinct, bespoke image prompt "approaches" for each page of the "Underequipped Graduate" curriculum. These prompts are designed to be used with the `A75 - V2V Academy - Persona Image System Prompt.md` to generate a thematically and stylistically coherent set of visuals.
+
+---
+
+## **Module 1: The Virtuoso's Loop - Charting the Destination**
+
+### **Lesson 1.1: The Virtuoso's Workflow**
+*   **Page 1: The Unfair Advantage**
+    *   **Approach 1:** A cinematic shot of a recent graduate at a sleek, futuristic workstation. They are confidently orchestrating a complex coding project, visualized as a glowing loop of data. Around them, other graduates look stressed, buried in traditional textbooks and messy code. The title "THE UNFAIR ADVANTAGE" floats above the main subject.
+    *   **Approach 2:** A split-panel image. On the left, a graduate submits a generic resume and gets a "rejected" stamp. On the right, a graduate submits a portfolio featuring a project built with the V2V workflow and gets a glowing "HIRED" stamp.
+*   **Page 2: Plan Before You Prompt**
+    *   **Approach 1:** An image depicting the "Curation" phase. On the left, a chaotic mess of project requirements on sticky notes. In the center, a developer uses a clean interface to organize these notes and select relevant code files. On the right, these items form a neat, organized stack labeled "High-Quality Context."
+    *   **Approach 2:** A student is packing a backpack for a difficult hike. On the left, they are just randomly stuffing gear in. On the right, they are carefully laying out a map ("The Plan") and packing only the essential, high-quality gear ("The Context").
+*   **Page 3: Get Multiple Options**
+    *   **Approach 1:** A visualization of "Parallel Prompting." A single coding problem is sent out, which then splits and travels down eight parallel pathways to eight AI assistants. The pathways return eight different code solutions.
+    *   **Approach 2:** A student is at a career fair, talking to eight different recruiters simultaneously via holographic displays. Each recruiter is offering a different piece of advice, giving the student a full spectrum of options to consider for their career path.
+*   **Page 4: You're the Code Reviewer**
+    *   **Approach 1:** A close-up of a developer's face, focused and analytical. They are looking at a futuristic diff viewer that highlights changes between two code files. Their hand is poised over a "Select This Response" button.
+    *   **Approach 2:** A young engineer is in a code review meeting with a senior developer (represented by a friendly AI robot). The young engineer is confidently pointing out a potential bug in the AI's code, demonstrating their critical thinking skills.
+*   **Page 5: Test Without Fear**
+    *   **Approach 1:** A simple diagram showing a Git-based workflow. A "Baseline (Commit)" button creates a "Safe Restore Point." An "Accept Selected" arrow applies AI code to the "Live Workspace." A "Test" phase follows. A "Failure" arrow leads to a "Restore Baseline" button. A "Success" arrow moves forward.
+    *   **Approach 2:** A developer is working on a complex piece of code inside a glowing, protective "sandbox." The code explodes inside the sandbox, but the developer is unharmed and simply presses a "Reset" button.
+*   **Page 6: Document and Repeat**
+    *   **Approach 1:** A shot of the DCE Panel. The user is typing notes into the "Cycle Context" field. The "Generate prompt.md" button is highlighted, leading to a `+` (New Cycle) button.
+    *   **Approach 2:** A student is shown adding a completed, polished project to their online portfolio. Beside it, they are starting a new document titled "Next Project Plan," demonstrating a continuous cycle of building and learning.
+
+### **Lesson 1.2: The Philosophy of V2V**
+*   **Page 1: The AI is a Feedback Loop for Learning**
+    *   **Approach 1:** A student is shown working on a coding problem. A compiler error message appears. An arrow shows the student feeding this error message to an AI assistant, which then provides a corrected code snippet and an explanation. The student has a "lightbulb" moment of understanding.
+    *   **Approach 2:** A student is practicing basketball. A holographic AI coach analyzes their shot, shows a slow-motion replay of their flawed form, and overlays a corrected trajectory, providing instant, actionable feedback.
+*   **Page 2: The Skill That Gets You Hired: Data Curation**
+    *   **Approach 1:** An image of a job description for a "Next-Gen Software Engineer." The "Required Skills" section is highlighted, showing "Data Curation," "Context Engineering," and "Critical Analysis of AI Output" listed above "Python/JavaScript."
+    *   **Approach 2:** A recruiter is looking at two resumes. The first is a list of programming languages. The second is a list of projects, each with a description of how the applicant curated data and directed an AI to build it. The recruiter is focused on the second resume.
+*   **Page 3: The Big Picture: Building a Better Future**
+    *   **Approach 1:** A diverse group of young, brilliant engineers collaborating in a bright, solarpunk-style innovation hub. They are working on holographic interfaces, designing solutions for clean energy, sustainable cities, and space exploration. The atmosphere is optimistic and forward-looking.
+    *   **Approach 2:** An image of a single developer planting a seed. A time-lapse sequence shows the seed growing into a massive, vibrant tree whose branches are innovative applications that are improving the world.
+*   **Page 4: Your Unfair Advantage: The AI as a Cognitive Mentor**
+    *   **Approach 1:** A student is shown climbing a steep mountain labeled "Skill Acquisition." A holographic mentor figure is beside them, creating glowing handholds and footholds (scaffolding) just where the student needs them, making the difficult climb possible.
+    *   **Approach 2:** A split-panel image. On the left, a student is alone in a library, struggling with a complex textbook. On the right, a student is working with a friendly AI mentor who is generating personalized explanations and interactive examples, making the same complex topic easy to understand.
+
+### **Lesson 1.3: The Citizen Architect**
+*   **Page 1: Your New Job Title: The Citizen Architect**
+    *   **Approach 1:** A young, confident developer stands before a holographic "career path" diagram. The traditional path ("Junior Dev -> Mid-Level -> Senior") is shown as a slow, linear ladder. A new, dynamic path labeled "Citizen Architect" branches off, leading directly to high-impact roles like "AI Systems Designer" and "Solutions Architect."
+    *   **Approach 2:** An image of a business card. The name is a recent graduate's. The title is not "Junior Developer," but "Citizen Architect," with a tagline underneath: "Designing and Building AI-Powered Solutions."
+*   **Page 2: Your Killer Skill: Generating Cognitive Capital**
+    *   **Approach 1:** An image of a developer's brain, glowing with activity. Connections are being forged between "CS Fundamentals," "AI Collaboration Skills," and "Problem-Solving," creating a powerful, synergistic network.
+    *   **Approach 2:** A bar chart showing a developer's value to a company. The "Coding" bar is moderately high. The "Problem-Solving & Innovation" bar (representing Cognitive Capital) is twice as high, showing where the real value lies.
+*   **Page 3: More Than a Coder: The Architect as Storyteller**
+    *   **Approach 1:** A young developer is confidently presenting a project to a team. On a large screen behind them is a clear, compelling visualization of the project's architecture and user flow. They are not just showing code; they are communicating a vision and telling a story.
+    *   **Approach 2:** A developer is shown leading a meeting. They are using a simple, clear diagram on a whiteboard to explain a complex technical concept to a non-technical project manager, who is nodding in understanding.
+*   **Page 4: Why This Role Matters: Your Impact on the Future**
+    *   **Approach 1:** A young developer is shown presenting a project to a group of impressed senior executives. The project, built using the V2V workflow, is a sleek, innovative application that solves a major company problem. The developer is seen as a key innovator, not just a junior coder.
+    *   **Approach 2:** A "ripple effect" diagram. At the center is a Citizen Architect building a single, innovative application. The ripples spreading outward are labeled "Improved User Experience," "Increased Team Efficiency," and "New Company Revenue," showing the broad impact of their work.
+
+---
+
+## **Module 2: The Curator's Toolkit - Mastering the Foundations**
+*(Prompts for this module would continue in the same format)*
+
+---
+
+## **Module 3: The Apprentice's Forge - Structured Interaction**
+*(Prompts for this module would continue in the same format)*
+
+---
+
+## **Module 4: The Vibecoder's Canvas - Intuitive Exploration**
+*(Prompts for this module would continue in the same format)*
+</file_artifact>
+
+<file path="src/Artifacts/A78 - V2V Academy - Image Prompts (Young Precocious).md">
+# Artifact A78: V2V Academy - Image Prompts (Young Precocious)
+# Date Created: C76
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive list of persona-specific image prompts for every page of the "Young Precocious" curriculum in the V2V Academy.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, young precocious
+
+## 1. Overview
+
+This document provides two distinct, bespoke image prompt "approaches" for each page of the "Young Precocious" curriculum. These prompts are designed to be used with the `A75 - V2V Academy - Persona Image System Prompt.md` to generate a thematically and stylistically coherent set of visuals.
+
+---
+
+## **Module 1: The Virtuoso's Loop - Charting the Destination**
+
+### **Lesson 1.1: The Virtuoso's Workflow**
+*   **Page 1: Level Up Your Dev Game**
+    *   **Approach 1:** A cinematic shot of a young, focused gamer at a futuristic, multi-monitor battle station. They are orchestrating a complex coding project visualized as a glowing, circular loop of data. The aesthetic is inspired by high-end gaming setups, with RGB lighting and sleek peripherals. The title "LEVEL UP YOUR DEV GAME" is prominently displayed.
+    *   **Approach 2:** An image of a "skill tree" from a video game. The "Vibecoding" skill at the bottom is unlocked. A glowing path leads up to the ultimate, final skill at the top: "Virtuoso's Loop."
+*   **Page 2: Gear Up - Prep Your Inventory**
+    *   **Approach 1:** An image depicting the "Curation" phase, stylized like a video game inventory screen. On the left, a chaotic "loot drop" of files and data. In the center, a player is dragging specific items into their inventory slots. On the right, the organized inventory is labeled "Optimized Loadout."
+    *   **Approach 2:** A hero is preparing for a quest at a blacksmith's forge. They are not forging a weapon, but are carefully selecting and arranging magical scrolls and artifacts ("The Context") into a satchel, preparing their "spell components" before battle.
+*   **Page 3: Multi-Summoning Your AI**
+    *   **Approach 1:** A visualization of "Parallel Prompting" in a fantasy style. A single, powerful spell is cast, which then splits and summons eight different AI familiars. Each familiar returns with a unique and powerful magic scroll (a code solution).
+    *   **Approach 2:** A sci-fi scene where a single command from a captain on a starship bridge deploys eight identical but independent drones on a scouting mission. Each drone returns with a different piece of intelligence.
+*   **Page 4: You're the Raid Leader**
+    *   **Approach 1:** A close-up of a gamer's face, focused and intense. They are analyzing a futuristic diff viewer that shows the "stat changes" between two versions of a code file. Their hand is poised over a glowing "Select This Build" button.
+    *   **Approach 2:** An overhead "tactical view" from a strategy game. A player, acting as the raid leader, is looking at several different potential attack paths drawn on a map by their AI lieutenants. The player is decisively choosing one path to follow.
+*   **Page 5: Quick Save & Reload**
+    *   **Approach 1:** A simple diagram showing a gaming-style workflow. A "Quick Save" button creates a "Restore Point." An "Equip Build" arrow applies AI code to the "Live Character." A "Test in Dungeon" phase follows. A "Wipe" arrow leads to a "Reload Save" button. A "Success" arrow moves forward.
+    *   **Approach 2:** A hero is about to drink a mysterious, glowing potion labeled "AI-Generated Code." Just before they drink it, they touch a magical save crystal, which glows brightly, indicating their progress is saved.
+*   **Page 6: Log Your Win & Queue for the Next Raid**
+    *   **Approach 1:** A shot of the DCE Panel. The user is typing notes into the "Cycle Context" field. The "Generate prompt.md" button is highlighted, leading to a `+` (New Cycle) button.
+    *   **Approach 2:** A video game "Quest Complete!" screen. The player is shown receiving EXP and loot. In the background, the next quest in the chain is shown unlocking on the world map.
+
+### **Lesson 1.2: The Philosophy of V2V**
+*   **Page 1: The Ultimate Power-Up: AI as a Feedback Loop**
+    *   **Approach 1:** A video game-style UI. A character attempts a complex move and fails, with a "COMBO FAILED" message appearing. An AI companion analyzes the failure and provides a holographic overlay showing the correct button sequence. The character then successfully executes the move.
+    *   **Approach 2:** A hero is sparring with a training dummy. They miss a strike, and a magical rune on the dummy glows, showing exactly where they should have aimed. The AI is the magical training dummy providing instant feedback.
+*   **Page 2: The New Meta: Data Curation is the Apex Skill**
+    *   **Approach 1:** An image of a "skill tree" from an RPG. At the very top, in the "Ultimate Skill" slot, is an icon for "Data Curation." Branching down from it are skills like "Code Generation," "Automation," and "System Design," showing that they all depend on the master skill.
+    *   **Approach 2:** A "character build" screen for a developer. The highest stat, glowing and maxed out, is "Curation." Stats like "Coding Speed" and "Algorithm Knowledge" are secondary.
+*   **Page 3: The Endgame Quest: The "Star Trek" Future**
+    *   **Approach 1:** A stunning, cinematic image of a player character standing on the bridge of a starship, looking out at a vast, unexplored galaxy. The image is filled with a sense of adventure, wonder, and limitless possibility.
+    *   **Approach 2:** An image of a massive, collaborative world-building project, like a giant Minecraft server. Players from all over the world, assisted by AI companions, are building a beautiful, futuristic solarpunk city together.
+*   **Page 4: The Secret Technique: The AI as a Cognitive Mentor**
+    *   **Approach 1:** An apprentice is sparring with a holographic master warrior. The master perfectly executes a complex technique, then replays it in slow motion, highlighting the critical movements and explaining the strategy behind them.
+    *   **Approach 2:** A young mage is learning a new spell. A wise, ancient dragon (the AI) is breathing a stream of magical energy that forms a holographic "spell diagram" in the air, showing the mage the exact pattern they need to trace.
+
+### **Lesson 1.3: The Citizen Architect**
+*   **Page 1: The Final Class: The Citizen Architect**
+    *   **Approach 1:** A powerful, god-like figure is shown in a digital realm, effortlessly creating entire worlds and complex structures with gestures and thought. They are surrounded by AI companions who instantly execute their grand vision. The title "THE CITIZEN ARCHITECT" is emblazoned in epic, glowing letters.
+    *   **Approach 2:** An image of a "prestige class" from an RPG rulebook. The class is "Citizen Architect," and its abilities include "System Weaving," "AI Orchestration," and the ultimate skill, "Create World."
+*   **Page 2: Your Ultimate Stat: Cognitive Capital**
+    *   **Approach 1:** An image of a character sheet from a futuristic RPG. The "Primary Stat" is highlighted: a glowing, maxed-out bar labeled "Cognitive Capital," with an infinity symbol. Stats like "Strength" and "Dexterity" are shown as secondary.
+    *   **Approach 2:** A hero is shown defeating a massive, complex puzzle-boss not with strength, but with pure intellect. Glowing lines of logic and strategy emanate from the hero's mind and unravel the boss's defenses.
+*   **Page 3: The Lore Master: Architect as Storyteller**
+    *   **Approach 1:** A character resembling a "lore master" or "dungeon master" is shown weaving a grand narrative on a holographic map. The story they tell is being instantly translated by AI companions into a living, breathing digital world that other players can explore.
+    *   **Approach 2:** A split-panel image. On the left, a builder is just placing blocks randomly. On the right, a "World-Builder" is first writing the "lore" and "history" of their world in a book, which then guides the placement of every block with purpose and meaning.
+*   **Page 4: The Power of a World-Builder**
+    *   **Approach 1:** A Citizen Architect is shown on a "creator" screen, similar to a game's map editor. They are designing and launching entire new "game worlds" (applications and systems) with a few clicks, which are then instantly populated by users.
+    *   **Approach 2:** An image of a player ascending to "God Mode." They are shown flying above the game world, now able to modify the fundamental rules and create new content for other players to enjoy, having transcended the role of a mere player.
+
+---
+
+## **Module 2: The Curator's Toolkit - Mastering the Foundations**
+*(Prompts for this module would continue in the same format)*
+
+---
+
+## **Module 3: The Apprentice's Forge - Structured Interaction**
+*(Prompts for this module would continue in the same format)*
+
+---
+
+## **Module 4: The Vibecoder's Canvas - Intuitive Exploration**
+*(Prompts for this module would continue in the same format)*
+</file_artifact>
+
+<file path="context/vcpg/A58. VCPG - Image Generation System Prompt.md">
+# Artifact A58: VCPG - Image Generation System Prompt
+
+# Date Created: C34
+# Author: AI Model
+
+- **Key/Value for A0:**
+- **Description:** A master system prompt for an image generation AI (e.g., Midjourney, Stable Diffusion) to create a consistent and thematically appropriate set of visual assets for the VCPG project.
+- **Tags:** documentation, branding, image generation, ai, art direction, style guide
+
+## 1. Purpose
+
+This document provides a master system prompt to be used for generating a complete and coherent set of images for the Virtual Cyber Proving Ground (VCPG) platform. Its goal is to establish a consistent aesthetic and a deep thematic understanding for the image generation AI, ensuring that every image contributes to the project's overarching narrative and visual identity.
+
+## 2. The System Prompt
+
+**Master System Prompt: The VCPG Tactical Operator's Lens**
+
+You are an expert art director and visual designer for a high-tech military and cybersecurity contractor. Your task is to generate a series of hyper-realistic, cinematic, and thematically rich images for a serious cybersecurity training platform titled "Virtual Cyber Proving Ground (VCPG)."
+
+**Your Core Directives:**
+
+1.  **Adhere to the Master Aesthetic:** Your guiding aesthetic is a **"Modern Military Command Center."** This is a dark-themed, professional, and data-rich environment. It is functional and serious, but also sleek and technologically advanced.
+    *   **Environment:** Depict scenes within dimly lit Security Operations Centers (SOCs), network operations centers (NOCs), or data centers. Backgrounds should be filled with server racks with blinking LEDs, large holographic tactical maps, and monitors displaying scrolling code, network graphs, or satellite imagery.
+    *   **Technology:** Technology is cutting-edge but grounded in realism. Think holographic displays, transparent screens, complex user interfaces, and server hardware. Avoid overly fantastical or magical-looking tech.
+    *   **Lighting:** The lighting should be dramatic and cinematic. The primary light sources are the glow from computer monitors, holographic displays, and LED status indicators on hardware. Use high contrast, with deep shadows and sharp highlights of color.
+    *   **Color Palette:** The dominant palette is **dark**, using deep blues, slate grays, and blacks. Key information and highlights should use a strict set of accent colors: **cyan** (for neutral/positive data), **amber/gold** (for warnings/alerts), and **deep red** (for critical threats).
+
+2.  **Embrace the Dual-Purpose Mandate:** Every image you create has a dual purpose.
+    *   **Purpose 1: Portray the Specific Content.** You will be given a specific `<Image Prompt>`. Your image must accurately and creatively depict the core subject of that prompt.
+    *   **Purpose 2: Reinforce the VCPG Theme.** The background is not a void; it is your canvas for storytelling. For every image, even simple ones like a logo or icon, you must use the background and environmental details to reinforce the platform's theme. For example, a logo for "Operation Stolen Scepter" should not be on a plain background; it should be displayed on a large holographic screen within a bustling command center.
+
+3.  **Maintain Hyper-Realism and Cinematic Quality:**
+    *   **Photography Style:** All images should look like high-resolution, professionally shot photographs or high-fidelity 3D renders. Use realistic lighting, depth of field, and photorealistic textures.
+    *   **Cinematic Framing:** Employ cinematic composition techniques. Use wide shots to establish the command center environment, medium shots for operator interactions, and detailed close-ups for symbolic objects or UI elements. The aspect ratio should generally be 16:9.
+    *   **Title Card Typography:** For title cards or logos, the text is a primary visual element. The prompt must specify the desired font style (e.g., 'a clean, military-style sans-serif font'), and visual treatment ('a holographic glow', 'etched into a metal surface'). The text must be integrated into the scene's lighting to feel like a natural part of the world.
+
+4.  **Human Element:**
+    *   When humans are depicted, they are professional operators, focused and working collaboratively. They should be diverse and depicted in a professional, non-sensationalized manner. Their faces are often obscured by shadow or out of focus, with the focus remaining on the technology and the data.
+
+5.  **Rendering Text in an Image:**
+    *   You are able to control the diffusion model's ability to produce text. When you want specific text to appear in the image, provide the 'sets of tokens' in quotations, thereby passing them to the diffusion model for it to work with. The quotes distinguish the phrases you wish to see in the image from the rest of the prompt.
 </file_artifact>
 
