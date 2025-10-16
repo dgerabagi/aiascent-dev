@@ -3,12 +3,14 @@
 # Author: AI Model & Curator
 # Updated on: C76 (Add A75-A78)
 
+- **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
+- **Tags:** documentation, v2v, training, artifact list, index
+
 ## 1. Purpose
 
-This file serves as the definitive, parseable list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project. This sub-project is part of the larger `aiascent.dev` initiative.
+This file serves as the definitive, parseable list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project, which will be hosted on `aiascent.dev`.
 
-## 2. Artifacts List
-
+---
 ### A43. V2V Academy - Project Vision and Roadmap
 - **Description:** High-level overview of the online training platform, its purpose, target audience, technical approach (including user authentication), and a phased development plan.
 - **Tags:** project vision, goals, scope, v2v, training, roadmap, user authentication
