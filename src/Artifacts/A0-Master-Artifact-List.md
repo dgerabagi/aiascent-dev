@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C76 (Add A75-A78)
+# Updated on: C81 (Add A79)
 
 ## 1. Purpose
 
@@ -239,10 +239,6 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 ## V. V2V Online Academy
 
-### A42. V2V Academy - Master Artifact List
-- **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
-- **Tags:** documentation, v2v, training, artifact list, index
-
 ### A43. V2V Academy - Project Vision and Roadmap
 - **Description:** High-level overview of the online training platform, its purpose, target audience, technical approach (including user authentication), and a phased development plan.
 - **Tags:** project vision, goals, scope, v2v, training, roadmap, user authentication
@@ -426,3 +422,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A78. V2V Academy - Image Prompts (Young Precocious)
 - **Description:** A comprehensive list of persona-specific image prompts for every page of the "Young Precocious" curriculum in the V2V Academy.
 - **Tags:** v2v, curriculum, images, prompt engineering, persona, young precocious
+
+### A79. V2V Academy - Image Generation Script Guide
+- **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling

@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T22:09:49.779Z
+  Date Generated: 2025-10-16T22:22:04.245Z
   ---
-  Total Files: 177
-  Approx. Tokens: 530463
+  Total Files: 178
+  Approx. Tokens: 531794
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -55,7 +55,7 @@
 33. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 34. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 35. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 428 - Chars: 28119 - Tokens: 7030
+36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 428 - Chars: 28143 - Tokens: 7036
 37. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 38. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 39. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -196,7 +196,8 @@
 174. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28236 - Tokens: 7059
 175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
 176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
-177. scripts\generate_images.mjs - Lines: 141 - Chars: 5418 - Tokens: 1355
+177. scripts\generate_images.mjs - Lines: 173 - Chars: 6592 - Tokens: 1648
+178. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 82 - Chars: 4126 - Tokens: 1032
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -20331,7 +20332,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C76 (Add A75-A78)
+# Updated on: C81 (Add A79)
 
 ## 1. Purpose
 
@@ -20566,10 +20567,6 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 ## V. V2V Online Academy
 
-### A42. V2V Academy - Master Artifact List
-- **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
-- **Tags:** documentation, v2v, training, artifact list, index
-
 ### A43. V2V Academy - Project Vision and Roadmap
 - **Description:** High-level overview of the online training platform, its purpose, target audience, technical approach (including user authentication), and a phased development plan.
 - **Tags:** project vision, goals, scope, v2v, training, roadmap, user authentication
@@ -20753,6 +20750,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A78. V2V Academy - Image Prompts (Young Precocious)
 - **Description:** A comprehensive list of persona-specific image prompts for every page of the "Young Precocious" curriculum in the V2V Academy.
 - **Tags:** v2v, curriculum, images, prompt engineering, persona, young precocious
+
+### A79. V2V Academy - Image Generation Script Guide
+- **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -33706,7 +33707,7 @@ You are an expert art director and visual designer for a high-tech military and 
 </file_artifact>
 
 <file path="scripts/generate_images.mjs">
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import pkg from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -33715,8 +33716,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // --- CONFIGURATION ---
+const { GoogleGenerativeAI } = pkg;
 const API_KEY = process.env.API_KEY;
-const MODEL_NAME = 'imagen-3'; // Using Imagen 3 as specified
+const MODEL_NAME = 'imagen-3'; 
 const OUTPUT_DIR_BASE = path.resolve(process.cwd(), 'public');
 
 // --- HELPER FUNCTIONS ---
@@ -33760,6 +33762,66 @@ function constructFinalPrompt(systemPrompt, pageContent, imagePrompt) {
     return `${systemPrompt}\n\n${trainingContent}\n\n<Image Prompt>\n${imagePrompt}\n</Image Prompt>`;
 }
 
+async function generateAndSaveImage(persona, pageId) {
+    console.log(`🚀 Processing page: '${pageId}' for persona: '${persona}'`);
+
+    // 1. Load all necessary data
+    const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
+    const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
+    const systemPromptPath = path.resolve(process.cwd(), 'src/Artifacts', 'A75 - V2V Academy - Persona Image System Prompt.md');
+
+    const imageManifest = await loadJsonData(manifestPath);
+    const curriculumData = await loadJsonData(curriculumPath);
+    const systemPrompt = await loadArtifact(systemPromptPath);
+
+    // 2. Find the specific content for the requested page
+    const pageContent = findPageById(curriculumData, pageId);
+    if (!pageContent) {
+        throw new Error(`Could not find page content for pageId '${pageId}'.`);
+    }
+
+    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page
+    if (!imageGroupId) {
+        throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
+    }
+
+    const groupMeta = imageManifest.imageGroups[imageGroupId];
+    if (!groupMeta) {
+        throw new Error(`Could not find image group metadata for groupId '${imageGroupId}'.`);
+    }
+
+    // 3. Construct the final prompt
+    const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
+
+    // 4. Initialize AI client and make the API call
+    console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+    
+    const result = await model.generateContent(finalPrompt);
+    const response = result.response;
+    
+    const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+
+    if (!base64ImageData) {
+        console.error('API Response:', JSON.stringify(response, null, 2));
+        throw new Error('No image data found in the API response.');
+    }
+
+    // 5. Define output path and save the image
+    const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
+    const outputFileName = `${groupMeta.baseFileName}1${groupMeta.fileExtension}`;
+    const outputPath = path.join(outputDirPath, outputFileName);
+
+    console.log(`   Ensuring output directory exists: ${outputDirPath}`);
+    await fs.mkdir(outputDirPath, { recursive: true });
+
+    console.log(`   Saving image to: ${outputPath}`);
+    await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
+
+    console.log(`✅ Image for '${pageId}' saved successfully!`);
+}
+
 // --- MAIN EXECUTION LOGIC ---
 
 async function main() {
@@ -33770,82 +33832,138 @@ async function main() {
 
     const args = process.argv.slice(2);
     if (args.length < 2) {
-        console.error('Usage: node scripts/generate_images.mjs <persona> <pageId>');
+        console.error('Usage:');
+        console.error('  node scripts/generate_images.mjs <persona> <pageId>              (for a single image)');
+        console.error('  node scripts/generate_images.mjs <persona> --module <number>    (for a whole module)');
         console.error('Example: node scripts/generate_images.mjs career_transitioner lesson-1.1-p1');
         process.exit(1);
     }
 
-    const [persona, pageId] = args;
-    console.log(`🚀 Starting image generation for persona: '${persona}', page: '${pageId}'`);
+    const persona = args;
+    const isModuleMode = args === '--module';
 
     try {
-        // 1. Load all necessary data
-        console.log('   Loading data files...');
-        const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
-        const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
-        const systemPromptPath = path.resolve(process.cwd(), 'src/Artifacts', 'A75 - V2V Academy - Persona Image System Prompt.md');
+        if (isModuleMode) {
+            const moduleNumber = args;
+            if (!moduleNumber || !['1', '2', '3', '4'].includes(moduleNumber)) {
+                throw new Error('Invalid module number. Must be 1, 2, 3, or 4.');
+            }
+            console.log(`🚀 Starting BATCH image generation for persona: '${persona}', module: ${moduleNumber}`);
+            
+            const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
+            const curriculumData = await loadJsonData(curriculumPath);
+            const sectionId = `module-${moduleNumber}`;
+            const section = curriculumData.sections.find(s => s.sectionId === sectionId);
 
-        const imageManifest = await loadJsonData(manifestPath);
-        const curriculumData = await loadJsonData(curriculumPath);
-        const systemPrompt = await loadArtifact(systemPromptPath);
+            if (!section) {
+                throw new Error(`Could not find module ${moduleNumber} for persona '${persona}'.`);
+            }
 
-        // 2. Find the specific content for the requested page
-        const pageContent = findPageById(curriculumData, pageId);
-        if (!pageContent) {
-            throw new Error(`Could not find page content for pageId '${pageId}'.`);
+            const pageIds = section.pages.map(p => p.pageId);
+            console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
+
+            for (const pageId of pageIds) {
+                await generateAndSaveImage(persona, pageId);
+                // Optional: Add a small delay between API calls
+                await new Promise(resolve => setTimeout(resolve, 1000)); 
+            }
+            console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
+
+        } else {
+            const pageId = args;
+            await generateAndSaveImage(persona, pageId);
         }
-
-        const imageGroupId = pageContent.imageGroupIds;
-        if (!imageGroupId) {
-            throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
-        }
-
-        const groupMeta = imageManifest.imageGroups[imageGroupId];
-        if (!groupMeta) {
-            throw new Error(`Could not find image group metadata for groupId '${imageGroupId}'.`);
-        }
-
-        // 3. Construct the final prompt
-        const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
-        console.log('   Prompt constructed successfully.');
-
-        // 4. Initialize AI client and make the API call
-        console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
-        const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-        
-        const result = await model.generateContent(finalPrompt);
-        const response = result.response;
-        
-        // This part is speculative based on Gemini API structure for images.
-        // It assumes the response contains base64-encoded image data.
-        // You MUST adjust this based on the actual Imagen 3 API response structure.
-        const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-
-        if (!base64ImageData) {
-            console.error('API Response:', JSON.stringify(response, null, 2));
-            throw new Error('No image data found in the API response. The structure might be different than expected.');
-        }
-
-        // 5. Define output path and save the image
-        const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
-        const outputFileName = `${groupMeta.baseFileName}1${groupMeta.fileExtension}`;
-        const outputPath = path.join(outputDirPath, outputFileName);
-
-        console.log(`   Ensuring output directory exists: ${outputDirPath}`);
-        await fs.mkdir(outputDirPath, { recursive: true });
-
-        console.log(`   Saving image to: ${outputPath}`);
-        await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
-
-        console.log('✅ Image generated and saved successfully!');
-
     } catch (error) {
-        console.error('❌ An error occurred during image generation:', error);
+        console.error('❌ An error occurred during image generation:', error.message);
         process.exit(1);
     }
 }
 
 main();
+</file_artifact>
+
+<file path="src/Artifacts/A79 - V2V Academy - Image Generation Script Guide.md">
+# Artifact A79: V2V Academy - Image Generation Script Guide
+# Date Created: C81
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling
+
+## 1. Overview & Purpose
+
+This document provides instructions for using the `scripts/generate_images.mjs` script, a powerful automation tool designed to generate all the visual assets for the V2V Academy curriculum.
+
+### A Note on "On-the-Fly Tooling"
+
+This script is a prime example of the "On-the-Fly Tooling" concept taught in the V2V Academy. The manual process of generating ~1,500+ (10+ per page) unique, persona-aligned images would typically take weeks of creative work. By leveraging the structured data in our artifacts and a powerful image generation API, this script compresses that entire workflow into a process that can be completed in a single evening. It is a tangible demonstration of how a well-curated data environment enables the creation of tools that provide a massive acceleration in productivity.
+
+## 2. Prerequisites
+
+Before running the script, ensure you have the following set up:
+
+1.  **Node.js:** The script is a Node.js module and requires Node.js to be installed.
+2.  **Dependencies:** You must install the project's dependencies by running `npm install` from the project root. This will install `@google/genai` and `dotenv`.
+3.  **API Key:** You must have a valid Google AI API key with access to the Imagen models. Create a file named `.env` in the root of the `aiascent-dev` project and add your key to it like this:
+
+    ```
+    # .env
+    API_KEY=your_google_api_key_here
+    ```
+
+## 3. Usage
+
+The script has two primary modes of operation: generating a single image for testing and generating a full batch of images for an entire module.
+
+### 3.1. Mode 1: Generating a Single Image (For Quality Control)
+
+This mode is ideal for testing a prompt or verifying the output quality before committing to a full batch run.
+
+**Command:**
+```bash
+node scripts/generate_images.mjs <persona> <pageId>
+```
+node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
+
+**Arguments:**
+*   `<persona>`: The identifier for the learner persona. Must be one of:
+    *   `career_transitioner`
+    *   `underequipped_graduate`
+    *   `young_precocious`
+*   `<pageId>`: The unique ID for the page you want to generate an image for. You can find these IDs in the corresponding `public/data/v2v_content_*.json` files (e.g., `lesson-1.1-p1`).
+
+**Example:**
+To generate the image for the first page of Lesson 1.1 for the Career Transitioner:
+```bash
+node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
+```
+
+### 3.2. Mode 2: Generating a Full Module (Batch Mode)
+
+This mode allows you to "set it loose" and generate all images for every page within a specific module for a given persona.
+
+**Command:**```bash
+node scripts/generate_images.mjs <persona> --module <module_number>
+```
+
+**Arguments:**
+*   `<persona>`: Same as above.
+*   `--module <module_number>`: A flag indicating you want to run in batch mode, followed by the module number (1, 2, 3, or 4).
+
+**Example:**
+To generate all images for Module 2 for the Underequipped Graduate:
+```bash
+node scripts/generate_images.mjs underequipped_graduate --module 2
+```The script will process each page in the module sequentially and log its progress in the console.
+
+## 4. How It Works: File Output
+
+The script is designed to work seamlessly with the `ReportViewer` component. It automatically creates, names, and places the generated images in the correct directory so that the application can find them without any manual configuration.
+
+Based on the persona, module, and page, the script will save the image to a path like:
+`public/assets/images/v2v/<persona>/module-<X>/lesson-X.X/lesson-X.X-pX-img-1.webp`
+
+This matches the structure expected by the image manifest files, ensuring that once the script is run, the images will appear correctly in the interactive curriculum.
 </file_artifact>
 
