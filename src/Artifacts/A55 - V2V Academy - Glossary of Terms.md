@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C62 (Expand with additional terms from transcripts and research)
+# Updated on: C64 (Add Citizen Architect definition)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -21,7 +21,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **C**
 
-*   **Citizen Architect:** An individual empowered by AI tools (like the DCE) and the V2V methodology to build, analyze, and maintain complex systems that were previously only accessible to large institutions or highly specialized teams.
+*   **Citizen Architect:** A professional archetype who combines deep domain expertise with AI collaboration skills to design, build, and lead the development of complex systems. They act as a strategic thinker and community leader, using their talents to solve problems and contribute meaningfully to society.
 *   **Cognitive Apprenticeship:** A pedagogical model where an expert (human or AI) makes their internal, tacit thought processes visible to a novice. The V2V curriculum is built on this model, using AI to model expert workflows, provide coaching, and offer scaffolding.
 *   **Cognitive Bandwidth Tax:** A concept from behavioral science describing how financial precarity or other stressors consume mental resources, measurably reducing a person's ability to perform complex cognitive tasks. The "fissured workplace" imposes this tax on its data annotators.
 *   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation.

@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C62 (Add new V2V lesson artifacts)
+# Updated on: C64 (Update artifact description for A64)
 
 ## 1. Purpose
 
