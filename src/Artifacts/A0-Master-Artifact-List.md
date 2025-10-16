@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C61 (Update Whisper guide description for PowerShell)
+# Updated on: C61 (Correct docker command in Whisper guide)
 
 ## 1. Purpose
 
@@ -256,7 +256,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** source material, research, workflow, development process, vibe coding
 
 ### A46. Whisper Transcription Setup Guide
-- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs.
+- **Description:** A technical guide detailing simple, Docker-based setups for using OpenAI's Whisper to transcribe audio recordings, with options for both NVIDIA GPUs and general-purpose CPUs. Includes commands for PowerShell and troubleshooting for common errors.
 - **Tags:** guide, setup, whisper, transcription, docker, audio processing, cpu, amd, powershell
 
 ### A47. David Gerabagi Resume (DCE Update)
