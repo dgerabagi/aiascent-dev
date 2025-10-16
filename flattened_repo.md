@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T21:55:57.862Z
+  Date Generated: 2025-10-16T22:09:49.779Z
   ---
   Total Files: 177
-  Approx. Tokens: 522738
+  Approx. Tokens: 530463
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -193,10 +193,10 @@
 171. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 201 - Chars: 29558 - Tokens: 7390
 172. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
 173. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
-174. public\data\imagemanifest_career_transitioner.json - Lines: 52 - Chars: 17047 - Tokens: 4262
-175. public\data\imagemanifest_underequipped_graduate.json - Lines: 52 - Chars: 15060 - Tokens: 3765
-176. public\data\imagemanifest_young_precocious.json - Lines: 52 - Chars: 15112 - Tokens: 3778
-177. scripts\generate_images.mjs - Lines: 177 - Chars: 6929 - Tokens: 1733
+174. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28236 - Tokens: 7059
+175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
+176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
+177. scripts\generate_images.mjs - Lines: 141 - Chars: 5418 - Tokens: 1355
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -32480,171 +32480,1233 @@ You are an expert art director and visual designer for a high-tech military and 
 
 <file path="public/data/imagemanifest_career_transitioner.json">
 {
-  "lesson-1.1-p1": "A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: 'Curation,' 'Parallel Prompting,' 'Validation,' and 'Integration.' The professional is calm and in control, conducting the flow with strategic intent. An overhead shot of a sleek, circular conference table where each seat represents a stage of the Virtuoso's Loop, with a beam of light traveling between icons for 'Planning,' 'AI Collaboration,' 'Testing,' and 'Finalizing,' showing a continuous, repeatable business process.",
-  "lesson-1.1-p2": "An image depicting the 'Curation' phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled 'Curated Context.' A professional architect is at a drafting table, carefully selecting specific blueprints and material samples from a large collection, assembling a focused 'project binder' that contains only the essential information.",
-  "lesson-1.1-p3": "A visualization of 'Parallel Prompting.' A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts, returning eight distinct, varied strategic proposals. The business leader is in a 'strategy room' with eight different whiteboards, each showing a unique AI-sketched approach to the same problem, providing a full spectrum of options.",
-  "lesson-1.1-p4": "A close-up of a leader's face, focused and analytical, reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing 'Select This Response' button. In a boardroom, a CEO points decisively at one of several holographic architectural models on a table, selecting it as the path forward.",
-  "lesson-1.1-p5": "A simple, clear flowchart showing a Git-based workflow with a 'Baseline (Commit)' button creating a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure or 'Success.' An engineer in a high-tech lab tests a new component in a sandboxed, transparent cube; when it fails, they calmly press a 'Reset Environment' button.",
-  "lesson-1.1-p6": "A shot of the DCE's Panel where a user is typing notes into the 'Cycle Context' field, summarizing key takeaways. The 'Generate prompt.md' button is highlighted, leading to a '+' (New Cycle) button. A professional writes key insights on a digital whiteboard at the conclusion of a project phase, which are automatically archived into a 'Corporate Knowledge Base.'",
-  "lesson-1.2-p1": "A professional in a modern office looks at a holographic screen showing a circular diagram: 'Human Expertise' -> 'Expert Feedback' -> 'AI Action' -> 'AI Output' -> 'System Error' -> 'Human Analysis,' which then loops back. A professional spars with a holographic martial arts master (the AI), who blocks a move and shows a slow-motion replay of the mistake for instant feedback.",
-  "lesson-1.2-p2": "A digital librarian in a futuristic library organizes glowing blocks of data labeled 'Code,' 'PDFs,' and 'Research,' building a 'Source of Truth' structure. A pyramid diagram of professional skills shows 'Basic Prompting' at the base and 'Context Architecture & Data Curation' at the very top.",
-  "lesson-1.2-p3": "A stunning, cinematic shot of a Starship Enterprise-like vessel exploring a beautiful, colorful nebula, evoking hope and discovery. A 'before-and-after' image shows a team struggling with limited tools, then empowered by AI, generating a fountain of innovative solutions.",
-  "lesson-1.2-p4": "A wise, holographic mentor figure guides a professional through a complex strategic blueprint, pointing out key connections and making the 'hidden curriculum' of expert thinking visible. A split-panel image shows a human expert's complex internal thought processes being translated by an AI into a clear, step-by-step flowchart for a learner.",
-  "lesson-1.3-p1": "A diverse group of professionals—a project manager, a military officer, a marketing strategist—collaborate in a futuristic workspace, using holographic interfaces to assemble complex systems without traditional coding. A 'Swiss Army Knife' for the modern professional, where the central, largest tool is labeled 'AI Orchestration,' representing the Citizen Architect's core competency.",
-  "lesson-1.3-p2": "An image showing a human brain composed of glowing, interconnected circuits, with data streams for 'Domain Expertise,' 'Critical Thinking,' and 'Systems Design' flowing into it, increasing its brightness. A diagram shows a company's value where 'Cognitive Capital' is a dynamic, growing tree that produces the 'fruit' of innovation.",
-  "lesson-1.3-p3": "A Citizen Architect stands before community stakeholders, presenting a holographic visualization of a new system and telling a compelling story about its benefits. An architect is shown conducting an orchestra where the musicians are developers, designers, and AI agents, unifying their efforts.",
-  "lesson-1.3-p4": "A 'before and after' diptych showing a shift from a slow, hierarchical corporate structure to a dynamic, decentralized network of empowered Citizen Architects. In a community garden, Citizen Architects provide tools and expertise to community members, helping them build their own solutions, representing bottom-up innovation.",
-  "lesson-2.1-p1": "A seasoned professional stands before a chaotic storm of digital information, calmly selecting and organizing it into a clean, structured, glowing data stream labeled 'High-Quality Context.' A chef in a high-end kitchen meticulously performs mise en place, organizing raw ingredients into neat bowls labeled 'Curated Data.'",
-  "lesson-2.1-p2": "A side-by-side comparison of an AI machine fed 'garbage' data producing a nonsensical blueprint, versus the same machine fed 'Curated Data' producing a brilliant, precise plan. Two pipelines show dirty water resulting in muddy output, while clean, filtered water results in pure output.",
-  "lesson-2.1-p3": "A three-panel diagram showing the core workflow: 'GATHER' (pulling in documents), 'ORGANIZE' (arranging into a folder structure), and 'LABEL' (applying descriptive names). A professional organizes a physical library by gathering books, sorting them by genre, and applying clear labels.",
-  "lesson-2.1-p4": "A sleek, futuristic toolkit is open, showing glowing digital tools like 'Context Selector' and 'Parallel Co-Pilot.' A VS Code window highlights the Data Curation Environment (DCE) extension, with its UI elements glowing, indicating they are the specific tools for the job.",
-  "lesson-2.2-p1": "A professional adds glowing labels and tags ('Version 2.1,' 'Status: Approved') to a complex digital blueprint, creating a layer of order. An intelligence analyst adds digital annotations to a satellite photo, marking points of interest to add meaning.",
-  "lesson-2.2-p2": "A split-panel image shows a confused AI surrounded by unlabeled file icons, versus a confident AI efficiently processing clearly labeled files. A manager gives a messy, unlabeled stack of papers to one employee (AI) who looks lost, while another receives an organized binder and gets to work immediately.",
-  "lesson-2.2-p3": "A three-panel diagram shows practical annotation: renaming `final_draft.docx` to `Q3-Marketing-Strategy-v2.1-APPROVED.docx`, moving files into structured folders, and applying metadata tags. A professional's screen shows a 'before' of a messy desktop and an 'after' of a clean file explorer with a well-defined hierarchy.",
-  "lesson-2.2-p4": "A powerful AI flawlessly executes a complex business workflow, guided by the glowing metadata attached to each piece of information. A CEO gives a high-level command ('Show me all active Q3 proposals'), and an AI instantly generates a perfect summary by filtering correctly annotated documents.",
-  "lesson-2.3-p1": "A seasoned professional in a high-tech quality control lab meticulously inspects a glowing, holographic blueprint generated by an AI, using a digital magnifying glass. A ship captain on the bridge carefully reviews a course plotted by an AI, cross-referencing it with traditional sea charts, taking ultimate responsibility.",
-  "lesson-2.3-p2": "A 'rogue's gallery' of digital phantoms representing AI failure modes: a 'Hallucination' ghost, a 'Flawed Logic' knot of wires, and a 'Security Vulnerability' skull-and-crossbones. A medical AI's report shows highlighted errors: a 'Hallucinated' study, a 'Logical Error' in dosage, and a 'Misalignment' with hospital policy.",
-  "lesson-2.3-p3": "A professional at a workstation with a large diff viewer methodically compares an 'Original File' with an 'AI-Generated File.' An editor is shown reviewing a manuscript by checking the plot, then chapter structure, then sentence-level grammar.",
-  "lesson-2.3-p4": "A diagram shows a virtuous cycle where an 'AI Output' is fed into a 'Human Critique,' which creates a 'Refined Prompt,' leading to an 'Improved Output.' A professional coaches an AI assistant, writing a clear, corrective instruction to teach it how to fix a mistake, rather than fixing it herself.",
-  "lesson-3.1-p1": "A seasoned executive outlines a structured project plan on a whiteboard, which an AI translates into a flawless digital architecture. A split-panel shows a manager giving vague instructions to a confused employee (AI), then giving a clear, written brief to an understanding employee.",
-  "lesson-3.1-p2": "A close-up of a futuristic digital document titled 'Interaction Schema' with clear sections for 'ROLE,' 'CONTEXT,' and 'OUTPUT_FORMAT.' An image of a military-style 'Operations Order' (OPORD) template, showing a real-world example of an effective interaction schema.",
-  "lesson-3.1-p3": "An architectural diagram where an 'Unstructured Prompt' leads to chaotic outcomes, while a 'Structured Interaction' leads to a predictable, straight line. An animation of a manufacturing assembly line shows robots making frequent errors with unstructured instructions, then working flawlessly with structured ones.",
-  "lesson-3.1-p4": "A 'before and after' comparison of a vague chat bubble request ('make the page better') versus a structured command with clear `// ROLE`, `// TASK`, `// CONTEXT` sections. A professional chef gives instructions: 'make dinner' (before) vs. handing over a detailed recipe card (after).",
-  "lesson-3.2-p1": "A professional looks at a holographic screen showing a circular feedback loop where 'System Error' is a key input for 'Human Analysis.' A scientist in a lab runs an experiment (AI code), gets an unexpected result (error), analyzes it, adjusts the parameters (prompt), and runs it again.",
-  "lesson-3.2-p2": "A clean, infographic-style diagram shows three types of errors: 'Compiler Error' (grammar mistakes), 'Runtime Error' (impossible action), and 'Logical Error' (correct machine, wrong direction). A doctor diagnoses a patient, identifying a 'Syntax Error' (miswritten prescription), 'Runtime Error' (allergic reaction), and 'Logical Error' (correct prescription, wrong illness).",
-  "lesson-3.2-p3": "A step-by-step diagram of the debugging feedback loop: AI generates code, a red error message appears, the professional copies the full error, and pastes it into the DCE with the prompt 'Fix this.' An after-action review where a 'Failure Report' (error message) becomes input for the 'Next Project's Planning Phase' (next prompt).",
-  "lesson-3.2-p4": "A graph showing a steep, upward-curving 'V2V Learning Curve,' fueled by small, iterative cycles of 'Error -> Feedback -> Correction.' A professional climbs a staircase labeled 'Expertise,' where each step is an error they have learned to solve, showing mastery is built by overcoming challenges.",
-  "lesson-3.3-p1": "A professional engineer works on a complex blueprint with a prominent, glowing 'UNDO' button beside them, conveying safety and confidence. A bomb disposal expert works on a device inside a reinforced containment chamber labeled 'Git Baseline,' allowing them to work without fear.",
-  "lesson-3.3-p2": "A diagram shows a single prompt leading to three unpredictable AI outcomes (one success, two failures), with a human protected by a glowing shield labeled 'Git Baseline.' A pharmaceutical researcher tests three new drug compounds (AI solutions) on disposable lab cultures, so a failure doesn't impact the main project.",
-  "lesson-3.3-p3": "A clear, four-step flowchart: 'Baseline' (snapshot), 'Accept' (apply AI code), 'Test' (run and see 'FAIL'), and 'Restore' (revert to snapshot). An animated sequence shows a developer saving their game ('Baseline'), trying a new strategy and losing ('Test'), then loading their last save ('Restore').",
-  "lesson-3.3-p4": "A graph compares a slow, cautious 'Traditional Workflow' with the rapid, experimental 'V2V Workflow,' which shows a much faster rate of progress. A split-panel shows a team cautiously debating a small change, versus a single developer fearlessly testing a massive change, knowing they can undo it instantly.",
-  "lesson-4.1-p1": "A seasoned professional sketches a high-level strategic plan on a holographic whiteboard, showing a clear line from 'Problem' to 'Target User' to 'Proposed Solution.' A ship's captain is on the bridge, decisively plotting a course on a star chart to a distant, shining star labeled 'Project Goal.'",
-  "lesson-4.1-p2": "A three-panel diagram showing the discovery phase: a magnifying glass over a 'Problem Statement,' a profile of a 'Target User Persona,' and a simple diagram of the 'Core Solution.' A professional breaks down a complex business challenge into three simple questions on a whiteboard: 'What is the pain point?', 'Who feels this pain?', and 'What is the simplest cure?'",
-  "lesson-4.1-p3": "An image showing the concept of an MVP: a team building a skateboard first, then a scooter, then a bicycle, and finally a car, delivering value at every stage. An architect presents a plan for a skyscraper where the first phase is a solid foundation and a single, functional ground floor.",
-  "lesson-4.1-p4": "A professional uses the DCE to create their first artifact: `A1 - Project Scope.md`, with clear headings for 'Vision Statement,' 'Problem,' 'User Persona,' and 'MVP Features.' A formal, signed contract labeled 'Project Scope' is shown being created, defining deliverables and goals.",
-  "lesson-4.2-p1": "A professional stands before a vast, empty, and intimidatingly white digital canvas, holding a single glowing seed of an idea, looking uncertain. An author sits at a desk with a futuristic typewriter, staring at a single blank page, completely stuck.",
-  "lesson-4.2-p2": "A professional presents their 'Project Scope' document to a powerful AI, which generates a complete and perfectly organized architectural blueprint in response. A construction foreman hands blueprints to robotic builders who rapidly assemble the steel frame (scaffolding) of a new building.",
-  "lesson-4.2-p3": "A close-up of the DCE extension's UI in 'Cycle 0,' showing a user's project scope being turned into a full set of planning artifacts. An animation shows a 'Project Scope' seed being watered by the DCE tool, instantly sprouting into a small but complete 'Project Tree.'",
-  "lesson-4.2-p4": "A professional confidently types a clear, structured prompt instructing an AI to use the attached Project Scope to generate a project's foundational structure. A CEO delegates the setup of a new branch office to a competent subordinate (the AI), providing the high-level business plan.",
-  "lesson-4.3-p1": "An AI as a master architect generates a detailed, glowing holographic blueprint of a software application from a 'Project Scope' document. A translator is shown a high-level concept ('the why') and produces a detailed, technical instruction manual ('the how').",
-  "lesson-4.3-p2": "A side-by-side comparison of a developer manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) instantly completes all the prep work, allowing the student chef (the user) to focus on the creative part of cooking.",
-  "lesson-4.3-p3": "A professional types a precise prompt assigning the AI the role of an architect and specifying the tech stack. A client gives a very specific and detailed brief to an architectural firm, including style, materials, and number of rooms.",
-  "lesson-4.3-p4": "The newly generated project structure is shown inside the DCE. The developer clicks 'Accept Selected,' and the files instantly appear in their workspace. The final shot shows them running the application for the first time. A time-lapse sequence shows a blueprint, then a foundation being instantly laid by robots, ending with the lights turning on in the new ground floor."
+  "manifestId": "v2v-ct-images-v1",
+  "basePath": "/assets/images/v2v/career_transitioner/",
+  "imageGroups": {
+    "lesson-1.1-p1-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: 'Curation,' 'Parallel Prompting,' 'Validation,' and 'Integration.' The professional is calm and in control, conducting the flow with strategic intent. An overhead shot of a sleek, circular conference table where each seat represents a stage of the Virtuoso's Loop, with a beam of light traveling between icons for 'Planning,' 'AI Collaboration,' 'Testing,' and 'Finalizing,' showing a continuous, repeatable business process.",
+      "alt": "An expert orchestrating a complex AI workflow.",
+      "baseFileName": "lesson-1.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p2-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "An image depicting the 'Curation' phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled 'Curated Context.' A professional architect is at a drafting table, carefully selecting specific blueprints and material samples from a large collection, assembling a focused 'project binder' that contains only the essential information.",
+      "alt": "The process of curating data from chaos to clarity.",
+      "baseFileName": "lesson-1.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p3-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A visualization of 'Parallel Prompting.' A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts, returning eight distinct, varied strategic proposals. The business leader is in a 'strategy room' with eight different whiteboards, each showing a unique AI-sketched approach to the same problem, providing a full spectrum of options.",
+      "alt": "Parallel prompting to get multiple AI solutions.",
+      "baseFileName": "lesson-1.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p4-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A close-up of a leader's face, focused and analytical, reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing 'Select This Response' button. In a boardroom, a CEO points decisively at one of several holographic architectural models on a table, selecting it as the path forward.",
+      "alt": "A leader making a critical decision based on AI-generated options.",
+      "baseFileName": "lesson-1.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p5-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A simple, clear flowchart showing a Git-based workflow with a 'Baseline (Commit)' button creating a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure or 'Success.' An engineer in a high-tech lab tests a new component in a sandboxed, transparent cube; when it fails, they calmly press a 'Reset Environment' button.",
+      "alt": "The Test-and-Revert workflow using Git.",
+      "baseFileName": "lesson-1.1-p5-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p6-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A shot of the DCE's Panel where a user is typing notes into the 'Cycle Context' field, summarizing key takeaways. The 'Generate prompt.md' button is highlighted, leading to a '+' (New Cycle) button. A professional writes key insights on a digital whiteboard at the conclusion of a project phase, which are automatically archived into a 'Corporate Knowledge Base.'",
+      "alt": "Finalizing a development cycle and preparing for the next one.",
+      "baseFileName": "lesson-1.1-p6-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p1-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A professional in a modern office looks at a holographic screen showing a circular diagram: 'Human Expertise' -> 'Expert Feedback' -> 'AI Action' -> 'AI Output' -> 'System Error' -> 'Human Analysis,' which then loops back. A professional spars with a holographic martial arts master (the AI), who blocks a move and shows a slow-motion replay of the mistake for instant feedback.",
+      "alt": "AI as a feedback loop.",
+      "baseFileName": "lesson-1.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p2-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A digital librarian in a futuristic library organizes glowing blocks of data labeled 'Code,' 'PDFs,' and 'Research,' building a 'Source of Truth' structure. A pyramid diagram of professional skills shows 'Basic Prompting' at the base and 'Context Architecture & Data Curation' at the very top.",
+      "alt": "Data Curation as the apex skill.",
+      "baseFileName": "lesson-1.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p3-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A stunning, cinematic shot of a Starship Enterprise-like vessel exploring a beautiful, colorful nebula, evoking hope and discovery. A 'before-and-after' image shows a team struggling with limited tools, then empowered by AI, generating a fountain of innovative solutions.",
+      "alt": "The 'Star Trek' motivation for progress.",
+      "baseFileName": "lesson-1.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p4-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A wise, holographic mentor figure guides a professional through a complex strategic blueprint, pointing out key connections and making the 'hidden curriculum' of expert thinking visible. A split-panel image shows a human expert's complex internal thought processes being translated by an AI into a clear, step-by-step flowchart for a learner.",
+      "alt": "AI as a Cognitive Mentor.",
+      "baseFileName": "lesson-1.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p1-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A diverse group of professionals—a project manager, a military officer, a marketing strategist—collaborate in a futuristic workspace, using holographic interfaces to assemble complex systems without traditional coding. A 'Swiss Army Knife' for the modern professional, where the central, largest tool is labeled 'AI Orchestration,' representing the Citizen Architect's core competency.",
+      "alt": "The Citizen Architect archetype.",
+      "baseFileName": "lesson-1.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p2-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "An image showing a human brain composed of glowing, interconnected circuits, with data streams for 'Domain Expertise,' 'Critical Thinking,' and 'Systems Design' flowing into it, increasing its brightness. A diagram shows a company's value where 'Cognitive Capital' is a dynamic, growing tree that produces the 'fruit' of innovation.",
+      "alt": "Cultivating Cognitive Capital.",
+      "baseFileName": "lesson-1.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p3-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A Citizen Architect stands before community stakeholders, presenting a holographic visualization of a new system and telling a compelling story about its benefits. An architect is shown conducting an orchestra where the musicians are developers, designers, and AI agents, unifying their efforts.",
+      "alt": "The Architect as a storyteller.",
+      "baseFileName": "lesson-1.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p4-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A 'before and after' diptych showing a shift from a slow, hierarchical corporate structure to a dynamic, decentralized network of empowered Citizen Architects. In a community garden, Citizen Architects provide tools and expertise to community members, helping them build their own solutions, representing bottom-up innovation.",
+      "alt": "The strategic impact of the Citizen Architect.",
+      "baseFileName": "lesson-1.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p1-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A seasoned professional stands before a chaotic storm of digital information, calmly selecting and organizing it into a clean, structured, glowing data stream labeled 'High-Quality Context.' A chef in a high-end kitchen meticulously performs mise en place, organizing raw ingredients into neat bowls labeled 'Curated Data.'",
+      "alt": "The principles of Data Curation.",
+      "baseFileName": "lesson-2.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p2-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A side-by-side comparison of an AI machine fed 'garbage' data producing a nonsensical blueprint, versus the same machine fed 'Curated Data' producing a brilliant, precise plan. Two pipelines show dirty water resulting in muddy output, while clean, filtered water results in pure output.",
+      "alt": "The 'Garbage In, Garbage Out' principle.",
+      "baseFileName": "lesson-2.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p3-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A three-panel diagram showing the core workflow: 'GATHER' (pulling in documents), 'ORGANIZE' (arranging into a folder structure), and 'LABEL' (applying descriptive names). A professional organizes a physical library by gathering books, sorting them by genre, and applying clear labels.",
+      "alt": "The Curator's Method.",
+      "baseFileName": "lesson-2.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p4-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A sleek, futuristic toolkit is open, showing glowing digital tools like 'Context Selector' and 'Parallel Co-Pilot.' A VS Code window highlights the Data Curation Environment (DCE) extension, with its UI elements glowing, indicating they are the specific tools for the job.",
+      "alt": "The Data Curation Environment (DCE) toolkit.",
+      "baseFileName": "lesson-2.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p1-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A professional adds glowing labels and tags ('Version 2.1,' 'Status: Approved') to a complex digital blueprint, creating a layer of order. An intelligence analyst adds digital annotations to a satellite photo, marking points of interest to add meaning.",
+      "alt": "The professional's guide to data annotation.",
+      "baseFileName": "lesson-2.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p2-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A split-panel image shows a confused AI surrounded by unlabeled file icons, versus a confident AI efficiently processing clearly labeled files. A manager gives a messy, unlabeled stack of papers to one employee (AI) who looks lost, while another receives an organized binder and gets to work immediately.",
+      "alt": "The cost of ambiguity in AI.",
+      "baseFileName": "lesson-2.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p3-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A three-panel diagram showing practical annotation: renaming `final_draft.docx` to `Q3-Marketing-Strategy-v2.1-APPROVED.docx`, moving files into structured folders, and applying metadata tags. A professional's screen shows a 'before' of a messy desktop and an 'after' of a clean file explorer with a well-defined hierarchy.",
+      "alt": "Practical annotation techniques.",
+      "baseFileName": "lesson-2.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p4-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A powerful AI flawlessly executes a complex business workflow, guided by the glowing metadata attached to each piece of information. A CEO gives a high-level command ('Show me all active Q3 proposals'), and an AI instantly generates a perfect summary by filtering correctly annotated documents.",
+      "alt": "The payoff of data annotation.",
+      "baseFileName": "lesson-2.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p1-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A seasoned professional in a high-tech quality control lab meticulously inspecting a glowing, holographic blueprint generated by an AI, using a digital magnifying glass. A ship captain on the bridge carefully reviews a course plotted by an AI, cross-referencing it with traditional sea charts, taking ultimate responsibility.",
+      "alt": "Quality control for AI output.",
+      "baseFileName": "lesson-2.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p2-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A 'rogue's gallery' of digital phantoms representing AI failure modes: a 'Hallucination' ghost, a 'Flawed Logic' knot of wires, and a 'Security Vulnerability' skull-and-crossbones. A medical AI's report shows highlighted errors: a 'Hallucinated' study, a 'Logical Error' in dosage, and a 'Misalignment' with hospital policy.",
+      "alt": "Common AI failure modes.",
+      "baseFileName": "lesson-2.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p3-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A professional at a workstation with a large diff viewer methodically compares an 'Original File' with an 'AI-Generated File.' An editor is shown reviewing a manuscript by checking the plot, then chapter structure, then sentence-level grammar.",
+      "alt": "The analysis workflow from diff to decision.",
+      "baseFileName": "lesson-2.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p4-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A diagram showing a virtuous cycle where an 'AI Output' is fed into a 'Human Critique,' which creates a 'Refined Prompt,' leading to an 'Improved Output.' A professional coaches an AI assistant, writing a clear, corrective instruction to teach it how to fix a mistake, rather than fixing it herself.",
+      "alt": "Closing the feedback loop.",
+      "baseFileName": "lesson-2.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p1-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A seasoned executive outlines a structured project plan on a whiteboard, which an AI translates into a flawless digital architecture. A split-panel shows a manager giving vague instructions to a confused employee (AI), then giving a clear, written brief to an understanding employee.",
+      "alt": "The principles of structured AI interaction.",
+      "baseFileName": "lesson-3.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p2-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A close-up of a futuristic digital document titled 'Interaction Schema' with clear sections for 'ROLE,' 'CONTEXT,' and 'OUTPUT_FORMAT.' An image of a military-style 'Operations Order' (OPORD) template, showing a real-world example of an effective interaction schema.",
+      "alt": "The Interaction Schema as a briefing document.",
+      "baseFileName": "lesson-3.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p3-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "An architectural diagram where an 'Unstructured Prompt' leads to chaotic outcomes, while a 'Structured Interaction' leads to a predictable, straight line. An animation of a manufacturing assembly line shows robots making frequent errors with unstructured instructions, then working flawlessly with structured ones.",
+      "alt": "The business case for structured interaction.",
+      "baseFileName": "lesson-3.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p4-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A 'before and after' comparison of a vague chat bubble request ('make the page better') versus a structured command with clear `// ROLE`, `// TASK`, `// CONTEXT` sections. A professional chef gives instructions: 'make dinner' (before) vs. handing over a detailed recipe card (after).",
+      "alt": "A practical example of structured interaction.",
+      "baseFileName": "lesson-3.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p1-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A professional looks at a holographic screen showing a circular feedback loop where 'System Error' is a key input for 'Human Analysis.' A scientist in a lab runs an experiment (AI code), gets an unexpected result (error), analyzes it, adjusts the parameters (prompt), and runs it again.",
+      "alt": "Leveraging errors as data points.",
+      "baseFileName": "lesson-3.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p2-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A clean, infographic-style diagram showing three types of errors: 'Compiler Error' (grammar mistakes), 'Runtime Error' (impossible action), and 'Logical Error' (correct machine, wrong direction). A doctor diagnoses a patient, identifying a 'Syntax Error' (miswritten prescription), 'Runtime Error' (allergic reaction), and 'Logical Error' (correct prescription, wrong illness).",
+      "alt": "A guide to different error types.",
+      "baseFileName": "lesson-3.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p3-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A step-by-step diagram of the debugging feedback loop: AI generates code, a red error message appears, the professional copies the full error, and pastes it into the DCE with the prompt 'Fix this.' An after-action review where a 'Failure Report' (error message) becomes input for the 'Next Project's Planning Phase' (next prompt).",
+      "alt": "The debugging cycle in practice.",
+      "baseFileName": "lesson-3.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p4-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A graph showing a steep, upward-curving 'V2V Learning Curve,' fueled by small, iterative cycles of error and correction. A professional climbs a staircase labeled 'Expertise,' where each step is an error they have learned to solve, showing mastery is built by overcoming a series of challenges.",
+      "alt": "Accelerating the learning curve.",
+      "baseFileName": "lesson-3.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p1-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A professional engineer works on a complex blueprint with a prominent, glowing 'UNDO' button beside them, conveying safety and confidence. A bomb disposal expert works on a device inside a reinforced containment chamber labeled 'Git Baseline,' allowing them to work without fear.",
+      "alt": "The professional's safety net.",
+      "baseFileName": "lesson-3.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p2-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A diagram shows a single prompt leading to three unpredictable AI outcomes (one success, two failures), with a human protected by a glowing shield labeled 'Git Baseline.' A pharmaceutical researcher tests three new drug compounds (AI solutions) on disposable lab cultures, so a failure doesn't impact the main project.",
+      "alt": "Managing non-determinism with a safety net.",
+      "baseFileName": "lesson-3.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p3-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A clear, four-step flowchart: 'Baseline' (snapshot), 'Accept' (apply AI code), 'Test' (run and see 'FAIL'), and 'Restore' (revert to snapshot). An animated sequence showing a developer saving their game ('Baseline'), trying a new strategy and losing ('Test'), then loading their last save ('Restore').",
+      "alt": "The four-step validation process.",
+      "baseFileName": "lesson-3.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p4-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A graph compares a slow, cautious 'Traditional Workflow' with the rapid, experimental 'V2V Workflow,' which shows a much faster rate of progress. A split-panel shows a team cautiously debating a small change, versus a single developer fearlessly testing a massive change, knowing they can undo it instantly.",
+      "alt": "The advantage of innovating with confidence.",
+      "baseFileName": "lesson-3.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p1-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A seasoned professional sketches a high-level strategic plan on a holographic whiteboard, showing a clear line from 'Problem' to 'Target User' to 'Proposed Solution.' A ship's captain is on the bridge, decisively plotting a course on a star chart to a distant, shining star labeled 'Project Goal.'",
+      "alt": "Architecting a solution from a business need.",
+      "baseFileName": "lesson-4.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p2-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A three-panel diagram showing the discovery phase: a magnifying glass over a 'Problem Statement,' a profile of a 'Target User Persona,' and a simple diagram of the 'Core Solution.' A professional breaks down a complex business challenge into three simple questions on a whiteboard: 'What is the pain point?', 'Who feels this pain?', and 'What is the simplest cure?'",
+      "alt": "Answering the three core questions of project scope.",
+      "baseFileName": "lesson-4.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p3-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "An image showing the concept of an MVP: a team building a skateboard first, then a scooter, then a bicycle, and finally a car, delivering value at every stage. An architect presents a plan for a skyscraper where the first phase is a solid foundation and a single, functional ground floor.",
+      "alt": "The principle of the Minimum Viable Product.",
+      "baseFileName": "lesson-4.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p4-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A professional is shown using the DCE to create their first artifact: `A1 - Project Scope.md`, with clear headings for 'Vision Statement,' 'Problem,' 'User Persona,' and 'MVP Features.' A formal, signed contract labeled 'Project Scope' is shown being created, defining deliverables and goals.",
+      "alt": "Writing the Project Scope artifact.",
+      "baseFileName": "lesson-4.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p1-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A professional stands before a vast, empty, and intimidatingly white digital canvas, holding a single glowing seed of an idea, looking uncertain. An author sits at a desk with a futuristic typewriter, staring at a single blank page, completely stuck.",
+      "alt": "The challenge of the Blank Page Problem.",
+      "baseFileName": "lesson-4.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p2-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A professional presents their 'Project Scope' document to a powerful AI, which generates a complete and perfectly organized architectural blueprint in response. A construction foreman hands blueprints to robotic builders who rapidly assemble the steel frame (scaffolding) of a new building.",
+      "alt": "AI as a scaffolding engine.",
+      "baseFileName": "lesson-4.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p3-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A close-up of the DCE extension's 'Cycle 0' UI, showing how a user's scope is turned into a full set of planning artifacts. An animation shows a 'Project Scope' seed being watered by the DCE tool, instantly sprouting into a small but complete 'Project Tree.'",
+      "alt": "The DCE's 'Cycle 0' onboarding workflow.",
+      "baseFileName": "lesson-4.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p4-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A professional confidently typing a prompt that instructs an AI to use the attached Project Scope to generate a project's foundational structure. A CEO is delegating the setup of a new branch office to a competent subordinate (the AI), providing the high-level business plan.",
+      "alt": "Commanding the AI to architect the foundation.",
+      "baseFileName": "lesson-4.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p1-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "An AI as a master architect generates a detailed, glowing holographic blueprint of a software application from a 'Project Scope' document. A translator is shown a high-level concept ('the why') and is producing a detailed, technical instruction manual ('the how').",
+      "alt": "Generating an architectural blueprint from a scope.",
+      "baseFileName": "lesson-4.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p2-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A side-by-side comparison of a developer manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) instantly completes all the prep work, allowing the student chef (the user) to focus on the creative part of cooking.",
+      "alt": "The AI as a technical architect.",
+      "baseFileName": "lesson-4.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p3-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A developer typing a precise prompt assigning the AI the role of an architect and specifying the tech stack. A client gives a very specific and detailed brief to an architectural firm, including style, materials, and number of rooms.",
+      "alt": "Writing the architectural scaffolding prompt.",
+      "baseFileName": "lesson-4.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p4-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "The newly generated project structure is shown inside the DCE, and with a click, the files appear in the workspace, and the application runs for the first time. A time-lapse sequence shows a blueprint, then a foundation being instantly laid by robots, ending with the lights turning on in the new ground floor.",
+      "alt": "Kicking off Cycle 1 from the AI-generated blueprint.",
+      "baseFileName": "lesson-4.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    }
+  }
 }
 </file_artifact>
 
 <file path="public/data/imagemanifest_underequipped_graduate.json">
 {
-  "lesson-1.1-p1": "A cinematic shot of a recent graduate at a sleek, futuristic workstation, confidently orchestrating a complex coding project while others around them look stressed and buried in textbooks; the title 'THE UNFAIR ADVANTAGE' floats above. A split-panel image shows a graduate's generic resume getting a 'rejected' stamp, while another's portfolio built with the V2V workflow gets a glowing 'HIRED' stamp.",
-  "lesson-1.1-p2": "On the left, a chaotic mess of project requirements on sticky notes; in the center, a developer organizes them with a clean interface; on the right, a neat stack labeled 'High-Quality Context.' A student packs a backpack for a hike: one panel shows them randomly stuffing gear, the other shows them carefully packing a map ('The Plan') and essential gear ('The Context').",
-  "lesson-1.1-p3": "A single coding problem is sent out and splits into eight parallel pathways to eight AI assistants, each returning a different code solution. A student at a career fair talks to eight holographic recruiters simultaneously, getting a full spectrum of career advice.",
-  "lesson-1.1-p4": "A focused developer reviews a futuristic diff viewer comparing two code files, their hand poised over a 'Select This Response' button. A young engineer in a code review with a senior developer (an AI robot) confidently points out a bug in the AI's code.",
-  "lesson-1.1-p5": "A simple diagram of a Git-based workflow: a 'Baseline (Commit)' button creates a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure. A developer works on complex code inside a glowing 'sandbox'; the code explodes, but the developer is unharmed and presses a 'Reset' button.",
-  "lesson-1.1-p6": "A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with the 'Generate prompt.md' and '+' (New Cycle) buttons highlighted. A student adds a completed, polished project to their online portfolio, then starts a new document titled 'Next Project Plan.'",
-  "lesson-1.2-p1": "A student working on a coding problem gets an error message; an AI assistant shows them how to feed the error back as a prompt, leading to a 'lightbulb' moment. A student practicing basketball gets instant feedback from a holographic AI coach who shows a slow-motion replay of their flawed form and the corrected trajectory.",
-  "lesson-1.2-p2": "A job description for a 'Next-Gen Software Engineer' with 'Data Curation' and 'Context Engineering' listed above 'Python/JavaScript.' A recruiter compares two resumes, focusing on the one that lists projects built by directing an AI, not just one listing programming languages.",
-  "lesson-1.2-p3": "A diverse group of young, brilliant engineers collaborate in a solarpunk innovation hub, working on holographic interfaces for clean energy and space exploration. An image of a single developer planting a seed that grows into a massive tree with branches of innovative applications.",
-  "lesson-1.2-p4": "A student climbs a steep mountain labeled 'Skill Acquisition' while a holographic mentor creates glowing handholds (scaffolding) for them. A split-panel image shows a student struggling with a textbook, then working with an AI mentor who generates personalized explanations and interactive examples.",
-  "lesson-1.3-p1": "A young, confident developer stands before a holographic career path diagram where the 'Citizen Architect' path branches off to high-impact roles like 'AI Systems Designer.' An image of a business card for a recent graduate with the title 'Citizen Architect,' and a tagline 'Designing and Building AI-Powered Solutions.'",
-  "lesson-1.3-p2": "An image of a developer's brain, glowing with activity as connections are forged between 'CS Fundamentals,' 'AI Collaboration Skills,' and 'Problem-Solving.' A bar chart shows a developer's value to a company, with the 'Problem-Solving & Innovation' bar being twice as high as the 'Coding' bar.",
-  "lesson-1.3-p3": "A young developer confidently presents a project to a team, using a compelling visualization of the architecture and user flow. A developer leads a meeting, using a simple whiteboard diagram to explain a complex technical concept to a non-technical project manager.",
-  "lesson-1.3-p4": "A young developer presents a sleek, innovative application to impressed senior executives, positioning them as a key innovator. A 'ripple effect' diagram shows a Citizen Architect at the center, with their single application creating ripples of 'Improved User Experience,' 'Increased Team Efficiency,' and 'New Company Revenue.'",
-  "lesson-2.1-p1": "A young graduate at a job interview, where the hiring manager is pointing to a glowing section on their resume: 'Proficient in Data Curation & Context Engineering.' A student in a high-tech library organizes glowing digital files into a 'Context Backpack' for a project.",
-  "lesson-2.1-p2": "A side-by-side comparison of a student handing a messy paper to a professor ('AI') and getting a 'C-', versus handing in a clean paper and getting an 'A+.' Two chefs bake a cake; one uses bad ingredients and gets a burnt cake, the other uses high-quality ingredients and gets a perfect cake.",
-  "lesson-2.1-p3": "A three-panel 'how-to' guide: 'GATHER' files for a project, 'ORGANIZE' them into folders like 'Source Code,' and 'LABEL' them with descriptive names. A student prepares for an open-book exam by gathering books, organizing notes with tabs, and creating an index.",
-  "lesson-2.1-p4": "A sleek, futuristic toolkit shows glowing digital tools like 'Context Selector' and 'Parallel Co-Pilot.' A student's laptop highlights the DCE extension in VS Code, with beams of light connecting it to a successful project.",
-  "lesson-2.2-p1": "A student adds glowing labels ('Chapter 1,' 'Key Concept') to digital flashcards, creating a structured study guide. A librarian uses a futuristic interface to add digital tags to books, allowing a robot assistant to instantly retrieve the correct one.",
-  "lesson-2.2-p2": "A split-panel image shows a student giving disorganized notes to a confused friend ('AI'), then giving an organized binder to a confident friend. An AI robot fails to assemble furniture with unlabeled parts, then succeeds perfectly when every part is in a labeled bag.",
-  "lesson-2.2-p3": "A three-panel guide shows renaming `script.js` to `user-login-api.js`, dragging messy desktop files into clean folders, and the final professional structure. A 'before and after' of a student's project folder shows a mess transformed into a clean hierarchy that would impress a hiring manager.",
-  "lesson-2.2-p4": "A young developer proudly shows off a complex, polished application on their laptop while a glowing AI avatar gives a thumbs-up. A gallery view of a student's portfolio shows multiple high-quality, working applications, implying the workflow is key to building it.",
-  "lesson-2.3-p1": "A young developer confidently presents a code review to an impressed senior engineer, pointing out a subtle bug in AI-generated code. A student acts as a fact-checker for an AI's essay, cross-referencing claims with reliable sources and highlighting an error.",
-  "lesson-2.3-p2": "A 'field guide' page shows different types of bugs: a 'Phantom Function,' a 'Logic Worm,' and a 'Security Spider.' A detective (the developer) at a crime scene (code) uses a magnifying glass to find clues representing different AI error types.",
-  "lesson-2.3-p3": "A young developer with a checklist methodically reviews code: '1. Understand the Goal,' '2. Check the Big Picture (Diff),' '3. Read the Code,' and '4. Run the Tests.' A student edits a term paper by checking the overall structure, then paragraph topics, then line-by-line grammar.",
-  "lesson-2.3-p4": "A diagram shows a cycle where an 'AI Bug' leads to a developer writing a 'Better Prompt,' which is fed back to the AI to produce 'Better Code.' A student in a tutoring session with an AI mentor shows the AI a mistake it made, and the AI provides a new, corrected solution with an explanation.",
-  "lesson-3.1-p1": "A young developer, frustrated with messy AI code, has a 'lightbulb' moment when a mentor points them to a structured checklist. A split-panel shows someone giving vague gestures to a confused robot, then giving a precise map to a robot that immediately proceeds to the destination.",
-  "lesson-3.1-p2": "A simple template on a screen with fields for '1. What is the AI's Role?', '2. What is the Task?', '3. What Files Does it Need?', etc. An image of a perfect lab report template with all required sections, ensuring a professional submission.",
-  "lesson-3.1-p3": "An engineering manager reviews two portfolios, smiling at the one with clean, documented, and structured processes. Two job candidates interview; one says 'I just talk to the AI,' the other explains their structured interaction schema, impressing the interviewer.",
-  "lesson-3.1-p4": "A 'before and after' of a vague prompt ('fix the login page') versus a professional command with `// ROLE`, `// TASK`, `// CONTEXT` sections. A student's email to a professor is shown, first as a sloppy message, then as a well-structured, professional email.",
-  "lesson-3.2-p1": "A student, confused by an error message, is encouraged by an AI companion to use the error as the next prompt, leading to a 'lightbulb' moment. A mechanic uses a diagnostic computer to get an error code from a car, then looks up that code in a technical manual (the AI) to find the solution.",
-  "lesson-3.2-p2": "A friendly infographic shows three types of bugs: a 'Syntax Bug' reading a rulebook incorrectly, a 'Runtime Bug' tripping over a wire, and a 'Logic Bug' following a map to the wrong treasure. A biology student looks at three different insects under a microscope, each representing a different type of code bug.",
-  "lesson-3.2-p3": "A step-by-step diagram: a developer runs code, a red error appears, they copy the entire error message, and paste it into the DCE with the prompt 'Fix this error.' A doctor gets a lab result (stack trace) from a patient (code) and feeds it into a medical database (the AI) to get a diagnosis.",
-  "lesson-3.2-p4": "A graph shows a slow 'Traditional Learning' line versus a steep, rocketing 'V2V Feedback Loop' line. A split-panel shows a student struggling to learn guitar from a book, versus another student learning much faster with a real-time feedback app.",
-  "lesson-3.3-p1": "A young developer confidently works on a complex project with a glowing 'UNDO' button beside them. A student in a chemistry lab works with volatile chemicals inside a protective fume hood labeled 'Git Workflow.'",
-  "lesson-3.3-p2": "An AI robot offers a developer three code snippets; one is good, but two have hidden bugs, and the developer is protected by a shield labeled 'Git Baseline.' A student uses a 'spell checker' AI that gives one perfect suggestion and one nonsensical one, illustrating the need for verification.",
-  "lesson-3.3-p3": "A four-step flowchart: 'Baseline' (Save Point), 'Accept' (Apply Code), 'Test' (Run and get 'TEST FAILED'), and 'Restore' (revert to save point). A student writing an essay saves the draft, accepts a major revision from a tool, re-reads it, finds it's bad, and reopens the last good version.",
-  "lesson-3.3-p4": "A graph shows a slow 'Cautious Coder' learning curve versus a steep 'V2V Developer' curve made of bold experiments and tiny, quick reverts. Two students build a Lego model; one is slow and cautious, the other is fast and experimental, knowing they can easily rebuild.",
-  "lesson-4.1-p1": "A hiring manager reviews a graduate's portfolio, looking impressed at a well-written Project Scope document. A young engineer confidently presents their Project Scope document on a large screen to their team lead in a project kickoff meeting.",
-  "lesson-4.1-p2": "A three-panel diagram shows a 'Cool Idea!' lightbulb being refined by questions ('Who is this for?') into an 'Actionable Plan' blueprint. A student's research paper process is shown: broad topic -> narrow research questions -> detailed outline.",
-  "lesson-4.1-p3": "An image shows two paths: 'Build Everything' leads to an unfinished mess, while 'Build the MVP' leads to a small but complete, working application. A student building a model rocket focuses on a simple, single-stage rocket that is guaranteed to launch, rather than a complex multi-stage one.",
-  "lesson-4.1-p4": "A student uses the DCE to create their first artifact: `A1 - Project Scope.md`, with professional headings. A 'before and after' shows a blank document transformed into a complete, professional project scope, ready for a portfolio.",
-  "lesson-4.2-p1": "A recent graduate sits in front of a completely empty code editor, looking overwhelmed and uncertain, with question marks floating around them. An artist stares at a large, blank white canvas, experiencing 'artist's block.'",
-  "lesson-4.2-p2": "A developer hands their 'Project Scope' document to a friendly AI robot, who reads it and quickly assembles a perfect 'skeleton' of a project. A writer gives their story outline to an AI, which generates the first few paragraphs, giving them a starting point.",
-  "lesson-4.2-p3": "A close-up of the DCE's 'Cycle 0' UI, showing a user's scope being turned into a full set of planning artifacts. An animation shows a student planting a 'Project Scope' seed, which the DCE waters, and it instantly sprouts into a 'Project Tree.'",
-  "lesson-4.2-p4": "A developer confidently types a prompt instructing an AI to use their Project Scope to generate a complete starter project for a Next.js application. A student gives their essay outline to a tutor (the AI), who helps them create the initial document with the title page and headings in place.",
-  "lesson-4.3-p1": "A student presents their 'Project Scope' document to an AI robot, which generates a professional 'Architectural Blueprint' in response. A home builder gives a client's feature list (scope) to a computer program (AI) to generate a detailed architectural blueprint.",
-  "lesson-4.3-p2": "A side-by-side comparison of a student manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) has already done all the prep work, allowing the student chef (the user) to focus on the creative cooking process.",
-  "lesson-4.3-p3": "A developer types a clear prompt: 'Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project.' A student ordering a custom computer uses a configuration tool, selecting the 'Expert' build and specifying all required components.",
-  "lesson-4.3-p4": "The new project structure is shown in the DCE. The developer clicks 'Accept Selected,' and the files appear. The final shot shows them typing `npm run dev` and seeing a 'Welcome to Next.js' page. A student receives a 'build-it-yourself' furniture kit (AI response), assembles it ('Accept' and `npm install`), and the final image shows their new, functional desk."
+  "manifestId": "v2v-ug-images-v1",
+  "basePath": "/assets/images/v2v/underequipped_graduate/",
+  "imageGroups": {
+    "lesson-1.1-p1-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A cinematic shot of a recent graduate at a sleek, futuristic workstation, confidently orchestrating a complex coding project while others around them look stressed and buried in textbooks; the title 'THE UNFAIR ADVANTAGE' floats above. A split-panel image shows a graduate's generic resume getting a 'rejected' stamp, while another's portfolio built with the V2V workflow gets a glowing 'HIRED' stamp.",
+      "alt": "A graduate gaining a competitive edge with AI skills.",
+      "baseFileName": "lesson-1.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p2-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "On the left, a chaotic mess of project requirements on sticky notes; in the center, a developer organizes them with a clean interface; on the right, a neat stack labeled 'High-Quality Context.' A student packs a backpack for a hike: one panel shows them randomly stuffing gear, the other shows them carefully packing a map ('The Plan') and essential gear ('The Context').",
+      "alt": "Planning and curating context for a project.",
+      "baseFileName": "lesson-1.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p3-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A single coding problem is sent out and splits into eight parallel pathways to eight AI assistants, each returning a different code solution. A student at a career fair talks to eight holographic recruiters simultaneously, getting a full spectrum of career advice.",
+      "alt": "Getting multiple options from AI.",
+      "baseFileName": "lesson-1.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p4-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A focused developer reviews a futuristic diff viewer comparing two code files, their hand poised over a 'Select This Response' button. A young engineer in a code review with a senior developer (an AI robot) confidently points out a bug in the AI's code.",
+      "alt": "The developer acting as a code reviewer for AI output.",
+      "baseFileName": "lesson-1.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p5-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A simple diagram of a Git-based workflow: a 'Baseline (Commit)' button creates a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure. A developer works on complex code inside a glowing 'sandbox'; the code explodes, but the developer is unharmed and presses a 'Reset' button.",
+      "alt": "Testing AI code without fear using Git.",
+      "baseFileName": "lesson-1.1-p5-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p6-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with the 'Generate prompt.md' and '+' (New Cycle) buttons highlighted. A student adds a completed, polished project to their online portfolio, then starts a new document titled 'Next Project Plan.'",
+      "alt": "Documenting and repeating the development cycle.",
+      "baseFileName": "lesson-1.1-p6-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p1-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A student working on a coding problem gets an error message; an AI assistant shows them how to feed the error back as a prompt, leading to a 'lightbulb' moment. A student practicing basketball gets instant feedback from a holographic AI coach who shows a slow-motion replay of their flawed form and the corrected trajectory.",
+      "alt": "Using AI as a feedback loop for learning.",
+      "baseFileName": "lesson-1.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p2-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A job description for a 'Next-Gen Software Engineer' with 'Data Curation' and 'Context Engineering' listed above 'Python/JavaScript.' A recruiter compares two resumes, focusing on the one that lists projects built by directing an AI, not just one listing programming languages.",
+      "alt": "Data Curation as a key skill for employment.",
+      "baseFileName": "lesson-1.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p3-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A diverse group of young, brilliant engineers collaborate in a solarpunk innovation hub, working on holographic interfaces for clean energy and space exploration. An image of a single developer planting a seed that grows into a massive tree with branches of innovative applications.",
+      "alt": "The big picture of building a better future with technology.",
+      "baseFileName": "lesson-1.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p4-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A student climbs a steep mountain labeled 'Skill Acquisition' while a holographic mentor creates glowing handholds (scaffolding) for them. A split-panel image shows a student struggling with a textbook, then working with an AI mentor who generates personalized explanations and interactive examples.",
+      "alt": "The AI as a cognitive mentor providing an unfair advantage.",
+      "baseFileName": "lesson-1.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p1-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A young, confident developer stands before a holographic career path diagram where the 'Citizen Architect' path branches off to high-impact roles like 'AI Systems Designer.' An image of a business card for a recent graduate with the title 'Citizen Architect,' and a tagline 'Designing and Building AI-Powered Solutions.'",
+      "alt": "The Citizen Architect as a new job title.",
+      "baseFileName": "lesson-1.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p2-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "An image of a developer's brain, glowing with activity as connections are forged between 'CS Fundamentals,' 'AI Collaboration Skills,' and 'Problem-Solving.' A bar chart shows a developer's value to a company, with the 'Problem-Solving & Innovation' bar being twice as high as the 'Coding' bar.",
+      "alt": "Cognitive Capital as a killer skill.",
+      "baseFileName": "lesson-1.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p3-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A young developer confidently presents a project to a team, using a compelling visualization of the architecture and user flow. A developer leads a meeting, using a simple whiteboard diagram to explain a complex technical concept to a non-technical project manager.",
+      "alt": "The architect as a storyteller and communicator.",
+      "baseFileName": "lesson-1.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p4-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A young developer presents a sleek, innovative application to impressed senior executives, positioning them as a key innovator. A 'ripple effect' diagram shows a Citizen Architect at the center, with their single application creating ripples of 'Improved User Experience,' 'Increased Team Efficiency,' and 'New Company Revenue.'",
+      "alt": "The impact of the Citizen Architect role on the future.",
+      "baseFileName": "lesson-1.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p1-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A young graduate at a job interview, where the hiring manager is pointing to a glowing section on their resume: 'Proficient in Data Curation & Context Engineering.' A student in a high-tech library organizes glowing digital files into a 'Context Backpack' for a project.",
+      "alt": "Data Curation as a key skill for employment.",
+      "baseFileName": "lesson-2.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p2-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A side-by-side comparison of a student handing a messy paper to a professor ('AI') and getting a 'C-', versus handing in a clean paper and getting an 'A+.' Two chefs bake a cake; one uses bad ingredients and gets a burnt cake, the other uses high-quality ingredients and gets a perfect cake.",
+      "alt": "The 'Garbage In, Garbage Out' rule.",
+      "baseFileName": "lesson-2.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p3-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A three-panel 'how-to' guide: 'GATHER' files, 'ORGANIZE' them into folders, and 'LABEL' them with descriptive names. A student prepares for an open-book exam by gathering books, organizing notes, and creating an index.",
+      "alt": "The Curator's Method: Gather, Organize, Label.",
+      "baseFileName": "lesson-2.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p4-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A sleek toolkit shows glowing digital tools like 'Context Selector.' A student's laptop highlights the DCE extension in VS Code, with beams of light connecting it to a successful project.",
+      "alt": "The Data Curation Environment (DCE) toolkit.",
+      "baseFileName": "lesson-2.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p1-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A student adds glowing labels ('Chapter 1,' 'Key Concept') to digital flashcards, creating a structured study guide. A librarian uses a futuristic interface to add digital tags to books, allowing a robot assistant to instantly find the right book.",
+      "alt": "An introduction to data annotation.",
+      "baseFileName": "lesson-2.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p2-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A split-panel shows a student giving disorganized notes to a confused friend ('AI'), then giving an organized binder to a confident friend. An AI robot fails to assemble furniture with unlabeled parts, then succeeds perfectly when every part is in a labeled bag.",
+      "alt": "The importance of not making the AI guess.",
+      "baseFileName": "lesson-2.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p3-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A three-panel guide shows renaming `script.js` to `user-login-api.js`, dragging messy files into clean folders, and the final professional structure. A 'before and after' of a student's project folder shows a mess transformed into a clean hierarchy.",
+      "alt": "The annotation starter pack: naming and structuring.",
+      "baseFileName": "lesson-2.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p4-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A young developer proudly shows off a complex, polished application on their laptop while a glowing AI avatar gives a thumbs-up. A gallery view of a student's portfolio shows multiple high-quality, working applications.",
+      "alt": "The payoff of building a killer portfolio.",
+      "baseFileName": "lesson-2.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p1-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A young developer confidently presents a code review to an impressed senior engineer, pointing out a subtle bug in AI-generated code. A student acts as a fact-checker for an AI's essay, cross-referencing claims with reliable sources.",
+      "alt": "The importance of verifying AI output.",
+      "baseFileName": "lesson-2.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p2-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A 'field guide' page shows different types of bugs: a 'Phantom Function,' a 'Logic Worm,' and a 'Security Spider.' A detective (the developer) at a crime scene (code) uses a magnifying glass to find clues representing different AI error types.",
+      "alt": "A field guide to AI errors.",
+      "baseFileName": "lesson-2.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p3-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A young developer with a checklist methodically reviews code: '1. Understand the Goal,' '2. Check the Big Picture (Diff),' '3. Read the Code,' '4. Run the Tests.' A student edits a term paper by checking the overall structure, then paragraph topics, then line-by-line grammar.",
+      "alt": "A method for reviewing code.",
+      "baseFileName": "lesson-2.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p4-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A diagram shows a cycle where an 'AI Bug' leads to a developer writing a 'Better Prompt,' which is fed back to the AI to produce 'Better Code.' A student in a tutoring session shows an AI mentor a mistake it made, and the AI provides a new, corrected solution with an explanation.",
+      "alt": "Turning bugs into better prompts.",
+      "baseFileName": "lesson-2.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p1-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A young developer, frustrated with messy AI code, has a 'lightbulb' moment when a mentor points them to a structured checklist. A split-panel shows someone giving vague gestures to a confused robot, then giving a precise map to a robot that immediately proceeds to the destination.",
+      "alt": "An introduction to interaction schemas.",
+      "baseFileName": "lesson-3.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p2-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A simple template on a screen with fields for '1. What is the AI's Role?', '2. What is the Task?', '3. What Files Does it Need?', etc. An image of a perfect lab report template with all required sections.",
+      "alt": "A template for perfect prompts.",
+      "baseFileName": "lesson-3.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p3-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "An engineering manager reviews two portfolios, smiling at the one with clean, documented, and structured processes. Two job candidates interview; one says 'I just talk to the AI,' the other explains their structured interaction schema, impressing the interviewer.",
+      "alt": "Why structured prompts get you hired.",
+      "baseFileName": "lesson-3.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p4-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A 'before and after' of a vague prompt ('fix the login page') versus a professional command with `// ROLE`, `// TASK`, `// CONTEXT` sections. A student's email to a professor is shown, first as a sloppy message, then as a well-structured, professional email.",
+      "alt": "From a vague request to a professional command.",
+      "baseFileName": "lesson-3.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p1-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A student, confused by an error message, is encouraged by an AI companion to use the error as the next prompt, leading to a 'lightbulb' moment. A mechanic uses a diagnostic computer to get an error code from a car, then looks up that code in a technical manual (the AI) to find the solution.",
+      "alt": "Turning errors into progress.",
+      "baseFileName": "lesson-3.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p2-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A friendly infographic shows three types of bugs: a 'Syntax Bug' reading a rulebook incorrectly, a 'Runtime Bug' tripping over a wire, and a 'Logic Bug' following a map to the wrong treasure. A biology student looks at three different insects under a microscope, each representing a different type of code bug.",
+      "alt": "A field guide to code bugs.",
+      "baseFileName": "lesson-3.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p3-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A step-by-step diagram: a developer runs code, a red error appears, they copy the entire error message, and paste it into the DCE with the prompt 'Fix this error.' A doctor gets a lab result (stack trace) from a patient (code) and feeds it into a medical database (the AI) to get a diagnosis.",
+      "alt": "The debugging cycle step-by-step.",
+      "baseFileName": "lesson-3.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p4-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A graph shows a slow 'Traditional Learning' line versus a steep, rocketing 'V2V Feedback Loop' line. A split-panel shows a student struggling to learn guitar from a book, versus another student learning much faster with a real-time feedback app.",
+      "alt": "The fastest way to learn.",
+      "baseFileName": "lesson-3.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p1-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A young developer confidently works on a complex project with a glowing 'UNDO' button beside them. A student in a chemistry lab works with volatile chemicals inside a protective fume hood labeled 'Git Workflow.'",
+      "alt": "The professional's safety net.",
+      "baseFileName": "lesson-3.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p2-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "An AI robot offers a developer three code snippets; one is good, but two have hidden bugs, and the developer is protected by a shield labeled 'Git Baseline.' A student uses a 'spell checker' AI that gives one perfect suggestion and one nonsensical one, illustrating the need for verification.",
+      "alt": "The AI is unpredictable.",
+      "baseFileName": "lesson-3.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p3-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A four-step flowchart: 'Baseline' (Save Point), 'Accept' (Apply Code), 'Test' (Run and get 'TEST FAILED'), and 'Restore' (revert to save point). A student writing an essay saves the draft, accepts a major revision from a tool, re-reads it, finds it's bad, and reopens the last good version.",
+      "alt": "The four-step validation process.",
+      "baseFileName": "lesson-3.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p4-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A graph shows a slow 'Cautious Coder' learning curve versus a steep 'V2V Developer' curve made of bold experiments and tiny, quick reverts. Two students build a Lego model; one is slow and cautious, the other is fast and experimental, knowing they can easily rebuild.",
+      "alt": "Build faster, learn faster.",
+      "baseFileName": "lesson-3.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p1-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A hiring manager reviews a graduate's portfolio, looking impressed at a well-written Project Scope document. A young engineer confidently presents their Project Scope document on a large screen to their team lead.",
+      "alt": "Creating a professional project scope.",
+      "baseFileName": "lesson-4.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p2-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A three-panel diagram shows a 'Cool Idea!' lightbulb being refined by questions ('Who is this for?') into an 'Actionable Plan' blueprint. A student's research paper process is shown: broad topic -> narrow research questions -> detailed outline.",
+      "alt": "From a cool idea to a concrete plan.",
+      "baseFileName": "lesson-4.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p3-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "An image shows two paths: 'Build Everything' leads to an unfinished mess, while 'Build the MVP' leads to a small but complete, working application. A student building a model rocket focuses on a simple, single-stage rocket that is guaranteed to launch.",
+      "alt": "The MVP strategy for finishing projects.",
+      "baseFileName": "lesson-4.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p4-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A student uses the DCE to create their first artifact: `A1 - Project Scope.md`, with professional headings. A 'before and after' shows a blank document transformed into a complete, professional project scope.",
+      "alt": "Writing the project scope artifact.",
+      "baseFileName": "lesson-4.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p1-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A recent graduate sits in front of a computer with a completely empty code editor, looking overwhelmed and uncertain. An artist stares at a large, blank white canvas, experiencing 'artist's block.'",
+      "alt": "The challenge of the blank page problem.",
+      "baseFileName": "lesson-4.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p2-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A developer hands their 'Project Scope' document to a friendly AI robot, who reads it and quickly assembles a perfect 'skeleton' of a project. A writer gives their story outline to an AI, which generates the first few paragraphs.",
+      "alt": "Using AI to build a project's skeleton.",
+      "baseFileName": "lesson-4.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p3-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A close-up of the DCE's 'Cycle 0' UI, showing a user's scope being turned into a full set of planning artifacts. An animation shows a student planting a 'Project Scope' seed, which the DCE waters, and it instantly sprouts into a 'Project Tree.'",
+      "alt": "How the DCE uses AI for scaffolding.",
+      "baseFileName": "lesson-4.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p4-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A developer confidently types a prompt instructing an AI to use their Project Scope to generate a complete starter project for a Next.js application. A student gives their essay outline to a tutor (the AI), who helps them create the initial document.",
+      "alt": "Commanding the AI to build a starter project.",
+      "baseFileName": "lesson-4.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p1-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A student presents their 'Project Scope' document to an AI robot, which generates a professional 'Architectural Blueprint.' A home builder gives a client's feature list to a computer program (AI) to generate a detailed blueprint.",
+      "alt": "Creating a blueprint to get starter code.",
+      "baseFileName": "lesson-4.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p2-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A side-by-side comparison of a student manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) has already done all the prep work, allowing the student chef (the user) to focus on the creative cooking process.",
+      "alt": "The AI as a senior developer partner.",
+      "baseFileName": "lesson-4.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p3-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A developer types a clear prompt: 'Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project.' A student ordering a custom computer uses a configuration tool, selecting the 'Expert' build and specifying all required components.",
+      "alt": "Writing the 'Build My Project' prompt.",
+      "baseFileName": "lesson-4.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p4-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "The new project structure is shown in the DCE. The developer clicks 'Accept Selected,' and the files appear. The final shot shows them typing `npm run dev` and seeing a 'Welcome to Next.js' page. A student receives a 'build-it-yourself' furniture kit (AI response), assembles it, and the final image shows their new, functional desk.",
+      "alt": "Your project is born.",
+      "baseFileName": "lesson-4.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    }
+  }
 }
 </file_artifact>
 
 <file path="public/data/imagemanifest_young_precocious.json">
 {
-  "lesson-1.1-p1": "A cinematic shot of a young, focused gamer at a futuristic battle station, orchestrating a complex coding project visualized as a glowing loop of data, with the title 'LEVEL UP YOUR DEV GAME' displayed. An image of a video game 'skill tree' with a glowing path leading from the 'Vibecoding' skill to the ultimate skill: 'Virtuoso's Loop.'",
-  "lesson-1.1-p2": "A video game inventory screen shows a chaotic 'loot drop' of files being skillfully organized into an 'Optimized Loadout.' A hero at a blacksmith's forge carefully selects magical scrolls and artifacts ('The Context') into a satchel, preparing their 'spell components.'",
-  "lesson-1.1-p3": "A single, powerful spell is cast, summoning eight different AI familiars, each returning with a unique magic scroll (a code solution). A sci-fi captain deploys eight identical drones on a scouting mission, each returning with a different piece of intelligence.",
-  "lesson-1.1-p4": "A close-up of a gamer's face, intensely analyzing a futuristic diff viewer showing 'stat changes' between two code files, their hand poised over a 'Select This Build' button. A top-down tactical view from a strategy game where a player, as raid leader, decisively chooses one of several AI-drawn attack paths.",
-  "lesson-1.1-p5": "A gaming-style workflow diagram: 'Quick Save' button creates a 'Restore Point,' leading to 'Equip Build,' 'Test in Dungeon,' and then a 'Wipe' arrow leading to 'Reload Save.' A hero touches a magical save crystal before drinking a mysterious potion labeled 'AI-Generated Code.'",
-  "lesson-1.1-p6": "A shot of the DCE Panel where a user types notes into the 'Cycle Context' field, with 'Generate prompt.md' and '+' (New Cycle) buttons highlighted. A 'Quest Complete!' screen shows a player receiving EXP and loot, while the next quest unlocks on the world map.",
-  "lesson-1.2-p1": "A video game character fails a complex move ('COMBO FAILED'), and an AI companion shows a holographic overlay of the correct button sequence. A hero sparring with a training dummy misses a strike, and a magical rune on the dummy glows to show the correct target.",
-  "lesson-1.2-p2": "An RPG 'skill tree' where the ultimate skill at the very top is 'Data Curation,' with 'Code Generation' and 'Automation' branching down from it. A 'character build' screen for a developer where the highest, maxed-out stat is 'Curation,' with 'Coding Speed' being secondary.",
-  "lesson-1.2-p3": "A stunning, cinematic image of a player character on a starship bridge, looking out at an unexplored galaxy. A massive, collaborative world-building project, like a giant Minecraft server, where players and AI companions build a futuristic solarpunk city together.",
-  "lesson-1.2-p4": "An apprentice spars with a holographic master warrior who replays a complex technique in slow motion, explaining the strategy. A young mage learns a new spell as a wise, ancient dragon (the AI) breathes a holographic 'spell diagram' into the air.",
-  "lesson-1.3-p1": "A powerful, god-like figure in a digital realm effortlessly creates worlds and structures with gestures, surrounded by AI companions. An image of an RPG rulebook's 'prestige class': the 'Citizen Architect,' with abilities like 'System Weaving' and 'Create World.'",
-  "lesson-1.3-p2": "A futuristic RPG character sheet where the primary stat is a glowing, maxed-out bar labeled 'Cognitive Capital.' A hero defeats a massive puzzle-boss not with strength, but with pure intellect, as glowing lines of logic unravel the boss's defenses.",
-  "lesson-1.3-p3": "A 'lore master' or 'dungeon master' weaves a grand narrative on a holographic map, which AI companions instantly translate into a living digital world. A split-panel shows a builder placing blocks randomly, versus a 'World-Builder' first writing the 'lore' which then guides the placement of every block with purpose.",
-  "lesson-1.3-p4": "A Citizen Architect on a 'creator' screen, like a game's map editor, designs and launches entire new 'game worlds' (applications) with a few clicks. An image of a player ascending to 'God Mode,' flying above the game world, now able to modify the fundamental rules and create new content.",
-  "lesson-2.1-p1": "A hero in a video game stands before a massive, glowing inventory screen, skillfully organizing a chaotic pile of 'loot' into a perfectly organized 'Optimized Loadout.' A sci-fi quartermaster in a vast cargo bay uses a holographic interface to tag and stack disorganized crates, preparing the ship's 'context' for a mission.",
-  "lesson-2.1-p2": "A side-by-side comparison of a fantasy blacksmith forging a weak sword from rusty materials ('Garbage In'), versus forging a legendary sword from glowing, high-quality ore ('Curated Data'). An alchemist mixes muddy water and weeds to get a sludge potion, then mixes crystal water and glowing herbs to get a powerful elixir.",
-  "lesson-2.1-p3": "A three-panel comic strip: 'GATHER' (hero collects loot), 'ORGANIZE' (hero sorts loot into labeled chests), and 'LABEL' (hero applies custom names and icons). A top-down view of a player organizing their base in a strategy game, creating designated zones for different resources.",
-  "lesson-2.1-p4": "A hero equips a set of glowing, futuristic armor, with the main tool being a powerful gauntlet labeled 'DCE.' An 'inspect item' screen from an RPG for the 'Data Curation Environment,' listing its stats as '+100 to Context Quality' and a special ability: 'Summon Parallel Solutions.'",
-  "lesson-2.2-p1": "A hero in a fantasy world enchants a plain sword by applying glowing runes labeled 'Metadata,' imbuing it with power. A mage draws glowing symbols onto a plain golem, animating it and giving the raw clay (data) purpose.",
-  "lesson-2.2-p2": "A split-panel cartoon: a hero asks their confused AI familiar for a 'healing potion' from an unlabeled pile, then points to a labeled shelf, and the familiar instantly grabs the correct one. A hero's commands cause chaos with an army of identical grey robots, but work perfectly once the robots are color-coded by role.",
-  "lesson-2.2-p3": "A page from a magical grimoire shows two spells: 'Spell of True Naming' (renaming a sword to 'Sword of the Fire Lord +5') and 'Spell of Sorting' (sorting loot into labeled chests). A tech-mage at a holographic interface casts 'Rename' and 'Organize' spells on a list of files.",
-  "lesson-2.2-p4": "A young hero proudly displays a set of epic, glowing armor and a powerful weapon they have crafted, with their AI familiar giving a thumbs-up. A 'crafting complete' screen from a game shows a 'Legendary Application' was successfully crafted from 'Well-Annotated Data' and 'High-Quality Context.'",
-  "lesson-2.3-p1": "A hero inspects a powerful, glowing sword from an NPC, using a 'detect magic' spell to reveal a hidden 'Cursed' debuff. A player overlays a 'Lens of Truth' on a treasure map from an AI, revealing that parts of it lead to traps.",
-  "lesson-2.3-p2": "A 'Monster Manual' page shows different digital monsters: the 'Hallucination' ghost, the 'Logic Gremlin' saboteur, and the 'Security Serpent' snake. A hero in a dungeon encounters a 'Phantom Wall' (Hallucination), a pressure plate that opens the wrong door (Logic Gremlin), and a hidden trapdoor (Security Serpent).",
-  "lesson-2.3-p3": "A hero plans an attack on a giant boss by looking at a map of its weak points, with a clear strategy: '1. Analyze the Quest,' '2. Scan for Weak Points (Diff),' '3. Target the Core,' '4. Final Blow.' A sci-fi bounty hunter reviews a mission briefing, then uses a scanner to highlight structural weaknesses in the target's lair before plotting their route.",
-  "lesson-2.3-p4": "A hero stands over a defeated bug-monster, which drops a glowing orb of 'Knowledge' that the hero absorbs, causing a 'LEVEL UP!' graphic to appear. A blacksmith, after breaking a sword while forging it, carefully studies the break point to learn from the mistake before starting a new, better sword.",
-  "lesson-3.1-p1": "A powerful mage casts a complex spell by tracing a precise, glowing geometric pattern labeled 'Structured Interaction.' A split-panel shows a wizard trying to command a golem with vague shouts, then successfully commanding it by reading a precise incantation from a scroll.",
-  "lesson-3.1-p2": "A close-up of a magical spellbook showing a template with sections for 'Target,' 'Components,' 'Incantation,' and 'Effect.' A sci-fi pilot uses a 'Macro Editor' with clear fields to program a complex maneuver for their ship.",
-  "lesson-3.1-p3": "Two wizards duel. One tries to remember a spell and looks stressed. The other calmly opens a spellbook and unleashes a flawless, powerful attack. A 'speedrunner' plays a game with a second monitor showing a list of optimized, repeatable steps for their run.",
-  "lesson-3.1-p4": "A 'before and after' of a vague wish ('make the sword cooler') versus a structured incantation on a magical scroll with sections for `// ROLE`, `// TASK`, `// CONTEXT`, and `// EFFECT`. A player at a crafting table first throws in random ingredients, then follows a precise, high-level recipe to craft a legendary item.",
-  "lesson-3.2-p1": "A video game character is defeated by a boss, then respawns. An AI companion replays a hologram of the fight, highlighting the boss's attack pattern. A 'Game Over' screen with a button that says 'Analyze Failure,' which brings up a tactical replay with an AI coach.",
-  "lesson-3.2-p2": "A 'Monster Manual' for code bugs, showing the 'Syntax Slug' (grammar mistakes), the 'Runtime Raptor' (crashes), and the 'Logic Lich' (illusionary bugs). A hero in a dungeon faces three traps: a miswritten rune that fizzles, a pressure plate that collapses the ceiling, and a plate that opens a door to a monster room.",
-  "lesson-3.2-p3": "A four-panel comic of a debugging combo: hero casts a spell, it backfires with a red 'ERROR!', the hero captures the error in an orb, and infuses their next spell with it. A sci-fi engineer's engine fails; they feed the error log to the ship's AI, which provides a repair schematic.",
-  "lesson-3.2-p4": "A hero levels up at incredible speed, absorbing energy from defeated bug-monsters, with '+1 INT' or '+1 WIS' appearing over their head. An animation shows a character's 'Debugging' skill bar rapidly filling as they go through a montage of finding an error, feeding it to their AI, and seeing the solution.",
-  "lesson-3.3-p1": "A gamer playing a difficult video game hits a glowing 'QUICKSAVE' button just before entering the boss room. A hero about to cross a rickety rope bridge plants a magical 'Respawn Beacon' at the start.",
-  "lesson-3.3-p2": "An AI companion offers a player three swords; one is 'Legendary,' but two are 'Cursed,' and the player is protected by a 'Git Baseline' shield. A player at a 'Gacha' machine uses a special token to 'preview' the random drop before spending real currency.",
-  "lesson-3.3-p3": "A four-hit fighting game combo: 'SAVE' (Baseline button), 'EQUIP' (new AI weapon), 'TEST' (weapon shatters on a dummy), 'RELOAD' (character reappears at save point). An animated sequence of a sci-fi RPG player saving, failing a hack, triggering alarms, and immediately loading their last save.",
-  "lesson-3.3-p4": "A speedrunner blazes through a level, trying risky skips without fear because a 'Reload Last Save' button is always visible. A hero practices a powerful but dangerous spell inside a magical training room that instantly repairs any damage from a backfire.",
-  "lesson-4.1-p1": "A hero stands before a massive, ancient map labeled 'Project Scope,' plotting a course from their starting village to a distant, glowing castle. A 'Quest Log' UI from a video game, where a new main quest has just been added: 'Build the Ultimate RPG.'",
-  "lesson-4.1-p2": "A wise, old quest giver presents a riddle to a young hero, broken into three glowing runes: 'Problem,' 'Hero' (user), and 'Solution.' A hero at a fork in the road with three signposts: 'What's the Goal?', 'Who is it for?', and 'How will you win?'.",
-  "lesson-4.1-p3": "A video game world map shows the player's current objective as a small, nearby dungeon labeled 'The First Dungeon (MVP),' with a clear path toward the final boss castle. A hero forges a small, perfect dagger labeled 'MVP,' which contains the essential magic that will be scaled up into a legendary sword.",
-  "lesson-4.1-p4": "A hero carefully inscribes their quest details onto a magical scroll with glowing sections for 'Prophecy' (Vision), 'The Evil' (Problem), 'The Chosen One' (User), and 'The First Trial' (MVP). A player uses an in-game 'Quest Editor' to fill out a form defining their custom quest's story and objectives.",
-  "lesson-4.2-p1": "A game developer stares at a completely empty, white grid in a game engine, labeled 'Level 1: The Blank Canvas.' A hero is given a quest to build a legendary city but is standing in a completely empty field, looking overwhelmed.",
-  "lesson-4.2-p2": "A hero casts a 'Genesis Spell' using their 'Project Scope' scroll, and their AI familiar instantly generates the entire 'world map' (folder structure) and 'starting cities' (files). A 'God Mode' view of a world-building game where the player clicks 'Generate World from Template,' and the AI instantly terraforms a flat plain.",
-  "lesson-4.2-p3": "A close-up of the DCE's 'Cycle 0' UI, where a user's 'world idea' is magically transformed into a full set of 'Lore Books' (planning artifacts). An image of the first level of a video game, a simple, guided tutorial that teaches the core mechanics by having the player complete one quest.",
-  "lesson-4.2-p4": "A hero confidently gives a command to their AI familiar: 'Use my Project Scope scroll to forge the world for my MVP.' A player in a 'world editor' is about to click a large, glowing button that says 'CREATE WORLD.'",
-  "lesson-4.3-p1": "A hero lays their magical 'Project Scope' scroll on a forge, which glows and automatically constructs the holographic blueprint of a massive castle. A 'tech tree' from a strategy game, where researching 'Project Scope' has unlocked the ability to build the 'Architectural Blueprint' building.",
-  "lesson-4.3-p2": "A side-by-side comparison of a novice clumsily building a shack versus a hero commanding an AI golem to expertly construct the foundation of a castle. A hero at a crafting station uses an 'Auto-Craft' feature powered by an AI to rapidly assemble all the basic components for a legendary item.",
-  "lesson-4.3-p3": "A hero recites a powerful, structured spell from a scroll with verses for 'ROLE: Master Architect,' 'CONTEXT: The Sacred Scroll of Scope,' etc. A player uses a powerful 'world editor' command line, typing a structured command like `/build foundation --from_blueprint 'scope.txt' --style 'fortress'`.",
-  "lesson-4.3-p4": "The new project structure is shown in the DCE. The hero clicks 'Accept,' and the files materialize in their world, which is now live and running. An animation shows a 3D printer (the AI) rapidly printing the foundation of a complex model, which the user then takes to start adding details."
+  "manifestId": "v2v-yp-images-v1",
+  "basePath": "/assets/images/v2v/young_precocious/",
+  "imageGroups": {
+    "lesson-1.1-p1-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A cinematic shot of a young, focused gamer at a futuristic battle station, orchestrating a complex coding project visualized as a glowing loop of data, with the title 'LEVEL UP YOUR DEV GAME' displayed. An image of a video game 'skill tree' with a glowing path leading from the 'Vibecoding' skill to the ultimate skill: 'Virtuoso's Loop.'",
+      "alt": "Leveling up your development game.",
+      "baseFileName": "lesson-1.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p2-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A video game inventory screen shows a chaotic 'loot drop' of files being skillfully organized into an 'Optimized Loadout.' A hero at a blacksmith's forge carefully selects magical scrolls and artifacts ('The Context') into a satchel, preparing their 'spell components.'",
+      "alt": "Preparing your inventory for a quest.",
+      "baseFileName": "lesson-1.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p3-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A single, powerful spell is cast, summoning eight different AI familiars, each returning with a unique magic scroll (a code solution). A sci-fi captain deploys eight identical drones on a scouting mission, each returning with a different piece of intelligence.",
+      "alt": "Multi-summoning AI for multiple solutions.",
+      "baseFileName": "lesson-1.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p4-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A close-up of a gamer's face, intensely analyzing a futuristic diff viewer showing 'stat changes' between two code files, their hand poised over a 'Select This Build' button. A top-down tactical view from a strategy game where a player, as raid leader, decisively chooses one of several AI-drawn attack paths.",
+      "alt": "Acting as the raid leader for your project.",
+      "baseFileName": "lesson-1.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p5-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A gaming-style workflow diagram: 'Quick Save' button creates a 'Restore Point,' leading to 'Equip Build,' 'Test in Dungeon,' and then a 'Wipe' arrow leading to 'Reload Save.' A hero touches a magical save crystal before drinking a mysterious potion labeled 'AI-Generated Code.'",
+      "alt": "Quick save and reload for your code.",
+      "baseFileName": "lesson-1.1-p5-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p6-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A 'Quest Complete!' screen shows a player receiving EXP and loot, while the next quest in the chain unlocks on the world map. A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with 'Generate prompt.md' and '+' (New Cycle) buttons highlighted.",
+      "alt": "Logging your win and queuing for the next raid.",
+      "baseFileName": "lesson-1.1-p6-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p1-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A video game character fails a complex move ('COMBO FAILED'), and an AI companion shows a holographic overlay of the correct button sequence. A hero sparring with a training dummy misses a strike, and a magical rune on the dummy glows to show the correct target.",
+      "alt": "AI as a feedback loop power-up.",
+      "baseFileName": "lesson-1.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p2-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "An RPG 'skill tree' where the ultimate skill at the very top is 'Data Curation,' with 'Code Generation' and 'Automation' branching down from it. A 'character build' screen for a developer where the highest, maxed-out stat is 'Curation.'",
+      "alt": "Data Curation as the new meta skill.",
+      "baseFileName": "lesson-1.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p3-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A stunning, cinematic image of a player character on a starship bridge, looking out at an unexplored galaxy. A massive, collaborative world-building project, like a giant Minecraft server, where players and AI companions build a futuristic solarpunk city together.",
+      "alt": "The endgame quest for a 'Star Trek' future.",
+      "baseFileName": "lesson-1.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p4-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "An apprentice spars with a holographic master warrior who replays a complex technique in slow motion, explaining the strategy. A young mage learns a new spell as a wise, ancient dragon (the AI) breathes a holographic 'spell diagram' into the air.",
+      "alt": "The AI as a cognitive mentor teaching secret techniques.",
+      "baseFileName": "lesson-1.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p1-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A powerful, god-like figure in a digital realm effortlessly creates entire worlds and complex structures with gestures, surrounded by AI companions. An image of an RPG rulebook's 'prestige class': the 'Citizen Architect,' with abilities like 'System Weaving' and 'Create World.'",
+      "alt": "The final class: The Citizen Architect.",
+      "baseFileName": "lesson-1.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p2-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A futuristic RPG character sheet where the primary stat is a glowing, maxed-out bar labeled 'Cognitive Capital.' A hero defeats a massive puzzle-boss not with strength, but with pure intellect, as glowing lines of logic unravel the boss's defenses.",
+      "alt": "Cognitive Capital as your ultimate stat.",
+      "baseFileName": "lesson-1.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p3-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A 'lore master' or 'dungeon master' weaves a grand narrative on a holographic map, which AI companions instantly translate into a living digital world. A split-panel shows a builder placing blocks randomly, versus a 'World-Builder' first writing the 'lore' which then guides the placement of every block with purpose.",
+      "alt": "The Architect as a storyteller and lore master.",
+      "baseFileName": "lesson-1.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p4-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A Citizen Architect on a 'creator' screen, like a game's map editor, designs and launches entire new 'game worlds' (applications) with a few clicks. An image of a player ascending to 'God Mode,' flying above the game world, now able to modify the fundamental rules.",
+      "alt": "The power of a world-builder.",
+      "baseFileName": "lesson-1.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p1-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A hero in a video game stands before a massive, glowing inventory screen, skillfully organizing a chaotic pile of 'loot' into a perfectly organized 'Optimized Loadout.' A sci-fi quartermaster in a vast cargo bay uses a holographic interface to tag and stack disorganized crates.",
+      "alt": "Ultimate inventory management.",
+      "baseFileName": "lesson-2.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p2-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A side-by-side comparison of a fantasy blacksmith forging a weak sword from rusty materials ('Garbage In'), versus forging a legendary sword from glowing, high-quality ore ('Curated Data'). An alchemist mixes muddy water and weeds to get a sludge potion, then mixes crystal water and glowing herbs to get a powerful elixir.",
+      "alt": "The 'Garbage In, Garbage Out' law.",
+      "baseFileName": "lesson-2.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p3-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A three-panel comic strip: 'GATHER' (hero collects loot), 'ORGANIZE' (hero sorts loot into labeled chests), and 'LABEL' (hero applies custom names and icons). A top-down view of a player organizing their base in a strategy game, creating designated zones for different resources.",
+      "alt": "The Curator's Combo: Gather, Organize, Label.",
+      "baseFileName": "lesson-2.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p4-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A hero equips a set of glowing, futuristic armor, with the main tool being a powerful gauntlet labeled 'DCE.' An 'inspect item' screen from an RPG for the 'Data Curation Environment,' listing its stats as '+100 to Context Quality' and a special ability: 'Summon Parallel Solutions.'",
+      "alt": "Your legendary gear: The DCE.",
+      "baseFileName": "lesson-2.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p1-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A hero in a fantasy world enchants a plain sword by applying glowing runes labeled 'Metadata,' imbuing it with power. A mage draws glowing symbols onto a plain golem, animating it and giving the raw clay (data) purpose.",
+      "alt": "Enchanting your data with annotation.",
+      "baseFileName": "lesson-2.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p2-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A split-panel cartoon: a hero asks their confused AI familiar for a 'healing potion' from an unlabeled pile, then points to a labeled shelf, and the familiar instantly grabs the correct one. A hero's commands cause chaos with an army of identical grey robots, but work perfectly once the robots are color-coded by role.",
+      "alt": "Your AI can't read minds.",
+      "baseFileName": "lesson-2.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p3-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A page from a magical grimoire shows two spells: 'Spell of True Naming' (renaming a sword to 'Sword of the Fire Lord +5') and 'Spell of Sorting' (sorting loot into labeled chests). A tech-mage at a holographic interface casts 'Rename' and 'Organize' spells on a list of files.",
+      "alt": "The Annotator's Grimoire: Naming & Sorting.",
+      "baseFileName": "lesson-2.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p4-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A young hero proudly displays a set of epic, glowing armor and a powerful weapon they have crafted, with their AI familiar giving a thumbs-up. A 'crafting complete' screen from a game shows a 'Legendary Application' was successfully crafted from 'Well-Annotated Data.'",
+      "alt": "The payoff: crafting god-tier loot.",
+      "baseFileName": "lesson-2.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p1-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A hero inspects a powerful, glowing sword from an NPC, using a 'detect magic' spell to reveal a hidden 'Cursed' debuff. A player overlays a 'Lens of Truth' on a treasure map from an AI, revealing that parts of it lead to traps.",
+      "alt": "Debuffing the AI with critical analysis.",
+      "baseFileName": "lesson-2.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p2-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A 'Monster Manual' page shows different digital monsters: the 'Hallucination' ghost, the 'Logic Gremlin' saboteur, and the 'Security Serpent' snake. A hero in a dungeon encounters a 'Phantom Wall' (Hallucination), a pressure plate that opens the wrong door (Logic Gremlin), and a hidden trapdoor (Security Serpent).",
+      "alt": "A bestiary of AI bugs.",
+      "baseFileName": "lesson-2.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p3-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A hero plans an attack on a giant boss by looking at a map of its weak points, with a clear strategy: '1. Analyze the Quest,' '2. Scan for Weak Points (Diff),' '3. Target the Core,' '4. Final Blow.' A sci-fi bounty hunter reviews a mission briefing, then uses a scanner to highlight structural weaknesses in the target's lair.",
+      "alt": "The hunter's strategy for bug takedowns.",
+      "baseFileName": "lesson-2.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p4-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A hero stands over a defeated bug-monster, which drops a glowing orb of 'Knowledge' that the hero absorbs, causing a 'LEVEL UP!' graphic to appear. A blacksmith, after breaking a sword, studies the break point to learn from the mistake before forging a new, better one.",
+      "alt": "Looting the corpse: turning bugs into EXP.",
+      "baseFileName": "lesson-2.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p1-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A powerful mage casts a complex spell by tracing a precise, glowing geometric pattern labeled 'Structured Interaction.' A split-panel shows a wizard trying to command a golem with vague shouts, then successfully commanding it by reading a precise incantation from a scroll.",
+      "alt": "Casting spells: mastering the syntax of power.",
+      "baseFileName": "lesson-3.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p2-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A close-up of a magical spellbook showing a template with sections for 'Target,' 'Components,' 'Incantation,' and 'Effect.' A sci-fi pilot uses a 'Macro Editor' with clear fields to program a complex maneuver.",
+      "alt": "The spellbook: your interaction schema.",
+      "baseFileName": "lesson-3.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p3-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "Two wizards duel. One tries to remember a spell and looks stressed. The other calmly opens a spellbook and unleashes a flawless, powerful attack. A 'speedrunner' plays a game with a second monitor showing a list of optimized, repeatable steps.",
+      "alt": "Why pros use spellbooks.",
+      "baseFileName": "lesson-3.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p4-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A 'before and after' of a vague wish ('make the sword cooler') versus a structured incantation on a magical scroll with sections for `// ROLE`, `// TASK`, etc. A player at a crafting table first throws in random ingredients, then follows a precise, high-level recipe.",
+      "alt": "From wish to incantation.",
+      "baseFileName": "lesson-3.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p1-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A video game character is defeated by a boss, then respawns. An AI companion replays a hologram of the fight, highlighting the boss's attack pattern. A 'Game Over' screen with an 'Analyze Failure' button that brings up a tactical replay.",
+      "alt": "Respawning with purpose.",
+      "baseFileName": "lesson-3.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p2-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A 'Monster Manual' for code bugs, showing the 'Syntax Slug,' the 'Runtime Raptor,' and the 'Logic Lich.' A hero in a dungeon faces three traps: a miswritten rune, a ceiling collapse, and a door to a monster room.",
+      "alt": "A bestiary of bugs.",
+      "baseFileName": "lesson-3.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p3-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A four-panel comic of a debugging combo: hero casts a spell, it backfires, the hero captures the error in an orb, and infuses their next spell with it. A sci-fi engineer's engine fails; they feed the error log to the ship's AI, which provides a repair schematic.",
+      "alt": "The debugging combo.",
+      "baseFileName": "lesson-3.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p4-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A hero levels up at incredible speed, absorbing energy from defeated bug-monsters, with '+1 INT' or '+1 WIS' appearing over their head. An animation shows a character's 'Debugging' skill bar rapidly filling as they go through a montage of finding an error, feeding it to their AI, and seeing the solution.",
+      "alt": "The ultimate training montage.",
+      "baseFileName": "lesson-3.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p1-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A gamer playing a difficult video game hits a glowing 'QUICKSAVE' button just before entering the boss room. A hero about to cross a rickety rope bridge plants a magical 'Respawn Beacon' at the start.",
+      "alt": "Save scumming for coders.",
+      "baseFileName": "lesson-3.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p2-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "An AI companion offers a player three swords; one is 'Legendary,' but two are 'Cursed,' and the player is protected by a 'Git Baseline' shield. A player at a 'Gacha' machine uses a special token to 'preview' the random drop before spending real currency.",
+      "alt": "Taming the RNG.",
+      "baseFileName": "lesson-3.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p3-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A four-hit fighting game combo: 'SAVE' (Baseline button), 'EQUIP' (new AI weapon), 'TEST' (weapon shatters on a dummy), 'RELOAD' (character reappears at save point). An animated sequence of a sci-fi RPG player saving, failing a hack, and immediately loading their last save.",
+      "alt": "The four-hit combo.",
+      "baseFileName": "lesson-3.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p4-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A speedrunner blazes through a difficult level, trying risky skips without fear because a 'Reload Last Save' button is always visible. A hero practices a powerful but dangerous spell inside a magical training room that instantly repairs any damage.",
+      "alt": "Fearless speedrunning.",
+      "baseFileName": "lesson-3.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p1-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A hero stands before a massive, ancient map labeled 'Project Scope,' plotting a course from their starting village to a distant, glowing castle. A 'Quest Log' UI from a video game, where a new main quest has just been added: 'Build the Ultimate RPG.'",
+      "alt": "Defining your quest.",
+      "baseFileName": "lesson-4.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p2-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A wise, old quest giver presents a riddle to a young hero, broken into three glowing runes: 'Problem,' 'Hero' (user), and 'Solution.' A hero at a fork in the road with three signposts: 'What's the Goal?', 'Who is it for?', and 'How will you win?'.",
+      "alt": "The Quest Giver's Riddle.",
+      "baseFileName": "lesson-4.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p3-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A video game world map shows the player's current objective as a small, nearby dungeon labeled 'The First Dungeon (MVP).' A hero forges a small, perfect dagger labeled 'MVP,' which contains the essential magic that will be scaled up into the full sword.",
+      "alt": "Conquering the first dungeon (MVP).",
+      "baseFileName": "lesson-4.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p4-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A hero carefully inscribes their quest details onto a magical scroll with glowing sections for 'Prophecy' (Vision), 'The Evil' (Problem), 'The Chosen One' (User), and 'The First Trial' (MVP). A player uses an in-game 'Quest Editor' to fill out a form defining their custom quest.",
+      "alt": "Inscribing your map.",
+      "baseFileName": "lesson-4.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p1-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A game developer stares at a completely empty, white grid in a game engine, labeled 'Level 1: The Blank Canvas.' A hero is given a quest to build a legendary city but is standing in a completely empty, flat field.",
+      "alt": "Conquering the blank canvas.",
+      "baseFileName": "lesson-4.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p2-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A hero casts a 'Genesis Spell' using their 'Project Scope' scroll, and their AI familiar instantly generates the entire 'world map' (folder structure) and 'starting cities' (files). A 'God Mode' view of a world-building game where the player clicks 'Generate World from Template,' and the AI instantly terraforms a flat plain.",
+      "alt": "The Genesis Spell.",
+      "baseFileName": "lesson-4.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p3-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A close-up of the DCE's 'Cycle 0' UI, where a user's 'world idea' is magically transformed into a full set of 'Lore Books' (planning artifacts). An image of the very first level of a video game, a simple, guided tutorial that teaches the core mechanics.",
+      "alt": "The built-in tutorial level.",
+      "baseFileName": "lesson-4.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p4-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A hero confidently gives a command to their AI familiar: 'Use my Project Scope scroll to forge the world for my MVP.' A player in a 'world editor' is about to click a large, glowing button that says 'CREATE WORLD.'",
+      "alt": "Your first quest: Forge My World.",
+      "baseFileName": "lesson-4.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p1-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A hero lays their magical 'Project Scope' scroll on a forge, which glows and automatically constructs the holographic blueprint of a massive castle. A 'tech tree' from a strategy game, where researching 'Project Scope' has unlocked the ability to build the 'Architectural Blueprint' building.",
+      "alt": "The Architect's Table.",
+      "baseFileName": "lesson-4.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p2-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A side-by-side comparison of a novice clumsily building a shack versus a hero commanding an AI golem to expertly construct the foundation of a castle. A hero at a crafting station uses an 'Auto-Craft' feature powered by an AI to rapidly assemble all the basic components for a legendary item.",
+      "alt": "The AI as your master blacksmith.",
+      "baseFileName": "lesson-4.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p3-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A hero recites a powerful, structured spell from a scroll with verses for 'ROLE: Master Architect,' 'CONTEXT: The Sacred Scroll of Scope,' etc. A player uses a powerful 'world editor' command line, typing a structured command like `/build foundation --from_blueprint 'scope.txt' --style 'fortress'`.",
+      "alt": "The Incantation of Creation.",
+      "baseFileName": "lesson-4.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p4-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "The new project structure is shown in the DCE. The hero clicks 'Accept,' and the files materialize in their world. The final shot shows them taking their first steps into the newly created world, which is now live and running. An animation shows a 3D printer (the AI) rapidly printing the foundation of a complex model, which the user then takes to start adding the details.",
+      "alt": "Cycle 1: The World is Born.",
+      "baseFileName": "lesson-4.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    }
+  }
 }
 </file_artifact>
 
 <file path="scripts/generate_images.mjs">
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -32654,18 +33716,12 @@ dotenv.config();
 
 // --- CONFIGURATION ---
 const API_KEY = process.env.API_KEY;
-const MODEL_NAME = 'imagen-4-ultra-001'; // As requested
-const OUTPUT_DIR = path.resolve(process.cwd(), 'public/assets/images/v2v');
+const MODEL_NAME = 'imagen-3'; // Using Imagen 3 as specified
+const OUTPUT_DIR_BASE = path.resolve(process.cwd(), 'public');
 
 // --- HELPER FUNCTIONS ---
 
-/**
- * Loads a JSON file from the public/data directory.
- * @param {string} fileName - The name of the JSON file to load.
- * @returns {Promise<object>} - The parsed JSON object.
- */
-async function loadJsonData(fileName) {
-    const filePath = path.resolve(process.cwd(), 'public/data', fileName);
+async function loadJsonData(filePath) {
     try {
         const fileContent = await fs.readFile(filePath, 'utf-8');
         return JSON.parse(fileContent);
@@ -32675,45 +33731,23 @@ async function loadJsonData(fileName) {
     }
 }
 
-/**
- * Loads a markdown artifact.
- * @param {string} artifactPath - The path to the artifact relative to src/Artifacts.
- * @returns {Promise<string>} - The content of the artifact.
- */
 async function loadArtifact(artifactPath) {
-    const filePath = path.resolve(process.cwd(), 'src/Artifacts', artifactPath);
     try {
-        return await fs.readFile(filePath, 'utf-8');
+        return await fs.readFile(artifactPath, 'utf-8');
     } catch (error) {
-        console.error(`Error loading artifact from ${filePath}:`, error);
+        console.error(`Error loading artifact from ${artifactPath}:`, error);
         throw error;
     }
 }
 
-/**
- * Finds a specific page's content from the structured curriculum data.
- * @param {object} curriculumData - The full curriculum data object.
- * @param {string} pageId - The ID of the page to find (e.g., 'lesson-1.1-p1').
- * @returns {object|null} - The page object or null if not found.
- */
 function findPageById(curriculumData, pageId) {
     for (const section of curriculumData.sections) {
-        for (const page of section.pages) {
-            if (page.pageId === pageId) {
-                return page;
-            }
-        }
+        const foundPage = section.pages.find(p => p.pageId === pageId);
+        if (foundPage) return foundPage;
     }
     return null;
 }
 
-/**
- * Constructs the final prompt to be sent to the Imagen API.
- * @param {string} systemPrompt - The master system prompt (A75).
- * @param {object} pageContent - The content of the specific lesson page.
- * @param {string} imagePrompt - The specific image prompt for the page.
- * @returns {string} - The fully constructed prompt.
- */
 function constructFinalPrompt(systemPrompt, pageContent, imagePrompt) {
     const trainingContent = `
         <Training Content>
@@ -32723,22 +33757,14 @@ function constructFinalPrompt(systemPrompt, pageContent, imagePrompt) {
         </Training Content>
     `;
 
-    return `
-        ${systemPrompt}
-        
-        ${trainingContent}
-
-        <Image Prompt>
-        ${imagePrompt}
-        </Image Prompt>
-    `;
+    return `${systemPrompt}\n\n${trainingContent}\n\n<Image Prompt>\n${imagePrompt}\n</Image Prompt>`;
 }
 
 // --- MAIN EXECUTION LOGIC ---
 
 async function main() {
     if (!API_KEY) {
-        console.error('Error: API_KEY is not defined. Please create a .env file with your Google AI API Key.');
+        console.error('Error: API_KEY is not defined. Please check your .env file.');
         process.exit(1);
     }
 
@@ -32755,62 +33781,62 @@ async function main() {
     try {
         // 1. Load all necessary data
         console.log('   Loading data files...');
-        const imageManifest = await loadJsonData(`imagemanifest_${persona}.json`);
-        const curriculumData = await loadJsonData(`v2v_content_${persona}.json`);
-        const systemPrompt = await loadArtifact('A75 - V2V Academy - Persona Image System Prompt.md');
+        const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
+        const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
+        const systemPromptPath = path.resolve(process.cwd(), 'src/Artifacts', 'A75 - V2V Academy - Persona Image System Prompt.md');
+
+        const imageManifest = await loadJsonData(manifestPath);
+        const curriculumData = await loadJsonData(curriculumPath);
+        const systemPrompt = await loadArtifact(systemPromptPath);
 
         // 2. Find the specific content for the requested page
-        const specificImagePrompt = imageManifest[pageId];
         const pageContent = findPageById(curriculumData, pageId);
+        if (!pageContent) {
+            throw new Error(`Could not find page content for pageId '${pageId}'.`);
+        }
 
-        if (!specificImagePrompt || !pageContent) {
-            console.error(`Error: Could not find data for pageId '${pageId}' in the provided files.`);
-            process.exit(1);
+        const imageGroupId = pageContent.imageGroupIds;
+        if (!imageGroupId) {
+            throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
+        }
+
+        const groupMeta = imageManifest.imageGroups[imageGroupId];
+        if (!groupMeta) {
+            throw new Error(`Could not find image group metadata for groupId '${imageGroupId}'.`);
         }
 
         // 3. Construct the final prompt
-        const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, specificImagePrompt);
+        const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
         console.log('   Prompt constructed successfully.');
 
         // 4. Initialize AI client and make the API call
-        console.log(`   Sending request to Google Imagen 4 model: '${MODEL_NAME}'...`);
-        const genAI = new GoogleGenAI(API_KEY);
+        console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
+        const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-
-        const result = await model.generateContent(finalPrompt);
-        // This is a placeholder for how the actual API might work for Imagen via this SDK.
-        // The actual response structure for image generation needs to be confirmed.
-        // Assuming `result.response.candidates[0].content.parts[0].fileData` for now based on Gemini examples.
-        // THIS WILL LIKELY NEED ADJUSTMENT BASED ON THE ACTUAL API RESPONSE FOR IMAGEN 4.
-        const response = result.response;
-        // The Google AI SDK for image generation is not yet released for Node.js as of some knowledge cutoffs.
-        // This is a speculative implementation based on Python examples and Gemini SDK structure.
-        // The actual implementation might look different.
-        // For now, let's assume a hypothetical `generateImage` method for clarity.
         
-        // Let's use a more realistic (but still hypothetical) approach based on the sample script
-        const imageGenerationResult = await genAI.getGenerativeModel({ model: "imagen-4.0-generate-001" }).generateImages({prompt: finalPrompt});
-        const images = imageGenerationResult.generatedImages;
+        const result = await model.generateContent(finalPrompt);
+        const response = result.response;
+        
+        // This part is speculative based on Gemini API structure for images.
+        // It assumes the response contains base64-encoded image data.
+        // You MUST adjust this based on the actual Imagen 3 API response structure.
+        const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
 
-        if (!images || images.length === 0) {
-            throw new Error('No images were generated. The prompt may have been blocked or the response was empty.');
+        if (!base64ImageData) {
+            console.error('API Response:', JSON.stringify(response, null, 2));
+            throw new Error('No image data found in the API response. The structure might be different than expected.');
         }
 
-        const base64ImageBytes = images.image.imageBytes;
-
         // 5. Define output path and save the image
-        const [lesson, part] = pageId.split('-p');
-        const [_, moduleNum, lessonNum] = lesson.split('-');
-        const sectionId = `module-${moduleNum}`;
-        const outputFileName = `${pageId}.webp`;
-        const outputDirPath = path.join(OUTPUT_DIR, persona, sectionId);
+        const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
+        const outputFileName = `${groupMeta.baseFileName}1${groupMeta.fileExtension}`;
         const outputPath = path.join(outputDirPath, outputFileName);
 
         console.log(`   Ensuring output directory exists: ${outputDirPath}`);
         await fs.mkdir(outputDirPath, { recursive: true });
 
         console.log(`   Saving image to: ${outputPath}`);
-        await fs.writeFile(outputPath, Buffer.from(base64ImageBytes, 'base64'));
+        await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
 
         console.log('✅ Image generated and saved successfully!');
 

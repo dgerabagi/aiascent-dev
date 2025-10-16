@@ -1,52 +1,406 @@
 {
-  "lesson-1.1-p1": "A cinematic shot of a young, focused gamer at a futuristic battle station, orchestrating a complex coding project visualized as a glowing loop of data, with the title 'LEVEL UP YOUR DEV GAME' displayed. An image of a video game 'skill tree' with a glowing path leading from the 'Vibecoding' skill to the ultimate skill: 'Virtuoso's Loop.'",
-  "lesson-1.1-p2": "A video game inventory screen shows a chaotic 'loot drop' of files being skillfully organized into an 'Optimized Loadout.' A hero at a blacksmith's forge carefully selects magical scrolls and artifacts ('The Context') into a satchel, preparing their 'spell components.'",
-  "lesson-1.1-p3": "A single, powerful spell is cast, summoning eight different AI familiars, each returning with a unique magic scroll (a code solution). A sci-fi captain deploys eight identical drones on a scouting mission, each returning with a different piece of intelligence.",
-  "lesson-1.1-p4": "A close-up of a gamer's face, intensely analyzing a futuristic diff viewer showing 'stat changes' between two code files, their hand poised over a 'Select This Build' button. A top-down tactical view from a strategy game where a player, as raid leader, decisively chooses one of several AI-drawn attack paths.",
-  "lesson-1.1-p5": "A gaming-style workflow diagram: 'Quick Save' button creates a 'Restore Point,' leading to 'Equip Build,' 'Test in Dungeon,' and then a 'Wipe' arrow leading to 'Reload Save.' A hero touches a magical save crystal before drinking a mysterious potion labeled 'AI-Generated Code.'",
-  "lesson-1.1-p6": "A shot of the DCE Panel where a user types notes into the 'Cycle Context' field, with 'Generate prompt.md' and '+' (New Cycle) buttons highlighted. A 'Quest Complete!' screen shows a player receiving EXP and loot, while the next quest unlocks on the world map.",
-  "lesson-1.2-p1": "A video game character fails a complex move ('COMBO FAILED'), and an AI companion shows a holographic overlay of the correct button sequence. A hero sparring with a training dummy misses a strike, and a magical rune on the dummy glows to show the correct target.",
-  "lesson-1.2-p2": "An RPG 'skill tree' where the ultimate skill at the very top is 'Data Curation,' with 'Code Generation' and 'Automation' branching down from it. A 'character build' screen for a developer where the highest, maxed-out stat is 'Curation,' with 'Coding Speed' being secondary.",
-  "lesson-1.2-p3": "A stunning, cinematic image of a player character on a starship bridge, looking out at an unexplored galaxy. A massive, collaborative world-building project, like a giant Minecraft server, where players and AI companions build a futuristic solarpunk city together.",
-  "lesson-1.2-p4": "An apprentice spars with a holographic master warrior who replays a complex technique in slow motion, explaining the strategy. A young mage learns a new spell as a wise, ancient dragon (the AI) breathes a holographic 'spell diagram' into the air.",
-  "lesson-1.3-p1": "A powerful, god-like figure in a digital realm effortlessly creates worlds and structures with gestures, surrounded by AI companions. An image of an RPG rulebook's 'prestige class': the 'Citizen Architect,' with abilities like 'System Weaving' and 'Create World.'",
-  "lesson-1.3-p2": "A futuristic RPG character sheet where the primary stat is a glowing, maxed-out bar labeled 'Cognitive Capital.' A hero defeats a massive puzzle-boss not with strength, but with pure intellect, as glowing lines of logic unravel the boss's defenses.",
-  "lesson-1.3-p3": "A 'lore master' or 'dungeon master' weaves a grand narrative on a holographic map, which AI companions instantly translate into a living digital world. A split-panel shows a builder placing blocks randomly, versus a 'World-Builder' first writing the 'lore' which then guides the placement of every block with purpose.",
-  "lesson-1.3-p4": "A Citizen Architect on a 'creator' screen, like a game's map editor, designs and launches entire new 'game worlds' (applications) with a few clicks. An image of a player ascending to 'God Mode,' flying above the game world, now able to modify the fundamental rules and create new content.",
-  "lesson-2.1-p1": "A hero in a video game stands before a massive, glowing inventory screen, skillfully organizing a chaotic pile of 'loot' into a perfectly organized 'Optimized Loadout.' A sci-fi quartermaster in a vast cargo bay uses a holographic interface to tag and stack disorganized crates, preparing the ship's 'context' for a mission.",
-  "lesson-2.1-p2": "A side-by-side comparison of a fantasy blacksmith forging a weak sword from rusty materials ('Garbage In'), versus forging a legendary sword from glowing, high-quality ore ('Curated Data'). An alchemist mixes muddy water and weeds to get a sludge potion, then mixes crystal water and glowing herbs to get a powerful elixir.",
-  "lesson-2.1-p3": "A three-panel comic strip: 'GATHER' (hero collects loot), 'ORGANIZE' (hero sorts loot into labeled chests), and 'LABEL' (hero applies custom names and icons). A top-down view of a player organizing their base in a strategy game, creating designated zones for different resources.",
-  "lesson-2.1-p4": "A hero equips a set of glowing, futuristic armor, with the main tool being a powerful gauntlet labeled 'DCE.' An 'inspect item' screen from an RPG for the 'Data Curation Environment,' listing its stats as '+100 to Context Quality' and a special ability: 'Summon Parallel Solutions.'",
-  "lesson-2.2-p1": "A hero in a fantasy world enchants a plain sword by applying glowing runes labeled 'Metadata,' imbuing it with power. A mage draws glowing symbols onto a plain golem, animating it and giving the raw clay (data) purpose.",
-  "lesson-2.2-p2": "A split-panel cartoon: a hero asks their confused AI familiar for a 'healing potion' from an unlabeled pile, then points to a labeled shelf, and the familiar instantly grabs the correct one. A hero's commands cause chaos with an army of identical grey robots, but work perfectly once the robots are color-coded by role.",
-  "lesson-2.2-p3": "A page from a magical grimoire shows two spells: 'Spell of True Naming' (renaming a sword to 'Sword of the Fire Lord +5') and 'Spell of Sorting' (sorting loot into labeled chests). A tech-mage at a holographic interface casts 'Rename' and 'Organize' spells on a list of files.",
-  "lesson-2.2-p4": "A young hero proudly displays a set of epic, glowing armor and a powerful weapon they have crafted, with their AI familiar giving a thumbs-up. A 'crafting complete' screen from a game shows a 'Legendary Application' was successfully crafted from 'Well-Annotated Data' and 'High-Quality Context.'",
-  "lesson-2.3-p1": "A hero inspects a powerful, glowing sword from an NPC, using a 'detect magic' spell to reveal a hidden 'Cursed' debuff. A player overlays a 'Lens of Truth' on a treasure map from an AI, revealing that parts of it lead to traps.",
-  "lesson-2.3-p2": "A 'Monster Manual' page shows different digital monsters: the 'Hallucination' ghost, the 'Logic Gremlin' saboteur, and the 'Security Serpent' snake. A hero in a dungeon encounters a 'Phantom Wall' (Hallucination), a pressure plate that opens the wrong door (Logic Gremlin), and a hidden trapdoor (Security Serpent).",
-  "lesson-2.3-p3": "A hero plans an attack on a giant boss by looking at a map of its weak points, with a clear strategy: '1. Analyze the Quest,' '2. Scan for Weak Points (Diff),' '3. Target the Core,' '4. Final Blow.' A sci-fi bounty hunter reviews a mission briefing, then uses a scanner to highlight structural weaknesses in the target's lair before plotting their route.",
-  "lesson-2.3-p4": "A hero stands over a defeated bug-monster, which drops a glowing orb of 'Knowledge' that the hero absorbs, causing a 'LEVEL UP!' graphic to appear. A blacksmith, after breaking a sword while forging it, carefully studies the break point to learn from the mistake before starting a new, better sword.",
-  "lesson-3.1-p1": "A powerful mage casts a complex spell by tracing a precise, glowing geometric pattern labeled 'Structured Interaction.' A split-panel shows a wizard trying to command a golem with vague shouts, then successfully commanding it by reading a precise incantation from a scroll.",
-  "lesson-3.1-p2": "A close-up of a magical spellbook showing a template with sections for 'Target,' 'Components,' 'Incantation,' and 'Effect.' A sci-fi pilot uses a 'Macro Editor' with clear fields to program a complex maneuver for their ship.",
-  "lesson-3.1-p3": "Two wizards duel. One tries to remember a spell and looks stressed. The other calmly opens a spellbook and unleashes a flawless, powerful attack. A 'speedrunner' plays a game with a second monitor showing a list of optimized, repeatable steps for their run.",
-  "lesson-3.1-p4": "A 'before and after' of a vague wish ('make the sword cooler') versus a structured incantation on a magical scroll with sections for `// ROLE`, `// TASK`, `// CONTEXT`, and `// EFFECT`. A player at a crafting table first throws in random ingredients, then follows a precise, high-level recipe to craft a legendary item.",
-  "lesson-3.2-p1": "A video game character is defeated by a boss, then respawns. An AI companion replays a hologram of the fight, highlighting the boss's attack pattern. A 'Game Over' screen with a button that says 'Analyze Failure,' which brings up a tactical replay with an AI coach.",
-  "lesson-3.2-p2": "A 'Monster Manual' for code bugs, showing the 'Syntax Slug' (grammar mistakes), the 'Runtime Raptor' (crashes), and the 'Logic Lich' (illusionary bugs). A hero in a dungeon faces three traps: a miswritten rune that fizzles, a pressure plate that collapses the ceiling, and a plate that opens a door to a monster room.",
-  "lesson-3.2-p3": "A four-panel comic of a debugging combo: hero casts a spell, it backfires with a red 'ERROR!', the hero captures the error in an orb, and infuses their next spell with it. A sci-fi engineer's engine fails; they feed the error log to the ship's AI, which provides a repair schematic.",
-  "lesson-3.2-p4": "A hero levels up at incredible speed, absorbing energy from defeated bug-monsters, with '+1 INT' or '+1 WIS' appearing over their head. An animation shows a character's 'Debugging' skill bar rapidly filling as they go through a montage of finding an error, feeding it to their AI, and seeing the solution.",
-  "lesson-3.3-p1": "A gamer playing a difficult video game hits a glowing 'QUICKSAVE' button just before entering the boss room. A hero about to cross a rickety rope bridge plants a magical 'Respawn Beacon' at the start.",
-  "lesson-3.3-p2": "An AI companion offers a player three swords; one is 'Legendary,' but two are 'Cursed,' and the player is protected by a 'Git Baseline' shield. A player at a 'Gacha' machine uses a special token to 'preview' the random drop before spending real currency.",
-  "lesson-3.3-p3": "A four-hit fighting game combo: 'SAVE' (Baseline button), 'EQUIP' (new AI weapon), 'TEST' (weapon shatters on a dummy), 'RELOAD' (character reappears at save point). An animated sequence of a sci-fi RPG player saving, failing a hack, triggering alarms, and immediately loading their last save.",
-  "lesson-3.3-p4": "A speedrunner blazes through a level, trying risky skips without fear because a 'Reload Last Save' button is always visible. A hero practices a powerful but dangerous spell inside a magical training room that instantly repairs any damage from a backfire.",
-  "lesson-4.1-p1": "A hero stands before a massive, ancient map labeled 'Project Scope,' plotting a course from their starting village to a distant, glowing castle. A 'Quest Log' UI from a video game, where a new main quest has just been added: 'Build the Ultimate RPG.'",
-  "lesson-4.1-p2": "A wise, old quest giver presents a riddle to a young hero, broken into three glowing runes: 'Problem,' 'Hero' (user), and 'Solution.' A hero at a fork in the road with three signposts: 'What's the Goal?', 'Who is it for?', and 'How will you win?'.",
-  "lesson-4.1-p3": "A video game world map shows the player's current objective as a small, nearby dungeon labeled 'The First Dungeon (MVP),' with a clear path toward the final boss castle. A hero forges a small, perfect dagger labeled 'MVP,' which contains the essential magic that will be scaled up into a legendary sword.",
-  "lesson-4.1-p4": "A hero carefully inscribes their quest details onto a magical scroll with glowing sections for 'Prophecy' (Vision), 'The Evil' (Problem), 'The Chosen One' (User), and 'The First Trial' (MVP). A player uses an in-game 'Quest Editor' to fill out a form defining their custom quest's story and objectives.",
-  "lesson-4.2-p1": "A game developer stares at a completely empty, white grid in a game engine, labeled 'Level 1: The Blank Canvas.' A hero is given a quest to build a legendary city but is standing in a completely empty field, looking overwhelmed.",
-  "lesson-4.2-p2": "A hero casts a 'Genesis Spell' using their 'Project Scope' scroll, and their AI familiar instantly generates the entire 'world map' (folder structure) and 'starting cities' (files). A 'God Mode' view of a world-building game where the player clicks 'Generate World from Template,' and the AI instantly terraforms a flat plain.",
-  "lesson-4.2-p3": "A close-up of the DCE's 'Cycle 0' UI, where a user's 'world idea' is magically transformed into a full set of 'Lore Books' (planning artifacts). An image of the first level of a video game, a simple, guided tutorial that teaches the core mechanics by having the player complete one quest.",
-  "lesson-4.2-p4": "A hero confidently gives a command to their AI familiar: 'Use my Project Scope scroll to forge the world for my MVP.' A player in a 'world editor' is about to click a large, glowing button that says 'CREATE WORLD.'",
-  "lesson-4.3-p1": "A hero lays their magical 'Project Scope' scroll on a forge, which glows and automatically constructs the holographic blueprint of a massive castle. A 'tech tree' from a strategy game, where researching 'Project Scope' has unlocked the ability to build the 'Architectural Blueprint' building.",
-  "lesson-4.3-p2": "A side-by-side comparison of a novice clumsily building a shack versus a hero commanding an AI golem to expertly construct the foundation of a castle. A hero at a crafting station uses an 'Auto-Craft' feature powered by an AI to rapidly assemble all the basic components for a legendary item.",
-  "lesson-4.3-p3": "A hero recites a powerful, structured spell from a scroll with verses for 'ROLE: Master Architect,' 'CONTEXT: The Sacred Scroll of Scope,' etc. A player uses a powerful 'world editor' command line, typing a structured command like `/build foundation --from_blueprint 'scope.txt' --style 'fortress'`.",
-  "lesson-4.3-p4": "The new project structure is shown in the DCE. The hero clicks 'Accept,' and the files materialize in their world, which is now live and running. An animation shows a 3D printer (the AI) rapidly printing the foundation of a complex model, which the user then takes to start adding details."
+  "manifestId": "v2v-yp-images-v1",
+  "basePath": "/assets/images/v2v/young_precocious/",
+  "imageGroups": {
+    "lesson-1.1-p1-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A cinematic shot of a young, focused gamer at a futuristic battle station, orchestrating a complex coding project visualized as a glowing loop of data, with the title 'LEVEL UP YOUR DEV GAME' displayed. An image of a video game 'skill tree' with a glowing path leading from the 'Vibecoding' skill to the ultimate skill: 'Virtuoso's Loop.'",
+      "alt": "Leveling up your development game.",
+      "baseFileName": "lesson-1.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p2-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A video game inventory screen shows a chaotic 'loot drop' of files being skillfully organized into an 'Optimized Loadout.' A hero at a blacksmith's forge carefully selects magical scrolls and artifacts ('The Context') into a satchel, preparing their 'spell components.'",
+      "alt": "Preparing your inventory for a quest.",
+      "baseFileName": "lesson-1.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p3-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A single, powerful spell is cast, summoning eight different AI familiars, each returning with a unique magic scroll (a code solution). A sci-fi captain deploys eight identical drones on a scouting mission, each returning with a different piece of intelligence.",
+      "alt": "Multi-summoning AI for multiple solutions.",
+      "baseFileName": "lesson-1.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p4-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A close-up of a gamer's face, intensely analyzing a futuristic diff viewer showing 'stat changes' between two code files, their hand poised over a 'Select This Build' button. A top-down tactical view from a strategy game where a player, as raid leader, decisively chooses one of several AI-drawn attack paths.",
+      "alt": "Acting as the raid leader for your project.",
+      "baseFileName": "lesson-1.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p5-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A gaming-style workflow diagram: 'Quick Save' button creates a 'Restore Point,' leading to 'Equip Build,' 'Test in Dungeon,' and then a 'Wipe' arrow leading to 'Reload Save.' A hero touches a magical save crystal before drinking a mysterious potion labeled 'AI-Generated Code.'",
+      "alt": "Quick save and reload for your code.",
+      "baseFileName": "lesson-1.1-p5-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.1-p6-ig1": {
+      "path": "module-1/lesson-1.1/",
+      "prompt": "A 'Quest Complete!' screen shows a player receiving EXP and loot, while the next quest in the chain unlocks on the world map. A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with 'Generate prompt.md' and '+' (New Cycle) buttons highlighted.",
+      "alt": "Logging your win and queuing for the next raid.",
+      "baseFileName": "lesson-1.1-p6-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p1-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A video game character fails a complex move ('COMBO FAILED'), and an AI companion shows a holographic overlay of the correct button sequence. A hero sparring with a training dummy misses a strike, and a magical rune on the dummy glows to show the correct target.",
+      "alt": "AI as a feedback loop power-up.",
+      "baseFileName": "lesson-1.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p2-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "An RPG 'skill tree' where the ultimate skill at the very top is 'Data Curation,' with 'Code Generation' and 'Automation' branching down from it. A 'character build' screen for a developer where the highest, maxed-out stat is 'Curation.'",
+      "alt": "Data Curation as the new meta skill.",
+      "baseFileName": "lesson-1.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p3-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "A stunning, cinematic image of a player character on a starship bridge, looking out at an unexplored galaxy. A massive, collaborative world-building project, like a giant Minecraft server, where players and AI companions build a futuristic solarpunk city together.",
+      "alt": "The endgame quest for a 'Star Trek' future.",
+      "baseFileName": "lesson-1.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.2-p4-ig1": {
+      "path": "module-1/lesson-1.2/",
+      "prompt": "An apprentice spars with a holographic master warrior who replays a complex technique in slow motion, explaining the strategy. A young mage learns a new spell as a wise, ancient dragon (the AI) breathes a holographic 'spell diagram' into the air.",
+      "alt": "The AI as a cognitive mentor teaching secret techniques.",
+      "baseFileName": "lesson-1.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p1-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A powerful, god-like figure in a digital realm effortlessly creates entire worlds and complex structures with gestures, surrounded by AI companions. An image of an RPG rulebook's 'prestige class': the 'Citizen Architect,' with abilities like 'System Weaving' and 'Create World.'",
+      "alt": "The final class: The Citizen Architect.",
+      "baseFileName": "lesson-1.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p2-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A futuristic RPG character sheet where the primary stat is a glowing, maxed-out bar labeled 'Cognitive Capital.' A hero defeats a massive puzzle-boss not with strength, but with pure intellect, as glowing lines of logic unravel the boss's defenses.",
+      "alt": "Cognitive Capital as your ultimate stat.",
+      "baseFileName": "lesson-1.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p3-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A 'lore master' or 'dungeon master' weaves a grand narrative on a holographic map, which AI companions instantly translate into a living digital world. A split-panel shows a builder placing blocks randomly, versus a 'World-Builder' first writing the 'lore' which then guides the placement of every block with purpose.",
+      "alt": "The Architect as a storyteller and lore master.",
+      "baseFileName": "lesson-1.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-1.3-p4-ig1": {
+      "path": "module-1/lesson-1.3/",
+      "prompt": "A Citizen Architect on a 'creator' screen, like a game's map editor, designs and launches entire new 'game worlds' (applications) with a few clicks. An image of a player ascending to 'God Mode,' flying above the game world, now able to modify the fundamental rules.",
+      "alt": "The power of a world-builder.",
+      "baseFileName": "lesson-1.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p1-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A hero in a video game stands before a massive, glowing inventory screen, skillfully organizing a chaotic pile of 'loot' into a perfectly organized 'Optimized Loadout.' A sci-fi quartermaster in a vast cargo bay uses a holographic interface to tag and stack disorganized crates.",
+      "alt": "Ultimate inventory management.",
+      "baseFileName": "lesson-2.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p2-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A side-by-side comparison of a fantasy blacksmith forging a weak sword from rusty materials ('Garbage In'), versus forging a legendary sword from glowing, high-quality ore ('Curated Data'). An alchemist mixes muddy water and weeds to get a sludge potion, then mixes crystal water and glowing herbs to get a powerful elixir.",
+      "alt": "The 'Garbage In, Garbage Out' law.",
+      "baseFileName": "lesson-2.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p3-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A three-panel comic strip: 'GATHER' (hero collects loot), 'ORGANIZE' (hero sorts loot into labeled chests), and 'LABEL' (hero applies custom names and icons). A top-down view of a player organizing their base in a strategy game, creating designated zones for different resources.",
+      "alt": "The Curator's Combo: Gather, Organize, Label.",
+      "baseFileName": "lesson-2.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.1-p4-ig1": {
+      "path": "module-2/lesson-2.1/",
+      "prompt": "A hero equips a set of glowing, futuristic armor, with the main tool being a powerful gauntlet labeled 'DCE.' An 'inspect item' screen from an RPG for the 'Data Curation Environment,' listing its stats as '+100 to Context Quality' and a special ability: 'Summon Parallel Solutions.'",
+      "alt": "Your legendary gear: The DCE.",
+      "baseFileName": "lesson-2.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p1-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A hero in a fantasy world enchants a plain sword by applying glowing runes labeled 'Metadata,' imbuing it with power. A mage draws glowing symbols onto a plain golem, animating it and giving the raw clay (data) purpose.",
+      "alt": "Enchanting your data with annotation.",
+      "baseFileName": "lesson-2.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p2-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A split-panel cartoon: a hero asks their confused AI familiar for a 'healing potion' from an unlabeled pile, then points to a labeled shelf, and the familiar instantly grabs the correct one. A hero's commands cause chaos with an army of identical grey robots, but work perfectly once the robots are color-coded by role.",
+      "alt": "Your AI can't read minds.",
+      "baseFileName": "lesson-2.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p3-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A page from a magical grimoire shows two spells: 'Spell of True Naming' (renaming a sword to 'Sword of the Fire Lord +5') and 'Spell of Sorting' (sorting loot into labeled chests). A tech-mage at a holographic interface casts 'Rename' and 'Organize' spells on a list of files.",
+      "alt": "The Annotator's Grimoire: Naming & Sorting.",
+      "baseFileName": "lesson-2.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.2-p4-ig1": {
+      "path": "module-2/lesson-2.2/",
+      "prompt": "A young hero proudly displays a set of epic, glowing armor and a powerful weapon they have crafted, with their AI familiar giving a thumbs-up. A 'crafting complete' screen from a game shows a 'Legendary Application' was successfully crafted from 'Well-Annotated Data.'",
+      "alt": "The payoff: crafting god-tier loot.",
+      "baseFileName": "lesson-2.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p1-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A hero inspects a powerful, glowing sword from an NPC, using a 'detect magic' spell to reveal a hidden 'Cursed' debuff. A player overlays a 'Lens of Truth' on a treasure map from an AI, revealing that parts of it lead to traps.",
+      "alt": "Debuffing the AI with critical analysis.",
+      "baseFileName": "lesson-2.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p2-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A 'Monster Manual' page shows different digital monsters: the 'Hallucination' ghost, the 'Logic Gremlin' saboteur, and the 'Security Serpent' snake. A hero in a dungeon encounters a 'Phantom Wall' (Hallucination), a pressure plate that opens the wrong door (Logic Gremlin), and a hidden trapdoor (Security Serpent).",
+      "alt": "A bestiary of AI bugs.",
+      "baseFileName": "lesson-2.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p3-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A hero plans an attack on a giant boss by looking at a map of its weak points, with a clear strategy: '1. Analyze the Quest,' '2. Scan for Weak Points (Diff),' '3. Target the Core,' '4. Final Blow.' A sci-fi bounty hunter reviews a mission briefing, then uses a scanner to highlight structural weaknesses in the target's lair.",
+      "alt": "The hunter's strategy for bug takedowns.",
+      "baseFileName": "lesson-2.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-2.3-p4-ig1": {
+      "path": "module-2/lesson-2.3/",
+      "prompt": "A hero stands over a defeated bug-monster, which drops a glowing orb of 'Knowledge' that the hero absorbs, causing a 'LEVEL UP!' graphic to appear. A blacksmith, after breaking a sword, studies the break point to learn from the mistake before forging a new, better one.",
+      "alt": "Looting the corpse: turning bugs into EXP.",
+      "baseFileName": "lesson-2.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p1-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A powerful mage casts a complex spell by tracing a precise, glowing geometric pattern labeled 'Structured Interaction.' A split-panel shows a wizard trying to command a golem with vague shouts, then successfully commanding it by reading a precise incantation from a scroll.",
+      "alt": "Casting spells: mastering the syntax of power.",
+      "baseFileName": "lesson-3.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p2-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A close-up of a magical spellbook showing a template with sections for 'Target,' 'Components,' 'Incantation,' and 'Effect.' A sci-fi pilot uses a 'Macro Editor' with clear fields to program a complex maneuver.",
+      "alt": "The spellbook: your interaction schema.",
+      "baseFileName": "lesson-3.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p3-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "Two wizards duel. One tries to remember a spell and looks stressed. The other calmly opens a spellbook and unleashes a flawless, powerful attack. A 'speedrunner' plays a game with a second monitor showing a list of optimized, repeatable steps.",
+      "alt": "Why pros use spellbooks.",
+      "baseFileName": "lesson-3.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.1-p4-ig1": {
+      "path": "module-3/lesson-3.1/",
+      "prompt": "A 'before and after' of a vague wish ('make the sword cooler') versus a structured incantation on a magical scroll with sections for `// ROLE`, `// TASK`, etc. A player at a crafting table first throws in random ingredients, then follows a precise, high-level recipe.",
+      "alt": "From wish to incantation.",
+      "baseFileName": "lesson-3.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p1-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A video game character is defeated by a boss, then respawns. An AI companion replays a hologram of the fight, highlighting the boss's attack pattern. A 'Game Over' screen with an 'Analyze Failure' button that brings up a tactical replay.",
+      "alt": "Respawning with purpose.",
+      "baseFileName": "lesson-3.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p2-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A 'Monster Manual' for code bugs, showing the 'Syntax Slug,' the 'Runtime Raptor,' and the 'Logic Lich.' A hero in a dungeon faces three traps: a miswritten rune, a ceiling collapse, and a door to a monster room.",
+      "alt": "A bestiary of bugs.",
+      "baseFileName": "lesson-3.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p3-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A four-panel comic of a debugging combo: hero casts a spell, it backfires, the hero captures the error in an orb, and infuses their next spell with it. A sci-fi engineer's engine fails; they feed the error log to the ship's AI, which provides a repair schematic.",
+      "alt": "The debugging combo.",
+      "baseFileName": "lesson-3.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.2-p4-ig1": {
+      "path": "module-3/lesson-3.2/",
+      "prompt": "A hero levels up at incredible speed, absorbing energy from defeated bug-monsters, with '+1 INT' or '+1 WIS' appearing over their head. An animation shows a character's 'Debugging' skill bar rapidly filling as they go through a montage of finding an error, feeding it to their AI, and seeing the solution.",
+      "alt": "The ultimate training montage.",
+      "baseFileName": "lesson-3.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p1-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A gamer playing a difficult video game hits a glowing 'QUICKSAVE' button just before entering the boss room. A hero about to cross a rickety rope bridge plants a magical 'Respawn Beacon' at the start.",
+      "alt": "Save scumming for coders.",
+      "baseFileName": "lesson-3.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p2-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "An AI companion offers a player three swords; one is 'Legendary,' but two are 'Cursed,' and the player is protected by a 'Git Baseline' shield. A player at a 'Gacha' machine uses a special token to 'preview' the random drop before spending real currency.",
+      "alt": "Taming the RNG.",
+      "baseFileName": "lesson-3.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p3-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A four-hit fighting game combo: 'SAVE' (Baseline button), 'EQUIP' (new AI weapon), 'TEST' (weapon shatters on a dummy), 'RELOAD' (character reappears at save point). An animated sequence of a sci-fi RPG player saving, failing a hack, and immediately loading their last save.",
+      "alt": "The four-hit combo.",
+      "baseFileName": "lesson-3.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-3.3-p4-ig1": {
+      "path": "module-3/lesson-3.3/",
+      "prompt": "A speedrunner blazes through a difficult level, trying risky skips without fear because a 'Reload Last Save' button is always visible. A hero practices a powerful but dangerous spell inside a magical training room that instantly repairs any damage.",
+      "alt": "Fearless speedrunning.",
+      "baseFileName": "lesson-3.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p1-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A hero stands before a massive, ancient map labeled 'Project Scope,' plotting a course from their starting village to a distant, glowing castle. A 'Quest Log' UI from a video game, where a new main quest has just been added: 'Build the Ultimate RPG.'",
+      "alt": "Defining your quest.",
+      "baseFileName": "lesson-4.1-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p2-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A wise, old quest giver presents a riddle to a young hero, broken into three glowing runes: 'Problem,' 'Hero' (user), and 'Solution.' A hero at a fork in the road with three signposts: 'What's the Goal?', 'Who is it for?', and 'How will you win?'.",
+      "alt": "The Quest Giver's Riddle.",
+      "baseFileName": "lesson-4.1-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p3-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A video game world map shows the player's current objective as a small, nearby dungeon labeled 'The First Dungeon (MVP).' A hero forges a small, perfect dagger labeled 'MVP,' which contains the essential magic that will be scaled up into the full sword.",
+      "alt": "Conquering the first dungeon (MVP).",
+      "baseFileName": "lesson-4.1-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.1-p4-ig1": {
+      "path": "module-4/lesson-4.1/",
+      "prompt": "A hero carefully inscribes their quest details onto a magical scroll with glowing sections for 'Prophecy' (Vision), 'The Evil' (Problem), 'The Chosen One' (User), and 'The First Trial' (MVP). A player uses an in-game 'Quest Editor' to fill out a form defining their custom quest.",
+      "alt": "Inscribing your map.",
+      "baseFileName": "lesson-4.1-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p1-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A game developer stares at a completely empty, white grid in a game engine, labeled 'Level 1: The Blank Canvas.' A hero is given a quest to build a legendary city but is standing in a completely empty, flat field.",
+      "alt": "Conquering the blank canvas.",
+      "baseFileName": "lesson-4.2-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p2-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A hero casts a 'Genesis Spell' using their 'Project Scope' scroll, and their AI familiar instantly generates the entire 'world map' (folder structure) and 'starting cities' (files). A 'God Mode' view of a world-building game where the player clicks 'Generate World from Template,' and the AI instantly terraforms a flat plain.",
+      "alt": "The Genesis Spell.",
+      "baseFileName": "lesson-4.2-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p3-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A close-up of the DCE's 'Cycle 0' UI, where a user's 'world idea' is magically transformed into a full set of 'Lore Books' (planning artifacts). An image of the very first level of a video game, a simple, guided tutorial that teaches the core mechanics.",
+      "alt": "The built-in tutorial level.",
+      "baseFileName": "lesson-4.2-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.2-p4-ig1": {
+      "path": "module-4/lesson-4.2/",
+      "prompt": "A hero confidently gives a command to their AI familiar: 'Use my Project Scope scroll to forge the world for my MVP.' A player in a 'world editor' is about to click a large, glowing button that says 'CREATE WORLD.'",
+      "alt": "Your first quest: Forge My World.",
+      "baseFileName": "lesson-4.2-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p1-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A hero lays their magical 'Project Scope' scroll on a forge, which glows and automatically constructs the holographic blueprint of a massive castle. A 'tech tree' from a strategy game, where researching 'Project Scope' has unlocked the ability to build the 'Architectural Blueprint' building.",
+      "alt": "The Architect's Table.",
+      "baseFileName": "lesson-4.3-p1-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p2-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A side-by-side comparison of a novice clumsily building a shack versus a hero commanding an AI golem to expertly construct the foundation of a castle. A hero at a crafting station uses an 'Auto-Craft' feature powered by an AI to rapidly assemble all the basic components for a legendary item.",
+      "alt": "The AI as your master blacksmith.",
+      "baseFileName": "lesson-4.3-p2-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p3-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "A hero recites a powerful, structured spell from a scroll with verses for 'ROLE: Master Architect,' 'CONTEXT: The Sacred Scroll of Scope,' etc. A player uses a powerful 'world editor' command line, typing a structured command like `/build foundation --from_blueprint 'scope.txt' --style 'fortress'`.",
+      "alt": "The Incantation of Creation.",
+      "baseFileName": "lesson-4.3-p3-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    },
+    "lesson-4.3-p4-ig1": {
+      "path": "module-4/lesson-4.3/",
+      "prompt": "The new project structure is shown in the DCE. The hero clicks 'Accept,' and the files materialize in their world. The final shot shows them taking their first steps into the newly created world, which is now live and running. An animation shows a 3D printer (the AI) rapidly printing the foundation of a complex model, which the user then takes to start adding the details.",
+      "alt": "Cycle 1: The World is Born.",
+      "baseFileName": "lesson-4.3-p4-img-",
+      "fileExtension": ".webp",
+      "imageCount": 1
+    }
+  }
 }
