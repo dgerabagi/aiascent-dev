@@ -1,7 +1,7 @@
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C70 (Add A70)
+# Updated on: C71 (Add A71)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -166,6 +166,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A70. V2V Academy - Lesson 3.3 - The Test-and-Revert Workflow
 - **Description:** The detailed content for Lesson 3.3 of the V2V Academy, "The Test-and-Revert Workflow," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
 - **Tags:** v2v, curriculum, lesson plan, git, version control, testing, cognitive apprenticeship, interactive learning, persona
+
+#### A71. V2V Academy - Lesson 4.1 - Defining Your Vision
+- **Description:** The detailed content for Lesson 4.1 of the V2V Academy, "Defining Your Vision," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, project scope, mvp, planning, interactive learning, persona
 
 ### IV. Technical Implementation & Guides
 

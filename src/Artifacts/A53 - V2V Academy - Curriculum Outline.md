@@ -1,7 +1,7 @@
 # Artifact A53: V2V Academy - Curriculum Outline
 # Date Created: C58
 # Author: AI Model & Curator
-# Updated on: C70 (Add Lesson 3.3)
+# Updated on: C71 (Add Lesson 4.1)
 
 - **Key/Value for A0:**
 - **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
@@ -91,7 +91,7 @@ The curriculum is divided into four core modules, each representing a stage in t
 
 *   **Objective:** To empower the learner to apply their skills to their own ideas, entering the **Exploration** phase of Cognitive Apprenticeship.
 *   **Lessons:**
-    *   **4.1: Defining Your Vision**
+    *   **4.1: Defining Your Vision** (See `A71`)
         *   **Career Transitioner:** "From Business Need to Project Scope: Architecting Your Solution"
         *   **Underequipped Graduate:** "Your Portfolio Starts Here: Creating a Professional Project Scope"
         *   **Young Precocious:** "The Hero's Journey: Defining Your Quest"

@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C70 (Add TDD, Git, and Version Control)
+# Updated on: C71 (Add Project Scope and Vision Document)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -104,6 +104,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **P**
 
 *   **Parallel Prompting:** The practice of sending the same prompt to multiple AI instances simultaneously to generate a diverse set of solutions. This allows the developer to compare different approaches and select the most promising one, rather than being locked into a single, linear path.
+*   **Project Scope:** A formal document or artifact that defines the boundaries of a project. It outlines the project's objectives, deliverables, features, functions, tasks, deadlines, and costs. A clear project scope is essential for aligning human and AI collaborators.
 
 ### **R**
 
@@ -115,6 +116,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
 *   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
+*   **Stakeholder:** Any person, group, or organization that has an interest in, or is affected by, a project's outcome. This includes team members, customers, investors, and users.
 *   **Structured Interaction:** The practice of moving beyond casual, conversational prompts to providing the AI with clear, explicit, and repeatable commands, often using a template or "Interaction Schema." This is a core skill for achieving reliable and predictable results from an AI.
 
 ### **T**
@@ -122,6 +124,10 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Test-and-Revert Workflow:** A core practice of the Virtuoso's Loop where a developer creates a safe restore point (Baseline), applies AI-generated code, tests it, and then either keeps the changes or instantly discards them (Revert) if they are faulty. This enables rapid, low-risk experimentation.
 *   **Test-Driven Development (TDD):** A software development methodology where developers write a failing test *before* they write the functional code to make that test pass. This "test-first" approach follows a simple "Red-Green-Refactor" cycle and helps ensure code quality, correctness, and maintainability from the start.
 *   **Token:** The basic unit of text that an LLM processes. A token can be a word, part of a word, or a punctuation mark. The number of tokens in a prompt is a key metric for cost and performance.
+
+### **U**
+
+*   **User Story:** A simple, structured sentence used in agile development to define a feature from an end-user's perspective. The format is: "As a `[type of user]`, I want to `[perform some action]`, so that `[I can achieve some goal]`."
 
 ### **V**
 
@@ -131,4 +137,5 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Vibecoding:** The intuitive, conversational, and often imprecise starting point for interacting with generative AI. It is the process of translating a high-level goal or "vibe" into a functional output using natural language. It is the first stage on the pathway to Virtuosity.
 *   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
 *   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization.
+*   **Vision Document:** A high-level strategic document that defines the purpose, goals, and long-term direction of a project. It answers the "why" and serves as a north star for all development decisions.
 *   **V2V (Vibecoding to Virtuosity):** The name of the pedagogical pathway and curriculum designed to guide learners from novice, intuitive AI interaction to expert-level mastery in human-AI collaboration.
