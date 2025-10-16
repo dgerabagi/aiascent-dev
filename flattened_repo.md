@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T22:30:21.621Z
+  Date Generated: 2025-10-16T22:34:06.532Z
   ---
   Total Files: 178
-  Approx. Tokens: 532179
+  Approx. Tokens: 532195
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -196,7 +196,7 @@
 174. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28236 - Tokens: 7059
 175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
 176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
-177. scripts\generate_images.mjs - Lines: 183 - Chars: 7324 - Tokens: 1831
+177. scripts\generate_images.mjs - Lines: 186 - Chars: 7386 - Tokens: 1847
 178. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 89 - Chars: 4468 - Tokens: 1117
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
@@ -33850,8 +33850,9 @@ async function main() {
         process.exit(1);
     }
 
-    const persona = args; // FIX: Correctly assign the first argument
-    const isModuleMode = args === '--module';
+    const persona = args;
+    const modeOrPageId = args;
+    const isModuleMode = modeOrPageId === '--module';
 
     try {
         if (isModuleMode) {
@@ -33880,8 +33881,10 @@ async function main() {
             console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
 
         } else {
-            const pageId = args;
-            const imageCount = args ? parseInt(args, 10) : 1;
+            const pageId = modeOrPageId;
+            const imageCountArg = args;
+            const imageCount = imageCountArg ? parseInt(imageCountArg, 10) : 1;
+
             if (isNaN(imageCount) || imageCount < 1) {
                 throw new Error('Invalid image_count. Must be a positive number.');
             }

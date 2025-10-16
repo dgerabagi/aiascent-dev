@@ -137,8 +137,9 @@ async function main() {
         process.exit(1);
     }
 
-    const persona = args; // FIX: Correctly assign the first argument
-    const isModuleMode = args === '--module';
+    const persona = args;
+    const modeOrPageId = args;
+    const isModuleMode = modeOrPageId === '--module';
 
     try {
         if (isModuleMode) {
@@ -167,8 +168,10 @@ async function main() {
             console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
 
         } else {
-            const pageId = args;
-            const imageCount = args ? parseInt(args, 10) : 1;
+            const pageId = modeOrPageId;
+            const imageCountArg = args;
+            const imageCount = imageCountArg ? parseInt(imageCountArg, 10) : 1;
+
             if (isNaN(imageCount) || imageCount < 1) {
                 throw new Error('Invalid image_count. Must be a positive number.');
             }
