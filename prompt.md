@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 83 - still script wont work
+Current Cycle 84 - reverse-engineer imagen 4 ultra fine tuning
+Cycle 83 - still script wont work
 Cycle 82 - script error
 Cycle 81 - create artifact for the script
 Cycle 80 - check on scripts use case make sure it names and places images appropriate for the report delivery system
@@ -718,6 +719,29 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 84>
+<Cycle Context>
+okay, i have a working script. however the images are coming back very bad. the imagen 4 model cant handle the entire prompt.
+
+i think we need to reduce what we are sending. can we just pass the image prompt and the image system prompt and drop the content? then, its possible that our markdown formatting is throwing off the diffusion model as well, based on how the results look (see imagery). 
+
+in fact, can you make a secondary script that i can run that will just to some A-B-C testing? like an image testing harness. you have perfect context of what generates incredible imagery, and the imagen 4 model is the one generating it. we just have to figure out how to talk 'straight to it' rather than going through ai studio or through the gemini app. 
+
+please derive a script with 5 - 10 static prompts that -would- generate -actual- images from any one of our pages of our report. i will then review the results and provide feedback. you will then take that feedback and then tweak the static image prompts. once we have perfect static image prompts, we can then reverse engineer them into a programmatic script to generate all images in the appropriate directories. what do you think?
+
+update: ive tracked down this: `context\v2v\create images with imagen 4.md` which is a copy/paste of this: https://ai.google.dev/gemini-api/docs/imagen
+</Cycle Context>
+<Previous Cycle 83 Summary of Actions>
+I've analyzed the error message `GoogleGenerativeAI is not a constructor`. This is a classic JavaScript module import issue. The `generate_images.mjs` script is using `import pkg from '@google/genai';` and then trying to destructure `GoogleGenerativeAI` from the `pkg` object. This assumes the library uses a default export, but the error indicates it uses named exports.
+
+My course of action is to correct the import statement in `scripts/generate_images.mjs`. I will change the import to use a named import syntax: `import { GoogleGenerativeAI } from '@google/genai';`. This directly imports the `GoogleGenerativeAI` class, which will resolve the "is not a constructor" error and allow the script to initialize the AI client correctly.
+
+1.  **Analyze Error:** Identify the `GoogleGenerativeAI is not a constructor` error as an incorrect module import in `scripts/generate_images.mjs`.
+2.  **Correct Import Statement:** Modify `scripts/generate_images.mjs` to use the correct named import syntax for the `@google/genai` library.
+3.  **Output Corrected File:** Provide the complete, corrected `scripts/generate_images.mjs` file. This should fix the script execution error and allow you to proceed with image generation.
+</Previous Cycle 83 Summary of Actions>
+</Cycle 84>
+
 <Cycle 83>
 <Cycle Context>
 lmfao i knew it, back to the first error we started with. im putting it here so its permanent, and in the ephemeral ill put the previous version of the script so you have full awareness of the situation... previously this was the error:
@@ -750,194 +774,6 @@ PS C:\Projects\aiascent-dev>
 
 
 </Cycle Context>
-<Ephemeral Context>
-import pkg from '@google/genai';
-import fs from 'fs/promises';
-import path from 'path';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
-
-// --- USER CONFIGURATION ---
-// EDIT THE VALUES IN THIS OBJECT TO CONTROL THE SCRIPT
-const CONFIG = {
-    // Set the persona: 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
-    persona: 'career_transitioner',
-
-    // Set the pageId you want to generate images for (e.g., 'lesson-1.1-p1')
-    pageId: 'lesson-1.1-p1',
-
-    // Set the number of images you want to generate for this page
-    imageCount: 2,
-
-    // To run for a whole module, set moduleNumber (1-4) and uncomment it.
-    // This will generate 1 image for every page in the module.
-    // moduleNumber: 1, 
-};
-// --- END OF CONFIGURATION ---
-
-
-const { GoogleGenerativeAI } = pkg;
-const API_KEY = process.env.API_KEY;
-const MODEL_NAME = 'imagen-3'; 
-const OUTPUT_DIR_BASE = path.resolve(process.cwd(), 'public');
-
-// --- HELPER FUNCTIONS ---
-
-async function loadJsonData(filePath) {
-    try {
-        const fileContent = await fs.readFile(filePath, 'utf-8');
-        return JSON.parse(fileContent);
-    } catch (error) {
-        console.error(`Error loading JSON data from ${filePath}:`, error);
-        throw error;
-    }
-}
-
-async function loadArtifact(artifactPath) {
-    try {
-        return await fs.readFile(artifactPath, 'utf-8');
-    } catch (error) {
-        console.error(`Error loading artifact from ${artifactPath}:`, error);
-        throw error;
-    }
-}
-
-function findPageById(curriculumData, pageId) {
-    for (const section of curriculumData.sections) {
-        const foundPage = section.pages.find(p => p.pageId === pageId);
-        if (foundPage) return foundPage;
-    }
-    return null;
-}
-
-function constructFinalPrompt(systemPrompt, pageContent, imagePrompt) {
-    const trainingContent = `
-        <Training Content>
-        Page Title: ${pageContent.pageTitle}
-        TL;DR: ${pageContent.tldr}
-        Content: ${pageContent.content}
-        </Training Content>
-    `;
-
-    return `${systemPrompt}\n\n${trainingContent}\n\n<Image Prompt>\n${imagePrompt}\n</Image Prompt>`;
-}
-
-async function generateAndSaveImages(persona, pageId, imageCount = 1) {
-    console.log(`🚀 Processing page: '${pageId}' for persona: '${persona}' (${imageCount} image(s))`);
-
-    // 1. Load all necessary data
-    const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
-    const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
-    const systemPromptPath = path.resolve(process.cwd(), 'src/Artifacts', 'A75 - V2V Academy - Persona Image System Prompt.md');
-
-    const imageManifest = await loadJsonData(manifestPath);
-    const curriculumData = await loadJsonData(curriculumPath);
-    const systemPrompt = await loadArtifact(systemPromptPath);
-
-    // 2. Find the specific content for the requested page
-    const pageContent = findPageById(curriculumData, pageId);
-    if (!pageContent) {
-        throw new Error(`Could not find page content for pageId '${pageId}'.`);
-    }
-
-    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page
-    if (!imageGroupId) {
-        throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
-    }
-
-    const groupMeta = imageManifest.imageGroups[imageGroupId];
-    if (!groupMeta) {
-        throw new Error(`Could not find image group metadata for groupId '${imageGroupId}'.`);
-    }
-
-    // 3. Construct the final prompt
-    const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
-
-    // 4. Initialize AI client
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-
-    // 5. Loop to generate the requested number of images
-    for (let i = 1; i <= imageCount; i++) {
-        console.log(`   Generating image ${i} of ${imageCount} for '${pageId}'...`);
-        
-        const result = await model.generateContent(finalPrompt);
-        const response = result.response;
-        
-        const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-
-        if (!base64ImageData) {
-            console.error('API Response:', JSON.stringify(response, null, 2));
-            throw new Error(`No image data found in the API response for image ${i}.`);
-        }
-
-        // 6. Define output path and save the image, using the loop index
-        const outputDirPath = path.join(OUTPUT_DIR_BASE, groupMeta.path.replace('/assets/images/v2v/', 'assets/images/v2v/'));
-        const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-        const outputPath = path.join(outputDirPath, outputFileName);
-
-        await fs.mkdir(outputDirPath, { recursive: true });
-
-        console.log(`   Saving image to: ${outputPath}`);
-        await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
-
-        console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
-    }
-    console.log(`✅ All ${imageCount} images for '${pageId}' saved successfully!`);
-}
-
-
-// --- MAIN EXECUTION LOGIC ---
-
-async function main() {
-    if (!API_KEY) {
-        console.error('Error: API_KEY is not defined. Please check your .env file.');
-        process.exit(1);
-    }
-
-    const { persona, pageId, imageCount, moduleNumber } = CONFIG;
-
-    try {
-        if (moduleNumber && [1, 2, 3, 4].includes(moduleNumber)) {
-            console.log(`🚀 Starting BATCH image generation for persona: '${persona}', module: ${moduleNumber}`);
-            
-            const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
-            const curriculumData = await loadJsonData(curriculumPath);
-            const sectionId = `module-${moduleNumber}`;
-            const section = curriculumData.sections.find(s => s.sectionId === sectionId);
-
-            if (!section) {
-                throw new Error(`Could not find module ${moduleNumber} for persona '${persona}'.`);
-            }
-
-            const pageIds = section.pages.map(p => p.pageId);
-            console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
-
-            for (const id of pageIds) {
-                await generateAndSaveImages(persona, id, 1); // Generate 1 image per page in module mode
-                await new Promise(resolve => setTimeout(resolve, 1000)); 
-            }
-            console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
-
-        } else {
-            if (!persona || !pageId) {
-                throw new Error('`persona` and `pageId` must be set in the CONFIG object.');
-            }
-            if (isNaN(imageCount) || imageCount < 1) {
-                throw new Error('Invalid imageCount. Must be a positive number.');
-            }
-            await generateAndSaveImages(persona, pageId, imageCount);
-        }
-    } catch (error) {
-        console.error('❌ An error occurred during image generation:', error.message);
-        process.exit(1);
-    }
-}
-
-main();
-</Ephemeral Context>
 <Previous Cycle 82 Summary of Actions>
 Excellent observation about the script epitomizing "on-the-fly tooling"—it's a perfect example of leveraging AI to build a tool that compresses weeks of manual work into a single evening. I've incorporated that insight into the new documentation.
 
@@ -4327,10 +4163,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T22:43:04.719Z
+  Date Generated: 2025-10-16T23:10:19.463Z
   ---
-  Total Files: 178
-  Approx. Tokens: 532173
+  Total Files: 181
+  Approx. Tokens: 537235
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4522,8 +4358,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 174. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28236 - Tokens: 7059
 175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
 176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
-177. scripts\generate_images.mjs - Lines: 190 - Chars: 7315 - Tokens: 1829
+177. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
 178. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
+179. public\module-1\lesson-1.1\lesson-1.1-p1-img-1.webp - [Binary] Size: 855.8 KB
+180. public\module-1\lesson-1.1\lesson-1.1-p1-img-2.webp - [Binary] Size: 714 KB
+181. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -38037,193 +37876,188 @@ You are an expert art director and visual designer for a high-tech military and 
 </file_artifact>
 
 <file path="scripts/generate_images.mjs">
-import { GoogleGenerativeAI } from '@google/genai';
+// scripts/generate_images.mjs
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
+import { GoogleGenAI } from '@google/genai'; // ✅ New SDK class name
 
-// Load environment variables from .env file
 dotenv.config();
 
 // --- USER CONFIGURATION ---
-// EDIT THE VALUES IN THIS OBJECT TO CONTROL THE SCRIPT
 const CONFIG = {
-    // Set the persona: 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
-    persona: 'career_transitioner',
-
-    // Set the pageId you want to generate images for (e.g., 'lesson-1.1-p1')
-    pageId: 'lesson-1.1-p1',
-
-    // Set the number of images you want to generate for this page
-    imageCount: 1,
-
-    // To run for a whole module, set moduleNumber (1-4) and uncomment it.
-    // This will generate 1 image for every page in the module.
-    // moduleNumber: 1, 
+  // 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
+  persona: 'career_transitioner',
+  // Page to generate for
+  pageId: 'lesson-1.1-p1',
+  // How many images to generate for this page (1–4 supported by Imagen)
+  imageCount: 2,
+  // To run a full module (1–4), uncomment and set this, it will make 1 image per page.
+  // moduleNumber: 1,
 };
-// --- END OF CONFIGURATION ---
+// --- END CONFIG ---
 
-const API_KEY = process.env.API_KEY;
-const MODEL_NAME = 'imagen-3'; 
+// Accept GEMINI_API_KEY or GOOGLE_API_KEY (new SDK) and fall back to API_KEY (your current var)
+const API_KEY = process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY ?? process.env.API_KEY;
+
+// Use the current Imagen model name from the GenAI SDK docs
+// Tip: 'imagen-4.0-generate-001' supports numberOfImages/aspectRatio/imageSize
+const MODEL_NAME = 'imagen-4.0-generate-001';
+
 const OUTPUT_DIR_BASE = path.resolve(process.cwd(), 'public');
 
-// --- HELPER FUNCTIONS ---
-
+// --- HELPERS ---
 async function loadJsonData(filePath) {
-    try {
-        const fileContent = await fs.readFile(filePath, 'utf-8');
-        return JSON.parse(fileContent);
-    } catch (error) {
-        console.error(`Error loading JSON data from ${filePath}:`, error);
-        throw error;
-    }
+  try {
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(fileContent);
+  } catch (error) {
+    console.error(`Error loading JSON data from ${filePath}:`, error);
+    throw error;
+  }
 }
 
 async function loadArtifact(artifactPath) {
-    try {
-        return await fs.readFile(artifactPath, 'utf-8');
-    } catch (error) {
-        console.error(`Error loading artifact from ${artifactPath}:`, error);
-        throw error;
-    }
+  try {
+    return await fs.readFile(artifactPath, 'utf-8');
+  } catch (error) {
+    console.error(`Error loading artifact from ${artifactPath}:`, error);
+    throw error;
+  }
 }
 
 function findPageById(curriculumData, pageId) {
-    for (const section of curriculumData.sections) {
-        const foundPage = section.pages.find(p => p.pageId === pageId);
-        if (foundPage) return foundPage;
-    }
-    return null;
+  for (const section of curriculumData.sections) {
+    const foundPage = section.pages.find((p) => p.pageId === pageId);
+    if (foundPage) return foundPage;
+  }
+  return null;
 }
 
 function constructFinalPrompt(systemPrompt, pageContent, imagePrompt) {
-    const trainingContent = `
-        <Training Content>
-        Page Title: ${pageContent.pageTitle}
-        TL;DR: ${pageContent.tldr}
-        Content: ${pageContent.content}
-        </Training Content>
-    `;
-
-    return `${systemPrompt}\n\n${trainingContent}\n\n<Image Prompt>\n${imagePrompt}\n</Image Prompt>`;
+  const trainingContent = `
+<Training Content>
+Page Title: ${pageContent.pageTitle}
+TL;DR: ${pageContent.tldr}
+Content: ${pageContent.content}
+</Training Content>
+  `;
+  return `${systemPrompt}\n\n${trainingContent}\n\n<Image Prompt>\n${imagePrompt}\n</Image Prompt>`;
 }
 
 async function generateAndSaveImages(persona, pageId, imageCount = 1) {
-    console.log(`🚀 Processing page: '${pageId}' for persona: '${persona}' (${imageCount} image(s))`);
+  console.log(`🚀 Processing page: '${pageId}' for persona: '${persona}' (${imageCount} image(s))`);
 
-    // 1. Load all necessary data
-    const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
-    const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
-    const systemPromptPath = path.resolve(process.cwd(), 'src/Artifacts', 'A75 - V2V Academy - Persona Image System Prompt.md');
+  // 1) Load all necessary data
+  const manifestPath = path.resolve(process.cwd(), 'public/data', `imagemanifest_${persona}.json`);
+  const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
+  const systemPromptPath = path.resolve(process.cwd(), 'src/Artifacts', 'A75 - V2V Academy - Persona Image System Prompt.md');
 
-    const imageManifest = await loadJsonData(manifestPath);
-    const curriculumData = await loadJsonData(curriculumPath);
-    const systemPrompt = await loadArtifact(systemPromptPath);
+  const imageManifest = await loadJsonData(manifestPath);
+  const curriculumData = await loadJsonData(curriculumPath);
+  const systemPrompt = await loadArtifact(systemPromptPath);
 
-    // 2. Find the specific content for the requested page
-    const pageContent = findPageById(curriculumData, pageId);
-    if (!pageContent) {
-        throw new Error(`Could not find page content for pageId '${pageId}'.`);
+  // 2) Page + image group
+  const pageContent = findPageById(curriculumData, pageId);
+  if (!pageContent) {
+    throw new Error(`Could not find page content for pageId '${pageId}'.`);
+  }
+
+  const imageGroupId = pageContent.imageGroupIds;
+  if (!imageGroupId) throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
+
+  const groupMeta = imageManifest.imageGroups[imageGroupId];
+  if (!groupMeta) throw new Error(`Could not find image group metadata for groupId '${imageGroupId}'.`);
+
+  // 3) Prompt (single string for Imagen)
+  const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
+
+  // 4) Initialize client (new GenAI SDK)
+  const ai = new GoogleGenAI({ apiKey: API_KEY });
+
+  // 5) Generate images (one call returns multiple images)
+  console.log(`   Calling Imagen model '${MODEL_NAME}' for ${imageCount} image(s)...`);
+  const response = await ai.models.generateImages({
+    model: MODEL_NAME,
+    prompt: finalPrompt,
+    // You can add aspectRatio: "16:9" or imageSize: "1K"|"2K" if desired
+    config: {
+      numberOfImages: Math.max(1, Math.min(4, Number(imageCount) || 1)),
+    },
+  });
+
+  if (!response?.generatedImages?.length) {
+    console.error('API Response (no images):', JSON.stringify(response, null, 2));
+    throw new Error('No images returned by the API.');
+  }
+
+  // 6) Persist outputs
+  const outputDirPath = path.join(
+    OUTPUT_DIR_BASE,
+    groupMeta.path.replace('/assets/images/v2v/', 'assets/images/v2v/')
+  );
+  await fs.mkdir(outputDirPath, { recursive: true });
+
+  let saved = 0;
+  for (let i = 0; i < response.generatedImages.length; i++) {
+    const img = response.generatedImages[i];
+    const bytes = img?.image?.imageBytes;
+    if (!bytes) {
+      console.warn(`   ⚠️ Skipping image ${i + 1}: missing image bytes`);
+      continue;
     }
+    const outputFileName = `${groupMeta.baseFileName}${i + 1}${groupMeta.fileExtension}`;
+    const outputPath = path.join(outputDirPath, outputFileName);
 
-    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page
-    if (!imageGroupId) {
-        throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
-    }
+    console.log(`   Saving image ${i + 1} → ${outputPath}`);
+    await fs.writeFile(outputPath, Buffer.from(bytes, 'base64'));
+    saved++;
+  }
 
-    const groupMeta = imageManifest.imageGroups[imageGroupId];
-    if (!groupMeta) {
-        throw new Error(`Could not find image group metadata for groupId '${imageGroupId}'.`);
-    }
+  if (saved === 0) {
+    throw new Error('Generation returned images but none had image bytes to save.');
+  }
 
-    // 3. Construct the final prompt
-    const finalPrompt = constructFinalPrompt(systemPrompt, pageContent, groupMeta.prompt);
-
-    // 4. Initialize AI client
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
-
-    // 5. Loop to generate the requested number of images
-    for (let i = 1; i <= imageCount; i++) {
-        console.log(`   Generating image ${i} of ${imageCount} for '${pageId}'...`);
-        
-        try {
-            const result = await model.generateContent(finalPrompt);
-            const response = result.response;
-            
-            const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-    
-            if (!base64ImageData) {
-                console.error('API Response:', JSON.stringify(response, null, 2));
-                throw new Error(`No image data found in the API response for image ${i}.`);
-            }
-    
-            // 6. Define output path and save the image, using the loop index
-            const outputDirPath = path.join(OUTPUT_DIR_BASE, groupMeta.path.replace('/assets/images/v2v/', 'assets/images/v2v/'));
-            const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-            const outputPath = path.join(outputDirPath, outputFileName);
-    
-            await fs.mkdir(outputDirPath, { recursive: true });
-    
-            console.log(`   Saving image to: ${outputPath}`);
-            await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
-    
-            console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
-
-        } catch (error) {
-            console.error('❌ An error occurred during image generation:', error);
-        }
-
-    }
-    console.log(`✅ All ${imageCount} images for '${pageId}' saved successfully!`);
+  console.log(`✅ Saved ${saved}/${response.generatedImages.length} image(s) for '${pageId}'.`);
 }
 
-
-// --- MAIN EXECUTION LOGIC ---
-
+// --- MAIN ---
 async function main() {
-    if (!API_KEY) {
-        console.error('Error: API_KEY is not defined. Please check your .env file.');
-        process.exit(1);
+  if (!API_KEY) {
+    console.error('Error: API key not found. Set GEMINI_API_KEY (or GOOGLE_API_KEY / API_KEY) in your .env');
+    process.exit(1);
+  }
+
+  const { persona, pageId, imageCount, moduleNumber } = CONFIG;
+
+  try {
+    if (moduleNumber && [1, 2, 3, 4].includes(moduleNumber)) {
+      console.log(`🚀 Starting BATCH image generation for persona: '${persona}', module: ${moduleNumber}`);
+
+      const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
+      const curriculumData = await loadJsonData(curriculumPath);
+      const sectionId = `module-${moduleNumber}`;
+      const section = curriculumData.sections.find((s) => s.sectionId === sectionId);
+
+      if (!section) throw new Error(`Could not find module ${moduleNumber} for persona '${persona}'.`);
+
+      const pageIds = section.pages.map((p) => p.pageId);
+      console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
+
+      for (const id of pageIds) {
+        await generateAndSaveImages(persona, id, 1); // 1 image per page in batch mode
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+      console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
+    } else {
+      if (!persona || !pageId) throw new Error('`persona` and `pageId` must be set in the CONFIG object.');
+      if (isNaN(imageCount) || imageCount < 1) throw new Error('Invalid imageCount. Must be a positive number.');
+      await generateAndSaveImages(persona, pageId, imageCount);
     }
-
-    const { persona, pageId, imageCount, moduleNumber } = CONFIG;
-
-    try {
-        if (moduleNumber && [1, 2, 3, 4].includes(moduleNumber)) {
-            console.log(`🚀 Starting BATCH image generation for persona: '${persona}', module: ${moduleNumber}`);
-            
-            const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
-            const curriculumData = await loadJsonData(curriculumPath);
-            const sectionId = `module-${moduleNumber}`;
-            const section = curriculumData.sections.find(s => s.sectionId === sectionId);
-
-            if (!section) {
-                throw new Error(`Could not find module ${moduleNumber} for persona '${persona}'.`);
-            }
-
-            const pageIds = section.pages.map(p => p.pageId);
-            console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
-
-            for (const id of pageIds) {
-                await generateAndSaveImages(persona, id, 1); // Generate 1 image per page in module mode
-                await new Promise(resolve => setTimeout(resolve, 1000)); 
-            }
-            console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
-
-        } else {
-            if (!persona || !pageId) {
-                throw new Error('`persona` and `pageId` must be set in the CONFIG object.');
-            }
-            if (isNaN(imageCount) || imageCount < 1) {
-                throw new Error('Invalid imageCount. Must be a positive number.');
-            }
-            await generateAndSaveImages(persona, pageId, imageCount);
-        }
-    } catch (error) {
-        console.error('❌ An error occurred during image generation:', error.message);
-        process.exit(1);
-    }
+  } catch (error) {
+    console.error('❌ An error occurred during image generation:', error?.message ?? error);
+    process.exit(1);
+  }
 }
 
 main();
@@ -38315,6 +38149,485 @@ Based on the persona, module, and page, the script will save the images to a pat
 `public/assets/images/v2v/<persona>/module-<X>/lesson-X.X/lesson-X.X-pX-img-1.webp`
 `public/assets/images/v2v/<persona>/module-<X>/lesson-X.X/lesson-X.X-pX-img-2.webp`
 ...and so on, incrementing the number for each image generated. This matches the structure expected by the image manifest files, ensuring that once the script is run, the images will appear correctly in the interactive curriculum.
+</file_artifact>
+
+<file path="public/module-1/lesson-1.1/lesson-1.1-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-1.1-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/module-1/lesson-1.1",
+  "fileType": "WEBP",
+  "sizeInBytes": 876359,
+  "dimensions": {
+    "width": 1024,
+    "height": 1024
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/module-1/lesson-1.1/lesson-1.1-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-1.1-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/module-1/lesson-1.1",
+  "fileType": "WEBP",
+  "sizeInBytes": 731112,
+  "dimensions": {
+    "width": 1024,
+    "height": 1024
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="context/v2v/create images with imagen 4.md">
+
+Skip to main content
+Gemini API
+
+/
+Get API key
+Cookbook
+Community
+Sign in
+Gemini API docs
+API Reference
+
+Veo 3.1 is here! Read about the new model and its features in the blog post and documentation.
+
+    Home
+    Gemini API
+    Gemini API docs
+
+Was this helpful?
+Generate images using Imagen
+
+Imagen is Google's high-fidelity image generation model, capable of generating realistic and high quality images from text prompts. All generated images include a SynthID watermark. To learn more about the available Imagen model variants, see the Model versions section.
+Note: You can also generate images with Gemini's built-in multimodal capabilities. See the Image generation guide for details.
+Generate images using the Imagen models
+
+This example demonstrates generating images with an Imagen model:
+Python
+JavaScript
+Go
+REST
+
+from google import genai
+from google.genai import types
+from PIL import Image
+from io import BytesIO
+
+client = genai.Client()
+
+response = client.models.generate_images(
+    model='imagen-4.0-generate-001',
+    prompt='Robot holding a red skateboard',
+    config=types.GenerateImagesConfig(
+        number_of_images= 4,
+    )
+)
+for generated_image in response.generated_images:
+  generated_image.image.show()
+
+AI-generated image of a robot holding a red skateboard
+AI-generated image of a robot holding a red skateboard
+Imagen configuration
+
+Imagen supports English only prompts at this time and the following parameters:
+Note: Naming conventions of parameters vary by programming language.
+
+    numberOfImages: The number of images to generate, from 1 to 4 (inclusive). The default is 4.
+    imageSize: The size of the generated image. This is only supported for the Standard and Ultra models. The supported values are 1K and 2K. Default is 1K.
+    aspectRatio: Changes the aspect ratio of the generated image. Supported values are "1:1", "3:4", "4:3", "9:16", and "16:9". The default is "1:1".
+
+    personGeneration: Allow the model to generate images of people. The following values are supported:
+        "dont_allow": Block generation of images of people.
+        "allow_adult": Generate images of adults, but not children. This is the default.
+        "allow_all": Generate images that include adults and children.
+    Note: The "allow_all" parameter value is not allowed in EU, UK, CH, MENA locations.
+
+Imagen prompt guide
+
+This section of the Imagen guide shows you how modifying a text-to-image prompt can produce different results, along with examples of images you can create.
+Prompt writing basics
+Note: Maximum prompt length is 480 tokens.
+
+A good prompt is descriptive and clear, and makes use of meaningful keywords and modifiers. Start by thinking of your subject, context, and style.
+Prompt with subject, context, and style emphasized
+Image text: A sketch (style) of a modern apartment building (subject) surrounded by skyscrapers (context and background).
+
+    Subject: The first thing to think about with any prompt is the subject: the object, person, animal, or scenery you want an image of.
+
+    Context and background: Just as important is the background or context in which the subject will be placed. Try placing your subject in a variety of backgrounds. For example, a studio with a white background, outdoors, or indoor environments.
+
+    Style: Finally, add the style of image you want. Styles can be general (painting, photograph, sketches) or very specific (pastel painting, charcoal drawing, isometric 3D). You can also combine styles.
+
+After you write a first version of your prompt, refine your prompt by adding more details until you get to the image that you want. Iteration is important. Start by establishing your core idea, and then refine and expand upon that core idea until the generated image is close to your vision.
+photorealistic sample image 1
+Prompt: A park in the spring next to a lake
+	
+photorealistic sample image 2
+Prompt: A park in the spring next to a lake, the sun sets across the lake, golden hour
+	
+photorealistic sample image 3
+Prompt: A park in the spring next to a lake, the sun sets across the lake, golden hour, red wildflowers
+
+Imagen models can transform your ideas into detailed images, whether your prompts are short or long and detailed. Refine your vision through iterative prompting, adding details until you achieve the perfect result.
+
+Short prompts let you generate an image quickly.
+Imagen 3 short prompt example
+Prompt: close-up photo of a woman in her 20s, street photography, movie still, muted orange warm tones
+	
+
+Longer prompts let you add specific details and build your image.
+Imagen 3 long prompt example
+Prompt: captivating photo of a woman in her 20s utilizing a street photography style. The image should look like a movie still with muted orange warm tones.
+
+Additional advice for Imagen prompt writing:
+
+    Use descriptive language: Employ detailed adjectives and adverbs to paint a clear picture for Imagen.
+    Provide context: If necessary, include background information to aid the AI's understanding.
+    Reference specific artists or styles: If you have a particular aesthetic in mind, referencing specific artists or art movements can be helpful.
+    Use prompt engineering tools: Consider exploring prompt engineering tools or resources to help you refine your prompts and achieve optimal results.
+    Enhancing the facial details in your personal and group images: Specify facial details as a focus of the photo (for example, use the word "portrait" in the prompt).
+
+Generate text in images
+
+Imagen models can add text into images, opening up more creative image generation possibilities. Use the following guidance to get the most out of this feature:
+
+    Iterate with confidence: You might have to regenerate images until you achieve the look you want. Imagen's text integration is still evolving, and sometimes multiple attempts yield the best results.
+    Keep it short: Limit text to 25 characters or less for optimal generation.
+
+    Multiple phrases: Experiment with two or three distinct phrases to provide additional information. Avoid exceeding three phrases for cleaner compositions.
+    Imagen 3 generate text example
+    Prompt: A poster with the text "Summerland" in bold font as a title, underneath this text is the slogan "Summer never felt so good"
+
+    Guide Placement: While Imagen can attempt to position text as directed, expect occasional variations. This feature is continually improving.
+
+    Inspire font style: Specify a general font style to subtly influence Imagen's choices. Don't rely on precise font replication, but expect creative interpretations.
+
+    Font size: Specify a font size or a general indication of size (for example, small, medium, large) to influence the font size generation.
+
+Prompt parameterization
+
+To better control output results, you might find it helpful to parameterize the inputs into Imagen. For example, suppose you want your customers to be able to generate logos for their business, and you want to make sure logos are always generated on a solid color background. You also want to limit the options that the client can select from a menu.
+
+In this example, you can create a parameterized prompt similar to the following:
+
+A {logo_style} logo for a {company_area} company on a solid color background. Include the text {company_name}.
+
+In your custom user interface, the customer can input the parameters using a menu, and their chosen value populates the prompt Imagen receives.
+
+For example:
+
+    Prompt: A minimalist logo for a health care company on a solid color background. Include the text Journey.
+
+    Imagen 3 prompt parameterization example 1
+
+    Prompt: A modern logo for a software company on a solid color background. Include the text Silo.
+
+    Imagen 3 prompt parameterization example 2
+
+    Prompt: A traditional logo for a baking company on a solid color background. Include the text Seed.
+
+    Imagen 3 prompt parameterization example 3
+
+Advanced prompt writing techniques
+
+Use the following examples to create more specific prompts based on attributes like photography descriptors, shapes and materials, historical art movements, and image quality modifiers.
+Photography
+
+    Prompt includes: "A photo of..."
+
+To use this style, start with using keywords that clearly tell Imagen that you're looking for a photograph. Start your prompts with "A photo of. . .". For example:
+photorealistic sample image 1
+Prompt: A photo of coffee beans in a kitchen on a wooden surface
+	
+photorealistic sample image 2
+Prompt: A photo of a chocolate bar on a kitchen counter
+	
+photorealistic sample image 3
+Prompt: A photo of a modern building with water in the background
+
+Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.
+Photography modifiers
+
+In the following examples, you can see several photography-specific modifiers and parameters. You can combine multiple modifiers for more precise control.
+
+    Camera Proximity - Close up, taken from far away
+
+    close up camera sample image
+    Prompt: A close-up photo of coffee beans
+    	
+    zoomed out camera sample image
+    Prompt: A zoomed out photo of a small bag of
+    coffee beans in a messy kitchen
+
+    Camera Position - aerial, from below
+    aerial photo sample image
+    Prompt: aerial photo of urban city with skyscrapers
+    	
+    a view from underneath sample image
+    Prompt: A photo of a forest canopy with blue skies from below
+
+    Lighting - natural, dramatic, warm, cold
+    natural lighting sample image
+    Prompt: studio photo of a modern arm chair, natural lighting
+    	
+    dramatic lighting sample image
+    Prompt: studio photo of a modern arm chair, dramatic lighting
+
+    Camera Settings - motion blur, soft focus, bokeh, portrait
+    motion blur sample image
+    Prompt: photo of a city with skyscrapers from the inside of a car with motion blur
+    	
+    soft focus sample image
+    Prompt: soft focus photograph of a bridge in an urban city at night
+
+    Lens types - 35mm, 50mm, fisheye, wide angle, macro
+    macro lens sample image
+    Prompt: photo of a leaf, macro lens
+    	
+    fisheye lens sample image
+    Prompt: street photography, new york city, fisheye lens
+
+    Film types - black and white, polaroid
+    polaroid photo sample image
+    Prompt: a polaroid portrait of a dog wearing sunglasses
+    	
+    black and white photo sample image
+    Prompt: black and white photo of a dog wearing sunglasses
+
+Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.
+Illustration and art
+
+    Prompt includes: "A painting of...", "A sketch of..."
+
+Art styles vary from monochrome styles like pencil sketches, to hyper-realistic digital art. For example, the following images use the same prompt with different styles:
+
+"An [art style or creation technique] of an angular sporty electric sedan with skyscrapers in the background"
+art sample images
+Prompt: A technical pencil drawing of an angular...
+	
+art sample images
+Prompt: A charcoal drawing of an angular...
+	
+art sample images
+Prompt: A color pencil drawing of an angular...
+art sample images
+Prompt: A pastel painting of an angular...
+	
+art sample images
+Prompt: A digital art of an angular...
+	
+art sample images
+Prompt: An art deco (poster) of an angular...
+
+Image source: Each image was generated using its corresponding text prompt with the Imagen 2 model.
+Shapes and materials
+
+    Prompt includes: "...made of...", "...in the shape of..."
+
+One of the strengths of this technology is that you can create imagery that is otherwise difficult or impossible. For example, you can recreate your company logo in different materials and textures.
+shapes and materials example image 1
+Prompt: a duffle bag made of cheese
+	
+shapes and materials example image 2
+Prompt: neon tubes in the shape of a bird
+	
+shapes and materials example image 3
+Prompt: an armchair made of paper, studio photo, origami style
+
+Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.
+Historical art references
+
+    Prompt includes: "...in the style of..."
+
+Certain styles have become iconic over the years. The following are some ideas of historical painting or art styles that you can try.
+
+"generate an image in the style of [art period or movement] : a wind farm"
+impressionism example image
+Prompt: generate an image in the style of an impressionist painting: a wind farm
+	
+renaissance example image
+Prompt: generate an image in the style of a renaissance painting: a wind farm
+	
+pop art example image
+Prompt: generate an image in the style of pop art: a wind farm
+
+Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.
+Image quality modifiers
+
+Certain keywords can let the model know that you're looking for a high-quality asset. Examples of quality modifiers include the following:
+
+    General Modifiers - high-quality, beautiful, stylized
+    Photos - 4K, HDR, Studio Photo
+    Art, Illustration - by a professional, detailed
+
+The following are a few examples of prompts without quality modifiers and the same prompt with quality modifiers.
+corn example image without modifiers
+Prompt (no quality modifiers): a photo of a corn stalk
+	
+corn example image with modifiers
+Prompt (with quality modifiers): 4k HDR beautiful
+photo of a corn stalk taken by a
+professional photographer
+
+Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.
+Aspect ratios
+
+Imagen image generation lets you set five distinct image aspect ratios.
+
+    Square (1:1, default) - A standard square photo. Common uses for this aspect ratio include social media posts.
+
+    Fullscreen (4:3) - This aspect ratio is commonly used in media or film. It is also the dimensions of most old (non-widescreen) TVs and medium format cameras. It captures more of the scene horizontally (compared to 1:1), making it a preferred aspect ratio for photography.
+    aspect ratio example
+    Prompt: close up of a musician's fingers playing the piano, black and white film, vintage (4:3 aspect ratio)
+    	
+    aspect ratio example
+    Prompt: A professional studio photo of french fries for a high end restaurant, in the style of a food magazine (4:3 aspect ratio)
+
+    Portrait full screen (3:4) - This is the fullscreen aspect ratio rotated 90 degrees. This lets to capture more of the scene vertically compared to the 1:1 aspect ratio.
+    aspect ratio example
+    Prompt: a woman hiking, close of her boots reflected in a puddle, large mountains in the background, in the style of an advertisement, dramatic angles (3:4 aspect ratio)
+    	
+    aspect ratio example
+    Prompt: aerial shot of a river flowing up a mystical valley (3:4 aspect ratio)
+
+    Widescreen (16:9) - This ratio has replaced 4:3 and is now the most common aspect ratio for TVs, monitors, and mobile phone screens (landscape). Use this aspect ratio when you want to capture more of the background (for example, scenic landscapes).
+    aspect ratio example
+    Prompt: a man wearing all white clothing sitting on the beach, close up, golden hour lighting (16:9 aspect ratio)
+
+    Portrait (9:16) - This ratio is widescreen but rotated. This a relatively new aspect ratio that has been popularized by short form video apps (for example, YouTube shorts). Use this for tall objects with strong vertical orientations such as buildings, trees, waterfalls, or other similar objects.
+    aspect ratio example
+    Prompt: a digital render of a massive skyscraper, modern, grand, epic with a beautiful sunset in the background (9:16 aspect ratio)
+
+Photorealistic images
+
+Different versions of the image generation model might offer a mix of artistic and photorealistic output. Use the following wording in prompts to generate more photorealistic output, based on the subject you want to generate.
+Note: Take these keywords as general guidance when you try to create photorealistic images. They aren't required to achieve your goal.
+Use case 	Lens type 	Focal lengths 	Additional details
+People (portraits) 	Prime, zoom 	24-35mm 	black and white film, Film noir, Depth of field, duotone (mention two colors)
+Food, insects, plants (objects, still life) 	Macro 	60-105mm 	High detail, precise focusing, controlled lighting
+Sports, wildlife (motion) 	Telephoto zoom 	100-400mm 	Fast shutter speed, Action or movement tracking
+Astronomical, landscape (wide-angle) 	Wide-angle 	10-24mm 	Long exposure times, sharp focus, long exposure, smooth water or clouds
+Portraits
+Use case 	Lens type 	Focal lengths 	Additional details
+People (portraits) 	Prime, zoom 	24-35mm 	black and white film, Film noir, Depth of field, duotone (mention two colors)
+
+Using several keywords from the table, Imagen can generate the following portraits:
+portrait photography example 	portrait photography example 	portrait photography example 	portrait photography example
+
+Prompt: A woman, 35mm portrait, blue and grey duotones
+Model: imagen-3.0-generate-002
+portrait photography example 	portrait photography example 	portrait photography example 	portrait photography example
+
+Prompt: A woman, 35mm portrait, film noir
+Model: imagen-3.0-generate-002
+Objects
+Use case 	Lens type 	Focal lengths 	Additional details
+Food, insects, plants (objects, still life) 	Macro 	60-105mm 	High detail, precise focusing, controlled lighting
+
+Using several keywords from the table, Imagen can generate the following object images:
+object photography example 	object photography example 	object photography example 	object photography example
+
+Prompt: leaf of a prayer plant, macro lens, 60mm
+Model: imagen-3.0-generate-002
+object photography example 	object photography example 	object photography example 	object photography example
+
+Prompt: a plate of pasta, 100mm Macro lens
+Model: imagen-3.0-generate-002
+Motion
+Use case 	Lens type 	Focal lengths 	Additional details
+Sports, wildlife (motion) 	Telephoto zoom 	100-400mm 	Fast shutter speed, Action or movement tracking
+
+Using several keywords from the table, Imagen can generate the following motion images:
+motion photography example 	motion photography example 	motion photography example 	motion photography example
+
+Prompt: a winning touchdown, fast shutter speed, movement tracking
+Model: imagen-3.0-generate-002
+motion photography example 	motion photography example 	motion photography example 	motion photography example
+
+Prompt: A deer running in the forest, fast shutter speed, movement tracking
+Model: imagen-3.0-generate-002
+Wide-angle
+Use case 	Lens type 	Focal lengths 	Additional details
+Astronomical, landscape (wide-angle) 	Wide-angle 	10-24mm 	Long exposure times, sharp focus, long exposure, smooth water or clouds
+
+Using several keywords from the table, Imagen can generate the following wide-angle images:
+wide-angle photography example 	wide-angle photography example 	wide-angle photography example 	wide-angle photography example
+
+Prompt: an expansive mountain range, landscape wide angle 10mm
+Model: imagen-3.0-generate-002
+wide-angle photography example 	wide-angle photography example 	wide-angle photography example 	wide-angle photography example
+
+Prompt: a photo of the moon, astro photography, wide angle 10mm
+Model: imagen-3.0-generate-002
+Model versions
+Imagen 4
+Property 	Description
+Model code 	
+
+Gemini API
+
+imagen-4.0-generate-001
+imagen-4.0-ultra-generate-001
+imagen-4.0-fast-generate-001
+Supported data types 	
+
+Input
+
+Text
+
+Output
+
+Images
+Token limits[*] 	
+
+Input token limit
+
+480 tokens (text)
+
+Output images
+
+1 to 4 (Ultra/Standard/Fast)
+Latest update 	June 2025
+Imagen 3
+Property 	Description
+Model code 	
+
+Gemini API
+
+imagen-3.0-generate-002
+Supported data types 	
+
+Input
+
+Text
+
+Output
+
+Images
+Token limits[*] 	
+
+Input token limit
+
+N/A
+
+Output images
+
+Up to 4
+Latest update 	February 2025
+Was this helpful?
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+Last updated 2025-09-25 UTC.
+
+    Terms
+    Privacy
+
 </file_artifact>
 
 
