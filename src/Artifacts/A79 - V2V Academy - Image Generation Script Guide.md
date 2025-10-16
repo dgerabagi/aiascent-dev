@@ -1,7 +1,7 @@
 # Artifact A79: V2V Academy - Image Generation Script Guide
 # Date Created: C81
 # Author: AI Model & Curator
-# Updated on: C82 (Add image_count argument and update file naming)
+# Updated on: C83 (Simplify to use constants instead of command-line arguments)
 
 - **Key/Value for A0:**
 - **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
@@ -30,54 +30,50 @@ Before running the script, ensure you have the following set up:
 
 ## 3. Usage
 
-The script has two primary modes of operation: generating one or more images for a single page, and generating a full batch of images for an entire module.
+To run the script, you no longer need to use command-line arguments. Instead, you will directly edit the configuration variables at the top of the script file itself.
 
-### 3.1. Mode 1: Generating One or More Images for a Single Page
+### Step 1: Open the Script
 
-This mode is ideal for testing a prompt or generating a set of variations for a specific page.
+Open the file `scripts/generate_images.mjs` in your editor.
 
-**Command:**
-```bash
-node scripts/generate_images.mjs <persona> <pageId> [image_count]
+### Step 2: Edit the `CONFIG` Object
+
+At the top of the file, you will find a `CONFIG` object. Edit the values inside this object to specify what you want to generate.
+
+```javascript
+// --- USER CONFIGURATION ---
+// EDIT THE VALUES IN THIS OBJECT TO CONTROL THE SCRIPT
+const CONFIG = {
+    // Set the persona: 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
+    persona: 'career_transitioner',
+
+    // Set the pageId you want to generate images for (e.g., 'lesson-1.1-p1')
+    pageId: 'lesson-1.1-p1',
+
+    // Set the number of images you want to generate for this page
+    imageCount: 2,
+
+    // To run for a whole module, set moduleNumber (1-4) and uncomment it.
+    // This will generate 1 image for every page in the module.
+    // moduleNumber: 1, 
+};
+// --- END OF CONFIGURATION ---
 ```
 
-**Arguments:**
-*   `<persona>`: The identifier for the learner persona. Must be one of:
-    *   `career_transitioner`
-    *   `underequipped_graduate`
-    *   `young_precocious`
-*   `<pageId>`: The unique ID for the page you want to generate an image for. You can find these IDs in the corresponding `public/data/v2v_content_*.json` files (e.g., `lesson-1.1-p1`).
-*   `[image_count]` (Optional): The number of images to generate for this page. If omitted, it defaults to 1.
+*   **`persona`**: Change this to the persona you are generating for.
+*   **`pageId`**: Change this to the specific page ID. You can find these IDs in the `public/data/v2v_content_*.json` files.
+*   **`imageCount`**: Set this to the number of images you want to create for that page.
+*   **`moduleNumber`** (Optional): To run in batch mode for a whole module, comment out `pageId` and `imageCount`, and uncomment `moduleNumber`, setting it to 1, 2, 3, or 4.
 
-**Example 1: Generate a single image**
+### Step 3: Run the Script
+
+Open your terminal in the project root and run the script with Node.js.
+
 ```bash
-node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
+node scripts/generate_images.mjs
 ```
 
-**Example 2: Generate 5 images**
-```bash
-node scripts/generate_images.mjs career_transitioner lesson-1.1-p1 5
-```
-
-### 3.2. Mode 2: Generating a Full Module (Batch Mode)
-
-This mode allows you to "set it loose" and generate all images (one per page) for every page within a specific module for a given persona.
-
-**Command:**
-```bash
-node scripts/generate_images.mjs <persona> --module <module_number>
-```
-
-**Arguments:**
-*   `<persona>`: Same as above.
-*   `--module <module_number>`: A flag indicating you want to run in batch mode, followed by the module number (1, 2, 3, or 4).
-
-**Example:**
-To generate all images for Module 2 for the Underequipped Graduate:
-```bash
-node scripts/generate_images.mjs underequipped_graduate --module 2
-```
-The script will process each page in the module sequentially and log its progress in the console.
+The script will read the values you set in the `CONFIG` object and begin the generation process, logging its progress to the console.
 
 ## 4. How It Works: File Output
 

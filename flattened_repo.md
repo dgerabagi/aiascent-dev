@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T22:34:06.532Z
+  Date Generated: 2025-10-16T22:43:04.719Z
   ---
   Total Files: 178
-  Approx. Tokens: 532195
+  Approx. Tokens: 532173
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -196,8 +196,8 @@
 174. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28236 - Tokens: 7059
 175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
 176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
-177. scripts\generate_images.mjs - Lines: 186 - Chars: 7386 - Tokens: 1847
-178. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 89 - Chars: 4468 - Tokens: 1117
+177. scripts\generate_images.mjs - Lines: 190 - Chars: 7315 - Tokens: 1829
+178. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -33711,7 +33711,7 @@ You are an expert art director and visual designer for a high-tech military and 
 </file_artifact>
 
 <file path="scripts/generate_images.mjs">
-import pkg from '@google/genai';
+import { GoogleGenerativeAI } from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -33719,8 +33719,24 @@ import dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config();
 
-// --- CONFIGURATION ---
-const { GoogleGenerativeAI } = pkg;
+// --- USER CONFIGURATION ---
+// EDIT THE VALUES IN THIS OBJECT TO CONTROL THE SCRIPT
+const CONFIG = {
+    // Set the persona: 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
+    persona: 'career_transitioner',
+
+    // Set the pageId you want to generate images for (e.g., 'lesson-1.1-p1')
+    pageId: 'lesson-1.1-p1',
+
+    // Set the number of images you want to generate for this page
+    imageCount: 1,
+
+    // To run for a whole module, set moduleNumber (1-4) and uncomment it.
+    // This will generate 1 image for every page in the module.
+    // moduleNumber: 1, 
+};
+// --- END OF CONFIGURATION ---
+
 const API_KEY = process.env.API_KEY;
 const MODEL_NAME = 'imagen-3'; 
 const OUTPUT_DIR_BASE = path.resolve(process.cwd(), 'public');
@@ -33784,7 +33800,7 @@ async function generateAndSaveImages(persona, pageId, imageCount = 1) {
         throw new Error(`Could not find page content for pageId '${pageId}'.`);
     }
 
-    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page for now
+    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page
     if (!imageGroupId) {
         throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
     }
@@ -33804,30 +33820,34 @@ async function generateAndSaveImages(persona, pageId, imageCount = 1) {
     // 5. Loop to generate the requested number of images
     for (let i = 1; i <= imageCount; i++) {
         console.log(`   Generating image ${i} of ${imageCount} for '${pageId}'...`);
-        console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
         
-        const result = await model.generateContent(finalPrompt);
-        const response = result.response;
-        
-        const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+        try {
+            const result = await model.generateContent(finalPrompt);
+            const response = result.response;
+            
+            const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+    
+            if (!base64ImageData) {
+                console.error('API Response:', JSON.stringify(response, null, 2));
+                throw new Error(`No image data found in the API response for image ${i}.`);
+            }
+    
+            // 6. Define output path and save the image, using the loop index
+            const outputDirPath = path.join(OUTPUT_DIR_BASE, groupMeta.path.replace('/assets/images/v2v/', 'assets/images/v2v/'));
+            const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+            const outputPath = path.join(outputDirPath, outputFileName);
+    
+            await fs.mkdir(outputDirPath, { recursive: true });
+    
+            console.log(`   Saving image to: ${outputPath}`);
+            await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
+    
+            console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
 
-        if (!base64ImageData) {
-            console.error('API Response:', JSON.stringify(response, null, 2));
-            throw new Error(`No image data found in the API response for image ${i}.`);
+        } catch (error) {
+            console.error('❌ An error occurred during image generation:', error);
         }
 
-        // 6. Define output path and save the image, using the loop index
-        const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
-        const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-        const outputPath = path.join(outputDirPath, outputFileName);
-
-        console.log(`   Ensuring output directory exists: ${outputDirPath}`);
-        await fs.mkdir(outputDirPath, { recursive: true });
-
-        console.log(`   Saving image to: ${outputPath}`);
-        await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
-
-        console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
     }
     console.log(`✅ All ${imageCount} images for '${pageId}' saved successfully!`);
 }
@@ -33841,25 +33861,10 @@ async function main() {
         process.exit(1);
     }
 
-    const args = process.argv.slice(2);
-    if (args.length < 2) {
-        console.error('Usage:');
-        console.error('  node scripts/generate_images.mjs <persona> <pageId> [image_count]   (for one or more images)');
-        console.error('  node scripts/generate_images.mjs <persona> --module <number>       (for a whole module, 1 image per page)');
-        console.error('Example: node scripts/generate_images.mjs career_transitioner lesson-1.1-p1 5');
-        process.exit(1);
-    }
-
-    const persona = args;
-    const modeOrPageId = args;
-    const isModuleMode = modeOrPageId === '--module';
+    const { persona, pageId, imageCount, moduleNumber } = CONFIG;
 
     try {
-        if (isModuleMode) {
-            const moduleNumber = args;
-            if (!moduleNumber || !['1', '2', '3', '4'].includes(moduleNumber)) {
-                throw new Error('Invalid module number. Must be 1, 2, 3, or 4.');
-            }
+        if (moduleNumber && [1, 2, 3, 4].includes(moduleNumber)) {
             console.log(`🚀 Starting BATCH image generation for persona: '${persona}', module: ${moduleNumber}`);
             
             const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
@@ -33874,19 +33879,18 @@ async function main() {
             const pageIds = section.pages.map(p => p.pageId);
             console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
 
-            for (const pageId of pageIds) {
-                await generateAndSaveImages(persona, pageId, 1); // Generate 1 image per page in module mode
+            for (const id of pageIds) {
+                await generateAndSaveImages(persona, id, 1); // Generate 1 image per page in module mode
                 await new Promise(resolve => setTimeout(resolve, 1000)); 
             }
             console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
 
         } else {
-            const pageId = modeOrPageId;
-            const imageCountArg = args;
-            const imageCount = imageCountArg ? parseInt(imageCountArg, 10) : 1;
-
+            if (!persona || !pageId) {
+                throw new Error('`persona` and `pageId` must be set in the CONFIG object.');
+            }
             if (isNaN(imageCount) || imageCount < 1) {
-                throw new Error('Invalid image_count. Must be a positive number.');
+                throw new Error('Invalid imageCount. Must be a positive number.');
             }
             await generateAndSaveImages(persona, pageId, imageCount);
         }
@@ -33903,7 +33907,7 @@ main();
 # Artifact A79: V2V Academy - Image Generation Script Guide
 # Date Created: C81
 # Author: AI Model & Curator
-# Updated on: C82 (Add image_count argument and update file naming)
+# Updated on: C83 (Simplify to use constants instead of command-line arguments)
 
 - **Key/Value for A0:**
 - **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
@@ -33932,54 +33936,50 @@ Before running the script, ensure you have the following set up:
 
 ## 3. Usage
 
-The script has two primary modes of operation: generating one or more images for a single page, and generating a full batch of images for an entire module.
+To run the script, you no longer need to use command-line arguments. Instead, you will directly edit the configuration variables at the top of the script file itself.
 
-### 3.1. Mode 1: Generating One or More Images for a Single Page
+### Step 1: Open the Script
 
-This mode is ideal for testing a prompt or generating a set of variations for a specific page.
+Open the file `scripts/generate_images.mjs` in your editor.
 
-**Command:**
-```bash
-node scripts/generate_images.mjs <persona> <pageId> [image_count]
+### Step 2: Edit the `CONFIG` Object
+
+At the top of the file, you will find a `CONFIG` object. Edit the values inside this object to specify what you want to generate.
+
+```javascript
+// --- USER CONFIGURATION ---
+// EDIT THE VALUES IN THIS OBJECT TO CONTROL THE SCRIPT
+const CONFIG = {
+    // Set the persona: 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
+    persona: 'career_transitioner',
+
+    // Set the pageId you want to generate images for (e.g., 'lesson-1.1-p1')
+    pageId: 'lesson-1.1-p1',
+
+    // Set the number of images you want to generate for this page
+    imageCount: 2,
+
+    // To run for a whole module, set moduleNumber (1-4) and uncomment it.
+    // This will generate 1 image for every page in the module.
+    // moduleNumber: 1, 
+};
+// --- END OF CONFIGURATION ---
 ```
 
-**Arguments:**
-*   `<persona>`: The identifier for the learner persona. Must be one of:
-    *   `career_transitioner`
-    *   `underequipped_graduate`
-    *   `young_precocious`
-*   `<pageId>`: The unique ID for the page you want to generate an image for. You can find these IDs in the corresponding `public/data/v2v_content_*.json` files (e.g., `lesson-1.1-p1`).
-*   `[image_count]` (Optional): The number of images to generate for this page. If omitted, it defaults to 1.
+*   **`persona`**: Change this to the persona you are generating for.
+*   **`pageId`**: Change this to the specific page ID. You can find these IDs in the `public/data/v2v_content_*.json` files.
+*   **`imageCount`**: Set this to the number of images you want to create for that page.
+*   **`moduleNumber`** (Optional): To run in batch mode for a whole module, comment out `pageId` and `imageCount`, and uncomment `moduleNumber`, setting it to 1, 2, 3, or 4.
 
-**Example 1: Generate a single image**
+### Step 3: Run the Script
+
+Open your terminal in the project root and run the script with Node.js.
+
 ```bash
-node scripts/generate_images.mjs career_transitioner lesson-1.1-p1
+node scripts/generate_images.mjs
 ```
 
-**Example 2: Generate 5 images**
-```bash
-node scripts/generate_images.mjs career_transitioner lesson-1.1-p1 5
-```
-
-### 3.2. Mode 2: Generating a Full Module (Batch Mode)
-
-This mode allows you to "set it loose" and generate all images (one per page) for every page within a specific module for a given persona.
-
-**Command:**
-```bash
-node scripts/generate_images.mjs <persona> --module <module_number>
-```
-
-**Arguments:**
-*   `<persona>`: Same as above.
-*   `--module <module_number>`: A flag indicating you want to run in batch mode, followed by the module number (1, 2, 3, or 4).
-
-**Example:**
-To generate all images for Module 2 for the Underequipped Graduate:
-```bash
-node scripts/generate_images.mjs underequipped_graduate --module 2
-```
-The script will process each page in the module sequentially and log its progress in the console.
+The script will read the values you set in the `CONFIG` object and begin the generation process, logging its progress to the console.
 
 ## 4. How It Works: File Output
 

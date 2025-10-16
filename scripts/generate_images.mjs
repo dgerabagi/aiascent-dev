@@ -1,4 +1,4 @@
-import pkg from '@google/genai';
+import { GoogleGenerativeAI } from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -6,8 +6,24 @@ import dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config();
 
-// --- CONFIGURATION ---
-const { GoogleGenerativeAI } = pkg;
+// --- USER CONFIGURATION ---
+// EDIT THE VALUES IN THIS OBJECT TO CONTROL THE SCRIPT
+const CONFIG = {
+    // Set the persona: 'career_transitioner', 'underequipped_graduate', or 'young_precocious'
+    persona: 'career_transitioner',
+
+    // Set the pageId you want to generate images for (e.g., 'lesson-1.1-p1')
+    pageId: 'lesson-1.1-p1',
+
+    // Set the number of images you want to generate for this page
+    imageCount: 1,
+
+    // To run for a whole module, set moduleNumber (1-4) and uncomment it.
+    // This will generate 1 image for every page in the module.
+    // moduleNumber: 1, 
+};
+// --- END OF CONFIGURATION ---
+
 const API_KEY = process.env.API_KEY;
 const MODEL_NAME = 'imagen-3'; 
 const OUTPUT_DIR_BASE = path.resolve(process.cwd(), 'public');
@@ -71,7 +87,7 @@ async function generateAndSaveImages(persona, pageId, imageCount = 1) {
         throw new Error(`Could not find page content for pageId '${pageId}'.`);
     }
 
-    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page for now
+    const imageGroupId = pageContent.imageGroupIds; // Assuming one group per page
     if (!imageGroupId) {
         throw new Error(`No imageGroupId found for pageId '${pageId}'.`);
     }
@@ -91,30 +107,34 @@ async function generateAndSaveImages(persona, pageId, imageCount = 1) {
     // 5. Loop to generate the requested number of images
     for (let i = 1; i <= imageCount; i++) {
         console.log(`   Generating image ${i} of ${imageCount} for '${pageId}'...`);
-        console.log(`   Sending request to Google AI model: '${MODEL_NAME}'...`);
         
-        const result = await model.generateContent(finalPrompt);
-        const response = result.response;
-        
-        const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+        try {
+            const result = await model.generateContent(finalPrompt);
+            const response = result.response;
+            
+            const base64ImageData = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+    
+            if (!base64ImageData) {
+                console.error('API Response:', JSON.stringify(response, null, 2));
+                throw new Error(`No image data found in the API response for image ${i}.`);
+            }
+    
+            // 6. Define output path and save the image, using the loop index
+            const outputDirPath = path.join(OUTPUT_DIR_BASE, groupMeta.path.replace('/assets/images/v2v/', 'assets/images/v2v/'));
+            const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
+            const outputPath = path.join(outputDirPath, outputFileName);
+    
+            await fs.mkdir(outputDirPath, { recursive: true });
+    
+            console.log(`   Saving image to: ${outputPath}`);
+            await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
+    
+            console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
 
-        if (!base64ImageData) {
-            console.error('API Response:', JSON.stringify(response, null, 2));
-            throw new Error(`No image data found in the API response for image ${i}.`);
+        } catch (error) {
+            console.error('❌ An error occurred during image generation:', error);
         }
 
-        // 6. Define output path and save the image, using the loop index
-        const outputDirPath = path.join(OUTPUT_DIR_BASE, imageManifest.basePath, groupMeta.path);
-        const outputFileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-        const outputPath = path.join(outputDirPath, outputFileName);
-
-        console.log(`   Ensuring output directory exists: ${outputDirPath}`);
-        await fs.mkdir(outputDirPath, { recursive: true });
-
-        console.log(`   Saving image to: ${outputPath}`);
-        await fs.writeFile(outputPath, Buffer.from(base64ImageData, 'base64'));
-
-        console.log(`   ✅ Image ${i} of ${imageCount} for '${pageId}' saved successfully!`);
     }
     console.log(`✅ All ${imageCount} images for '${pageId}' saved successfully!`);
 }
@@ -128,25 +148,10 @@ async function main() {
         process.exit(1);
     }
 
-    const args = process.argv.slice(2);
-    if (args.length < 2) {
-        console.error('Usage:');
-        console.error('  node scripts/generate_images.mjs <persona> <pageId> [image_count]   (for one or more images)');
-        console.error('  node scripts/generate_images.mjs <persona> --module <number>       (for a whole module, 1 image per page)');
-        console.error('Example: node scripts/generate_images.mjs career_transitioner lesson-1.1-p1 5');
-        process.exit(1);
-    }
-
-    const persona = args;
-    const modeOrPageId = args;
-    const isModuleMode = modeOrPageId === '--module';
+    const { persona, pageId, imageCount, moduleNumber } = CONFIG;
 
     try {
-        if (isModuleMode) {
-            const moduleNumber = args;
-            if (!moduleNumber || !['1', '2', '3', '4'].includes(moduleNumber)) {
-                throw new Error('Invalid module number. Must be 1, 2, 3, or 4.');
-            }
+        if (moduleNumber && [1, 2, 3, 4].includes(moduleNumber)) {
             console.log(`🚀 Starting BATCH image generation for persona: '${persona}', module: ${moduleNumber}`);
             
             const curriculumPath = path.resolve(process.cwd(), 'public/data', `v2v_content_${persona}.json`);
@@ -161,19 +166,18 @@ async function main() {
             const pageIds = section.pages.map(p => p.pageId);
             console.log(`   Found ${pageIds.length} pages to process for Module ${moduleNumber}.`);
 
-            for (const pageId of pageIds) {
-                await generateAndSaveImages(persona, pageId, 1); // Generate 1 image per page in module mode
+            for (const id of pageIds) {
+                await generateAndSaveImages(persona, id, 1); // Generate 1 image per page in module mode
                 await new Promise(resolve => setTimeout(resolve, 1000)); 
             }
             console.log(`\n🎉 Batch generation for Module ${moduleNumber} complete!`);
 
         } else {
-            const pageId = modeOrPageId;
-            const imageCountArg = args;
-            const imageCount = imageCountArg ? parseInt(imageCountArg, 10) : 1;
-
+            if (!persona || !pageId) {
+                throw new Error('`persona` and `pageId` must be set in the CONFIG object.');
+            }
             if (isNaN(imageCount) || imageCount < 1) {
-                throw new Error('Invalid image_count. Must be a positive number.');
+                throw new Error('Invalid imageCount. Must be a positive number.');
             }
             await generateAndSaveImages(persona, pageId, imageCount);
         }
