@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 60 - more reflection; synthesize transcripts
+Current Cycle 61 - final review
+Cycle 60 - more reflection; synthesize transcripts
 Cycle 59 - self-reflection
 Cycle 58 - transcriptions have arrived; plan curriculum
 Cycle 57 - minor tweaks
@@ -269,7 +270,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C59 (Add new V2V glossary and planning artifacts)
+# Updated on: C60 (Add new V2V planning and synthesis artifacts)
 
 ## 1. Purpose
 
@@ -563,9 +564,89 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A57. V2V Academy - C58 Response Analysis and Strategic Gaps
 - **Description:** An analysis of the artifacts created in Cycle 58, showing their alignment with the source transcripts and identifying strategic gaps in the V2V Academy's planning.
 - **Tags:** v2v, curriculum design, analysis, strategy, self-reflection
+
+### A58. V2V Academy - Target Learner Personas
+- **Description:** Defines the three primary target learner personas for the V2V Academy, outlining their backgrounds, motivations, and learning goals.
+- **Tags:** v2v, curriculum design, learner persona, target audience
+
+### A59. V2V Academy - Student Environment Guide
+- **Description:** A guide for V2V Academy students, explaining the required software setup and the pedagogical model for interacting with the AI cognitive tutor during exercises.
+- **Tags:** v2v, curriculum design, student guide, setup, cognitive tutor, vscode
+
+### A60. V2V Academy - Assessment Philosophy
+- **Description:** Documents the V2V Academy's philosophy on student assessment, emphasizing tangible outcomes and self-evaluation over traditional, high-overhead testing.
+- **Tags:** v2v, curriculum design, assessment, project-based learning, self-assessment
+
+### A61.1. Transcript 1 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-1.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.2. Transcript 2 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-2.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.3. Transcript 3 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-3.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.4. Transcript 4 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-4.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.5. Transcript 5 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-5.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.6. Transcript 6 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-6.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.7. Transcript 7 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-7.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.8. Transcript 8 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-8.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.9. Transcript 9 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-9.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.10. Transcript 10 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-10.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.11. Transcript 11 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-11.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.12. Transcript 12 Summary (Cycle 58 Context)
+- **Description:** A high-level summary and synthesis of the key insights from the partial coaching transcript provided in the context for Cycle 58.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A62. V2V Academy - Synthesis of Research Proposals
+- **Description:** A meta-reflection on the provided research proposals, summarizing key themes, strategic insights, and recurring patterns.
+- **Tags:** v2v, research, synthesis, meta-analysis, strategy
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 61>
+<Cycle Context>
+nice fkin work with the glossary. now we are talking. keep it up. this is the final reflection stage. this is the step to update our curriculum/planning for anything we've gleaned. for instance, we'll create three sets of each lesson. ensure that our curriculum outline, and lesson 1.1 sample actually contain all three versions. that way, when we create the json version, we'll have three sets of each item, title, image prompt, tldr, and content.
+
+also, in order to save tokens, can you review the transcripts to select one or more to remove from context? perhaps one repeats alot of what another says? i removed two that were totally off-topic, i accidentally included different transcripts before i knew their contents. but do you see anything to remove? just to free up some tokens before we begin.
+</Cycle Context>
+<Previous Cycle 60 Summary of Actions>
+This cycle is dedicated to self-reflection, planning, and strategic documentation. I will create three new artifacts to address your requests. First, I will author a comprehensive glossary of all key terms used in the "Vibecoding to Virtuosity" (V2V) methodology to establish a shared vocabulary. Second, I will create a detailed plan for the practical exercises, centering them on your idea of having students incrementally build their own interactive `ReportViewer`. Finally, I will produce an analysis of my previous work from Cycle 58, connecting the synthesized artifacts back to the raw transcripts and identifying strategic gaps in our current planning, such as the need for defined learner personas and a clear student tooling setup guide.
+
+1.  **Create Glossary Artifact:** I will create `A55. V2V Academy - Glossary of Terms.md` by identifying and defining key terminology from the project's entire context, including "Vibecoding," "Virtuosity," "Context Engineering," and "Cognitive Apprenticeship."
+2.  **Create Exercises Plan Artifact:** I will author `A56. V2V Academy - Practical Exercises Plan.md`. This artifact will outline a structured, multi-module project where students build their own `ReportViewer`, starting with the data model and progressively adding UI, interactivity, and finally, a RAG-powered AI chat feature.
+3.  **Create Analysis Artifact:** I will write `A57. V2V Academy - C58 Response Analysis and Strategic Gaps.md`. This document will provide a self-assessment of the artifacts created in the previous cycle, demonstrating how they align with the source transcripts. It will also identify and propose solutions for strategic gaps in the V2V Academy's planning, such as defining target learner personas and outlining the technical environment for exercises.
+4.  **Update Master Lists:** I will update both `A0 - Master Artifact List.md` and `A42 - V2V Academy - Master Artifact List.md` to include the three new artifacts, ensuring our documentation remains organized and current.
+</Previous Cycle 60 Summary of Actions>
+</Cycle 61>
 
 <Cycle 60>
 <Cycle Context>
@@ -3423,10 +3504,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T11:12:45.738Z
+  Date Generated: 2025-10-16T11:42:26.554Z
   ---
-  Total Files: 164
-  Approx. Tokens: 750995
+  Total Files: 173
+  Approx. Tokens: 728587
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -3442,526 +3523,179 @@ This file-centric approach helps in planning and prioritizing work, especially i
 10. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md (19246 tokens)
 
 <!-- Full File List -->
-1. context\aiascentgame\code\ascentiaHandler.ts.md - Lines: 353 - Chars: 19428 - Tokens: 4857
-2. context\aiascentgame\report\AudioControls.tsx.md - Lines: 290 - Chars: 11322 - Tokens: 2831
-3. context\aiascentgame\report\ImageNavigator.tsx.md - Lines: 203 - Chars: 7598 - Tokens: 1900
-4. context\aiascentgame\report\llmService.ts.md - Lines: 162 - Chars: 7451 - Tokens: 1863
-5. context\aiascentgame\report\PageNavigator.tsx.md - Lines: 73 - Chars: 2272 - Tokens: 568
-6. context\aiascentgame\report\PromptNavigator.tsx.md - Lines: 43 - Chars: 1300 - Tokens: 325
-7. context\aiascentgame\report\ReportChatPanel.tsx.md - Lines: 289 - Chars: 17167 - Tokens: 4292
-8. context\aiascentgame\report\ReportProgressBar.tsx.md - Lines: 146 - Chars: 5008 - Tokens: 1252
-9. context\aiascentgame\report\reportStore.ts.md - Lines: 783 - Chars: 36322 - Tokens: 9081
-10. context\aiascentgame\report\ReportTreeNav.tsx.md - Lines: 152 - Chars: 6078 - Tokens: 1520
-11. context\aiascentgame\report\ReportViewerModal.tsx.md - Lines: 399 - Chars: 14069 - Tokens: 3518
-12. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
-13. context\aiascentgame\scripts\create_report_embedding.js.md - Lines: 145 - Chars: 5384 - Tokens: 1346
-14. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
-15. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
-16. context\aiascentgame\flattened-repo.md - Lines: 1381 - Chars: 74313 - Tokens: 18579
-17. context\automationsaas\flattened-repo.md - Lines: 5731 - Chars: 180837 - Tokens: 45210
-18. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
-19. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
-20. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
-21. context\dce\dce_kb.md - Lines: 7873 - Chars: 578264 - Tokens: 144566
-22. context\dce\flattened-repo.md - Lines: 766 - Chars: 59174 - Tokens: 14794
-23. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
-24. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
-25. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-26. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
-27. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
-28. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-29. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
-30. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-31. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
-32. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
-33. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
-34. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
-35. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
-36. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
-37. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-38. src\Artifacts\A0-Master-Artifact-List.md - Lines: 300 - Chars: 18194 - Tokens: 4549
-39. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
-40. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
-41. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-42. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-43. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
-44. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
-45. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
-46. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
-47. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
-48. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-49. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
-50. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
-51. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
-52. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
-53. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
-54. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
-55. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
-56. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
-57. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
-58. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-59. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
-60. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
-61. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
-62. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
-63. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
-64. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-65. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
-66. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
-67. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
-68. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
-69. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
-70. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
-71. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
-72. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
-73. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
-74. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
-75. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
-76. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
-77. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-78. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-79. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
-80. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
-81. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-82. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
-83. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-84. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
-85. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
-86. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
-87. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-88. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
-89. src\components\layout\Header.tsx - Lines: 67 - Chars: 2598 - Tokens: 650
-90. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
-91. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
-92. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
-93. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-94. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-95. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
-96. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
-97. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-98. src\components\report-viewer\ReportViewer.tsx - Lines: 178 - Chars: 7544 - Tokens: 1886
-99. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-100. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
-101. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-102. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
-103. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
-104. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
-105. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
-106. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-107. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
-108. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-109. src\stores\reportStore.ts - Lines: 731 - Chars: 33774 - Tokens: 8444
-110. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
-111. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
-112. components.json - Lines: 17 - Chars: 370 - Tokens: 93
-113. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
-114. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
-115. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
-116. package.json - Lines: 51 - Chars: 1528 - Tokens: 382
-117. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
-118. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
-119. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
-120. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
-121. public\assets\images\report\dce\dce-feature-artifacts.gif - [Binary] Size: 36.5 MB
-122. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
-123. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
-124. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
-125. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
-126. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
-127. src\Artifacts\A42 - V2V Academy - Master Artifact List.md - Lines: 84 - Chars: 5514 - Tokens: 1379
-128. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
-129. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
-130. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
-131. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 131 - Chars: 6936 - Tokens: 1734
-132. src\components\global\SplashCursor.jsx - Lines: 1075 - Chars: 35759 - Tokens: 8940
-133. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 354 - Chars: 33508 - Tokens: 8377
-134. context\v2v\audio-transcripts\1-on-1-training\transcript-10.md - Lines: 216 - Chars: 18273 - Tokens: 4569
-135. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 704 - Chars: 89232 - Tokens: 22308
-136. context\v2v\audio-transcripts\1-on-1-training\transcript-2.md - Lines: 504 - Chars: 50152 - Tokens: 12538
-137. context\v2v\audio-transcripts\1-on-1-training\transcript-3.md - Lines: 1256 - Chars: 131611 - Tokens: 32903
-138. context\v2v\audio-transcripts\1-on-1-training\transcript-4.md - Lines: 130 - Chars: 17890 - Tokens: 4473
-139. context\v2v\audio-transcripts\1-on-1-training\transcript-5.md - Lines: 418 - Chars: 46045 - Tokens: 11512
-140. context\v2v\audio-transcripts\1-on-1-training\transcript-6.md - Lines: 858 - Chars: 78046 - Tokens: 19512
-141. context\v2v\audio-transcripts\1-on-1-training\transcript-7.md - Lines: 1008 - Chars: 122887 - Tokens: 30722
-142. context\v2v\audio-transcripts\1-on-1-training\transcript-8.md - Lines: 814 - Chars: 87844 - Tokens: 21961
-143. context\v2v\audio-transcripts\1-on-1-training\transcript-9.md - Lines: 818 - Chars: 65770 - Tokens: 16443
-144. src\Artifacts\A47 - insanely-fast-whisper-api-README.md - Lines: 178 - Chars: 8372 - Tokens: 2093
-145. context\v2v\research-proposals\01-V2V Academy Content Research Plan.md - Lines: 246 - Chars: 52667 - Tokens: 13167
-146. context\v2v\research-proposals\02-V2V Context Engineering Research Plan.md - Lines: 266 - Chars: 61311 - Tokens: 15328
-147. context\v2v\research-proposals\03-AI Research Proposal_ V2V Pathway.md - Lines: 217 - Chars: 61407 - Tokens: 15352
-148. context\v2v\research-proposals\04-AI Research Proposal_ V2V Pathway.md - Lines: 388 - Chars: 80971 - Tokens: 20243
-149. context\v2v\research-proposals\05-V2V Pathway Research Proposal Execution.md - Lines: 309 - Chars: 77291 - Tokens: 19323
-150. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md - Lines: 419 - Chars: 76982 - Tokens: 19246
-151. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
-152. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
-153. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
-154. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
-155. src\Artifacts\A47 - David Gerabagi Resume (DCE Update).md - Lines: 78 - Chars: 6900 - Tokens: 1725
-156. src\Artifacts\A49 - V2V Academy - Research & Synthesis Plan.md - Lines: 58 - Chars: 4851 - Tokens: 1213
-157. src\Artifacts\A50 - V2V Academy - Core Principles & Philosophy.md - Lines: 42 - Chars: 5240 - Tokens: 1310
-158. src\Artifacts\A51 - V2V Academy - The Virtuoso's Workflow.md - Lines: 50 - Chars: 4630 - Tokens: 1158
-159. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
-160. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 49 - Chars: 4587 - Tokens: 1147
-161. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 77 - Chars: 7533 - Tokens: 1884
-162. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 46 - Chars: 4613 - Tokens: 1154
-163. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
-164. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
-
-<file path="context/aiascentgame/code/ascentiaHandler.ts.md">
-// src/server/api/ascentiaHandler.ts
-// Updated on: C1401 (Add detailed logging for context selection and chunk retrieval.)
-// Updated on: C1382 (Add explicit logging to handleAscentiaStream to diagnose RAG context issues.)
-// Updated on: C1381 (Add `context` parameter handling to select the correct knowledge base.)
-// Updated on: C1374 (Remove "thinking" system message from report handler to prevent it appearing in main chat.)
-// Updated on: C1373 (Verify path logic for report KB is correct.)
-// Updated on: C1356 (Incorporate the full pageContext from the client into the LLM system prompt.)
-// Updated on: C1344 (Add logic for loading and handling report-specific knowledge base and chat stream.)
-import { type Socket, type Server as SocketIOServer } from 'socket.io';
-import { logInfo, logWarn, logError } from '../../logger';
-import { type PlayerState } from '../../server';
-import { type ChatMessage } from '../../state/multiplayerStore';
-import faiss from 'faiss-node';
-import fs from 'fs';
-import path from 'path';
-import axios from 'axios';
-import { OUT_OF_GAME_SYSTEM_PROMPTS } from '../../game/personas/personaConstants';
-import { LlmService } from '../llmService';
-
-const LLM_BASE_URL = process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234';
-const EMBEDDING_API_URL = LLM_BASE_URL + '/v1/embeddings';
-const CHAT_COMPLETIONS_API_URL = LLM_BASE_URL + '/v1/chat/completions';
-const EMBEDDING_MODEL = 'text-embedding-granite-embedding-278m-multilingual';
-const ASCENTIA_MODEL = 'qwen/qwen3-30b-a3b';
-
-let faissIndex: any = null;
-let ascentiaChunks: { id: string, chunk: string }[] = [];
-let reportFaissIndex: any = null;
-let reportAscentiaChunks: { id: string, chunk: string }[] = [];
-
-export function loadAscentiaKnowledgeBase(publicPath: string) {
-    const FAISS_INDEX_PATH = path.join(publicPath, 'ascentia_faiss.index');
-    const CHUNKS_PATH = path.join(publicPath, 'ascentia_chunks.json');
-    try {
-        if (fs.existsSync(FAISS_INDEX_PATH) && fs.existsSync(CHUNKS_PATH)) {
-            logInfo('[AscentiaKB]', 'Loading GAME FAISS index and chunk data...');
-            ascentiaChunks = JSON.parse(fs.readFileSync(CHUNKS_PATH, 'utf-8'));
-            faissIndex = faiss.Index.read(FAISS_INDEX_PATH);
-            logInfo('[AscentiaKB]', `Successfully loaded GAME FAISS index with ${faissIndex.ntotal} vectors and ${ascentiaChunks.length} chunks.`);
-        } else {
-            logWarn('[AscentiaKB]', 'GAME FAISS index or chunks file not found. Ascentia will have no game knowledge base.');
-        }
-    } catch (error) {
-        logError('[AscentiaKB]', 'Failed to load GAME FAISS index or chunks file.', error);
-        faissIndex = null;
-        ascentiaChunks = [];
-    }
-}
-
-export function loadReportKnowledgeBase(publicPath: string) {
-    const FAISS_INDEX_PATH = path.join(publicPath, 'report_faiss.index');
-    const CHUNKS_PATH = path.join(publicPath, 'report_chunks.json');
-    try {
-        if (fs.existsSync(FAISS_INDEX_PATH) && fs.existsSync(CHUNKS_PATH)) {
-            logInfo('[ReportKB]', 'Loading REPORT FAISS index and chunk data...');
-            reportAscentiaChunks = JSON.parse(fs.readFileSync(CHUNKS_PATH, 'utf-8'));
-            reportFaissIndex = faiss.Index.read(FAISS_INDEX_PATH);
-            logInfo('[ReportKB]', `Successfully loaded REPORT FAISS index with ${reportFaissIndex.ntotal} vectors and ${reportAscentiaChunks.length} chunks.`);
-        } else {
-            logWarn('[ReportKB]', `REPORT FAISS index or chunks file not found at ${FAISS_INDEX_PATH}. Ascentia will have no report knowledge base.`);
-        }
-    } catch (error) {
-        logError('[ReportKB]', 'Failed to load REPORT FAISS index or chunks file.', error);
-        reportFaissIndex = null;
-        reportAscentiaChunks = [];
-    }
-}
-
-async function getEmbeddingForQuery(text: string): Promise<number[] | null> {
-    try {
-        const response = await axios.post(EMBEDDING_API_URL, {
-            model: EMBEDDING_MODEL,
-            input: text,
-        });
-        if (response.data?.data?.[0]?.embedding) {
-            return response.data.data[0].embedding;
-        }
-        return null;
-    } catch (error) {
-        logError('[AscentiaKB]', 'Failed to get embedding for query.', error);
-        return null;
-    }
-}
-
-export async function handleAscentiaWelcome(socket: Socket, players: Record<string, PlayerState>, payload: any) {
-    const logPrefix = '[Handler:AscentiaWelcome]';
-    const recipientState = players[socket.id];
-    if (!recipientState) {
-        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
-        return;
-    }
-    const { showThinking } = payload || {};
-    logInfo(logPrefix, `Handling welcome message for ${recipientState.displayName}`);
-    const temporaryId = `ascentia_welcome_${Date.now()}`;
-    const emitter = socket;
-
-    try {
-        const placeholder: ChatMessage = {
-            id: temporaryId,
-            author: 'Ascentia',
-            flag: '🤖',
-            message: '',
-            status: 'thinking',
-            channel: 'private',
-        };
-        emitter.emit('newPrivateMessage', placeholder);
-
-        const welcomePrompt = `A new player, ${recipientState.displayName}, has just joined the game AI Ascent. Greet them warmly and offer your assistance as Ascentia, the in-game AI helper. Keep it concise (2-3 sentences).`;
-        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia. Your personality is that of a helpful, encouraging, and slightly witty AI assistant. You are greeting a new player. Do not use any context from the knowledge base for this greeting.</In-Game System Prompt>`;
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
-
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}` },
-            { role: 'user', content: welcomePrompt }
-        ];
-
-        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.8, max_tokens: 1024, stream: true };
-
-        emitter.emit('ascentia_generation_complete', { temporaryId });
-
-        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
-        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
-
-        const reader = llmResponse.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-        let isFirstChunk = true;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-            for (const line of lines) {
-                if (line.startsWith('data: ')) {
-                    const jsonStr = line.substring(6);
-                    if (jsonStr === '[DONE]') break;
-                    try {
-                        const chunk = JSON.parse(jsonStr);
-                        if (chunk.choices[0]?.delta?.content) {
-                            let textChunk = chunk.choices[0].delta.content;
-                            if (showThinking === false) {
-                                textChunk = textChunk.replace(/<Thinking>[\s\S]*?<\/Thinking>/gi, '');
-                            }
-                            if (isFirstChunk) {
-                                textChunk = textChunk.trimStart();
-                                isFirstChunk = false;
-                            }
-                            if (textChunk) {
-                                emitter.emit('ascentia_stream_chunk', { temporaryId, text: textChunk });
-                            }
-                        }
-                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
-                }
-            }
-        }
-    } catch (error: any) {
-        logError(logPrefix, 'Error during welcome message streaming:', error);
-        emitter.emit('ascentia_stream_chunk', { temporaryId, text: `\n[System Error: Could not generate welcome message.]` });
-    } finally {
-        emitter.emit('ascentia_stream_end', { temporaryId });
-    }
-}
-
-export async function handleAscentiaStream(io: SocketIOServer, socket: Socket, players: Record<string, PlayerState>, payload: any) {
-    const logPrefix = '[Handler:AscentiaStream]';
-    const senderState = players[socket.id];
-    if (!senderState) {
-        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
-        return;
-    }
-    const { prompt, isGlobal, showThinking, kbChunks, context } = payload || {};
-    
-    // C1401: Logic to select the correct knowledge base
-    const useReportKb = context === 'report';
-    const activeFaissIndex = useReportKb ? reportFaissIndex : faissIndex;
-    const activeChunks = useReportKb ? reportAscentiaChunks : ascentiaChunks;
-    const kbName = useReportKb ? 'REPORT' : 'GAME';
-    
-    logInfo(logPrefix, `Received stream request from ${senderState.displayName}: "${prompt}" (Global: ${isGlobal}, Context: ${context}). Using ${kbName} knowledge base.`);
-    
-    const temporaryId = `ascentia_response_${Date.now()}`;
-    const emitter = isGlobal ? io : socket;
-    const chunkEvent = isGlobal ? 'ascentia_global_stream_chunk' : 'ascentia_stream_chunk';
-    const endEvent = isGlobal ? 'ascentia_global_stream_end' : 'ascentia_stream_end';
-    const messageEvent = isGlobal ? 'newGlobalMessage' : 'newPrivateMessage';
-
-    try {
-        const placeholder: ChatMessage = { id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: isGlobal ? 'global' : 'private' };
-        emitter.emit(messageEvent, placeholder);
-        
-        let contextString = `No relevant context found in the ${kbName} knowledge base.`;
-        if (activeFaissIndex && activeChunks.length > 0 && kbChunks > 0) {
-            logInfo(logPrefix, `Searching ${kbName} KB for prompt: "${prompt}"`);
-            const queryEmbedding = await getEmbeddingForQuery(prompt);
-            if (queryEmbedding) {
-                const { labels } = activeFaissIndex.search(queryEmbedding, kbChunks);
-                if (labels.length > 0) {
-                    const retrievedChunks = labels.map((labelIndex: number) => activeChunks[labelIndex]).filter(Boolean);
-                    contextString = retrievedChunks.map((c: { id: string, chunk: string }) => `// Source: ${c.id}\n${c.chunk}`).join('\n\n---\n\n');
-                    logInfo(logPrefix, `FAISS search retrieved ${retrievedChunks.length} chunks from the ${kbName} KB.`);
-                    // C1401: Log the retrieved chunks for debugging
-                    logInfo(logPrefix, `[CONTEXT DUMP FOR "${prompt}"]:\n${contextString}`);
-                } else {
-                    logWarn(logPrefix, `FAISS search returned 0 results from the ${kbName} KB.`);
-                }
-            } else {
-                logError(logPrefix, `Failed to generate embedding for the query. Cannot perform search.`);
-            }
-        } else {
-            logWarn(logPrefix, `Skipping FAISS search. Index not loaded, chunks empty, or kbChunks is 0 for ${kbName} KB.`);
-        }
-        
-        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`; // Abridged for brevity
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
-        
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}\n\nCONTEXT FROM ${kbName} DOCUMENTATION:\n${contextString}` },
-            { role: 'user', content: `From ${senderState.displayName}: ${prompt}` }
-        ];
-        
-        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.7, max_tokens: 2048, stream: true };
-        
-        emitter.emit(isGlobal ? 'ascentia_global_generation_complete' : 'ascentia_generation_complete', { temporaryId });
-
-        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
-        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
-
-        const reader = llmResponse.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-        let isFirstChunk = true;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-            for (const line of lines) {
-                if (line.startsWith('data: ')) {
-                    const jsonStr = line.substring(6);
-                    if (jsonStr === '[DONE]') break;
-                    try {
-                        const chunk = JSON.parse(jsonStr);
-                        if (chunk.choices[0]?.delta?.content) {
-                            let textChunk = chunk.choices[0].delta.content;
-                            if (showThinking === false) {
-                                textChunk = textChunk.replace(/<Thinking>[\s\S]*?<\/Thinking>/gi, '');
-                            }
-                            if (isFirstChunk) {
-                                textChunk = textChunk.trimStart();
-                                isFirstChunk = false;
-                            }
-                            if (textChunk) {
-                                emitter.emit(chunkEvent, { temporaryId, text: textChunk });
-                            }
-                        }
-                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
-                }
-            }
-        }
-    } catch (error: any) {
-        logError(logPrefix, 'Error during streaming chat:', error);
-        emitter.emit(chunkEvent, { temporaryId, text: `\n[System Error: Could not generate response.]` });
-    } finally {
-        emitter.emit(endEvent, { temporaryId });
-    }
-}
-
-export async function handleReportAscentiaStream(io: SocketIOServer, socket: Socket, players: Record<string, PlayerState>, payload: any) {
-    const logPrefix = '[Handler:ReportAscentiaStream]';
-    const senderState = players[socket.id];
-    if (!senderState) {
-        logWarn(logPrefix, `Received request from unidentified socket ${socket.id}. Ignoring.`);
-        return;
-    }
-    const { prompt, pageContext, temporaryId } = payload || {};
-    logInfo(logPrefix, `Received stream request from ${senderState.displayName}: "${prompt}"`);
-
-    const emitter = socket; // Always private for report chat
-    const chunkEvent = 'report_ascentia_stream_chunk';
-    const endEvent = 'report_ascentia_stream_end';
-
-    try {
-        let contextString = "No relevant context found in the report knowledge base.";
-        if (reportFaissIndex && reportAscentiaChunks.length > 0) {
-            const queryEmbedding = await getEmbeddingForQuery(prompt);
-            if (queryEmbedding) {
-                const { labels } = reportFaissIndex.search(queryEmbedding, 10); // Fetch more chunks for report context
-                if (labels.length > 0) {
-                    const retrievedChunks = labels.map((labelIndex: number) => reportAscentiaChunks[labelIndex]?.chunk).filter(Boolean);
-                    contextString = retrievedChunks.join('\n\n---\n\n');
-                    logInfo(logPrefix, `FAISS search retrieved ${retrievedChunks.length} chunks from the report KB.`);
-                }
-            }
-        }
-        
-        const fullContext = `--- START OF CURRENT PAGE CONTEXT ---\n${pageContext}\n--- END OF CURRENT PAGE CONTEXT ---\n\n--- START OF ADDITIONAL RELEVANT CONTEXT FROM REPORT ---\n${contextString}\n--- END OF ADDITIONAL RELEVANT CONTEXT FROM REPORT ---`;
-        
-        const inGameSystemPrompt = `<In-Game System Prompt>You are @Ascentia, an AI assistant. You are helping a user who is reading a detailed report. Answer their question based ONLY on the provided context from the report. Be concise and helpful. The user is currently on a page with the following content: "${pageContext}".</In-Game System Prompt>`;
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[ASCENTIA_MODEL as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS];
-        
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}\n\nCONTEXT FROM REPORT:\n${fullContext}` },
-            { role: 'user', content: prompt }
-        ];
-
-        const requestBody = { model: ASCENTIA_MODEL, messages, temperature: 0.7, max_tokens: 2048, stream: true };
-        
-        const llmResponse = await fetch(CHAT_COMPLETIONS_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(requestBody) });
-        if (!llmResponse.ok || !llmResponse.body) { const errorBody = await llmResponse.text(); throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`); }
-        
-        const reader = llmResponse.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = '';
-        let isFirstChunk = true;
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-            for (const line of lines) {
-                if (line.startsWith('data: ')) {
-                    const jsonStr = line.substring(6);
-                    if (jsonStr === '[DONE]') break;
-                    try {
-                        const chunk = JSON.parse(jsonStr);
-                        if (chunk.choices[0]?.delta?.content) {
-                            let textChunk = chunk.choices[0].delta.content;
-                            if (isFirstChunk) {
-                                textChunk = textChunk.trimStart();
-                                isFirstChunk = false;
-                            }
-                            if (textChunk) {
-                                emitter.emit(chunkEvent, { temporaryId, text: textChunk });
-                            }
-                        }
-                    } catch (e) { logWarn(logPrefix, 'Failed to parse stream chunk JSON:', jsonStr, e); }
-                }
-            }
-        }
-    } catch (error: any) {
-        logError(logPrefix, 'Error during report streaming chat:', error);
-        emitter.emit(chunkEvent, { temporaryId, text: `\n[System Error: Could not generate response.]` });
-    } finally {
-        emitter.emit(endEvent, { temporaryId });
-        logInfo(logPrefix, `Report stream ended for temporaryId: ${temporaryId}`);
-    }
-}
-</file_artifact>
+1. context\aiascentgame\report\AudioControls.tsx.md - Lines: 290 - Chars: 11322 - Tokens: 2831
+2. context\aiascentgame\report\ImageNavigator.tsx.md - Lines: 203 - Chars: 7598 - Tokens: 1900
+3. context\aiascentgame\report\llmService.ts.md - Lines: 162 - Chars: 7451 - Tokens: 1863
+4. context\aiascentgame\report\PageNavigator.tsx.md - Lines: 73 - Chars: 2272 - Tokens: 568
+5. context\aiascentgame\report\PromptNavigator.tsx.md - Lines: 43 - Chars: 1300 - Tokens: 325
+6. context\aiascentgame\report\ReportChatPanel.tsx.md - Lines: 289 - Chars: 17167 - Tokens: 4292
+7. context\aiascentgame\report\ReportProgressBar.tsx.md - Lines: 146 - Chars: 5008 - Tokens: 1252
+8. context\aiascentgame\report\ReportTreeNav.tsx.md - Lines: 152 - Chars: 6078 - Tokens: 1520
+9. context\aiascentgame\report\ReportViewerModal.tsx.md - Lines: 399 - Chars: 14069 - Tokens: 3518
+10. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
+11. context\aiascentgame\scripts\create_report_embedding.js.md - Lines: 145 - Chars: 5384 - Tokens: 1346
+12. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
+13. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
+14. context\aiascentgame\flattened-repo.md - Lines: 1381 - Chars: 74313 - Tokens: 18579
+15. context\automationsaas\flattened-repo.md - Lines: 5731 - Chars: 180837 - Tokens: 45210
+16. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
+17. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
+18. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
+19. context\dce\dce_kb.md - Lines: 7873 - Chars: 578264 - Tokens: 144566
+20. context\dce\flattened-repo.md - Lines: 766 - Chars: 59174 - Tokens: 14794
+21. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
+22. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
+23. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
+24. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
+25. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
+26. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
+27. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
+28. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
+29. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
+30. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
+31. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
+32. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
+33. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
+34. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
+35. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
+36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 364 - Chars: 21951 - Tokens: 5488
+37. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
+38. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
+39. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
+40. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
+41. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
+42. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
+43. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
+44. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
+45. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
+46. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
+47. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
+48. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
+49. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
+50. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
+51. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
+52. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
+53. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
+54. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
+55. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
+56. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
+57. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
+58. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
+59. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
+60. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
+61. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
+62. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
+63. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
+64. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
+65. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
+66. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
+67. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
+68. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
+69. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
+70. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
+71. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
+72. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
+73. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
+74. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
+75. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
+76. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
+77. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
+78. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
+79. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
+80. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
+81. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
+82. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
+83. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
+84. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
+85. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
+86. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
+87. src\components\layout\Header.tsx - Lines: 67 - Chars: 2598 - Tokens: 650
+88. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
+89. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
+90. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
+91. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+92. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
+93. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
+94. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
+95. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
+96. src\components\report-viewer\ReportViewer.tsx - Lines: 178 - Chars: 7544 - Tokens: 1886
+97. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
+98. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
+99. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
+100. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
+101. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
+102. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
+103. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
+104. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
+105. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
+106. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
+107. src\stores\reportStore.ts - Lines: 731 - Chars: 33774 - Tokens: 8444
+108. .env.local - Lines: 10 - Chars: 525 - Tokens: 132
+109. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
+110. components.json - Lines: 17 - Chars: 370 - Tokens: 93
+111. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
+112. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
+113. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
+114. package.json - Lines: 51 - Chars: 1528 - Tokens: 382
+115. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
+116. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
+117. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
+118. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
+119. public\assets\images\report\dce\dce-feature-artifacts.gif - [Binary] Size: 36.5 MB
+120. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
+121. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
+122. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
+123. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
+124. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+125. src\Artifacts\A42 - V2V Academy - Master Artifact List.md - Lines: 148 - Chars: 9266 - Tokens: 2317
+126. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
+127. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
+128. src\Artifacts\A45 - V2V Academy - Key Learnings from Ryan Carson.md - Lines: 1046 - Chars: 57377 - Tokens: 14345
+129. src\Artifacts\A46 - Whisper Transcription Setup Guide.md - Lines: 131 - Chars: 6936 - Tokens: 1734
+130. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 354 - Chars: 33508 - Tokens: 8377
+131. context\v2v\audio-transcripts\1-on-1-training\transcript-2.md - Lines: 504 - Chars: 50152 - Tokens: 12538
+132. context\v2v\audio-transcripts\1-on-1-training\transcript-3.md - Lines: 1256 - Chars: 131611 - Tokens: 32903
+133. context\v2v\audio-transcripts\1-on-1-training\transcript-4.md - Lines: 130 - Chars: 17890 - Tokens: 4473
+134. context\v2v\audio-transcripts\1-on-1-training\transcript-6.md - Lines: 858 - Chars: 78046 - Tokens: 19512
+135. context\v2v\audio-transcripts\1-on-1-training\transcript-7.md - Lines: 1008 - Chars: 122887 - Tokens: 30722
+136. context\v2v\audio-transcripts\1-on-1-training\transcript-8.md - Lines: 814 - Chars: 87844 - Tokens: 21961
+137. context\v2v\audio-transcripts\1-on-1-training\transcript-9.md - Lines: 818 - Chars: 65770 - Tokens: 16443
+138. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 704 - Chars: 89232 - Tokens: 22308
+139. src\Artifacts\A47 - insanely-fast-whisper-api-README.md - Lines: 178 - Chars: 8372 - Tokens: 2093
+140. context\v2v\research-proposals\01-V2V Academy Content Research Plan.md - Lines: 246 - Chars: 52667 - Tokens: 13167
+141. context\v2v\research-proposals\02-V2V Context Engineering Research Plan.md - Lines: 266 - Chars: 61311 - Tokens: 15328
+142. context\v2v\research-proposals\03-AI Research Proposal_ V2V Pathway.md - Lines: 217 - Chars: 61407 - Tokens: 15352
+143. context\v2v\research-proposals\04-AI Research Proposal_ V2V Pathway.md - Lines: 388 - Chars: 80971 - Tokens: 20243
+144. context\v2v\research-proposals\05-V2V Pathway Research Proposal Execution.md - Lines: 309 - Chars: 77291 - Tokens: 19323
+145. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md - Lines: 419 - Chars: 76982 - Tokens: 19246
+146. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
+147. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
+148. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
+149. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
+150. src\Artifacts\A47 - David Gerabagi Resume (DCE Update).md - Lines: 78 - Chars: 6900 - Tokens: 1725
+151. src\Artifacts\A49 - V2V Academy - Research & Synthesis Plan.md - Lines: 58 - Chars: 4851 - Tokens: 1213
+152. src\Artifacts\A50 - V2V Academy - Core Principles & Philosophy.md - Lines: 42 - Chars: 5240 - Tokens: 1310
+153. src\Artifacts\A51 - V2V Academy - The Virtuoso's Workflow.md - Lines: 50 - Chars: 4630 - Tokens: 1158
+154. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
+155. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 49 - Chars: 4587 - Tokens: 1147
+156. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 77 - Chars: 7533 - Tokens: 1884
+157. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 82 - Chars: 8105 - Tokens: 2027
+158. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
+159. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
+160. src\Artifacts\A58 - V2V Academy - Target Learner Personas.md - Lines: 64 - Chars: 5141 - Tokens: 1286
+161. src\Artifacts\A59 - V2V Academy - Student Environment Guide.md - Lines: 45 - Chars: 3728 - Tokens: 932
+162. src\Artifacts\A60 - V2V Academy - Assessment Philosophy.md - Lines: 35 - Chars: 2940 - Tokens: 735
+163. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
+164. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
+165. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
+166. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
+167. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
+168. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
+169. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
+170. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
+171. src\Artifacts\A61.8 - Transcript 8 Summary.md - Lines: 33 - Chars: 3930 - Tokens: 983
+172. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
+173. src\Artifacts\A62 - V2V Academy - Synthesis of Research Proposals.md - Lines: 33 - Chars: 4303 - Tokens: 1076
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -5188,792 +4922,6 @@ const ReportProgressBar: React.FC = () => {
 };
 
 export default ReportProgressBar;
-</file_artifact>
-
-<file path="context/aiascentgame/report/reportStore.ts.md">
-// src/state/reportStore.ts
-// Updated on: C1401 (Add state for Ascentia message audio narration.)
-// Updated on: C1399 (Implement playback speed control and fix continuous autoplay.)
-// Updated on: C1398 (Complete refactor of autoplay and slideshow logic to fix bugs and implement correct timer handling.)
-// Updated on: C1397 (Add volume and mute state. Refine slideshow and autoplay logic to fix bugs.)
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
-import { logInfo, logWarn, logError } from '../logger';
-import { type ChatMessage } from './multiplayerStore';
-
-interface ReportImage {
-    imageId: string;
-    url: string;
-    prompt: string;
-    alt: string;
-}
-
-interface ReportImagePrompt {
-    promptId: string;
-    promptText: string;
-    images: ReportImage[];
-}
-
-export interface ReportPage {
-    pageId: string;
-    pageTitle: string;
-    tldr: string;
-    content: string;
-    imagePrompts: ReportImagePrompt[];
-}
-
-// --- Raw Data Structures from JSON files ---
-export interface RawReportPage {
-    pageId: string;
-    pageTitle: string;
-    tldr: string;
-    content: string;
-    imageGroupIds: string[];
-}
-
-export interface RawSubSection {
-    subSectionId: string;
-    subSectionTitle: string;
-    pages: RawReportPage[];
-}
-
-export interface RawReportSection {
-    sectionId: string;
-    sectionTitle: string;
-    pages?: RawReportPage[];
-    subSections?: RawSubSection[];
-}
-
-interface ReportContentData {
-    reportId: string;
-    reportTitle: string;
-    sections: RawReportSection[];
-}
-
-interface ImageManifestData {
-    manifestId: string;
-    basePath: string;
-    imageGroups: Record<string, {
-        path: string;
-        prompt: string;
-        alt: string;
-        baseFileName: string;
-        fileExtension: string;
-        imageCount: number;
-    }>;
-}
-// --- End Raw Data Structures ---
-
-
-export interface ReportState {
-    reportData: ReportContentData | null;
-    imageManifest: ImageManifestData | null;
-    allPages: ReportPage[];
-    currentPageIndex: number;
-    currentImageIndex: number;
-    imageVotes: Record<string, number>;
-    isTreeNavOpen: boolean;
-    expandedSections: Record<string, boolean>;
-    isChatPanelOpen: boolean;
-    chatPanelWidth: number;
-    imagePanelHeight: number;
-    isImageFullscreen: boolean;
-    votesCastByPage: Record<number, string>;
-    reportChatHistory: ChatMessage[];
-    reportChatInput: string;
-    tokenCount: {
-        total: number;
-        breakdown: { system: number; context: number; history: number; user: number; response: number; };
-    };
-    isPromptVisible: boolean;
-    isTldrVisible: boolean;
-    isContentVisible: boolean;
-    isHintVisible: boolean;
-    seenImages: Record<string, boolean>;
-    // Page Audio State
-    playbackStatus: 'idle' | 'generating' | 'buffering' | 'playing' | 'paused' | 'error';
-    autoplayEnabled: boolean;
-    currentAudioUrl: string | null;
-    currentAudioPageIndex: number | null;
-    currentTime: number;
-    duration: number;
-    volume: number;
-    isMuted: boolean;
-    slideshowTimer: NodeJS.Timeout | null;
-    nextPageTimer: NodeJS.Timeout | null;
-    playbackSpeed: number;
-    // Ascentia Message Audio State (NEW C1401)
-    ascentiaAudioStatus: 'idle' | 'generating' | 'playing' | 'paused' | 'error';
-    ascentiaAudioAutoplay: boolean;
-    currentAscentiaAudioUrl: string | null;
-    lastAscentiaMessageText: string | null;
-}
-
-export interface ReportActions {
-    loadReportData: () => Promise<void>;
-    nextPage: () => void;
-    prevPage: () => void;
-    jumpPages: (count: number) => void;
-    goToPageByIndex: (pageIndex: number) => void;
-    nextImage: () => void;
-    prevImage: () => void;
-    setCurrentImageIndex: (index: number) => void;
-    castVote: (imageId: string, pageIndex: number) => void;
-    voteWithKeyboard: () => void;
-    jumpToNextUnvotedPage: () => void;
-    handleKeyDown: (event: KeyboardEvent) => void;
-    toggleTreeNav: () => void;
-    toggleSectionExpansion: (sectionId: string) => void;
-    setActiveExpansionPath: (pageIndex: number) => void;
-    toggleChatPanel: () => void;
-    setChatPanelWidth: (width: number) => void;
-    setImagePanelHeight: (height: number) => void;
-    openImageFullscreen: () => void;
-    closeImageFullscreen: () => void;
-    setReportChatInput: (input: string) => void;
-    addReportChatMessage: (message: ChatMessage) => void;
-    updateReportChatMessage: (id: string, chunk: string) => void;
-    updateReportChatStatus: (id: string, status: ChatMessage['status']) => void;
-    clearReportChatHistory: (currentPageTitle: string) => void;
-    updateTokenCount: (parts: Partial<ReportState['tokenCount']['breakdown']>) => void;
-    togglePromptVisibility: () => void;
-    toggleTldrVisibility: () => void;
-    toggleContentVisibility: () => void;
-    toggleHintVisibility: () => void;
-    markImageAsSeen: (pageId: string, imageId: string) => void;
-    jumpToNextUnseenImage: () => void;
-    jumpToFirstUnseenImage: () => void;
-    resetProgress: () => void;
-    // Page Audio Actions
-    setPlaybackStatus: (status: ReportState['playbackStatus']) => void;
-    setAutoplay: (enabled: boolean) => void;
-    setCurrentAudio: (url: string | null, pageIndex: number) => void;
-    setAudioTime: (time: number) => void;
-    setAudioDuration: (duration: number) => void;
-    setVolume: (level: number) => void;
-    toggleMute: () => void;
-    startSlideshow: () => void;
-    stopSlideshow: (userInitiated?: boolean) => void;
-    setPlaybackSpeed: (speed: number) => void;
-    // Ascentia Message Audio Actions (NEW C1401)
-    setAscentiaAudioStatus: (status: ReportState['ascentiaAudioStatus']) => void;
-    setAscentiaAutoplay: (enabled: boolean) => void;
-    playAscentiaMessage: (messageText: string) => void;
-    setCurrentAscentiaAudioUrl: (url: string | null) => void;
-    _resetReportStore: () => void;
-}
-
-type PersistedReportState = Pick<
-    ReportState,
-    | 'currentPageIndex' | 'currentImageIndex' | 'votesCastByPage' | 'imageVotes'
-    | 'isTreeNavOpen' | 'expandedSections' | 'isChatPanelOpen' | 'chatPanelWidth'
-    | 'imagePanelHeight' | 'reportChatHistory' | 'reportChatInput'
-    | 'seenImages' | 'isPromptVisible' | 'isTldrVisible' | 'isContentVisible' | 'isHintVisible'
-    | 'autoplayEnabled' | 'volume' | 'isMuted' | 'playbackSpeed' | 'ascentiaAudioAutoplay'
->;
-
-const createInitialReportState = (): ReportState => ({
-    reportData: null,
-    imageManifest: null,
-    allPages: [],
-    currentPageIndex: 0,
-    currentImageIndex: 0,
-    imageVotes: {},
-    isTreeNavOpen: false,
-    expandedSections: {},
-    isChatPanelOpen: false,
-    chatPanelWidth: 400,
-    imagePanelHeight: 300,
-    isImageFullscreen: false,
-    votesCastByPage: {},
-    reportChatHistory: [],
-    reportChatInput: '',
-    tokenCount: {
-        total: 0,
-        breakdown: { system: 0, context: 0, history: 0, user: 0, response: 0 },
-    },
-    isPromptVisible: true,
-    isTldrVisible: true,
-    isContentVisible: true,
-    isHintVisible: true,
-    seenImages: {},
-    // Page Audio State
-    playbackStatus: 'idle',
-    autoplayEnabled: false,
-    currentAudioUrl: null,
-    currentAudioPageIndex: null,
-    currentTime: 0,
-    duration: 0,
-    volume: 1,
-    isMuted: false,
-    slideshowTimer: null,
-    nextPageTimer: null,
-    playbackSpeed: 1,
-    // Ascentia Message Audio State (NEW C1401)
-    ascentiaAudioStatus: 'idle',
-    ascentiaAudioAutoplay: false,
-    currentAscentiaAudioUrl: null,
-    lastAscentiaMessageText: null,
-});
-
-export const useReportStore = create<ReportState & ReportActions>()(
-    persist(
-        (set, get) => ({
-            ...createInitialReportState(),
-
-            // NEW C1401: Ascentia Message Audio Actions
-            setAscentiaAudioStatus: (status) => set({ ascentiaAudioStatus: status }),
-            setAscentiaAutoplay: (enabled) => set({ ascentiaAudioAutoplay: enabled }),
-            setCurrentAscentiaAudioUrl: (url) => set({ currentAscentiaAudioUrl: url }),
-            playAscentiaMessage: (messageText) => {
-                const { setAscentiaAudioStatus, setCurrentAscentiaAudioUrl } = get();
-                setAscentiaAudioStatus('generating');
-                set({ lastAscentiaMessageText: messageText });
-                
-                fetch('/api/tts/generate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text: messageText }),
-                })
-                .then(response => {
-                    if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
-                    return response.blob();
-                })
-                .then(audioBlob => {
-                    const newUrl = URL.createObjectURL(audioBlob);
-                    setCurrentAscentiaAudioUrl(newUrl);
-                })
-                .catch(error => {
-                    logError('[reportStore:playAscentia]', 'Failed to generate audio for Ascentia message', error);
-                    setAscentiaAudioStatus('error');
-                });
-            },
-            // ---
-
-            setVolume: (level) => set({ volume: Math.max(0, Math.min(1, level)) }),
-            toggleMute: () => set(state => ({ isMuted: !state.isMuted })),
-            setPlaybackSpeed: (speed) => {
-                const { startSlideshow, playbackStatus } = get();
-                set({ playbackSpeed: speed });
-                if (playbackStatus === 'playing' || playbackStatus === 'paused') {
-                    startSlideshow();
-                }
-            },
-
-            startSlideshow: () => {
-                const { stopSlideshow, allPages, currentPageIndex, duration, setCurrentImageIndex, nextPage, autoplayEnabled, playbackSpeed } = get();
-                stopSlideshow(false); 
-
-                const currentPage = allPages[currentPageIndex];
-                if (!currentPage || !autoplayEnabled) return;
-
-                const actualDuration = duration / playbackSpeed;
-                const actualDurationMs = actualDuration * 1000;
-                if (actualDurationMs <= 0) return;
-
-                logInfo('[reportStore:slideshow]', `Starting slideshow for page ${currentPageIndex} with actual duration ${actualDuration}s.`);
-
-                const nextPageTimer = setTimeout(() => {
-                    if (get().autoplayEnabled) {
-                        logInfo('[reportStore:slideshow]', `Next page timer fired. Advancing page.`);
-                        nextPage();
-                    }
-                }, actualDurationMs + 2000);
-                set({ nextPageTimer });
-
-                const images = currentPage.imagePrompts[0]?.images;
-                if (!images || images.length <= 1) return;
-
-                const timePerImage = actualDurationMs / images.length;
-                let imageIdx = get().currentImageIndex; 
-
-                const slideshowTimer = setInterval(() => {
-                    if (!get().autoplayEnabled) {
-                        clearInterval(slideshowTimer);
-                        return;
-                    }
-                    imageIdx = (get().currentImageIndex + 1);
-                    if (imageIdx < images.length) {
-                        setCurrentImageIndex(imageIdx);
-                    } else {
-                        clearInterval(slideshowTimer);
-                        set({ slideshowTimer: null });
-                    }
-                }, timePerImage);
-
-                set({ slideshowTimer });
-            },
-
-            stopSlideshow: (userInitiated = false) => {
-                const { slideshowTimer, nextPageTimer } = get();
-                if (slideshowTimer) clearInterval(slideshowTimer);
-                if (nextPageTimer) clearTimeout(nextPageTimer);
-
-                const currentState = get();
-                if (currentState.slideshowTimer || currentState.nextPageTimer) {
-                    logInfo('[reportStore:slideshow]', `Stopping slideshow. User initiated: ${userInitiated}`);
-                }
-
-                if (userInitiated) {
-                    set({ slideshowTimer: null, nextPageTimer: null, autoplayEnabled: false });
-                } else {
-                    set({ slideshowTimer: null, nextPageTimer: null });
-                }
-            },
-            
-            // ... (loadReportData and other actions remain the same)
-            loadReportData: async () => {
-                const logPrefix = '[store:report:loadV3]';
-                if (get().reportData && get().imageManifest) return;
-
-                try {
-                    logInfo(logPrefix, 'Fetching report content and image manifest...');
-                    const [contentRes, manifestRes] = await Promise.all([
-                        fetch('/data/reports/reportContent.json'),
-                        fetch('/data/reports/imageManifest.json')
-                    ]);
-
-                    if (!contentRes.ok) throw new Error(`Failed to fetch reportContent.json: ${contentRes.statusText}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch imageManifest.json: ${manifestRes.statusText}`);
-
-                    const contentData: ReportContentData = await contentRes.json();
-                    const manifestData: ImageManifestData = await manifestRes.json();
-
-                    logInfo(logPrefix, `Successfully fetched data. Content: "${contentData.reportTitle}", Manifest: "${manifestData.manifestId}"`);
-
-                    const reconstructedPages: ReportPage[] = [];
-                    contentData.sections.forEach(section => {
-                        const processPages = (pages: RawReportPage[]) => {
-                            (pages || []).forEach(rawPage => {
-                                const imagePrompts: ReportImagePrompt[] = [];
-
-                                (rawPage.imageGroupIds || []).forEach((groupId) => {
-                                    const groupMeta = manifestData.imageGroups[groupId];
-                                    if (groupMeta) {
-                                        const images: ReportImage[] = [];
-                                        for (let i = 1; i <= groupMeta.imageCount; i++) {
-                                            const fileName = `${groupMeta.baseFileName}${i}${groupMeta.fileExtension}`;
-                                            const url = `${manifestData.basePath}${groupMeta.path}${fileName}`;
-                                            const imageId = `${rawPage.pageId}-${groupId}-${i}`;
-                                            images.push({
-                                                imageId,
-                                                url,
-                                                prompt: groupMeta.prompt,
-                                                alt: groupMeta.alt,
-                                            });
-                                        }
-                                        imagePrompts.push({
-                                            promptId: groupId,
-                                            promptText: groupMeta.prompt,
-                                            images,
-                                        });
-                                    } else {
-                                        logWarn(logPrefix, `Image group metadata not found for groupId: ${groupId}`);
-                                    }
-                                });
-
-                                reconstructedPages.push({
-                                    pageId: rawPage.pageId,
-                                    pageTitle: rawPage.pageTitle,
-                                    tldr: rawPage.tldr,
-                                    content: rawPage.content,
-                                    imagePrompts,
-                                });
-                            });
-                        };
-                        
-                        if (section.pages) {
-                            processPages(section.pages);
-                        }
-                        if (section.subSections) {
-                            section.subSections.forEach(sub => processPages(sub.pages));
-                        }
-                    });
-
-                    logInfo(logPrefix, `Reconstructed ${reconstructedPages.length} pages.`);
-                    const { currentPageIndex, currentImageIndex } = get();
-                    const validPageIndex = currentPageIndex >= 0 && currentPageIndex < reconstructedPages.length ? currentPageIndex : 0;
-                    
-                    set({
-                        reportData: contentData,
-                        imageManifest: manifestData,
-                        allPages: reconstructedPages,
-                        currentPageIndex: validPageIndex,
-                        currentImageIndex: currentImageIndex || 0,
-                    });
-
-                } catch (error) {
-                    logError(logPrefix, "Failed to load and process report data.", error);
-                }
-            },
-            
-            nextPage: () => get().jumpPages(1),
-            prevPage: () => get().jumpPages(-1),
-
-            jumpPages: (count) => {
-                const { stopSlideshow, autoplayEnabled, setPlaybackStatus } = get();
-                const userInitiated = !autoplayEnabled;
-                stopSlideshow(userInitiated);
-                set((state) => {
-                    const totalPages = state.allPages.length;
-                    if (totalPages === 0) return state;
-                    let newIndex = state.currentPageIndex + count;
-                    if (newIndex >= totalPages) {
-                        // C1399: If autoplay is on and we reach the end, turn it off.
-                        if (state.autoplayEnabled) {
-                            logInfo('store:report', 'Autoplay reached end of report. Disabling.');
-                            setPlaybackStatus('idle');
-                            return { ...state, autoplayEnabled: false };
-                        }
-                        newIndex = 0;
-                    }
-                    if (newIndex < 0) newIndex = totalPages - 1;
-                    
-                    if (newIndex !== state.currentPageIndex) {
-                        logInfo('store:report', `Jumping ${count} pages to index ${newIndex}`);
-                        return { currentPageIndex: newIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 };
-                    }
-                    return state;
-                });
-            },
-
-            goToPageByIndex: (pageIndex) => {
-                get().stopSlideshow(true);
-                const totalPages = get().allPages.length;
-                if (pageIndex >= 0 && pageIndex < totalPages) {
-                    logInfo('store:report', `Jumping to page by index: ${pageIndex}`);
-                    set({ currentPageIndex: pageIndex, currentImageIndex: 0, currentAudioUrl: null, playbackStatus: 'idle', currentTime: 0, duration: 0 });
-                } else {
-                    logWarn('store:report', `Attempted to jump to invalid page index: ${pageIndex}`);
-                }
-            },
-            
-            nextImage: () => {
-                get().stopSlideshow(true);
-                set((state) => {
-                    const currentPage = state.allPages[state.currentPageIndex];
-                    const currentPrompt = currentPage?.imagePrompts[0];
-                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
-                    const newImageIndex = (state.currentImageIndex + 1) % currentPrompt.images.length;
-                    return { currentImageIndex: newImageIndex };
-                });
-            },
-
-            prevImage: () => {
-                get().stopSlideshow(true);
-                set((state) => {
-                    const currentPage = state.allPages[state.currentPageIndex];
-                    const currentPrompt = currentPage?.imagePrompts[0];
-                    if (!currentPrompt || currentPrompt.images.length <= 1) return state;
-                    const newImageIndex = (state.currentImageIndex - 1 + currentPrompt.images.length) % currentPrompt.images.length;
-                    return { currentImageIndex: newImageIndex };
-                });
-            },
-            
-            setCurrentImageIndex: (index) => {
-                set((state) => {
-                    const currentPage = state.allPages[state.currentPageIndex];
-                    const totalImages = currentPage?.imagePrompts[0]?.images.length ?? 0;
-                    if (index >= 0 && index < totalImages) {
-                        return { currentImageIndex: index };
-                    }
-                    return state;
-                });
-            },
-
-            castVote: async (imageId, pageIndex) => {
-                const { votesCastByPage } = get();
-                const alreadyVotedFor = votesCastByPage[pageIndex];
-                if (alreadyVotedFor === imageId) return;
-                logInfo('store:report', `Casting vote for image: ${imageId} on page ${pageIndex}`);
-                set(state => ({
-                    votesCastByPage: { ...state.votesCastByPage, [pageIndex]: imageId },
-                    imageVotes: { ...state.imageVotes, [imageId]: (state.imageVotes[imageId] || 0) + 1 }
-                }));
-                try {
-                    const response = await fetch('/api/report/vote', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ imageId }),
-                    });
-                    if (!response.ok) throw new Error(await response.text());
-                    const result = await response.json();
-                    logInfo('store:report', `Vote successful for ${imageId}. New server count: ${result.newVoteCount}`);
-                } catch (error) {
-                    logWarn('store:report', `Failed to cast vote for ${imageId}. Reverting optimistic update.`, error);
-                    set(state => ({
-                        votesCastByPage: { ...state.votesCastByPage, [pageIndex]: alreadyVotedFor },
-                        imageVotes: { ...state.imageVotes, [imageId]: Math.max(0, (state.imageVotes[imageId] || 1) - 1) }
-                    }));
-                }
-            },
-            
-            voteWithKeyboard: () => {
-                get().stopSlideshow(true);
-                const { allPages, currentPageIndex, currentImageIndex, castVote } = get();
-                const currentPage = allPages[currentPageIndex];
-                const currentPrompt = currentPage?.imagePrompts[0];
-                const currentImage = currentPrompt?.images[currentImageIndex];
-                if (currentImage) castVote(currentImage.imageId, currentPageIndex);
-            },
-
-            jumpToNextUnvotedPage: () => {
-                const { allPages, votesCastByPage, goToPageByIndex } = get();
-                for (let i = 0; i < allPages.length; i++) {
-                    if (!votesCastByPage.hasOwnProperty(i)) {
-                        goToPageByIndex(i);
-                        return;
-                    }
-                }
-                logInfo('store:report', 'All pages have been voted on!');
-            },
-
-            handleKeyDown: (event: KeyboardEvent) => {
-                const { stopSlideshow } = get();
-                let jumpCount = 1;
-                if (event.shiftKey) jumpCount = 5;
-                if (event.ctrlKey) jumpCount = 10;
-
-                switch (event.key) {
-                    case 'ArrowUp': stopSlideshow(true); get().jumpPages(-jumpCount); break;
-                    case 'ArrowDown': stopSlideshow(true); get().jumpPages(jumpCount); break;
-                    case 'ArrowLeft': stopSlideshow(true); get().prevImage(); break;
-                    case 'ArrowRight': stopSlideshow(true); get().nextImage(); break;
-                    case ' ': get().voteWithKeyboard(); break;
-                }
-            },
-            
-            toggleTreeNav: () => set(state => ({ isTreeNavOpen: !state.isTreeNavOpen })),
-            toggleSectionExpansion: (sectionId) => set(state => ({
-                expandedSections: {
-                    ...state.expandedSections,
-                    [sectionId]: !state.expandedSections[sectionId],
-                }
-            })),
-
-            setActiveExpansionPath: (pageIndex) => {
-                const { reportData } = get();
-                if (!reportData) return;
-
-                let activeSectionId: string | null = null;
-                let activeSubSectionId: string | null = null;
-
-                let cumulativePages = 0;
-                for (const section of reportData.sections) {
-                    let pageCounterForSection = 0;
-                    
-                    const directPagesCount = (section.pages || []).length;
-                    if (pageIndex >= cumulativePages && pageIndex < cumulativePages + directPagesCount) {
-                        activeSectionId = section.sectionId;
-                        break;
-                    }
-                    pageCounterForSection += directPagesCount;
-
-                    if (section.subSections) {
-                        for (const subSection of section.subSections) {
-                            const subSectionPageCount = (subSection.pages || []).length;
-                            if (pageIndex >= cumulativePages + pageCounterForSection && pageIndex < cumulativePages + pageCounterForSection + subSectionPageCount) {
-                                activeSectionId = section.sectionId;
-                                activeSubSectionId = subSection.subSectionId;
-                                break;
-                            }
-                            pageCounterForSection += subSectionPageCount;
-                        }
-                    }
-                    if (activeSectionId) break;
-                    cumulativePages += pageCounterForSection;
-                }
-
-                if (!activeSectionId) return;
-
-                set(state => {
-                    const newExpandedSections: Record<string, boolean> = {};
-                    
-                    for (const section of state.reportData!.sections) {
-                        newExpandedSections[section.sectionId] = section.sectionId === activeSectionId;
-                        
-                        if (section.subSections) {
-                            for (const subSection of section.subSections) {
-                                newExpandedSections[subSection.subSectionId] = subSection.subSectionId === activeSubSectionId;
-                            }
-                        }
-                    }
-                    return { expandedSections: newExpandedSections };
-                });
-            },
-
-            toggleChatPanel: () => set(state => ({ isChatPanelOpen: !state.isChatPanelOpen })),
-            setChatPanelWidth: (width) => set({ chatPanelWidth: Math.max(300, width) }),
-            setImagePanelHeight: (height) => set({ imagePanelHeight: Math.max(200, height) }),
-            openImageFullscreen: () => set({ isImageFullscreen: true }),
-            closeImageFullscreen: () => set({ isImageFullscreen: false }),
-            setReportChatInput: (input) => set({ reportChatInput: input }),
-            addReportChatMessage: (message) => {
-                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
-                set(state => ({
-                    reportChatHistory: [...state.reportChatHistory, message].slice(-50),
-                }));
-                if (message.author === 'Ascentia' && message.status === 'complete' && ascentiaAudioAutoplay) {
-                    playAscentiaMessage(message.message);
-                }
-            },
-            updateReportChatMessage: (id, chunk) => set(state => ({
-                reportChatHistory: state.reportChatHistory.map(msg =>
-                    msg.id === id ? { ...msg, message: msg.message + chunk, status: 'streaming' } : msg
-                )
-            })),
-            updateReportChatStatus: (id, status) => {
-                const { ascentiaAudioAutoplay, playAscentiaMessage } = get();
-                set(state => ({
-                    reportChatHistory: state.reportChatHistory.map(msg =>
-                        msg.id === id ? { ...msg, status } : msg
-                    )
-                }));
-                if (status === 'complete') {
-                    const finalMessage = get().reportChatHistory.find(msg => msg.id === id);
-                    if (finalMessage && ascentiaAudioAutoplay) {
-                        playAscentiaMessage(finalMessage.message);
-                    }
-                }
-            },
-            clearReportChatHistory: (currentPageTitle) => {
-                const initialMessage: ChatMessage = {
-                    author: 'Ascentia', flag: '🤖',
-                    message: `Ask me anything about "${currentPageTitle}".`, channel: 'system',
-                };
-                set({
-                    reportChatHistory: [initialMessage],
-                    reportChatInput: '',
-                    tokenCount: createInitialReportState().tokenCount,
-                });
-            },
-            updateTokenCount: (parts) => {
-                set(state => {
-                    const historyChars = state.reportChatHistory.map(m => (typeof m.author === 'string' ? m.author : m.author.displayName) + m.message).join('').length;
-                    const historyTokens = Math.ceil(historyChars / 4);
-
-                    const responseChars = state.reportChatHistory.filter(m => m.author === 'Ascentia').map(m => m.message).join('').length;
-                    const responseTokens = Math.ceil(responseChars / 4);
-
-                    const staticSystemPrompt = `<In-Game System Prompt>You are @Ascentia...`;
-                    const systemTokens = Math.ceil(staticSystemPrompt.length / 4);
-
-                    const newBreakdown = {
-                        system: systemTokens,
-                        context: parts.context ?? state.tokenCount.breakdown.context,
-                        history: historyTokens,
-                        user: parts.user ?? state.tokenCount.breakdown.user,
-                        response: responseTokens,
-                    };
-                    
-                    const total = newBreakdown.system + newBreakdown.context + newBreakdown.history + newBreakdown.user;
-                    
-                    return { tokenCount: { total, breakdown: newBreakdown } };
-                });
-            },
-            togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
-            toggleTldrVisibility: () => set(state => ({ isTldrVisible: !state.isTldrVisible })),
-            toggleContentVisibility: () => set(state => ({ isContentVisible: !state.isContentVisible })),
-            toggleHintVisibility: () => set(state => ({ isHintVisible: !state.isHintVisible })),
-            markImageAsSeen: (pageId, imageId) => {
-                const key = `${pageId}-${imageId}`;
-                if (get().seenImages[key]) return;
-                set(state => ({ seenImages: { ...state.seenImages, [key]: true } }));
-            },
-            jumpToFirstUnseenImage: () => {
-                const { allPages, seenImages, goToPageByIndex } = get();
-                for (let p = 0; p < allPages.length; p++) {
-                    const page = allPages[p];
-                    const image = page.imagePrompts[0]?.images[0];
-                    if (image) {
-                        const key = `${page.pageId}-${image.imageId}`;
-                        if (!seenImages[key]) {
-                            goToPageByIndex(p);
-                            return;
-                        }
-                    }
-                }
-                goToPageByIndex(0);
-            },
-            jumpToNextUnseenImage: () => {
-                const { allPages, seenImages, currentPageIndex, goToPageByIndex } = get();
-                const totalPages = allPages.length;
-                for (let i = 1; i <= totalPages; i++) {
-                    const nextIndex = (currentPageIndex + i) % totalPages;
-                    const page = allPages[nextIndex];
-                    const image = page.imagePrompts[0]?.images[0];
-                    if (image) {
-                        const key = `${page.pageId}-${image.imageId}`;
-                        if (!seenImages[key]) {
-                            goToPageByIndex(nextIndex);
-                            return;
-                        }
-                    }
-                }
-                logInfo('store:report', 'All images have been seen!');
-            },
-            resetProgress: () => {
-                logInfo('store:report', 'Resetting all image progress.');
-                set({ seenImages: {} });
-            },
-            setPlaybackStatus: (status) => set({ playbackStatus: status }),
-            setAutoplay: (enabled) => {
-                get().stopSlideshow(false); 
-                if (enabled) {
-                    set({ autoplayEnabled: true, currentImageIndex: 0 }); 
-                } else {
-                    set({ autoplayEnabled: false });
-                }
-            },
-            setCurrentAudio: (url, pageIndex) => set(state => {
-                if (state.currentAudioPageIndex === pageIndex && state.currentAudioUrl === url) {
-                    return state;
-                }
-                return {
-                    currentAudioUrl: url,
-                    currentAudioPageIndex: pageIndex,
-                    playbackStatus: url ? 'buffering' : 'idle',
-                    currentTime: 0,
-                    duration: 0,
-                };
-            }),
-            setAudioTime: (time) => set({ currentTime: time }),
-            setAudioDuration: (duration) => set({ duration: duration }),
-            _resetReportStore: () => set(createInitialReportState()),
-        }),
-        {
-            name: 'ai-ascent-report-storage',
-            storage: createJSONStorage(() => localStorage),
-            partialize: (state): PersistedReportState => ({
-                currentPageIndex: state.currentPageIndex,
-                currentImageIndex: state.currentImageIndex,
-                votesCastByPage: state.votesCastByPage,
-                imageVotes: state.imageVotes,
-                isTreeNavOpen: state.isTreeNavOpen,
-                expandedSections: state.expandedSections,
-                isChatPanelOpen: state.isChatPanelOpen,
-                chatPanelWidth: state.chatPanelWidth,
-                imagePanelHeight: state.imagePanelHeight,
-                reportChatHistory: state.reportChatHistory,
-                reportChatInput: state.reportChatInput,
-                seenImages: state.seenImages,
-                isPromptVisible: state.isPromptVisible,
-                isTldrVisible: state.isTldrVisible,
-                isContentVisible: state.isContentVisible,
-                isHintVisible: state.isHintVisible,
-                autoplayEnabled: state.autoplayEnabled,
-                volume: state.volume,
-                isMuted: state.isMuted,
-                playbackSpeed: state.playbackSpeed,
-                ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
-            }),
-        }
-    )
-);
-
-if (process.env.NODE_ENV === 'development') {
-    (window as any).reportStore = useReportStore;
-}
 </file_artifact>
 
 <file path="context/aiascentgame/report/ReportTreeNav.tsx.md">
@@ -24882,7 +23830,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C59 (Add new V2V glossary and planning artifacts)
+# Updated on: C60 (Add new V2V planning and synthesis artifacts)
 
 ## 1. Purpose
 
@@ -25176,6 +24124,70 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A57. V2V Academy - C58 Response Analysis and Strategic Gaps
 - **Description:** An analysis of the artifacts created in Cycle 58, showing their alignment with the source transcripts and identifying strategic gaps in the V2V Academy's planning.
 - **Tags:** v2v, curriculum design, analysis, strategy, self-reflection
+
+### A58. V2V Academy - Target Learner Personas
+- **Description:** Defines the three primary target learner personas for the V2V Academy, outlining their backgrounds, motivations, and learning goals.
+- **Tags:** v2v, curriculum design, learner persona, target audience
+
+### A59. V2V Academy - Student Environment Guide
+- **Description:** A guide for V2V Academy students, explaining the required software setup and the pedagogical model for interacting with the AI cognitive tutor during exercises.
+- **Tags:** v2v, curriculum design, student guide, setup, cognitive tutor, vscode
+
+### A60. V2V Academy - Assessment Philosophy
+- **Description:** Documents the V2V Academy's philosophy on student assessment, emphasizing tangible outcomes and self-evaluation over traditional, high-overhead testing.
+- **Tags:** v2v, curriculum design, assessment, project-based learning, self-assessment
+
+### A61.1. Transcript 1 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-1.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.2. Transcript 2 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-2.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.3. Transcript 3 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-3.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.4. Transcript 4 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-4.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.5. Transcript 5 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-5.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.6. Transcript 6 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-6.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.7. Transcript 7 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-7.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.8. Transcript 8 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-8.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.9. Transcript 9 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-9.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.10. Transcript 10 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-10.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.11. Transcript 11 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-11.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A61.12. Transcript 12 Summary (Cycle 58 Context)
+- **Description:** A high-level summary and synthesis of the key insights from the partial coaching transcript provided in the context for Cycle 58.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+### A62. V2V Academy - Synthesis of Research Proposals
+- **Description:** A meta-reflection on the provided research proposals, summarizing key themes, strategic insights, and recurring patterns.
+- **Tags:** v2v, research, synthesis, meta-analysis, strategy
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -32140,7 +31152,7 @@ This new section will be added to `src/app/dce/page.tsx` as the fourth `MissionS
 # Artifact A42: V2V Academy - Master Artifact List
 # Date Created: C55
 # Author: AI Model & Curator
-# Updated on: C59 (Add new glossary and planning artifacts)
+# Updated on: C60 (Add new planning and synthesis artifacts)
 
 - **Key/Value for A0:**
 - **Description:** The definitive list of all documentation artifacts for the "Vibecoding to Virtuosity" (V2V) online training academy sub-project.
@@ -32161,6 +31173,18 @@ This file serves as the definitive, parseable list of all documentation artifact
 #### A43. V2V Academy - Project Vision and Roadmap
 - **Description:** High-level overview of the online training platform, its purpose, target audience, technical approach (including user authentication), and a phased development plan.
 - **Tags:** project vision, goals, scope, v2v, training, roadmap, user authentication
+
+#### A58. V2V Academy - Target Learner Personas
+- **Description:** Defines the three primary target learner personas for the V2V Academy, outlining their backgrounds, motivations, and learning goals.
+- **Tags:** v2v, curriculum design, learner persona, target audience
+
+#### A59. V2V Academy - Student Environment Guide
+- **Description:** A guide for V2V Academy students, explaining the required software setup and the pedagogical model for interacting with the AI cognitive tutor during exercises.
+- **Tags:** v2v, curriculum design, student guide, setup, cognitive tutor, vscode
+
+#### A60. V2V Academy - Assessment Philosophy
+- **Description:** Documents the V2V Academy's philosophy on student assessment, emphasizing tangible outcomes and self-evaluation over traditional, high-overhead testing.
+- **Tags:** v2v, curriculum design, assessment, project-based learning, self-assessment
 
 ### II. Research & Synthesis
 
@@ -32192,6 +31216,58 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Description:** An analysis of the artifacts created in Cycle 58, showing their alignment with the source transcripts and identifying strategic gaps in the V2V Academy's planning.
 - **Tags:** v2v, curriculum design, analysis, strategy, self-reflection
 
+#### A61.1. Transcript 1 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-1.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.2. Transcript 2 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-2.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.3. Transcript 3 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-3.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.4. Transcript 4 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-4.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.5. Transcript 5 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-5.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.6. Transcript 6 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-6.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.7. Transcript 7 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-7.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.8. Transcript 8 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-8.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.9. Transcript 9 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-9.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.10. Transcript 10 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-10.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.11. Transcript 11 Summary
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-11.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A61.12. Transcript 12 Summary (Cycle 58 Context)
+- **Description:** A high-level summary and synthesis of the key insights from the partial coaching transcript provided in the context for Cycle 58.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+#### A62. V2V Academy - Synthesis of Research Proposals
+- **Description:** A meta-reflection on the provided research proposals, summarizing key themes, strategic insights, and recurring patterns.
+- **Tags:** v2v, research, synthesis, meta-analysis, strategy
+
 ### III. Curriculum Design & Content
 
 #### A53. V2V Academy - Curriculum Outline
@@ -32204,7 +31280,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 #### A55. V2V Academy - Glossary of Terms
 - **Description:** A comprehensive glossary of key terms and concepts related to the "Vibecoding to Virtuosity" (V2V) pathway and the Data Curation Environment (DCE).
-- **Tags:** v2v, documentation, glossary, definitions, cognitive apprenticeship, context engineering
+- **Tags:** v2v, documentation, glossary, definitions, cognitive apprenticeship
 
 #### A56. V2V Academy - Practical Exercises Plan
 - **Description:** Outlines the plan for the practical exercises within the V2V Academy, centered on the project of incrementally building a fully functional, AI-powered interactive report viewer.
@@ -33539,1083 +32615,6 @@ After running the script, you will see `.json` files appear in your `audio-to-pr
 You can now copy the value of the `"text"` field from each JSON file to create your markdown transcript artifacts. When you are finished, you can stop the Docker container by running `docker stop whisper-api` in your terminal.
 </file_artifact>
 
-<file path="src/components/global/SplashCursor.jsx">
-'use client';
-import { useEffect, useRef } from 'react';
-
-function SplashCursor({
-  SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 1440,
-  CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 3.5,
-  VELOCITY_DISSIPATION = 2,
-  PRESSURE = 0.1,
-  PRESSURE_ITERATIONS = 20,
-  CURL = 3,
-  SPLAT_RADIUS = 0.2,
-  SPLAT_FORCE = 6000,
-  SHADING = true,
-  COLOR_UPDATE_SPEED = 10,
-  BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true
-}) {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    function pointerPrototype() {
-      this.id = -1;
-      this.texcoordX = 0;
-      this.texcoordY = 0;
-      this.prevTexcoordX = 0;
-      this.prevTexcoordY = 0;
-      this.deltaX = 0;
-      this.deltaY = 0;
-      this.down = false;
-      this.moved = false;
-      this.color = [0, 0, 0];
-    }
-
-    let config = {
-      SIM_RESOLUTION,
-      DYE_RESOLUTION,
-      CAPTURE_RESOLUTION,
-      DENSITY_DISSIPATION,
-      VELOCITY_DISSIPATION,
-      PRESSURE,
-      PRESSURE_ITERATIONS,
-      CURL,
-      SPLAT_RADIUS,
-      SPLAT_FORCE,
-      SHADING,
-      COLOR_UPDATE_SPEED,
-      PAUSED: false,
-      BACK_COLOR,
-      TRANSPARENT
-    };
-
-    let pointers = [new pointerPrototype()];
-
-    const { gl, ext } = getWebGLContext(canvas);
-    if (!ext.supportLinearFiltering) {
-      config.DYE_RESOLUTION = 256;
-      config.SHADING = false;
-    }
-
-    function getWebGLContext(canvas) {
-      const params = {
-        alpha: true,
-        depth: false,
-        stencil: false,
-        antialias: false,
-        preserveDrawingBuffer: false
-      };
-      let gl = canvas.getContext('webgl2', params);
-      const isWebGL2 = !!gl;
-      if (!isWebGL2) gl = canvas.getContext('webgl', params) || canvas.getContext('experimental-webgl', params);
-
-      let halfFloat;
-      let supportLinearFiltering;
-      if (isWebGL2) {
-        gl.getExtension('EXT_color_buffer_float');
-        supportLinearFiltering = gl.getExtension('OES_texture_float_linear');
-      } else {
-        halfFloat = gl.getExtension('OES_texture_half_float');
-        supportLinearFiltering = gl.getExtension('OES_texture_half_float_linear');
-      }
-      gl.clearColor(0.0, 0.0, 0.0, 1.0);
-
-      const halfFloatTexType = isWebGL2 ? gl.HALF_FLOAT : halfFloat && halfFloat.HALF_FLOAT_OES;
-      let formatRGBA;
-      let formatRG;
-      let formatR;
-
-      if (isWebGL2) {
-        formatRGBA = getSupportedFormat(gl, gl.RGBA16F, gl.RGBA, halfFloatTexType);
-        formatRG = getSupportedFormat(gl, gl.RG16F, gl.RG, halfFloatTexType);
-        formatR = getSupportedFormat(gl, gl.R16F, gl.RED, halfFloatTexType);
-      } else {
-        formatRGBA = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
-        formatRG = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
-        formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
-      }
-
-      return {
-        gl,
-        ext: {
-          formatRGBA,
-          formatRG,
-          formatR,
-          halfFloatTexType,
-          supportLinearFiltering
-        }
-      };
-    }
-
-    function getSupportedFormat(gl, internalFormat, format, type) {
-      if (!supportRenderTextureFormat(gl, internalFormat, format, type)) {
-        switch (internalFormat) {
-          case gl.R16F:
-            return getSupportedFormat(gl, gl.RG16F, gl.RG, type);
-          case gl.RG16F:
-            return getSupportedFormat(gl, gl.RGBA16F, gl.RGBA, type);
-          default:
-            return null;
-        }
-      }
-      return { internalFormat, format };
-    }
-
-    function supportRenderTextureFormat(gl, internalFormat, format, type) {
-      const texture = gl.createTexture();
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texImage2D(gl.TEXTURE_2D, 0, internalFormat, 4, 4, 0, format, type, null);
-      const fbo = gl.createFramebuffer();
-      gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
-      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
-      const status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
-      return status === gl.FRAMEBUFFER_COMPLETE;
-    }
-
-    class Material {
-      constructor(vertexShader, fragmentShaderSource) {
-        this.vertexShader = vertexShader;
-        this.fragmentShaderSource = fragmentShaderSource;
-        this.programs = [];
-        this.activeProgram = null;
-        this.uniforms = [];
-      }
-      setKeywords(keywords) {
-        let hash = 0;
-        for (let i = 0; i < keywords.length; i++) hash += hashCode(keywords[i]);
-        let program = this.programs[hash];
-        if (program == null) {
-          let fragmentShader = compileShader(gl.FRAGMENT_SHADER, this.fragmentShaderSource, keywords);
-          program = createProgram(this.vertexShader, fragmentShader);
-          this.programs[hash] = program;
-        }
-        if (program === this.activeProgram) return;
-        this.uniforms = getUniforms(program);
-        this.activeProgram = program;
-      }
-      bind() {
-        gl.useProgram(this.activeProgram);
-      }
-    }
-
-    class Program {
-      constructor(vertexShader, fragmentShader) {
-        this.uniforms = {};
-        this.program = createProgram(vertexShader, fragmentShader);
-        this.uniforms = getUniforms(this.program);
-      }
-      bind() {
-        gl.useProgram(this.program);
-      }
-    }
-
-    function createProgram(vertexShader, fragmentShader) {
-      let program = gl.createProgram();
-      gl.attachShader(program, vertexShader);
-      gl.attachShader(program, fragmentShader);
-      gl.linkProgram(program);
-      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) console.trace(gl.getProgramInfoLog(program));
-      return program;
-    }
-
-    function getUniforms(program) {
-      let uniforms = [];
-      let uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
-      for (let i = 0; i < uniformCount; i++) {
-        let uniformName = gl.getActiveUniform(program, i).name;
-        uniforms[uniformName] = gl.getUniformLocation(program, uniformName);
-      }
-      return uniforms;
-    }
-
-    function compileShader(type, source, keywords) {
-      source = addKeywords(source, keywords);
-      const shader = gl.createShader(type);
-      gl.shaderSource(shader, source);
-      gl.compileShader(shader);
-      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) console.trace(gl.getShaderInfoLog(shader));
-      return shader;
-    }
-
-    function addKeywords(source, keywords) {
-      if (!keywords) return source;
-      let keywordsString = '';
-      keywords.forEach(keyword => {
-        keywordsString += '#define ' + keyword + '\n';
-      });
-      return keywordsString + source;
-    }
-
-    const baseVertexShader = compileShader(
-      gl.VERTEX_SHADER,
-      `
-        precision highp float;
-        attribute vec2 aPosition;
-        varying vec2 vUv;
-        varying vec2 vL;
-        varying vec2 vR;
-        varying vec2 vT;
-        varying vec2 vB;
-        uniform vec2 texelSize;
-
-        void main () {
-            vUv = aPosition * 0.5 + 0.5;
-            vL = vUv - vec2(texelSize.x, 0.0);
-            vR = vUv + vec2(texelSize.x, 0.0);
-            vT = vUv + vec2(0.0, texelSize.y);
-            vB = vUv - vec2(0.0, texelSize.y);
-            gl_Position = vec4(aPosition, 0.0, 1.0);
-        }
-      `
-    );
-
-    const copyShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision mediump float;
-        precision mediump sampler2D;
-        varying highp vec2 vUv;
-        uniform sampler2D uTexture;
-
-        void main () {
-            gl_FragColor = texture2D(uTexture, vUv);
-        }
-      `
-    );
-
-    const clearShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision mediump float;
-        precision mediump sampler2D;
-        varying highp vec2 vUv;
-        uniform sampler2D uTexture;
-        uniform float value;
-
-        void main () {
-            gl_FragColor = value * texture2D(uTexture, vUv);
-        }
-      `
-    );
-
-    const displayShaderSource = `
-      precision highp float;
-      precision highp sampler2D;
-      varying vec2 vUv;
-      varying vec2 vL;
-      varying vec2 vR;
-      varying vec2 vT;
-      varying vec2 vB;
-      uniform sampler2D uTexture;
-      uniform sampler2D uDithering;
-      uniform vec2 ditherScale;
-      uniform vec2 texelSize;
-
-      vec3 linearToGamma (vec3 color) {
-          color = max(color, vec3(0));
-          return max(1.055 * pow(color, vec3(0.416666667)) - 0.055, vec3(0));
-      }
-
-      void main () {
-          vec3 c = texture2D(uTexture, vUv).rgb;
-          #ifdef SHADING
-              vec3 lc = texture2D(uTexture, vL).rgb;
-              vec3 rc = texture2D(uTexture, vR).rgb;
-              vec3 tc = texture2D(uTexture, vT).rgb;
-              vec3 bc = texture2D(uTexture, vB).rgb;
-
-              float dx = length(rc) - length(lc);
-              float dy = length(tc) - length(bc);
-
-              vec3 n = normalize(vec3(dx, dy, length(texelSize)));
-              vec3 l = vec3(0.0, 0.0, 1.0);
-
-              float diffuse = clamp(dot(n, l) + 0.7, 0.7, 1.0);
-              c *= diffuse;
-          #endif
-
-          float a = max(c.r, max(c.g, c.b));
-          gl_FragColor = vec4(c, a);
-      }
-    `;
-
-    const splatShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision highp float;
-        precision highp sampler2D;
-        varying vec2 vUv;
-        uniform sampler2D uTarget;
-        uniform float aspectRatio;
-        uniform vec3 color;
-        uniform vec2 point;
-        uniform float radius;
-
-        void main () {
-            vec2 p = vUv - point.xy;
-            p.x *= aspectRatio;
-            vec3 splat = exp(-dot(p, p) / radius) * color;
-            vec3 base = texture2D(uTarget, vUv).xyz;
-            gl_FragColor = vec4(base + splat, 1.0);
-        }
-      `
-    );
-
-    const advectionShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision highp float;
-        precision highp sampler2D;
-        varying vec2 vUv;
-        uniform sampler2D uVelocity;
-        uniform sampler2D uSource;
-        uniform vec2 texelSize;
-        uniform vec2 dyeTexelSize;
-        uniform float dt;
-        uniform float dissipation;
-
-        vec4 bilerp (sampler2D sam, vec2 uv, vec2 tsize) {
-            vec2 st = uv / tsize - 0.5;
-            vec2 iuv = floor(st);
-            vec2 fuv = fract(st);
-
-            vec4 a = texture2D(sam, (iuv + vec2(0.5, 0.5)) * tsize);
-            vec4 b = texture2D(sam, (iuv + vec2(1.5, 0.5)) * tsize);
-            vec4 c = texture2D(sam, (iuv + vec2(0.5, 1.5)) * tsize);
-            vec4 d = texture2D(sam, (iuv + vec2(1.5, 1.5)) * tsize);
-
-            return mix(mix(a, b, fuv.x), mix(c, d, fuv.x), fuv.y);
-        }
-
-        void main () {
-            #ifdef MANUAL_FILTERING
-                vec2 coord = vUv - dt * bilerp(uVelocity, vUv, texelSize).xy * texelSize;
-                vec4 result = bilerp(uSource, coord, dyeTexelSize);
-            #else
-                vec2 coord = vUv - dt * texture2D(uVelocity, vUv).xy * texelSize;
-                vec4 result = texture2D(uSource, coord);
-            #endif
-            float decay = 1.0 + dissipation * dt;
-            gl_FragColor = result / decay;
-        }
-      `,
-      ext.supportLinearFiltering ? null : ['MANUAL_FILTERING']
-    );
-
-    const divergenceShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision mediump float;
-        precision mediump sampler2D;
-        varying highp vec2 vUv;
-        varying highp vec2 vL;
-        varying highp vec2 vR;
-        varying highp vec2 vT;
-        varying highp vec2 vB;
-        uniform sampler2D uVelocity;
-
-        void main () {
-            float L = texture2D(uVelocity, vL).x;
-            float R = texture2D(uVelocity, vR).x;
-            float T = texture2D(uVelocity, vT).y;
-            float B = texture2D(uVelocity, vB).y;
-
-            vec2 C = texture2D(uVelocity, vUv).xy;
-            if (vL.x < 0.0) { L = -C.x; }
-            if (vR.x > 1.0) { R = -C.x; }
-            if (vT.y > 1.0) { T = -C.y; }
-            if (vB.y < 0.0) { B = -C.y; }
-
-            float div = 0.5 * (R - L + T - B);
-            gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
-        }
-      `
-    );
-
-    const curlShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision mediump float;
-        precision mediump sampler2D;
-        varying highp vec2 vUv;
-        varying highp vec2 vL;
-        varying highp vec2 vR;
-        varying highp vec2 vT;
-        varying highp vec2 vB;
-        uniform sampler2D uVelocity;
-
-        void main () {
-            float L = texture2D(uVelocity, vL).y;
-            float R = texture2D(uVelocity, vR).y;
-            float T = texture2D(uVelocity, vT).x;
-            float B = texture2D(uVelocity, vB).x;
-            float vorticity = R - L - T + B;
-            gl_FragColor = vec4(0.5 * vorticity, 0.0, 0.0, 1.0);
-        }
-      `
-    );
-
-    const vorticityShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision highp float;
-        precision highp sampler2D;
-        varying vec2 vUv;
-        varying vec2 vL;
-        varying vec2 vR;
-        varying vec2 vT;
-        varying vec2 vB;
-        uniform sampler2D uVelocity;
-        uniform sampler2D uCurl;
-        uniform float curl;
-        uniform float dt;
-
-        void main () {
-            float L = texture2D(uCurl, vL).x;
-            float R = texture2D(uCurl, vR).x;
-            float T = texture2D(uCurl, vT).x;
-            float B = texture2D(uCurl, vB).x;
-            float C = texture2D(uCurl, vUv).x;
-
-            vec2 force = 0.5 * vec2(abs(T) - abs(B), abs(R) - abs(L));
-            force /= length(force) + 0.0001;
-            force *= curl * C;
-            force.y *= -1.0;
-
-            vec2 velocity = texture2D(uVelocity, vUv).xy;
-            velocity += force * dt;
-            velocity = min(max(velocity, -1000.0), 1000.0);
-            gl_FragColor = vec4(velocity, 0.0, 1.0);
-        }
-      `
-    );
-
-    const pressureShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision mediump float;
-        precision mediump sampler2D;
-        varying highp vec2 vUv;
-        varying highp vec2 vL;
-        varying highp vec2 vR;
-        varying highp vec2 vT;
-        varying highp vec2 vB;
-        uniform sampler2D uPressure;
-        uniform sampler2D uDivergence;
-
-        void main () {
-            float L = texture2D(uPressure, vL).x;
-            float R = texture2D(uPressure, vR).x;
-            float T = texture2D(uPressure, vT).x;
-            float B = texture2D(uPressure, vB).x;
-            float C = texture2D(uPressure, vUv).x;
-            float divergence = texture2D(uDivergence, vUv).x;
-            float pressure = (L + R + B + T - divergence) * 0.25;
-            gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
-        }
-      `
-    );
-
-    const gradientSubtractShader = compileShader(
-      gl.FRAGMENT_SHADER,
-      `
-        precision mediump float;
-        precision mediump sampler2D;
-        varying highp vec2 vUv;
-        varying highp vec2 vL;
-        varying highp vec2 vR;
-        varying highp vec2 vT;
-        varying highp vec2 vB;
-        uniform sampler2D uPressure;
-        uniform sampler2D uVelocity;
-
-        void main () {
-            float L = texture2D(uPressure, vL).x;
-            float R = texture2D(uPressure, vR).x;
-            float T = texture2D(uPressure, vT).x;
-            float B = texture2D(uPressure, vB).x;
-            vec2 velocity = texture2D(uVelocity, vUv).xy;
-            velocity.xy -= vec2(R - L, T - B);
-            gl_FragColor = vec4(velocity, 0.0, 1.0);
-        }
-      `
-    );
-
-    const blit = (() => {
-      gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, -1, 1, 1, 1, 1, -1]), gl.STATIC_DRAW);
-      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
-      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array([0, 1, 2, 0, 2, 3]), gl.STATIC_DRAW);
-      gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
-      gl.enableVertexAttribArray(0);
-      return (target, clear = false) => {
-        if (target == null) {
-          gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
-          gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-        } else {
-          gl.viewport(0, 0, target.width, target.height);
-          gl.bindFramebuffer(gl.FRAMEBUFFER, target.fbo);
-        }
-        if (clear) {
-          gl.clearColor(0.0, 0.0, 0.0, 1.0);
-          gl.clear(gl.COLOR_BUFFER_BIT);
-        }
-        gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
-      };
-    })();
-
-    let dye, velocity, divergence, curl, pressure;
-
-    const copyProgram = new Program(baseVertexShader, copyShader);
-    const clearProgram = new Program(baseVertexShader, clearShader);
-    const splatProgram = new Program(baseVertexShader, splatShader);
-    const advectionProgram = new Program(baseVertexShader, advectionShader);
-    const divergenceProgram = new Program(baseVertexShader, divergenceShader);
-    const curlProgram = new Program(baseVertexShader, curlShader);
-    const vorticityProgram = new Program(baseVertexShader, vorticityShader);
-    const pressureProgram = new Program(baseVertexShader, pressureShader);
-    const gradienSubtractProgram = new Program(baseVertexShader, gradientSubtractShader);
-    const displayMaterial = new Material(baseVertexShader, displayShaderSource);
-
-    function initFramebuffers() {
-      let simRes = getResolution(config.SIM_RESOLUTION);
-      let dyeRes = getResolution(config.DYE_RESOLUTION);
-      const texType = ext.halfFloatTexType;
-      const rgba = ext.formatRGBA;
-      const rg = ext.formatRG;
-      const r = ext.formatR;
-      const filtering = ext.supportLinearFiltering ? gl.LINEAR : gl.NEAREST;
-      gl.disable(gl.BLEND);
-
-      if (!dye)
-        dye = createDoubleFBO(dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, texType, filtering);
-      else
-        dye = resizeDoubleFBO(dye, dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, texType, filtering);
-
-      if (!velocity)
-        velocity = createDoubleFBO(simRes.width, simRes.height, rg.internalFormat, rg.format, texType, filtering);
-      else
-        velocity = resizeDoubleFBO(
-          velocity,
-          simRes.width,
-          simRes.height,
-          rg.internalFormat,
-          rg.format,
-          texType,
-          filtering
-        );
-
-      divergence = createFBO(simRes.width, simRes.height, r.internalFormat, r.format, texType, gl.NEAREST);
-      curl = createFBO(simRes.width, simRes.height, r.internalFormat, r.format, texType, gl.NEAREST);
-      pressure = createDoubleFBO(simRes.width, simRes.height, r.internalFormat, r.format, texType, gl.NEAREST);
-    }
-
-    function createFBO(w, h, internalFormat, format, type, param) {
-      gl.activeTexture(gl.TEXTURE0);
-      let texture = gl.createTexture();
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, param);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, param);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texImage2D(gl.TEXTURE_2D, 0, internalFormat, w, h, 0, format, type, null);
-
-      let fbo = gl.createFramebuffer();
-      gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
-      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
-      gl.viewport(0, 0, w, h);
-      gl.clear(gl.COLOR_BUFFER_BIT);
-
-      let texelSizeX = 1.0 / w;
-      let texelSizeY = 1.0 / h;
-      return {
-        texture,
-        fbo,
-        width: w,
-        height: h,
-        texelSizeX,
-        texelSizeY,
-        attach(id) {
-          gl.activeTexture(gl.TEXTURE0 + id);
-          gl.bindTexture(gl.TEXTURE_2D, texture);
-          return id;
-        }
-      };
-    }
-
-    function createDoubleFBO(w, h, internalFormat, format, type, param) {
-      let fbo1 = createFBO(w, h, internalFormat, format, type, param);
-      let fbo2 = createFBO(w, h, internalFormat, format, type, param);
-      return {
-        width: w,
-        height: h,
-        texelSizeX: fbo1.texelSizeX,
-        texelSizeY: fbo1.texelSizeY,
-        get read() {
-          return fbo1;
-        },
-        set read(value) {
-          fbo1 = value;
-        },
-        get write() {
-          return fbo2;
-        },
-        set write(value) {
-          fbo2 = value;
-        },
-        swap() {
-          let temp = fbo1;
-          fbo1 = fbo2;
-          fbo2 = temp;
-        }
-      };
-    }
-
-    function resizeFBO(target, w, h, internalFormat, format, type, param) {
-      let newFBO = createFBO(w, h, internalFormat, format, type, param);
-      copyProgram.bind();
-      gl.uniform1i(copyProgram.uniforms.uTexture, target.attach(0));
-      blit(newFBO);
-      return newFBO;
-    }
-
-    function resizeDoubleFBO(target, w, h, internalFormat, format, type, param) {
-      if (target.width === w && target.height === h) return target;
-      target.read = resizeFBO(target.read, w, h, internalFormat, format, type, param);
-      target.write = createFBO(w, h, internalFormat, format, type, param);
-      target.width = w;
-      target.height = h;
-      target.texelSizeX = 1.0 / w;
-      target.texelSizeY = 1.0 / h;
-      return target;
-    }
-
-    function updateKeywords() {
-      let displayKeywords = [];
-      if (config.SHADING) displayKeywords.push('SHADING');
-      displayMaterial.setKeywords(displayKeywords);
-    }
-
-    updateKeywords();
-    initFramebuffers();
-    let lastUpdateTime = Date.now();
-    let colorUpdateTimer = 0.0;
-
-    function updateFrame() {
-      const dt = calcDeltaTime();
-      if (resizeCanvas()) initFramebuffers();
-      updateColors(dt);
-      applyInputs();
-      step(dt);
-      render(null);
-      requestAnimationFrame(updateFrame);
-    }
-
-    function calcDeltaTime() {
-      let now = Date.now();
-      let dt = (now - lastUpdateTime) / 1000;
-      dt = Math.min(dt, 0.016666);
-      lastUpdateTime = now;
-      return dt;
-    }
-
-    function resizeCanvas() {
-      let width = scaleByPixelRatio(canvas.clientWidth);
-      let height = scaleByPixelRatio(canvas.clientHeight);
-      if (canvas.width !== width || canvas.height !== height) {
-        canvas.width = width;
-        canvas.height = height;
-        return true;
-      }
-      return false;
-    }
-
-    function updateColors(dt) {
-      colorUpdateTimer += dt * config.COLOR_UPDATE_SPEED;
-      if (colorUpdateTimer >= 1) {
-        colorUpdateTimer = wrap(colorUpdateTimer, 0, 1);
-        pointers.forEach(p => {
-          p.color = generateColor();
-        });
-      }
-    }
-
-    function applyInputs() {
-      pointers.forEach(p => {
-        if (p.moved) {
-          p.moved = false;
-          splatPointer(p);
-        }
-      });
-    }
-
-    function step(dt) {
-      gl.disable(gl.BLEND);
-      curlProgram.bind();
-      gl.uniform2f(curlProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
-      gl.uniform1i(curlProgram.uniforms.uVelocity, velocity.read.attach(0));
-      blit(curl);
-
-      vorticityProgram.bind();
-      gl.uniform2f(vorticityProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
-      gl.uniform1i(vorticityProgram.uniforms.uVelocity, velocity.read.attach(0));
-      gl.uniform1i(vorticityProgram.uniforms.uCurl, curl.attach(1));
-      gl.uniform1f(vorticityProgram.uniforms.curl, config.CURL);
-      gl.uniform1f(vorticityProgram.uniforms.dt, dt);
-      blit(velocity.write);
-      velocity.swap();
-
-      divergenceProgram.bind();
-      gl.uniform2f(divergenceProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
-      gl.uniform1i(divergenceProgram.uniforms.uVelocity, velocity.read.attach(0));
-      blit(divergence);
-
-      clearProgram.bind();
-      gl.uniform1i(clearProgram.uniforms.uTexture, pressure.read.attach(0));
-      gl.uniform1f(clearProgram.uniforms.value, config.PRESSURE);
-      blit(pressure.write);
-      pressure.swap();
-
-      pressureProgram.bind();
-      gl.uniform2f(pressureProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
-      gl.uniform1i(pressureProgram.uniforms.uDivergence, divergence.attach(0));
-      for (let i = 0; i < config.PRESSURE_ITERATIONS; i++) {
-        gl.uniform1i(pressureProgram.uniforms.uPressure, pressure.read.attach(1));
-        blit(pressure.write);
-        pressure.swap();
-      }
-
-      gradienSubtractProgram.bind();
-      gl.uniform2f(gradienSubtractProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
-      gl.uniform1i(gradienSubtractProgram.uniforms.uPressure, pressure.read.attach(0));
-      gl.uniform1i(gradienSubtractProgram.uniforms.uVelocity, velocity.read.attach(1));
-      blit(velocity.write);
-      velocity.swap();
-
-      advectionProgram.bind();
-      gl.uniform2f(advectionProgram.uniforms.texelSize, velocity.texelSizeX, velocity.texelSizeY);
-      if (!ext.supportLinearFiltering)
-        gl.uniform2f(advectionProgram.uniforms.dyeTexelSize, velocity.texelSizeX, velocity.texelSizeY);
-      let velocityId = velocity.read.attach(0);
-      gl.uniform1i(advectionProgram.uniforms.uVelocity, velocityId);
-      gl.uniform1i(advectionProgram.uniforms.uSource, velocityId);
-      gl.uniform1f(advectionProgram.uniforms.dt, dt);
-      gl.uniform1f(advectionProgram.uniforms.dissipation, config.VELOCITY_DISSIPATION);
-      blit(velocity.write);
-      velocity.swap();
-
-      if (!ext.supportLinearFiltering)
-        gl.uniform2f(advectionProgram.uniforms.dyeTexelSize, dye.texelSizeX, dye.texelSizeY);
-      gl.uniform1i(advectionProgram.uniforms.uVelocity, velocity.read.attach(0));
-      gl.uniform1i(advectionProgram.uniforms.uSource, dye.read.attach(1));
-      gl.uniform1f(advectionProgram.uniforms.dissipation, config.DENSITY_DISSIPATION);
-      blit(dye.write);
-      dye.swap();
-    }
-
-    function render(target) {
-      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-      gl.enable(gl.BLEND);
-      drawDisplay(target);
-    }
-
-    function drawDisplay(target) {
-      let width = target == null ? gl.drawingBufferWidth : target.width;
-      let height = target == null ? gl.drawingBufferHeight : target.height;
-      displayMaterial.bind();
-      if (config.SHADING) gl.uniform2f(displayMaterial.uniforms.texelSize, 1.0 / width, 1.0 / height);
-      gl.uniform1i(displayMaterial.uniforms.uTexture, dye.read.attach(0));
-      blit(target);
-    }
-
-    function splatPointer(pointer) {
-      let dx = pointer.deltaX * config.SPLAT_FORCE;
-      let dy = pointer.deltaY * config.SPLAT_FORCE;
-      splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color);
-    }
-
-    function clickSplat(pointer) {
-      const color = generateColor();
-      color.r *= 10.0;
-      color.g *= 10.0;
-      color.b *= 10.0;
-      let dx = 10 * (Math.random() - 0.5);
-      let dy = 30 * (Math.random() - 0.5);
-      splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
-    }
-
-    function splat(x, y, dx, dy, color) {
-      splatProgram.bind();
-      gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0));
-      gl.uniform1f(splatProgram.uniforms.aspectRatio, canvas.width / canvas.height);
-      gl.uniform2f(splatProgram.uniforms.point, x, y);
-      gl.uniform3f(splatProgram.uniforms.color, dx, dy, 0.0);
-      gl.uniform1f(splatProgram.uniforms.radius, correctRadius(config.SPLAT_RADIUS / 100.0));
-      blit(velocity.write);
-      velocity.swap();
-
-      gl.uniform1i(splatProgram.uniforms.uTarget, dye.read.attach(0));
-      gl.uniform3f(splatProgram.uniforms.color, color.r, color.g, color.b);
-      blit(dye.write);
-      dye.swap();
-    }
-
-    function correctRadius(radius) {
-      let aspectRatio = canvas.width / canvas.height;
-      if (aspectRatio > 1) radius *= aspectRatio;
-      return radius;
-    }
-
-    function updatePointerDownData(pointer, id, posX, posY) {
-      pointer.id = id;
-      pointer.down = true;
-      pointer.moved = false;
-      pointer.texcoordX = posX / canvas.width;
-      pointer.texcoordY = 1.0 - posY / canvas.height;
-      pointer.prevTexcoordX = pointer.texcoordX;
-      pointer.prevTexcoordY = pointer.texcoordY;
-      pointer.deltaX = 0;
-      pointer.deltaY = 0;
-      pointer.color = generateColor();
-    }
-
-    function updatePointerMoveData(pointer, posX, posY, color) {
-      pointer.prevTexcoordX = pointer.texcoordX;
-      pointer.prevTexcoordY = pointer.texcoordY;
-      pointer.texcoordX = posX / canvas.width;
-      pointer.texcoordY = 1.0 - posY / canvas.height;
-      pointer.deltaX = correctDeltaX(pointer.texcoordX - pointer.prevTexcoordX);
-      pointer.deltaY = correctDeltaY(pointer.texcoordY - pointer.prevTexcoordY);
-      pointer.moved = Math.abs(pointer.deltaX) > 0 || Math.abs(pointer.deltaY) > 0;
-      pointer.color = color;
-    }
-
-    function updatePointerUpData(pointer) {
-      pointer.down = false;
-    }
-
-    function correctDeltaX(delta) {
-      let aspectRatio = canvas.width / canvas.height;
-      if (aspectRatio < 1) delta *= aspectRatio;
-      return delta;
-    }
-
-    function correctDeltaY(delta) {
-      let aspectRatio = canvas.width / canvas.height;
-      if (aspectRatio > 1) delta /= aspectRatio;
-      return delta;
-    }
-
-    function generateColor() {
-      let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
-      c.b *= 0.15;
-      return c;
-    }
-
-    function HSVtoRGB(h, s, v) {
-      let r, g, b, i, f, p, q, t;
-      i = Math.floor(h * 6);
-      f = h * 6 - i;
-      p = v * (1 - s);
-      q = v * (1 - f * s);
-      t = v * (1 - (1 - f) * s);
-      switch (i % 6) {
-        case 0:
-          r = v;
-          g = t;
-          b = p;
-          break;
-        case 1:
-          r = q;
-          g = v;
-          b = p;
-          break;
-        case 2:
-          r = p;
-          g = v;
-          b = t;
-          break;
-        case 3:
-          r = p;
-          g = q;
-          b = v;
-          break;
-        case 4:
-          r = t;
-          g = p;
-          b = v;
-          break;
-        case 5:
-          r = v;
-          g = p;
-          b = q;
-          break;
-        default:
-          break;
-      }
-      return { r, g, b };
-    }
-
-    function wrap(value, min, max) {
-      const range = max - min;
-      if (range === 0) return min;
-      return ((value - min) % range) + min;
-    }
-
-    function getResolution(resolution) {
-      let aspectRatio = gl.drawingBufferWidth / gl.drawingBufferHeight;
-      if (aspectRatio < 1) aspectRatio = 1.0 / aspectRatio;
-      const min = Math.round(resolution);
-      const max = Math.round(resolution * aspectRatio);
-      if (gl.drawingBufferWidth > gl.drawingBufferHeight) return { width: max, height: min };
-      else return { width: min, height: max };
-    }
-
-    function scaleByPixelRatio(input) {
-      const pixelRatio = window.devicePixelRatio || 1;
-      return Math.floor(input * pixelRatio);
-    }
-
-    function hashCode(s) {
-      if (s.length === 0) return 0;
-      let hash = 0;
-      for (let i = 0; i < s.length; i++) {
-        hash = (hash << 5) - hash + s.charCodeAt(i);
-        hash |= 0;
-      }
-      return hash;
-    }
-
-    window.addEventListener('mousedown', e => {
-      let pointer = pointers[0];
-      let posX = scaleByPixelRatio(e.clientX);
-      let posY = scaleByPixelRatio(e.clientY);
-      updatePointerDownData(pointer, -1, posX, posY);
-      clickSplat(pointer);
-    });
-
-    document.body.addEventListener('mousemove', function handleFirstMouseMove(e) {
-      let pointer = pointers[0];
-      let posX = scaleByPixelRatio(e.clientX);
-      let posY = scaleByPixelRatio(e.clientY);
-      let color = generateColor();
-      updateFrame();
-      updatePointerMoveData(pointer, posX, posY, color);
-      document.body.removeEventListener('mousemove', handleFirstMouseMove);
-    });
-
-    window.addEventListener('mousemove', e => {
-      let pointer = pointers[0];
-      let posX = scaleByPixelRatio(e.clientX);
-      let posY = scaleByPixelRatio(e.clientY);
-      let color = pointer.color;
-      updatePointerMoveData(pointer, posX, posY, color);
-    });
-
-    document.body.addEventListener('touchstart', function handleFirstTouchStart(e) {
-      const touches = e.targetTouches;
-      let pointer = pointers[0];
-      for (let i = 0; i < touches.length; i++) {
-        let posX = scaleByPixelRatio(touches[i].clientX);
-        let posY = scaleByPixelRatio(touches[i].clientY);
-        updateFrame();
-        updatePointerDownData(pointer, touches[i].identifier, posX, posY);
-      }
-      document.body.removeEventListener('touchstart', handleFirstTouchStart);
-    });
-
-    window.addEventListener('touchstart', e => {
-      const touches = e.targetTouches;
-      let pointer = pointers[0];
-      for (let i = 0; i < touches.length; i++) {
-        let posX = scaleByPixelRatio(touches[i].clientX);
-        let posY = scaleByPixelRatio(touches[i].clientY);
-        updatePointerDownData(pointer, touches[i].identifier, posX, posY);
-      }
-    });
-
-    window.addEventListener(
-      'touchmove',
-      e => {
-        const touches = e.targetTouches;
-        let pointer = pointers[0];
-        for (let i = 0; i < touches.length; i++) {
-          let posX = scaleByPixelRatio(touches[i].clientX);
-          let posY = scaleByPixelRatio(touches[i].clientY);
-          updatePointerMoveData(pointer, posX, posY, pointer.color);
-        }
-      },
-      false
-    );
-
-    window.addEventListener('touchend', e => {
-      const touches = e.changedTouches;
-      let pointer = pointers[0];
-      for (let i = 0; i < touches.length; i++) {
-        updatePointerUpData(pointer);
-      }
-    });
-
-    updateFrame();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    SIM_RESOLUTION,
-    DYE_RESOLUTION,
-    CAPTURE_RESOLUTION,
-    DENSITY_DISSIPATION,
-    VELOCITY_DISSIPATION,
-    PRESSURE,
-    PRESSURE_ITERATIONS,
-    CURL,
-    SPLAT_RADIUS,
-    SPLAT_FORCE,
-    SHADING,
-    COLOR_UPDATE_SPEED,
-    BACK_COLOR,
-    TRANSPARENT
-  ]);
-
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: 50,
-        pointerEvents: 'none',
-        width: '100%',
-        height: '100%'
-      }}
-    >
-      <canvas
-        ref={canvasRef}
-        id="fluid"
-        style={{
-          width: '100vw',
-          height: '100vh',
-          display: 'block'
-        }}
-      />
-    </div>
-  );
-}
-
-export default SplashCursor;
-</file_artifact>
-
 <file path="context/v2v/audio-transcripts/1-on-1-training/transcript-1.md">
 Transcribed with Cockatoo
 
@@ -34967,930 +32966,6 @@ Um, so, um, so it's just going to be proof that we will, I will use your, see, I
 You know what I'm saying? No, me too, me too. I'm in the same boat you are, man, you know? But what protects me is the knowledge of the script. The tool. Yeah, you got to be, you know, we're not recording this, are we? 
 
 Just my own phone. I can stop at this point. Yeah. Yeah.
-
-
-Transcribed with Cockatoo
-</file_artifact>
-
-<file path="context/v2v/audio-transcripts/1-on-1-training/transcript-10.md">
-Transcribed with Cockatoo
-
-
-that anything was done to this after the image was taken. The first time he mentioned it to me, he said, I've got this photograph. I wonder if you could copy it for me. I'm going up to Scotland to get it. Fitted with the story, it substantiates the narrative that's been told about it. The grain seems very smooth over the edges of the object. There's no sign that anything was done to this after the image was taken. 
-
-At the RVF, saved this for 30 plus years. 
-
-Yes. 
-
-Even after retirement, he took it with him when he left the office in 2000. He's kind of a hero. 
-
-He is a real hero. 
-
-We would know so less about this story now if it wasn't for Craig doing what he did. 
-
-This was a good photo. It was twofold, really. Firstly, it was daylight. But secondly, far more importantly, there were features of the ground. And what that meant, of course, is that one can triangulate, one can start to make detailed calculations about the distance of the object from the camera, the height above the ground, et cetera. Everyone was very impressed with this and said, no, it's a solid, structured, real craft. 
-
-Where's the fuselage? Where are the engines? How does this thing fly? And what we were interested in trying to do from the images is to try and almost reverse engineer an idea about what kind of propulsion system was involved here. And that, we hoped, would give us a clue as to who was operating this. 
-
-The last thing we wanted was an open discussion about these up -close and personal daylight images. of a huge unknown craft of some type with military aircraft in the background. Each and at a time when a military aircraft was seen, you would find out in an instant what aircraft it was, what squadron it came from, instantly be able to brief them. Whatever reason, the Ministry of Defense line on this is that craft was not traced, were not interviewed. 
-
-The overwhelming consensus is that the military plane seen in the photo is a Harrier jump jet, but neither records nor a pilot's name has been found. 
-
-So we've got three possible scenarios. One, hoax. Two, secret stealth military aircraft belonging to the United States or some other foreign power. Or three, which would fall into the category of other, which would imply originating from a non -human intelligence. 
-
-during my posting on the UFO desk. I went to a briefing, a more general briefing about UAP, and this photo was brought out, and the briefer, who was in the intelligence community, said, this photo here, he said, and he started gesticulating, and he said, you know, it's not the United States. He said, it's not Russia. He pointed straight up. We looked at his finger, and we looked at the ceiling, and nothing further was said. 
-
-Thirty -four years after their disappearance, A co -worker at the hotel, Richard Greave, has broken his silence. A few days after taking the photos, the witnesses and their co -workers were on a five -minute cigarette break when they had an unexpected visit. The lights stayed on, the window wiper stayed on, private glass in the back, driver in the front. He never got out of his car once, but the two people in the back did. So that was it. cigarette breaks over, go back inside, we need to speak to your friends. 
-
-Richard and the other chefs watched through a nearby hotel window as the two strangers confronted their co -workers in the parking lot. Spooks, they were men in black, and they stood outside in the pissing rain, speaking for roughly 10 minutes. The men drove off, two witnesses came back inside. 
-
-Came in the back door, ghost. Something happened, something, out the car. I heard the absolute crap out of them. Picture a UFO and the Americans are after us. The same chefs that left the same kitchen I was working in with them. 
-
-According to their co -worker, Richard, two witnesses started to drink heavily, missed shifts, slept in their cars at work, and after four weeks, they vanished without a trace. 
-
-Chefs don't just disappear out of the kitchen for 34 years and not have no other job. Do you hear what I'm saying? Just don't fuck off and not work ever again. Where are they? 
-
-Washington, D . C. , filmmakers arrive at NASA headquarters for a press conference where the head of NASA will announce the results of their first year -long UAP study. 
-
-The announcement was made during a news conference on findings from NASA's headquarters in Washington, D . 
-
-C. 
-
-We, NASA, have taken for the first time concrete action to seriously look into UAP. 
-
-UAP are one of our planet's greatest mysteries. 
-
-We looked at NASA's assets. 
-
-They typically do not have the resolution needed for UAP events. 
-
-They relied on unclassified data only. 
-
-The NASA independent study team, based on our current findings and methodology, that we find no evidence to suggest that UAP have an extraterrestrial origin. Most events are explainable as planes, balloons, drones, satellites, aircraft, seeing the sun glinting off of them. 
-
-weather phenomenon and instrument features. 
-
-We don't know what these UAP are, but we're going to try to find out. You said at the beginning of the meeting that NASA will be transparent. Well, a month and a half ago, Mr. David Grush said under oath in Congress that the U . S. government is in possession of UAPs and extraterrestrial life. Do you believe what Mr. David Grush said or is he lying? 
-
-if I recall having seen this on the nightly news, was that he had a friend that knew where a warehouse was that had FOs. 
-
-locked up in a warehouse. 
-
-I served at the NRO operations center on the director's briefing staff, which included the coordination of the presidential daily brief in supporting a variety of contingency operations, which I was the reserve intelligence division chief backup. 
-
-For the first time in history, an intelligence officer with top level security clearances testified under oath. that the U . S. 
-
-government has definitive proof that we're not alone. 
-
-Mr. Rush? Chairman, Ranking Members, and Congressmen, my name is David Charles Rush. 
-
-I was an intelligence officer for 14 years, both in the U . 
-
-S. 
-
-Mr. Rush, a decorated combat veteran, had been tasked by multiple agencies to look specifically into classified UAP evidence. 
-
-I was my agency's co -lead in Unidentified Anomalous Phenomena and Transmedium Object Analysis, as well as reporting to the UAP Task Force. 
-
-The Inspector General deemed his whistleblower claim both credible and urgent. 
-
-Mr. Grush, in the last couple of years, have you had incidences that have caused you to be in fear for your life for addressing these issues? 
-
-Yes, personally. Upon discovering a rogue UAP program, Mr. Brush felt going public was his only option. 
-
-To put in perspective, if they were really not scared about this information coming out, why would someone be intimidated like that? 
-
-Has the U . 
-
-S. 
-
-government become aware of actual evidence of extraterrestrial, otherwise unexplained forms of intelligence? 
-
-I was informed in the course of my official duties of a multi -decade UAP crash retrieval and reverse engineering program. I made the decision, based on the data I collected, to report this information to my superior superiors and multiple inspectors general, and in effect becoming a whistleblower. 
-
-What level of security clearance is required to fully access these programs? 
-
-You know, TSSCI clearance and meets the eligibility criteria. The access adjudicative authority should be able to grant you access. Mr. Burchard, if you'll yield. 
-
-So, just to be put a fine point on that. 
-
-He knows all this information, but by law he can't tell it to us unless we're in a secure environment. 
-
-It's something I can't discuss in a public setting. 
-
-Mr. Grish, finally, do you believe that our government is in possession of UAPs? 
-
-Absolutely, based on interviewing over 40 witnesses over four years. And where? I know the exact locations, and those locations were provided to the Inspector General, and some of which to the intelligence committees. 
-
-I actually had the people with the first -hand knowledge provide a protected disclosure to the Inspector General. 
-
-A former staff member for the Senate Armed Services Committee was present at meetings with current and former government and contractor personnel claiming first -hand knowledge of involvement in crash recovery operations, intelligence operations, and reverse engineering programs. 
-
-They have or have had very high -level security clearances. They appear to be rational and believable. 
-
-You're telling me People have come forward behind the scenes. 
-
-claiming first -hand knowledge of non -human origins. 
-
-That's correct, they have. We have, let's say sources, we have individuals, people, who have asserted not only that there have been crashes, but there have been crash retrievals, and that there is a crash retrieval effort that has spanned a significant period of time since the end of the Second World War. 
-
-And so it does deserve to be looked at seriously, not dismissed. 
-
-I just kept trying to keep an open mind. And I really believe it's all about the data. I'm very empirical. And I'm not going to, say, take a conclusive position on this until there is absolute conclusive proof. But at this point, together with some other sources, I started to think, oh my god, it's really true. 2020. 
-
-Former Deputy Assistant Secretary of Defense for Intelligence Christopher Mellon engaged in confidential correspondence with a high -level government official with credible access, who described in considerable detail aspects of an alleged UAP recovery program. After he cleared it for release, Mellon provided an unredacted copy with names, including that of the gatekeeper of the program to select members of Congress. I was flabbergasted when I got this message. This is from somebody that I knew, a senior government official with appropriate access telling me that UAP have landed and been recovered and there is a formal government program and he had encountered it, discovered it, and was seeking to be read into it. And I are making huge progress getting into the crash retrieval program. 
-
-So it's not just one individual, it's two who are involved in winning. He plans to meet with you at some point. The Senate Armed Services and Intelligence Committees would be 
-
-It's not you, it's me, so the hell am I doing? 
-
-is on display including you and i feel every day it's just the same stuck in the loop i need some variety i'm sick of this anxiety i'm sick of this society they make us feel alone we compare ourselves to others but we all got different mothers we were raised in different structures so we're different there's no one to judge with afflictions. I look at what's in front of us on the other things. I know that's something that could challenge me. For my classes, push through all the constants. Plus, I'm ambitious and I'm restless, yeah. 
-
-Was an apprentice, but possessed a different engine. So I asked a lot of questions, and I learned a lot of things, and I worked on my direction, yeah. We don't hide or die. Through the rise of enchantment. We don't strive to make progress. We don't hide from the pride when we train. 
-
-We don't rise of enchantment. We don't hide or die. Through the rise of enchantment. 
-
-if they found out what we now know. Dealing with the recovered UAP crashed and did in Kingman Arizona 50s. Also know who recovers landed or crashed UAPs under what authorities. We know the management structure and the security control systems and ownership of the program. We know a still highly classified memo by the Secretary of the Air Force in the 50s is still in effect to maintain the cover. 
-
-We also know who the Air Force gatekeeper is, and he names him. The gatekeeper is the individual who manages access to the program. And I know someone who spoke to the Air Force gatekeeper, and, um, The Air Force gatekeeper purportedly neither confirmed nor denied. Air Force Master Sergeant Jason Sands has secretly testified to the Senate and House Intelligence Committees. This is his first time going on camera to discuss the unclassified portion of those meetings. Could you and a handful of others prove to our government, our elected officials, that we are in possession of off -world vehicles? 
-
-Yes. 
-
-Master Sergeant Sands is willing to publicly testify under oath to Congress that he can produce the classified details needed to verify the following claims, provided he's given immunity. 
-
-I'm a retired Air Force Master Sergeant. Part of my career in the 1990s, I worked three years at the Air... and the programs which included numerous sites around the United States and I was one of the red team members that would go out and do telecommunications assessments to check for intelligence leaks and counterintel type issues at those locations that were involved in the legacy program. 
-
-The term legacy program means endeavors to collect, exploit, or revive -engineer technologies of unknown origin, or examine biological evidence of living or deceased non -human intelligence. 
-
-Do you have the names of the programs? 
-
-I gave it all to them. 
-
-You have the names of the people involved with the programs? 
-
-Yes. 
-
-This definition appears verbatim in the UAP Disclosure Act authorized by Senators Schumer, Rounds, Rubio, and Gillibrand that passed the Senate in 2023. 
-
-Why now? I feel like it is the time where I've seen the interest in the Congress. I've seen the interest with the UFO programs, and including Aero, the talk of that, standing up and everything. I kind of think in my head, is this the time to do this? Because I'd seen so many times that it failed. Decade after decade of, you know, somebody trying to come forward, pointing fingers at Congress, pointing fingers at everybody, pointing fingers at whoever else, and it just was very adversarial. 
-
-I felt comfortable enough without getting shot to go walk on air and show them exactly what I told them in the interview. I would go out there and I would drive them right up to the gate. As long as I knew they had the authority to walk into that facility with me. This is the hangar I told you about. There's the radar over there. There's the weather station I was taken over. 
-
-Here's where me and the commander went around the whole base. Show them all those kinds of things. And that's where we're kind of headed with all this. Get the fact that the technology, if you could separate that out, call that national security, that the technologies they're working on, that has some reason to stay classified. But the revelation that there's other life out there. that should be something for everybody. 
-
-That's the way I feel. Staffers have confirmed the credentials of this witness to the filmmakers. He is who he says he is. 
-
-He was stationed where he said he was, and he's confirmed actual names of classified programs. It's a concern that there's something locked up, classified, and that is not being opened. or is he lying? 
-
-Whatever he said, where's the evidence, is my response. 
-
-I can give you a specific cooperative and hostile witness list. 
-
-And we could get that in the SCIF if we were allowed to get in a SCIF with you, would that be probably? 
-
-I can't discuss that publicly, but I did provide that information both to the intel committees and the Inspector General. 
-
-He also said he had another friend that said that he had parts Do we have the bodies of the pilots who piloted this craft? 
-
-As I've stated publicly already in my News Nation interview, biologics came with some of these recoveries, yeah. 
-
-Do you believe our government has made contact with intelligent extraterrestrials? 
-
-Something I can't discuss in a public setting. at Nellis Test Range in Nevada in the winter of 1994. U . 
-
-S. Air Force Master Sergeant Jason Sands was stationed at the nearby Nellis Air Base with the 67th Intelligence Group at the time. This previous week, the UFO came on the range, flew right by what we called the schoolhouse, because that's where we did the training, and it went down into the valley, continued on. So they have actual video of it, and that's what you see out there in the public, this Nellis Range UFO. The system that they use also uses a type of radar to lock on to aircraft as they come into view. So this is what recorded the UFO also. 
-
-The public also leaked the names of those individuals. A lot of them were excited. Some didn't know what it was. Some were saying it was a UFO for sure. Other people were like, no, it had to be some kind of messed up looking helicopter. 
-
-Other people were like, I just don't know. 
-
-I just don't know. But everybody was excited about it. 
-
-Days later, Sergeant Sands was part of a convoy overseeing a training exercise. He was in the lead vehicle heading toward the center of Nellis Range near Quartz Mountain. Cuts right through whatever you're wearing. First in the passenger seat and a young lady off to my right. There's this guy on my left, looks like he's wearing a uniform like ours. But I also notice his skin tone is very white to blue. 
-
-Running funny too, it's like every step he takes, it looks like he's gonna fall over. Needs help, we need to stop. He must be suffering from hypothermia because he does have this bluish tint to his skin. 
-
-I'm thinking, this guy needs medical help, I need to get my butt out of the car and you know, before he falls down and starts to die. 
-
-And I'm thinking... 
-
-In the distance, Sergeant Sands noticed a strange landed craft, resembling a helicopter, but he was more focused on the individual in need of help. 
-
-And then as we slow down and we approach the part where he's only just a few feet away... Is it serious? It's always serious when credentials are compromised. That's how they get in. 
-
-Now excuse me, I've got to shut the door. 
-
-Make sure your form is perfect when doing weighted sit -ups to build your core strength. There's one more thing where data is money. 
-
-Thank you. Thank you. 
-
-Bye. you idiots.
-
-
-Transcribed with Cockatoo
-</file_artifact>
-
-<file path="context/v2v/audio-transcripts/1-on-1-training/transcript-11.md">
-Transcribed with Cockatoo
-
-
-Yeah So yeah, give me a bit about your background tell me a bit about where you're from that way I know who I'm talking to and I can talk to you rather than at you so So basically, let's see this. Basically, so actually just I have it downloaded and then if I open it that way. 
-
-Okay, cool. 
-
-Okay, so three years ago, I was working at Palo Alto Networks. I was initially hired to be a customer success engineer and because I had just gotten my bachelor's in cloud computing and I was hired in a I'm with 18 other academy members, and we were put in the Prisma Cloud Academy, which is like a six -week training course at Palo Alto, their internal enablement team put together. And so I was the top student in that academy. And then the team that was putting the training together actually offered me a position on that team. So I got a full, yeah, I got a full, I got, I've worked hard. I got a full -time, I earned a full -time position at Palo Alto Networks, kind of my first, first stint in cybersecurity. 
-
-And that was about four years ago. And I supported Prism Cloud and XOR. And near the end of me working there, Chad GPT came out. And, you know, technical enablement. At the time, I knew exactly how it could be helpful for learning and education. I was in education at the time. 
-
-And I was in technology. So technical enablement. this is the, what's the most technically enabling tool, the freaking AI, right? That can answer all those questions. Yeah, and that's another thing, that's another thing, the fear was there as well, there was fear, but for me it was fear of missing out, because I felt like it was gonna be a big wave, it was big, I didn't feel like it, I knew it was gonna be a big wave. Actually, hold on, let me click, let me see here. 
-
-There should be a button here I can click, yeah. 
-
-Okay, hi, yeah. 
-
-So I basically heard two stories. I heard people were starting companies with AI, which I understood that to mean they were basically getting all the questions answered that they needed, like all the hurdles, all the legal issues, everything, just all the paperwork. And then people were also writing code with AI. 
-
-Wow. 
-
-If it can, because I asked the question, what's the most valuable thing that AI can write, if it can write? And the answer to me was code, because code is, objectionable, it's not subjective, like an essay is. You can write me the perfect essay, I can find you some editor who will find something to criticize about it. Versus code, it's functional, you can write a perfect function versus a not so efficient function, but all things being equal, it either does the job or doesn't do the job. And so you can verify, it's objective, verifiably objective. And so that's what I set out to do back then. 
-
-With GPT 3 .5, I created a Slackbot. I created a Slackbot. I basically created a multiplayer GPT. something that still doesn't quite exist yet. Because in Slack, you know, anyone can start a thread and then anyone can see the thread. And then so anyone can also read what the AI says to you and then can also reply and ask. 
-
-So it's like multiplayer, right? And you can customize for each channel it's in. Like I made a sales enablement channel. And so I gave it a persona with the channel's system message, adopt the persona of sales enablement specialist inside our security field, focusing on managed security services providers and palliative networks products, your audience is a team of sales professionals, blah, blah, blah. Prospective client is asking, why did you go with our solution over Zscaler? Sure, David, here are some common questions we encounter. 
-
-And then some talking points for the sales enablement specialist, for answering the customer's question. 
-
-Yeah. 
-
-Absolutely, absolutely. Yeah, and I'll tell you exactly how it's going to work. It's just missing a few more pieces, so glasses. Imagine when, let's go with hair stylists. I use this analogy all the time. Very soon, everyone's going to have those glasses that have a camera in them, and people are going to be basically live streaming like to Twitch their entire lives, basically. 
-
-And there'll be a viewership of two. It'll be everyone watching their own stream and then their AI. it as well. Then what's going to happen is that's when you're going to get hours and hours and hours of cutting hair, a hairstylist cutting hair. Then he's going to start annotating that data. Or not even just annotating, he's going to have that data as raw data. 
-
-He's a good hairstylist, so it's recorded how to cut a good haircut, right? Bada bing, bada boom, that's training data that we didn't have before we had the recording platform. So you can't skip the step. You can't have an AI that can help you learn to cut hair with your glasses, you know, augmented reality superimposed like the right angle or the right clipper or detecting that you've picked up the wrong clipper or the wrong size and saying, uh -uh, they've asked for this haircut and this is the right one you're supposed to be using. That's in situ learning. That's not possible without the training data set and you can't get the training data set until you have the need for it. 
-
-Okay, so and here's an example of I also created a RAG system before I even knew the term RAG. Because you see here I'm adding a knowledge base file. I'm adding the administrator guide for XIM and it turns it into an embedding. And I actually store the embedding in the Slack channel. So Slack instantly became my vector database. Um, um, but, uh, so I asked, this is the reset of the GIF. 
-
-So what is Cortex XIM? And XIM was a software that came out in January of 2022. And the cutoff date for training was December, 2021. And so when you ask about XIM, it's like, oh, XOR it's, uh, and I'm like, no, not XOR, XIM. It's a new product. It's not in the training data. 
-
-I apologize. However, I'm not familiar with XIM. It might be some confusion or a typo. No brother. I didn't make a typo. So I drop in the advert. 
-
-guide, I upload it to the Slack channel, and then I just use the slash command to upload a PDF. I choose which PDF to make into a knowledge base for this channel. It's processed. Now I'm going to ask the exact same question. And this was what it said the first time, EXOR. So here's the exact same question. 
-
-I get a response. Thinking. Cortex XIM is a comprehensive security platform with XIM, a gainful visibility in the assets, a tech emerging set. 
-
-Yes, yes, yes. 
-
-Follow -up questions. 
-
-You see? 
-
-How hard was that to set up? Yeah, and I, yeah, yeah. That's what, that's what taught me. See, that's great. You're very clever, so check this out. That's how I came up with my RAG idea was I first asked, chat GPT, do you know what XOR is? 
-
-Yeah, I do, blah, blah, blah, generics. I said, make me training on playbooks, how to make a playbook in XOR. And it was garbage. That's when I thought, well, I went through the whole admin. The admin guide itself was too big at the time to fit, so I went through and I just did a control F, playbooks. Every single paragraph that had the word playbook in it, I made my own file, and then that was basically like my playbook. 
-
-you know, data set, right? That's right. And then I just asked the exact same question, but I just added that in with my prompt. And it was like, magic. It was damn near almost usable. 
-
-I only had to like format for like the use case, right? But it was literally like whole, it was like night and day difference. And I was like, wow, if I could just like automate this somehow. And so I found a YouTube video. Some dude made a 70 line script where he could rag the constitution and ask questions on it. followed his YouTube, made the 70 -page script. 
-
-I had already made my AI bot without the rag, and so I took the two scripts, I showed them to the AI, because I can't write it. I can't code. I can't code. I'm not a coder, I'm not a developer. I can't write enough statements to save my life. I also could never learn another foreign language. 
-
-I failed Spanish every year before I passed it, every year of high school, every year of college, because it's a required course. That's right. I know. I know. Thank you. And this is it's I'm kind of I'm chicken little over here and I'm screaming the sky is falling. 
-
-Alright, so let's fast forward. Let's fast forward. Because if I could do this, China can do this. And if no one's paying attention, if no one's paying attention, I know they are paying attention in China, they see this as their golden ticket. If you look at just optimism levels, if you just look at optimism levels of AI, AI in China, and in in America, it's like 39 % optimism in AI in America and 70 or 81 % optimism in China and if you just look at the adoption rate of any technology throughout history, a leading indicator as to the adoption rate is the optimism rate as well. 
-
-One of which is measurable prior. You see what I'm saying? So, like, they are, and not, and so, in March of this year, March 25, Gemini 2 .5 Pro came out. Before that, in May, November, I had reactivated a game that I had launched over a decade ago. 
-
-No, no, no, no, no. Where's the damn history? 
-
-Ah, yes. My videos, yes. 
-
-That's what I'm looking at. 
-
-A game called Lineage 2. It'll be fine. And so I made... It's a L2J server. It's a Java server from over a decade ago where I got hacked. Someone wiped my database. 
-
-But I kept my code, because I always thought in the back of my mind I could maybe reverse engineer the custom part of the database from if you could look at the code, because the code is going to call directly the right tables and columns, and if you just put it all together, you could do that. And so I kept it for 12 years. And then finally AI comes about, right? And then O1 Preview comes out, which was the first thinking model. And that's what made it really code extraordinarily well. And that's when I sort of learned my parallel processing. 
-
-trick. And one of the things that I did was once I got that server back up and running and everything, I made a website and everything, I wanted to start making new things. That was sort of the holy grail was making something new versus tweaking something that already exists. So I had played on a server way back in the day where they had this fantastic custom PVP event in a specific dungeon that was perfect red versus blue because the dungeon itself was colored red and blue. And so I basically recreated that from memory in this game with AI. This was kind of like the, huh? 
-
-No, this was before Gemini. I used O1 preview. So I'm giving you the real long back story because you sound like, oh, yeah, no, it's chat TBT. Now it's like O3 or whatever. Yep, but it was the first version of the o1 o2 their strength their thinking models They had you know chat GPT 3 .5 and 4 and then I think they just got to 5 and they're not going to do that anymore They're doing thinking models. They're doing 4o and other in that but they're doing o1. 
-
-It's so confusing But yeah, this the first one was o1 preview. That was in november of last year. So it literally hasn't even been a year since the first thinking LLM has been in existence. So like, that's right. And so this is all very fresh. What I'm able to do, I was able to do from the very first version of thinking. 
-
-It's only going to be uphill from here. you know what I mean? So what this event is, basically, you got your scores. I even had a whole, yeah, I'll show that as well. So you destroy the flags and you push around here. Ah, so a thinking model is basically just a model that talks to itself before it talks to you. 
-
-So it's basically accessing the latent space in its memory as it thinks, right? And then it can make a plan. It can make a plan for you in the thinking, see? So you can prompt it to think in a certain way. And then there's all kinds of like thinking strategies like plan, act, do, reason, you know, those things they make you learn in like business school. But you can just have your AI do that as long as you, right? 
-
-And then you can make that into a, you can make that, it's called chain of thought as well, so. But they do that automatically. It's not like you have to do it. It's done automatically, sort of. That's right. It can plan. 
-
-And then it can find a solution, right? And then it can give that one to you, right? Actually, yeah. Yes. 2 .5 Pro is a thinking model. Yeah. 
-
-So, I trained Gemini before working at UKI. I was a RLHF trainer, basically. It's actually part of my whole story, part of this situation. This isn't loading, but maybe we could, ah, there we go, okay. So, this was my website. I still have it all. 
-
-I just flipped it off to do this game instead. But this was kind of the first time using an AI to like make SQL statements, servicing data. on the website. This is data from the game server. So who owns what boss jewelry? Where is it? 
-
-One of my players said this is like CIA level status. One of the things in the game that's very fun is over enchanting a weapon and then you can break the weapon. But when you do that, that story is gone. But that's part of the story of the servers who has what over enchanted equipment. And so now it's captured. It's actually stored. 
-
-And so you can see the history. You know top clan list all that kind of stuff and then for the battlegrounds they have stats as well So yeah, yeah, so it's um, it's an open source project called L2j and yeah, I just got basically my own version of it with it that has some pretty sophisticated Customization that I actually got one of one of the world's best Developers of this game to make for me at his people at his peak when he was he was making $10 ,000 a weekend off of his off of his 
-
-servers from donations. 
-
-Yeah, I was I Was just barely scrapped punk dude. Oh, man. Oh, yeah. This is yeah, I still have him Actually, this is him just a full circle This is him right here. Jeremy Eskins. That was that's the guy. 
-
-Yeah, that's the guy So anyway, um, so this was a replay. So I I record everything I made a whole season Because every single game gets recorded, and so you can have ELO, persistent ELO, persistent kill death. And then each kill, depending on what kind of class you kill. So it's all dynamic ELO scoring. And then I put it all on the website. It was wild. 
-
-But then, so, Autofarm. I made my own bot in the game. 
-
-My own botting system. 
-
-Let's find it. 
-
-I should have a video of that, actually. Maybe not. Oh, I love that game, yeah. Okay, but, okay. I have a little bit, but not too much. It'll be nice when it's ready for VR. 
-
-Okay, so that was... I was making... Now, 01 has a context window limit of 128 ,000, which when it came out was an extraordinary leap. It went from 20 ,000 to 120 ,000. And then when 2 .5 Pro came out, that one had a million. So that's a huge jump, that's right. 
-
-Huge jump. And even still now, the latest quad code just came out, 4 .5 or whatever, it's got 200 ,000 still. So a million is a lot. And this game, Yeah, now I hear there's some, yeah, on the super expensive plans, I think you can get more, but it's extremely expensive. Like we're talking like, you can get a million with Quad, but it's like $15 prompt, a $15. Good question. 
-
-Divide character count by four. And I'll show you what, I'll, I'll, no, no, no. So just rule of thumb, and we can get deeper into it, but rule of thumb, the token count is just the character count divided by four. Yep. I'm showing, no it's a great question and that's how I know when the student is tracking, is that question always comes up. So this is what a token is, is, is, is, is, is. 
-
-So this is what a token is, is, is, is, is, is. So we got an is and an is. See there all the different colors are signifying which one is a token. So this is one token, this is one token, this is one token, this is one token. It's just the colors are showing that. Now you can see, there's 12 tokens and 39 characters. 
-
-It's a bit off of that. It's repetitive, so that's cheating. Anyway, so what's happening is these are what the actual token numbers are. So these are the actual tokens. It's 382. That's IS. 
-
-Because I can tell, because look at all the 382s. See? So this is, they're just numbers. Brother, they're just numbers. You're looking at a number. this is what an embedding looks like. 
-
-This is what an embedding file, that file I showed you that comes back, I press in the PDF. When you actually look at that file, because I can see it in the raw text as it streams back in, even though it's binary, when it's in the code and processing, I can see it. And it's just this shit. It's just strings, it's just chunks. Because that's what a rag does, right? It chunks out your document into smaller pieces. 
-
-Each chunk then gets turned into this vector. That's what they look like. Huh? Ah, bro, bro, why? Oh, so there's a whole field of study called tokenomics. It's actually a whole, yeah, dude, it's a whole thing. 
-
-It's basically just symbology. It's basically just about compression. It's basically just how you use, it's basically just another language. It's like another base. Base 27, base 10, base 2. It's just, it's just, that's all it is, dude. 
-
-It's just numbers. It's just, that's it. Divide by four. There's nothing else you need to worry about at all whatsoever. And that's it. Limits and costs. 
-
-That's right. That's right. Now, that's right. That's right. That's right. Yeah. 
-
-That's where it matters for us. 
-
-Yeah. 
-
-Where's my AI studio? I don't know why. Oh, what is going on here? Why is all my history? Oh, I'm in Chrome right now. That's why. 
-
-Okay. 
-
-I understand. So AI studio. is free. No one offers an analog. OpenAI does not offer an AI studio equivalent where they just give you damn near unfettered access to their smartest models. Claude, same thing. 
-
-Yes. Yeah, so that's unfortunately our company is not ready for that yet, not for lack of trying on my part. I had a very nice long talk with the CTO, but apparently no, he never wanted to follow up. But basically, it's like a repeat. It's like a repeat. I gem these guys up about AI, but then they don't pull the trigger and do the one thing that they need to do, which is to get us a CUI safe API or get us our own endpoint that we can call. 
-
-I've got an LLM running in my damn closet. What is their excuse? right like let's you know it's really not that and it's not rocket science and i can help them shut it all up you know but it's just they they go off and don't whatever anyway so um so that's what that's yeah yeah well we'll look uh talk to who i don't know who he is all right so let me just do a quick demo of where i'm at with my DCE. I'm in the process of working on this, so I'll just have to close that. Yeah, yeah. 
-
-Dude, it's wild. I've never done it either, bro. That's the fucking point, bro. Dude, I didn't even know how to get the goddamn logs. How do you develop when you don't know where the air logs come from, right? It took me like four hours to figure that out and then even then like, you know There's a certain thing you have to do or else like you won't really refresh your environment even with your new code is saved or whatever And so I'm sitting here testing the same damn environment eight times not knowing I have to refresh it into a certain way It's all learning but the AI is helping me learn every step of the way my process, dude Oh my god. 
-
-No, I'm like chicken little over here, dude. It's it's wild. Okay, so 34. I'm just gonna make a new older I know you saw this, but there's one piece of the puzzle that... Yeah, there was one piece of the puzzle that you didn't see. Because this is the development version. 
-
-Alright, so, watch this. Oh no, that's right, it broke. That's right, okay. I have this... It's okay, I have a GIF of it. I'm in the middle of fixing it, and I've made some really good progress. 
-
-But let me just show you a GIF of it. Yeah, yeah, yeah, it would, but you would have to coax it a bit. All you would have to do, though, is you would have to make your, it's the same process, though. That's what it is, it's this, you create the artifacts, you just create the artifacts that describe the thing that you're after, and you don't know what they look like, the AI does, right? It'll come up with, like, user stories. I didn't ask for user stories, but I get user stories, right? 
-
-You just have to work with it, And then you start getting artifacts and you start vibing with it. And you're like, yeah, I like this. No, I don't like that. And with multiple responses, you know, you like this. And when you get a choice, you're like, oh, I want it. I want this direction. 
-
-I like this direction. And you can go that direction. It's do it. So I got a demo mode that I'm building out right now, because once I'm done with demo mode, then API mode is just built automatically built. 
-
-Demo mode is using a local LLM, my local LLM. 
-
-So it doesn't matter how many responses that you generate. And then they come streaming in. This is, so this is from my local LLM, streaming them in parallel. I'm getting about 500. tokens per second from just my shitty -ass little 3890. I'm just running OpenAIs at GPT -OSS. 
-
-Yes, yes. The same, it's running my server, it's running RISC -AIM as well. It's hosting the, no, it's all free. No, no, yeah, that's right, it's free, that's right. It's free. That's right. 
-
-I'm just paying for electricity. I'm just that's right. And that's what I'm saying. That's what this is over here That's what this is. That's what so look at this. 
-
-Look at this. 
-
-That's what this one is. All right, that's this choice Like we can do this like we can that's on premise. We make our own LLM. That's pillar three. It's more expensive No, no, this is all my personal stuff. Yeah. 
-
-No, I'll share this as well. Not sure. We'll try open that one Okay, and then that one the prep this one So, yeah, well, this is how you get AI, and this is how you get AI in your company. It's so, I understand completely how blinding it is to not even know where to start, but this is where you start. You either get commercial API, which is you go to ChatGBT and start using it, which is not good for us for a myriad of reasons, or you get your own AWS Bedrock solution with SageMaker, like I said in the meeting, which is in here as well. 
-
-That's pillar two. And then pillar three is running your own local model. And then so certain tasks will be good for local, and certain tasks you're going to want the foundational models because they're smarter. Yes, that's Bedrock. 
-
-No, so you're talking two different things. 
-
-So there's one is API access to foundational models through Bedrock, which is CUI safe. 
-
-So it's API calls, so no local. 
-
-Or you can still in the cloud set up your own, now what you're talking about, get your own GPU in the cloud and then put your local model on that GPU. That's different, that's different. Or you can get the third, which is your own damn GPU. I'm advocating for the API, and then what'll happen is we'll start to discover functions that we would love to make API calls for. Like, do you remember that in the demo I gave, the Intel chip, where I highlighted a paragraph and I got the key Intel out of it? Okay. 
-
-Basically, I could get it up again, but that is an example of like a refined, defined function. Right? I send it a paragraph, and then it reviews that paragraph, but then it also reviews the context of the scenario, and then decide, because then it knows what the users are going to need to do, because the users are going to need to ultimately type five different commands. Right? It boils down to like five different commands. And so ultimately, the user needs to know which of the five commands should they, you know, and so just find some relevancy there. 
-
-So whatever the user's copying. And so right in the beginning, the key intel is telling them how to log in to get the drone manifest. And so the AI knows those two things. And so the AI understands and knows just by those two things, oh, the user's in the beginning, they're looking for the drone manifest, here are the two things they're gonna need to copy and paste in order to get access to it. And it just creates that nice little chip for the user. 
-
-Now, you don't need to, once you've got that refined and you've fine -tuned that process, you don't need, you know, you can use a local call, that's a free, that's free AI, because it's so clean and refined use case, yeah. 
-
-those are the big boy models. No, that's what they are. They're the foundational. 
-
-That's your biggest, strongest models available that need massive server farms to run. 
-
-2 .5 Pro? Yes. Yes. Yes. That's right. That's right. 
-
-Yeah. That's okay. Yeah, that's right. Yes, sir. Now you're catching it. See? 
-
-There's nothing stopping us from just getting this started. But they're going about it the wrong way. They're trying to like define the, huh? So that's what I'm trying, that's what I'm building out right now. That's what you just saw with the GIF where it was streaming in, right? See, so it's a GIF. 
-
-It's the exact same. Yeah. And then you get a choice. Just look at the spread. Look at this. Did you just see that spread? 
-
-So yeah, I'm doing eight. I'm doing eight at once, but now it's just restarting. Yes. Okay. Yeah, because think about it. Think about how different they are. 
-
-Think about the question I ask. I ask, I want to create a tower defense game. Maybe one of them goes a cybernetic route. Maybe one of them goes like a plant -based route. You see what I'm saying? Like they could be so completely different and now I get to choose. 
-
-That's what I mean by I flip the script when you do this. But then also one could have an error and one could not have an error. One could have a good idea that the others did not have. Yes, that's what a lot of people don't do as well. Is they think they want to use is not wrong, it's just not what I'm doing. 
-
-What they do is they do one to Grock and one to Claude and one to Gemini, which is fine. It's still sort of the same thing, but it's apples to oranges sort of. This is very standard and you still get the gains that I've been just espousing over and over again from my process. Yes, yeah. And look, yeah, it is, and look at the difference. It's about to finish, when the last one finishes, there. 
-
-So the spread, see, one to eight, and then over on the right, I'm gonna click sort, and now the biggest one is 3 .1, and the shortest one is 1 .3. So it's almost double the size. And I got, you see, so I got more planning, I got more planning out of it, okay? So that's just, now this is just local, this is all just local. 
-
-The smarter AIs, the better AI you use, the better planning it can give you. 
-
-And again, that's the beauty of my extension, is all when a new AI comes, I just point to the new AI. So, okay, so now let's kind of back up a little bit, because now we're basically at the very tip of today, which is my extension and connecting it with the local LLM. Because it's the moment that, the moment that UKI has a KUI safe API, all they need is my extension that's API friendly, which I'm coding it out right now. 
-
-And then it's, you can just use it with our repos. 
-
-And then the code created a whole new Ansible role instantly. 
-
-I've done it. This is phenomenal. But this is actually where I want to go. I want to pivot to this. go over the game a little bit because once March 23 25 came around This I have a good idea. 
-
-Yeah, this is uh, this is the game I made and then I made a report about the game So this is sort of I skipped into section 2 the origin story. 
-
-Let's see. 
-
-Check this out. Actually It's it's it's right here 120 days This is the prompt for my game. 
-
-I did it manually. I did it manually. That's right. Before I had the extension. See? So, this is the way I would do it. 
-
-I'm just going to scroll down to, and start with one of the cycles. Let me just search open bracket cycle. There we go. Cycle 1. I want to fill this out before I use it. Something is bothering me. 
-
-Oh, that's why I did it differently. That's why I did it differently. Okay, so you see I just wrote cycle 1, 3, 3, 7. And I said, we're done with reports one and two. Please continue. I was building out a report. 
-
-I was building out my reports, this report, basically. And the image, yeah, working on the image generation and stuff. And then, see, here was the previous cycle summary of action. So this was just part of the AI's response that I clicked out to keep the context. See, it was all manual. And I would put my own tags like this. 
-
-And then, great work. Let's fix the script. And I just built this over time. 
-
-This is the prompt file. 
-
-And this is where I would put all the responses, in these eight different tabs. 
-
-It's all manual, in Notepad++. I'm not a developer, bro. But I am, uh, I know. It's impressive that I just never stopped, even though everyone tells me that this is stupid, you know what I mean? Dude, this is like, just, you know, no one listens, man. Like, everyone should... 
-
-When I show this to someone, they should do what you did. Fucking stop, and turn, and start asking some fucking questions. Just like the thing just said, it's something that demands an explanation. Legit, you know, like yeah, and then I would look that's right. I need to talk to the right billionaire dude. 
-
-Yeah. Yeah, I haven't met that person Yeah, I could make some waves trust me and I'm just getting more and more refined Oh, and also let me tell you as well. Let me just mention this is to you as well when I did talk to dr Wells I didn't have my DCE extension He doesn't know about he doesn't know about that. And and in fact why I started making it it's a direct replacement and competition between Not in a bad way, in honestly a good way. As to what is he making right now? You know he's making a content development studio, right? 
-
-That's what him and Ben, and they're all jazzed up about it. They're going about it the wrong way. This is the content, we already develop content in a studio. It's called Visual Studio. Stop inventing, reinventing the wheel. I did it so well on accident with an extension, yes. 
-
-Let's keep going, man. I already love where your head's at. Let's just keep going, because I need to fill your head with all these ideas. Alright? I love it. Seriously. Let's skip a bit. 
-
-Let's skip a bit. 
-
-And we can go quicker. Because what needs to happen, let me tell you why. I need to create a training. Imagine every senator, every decision maker in our country receiving reports of this magnitude. It took me days to put this together. Days. 
-
-the brother brother no no no no no no let me look at this look to pick it's a picture book okay it's a picture book it's an adult picture book it's the printing press 2 .0 it's read to you by Scarlett Johansson okay dude I mean I could do however I could mix match the voices I can give her I can give her an accent if you'd like all right it's crazy all right but this this delivery of knowledge like knowledge transfer is unprecedented and available today. It cost me zero to put this together. It's zero dollars. If I can do this, China is using these tools to do the same thing to stab us in the back. That's their M . O. 
-
-, dude. That's their M . O. They have a whole, yes. Okay, so here's where sort of it starts to get more like, so the way that they train AIs is this fissured workforce. Basically, Google, OpenAI, Mena. 
-
-They break out the, they subcontract out the work to these contractors like Globalogic, Majoral, ScaleAI, and then they even subcontract it out further to even more subcontractors like Synet, Ravens, and Digitiv. And basically it's a whole army of ghost workers that are doing this essential work, by the way, so they should not be coming in. They should be full -fledged employees, just off that fact alone. But so, it's a critical, you can't get an AI. An AI, once it's pre -trained and it's trained, it's useless until you do the reinforcement learning with human feedback where you evaluate the helpfulness and the harmfulness and you write, you get two responses back and you say, well, this one's better than the other one. And you create that reinforcement learning. 
-
-That's what makes a model actually usable. And so, that's what this army actually creates. And so, without this army, yeah, and so, that becomes a problem though. It used to be the way it works is it's labor arbitrage. So Globalogic, which is a Hitachi Group company, they're a Japanese conglomerate. It's not even American. 
-
-They make money via labor arbitrage, so the split in between, obviously, from what Google pays them and what they can pay the workers. So the more they can pay, keep the wages down. And so the job title is a content writer. In America, content writer. No one listens to a content writer. Ask me how I know. 
-
-That was my title and no one will listen to me talk about AI. Now if my title were pacing threat, what is China doing? I'll just jump down to that. They have an entire training. They've done professionalization. It's state -sanctioned. 
-
-They started it over five and a half years ago. They have a whole job career ladder. Whereas in America, I hit it. I hit the glass ceiling. I'm a go -getter. If you can't tell already, hence the story about Palo Alto. 
-
-And then so it the same thing happened, huh? Yes. Yeah. Um, yep I have all the research that I used Gemini to do research OSET I don't know Mandarin. Okay, but I use Gemini I said to Gemini deep research I said your English is pretty good, but how's your Mandarin and I sent it and I asked it How is China's AI playing? What are they doing? 
-
-How it and that's how I got all my Intel. Yes wild Dude, oh my God, they're doing it on us. They use DeepSea for OSINTs, of course. That's in here as well. But so here, so what we have, so here's what I'm saying, is what I am doing is I have this skill set that the Chinese are cultivating. That's, thank you, thank you, and then no one will listen to me because I'm deprofessionalized, all right? 
-
-There was no career path for me to go up, okay? And that's what's missing in all of America AI right now is, The AI deployments fail. I'm sure, I don't know if you've seen those statistics right now, but Gartner and everything, they're putting out these, there's only like 1 % of AI deployments are making like million dollar returns. And the vast majority of them are failing and not doing good. And everyone's gonna ask why, maybe go into an AI winter, probably not. Because too many people like me are just saying this is way too ridiculous to get AI winter. 
-
-Even if AI stopped today, we've got a decade of work ahead of us. and AI is not gonna stop today. So, the glass ceiling, I hit it, dude, I hit it. In fact, just check this out. I'm in the union for Alphabet Workers Union. I just met with the organizing committee. 
-
-I gave them a short spiel, but I blew their minds. Also, at Global Logic, I'm still in communication with the training manager. She's right here. And she's been there. She knows it's a revolving door. She knows exactly. 
-
-She might even be ex -military. Because she said, when I showed her my virtual side of the proving ground, she said, imagine military using a crane. It reminded me of the Arnold Whitehall simulations I did in grad school. So I'd love to hear more about what she's talking about here. She was the one who promoted it. So let me actually share this as well. 
-
-It's probably quicker if I go over here. So, basically, this, they could care less, dude, they could care less. I basically, because it's, you know, it's basically my responsibility, honestly, to let them know when I discovered this, the fact that the job is a de facto national security asset. Because we're training the I mean you use gymnastics and people in the NSA use Gemini. And when your workers training Gemini are up here in this section, the cognitive consequences of scarcity are all underpaid. 
-
-They're ghost workers. I wasn't even allowed to say I worked and trained Gemini. I'm creating the most celebrated technology, yet I can't even say that I am doing it. It's either, I get a little emotional sometimes because of that. And so, it's institutionalized garbage in, garbage out. Because Hitachi Globalogic does not care about the quality of the product, only so much as Google doesn't complain, all right? 
-
-And people say, oh, well, they have, Reviewers, they have to make sure that the data is good. You're talking to the senior reviewer. Okay, I got promoted. I was promoted to reviewer. First, I was moved from the non -technical to technical. That's when I tried to get a pay raise. 
-
-I never got it. And then I was promoted again to reviewer and then promoted again to senior reviewer. When I was promoted to senior reviewer, I got English grammar training. That was the training. We were all put in English grammar. We were given grammar worksheets. 
-
-English grammar, so no training whatsoever for, you know, chain of thought, yeah, nothing, because they don't know how to, and the size of the tasks, because in the beginning, the AI could only have a thousand tokens, it just, LLMs didn't have context windows. And so you could only have to review 1 ,000 tokens max, right? They're small tasks, right? But over time, it grows exponentially. Now we're dealing with a million token context windows. The size of the tasks we were reviewing went from 1 ,000 to 40 ,000 on track to 120. 
-
-And the pay didn't change. Nothing changed. It's just more work. And then they give you three hours to do it. That's nearly a book, actually. Okay? 
-
-So garbage in, garbage out. That's all you're going to get. And so institutionalized garbage in, garbage out. It's the cause of Ouroboros effect, which is the model collapse. That's my theory. It's why AI sort of hit a plateau. 
-
-Because the people training them. We're not given any training. Imagine if I had my DCE system doing grading validation. That never allowed to be innovative whatsoever. So that is a problem in and of itself as well in such a fast -moving field. Anyway, so this is basically what's going on is the higher the tech rises, the harder the fall will be in this current deprofessionalized situation where all the learning that's down here actually on the unseen battlefield. 
-
-Let's skip down here. Oh, what is this? I forgot about this. Okay. 
-
-Anyway, I forgot what I was looking for. 
-
-Well, obviously I'll find it. Yeah, let's go there. I like this picture a lot, actually. This is fun. So I made over 2 ,000 images for this. And you can see the difference. 
-
-Look at this image. Versus, this was the first one I created. It is, however, it's the image for cognitive capital. And cognitive capital is the collective intellectual capacity, skill, and problem -solving potential of a workforce or population. Now, would you get that from this? Absolutely not, right? 
-
-Yeah, right? Versus like this, when I got better, and I learned, oh, it can do words, right? You can tell what this is all about. No, no, this is Gemini. This is foundational. Yeah, see? 
-
-So this is like, you can tell exactly what I'm trying to communicate in this section. And I learned how to do it over time. That's the vibe coding to virtuosity. You can literally see the, now I can take this with me for the rest of my life. This quality, you know, because I put in the two weeks it took to learn how to, and what do I ask for? I ask for, it's about knowing how the system you're interacting with, because you're talking to Gemini 2 .5 Pro, and Gemini 2 .5 Pro can send a message to the diffusion model, the image model. 
-
-So when you understand you're working with it like that, you can tell, because you don't send the message to the diffusion model, Gemini does. Gemini creates the tool call. So you've got to coax Gemini to do something good for you. You get what I'm saying? You've got to gin up Gemini. You've got to gin up Gemini. 
-
-gin up, it's actually for real. And so, you, no, this is, no, no, absolutely not, no. And I told you, I trained Gemini. And I learned this stuff myself, everything I learned was, yes, from three years ago, the first project I made was the Slackbot. No one could be vibe coding longer than me, I was the original, I was an OG vibe coder. Because, are you in your car, Pat? 
-
-No, that's fine, that's fine. It's got a history from March or something. Vibe Code, yeah, February, not March. Andrew Karpathy, one of the guys, one of the OpenAI, original OpenAI guys. In 2025, he wrote a blog post. 
-
-Oh, no, no, no, no, no, no. 
-
-He wrote a tweet or whatever. Tweet, tweet. There's a new kind of coding I call vibe coding, where you fully give in to the vibe, express exponentials, and forget that code even exists. It's possible because, yeah, dude, I can't write code. What is he talking about? It means, honestly, seriously, it's crazy. 
-
-It should mean nothing coming from a real developer, and it should mean everything coming from someone like me. Do you see what I'm saying? The fact that I can't code makes it completely... Dude. And so, he comes up with this idea this year. This year. 
-
-I've been doing it since 3 .5 came out. It was the first thing I thought, like I told you. I asked the fucking question. What's the most valuable thing you can write if you can write code? The answer is code. I told you why. 
-
-It's an object. I just put the two dog brain cells together. That was it. I did it three years ago and I never stopped. I never stopped because I got the results, dude. If I didn't get the results, I wouldn't have thrown it all. 
-
-I would have gone, you know, played my video games, whatever. But I got the results. and it just changes everything. I felt like the wave is coming. You know, we gotta learn this before it's, I can capture as much as I can, and I didn't know I'd be riding it. I also didn't know that no one would even recognize, like, that I'm riding the wave. 
-
-I'm gonna appear up right in the wave, and no one even recognizes. It's pretty, okay, so, all right. Anyway, yes, thank you, thank you. So, I'd love to make it huge. Yeah, so negative feedback loop, that's Ouroboros effect, the snake eating its own tail. In China, what they're doing, I mean, they're only five years away from the completion of their plan to dominate in AI, okay? 
-
-And they started this plan in 2017. So how they're doing it, how they're doing it, they're doing inland sourcing, so whereas we're outsourcing our cognitive capital, they're insourcing, so they're using it as a form of poverty alleviation. If they have done in Yizhou, the poorest region in all of China, because it is the most mountainous, they have turned it into their premier prime data labeling base that they're going to use as a case study to expedite delivery throughout the rest of their nation. So while people on Reddit are all like, ooh, ah, look at this cool, interesting this bug, interesting this bug, ooh, I'm sitting here realizing the only reason that they could possibly have. 
-
-be cutting mountains to build a highway as fast as they fucking can in this fucking place that's ass because of the mountains is for AI is for AI they built this they built this for AI so yes and people are like oh cool is it less work than building a tunnel guys you're asking why did they build this in the poorest region because that's where their AI base is right and yeah and yeah and so So they're gonna have people like me. 
-
-Armies of people like me. And it's just data, it's data curation. That's the skill set. Data labeling is the skill set. And it's like this, they're gonna be, dude, they're gonna be like, they're gonna be like sleeper agents, dude. And they won't even know it. 
-
-Because they're gonna be gaining these insane skills of the future and they won't even know it until China activates them, I'm telling you. 
-
-And how does that, what do I mean by that? 
-
-That's what I mean down here. Like the call to action, like so, when you do this vibe coding virtuosity, Basically, you just find some cool project and you code it out, you know, I love baking so I'm going to make a website for my bakery, or I love fishing so I'm going to make an app that helps me find the best fishing spots, whatever. And then, after you code it out, you make your website, you do whatever. And then you live your life, and then you're walking through your community, and all of a sudden, you know, your neighbor, X, Y, Z, someone in your community is having a problem that you realize, wait a minute, I have the skill set. I can make them a website, an intake system, a blah, blah, blah, accounts, and I can solve that problem for them. I've got this skill set. 
-
-You get what? You get activated. and you didn't even know it you're so you're you're I think you can we can create sleeper agents in our country of these people who just become these experts and they don't even know it because this because the AI will get better under their feet that it's all about and why is it why is it data curation I use the analogy of the human eye The human eye has a focal point of 2 degrees, and everything else is, for lack of a better word, hallucinated. Your brain is basically concocting that which it thinks is around, but you only get focus here. Why? Because there's so much information that your brain would be overloaded if everything was in perfect focus. 
-
-Same thing here, it's context window. Always, I argue, the context window will never be as big as the universe. Therefore, we will always have to filter or funnel somehow into our context the data which we need to use for the task at hand, and the tasks will always change and evolve over time as we explore and spread throughout the solar system. Everywhere AI has not been, it will hallucinate. We will have to go first and create the data sets, annotate, label, transform the data into something that the AI can then come with and use, and we're the explorers. We're going to be the eyes for the brain. 
-
-That's it. So, and just look at how much data we produce as humanity. It grows exponentially the moment we got more data to store, right? So, we'll never have a need, a lack of data. We'll always be exponential. Ah, and then you can rise to meet the moment. 
-
-which is basically here. As AI gets better, the capability threshold to use it to reach your 100x moment will go down over time. The expert will be able to reach their 100x moment sooner than a novice would. But what you can do is you can become an active learner and you can accelerate that intersection. You can accelerate that. But you know all about technology, so this is where I want to, you started talking sort of got me thinking about this because this is what my skill set plus your skill set, right, is the peak archetype because it's one thing to, a lot of people don't know how to get data together, right? 
-
-And I think these skills help these skills. 
-
-Like I know this data is important, not that data. I know I need this data. I think I say it like this, the internet is your hard drive. So the more you know that's out there on the internet, the more you can think, oh, I need this data set. I can pull this data set into my project and use it. So it's more or less, yeah, live coding virtuosity. 
-
-The AI sort of helps you learn. You start out basically trying to dissect everything, untangling knots to building blocks. After a little while, you start to be able to bring pieces together and put them together. Then what happens is at a certain point, you kind of get stuck somewhere. it's because you don't know something. Like maybe you don't have like cloud skills and so like a serverless function is like very abstract to you, right? 
-
-You know, you're talking to an AI that can make you an artifact that can explain exactly how it works and like you can give it, you know, errors and build out this AI as a meta tool and explain all those learning gaps. It becomes this learning accelerator. That's this recursive learner stage. Yes, exactly. That's it. Exactly. 
-
-That's right. That's this stage, right, precisely. And then at a certain point, you become sort of an adaptive toolmaker in this recursive learning stage. And the Apex skill is on -the -fly tooling. That's literally me making the DCE. And it's here. 
-
-It says, a competent user asks the AI, how do I solve problem X? While the expert asks or says, build me a tool that solves problem X. It's the same AI. You just have to think how, what you're doing is you're building, you have to build a mental model of the model so that every prompt is a lesson. Because you send a message, you get a response, you now know what it can create. And maybe if you ask it differently next time, you'll get closer to what you're after. It's building that mental model of the model. 
-
-Or you can even game that out with the AI as well. Yeah. Because even that might be so abstract, you don't even know what it is, what it should look like. So, yes. And you know when it's solved. That's crucial as well. 
-
-That's key as well. Because I don't look at the code, right? I look at this and I say, this button doesn't do what it's supposed to do. Fix it, right? This is what it does, and this is what I want it to do. So I'm at step A, and there's step Z. Get me B to Y, right? 
-
-And then, also, another thing, you don't know how many in -between steps, because again, you're not a coder, and you can't instantly come up with a solution to every problem in your brain to know that, oh, this is going to take one cycle, or this is a big problem, this is going to take five cycles. You know what I'm saying? Just throw it at the AI. You'll get there at the end sometime. Because that's what I do at DCE. I give 10 problems. 
-
-I don't know which one is going to be the hard one. 
-
-It'll solve seven in one go. 
-
-Those were probably easy. Two made some progress, and one it didn't even touch. That doesn't matter. I'm asking about three problems this time, not seven or ten, right? So I have a solution as well. I came up with something called universal basic access. 
-
-It's not universal basic income. It's better than that because you're giving people AI credits. You're not giving people dollars. You're giving people AI credits. So how much does it cost to give a person a dollar? 
-
-It's not a trick question. 
-
-That's right. 
-
-How much does it cost to give someone an AI credit? Fucking nothing until they spend it, yeah, right? 
-
-And then when they spend it, what are they doing? They're prompting they're producing. That's right They produced something out input output response. That was a something was produced an image a digital asset, right? Yeah, that's right. That's right That's you got it. 
-
-I don't have to I don't have to walk you. I don't have to hold your hand through it Yeah, that's absolutely right. And that's what we do with the Rural Electrification Act We needed electricity in the country, but no no But no one would, no electrical company would build it. Likewise, we need AI talent in the workforce, but no AI company, they keep it deprofessionalized. Yeah, Trump doesn't like AI spending. Trump doesn't like spending money on AI. 
-
-The money's not moving and the factories aren't getting built. So, you know, show me the factories, you know, show me the results. So by Google's own admission, by Google's own research, they predict billion data labelers in the future right now think about that number so currently you're right let's listen to this one That's my job. What is DLA accounts in your table? I'm not sure. 
-
-That was a thought I had. I wanted to mention it. It'll probably come back to me. It's a way to explain the significance of this situation, right? I remember, I remember. Okay, so machine learning training has always been a super data intensive task. 
-
-And then in 2017, generative AI showed up. It was that research paper. So, but up until that, so up until that point, Machine learning was a sort of like, at most, like sentiment analysis, like is this paragraph, you know, positive sentiment, negative sentiment? By and large, it was like, you know, maybe like, you know, data, like drawing bounding boxes around like a pedestrian and saying pedestrian, you know, labeling a dog a dog, a cat a cat. You don't need to be a rocket scientist to do that, much less speak much English to do that, and this is a globalized economy. And so it makes sense that largely a lot of that work is outsourced. 
-
-You almost can't fault the big companies for doing that. 
-
-But then 2017 creates a new tool, the LLM, which requires a new data set, a critical thinking kind of data set. 
-
-And that kind of leads to this hidden curriculum, which is here. That's this hidden curriculum. Because when you spend eight hours a day critical thinking and writing down your critical thinking, see, when people would do work, they wouldn't write down their thoughts, they would write down the product. It's only now that we have the tool that we actually need to write down our thoughts. Exactly, you see? 
-
-An AI without knowing how to think won't be able to, right? You've got to put the thoughts down in words and then it can do it. So when you spend eight hours a day, five days a week critically thinking about thinking, you get what? You get smarter. It's just because you're black. What a surprise, right? 
-
-It's a hidden curriculum. The mind is a muscle. Every click is a rep, you know? Sense making is basically critical thinking, bias detection, AI validation. You're building these insane skills. This is the same skill set, right? 
-
-Okay, so That's right. Yeah, that's right. Yeah. Yeah, basically so because cognitive capital is more powerful than economic capital now because look what I can do with no money a 3090 I just went for the cheapest route. I just went for the cheapest route to 24 gigs 100 % Yeah, because you can't you just can't load a model and VRAM if you don't have the VRAM because then it goes into CPU RAM and then it's just dogshit slow using GPT OSS. 
-
-They have two model. It's open AI's open source model. They have two models. They have a 20 billion model and 120 billion model and I'm using the 20 billion. Parameters. Yeah, the size of the model. 
-
-How big is its brain? 
-
-Yeah, and it directly correlates with that's how much VRAM you need. You can fit 20. And then now quantization comes in. So quantization basically halves the amount of VRAM you need, but then AI gets stupider. So for 20 billion at like Q4 or whatever, you cut it in half or something. I think eight, I don't know. 
-
-I think an unquantized is FP16, and then I think the first layer of quantization is Q8, and then the second layer is this Q4, which is what basically everyone's going towards. It's this happy medium, and then there's Q2, which is just dog shit. So first my process is the copy and paste to AI Studio. And that's free. API calls cost money. So I first, I'm designing my DCE in phases. 
-
-The first phase is complete, where the whole thing fucking works and I can, you know, create the whole project. and then I can, I have that file that I can then manually send it to the AI of my choice for whatever service I have purchased, $20 a month or whatever. Now that that's all built out, it's a much smaller lift to then build the API piece of the puzzle, you know what I'm saying? Now, well not even, not even cost, yeah, because in order, because now I'll have to build out this, the API calls and the functions and stuff. So I can just use my model as a toy to build out, yes, yes, as a test bed. No, no, no, no, so, no, so I use Gemini 2 .5 Pro to actually write my DCE code because I need the smartest dude. 
-
-If I'm going to, I'm not going to, I would not be wasting my time, you know, trying, because that's where I'm doing real work, the real work, the cooking. I'm going to use the smartest model available to me, right? Why wouldn't I? It's also, but also, no, again, no one has anything like AI Studio. Only Google has this, which is literally damn near unfettered access to their smartest model. My prompts do $15, bro, if I were to pay API. 
-
-Let me tell you the math per cycle. Yes, per cycle. Yes, in my game. No, per prompt. I have a shortcut here. I just go here and I click this, click this. 
-
-Yeah, I have this button right here. Yeah, see, it counts it up for me, see? I actually do the math. See, so this is my game, AI Ascent, my project. My whole prompt would be about 747. ,000 tokens. 
-
-And it would cost me to send it four times, but I actually, I usually do eight, $15. And did you see how many cycles I'm in? Let's go to the top, 1 ,408. So let's do the math, let's do the math. That's just to make the game. That's how much, nah, we'll get there. 
-
-So that's $21 ,000 of API calls. And that's a, that's a, that's a, Conservative because not every cycle is just one and done all that would be beautiful now many times a cycle year Yeah, yeah, you have to reiterate and change and realize you made a mistake and fix and send it again Yeah, so yeah This is what basis this is the minimum of what it would have cost to make this game Via API and I did it for free. I took that money. I put in my pocket basically because it's yeah, I got the tokens the tokens Yeah Okay, so but now now you're asking some questions that actually get to sort of like are important in terms of making development decisions like so So I made this game. Let's sort of look at what did I make so I made a game where? you research Yeah, so I've got two researchers in my my founder on research right now, so that's researching We'll just do a little building So I just got basic in the concepts that gave me some more components and I can get some vision tech Oops, did you see that? 
-
-Oh, what do I need? need gpu oh i need cpu so let's just add some more cpus to my cluster the research is going again i'm playing the game right now i'm showing you the game yeah it's a tycoon game yep it's a simulation game you you make your own ai company and so this is just sort of the research tree that we're going through right here right now i can actually queue dude it's so meta no research nodes yet so we'll get there later all right so well all right so now i've got some components i can make I'm gonna assign my founder to build that one. I've got some machine learning engineers. Hire some. I only got two right now. 
-
-So they're building some components. 
-
-Our old training gears, agent sensor unit, agent logic cores. I think they'll build those up. Yeah, yeah, I sent that in. And my report is in here, see? 
-
-I mean, yeah, the game is the proof and the report is the theory, right? 
-
-So I made this game. 
-
-Three months into making the game, that's when I decided to pause and I'm like, because I'm showing you just the pieces. 
-
-I'm showing you what I made. And then after I made it all, I'm like, Hold the phone, man. This is just wild. And then I, because everything that's in the report was in my brain. It was too much man. I had to get it out Yeah, I think I think it's just gonna change yeah, so simple pathfinding algorithm implement basic pathfinding for the game AI agent Okay, cool, and then we can train the game AI agent. We're ready to train it. 
-
-I've got the agent modules I needed see the agent modules. They needed those core logics that I was making so to make these so now I can train the game AI agent. I need a cluster first. Let me make a cluster. Make a cluster. ClusterFuck to add some resources to it. 
-
-I'll do it this way. Put it over here. Do it this way. I just changed that. Okay. Now I'm looking at the cluster and adding resource to that cluster. 
-
-I think that should be enough right there. Okay. Back to the training. Yes. See? I require, I need 100 and I have 250 in the cluster, in the selected cluster, which is ClusterFuck. 
-
-And then I have enough GPU and I can start the training. It starts a training cycle. I have a nice little simulated loss function, you can see it's sucking up all the GPU to do the training. General pool's not in use right now. Okay, so that training is done, now I can do the benchmark for the game AI agent. Oh, I need compute, I have no compute in my general pool, I forgot, I took it all out. 
-
-Took it all out, general pool, let's put one in general pool. 
-
-probably just that, probably just that. 
-
-Okay. Yeah, that was it. 
-
-That was what I needed. 
-
-I took all my GPUs out and I didn't really need it. Okay, benchmark. Now the benchmark is running. So loading the opponent, a medium bot. So my AI is playing a bot and my AI beat the bot. So now I can finalize, name it OpenAI5. 
-
-That's what they called their bot. Okay, so now I have a bot. I can add some features like basic heuristics. Simple rules for decision making, some lane control, oh my CPU is junk. And some predictive aiming. Oh, I'll deal with the CPU, I'm stuck in a second, let me upgrade. 
-
-I need a certain amount of ELO, I need more, I need more components, and I need more compute. 
-
-So let's, I can hold shift to do five at a time, cook and knees again, in order to upgrade. See, now I can upgrade again. Once I get, I think it's 1650, and I can hold shift to upgrade five at a time, so it's faster. Oh, they're getting built, they're getting built. I've got my engineers building. This guy actually, let me reassign. 
-
-There we go. There we go. Okay. Almost there. We need 1650. There we go. 
-
-Okay. Now I have enough ELO to enter the... i need 1640 so i can compete my game ai agent against their game ai agent oh so they're just kicking that guy's out they just kill that guy basically they're probably yeah they're probably yeah so i mean bro right dude dude okay how how crazy is what you're looking at right now all right so i followed history because open ai before they made chat gbt they were making a dota bot and i got the dota map So you make the first AI you make as a game AI, and then once you win your first match, the attention is all you need, paper gets released, and then you can do more research, because I've done all the research already for this stage of the game, and then unlock more research, and I can do more research, and I can make an LLM API, and then I can make a chatbot, and then I can make an audio model, and an image model, and a video model, a robotics model, a multimodal model, and then finally a world model, and that's how you beat the game is you get all seven billion people to play your world model. Everyone's living in your simulation at that point. So, I have an idea. You saw my virtual cyber proofing round. 
-
-I literally made that from scratch, dude. It honestly sounded kind of corny, I'll be honest with you, when the AI came up with that scenario. Because it came up with four different scenarios. And it sounded corny, but I didn't care. I just had the AI pick which one would be easiest to make. And I just went with it, dude. 
-
-And it came out pretty damn good. A month. Not the scenario. the whole vcpg and then you can just make scenario after scenario after scenario because i've got the whole environment you see i've got the platform made that's right with my extension it was the first project that's right i made with my extension because i just needed to test i needed to test it was it's a throw it's a throwaway project dude it's a genuine throwaway it but it's god it's glory it's a billion dollar thing dude and and and also look at the look at this consistency like that's what's really key is i had this image then I could say I need a yellow one and you know blue one but it's yeah that's the AI's at that point now and then I just had a bunch of image and I think I like whatever I use this one or whatever right and then I just map it and then you saw up here this was just I said I drew this out in paint and I sent this image to the AI And I said, this is the plan. And I put my mouse over it to get the X, Y coordinates, right? 
-
-Because it's 10, 24, 10, 24. I just used paint, because paint, wherever you put your mouse, it'll show you the coordinate of your mouse. So I just needed one, two, three, four, five coordinates to make my game logic, basically. Yeah, which is just an image also AI generated. easy easy easy yeah great well let's go let me yeah so the so there so the four scenarios that were planned out one of them was this forward base blackout basically it's early morning like 4 a . m and then at 6 a . 
-
-m the big off is about to go off but right before the whole base gets shut down and then you have two hours to get the base back online Ghost Fleet is the one, is the drone one. Silent Running, that one's about you're in a submarine and you're in, you know, silent ops or whatever. So, and all of a sudden the reactor starts acting erratically and you've got to figure out what the heck is going on with the outside support. So, breaking, you know, radio silence and using internet or anything like that. And then Operation Stolen Scepter, I don't remember. I didn't read that one too carefully. 
-
-That was like the first one I suggested. But I could just make hundreds of them, each one. Also, some of those artifacts are worth just glancing at, because that's what we can do is we can just build a little bit of this. vcpg together And that'll just open your eyes. So I always do this with people. I'll show I'll I'll give them those so all the theory That's what we just talked about all theory like it's all great. 
-
-It's all talk right? Um until the next time you're gonna see it. Um, You're gonna see it. So let me get in here and just uh, yeah, let me just cut by coding it out with the dce um, so in here artifacts, so The team intelligence and flags, the scenario, tactical map integration, UI plan, collaborative intelligence system, those little Intel chips, Jane AI integration, so like how we're going to get the AI. I called it Jane from Indra's game. The tactical map, you know, so like zooming in on it. 
-
-I didn't, we didn't do that yet, right? 
-
-If I ever want to, I have an artifact made for it. The offensive gameplay, so I added that to it after we had all the defensive stuff. I had, so then that means that most of the scenario three planning is going to be up here a bit. There it is, S003, ghost fleet, narrative, and event flow. So, aha, this artifact, because I had it all split up. This artifact is deprecated as of cycle 104. 
-
-Contents of this document have been consolidated into artifact 59. That's where we want to go. Okay, so there we go. I had, so I had to ask for this. I had to ask, I had to recognize that, okay, my scenario three is sort of getting split up between these artifacts, and it's like, you know, I've got some scenario three at artifact 30, I've got some scenario three at artifact 70, and I decided to ask the AI. a cycle on that, reorganization. 
-
-That's part of being the curator, the human in the loop. It's called context rot. It's a known thing. This allows you to spend a cycle to keep your context. from Roddy, that's right, it's real. So, but yeah, that's it. 
-
-See, I'm glad that's what you're seeing by just getting into, now we're transitioning a bit to the, from theory to practice. Now you're seeing still theory, but because you didn't see it create this, maybe I wrote this. Oh, good God, Jesus Christ, look at this. 
-
-I did not write this. 
-
-So, but yeah, all these, yeah, all AI studio, yep, every copy paste. 
-
-And then so it starts with the master artifact list. 
-
-Which has every single artifact organized by the way look at this organized, dude, dude That's insane because yeah the first yeah, it keeps it up to date. Yeah. Yeah, so I So I write I want to make a tower defense game click create the prompts that gives me the whole prompt markdown file Which is just in the root directory down here at the bottom prompt markdown and see I was at cycle 125 on this project And see all my cycles are recorded because DCE every single cycle is in here So I have my own company, that's another thing. I have my own AI company. This is, DC is mine, dude. Okay, so let's just keep that in the back, keep, I, dude, I am the. 
-
-most generous motherfucker you'll ever meet. But let's just keep, let's just, yeah. No, no, I'm happy to share, but this motherfucker is mine. And because here's the deal, here's the deal. I am happy to share because I am going exponential. I am going parabolic. 
-
-And so if you wanna try to cut me dry, that's short -sighted thinking, bro. You wanna take my DCE and cut me dry? You're not gonna get the next version, bro. That's only two months old. Imagine what it looks like in four months, bro. Wait until I'm, wait until I'm making it, wait until I'm making it with Gemini 3. 
-
-Gemini 3's on the horizon. 
-
-It's on the horizon. There's, there's, there's, there's rumors. I'm just gonna code faster when I got 3. It's because it's my process, dude, right? Yeah, yeah, yeah. No, no, I wanted to, I wanted to get that, oh no, no, no, it's a fair, it's important, and it's very important that you know where I'm coming from, right? 
-
-Yeah, yeah, yeah. Yeah, the way I would want it the way I'm thinking about monetizing it is um so over in the Version of building in the settings I have I have these choices, so I think there'll be a split right here, so if you want to get API Access you need to pay like you know five dollars a month. I don't care. It doesn't matter money is nothing But you get the free mode which is the manual copy and paste version, and then there's this demo mode, which can just be my local LLM, I don't, I could care less. It'll stream in, right, whatever, the users can, and then that'll, because then that will show them how the API works. work, right? 
-
-So that the moment, just use the, no, yeah, pick us. Because then the moment they just, they love it, they want it, they're done copying and pasting, they want API, just show off the five bucks a month, right? I don't care. And then they can get the API, and then it's all straight. So that's how I think about it, I'll just make a website, right, you know? Then just that's that, you know. 
-
-I've never been able to monetize anything, I'm not very good at it. 
-
-Maybe this will be the thing I can monetize, right? 
-
-I don't know. Maybe, maybe I can get some people to help me. Maybe I can get some people to help me. I don't know. Who knows, right? Okay, because I'm, yeah, yeah. 
-
-No, you're right. 
-
-Okay, so check, no, I know you said you gotta go. Maybe five minutes and then we'll, okay. So, finish this. Now I can start a company because I beat my first one. Let's just call it OpenAI for, just to get it over with. And then intention is all you need, paper's been published, this revolutionary transformer architect, you can change everything. 
-
-But also, training. I could retrain now because I have a win replay data, so I could retrain my game AI agent. But also, I got new research available, see? 
-
-A whole bunch of new research now. 
-
-But now let's just fast forward, just unlock all research, so you can get a kind of glimpse, right? Researcher, data science, training optimization. I made a whole, and this isn't Angry Birds, right? This is not Angry Birds. This is not Angry Birds. So these are all the different AIs you can make. 
-
-These are all the different components you can make. 
-
-And they filter, so you can just see what the advanced image API needs. 
-
-It just needs these. Yep, yep, yep. All the different compute, different data types. Text, coding, image, audio, video, robotics. You do data enrichment, actually. Raw web text, synthetic web text. 
-
-And that's how you keep your data quality high. 
-
-Oh, it's multiplayer. So I made the whole game before I even plugged an LLM into it. And then about three months into it, I was like, oh, let's just try to make a multiplayer. So I made a multiplayer. And then once I made a multiplayer, yeah, just some people, mostly people I know. A few people are from the internet, genuine. 
-
-Yeah, he's my friend. He's a good friend. So yeah, he's a really smart guy too. Okay, so I'm just gonna go. 
-
-Oh yeah, yeah, yeah. 
-
-So once I had the chat window, That was when I had the idea to make my chatbot, because I was like, well, I already made a Slackbot. So I had my whole game, I got my Slackbot script, and I just added it as an artifact. I said, now let's make Ascentia. I call my AI Ascentia. 
-
-Ascent AI, you put AI at the end, Ascentia. 
-
-So that's my AI. It's turned off. Yeah, it's good. I turned it off right now because I'm actually pivoting to use VLLM, which is much more potent than LM Studio. And so I had not switched over the game to use the LLM. The game still uses LLM Studio, so I would have to turn off the AI over there, turn it on over here. 
-
-I don't want to bother with it. the AI questions about the game and it will tell you how to play the game. You can also ask an AI in here about the page, or you can ask anything about the report, because I have over 100 ,000 tokens of report, or 300 ,000 that are also an embedding, so when you ask a question about that, you get all my data in the response from the AI. Dude, basic. 
-
-That's actually yes. And that's so funny you said that. 
-
-No, you're right. I said that to someone that thought I was being cheeky. They thought I was being snarky. I'm like, no, legit. Because she said, well, what do you think about it? I'm like, you can ask the AI what I think about it. 
-
-And she's like, no, I want to know what you think. And I'm like, all the research was I painstakingly put it together. I read it. And if I didn't like it, I changed it. Because I would critique the model I would say this paragraph is wrong and here's why right so you're getting my answers You're getting my thought. Yeah, so like she and then she and then she's like, oh I get what you're saying She actually I see what you did there. 
-
-She got it. She got it. Yeah, she's part of the union Yeah, okay. So, um, yeah, so next time absolutely. 
-
-I'm glad we got this to make this connection Yeah, it'll be forever man because this is just gonna you know Parabolic man, and you will grow with it Once you get entwined with it the next model comes out you get more capable all your tricks will work Okay, so yeah, I'll just kind of leave it at that 
-
-Yes, absolutely. I love that idea. So I gave you the extension already, so let me just show you how you would install it. I'm glad you asked that before we disconnect. 
-
-All you would have to do with that file that you download, it's a v6 file, you just go into the extension section, and then a VS Code, it doesn't matter if it's Windows or Linux or Mac, you just click this button right here, as long as you've got like real VS Studio and you don't have like Community Edition, you'll have this option right here. 
-
-Then you just you just shoot you point you point to the v6 file and then you'll get this little button right here And you're in yeah, the AI just made a spiral. 
-
-Yeah That's right. That's right. That's right. We never that's right. 
-
-That's talking about my DCE. 
-
-That's right So so what's important? Yeah, so by all means by all means and maybe probably everyone has this you'll get stuck You'll like you won't even know where to click. It's confusing sometimes and I'm telling you like there's parts where I'm on my DC. Let me pull it over I'm over here in my DC and I'm like, shit, wait, do I right here? Do I need to start a new cycle? Wait, shit, wait, I forgot. 
-
-Like, where am I at? You start to get into a flow and I'll help you. Once you get into the flow, you're in the flow. But there's, yeah, so, yeah, see? The solution in the accuracy environment. Because the problem, right? 
-
-Revising something, dude? Oh my God, dude. Oh my God. 
-
-What a nightmare. 
-
-Also, you know, getting a little work done. 
-
-Oh, you did read this. Great. Okay, good. Yes. I put this together in one evening. After I showed Eric, Nell, my DCE, he got to sit next to me and see it, right? 
-
-But again, it's sort of falling on deaf ears. No shade. So, no, no, no. He, no, no, no. Yeah, he knows. Not in any meaningful way, right? 
-
-Everyone can see and agree it's cool. Everyone can see and get that. But we need action, brother. We need to make movement. We need to start walking the walk. Yeah, and it's fresh, it's brand new. 
-
-Dude, I literally just made it. I literally just made this thing. And I only made it because I showed the whole team before you showed up, the last demo day, two demo days ago. I showed, that was the first time the whole team saw my AI gig. And so they were astounded, but then they were like, what does this mean for us? And then, that's what I'm trying to say. 
-
-It's content, bro. I created content. What do we do? So, but yeah, yeah, yeah, it helps. 
-
-So yeah, I'm not a coder. 
-
-I just know a lot about tech, because I grew up, I'm a gamer, right? So I have that edge, right? I think gamers all have an edge at this. Yeah, I could literally talk all day to you about that. But yeah, so you saw this. I made this for Eric in an evening because he suggested it. 
-
-He suggested you should make a white paper. And so I literally that evening put this entire thing together. for him So this was a one evening thing because because how because I have my entire Context already brother and I just pivoted I said, okay, we're making a white paper on this extension. It's already got all the context It knows it knows all my artifacts. It's got all of the code and it's got all of the cycles of me inventing inventing this thing so this so So the way I do that as well is I take the, once I get the white paper written, it's basically, you know, it's basically this paragraphical form. And then I just basically for each page, for each section, I create an image prompt. 
-
-And let's actually do it. Let's do it. Let's go to my DCE. 
-
-Let's go to my artifacts. Let's go to my search image. 
-
-Image. I got it. White paper generation plan. Yeah, where are the images? 
-
-Processes asset. 
-
-Okay, so here is the actual. 
-
-white paper before it has images. Okay, there's one for the AISN game. Actually, no, let's look at this one. Here, yes. Image generation system prompt. I have a file like this somewhere for each project. 
-
-It's a master system prompt for an image generation to create a consistent and thematically appropriate set of visual assets for whatever the project is. And so whatever sort of the theme of the images I want, like high tech, military, cyber security, you know, environment, technology, lighting, color palette, dominant, dark, amber, gold, cyan, it's going to have all the same sort of theme to it. And so all I do when it's image creation time, whatever I'm asking for, I just copy and paste this in with it. It's that simple. And then there was one in here, image generation system prompt, and then the CVPG banner image prompt. So this was, at some point, Original home page I felt a little bland, but I was like you know what we should have a banner image So I just said one of the cycles make an artifact to make an image banner to ask for an image banner So I can get an image banner, and it just broke this up And I just I literally just literally just copied that and dropped it into the to the running conversation I had and it came out with the banner. 
-
-I just picked the one out of the ten I liked hyper -realistic cinematic ultra -wide aspect image of futuristic cemented earth or whatever And it tells me where I should put it, where I should name it when I get it and save it, right? You see, you build out all the structure, all that content, and then the book will write itself. Okay, let's write chapter one. And then you can read eight different chapter ones. Yeah, which one tickled your fancy? 
-
-Which one got your goosebumps, bro? It's exactly what it is. I love that analogy. Choose your own adventure. What does OCO stand for? Offensive Cyber Company. No, I get you. 
-
-Yeah, the bad guys. Yep. Yep. Here's the scenario one. A critical segment of the Combatant Command Headquarters network has been compromised. The SOC received high -fidelity alerts indicating unusual outbound traffic and potential data staging from the server in the J2 Directorate. 
-
-Preliminary analysis suggests the activity aligns with DTPs of a known nation -state, cozy bearer, CPT, activated, conduct immediate alerting objectives. See? And if we had KSATs, see that's what Ben was asking in the meeting, right? He's like, how could we map this? I'm like, and that's what I said, this is all my own shit. Like what I meant was this is all from my own head. 
-
-I haven't bought, why would I care to map to KSATs? I could care less about that. But if that's what you're interested in, yeah, drop the Excel in here, bro. Check the box. And then when you ask for learning objectives, you ask for learning objectives mapped to the KSATs. Guess what you're gonna get? 
-
-Guess what you're gonna get? That's right, that's right. Look at this, dude. This is what it's going to make for this scenario. I need a DC, I need a seam, I need a file share, I need two workstations, a firewall, and the AI will help me build this whole network. 
-
-Yes, dude, bare bones. 
-
-Yeah, yes, actually, actually, yes, actually, yes. 
-
-But also another thing is a lot of that is a lot of heavy lifting that we might not need to do, but also a lot of it, the AI knows Ansible, actually, and can just start helping make those as well. 
-
-So my, yeah, yes, the Ansible rules, that's right, yep, I know. Scenario index, so as these scenarios grow, Bunny rabbit on the pancake bunny rabbit with a pancake on its head man. I don't know what what do you people need to see? So here's a bunny rabbit with a pancake on its head. Um, I think I think I think over time I think it's more people. I just hope you know sooner rather than later Oh, I already sent it to you. You already have it. 
-
-You already have it. That's right. Yeah, basically, yeah, so That's right, that's right. This is the skill of the future. That's another thing I didn't say to you. Everyone, so that billion person workforce, this is what I'm trying to say. 
-
-This is what I was trying to put in perspective. I got it now, I remember. This is the secondary skill set that everyone is gonna have, data curation. Because if you're a radiologist, if you're a hairstylist, if you're XYZ, it's about data labeling, data annotation. 
-
-A reporter, a news reporter, or a stock analyst, or an accountant, it doesn't matter. 
-
-All of them will have their own AI that Just like you said, it's my brain out, right? 
-
-Everyone's gonna do the same thing. 
-
-It's too valuable not to. You give everyone a chance. and then what when one person doesn't give a rat's ass about them they're just gonna what they're gonna accumulate government doesn't care about it they're gonna see someone oh look someone made a baking app for their bakery I have a bakery I have credits I never spent my credits oh I wonder what GPT -7 can do now with my credits ah strategically saving and you know this is They're appreciating assets. Like, there's a reason to save them and then there's a reason to use them strategically. Anyway, so yeah. That's the billion person workforce. 
-
-Huh? Let's see. I think I just clicked here, right? 
-
-Share, copy. 
-
-Yeah, there it is. Yeah, so version 1 .10 is the final version of the one before I started integrating local. 
-
-This is probably the one you were saying you couldn't download before. 
-
-Yeah, because I can't just click and drag it. It's too big for Discord. I can email it to you. Oh, someone messaged me on my, literally my catalyst AI, probably a spammer. What the hell, dude? What are the odds? 
-
-No one messaged me over there. Okay, one hour ago. Literally, what are the odds, dude? Talking about it one hour ago. Anyway, who cares? 
-
-Seriously, what the fuck? 
-
-I haven't touched that website for three fucking years, dude. Okay. Yeah, me too, man. Yeah, I agree, and it's just gonna get better, you know? Oh, that's another thing I wanna do, is I bet you, I bet you that's gonna be a real takeoff. is the moments people start using AI to make VR, because it's extremely difficult to make VR. 
-
-AI, AI, AI's gonna make it easy. And we're gonna have it once, yeah, so. um, I just sent, yeah. So see if that link works. Yeah. Cause it still did turn it into a, um, Google drive link anyway, but, um, maybe it'll still work this way. 
-
-Yes, it is exactly that. Yeah. Just drop me a message on discord. Yeah. When you're dicking and dicking around with it and then I'll just, you know, I can look over your shoulder. 
-
-So that's sort of the, uh, cognitive apprenticeship model. 
-
-Uh, let's actually, yeah, yeah. Basically it's, uh, I remember what it is. I remember this. Yes, yes, yes, yes. Modeling. coaching scaffolding and fading. So basically I do it, I'll show it to you and then you do it and I look over your shoulder while you do it. 
-
-That's basically kind of this little, I forget the name of it. It starts with a D or something. Oh no, it was a car, it was a race car. It was some race car. I don't know if I'll find it. Anyway, I'll let you go, man. 
-
-Yeah, yeah. No, it's fine. This is the only thing that's really important. You're not taking away my weekend. The more people that I empower turn into citizen architects, it's one more out of the 330 million. Yeah, no, for real, for real. 
-
-Absolutely. That's where my headspace is at, so. Yeah, so you pick a project. You pick a project, something you're just passionate about, and ideally something you have intimate knowledge with. My friend said, you know, he's got a 60 -year -old aunt, she's an accountant, accountant all her life, he lives in Romania, he's saying, what is she going to do with the rest of her life? I said, make an accounting game, because it's something that she knows internally, she can go, what that allows you to do is you can go deep in, like many cycles deep, and you can, without hallucinations. 
-
-Because you can gut check those hallucinations the moment it shows up because you know it counting like the back of your hand. So you're gaining, that's the skill set. You're gaining the gut check ability so that the moment the AI is going off, you're gonna see, you're gonna be like, why? Then you're gonna learn the true lessons. So that puts you in a position to gut check, by coding everything, having that intimate knowledge, picking a project that you have intimate knowledge in. And then you just go deep, go deep, go deep, and you learn all the side skills, the secondary skill set. 
-
-Yep. that's right. That's feedback, that's right. So that's another part of the equation is in order to, because you don't know if it's a hallucination without the accurate feedback. And if you're an expert, you can give accurate feedback, like that's the wrong cybersecurity solution. That's expert feedback. 
-
-But if you aren't an expert, you cannot give expert feedback. 
-
-So then you can't go deep with the AI. 
-
-But then if you get a code error, that's expert feedback that you don't have to create. It's created by the system. The code error, that's right. 
-
-And you take that and you give that, that's expert feedback of the code that the AI just wrote. 
-
-There's your feedback loop. There's your feedback loop, yeah. And because that's your feedback loop and you're witnessing it, you learn coding because you're in that feedback loop. 
-
-And so, yes, yes, yes. 
-
-It's already here. This is Star Trek level status. It's just not evenly distributed. 
-
-And that's again, that's why I'm actually so gung -ho, dude. Why, David? What is your motivation? What's your selfishness? I want to be Star Trek, bro. I want to be Captain Kirk. 
-
-I want to travel through space. And we're not going to fucking do it if we're fucking shooting each other for fucking Nikes, bro. It's so stupid. Look at the skills. Look at the tools we have, dude. We could solve every problem. 
-
-We could explore this universe. Like, get your shit together. I want to do it in my lifetime. So there's my selfishness. I'm selfish as fuck, dude. I want to see it myself. 
-
-Alright? So there we go. Yeah. Yeah. Yeah, yeah. Yeah, fold space, man. 
-
-Yeah, fold that shit. Yeah, let's go. Yeah, man. All right. Now, all right. Anytime. 
-
-I'm glad we got to connect like this. Yeah. Cool, man. All right. Have a good night. Bye.
 
 
 Transcribed with Cockatoo
@@ -37787,426 +34862,6 @@ Or are they using, they only get two terminals. Are they using one of their othe
 So who's good at synthesizing information? And all this is possible because I have the entire context of the entire project, where I can then say, okay, now let's start working on the analysis portion and I'm just about done now basically but just looking at some of these artifacts to kind of explain so like Jane's telemetry and heuristics for I have an artifact for onboarding the content creator for this so y 'all could make scenarios and you just make an art stage so the drone hacking scenario if there's just a few artifacts that come consist of one scenario, that then, you know, I could just ramble, ramble, ramble. But yeah, I mean, this is, yeah, after action report, instructor view, overwatch kind of stuff. So yeah, all kinds of stuff. The spectrum for the UAV, so when you see the jamming occurring, you know what frequency to switch to. 
 
 Whatever, the sky's the limit, right? So anyway, okay, I'll finish here. Thanks for coming to my TED Talk.
-
-
-Transcribed with Cockatoo
-</file_artifact>
-
-<file path="context/v2v/audio-transcripts/1-on-1-training/transcript-5.md">
-Transcribed with Cockatoo
-
-
-overview of the platform, how we track competencies, and a lot of that relate to how detections work and it'll relate to as we go through the lab. So you kind of picture in your head what it's going to look like. This platform that we're viewing right now, we call it Bravo. This is the platform that the service sits on GovCloud and it can hold CUI data. So this is where we build all of our content. And it sits here. 
-
-Now, the on -prem PCT version, if you're familiar, looks exactly like this, right? Actually, when I highlight it, the lower says PCT. So, this is UKI's learning and system that sits on PCT, sits here on Bravo, and then there's another version here. We call it Alpha. And this also sits in GovCloud, Amazon AWS GovCloud. And this is delivered for Silicon. 
-
-So, it doesn't say PCT because it wasn't funded by that. The only difference here between the two platforms is they get their IML, Hackbox, anti -stipend through this platform. AuthSec is not up right now. So they can access all the JQRContent we built for Abercrombie is also here. So they have complete access to that. They don't have to pay for it. 
-
-It's kind of a nice thing. A lot of the PowerShell stuff we've built for the Navy is also available. And things that they pay for are available in Bravo. When we publish, we publish the whole platform. 
-
-at the same time. 
-
-Bravo just doesn't have access to these. That is provided through the on -prem PCTD. And then I think you guys get exactly where they do the logins, right? The larger Navy gets them through, or all the services get them through the PCTD. One of the things that the LMS provides that was a requirement, and this is just to be honest, if it's going too much, just let me know. It's kind of work role tracking and competency. 
-
-So the JQRs are obviously the biggest thing for CyberCon that we deliver, and those map to line items on a JQR, and then those map to DCWF or NIST, whichever one's relevant to the line item. So what you're seeing here is all of Army Cyber and their work role status. So quickly, right, you can see they have 199 that are in progress on network basic, or host, sorry. Oh, and 206 completed. Army is the biggest user of this because they use it in their schoolhouse. The students that sit there can use it. 
-
-And then we have all the services, right? You can kind of click through. So as you do content, if you were, if you, you know, so this is one of our lab developers. He's going to be a bad one. Bad example. He is. 
-
-It looks like representative wise is, so I've had all these work roles and these are all the line items. These are all the line items that I have completed through the training. And these are awarded through two means. So I didn't get as far. I haven't completed it. They're awarded either through the labs or through static assessments, you know, question answer. 
-
-And I'll show that real quick. So when the data is online, you will be assigned, right? You can assign a training center to be assigned. This is where they're, they kind of live at for their stuff to call training center. There they can open a test, they can open the basic training. When we go to the, after this, we're gonna go into the static content. 
-
-This is some of what the static content looks like. It's very academic. It's kind of read, breakthrough. It is what it is, but it is important. Static content that we're gonna test on. We try to introduce a lot of concepts. 
-
-within the static content before it goes to lab, so it's not the first time you hear that. You'll see like CTI in this case we're gonna talk about, right, Cyberthreat Intel. So we'll talk about it, you'll see it, and then when you go into the lab you're gonna actually have it, right? We're trying not to introduce topics in labs that require a lot of explanation. And then at the end of the lab, or at the end of the training, you have knowledge checks, you're gonna check on that. These don't count for, these will not work competencies or line items. 
-
-They're just knowledge checks on topic, but you have to do an assessment to get awarded that. And then we have, this is how the lab works, right? We have stuff right on the left. You have that screen to the right. In this host analyst, you have two VMs that you will be using for the training. Scrolls down, gives you instructions. 
-
-The host analyst one has a lot of scripting. It's a lot like deployment of agents. So we will provide scripts. The senior one does get more difficult, right? The scripts may not be accurate. It may not work, so team one's got to fix it out. 
-
-A lot of people don't like that. There are questions, answer them, and then in this case, it's going to track how many questions you have answered to make sure you get 400 % and these are our attacks. The first detection we have, I'm just going to demonstrate it real quick. It's a simple one. It is open up web event viewer. 
-
-Is it event viewer? 
-
-Yeah. Type event viewer, right? So this one, because it's really good. So the first detection it wants, right, is just open up event viewer. And then it shares it and gives you credit. 
-
-It'll work the same way in assessments. 
-
-Detections will work the same way. 
-
-So when we talk about detections, that's kind of what they are. I know that's a very basic detect, and there's obviously a longer list of detections we can do. The first is to validate that the consumer, or in this case, the customer, knows what they're supposed to be doing. 
-
-And so instead of just solely relying on question and answer base, it is the user has to actually conduct whatever that specific task is, and we validate that based upon a number of different things, like there is a lot of things going on. 
-
-I have a question. What terminology do you use to determine if they can perform it? 
-
-And I ask that because in the U . 
-
-S. 
-
-, you know, normally it would have some verbiage like, performs X, Y, Z. Like, what are you calling that? 
-
-Lab? To perform it? 
-
-Or what is this section? 
-
-they can be interactive to know that they know how to find a threat. 
-
-So that would be in our assessment. Can Dewey do it like in a detection or question or? 
-
-Yeah, because to me, we can say that the satellite is pretty interactive and they have to actually demonstrate that they can find a threat. So I know the question is slash AQRs. You have line items that say, did you perform X, Y, Z? 
-
-What do y 'all call them? 
-
-Is it lab? 
-
-Is that in the assessment? 
-
-100%. In the assessment. Yeah. So the Cybercom JQR is now, we have CS . JQR, but the Cybercom AQRs, we literally just took a line item, right? And then we draw up what the user action is to do that. 
-
-And sometimes you can't have user action. Sometimes it's just a question. But you may need the lab to answer that, right? Like, what port is that guy? 
-
-Yeah, right? 
-
-So we'll ask the questions. 
-
-You will have to do a functional lab to get that answer. Yeah. It's... Okay. Yeah, you might have to pull the... copy the hex and then paste it into the question form to show that you got that. And you walk through those steps to get the answer. 
-
-And it might be good to highlight that there's training labs and then assessment labs. So you can think of it like there's a training course where you're having static content in a lab that guides you through the activities. So the detections show, yes, I formed the training content. But then there's a whole other assessment course where they'll have assessment questions for the static content in a lab that is similar, maybe different, maybe abbreviated, maybe it's an extension of the training lab. So the labs should be building blocks in order to get to the culminating event, which is the assessment. So like Dan was saying, once you get to the assessment, You shouldn't come across something for the very first time in that. 
-
-You might have to take the knowledge that you learned in lesson one, lab one, and like, but that should never be the first like, oh, we never learned how to do this. 
-
-Your topic's never, we think of that in the beginning, and now we're gonna need to do something completely different. 
-
-That's not really the essence that you crash for. 
-
-So it's all building blocks, leaning towards the assessment. 
-
-is bringing people to take an assessment. That makes sense. I mean, we've got the training lab. Why, like, wasn't it to determine the fact that we said, yeah, we're going to do an assessment? So I'm going to kind of, we don't do that. What we do is we put a control mechanism in. 
-
-So students have the ability, which I didn't demo. We call it universal course catalog. It's on all the PCT. Students can come in and just enroll in a course, right? So they can do this JQR. They can do some of the CQTT stuff. 
-
-What they can't do is self -enroll in an assessment. So there's like a foot permission, we call it training manager, and then whoever runs the command or whatever will be training manager. Those people are usually designated in the real PCT too, I believe. So they're usually just the same person. And then those people will have access to our instructor guides, which we build. And it's kind of a little bit of a footstomp. 
-
-What we're trying to do with this, 
-
-is allow if you want to facilitate this as a course, right? 
-
-It's like a facilitator guide, instructor guide. 
-
-It's got all the answers and some talking points, some troubleshooting stuff, right? 
-
-I've worked on that. So the training managers have to request them. They assign it. So you can go in as the training manager, distract your partner, and then when they're ready, and they've completed all their coursework, then it's time to do the assessment of that paper. 
-
-How have you seen those metrics? 
-
-I'm sure it's asked for. 
-
-They've been asked for. 
-
-I'm sure the metrics are saying, yeah, this person checked all the boxes out. 
-
-Yeah, definitely. It's what they find. Yeah. It's something that works for them. Sure, we need it? Yeah. 
-
-I mean, we'll probably build an NC . org directly, if that's what you guys want. probably something to talk about. 
-
-But like for the Navy right now, right? 
-
-So overall you can see they have 25 people involved in the host analyst. None completed, six in progress. Yeah, I mean, is that kind of what you're asking? 
-
-And then if you want to see the individual, right, status. 
-
-So if I went under where Tiffany Adams is, I can see she's 0 % with Basic and she's 24 % with Senior, yeah. If you clicked on that one in progress right there, sorry, will it go down a little bit further and see which? No, it won't. Okay. If you click on her, you can get a little bit more granular, right? 
-
-She's not been awarded any line items yet. Training, she is active. You can enroll. You can enroll in the training anytime. We don't put a bar on that. You cannot self -enroll in the assessment. 
-
-Competencies are only awarded during assessment. 
-
-Like if you're already considered senior, do they have to go and complete this? Or if they're already basic, then they jump into the senior and start going from there? 
-
-We have no control over any of that. 
-
-Everybody just asks for a basic and senior level JQR for those workloads. 
-
-And we're currently, like you see, we have host analysts, we have network analysts and a network technician. We're currently working on data engineer and ASO, and that should wrap up. DCOTQR requirements. 
-
-Went out to the airport and also doing a lot of it in the schoolhouse, right down the schoolhouse. That's why they have a large number of Marines. The Marines are just getting online too. Shake that crap up. So I didn't just want to highlight, like, this year when we're starting, that is how it'll be presented in this fall. We didn't put a static assessment. 
-
-We want to pull up a static assessment. Oh, yeah. So let's show you what a static assessment is, because that's... That's kind of a decision we will need from nc .exe on how you want to grade them. Obviously, don't make them now. Put you on the spot. 
-
-We want to talk about it. Didn't I have one on? This is an assessment AL1, right? So this will hand out competencies once submitted. And it's got a submit button. And it will warn them if they cannot answer all the questions. 
-
-It'll tell them to answer. And then training. So these are the static things. that are built off the static content to make things 40 questions. And if you look at on the left, there's multiple of these. There's some that are 50. 
-
-This could be very long, like painful. 
-
-It's kind of what the Army was the lead on this one, I believe. Post -analysis is kind of the way they went with it in Cybercom. Now, I mean, this is what it looks like, right? It's going to tell you what line item it's attached to, right? So you can kind of just line item a question, see if that's the right answer. It tells you you're incorrect. 
-
-What should we do? The thing with being right now, this is E, is the way CyberCon wanted this to happen with third JQ bars is it's all or nothing. So, you'll take this exam, what it'll do is everything you get wrong based on line item, it'll read, it'll ask, it's gonna give you a second attempt, and it's just gonna ask you questions amidst the line items, right, questions about the line item. Fail that, and by fail that, I don't mean you get one wrong, fail the whole thing. 
-
-No competencies are awarded. 
-
-There's a lot of heartache and force about that and we kind of take a brunt of that. 
-
-We have a little bit of a technical limitation. we have to award all the competencies based on the exam or the lab. So if we tie five competencies or five line items to like this one, if we say 80 % is the threshold, you will be awarded all five, even though let's say you got one line item you just didn't know. 
-
-It's all about the score of the questions. 
-
-Can you answer that? 
-
-Yeah. So all the questions, they will retain our variance on the question. 
-
-So it's not exact. 
-
-But if they were to fail this retake, they're going to send me all the same exact questions. They want to ensure that every, in this case, a sailor, gets the same exact look at the lineup, right? 
-
-Whereas we do 100 questions, one question may be harder than another question. And, you know, if somebody gets those, 
-
-those... 
-
-Yeah, so to your point, the things would be on competencies, on line items. If you don't want that, I'm just, that's kind of where this answer was. 
-
-They want every soldier to see the same thing and not have a weird one question is harder than another question. 
-
-and polygons, seeing what the embedded properties are. tests are a reflection of it. Right now they don't do it that way. They don't pull the same test each time, when it's not like a failing question. We're digressing. Let's go on to the actual thing you want to do. 
-
-If you guys have an option to work for static assessments, would you do multiple static assessments or would we just do one and compile it all? 
-
-That's up to you. 
-
-Yeah, we'll come back. We're not at that point anyways. So we're going to go to the static content real quick, kind of talk about what really high level, which each thing is, you know, sure. From the last meeting, we made those adjustments, right? Remember the DOD knowledge and all that. Yeah. 
-
-Although what we have right now is four models that are one thing or two. 
-
-This is just a wheel call, whatever you want. Bye. One quick background, Austin and I, we're tired of that NCDP, we both deployed, so a lot of this knowledge, we've both experienced, we have a lot of people in here that probably deployed too. We all know too that NCDP really lacks black and white training, right? We all kind of agree with that. So, please take a look through the training. 
-
-A lot of this is based off of actual doctrine and training, but I've also tried really, really hard to get as operational as possible. 
-
-Right, so this is totally draft, it's not complete by any means, so if you see stuff you like in there, mark that, you know, whatever you don't like in there, write about it, let us know. We have the amount of pictures and everything right now. So, we get sent off topics. This is just, this is just kind of the really high -level talking points. So going into it, what we wanted to do, again, was provide mission relevance. So we try to provide scenarios. 
-
-A lot of them are just like hypothetical scenarios or situations, really hard to find. Intelligence reports and stuff don't really exactly do the shifts. So we try to do that as much as possible. Hey, this is the content. This is why it's important to you, right? Next one is we try to, in throughout training, we bring up a lot of the tools that are okay. 
-
-So, again, operational relevance, okay, where are you going to be famous, how are you going to be famous, and again, static content, so we're just going to bring some of those ideas. 
-
-Static is just really kind of a reinforce what you're going to be doing in the interactive labs. So, again, we want to be able to see how stuff is going to look like the first time. And then we used doctrine, so there's not a whole lot of doctrine out there as far as CDT was used, so we're fine, we'll bring that in there. Right? Using lighter cyber attacks, crocheting, stuff like that, doing mass apparel, thinking about your animals, right? You see something, okay, now what's next? 
-
-So using those to kind of get a start to take my hand on this, and not just a concept, right? Like, what is it? Okay, I've got a spearfishing mural. I'm done. Now let's start having more questions, and this will kind of help Daniels ask those questions. So I'm just going to go really top level, and again, look through here if you have questions, bring it up with lessons they're covering. 
-
-We hit heavy on cyber -threatening intelligence. In there, we want to bring up above the sea ox and to utilize that threat intelligence, we're moving into a new AOR and things like that. Pulling those indicators of compromise. How are we visualizing? How are we reporting? So this just kind of hits a couple of CTIs, and then we go into APT activity, life cycles of attacks, really kind of just top -level stuff. 
-
-practices or trying to incorporate a lot of those key items in there. So we've got to go into ITOT services, kind of explain some things you might still understand, right, how that might work. because we actually only keep it out there when we're on a ship. So it's very hard for them, and, you know, what's the environment like? We go into enterprise protocols, talk about float networks. The way the architecture and how you implement CPI on your weak point within a network, they're really important. 
-
-How, you know, what's your biggest attack vector? It's kind of recognizing those things as an analyst. We go into gated controls. Key cyber terrain, I know we tried to keep that possible. They probably need troubleshooting or additional requirements to somehow change or somewhere in the past they would at least have a base in the office or just have seen it. And here, again, we stick top -up. 
-
-We try to embed a lot of other documentation straight from Splunk, Elastic and whatnot, so if they need those other additional resources, it's right there in the training and they can just pull it out. They won't get another bring -out by the dashboard. It's all embedded in there in TDS. So this was a very kind of technical one. It had DOD, cyber, so event classification. I'm probably going to move this one out. 
-
-It didn't have to do with all categories. You may have a lot of analysts who don't know what CPIRs are. You can work from that faucet. When this should bring that up, dealing with the team lead, those are important topics that should be talked about. This is really getting into, you know, The actually like analytic code works, we talk about the packet inspections, deploy log analysis. Again, we make a lot of notes in here, validating network maps a lot. 
-
-If you can't do this on the road, they have to coordinate with the ship, they have to coordinate the IPs on board. So there's a lot of notes. And then the train says, hey, these are things that you can do, but you have to build those relationships to get that, right? It's not just allow, you know, ADP will get the ship, the banners, the blocks, some don't. It's just the way to go. So at least they know where to go and get it, when it can be used for, why it can be used for, why they should get them. 
-
-Yeah, it talks about, and if you go through it again, you'll see it kind of connects everything with the kit. So it'll talk about the tools, where they're going to see, and they can use it within the kit. Some of the stuff they probably might know already, so it's really kind of coverage if you feel, hey, we need to dive deeper into these things, we can definitely do that. This one we have yet to write yet, so you're not actually going to see anything. It's a lot of time. Very assorted type of topics, and as we write it, it might be integrated from where I was. 
-
-So this thing right here is like a joint marketing lifestyle, like another type of architecture that we can use with that overall. incidents on a ship or anything like that and build that up, work with incident analysts, work with ACW guys, network analysts, and kind of put that out there. So trying to, again, make permitting relevant to NCP. So throughout the training, you're going to see a lot of NCP, ACW, incident, a lot of the watch data and stuff like that, how to utilize that stuff. They're very strict on what they can do. They have a lot of resources, a lot of things they don't know about. 
-
-So that's overall. 
-
-Try to put as much stuff into the labs. We want the interaction, right? 
-
-So again, this is very basic stuff. 
-
-And as we go through and we can say, you know what, we can kind of fit this in the lab, then we talk about it and we'll go ahead and move into a lab. This way they can get a lot more hands -on. But most of the core stuff, the potatoes, we try to put everything into a lab for interaction. 
-
-Once we have it up here, we can show you some of those things. 
-
-Any questions on the static content? The big question is, how do you guys want the assessments, right? So that's that. 
-
-But everything, every single topic will have a question and will be set up online. 
-
-The question on these lessons, right, how are they structured? Oh, okay. So you're going to have, if you agree, you'll always have the conceptual idea of what we're trying to put across. And then if it's good enough, then we put operation problems in. And there's a step -by -step process. We learn how to break that down. 
-
-Going into the third lesson, there's a lot of long stuff. So we provide a lot of that coding. Like this is a really simple what you would see, how you would write it. And then we also do that embedded PDFs. So they actually have more detail. We don't want to flood it with tons of scripts and whatnot, so we kind of put that off to the side. 
-
-So, and we try to go in there with that mindset, and that's what we do for writing. It's like, okay, here we go. We'll say right in there, I'll reach a little bit out there, or I'll add a scenario in there, and we try to use, you know, Again, it was just difficult to find one that was specific to Navy ships. It was a short manned or, you know, not a big stuff. So, big crystal ball type of vehicles that we could, you know, it's very likely or, you know, it's possible on the ship. I think that was the last one, just a summary kind of covering some of the, basically what we kind of talked about in the beginning. 
-
-Another thing, too, is within there, There's always that, of course, action that goes like step by step, right? You get that, and then at the end, it'll say, okay, here's like a footnote forward. Here's that action to keep in mind as you're going through this process and kind of like summarize a bit. 
-
-You know that text can get boring. 
-
-We're going to try to interact, put as many pictures in there as we can to kind of break things up. We just didn't want it to be that, you know, Like it's just a statement, a definition, moving on. 
-
-Definition of something, moving on. And you really learn from that. It's really hard to learn from that content. So here's that operational relevance of really where we're trying to focus on. That's all I have. 
-
-Cool, I'll just bring it up. And then, do we have anything from the Teams chat, anything from the feed? Awesome. This is in, right? Yeah, there it is. Yeah, so once we get this up, I'm going to start publishing. 
-
-We'll probably, we can do virtual, right? If you have people that want to run through what it looks like, where it's at, we can do that. We'll do that pretty early. 
-
-Yeah, it's still at the course publish yet, so we didn't really put it. 
-
-Alex takes over, we'll talk about the labs and kind of like the phases. 
-
-that we kind of designed. 
-
-We kind of went with the approach with the crawl, walk, run. 
-
-And it starts with the first phase being strictly, they get on to a team, a part of a ship. 
-
-What do they have to do first? 
-
-Well, physically it's a lot of grooming. 
-
-The kids building out their dashboards on the kit, getting everything ready, what that looks like. 
-
-So that's the first phase, we'll bring us through that. 
-
-The second phase is once your dashboards are set up, your kit's where you want it to be, They're checking off those alerts, monitoring it, getting malicious or not, moving on, right? 
-
-What are you doing? 
-
-You get thousands of hits every day. 
-
-How do you deal with it? 
-
-standard you provide them for? 
-
-I don't believe there's any that are pre -loaded into the kit. 
-
-Okay. 
-
-So, Ms. Zalewki, do we still then provide them, hey, here's what you will load onto the kit, or is it 
-
-send them out and say, yo, how are we doing? 
-
-And some portions of N3 Alpha confer with the team before they go out and get this info. 
-
-Oh, I get it. 
-
-Why aren't we showing how students can split this up and help teams figure it out? 
-
-That would be weird. 
-
-I want to make sure I understand. That's what it sounds like we're doing. Yeah, there's nothing preloaded behind it. 
-
-It's true. OK. So we get an early case. That should not be an easy case. OK. So if anything you ask me, this will teach you how to quantify, right? 
-
-We'll come to you. So, yeah, day -to -day operations covered in the phase 3. Phase 3 for things that are a little bit more serious. You know, get over the AOR. What you want to do is, you know, reach out to the MCU and say, we've got some in -cell reports of what's going on from here. What do I want to do with that? 
-
-Right? So that's where phase 3 comes in. And then that's a very important kind of look out for. So now you've got to learn how to pull those IFCs out of there. put it in a dashboard so they're way up in there to make sure you're aware. Now, phase three, we'll go through that, right? 
-
-So a lot of CTIs and building those phase four projects really is representing where these 380PT have to be, right? So we're talking CCR, you know, area. Go through that, go through that whole scenario, and then phase five is the reporters. Again, I'm talking about walk, crawl, run, right? Bring it through, and everyone will kind of play a building block to the other. So I'll let Alex go ahead and take over. 
-
-Yeah, so I'm going to try and focus on what it is that we're talking about. I know this is probably really small. for those in the near future. I do apologize for that, but just kind of reiterate what Jesse was saying. As he said, we're calling phases. There really is just one scenario that we're taking the learner through, start to finish, like a crawl, walk, run, going through all those different steps. 
-
-And just for the training, we've broken that into five different phases, right? So same environment, same kind of situation, which kind of help and guide them through those steps that he is brought up. So that's why we call it phases. We've got the box here. I've tried to find it for our information, see what's the input, what's changing, what's the output, and then what are they doing. Then before I start zooming into these things specifically, I'll just point out these little purple thing on the side. 
-
-We've got data set one and data set two. That's just correlated to what kind of data are they looking at on the same environment. I'll actually go into what that environment looks like and how we're generating it. But that's what this is meaning, but it's all the same scenario. We're just, you know, kind of helping them piecemeal, taking them through that process. Like Jesse said, phase one, you're all up, you've got your kit, it's a blank kit, so a lot of that, you've got some generic environmental data in there, nothing malicious, just kind of day -to -day network operations, and like I said, you've got a base limit, I think it's called rooming it, so just kind of getting it ready and tuned to the environment. 
-
-So with those changes, the yellow here, they've got their dashboards, queries, searches, filters, you know, they have an understanding of what that environment looks like. They've got a baseline. Phase two is you have the network data, now let's go look at it. So what's anomalous? EAPLs are specifically asking for any kind of anomalous activity or anything that's unexpected, anything that would spike off the baseline. So now they have those baselines in there. 
-
-now they've got to look for it, and there's a couple of benign activity in the environment they've got to be able to pinpoint. So I just kind of bring them, okay, you've got your baseline, now we're applying it, things are working well, now we can start moving on to phase three. which is where they've been given some cyber threat intel, some IOCs for a specific attack they're seeing, and now they actually have to go tune the kit for that. So again, no malicious phenomena in the environment yet. They're just preparing for it. They're getting plugged into the kit so that when we roll into phase four and those new dashboards, filters, searches, and detections are run through the data set number two with the attack sim, Now they're going to start seeing some lights, you know, start blinking, some detections that are rolling in, and that's for phase four. 
-
-They've really got to dig in and see, okay, what happened? What did I see here? What are all the different events that happened? Start pulling all these pieces together, and so that way in phase five, they can start condensing that into that report for them to distill all this information on, you know, what's happened here in this event. So that's kind of the methodology here. That's why we're breaking it into the different phases, and that's why we've got the different data sets. 
-
-Again, I've got other diagrams. We'll see what that environment looks like, but I'll pause there and see if there's any questions or concerns just with the approach that we're taking. Kind of easing into the environment, the kit right up here. As I said before, we're constructing a very large environment that is representative of the canes, the moths, et cetera, that can actually collect that traffic from. We're loading that onto a security onion system, and we're just that system in Splunk in a Windows workstation. That's the only thing the learner actually has access to, right? 
-
-It's a passive environment, passive network. They've got to go analyze it. Why I mention that is that, you know, cost -wise, we're able to expose this lab and these concepts with only a couple of hosts that they need access to. But we're generating it through this very large environment. But this is what that minimized environment would look like for the learner, right? They've got that security onion system, Splunk, they have analyst workstation, and then a sensor that they're able to pull PCAPs from. 
-
-So if we have access to all the network data, we're just not having to pull all that large environment along with us. And then again, we've met with some of the kit creators and looked at a couple of setup guides. So we're basing this off of just a standard security 8 .4 install. 
-
-with the Logstash, Lester's Kibana, and then a side Splunk server that they can query against. 
-
-It's also ingesting the same Zeek and Seracata data. 
-
-So, just kind of level set, that's what that is merging for. 
-
-Yeah, I think it's like the 2 .4 and then I think 270 or something similar to that. 
-
-But yeah, that's what we're currently working with and that's what will be spun up and then collecting that network data. No questions there. Host data, so like host logs. So the host could have logs, like the actions are really happening on hosts. This is a good discussion, because we right now, when it goes into the actual actions, we're not collecting them. Well, we'll collect. 
-
-We were expecting to collect logs from a system, and then they, as a learner, would request those logs, and they'd have to use that to correlate against an action in the attack. So, they do exist. Yeah. Was there another question? Do you guys have any questions online? As you'll see, we do have, I'll actually bring it up here, the representative environment that we are currently building out. 
-
-These are going to be like real, virtualized, real systems, but actual operating systems that will be generating logs, network traffic, etc. So whatever system or whatever component that we want to present those host logs to the learner to kind of corroborate the network data that they're analyzing, those can't be available. We'll just have to know where to pick it from and then give it to them at the appropriate time. 
-
-So this, again, this is the representative environment that we've built. I say representative because it's not. 
-
-We say canes, it's not a full canes environment, it's just really an environment that we've crafted that's representative of what's been told to us, but also allows us to demonstrate a full spectrum of the MITRE ATT &CK framework, which is actually what we've aligned the ATT &CK to. 
-
-So that's why we've got standard workstations over here, we've got a couple of server subnets or security subnets. Importantly, we've got point -to -point from the canes environment to the NOC. It's also got a couple of enterprise -ish systems that we can generate some enterprise, you know, cross -point traffic with, and then through the NACA everything. actually then eventually filters out into the public Internet. 
-
-So with that, we're able to create, you know, some SMTP traffic, so exchange -to -exchange, exchange -to -public Internet. Actual internet traffic is going to help us demonstrate some of those lateral movement, pivoting activities in the MITRE framework. So I'll highlight here that we're currently capturing traffic northbound as traffic is crossing the BGR into the NOC, and then also the two entry points into the server subnets, so like Workstation, the server you have visibility into, and egressing from the Cairns network you have visibility into. I'll actually go and bring up a modified diagram to show DATASET -1, DATASET -2, what it is that we're actually looking at, but I'll pause here and see if there's any questions or concerns about the representative environment that we're generating. We are struggling to figure out what that tap really looks like. But I think I gave us a thumbs up. 
-
-So that was my decision. What you need to do is look at the path of the Agent 7s, monitor the standing engines, but then see if you can produce any less traffic, which is really the point with this Agent 7. As far as my eyes, it was four taps. We worked this out, two on the Agent S, two on the Batacom, two just for that. We didn't see all the traffic traversing in and out. So I'm trying to get inside the school. 
-
-We can wait for it if you don't have the answer down. I'll move into the data sets. Data set one is meant to have, again, this is assumed to have a bunch of standard day -to -day network activity that's already being generated. I'm just highlighting what's going to be of interest to the learner. So we're going to be seeing all these workstations generating standard web traffic, both encrypted and unencrypted, from here to local web servers, here to web servers in Manila or other regions in the Navy, and then additional, some actual internet traffic. So we'll see a good variety of HTTP, HTTPS. 
-
-And the same thing with email, right? 
-
-We've got an Exchange server that will be on the ship, an Exchange server on the NOC that's acting as an upstream forwarder, so it'll see all the SMCB traffic go through there, and then you'll also have a web host that is serving traffic to Exchange, and then through an actual, like, Personal webmail point being you're going to see a lot of email traffic and I emphasize email events because that's the entry point for the attack, right? It's a phishing scenario. So we're going to make sure that there's a lot of traffic, you know, day -to -day, nothing should stand out except what we want to stand out. And so Dataset 1, after they've re -inducted the kit, they'll see two things that are kind of anomalous. 
-
-One is an undocumented host. 
-
-non -malicious, but just something that somebody's plugged into the network, it's not documented, they gotta see that, the spike, okay? That's an undocumented host. And another host here that's navigating to a website for the first time, right? So we've never seen network traffic go to this domain before. Why is that? Is that malicious? 
-
-We need to look into it. Just something to kind of put a couple of spikes under that baseline they've established. So I'll pause there. Any questions on data set one? No? And then this here is like the meat and bones. 
-
-So after they've got their IOCs tuned into the system, we have this attack scenario that is a miter just kind of highlight what the path would look like. So anything from the initial compromise to AD reconnaissance, file reconnaissance, privilege escalation. Pivoting within an environment, moving up a level of movement within the environment, data exfil, C2, what have you. Just kind of a standard attack progression to help kind of highlight, you know, this is what this would look like in MITRE. What would that be doing to this? How do I find the next step and start putting all those pieces together? 
-
-So, at a high level, that's what we're trying to get after here. Kind of breaking it down, as I mentioned, the first gear is phishing email delivered to the user's inbox. They click on it, it goes to a domain that has been compromised, drive -by attack, JavaScript, falls down a C2 beacon, and now you've got C2 traffic that's going out to a post on the internet that's TLS encrypted. 
-
-So, that's the initial vector. Once they've compromised, that C2 beacon starts doing some AD, domain -based response, so enumerating users, trying to find service accounts, finds a password in the description field for a service account or something, and then uses that to start moving laterally through the network, uses that to connect onto an SMB share, finds an SHP, that SHP gets sent into an actual Linux host, which they then deploy the second C2 beacon, which goes to a separate C2 infrastructure out in the cloud. From there, they're able to do slow XFIL, which is one of the EOLs that we need to demonstrate. 
-
-And then once they have that slow XFIL, they move laterally within the server subnet, which is not visible to the apps. 
-
-We said we had concurrent places, enter subnet traversal, so that little wrinkle there. 
-
-Once they compromise this Windows IIS system, they're able to perform hundreds of chain delegation, request certificate from ADCF services to just obtain persistence. 
-
-Nothing malicious happening here, just more of a persistence measure so we can demonstrate that aspect of MITRE ATT &CK. But the main focus is the machine delivery, the C2, the reconnaissance, and that slow X spill over that second beacon. 
-
-So pause there, see if there's any questions or concerns about the scenario or how we're aligning that to MITRE. But this is what that, this is the network data that will be generated for that certain task set that they're playing with. I just had a quick question, not necessarily about the scenario or its alignment, which seems pretty intuitive. You did reference some of the ELOs, like slow exfil and stuff. I might have missed this, but where are those ELOs coming from? Are those coming from the network analysts, cybercoms, TMFGQRs? 
-
-No, no, no. They're coming from the I don't know how to put it. The sound of different sounds works. Okay, gotcha. Thank you. The Network Analyst and Post Analyst JPR are separate entities. 
-
-This corollary is closest to the... No, this is to you. 
-
-This is the Cyber Defense Analyst JPR brought out by Cyber Command to develop. 
-
-So, it's not going to look like Post and Network Analyst because it's supposed to be a discrete entity. 
-
-We are using it to fill the gap with SVGIs because they have to do a little bit of both host and network and do it alone and free. So there's going to be some overlap between host and network application knowledge. From an internal or for us, how it would be is that, so first we go, how would we want to actually practice like the C2? Like I could not have them in the lab do a talk to somebody and make sure we're capable. Because if it's email and this is happening, they have internet. So they're not isolated. 
-
-So they could talk to us. But that's how we want to structure that part of it. In the worst case, the IW wants to eat these people and then no longer talk to us ever. 
-
-So we need to confirm and figure out what we want, how we want to fix that ending down. Does that make sense? Nothing for you guys yet. We need to figure out what that looks like on our end. 
-
-I guess it's definitely the same thing. 
-
-the information ends up what's happening, they can't. And so they say, I guess it's definitely this type of thing. 
-
-So we figure out how do we build something that we actually know. You have to keep doing your analysis, but also make sure you're communicating with your machine, and the machine is talking to you. Yeah, I think there was mention of CCRR on the content side, right? Is that kind of, is that not strong? Yeah, so we understand that these things play a part, right? Obviously, in a lab, we can't We can try to represent that. 
-
-We talked about that with like white party. We can put in a scenario and it's already communicated with the launch core VWC. This is stuff going on. Right, like, at this point, you know, I probably do a good job of running through those labs, but as you scroll through a lab, there'll be a question, so you move on to the next section. make them actually fill out that form, and that's the same as whatever reports could be there. So one, we can bring that up in the static content. 
-
-We can give them the initial and the final. But if you move on to step five, that's where we're going to go reporting. And you'll see some of this, again, we understand it's a long time frame. We're trying to encapsulate that. 
-
-And we're definitely looking for any ideas that help that long term. And that's where I just, yeah, fill in those gaps so I can get all the things that are happening behind the scenes that we'd like to implement in there. It's just one of the, you know, you've got all of the, you've done your analysis and everything, and you're kind of putting it together for your final report or yeah. Yeah, and based upon, it's been a long time for me, but based upon that IIR, there's different fields that are required for information. we can make that part of the checks for different fields. So it's not just a one answer, one question. 
-
-There'd be multiple questions for kind of like each one of those fields to do checks against to ensure that they're getting the proper information that you require. Okay. the customer end, a lot of them are just houses. Locally, it can be as good as possible, but if it's not communicated correctly for validation, then it's only doing so much. 
-
-And especially if that's being used to communicate with like the ship's company, defenders, I just, I think that's something that definitely needs to be stressed out. 
-
-Back to that piece of communication and building those relationships over the ship, because if you don't have a good relationship with the ITs and you're just going off the other boats, You know, if it's a report about your agent input that has been found, then it may be lacking information. 
-
-So we probably have a hard point. Hey, this is the stuff that they need. 
-
-Make sure you get this stuff, provide it to them. 
-
-We'll get those reports before the sentence is adopted. 
-
-We're gonna try to get that form of relationship going. That was really the wrap for the labs. 
-
-You know, if there's anything else you wanted to dig into, either the lab scenario, the resources, phishing, et cetera, or if we wanted to pivot back to the static content or the static training for assessment, I'm happy to do so. But that kind of wraps up everything that we went ahead on for NC DOC, right? Or do you want us to delete room and just have it up here? Can you just pull that up? Yeah. Do we want to leave the team's call open, or? 
-
-We'll just tell them. Hey, Priscilla and David, can you get off the team's call? I've got it covered. Yep, sure. Everyone leaves. It's a team's representative environment.
 
 
 Transcribed with Cockatoo
@@ -41718,6 +38373,712 @@ It'll help you in dividends in the future, man. This is not just for work. This 
 Transcribed with Cockatoo
 </file_artifact>
 
+<file path="context/v2v/audio-transcripts/1-on-1-training/transcript-11.md">
+Transcribed with Cockatoo
+
+
+Yeah So yeah, give me a bit about your background tell me a bit about where you're from that way I know who I'm talking to and I can talk to you rather than at you so So basically, let's see this. Basically, so actually just I have it downloaded and then if I open it that way. 
+
+Okay, cool. 
+
+Okay, so three years ago, I was working at Palo Alto Networks. I was initially hired to be a customer success engineer and because I had just gotten my bachelor's in cloud computing and I was hired in a I'm with 18 other academy members, and we were put in the Prisma Cloud Academy, which is like a six -week training course at Palo Alto, their internal enablement team put together. And so I was the top student in that academy. And then the team that was putting the training together actually offered me a position on that team. So I got a full, yeah, I got a full, I got, I've worked hard. I got a full -time, I earned a full -time position at Palo Alto Networks, kind of my first, first stint in cybersecurity. 
+
+And that was about four years ago. And I supported Prism Cloud and XOR. And near the end of me working there, Chad GPT came out. And, you know, technical enablement. At the time, I knew exactly how it could be helpful for learning and education. I was in education at the time. 
+
+And I was in technology. So technical enablement. this is the, what's the most technically enabling tool, the freaking AI, right? That can answer all those questions. Yeah, and that's another thing, that's another thing, the fear was there as well, there was fear, but for me it was fear of missing out, because I felt like it was gonna be a big wave, it was big, I didn't feel like it, I knew it was gonna be a big wave. Actually, hold on, let me click, let me see here. 
+
+There should be a button here I can click, yeah. 
+
+Okay, hi, yeah. 
+
+So I basically heard two stories. I heard people were starting companies with AI, which I understood that to mean they were basically getting all the questions answered that they needed, like all the hurdles, all the legal issues, everything, just all the paperwork. And then people were also writing code with AI. 
+
+Wow. 
+
+If it can, because I asked the question, what's the most valuable thing that AI can write, if it can write? And the answer to me was code, because code is, objectionable, it's not subjective, like an essay is. You can write me the perfect essay, I can find you some editor who will find something to criticize about it. Versus code, it's functional, you can write a perfect function versus a not so efficient function, but all things being equal, it either does the job or doesn't do the job. And so you can verify, it's objective, verifiably objective. And so that's what I set out to do back then. 
+
+With GPT 3 .5, I created a Slackbot. I created a Slackbot. I basically created a multiplayer GPT. something that still doesn't quite exist yet. Because in Slack, you know, anyone can start a thread and then anyone can see the thread. And then so anyone can also read what the AI says to you and then can also reply and ask. 
+
+So it's like multiplayer, right? And you can customize for each channel it's in. Like I made a sales enablement channel. And so I gave it a persona with the channel's system message, adopt the persona of sales enablement specialist inside our security field, focusing on managed security services providers and palliative networks products, your audience is a team of sales professionals, blah, blah, blah. Prospective client is asking, why did you go with our solution over Zscaler? Sure, David, here are some common questions we encounter. 
+
+And then some talking points for the sales enablement specialist, for answering the customer's question. 
+
+Yeah. 
+
+Absolutely, absolutely. Yeah, and I'll tell you exactly how it's going to work. It's just missing a few more pieces, so glasses. Imagine when, let's go with hair stylists. I use this analogy all the time. Very soon, everyone's going to have those glasses that have a camera in them, and people are going to be basically live streaming like to Twitch their entire lives, basically. 
+
+And there'll be a viewership of two. It'll be everyone watching their own stream and then their AI. it as well. Then what's going to happen is that's when you're going to get hours and hours and hours of cutting hair, a hairstylist cutting hair. Then he's going to start annotating that data. Or not even just annotating, he's going to have that data as raw data. 
+
+He's a good hairstylist, so it's recorded how to cut a good haircut, right? Bada bing, bada boom, that's training data that we didn't have before we had the recording platform. So you can't skip the step. You can't have an AI that can help you learn to cut hair with your glasses, you know, augmented reality superimposed like the right angle or the right clipper or detecting that you've picked up the wrong clipper or the wrong size and saying, uh -uh, they've asked for this haircut and this is the right one you're supposed to be using. That's in situ learning. That's not possible without the training data set and you can't get the training data set until you have the need for it. 
+
+Okay, so and here's an example of I also created a RAG system before I even knew the term RAG. Because you see here I'm adding a knowledge base file. I'm adding the administrator guide for XIM and it turns it into an embedding. And I actually store the embedding in the Slack channel. So Slack instantly became my vector database. Um, um, but, uh, so I asked, this is the reset of the GIF. 
+
+So what is Cortex XIM? And XIM was a software that came out in January of 2022. And the cutoff date for training was December, 2021. And so when you ask about XIM, it's like, oh, XOR it's, uh, and I'm like, no, not XOR, XIM. It's a new product. It's not in the training data. 
+
+I apologize. However, I'm not familiar with XIM. It might be some confusion or a typo. No brother. I didn't make a typo. So I drop in the advert. 
+
+guide, I upload it to the Slack channel, and then I just use the slash command to upload a PDF. I choose which PDF to make into a knowledge base for this channel. It's processed. Now I'm going to ask the exact same question. And this was what it said the first time, EXOR. So here's the exact same question. 
+
+I get a response. Thinking. Cortex XIM is a comprehensive security platform with XIM, a gainful visibility in the assets, a tech emerging set. 
+
+Yes, yes, yes. 
+
+Follow -up questions. 
+
+You see? 
+
+How hard was that to set up? Yeah, and I, yeah, yeah. That's what, that's what taught me. See, that's great. You're very clever, so check this out. That's how I came up with my RAG idea was I first asked, chat GPT, do you know what XOR is? 
+
+Yeah, I do, blah, blah, blah, generics. I said, make me training on playbooks, how to make a playbook in XOR. And it was garbage. That's when I thought, well, I went through the whole admin. The admin guide itself was too big at the time to fit, so I went through and I just did a control F, playbooks. Every single paragraph that had the word playbook in it, I made my own file, and then that was basically like my playbook. 
+
+you know, data set, right? That's right. And then I just asked the exact same question, but I just added that in with my prompt. And it was like, magic. It was damn near almost usable. 
+
+I only had to like format for like the use case, right? But it was literally like whole, it was like night and day difference. And I was like, wow, if I could just like automate this somehow. And so I found a YouTube video. Some dude made a 70 line script where he could rag the constitution and ask questions on it. followed his YouTube, made the 70 -page script. 
+
+I had already made my AI bot without the rag, and so I took the two scripts, I showed them to the AI, because I can't write it. I can't code. I can't code. I'm not a coder, I'm not a developer. I can't write enough statements to save my life. I also could never learn another foreign language. 
+
+I failed Spanish every year before I passed it, every year of high school, every year of college, because it's a required course. That's right. I know. I know. Thank you. And this is it's I'm kind of I'm chicken little over here and I'm screaming the sky is falling. 
+
+Alright, so let's fast forward. Let's fast forward. Because if I could do this, China can do this. And if no one's paying attention, if no one's paying attention, I know they are paying attention in China, they see this as their golden ticket. If you look at just optimism levels, if you just look at optimism levels of AI, AI in China, and in in America, it's like 39 % optimism in AI in America and 70 or 81 % optimism in China and if you just look at the adoption rate of any technology throughout history, a leading indicator as to the adoption rate is the optimism rate as well. 
+
+One of which is measurable prior. You see what I'm saying? So, like, they are, and not, and so, in March of this year, March 25, Gemini 2 .5 Pro came out. Before that, in May, November, I had reactivated a game that I had launched over a decade ago. 
+
+No, no, no, no, no. Where's the damn history? 
+
+Ah, yes. My videos, yes. 
+
+That's what I'm looking at. 
+
+A game called Lineage 2. It'll be fine. And so I made... It's a L2J server. It's a Java server from over a decade ago where I got hacked. Someone wiped my database. 
+
+But I kept my code, because I always thought in the back of my mind I could maybe reverse engineer the custom part of the database from if you could look at the code, because the code is going to call directly the right tables and columns, and if you just put it all together, you could do that. And so I kept it for 12 years. And then finally AI comes about, right? And then O1 Preview comes out, which was the first thinking model. And that's what made it really code extraordinarily well. And that's when I sort of learned my parallel processing. 
+
+trick. And one of the things that I did was once I got that server back up and running and everything, I made a website and everything, I wanted to start making new things. That was sort of the holy grail was making something new versus tweaking something that already exists. So I had played on a server way back in the day where they had this fantastic custom PVP event in a specific dungeon that was perfect red versus blue because the dungeon itself was colored red and blue. And so I basically recreated that from memory in this game with AI. This was kind of like the, huh? 
+
+No, this was before Gemini. I used O1 preview. So I'm giving you the real long back story because you sound like, oh, yeah, no, it's chat TBT. Now it's like O3 or whatever. Yep, but it was the first version of the o1 o2 their strength their thinking models They had you know chat GPT 3 .5 and 4 and then I think they just got to 5 and they're not going to do that anymore They're doing thinking models. They're doing 4o and other in that but they're doing o1. 
+
+It's so confusing But yeah, this the first one was o1 preview. That was in november of last year. So it literally hasn't even been a year since the first thinking LLM has been in existence. So like, that's right. And so this is all very fresh. What I'm able to do, I was able to do from the very first version of thinking. 
+
+It's only going to be uphill from here. you know what I mean? So what this event is, basically, you got your scores. I even had a whole, yeah, I'll show that as well. So you destroy the flags and you push around here. Ah, so a thinking model is basically just a model that talks to itself before it talks to you. 
+
+So it's basically accessing the latent space in its memory as it thinks, right? And then it can make a plan. It can make a plan for you in the thinking, see? So you can prompt it to think in a certain way. And then there's all kinds of like thinking strategies like plan, act, do, reason, you know, those things they make you learn in like business school. But you can just have your AI do that as long as you, right? 
+
+And then you can make that into a, you can make that, it's called chain of thought as well, so. But they do that automatically. It's not like you have to do it. It's done automatically, sort of. That's right. It can plan. 
+
+And then it can find a solution, right? And then it can give that one to you, right? Actually, yeah. Yes. 2 .5 Pro is a thinking model. Yeah. 
+
+So, I trained Gemini before working at UKI. I was a RLHF trainer, basically. It's actually part of my whole story, part of this situation. This isn't loading, but maybe we could, ah, there we go, okay. So, this was my website. I still have it all. 
+
+I just flipped it off to do this game instead. But this was kind of the first time using an AI to like make SQL statements, servicing data. on the website. This is data from the game server. So who owns what boss jewelry? Where is it? 
+
+One of my players said this is like CIA level status. One of the things in the game that's very fun is over enchanting a weapon and then you can break the weapon. But when you do that, that story is gone. But that's part of the story of the servers who has what over enchanted equipment. And so now it's captured. It's actually stored. 
+
+And so you can see the history. You know top clan list all that kind of stuff and then for the battlegrounds they have stats as well So yeah, yeah, so it's um, it's an open source project called L2j and yeah, I just got basically my own version of it with it that has some pretty sophisticated Customization that I actually got one of one of the world's best Developers of this game to make for me at his people at his peak when he was he was making $10 ,000 a weekend off of his off of his 
+
+servers from donations. 
+
+Yeah, I was I Was just barely scrapped punk dude. Oh, man. Oh, yeah. This is yeah, I still have him Actually, this is him just a full circle This is him right here. Jeremy Eskins. That was that's the guy. 
+
+Yeah, that's the guy So anyway, um, so this was a replay. So I I record everything I made a whole season Because every single game gets recorded, and so you can have ELO, persistent ELO, persistent kill death. And then each kill, depending on what kind of class you kill. So it's all dynamic ELO scoring. And then I put it all on the website. It was wild. 
+
+But then, so, Autofarm. I made my own bot in the game. 
+
+My own botting system. 
+
+Let's find it. 
+
+I should have a video of that, actually. Maybe not. Oh, I love that game, yeah. Okay, but, okay. I have a little bit, but not too much. It'll be nice when it's ready for VR. 
+
+Okay, so that was... I was making... Now, 01 has a context window limit of 128 ,000, which when it came out was an extraordinary leap. It went from 20 ,000 to 120 ,000. And then when 2 .5 Pro came out, that one had a million. So that's a huge jump, that's right. 
+
+Huge jump. And even still now, the latest quad code just came out, 4 .5 or whatever, it's got 200 ,000 still. So a million is a lot. And this game, Yeah, now I hear there's some, yeah, on the super expensive plans, I think you can get more, but it's extremely expensive. Like we're talking like, you can get a million with Quad, but it's like $15 prompt, a $15. Good question. 
+
+Divide character count by four. And I'll show you what, I'll, I'll, no, no, no. So just rule of thumb, and we can get deeper into it, but rule of thumb, the token count is just the character count divided by four. Yep. I'm showing, no it's a great question and that's how I know when the student is tracking, is that question always comes up. So this is what a token is, is, is, is, is, is. 
+
+So this is what a token is, is, is, is, is, is. So we got an is and an is. See there all the different colors are signifying which one is a token. So this is one token, this is one token, this is one token, this is one token. It's just the colors are showing that. Now you can see, there's 12 tokens and 39 characters. 
+
+It's a bit off of that. It's repetitive, so that's cheating. Anyway, so what's happening is these are what the actual token numbers are. So these are the actual tokens. It's 382. That's IS. 
+
+Because I can tell, because look at all the 382s. See? So this is, they're just numbers. Brother, they're just numbers. You're looking at a number. this is what an embedding looks like. 
+
+This is what an embedding file, that file I showed you that comes back, I press in the PDF. When you actually look at that file, because I can see it in the raw text as it streams back in, even though it's binary, when it's in the code and processing, I can see it. And it's just this shit. It's just strings, it's just chunks. Because that's what a rag does, right? It chunks out your document into smaller pieces. 
+
+Each chunk then gets turned into this vector. That's what they look like. Huh? Ah, bro, bro, why? Oh, so there's a whole field of study called tokenomics. It's actually a whole, yeah, dude, it's a whole thing. 
+
+It's basically just symbology. It's basically just about compression. It's basically just how you use, it's basically just another language. It's like another base. Base 27, base 10, base 2. It's just, it's just, that's all it is, dude. 
+
+It's just numbers. It's just, that's it. Divide by four. There's nothing else you need to worry about at all whatsoever. And that's it. Limits and costs. 
+
+That's right. That's right. Now, that's right. That's right. That's right. Yeah. 
+
+That's where it matters for us. 
+
+Yeah. 
+
+Where's my AI studio? I don't know why. Oh, what is going on here? Why is all my history? Oh, I'm in Chrome right now. That's why. 
+
+Okay. 
+
+I understand. So AI studio. is free. No one offers an analog. OpenAI does not offer an AI studio equivalent where they just give you damn near unfettered access to their smartest models. Claude, same thing. 
+
+Yes. Yeah, so that's unfortunately our company is not ready for that yet, not for lack of trying on my part. I had a very nice long talk with the CTO, but apparently no, he never wanted to follow up. But basically, it's like a repeat. It's like a repeat. I gem these guys up about AI, but then they don't pull the trigger and do the one thing that they need to do, which is to get us a CUI safe API or get us our own endpoint that we can call. 
+
+I've got an LLM running in my damn closet. What is their excuse? right like let's you know it's really not that and it's not rocket science and i can help them shut it all up you know but it's just they they go off and don't whatever anyway so um so that's what that's yeah yeah well we'll look uh talk to who i don't know who he is all right so let me just do a quick demo of where i'm at with my DCE. I'm in the process of working on this, so I'll just have to close that. Yeah, yeah. 
+
+Dude, it's wild. I've never done it either, bro. That's the fucking point, bro. Dude, I didn't even know how to get the goddamn logs. How do you develop when you don't know where the air logs come from, right? It took me like four hours to figure that out and then even then like, you know There's a certain thing you have to do or else like you won't really refresh your environment even with your new code is saved or whatever And so I'm sitting here testing the same damn environment eight times not knowing I have to refresh it into a certain way It's all learning but the AI is helping me learn every step of the way my process, dude Oh my god. 
+
+No, I'm like chicken little over here, dude. It's it's wild. Okay, so 34. I'm just gonna make a new older I know you saw this, but there's one piece of the puzzle that... Yeah, there was one piece of the puzzle that you didn't see. Because this is the development version. 
+
+Alright, so, watch this. Oh no, that's right, it broke. That's right, okay. I have this... It's okay, I have a GIF of it. I'm in the middle of fixing it, and I've made some really good progress. 
+
+But let me just show you a GIF of it. Yeah, yeah, yeah, it would, but you would have to coax it a bit. All you would have to do, though, is you would have to make your, it's the same process, though. That's what it is, it's this, you create the artifacts, you just create the artifacts that describe the thing that you're after, and you don't know what they look like, the AI does, right? It'll come up with, like, user stories. I didn't ask for user stories, but I get user stories, right? 
+
+You just have to work with it, And then you start getting artifacts and you start vibing with it. And you're like, yeah, I like this. No, I don't like that. And with multiple responses, you know, you like this. And when you get a choice, you're like, oh, I want it. I want this direction. 
+
+I like this direction. And you can go that direction. It's do it. So I got a demo mode that I'm building out right now, because once I'm done with demo mode, then API mode is just built automatically built. 
+
+Demo mode is using a local LLM, my local LLM. 
+
+So it doesn't matter how many responses that you generate. And then they come streaming in. This is, so this is from my local LLM, streaming them in parallel. I'm getting about 500. tokens per second from just my shitty -ass little 3890. I'm just running OpenAIs at GPT -OSS. 
+
+Yes, yes. The same, it's running my server, it's running RISC -AIM as well. It's hosting the, no, it's all free. No, no, yeah, that's right, it's free, that's right. It's free. That's right. 
+
+I'm just paying for electricity. I'm just that's right. And that's what I'm saying. That's what this is over here That's what this is. That's what so look at this. 
+
+Look at this. 
+
+That's what this one is. All right, that's this choice Like we can do this like we can that's on premise. We make our own LLM. That's pillar three. It's more expensive No, no, this is all my personal stuff. Yeah. 
+
+No, I'll share this as well. Not sure. We'll try open that one Okay, and then that one the prep this one So, yeah, well, this is how you get AI, and this is how you get AI in your company. It's so, I understand completely how blinding it is to not even know where to start, but this is where you start. You either get commercial API, which is you go to ChatGBT and start using it, which is not good for us for a myriad of reasons, or you get your own AWS Bedrock solution with SageMaker, like I said in the meeting, which is in here as well. 
+
+That's pillar two. And then pillar three is running your own local model. And then so certain tasks will be good for local, and certain tasks you're going to want the foundational models because they're smarter. Yes, that's Bedrock. 
+
+No, so you're talking two different things. 
+
+So there's one is API access to foundational models through Bedrock, which is CUI safe. 
+
+So it's API calls, so no local. 
+
+Or you can still in the cloud set up your own, now what you're talking about, get your own GPU in the cloud and then put your local model on that GPU. That's different, that's different. Or you can get the third, which is your own damn GPU. I'm advocating for the API, and then what'll happen is we'll start to discover functions that we would love to make API calls for. Like, do you remember that in the demo I gave, the Intel chip, where I highlighted a paragraph and I got the key Intel out of it? Okay. 
+
+Basically, I could get it up again, but that is an example of like a refined, defined function. Right? I send it a paragraph, and then it reviews that paragraph, but then it also reviews the context of the scenario, and then decide, because then it knows what the users are going to need to do, because the users are going to need to ultimately type five different commands. Right? It boils down to like five different commands. And so ultimately, the user needs to know which of the five commands should they, you know, and so just find some relevancy there. 
+
+So whatever the user's copying. And so right in the beginning, the key intel is telling them how to log in to get the drone manifest. And so the AI knows those two things. And so the AI understands and knows just by those two things, oh, the user's in the beginning, they're looking for the drone manifest, here are the two things they're gonna need to copy and paste in order to get access to it. And it just creates that nice little chip for the user. 
+
+Now, you don't need to, once you've got that refined and you've fine -tuned that process, you don't need, you know, you can use a local call, that's a free, that's free AI, because it's so clean and refined use case, yeah. 
+
+those are the big boy models. No, that's what they are. They're the foundational. 
+
+That's your biggest, strongest models available that need massive server farms to run. 
+
+2 .5 Pro? Yes. Yes. Yes. That's right. That's right. 
+
+Yeah. That's okay. Yeah, that's right. Yes, sir. Now you're catching it. See? 
+
+There's nothing stopping us from just getting this started. But they're going about it the wrong way. They're trying to like define the, huh? So that's what I'm trying, that's what I'm building out right now. That's what you just saw with the GIF where it was streaming in, right? See, so it's a GIF. 
+
+It's the exact same. Yeah. And then you get a choice. Just look at the spread. Look at this. Did you just see that spread? 
+
+So yeah, I'm doing eight. I'm doing eight at once, but now it's just restarting. Yes. Okay. Yeah, because think about it. Think about how different they are. 
+
+Think about the question I ask. I ask, I want to create a tower defense game. Maybe one of them goes a cybernetic route. Maybe one of them goes like a plant -based route. You see what I'm saying? Like they could be so completely different and now I get to choose. 
+
+That's what I mean by I flip the script when you do this. But then also one could have an error and one could not have an error. One could have a good idea that the others did not have. Yes, that's what a lot of people don't do as well. Is they think they want to use is not wrong, it's just not what I'm doing. 
+
+What they do is they do one to Grock and one to Claude and one to Gemini, which is fine. It's still sort of the same thing, but it's apples to oranges sort of. This is very standard and you still get the gains that I've been just espousing over and over again from my process. Yes, yeah. And look, yeah, it is, and look at the difference. It's about to finish, when the last one finishes, there. 
+
+So the spread, see, one to eight, and then over on the right, I'm gonna click sort, and now the biggest one is 3 .1, and the shortest one is 1 .3. So it's almost double the size. And I got, you see, so I got more planning, I got more planning out of it, okay? So that's just, now this is just local, this is all just local. 
+
+The smarter AIs, the better AI you use, the better planning it can give you. 
+
+And again, that's the beauty of my extension, is all when a new AI comes, I just point to the new AI. So, okay, so now let's kind of back up a little bit, because now we're basically at the very tip of today, which is my extension and connecting it with the local LLM. Because it's the moment that, the moment that UKI has a KUI safe API, all they need is my extension that's API friendly, which I'm coding it out right now. 
+
+And then it's, you can just use it with our repos. 
+
+And then the code created a whole new Ansible role instantly. 
+
+I've done it. This is phenomenal. But this is actually where I want to go. I want to pivot to this. go over the game a little bit because once March 23 25 came around This I have a good idea. 
+
+Yeah, this is uh, this is the game I made and then I made a report about the game So this is sort of I skipped into section 2 the origin story. 
+
+Let's see. 
+
+Check this out. Actually It's it's it's right here 120 days This is the prompt for my game. 
+
+I did it manually. I did it manually. That's right. Before I had the extension. See? So, this is the way I would do it. 
+
+I'm just going to scroll down to, and start with one of the cycles. Let me just search open bracket cycle. There we go. Cycle 1. I want to fill this out before I use it. Something is bothering me. 
+
+Oh, that's why I did it differently. That's why I did it differently. Okay, so you see I just wrote cycle 1, 3, 3, 7. And I said, we're done with reports one and two. Please continue. I was building out a report. 
+
+I was building out my reports, this report, basically. And the image, yeah, working on the image generation and stuff. And then, see, here was the previous cycle summary of action. So this was just part of the AI's response that I clicked out to keep the context. See, it was all manual. And I would put my own tags like this. 
+
+And then, great work. Let's fix the script. And I just built this over time. 
+
+This is the prompt file. 
+
+And this is where I would put all the responses, in these eight different tabs. 
+
+It's all manual, in Notepad++. I'm not a developer, bro. But I am, uh, I know. It's impressive that I just never stopped, even though everyone tells me that this is stupid, you know what I mean? Dude, this is like, just, you know, no one listens, man. Like, everyone should... 
+
+When I show this to someone, they should do what you did. Fucking stop, and turn, and start asking some fucking questions. Just like the thing just said, it's something that demands an explanation. Legit, you know, like yeah, and then I would look that's right. I need to talk to the right billionaire dude. 
+
+Yeah. Yeah, I haven't met that person Yeah, I could make some waves trust me and I'm just getting more and more refined Oh, and also let me tell you as well. Let me just mention this is to you as well when I did talk to dr Wells I didn't have my DCE extension He doesn't know about he doesn't know about that. And and in fact why I started making it it's a direct replacement and competition between Not in a bad way, in honestly a good way. As to what is he making right now? You know he's making a content development studio, right? 
+
+That's what him and Ben, and they're all jazzed up about it. They're going about it the wrong way. This is the content, we already develop content in a studio. It's called Visual Studio. Stop inventing, reinventing the wheel. I did it so well on accident with an extension, yes. 
+
+Let's keep going, man. I already love where your head's at. Let's just keep going, because I need to fill your head with all these ideas. Alright? I love it. Seriously. Let's skip a bit. 
+
+Let's skip a bit. 
+
+And we can go quicker. Because what needs to happen, let me tell you why. I need to create a training. Imagine every senator, every decision maker in our country receiving reports of this magnitude. It took me days to put this together. Days. 
+
+the brother brother no no no no no no let me look at this look to pick it's a picture book okay it's a picture book it's an adult picture book it's the printing press 2 .0 it's read to you by Scarlett Johansson okay dude I mean I could do however I could mix match the voices I can give her I can give her an accent if you'd like all right it's crazy all right but this this delivery of knowledge like knowledge transfer is unprecedented and available today. It cost me zero to put this together. It's zero dollars. If I can do this, China is using these tools to do the same thing to stab us in the back. That's their M . O. 
+
+, dude. That's their M . O. They have a whole, yes. Okay, so here's where sort of it starts to get more like, so the way that they train AIs is this fissured workforce. Basically, Google, OpenAI, Mena. 
+
+They break out the, they subcontract out the work to these contractors like Globalogic, Majoral, ScaleAI, and then they even subcontract it out further to even more subcontractors like Synet, Ravens, and Digitiv. And basically it's a whole army of ghost workers that are doing this essential work, by the way, so they should not be coming in. They should be full -fledged employees, just off that fact alone. But so, it's a critical, you can't get an AI. An AI, once it's pre -trained and it's trained, it's useless until you do the reinforcement learning with human feedback where you evaluate the helpfulness and the harmfulness and you write, you get two responses back and you say, well, this one's better than the other one. And you create that reinforcement learning. 
+
+That's what makes a model actually usable. And so, that's what this army actually creates. And so, without this army, yeah, and so, that becomes a problem though. It used to be the way it works is it's labor arbitrage. So Globalogic, which is a Hitachi Group company, they're a Japanese conglomerate. It's not even American. 
+
+They make money via labor arbitrage, so the split in between, obviously, from what Google pays them and what they can pay the workers. So the more they can pay, keep the wages down. And so the job title is a content writer. In America, content writer. No one listens to a content writer. Ask me how I know. 
+
+That was my title and no one will listen to me talk about AI. Now if my title were pacing threat, what is China doing? I'll just jump down to that. They have an entire training. They've done professionalization. It's state -sanctioned. 
+
+They started it over five and a half years ago. They have a whole job career ladder. Whereas in America, I hit it. I hit the glass ceiling. I'm a go -getter. If you can't tell already, hence the story about Palo Alto. 
+
+And then so it the same thing happened, huh? Yes. Yeah. Um, yep I have all the research that I used Gemini to do research OSET I don't know Mandarin. Okay, but I use Gemini I said to Gemini deep research I said your English is pretty good, but how's your Mandarin and I sent it and I asked it How is China's AI playing? What are they doing? 
+
+How it and that's how I got all my Intel. Yes wild Dude, oh my God, they're doing it on us. They use DeepSea for OSINTs, of course. That's in here as well. But so here, so what we have, so here's what I'm saying, is what I am doing is I have this skill set that the Chinese are cultivating. That's, thank you, thank you, and then no one will listen to me because I'm deprofessionalized, all right? 
+
+There was no career path for me to go up, okay? And that's what's missing in all of America AI right now is, The AI deployments fail. I'm sure, I don't know if you've seen those statistics right now, but Gartner and everything, they're putting out these, there's only like 1 % of AI deployments are making like million dollar returns. And the vast majority of them are failing and not doing good. And everyone's gonna ask why, maybe go into an AI winter, probably not. Because too many people like me are just saying this is way too ridiculous to get AI winter. 
+
+Even if AI stopped today, we've got a decade of work ahead of us. and AI is not gonna stop today. So, the glass ceiling, I hit it, dude, I hit it. In fact, just check this out. I'm in the union for Alphabet Workers Union. I just met with the organizing committee. 
+
+I gave them a short spiel, but I blew their minds. Also, at Global Logic, I'm still in communication with the training manager. She's right here. And she's been there. She knows it's a revolving door. She knows exactly. 
+
+She might even be ex -military. Because she said, when I showed her my virtual side of the proving ground, she said, imagine military using a crane. It reminded me of the Arnold Whitehall simulations I did in grad school. So I'd love to hear more about what she's talking about here. She was the one who promoted it. So let me actually share this as well. 
+
+It's probably quicker if I go over here. So, basically, this, they could care less, dude, they could care less. I basically, because it's, you know, it's basically my responsibility, honestly, to let them know when I discovered this, the fact that the job is a de facto national security asset. Because we're training the I mean you use gymnastics and people in the NSA use Gemini. And when your workers training Gemini are up here in this section, the cognitive consequences of scarcity are all underpaid. 
+
+They're ghost workers. I wasn't even allowed to say I worked and trained Gemini. I'm creating the most celebrated technology, yet I can't even say that I am doing it. It's either, I get a little emotional sometimes because of that. And so, it's institutionalized garbage in, garbage out. Because Hitachi Globalogic does not care about the quality of the product, only so much as Google doesn't complain, all right? 
+
+And people say, oh, well, they have, Reviewers, they have to make sure that the data is good. You're talking to the senior reviewer. Okay, I got promoted. I was promoted to reviewer. First, I was moved from the non -technical to technical. That's when I tried to get a pay raise. 
+
+I never got it. And then I was promoted again to reviewer and then promoted again to senior reviewer. When I was promoted to senior reviewer, I got English grammar training. That was the training. We were all put in English grammar. We were given grammar worksheets. 
+
+English grammar, so no training whatsoever for, you know, chain of thought, yeah, nothing, because they don't know how to, and the size of the tasks, because in the beginning, the AI could only have a thousand tokens, it just, LLMs didn't have context windows. And so you could only have to review 1 ,000 tokens max, right? They're small tasks, right? But over time, it grows exponentially. Now we're dealing with a million token context windows. The size of the tasks we were reviewing went from 1 ,000 to 40 ,000 on track to 120. 
+
+And the pay didn't change. Nothing changed. It's just more work. And then they give you three hours to do it. That's nearly a book, actually. Okay? 
+
+So garbage in, garbage out. That's all you're going to get. And so institutionalized garbage in, garbage out. It's the cause of Ouroboros effect, which is the model collapse. That's my theory. It's why AI sort of hit a plateau. 
+
+Because the people training them. We're not given any training. Imagine if I had my DCE system doing grading validation. That never allowed to be innovative whatsoever. So that is a problem in and of itself as well in such a fast -moving field. Anyway, so this is basically what's going on is the higher the tech rises, the harder the fall will be in this current deprofessionalized situation where all the learning that's down here actually on the unseen battlefield. 
+
+Let's skip down here. Oh, what is this? I forgot about this. Okay. 
+
+Anyway, I forgot what I was looking for. 
+
+Well, obviously I'll find it. Yeah, let's go there. I like this picture a lot, actually. This is fun. So I made over 2 ,000 images for this. And you can see the difference. 
+
+Look at this image. Versus, this was the first one I created. It is, however, it's the image for cognitive capital. And cognitive capital is the collective intellectual capacity, skill, and problem -solving potential of a workforce or population. Now, would you get that from this? Absolutely not, right? 
+
+Yeah, right? Versus like this, when I got better, and I learned, oh, it can do words, right? You can tell what this is all about. No, no, this is Gemini. This is foundational. Yeah, see? 
+
+So this is like, you can tell exactly what I'm trying to communicate in this section. And I learned how to do it over time. That's the vibe coding to virtuosity. You can literally see the, now I can take this with me for the rest of my life. This quality, you know, because I put in the two weeks it took to learn how to, and what do I ask for? I ask for, it's about knowing how the system you're interacting with, because you're talking to Gemini 2 .5 Pro, and Gemini 2 .5 Pro can send a message to the diffusion model, the image model. 
+
+So when you understand you're working with it like that, you can tell, because you don't send the message to the diffusion model, Gemini does. Gemini creates the tool call. So you've got to coax Gemini to do something good for you. You get what I'm saying? You've got to gin up Gemini. You've got to gin up Gemini. 
+
+gin up, it's actually for real. And so, you, no, this is, no, no, absolutely not, no. And I told you, I trained Gemini. And I learned this stuff myself, everything I learned was, yes, from three years ago, the first project I made was the Slackbot. No one could be vibe coding longer than me, I was the original, I was an OG vibe coder. Because, are you in your car, Pat? 
+
+No, that's fine, that's fine. It's got a history from March or something. Vibe Code, yeah, February, not March. Andrew Karpathy, one of the guys, one of the OpenAI, original OpenAI guys. In 2025, he wrote a blog post. 
+
+Oh, no, no, no, no, no, no. 
+
+He wrote a tweet or whatever. Tweet, tweet. There's a new kind of coding I call vibe coding, where you fully give in to the vibe, express exponentials, and forget that code even exists. It's possible because, yeah, dude, I can't write code. What is he talking about? It means, honestly, seriously, it's crazy. 
+
+It should mean nothing coming from a real developer, and it should mean everything coming from someone like me. Do you see what I'm saying? The fact that I can't code makes it completely... Dude. And so, he comes up with this idea this year. This year. 
+
+I've been doing it since 3 .5 came out. It was the first thing I thought, like I told you. I asked the fucking question. What's the most valuable thing you can write if you can write code? The answer is code. I told you why. 
+
+It's an object. I just put the two dog brain cells together. That was it. I did it three years ago and I never stopped. I never stopped because I got the results, dude. If I didn't get the results, I wouldn't have thrown it all. 
+
+I would have gone, you know, played my video games, whatever. But I got the results. and it just changes everything. I felt like the wave is coming. You know, we gotta learn this before it's, I can capture as much as I can, and I didn't know I'd be riding it. I also didn't know that no one would even recognize, like, that I'm riding the wave. 
+
+I'm gonna appear up right in the wave, and no one even recognizes. It's pretty, okay, so, all right. Anyway, yes, thank you, thank you. So, I'd love to make it huge. Yeah, so negative feedback loop, that's Ouroboros effect, the snake eating its own tail. In China, what they're doing, I mean, they're only five years away from the completion of their plan to dominate in AI, okay? 
+
+And they started this plan in 2017. So how they're doing it, how they're doing it, they're doing inland sourcing, so whereas we're outsourcing our cognitive capital, they're insourcing, so they're using it as a form of poverty alleviation. If they have done in Yizhou, the poorest region in all of China, because it is the most mountainous, they have turned it into their premier prime data labeling base that they're going to use as a case study to expedite delivery throughout the rest of their nation. So while people on Reddit are all like, ooh, ah, look at this cool, interesting this bug, interesting this bug, ooh, I'm sitting here realizing the only reason that they could possibly have. 
+
+be cutting mountains to build a highway as fast as they fucking can in this fucking place that's ass because of the mountains is for AI is for AI they built this they built this for AI so yes and people are like oh cool is it less work than building a tunnel guys you're asking why did they build this in the poorest region because that's where their AI base is right and yeah and yeah and so So they're gonna have people like me. 
+
+Armies of people like me. And it's just data, it's data curation. That's the skill set. Data labeling is the skill set. And it's like this, they're gonna be, dude, they're gonna be like, they're gonna be like sleeper agents, dude. And they won't even know it. 
+
+Because they're gonna be gaining these insane skills of the future and they won't even know it until China activates them, I'm telling you. 
+
+And how does that, what do I mean by that? 
+
+That's what I mean down here. Like the call to action, like so, when you do this vibe coding virtuosity, Basically, you just find some cool project and you code it out, you know, I love baking so I'm going to make a website for my bakery, or I love fishing so I'm going to make an app that helps me find the best fishing spots, whatever. And then, after you code it out, you make your website, you do whatever. And then you live your life, and then you're walking through your community, and all of a sudden, you know, your neighbor, X, Y, Z, someone in your community is having a problem that you realize, wait a minute, I have the skill set. I can make them a website, an intake system, a blah, blah, blah, accounts, and I can solve that problem for them. I've got this skill set. 
+
+You get what? You get activated. and you didn't even know it you're so you're you're I think you can we can create sleeper agents in our country of these people who just become these experts and they don't even know it because this because the AI will get better under their feet that it's all about and why is it why is it data curation I use the analogy of the human eye The human eye has a focal point of 2 degrees, and everything else is, for lack of a better word, hallucinated. Your brain is basically concocting that which it thinks is around, but you only get focus here. Why? Because there's so much information that your brain would be overloaded if everything was in perfect focus. 
+
+Same thing here, it's context window. Always, I argue, the context window will never be as big as the universe. Therefore, we will always have to filter or funnel somehow into our context the data which we need to use for the task at hand, and the tasks will always change and evolve over time as we explore and spread throughout the solar system. Everywhere AI has not been, it will hallucinate. We will have to go first and create the data sets, annotate, label, transform the data into something that the AI can then come with and use, and we're the explorers. We're going to be the eyes for the brain. 
+
+That's it. So, and just look at how much data we produce as humanity. It grows exponentially the moment we got more data to store, right? So, we'll never have a need, a lack of data. We'll always be exponential. Ah, and then you can rise to meet the moment. 
+
+which is basically here. As AI gets better, the capability threshold to use it to reach your 100x moment will go down over time. The expert will be able to reach their 100x moment sooner than a novice would. But what you can do is you can become an active learner and you can accelerate that intersection. You can accelerate that. But you know all about technology, so this is where I want to, you started talking sort of got me thinking about this because this is what my skill set plus your skill set, right, is the peak archetype because it's one thing to, a lot of people don't know how to get data together, right? 
+
+And I think these skills help these skills. 
+
+Like I know this data is important, not that data. I know I need this data. I think I say it like this, the internet is your hard drive. So the more you know that's out there on the internet, the more you can think, oh, I need this data set. I can pull this data set into my project and use it. So it's more or less, yeah, live coding virtuosity. 
+
+The AI sort of helps you learn. You start out basically trying to dissect everything, untangling knots to building blocks. After a little while, you start to be able to bring pieces together and put them together. Then what happens is at a certain point, you kind of get stuck somewhere. it's because you don't know something. Like maybe you don't have like cloud skills and so like a serverless function is like very abstract to you, right? 
+
+You know, you're talking to an AI that can make you an artifact that can explain exactly how it works and like you can give it, you know, errors and build out this AI as a meta tool and explain all those learning gaps. It becomes this learning accelerator. That's this recursive learner stage. Yes, exactly. That's it. Exactly. 
+
+That's right. That's this stage, right, precisely. And then at a certain point, you become sort of an adaptive toolmaker in this recursive learning stage. And the Apex skill is on -the -fly tooling. That's literally me making the DCE. And it's here. 
+
+It says, a competent user asks the AI, how do I solve problem X? While the expert asks or says, build me a tool that solves problem X. It's the same AI. You just have to think how, what you're doing is you're building, you have to build a mental model of the model so that every prompt is a lesson. Because you send a message, you get a response, you now know what it can create. And maybe if you ask it differently next time, you'll get closer to what you're after. It's building that mental model of the model. 
+
+Or you can even game that out with the AI as well. Yeah. Because even that might be so abstract, you don't even know what it is, what it should look like. So, yes. And you know when it's solved. That's crucial as well. 
+
+That's key as well. Because I don't look at the code, right? I look at this and I say, this button doesn't do what it's supposed to do. Fix it, right? This is what it does, and this is what I want it to do. So I'm at step A, and there's step Z. Get me B to Y, right? 
+
+And then, also, another thing, you don't know how many in -between steps, because again, you're not a coder, and you can't instantly come up with a solution to every problem in your brain to know that, oh, this is going to take one cycle, or this is a big problem, this is going to take five cycles. You know what I'm saying? Just throw it at the AI. You'll get there at the end sometime. Because that's what I do at DCE. I give 10 problems. 
+
+I don't know which one is going to be the hard one. 
+
+It'll solve seven in one go. 
+
+Those were probably easy. Two made some progress, and one it didn't even touch. That doesn't matter. I'm asking about three problems this time, not seven or ten, right? So I have a solution as well. I came up with something called universal basic access. 
+
+It's not universal basic income. It's better than that because you're giving people AI credits. You're not giving people dollars. You're giving people AI credits. So how much does it cost to give a person a dollar? 
+
+It's not a trick question. 
+
+That's right. 
+
+How much does it cost to give someone an AI credit? Fucking nothing until they spend it, yeah, right? 
+
+And then when they spend it, what are they doing? They're prompting they're producing. That's right They produced something out input output response. That was a something was produced an image a digital asset, right? Yeah, that's right. That's right That's you got it. 
+
+I don't have to I don't have to walk you. I don't have to hold your hand through it Yeah, that's absolutely right. And that's what we do with the Rural Electrification Act We needed electricity in the country, but no no But no one would, no electrical company would build it. Likewise, we need AI talent in the workforce, but no AI company, they keep it deprofessionalized. Yeah, Trump doesn't like AI spending. Trump doesn't like spending money on AI. 
+
+The money's not moving and the factories aren't getting built. So, you know, show me the factories, you know, show me the results. So by Google's own admission, by Google's own research, they predict billion data labelers in the future right now think about that number so currently you're right let's listen to this one That's my job. What is DLA accounts in your table? I'm not sure. 
+
+That was a thought I had. I wanted to mention it. It'll probably come back to me. It's a way to explain the significance of this situation, right? I remember, I remember. Okay, so machine learning training has always been a super data intensive task. 
+
+And then in 2017, generative AI showed up. It was that research paper. So, but up until that, so up until that point, Machine learning was a sort of like, at most, like sentiment analysis, like is this paragraph, you know, positive sentiment, negative sentiment? By and large, it was like, you know, maybe like, you know, data, like drawing bounding boxes around like a pedestrian and saying pedestrian, you know, labeling a dog a dog, a cat a cat. You don't need to be a rocket scientist to do that, much less speak much English to do that, and this is a globalized economy. And so it makes sense that largely a lot of that work is outsourced. 
+
+You almost can't fault the big companies for doing that. 
+
+But then 2017 creates a new tool, the LLM, which requires a new data set, a critical thinking kind of data set. 
+
+And that kind of leads to this hidden curriculum, which is here. That's this hidden curriculum. Because when you spend eight hours a day critical thinking and writing down your critical thinking, see, when people would do work, they wouldn't write down their thoughts, they would write down the product. It's only now that we have the tool that we actually need to write down our thoughts. Exactly, you see? 
+
+An AI without knowing how to think won't be able to, right? You've got to put the thoughts down in words and then it can do it. So when you spend eight hours a day, five days a week critically thinking about thinking, you get what? You get smarter. It's just because you're black. What a surprise, right? 
+
+It's a hidden curriculum. The mind is a muscle. Every click is a rep, you know? Sense making is basically critical thinking, bias detection, AI validation. You're building these insane skills. This is the same skill set, right? 
+
+Okay, so That's right. Yeah, that's right. Yeah. Yeah, basically so because cognitive capital is more powerful than economic capital now because look what I can do with no money a 3090 I just went for the cheapest route. I just went for the cheapest route to 24 gigs 100 % Yeah, because you can't you just can't load a model and VRAM if you don't have the VRAM because then it goes into CPU RAM and then it's just dogshit slow using GPT OSS. 
+
+They have two model. It's open AI's open source model. They have two models. They have a 20 billion model and 120 billion model and I'm using the 20 billion. Parameters. Yeah, the size of the model. 
+
+How big is its brain? 
+
+Yeah, and it directly correlates with that's how much VRAM you need. You can fit 20. And then now quantization comes in. So quantization basically halves the amount of VRAM you need, but then AI gets stupider. So for 20 billion at like Q4 or whatever, you cut it in half or something. I think eight, I don't know. 
+
+I think an unquantized is FP16, and then I think the first layer of quantization is Q8, and then the second layer is this Q4, which is what basically everyone's going towards. It's this happy medium, and then there's Q2, which is just dog shit. So first my process is the copy and paste to AI Studio. And that's free. API calls cost money. So I first, I'm designing my DCE in phases. 
+
+The first phase is complete, where the whole thing fucking works and I can, you know, create the whole project. and then I can, I have that file that I can then manually send it to the AI of my choice for whatever service I have purchased, $20 a month or whatever. Now that that's all built out, it's a much smaller lift to then build the API piece of the puzzle, you know what I'm saying? Now, well not even, not even cost, yeah, because in order, because now I'll have to build out this, the API calls and the functions and stuff. So I can just use my model as a toy to build out, yes, yes, as a test bed. No, no, no, no, so, no, so I use Gemini 2 .5 Pro to actually write my DCE code because I need the smartest dude. 
+
+If I'm going to, I'm not going to, I would not be wasting my time, you know, trying, because that's where I'm doing real work, the real work, the cooking. I'm going to use the smartest model available to me, right? Why wouldn't I? It's also, but also, no, again, no one has anything like AI Studio. Only Google has this, which is literally damn near unfettered access to their smartest model. My prompts do $15, bro, if I were to pay API. 
+
+Let me tell you the math per cycle. Yes, per cycle. Yes, in my game. No, per prompt. I have a shortcut here. I just go here and I click this, click this. 
+
+Yeah, I have this button right here. Yeah, see, it counts it up for me, see? I actually do the math. See, so this is my game, AI Ascent, my project. My whole prompt would be about 747. ,000 tokens. 
+
+And it would cost me to send it four times, but I actually, I usually do eight, $15. And did you see how many cycles I'm in? Let's go to the top, 1 ,408. So let's do the math, let's do the math. That's just to make the game. That's how much, nah, we'll get there. 
+
+So that's $21 ,000 of API calls. And that's a, that's a, that's a, Conservative because not every cycle is just one and done all that would be beautiful now many times a cycle year Yeah, yeah, you have to reiterate and change and realize you made a mistake and fix and send it again Yeah, so yeah This is what basis this is the minimum of what it would have cost to make this game Via API and I did it for free. I took that money. I put in my pocket basically because it's yeah, I got the tokens the tokens Yeah Okay, so but now now you're asking some questions that actually get to sort of like are important in terms of making development decisions like so So I made this game. Let's sort of look at what did I make so I made a game where? you research Yeah, so I've got two researchers in my my founder on research right now, so that's researching We'll just do a little building So I just got basic in the concepts that gave me some more components and I can get some vision tech Oops, did you see that? 
+
+Oh, what do I need? need gpu oh i need cpu so let's just add some more cpus to my cluster the research is going again i'm playing the game right now i'm showing you the game yeah it's a tycoon game yep it's a simulation game you you make your own ai company and so this is just sort of the research tree that we're going through right here right now i can actually queue dude it's so meta no research nodes yet so we'll get there later all right so well all right so now i've got some components i can make I'm gonna assign my founder to build that one. I've got some machine learning engineers. Hire some. I only got two right now. 
+
+So they're building some components. 
+
+Our old training gears, agent sensor unit, agent logic cores. I think they'll build those up. Yeah, yeah, I sent that in. And my report is in here, see? 
+
+I mean, yeah, the game is the proof and the report is the theory, right? 
+
+So I made this game. 
+
+Three months into making the game, that's when I decided to pause and I'm like, because I'm showing you just the pieces. 
+
+I'm showing you what I made. And then after I made it all, I'm like, Hold the phone, man. This is just wild. And then I, because everything that's in the report was in my brain. It was too much man. I had to get it out Yeah, I think I think it's just gonna change yeah, so simple pathfinding algorithm implement basic pathfinding for the game AI agent Okay, cool, and then we can train the game AI agent. We're ready to train it. 
+
+I've got the agent modules I needed see the agent modules. They needed those core logics that I was making so to make these so now I can train the game AI agent. I need a cluster first. Let me make a cluster. Make a cluster. ClusterFuck to add some resources to it. 
+
+I'll do it this way. Put it over here. Do it this way. I just changed that. Okay. Now I'm looking at the cluster and adding resource to that cluster. 
+
+I think that should be enough right there. Okay. Back to the training. Yes. See? I require, I need 100 and I have 250 in the cluster, in the selected cluster, which is ClusterFuck. 
+
+And then I have enough GPU and I can start the training. It starts a training cycle. I have a nice little simulated loss function, you can see it's sucking up all the GPU to do the training. General pool's not in use right now. Okay, so that training is done, now I can do the benchmark for the game AI agent. Oh, I need compute, I have no compute in my general pool, I forgot, I took it all out. 
+
+Took it all out, general pool, let's put one in general pool. 
+
+probably just that, probably just that. 
+
+Okay. Yeah, that was it. 
+
+That was what I needed. 
+
+I took all my GPUs out and I didn't really need it. Okay, benchmark. Now the benchmark is running. So loading the opponent, a medium bot. So my AI is playing a bot and my AI beat the bot. So now I can finalize, name it OpenAI5. 
+
+That's what they called their bot. Okay, so now I have a bot. I can add some features like basic heuristics. Simple rules for decision making, some lane control, oh my CPU is junk. And some predictive aiming. Oh, I'll deal with the CPU, I'm stuck in a second, let me upgrade. 
+
+I need a certain amount of ELO, I need more, I need more components, and I need more compute. 
+
+So let's, I can hold shift to do five at a time, cook and knees again, in order to upgrade. See, now I can upgrade again. Once I get, I think it's 1650, and I can hold shift to upgrade five at a time, so it's faster. Oh, they're getting built, they're getting built. I've got my engineers building. This guy actually, let me reassign. 
+
+There we go. There we go. Okay. Almost there. We need 1650. There we go. 
+
+Okay. Now I have enough ELO to enter the... i need 1640 so i can compete my game ai agent against their game ai agent oh so they're just kicking that guy's out they just kill that guy basically they're probably yeah they're probably yeah so i mean bro right dude dude okay how how crazy is what you're looking at right now all right so i followed history because open ai before they made chat gbt they were making a dota bot and i got the dota map So you make the first AI you make as a game AI, and then once you win your first match, the attention is all you need, paper gets released, and then you can do more research, because I've done all the research already for this stage of the game, and then unlock more research, and I can do more research, and I can make an LLM API, and then I can make a chatbot, and then I can make an audio model, and an image model, and a video model, a robotics model, a multimodal model, and then finally a world model, and that's how you beat the game is you get all seven billion people to play your world model. Everyone's living in your simulation at that point. So, I have an idea. You saw my virtual cyber proofing round. 
+
+I literally made that from scratch, dude. It honestly sounded kind of corny, I'll be honest with you, when the AI came up with that scenario. Because it came up with four different scenarios. And it sounded corny, but I didn't care. I just had the AI pick which one would be easiest to make. And I just went with it, dude. 
+
+And it came out pretty damn good. A month. Not the scenario. the whole vcpg and then you can just make scenario after scenario after scenario because i've got the whole environment you see i've got the platform made that's right with my extension it was the first project that's right i made with my extension because i just needed to test i needed to test it was it's a throw it's a throwaway project dude it's a genuine throwaway it but it's god it's glory it's a billion dollar thing dude and and and also look at the look at this consistency like that's what's really key is i had this image then I could say I need a yellow one and you know blue one but it's yeah that's the AI's at that point now and then I just had a bunch of image and I think I like whatever I use this one or whatever right and then I just map it and then you saw up here this was just I said I drew this out in paint and I sent this image to the AI And I said, this is the plan. And I put my mouse over it to get the X, Y coordinates, right? 
+
+Because it's 10, 24, 10, 24. I just used paint, because paint, wherever you put your mouse, it'll show you the coordinate of your mouse. So I just needed one, two, three, four, five coordinates to make my game logic, basically. Yeah, which is just an image also AI generated. easy easy easy yeah great well let's go let me yeah so the so there so the four scenarios that were planned out one of them was this forward base blackout basically it's early morning like 4 a . m and then at 6 a . 
+
+m the big off is about to go off but right before the whole base gets shut down and then you have two hours to get the base back online Ghost Fleet is the one, is the drone one. Silent Running, that one's about you're in a submarine and you're in, you know, silent ops or whatever. So, and all of a sudden the reactor starts acting erratically and you've got to figure out what the heck is going on with the outside support. So, breaking, you know, radio silence and using internet or anything like that. And then Operation Stolen Scepter, I don't remember. I didn't read that one too carefully. 
+
+That was like the first one I suggested. But I could just make hundreds of them, each one. Also, some of those artifacts are worth just glancing at, because that's what we can do is we can just build a little bit of this. vcpg together And that'll just open your eyes. So I always do this with people. I'll show I'll I'll give them those so all the theory That's what we just talked about all theory like it's all great. 
+
+It's all talk right? Um until the next time you're gonna see it. Um, You're gonna see it. So let me get in here and just uh, yeah, let me just cut by coding it out with the dce um, so in here artifacts, so The team intelligence and flags, the scenario, tactical map integration, UI plan, collaborative intelligence system, those little Intel chips, Jane AI integration, so like how we're going to get the AI. I called it Jane from Indra's game. The tactical map, you know, so like zooming in on it. 
+
+I didn't, we didn't do that yet, right? 
+
+If I ever want to, I have an artifact made for it. The offensive gameplay, so I added that to it after we had all the defensive stuff. I had, so then that means that most of the scenario three planning is going to be up here a bit. There it is, S003, ghost fleet, narrative, and event flow. So, aha, this artifact, because I had it all split up. This artifact is deprecated as of cycle 104. 
+
+Contents of this document have been consolidated into artifact 59. That's where we want to go. Okay, so there we go. I had, so I had to ask for this. I had to ask, I had to recognize that, okay, my scenario three is sort of getting split up between these artifacts, and it's like, you know, I've got some scenario three at artifact 30, I've got some scenario three at artifact 70, and I decided to ask the AI. a cycle on that, reorganization. 
+
+That's part of being the curator, the human in the loop. It's called context rot. It's a known thing. This allows you to spend a cycle to keep your context. from Roddy, that's right, it's real. So, but yeah, that's it. 
+
+See, I'm glad that's what you're seeing by just getting into, now we're transitioning a bit to the, from theory to practice. Now you're seeing still theory, but because you didn't see it create this, maybe I wrote this. Oh, good God, Jesus Christ, look at this. 
+
+I did not write this. 
+
+So, but yeah, all these, yeah, all AI studio, yep, every copy paste. 
+
+And then so it starts with the master artifact list. 
+
+Which has every single artifact organized by the way look at this organized, dude, dude That's insane because yeah the first yeah, it keeps it up to date. Yeah. Yeah, so I So I write I want to make a tower defense game click create the prompts that gives me the whole prompt markdown file Which is just in the root directory down here at the bottom prompt markdown and see I was at cycle 125 on this project And see all my cycles are recorded because DCE every single cycle is in here So I have my own company, that's another thing. I have my own AI company. This is, DC is mine, dude. Okay, so let's just keep that in the back, keep, I, dude, I am the. 
+
+most generous motherfucker you'll ever meet. But let's just keep, let's just, yeah. No, no, I'm happy to share, but this motherfucker is mine. And because here's the deal, here's the deal. I am happy to share because I am going exponential. I am going parabolic. 
+
+And so if you wanna try to cut me dry, that's short -sighted thinking, bro. You wanna take my DCE and cut me dry? You're not gonna get the next version, bro. That's only two months old. Imagine what it looks like in four months, bro. Wait until I'm, wait until I'm making it, wait until I'm making it with Gemini 3. 
+
+Gemini 3's on the horizon. 
+
+It's on the horizon. There's, there's, there's, there's rumors. I'm just gonna code faster when I got 3. It's because it's my process, dude, right? Yeah, yeah, yeah. No, no, I wanted to, I wanted to get that, oh no, no, no, it's a fair, it's important, and it's very important that you know where I'm coming from, right? 
+
+Yeah, yeah, yeah. Yeah, the way I would want it the way I'm thinking about monetizing it is um so over in the Version of building in the settings I have I have these choices, so I think there'll be a split right here, so if you want to get API Access you need to pay like you know five dollars a month. I don't care. It doesn't matter money is nothing But you get the free mode which is the manual copy and paste version, and then there's this demo mode, which can just be my local LLM, I don't, I could care less. It'll stream in, right, whatever, the users can, and then that'll, because then that will show them how the API works. work, right? 
+
+So that the moment, just use the, no, yeah, pick us. Because then the moment they just, they love it, they want it, they're done copying and pasting, they want API, just show off the five bucks a month, right? I don't care. And then they can get the API, and then it's all straight. So that's how I think about it, I'll just make a website, right, you know? Then just that's that, you know. 
+
+I've never been able to monetize anything, I'm not very good at it. 
+
+Maybe this will be the thing I can monetize, right? 
+
+I don't know. Maybe, maybe I can get some people to help me. Maybe I can get some people to help me. I don't know. Who knows, right? Okay, because I'm, yeah, yeah. 
+
+No, you're right. 
+
+Okay, so check, no, I know you said you gotta go. Maybe five minutes and then we'll, okay. So, finish this. Now I can start a company because I beat my first one. Let's just call it OpenAI for, just to get it over with. And then intention is all you need, paper's been published, this revolutionary transformer architect, you can change everything. 
+
+But also, training. I could retrain now because I have a win replay data, so I could retrain my game AI agent. But also, I got new research available, see? 
+
+A whole bunch of new research now. 
+
+But now let's just fast forward, just unlock all research, so you can get a kind of glimpse, right? Researcher, data science, training optimization. I made a whole, and this isn't Angry Birds, right? This is not Angry Birds. This is not Angry Birds. So these are all the different AIs you can make. 
+
+These are all the different components you can make. 
+
+And they filter, so you can just see what the advanced image API needs. 
+
+It just needs these. Yep, yep, yep. All the different compute, different data types. Text, coding, image, audio, video, robotics. You do data enrichment, actually. Raw web text, synthetic web text. 
+
+And that's how you keep your data quality high. 
+
+Oh, it's multiplayer. So I made the whole game before I even plugged an LLM into it. And then about three months into it, I was like, oh, let's just try to make a multiplayer. So I made a multiplayer. And then once I made a multiplayer, yeah, just some people, mostly people I know. A few people are from the internet, genuine. 
+
+Yeah, he's my friend. He's a good friend. So yeah, he's a really smart guy too. Okay, so I'm just gonna go. 
+
+Oh yeah, yeah, yeah. 
+
+So once I had the chat window, That was when I had the idea to make my chatbot, because I was like, well, I already made a Slackbot. So I had my whole game, I got my Slackbot script, and I just added it as an artifact. I said, now let's make Ascentia. I call my AI Ascentia. 
+
+Ascent AI, you put AI at the end, Ascentia. 
+
+So that's my AI. It's turned off. Yeah, it's good. I turned it off right now because I'm actually pivoting to use VLLM, which is much more potent than LM Studio. And so I had not switched over the game to use the LLM. The game still uses LLM Studio, so I would have to turn off the AI over there, turn it on over here. 
+
+I don't want to bother with it. the AI questions about the game and it will tell you how to play the game. You can also ask an AI in here about the page, or you can ask anything about the report, because I have over 100 ,000 tokens of report, or 300 ,000 that are also an embedding, so when you ask a question about that, you get all my data in the response from the AI. Dude, basic. 
+
+That's actually yes. And that's so funny you said that. 
+
+No, you're right. I said that to someone that thought I was being cheeky. They thought I was being snarky. I'm like, no, legit. Because she said, well, what do you think about it? I'm like, you can ask the AI what I think about it. 
+
+And she's like, no, I want to know what you think. And I'm like, all the research was I painstakingly put it together. I read it. And if I didn't like it, I changed it. Because I would critique the model I would say this paragraph is wrong and here's why right so you're getting my answers You're getting my thought. Yeah, so like she and then she and then she's like, oh I get what you're saying She actually I see what you did there. 
+
+She got it. She got it. Yeah, she's part of the union Yeah, okay. So, um, yeah, so next time absolutely. 
+
+I'm glad we got this to make this connection Yeah, it'll be forever man because this is just gonna you know Parabolic man, and you will grow with it Once you get entwined with it the next model comes out you get more capable all your tricks will work Okay, so yeah, I'll just kind of leave it at that 
+
+Yes, absolutely. I love that idea. So I gave you the extension already, so let me just show you how you would install it. I'm glad you asked that before we disconnect. 
+
+All you would have to do with that file that you download, it's a v6 file, you just go into the extension section, and then a VS Code, it doesn't matter if it's Windows or Linux or Mac, you just click this button right here, as long as you've got like real VS Studio and you don't have like Community Edition, you'll have this option right here. 
+
+Then you just you just shoot you point you point to the v6 file and then you'll get this little button right here And you're in yeah, the AI just made a spiral. 
+
+Yeah That's right. That's right. That's right. We never that's right. 
+
+That's talking about my DCE. 
+
+That's right So so what's important? Yeah, so by all means by all means and maybe probably everyone has this you'll get stuck You'll like you won't even know where to click. It's confusing sometimes and I'm telling you like there's parts where I'm on my DC. Let me pull it over I'm over here in my DC and I'm like, shit, wait, do I right here? Do I need to start a new cycle? Wait, shit, wait, I forgot. 
+
+Like, where am I at? You start to get into a flow and I'll help you. Once you get into the flow, you're in the flow. But there's, yeah, so, yeah, see? The solution in the accuracy environment. Because the problem, right? 
+
+Revising something, dude? Oh my God, dude. Oh my God. 
+
+What a nightmare. 
+
+Also, you know, getting a little work done. 
+
+Oh, you did read this. Great. Okay, good. Yes. I put this together in one evening. After I showed Eric, Nell, my DCE, he got to sit next to me and see it, right? 
+
+But again, it's sort of falling on deaf ears. No shade. So, no, no, no. He, no, no, no. Yeah, he knows. Not in any meaningful way, right? 
+
+Everyone can see and agree it's cool. Everyone can see and get that. But we need action, brother. We need to make movement. We need to start walking the walk. Yeah, and it's fresh, it's brand new. 
+
+Dude, I literally just made it. I literally just made this thing. And I only made it because I showed the whole team before you showed up, the last demo day, two demo days ago. I showed, that was the first time the whole team saw my AI gig. And so they were astounded, but then they were like, what does this mean for us? And then, that's what I'm trying to say. 
+
+It's content, bro. I created content. What do we do? So, but yeah, yeah, yeah, it helps. 
+
+So yeah, I'm not a coder. 
+
+I just know a lot about tech, because I grew up, I'm a gamer, right? So I have that edge, right? I think gamers all have an edge at this. Yeah, I could literally talk all day to you about that. But yeah, so you saw this. I made this for Eric in an evening because he suggested it. 
+
+He suggested you should make a white paper. And so I literally that evening put this entire thing together. for him So this was a one evening thing because because how because I have my entire Context already brother and I just pivoted I said, okay, we're making a white paper on this extension. It's already got all the context It knows it knows all my artifacts. It's got all of the code and it's got all of the cycles of me inventing inventing this thing so this so So the way I do that as well is I take the, once I get the white paper written, it's basically, you know, it's basically this paragraphical form. And then I just basically for each page, for each section, I create an image prompt. 
+
+And let's actually do it. Let's do it. Let's go to my DCE. 
+
+Let's go to my artifacts. Let's go to my search image. 
+
+Image. I got it. White paper generation plan. Yeah, where are the images? 
+
+Processes asset. 
+
+Okay, so here is the actual. 
+
+white paper before it has images. Okay, there's one for the AISN game. Actually, no, let's look at this one. Here, yes. Image generation system prompt. I have a file like this somewhere for each project. 
+
+It's a master system prompt for an image generation to create a consistent and thematically appropriate set of visual assets for whatever the project is. And so whatever sort of the theme of the images I want, like high tech, military, cyber security, you know, environment, technology, lighting, color palette, dominant, dark, amber, gold, cyan, it's going to have all the same sort of theme to it. And so all I do when it's image creation time, whatever I'm asking for, I just copy and paste this in with it. It's that simple. And then there was one in here, image generation system prompt, and then the CVPG banner image prompt. So this was, at some point, Original home page I felt a little bland, but I was like you know what we should have a banner image So I just said one of the cycles make an artifact to make an image banner to ask for an image banner So I can get an image banner, and it just broke this up And I just I literally just literally just copied that and dropped it into the to the running conversation I had and it came out with the banner. 
+
+I just picked the one out of the ten I liked hyper -realistic cinematic ultra -wide aspect image of futuristic cemented earth or whatever And it tells me where I should put it, where I should name it when I get it and save it, right? You see, you build out all the structure, all that content, and then the book will write itself. Okay, let's write chapter one. And then you can read eight different chapter ones. Yeah, which one tickled your fancy? 
+
+Which one got your goosebumps, bro? It's exactly what it is. I love that analogy. Choose your own adventure. What does OCO stand for? Offensive Cyber Company. No, I get you. 
+
+Yeah, the bad guys. Yep. Yep. Here's the scenario one. A critical segment of the Combatant Command Headquarters network has been compromised. The SOC received high -fidelity alerts indicating unusual outbound traffic and potential data staging from the server in the J2 Directorate. 
+
+Preliminary analysis suggests the activity aligns with DTPs of a known nation -state, cozy bearer, CPT, activated, conduct immediate alerting objectives. See? And if we had KSATs, see that's what Ben was asking in the meeting, right? He's like, how could we map this? I'm like, and that's what I said, this is all my own shit. Like what I meant was this is all from my own head. 
+
+I haven't bought, why would I care to map to KSATs? I could care less about that. But if that's what you're interested in, yeah, drop the Excel in here, bro. Check the box. And then when you ask for learning objectives, you ask for learning objectives mapped to the KSATs. Guess what you're gonna get? 
+
+Guess what you're gonna get? That's right, that's right. Look at this, dude. This is what it's going to make for this scenario. I need a DC, I need a seam, I need a file share, I need two workstations, a firewall, and the AI will help me build this whole network. 
+
+Yes, dude, bare bones. 
+
+Yeah, yes, actually, actually, yes, actually, yes. 
+
+But also another thing is a lot of that is a lot of heavy lifting that we might not need to do, but also a lot of it, the AI knows Ansible, actually, and can just start helping make those as well. 
+
+So my, yeah, yes, the Ansible rules, that's right, yep, I know. Scenario index, so as these scenarios grow, Bunny rabbit on the pancake bunny rabbit with a pancake on its head man. I don't know what what do you people need to see? So here's a bunny rabbit with a pancake on its head. Um, I think I think I think over time I think it's more people. I just hope you know sooner rather than later Oh, I already sent it to you. You already have it. 
+
+You already have it. That's right. Yeah, basically, yeah, so That's right, that's right. This is the skill of the future. That's another thing I didn't say to you. Everyone, so that billion person workforce, this is what I'm trying to say. 
+
+This is what I was trying to put in perspective. I got it now, I remember. This is the secondary skill set that everyone is gonna have, data curation. Because if you're a radiologist, if you're a hairstylist, if you're XYZ, it's about data labeling, data annotation. 
+
+A reporter, a news reporter, or a stock analyst, or an accountant, it doesn't matter. 
+
+All of them will have their own AI that Just like you said, it's my brain out, right? 
+
+Everyone's gonna do the same thing. 
+
+It's too valuable not to. You give everyone a chance. and then what when one person doesn't give a rat's ass about them they're just gonna what they're gonna accumulate government doesn't care about it they're gonna see someone oh look someone made a baking app for their bakery I have a bakery I have credits I never spent my credits oh I wonder what GPT -7 can do now with my credits ah strategically saving and you know this is They're appreciating assets. Like, there's a reason to save them and then there's a reason to use them strategically. Anyway, so yeah. That's the billion person workforce. 
+
+Huh? Let's see. I think I just clicked here, right? 
+
+Share, copy. 
+
+Yeah, there it is. Yeah, so version 1 .10 is the final version of the one before I started integrating local. 
+
+This is probably the one you were saying you couldn't download before. 
+
+Yeah, because I can't just click and drag it. It's too big for Discord. I can email it to you. Oh, someone messaged me on my, literally my catalyst AI, probably a spammer. What the hell, dude? What are the odds? 
+
+No one messaged me over there. Okay, one hour ago. Literally, what are the odds, dude? Talking about it one hour ago. Anyway, who cares? 
+
+Seriously, what the fuck? 
+
+I haven't touched that website for three fucking years, dude. Okay. Yeah, me too, man. Yeah, I agree, and it's just gonna get better, you know? Oh, that's another thing I wanna do, is I bet you, I bet you that's gonna be a real takeoff. is the moments people start using AI to make VR, because it's extremely difficult to make VR. 
+
+AI, AI, AI's gonna make it easy. And we're gonna have it once, yeah, so. um, I just sent, yeah. So see if that link works. Yeah. Cause it still did turn it into a, um, Google drive link anyway, but, um, maybe it'll still work this way. 
+
+Yes, it is exactly that. Yeah. Just drop me a message on discord. Yeah. When you're dicking and dicking around with it and then I'll just, you know, I can look over your shoulder. 
+
+So that's sort of the, uh, cognitive apprenticeship model. 
+
+Uh, let's actually, yeah, yeah. Basically it's, uh, I remember what it is. I remember this. Yes, yes, yes, yes. Modeling. coaching scaffolding and fading. So basically I do it, I'll show it to you and then you do it and I look over your shoulder while you do it. 
+
+That's basically kind of this little, I forget the name of it. It starts with a D or something. Oh no, it was a car, it was a race car. It was some race car. I don't know if I'll find it. Anyway, I'll let you go, man. 
+
+Yeah, yeah. No, it's fine. This is the only thing that's really important. You're not taking away my weekend. The more people that I empower turn into citizen architects, it's one more out of the 330 million. Yeah, no, for real, for real. 
+
+Absolutely. That's where my headspace is at, so. Yeah, so you pick a project. You pick a project, something you're just passionate about, and ideally something you have intimate knowledge with. My friend said, you know, he's got a 60 -year -old aunt, she's an accountant, accountant all her life, he lives in Romania, he's saying, what is she going to do with the rest of her life? I said, make an accounting game, because it's something that she knows internally, she can go, what that allows you to do is you can go deep in, like many cycles deep, and you can, without hallucinations. 
+
+Because you can gut check those hallucinations the moment it shows up because you know it counting like the back of your hand. So you're gaining, that's the skill set. You're gaining the gut check ability so that the moment the AI is going off, you're gonna see, you're gonna be like, why? Then you're gonna learn the true lessons. So that puts you in a position to gut check, by coding everything, having that intimate knowledge, picking a project that you have intimate knowledge in. And then you just go deep, go deep, go deep, and you learn all the side skills, the secondary skill set. 
+
+Yep. that's right. That's feedback, that's right. So that's another part of the equation is in order to, because you don't know if it's a hallucination without the accurate feedback. And if you're an expert, you can give accurate feedback, like that's the wrong cybersecurity solution. That's expert feedback. 
+
+But if you aren't an expert, you cannot give expert feedback. 
+
+So then you can't go deep with the AI. 
+
+But then if you get a code error, that's expert feedback that you don't have to create. It's created by the system. The code error, that's right. 
+
+And you take that and you give that, that's expert feedback of the code that the AI just wrote. 
+
+There's your feedback loop. There's your feedback loop, yeah. And because that's your feedback loop and you're witnessing it, you learn coding because you're in that feedback loop. 
+
+And so, yes, yes, yes. 
+
+It's already here. This is Star Trek level status. It's just not evenly distributed. 
+
+And that's again, that's why I'm actually so gung -ho, dude. Why, David? What is your motivation? What's your selfishness? I want to be Star Trek, bro. I want to be Captain Kirk. 
+
+I want to travel through space. And we're not going to fucking do it if we're fucking shooting each other for fucking Nikes, bro. It's so stupid. Look at the skills. Look at the tools we have, dude. We could solve every problem. 
+
+We could explore this universe. Like, get your shit together. I want to do it in my lifetime. So there's my selfishness. I'm selfish as fuck, dude. I want to see it myself. 
+
+Alright? So there we go. Yeah. Yeah. Yeah, yeah. Yeah, fold space, man. 
+
+Yeah, fold that shit. Yeah, let's go. Yeah, man. All right. Now, all right. Anytime. 
+
+I'm glad we got to connect like this. Yeah. Cool, man. All right. Have a good night. Bye.
+
+
+Transcribed with Cockatoo
+</file_artifact>
+
 <file path="src/Artifacts/A47 - insanely-fast-whisper-api-README.md">
 # Insanely Fast Whisper API
 An API to transcribe audio with [OpenAI's Whisper Large v3](https://huggingface.co/openai/whisper-large-v3)! Powered by 🤗 Transformers, Optimum & flash-attn
@@ -44993,6 +42354,7 @@ The curriculum is divided into four core modules, each representing a stage in t
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
+# Updated on: C60 (Expand with additional terms from transcripts and research)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -45006,6 +42368,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **A**
 
+*   **Agentic Workflow:** A development process where an AI agent can autonomously plan, reason, and execute complex, multi-step tasks, often involving the use of tools and memory.
 *   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems. [cite: A39, A51]
 *   **Artifact:** A formal, written document (e.g., project plan, requirements document, source code file) that serves as a "source of truth" for a specific part of a project. In the DCE workflow, artifacts are the primary medium for instructing and aligning with an AI.
 
@@ -45014,26 +42377,60 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Citizen Architect:** An individual empowered by AI tools (like the DCE) and the V2V methodology to build, analyze, and maintain complex systems that were previously only accessible to large institutions or highly specialized teams.
 *   **Cognitive Apprenticeship:** A pedagogical model where an expert (human or AI) makes their internal, tacit thought processes visible to a novice. The V2V curriculum is built on this model, using AI to model expert workflows, provide coaching, and offer scaffolding. [cite: A36, A50, A53]
 *   **Cognitive Capital:** The collective problem-solving capacity of an individual, organization, or society. In the AI era, it is considered the primary strategic asset, representing the potential for innovation and adaptation. [cite: A23]
+*   **Cognitive Security (COGSEC):** The practice of defending human perception and decision-making from online manipulation, propaganda, and deceptive information. It also refers to using AI modeled on human cognition to detect cybersecurity threats.
+*   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
+*   **Context Window:** The finite amount of information (measured in tokens) that an LLM can "see" and process at any given time. Effective management of this "working memory" is a core challenge of Context Engineering.
 *   **Cycle:** A single, complete iteration of the development workflow within the DCE. A cycle includes the curated context, the user's instructions, all AI-generated responses, and the user's final decision, all of which are saved to a persistent knowledge graph.
 
 ### **D**
 
 *   **Data Curation Environment (DCE):** A VS Code extension designed to streamline the workflow of AI-assisted development. It provides tools for selecting context, managing parallel AI responses, and iterating on projects in a structured, auditable manner.
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
+*   **Deliberate Practice:** A highly structured form of practice aimed at improving performance. It involves setting specific goals, maintaining intense focus, receiving immediate feedback, and constant refinement.
+
+### **E**
+
+*   **Experiential Blindness:** A state of not knowing what is possible or how to solve a problem due to a lack of relevant experience. The V2V pathway aims to cure this by providing a structured path to gaining experience in partnership with an AI.
+
+### **F**
+
+*   **Feedback Loop:** A core concept in V2V where the AI's output is used as a basis for human critique and refinement. For a non-coder, a compiler error is a form of "expert feedback" that can be fed back to the AI to guide it toward a correct solution.
+*   **Fissured Workplace:** An economic structure where large corporations distance themselves from their labor force by using layers of contractors and subcontractors. In the AI industry, this has led to a deprofessionalized and underpaid "ghost workforce" of data annotators.
+
+### **K**
+
+*   **Knowledge Graph:** A structured representation of a project's development history, as captured by the DCE. Each "Cycle" is a node in the graph, containing the context, prompts, AI responses, and developer decisions for that iteration.
+
+### **M**
+
+*   **Mental Model of the Model:** The intuitive understanding a developer builds over time of an AI's capabilities, limitations, and "thought processes." Developing this mental model is key to effective collaboration and is a primary outcome of the V2V pathway.
+*   **Metacognition:** The ability to "think about one's own thinking." In the V2V context, this involves critically analyzing one's own learning gaps and using AI as a "meta-tool" to build personalized learning accelerators.
 
 ### **O**
 
 *   **On-the-Fly Tooling:** See **Apex Skill**.
 
+### **P**
+
+*   **Parallel Prompting:** The practice of sending the same prompt to multiple AI instances simultaneously to generate a diverse set of solutions. This allows the developer to compare different approaches and select the most promising one, rather than being locked into a single, linear path.
+
 ### **R**
 
 *   **Retrieval-Augmented Generation (RAG):** A technique that enhances an LLM's response by dynamically retrieving relevant information from an external knowledge base and including it in the context provided to the model. This grounds the AI's answer in factual, up-to-date, or proprietary data.
 
+### **S**
+
+*   **Source of Truth:** A canonical document or artifact that is treated as the definitive blueprint for a project or feature. In the V2V workflow, documentation artifacts are created *before* code to serve as this source of truth.
+
+### **T**
+
+*   **Token:** The basic unit of text that an LLM processes. A token can be a word, part of a word, or a punctuation mark. The number of tokens in a prompt is a key metric for cost and performance.
+
 ### **V**
 
-*   **Vibecoding:** The intuitive, conversational, and often imprecise starting point for interacting with generative AI. It is the process of translating a high-level goal or "vibe" into a functional output using natural language. It is the first stage on the pathway to Virtuosity. [cite: A25, A36, A50]
-*   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows. [cite: A38, A50]
+*   **Vibecoding:** The intuitive, conversational, and often imprecise starting point for interacting with generative AI. It is the process of translating a high-level goal or "vibe" into a functional output using natural language. It is the first stage on the pathway to Virtuosity.
+*   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
 *   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization. [cite: A51, A54]
 *   **V2V (Vibecoding to Virtuosity):** The name of the pedagogical pathway and curriculum designed to guide learners from novice, intuitive AI interaction to expert-level mastery in human-AI collaboration. [cite: A25, A53]
 </file_artifact>
@@ -45148,6 +42545,566 @@ As requested, the creation of a glossary is a critical next step. Beyond that, t
 ### **Gap 3: Lack of Assessment Strategy**
 *   **Problem:** We have a curriculum and exercises, but we have not defined how we will measure student learning and mastery. How will we assess progress? What does "graduation" from the V2V pathway look like?
 *   **Proposed Action:** Create a new artifact, **`A60. V2V Academy - Assessment and Certification Strategy.md`**, to outline how student progress will be evaluated. This could include quizzes, code reviews of their `ReportViewer` project submissions, and a final capstone project to earn a "V2V Certified Citizen Architect" credential.
+</file_artifact>
+
+<file path="src/Artifacts/A58 - V2V Academy - Target Learner Personas.md">
+# Artifact A58: V2V Academy - Target Learner Personas
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Defines the three primary target learner personas for the "Vibecoding to Virtuosity" (V2V) Academy, outlining their backgrounds, motivations, and learning goals.
+- **Tags:** v2v, curriculum design, learner persona, target audience
+
+## 1. Overview
+
+To design an effective and resonant curriculum, it is essential to understand the diverse needs and motivations of our learners. This document defines the three primary archetypal personas for the V2V Academy. These personas will guide the development of lesson content, exercise design, and the overall tone of the program, ensuring that we meet students where they are.
+
+The overarching context for all personas is the ongoing employment shift, where traditional entry-level jobs are being automated by AI, creating a demand for new talent that possesses both domain expertise and AI fluency.
+
+---
+
+### **Persona 1: "The Career Transitioner"**
+
+*   **Archetype:** An adult learner (30s-50s) with established expertise in a non-technical field (e.g., project management, marketing, finance, military) who recognizes the transformative impact of AI on their industry.
+*   **Background:**
+    *   Professionally successful but feels their career is plateauing or at risk of becoming obsolete.
+    *   Likely has strong soft skills: communication, strategic thinking, problem-solving.
+    *   Has minimal to no formal coding experience and may find traditional programming courses intimidating or irrelevant to their goals.
+*   **Motivation:**
+    *   **Primary:** To future-proof their career by acquiring a high-demand, high-value skillset.
+    *   **Secondary:** To leverage AI to become a "10x" performer in their current field by automating tasks, generating novel insights, and building custom tools. They want to augment their existing expertise, not replace it.
+*   **Learning Goals & Needs:**
+    *   Needs a learning path that respects their existing domain knowledge and doesn't force them through a traditional CS101 curriculum.
+    *   Wants to see immediate, practical applications of what they are learning.
+    *   Responds well to a curriculum that frames AI collaboration as a strategic, problem-solving skill rather than a purely technical one.
+
+---
+
+### **Persona 2: "The Underequipped Graduate"**
+
+*   **Archetype:** A recent college graduate (20s) who has a traditional degree (including computer science) but feels unprepared for the realities of the AI-driven job market.
+*   **Background:**
+    *   Has foundational knowledge in their field but lacks practical experience in human-AI collaboration.
+    *   May have learned traditional programming but has not been taught how to partner with an AI, use agentic workflows, or practice context engineering.
+    *   Is likely struggling to find an entry-level position, as many of these roles are being automated or are now requiring AI skills they weren't taught.
+*   **Motivation:**
+    *   **Primary:** To gain a competitive edge and land a high-quality job in a market that is rapidly evolving.
+    *   **Secondary:** To bridge the gap between their academic knowledge and the real-world skills employers are now demanding. They need to learn the "new way" of working.
+*   **Learning Goals & Needs:**
+    *   Needs a curriculum that is intensely practical and project-based, resulting in a strong portfolio piece (the `ReportViewer` project).
+    *   Wants to learn the specific, cutting-edge workflows and tools (like the DCE) that companies are actually using.
+    *   Responds well to a curriculum that provides a clear "pathway to employment" by teaching in-demand, next-generation skills.
+
+---
+
+### **Persona 3: "The Young Precocious"**
+
+*   **Archetype:** A highly motivated young learner (high school or early college) who is digitally native and sees AI not just as a tool, but as a fundamental medium for creation.
+*   **Background:**
+    *   Grew up with technology and is not intimidated by it. May have already experimented with "vibecoding" to build simple games, websites, or automations.
+    *   Is likely self-taught and learns quickly through online resources.
+    *   May lack formal structure and engineering discipline in their current approach.
+*   **Motivation:**
+    *   **Primary:** A deep, intrinsic desire to build and create. They are driven by curiosity and the sheer power of turning an idea into a reality.
+    *   **Secondary:** To find a structured pathway that can channel their raw talent and intuitive skills into the ability to build larger, more complex, and more robust systems.
+*   **Learning Goals & Needs:**
+    *   Needs a curriculum that is challenging and moves quickly, but also instills the discipline of documentation, testing, and structured workflows.
+    *   Responds well to a project-based approach that allows for creativity and personalization.
+    *   Benefits from a framework that provides the "rules of the game" for professional development, transforming their hobbyist passion into an engineering-level skillset.
+</file_artifact>
+
+<file path="src/Artifacts/A59 - V2V Academy - Student Environment Guide.md">
+# Artifact A59: V2V Academy - Student Environment Guide
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A guide for V2V Academy students, explaining the required software setup and the pedagogical model for interacting with the AI cognitive tutor during exercises.
+- **Tags:** v2v, curriculum design, student guide, setup, cognitive tutor, vscode
+
+## 1. Overview
+
+Welcome to the V2V Academy! This guide outlines the software you'll need to participate in the practical exercises and explains the unique human-AI interaction model we will use throughout the course. Our goal is to create a learning environment that is both powerful and supportive, meeting you exactly where you are on your learning journey.
+
+## 2. Your Development & Learning Environment
+
+The entire V2V curriculum is built around a single, powerful tool: **Visual Studio Code (VS Code)**.
+
+*   **Why VS Code?** VS Code is more than just a text editor; it is the environment where the **Data Curation Environment (DCE)** lives. The DCE is the core tool you will use to practice the Virtuoso's Workflow. By learning within the same environment used by professionals, you are gaining authentic, real-world experience from day one.
+*   **Required Software:**
+    1.  **Visual Studio Code:** The latest version.
+    2.  **Node.js:** Required to run the Next.js/React projects for the exercises.
+    3.  **Git:** Essential for the "Test-and-Revert" validation loop and for versioning your work.
+    4.  **The DCE Extension:** You will be provided with the `.vsix` file for the Data Curation Environment.
+
+Detailed, step-by-step installation instructions for all required software will be provided in the first lesson of the curriculum.
+
+## 3. The AI as Your Cognitive Tutor
+
+Throughout this course, you will be working in partnership with an AI assistant. This AI is more than a simple chatbot; it is designed to act as your **Cognitive Tutor**.
+
+### 3.1. What is a Cognitive Tutor?
+
+A cognitive tutor is an AI system designed to mimic a human expert, providing personalized, one-on-one instruction. It adapts to your specific needs, tracks your progress, and provides real-time feedback. The AI tutor's goal is not to give you the answers, but to guide you in discovering the answers for yourself.
+
+### 3.2. How to Interact with Your AI Tutor
+
+The most important principle of our learning model is: **the AI meets you where you are.** We do not assume you have any prior knowledge of a specific topic. Instead, we rely on you to make your knowledge gaps explicit.
+
+*   **Announce Your Gaps:** The AI does not know what you don't know. It is your responsibility to announce any gaps in your understanding *as part of the context of your request*. This is a core skill of data curation.
+
+*   **Example Interaction:**
+    Imagine an exercise asks you to run a Node.js application for the first time. If you have never done this before, you would structure your interaction with the AI as follows:
+
+    > **Your Prompt to the AI:** "My task is to run this Node.js application. **My knowledge gap is that I have never run a Node.js application before and I'm not sure what the command is or where to run it.** Please provide me with the step-by-step instructions to run the application in the VS Code terminal."
+
+By explicitly stating your "knowledge gap," you provide the AI with the precise context it needs to act as an effective tutor. It will not assume you know the basics; it will start from the beginning and guide you through the process, just as a human mentor would. This method of interaction is, in itself, a form of deliberate practice for the data curation and context engineering skills you are here to learn.
+</file_artifact>
+
+<file path="src/Artifacts/A60 - V2V Academy - Assessment Philosophy.md">
+# Artifact A60: V2V Academy - Assessment Philosophy
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Documents the V2V Academy's philosophy on student assessment, emphasizing tangible outcomes and self-evaluation over traditional, high-overhead testing.
+- **Tags:** v2v, curriculum design, assessment, project-based learning, self-assessment
+
+## 1. Core Philosophy: Assessment is the Learner's Responsibility
+
+The "Vibecoding to Virtuosity" (V2V) Academy rejects traditional, high-overhead models of student evaluation. We do not use formal quizzes, graded exams, or performance metrics. Our assessment philosophy is rooted in a deep respect for the learner's autonomy and is based on a single, powerful principle: **the outcome is the assessment.**
+
+## 2. The Tangible Metric of Success
+
+The practical exercises in the V2V curriculum are designed around a single, cumulative project: building a fully functional, AI-powered interactive report viewer. This project is not just a learning tool; it is the ultimate and only metric of success.
+
+The assessment is binary and self-evident:
+*   **Did you build a report viewer that works? Or did you not?**
+*   **Did you learn how to run a Node.js application? Or did you not?**
+
+There is no need for an external system to measure this. The learner is the sole arbiter of their success. If they are here, they possess the intrinsic motivation and self-awareness to see the process through. The value is derived from the act of building and learning, not from passing a test.
+
+## 3. A Low-Overhead, Learner-Centric Approach
+
+This philosophy is a deliberate design choice with several key benefits:
+
+*   **Focus on Building, Not Testing:** It eliminates the significant overhead required to create, maintain, and grade a formal testing system. All development effort is focused on creating high-quality curriculum and learning experiences.
+*   **Fosters Intrinsic Motivation:** By placing the responsibility for assessment on the learner, we foster a sense of ownership and self-direction. The goal is to build something functional, not to achieve a certain score.
+*   **Leverages the Learning Environment:** The V2V learning environment itself provides all the assessment tools a student needs. The integrated AI assistant, with its RAG-enabled knowledge base of all course materials, can function as an on-demand quiz generator. If a learner wishes to test their knowledge, they can simply ask the AI:
+
+    > "Based on the lesson about the Virtuoso's Loop, can you ask me five multiple-choice questions to test my understanding?"
+
+This approach empowers the learner to create their own assessments tailored to their specific needs, whenever they choose. It is a more flexible, powerful, and learner-centric model that aligns perfectly with the V2V ethos of empowerment and autonomy.
+
+We will leverage AI to ask the learner to think critically, in-situ.
+</file_artifact>
+
+<file path="src/Artifacts/A61.1 - Transcript 1 Summary.md">
+# Artifact A61.1: Transcript 1 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-1.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a coaching session focused on onboarding two learners to the curator's AI-assisted development workflow. The curator explains the foundational concepts of the Data Curation Environment (DCE), the importance of organizing "source of truth" documents, and the distinction between static "documents" and iterative "artifacts." The session concludes with a homework assignment for the learners: to begin curating their own project data and to review the curator's past project histories as a source of inspiration and learning.
+
+## 2. Key Learnings & Insights
+
+*   **The Workflow is the Lesson:** The primary lesson is the workflow itself. Learning to use the DCE—curating data, creating artifacts, and iterating with an AI—is the core skill being taught.
+*   **"It's All Just Text":** A recurring theme is the need to convert all forms of knowledge (PDFs, Excel sheets, ideas) into a flat, text-based format (preferably Markdown) so it can be processed by the AI.
+*   **Organization Emerges Naturally:** The curator advises against over-organizing at the beginning. The best folder structure will emerge naturally as the project grows and the user discovers the most efficient way to group files for context selection (i.e., to minimize the number of checkboxes they need to click).
+*   **Artifacts are Iterative; Documents are Static:** A key distinction is made. "Documents" are foundational, reference materials that don't change often. "Artifacts" are the living, iterative outputs of the AI collaboration process.
+*   **The Value of Past Cycles:** The curator's own project histories (the `prompt.md` files with all their cycles) are presented as invaluable learning resources. They are a "lab guide" containing real-world examples of problems, solutions, and the evolution of the curator's own thinking.
+*   **Reverse-Engineering as a Learning Tool:** The process of taking a completed project (like a perfect lesson plan) and turning it into a template is a powerful learning exercise.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the core skill:**
+    > "The more organized, the better, but it can be anything. Gotcha. Yep. Okay. Oh, here's an example. An artifact can even be a set of artifacts... That is literally what few-shot learning is. It's good. You just went from zero shot to one shot."
+
+*   **On the importance of data curation:**
+    > "You're just going to curate data, and then you're going to ask for code solutions, and you'll get them. The better your data is curated, the better your code solutions. Trust me."
+
+*   **On the learning process:**
+    > "When you don't know what to add, come in here and read the generated artifacts. Because these are tangential parallel problems. I was making lessons in labs for cybersecurity using KSATs and all of our same knowledge artifacts. So you'll get inspiration by sitting here and reading this, I promise you."
+
+*   **On the nature of AI interaction:**
+    > "You're building the mental model of the model right now. You're getting an idea of what one... So this is an important analogy. Think of your prompt as an input output as a single page... if you just conceptualize it as one big page both the input and the output then what you're doing is you're you're you're building a new alphabet because you now know what the input will produce the output and that's one page like one japanese letter."
+</file_artifact>
+
+<file path="src/Artifacts/A61.11 - Transcript 11 Summary.md">
+# Artifact A61.11: Transcript 11 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-11.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a deep and wide-ranging coaching session where the curator shares his personal journey into AI-assisted development, demonstrates his core workflow and tools, and articulates the entire philosophical and geopolitical vision behind the "Vibecoding to Virtuosity" pathway. He uses his past projects—a sophisticated Slackbot for Palo Alto Networks and the AI-driven game `AI Ascent`—as case studies to explain concepts like RAG, thinking models, and the power of parallel prompting. The session culminates in a passionate explanation of the "AI Cold War" with China and his mission to create "sleeper agent" Citizen Architects to strengthen America's cognitive capital.
+
+## 2. Key Learnings & Insights
+
+*   **The "Non-Coder" Origin Story:** The curator's journey began as a non-developer who asked a fundamental question: "What's the most valuable thing AI can write?" The answer was code, because it's objective and verifiable. This led him to partner with AI to build complex applications despite not knowing how to code traditionally.
+*   **Early RAG Implementation:** The curator independently invented a form of Retrieval-Augmented Generation (RAG) for his Palo Alto Slackbot. By feeding the bot's context with product documentation, he enabled it to answer questions about new products it hadn't been trained on. This is a powerful, real-world example of the core V2V skill.
+*   **Thinking Models & Parallelism:** The curator explains that "thinking models" (like GPT-4o) are AIs that "talk to themselves before they talk to you," allowing them to plan. He combines this with his parallel prompting technique (running 8+ instances at once) to explore a wide solution space and select the best outcome.
+*   **The AI Cold War:** A central theme is the strategic competition with China. The curator argues that the West's "fissured workplace" model for AI training creates a deprofessionalized, underpaid workforce that produces low-quality data ("garbage in, garbage out"). In contrast, China is professionalizing its data workforce, creating a strategic advantage and an army of "cognitive warriors."
+*   **The V2V Pathway as a Counter-Strategy:** The V2V curriculum is framed as the American counter-strategy. Its goal is to create "sleeper agents" or "Citizen Architects"—individuals who master AI collaboration, become "100x" experts in their fields, and can be "activated" to solve problems in their communities, thereby strengthening the nation's collective "Cognitive Capital."
+*   **The Apex Skill is On-the-Fly Tooling:** The highest level of virtuosity is described as "on-the-fly tooling"—the ability to command the AI to "build me a tool that solves problem X," rather than just asking it how to solve the problem. This is demonstrated by the curator's creation of the DCE extension itself.
+*   **Universal Basic Access (UBA):** The curator proposes a solution to the economic disruption of AI: giving citizens AI credits instead of cash. These credits are an appreciating asset (as AI becomes more powerful) and can only be used for productive creation, spurring grassroots innovation.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the origin of his RAG system:**
+    > "I went through the whole admin... I did a control F, playbooks. Every single paragraph that had the word playbook in it, I made my own file... And then I just asked the exact same question, but I just added that in with my prompt. And it was like, magic. It was damn near almost usable."
+
+*   **On his development philosophy:**
+    > "I can't code. I'm not a coder, I'm not a developer. I can't write an IF statement to save my life... It's my job to have the taste and the gumption to like push through and see the project to completion."
+
+*   **On the human-AI feedback loop:**
+    > "But then if you get a code error, that's expert feedback that you don't have to create. It's created by the system... And you take that and you give that, that's expert feedback of the code that the AI just wrote. There's your feedback loop."
+
+*   **On the geopolitical stakes and his motivation:**
+    > "I want to be Star Trek, bro. I want to be Captain Kirk. I want to travel through space. And we're not going to fucking do it if we're fucking shooting each other for fucking Nikes, bro. It's so stupid. Look at the skills. Look at the tools we have, dude. We could solve every problem."
+</file_artifact>
+
+<file path="src/Artifacts/A61.12 - Transcript 12 Summary (Cycle 58 Context).md">
+# Artifact A61.12: Transcript 12 Summary (Cycle 58 Context)
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the partial coaching transcript provided in the context for Cycle 58.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This partial transcript captures the climax of a coaching session where the curator articulates the core philosophy behind the "Vibecoding to Virtuosity" pathway and its broader societal implications. The conversation crystallizes the idea of using AI as a feedback loop for learning, explains the curator's personal motivation, and connects the development of AI skills to a hopeful, "Star Trek" vision for the future of humanity.
+
+## 2. Key Learnings & Insights
+
+*   **The AI Feedback Loop for Learning:** The central pedagogical idea is that a non-expert can learn a technical skill like coding by using the AI as a partner. The key is to leverage system-generated errors as a form of "expert feedback." The human doesn't need to know *why* the code is wrong; they just need to take the error message and feed it back to the AI, creating a powerful, observable learning loop.
+*   **The "Star Trek" Motivation:** The curator's personal motivation is revealed to be deeply aspirational. The drive to build these tools and teach these skills is not for personal gain but to accelerate human progress. The ultimate "selfish" goal is to live in a "Star Trek" future—a world of exploration and problem-solving—and the belief is that empowering individuals with these AI-driven skills is the fastest way to get there.
+*   **AI Skills as a Solution to Scarcity:** The curator frames current societal problems as "stupid" and rooted in scarcity (e.g., "shooting each other for Nikes"). The V2V pathway is presented as a solution, providing tools of abundance that can solve major problems and elevate humanity's focus.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On learning to code with AI:**
+    > "But then if you get a code error, that's expert feedback that you don't have to create. It's created by the system. The code error, that's right. And you take that and you give that, that's expert feedback of the code that the AI just wrote. There's your feedback loop. There's your feedback loop, yeah. And because that's your feedback loop and you're witnessing it, you learn coding because you're in that feedback loop."
+
+*   **On the current state of technology:**
+    > "It's already here. This is Star Trek level status. It's just not evenly distributed."
+
+*   **On personal motivation and vision:**
+    > "What is your motivation? What's your selfishness? I want to be Star Trek, bro. I want to be Captain Kirk. I want to travel through space. And we're not going to fucking do it if we're fucking shooting each other for fucking Nikes, bro. It's so stupid. Look at the skills. Look at the tools we have, dude. We could solve every problem. We could explore this universe. Like, get your shit together. I want to do it in my lifetime. So there's my selfishness. I'm selfish as fuck, dude. I want to see it myself."
+</file_artifact>
+
+<file path="src/Artifacts/A61.2 - Transcript 2 Summary.md">
+# Artifact A61.2: Transcript 2 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-2.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a practical, hands-on coaching session where the curator guides a learner through the initial setup and organization of their project repository for the V2V workflow. The conversation focuses on establishing a logical folder structure to manage different types of documentation (CUI, customer docs, frameworks, templates). The session emphasizes the core principle that a well-organized repository is the foundation for effective data curation and, consequently, for high-quality AI collaboration. The concept of a "master project template" is developed as a way to bootstrap future projects.
+
+## 2. Key Learnings & Insights
+
+*   **Folder Structure as a Form of Tagging:** The curator explains that folder names themselves act as "tags." A well-named folder (e.g., `UKI-templates`) provides inherent context to the AI, which can infer the purpose of the files within it without needing explicit instructions.
+*   **Organization is Driven by Curation Efficiency:** The primary driver for how to organize files should be curation efficiency. The user will naturally start grouping related files into folders to minimize the number of checkboxes they need to click when selecting context for a prompt.
+*   **The "External Brain" Concept:** The repository is framed as the user's "external brain." It's a persistent, organized collection of knowledge that grows over time and makes the user's interactions with AI progressively more powerful and personalized.
+*   **Separating Tasks from Metadata:** A key architectural decision is made to create a top-level `tasks` folder. This separates the specific, iterative work of a project (like the "NC-DOC" project) from the more static, reusable metadata (like frameworks and templates), leading to a cleaner structure.
+*   **Reverse-Engineering a Template:** The best way to create a project template is to first build out a real project. Once the project is complete, its structure and key files can be "reverse-engineered" into a clean, reusable skeleton for future projects.
+*   **"It's All Just Text":** The curator reiterates the core philosophy that all forms of data (Excel sheets, PDFs, etc.) must be "flattened" into a text-based format (ideally Markdown) to be usable by the AI. This is analogized to the meme "Wait, it's all Ohio? Always has been," but replaced with "Wait, it's all just text? Always has been."
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the purpose of organization:**
+    > "Because you've structured it intelligently, it's intelligent and it'll get it. So it's good. It's good. You don't even... And then you'll only need to explicitly explain that which it clearly didn't get."
+
+*   **On the natural evolution of structure:**
+    > "The only constraint you will find is you will realize it gets annoying to check the box to select and deselect. You will realize it's better if these five files go in a folder so that I can just click it. That's what's gonna happen... That's how you're gonna constrain your organization."
+
+*   **On the value of the process:**
+    > "Even if AI didn't exist, having this organized in this way would still help you be more... Oh yeah. You see what I'm saying? And that's what I typically do... And for the final and final. And I never wanted to do this organization in my life up until... the AI values it, right? You see what I'm saying? So it's now fun to be organized. It's valuable."
+</file_artifact>
+
+<file path="src/Artifacts/A61.3 - Transcript 3 Summary.md">
+# Artifact A61.3: Transcript 3 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-3.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript details an end-to-end "Cycle 0" project initialization using the Data Curation Environment (DCE). The curator guides two learners through the entire process: writing the initial project scope, manually adding a pre-existing code file (`appdemo.py`) to the prompt's context, sending the prompt to the AI, and then parsing and analyzing the generated artifacts. The session serves as a practical, hands-on demonstration of the core DCE workflow and surfaces several key pedagogical points about interacting with AI, as well as a few bugs in the tool that require fixing.
+
+## 2. Key Learnings & Insights
+
+*   **The Power of Metacognition in Prompts:** The curator emphasizes the importance of providing the AI with the "big picture" context. By explaining *who* is doing the task and *why* (e.g., "I am following in the footsteps of an expert vibe coder"), the AI gets a much richer understanding of the user's intent, leading to better results.
+*   **Manual Context Injection:** The session demonstrates a workaround for including existing files in the initial prompt before the DCE's file system is fully active: manually pasting the file content into the `prompt.md` within an `<ephemeral_context>` tag.
+*   **The Value of Parallelism:** The curator runs the same prompt against multiple AI instances, including a premium "DeepThink" model. This immediately highlights the variance in AI responses (some are longer, some are structured differently) and demonstrates the core value of having multiple options to choose from.
+*   **Critique and Alignment as the Core Loop:** The workflow doesn't stop after the first response. The main activity is to critique the AI's output (the generated artifacts) against the user's mental model, document the misalignments in the next cycle's context, and re-prompt. This is the essence of AI alignment in practice.
+*   **Local LLMs vs. Cloud APIs:** The session includes a practical discussion on using a local LLM via LM Studio. The curator explains that while cloud APIs are more powerful, local models are free (beyond electricity cost) and sufficient for many tasks, and the DCE is designed to switch between them.
+*   **Bugs as Learning Opportunities:** The session reveals several bugs in the DCE (parsing errors, data loss on tab switching, including the `.git` directory). These are treated not as failures, but as the natural next steps for the development process, becoming the user stories for the next cycle.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On providing context:**
+    > "You see how I'm printing this? Do you see that? Like, it's metacognition. I'm giving the AI the whole context, dude. It's from the big picture so that it can help, it will really help us out in our situation. Not like guessing, like what does even the user want?"
+
+*   **On the iterative process:**
+    > "We just described all the differences that we have with our project in our mind with what the AI told us it has in its mind. Now we want to read those, we want to see the results of that... This is alignment, this is AI alignment. You're aligning this context for your specific use case and the more you do now, the much better off you will be, I promise."
+
+*   **On the value of small changes:**
+    > "You just weren't specific that the model you're using is local. Do you see? The moment it got that, it knew to give you a local LLM integration guide. You see? So, that's a good lesson right there. Tiny little tweak. Tiny, tiny, tiny little tweak."
+
+*   **On the human's role:**
+    > "It's all feedback. It's one big feedback loop, both for you and for it. You're giving it the feedback, and it kind of breaks down if you're just editing the same cycle. You're not quite giving it a full feedback, if that makes sense."
+</file_artifact>
+
+<file path="src/Artifacts/A61.4 - Transcript 4 Summary.md">
+# Artifact A61.4: Transcript 4 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-4.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a coaching session where the curator explains the full, end-to-end workflow of his Data Curation Environment (DCE) extension. He walks the learner through the "perfect loop" of development, from initial data curation and project setup to generating a prompt, parsing multiple AI responses, and using the Git-integrated features to test and validate the code. The session is a practical demonstration of the V2V methodology, emphasizing the principles of "documentation first," parallel processing, and iterative refinement.
+
+## 2. Key Learnings & Insights
+
+*   **The "Perfect Loop" Workflow:**
+    1.  **Curation:** Start by selecting all relevant files for a task using the DCE's file tree.
+    2.  **Prompt Generation:** Use the DCE to generate a `prompt.md` file based on the curated context and cycle history.
+    3.  **Parallel Responses:** Send the same prompt to multiple AI instances to get a variety of solutions.
+    4.  **Parse & Sort:** Paste the responses into the DCE's Parallel Co-Pilot Panel, parse them into a structured view, and sort by token count to review the most detailed responses first.
+    5.  **Select & Baseline:** Choose the best response and create a Git commit ("Baseline") as a safe restore point.
+    6.  **Accept & Test:** Apply the AI's code to the workspace and test it.
+    7.  **Restore or Proceed:** If the test fails, instantly revert with "Restore Baseline." If it succeeds, proceed to the next cycle.
+*   **The Power of Parallelism:** The curator emphasizes that running prompts in parallel is a "superpower." It transforms the workflow from a linear process of reading and reacting to a single response into a comparative process of choosing the best among multiple options. This dramatically increases the probability of getting a high-quality solution quickly.
+*   **Metacognition is Key:** The process of writing down the project scope and instructions in the DCE is a form of metacognition ("thinking about thinking"). It forces the developer to clarify their intent, which in turn leads to better AI outputs.
+*   **The DCE as an "External Brain":** The extension and its associated files (`prompt.md`, `dce_history.json`) act as a persistent, external memory for the project. This allows for a complete audit trail and prevents the loss of context that plagues simple chatbot interactions.
+*   **AI as a Content Delivery Solution:** The curator frames the V2V workflow as a "content delivery solution." It can be used to generate any form of structured content, not just code. The example of creating training materials for UKI is used to illustrate this.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the core value of the DCE:**
+    > "You're going to curate data, and then you're going to ask for code solutions, and you'll get them. The better your data is curated, the better your code solutions. Trust me."
+
+*   **On the shift in workflow:**
+    > "The parallel, sending a message parallel is actually crucial because it flips the script completely. You're not reading an entire prompt. You are now comparing between the prompts that you've received. It's a completely different ballpark, ballgame. The iteration cycle is immensely expedited by that."
+
+*   **On the human's role:**
+    > "The human is in the loop at every step of the way... We have perfect documentation. Every time I see a piece that's going to be missing, I just make sure it's in my process."
+
+*   **On the future of development:**
+    > "It's not about making code anymore... I'm making this for curation, not coding, because coding is gone. I'm already planning for coding being gone."
+</file_artifact>
+
+<file path="src/Artifacts/A61.6 - Transcript 6 Summary.md">
+# Artifact A61.6: Transcript 6 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-6.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a working session where the curator is guiding a learner on how to structure their project repository for use with the Data Curation Environment (DCE). The core of the conversation revolves around establishing a folder structure that is both logically organized for the human and optimally structured for the AI. They discuss the creation of a "project template" and the importance of separating static reference materials from dynamic project files. The session concludes with the learner successfully setting up their initial repository, curating their context, and generating their first `prompt.md` file, ready to be sent to an AI.
+
+## 2. Key Learnings & Insights
+
+*   **The Importance of a "Rock":** The curator suggests keeping original, unchanging reference documents (the "rock" or "seed") separate from the working, living documents that will be iterated upon. This establishes a stable foundation for the project.
+*   **Project Templates for Reusability:** The learner proposes creating a `project_template` folder. This idea is validated and refined, establishing a pattern for creating reusable skeletons for future projects, which aligns with the "Virtuosity" stage of having a repeatable process.
+*   **The Screenshot-to-Artifact Workflow:** A key workflow is introduced: take screenshots of a folder structure, feed them to an AI, and ask it to transcribe them into a structured text artifact (like a `File Tree Structure List`). This is a powerful method for bootstrapping documentation.
+*   **The "Why" of Folder Structure:** The curator explains that the AI can infer a lot from a logical folder structure. A folder named `UKI-templates` immediately tells the AI the purpose of the files within it. This reinforces that good organization is a form of context curation.
+*   **The Manual `prompt.md` Assembly:** The session demonstrates the manual steps for constructing the initial `prompt.md` file:
+    1.  Use the DCE to "Flatten Context" to generate `flattened_repo.md`.
+    2.  Manually copy the content of `flattened_repo.md` and paste it into the `<M7. Flattened Repo>` section of the main `prompt.md` file.
+    3.  This manual step is a temporary part of the "Cycle 0" process before the fully automated workflow takes over.
+*   **AI Studio Setup:** The curator provides specific instructions for configuring Google's AI Studio for optimal results: use the `Gemini 1.5 Pro` model, set the temperature to `0.7`, and max out the "Thinking budget."
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the value of organization:**
+    > "The AI is very good at helping organize... When I started... I had no actual logical ordering other than chronological. And then so I actually thought, well, what if we can you group these up somehow... Now every time I get a new artifact, the artifact comes with its own description, its own tags, and it gets placed in my master's list or in an organized manner."
+
+*   **On the meta-level of the workflow:**
+    > "This is pretty meta. What you can also do is once you've got, let's just say you're done with this project and you're moving on to another, you can take this entire prompt and wrap it as example one and then just move on and then you don't have to sort of regurgitate all the boilerplate. It serves as training data. It's pretty epic."
+
+*   **On the core value of the process:**
+    > "The V2V pathway is a structured pedagogical model, grounded in Cognitive Apprenticeship, designed to transform intuitive AI interaction ('vibecoding') into architectural mastery."
+</file_artifact>
+
+<file path="src/Artifacts/A61.7 - Transcript 7 Summary.md">
+# Artifact A61.7: Transcript 7 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-7.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a wide-ranging and philosophical coaching session where the curator explains the entire "Vibecoding to Virtuosity" pathway, its strategic importance, and the personal motivations behind it. He uses his AI-built game, `AI Ascent`, and the accompanying "Ascent Report" as the primary case study. The conversation covers the technical (local LLMs, RAG, tokens), the pedagogical (Cognitive Apprenticeship), and the geopolitical (the AI race with China), weaving them into a single, coherent narrative about the future of human-AI collaboration.
+
+## 2. Key Learnings & Insights
+
+*   **The V2V Pathway Explained:** The curator details the progression from "Vibecoding" (intuitive, messy, but powerful) to "Virtuosity" (structured, repeatable, expert-level). He frames himself as an "OG Vibe Coder" who has been practicing this for years, long before the term was coined.
+*   **The Game as Proof, The Report as Theory:** `AI Ascent` (the game) is presented as the tangible proof of what one person can build with this methodology. "The Ascent Report" is the theory, explaining the "why" behind the game and the V2V process.
+*   **Local LLMs are Accessible:** The curator demystifies running local LLMs using tools like LM Studio, explaining that powerful models can run on consumer-grade hardware (e.g., a GPU with 16GB VRAM) and provide free API calls for development and experimentation.
+*   **Tokens Explained Simply:** Tokens are demystified as the basic units of text for an AI, with the simple rule of thumb: `character_count / 4`. This is presented as all a developer really needs to know to manage context windows.
+*   **RAG as a Superpower:** The curator explains Retrieval-Augmented Generation (RAG) by recounting his own "origin story" of building a Slackbot for Palo Alto Networks. He demonstrates how providing the AI with a knowledge base (the admin guide for a product) enabled it to answer questions about topics it wasn't trained on.
+*   **The Geopolitical Imperative (The AI Cold War):** A major theme is the strategic competition with China. The curator argues that the West's "fissured workplace" model for AI training is a critical vulnerability ("institutionalized garbage in, garbage out"). In contrast, China is professionalizing its data workforce, creating a "unicorn farm" of AI talent that poses a long-term strategic threat.
+*   **The Human as a "Cognitive Warrior":** The ultimate goal of the V2V pathway is to create "Citizen Architects" or "cognitive warriors"—individuals with the skills to leverage AI to solve complex problems, thereby strengthening the nation's collective "Cognitive Capital."
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the core of the V2V philosophy:**
+    > "The proof is the product, the game is the proof, and the report is the theory. The theory is the 100x curator, the vibe coding to virtuosity pathway."
+
+*   **On his personal journey and the power of AI:**
+    > "I'm a one person studio. It's a paradigm shift in labor. One dude with AI with a vision can do everything that the entire team would do. This is what 100x looks like."
+
+*   **On the human's role in the AI era:**
+    > "The human is a strategist. The AI is the producer. Human vision, AI execution."
+
+*   **On the strategic stakes:**
+    > "While we hunt for unicorns... they build a unicorn farm... They're creating cognitive warriors at the same time we're outsourcing the potential to create cognitive warriors."
+
+*   **On the accessibility of learning:**
+    > "You get to learn everything with AI... you're going to get not only like in every having a professor in your pocket, every answer you want, but also on demand the best answer possible."
+</file_artifact>
+
+<file path="src/Artifacts/A61.8 - Transcript 8 Summary.md">
+# Artifact A61.8: Transcript 8 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-8.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript details a coaching session focused on the practical application of the curator's AI-assisted development workflow, specifically using the Data Curation Environment (DCE) extension. The curator guides a learner through the "Cycle 0" process of initializing a new project: writing a project scope, generating the initial prompt and artifacts, and then sending that prompt to an AI. The session is a hands-on tutorial that also serves to highlight the core philosophies of the V2V pathway, such as the importance of metacognition in prompts and the power of parallel processing.
+
+## 2. Key Learnings & Insights
+
+*   **The Power of Metacognition in Prompts:** The curator emphasizes the importance of providing the AI with the high-level "why" behind a project. By stating, "I am following in his footsteps," the curator gives the AI crucial context about the user's intent and learning process, which leads to more aligned and helpful responses.
+*   **The "Perfect Loop" in Action:** The session is a live demonstration of the initial steps of the Virtuoso's Loop:
+    1.  **Curation/Planning:** The user defines their goal in the DCE's "Project Scope" text area.
+    2.  **Prompt Generation:** The user clicks "Generate Initial Artifacts Prompt," which creates the `prompt.md` file.
+    3.  **Parallel Responses:** The user sends the same prompt to multiple AI instances to get a variety of initial plans.
+*   **Parallelism Reveals Quality Variance:** The curator runs the prompt on both the standard Gemini 1.5 Pro and the premium "DeepThink" model. The results immediately show a difference in quality and verbosity, demonstrating the value of having multiple responses to compare. The less advanced model simply regurgitated the input script, while the more advanced model provided a detailed analysis.
+*   **Artifacts as the Core Output:** The initial goal of the first prompt is not to generate code, but to generate the foundational *planning artifacts* for the project (Master Artifact List, Vision & Goals, Scaffolding Plan, etc.). This reinforces the "documentation first" principle.
+*   **Critique is the Next Step:** The session ends with the curator explaining that the next step in the workflow is to critically review the AI-generated artifacts, document any misalignments, and use that feedback to fuel the next development cycle.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On providing context to the AI:**
+    > "You see how I'm printing this? Do you see that? Like, it's metacognition. I'm giving the AI the whole context, dude. It's from the big picture so that it can help, it will really help us out in our situation. Not like guessing, like what does even the user want?"
+
+*   **On the value of the DCE workflow:**
+    > "This is a content delivery solution. You could be writing a book with this. This is a content delivery solution... You just have to work with it. And then you start getting artifacts and you start vibing with it. And you're like, yeah, I like this. No, I don't like that. And with multiple responses, you know, you like this. And when you get a choice, you're like, oh, I want it. I want this direction."
+
+*   **On the iterative nature of learning and development:**
+    > "You're building the mental model of the model right now. You're getting an idea of what one... So this is an important analogy. Think of your prompt as an input output as a single page... if you just conceptualize it as one big page both the input and the output then what you're doing is you're building a new alphabet because you now know what the input will produce the output."
+</file_artifact>
+
+<file path="src/Artifacts/A61.9 - Transcript 9 Summary.md">
+# Artifact A61.9: Transcript 9 Summary
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A high-level summary and synthesis of the key insights from the coaching transcript `transcript-9.md`.
+- **Tags:** v2v, research, synthesis, transcript analysis
+
+## 1. High-Level Summary
+
+This transcript captures a coaching session where the curator is guiding learners through the process of setting up their project repositories and beginning to curate their initial data sets for the V2V workflow. The conversation is highly practical, focusing on file organization, the purpose of different document types, and the mechanics of using the Data Curation Environment (DCE) extension. The session emphasizes that a well-organized repository is the crucial first step in the "documentation first" methodology and serves as the foundation for all subsequent AI interactions.
+
+## 2. Key Learnings & Insights
+
+*   **Separation of Concerns in the Repo:** A key organizational principle is established:
+    *   **Reference Documents:** Static, foundational materials that don't change often (e.g., frameworks, style guides, official documents).
+    *   **Working/Project Documents:** The "living documents" and iterative artifacts that are created and modified during the development process.
+    *   **Templates:** Reusable skeletons for projects, lessons, or artifacts.
+*   **The Power of a Project Template:** The idea of a `project_template` folder is developed. This allows a user to bootstrap a new project with a pre-defined, logical folder structure, which is a key step toward a repeatable, "virtuoso" workflow.
+*   **The Screenshot-to-Artifact Workflow:** A powerful technique is discussed: taking screenshots of a folder structure or UI, feeding them to an AI, and having the AI transcribe them into a structured text artifact (like a file tree list). This is presented as a method for quickly bootstrapping documentation.
+*   **The Feedback Loop of Curation:** The process of organizing files is itself a learning experience. The curator explains that the user will naturally start grouping related files to make context selection easier (i.e., to minimize the number of checkboxes they need to click), leading to a more efficient structure over time.
+*   **The DCE as a Data Management Tool:** The session provides a hands-on demonstration of the DCE's core features: selecting files with checkboxes, seeing the live token count update, sorting the selected file list by type or size, and removing unwanted files from the context.
+*   **Handling Non-Text Files:** The session reveals a bug/limitation in the current version of the DCE: it cannot properly process `.docx` files, leading to garbled text in the flattened output. The immediate workaround is to convert them to PDFs, and the long-term solution is for the curator to add `.docx` parsing capability to the extension.
+
+## 3. Best Bits (Direct Quotes)
+
+*   **On the value of organization for AI:**
+    > "As you're doing this, the file structure, what we'll do is we'll just click expand all when you're finally done and we'll take a screenshot of that. And then we'll just let AI turn that into an initial documentation artifact... And then... what you're gonna add in there is what is the significance of the folders, so that it is known from the get-go."
+
+*   **On the iterative nature of the process:**
+    > "You'll start making living documents that can turn into templates later because you've got... let's say you've already got templates for state A, listen, then we'll get a template at state Z."
+
+*   **On troubleshooting and tool limitations:**
+    > "Oh, I didn't handle docx yet. Sorry, dude. That's why it's happening, because I handled PDF, I handled XLS, I haven't handled docx yet... That'll be next, I guess, on the list. I'll do that for you tomorrow."
+</file_artifact>
+
+<file path="src/Artifacts/A62 - V2V Academy - Synthesis of Research Proposals.md">
+# Artifact A62: V2V Academy - Synthesis of Research Proposals
+# Date Created: C60
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A meta-reflection on the provided research proposals, summarizing key themes, strategic insights, and recurring patterns.
+- **Tags:** v2v, research, synthesis, meta-analysis, strategy
+
+## 1. Overview
+
+This document provides a high-level synthesis of the key insights gleaned from the provided research proposals (`context/v2v/research-proposals/`). These proposals represent a deep dive into the transition from "prompt engineering" to "context engineering" and form the intellectual bedrock of the V2V Academy. This reflection consolidates the most critical themes that should guide our curriculum design and strategic positioning.
+
+## 2. Key Themes and Strategic Insights
+
+### 1. The Paradigm Shift is Real and Defensible
+*   **Insight:** The transition from "prompt engineering" to "context engineering" is not just a semantic change but a fundamental, industry-wide paradigm shift. The research consistently frames prompt engineering as a tactical, brittle, and introductory skill, while context engineering is positioned as a strategic, robust, and architectural discipline required for production-grade AI systems.
+*   **Strategic Implication:** This validates the core premise of the V2V curriculum. We should lean heavily into this distinction, positioning V2V as an advanced program that teaches AI *systems architecture*, not just prompt crafting. This creates a clear market differentiator.
+
+### 2. The Future is Agentic and Systemic
+*   **Insight:** The research points toward a future dominated by "agentic workflows," where autonomous or semi-autonomous AI agents execute complex, multi-step tasks. Building these agents requires a systems-thinking approach, focusing on memory, tool integration, and state management.
+*   **Strategic Implication:** The V2V curriculum must be forward-looking. The end goal should not be to create a better "prompter," but a capable "agent architect." The capstone projects and advanced modules should focus on designing and orchestrating these agentic systems.
+
+### 3. Pedagogy Must Evolve to Counter "Pseudo-Apprenticeship"
+*   **Insight:** The research highlights a critical pedagogical risk: learners using AI as an "answer engine" to bypass the productive struggle required for deep learning. The Cognitive Apprenticeship model is identified as the ideal framework, but it must be implemented in a way that forces learners to engage in metacognition, articulation, and reflection.
+*   **Strategic Implication:** Our curriculum design and exercises must be intentionally structured to mitigate this risk. We should prioritize activities that require students to critique AI output, justify their own design choices, and use the AI as a Socratic partner rather than a simple code generator. Assessment should focus on the student's *process* and *reasoning*, not just the final code.
+
+### 4. The "Human-in-the-Loop" is the "Chief Validation Officer"
+*   **Insight:** As AI automates more of the tactical implementation (the "how"), the human's value shifts to higher-order cognitive functions: strategic intent (the "why"), critical validation, and ethical oversight.
+*   **Strategic Implication:** The V2V curriculum should explicitly train for this new role. We are not just training coders; we are training the next generation of technical leaders who can strategically direct and rigorously validate AI systems. Modules on AI-assisted Test-Driven Development (TDD) and spec-driven workflows are practical implementations of this principle.
+
+### 5. Context is the New Competitive Moat
+*   **Insight:** As powerful foundational models become commoditized, the source of competitive advantage is no longer the model itself, but the ability to effectively connect that model to unique, proprietary data and workflows. The context layer—the RAG pipelines, memory systems, and tool integrations—is the defensible asset.
+*   **Strategic Implication:** This reinforces the value proposition of the entire V2V program. By teaching the discipline of context engineering, we are equipping students with the skills to build these valuable, defensible systems, making them highly sought-after in the market.
 </file_artifact>
 
 
