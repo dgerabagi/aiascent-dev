@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C60 (Add new V2V planning and synthesis artifacts)
+# Updated on: C61 (Update curriculum artifacts to reflect multi-persona approach)
 
 ## 1. Purpose
 
@@ -280,12 +280,12 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** v2v, curriculum design, foundational skills, data curation, critical thinking
 
 ### A53. V2V Academy - Curriculum Outline
-- **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow."
-- **Tags:** v2v, curriculum design, instructional design, learning pathway, cognitive apprenticeship
+- **Description:** Proposes a multi-module curriculum structure for the V2V Academy, designed to guide learners from the fundamentals of "Vibecoding" to the mastery of the "Virtuoso's Workflow." Each lesson is tailored to three distinct learner personas.
+- **Tags:** v2v, curriculum design, instructional design, learning pathway, cognitive apprenticeship, persona
 
 ### A54. V2V Academy - Lesson 1.1 - The Virtuoso's Loop
-- **Description:** The detailed content for Lesson 1.1 of the V2V Academy, "The Virtuoso's Loop," designed for the interactive report viewer.
-- **Tags:** v2v, curriculum, lesson plan, workflow, interactive learning
+- **Description:** The detailed content for Lesson 1.1 of the V2V Academy, "The Virtuoso's Loop," designed for the interactive report viewer. It includes three parallel versions of the content for different learner personas.
+- **Tags:** v2v, curriculum, lesson plan, workflow, interactive learning, persona
 
 ### A55. V2V Academy - Glossary of Terms
 - **Description:** A comprehensive glossary of key terms and concepts related to the "Vibecoding to Virtuosity" (V2V) pathway and the Data Curation Environment (DCE).
