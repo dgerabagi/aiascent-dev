@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C91 (Add knowledgeBase to _fetchSuggestions call)
 // Updated on: C90 (Refactor suggestion fetches to use store's reportName)
 // Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
 // Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
@@ -235,7 +236,7 @@ const createInitialReportState = (): ReportState => ({
 
 const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
-    if (reportName.startsWith('v2v-academy')) return ACADEMY_DEFAULT_SUGGESTIONS;
+    if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
@@ -249,6 +250,13 @@ const _fetchSuggestions = async (
     const MAX_RETRIES = 3;
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
+            let knowledgeBase = 'report'; // default
+            if (reportName === 'whitepaper') {
+                knowledgeBase = 'dce';
+            } else if (reportName.startsWith('v2v_')) {
+                knowledgeBase = 'academy';
+            }
+
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -257,6 +265,7 @@ const _fetchSuggestions = async (
                     suggestionType,
                     context,
                     reportName, // C89: Pass reportName to backend for persona-specific prompts
+                    knowledgeBase, // C91: Pass knowledgeBase to backend for RAG lookup
                 }),
             });
 

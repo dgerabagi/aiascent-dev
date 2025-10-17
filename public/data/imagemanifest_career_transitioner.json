@@ -128,7 +128,7 @@
       "alt": "The 'Garbage In, Garbage Out' principle.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 21
+      "imageCount": 20
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -136,7 +136,7 @@
       "alt": "The Curator's Method.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 22
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -144,7 +144,7 @@
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 18
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -152,7 +152,7 @@
       "alt": "The professional's guide to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -160,7 +160,7 @@
       "alt": "The cost of ambiguity in AI.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -168,7 +168,7 @@
       "alt": "Practical annotation techniques.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -176,7 +176,7 @@
       "alt": "The payoff of data annotation.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",

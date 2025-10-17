@@ -33,6 +33,52 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
+/**
+ * Performs a RAG lookup against a specified knowledge base.
+ */
+async function performRagLookup(query: string, kbIdentifier: string, embeddingUrl: string, k: number): Promise<{ retrievedContext: string; retrievedDocsLog: string; }> {
+    let retrievedContext = '';
+    let retrievedDocsLog = 'No documents retrieved.';
+    try {
+        const faissFile = `${kbIdentifier}_faiss.index`;
+        const chunksFile = `${kbIdentifier}_chunks.json`;
+
+        const publicPath = path.join(process.cwd(), 'public');
+        const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
+        const chunksPath = path.join(publicPath, 'data', 'embeddings', chunksFile);
+
+        const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
+        const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
+
+        if (!faissExists || !chunksExist) {
+            throw new Error(`Embedding files not found. Ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`);
+        }
+
+        const index = Index.read(faissPath);
+        const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
+        const queryEmbedding = await getEmbedding(query, embeddingUrl);
+
+        if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
+            const { labels, distances } = index.search(queryEmbedding, k);
+            if (labels.length > 0) {
+                const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
+                retrievedContext = results.join('\n\n---\n\n');
+                retrievedDocsLog = `Retrieved ${results.length} documents from '${kbIdentifier}' KB:\n${results.map((doc, i) => `  Doc ${i + 1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
+            }
+        } else if (!queryEmbedding) {
+            throw new Error("Could not generate embedding for the query.");
+        } else {
+            throw new Error(`Embedding dimension mismatch. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`);
+        }
+    } catch (error: any) {
+        console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB:`, error);
+        retrievedContext = `RAG system failed: ${error.message}.`;
+        retrievedDocsLog = `RAG Error: ${error.message}`;
+    }
+    return { retrievedContext, retrievedDocsLog };
+}
+
+
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
 - For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
@@ -67,7 +113,7 @@ ${markdownFormattingInstruction}`
 // C89: New persona-aware suggestion prompts
 const suggestionSystemPrompts = {
     page: {
-        default: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+        default: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Your questions should be deeper, drawing connections between the original page content and the extra context provided. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
@@ -100,11 +146,8 @@ export async function POST(request: Request) {
   if (task === 'generate_suggestions') {
     const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
     
-    let systemPrompt = suggestionPromptType === 'conversation' 
-        ? suggestionSystemPrompts.conversation 
-        : suggestionSystemPrompts.page.default;
+    let systemPrompt = suggestionSystemPrompts.page.default;
 
-    // C89: Persona-aware prompt selection for academy page suggestions
     if (suggestionPromptType === 'page' && kbIdentifier === 'academy' && reportName) {
         if (reportName.includes('career_transitioner')) {
             systemPrompt = suggestionSystemPrompts.page.career_transitioner;
@@ -113,19 +156,27 @@ export async function POST(request: Request) {
         } else if (reportName.includes('young_precocious')) {
             systemPrompt = suggestionSystemPrompts.page.young_precocious;
         }
+    } else if (suggestionPromptType === 'conversation') {
+        systemPrompt = suggestionSystemPrompts.conversation;
     }
 
-    const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
+    const { retrievedContext, retrievedDocsLog } = await performRagLookup(context, kbIdentifier, embeddingUrl, 3);
+    console.log(`[Chat API - Suggestions] RAG Diagnostic for page context using KB: '${kbIdentifier}'`);
+    console.log(`[Chat API - Suggestions] ${retrievedDocsLog}`);
 
     try {
         const suggestionPrompt = `
 System: ${systemPrompt}
 
---- START ${contextTypeLabel} ---
+--- START ORIGINAL DOCUMENT TEXT ---
 ${context}
---- END ${contextTypeLabel} ---
+--- END ORIGINAL DOCUMENT TEXT ---
 
-User: Generate questions based on the text above.
+--- START EXTRA CONTEXT FROM KNOWLEDGE BASE ---
+${retrievedContext}
+--- END EXTRA CONTEXT FROM KNOWLEDGE BASE ---
+
+User: Generate insightful questions based on all the text provided above.
 
 Assistant:`;
 
@@ -183,52 +234,7 @@ Assistant:`;
   }
 
   // --- Existing RAG and Chat Logic ---
-  let retrievedContext = '';
-  let retrievedDocsLog = 'No documents retrieved.';
-  try {
-    const faissFile = `${kbIdentifier}_faiss.index`;
-    const chunksFile = `${kbIdentifier}_chunks.json`;
-
-    const publicPath = path.join(process.cwd(), 'public');
-    const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
-    const chunksPath = path.join(publicPath, 'data', 'embeddings', chunksFile);
-
-    const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
-    const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
-
-    if (!faissExists || !chunksExist) {
-        const errorMessage = `Embedding files for knowledge base '${kbIdentifier}' not found. Please ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`;
-        console.error(`[Chat API] RAG Error: ${errorMessage}`);
-        retrievedContext = `RAG system failed: ${errorMessage}`;
-    } else {
-        const index = Index.read(faissPath);
-        const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
-        
-        const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
-
-        if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
-            const { labels, distances } = index.search(queryEmbedding, 6);
-            
-            if (labels.length > 0) {
-                const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
-                retrievedContext = results.join('\n\n---\n\n');
-                retrievedDocsLog = `Retrieved ${results.length} documents from '${kbIdentifier}' KB:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
-            }
-        } else if (!queryEmbedding) {
-            retrievedContext = "RAG system failed: Could not generate embedding for the query.";
-            retrievedDocsLog = "RAG Error: Could not generate embedding for the query.";
-        } else {
-            const errorMessage = `Embedding dimension mismatch for '${kbIdentifier}' KB. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`;
-            console.error(`[Chat API] RAG Error: ${errorMessage}`);
-            retrievedContext = `RAG system failed: ${errorMessage}`;
-            retrievedDocsLog = `RAG Error: ${errorMessage}`;
-        }
-    }
-  } catch (error: any) {
-    console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB: Could not load vector store or retrieve documents.`, error);
-    retrievedContext = `RAG system failed: ${error.message}.`;
-    retrievedDocsLog = `RAG Error: ${error.message}`;
-  }
+  const { retrievedContext, retrievedDocsLog } = await performRagLookup(prompt, kbIdentifier, embeddingUrl, 6);
 
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
