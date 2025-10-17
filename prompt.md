@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 85 - terrible images, i figured out why, remove markdown system prompt and write static prompts please
+Current Cycle 86 - create script to create image directories
+Cycle 85 - terrible images, i figured out why, remove markdown system prompt and write static prompts please
 Cycle 84 - reverse-engineer imagen 4 ultra fine tuning
 Cycle 83 - still script wont work
 Cycle 82 - script error
@@ -294,7 +295,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C84 (Add A80)
+# Updated on: C85 (Update A80 description)
 
 ## 1. Purpose
 
@@ -718,11 +719,41 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** v2v, curriculum, images, script, automation, guide, tooling
 
 ### A80. V2V Academy - Image Generation Test Harness Guide
-- **Description:** A guide for using the `image_harness.mjs` script to test static prompts with the Imagen 4 model, helping to diagnose prompt engineering issues and find an optimal prompt structure.
-- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen
+- **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 86>
+<Cycle Context>
+nah this isnt working, ill use my manual approach. instead, now i just need a script which will simply create all of the image directories within `public\assets\images\v2v`, can you do that?
+
+heres my plan:
+
+ill drop in all the images, and then that same script when i re-run it can check for and rename any images in those folders sequentially, so if a directory has 5 images, then we would name them:
+
+lesson-1.1-p1-img-1.png
+lesson-1.1-p1-img-2.png
+
+and so on.
+</Cycle Context>
+<Previous Cycle 85 Summary of Actions>
+Could not parse summary.
+
+1.  **Create `scripts/image_harness.mjs`:** I will author a new Node.js script specifically for testing. This script will:
+    *   Use the same CJS-compatible import for `@google/genai` as the corrected main script to ensure it runs correctly in your environment.
+    *   Contain a hardcoded array of 6-8 representative, high-quality image prompts drawn from the existing V2V curriculum artifacts (`A76`, `A77`, `A78`).
+    *   Load the master system prompt from `A75`.
+    *   Construct a simplified final prompt that **only** combines the master system prompt and the specific image prompt, deliberately excluding the lesson content.
+    *   Call the Google Generative AI API to generate one image per prompt, hardcoding the parameters for a 16:9 aspect ratio and high resolution as requested.
+    *   Save the generated images to a new, dedicated directory (`public/assets/images/v2v/test_harness/`) with descriptive filenames for easy review.
+
+2.  **Create `A80 - V2V Academy - Image Generation Test Harness Guide.md`:** I will author a new documentation artifact that explains the purpose and usage of the `image_harness.mjs` script. This guide will instruct you on how to run the script and review the results to identify which prompt structures produce the best images.
+
+3.  **Update Master Artifact List:** I will add the new `A80` artifact to the master list (`A0`).
+</Previous Cycle 85 Summary of Actions>
+</Cycle 86>
 
 <Cycle 85>
 <Cycle Context>
@@ -4199,10 +4230,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-16T23:51:26.886Z
+  Date Generated: 2025-10-17T00:29:18.544Z
   ---
-  Total Files: 191
-  Approx. Tokens: 541658
+  Total Files: 195
+  Approx. Tokens: 541088
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4253,7 +4284,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 34. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 35. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 432 - Chars: 28492 - Tokens: 7123
+36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 432 - Chars: 28559 - Tokens: 7140
 37. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 38. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 39. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -4395,20 +4426,24 @@ This file-centric approach helps in planning and prioritizing work, especially i
 175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
 176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
 177. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
-178. scripts\image_harness.mjs - Lines: 187 - Chars: 13757 - Tokens: 3440
+178. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
 179. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
 180. public\module-1\lesson-1.1\lesson-1.1-p1-img-1.webp - [Binary] Size: 855.8 KB
 181. public\module-1\lesson-1.1\lesson-1.1-p1-img-2.webp - [Binary] Size: 714 KB
 182. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
-183. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 48 - Chars: 3581 - Tokens: 896
+183. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
 184. public\assets\images\v2v\test_harness\career-transitioner-loop--v01-aistudio.png - [Binary] Size: 1.7 MB
 185. public\assets\images\v2v\test_harness\career-transitioner-loop--v01.png - [Binary] Size: 1.1 MB
-186. public\assets\images\v2v\test_harness\career-transitioner-loop--v02-aistudio.png - [Binary] Size: 1.7 MB
-187. public\assets\images\v2v\test_harness\career-transitioner-loop--v02.png - [Binary] Size: 1 MB
-188. public\assets\images\v2v\test_harness\career-transitioner-loop--v03-aistudio.png - [Binary] Size: 1.6 MB
-189. public\assets\images\v2v\test_harness\career-transitioner-loop--v03.png - [Binary] Size: 1.1 MB
-190. public\assets\images\v2v\test_harness\career-transitioner-loop--v04-aistudio.png - [Binary] Size: 1.8 MB
-191. public\assets\images\v2v\test_harness\career-transitioner-loop--v04.png - [Binary] Size: 1.2 MB
+186. public\assets\images\v2v\test_harness\career-transitioner-loop--v01.prompt.txt - Lines: 1 - Chars: 987 - Tokens: 247
+187. public\assets\images\v2v\test_harness\career-transitioner-loop--v02-aistudio.png - [Binary] Size: 1.7 MB
+188. public\assets\images\v2v\test_harness\career-transitioner-loop--v02.png - [Binary] Size: 1018.3 KB
+189. public\assets\images\v2v\test_harness\career-transitioner-loop--v02.prompt.txt - Lines: 1 - Chars: 738 - Tokens: 185
+190. public\assets\images\v2v\test_harness\career-transitioner-loop--v03-aistudio.png - [Binary] Size: 1.6 MB
+191. public\assets\images\v2v\test_harness\career-transitioner-loop--v03.png - [Binary] Size: 1008.4 KB
+192. public\assets\images\v2v\test_harness\career-transitioner-loop--v03.prompt.txt - Lines: 1 - Chars: 554 - Tokens: 139
+193. public\assets\images\v2v\test_harness\career-transitioner-loop--v04-aistudio.png - [Binary] Size: 1.8 MB
+194. public\assets\images\v2v\test_harness\career-transitioner-loop--v04.png - [Binary] Size: 1.1 MB
+195. public\assets\images\v2v\test_harness\career-transitioner-loop--v04.prompt.txt - Lines: 1 - Chars: 461 - Tokens: 116
 
 <file path="context/aiascentgame/report/AudioControls.tsx.md">
 // src/components/menus/report/AudioControls.tsx
@@ -24543,7 +24578,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C84 (Add A80)
+# Updated on: C85 (Update A80 description)
 
 ## 1. Purpose
 
@@ -24967,8 +25002,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** v2v, curriculum, images, script, automation, guide, tooling
 
 ### A80. V2V Academy - Image Generation Test Harness Guide
-- **Description:** A guide for using the `image_harness.mjs` script to test static prompts with the Imagen 4 model, helping to diagnose prompt engineering issues and find an optimal prompt structure.
-- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen
+- **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -38122,118 +38157,64 @@ import { GoogleGenAI } from '@google/genai';
 
 dotenv.config();
 
-/**
- * CONFIG
- * - VARIATIONS_PER_CASE: how many prompt strategies to try per test case (1-6)
- * - ASPECT_RATIO: "16:9" | "4:3" | "1:1" | etc.
- * - IMAGE_SIZE: "1K" | "2K"  (Imagen supports size presets)
- */
-const VARIATIONS_PER_CASE = 4; // try 4 distinct prompt styles per case
-const ASPECT_RATIO = '16:9';
-const IMAGE_SIZE = '2K';
-
-// Accept common env names
+// ====== CONFIG ======
 const API_KEY = process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY ?? process.env.API_KEY;
 const MODEL_NAME = 'imagen-4.0-generate-001';
-
-// Where images + prompts will be saved
 const OUTPUT_DIR = path.resolve(process.cwd(), 'public/assets/images/v2v/test_harness');
 
-// --- TEST CASES ---------------------------------------------------------------
-// Keep your existing cases, but we'll layer strategy variants on top.
-const TEST_PROMPTS = [
-  {
-    key: 'career-transitioner-loop',
-    persona: 'career_transitioner',
-    // Short seed description; strategies will expand this into long paragraphs
-    seed: "A seasoned professional orchestrates a circular workflow loop: 'Curation', 'Parallel Prompting', 'Validation', 'Integration'. Calm control, modern office, luminous UI."
-  },
-  {
-    key: 'underequipped-grad-hired',
-    persona: 'underequipped_graduate',
-    seed: "A young graduate in a job interview; the hiring manager highlights a glowing resume line: 'Proficient in Data Curation & Context Engineering'. Relief + pride."
-  },
-];
+// Tweak these to match the AI Studio renders
+const ASPECT_RATIO = '16:9';
+const IMAGE_SIZE = '2K';
+const SLEEP_MS = 1200;
 
-// --- STRATEGY ENGINE ----------------------------------------------------------
-// Each strategy returns a *single paragraph* (no formatting), using quotes only for literal on-image text.
-// We also support bespoke overrides per (case.key), which completely replace the strategy output.
-
-const STRATEGIES = [
-  // 1) Narrative Snapshot: a grounded, cinematic slice-of-time; realistic lens + composition
-  ({ seed, persona }) =>
-    `Cinematic documentary photograph frozen at the decisive moment: ${seed}. Shot on a full-frame 35mm lens at f/1.8 for shallow depth-of-field, natural human skin tones, realistic textures, and believable lighting. Gentle rim light shapes the subject, while the background falls into soft bokeh with crisp UI elements hovering as emissive glass. The palette favors charcoal, slate, and teal accents, avoiding neon oversaturation. Composition follows rule of thirds with leading lines toward the subject’s hands and eyes. No clutter; surfaces are clean and premium. If typography appears, use a restrained modern sans serif in white or soft teal, only where explicitly quoted in the scene such as "Curation", "Parallel Prompting", "Validation", "Integration" or "Proficient in Data Curation & Context Engineering". The overall feeling is controlled confidence and expert craftsmanship, not sci-fi camp.`,
-
-  // 2) Product Still / Key Art: looks like a hero image from a tech campaign
-  ({ seed }) =>
-    `Hero key-art render that feels like a flagship tech campaign: ${seed}. The subject is lit with a large soft key, subtle kicker, and a cool ambient fill to reveal premium materials; micro-contrast and specular highlights feel photographic, not plastic. The background is a deep gradient with faint volumetric light, forming a stage. UI motifs are thin-line, grid-aligned overlays that appear etched into glass, with subtle parallax. The camera is a slightly elevated three-quarter angle, 50mm equivalent, with minimal distortion. Color palette: deep navy, graphite, and cyan accents. The scene reads clearly at a glance; one hero, one message. If any text appears, restrict it to exactly the quoted phrases present in the description.`,
-
-  // 3) Infographic Panel: single-frame infographic, clean type, hierarchy, and iconography
-  ({ seed }) =>
-    `Single-frame infographic poster that communicates the concept with visual hierarchy and immaculate typography: ${seed}. Use a wide canvas with generous negative space, a clean grid, and three to five modular areas. Render precise icons and line-based diagrams with consistent stroke weight. Use a modern grotesk typeface for headings and light-weight text for labels. Colors are restrained: charcoal background, ice blue for active elements, soft white for text. Subtle glow only to increase legibility, never to look gimmicky. Include only literal quoted strings for labels if any, e.g., "Curation", "Parallel Prompting", "Validation", "Integration". The overall tone is premium, minimal, and instructional without feeling corporate clip-art.`,
-
-  // 4) Magazine Cover: editorial portrait with tasteful type, believable set, subtle drama
-  ({ seed }) =>
-    `Editorial magazine cover photograph with subtle drama: ${seed}. The subject stands three-quarter to camera, confident posture, hands visible. Use a shallow depth of field and a moody practical backlight from office fixtures, plus a cool key from the front. The set has believable modern furniture and a hint of reflective glass. Use tasteful masthead-like typography only if quoted. The color grade is cinematic teal-and-warm skin, with filmic halation and gentle grain. The image communicates ambition and clarity rather than sci-fi spectacle.`,
-
-  // 5) Premium Concept Art: painterly realism, controlled atmosphere, elegant UI
-  ({ seed }) =>
-    `Highly polished concept art with painterly realism and controlled atmosphere: ${seed}. The lighting is volumetric but subtle, with light shafts that carve space and draw attention to the subject’s gesture. Interfaces appear as elegant glass-panes with thin cyan edges, softly refracting the environment. The composition balances negative space against an intricate central motif. Saturation remains restrained; micro-details and material richness do the heavy lifting. Include any literal text only as quoted labels if present.`,
-
-  // 6) Documentary Office Moment: candid, natural light, emotional authenticity
-  ({ seed }) =>
-    `Candid office photograph at golden-hour with authentic emotion: ${seed}. Natural window light wraps the subject; practical desk lamps add warmth. The framing is slightly off-center and believable, with real-world objects arranged neatly: notebook, laptop, pen. A hint of motion blur in the background conveys life without distraction. Keep colors human and restrained. Only include on-image text if it is explicitly quoted in the description, rendered subtly on a screen or paper. The mood is relief, competence, and quiet pride.`
-];
-
-// BESPOKE overrides for your first two cases (stronger direction than generic strategies)
-const BESPOKE = {
+// ====== PROMPT SETS (bespoke long paragraphs) ======
+const PROMPT_SETS = {
   'career-transitioner-loop': [
-    // A: Orchestration loop as luminous ring interface, not kitschy neon
-    ({ persona }) =>
-      `A seasoned ${persona.replace('_', ' ')} stands at a sleek standing desk in a modern conference room. Floating at chest height is a single luminous ring interface—thin, elegant, not noisy—divided into four equal segments labeled "Curation", "Parallel Prompting", "Validation", "Integration". Each segment emits a soft cyan glow and a faint particle drift toward the next, implying motion around the ring. The person conducts the flow with one hand mid-gesture; their expression is calm, analytical, in control. The camera is a 50mm lens at f/2.0, shoulder-level angle. Lighting is cinematic: cool key from camera left, warm practicals in the background create depth, subtle rim on hair and shoulders. The palette is graphite, slate, and a single accent of cyan; no neon, no clutter. The glass UI reflects a hint of the room. Everything looks premium and believable.`,
-
-    // B: Whiteboard wall + projected minimal UI, more grounded realism
-    () =>
-      `In a glass-walled meeting room, a professional stands before a matte whiteboard wall where a minimal circular diagram is projected, divided into four steps: "Curation", "Parallel Prompting", "Validation", "Integration". The projection is tack-sharp with thin vector lines and small animated arrows between phases. The subject’s hand casts a soft shadow on the diagram as they point to the next step. Natural daylight from the left, soft fill from the right. 35mm lens, modest depth of field, realistic textures and reflections. Color grade is neutral with a cool bias; typography is modern and unobtrusive. The scene feels like a real photo taken during a high-stakes planning session.`,
-
-    // C: Desktop tabletop macro with ring UI reflected on screen
-    () =>
-      `A close table-top shot captures a premium laptop on a walnut desk; on the screen, a refined circular workflow appears with the four labels "Curation", "Parallel Prompting", "Validation", "Integration". A hand enters frame from the right, mid-gesture, rotating the loop with a trackpad. Soft morning light streaks across the desk, revealing subtle dust motes and the brushed metal texture of the device. The composition is balanced and minimal, with a shallow depth of field, honest materials, and restrained cyan accents. No gimmicks—just clarity and craft.`
+    // P1 — Editorial night skyline, hero ring
+    `A hyper-realistic editorial photograph at dusk inside a high-floor office with a panoramic city skyline behind glass; a confident professional stands three-quarter to camera, hand mid-gesture inside a single elegant circular interface that floats at chest height, divided into four clean quadrants labeled "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; the circle is thin-lined, cyan-teal accents with precise tick marks and a faint orbit of particles, not neon; lighting is cinematic with a cool key from the windows and a warm rim from practical lamps; 50 mm lens at f/2.8 for shallow depth, natural skin tone, premium fabrics; composition places the ring slightly left of center and the subject right of center; add a tasteful title at the top reading "THE VIRTUOSO’S LOOP" and a lower-left module tag "MODULE 1: THE VIRTUOSO’S LOOP — LESSON 1.1: THE PROFESSIONAL’S PLAYBOOK"; no extra icons, no thick arrows, no sci-fi consoles, keep the scene minimal and believable.`,
+    // P2 — Daylight boardroom, senior leader
+    `A hyper-realistic daylight boardroom with matte concrete and a wide view of the city; a senior leader gestures to a refined circular workflow overlay hovering in front of them, divided into four equal segments labeled "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; the ring uses thin concentric strokes and subtle radial ticks, cyan accents on a graphite palette; soft window light wraps the subject, subtle rim separates them from the background; 35 mm lens, shoulder-level angle; add the title "THE VIRTUOSO’S LOOP" centered above and a small lower-left tag "MODULE 1: THE VIRTUOSO’S LOOP — LESSON 1.1: THE PROFESSIONAL’S PLAYBOOK"; realistic glass reflections, restrained glow, absolutely no clutter or extra UI panels.`,
+    // P3 — Minimal standing desk, linear bead trail
+    `A hyper-realistic minimal mid-shot of a professional at a white standing desk in a quiet room; a small precise circular control with three cyan nodes sits in front of their fingertip; a subtle dotted bead-trail runs horizontally linking the four labels "CURATION" · "PARALLEL PROMPTING" · "VALIDATION" · "INTEGRATION", with the finger hovering over the central control; lighting is moody and photographic, shallow depth isolates the gesture; no extra graphics besides these words and the tiny circle; premium realism, no neon, no 3D sci-fi chrome—just elegant restraint.`,
+    // P4 — Projected loop on glass wall
+    `In a hyper-realistic glass-walled meeting room, a professional points to a projected circular diagram on the glass—thin strokes, consistent vector weights, labeled exactly "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; small arrows imply clockwise flow without thick swooshes; desaturated neutral palette with a hint of cyan; 50 mm lens, clean reflections, natural daylight; no extra icons or text, no garish glow—this reads like a real photo of a real diagram.`,
+    // P5 — Tabletop macro with laptop screen
+    `A hyper-realistic premium laptop on a walnut desk fills the frame; on the screen, a crisp circular workflow graphic divided into four with labels "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; thin cyan strokes on a dark graphite UI; a hand enters frame to rotate the loop on the trackpad; morning window light reveals wood grain and brushed aluminum; shallow depth, realistic materials, no additional charts or clip-art.`,
+    // P6 — Studio portrait with ring front-and-center
+    `A hyper-realistic studio-lit portrait of a professional against a deep charcoal backdrop; the circular interface floats directly between camera and subject so the face is partly visible through the ring; thin cyan lines, tiny radial dots, quadrant labels "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; large soft key, faint kicker, subtle film grain; composition is perfectly balanced and minimal; absolutely no extra UI blocks, no icons, no stock-photo graphs.`
   ],
   'underequipped-grad-hired': [
-    // A: Interview room, highlight line on resume glows subtly
-    () =>
-      `Inside a real interview room with a round table and frosted glass, a young graduate sits upright while a hiring manager leans forward, pen poised above a printed resume. A single line on the page glows gently, as if backlit: "Proficient in Data Curation & Context Engineering". The manager’s eyebrows lift in visible approval; the graduate shows a small, proud smile. The light is soft and natural from a window, augmented by a warm desk lamp. 85mm portrait lens at f/2.0 for creamy background blur. Colors are warm neutrals with a hint of cool ambient from the hallway. The mood is human, grounded, and quietly triumphant.`,
-
-    // B: Glass wall reflection, subtle textual highlight on tablet
-    () =>
-      `A graduate and a hiring manager review a digital resume on a tablet placed between them. The camera frames their hands and expressions while the glass wall behind them reflects city lights. One line on the tablet interface is highlighted with a tasteful cyan underline: "Proficient in Data Curation & Context Engineering". The type is crisp and modern, the UI minimal. 50mm lens, cinematic grade, believable reflections, and tasteful bokeh. The scene communicates recognition and fit, not hype.`,
-
-    // C: Hallway post-interview reaction, no text on image but emotion clear
-    () =>
-      `A candid post-interview moment in a sunlit hallway: the graduate steps out, exhales, and grins subtly, clutching a neatly organized portfolio. Through the open door we glimpse the manager returning to their notes. The storytelling implies that the highlighted resume line was a turning point. Natural light, subtle lens flare, light grain for authenticity, and a soft teal-and-warm grade.`
+    // U1 — Interview table, glowing resume line
+    `Inside a hyper-realistic interview room with a round table and frosted glass, a young graduate sits upright while a hiring manager leans forward, pen above a printed resume; a single line on the page glows subtly, exactly "Proficient in Data Curation & Context Engineering"; the manager’s expression shows impressed approval, the graduate allows a small relieved smile; natural window light with a warm desk lamp, 85 mm portrait at f/2, shallow depth, warm neutrals; no extra UI graphics, no neon—just that one glowing line.`,
+    // U2 — Tablet review, tasteful underline
+    `A hyper-realistic mid-shot over a table: the hiring manager and graduate look at a tablet; one line in the digital resume is highlighted with a thin cyan underline reading "Proficient in Data Curation & Context Engineering"; realistic reflections in the glass, restrained typography, clean UI; cinematic color grade, 50 mm lens, believable office; no added charts or icons.`,
+    // U3 — Post-interview corridor, implied success
+    `A hyper-realistic candid photograph in a sunlit corridor after the interview: the graduate steps out, exhales, and smiles; their folder peeks a printed resume where a faint highlight still marks the line "Proficient in Data Curation & Context Engineering"; background bokeh shows the meeting room; natural light, soft halation, human warmth; no overlays, no UI—just storytelling.`,
+    // U4 — Whiteboard recap
+    `A hyper-realistic manager stands by a whiteboard listing short bullet points; one neat line is boxed and reads "Proficient in Data Curation & Context Engineering"; the graduate stands nearby in frame, hopeful; daylight key, subtle rim, neutral palette, 35 mm lens; no extra diagrams or icons; this feels like a documentary still.`
   ]
 };
 
-// --- CORE: Generate ----------------------------------------------------------------
-async function generateOne({ ai, prompt, caseKey, variantIndex }) {
+// ====== CASES TO RUN ======
+const TEST_CASES = [
+  { key: 'career-transitioner-loop' },
+  { key: 'underequipped-grad-hired' }
+];
+
+// ====== CORE ======
+async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function generateOne(ai, caseKey, variantIndex, prompt) {
   const response = await ai.models.generateImages({
     model: MODEL_NAME,
     prompt,
-    config: {
-      numberOfImages: 1,
-      aspectRatio: ASPECT_RATIO,
-      imageSize: IMAGE_SIZE
-    }
+    config: { numberOfImages: 1, aspectRatio: ASPECT_RATIO, imageSize: IMAGE_SIZE }
   });
 
-  if (!response?.generatedImages?.length) {
-    throw new Error('No images returned by the API.');
-  }
+  if (!response?.generatedImages?.length) throw new Error('No images returned by the API.');
   const bytes = response.generatedImages[0]?.image?.imageBytes;
   if (!bytes) throw new Error('Image bytes missing in response.');
 
-  // Save image + prompt (sidecar .txt)
   const base = `${caseKey}--v${String(variantIndex + 1).padStart(2, '0')}`;
   const imgPath = path.join(OUTPUT_DIR, `${base}.png`);
   const txtPath = path.join(OUTPUT_DIR, `${base}.prompt.txt`);
@@ -38244,59 +38225,41 @@ async function generateOne({ ai, prompt, caseKey, variantIndex }) {
   return { imgPath, txtPath };
 }
 
-// Build prompts for a case: bespoke overrides (if any) then generic strategies
-function buildPromptsForCase(testCase) {
-  const { key, seed, persona } = testCase;
-
-  // Use bespoke when available, otherwise fall back to strategies
-  const bespoke = BESPOKE[key] || [];
-  const bespokePrompts = bespoke.map((fn) => fn({ seed, persona }));
-
-  const genericPrompts = STRATEGIES.map((fn) => fn({ seed, persona }));
-
-  // Merge and trim to VARIATIONS_PER_CASE
-  const all = [...bespokePrompts, ...genericPrompts].slice(0, Math.max(1, Math.min(6, VARIATIONS_PER_CASE)));
-  return all;
-}
-
-// --- MAIN --------------------------------------------------------------------
+// ====== MAIN ======
 async function main() {
   if (!API_KEY) {
     console.error('Error: API key not found. Set GEMINI_API_KEY (or GOOGLE_API_KEY / API_KEY) in your .env');
     process.exit(1);
   }
 
+  await fs.mkdir(OUTPUT_DIR, { recursive: true });
   const ai = new GoogleGenAI({ apiKey: API_KEY });
 
-  console.log('--- Imagen Prompt Lab: starting ---');
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
+  console.log('--- Imagen Prompt Lab (bespoke paragraphs) ---');
 
-  for (const testCase of TEST_PROMPTS) {
-    console.log(`\n▶ Case: ${testCase.key}`);
-    const prompts = buildPromptsForCase(testCase);
+  for (const tc of TEST_CASES) {
+    const prompts = PROMPT_SETS[tc.key];
+    if (!prompts?.length) {
+      console.warn(`⚠️ No prompts for case '${tc.key}', skipping.`);
+      continue;
+    }
 
+    console.log(`\n▶ Case: ${tc.key} (${prompts.length} variants)`);
     for (let i = 0; i < prompts.length; i++) {
-      const prompt = prompts[i];
+      const p = prompts[i];
       try {
         console.log(`   • Variant ${i + 1}/${prompts.length}…`);
-        const { imgPath, txtPath } = await generateOne({
-          ai,
-          prompt,
-          caseKey: testCase.key,
-          variantIndex: i
-        });
+        const { imgPath, txtPath } = await generateOne(ai, tc.key, i, p);
         console.log(`     ✅ Saved image: ${imgPath}`);
         console.log(`     📝 Saved prompt: ${txtPath}`);
       } catch (err) {
-        console.error(`     ❌ Variant ${i + 1} failed:`, err?.message ?? err);
+        console.error(`     ❌ Variant ${i + 1} failed: ${err?.message ?? err}`);
       }
-      // polite pacing between calls
-      await new Promise((r) => setTimeout(r, 1200));
+      await sleep(SLEEP_MS);
     }
   }
 
-  console.log('\n--- Prompt Lab complete ---');
-  console.log(`Outputs → ${OUTPUT_DIR}`);
+  console.log('\n--- Done. Check outputs in:', OUTPUT_DIR);
 }
 
 main();
@@ -38873,51 +38836,53 @@ Last updated 2025-09-25 UTC.
 # Artifact A80: V2V Academy - Image Generation Test Harness Guide
 # Date Created: C84
 # Author: AI Model & Curator
+# Updated on: C85 (Reflect new purpose of reverse-engineering good prompts)
 
 - **Key/Value for A0:**
-- **Description:** A guide for using the `image_harness.mjs` script to test static prompts with the Imagen 4 model, helping to diagnose prompt engineering issues and find an optimal prompt structure.
-- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen
+- **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
 
 ## 1. Overview & Purpose
 
-The `scripts/image_harness.mjs` script is a diagnostic tool created to solve image quality issues with the Imagen 4 model. It provides a controlled environment to test different image prompts without the complexity of the full `generate_images.mjs` script.
+The `scripts/image_harness.mjs` script is a diagnostic tool created to solve image quality issues with the Imagen 4 model. Its purpose is to provide a controlled environment for A/B testing different prompt *strategies* to discover the most effective way to communicate with the image generation API.
 
-The primary goals of this test harness are:
-1.  **Simplify the Prompt:** It tests a simplified prompt structure that only includes the master system prompt (`A75`) and a specific image prompt, completely removing the lesson content. This helps determine if the prompt length or markdown formatting was causing issues.
-2.  **A/B/C Testing:** It contains a set of 6-8 diverse, high-quality, static prompts. By running these known-good prompts, you can establish a baseline for the image quality you should expect from the API.
-3.  **Find the "Golden Prompt":** By reviewing the output, you can identify which prompt structures and styles work best with the Imagen 4 API. Once a successful pattern is found, it can be reverse-engineered back into the main `generate_images.mjs` script.
+The script moves away from a simple, fragmented prompt structure. Instead, it tests multiple, sophisticated approaches that frame the image request as a rich, descriptive, single paragraph, mimicking how a human might describe a scene to an artist.
 
 ## 2. Prerequisites
 
 1.  **Node.js:** The script requires Node.js to be installed.
 2.  **Dependencies:** Ensure all project dependencies are installed by running `npm install`.
-3.  **API Key:** Your Google AI API key must be in the `.env` file in the project root, under the variable `API_KEY`.
+3.  **API Key:** Your Google AI API key must be in the `.env` file in the project root, under a variable like `API_KEY`, `GEMINI_API_KEY`, or `GOOGLE_API_KEY`.
 
 ## 3. How to Use
 
-1.  **Open the Script (Optional):** You can open `scripts/image_harness.mjs` to review the `TEST_PROMPTS` array at the top of the file. This shows the exact 6 prompts that will be tested across the different personas. You can modify these if you wish to test other specific prompts.
+1.  **Open the Script (Optional):** You can open `scripts/image_harness.mjs` to review the `TEST_PROMPTS` array and the various `STRATEGIES` defined within it. This will show you the "seed" concepts and the different stylistic approaches the script will test (e.g., "Cinematic Photography," "Product Key Art," "Bespoke Narrative").
 
 2.  **Run the Script:** Open a terminal in the root of the `aiascent-dev` project and execute the script:
     ```bash
     node scripts/image_harness.mjs
     ```
 
-3.  **Monitor the Console:** The script will log its progress, indicating which test case it is currently processing.
+3.  **Monitor the Console:** The script will log its progress, indicating which test case and which prompt variation it is currently processing.
 
 4.  **Review the Output:** The generated images will be saved in a new directory:
     `public/assets/images/v2v/test_harness/`
 
-    The files will be named according to the test case, for example:
-    *   `1-career-transitioner-loop.webp`
-    *   `2-underequipped-grad-hired.webp`
-    *   ...and so on.
+    The files will be named according to the test case and variation, for example:
+    *   `career-transitioner-loop--v01.png`
+    *   `career-transitioner-loop--v02.png`
+
+    Crucially, for each image, a corresponding text file with the **exact prompt** used to generate it will be saved:
+    *   `career-transitioner-loop--v01.prompt.txt`
+    *   `career-transitioner-loop--v02.prompt.txt`
 
 ## 4. Next Steps: Analysis and Iteration
 
-After the script completes, review the images in the `test_harness` directory.
+After the script completes, compare the images in the `test_harness` directory against the high-quality examples from AI Studio.
 
-*   **If the images are high quality:** This confirms that the simplified prompt structure (System Prompt + Image Prompt) is effective. The next step would be to update the main `generate_images.mjs` script to use this simplified prompt construction, omitting the lesson content.
-*   **If the images are still low quality:** This suggests the issue may not be with the prompt content itself, but potentially with the master system prompt (`A75`), the API parameters being used, or a fundamental issue with how the model is interpreting our specific style of prompts. In this case, the next step would be to modify the static prompts within `image_harness.mjs` further (e.g., making them shorter, more or less descriptive) and re-run the test until a successful pattern is found.
+*   **Identify the Winning Strategy:** By reviewing the generated images and their corresponding `.prompt.txt` files, you can identify which of the prompt strategies (e.g., the highly cinematic one, the product-focused one) produces results that are closest to the desired aesthetic.
+*   **Reverse-Engineer:** Once a successful pattern is found, that "golden prompt" structure can be analyzed and used as a template.
+*   **Update the Main Script:** The learnings from the test harness should then be applied to update the main `generate_images.mjs` script, replacing its current prompt construction logic with the new, more effective strategy.
 </file_artifact>
 
 <file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v01-aistudio.png">
@@ -38941,13 +38906,17 @@ After the script completes, review the images in the `test_harness` directory.
   "name": "career-transitioner-loop--v01.png",
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/test_harness",
   "fileType": "PNG",
-  "sizeInBytes": 1125776,
+  "sizeInBytes": 1188369,
   "dimensions": {
     "width": 1408,
     "height": 768
   }
 }
 </metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v01.prompt.txt">
+A hyper-realistic editorial photograph at dusk inside a high-floor office with a panoramic city skyline behind glass; a confident professional stands three-quarter to camera, hand mid-gesture inside a single elegant circular interface that floats at chest height, divided into four clean quadrants labeled "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; the circle is thin-lined, cyan-teal accents with precise tick marks and a faint orbit of particles, not neon; lighting is cinematic with a cool key from the windows and a warm rim from practical lamps; 50 mm lens at f/2.8 for shallow depth, natural skin tone, premium fabrics; composition places the ring slightly left of center and the subject right of center; add a tasteful title at the top reading "THE VIRTUOSO’S LOOP" and a lower-left module tag "MODULE 1: THE VIRTUOSO’S LOOP — LESSON 1.1: THE PROFESSIONAL’S PLAYBOOK"; no extra icons, no thick arrows, no sci-fi consoles, keep the scene minimal and believable.
 </file_artifact>
 
 <file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v02-aistudio.png">
@@ -38971,13 +38940,17 @@ After the script completes, review the images in the `test_harness` directory.
   "name": "career-transitioner-loop--v02.png",
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/test_harness",
   "fileType": "PNG",
-  "sizeInBytes": 1055508,
+  "sizeInBytes": 1042786,
   "dimensions": {
     "width": 1408,
     "height": 768
   }
 }
 </metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v02.prompt.txt">
+A hyper-realistic daylight boardroom with matte concrete and a wide view of the city; a senior leader gestures to a refined circular workflow overlay hovering in front of them, divided into four equal segments labeled "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; the ring uses thin concentric strokes and subtle radial ticks, cyan accents on a graphite palette; soft window light wraps the subject, subtle rim separates them from the background; 35 mm lens, shoulder-level angle; add the title "THE VIRTUOSO’S LOOP" centered above and a small lower-left tag "MODULE 1: THE VIRTUOSO’S LOOP — LESSON 1.1: THE PROFESSIONAL’S PLAYBOOK"; realistic glass reflections, restrained glow, absolutely no clutter or extra UI panels.
 </file_artifact>
 
 <file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v03-aistudio.png">
@@ -39001,13 +38974,17 @@ After the script completes, review the images in the `test_harness` directory.
   "name": "career-transitioner-loop--v03.png",
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/test_harness",
   "fileType": "PNG",
-  "sizeInBytes": 1203701,
+  "sizeInBytes": 1032633,
   "dimensions": {
     "width": 1408,
     "height": 768
   }
 }
 </metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v03.prompt.txt">
+A minimal mid-shot of a professional at a white standing desk in a quiet room; a small precise circular control with three cyan nodes sits in front of their fingertip; a subtle dotted bead-trail runs horizontally linking the four labels "CURATION" · "PARALLEL PROMPTING" · "VALIDATION" · "INTEGRATION", with the finger hovering over the central control; lighting is moody and photographic, shallow depth isolates the gesture; no extra graphics besides these words and the tiny circle; premium realism, no neon, no 3D sci-fi chrome—just elegant restraint.
 </file_artifact>
 
 <file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v04-aistudio.png">
@@ -39031,13 +39008,17 @@ After the script completes, review the images in the `test_harness` directory.
   "name": "career-transitioner-loop--v04.png",
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/test_harness",
   "fileType": "PNG",
-  "sizeInBytes": 1217019,
+  "sizeInBytes": 1105599,
   "dimensions": {
     "width": 1408,
     "height": 768
   }
 }
 </metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/test_harness/career-transitioner-loop--v04.prompt.txt">
+In a glass-walled meeting room, a professional points to a projected circular diagram on the glass—thin strokes, consistent vector weights, labeled exactly "CURATION", "PARALLEL PROMPTING", "VALIDATION", "INTEGRATION"; small arrows imply clockwise flow without thick swooshes; desaturated neutral palette with a hint of cyan; 50 mm lens, clean reflections, natural daylight; no extra icons or text, no garish glow—this reads like a real photo of a real diagram.
 </file_artifact>
 
 

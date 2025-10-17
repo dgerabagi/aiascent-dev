@@ -1,48 +1,50 @@
 # Artifact A80: V2V Academy - Image Generation Test Harness Guide
 # Date Created: C84
 # Author: AI Model & Curator
+# Updated on: C85 (Reflect new purpose of reverse-engineering good prompts)
 
 - **Key/Value for A0:**
-- **Description:** A guide for using the `image_harness.mjs` script to test static prompts with the Imagen 4 model, helping to diagnose prompt engineering issues and find an optimal prompt structure.
-- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen
+- **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
+- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
 
 ## 1. Overview & Purpose
 
-The `scripts/image_harness.mjs` script is a diagnostic tool created to solve image quality issues with the Imagen 4 model. It provides a controlled environment to test different image prompts without the complexity of the full `generate_images.mjs` script.
+The `scripts/image_harness.mjs` script is a diagnostic tool created to solve image quality issues with the Imagen 4 model. Its purpose is to provide a controlled environment for A/B testing different prompt *strategies* to discover the most effective way to communicate with the image generation API.
 
-The primary goals of this test harness are:
-1.  **Simplify the Prompt:** It tests a simplified prompt structure that only includes the master system prompt (`A75`) and a specific image prompt, completely removing the lesson content. This helps determine if the prompt length or markdown formatting was causing issues.
-2.  **A/B/C Testing:** It contains a set of 6-8 diverse, high-quality, static prompts. By running these known-good prompts, you can establish a baseline for the image quality you should expect from the API.
-3.  **Find the "Golden Prompt":** By reviewing the output, you can identify which prompt structures and styles work best with the Imagen 4 API. Once a successful pattern is found, it can be reverse-engineered back into the main `generate_images.mjs` script.
+The script moves away from a simple, fragmented prompt structure. Instead, it tests multiple, sophisticated approaches that frame the image request as a rich, descriptive, single paragraph, mimicking how a human might describe a scene to an artist.
 
 ## 2. Prerequisites
 
 1.  **Node.js:** The script requires Node.js to be installed.
 2.  **Dependencies:** Ensure all project dependencies are installed by running `npm install`.
-3.  **API Key:** Your Google AI API key must be in the `.env` file in the project root, under the variable `API_KEY`.
+3.  **API Key:** Your Google AI API key must be in the `.env` file in the project root, under a variable like `API_KEY`, `GEMINI_API_KEY`, or `GOOGLE_API_KEY`.
 
 ## 3. How to Use
 
-1.  **Open the Script (Optional):** You can open `scripts/image_harness.mjs` to review the `TEST_PROMPTS` array at the top of the file. This shows the exact 6 prompts that will be tested across the different personas. You can modify these if you wish to test other specific prompts.
+1.  **Open the Script (Optional):** You can open `scripts/image_harness.mjs` to review the `TEST_PROMPTS` array and the various `STRATEGIES` defined within it. This will show you the "seed" concepts and the different stylistic approaches the script will test (e.g., "Cinematic Photography," "Product Key Art," "Bespoke Narrative").
 
 2.  **Run the Script:** Open a terminal in the root of the `aiascent-dev` project and execute the script:
     ```bash
     node scripts/image_harness.mjs
     ```
 
-3.  **Monitor the Console:** The script will log its progress, indicating which test case it is currently processing.
+3.  **Monitor the Console:** The script will log its progress, indicating which test case and which prompt variation it is currently processing.
 
 4.  **Review the Output:** The generated images will be saved in a new directory:
     `public/assets/images/v2v/test_harness/`
 
-    The files will be named according to the test case, for example:
-    *   `1-career-transitioner-loop.webp`
-    *   `2-underequipped-grad-hired.webp`
-    *   ...and so on.
+    The files will be named according to the test case and variation, for example:
+    *   `career-transitioner-loop--v01.png`
+    *   `career-transitioner-loop--v02.png`
+
+    Crucially, for each image, a corresponding text file with the **exact prompt** used to generate it will be saved:
+    *   `career-transitioner-loop--v01.prompt.txt`
+    *   `career-transitioner-loop--v02.prompt.txt`
 
 ## 4. Next Steps: Analysis and Iteration
 
-After the script completes, review the images in the `test_harness` directory.
+After the script completes, compare the images in the `test_harness` directory against the high-quality examples from AI Studio.
 
-*   **If the images are high quality:** This confirms that the simplified prompt structure (System Prompt + Image Prompt) is effective. The next step would be to update the main `generate_images.mjs` script to use this simplified prompt construction, omitting the lesson content.
-*   **If the images are still low quality:** This suggests the issue may not be with the prompt content itself, but potentially with the master system prompt (`A75`), the API parameters being used, or a fundamental issue with how the model is interpreting our specific style of prompts. In this case, the next step would be to modify the static prompts within `image_harness.mjs` further (e.g., making them shorter, more or less descriptive) and re-run the test until a successful pattern is found.
+*   **Identify the Winning Strategy:** By reviewing the generated images and their corresponding `.prompt.txt` files, you can identify which of the prompt strategies (e.g., the highly cinematic one, the product-focused one) produces results that are closest to the desired aesthetic.
+*   **Reverse-Engineer:** Once a successful pattern is found, that "golden prompt" structure can be analyzed and used as a template.
+*   **Update the Main Script:** The learnings from the test harness should then be applied to update the main `generate_images.mjs` script, replacing its current prompt construction logic with the new, more effective strategy.
