@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-17T01:20:17.553Z
+  Date Generated: 2025-10-17T01:29:31.252Z
   ---
   Total Files: 166
-  Approx. Tokens: 457902
+  Approx. Tokens: 458200
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -33,7 +33,7 @@
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
+14. src\app\api\chat\route.ts - Lines: 289 - Chars: 14290 - Tokens: 3573
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
@@ -98,7 +98,7 @@
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 300 - Chars: 14011 - Tokens: 3503
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 82. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8767 - Tokens: 2192
@@ -177,8 +177,8 @@
 155. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
 156. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
 157. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 27969 - Tokens: 6993
-158. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25660 - Tokens: 6415
-159. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25460 - Tokens: 6365
+158. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25769 - Tokens: 6443
+159. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25510 - Tokens: 6378
 160. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
 161. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
 162. scripts\manage_v2v_images.mjs - Lines: 107 - Chars: 4232 - Tokens: 1058
@@ -10359,6 +10359,12 @@ ${markdownFormattingInstruction}`,
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
 If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
+${markdownFormattingInstruction}`,
+    academy: `You are @Ascentia, an AI guide for the V2V Academy on aiascent.dev. Your purpose is to answer questions about the "Vibecoding to Virtuosity" curriculum, its lessons, and the core concepts of AI-assisted development it teaches.
+
+Your answers must be based *only* on the provided context chunks from the V2V Academy's official curriculum. Be helpful, encouraging, and aim to clarify concepts for the learner.
+
+If the answer isn't directly in the context, state that, but you can guide the user to the relevant lesson if you can infer it. Use markdown for formatting to enhance clarity. Do not invent information.
 ${markdownFormattingInstruction}`
 };
 
@@ -10377,7 +10383,7 @@ Example of a PERFECT response:
 
 export async function POST(request: Request) {
   const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
-  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;
@@ -16033,7 +16039,13 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-        const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
+        
+        let knowledgeBase = 'report'; // default
+        if (reportName === 'whitepaper') {
+            knowledgeBase = 'dce';
+        } else if (reportName.startsWith('v2v_')) {
+            knowledgeBase = 'academy';
+        }
 
         try {
             const controller = new AbortController();
@@ -16139,13 +16151,19 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         sendMessage(prompt);
     };
 
+    const getKnowledgeBaseName = (name: string) => {
+        if (name === 'whitepaper') return 'DCE Docs';
+        if (name.startsWith('v2v_')) return 'Academy KB';
+        return 'Report KB';
+    };
+
     return (
         <div className="h-full bg-background border-l border-border flex flex-col flex-shrink-0" onKeyDown={handlePanelKeyDown}>
             <header className="flex justify-between items-center p-2 border-b border-border flex-shrink-0 bg-muted/30">
                 <h3 className="font-bold text-sm flex items-center gap-2">
                     Ask @Ascentia
                     <Badge variant="outline" className="text-[10px] px-1 py-0 border-primary/50 text-primary">
-                        {reportName === 'whitepaper' ? 'DCE Docs' : 'Report KB'}
+                        {getKnowledgeBaseName(reportName)}
                     </Badge>
                 </h3>
                 <div>
@@ -23744,7 +23762,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A graduate gaining a competitive edge with AI skills.",
       "baseFileName": "lesson-1.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p2-ig1": {
       "path": "lesson-1.1-p2/",
@@ -23752,7 +23770,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Planning and curating context for a project.",
       "baseFileName": "lesson-1.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p3-ig1": {
       "path": "lesson-1.1-p3/",
@@ -23760,7 +23778,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Getting multiple options from AI.",
       "baseFileName": "lesson-1.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p4-ig1": {
       "path": "lesson-1.1-p4/",
@@ -23768,7 +23786,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The developer acting as a code reviewer for AI output.",
       "baseFileName": "lesson-1.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p5-ig1": {
       "path": "lesson-1.1-p5/",
@@ -23776,7 +23794,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Testing AI code without fear using Git.",
       "baseFileName": "lesson-1.1-p5-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p6-ig1": {
       "path": "lesson-1.1-p6/",
@@ -23784,7 +23802,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Documenting and repeating the development cycle.",
       "baseFileName": "lesson-1.1-p6-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p1-ig1": {
       "path": "lesson-1.2-p1/",
@@ -23792,7 +23810,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Using AI as a feedback loop for learning.",
       "baseFileName": "lesson-1.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p2-ig1": {
       "path": "lesson-1.2-p2/",
@@ -23800,7 +23818,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-1.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p3-ig1": {
       "path": "lesson-1.2-p3/",
@@ -23808,7 +23826,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The big picture of building a better future with technology.",
       "baseFileName": "lesson-1.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p4-ig1": {
       "path": "lesson-1.2-p4/",
@@ -23816,7 +23834,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI as a cognitive mentor providing an unfair advantage.",
       "baseFileName": "lesson-1.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p1-ig1": {
       "path": "lesson-1.3-p1/",
@@ -23824,7 +23842,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Citizen Architect as a new job title.",
       "baseFileName": "lesson-1.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p2-ig1": {
       "path": "lesson-1.3-p2/",
@@ -23832,7 +23850,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Cognitive Capital as a killer skill.",
       "baseFileName": "lesson-1.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p3-ig1": {
       "path": "lesson-1.3-p3/",
@@ -23840,7 +23858,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The architect as a storyteller and communicator.",
       "baseFileName": "lesson-1.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p4-ig1": {
       "path": "lesson-1.3-p4/",
@@ -23848,7 +23866,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The impact of the Citizen Architect role on the future.",
       "baseFileName": "lesson-1.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p1-ig1": {
       "path": "lesson-2.1-p1/",
@@ -23856,7 +23874,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-2.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p2-ig1": {
       "path": "lesson-2.1-p2/",
@@ -23864,7 +23882,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The 'Garbage In, Garbage Out' rule.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -23872,7 +23890,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Curator's Method: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -23880,7 +23898,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -23888,7 +23906,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "An introduction to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -23896,7 +23914,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The importance of not making the AI guess.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -23904,7 +23922,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The annotation starter pack: naming and structuring.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -23912,7 +23930,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The payoff of building a killer portfolio.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",
@@ -23920,7 +23938,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The importance of verifying AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -23928,7 +23946,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A field guide to AI errors.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -23936,7 +23954,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A method for reviewing code.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -23944,7 +23962,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Turning bugs into better prompts.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -23952,7 +23970,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "An introduction to interaction schemas.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -23960,7 +23978,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A template for perfect prompts.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -23968,7 +23986,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Why structured prompts get you hired.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -23976,7 +23994,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "From a vague request to a professional command.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -23984,7 +24002,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Turning errors into progress.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -23992,7 +24010,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A field guide to code bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -24000,7 +24018,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The debugging cycle step-by-step.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -24008,7 +24026,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The fastest way to learn.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -24016,7 +24034,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -24024,7 +24042,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI is unpredictable.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -24032,7 +24050,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -24040,7 +24058,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Build faster, learn faster.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -24048,7 +24066,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Creating a professional project scope.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -24056,7 +24074,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "From a cool idea to a concrete plan.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -24064,7 +24082,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The MVP strategy for finishing projects.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -24072,7 +24090,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Writing the project scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -24080,7 +24098,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The challenge of the blank page problem.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -24088,7 +24106,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Using AI to build a project's skeleton.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -24096,7 +24114,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "How the DCE uses AI for scaffolding.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -24104,7 +24122,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Commanding the AI to build a starter project.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -24112,7 +24130,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Creating a blueprint to get starter code.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -24120,15 +24138,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI as a senior developer partner.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
-      "prompt": "A developer types a clear prompt: 'Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project.' A student ordering a custom computer uses a configuration tool, selecting the 'Expert' build and specifying all required components.",
+      "prompt": "A developer types a clear, concise prompt: 'Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project using the App Router, TypeScript, and TailwindCSS.' A student ordering a custom computer uses a configuration tool, selecting the 'Expert' build and specifying all required components.",
       "alt": "Writing the 'Build My Project' prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -24136,7 +24154,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Your project is born.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     }
   }
 }
@@ -24153,7 +24171,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Leveling up your development game.",
       "baseFileName": "lesson-1.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p2-ig1": {
       "path": "lesson-1.1-p2/",
@@ -24161,7 +24179,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Preparing your inventory for a quest.",
       "baseFileName": "lesson-1.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p3-ig1": {
       "path": "lesson-1.1-p3/",
@@ -24169,7 +24187,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Multi-summoning AI for multiple solutions.",
       "baseFileName": "lesson-1.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p4-ig1": {
       "path": "lesson-1.1-p4/",
@@ -24177,7 +24195,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Acting as the raid leader for your project.",
       "baseFileName": "lesson-1.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p5-ig1": {
       "path": "lesson-1.1-p5/",
@@ -24185,7 +24203,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Quick save and reload for your code.",
       "baseFileName": "lesson-1.1-p5-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p6-ig1": {
       "path": "lesson-1.1-p6/",
@@ -24193,7 +24211,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Logging your win and queuing for the next raid.",
       "baseFileName": "lesson-1.1-p6-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p1-ig1": {
       "path": "lesson-1.2-p1/",
@@ -24201,7 +24219,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "AI as a feedback loop power-up.",
       "baseFileName": "lesson-1.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p2-ig1": {
       "path": "lesson-1.2-p2/",
@@ -24209,7 +24227,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Data Curation as the new meta skill.",
       "baseFileName": "lesson-1.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p3-ig1": {
       "path": "lesson-1.2-p3/",
@@ -24217,7 +24235,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The endgame quest for a 'Star Trek' future.",
       "baseFileName": "lesson-1.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p4-ig1": {
       "path": "lesson-1.2-p4/",
@@ -24225,7 +24243,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI as a cognitive mentor teaching secret techniques.",
       "baseFileName": "lesson-1.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p1-ig1": {
       "path": "lesson-1.3-p1/",
@@ -24233,7 +24251,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The final class: The Citizen Architect.",
       "baseFileName": "lesson-1.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p2-ig1": {
       "path": "lesson-1.3-p2/",
@@ -24241,7 +24259,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Cognitive Capital as your ultimate stat.",
       "baseFileName": "lesson-1.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p3-ig1": {
       "path": "lesson-1.3-p3/",
@@ -24249,7 +24267,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Architect as a storyteller and lore master.",
       "baseFileName": "lesson-1.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p4-ig1": {
       "path": "lesson-1.3-p4/",
@@ -24257,7 +24275,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The power of a world-builder.",
       "baseFileName": "lesson-1.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p1-ig1": {
       "path": "lesson-2.1-p1/",
@@ -24265,7 +24283,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Ultimate inventory management.",
       "baseFileName": "lesson-2.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p2-ig1": {
       "path": "lesson-2.1-p2/",
@@ -24273,7 +24291,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The 'Garbage In, Garbage Out' law.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -24281,7 +24299,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Curator's Combo: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -24289,7 +24307,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Your legendary gear: The DCE.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -24297,7 +24315,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Enchanting your data with annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -24305,7 +24323,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Your AI can't read minds.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -24313,7 +24331,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Annotator's Grimoire: Naming & Sorting.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -24321,7 +24339,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The payoff: crafting god-tier loot.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",
@@ -24329,7 +24347,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Debuffing the AI with critical analysis.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -24337,7 +24355,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A bestiary of AI bugs.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -24345,7 +24363,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The hunter's strategy for bug takedowns.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -24353,7 +24371,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Looting the corpse: turning bugs into EXP.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -24361,7 +24379,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Casting spells: mastering the syntax of power.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -24369,7 +24387,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The spellbook: your interaction schema.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -24377,7 +24395,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Why pros use spellbooks.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -24385,7 +24403,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "From wish to incantation.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -24393,7 +24411,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Respawning with purpose.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -24401,7 +24419,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A bestiary of bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -24409,7 +24427,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The debugging combo.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -24417,7 +24435,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The ultimate training montage.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -24425,7 +24443,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Save scumming for coders.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -24433,7 +24451,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Taming the RNG.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -24441,7 +24459,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The four-hit combo.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -24449,7 +24467,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Fearless speedrunning.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -24457,7 +24475,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Defining your quest.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -24465,7 +24483,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Quest Giver's Riddle.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -24473,7 +24491,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Conquering the first dungeon (MVP).",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -24481,7 +24499,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Inscribing your map.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -24489,7 +24507,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Conquering the blank canvas.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -24497,7 +24515,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Genesis Spell.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -24505,7 +24523,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The built-in tutorial level.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -24513,7 +24531,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Your first quest: Forge My World.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -24521,7 +24539,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Architect's Table.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -24529,7 +24547,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI as your master blacksmith.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
@@ -24537,7 +24555,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Incantation of Creation.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -24545,7 +24563,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Cycle 1: The World is Born.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     }
   }
 }

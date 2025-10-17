@@ -76,7 +76,13 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         setReportChatInput('');
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-        const knowledgeBase = reportName === 'whitepaper' ? 'dce' : 'report';
+        
+        let knowledgeBase = 'report'; // default
+        if (reportName === 'whitepaper') {
+            knowledgeBase = 'dce';
+        } else if (reportName.startsWith('v2v_')) {
+            knowledgeBase = 'academy';
+        }
 
         try {
             const controller = new AbortController();
@@ -182,13 +188,19 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         sendMessage(prompt);
     };
 
+    const getKnowledgeBaseName = (name: string) => {
+        if (name === 'whitepaper') return 'DCE Docs';
+        if (name.startsWith('v2v_')) return 'Academy KB';
+        return 'Report KB';
+    };
+
     return (
         <div className="h-full bg-background border-l border-border flex flex-col flex-shrink-0" onKeyDown={handlePanelKeyDown}>
             <header className="flex justify-between items-center p-2 border-b border-border flex-shrink-0 bg-muted/30">
                 <h3 className="font-bold text-sm flex items-center gap-2">
                     Ask @Ascentia
                     <Badge variant="outline" className="text-[10px] px-1 py-0 border-primary/50 text-primary">
-                        {reportName === 'whitepaper' ? 'DCE Docs' : 'Report KB'}
+                        {getKnowledgeBaseName(reportName)}
                     </Badge>
                 </h3>
                 <div>

@@ -55,6 +55,12 @@ ${markdownFormattingInstruction}`,
 Your answers must be grounded in the provided context chunks. Be helpful, concise, and stay on topic.
 
 If the answer isn't directly in the context, state that, but you can offer to discuss related concepts that *are* in the context. Use simple markdown for formatting as described below. Do not invent information or use outside knowledge.
+${markdownFormattingInstruction}`,
+    academy: `You are @Ascentia, an AI guide for the V2V Academy on aiascent.dev. Your purpose is to answer questions about the "Vibecoding to Virtuosity" curriculum, its lessons, and the core concepts of AI-assisted development it teaches.
+
+Your answers must be based *only* on the provided context chunks from the V2V Academy's official curriculum. Be helpful, encouraging, and aim to clarify concepts for the learner.
+
+If the answer isn't directly in the context, state that, but you can guide the user to the relevant lesson if you can infer it. Use markdown for formatting to enhance clarity. Do not invent information.
 ${markdownFormattingInstruction}`
 };
 
@@ -73,7 +79,7 @@ Example of a PERFECT response:
 
 export async function POST(request: Request) {
   const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
-  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report') ? knowledgeBase as keyof typeof systemPrompts : 'report';
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;
