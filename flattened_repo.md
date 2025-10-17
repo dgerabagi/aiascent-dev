@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-17T01:29:31.252Z
+  Date Generated: 2025-10-17T01:42:33.029Z
   ---
   Total Files: 166
-  Approx. Tokens: 458200
+  Approx. Tokens: 458756
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -13,7 +13,7 @@
 3. public\data\v2v_content_career_transitioner.json (13723 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12257 tokens)
-6. src\stores\reportStore.ts (8107 tokens)
+6. src\stores\reportStore.ts (8111 tokens)
 7. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7880 tokens)
 8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7390 tokens)
 9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
@@ -33,7 +33,7 @@
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 289 - Chars: 14290 - Tokens: 3573
+14. src\app\api\chat\route.ts - Lines: 308 - Chars: 16143 - Tokens: 4036
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
@@ -98,10 +98,10 @@
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 300 - Chars: 14011 - Tokens: 3503
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 300 - Chars: 14310 - Tokens: 3578
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8767 - Tokens: 2192
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 206 - Chars: 8823 - Tokens: 2206
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 84. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -112,7 +112,7 @@
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 712 - Chars: 32427 - Tokens: 8107
+93. src\stores\reportStore.ts - Lines: 716 - Chars: 32444 - Tokens: 8111
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -10368,12 +10368,17 @@ If the answer isn't directly in the context, state that, but you can guide the u
 ${markdownFormattingInstruction}`
 };
 
-// C49: New prompts for decoupled suggestion generation
+// C89: New persona-aware suggestion prompts
 const suggestionSystemPrompts = {
-    page: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+    page: {
+        default: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
+        career_transitioner: `You are an AI assistant helping a career-transitioning professional. Analyze the following lesson content and generate 2-4 insightful questions they might ask to understand its strategic value and practical application in a business context. Focus on questions about ROI, team impact, and professional development. Respond ONLY with a valid JSON array of strings.`,
+        underequipped_graduate: `You are an AI assistant helping a recent graduate. Analyze the following lesson content and generate 2-4 clear, foundational questions they might ask to solidify their understanding and see how this skill applies to getting a job. Focus on "what is," "why does it matter," and "how do I use this" questions. Respond ONLY with a valid JSON array of strings.`,
+        young_precocious: `You are an AI assistant helping a young, ambitious learner. Analyze the following lesson content and generate 2-4 deep, probing questions they might ask to explore the underlying principles, advanced applications, or creative potential of the concept. Focus on "what if," "how does it work at a deeper level," and "what's the next step to mastery" questions. Respond ONLY with a valid JSON array of strings.`,
+    },
     conversation: `Your ONLY task is to analyze the following conversation history and generate 2-4 insightful follow-up questions the user might ask next. The goal is to continue the current conversational thread. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
@@ -10382,7 +10387,7 @@ Example of a PERFECT response:
 
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', reportName, task, suggestionType, context } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -10396,10 +10401,24 @@ export async function POST(request: Request) {
 
   const completionsUrl = `${llmUrl}/v1/completions`;
 
-  // C49: Refactored suggestion generation task
   if (task === 'generate_suggestions') {
     const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
-    const systemPrompt = suggestionSystemPrompts[suggestionPromptType as keyof typeof suggestionSystemPrompts];
+    
+    let systemPrompt = suggestionPromptType === 'conversation' 
+        ? suggestionSystemPrompts.conversation 
+        : suggestionSystemPrompts.page.default;
+
+    // C89: Persona-aware prompt selection for academy page suggestions
+    if (suggestionPromptType === 'page' && kbIdentifier === 'academy' && reportName) {
+        if (reportName.includes('career_transitioner')) {
+            systemPrompt = suggestionSystemPrompts.page.career_transitioner;
+        } else if (reportName.includes('underequipped_graduate')) {
+            systemPrompt = suggestionSystemPrompts.page.underequipped_graduate;
+        } else if (reportName.includes('young_precocious')) {
+            systemPrompt = suggestionSystemPrompts.page.young_precocious;
+        }
+    }
+
     const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
 
     try {
@@ -16495,7 +16514,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        if (currentPage && !reportName.startsWith('v2v')) {
+        // C89 FIX: Remove condition preventing suggestion generation for academy pages.
+        if (currentPage) {
             fetchPageSuggestions(currentPage, reportName);
         }
     }, [currentPage, reportName, fetchPageSuggestions]);
@@ -17258,8 +17278,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
 // Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
-// Updated on: C57 (Remove isImageFullscreen and related actions to unify fullscreen logic)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -17338,6 +17358,8 @@ export type ChatMessage = {
 
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
+const ACADEMY_DEFAULT_SUGGESTIONS = ["Can you explain this concept in simpler terms?", "How does this apply to a real-world project?", "What is the key takeaway from this page?"];
+
 
 type LastSuggestionRequest = {
     type: 'page' | 'conversation';
@@ -17445,7 +17467,7 @@ export interface ReportActions {
 }
 
 
-// ... (createInitialReportState and _fetchSuggestions ommitted for brevity)
+// ... (createInitialReportState ommitted for brevity)
 const createInitialReportState = (): ReportState => ({
     reportName: null,
     _hasHydrated: false,
@@ -17489,6 +17511,14 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
+const getFallbackSuggestions = (reportName: string | null) => {
+    if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
+    if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
+    if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
+    return SHOWCASE_DEFAULT_SUGGESTIONS;
+};
+
+
 const _fetchSuggestions = async (
     suggestionType: 'page' | 'conversation',
     context: string,
@@ -17504,6 +17534,7 @@ const _fetchSuggestions = async (
                     task: 'generate_suggestions',
                     suggestionType,
                     context,
+                    reportName, // C89: Pass reportName to backend for persona-specific prompts
                 }),
             });
 
@@ -17558,8 +17589,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (suggestions) {
                     set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                 } else {
-                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    set({ suggestedPrompts: getFallbackSuggestions(reportName), suggestionsStatus: 'error' });
                 }
             },
 
@@ -17582,8 +17612,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (suggestions) {
                     set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                 } else {
-                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    set({ suggestedPrompts: getFallbackSuggestions(reportName), suggestionsStatus: 'error' });
                 }
             },
 
@@ -17604,8 +17633,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (suggestions) {
                     set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                 } else {
-                    const defaultSuggestions = payload.reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    set({ suggestedPrompts: getFallbackSuggestions(payload.reportName), suggestionsStatus: 'error' });
                 }
             },
 
@@ -17619,11 +17647,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 
                 set(createInitialReportState());
 
-                const defaultSuggestions = reportName.startsWith('v2v')
-                    ? []
-                    : reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+                const defaultSuggestions = getFallbackSuggestions(reportName);
 
                 set({ 
                     reportName: reportName,

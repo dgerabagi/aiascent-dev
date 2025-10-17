@@ -64,12 +64,17 @@ If the answer isn't directly in the context, state that, but you can guide the u
 ${markdownFormattingInstruction}`
 };
 
-// C49: New prompts for decoupled suggestion generation
+// C89: New persona-aware suggestion prompts
 const suggestionSystemPrompts = {
-    page: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+    page: {
+        default: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
+        career_transitioner: `You are an AI assistant helping a career-transitioning professional. Analyze the following lesson content and generate 2-4 insightful questions they might ask to understand its strategic value and practical application in a business context. Focus on questions about ROI, team impact, and professional development. Respond ONLY with a valid JSON array of strings.`,
+        underequipped_graduate: `You are an AI assistant helping a recent graduate. Analyze the following lesson content and generate 2-4 clear, foundational questions they might ask to solidify their understanding and see how this skill applies to getting a job. Focus on "what is," "why does it matter," and "how do I use this" questions. Respond ONLY with a valid JSON array of strings.`,
+        young_precocious: `You are an AI assistant helping a young, ambitious learner. Analyze the following lesson content and generate 2-4 deep, probing questions they might ask to explore the underlying principles, advanced applications, or creative potential of the concept. Focus on "what if," "how does it work at a deeper level," and "what's the next step to mastery" questions. Respond ONLY with a valid JSON array of strings.`,
+    },
     conversation: `Your ONLY task is to analyze the following conversation history and generate 2-4 insightful follow-up questions the user might ask next. The goal is to continue the current conversational thread. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
@@ -78,7 +83,7 @@ Example of a PERFECT response:
 
 
 export async function POST(request: Request) {
-  const { prompt, pageContext, knowledgeBase = 'report', task, suggestionType, context } = await request.json();
+  const { prompt, pageContext, knowledgeBase = 'report', reportName, task, suggestionType, context } = await request.json();
   const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
@@ -92,10 +97,24 @@ export async function POST(request: Request) {
 
   const completionsUrl = `${llmUrl}/v1/completions`;
 
-  // C49: Refactored suggestion generation task
   if (task === 'generate_suggestions') {
     const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
-    const systemPrompt = suggestionSystemPrompts[suggestionPromptType as keyof typeof suggestionSystemPrompts];
+    
+    let systemPrompt = suggestionPromptType === 'conversation' 
+        ? suggestionSystemPrompts.conversation 
+        : suggestionSystemPrompts.page.default;
+
+    // C89: Persona-aware prompt selection for academy page suggestions
+    if (suggestionPromptType === 'page' && kbIdentifier === 'academy' && reportName) {
+        if (reportName.includes('career_transitioner')) {
+            systemPrompt = suggestionSystemPrompts.page.career_transitioner;
+        } else if (reportName.includes('underequipped_graduate')) {
+            systemPrompt = suggestionSystemPrompts.page.underequipped_graduate;
+        } else if (reportName.includes('young_precocious')) {
+            systemPrompt = suggestionSystemPrompts.page.young_precocious;
+        }
+    }
+
     const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
 
     try {

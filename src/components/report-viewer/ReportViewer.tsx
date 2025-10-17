@@ -80,7 +80,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        if (currentPage && !reportName.startsWith('v2v')) {
+        // C89 FIX: Remove condition preventing suggestion generation for academy pages.
+        if (currentPage) {
             fetchPageSuggestions(currentPage, reportName);
         }
     }, [currentPage, reportName, fetchPageSuggestions]);

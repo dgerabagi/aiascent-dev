@@ -1,6 +1,6 @@
 // src/stores/reportStore.ts
+// Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
 // Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
-// Updated on: C57 (Remove isImageFullscreen and related actions to unify fullscreen logic)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -79,6 +79,8 @@ export type ChatMessage = {
 
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
+const ACADEMY_DEFAULT_SUGGESTIONS = ["Can you explain this concept in simpler terms?", "How does this apply to a real-world project?", "What is the key takeaway from this page?"];
+
 
 type LastSuggestionRequest = {
     type: 'page' | 'conversation';
@@ -186,7 +188,7 @@ export interface ReportActions {
 }
 
 
-// ... (createInitialReportState and _fetchSuggestions ommitted for brevity)
+// ... (createInitialReportState ommitted for brevity)
 const createInitialReportState = (): ReportState => ({
     reportName: null,
     _hasHydrated: false,
@@ -230,6 +232,14 @@ const createInitialReportState = (): ReportState => ({
     genericAudioText: null,
 });
 
+const getFallbackSuggestions = (reportName: string | null) => {
+    if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
+    if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
+    if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
+    return SHOWCASE_DEFAULT_SUGGESTIONS;
+};
+
+
 const _fetchSuggestions = async (
     suggestionType: 'page' | 'conversation',
     context: string,
@@ -245,6 +255,7 @@ const _fetchSuggestions = async (
                     task: 'generate_suggestions',
                     suggestionType,
                     context,
+                    reportName, // C89: Pass reportName to backend for persona-specific prompts
                 }),
             });
 
@@ -299,8 +310,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (suggestions) {
                     set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                 } else {
-                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    set({ suggestedPrompts: getFallbackSuggestions(reportName), suggestionsStatus: 'error' });
                 }
             },
 
@@ -323,8 +333,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (suggestions) {
                     set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                 } else {
-                    const defaultSuggestions = reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    set({ suggestedPrompts: getFallbackSuggestions(reportName), suggestionsStatus: 'error' });
                 }
             },
 
@@ -345,8 +354,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 if (suggestions) {
                     set({ suggestedPrompts: suggestions, suggestionsStatus: 'idle' });
                 } else {
-                    const defaultSuggestions = payload.reportName === 'whitepaper' ? WHITEPAPER_DEFAULT_SUGGESTIONS : SHOWCASE_DEFAULT_SUGGESTIONS;
-                    set({ suggestedPrompts: defaultSuggestions, suggestionsStatus: 'error' });
+                    set({ suggestedPrompts: getFallbackSuggestions(payload.reportName), suggestionsStatus: 'error' });
                 }
             },
 
@@ -360,11 +368,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 
                 set(createInitialReportState());
 
-                const defaultSuggestions = reportName.startsWith('v2v')
-                    ? []
-                    : reportName === 'whitepaper' 
-                    ? WHITEPAPER_DEFAULT_SUGGESTIONS 
-                    : SHOWCASE_DEFAULT_SUGGESTIONS;
+                const defaultSuggestions = getFallbackSuggestions(reportName);
 
                 set({ 
                     reportName: reportName,
