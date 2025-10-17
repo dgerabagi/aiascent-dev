@@ -3,7 +3,7 @@
   "basePath": "/assets/images/v2v/underequipped_graduate/",
   "imageGroups": {
     "lesson-1.1-p1-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p1/",
       "prompt": "A cinematic shot of a recent graduate at a sleek, futuristic workstation, confidently orchestrating a complex coding project while others around them look stressed and buried in textbooks; the title 'THE UNFAIR ADVANTAGE' floats above. A split-panel image shows a graduate's generic resume getting a 'rejected' stamp, while another's portfolio built with the V2V workflow gets a glowing 'HIRED' stamp.",
       "alt": "A graduate gaining a competitive edge with AI skills.",
       "baseFileName": "lesson-1.1-p1-img-",
@@ -11,7 +11,7 @@
       "imageCount": 1
     },
     "lesson-1.1-p2-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p2/",
       "prompt": "On the left, a chaotic mess of project requirements on sticky notes; in the center, a developer organizes them with a clean interface; on the right, a neat stack labeled 'High-Quality Context.' A student packs a backpack for a hike: one panel shows them randomly stuffing gear, the other shows them carefully packing a map ('The Plan') and essential gear ('The Context').",
       "alt": "Planning and curating context for a project.",
       "baseFileName": "lesson-1.1-p2-img-",
@@ -19,7 +19,7 @@
       "imageCount": 1
     },
     "lesson-1.1-p3-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p3/",
       "prompt": "A single coding problem is sent out and splits into eight parallel pathways to eight AI assistants, each returning a different code solution. A student at a career fair talks to eight holographic recruiters simultaneously, getting a full spectrum of career advice.",
       "alt": "Getting multiple options from AI.",
       "baseFileName": "lesson-1.1-p3-img-",
@@ -27,7 +27,7 @@
       "imageCount": 1
     },
     "lesson-1.1-p4-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p4/",
       "prompt": "A focused developer reviews a futuristic diff viewer comparing two code files, their hand poised over a 'Select This Response' button. A young engineer in a code review with a senior developer (an AI robot) confidently points out a bug in the AI's code.",
       "alt": "The developer acting as a code reviewer for AI output.",
       "baseFileName": "lesson-1.1-p4-img-",
@@ -35,7 +35,7 @@
       "imageCount": 1
     },
     "lesson-1.1-p5-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p5/",
       "prompt": "A simple diagram of a Git-based workflow: a 'Baseline (Commit)' button creates a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure. A developer works on complex code inside a glowing 'sandbox'; the code explodes, but the developer is unharmed and presses a 'Reset' button.",
       "alt": "Testing AI code without fear using Git.",
       "baseFileName": "lesson-1.1-p5-img-",
@@ -43,7 +43,7 @@
       "imageCount": 1
     },
     "lesson-1.1-p6-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p6/",
       "prompt": "A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with the 'Generate prompt.md' and '+' (New Cycle) buttons highlighted. A student adds a completed, polished project to their online portfolio, then starts a new document titled 'Next Project Plan.'",
       "alt": "Documenting and repeating the development cycle.",
       "baseFileName": "lesson-1.1-p6-img-",
@@ -51,7 +51,7 @@
       "imageCount": 1
     },
     "lesson-1.2-p1-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p1/",
       "prompt": "A student working on a coding problem gets an error message; an AI assistant shows them how to feed the error back as a prompt, leading to a 'lightbulb' moment. A student practicing basketball gets instant feedback from a holographic AI coach who shows a slow-motion replay of their flawed form and the corrected trajectory.",
       "alt": "Using AI as a feedback loop for learning.",
       "baseFileName": "lesson-1.2-p1-img-",
@@ -59,7 +59,7 @@
       "imageCount": 1
     },
     "lesson-1.2-p2-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p2/",
       "prompt": "A job description for a 'Next-Gen Software Engineer' with 'Data Curation' and 'Context Engineering' listed above 'Python/JavaScript.' A recruiter compares two resumes, focusing on the one that lists projects built by directing an AI, not just one listing programming languages.",
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-1.2-p2-img-",
@@ -67,7 +67,7 @@
       "imageCount": 1
     },
     "lesson-1.2-p3-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p3/",
       "prompt": "A diverse group of young, brilliant engineers collaborate in a solarpunk innovation hub, working on holographic interfaces for clean energy and space exploration. An image of a single developer planting a seed that grows into a massive tree with branches of innovative applications.",
       "alt": "The big picture of building a better future with technology.",
       "baseFileName": "lesson-1.2-p3-img-",
@@ -75,7 +75,7 @@
       "imageCount": 1
     },
     "lesson-1.2-p4-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p4/",
       "prompt": "A student climbs a steep mountain labeled 'Skill Acquisition' while a holographic mentor creates glowing handholds (scaffolding) for them. A split-panel image shows a student struggling with a textbook, then working with an AI mentor who generates personalized explanations and interactive examples.",
       "alt": "The AI as a cognitive mentor providing an unfair advantage.",
       "baseFileName": "lesson-1.2-p4-img-",
@@ -83,7 +83,7 @@
       "imageCount": 1
     },
     "lesson-1.3-p1-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p1/",
       "prompt": "A young, confident developer stands before a holographic career path diagram where the 'Citizen Architect' path branches off to high-impact roles like 'AI Systems Designer.' An image of a business card for a recent graduate with the title 'Citizen Architect,' and a tagline 'Designing and Building AI-Powered Solutions.'",
       "alt": "The Citizen Architect as a new job title.",
       "baseFileName": "lesson-1.3-p1-img-",
@@ -91,7 +91,7 @@
       "imageCount": 1
     },
     "lesson-1.3-p2-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p2/",
       "prompt": "An image of a developer's brain, glowing with activity as connections are forged between 'CS Fundamentals,' 'AI Collaboration Skills,' and 'Problem-Solving.' A bar chart shows a developer's value to a company, with the 'Problem-Solving & Innovation' bar being twice as high as the 'Coding' bar.",
       "alt": "Cognitive Capital as a killer skill.",
       "baseFileName": "lesson-1.3-p2-img-",
@@ -99,7 +99,7 @@
       "imageCount": 1
     },
     "lesson-1.3-p3-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p3/",
       "prompt": "A young developer confidently presents a project to a team, using a compelling visualization of the architecture and user flow. A developer leads a meeting, using a simple whiteboard diagram to explain a complex technical concept to a non-technical project manager.",
       "alt": "The architect as a storyteller and communicator.",
       "baseFileName": "lesson-1.3-p3-img-",
@@ -107,7 +107,7 @@
       "imageCount": 1
     },
     "lesson-1.3-p4-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p4/",
       "prompt": "A young developer presents a sleek, innovative application to impressed senior executives, positioning them as a key innovator. A 'ripple effect' diagram shows a Citizen Architect at the center, with their single application creating ripples of 'Improved User Experience,' 'Increased Team Efficiency,' and 'New Company Revenue.'",
       "alt": "The impact of the Citizen Architect role on the future.",
       "baseFileName": "lesson-1.3-p4-img-",
@@ -115,7 +115,7 @@
       "imageCount": 1
     },
     "lesson-2.1-p1-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p1/",
       "prompt": "A young graduate at a job interview, where the hiring manager is pointing to a glowing section on their resume: 'Proficient in Data Curation & Context Engineering.' A student in a high-tech library organizes glowing digital files into a 'Context Backpack' for a project.",
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-2.1-p1-img-",
@@ -123,7 +123,7 @@
       "imageCount": 1
     },
     "lesson-2.1-p2-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p2/",
       "prompt": "A side-by-side comparison of a student handing a messy paper to a professor ('AI') and getting a 'C-', versus handing in a clean paper and getting an 'A+.' Two chefs bake a cake; one uses bad ingredients and gets a burnt cake, the other uses high-quality ingredients and gets a perfect cake.",
       "alt": "The 'Garbage In, Garbage Out' rule.",
       "baseFileName": "lesson-2.1-p2-img-",
@@ -131,7 +131,7 @@
       "imageCount": 1
     },
     "lesson-2.1-p3-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p3/",
       "prompt": "A three-panel 'how-to' guide: 'GATHER' files, 'ORGANIZE' them into folders, and 'LABEL' them with descriptive names. A student prepares for an open-book exam by gathering books, organizing notes, and creating an index.",
       "alt": "The Curator's Method: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
@@ -139,7 +139,7 @@
       "imageCount": 1
     },
     "lesson-2.1-p4-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p4/",
       "prompt": "A sleek toolkit shows glowing digital tools like 'Context Selector.' A student's laptop highlights the DCE extension in VS Code, with beams of light connecting it to a successful project.",
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
@@ -147,15 +147,15 @@
       "imageCount": 1
     },
     "lesson-2.2-p1-ig1": {
-      "path": "module-2/lesson-2.2/",
-      "prompt": "A student adds glowing labels ('Chapter 1,' 'Key Concept') to digital flashcards, creating a structured study guide. A librarian uses a futuristic interface to add digital tags to books, allowing a robot assistant to instantly find the right book.",
+      "path": "lesson-2.2-p1/",
+      "prompt": "A student is shown adding clear, glowing labels to digital flashcards. The labels (`Chapter 1`, `Key Concept`, `Final Exam`) help organize the raw information into a structured study guide. A librarian uses a futuristic interface to add digital tags to books, allowing a robot assistant to instantly find the right book.",
       "alt": "An introduction to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-2.2-p2-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p2/",
       "prompt": "A split-panel shows a student giving disorganized notes to a confused friend ('AI'), then giving an organized binder to a confident friend. An AI robot fails to assemble furniture with unlabeled parts, then succeeds perfectly when every part is in a labeled bag.",
       "alt": "The importance of not making the AI guess.",
       "baseFileName": "lesson-2.2-p2-img-",
@@ -163,15 +163,15 @@
       "imageCount": 1
     },
     "lesson-2.2-p3-ig1": {
-      "path": "module-2/lesson-2.2/",
-      "prompt": "A three-panel guide shows renaming `script.js` to `user-login-api.js`, dragging messy files into clean folders, and the final professional structure. A 'before and after' of a student's project folder shows a mess transformed into a clean hierarchy.",
+      "path": "lesson-2.2-p3/",
+      "prompt": "A three-panel 'how-to' guide shows renaming `script.js` to `user-login-api.js`, dragging messy files into clean folders, and the final professional structure. A 'before and after' of a student's project folder shows a mess transformed into a clean hierarchy.",
       "alt": "The annotation starter pack: naming and structuring.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-2.2-p4-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p4/",
       "prompt": "A young developer proudly shows off a complex, polished application on their laptop while a glowing AI avatar gives a thumbs-up. A gallery view of a student's portfolio shows multiple high-quality, working applications.",
       "alt": "The payoff of building a killer portfolio.",
       "baseFileName": "lesson-2.2-p4-img-",
@@ -179,7 +179,7 @@
       "imageCount": 1
     },
     "lesson-2.3-p1-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p1/",
       "prompt": "A young developer confidently presents a code review to an impressed senior engineer, pointing out a subtle bug in AI-generated code. A student acts as a fact-checker for an AI's essay, cross-referencing claims with reliable sources.",
       "alt": "The importance of verifying AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
@@ -187,7 +187,7 @@
       "imageCount": 1
     },
     "lesson-2.3-p2-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p2/",
       "prompt": "A 'field guide' page shows different types of bugs: a 'Phantom Function,' a 'Logic Worm,' and a 'Security Spider.' A detective (the developer) at a crime scene (code) uses a magnifying glass to find clues representing different AI error types.",
       "alt": "A field guide to AI errors.",
       "baseFileName": "lesson-2.3-p2-img-",
@@ -195,7 +195,7 @@
       "imageCount": 1
     },
     "lesson-2.3-p3-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p3/",
       "prompt": "A young developer with a checklist methodically reviews code: '1. Understand the Goal,' '2. Check the Big Picture (Diff),' '3. Read the Code,' '4. Run the Tests.' A student edits a term paper by checking the overall structure, then paragraph topics, then line-by-line grammar.",
       "alt": "A method for reviewing code.",
       "baseFileName": "lesson-2.3-p3-img-",
@@ -203,7 +203,7 @@
       "imageCount": 1
     },
     "lesson-2.3-p4-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p4/",
       "prompt": "A diagram shows a cycle where an 'AI Bug' leads to a developer writing a 'Better Prompt,' which is fed back to the AI to produce 'Better Code.' A student in a tutoring session shows an AI mentor a mistake it made, and the AI provides a new, corrected solution with an explanation.",
       "alt": "Turning bugs into better prompts.",
       "baseFileName": "lesson-2.3-p4-img-",
@@ -211,7 +211,7 @@
       "imageCount": 1
     },
     "lesson-3.1-p1-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p1/",
       "prompt": "A young developer, frustrated with messy AI code, has a 'lightbulb' moment when a mentor points them to a structured checklist. A split-panel shows someone giving vague gestures to a confused robot, then giving a precise map to a robot that immediately proceeds to the destination.",
       "alt": "An introduction to interaction schemas.",
       "baseFileName": "lesson-3.1-p1-img-",
@@ -219,15 +219,15 @@
       "imageCount": 1
     },
     "lesson-3.1-p2-ig1": {
-      "path": "module-3/lesson-3.1/",
-      "prompt": "A simple template on a screen with fields for '1. What is the AI's Role?', '2. What is the Task?', '3. What Files Does it Need?', etc. An image of a perfect lab report template with all required sections.",
+      "path": "lesson-3.1-p2/",
+      "prompt": "A clear, simple template is shown on a screen, like a form to be filled out. The fields are '1. What is the AI's Role?', '2. What is the Task?', '3. What Files Does it Need?', etc. An image of a perfect lab report template with all required sections.",
       "alt": "A template for perfect prompts.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-3.1-p3-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p3/",
       "prompt": "An engineering manager reviews two portfolios, smiling at the one with clean, documented, and structured processes. Two job candidates interview; one says 'I just talk to the AI,' the other explains their structured interaction schema, impressing the interviewer.",
       "alt": "Why structured prompts get you hired.",
       "baseFileName": "lesson-3.1-p3-img-",
@@ -235,7 +235,7 @@
       "imageCount": 1
     },
     "lesson-3.1-p4-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p4/",
       "prompt": "A 'before and after' of a vague prompt ('fix the login page') versus a professional command with `// ROLE`, `// TASK`, `// CONTEXT` sections. A student's email to a professor is shown, first as a sloppy message, then as a well-structured, professional email.",
       "alt": "From a vague request to a professional command.",
       "baseFileName": "lesson-3.1-p4-img-",
@@ -243,7 +243,7 @@
       "imageCount": 1
     },
     "lesson-3.2-p1-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p1/",
       "prompt": "A student, confused by an error message, is encouraged by an AI companion to use the error as the next prompt, leading to a 'lightbulb' moment. A mechanic uses a diagnostic computer to get an error code from a car, then looks up that code in a technical manual (the AI) to find the solution.",
       "alt": "Turning errors into progress.",
       "baseFileName": "lesson-3.2-p1-img-",
@@ -251,7 +251,7 @@
       "imageCount": 1
     },
     "lesson-3.2-p2-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p2/",
       "prompt": "A friendly infographic shows three types of bugs: a 'Syntax Bug' reading a rulebook incorrectly, a 'Runtime Bug' tripping over a wire, and a 'Logic Bug' following a map to the wrong treasure. A biology student looks at three different insects under a microscope, each representing a different type of code bug.",
       "alt": "A field guide to code bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
@@ -259,7 +259,7 @@
       "imageCount": 1
     },
     "lesson-3.2-p3-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p3/",
       "prompt": "A step-by-step diagram: a developer runs code, a red error appears, they copy the entire error message, and paste it into the DCE with the prompt 'Fix this error.' A doctor gets a lab result (stack trace) from a patient (code) and feeds it into a medical database (the AI) to get a diagnosis.",
       "alt": "The debugging cycle step-by-step.",
       "baseFileName": "lesson-3.2-p3-img-",
@@ -267,7 +267,7 @@
       "imageCount": 1
     },
     "lesson-3.2-p4-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p4/",
       "prompt": "A graph shows a slow 'Traditional Learning' line versus a steep, rocketing 'V2V Feedback Loop' line. A split-panel shows a student struggling to learn guitar from a book, versus another student learning much faster with a real-time feedback app.",
       "alt": "The fastest way to learn.",
       "baseFileName": "lesson-3.2-p4-img-",
@@ -275,7 +275,7 @@
       "imageCount": 1
     },
     "lesson-3.3-p1-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p1/",
       "prompt": "A young developer confidently works on a complex project with a glowing 'UNDO' button beside them. A student in a chemistry lab works with volatile chemicals inside a protective fume hood labeled 'Git Workflow.'",
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
@@ -283,7 +283,7 @@
       "imageCount": 1
     },
     "lesson-3.3-p2-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p2/",
       "prompt": "An AI robot offers a developer three code snippets; one is good, but two have hidden bugs, and the developer is protected by a shield labeled 'Git Baseline.' A student uses a 'spell checker' AI that gives one perfect suggestion and one nonsensical one, illustrating the need for verification.",
       "alt": "The AI is unpredictable.",
       "baseFileName": "lesson-3.3-p2-img-",
@@ -291,7 +291,7 @@
       "imageCount": 1
     },
     "lesson-3.3-p3-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p3/",
       "prompt": "A four-step flowchart: 'Baseline' (Save Point), 'Accept' (Apply Code), 'Test' (Run and get 'TEST FAILED'), and 'Restore' (revert to save point). A student writing an essay saves the draft, accepts a major revision from a tool, re-reads it, finds it's bad, and reopens the last good version.",
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
@@ -299,7 +299,7 @@
       "imageCount": 1
     },
     "lesson-3.3-p4-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p4/",
       "prompt": "A graph shows a slow 'Cautious Coder' learning curve versus a steep 'V2V Developer' curve made of bold experiments and tiny, quick reverts. Two students build a Lego model; one is slow and cautious, the other is fast and experimental, knowing they can easily rebuild.",
       "alt": "Build faster, learn faster.",
       "baseFileName": "lesson-3.3-p4-img-",
@@ -307,7 +307,7 @@
       "imageCount": 1
     },
     "lesson-4.1-p1-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p1/",
       "prompt": "A hiring manager reviews a graduate's portfolio, looking impressed at a well-written Project Scope document. A young engineer confidently presents their Project Scope document on a large screen to their team lead.",
       "alt": "Creating a professional project scope.",
       "baseFileName": "lesson-4.1-p1-img-",
@@ -315,7 +315,7 @@
       "imageCount": 1
     },
     "lesson-4.1-p2-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p2/",
       "prompt": "A three-panel diagram shows a 'Cool Idea!' lightbulb being refined by questions ('Who is this for?') into an 'Actionable Plan' blueprint. A student's research paper process is shown: broad topic -> narrow research questions -> detailed outline.",
       "alt": "From a cool idea to a concrete plan.",
       "baseFileName": "lesson-4.1-p2-img-",
@@ -323,15 +323,15 @@
       "imageCount": 1
     },
     "lesson-4.1-p3-ig1": {
-      "path": "module-4/lesson-4.1/",
-      "prompt": "An image shows two paths: 'Build Everything' leads to an unfinished mess, while 'Build the MVP' leads to a small but complete, working application. A student building a model rocket focuses on a simple, single-stage rocket that is guaranteed to launch.",
+      "path": "lesson-4.1-p3/",
+      "prompt": "An image shows two paths: 'Build Everything' leads to an unfinished mess, while 'Build the MVP' leads to a small but complete, working application. A student building a model rocket focuses on a simple, single-stage rocket that is guaranteed to launch successfully.",
       "alt": "The MVP strategy for finishing projects.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-4.1-p4-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p4/",
       "prompt": "A student uses the DCE to create their first artifact: `A1 - Project Scope.md`, with professional headings. A 'before and after' shows a blank document transformed into a complete, professional project scope.",
       "alt": "Writing the project scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
@@ -339,7 +339,7 @@
       "imageCount": 1
     },
     "lesson-4.2-p1-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p1/",
       "prompt": "A recent graduate sits in front of a computer with a completely empty code editor, looking overwhelmed and uncertain. An artist stares at a large, blank white canvas, experiencing 'artist's block.'",
       "alt": "The challenge of the blank page problem.",
       "baseFileName": "lesson-4.2-p1-img-",
@@ -347,7 +347,7 @@
       "imageCount": 1
     },
     "lesson-4.2-p2-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p2/",
       "prompt": "A developer hands their 'Project Scope' document to a friendly AI robot, who reads it and quickly assembles a perfect 'skeleton' of a project. A writer gives their story outline to an AI, which generates the first few paragraphs.",
       "alt": "Using AI to build a project's skeleton.",
       "baseFileName": "lesson-4.2-p2-img-",
@@ -355,7 +355,7 @@
       "imageCount": 1
     },
     "lesson-4.2-p3-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p3/",
       "prompt": "A close-up of the DCE's 'Cycle 0' UI, showing a user's scope being turned into a full set of planning artifacts. An animation shows a student planting a 'Project Scope' seed, which the DCE waters, and it instantly sprouts into a 'Project Tree.'",
       "alt": "How the DCE uses AI for scaffolding.",
       "baseFileName": "lesson-4.2-p3-img-",
@@ -363,7 +363,7 @@
       "imageCount": 1
     },
     "lesson-4.2-p4-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p4/",
       "prompt": "A developer confidently types a prompt instructing an AI to use their Project Scope to generate a complete starter project for a Next.js application. A student gives their essay outline to a tutor (the AI), who helps them create the initial document.",
       "alt": "Commanding the AI to build a starter project.",
       "baseFileName": "lesson-4.2-p4-img-",
@@ -371,7 +371,7 @@
       "imageCount": 1
     },
     "lesson-4.3-p1-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p1/",
       "prompt": "A student presents their 'Project Scope' document to an AI robot, which generates a professional 'Architectural Blueprint.' A home builder gives a client's feature list to a computer program (AI) to generate a detailed blueprint.",
       "alt": "Creating a blueprint to get starter code.",
       "baseFileName": "lesson-4.3-p1-img-",
@@ -379,7 +379,7 @@
       "imageCount": 1
     },
     "lesson-4.3-p2-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p2/",
       "prompt": "A side-by-side comparison of a student manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) has already done all the prep work, allowing the student chef (the user) to focus on the creative cooking process.",
       "alt": "The AI as a senior developer partner.",
       "baseFileName": "lesson-4.3-p2-img-",
@@ -387,7 +387,7 @@
       "imageCount": 1
     },
     "lesson-4.3-p3-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p3/",
       "prompt": "A developer types a clear prompt: 'Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project.' A student ordering a custom computer uses a configuration tool, selecting the 'Expert' build and specifying all required components.",
       "alt": "Writing the 'Build My Project' prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
@@ -395,7 +395,7 @@
       "imageCount": 1
     },
     "lesson-4.3-p4-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p4/",
       "prompt": "The new project structure is shown in the DCE. The developer clicks 'Accept Selected,' and the files appear. The final shot shows them typing `npm run dev` and seeing a 'Welcome to Next.js' page. A student receives a 'build-it-yourself' furniture kit (AI response), assembles it, and the final image shows their new, functional desk.",
       "alt": "Your project is born.",
       "baseFileName": "lesson-4.3-p4-img-",

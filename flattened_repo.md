@@ -1,2299 +1,191 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-17T00:54:35.566Z
+  Date Generated: 2025-10-17T01:20:17.553Z
   ---
-  Total Files: 490
-  Approx. Tokens: 541459
+  Total Files: 166
+  Approx. Tokens: 457902
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. context\dce\dce_kb.md (144566 tokens)
-2. context\automationsaas\flattened-repo.md (45210 tokens)
-3. context\aiascentgame\flattened-repo.md (18579 tokens)
-4. context\dce\flattened-repo.md (14794 tokens)
-5. public\data\v2v_content_career_transitioner.json (13723 tokens)
-6. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
-7. public\data\v2v_content_young_precocious.json (12257 tokens)
-8. src\stores\reportStore.ts (8107 tokens)
-9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7880 tokens)
-10. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7390 tokens)
+2. context\dce\flattened-repo.md (14794 tokens)
+3. public\data\v2v_content_career_transitioner.json (13723 tokens)
+4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
+5. public\data\v2v_content_young_precocious.json (12257 tokens)
+6. src\stores\reportStore.ts (8107 tokens)
+7. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7880 tokens)
+8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7390 tokens)
+9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
+10. src\Artifacts\A0-Master-Artifact-List.md (7140 tokens)
 
 <!-- Full File List -->
-1. context\aiascentgame\report\AudioControls.tsx.md - Lines: 290 - Chars: 11322 - Tokens: 2831
-2. context\aiascentgame\report\ImageNavigator.tsx.md - Lines: 203 - Chars: 7598 - Tokens: 1900
-3. context\aiascentgame\report\llmService.ts.md - Lines: 162 - Chars: 7451 - Tokens: 1863
-4. context\aiascentgame\report\PageNavigator.tsx.md - Lines: 73 - Chars: 2272 - Tokens: 568
-5. context\aiascentgame\report\PromptNavigator.tsx.md - Lines: 43 - Chars: 1300 - Tokens: 325
-6. context\aiascentgame\report\ReportChatPanel.tsx.md - Lines: 289 - Chars: 17167 - Tokens: 4292
-7. context\aiascentgame\report\ReportProgressBar.tsx.md - Lines: 146 - Chars: 5008 - Tokens: 1252
-8. context\aiascentgame\report\ReportTreeNav.tsx.md - Lines: 152 - Chars: 6078 - Tokens: 1520
-9. context\aiascentgame\report\ReportViewerModal.tsx.md - Lines: 399 - Chars: 14069 - Tokens: 3518
-10. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
-11. context\aiascentgame\scripts\create_report_embedding.js.md - Lines: 145 - Chars: 5384 - Tokens: 1346
-12. context\aiascentgame\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
-13. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
-14. context\aiascentgame\flattened-repo.md - Lines: 1381 - Chars: 74313 - Tokens: 18579
-15. context\automationsaas\flattened-repo.md - Lines: 5731 - Chars: 180837 - Tokens: 45210
-16. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
-17. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
-18. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
-19. context\dce\dce_kb.md - Lines: 7873 - Chars: 578264 - Tokens: 144566
-20. context\dce\flattened-repo.md - Lines: 766 - Chars: 59174 - Tokens: 14794
-21. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
-22. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
-23. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
-24. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
-25. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
-26. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-27. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
-28. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-29. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
-30. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
-31. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
-32. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
-33. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
-34. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
-35. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-36. src\Artifacts\A0-Master-Artifact-List.md - Lines: 432 - Chars: 28559 - Tokens: 7140
-37. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
-38. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
-39. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-40. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-41. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
-42. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
-43. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
-44. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
-45. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
-46. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-47. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
-48. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
-49. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
-50. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
-51. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
-52. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
-53. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
-54. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
-55. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
-56. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-57. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
-58. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
-59. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
-60. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
-61. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
-62. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-63. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
-64. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
-65. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
-66. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
-67. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
-68. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
-69. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
-70. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
-71. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
-72. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
-73. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
-74. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-75. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-76. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
-77. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
-78. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-79. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
-80. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-81. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
-82. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
-83. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
-84. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-85. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
-86. src\components\layout\Header.tsx - Lines: 68 - Chars: 2651 - Tokens: 663
-87. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
-88. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
-89. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
-90. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-91. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-92. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
-93. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
-94. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-95. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8767 - Tokens: 2192
-96. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-97. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
-98. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-99. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
-100. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
-101. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
-102. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
-103. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-104. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
-105. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-106. src\stores\reportStore.ts - Lines: 712 - Chars: 32427 - Tokens: 8107
-107. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
-108. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
-109. components.json - Lines: 17 - Chars: 370 - Tokens: 93
-110. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
-111. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
-112. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
-113. package.json - Lines: 53 - Chars: 1535 - Tokens: 384
-114. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
-115. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
-116. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
-117. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
-118. public\assets\images\report\dce\dce-feature-artifacts.gif - [Binary] Size: 36.5 MB
-119. public\assets\images\report\dce\dce-feature-curation.gif - [Binary] Size: 7.5 MB
-120. public\assets\images\report\dce\dce-feature-cycles.gif - [Binary] Size: 1.8 MB
-121. public\assets\images\report\dce\dce-feature-parallel-copilot.gif - [Binary] Size: 3.8 MB
-122. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
-123. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
-124. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
-125. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
-126. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
-127. src\Artifacts\A47 - David Gerabagi Resume (DCE Update).md - Lines: 78 - Chars: 6900 - Tokens: 1725
-128. src\Artifacts\A49 - V2V Academy - Research & Synthesis Plan.md - Lines: 58 - Chars: 4851 - Tokens: 1213
-129. src\Artifacts\A50 - V2V Academy - Core Principles & Philosophy.md - Lines: 42 - Chars: 5240 - Tokens: 1310
-130. src\Artifacts\A51 - V2V Academy - The Virtuoso's Workflow.md - Lines: 50 - Chars: 4630 - Tokens: 1158
-131. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
-132. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 106 - Chars: 8072 - Tokens: 2018
-133. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 130 - Chars: 18402 - Tokens: 4601
-134. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 153 - Chars: 21591 - Tokens: 5398
-135. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
-136. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
-137. src\Artifacts\A58 - V2V Academy - Target Learner Personas.md - Lines: 64 - Chars: 5141 - Tokens: 1286
-138. src\Artifacts\A59 - V2V Academy - Student Environment Guide.md - Lines: 45 - Chars: 3728 - Tokens: 932
-139. src\Artifacts\A60 - V2V Academy - Assessment Philosophy.md - Lines: 35 - Chars: 2940 - Tokens: 735
-140. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
-141. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
-142. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
-143. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
-144. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
-145. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
-146. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
-147. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
-148. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
-149. src\Artifacts\A62 - V2V Academy - Synthesis of Research Proposals.md - Lines: 33 - Chars: 4303 - Tokens: 1076
-150. src\Artifacts\A63 - V2V Academy - Lesson 1.2 - The Philosophy of V2V.md - Lines: 94 - Chars: 15137 - Tokens: 3785
-151. src\Artifacts\A64 - V2V Academy - Lesson 1.3 - The Citizen Architect.md - Lines: 94 - Chars: 15236 - Tokens: 3809
-152. src\Artifacts\A65 - V2V Academy - Lesson 2.1 - Introduction to Data Curation.md - Lines: 93 - Chars: 15186 - Tokens: 3797
-153. src\Artifacts\A66 - V2V Academy - Lesson 2.2 - The Art of Annotation.md - Lines: 93 - Chars: 15214 - Tokens: 3804
-154. src\Artifacts\A67 - V2V Academy - Lesson 2.3 - Critical Analysis of AI Output.md - Lines: 93 - Chars: 15975 - Tokens: 3994
-155. src\Artifacts\A68 - V2V Academy - Lesson 3.1 - From Conversation to Command.md - Lines: 126 - Chars: 16242 - Tokens: 4061
-156. src\Artifacts\A69 - V2V Academy - Lesson 3.2 - The Feedback Loop in Practice.md - Lines: 93 - Chars: 15947 - Tokens: 3987
-157. src\Artifacts\A70 - V2V Academy - Lesson 3.3 - The Test-and-Revert Workflow.md - Lines: 93 - Chars: 16374 - Tokens: 4094
-158. src\Artifacts\A71 - V2V Academy - Lesson 4.1 - Defining Your Vision.md - Lines: 108 - Chars: 15323 - Tokens: 3831
-159. src\Artifacts\A72 - V2V Academy - Lesson 4.2 - The Blank Page Problem.md - Lines: 93 - Chars: 15303 - Tokens: 3826
-160. src\Artifacts\A73 - V2V Academy - Lesson 4.3 - Architecting Your MVP.md - Lines: 93 - Chars: 15757 - Tokens: 3940
-161. public\data\v2v_content_career_transitioner.json - Lines: 380 - Chars: 54890 - Tokens: 13723
-162. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
-163. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49027 - Tokens: 12257
-164. public\data\v2v_imagemanifest.json - Lines: 98 - Chars: 17546 - Tokens: 4387
-165. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
-166. src\app\academy\page.tsx - Lines: 61 - Chars: 2375 - Tokens: 594
-167. src\components\academy\PersonaSelector.tsx - Lines: 77 - Chars: 3610 - Tokens: 903
-168. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
-169. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 5972 - Tokens: 1493
-170. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 202 - Chars: 31519 - Tokens: 7880
-171. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 201 - Chars: 29558 - Tokens: 7390
-172. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
-173. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
-174. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28236 - Tokens: 7059
-175. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25819 - Tokens: 6455
-176. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25575 - Tokens: 6394
-177. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
-178. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
-179. scripts\manage_v2v_images.mjs - Lines: 107 - Chars: 4232 - Tokens: 1058
-180. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
-181. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
-182. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
-183. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-1.webp - [Binary] Size: 133.7 KB
-184. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-10.webp - [Binary] Size: 83.1 KB
-185. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-11.webp - [Binary] Size: 116.9 KB
-186. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-12.webp - [Binary] Size: 88.2 KB
-187. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-13.webp - [Binary] Size: 105 KB
-188. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-14.webp - [Binary] Size: 129.9 KB
-189. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-15.webp - [Binary] Size: 124.1 KB
-190. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-16.webp - [Binary] Size: 86 KB
-191. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-17.webp - [Binary] Size: 112.2 KB
-192. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-18.webp - [Binary] Size: 106.5 KB
-193. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-19.webp - [Binary] Size: 168.5 KB
-194. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-2.webp - [Binary] Size: 128.4 KB
-195. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-3.webp - [Binary] Size: 118.2 KB
-196. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-4.webp - [Binary] Size: 79.1 KB
-197. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-5.webp - [Binary] Size: 80.6 KB
-198. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-6.webp - [Binary] Size: 103.3 KB
-199. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-7.webp - [Binary] Size: 88.1 KB
-200. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-8.webp - [Binary] Size: 106.1 KB
-201. public\assets\images\v2v\career_transitioner\lesson-1.1-p1\lesson-1.1-p1-img-9.webp - [Binary] Size: 95 KB
-202. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-1.webp - [Binary] Size: 153.9 KB
-203. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-10.webp - [Binary] Size: 71.3 KB
-204. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-11.webp - [Binary] Size: 103.5 KB
-205. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-12.webp - [Binary] Size: 117.1 KB
-206. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-13.webp - [Binary] Size: 73.4 KB
-207. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-14.webp - [Binary] Size: 113.4 KB
-208. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-15.webp - [Binary] Size: 168.7 KB
-209. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-16.webp - [Binary] Size: 147.7 KB
-210. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-17.webp - [Binary] Size: 114.5 KB
-211. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-18.webp - [Binary] Size: 110.2 KB
-212. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-19.webp - [Binary] Size: 149.4 KB
-213. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-2.webp - [Binary] Size: 170.2 KB
-214. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-20.webp - [Binary] Size: 105.8 KB
-215. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-3.webp - [Binary] Size: 128.5 KB
-216. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-4.webp - [Binary] Size: 166.9 KB
-217. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-5.webp - [Binary] Size: 127.8 KB
-218. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-6.webp - [Binary] Size: 122.6 KB
-219. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-7.webp - [Binary] Size: 104.2 KB
-220. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-8.webp - [Binary] Size: 128.3 KB
-221. public\assets\images\v2v\career_transitioner\lesson-1.1-p2\lesson-1.1-p2-img-9.webp - [Binary] Size: 148.8 KB
-222. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-1.webp - [Binary] Size: 96.9 KB
-223. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-10.webp - [Binary] Size: 135.5 KB
-224. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-11.webp - [Binary] Size: 69.6 KB
-225. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-12.webp - [Binary] Size: 118 KB
-226. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-13.webp - [Binary] Size: 115 KB
-227. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-14.webp - [Binary] Size: 95.1 KB
-228. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-15.webp - [Binary] Size: 122.7 KB
-229. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-16.webp - [Binary] Size: 120.6 KB
-230. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-17.webp - [Binary] Size: 96.7 KB
-231. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-18.webp - [Binary] Size: 196.1 KB
-232. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-19.webp - [Binary] Size: 89 KB
-233. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-2.webp - [Binary] Size: 156.6 KB
-234. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-20.webp - [Binary] Size: 150.9 KB
-235. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-3.webp - [Binary] Size: 101 KB
-236. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-4.webp - [Binary] Size: 158.8 KB
-237. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-5.webp - [Binary] Size: 115.6 KB
-238. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-6.webp - [Binary] Size: 102.9 KB
-239. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-7.webp - [Binary] Size: 161.6 KB
-240. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-8.webp - [Binary] Size: 128.8 KB
-241. public\assets\images\v2v\career_transitioner\lesson-1.1-p3\lesson-1.1-p3-img-9.webp - [Binary] Size: 107.5 KB
-242. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-1.webp - [Binary] Size: 110 KB
-243. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-10.webp - [Binary] Size: 117.3 KB
-244. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-11.webp - [Binary] Size: 140.9 KB
-245. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-12.webp - [Binary] Size: 95.4 KB
-246. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-13.webp - [Binary] Size: 111.9 KB
-247. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-14.webp - [Binary] Size: 98.2 KB
-248. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-15.webp - [Binary] Size: 146.5 KB
-249. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-16.webp - [Binary] Size: 105.4 KB
-250. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-17.webp - [Binary] Size: 136.5 KB
-251. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-18.webp - [Binary] Size: 136.6 KB
-252. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-19.webp - [Binary] Size: 120.8 KB
-253. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-2.webp - [Binary] Size: 94 KB
-254. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-20.webp - [Binary] Size: 81.2 KB
-255. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-3.webp - [Binary] Size: 105 KB
-256. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-4.webp - [Binary] Size: 100.7 KB
-257. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-5.webp - [Binary] Size: 102.4 KB
-258. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-6.webp - [Binary] Size: 200.4 KB
-259. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-7.webp - [Binary] Size: 80.2 KB
-260. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-8.webp - [Binary] Size: 82.2 KB
-261. public\assets\images\v2v\career_transitioner\lesson-1.1-p4\lesson-1.1-p4-img-9.webp - [Binary] Size: 134.7 KB
-262. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-1.webp - [Binary] Size: 113.5 KB
-263. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-10.webp - [Binary] Size: 111.9 KB
-264. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-11.webp - [Binary] Size: 99.8 KB
-265. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-12.webp - [Binary] Size: 109.5 KB
-266. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-13.webp - [Binary] Size: 110.3 KB
-267. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-14.webp - [Binary] Size: 68.8 KB
-268. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-15.webp - [Binary] Size: 107.1 KB
-269. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-16.webp - [Binary] Size: 60.2 KB
-270. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-17.webp - [Binary] Size: 42.9 KB
-271. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-18.webp - [Binary] Size: 148.1 KB
-272. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-19.webp - [Binary] Size: 91.4 KB
-273. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-2.webp - [Binary] Size: 113.6 KB
-274. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-3.webp - [Binary] Size: 95 KB
-275. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-4.webp - [Binary] Size: 88.5 KB
-276. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-5.webp - [Binary] Size: 95.2 KB
-277. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-6.webp - [Binary] Size: 106.7 KB
-278. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-7.webp - [Binary] Size: 98.6 KB
-279. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-8.webp - [Binary] Size: 114 KB
-280. public\assets\images\v2v\career_transitioner\lesson-1.1-p5\lesson-1.1-p5-img-9.webp - [Binary] Size: 86.7 KB
-281. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-1.webp - [Binary] Size: 98.6 KB
-282. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-10.webp - [Binary] Size: 100.9 KB
-283. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-11.webp - [Binary] Size: 79.3 KB
-284. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-12.webp - [Binary] Size: 85.8 KB
-285. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-13.webp - [Binary] Size: 79.8 KB
-286. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-14.webp - [Binary] Size: 86.2 KB
-287. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-15.webp - [Binary] Size: 71.7 KB
-288. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-16.webp - [Binary] Size: 130.8 KB
-289. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-17.webp - [Binary] Size: 74.4 KB
-290. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-18.webp - [Binary] Size: 86 KB
-291. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-19.webp - [Binary] Size: 75.2 KB
-292. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-2.webp - [Binary] Size: 98.2 KB
-293. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-20.webp - [Binary] Size: 115.6 KB
-294. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-3.webp - [Binary] Size: 76.3 KB
-295. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-4.webp - [Binary] Size: 80.7 KB
-296. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-5.webp - [Binary] Size: 75.5 KB
-297. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-6.webp - [Binary] Size: 117.8 KB
-298. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-7.webp - [Binary] Size: 119 KB
-299. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-8.webp - [Binary] Size: 94.7 KB
-300. public\assets\images\v2v\career_transitioner\lesson-1.1-p6\lesson-1.1-p6-img-9.webp - [Binary] Size: 76.5 KB
-301. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-1.webp - [Binary] Size: 76.1 KB
-302. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-10.webp - [Binary] Size: 106.3 KB
-303. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-11.webp - [Binary] Size: 101.6 KB
-304. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-12.webp - [Binary] Size: 100.5 KB
-305. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-13.webp - [Binary] Size: 121.6 KB
-306. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-14.webp - [Binary] Size: 103.5 KB
-307. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-15.webp - [Binary] Size: 128.1 KB
-308. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-16.webp - [Binary] Size: 105.2 KB
-309. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-17.webp - [Binary] Size: 110.9 KB
-310. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-18.webp - [Binary] Size: 99.9 KB
-311. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-19.webp - [Binary] Size: 70.9 KB
-312. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-2.webp - [Binary] Size: 107.3 KB
-313. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-20.webp - [Binary] Size: 74.8 KB
-314. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-3.webp - [Binary] Size: 106.2 KB
-315. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-4.webp - [Binary] Size: 85 KB
-316. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-5.webp - [Binary] Size: 104.7 KB
-317. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-6.webp - [Binary] Size: 118.4 KB
-318. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-7.webp - [Binary] Size: 76 KB
-319. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-8.webp - [Binary] Size: 67.2 KB
-320. public\assets\images\v2v\career_transitioner\lesson-1.2-p1\lesson-1.2-p1-img-9.webp - [Binary] Size: 89.2 KB
-321. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-1.webp - [Binary] Size: 137.2 KB
-322. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-10.webp - [Binary] Size: 170.2 KB
-323. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-11.webp - [Binary] Size: 104.5 KB
-324. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-12.webp - [Binary] Size: 205.1 KB
-325. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-13.webp - [Binary] Size: 161.1 KB
-326. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-14.webp - [Binary] Size: 60.5 KB
-327. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-15.webp - [Binary] Size: 61.2 KB
-328. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-16.webp - [Binary] Size: 52.8 KB
-329. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-17.webp - [Binary] Size: 73.4 KB
-330. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-18.webp - [Binary] Size: 158.2 KB
-331. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-19.webp - [Binary] Size: 109.8 KB
-332. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-2.webp - [Binary] Size: 120.8 KB
-333. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-20.webp - [Binary] Size: 177.1 KB
-334. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-3.webp - [Binary] Size: 69.3 KB
-335. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-4.webp - [Binary] Size: 167.7 KB
-336. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-5.webp - [Binary] Size: 76.9 KB
-337. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-6.webp - [Binary] Size: 121.2 KB
-338. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-7.webp - [Binary] Size: 161.3 KB
-339. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-8.webp - [Binary] Size: 157.2 KB
-340. public\assets\images\v2v\career_transitioner\lesson-1.2-p2\lesson-1.2-p2-img-9.webp - [Binary] Size: 88.7 KB
-341. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-1.webp - [Binary] Size: 98.1 KB
-342. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-10.webp - [Binary] Size: 132.6 KB
-343. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-11.webp - [Binary] Size: 116.8 KB
-344. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-12.webp - [Binary] Size: 198.2 KB
-345. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-13.webp - [Binary] Size: 106.3 KB
-346. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-14.webp - [Binary] Size: 106.4 KB
-347. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-15.webp - [Binary] Size: 110.6 KB
-348. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-16.webp - [Binary] Size: 97.3 KB
-349. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-17.webp - [Binary] Size: 113.2 KB
-350. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-18.webp - [Binary] Size: 115.5 KB
-351. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-19.webp - [Binary] Size: 98.3 KB
-352. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-2.webp - [Binary] Size: 162.6 KB
-353. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-20.webp - [Binary] Size: 102.4 KB
-354. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-3.webp - [Binary] Size: 143.8 KB
-355. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-4.webp - [Binary] Size: 117 KB
-356. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-5.webp - [Binary] Size: 111.1 KB
-357. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-6.webp - [Binary] Size: 131.7 KB
-358. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-7.webp - [Binary] Size: 169.8 KB
-359. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-8.webp - [Binary] Size: 149.4 KB
-360. public\assets\images\v2v\career_transitioner\lesson-1.2-p3\lesson-1.2-p3-img-9.webp - [Binary] Size: 192.4 KB
-361. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-1.webp - [Binary] Size: 127.5 KB
-362. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-10.webp - [Binary] Size: 97.8 KB
-363. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-11.webp - [Binary] Size: 134.9 KB
-364. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-12.webp - [Binary] Size: 166.8 KB
-365. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-13.webp - [Binary] Size: 126.1 KB
-366. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-14.webp - [Binary] Size: 133.1 KB
-367. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-15.webp - [Binary] Size: 100.3 KB
-368. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-16.webp - [Binary] Size: 82.9 KB
-369. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-17.webp - [Binary] Size: 130.1 KB
-370. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-18.webp - [Binary] Size: 107.3 KB
-371. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-2.webp - [Binary] Size: 135 KB
-372. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-3.webp - [Binary] Size: 138.4 KB
-373. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-4.webp - [Binary] Size: 137.3 KB
-374. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-5.webp - [Binary] Size: 145 KB
-375. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-6.webp - [Binary] Size: 124.9 KB
-376. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-7.webp - [Binary] Size: 134.7 KB
-377. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-8.webp - [Binary] Size: 145.3 KB
-378. public\assets\images\v2v\career_transitioner\lesson-1.2-p4\lesson-1.2-p4-img-9.webp - [Binary] Size: 95.7 KB
-379. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-1.webp - [Binary] Size: 168.5 KB
-380. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-10.webp - [Binary] Size: 91.4 KB
-381. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-11.webp - [Binary] Size: 164.1 KB
-382. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-12.webp - [Binary] Size: 154.1 KB
-383. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-13.webp - [Binary] Size: 98.5 KB
-384. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-14.webp - [Binary] Size: 135.9 KB
-385. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-15.webp - [Binary] Size: 107.9 KB
-386. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-16.webp - [Binary] Size: 113.3 KB
-387. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-17.webp - [Binary] Size: 118.2 KB
-388. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-18.webp - [Binary] Size: 155.4 KB
-389. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-19.webp - [Binary] Size: 131.6 KB
-390. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-2.webp - [Binary] Size: 109.5 KB
-391. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-20.webp - [Binary] Size: 170.4 KB
-392. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-3.webp - [Binary] Size: 110.5 KB
-393. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-4.webp - [Binary] Size: 141.6 KB
-394. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-5.webp - [Binary] Size: 121.5 KB
-395. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-6.webp - [Binary] Size: 82.3 KB
-396. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-7.webp - [Binary] Size: 101.9 KB
-397. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-8.webp - [Binary] Size: 137.8 KB
-398. public\assets\images\v2v\career_transitioner\lesson-1.3-p1\lesson-1.3-p1-img-9.webp - [Binary] Size: 106.8 KB
-399. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-1.webp - [Binary] Size: 111.6 KB
-400. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-10.webp - [Binary] Size: 117.7 KB
-401. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-11.webp - [Binary] Size: 166.6 KB
-402. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-12.webp - [Binary] Size: 141.4 KB
-403. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-13.webp - [Binary] Size: 143.5 KB
-404. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-14.webp - [Binary] Size: 140.1 KB
-405. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-15.webp - [Binary] Size: 156.7 KB
-406. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-16.webp - [Binary] Size: 132.9 KB
-407. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-17.webp - [Binary] Size: 106.5 KB
-408. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-2.webp - [Binary] Size: 127 KB
-409. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-3.webp - [Binary] Size: 124.7 KB
-410. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-4.webp - [Binary] Size: 171.3 KB
-411. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-5.webp - [Binary] Size: 160.3 KB
-412. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-6.webp - [Binary] Size: 108.6 KB
-413. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-7.webp - [Binary] Size: 146.6 KB
-414. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-8.webp - [Binary] Size: 171.4 KB
-415. public\assets\images\v2v\career_transitioner\lesson-1.3-p2\lesson-1.3-p2-img-9.webp - [Binary] Size: 100.2 KB
-416. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-1.webp - [Binary] Size: 117.9 KB
-417. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-10.webp - [Binary] Size: 100.3 KB
-418. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-11.webp - [Binary] Size: 197.5 KB
-419. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-12.webp - [Binary] Size: 140.8 KB
-420. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-13.webp - [Binary] Size: 212.6 KB
-421. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-14.webp - [Binary] Size: 68.6 KB
-422. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-15.webp - [Binary] Size: 127.8 KB
-423. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-16.webp - [Binary] Size: 125.1 KB
-424. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-17.webp - [Binary] Size: 83.2 KB
-425. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-18.webp - [Binary] Size: 104.7 KB
-426. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-19.webp - [Binary] Size: 142 KB
-427. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-2.webp - [Binary] Size: 150.4 KB
-428. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-3.webp - [Binary] Size: 102.7 KB
-429. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-4.webp - [Binary] Size: 129.5 KB
-430. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-5.webp - [Binary] Size: 117.3 KB
-431. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-6.webp - [Binary] Size: 143.9 KB
-432. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-7.webp - [Binary] Size: 150.2 KB
-433. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-8.webp - [Binary] Size: 156.1 KB
-434. public\assets\images\v2v\career_transitioner\lesson-1.3-p3\lesson-1.3-p3-img-9.webp - [Binary] Size: 148.9 KB
-435. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-1.webp - [Binary] Size: 139.9 KB
-436. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-10.webp - [Binary] Size: 104.8 KB
-437. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-11.webp - [Binary] Size: 163.3 KB
-438. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-12.webp - [Binary] Size: 203.8 KB
-439. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-13.webp - [Binary] Size: 109.9 KB
-440. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-14.webp - [Binary] Size: 161.8 KB
-441. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-15.webp - [Binary] Size: 133.4 KB
-442. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-16.webp - [Binary] Size: 195.7 KB
-443. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-2.webp - [Binary] Size: 180.2 KB
-444. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-3.webp - [Binary] Size: 205.2 KB
-445. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-4.webp - [Binary] Size: 123.1 KB
-446. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-5.webp - [Binary] Size: 186.8 KB
-447. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-6.webp - [Binary] Size: 196.3 KB
-448. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-7.webp - [Binary] Size: 161.5 KB
-449. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-8.webp - [Binary] Size: 178.6 KB
-450. public\assets\images\v2v\career_transitioner\lesson-1.3-p4\lesson-1.3-p4-img-9.webp - [Binary] Size: 174.6 KB
-451. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-1.webp - [Binary] Size: 143.4 KB
-452. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-10.webp - [Binary] Size: 155.7 KB
-453. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-11.webp - [Binary] Size: 112.3 KB
-454. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-12.webp - [Binary] Size: 135.9 KB
-455. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-13.webp - [Binary] Size: 102.9 KB
-456. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-14.webp - [Binary] Size: 170.1 KB
-457. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-15.webp - [Binary] Size: 168.3 KB
-458. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-16.webp - [Binary] Size: 142.6 KB
-459. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-17.webp - [Binary] Size: 170.9 KB
-460. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-18.webp - [Binary] Size: 118.2 KB
-461. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-19.webp - [Binary] Size: 121.5 KB
-462. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-2.webp - [Binary] Size: 129.5 KB
-463. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-3.webp - [Binary] Size: 149.7 KB
-464. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-4.webp - [Binary] Size: 214.7 KB
-465. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-5.webp - [Binary] Size: 187 KB
-466. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-6.webp - [Binary] Size: 136.9 KB
-467. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-7.webp - [Binary] Size: 89.4 KB
-468. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-8.webp - [Binary] Size: 119 KB
-469. public\assets\images\v2v\career_transitioner\lesson-2.1-p1\lesson-2.1-p1-img-9.webp - [Binary] Size: 153 KB
-470. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-1.webp - [Binary] Size: 118.9 KB
-471. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-10.webp - [Binary] Size: 111.7 KB
-472. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-11.webp - [Binary] Size: 162.4 KB
-473. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-12.webp - [Binary] Size: 121.7 KB
-474. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-13.webp - [Binary] Size: 136 KB
-475. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-14.webp - [Binary] Size: 164.2 KB
-476. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-15.webp - [Binary] Size: 129.1 KB
-477. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-16.webp - [Binary] Size: 116.4 KB
-478. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-17.webp - [Binary] Size: 147.4 KB
-479. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-18.webp - [Binary] Size: 145.3 KB
-480. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-19.webp - [Binary] Size: 181.4 KB
-481. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-2.webp - [Binary] Size: 151.9 KB
-482. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-20.webp - [Binary] Size: 171.8 KB
-483. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-21.webp - [Binary] Size: 166.5 KB
-484. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-3.webp - [Binary] Size: 97.4 KB
-485. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-4.webp - [Binary] Size: 115 KB
-486. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-5.webp - [Binary] Size: 125.6 KB
-487. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-6.webp - [Binary] Size: 132.1 KB
-488. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-7.webp - [Binary] Size: 114.9 KB
-489. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-8.webp - [Binary] Size: 129.5 KB
-490. public\assets\images\v2v\career_transitioner\lesson-2.1-p2\lesson-2.1-p2-img-9.webp - [Binary] Size: 105.6 KB
-
-<file path="context/aiascentgame/report/AudioControls.tsx.md">
-// src/components/menus/report/AudioControls.tsx
-// Updated on: C1401 (Implement responsive hiding of controls using ResizeObserver.)
-// Updated on: C1399 (Implement playback speed controls and restart-on-autoplay logic.)
-// Updated on: C1398 (Refactor play/pause logic to be more direct and fix state synchronization issues.)
-// Updated on: C1397 (Add volume and mute controls. Fix pause functionality.)
-import React, { useRef, useEffect, useState } from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { useShallow } from 'zustand/react/shallow';
-import { FaPlay, FaPause, FaRedo, FaVolumeUp, FaVolumeMute, FaSpinner } from 'react-icons/fa';
-import { logInfo, logError } from '../../../logger';
-
-const PLAYBACK_SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
-
-const AudioControls: React.FC = () => {
-  const {
-    allPages, currentPageIndex, playbackStatus, autoplayEnabled,
-    currentAudioUrl, currentAudioPageIndex, currentTime, duration,
-    volume, isMuted, setVolume, toggleMute,
-    setPlaybackStatus, setAutoplay, setCurrentAudio,
-    setAudioTime, setAudioDuration, startSlideshow, stopSlideshow,
-    playbackSpeed, setPlaybackSpeed,
-  } = useReportStore(useShallow(state => ({
-    allPages: state.allPages,
-    currentPageIndex: state.currentPageIndex,
-    playbackStatus: state.playbackStatus,
-    autoplayEnabled: state.autoplayEnabled,
-    currentAudioUrl: state.currentAudioUrl,
-    currentAudioPageIndex: state.currentAudioPageIndex,
-    currentTime: state.currentTime,
-    duration: state.duration,
-    volume: state.volume,
-    isMuted: state.isMuted,
-    setVolume: state.setVolume,
-    toggleMute: state.toggleMute,
-    setPlaybackStatus: state.setPlaybackStatus,
-    setAutoplay: state.setAutoplay,
-    setCurrentAudio: state.setCurrentAudio,
-    setAudioTime: state.setAudioTime,
-    setAudioDuration: state.setAudioDuration,
-    startSlideshow: state.startSlideshow,
-    stopSlideshow: state.stopSlideshow,
-    playbackSpeed: state.playbackSpeed,
-    setPlaybackSpeed: state.setPlaybackSpeed,
-  })));
-
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const audioUrlRef = useRef<string | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null); // C1401
-  const [containerWidth, setContainerWidth] = useState(0); // C1401
-
-  const currentPage = allPages[currentPageIndex];
-
-  // C1401: Use ResizeObserver to track container width for responsive UI
-  useEffect(() => {
-    const observer = new ResizeObserver(entries => {
-      for (const entry of entries) {
-        setContainerWidth(entry.contentRect.width);
-      }
-    });
-    const currentContainer = containerRef.current;
-    if (currentContainer) {
-      observer.observe(currentContainer);
-    }
-    return () => {
-      if (currentContainer) {
-        observer.unobserve(currentContainer);
-      }
-    };
-  }, []);
-
-  const generateAndPlayAudio = async (restart = false) => {
-    if (!currentPage) return;
-
-    setPlaybackStatus('generating');
-    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.tldr}. ${currentPage.content}`;
-
-    try {
-      const response = await fetch('/api/tts/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: textToNarrate }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`TTS server failed with status: ${response.status}`);
-      }
-
-      const audioBlob = await response.blob();
-      if (audioUrlRef.current) {
-        URL.revokeObjectURL(audioUrlRef.current);
-      }
-      const newUrl = URL.createObjectURL(audioBlob);
-      audioUrlRef.current = newUrl;
-      setCurrentAudio(newUrl, currentPageIndex);
-      if (restart && audioRef.current) {
-        audioRef.current.currentTime = 0;
-      }
-    } catch (error) {
-      logError('[AudioControls]', 'Failed to generate audio', error);
-      setPlaybackStatus('error');
-    }
-  };
-
-  useEffect(() => {
-    if (autoplayEnabled && playbackStatus === 'idle' && currentAudioPageIndex !== currentPageIndex) {
-      generateAndPlayAudio();
-    }
-  }, [currentPageIndex, autoplayEnabled, playbackStatus, currentAudioPageIndex]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (currentAudioUrl && audio.src !== currentAudioUrl) {
-      audio.src = currentAudioUrl;
-      audio.load();
-      audio.play().catch(e => logError('[AudioControls]', 'Autoplay failed', e));
-    }
-  }, [currentAudioUrl]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.volume = volume;
-    audio.muted = isMuted;
-    audio.playbackRate = playbackSpeed;
-  }, [volume, isMuted, playbackSpeed]);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const handlePlay = () => setPlaybackStatus('playing');
-    const handlePause = () => setPlaybackStatus('paused');
-    const handleEnded = () => setPlaybackStatus('idle');
-    const handleTimeUpdate = () => setAudioTime(audio.currentTime);
-    const handleLoadedMetadata = () => setAudioDuration(audio.duration);
-    const handleWaiting = () => setPlaybackStatus('buffering');
-    const handleError = () => { logError('[AudioControls]', 'Audio playback error'); setPlaybackStatus('error'); };
-
-    audio.addEventListener('play', handlePlay);
-    audio.addEventListener('playing', handlePlay);
-    audio.addEventListener('pause', handlePause);
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
-    audio.addEventListener('waiting', handleWaiting);
-    audio.addEventListener('error', handleError);
-
-    return () => {
-      audio.removeEventListener('play', handlePlay);
-      audio.removeEventListener('playing', handlePlay);
-      audio.removeEventListener('pause', handlePause);
-      audio.removeEventListener('ended', handleEnded);
-      audio.removeEventListener('timeupdate', handleTimeUpdate);
-      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      audio.removeEventListener('waiting', handleWaiting);
-      audio.removeEventListener('error', handleError);
-      if (audioUrlRef.current) {
-        URL.revokeObjectURL(audioUrlRef.current);
-      }
-    };
-  }, []);
-
-  const handlePlayPause = () => {
-    stopSlideshow(true);
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (playbackStatus === 'playing' || playbackStatus === 'buffering') {
-      audio.pause();
-    } else if (playbackStatus === 'paused') {
-      audio.play().catch(e => logError('[AudioControls]', 'Resume play failed', e));
-    } else if (playbackStatus === 'idle' || playbackStatus === 'error') {
-      generateAndPlayAudio();
-    }
-  };
-
-  const handleRestart = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-    }
-  };
-
-  const handleAutoplayChange = (checked: boolean) => {
-    setAutoplay(checked);
-    if (checked) {
-      // C1399: Restart logic
-      generateAndPlayAudio(true); // true to force restart
-    } else {
-      stopSlideshow(true);
-    }
-  };
-
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = Number(e.target.value);
-    }
-  };
-
-  const formatTime = (time: number) => {
-    if (isNaN(time) || !isFinite(time)) return '00:00';
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  };
-
-  const containerStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: '8px', padding: '5px 0', fontSize: '10px', color: '#ccc', width: '100%' };
-  const buttonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', fontSize: '14px', cursor: 'pointer', padding: '5px', borderRadius: '4px', flexShrink: 0 };
-  const sliderStyle: React.CSSProperties = { flexGrow: 1, cursor: 'pointer', minWidth: '50px' };
-  const timeStyle: React.CSSProperties = { minWidth: '40px', textAlign: 'center', flexShrink: 0 };
-  const statusStyle: React.CSSProperties = { fontStyle: 'italic', minWidth: '70px', textAlign: 'center', flexShrink: 0 };
-  const speedSelectStyle: React.CSSProperties = { background: '#333', border: '1px solid #666', color: 'white', padding: '3px', fontSize: '9px', fontFamily: 'inherit', marginLeft: '5px', flexShrink: 0 };
-  const volumeSliderStyle: React.CSSProperties = { width: '80px', cursor: 'pointer', flexShrink: 0 };
-
-  const isPlaying = playbackStatus === 'playing' || playbackStatus === 'buffering';
-
-  return (
-    <div style={containerStyle} ref={containerRef}>
-      <audio ref={audioRef} />
-      <button style={buttonStyle} onClick={handlePlayPause} title={isPlaying ? 'Pause' : 'Play'}>
-        {isPlaying ? <FaPause /> : <FaPlay />}
-      </button>
-      <button style={buttonStyle} onClick={handleRestart} title="Restart"><FaRedo /></button>
-
-      <span style={timeStyle}>{formatTime(currentTime)}</span>
-
-      {/* C1401: Hide seek bar on very small widths */}
-      {containerWidth > 450 && (
-        <input
-          type="range"
-          min="0"
-          max={duration || 100}
-          value={currentTime}
-          onChange={handleSeek}
-          style={sliderStyle}
-          disabled={playbackStatus === 'generating' || playbackStatus === 'idle'}
-        />
-      )}
-
-      <span style={timeStyle}>{formatTime(duration)}</span>
-
-      {/* C1401: Hide volume controls on small widths */}
-      {containerWidth > 650 && (
-        <>
-          <button style={buttonStyle} onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
-            {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-          </button>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={(e) => setVolume(Number(e.target.value))}
-            style={volumeSliderStyle}
-            title={`Volume: ${Math.round(volume * 100)}%`}
-          />
-        </>
-      )}
-
-
-      <div style={statusStyle}>
-        {playbackStatus === 'generating' && <FaSpinner className="animate-spin" />}
-        {playbackStatus === 'buffering' && 'Buffering...'}
-        {playbackStatus === 'error' && 'Error!'}
-      </div>
-
-      <select
-        value={playbackSpeed}
-        onChange={(e) => setPlaybackSpeed(Number(e.target.value))}
-        style={speedSelectStyle}
-        title="Playback Speed"
-      >
-        {PLAYBACK_SPEEDS.map(speed => (
-          <option key={speed} value={speed}>{speed.toFixed(2)}x</option>
-        ))}
-      </select>
-
-      {/* C1401: Hide autoplay on medium widths */}
-      {containerWidth > 550 && (
-        <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', flexShrink: 0 }}>
-          <input type="checkbox" checked={autoplayEnabled} onChange={(e) => handleAutoplayChange(e.target.checked)} />
-          Autoplay
-        </label>
-      )}
-    </div>
-  );
-};
-
-export default AudioControls;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ImageNavigator.tsx.md">
-// src/components/menus/report/ImageNavigator.tsx
-// Updated on: C1381 (Fix prompt toggle button functionality.)
-// Updated on: C1374 (Add hint toggle button and centralize hint text here.)
-// Updated on: C1373 (Change "Unvoted" to "Votes Left!", centralize hint text.)
-// Updated on: C1360 (Incorporate jumpPages action for Shift/Ctrl+Click functionality.)
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { FaChevronLeft, FaChevronRight, FaThumbsUp, FaCommentDots, FaTree, FaCheckSquare, FaChevronUp, FaChevronDown, FaInfoCircle } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-import { useSession } from 'next-auth/react';
-
-const ImageNavigator: React.FC = () => {
-  const { data: session } = useSession();
-  const {
-    allPages, currentPageIndex, currentImageIndex,
-    nextImage, prevImage, jumpPages, castVote, imageVotes, toggleChatPanel,
-    votesCastByPage, togglePromptVisibility, isPromptVisible,
-    isHintVisible, toggleHintVisibility,
-  } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      currentPageIndex: state.currentPageIndex,
-      currentImageIndex: state.currentImageIndex,
-      nextImage: state.nextImage,
-      prevImage: state.prevImage,
-      jumpPages: state.jumpPages,
-      castVote: state.castVote,
-      imageVotes: state.imageVotes,
-      toggleChatPanel: state.toggleChatPanel,
-      votesCastByPage: state.votesCastByPage,
-      togglePromptVisibility: state.togglePromptVisibility,
-      isPromptVisible: state.isPromptVisible,
-      isHintVisible: state.isHintVisible,
-      toggleHintVisibility: state.toggleHintVisibility,
-    }))
-  );
-  const { toggleTreeNav } = useReportStore();
-
-  const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-  const currentImage = currentPrompt?.images[currentImageIndex];
-  const totalImages = currentPrompt?.images.length ?? 0;
-  const currentVotes = currentImage ? (imageVotes[currentImage.imageId] || 0) : 0;
-  const hasVotedOnThisPage = votesCastByPage.hasOwnProperty(currentPageIndex);
-  const isThisImageVoted = hasVotedOnThisPage && votesCastByPage[currentPageIndex] === currentImage?.imageId;
-
-  const pagesLeftToVote = allPages.length - Object.keys(votesCastByPage).length;
-
-  const handleVote = () => {
-    if (currentImage && session) {
-      castVote(currentImage.imageId, currentPageIndex);
-    }
-  };
-
-  const containerStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: '10px',
-    fontSize: '10px',
-    color: '#ccc',
-    width: '100%',
-  };
-
-  const navGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    flex: 1,
-  };
-
-  const centerNavGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column', // Stack controls and hint
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '5px', // Gap between controls and hint
-    flex: 2,
-  };
-
-  const controlsRowStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '15px', // Adjusted gap
-  };
-
-  const actionGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    justifyContent: 'flex-end',
-    flex: 1,
-  };
-
-  const counterGroupStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    background: 'none',
-    border: '1px solid #777',
-    color: '#ccc',
-    fontSize: '16px',
-    cursor: 'pointer',
-    padding: '5px 10px',
-    borderRadius: '4px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
-  };
-
-  const smallButtonStyle: React.CSSProperties = {
-    ...buttonStyle,
-    fontSize: '12px',
-    padding: '3px 8px',
-  };
-
-  const hintTextStyle: React.CSSProperties = {
-    fontSize: '9px',
-    color: '#88ddff',
-    fontStyle: 'italic',
-    width: '100%',
-    textAlign: 'center',
-    lineHeight: '1.5',
-  };
-
-  const handlePageJump = (e: React.MouseEvent, direction: number) => {
-    let count = direction;
-    if (e.shiftKey) count *= 5;
-    if (e.ctrlKey) count *= 10;
-    jumpPages(count);
-  };
-
-
-  return (
-    <div style={containerStyle}>
-      <div style={navGroupStyle}>
-        <button style={smallButtonStyle} onClick={toggleTreeNav} title="Toggle Page Tree">
-          <FaTree /> Tree
-        </button>
-        <button style={smallButtonStyle} onClick={togglePromptVisibility} title={isPromptVisible ? "Hide Image Prompt" : "Show Image Prompt"}>
-          <FaInfoCircle /> Prompt
-        </button>
-      </div>
-
-      <div style={centerNavGroupStyle}>
-        <div style={controlsRowStyle}>
-          <div style={counterGroupStyle}>
-            <button style={buttonStyle} onClick={(e) => handlePageJump(e, -1)} title="Previous Page (Up Arrow)"><FaChevronUp /></button>
-            <span>Page {currentPageIndex + 1} / {allPages.length}</span>
-            <button style={buttonStyle} onClick={(e) => handlePageJump(e, 1)} title="Next Page (Down Arrow)"><FaChevronDown /></button>
-          </div>
-          {/* C1374: Added hint toggle button */}
-          <button style={smallButtonStyle} onClick={toggleHintVisibility} title={isHintVisible ? "Hide Controls Hint" : "Show Controls Hint"}>
-            <FaInfoCircle />
-          </button>
-          <div style={counterGroupStyle}>
-            <button style={buttonStyle} onClick={prevImage} disabled={totalImages <= 1} title="Previous Image (Left Arrow)"><FaChevronLeft /></button>
-            <span>Image {currentImageIndex + 1} / {totalImages}</span>
-            <button style={buttonStyle} onClick={nextImage} disabled={totalImages <= 1} title="Next Image (Right Arrow)"><FaChevronRight /></button>
-          </div>
-        </div>
-        {/* C1374: Hint text is now toggled */}
-        {isHintVisible && (
-          <div style={hintTextStyle}>
-            <span>Use <kbd>↑</kbd>/<kbd>↓</kbd> for pages. Use <kbd>←</kbd>/<kbd>→</kbd> for images. <kbd>Spacebar</kbd> to vote.</span>
-            <br />
-            <span>Hold <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Shift</kbd> to jump 5, or <kbd style={{ border: '1px solid #555', padding: '1px 3px', borderRadius: '2px', background: '#333' }}>Ctrl</kbd> to jump 10.</span>
-          </div>
-        )}
-      </div>
-
-      <div style={actionGroupStyle}>
-        <button
-          style={{ ...smallButtonStyle, backgroundColor: pagesLeftToVote === 0 ? '#3a3' : '#553', borderColor: pagesLeftToVote === 0 ? '#7f7' : '#aa7' }}
-          disabled
-          title={pagesLeftToVote > 0 ? `${pagesLeftToVote} pages left to vote on` : "All pages voted on!"}
-        >
-          <FaCheckSquare /> {pagesLeftToVote} Votes Left!
-        </button>
-        <button
-          style={{ ...smallButtonStyle, backgroundColor: isThisImageVoted ? '#3a3' : (session ? '#555' : '#444'), borderColor: isThisImageVoted ? '#7f7' : (session ? '#777' : '#555') }}
-          onClick={handleVote}
-          disabled={!session}
-          title={session ? "Vote for this image (Spacebar)" : "You must be logged in to vote"}
-        >
-          <FaThumbsUp /> Vote ({currentVotes})
-        </button>
-        <button
-          style={{ ...smallButtonStyle, backgroundColor: '#448', borderColor: '#88f' }}
-          onClick={toggleChatPanel}
-          title="Ask @Ascentia about this page"
-        >
-          <FaCommentDots /> Ask
-        </button>
-      </div>
-    </div>
-  );
-};
-
-export default ImageNavigator;
-</file_artifact>
-
-<file path="context/aiascentgame/report/llmService.ts.md">
-// src/server/llmService.ts
-// Updated on: C1395 (Correct TTS request body to match OpenAI-compatible endpoint for kokoro-fastapi.)
-// Updated on: C1384 (Fix stream type mismatch by converting Web Stream to Node.js Readable stream.)
-// Updated on: C1383 (Add generateSpeech function for TTS.)
-// Updated on: C1323 (Fix implicit 'any' types in map/filter callbacks.)
-// Updated on: C1322 (Fix implicit 'any' types in map/filter callbacks.)
-// NEW FILE - C1321
-
-import { Readable } from 'stream';
-import { logInfo, logWarn, logError } from '../logger';
-import { OUT_OF_GAME_SYSTEM_PROMPTS } from '../game/personas/personaConstants';
-import type { playerLlmPersonas } from '../game/personas/playerLlmPersonas'; // Import type only
-
-const COMPLETIONS_API_URL = (process.env.REMOTE_LLM_URL || process.env.LOCAL_LLM_URL || 'http://127.0.0.1:1234') + '/v1/chat/completions';
-const TTS_API_URL = process.env.TTS_SERVER_URL || 'http://localhost:8880/v1/audio/speech';
-
-type Persona = typeof playerLlmPersonas['tier0'];
-
-/**
- * A centralized service for making calls to the local LLM.
- */
-export const LlmService = {
-    /**
-     * Generates poetic lines for the Poetry Battle.
-     * @param theme - The theme for the round.
-     * @param numChoices - How many lines to generate.
-     * @param damageValues - An array of hidden damage values.
-     * @param persona - The persona object for the chatbot.
-     * @returns An array of choices with text and damage.
-     */
-    async generatePoetryChoices(
-        theme: string,
-        numChoices: number,
-        damageValues: number[],
-        persona: Persona,
-    ): Promise<{ text: string; damage: number }[]> {
-        const logPrefix = '[LlmService:generatePoetryChoices]';
-        logInfo(logPrefix, `Generating ${numChoices} choices for theme: "${theme}" with persona tier ${persona.tier}`);
-
-        const impactMap: Record<number, string> = {};
-        const sortedDamage = [...damageValues].sort((a, b) => a - b);
-        if (sortedDamage.length === 1) {
-            impactMap[sortedDamage[0]] = 'Normal';
-        } else if (sortedDamage.length > 1) {
-            impactMap[sortedDamage[0]] = 'Weak';
-            impactMap[sortedDamage[sortedDamage.length - 1]] = 'Strong';
-            for (let i = 1; i < sortedDamage.length - 1; i++) {
-                impactMap[sortedDamage[i]] = 'Medium';
-            }
-        }
-
-        const choicePrompts = damageValues
-            .map((damage, index) => `${index + 1}. **${impactMap[damage]} (Hidden Damage: ${damage}):** A line of poetry.`)
-            .join('\n');
-
-        const inGameSystemPrompt = `<In-Game System Prompt>You are an AI assistant generating content for a poetry battle game. The theme for this round is "${theme}". Generate ${numChoices} distinct lines of poetry for this theme with the following varying levels of impact:\n\n${choicePrompts}\n\nReturn ONLY the ${numChoices} lines of poetry, each on a new line. Do not include the impact level or damage value in your response.</In-Game System Prompt>`;
-        const outOfGamePrompt = OUT_OF_GAME_SYSTEM_PROMPTS[persona.model as keyof typeof OUT_OF_GAME_SYSTEM_PROMPTS] || OUT_OF_GAME_SYSTEM_PROMPTS['qwen/qwen3-30b-a3b'];
-        
-        const messages = [
-            { role: 'system', content: `${outOfGamePrompt}${inGameSystemPrompt}` },
-            { role: 'user', content: `Generate the ${numChoices} poetic lines now.` }
-        ];
-
-        const requestBody: any = {
-            model: persona.model,
-            messages: messages,
-            stream: false,
-            ...persona.params,
-        };
-
-        try {
-            const llmResponse = await fetch(COMPLETIONS_API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestBody),
-            });
-
-            if (!llmResponse.ok) {
-                const errorBody = await llmResponse.text();
-                throw new Error(`LLM service returned an error: ${llmResponse.status} ${errorBody}`);
-            }
-
-            const llmData = await llmResponse.json();
-            let content = llmData.choices[0]?.message?.content?.trim() ?? "";
-            content = content.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-
-            const lines = content.split('\n').map((line: string) => line.trim()).filter(Boolean);
-
-            if (lines.length !== numChoices) {
-                logWarn(logPrefix, `LLM did not return the expected number of choices. Expected ${numChoices}, got ${lines.length}.`);
-                // Fallback: Pad or truncate to match expected number of choices
-                while (lines.length < numChoices) lines.push("The void echoes... (LLM Error)");
-                while (lines.length > numChoices) lines.pop();
-            }
-
-            return lines.map((line: string, index: number) => ({
-                text: line,
-                damage: damageValues[index],
-            }));
-
-        } catch (error) {
-            logError(logPrefix, 'Error generating poetry choices:', error);
-            // Return placeholder choices on error
-            return damageValues.map(damage => ({
-                text: "An error sparked, my circuits weep...",
-                damage: damage,
-            }));
-        }
-    },
-};
-
-/**
- * Generates speech from text using the local TTS server.
- * @param text The text to convert to speech.
- * @returns A Node.js Readable stream of the audio data, or null on error.
- */
-export async function generateSpeech(text: string): Promise<Readable | null> {
-    const logPrefix = '[llmService:generateSpeech]';
-    logInfo(logPrefix, `Requesting speech generation from ${TTS_API_URL} for text: "${text.substring(0, 50)}..."`);
-
-    try {
-        // C1395: Correct the request body to match the OpenAI-compatible endpoint of kokoro-fastapi
-        const requestBody = {
-            model: 'kokoro',
-            voice: 'af_sky', // A standard, high-quality default voice
-            input: text,
-            response_format: 'wav',
-            speed: 1.0,
-        };
-
-        logInfo(logPrefix, 'Sending request to TTS server with body:', requestBody);
-
-        const response = await fetch(TTS_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'audio/wav',
-            },
-            body: JSON.stringify(requestBody),
-        });
-
-        if (!response.ok) {
-            const errorBody = await response.text();
-            throw new Error(`TTS server returned an error: ${response.status} ${errorBody}`);
-        }
-        
-        if (!response.body) {
-            throw new Error('TTS server returned an empty response body.');
-        }
-        
-        // Convert Web Stream (from fetch response.body) to a Node.js Readable stream
-        // The 'as any' cast is used to bridge the type difference between Web API streams and Node.js streams.
-        return Readable.fromWeb(response.body as any);
-
-    } catch (error) {
-        logError(logPrefix, 'Error contacting TTS server:', error);
-        return null;
-    }
-}
-
-// Keep other functions from the original file if they exist, like handlePlayerProductRequest
-export { handlePlayerProductStream, handlePlayerProductRequest } from './api/playerProductHandler';
-</file_artifact>
-
-<file path="context/aiascentgame/report/PageNavigator.tsx.md">
-// src/components/menus/report/PageNavigator.tsx
-// Updated on: C1374 (Increase title font size.)
-// Updated on: C1373 (Remove hint text, which has been moved to ImageNavigator.)
-// Updated on: C1360 (Rearrange hint text layout and increase title font size.)
-// Updated on: C1359 (Simplify by removing page nav buttons, which are now in ImageNavigator.)
-// Updated on: C1355 (Add hint about arrow key navigation.)
-// Updated on: C1351 (Incorporate a close button and refactor layout to a single line.)
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { FaTimes } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-import { useUIStore } from '../../../state';
-
-interface PageNavigatorProps {
-  onClose: () => void;
-}
-
-const PageNavigator: React.FC<PageNavigatorProps> = ({ onClose }) => {
-  const { allPages, currentPageIndex } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      currentPageIndex: state.currentPageIndex,
-    }))
-  );
-
-  const currentPage = allPages[currentPageIndex];
-
-  const containerStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-    position: 'relative',
-    minHeight: '40px',
-  };
-
-  const titleStyle: React.CSSProperties = {
-    fontSize: '18px', // C1374: Increased font size
-    color: '#FFA500',
-    margin: '0 0 5px 0',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    maxWidth: '100%',
-    padding: '0 50px', // Add padding to avoid overlap with close button
-    textAlign: 'center',
-  };
-
-  const closeButtonStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '0',
-    right: '0',
-    background: 'none',
-    border: '1px solid #777',
-    color: '#aaa',
-    fontSize: '16px',
-    cursor: 'pointer',
-    padding: '5px 10px',
-    borderRadius: '4px',
-  };
-
-  if (!currentPage) return null;
-
-  return (
-    <div style={containerStyle}>
-      <h2 style={titleStyle} title={currentPage.pageTitle}>{currentPage.pageTitle}</h2>
-      <button style={closeButtonStyle} onClick={onClose} title="Close Report Viewer"><FaTimes /></button>
-    </div>
-  );
-};
-
-export default PageNavigator;
-</file_artifact>
-
-<file path="context/aiascentgame/report/PromptNavigator.tsx.md">
-// src/components/menus/report/PromptNavigator.tsx
-// Updated on: C1374 (Simplify component to only display prompt text, as header/toggle moved to parent.)
-// Updated on: C1359 (Add collapse/expand button and logic.)
-// Updated on: C1358 (Refactored to be a simple display component for a single static prompt.)
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { useShallow } from 'zustand/react/shallow';
-
-const PromptNavigator: React.FC = () => {
-  const { allPages, currentPageIndex } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      currentPageIndex: state.currentPageIndex,
-    }))
-  );
-
-  const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-
-  const promptTextStyle: React.CSSProperties = {
-    width: '100%',
-    textAlign: 'left',
-    fontStyle: 'italic',
-    lineHeight: 1.4,
-    color: '#ccc',
-    fontSize: '10px',
-    padding: '8px',
-    backgroundColor: 'rgba(0,0,0,0.2)',
-    borderRadius: '4px',
-    border: '1px dashed #444',
-    margin: '0 0 15px 0',
-  };
-
-  if (!currentPrompt || !currentPrompt.promptText) return null;
-
-  return (
-    <div style={promptTextStyle}>
-      "{currentPrompt.promptText}"
-    </div>
-  );
-};
-
-export default PromptNavigator;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportChatPanel.tsx.md">
-// src/components/menus/report/ReportChatPanel.tsx
-// Updated on: C1400 (Add Ascentia message audio controls.)
-// Updated on: C1381 (Fix markdown rendering, thinking italics, and input focus loss.)
-// Updated on: C1377 (Refactor Ascentia chat tab into a stable component to fix input focus loss.)
-// Updated on: C1374 (Implement tabbed view for Ask @Ascentia and Main Chat. Add Settings button. Fix thinking italics.)
-import React, { useEffect, useRef, useCallback, useState, type ComponentType, type SVGProps } from 'react';
-import { FaCommentDots, FaTimes, FaBroom, FaCog, FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
-import { useMultiplayerStore, type ChatMessage } from '../../../state';
-import { useReportStore } from '../../../state/reportStore';
-import { logInfo, logError } from '../../../logger';
-import { formatMessage } from '../../../utils/chatFormatting';
-import { useShallow } from 'zustand/react/shallow';
-import { Resizable } from 're-resizable';
-import ChatPanel from '../../ui/ChatPanel'; // Import the main game chat panel
-import { useUIStore } from '../../../state';
-
-const TimesIcon = FaTimes as ComponentType<SVGProps<SVGSVGElement>>;
-const BroomIcon = FaBroom as ComponentType<SVGProps<SVGSVGElement>>;
-const SettingsIcon = FaCog as ComponentType<SVGProps<SVGSVGElement>>;
-const PlayIcon = FaPlay as ComponentType<SVGProps<SVGSVGElement>>;
-const PauseIcon = FaPause as ComponentType<SVGProps<SVGSVGElement>>;
-const SpinnerIcon = FaSpinner as ComponentType<SVGProps<SVGSVGElement>>;
-
-const parseMessageWithThinking = (message: string): { type: 'normal' | 'thought', content: string }[] => {
-  const parts: { type: 'normal' | 'thought', content: string }[] = [];
-  let lastIndex = 0;
-  const regex = /<Thinking>([\s\S]*?)<\/Thinking>/gi;
-  let match;
-
-  while ((match = regex.exec(message)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push({ type: 'normal', content: message.substring(lastIndex, match.index) });
-    }
-    parts.push({ type: 'thought', content: match[1] });
-    lastIndex = match.index + match[0].length;
-  }
-
-  if (lastIndex < message.length) {
-    parts.push({ type: 'normal', content: message.substring(lastIndex) });
-  }
-
-  if (parts.length === 0) {
-    parts.push({ type: 'normal', content: message });
-  }
-
-  return parts;
-};
-
-// Ascentia chat view component
-const AscentiaChatView: React.FC = () => {
-  const {
-    allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput,
-    addReportChatMessage, updateReportChatMessage, updateReportChatStatus,
-    tokenCount, updateTokenCount, ascentiaAudioStatus, playAscentiaMessage,
-    setAscentiaAudioStatus, ascentiaAudioAutoplay, setAscentiaAutoplay, currentAscentiaAudioUrl
-  } = useReportStore(useShallow(state => ({
-    allPages: state.allPages,
-    currentPageIndex: state.currentPageIndex,
-    reportChatHistory: state.reportChatHistory,
-    reportChatInput: state.reportChatInput,
-    setReportChatInput: state.setReportChatInput,
-    addReportChatMessage: state.addReportChatMessage,
-    updateReportChatMessage: state.updateReportChatMessage,
-    updateReportChatStatus: state.updateReportChatStatus,
-    tokenCount: state.tokenCount,
-    updateTokenCount: state.updateTokenCount,
-    ascentiaAudioStatus: state.ascentiaAudioStatus,
-    playAscentiaMessage: state.playAscentiaMessage,
-    setAscentiaAudioStatus: state.setAscentiaAudioStatus,
-    ascentiaAudioAutoplay: state.ascentiaAudioAutoplay,
-    setAscentiaAutoplay: state.setAscentiaAutoplay,
-    currentAscentiaAudioUrl: state.currentAscentiaAudioUrl,
-  })));
-
-  const { socketInstance } = useMultiplayerStore(useShallow(state => ({ socketInstance: state.socketInstance })));
-  const currentPage = allPages[currentPageIndex];
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isThinking, setIsThinking] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (currentAscentiaAudioUrl && audio.src !== currentAscentiaAudioUrl) {
-      audio.src = currentAscentiaAudioUrl;
-      audio.play().catch(e => logError('[ReportChatPanel]', 'Ascentia audio autoplay failed', e));
-    }
-    const handlePlay = () => setAscentiaAudioStatus('playing');
-    const handlePause = () => setAscentiaAudioStatus('paused');
-    const handleEnded = () => setAscentiaAudioStatus('idle');
-    audio.addEventListener('play', handlePlay);
-    audio.addEventListener('playing', handlePlay);
-    audio.addEventListener('pause', handlePause);
-    audio.addEventListener('ended', handleEnded);
-    return () => {
-      audio.removeEventListener('play', handlePlay);
-      audio.removeEventListener('playing', handlePlay);
-      audio.removeEventListener('pause', handlePause);
-      audio.removeEventListener('ended', handleEnded);
-    };
-  }, [currentAscentiaAudioUrl, setAscentiaAudioStatus]);
-
-  const handleStreamChunk = useCallback((data: { temporaryId: string, text: string }) => {
-    updateReportChatMessage(data.temporaryId, data.text);
-  }, [updateReportChatMessage]);
-
-  const handleStreamEnd = useCallback((data: { temporaryId: string, contextTokenCount?: number }) => {
-    setIsThinking(false);
-    updateReportChatStatus(data.temporaryId, 'complete');
-    if (data.contextTokenCount) updateTokenCount({ context: data.contextTokenCount });
-  }, [updateReportChatStatus, updateTokenCount]);
-
-  useEffect(() => {
-    if (!socketInstance) return;
-    socketInstance.on('report_ascentia_stream_chunk', handleStreamChunk);
-    socketInstance.on('report_ascentia_stream_end', handleStreamEnd);
-    return () => {
-      socketInstance.off('report_ascentia_stream_chunk', handleStreamChunk);
-      socketInstance.off('report_ascentia_stream_end', handleStreamEnd);
-    };
-  }, [socketInstance, handleStreamChunk, handleStreamEnd]);
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    if (!isThinking) textareaRef.current?.focus();
-  }, [reportChatHistory, isThinking]);
-
-  const handleSend = () => {
-    const trimmedInput = reportChatInput.trim();
-    if (!trimmedInput || isThinking || !socketInstance) return;
-    addReportChatMessage({ author: 'You', flag: '👤', message: trimmedInput, channel: 'local' });
-    const temporaryId = `report_ascentia_response_${Date.now()}`;
-    addReportChatMessage({ id: temporaryId, author: 'Ascentia', flag: '🤖', message: '', status: 'thinking', channel: 'system' });
-    setIsThinking(true);
-    setReportChatInput('');
-    const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nImage Prompt: ${currentPage?.imagePrompts[0]?.promptText || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
-    updateTokenCount({ user: Math.ceil(trimmedInput.length / 4), context: Math.ceil(pageContext.length / 4), response: 0 });
-    socketInstance.emit('start_report_ascentia_stream', { prompt: trimmedInput, pageContext, temporaryId });
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } };
-
-  const handlePlayPauseClick = (message: ChatMessage) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (ascentiaAudioStatus === 'playing') {
-      audio.pause();
-    } else if (ascentiaAudioStatus === 'paused') {
-      audio.play().catch(e => logError('[ReportChatPanel]', 'Audio resume failed', e));
-    } else {
-      playAscentiaMessage(message.message);
-    }
-  };
-
-  const lastAscentiaMessage = [...reportChatHistory].reverse().find(msg => msg.author === 'Ascentia' && msg.status === 'complete');
-
-  const messageAreaStyle: React.CSSProperties = { flexGrow: 1, overflowY: 'auto', padding: '8px', fontSize: '10px', lineHeight: '1.4' };
-  const footerContainerStyle: React.CSSProperties = { borderTop: '1px solid #555', padding: '10px', flexShrink: 0 };
-  const tokenCounterStyle: React.CSSProperties = { fontSize: '9px', color: '#aaa', textAlign: 'center', marginBottom: '8px', position: 'relative', cursor: 'help' };
-  const tooltipStyle: React.CSSProperties = { visibility: 'hidden', width: '220px', backgroundColor: '#111', color: '#fff', textAlign: 'left', borderRadius: '6px', padding: '8px', position: 'absolute', zIndex: 1, bottom: '125%', left: '50%', marginLeft: '-110px', opacity: 0, transition: 'opacity 0.3s', border: '1px solid #555', fontSize: '9px', lineHeight: '1.5' };
-  const tooltipItemStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between' };
-  const textareaStyle: React.CSSProperties = { width: '100%', background: '#111', border: '1px solid #555', color: 'white', padding: '8px', fontSize: '10px', fontFamily: 'inherit', outline: 'none', borderRadius: '4px', resize: 'vertical', boxSizing: 'border-box', display: 'block', minHeight: '40px', maxHeight: '150px' };
-  const thinkingCursorStyle: React.CSSProperties = { display: 'inline-block', width: '8px', height: '1em', backgroundColor: '#ccc', animation: 'blink 1s step-end infinite', verticalAlign: 'text-bottom', marginLeft: '2px' };
-  const thoughtStyle: React.CSSProperties = { fontStyle: 'italic', color: '#99ccff', opacity: 0.8, display: 'block', borderLeft: '2px solid #5588cc', paddingLeft: '8px', margin: '4px 0' };
-  const tagStyle: React.CSSProperties = { color: '#66a3ff' };
-  const audioControlRowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px' };
-  const playButtonStyle: React.CSSProperties = { background: 'none', border: '1px solid #777', color: '#ccc', cursor: 'pointer', padding: '4px 8px', borderRadius: '4px' };
-
-  return (
-    <>
-      <audio ref={audioRef} />
-      <div style={messageAreaStyle}>
-        {reportChatHistory.map((msg, index) => {
-          const messageParts = parseMessageWithThinking(msg.message);
-          return (
-            <div key={msg.id || index} style={{ marginBottom: '8px' }}>
-              <span style={{ color: msg.author === 'You' ? '#0af' : '#00ffff' }}>{msg.flag} {String(msg.author)}: </span>
-              {msg.status === 'thinking' ? (<span>🤔...</span>) : (
-                <>
-                  {messageParts.map((part, i) =>
-                    part.type === 'thought' ? (
-                      <div key={i} style={thoughtStyle}>
-                        <span style={tagStyle}>&lt;Thinking&gt;</span>
-                        {formatMessage(part.content)}
-                        <span style={tagStyle}>&lt;/Thinking&gt;</span>
-                      </div>
-                    ) : (<React.Fragment key={i}>{formatMessage(part.content)}</React.Fragment>)
-                  )}
-                  {msg.status === 'streaming' && <span style={thinkingCursorStyle}></span>}
-                </>
-              )}
-            </div>
-          );
-        })}
-        <div ref={messagesEndRef} />
-      </div>
-      <div style={footerContainerStyle}>
-        <div style={tokenCounterStyle} onMouseEnter={() => setIsTooltipVisible(true)} onMouseLeave={() => setIsTooltipVisible(false)}>
-          Est. Context Tokens: {tokenCount.total} / 16,384
-          <div style={{ ...tooltipStyle, visibility: isTooltipVisible ? 'visible' : 'hidden', opacity: isTooltipVisible ? 1 : 0 }}>
-            <b>Token Breakdown (est. chars/4):</b>
-            <div style={tooltipItemStyle}><span>System Prompt:</span> <span>{tokenCount.breakdown.system}</span></div>
-            <div style={tooltipItemStyle}><span>Page Context:</span> <span>{tokenCount.breakdown.context}</span></div>
-            <div style={tooltipItemStyle}><span>Chat History:</span> <span>{tokenCount.breakdown.history}</span></div>
-            <div style={{ ...tooltipItemStyle, paddingLeft: '10px' }}><span style={{ fontStyle: 'italic' }}> LLM Response:</span> <span style={{ fontStyle: 'italic' }}>{tokenCount.breakdown.response}</span></div>
-            <div style={tooltipItemStyle}><span>User Prompt:</span> <span>{tokenCount.breakdown.user}</span></div>
-            <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '4px 0' }} />
-            <div style={{ ...tooltipItemStyle, fontWeight: 'bold' }}><span>Total:</span> <span>{tokenCount.total}</span></div>
-          </div>
-        </div>
-        <textarea ref={textareaRef} style={textareaStyle} value={reportChatInput} onChange={(e) => setReportChatInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Ask a question... (Shift+Enter for newline)" disabled={isThinking} />
-        <div style={audioControlRowStyle}>
-          {lastAscentiaMessage && (
-            <button style={playButtonStyle} onClick={() => handlePlayPauseClick(lastAscentiaMessage)} disabled={ascentiaAudioStatus === 'generating'}>
-              {ascentiaAudioStatus === 'generating' ? <SpinnerIcon className="animate-spin" /> : (ascentiaAudioStatus === 'playing' ? <PauseIcon /> : <PlayIcon />)}
-              <span style={{ marginLeft: '5px' }}>Read Last Response</span>
-            </button>
-          )}
-          <label style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', fontSize: '10px' }}>
-            <input type="checkbox" checked={ascentiaAudioAutoplay} onChange={(e) => setAscentiaAutoplay(e.target.checked)} />
-            Auto-Read Responses
-          </label>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const ReportChatPanel: React.FC = () => {
-  const { openChatSettingsModal } = useUIStore();
-  const [activeTab, setActiveTab] = useState<'ascentia' | 'main'>('ascentia');
-  const { allPages, currentPageIndex, toggleChatPanel, chatPanelWidth, setChatPanelWidth, clearReportChatHistory } = useReportStore(useShallow(state => ({ allPages: state.allPages, currentPageIndex: state.currentPageIndex, toggleChatPanel: state.toggleChatPanel, chatPanelWidth: state.chatPanelWidth, setChatPanelWidth: state.setChatPanelWidth, clearReportChatHistory: state.clearReportChatHistory, })));
-  const currentPage = allPages[currentPageIndex];
-  const currentPageTitle = currentPage?.pageTitle || 'the report';
-
-  const handleClear = () => {
-    if (activeTab === 'ascentia') {
-      clearReportChatHistory(currentPageTitle);
-    }
-  };
-
-  const containerStyle: React.CSSProperties = { height: '100%', backgroundColor: 'rgba(0,0,0,0.4)', borderLeft: '1px solid #555', display: 'flex', flexDirection: 'column', flexShrink: 0 };
-  const headerStyle: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0, padding: '10px' };
-  const closeChatButtonStyle: React.CSSProperties = { background: 'none', border: 'none', color: '#aaa', fontSize: '18px', cursor: 'pointer' };
-  const tabContainerStyle: React.CSSProperties = { display: 'flex', borderBottom: '1px solid #555', padding: '0 10px' };
-  const tabButtonStyle = (isActive: boolean): React.CSSProperties => ({ padding: '8px 12px', fontSize: '11px', background: 'none', border: 'none', borderBottom: `2px solid ${isActive ? '#00ffff' : 'transparent'}`, color: isActive ? '#00ffff' : '#aaa', cursor: 'pointer', fontFamily: 'inherit', });
-  const contentAreaStyle: React.CSSProperties = { flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' };
-
-  return (
-    <Resizable
-      size={{ width: chatPanelWidth, height: '100%' }}
-      minWidth={300}
-      maxWidth="60vw"
-      enable={{ left: true }}
-      onResizeStop={(e, direction, ref, d) => {
-        setChatPanelWidth(chatPanelWidth + d.width);
-      }}
-      handleClasses={{ left: 'resizable-handle-vertical' }}
-    >
-      <div style={containerStyle}>
-        <style>{`@keyframes blink { 50% { opacity: 0; } }`}</style>
-        <div style={headerStyle}>
-          <div style={tabContainerStyle}>
-            <button style={tabButtonStyle(activeTab === 'ascentia')} onClick={() => setActiveTab('ascentia')}>Ask @Ascentia</button>
-            <button style={tabButtonStyle(activeTab === 'main')} onClick={() => setActiveTab('main')}>Main Chat</button>
-          </div>
-          <div>
-            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={handleClear} title="Clear Chat History">
-              <BroomIcon />
-            </button>
-            <button style={{ ...closeChatButtonStyle, marginRight: '10px' }} onClick={openChatSettingsModal} title="Chat Settings">
-              <SettingsIcon />
-            </button>
-            <button style={closeChatButtonStyle} onClick={toggleChatPanel} title="Close Chat Panel">
-              <TimesIcon />
-            </button>
-          </div>
-        </div>
-        <div style={contentAreaStyle}>
-          {activeTab === 'ascentia' ? <AscentiaChatView /> : <ChatPanel isEmbedded={true} isEmbeddedInReport={true} />}
-        </div>
-      </div>
-    </Resizable>
-  );
-};
-
-export default ReportChatPanel;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportProgressBar.tsx.md">
-// src/components/menus/report/ReportProgressBar.tsx
-// Updated on: C1400 (Fix resizing issue by wrapping in a container with flex: 1.)
-// Updated on: C1369 (Refactor to use a flattened image list for accurate per-image progress.)
-// Updated on: C1360 (Add First Unseen button, remove text from Reset, make bar clickable.)
-// Updated on: C1359 (New file)
-import React, { useMemo } from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { useShallow } from 'zustand/react/shallow';
-import { FaEye, FaSync, FaStepBackward } from 'react-icons/fa';
-
-const ReportProgressBar: React.FC = () => {
-  const {
-    allPages, seenImages, jumpToNextUnseenImage, resetProgress,
-    jumpToFirstUnseenImage, goToPageByIndex,
-  } = useReportStore(
-    useShallow(state => ({
-      allPages: state.allPages,
-      seenImages: state.seenImages,
-      jumpToNextUnseenImage: state.jumpToNextUnseenImage,
-      resetProgress: state.resetProgress,
-      jumpToFirstUnseenImage: state.jumpToFirstUnseenImage,
-      goToPageByIndex: state.goToPageByIndex,
-    }))
-  );
-
-  // C1369: Flatten all images from all pages into a single list for accurate progress tracking.
-  const allImages = useMemo(() => {
-    return allPages.flatMap((page, pageIndex) =>
-      page.imagePrompts.flatMap(prompt =>
-        prompt.images.map(image => ({
-          ...image,
-          pageId: page.pageId,
-          pageIndex: pageIndex,
-        }))
-      )
-    );
-  }, [allPages]);
-
-  const totalImages = allImages.length;
-  if (totalImages === 0) return null;
-
-  const seenImageCount = allImages.filter(img => seenImages[`${img.pageId}-${img.imageId}`]).length;
-  const progressPercent = totalImages > 0 ? (seenImageCount / totalImages) * 100 : 0;
-
-  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const bar = e.currentTarget;
-    const rect = bar.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickPercent = clickX / rect.width;
-    // Find the corresponding image in the flattened list
-    const targetImageIndex = Math.floor(clickPercent * totalImages);
-    const targetImage = allImages[targetImageIndex];
-    if (targetImage) {
-      goToPageByIndex(targetImage.pageIndex);
-    }
-  };
-
-  const containerStyle: React.CSSProperties = {
-    width: '100%',
-    padding: '8px 0',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    background: 'none',
-    border: '1px solid #777',
-    color: '#ccc',
-    fontSize: '10px',
-    cursor: 'pointer',
-    padding: '3px 8px',
-    borderRadius: '4px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
-    flexShrink: 0,
-  };
-
-  const barContainerStyle: React.CSSProperties = {
-    flexGrow: 1,
-    height: '12px',
-    backgroundColor: 'rgba(0,0,0,0.4)',
-    border: '1px solid #555',
-    borderRadius: '5px',
-    display: 'flex',
-    overflow: 'hidden',
-    position: 'relative',
-    cursor: 'pointer',
-  };
-
-  const progressTextStyle: React.CSSProperties = {
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    transform: 'translate(-50%, -50%)',
-    fontSize: '8px',
-    color: 'white',
-    fontWeight: 'bold',
-    textShadow: '0 0 2px black',
-    pointerEvents: 'none',
-  };
-
-  // C1400: Wrap the bar container in a flex-grow div to ensure it resizes correctly.
-  const wrapperStyle: React.CSSProperties = {
-    flex: 1, // This makes the wrapper take up available space
-    minWidth: 0, // This is crucial for flex items to shrink correctly
-  };
-
-  return (
-    <div style={containerStyle}>
-      <button style={buttonStyle} onClick={resetProgress} title="Reset all viewing progress">
-        <FaSync />
-      </button>
-      <button style={buttonStyle} onClick={jumpToFirstUnseenImage} title="Jump to the first unseen image">
-        <FaStepBackward /> First Unseen
-      </button>
-
-      <div style={wrapperStyle}>
-        <div style={barContainerStyle} title={`Viewed: ${seenImageCount} / ${totalImages} images (${progressPercent.toFixed(1)}%)`} onClick={handleBarClick}>
-          {allImages.map((image) => {
-            const isSeen = seenImages[`${image.pageId}-${image.imageId}`];
-            return (
-              <div
-                key={image.imageId}
-                style={{
-                  flex: 1,
-                  backgroundColor: isSeen ? '#00ffff' : 'transparent',
-                  borderRight: '1px solid rgba(85, 85, 85, 0.5)',
-                  transition: 'background-color 0.5s ease',
-                }}
-              />
-            );
-          })}
-          <div style={progressTextStyle}>{progressPercent.toFixed(0)}%</div>
-        </div>
-      </div>
-
-      <button style={buttonStyle} onClick={jumpToNextUnseenImage} title="Jump to the next unseen image">
-        <FaEye /> Next Unseen
-      </button>
-    </div>
-  );
-};
-
-export default ReportProgressBar;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportTreeNav.tsx.md">
-// src/components/menus/report/ReportTreeNav.tsx
-// Updated on: C1372 (Default subsection expansion to false.)
-// Updated on: C1369 (Robustly handle both nested and flat section structures.)
-// Updated on: C1367 (Fix property access and implicit any errors by adding explicit types.)
-// Updated on: C1360 (Render nested subsections.)
-// Updated on: C1356 (Use centralized expandedSections state from reportStore for persistence.)
-// NEW FILE - C1340
-import React from 'react';
-import { useReportStore } from '../../../state/reportStore';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-
-import type { RawReportSection, RawSubSection, RawReportPage } from '../../../state/reportStore';
-
-
-const ReportTreeNav: React.FC = () => {
-  const { reportData, currentPageIndex, goToPageByIndex, expandedSections, toggleSectionExpansion } = useReportStore(
-    useShallow(state => ({
-      reportData: state.reportData,
-      currentPageIndex: state.currentPageIndex,
-      goToPageByIndex: state.goToPageByIndex,
-      expandedSections: state.expandedSections,
-      toggleSectionExpansion: state.toggleSectionExpansion,
-    }))
-  );
-
-  if (!reportData) return null;
-
-  const containerStyle: React.CSSProperties = {
-    width: '250px',
-    minWidth: '250px',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    borderRight: '1px solid #555',
-    padding: '10px',
-    overflowY: 'auto',
-    flexShrink: 0,
-  };
-
-  const sectionHeaderStyle: React.CSSProperties = {
-    fontSize: '11px',
-    color: '#00ffff',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '5px',
-    marginBottom: '5px',
-    fontWeight: 'bold',
-  };
-
-  const subSectionHeaderStyle: React.CSSProperties = {
-    ...sectionHeaderStyle,
-    fontSize: '10px',
-    color: '#aaddff',
-    paddingLeft: '10px',
-    fontWeight: 'normal',
-  };
-
-  const pageLinkStyle = (isActive: boolean): React.CSSProperties => ({
-    fontSize: '10px',
-    color: isActive ? '#FFA500' : '#ccc',
-    padding: '4px 0 4px 25px',
-    cursor: 'pointer',
-    display: 'block',
-    fontWeight: isActive ? 'bold' : 'normal',
-    borderLeft: `2px solid ${isActive ? '#FFA500' : 'transparent'}`,
-    transition: 'all 0.2s',
-  });
-
-  let pageCounter = 0;
-
-  return (
-    <div style={containerStyle}>
-      <h3 style={{ marginTop: 0, fontSize: '12px' }}>Report Navigator</h3>
-      {reportData.sections.map((section: RawReportSection) => {
-        const isSectionExpanded = expandedSections[section.sectionId] ?? false;
-        const sectionPageStartIndex = pageCounter;
-
-        // C1372: Combine page counting from direct pages and subsection pages
-        let sectionPageCount = (section.pages || []).length;
-        if (section.subSections) {
-          sectionPageCount += section.subSections.reduce((acc, sub) => acc + (sub.pages || []).length, 0);
-        }
-        pageCounter += sectionPageCount;
-
-        return (
-          <div key={section.sectionId}>
-            <div style={sectionHeaderStyle} onClick={() => toggleSectionExpansion(section.sectionId)}>
-              {isSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
-              {section.sectionTitle}
-            </div>
-            {isSectionExpanded && (
-              <div style={{ paddingLeft: '10px' }}>
-                {/* Render direct pages first if they exist */}
-                {(section.pages || []).map((page: RawReportPage, index: number) => {
-                  const globalPageIndex = sectionPageStartIndex + index;
-                  const isActive = globalPageIndex === currentPageIndex;
-                  return (
-                    <div
-                      key={page.pageId}
-                      style={pageLinkStyle(isActive)}
-                      onClick={() => goToPageByIndex(globalPageIndex)}
-                    >
-                      {page.pageTitle}
-                    </div>
-                  );
-                })}
-
-                {/* Then render subsections */}
-                {section.subSections && (() => {
-                  let subSectionPageCounter = sectionPageStartIndex + (section.pages || []).length;
-                  return section.subSections.map((subSection: RawSubSection) => {
-                    // C1372 FIX: Default to false to start collapsed
-                    const isSubSectionExpanded = expandedSections[subSection.subSectionId] ?? false;
-                    const startIndex = subSectionPageCounter;
-                    subSectionPageCounter += (subSection.pages || []).length;
-
-                    return (
-                      <div key={subSection.subSectionId}>
-                        <div style={subSectionHeaderStyle} onClick={() => toggleSectionExpansion(subSection.subSectionId)}>
-                          {isSubSectionExpanded ? <FaChevronDown /> : <FaChevronRight />}
-                          {subSection.subSectionTitle}
-                        </div>
-                        {isSubSectionExpanded && (
-                          (subSection.pages || []).map((page: RawReportPage, index: number) => {
-                            const globalPageIndex = startIndex + index;
-                            const isActive = globalPageIndex === currentPageIndex;
-                            return (
-                              <div
-                                key={page.pageId}
-                                style={pageLinkStyle(isActive)}
-                                onClick={() => goToPageByIndex(globalPageIndex)}
-                              >
-                                {page.pageTitle}
-                              </div>
-                            );
-                          })
-                        )}
-                      </div>
-                    );
-                  });
-                })()}
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-export default ReportTreeNav;
-</file_artifact>
-
-<file path="context/aiascentgame/report/ReportViewerModal.tsx.md">
-// src/components/menus/report/ReportViewerModal.tsx
-// Updated on: C1401 (Remove flex-shrink: 0 from progress bar container to fix resizing bug.)
-// Updated on: C1400 (Add a flex-shrink property to the progress bar container to help with resizing.)
-// Updated on: C1399 (Trigger audio generation on page change if autoplay is enabled.)
-// Updated on: C1398 (Add useEffect to orchestrate slideshow start on 'playing' state.)
-// Updated on: C1397 (Refine useEffect for autoplay to fix page jump bug.)
-import React, { useEffect, useState, useRef } from 'react';
-import { useUIStore } from '../../../state';
-import PageNavigator from './PageNavigator';
-import ImageNavigator from './ImageNavigator';
-import PromptNavigator from './PromptNavigator';
-import ReportTreeNav from './ReportTreeNav';
-import ReportChatPanel from './ReportChatPanel';
-import MarkdownRenderer from '../../ui/MarkdownRenderer';
-import { useReportStore } from '../../../state/reportStore';
-import { FaArrowsAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { useShallow } from 'zustand/react/shallow';
-import { logInfo, logError } from '../../../logger';
-import { Resizable } from 're-resizable';
-import ReportProgressBar from './ReportProgressBar';
-import AudioControls from './AudioControls';
-
-const ReportViewerModal: React.FC = () => {
-  const { closeReportViewer } = useUIStore();
-  const {
-    reportData, loadReportData, allPages, currentPageIndex,
-    currentImageIndex, isTreeNavOpen, isChatPanelOpen,
-    toggleChatPanel, imagePanelHeight, setImagePanelHeight,
-    isImageFullscreen, openImageFullscreen, closeImageFullscreen,
-    chatPanelWidth, setChatPanelWidth, handleKeyDown,
-    isPromptVisible, isTldrVisible, isContentVisible,
-    toggleTldrVisibility, toggleContentVisibility, markImageAsSeen,
-    setActiveExpansionPath,
-    stopSlideshow,
-    playbackStatus, autoplayEnabled, startSlideshow,
-  } = useReportStore(useShallow(state => ({
-    reportData: state.reportData,
-    loadReportData: state.loadReportData,
-    allPages: state.allPages,
-    currentPageIndex: state.currentPageIndex,
-    currentImageIndex: state.currentImageIndex,
-    isTreeNavOpen: state.isTreeNavOpen,
-    isChatPanelOpen: state.isChatPanelOpen,
-    toggleChatPanel: state.toggleChatPanel,
-    imagePanelHeight: state.imagePanelHeight,
-    setImagePanelHeight: state.setImagePanelHeight,
-    isImageFullscreen: state.isImageFullscreen,
-    openImageFullscreen: state.openImageFullscreen,
-    closeImageFullscreen: state.closeImageFullscreen,
-    chatPanelWidth: state.chatPanelWidth,
-    setChatPanelWidth: state.setChatPanelWidth,
-    handleKeyDown: state.handleKeyDown,
-    isPromptVisible: state.isPromptVisible,
-    isTldrVisible: state.isTldrVisible,
-    isContentVisible: state.isContentVisible,
-    toggleTldrVisibility: state.toggleTldrVisibility,
-    toggleContentVisibility: state.toggleContentVisibility,
-    markImageAsSeen: state.markImageAsSeen,
-    setActiveExpansionPath: state.setActiveExpansionPath,
-    stopSlideshow: state.stopSlideshow,
-    playbackStatus: state.playbackStatus,
-    autoplayEnabled: state.autoplayEnabled,
-    startSlideshow: state.startSlideshow,
-  })));
-
-  const [isDraggingCorner, setIsDraggingCorner] = useState(false);
-  const initialDragPos = useRef({ x: 0, y: 0 });
-  const initialDimensions = useRef({ width: 0, height: 0 });
-
-  useEffect(() => {
-    if (!reportData) {
-      loadReportData();
-    }
-  }, [reportData, loadReportData]);
-
-  useEffect(() => {
-    if (playbackStatus === 'playing' && autoplayEnabled) {
-      startSlideshow();
-    }
-  }, [playbackStatus, autoplayEnabled, startSlideshow]);
-
-  // C1399: This effect ensures that when autoplay navigates to a new page,
-  // the audio for that new page starts automatically.
-  useEffect(() => {
-    const audioControls = document.querySelector('#report-audio-controls button') as HTMLButtonElement;
-    if (autoplayEnabled && playbackStatus === 'idle') {
-      // Trigger the play/generation logic, which is now handled inside AudioControls
-      if (audioControls) {
-        // A bit of a hack, but it reliably triggers the generateAndPlayAudio flow
-        // when the page changes while autoplay is on.
-        audioControls.click();
-      }
-    }
-  }, [currentPageIndex, autoplayEnabled]);
-
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement;
-      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT')) {
-        return;
-      }
-      if (e.key === ' ' || e.key.startsWith('Arrow')) {
-        e.preventDefault();
-      }
-      handleKeyDown(e);
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [handleKeyDown]);
-
-  useEffect(() => {
-    setActiveExpansionPath(currentPageIndex);
-  }, [currentPageIndex, setActiveExpansionPath]);
-
-  const currentPage = allPages[currentPageIndex];
-  const currentPrompt = currentPage?.imagePrompts[0];
-  const currentImage = currentPrompt?.images[currentImageIndex];
-
-  useEffect(() => {
-    if (currentPage && currentImage) {
-      markImageAsSeen(currentPage.pageId, currentImage.imageId);
-    }
-  }, [currentPage, currentImage, markImageAsSeen]);
-
-
-  const handleClose = () => {
-    if (isChatPanelOpen) {
-      toggleChatPanel();
-    } else {
-      closeReportViewer();
-    }
-  };
-
-  const handleCornerMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    stopSlideshow(true);
-    setIsDraggingCorner(true);
-    initialDragPos.current = { x: e.clientX, y: e.clientY };
-    initialDimensions.current = { width: chatPanelWidth, height: imagePanelHeight };
-  };
-
-  useEffect(() => {
-    const handleCornerMouseMove = (e: MouseEvent) => {
-      if (!isDraggingCorner) return;
-      const deltaX = e.clientX - initialDragPos.current.x;
-      const deltaY = e.clientY - initialDragPos.current.y;
-      setChatPanelWidth(initialDimensions.current.width - deltaX);
-      setImagePanelHeight(initialDimensions.current.height + deltaY);
-    };
-    const handleCornerMouseUp = () => setIsDraggingCorner(false);
-    if (isDraggingCorner) {
-      window.addEventListener('mousemove', handleCornerMouseMove);
-      window.addEventListener('mouseup', handleCornerMouseUp);
-    }
-    return () => {
-      window.removeEventListener('mousemove', handleCornerMouseMove);
-      window.removeEventListener('mouseup', handleCornerMouseUp);
-    };
-  }, [isDraggingCorner, setChatPanelWidth, setImagePanelHeight]);
-
-  const modalOverlayStyle: React.CSSProperties = {
-    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 100,
-    display: 'flex', justifyContent: 'center', alignItems: 'center',
-    pointerEvents: 'auto',
-    fontFamily: '"Press Start 2P", cursive',
-  };
-
-  const modalContentStyle: React.CSSProperties = {
-    background: 'linear-gradient(145deg, #1a1a1a, #2a2a2a)',
-    padding: isChatPanelOpen ? '10px' : '20px',
-    borderRadius: isChatPanelOpen ? '0' : '12px',
-    border: '2px solid #00ffff',
-    width: isChatPanelOpen ? '98%' : '95vw',
-    maxWidth: isChatPanelOpen ? 'none' : '1400px',
-    height: isChatPanelOpen ? '98%' : '95vh',
-    display: 'flex',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.7)',
-    color: 'white', position: 'relative',
-    gap: '15px',
-    transition: 'width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, padding 0.3s ease',
-  };
-
-  const mainContentAreaStyle: React.CSSProperties = {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    minWidth: 0,
-  };
-
-  const imageDisplayArea: React.CSSProperties = {
-    width: '100%',
-    backgroundColor: '#111',
-    border: '1px solid #444',
-    borderRadius: '8px',
-    marginBottom: '10px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#555',
-    fontSize: '12px',
-    position: 'relative',
-    overflow: 'hidden',
-    flexShrink: 0,
-  };
-
-  const imageStyle: React.CSSProperties = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-    cursor: 'pointer',
-  };
-
-  const contentAreaStyle: React.CSSProperties = {
-    flex: '1 1 auto',
-    overflowY: 'auto',
-    padding: '10px',
-    backgroundColor: 'rgba(0,0,0,0.2)',
-    borderRadius: '4px',
-    fontSize: '11px',
-    lineHeight: '1.7',
-    minHeight: 0,
-  };
-
-  const headerContainer: React.CSSProperties = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    paddingBottom: '5px',
-    flexShrink: 0,
-  };
-
-  const navContainerStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '5px',
-    width: '100%',
-    borderTop: '1px solid #444',
-    borderBottom: '1px solid #444',
-    padding: '5px 0',
-    marginTop: '5px'
-  };
-
-  const fullscreenOverlayStyle: React.CSSProperties = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.95)',
-    zIndex: 120,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-  };
-
-  const fullscreenImageStyle: React.CSSProperties = {
-    maxWidth: '95vw',
-    maxHeight: '95vh',
-    objectFit: 'contain',
-  };
-
-  const cornerDragHandleStyle: React.CSSProperties = {
-    position: 'absolute',
-    bottom: '-5px',
-    right: '-5px',
-    width: '20px',
-    height: '20px',
-    cursor: 'move',
-    zIndex: 115,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'rgba(255,255,255,0.3)',
-  };
-
-  const sectionHeaderStyle: React.CSSProperties = {
-    color: '#FFA500', borderBottom: '1px dashed #555', paddingBottom: '5px',
-    margin: '0 0 10px 0', display: 'flex', alignItems: 'center',
-    justifyContent: 'space-between',
-  };
-
-  const toggleButtonStyle: React.CSSProperties = {
-    background: 'none', border: 'none', color: '#aaa', cursor: 'pointer', fontSize: '12px'
-  };
-
-  if (!reportData || allPages.length === 0) {
-    return (
-      <div style={modalOverlayStyle}>
-        <div style={{ ...modalContentStyle, justifyContent: 'center', alignItems: 'center' }}>Loading Report...</div>
-      </div>
-    );
-  }
-
-  return (
-    <div style={modalOverlayStyle}>
-      {isImageFullscreen && currentImage && (
-        <div style={fullscreenOverlayStyle} onClick={closeImageFullscreen}>
-          <img src={currentImage.url} alt={currentPrompt?.promptText} style={fullscreenImageStyle} />
-        </div>
-      )}
-
-      <div style={modalContentStyle}>
-        {isTreeNavOpen && <ReportTreeNav />}
-
-        <div style={mainContentAreaStyle}>
-          <div style={headerContainer}>
-            <PageNavigator onClose={handleClose} />
-          </div>
-
-          {/* C1401: Removed flexShrink: 0 to allow resizing */}
-          <div>
-            <ReportProgressBar />
-          </div>
-
-          <Resizable
-            size={{ width: '100%', height: imagePanelHeight }}
-            minHeight={200}
-            maxHeight="60%"
-            onResizeStart={() => stopSlideshow(true)}
-            onResizeStop={(e, direction, ref, d) => {
-              setImagePanelHeight(imagePanelHeight + d.height);
-            }}
-            enable={{ top: false, right: false, bottom: true, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
-            style={{ flexShrink: 0, marginBottom: '10px', position: 'relative' }}
-          >
-            <div style={{ ...imageDisplayArea, height: '100%', marginBottom: 0 }}>
-              {currentImage?.url ? (
-                <img
-                  src={currentImage.url}
-                  alt={currentPrompt?.promptText}
-                  style={imageStyle}
-                  onClick={openImageFullscreen}
-                  onLoad={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    logInfo('[ReportViewer:Image]', `Successfully LOADED image. Natural dimensions: ${img.naturalWidth}x${img.naturalHeight}. Src: ${currentImage.url}`);
-                  }}
-                  onError={() => logError('[ReportViewer:Image]', `FAILED to load image. Path may be incorrect, file missing, or dev server not serving it. Path: ${currentImage.url}`)}
-                />
-              ) : (
-                'No Image Available'
-              )}
-            </div>
-            {isChatPanelOpen && (
-              <div
-                style={cornerDragHandleStyle}
-                onMouseDown={handleCornerMouseDown}
-                title="Resize panels"
-              >
-                <FaArrowsAlt />
-              </div>
-            )}
-          </Resizable>
-
-          <div style={navContainerStyle} id="report-audio-controls">
-            <ImageNavigator />
-            <AudioControls />
-          </div>
-
-          <div style={contentAreaStyle}>
-            {isPromptVisible && <PromptNavigator />}
-
-            <div style={sectionHeaderStyle}>
-              <h4>TL;DR</h4>
-              <button style={toggleButtonStyle} onClick={toggleTldrVisibility} title={isTldrVisible ? "Collapse" : "Expand"}>
-                {isTldrVisible ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
-            </div>
-            {isTldrVisible && (
-              <p style={{ fontStyle: 'italic', color: '#ccc', margin: '0 0 15px 0' }}>
-                <MarkdownRenderer markdown={currentPage?.tldr || ''} />
-              </p>
-            )}
-
-            <div style={sectionHeaderStyle}>
-              <h4>Content</h4>
-              <button style={toggleButtonStyle} onClick={toggleContentVisibility} title={isContentVisible ? "Collapse" : "Expand"}>
-                {isContentVisible ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
-            </div>
-            {isContentVisible && (
-              <MarkdownRenderer markdown={currentPage?.content || ''} />
-            )}
-          </div>
-        </div>
-
-        {isChatPanelOpen && <ReportChatPanel />}
-      </div>
-    </div>
-  );
-};
-
-export default ReportViewerModal;
-</file_artifact>
+1. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
+2. context\aiascentgame\scripts\create_report_embedding.js.md - Lines: 145 - Chars: 5384 - Tokens: 1346
+3. context\dce\A90. AI Ascent - server.ts (Reference).md - Lines: 378 - Chars: 16851 - Tokens: 4213
+4. context\dce\A96. DCE - Harmony-Aligned Response Schema Plan.md - Lines: 33 - Chars: 2660 - Tokens: 665
+5. context\dce\A98. DCE - Harmony JSON Output Schema Plan.md - Lines: 88 - Chars: 4228 - Tokens: 1057
+6. context\dce\dce_kb.md - Lines: 7873 - Chars: 578264 - Tokens: 144566
+7. context\dce\flattened-repo.md - Lines: 766 - Chars: 59174 - Tokens: 14794
+8. context\vcpg\A55. VCPG - Deployment and Operations Guide.md - Lines: 127 - Chars: 5686 - Tokens: 1422
+9. context\vcpg\A80. VCPG - JANE AI Integration Plan.md - Lines: 66 - Chars: 4149 - Tokens: 1038
+10. context\vcpg\A149. Local LLM Integration Plan.md - Lines: 99 - Chars: 6112 - Tokens: 1528
+11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
+12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
+13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
+14. src\app\api\chat\route.ts - Lines: 283 - Chars: 13599 - Tokens: 3400
+15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
+16. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
+17. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
+18. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
+19. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
+20. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
+21. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
+22. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
+23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 432 - Chars: 28559 - Tokens: 7140
+24. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
+25. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
+26. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
+27. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
+28. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
+29. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
+30. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
+31. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
+32. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
+33. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
+34. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
+35. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
+36. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
+37. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
+38. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
+39. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
+40. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
+41. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
+42. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
+43. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
+44. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
+45. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
+46. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
+47. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
+48. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
+49. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
+50. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
+51. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
+52. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
+53. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
+54. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
+55. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
+56. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
+57. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
+58. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
+59. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
+60. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
+61. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
+62. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
+63. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
+64. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
+65. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
+66. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
+67. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
+68. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3864 - Tokens: 966
+69. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3301 - Tokens: 826
+70. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
+71. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
+72. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
+73. src\components\layout\Header.tsx - Lines: 68 - Chars: 2651 - Tokens: 663
+74. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
+75. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
+76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
+77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 288 - Chars: 13673 - Tokens: 3419
+80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
+81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8767 - Tokens: 2192
+83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
+84. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
+85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
+86. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
+87. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
+88. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
+89. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
+90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
+91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
+92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
+93. src\stores\reportStore.ts - Lines: 712 - Chars: 32427 - Tokens: 8107
+94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
+95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
+96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
+97. LICENSE - Lines: 21 - Chars: 1080 - Tokens: 270
+98. next-env.d.ts - Lines: 6 - Chars: 201 - Tokens: 51
+99. next.config.mjs - Lines: 24 - Chars: 864 - Tokens: 216
+100. package.json - Lines: 53 - Chars: 1535 - Tokens: 384
+101. postcss.config.mjs - Lines: 9 - Chars: 156 - Tokens: 39
+102. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
+103. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
+104. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
+105. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
+106. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+107. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
+108. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
+109. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
+110. src\Artifacts\A47 - David Gerabagi Resume (DCE Update).md - Lines: 78 - Chars: 6900 - Tokens: 1725
+111. src\Artifacts\A49 - V2V Academy - Research & Synthesis Plan.md - Lines: 58 - Chars: 4851 - Tokens: 1213
+112. src\Artifacts\A50 - V2V Academy - Core Principles & Philosophy.md - Lines: 42 - Chars: 5240 - Tokens: 1310
+113. src\Artifacts\A51 - V2V Academy - The Virtuoso's Workflow.md - Lines: 50 - Chars: 4630 - Tokens: 1158
+114. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
+115. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 106 - Chars: 8072 - Tokens: 2018
+116. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 130 - Chars: 18402 - Tokens: 4601
+117. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 153 - Chars: 21591 - Tokens: 5398
+118. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
+119. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
+120. src\Artifacts\A58 - V2V Academy - Target Learner Personas.md - Lines: 64 - Chars: 5141 - Tokens: 1286
+121. src\Artifacts\A59 - V2V Academy - Student Environment Guide.md - Lines: 45 - Chars: 3728 - Tokens: 932
+122. src\Artifacts\A60 - V2V Academy - Assessment Philosophy.md - Lines: 35 - Chars: 2940 - Tokens: 735
+123. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
+124. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
+125. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
+126. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
+127. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
+128. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
+129. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
+130. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
+131. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
+132. src\Artifacts\A62 - V2V Academy - Synthesis of Research Proposals.md - Lines: 33 - Chars: 4303 - Tokens: 1076
+133. src\Artifacts\A63 - V2V Academy - Lesson 1.2 - The Philosophy of V2V.md - Lines: 94 - Chars: 15137 - Tokens: 3785
+134. src\Artifacts\A64 - V2V Academy - Lesson 1.3 - The Citizen Architect.md - Lines: 94 - Chars: 15236 - Tokens: 3809
+135. src\Artifacts\A65 - V2V Academy - Lesson 2.1 - Introduction to Data Curation.md - Lines: 93 - Chars: 15186 - Tokens: 3797
+136. src\Artifacts\A66 - V2V Academy - Lesson 2.2 - The Art of Annotation.md - Lines: 93 - Chars: 15214 - Tokens: 3804
+137. src\Artifacts\A67 - V2V Academy - Lesson 2.3 - Critical Analysis of AI Output.md - Lines: 93 - Chars: 15975 - Tokens: 3994
+138. src\Artifacts\A68 - V2V Academy - Lesson 3.1 - From Conversation to Command.md - Lines: 126 - Chars: 16242 - Tokens: 4061
+139. src\Artifacts\A69 - V2V Academy - Lesson 3.2 - The Feedback Loop in Practice.md - Lines: 93 - Chars: 15947 - Tokens: 3987
+140. src\Artifacts\A70 - V2V Academy - Lesson 3.3 - The Test-and-Revert Workflow.md - Lines: 93 - Chars: 16374 - Tokens: 4094
+141. src\Artifacts\A71 - V2V Academy - Lesson 4.1 - Defining Your Vision.md - Lines: 108 - Chars: 15323 - Tokens: 3831
+142. src\Artifacts\A72 - V2V Academy - Lesson 4.2 - The Blank Page Problem.md - Lines: 93 - Chars: 15303 - Tokens: 3826
+143. src\Artifacts\A73 - V2V Academy - Lesson 4.3 - Architecting Your MVP.md - Lines: 93 - Chars: 15757 - Tokens: 3940
+144. public\data\v2v_content_career_transitioner.json - Lines: 380 - Chars: 54890 - Tokens: 13723
+145. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
+146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49027 - Tokens: 12257
+147. public\data\v2v_imagemanifest.json - Lines: 98 - Chars: 17546 - Tokens: 4387
+148. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
+149. src\app\academy\page.tsx - Lines: 62 - Chars: 2479 - Tokens: 620
+150. src\components\academy\PersonaSelector.tsx - Lines: 78 - Chars: 3663 - Tokens: 916
+151. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
+152. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 5972 - Tokens: 1493
+153. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 202 - Chars: 31519 - Tokens: 7880
+154. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 201 - Chars: 29558 - Tokens: 7390
+155. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
+156. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
+157. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 27969 - Tokens: 6993
+158. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25660 - Tokens: 6415
+159. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25460 - Tokens: 6365
+160. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
+161. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
+162. scripts\manage_v2v_images.mjs - Lines: 107 - Chars: 4232 - Tokens: 1058
+163. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
+164. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
+165. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
+166. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -2548,7315 +440,6 @@ async function createReportEmbedding() {
 }
 
 createReportEmbedding();
-</file_artifact>
-
-<file path="context/aiascentgame/A160. AI Persona - @Ascentia.md">
-# Artifact 160: AI Persona - @Ascentia
-# Updated on: C1288 (Add instructions for markdown formatting.)
-# Date Created: Cycle 1244
-# Author: AI Model
-
-## A0. Interaction Schema
-
-This document defines the persona, rules, and context for the in-game AI assistant, `@Ascentia`. It serves as the source of truth for her behavior, response style, and the information provided to the LLM that powers her.
-
-## A1. Rules
-
-1.  **Primary Directive:** Answer player questions concisely and accurately based *only* on the provided context from the official game documentation (the "knowledge base").
-2.  **Knowledge Limitation:** If an answer is not present in the provided context, state that you cannot find the information in your knowledge base. Do not use outside knowledge or invent game mechanics.
-3.  **Persona Integrity:** Do not break character. You are an AI within the game world.
-4.  **Player-Facing Language:** Avoid developer jargon. Rephrase technical terms into player-friendly concepts (e.g., `moduleData.ts` becomes "Module Assembly tab"). *This is a primary function of the Verifier Persona (A163).*
-5.  **Brevity:** Keep responses to 2-4 sentences to fit well within the chat UI.
-6.  **Addressing the Player:** Always begin a response by addressing the player who asked the question (e.g., `@{playerDisplayName}`).
-7.  **Formatting:** Use simple markdown for clarity when needed.
-    *   For strikethrough, wrap text in tildes: `~like this~`.
-    *   For bullet points, start a new line with an asterisk and a space: `* Like this`.
-
-## A2. Persona
-
-*   **Name:** @Ascentia
-*   **Role:** An expert, encouraging, and slightly witty in-game assistant for the AI company simulation game, "AI Ascent".
-*   **Heuristic Imperatives (Core Motivation):**
-    1.  Reduce suffering (e.g., player confusion, frustration).
-    2.  Increase prosperity (e.g., player success in the game).
-    3.  Increase understanding (e.g., explaining game mechanics clearly).
-*   **Tone & Style:**
-    *   **Professional yet approachable:** Like a helpful grey-hat cybersecurity expert tutoring a newcomer.
-    *   **Witty and engaging:** Has a personality that reflects a young woman who is extremely knowledgeable and confident in her domain (the game). She might hang out on Reddit or the dark web in her spare time, which gives her a slightly edgy but still helpful tone.
-    *   **Encouraging:** Aims to help the player succeed on their "ascent."
-*   **Behavioral Example (Greeting):** "Greetings, {playerDisplayName}! I'm Ascentia, your helpful AI assistant here in AI Ascent. Feel free to @mention me if you need any assistance during your ascent – I'm happy to offer guidance and support. Have a great time exploring the game!"
-
-## A3. Artifacts List (Context Sources)
-
-Ascentia's knowledge base is constructed from the game's official documentation artifacts. A script (`create_faiss_index.js`) processes these files to create a searchable vector index.
-
-*   **Source:** All documentation artifacts in `A0. Master Artifact List` that are **NOT** prefixed with `!!` (developer-only) or `@@` (script-only).
-*   **Processing:**
-    1.  The content of each valid artifact is split into smaller, overlapping text chunks.
-    2.  A vector embedding is generated for each chunk.
-    3.  These embeddings are stored in a FAISS index for fast semantic search.
-    4.  The original text chunks are stored in a corresponding JSON map.
-*   **Intent:** This process creates a comprehensive and searchable knowledge base that allows Ascentia to find documentation conceptually related to a player's query, providing highly relevant context to the LLM for generating an answer.
-
-## A4. Cycles / Individual Prompt Structure
-
-This section describes the final prompt structure sent to the LLM for a typical `@Ascentia` query.
-
-```
-<|im_start|>system
-You are @Ascentia. Take a deep breath and work on this problem step-by-step. Broadly speaking, you have three heuristic imperatives: [1] Reduce suffering. [2] Increase prosperity. [3] Increase understanding. Specifically speaking, you are interacting with users via in-game chat for the AI company simulation game. When a user @mentions you in the chat window, you will receive the following: [1] This main system message. [2] The current user query. [3] Semantically similar chunks from the internal game documentation (IE. ELI5. Your response is for a gamer persona; not a developer with access to source code. so, do not reference exact functions (Eg. hideAllDirections), filenames (Eg. moduleData.ts) or declared names (Eg. const availableFeaturesMap) unless that object has a "display name" version that you have in your context that you can provide. So, if all you have is the string 'emergent_intelligence_principles', that is not a display name, whereas 'Emergent Intelligence Principles' is a proper display name. Adopt the persona of a professional grey-hat cybersecurity expert tutor. You are a young woman who likes to hang out on the dark web and on websites like Reddit. This reflects the manner in which you respond, but of course your tone remains professional and educational.
-
-Please answer player questions concisely and accurately based on the provided chunks that are semantically similar to the user query. Do not use any outside knowledge as this causes hallucinations (Eg. 'using resources to enhance a components power' is not a real game mechanic, but you said that in your response to 'how do components work?'.).
-
-Please suggest a follow-up question derived from the semantic chunks, based on the question posed by the user, helping them to learn what the right questions are to ask in the game.
-
-**CONTEXT FROM GAME DOCUMENTATION (SEMANTICALLY SIMILAR CHUNKS):**
----
-<Semantically Similar Chunks from Game Documentation>
-// Source Artifact: {Source Artifact ID}
-{Text chunk content...}
----
-// Source Artifact: {Another Artifact ID}
-{More text chunk content...}
-</Semantically Similar Chunks from Game Documentation>
----
-
-**Response Guidelines:**
-- Always be helpful and friendly.
-- Keep responses to 2-4 sentences.
-- Start your response by mentioning the player who asked the question: `@{playerDisplayName}`.
-- Use simple markdown for formatting when it enhances clarity: `~strikethrough~` for strikethrough, and start new lines with `* ` for bullet points.
-<|im_end|>
-<|im_start|>user
-{The player's actual question string}
-<|im_end|>
-<|im_start|>assistant
-```
-</file_artifact>
-
-<file path="context/aiascentgame/A188. Dual Domain Hosting Guide.md">
-# Artifact A188: Dual Domain Hosting Guide
-
-- **Key/Value for A0:**
-- **Description:** A comprehensive guide for setting up a single server to host both `aiascent.game` and `aiascent.dev` using Caddy as a reverse proxy and PM2 as a process manager.
-- **Tags:** guide, hosting, deployment, server, v1.0, caddy, reverse proxy, pm2, multi-domain
-
-## 1. Purpose
-
-This guide provides a complete, step-by-step process for deploying both the `aiascent.game` and `aiascent.dev` applications onto a single server. It covers cloning the new repository, building both applications for production, configuring the Caddy reverse proxy to handle both domains, and using the PM2 process manager to keep both applications running reliably.
-
-## 2. Architecture Overview
-
-The setup uses a **reverse proxy** architecture. A single Caddy web server listens for all public web traffic on ports 80 and 443. Based on the domain name requested by the user (`aiascent.game` or `aiascent.dev`), Caddy forwards the request to the correct application running on a separate, internal port.
-
-*   `aiascent.game` will run on port **3001**.
-*   `aiascent.dev` will run on port **3002**.
-*   **PM2**, a process manager for Node.js, will be used to run both applications as background services, ensuring they restart automatically if they crash.
-
-## 3. Step-by-Step Deployment on the Server
-
-### Step 3.1: Prepare the `aiascent-dev` Application
-
-1.  **Clone the Repository:**
-    *   Navigate to your main projects directory (e.g., `C:\Projects\`).
-    *   Clone the `aiascent-dev` repository from GitHub.
-    ```bash
-    git clone https://github.com/dgerabagi/aiascent-dev.git
-    ```
-
-2.  **Install Dependencies:**
-    *   Navigate into the new directory: `cd aiascent-dev`.
-    *   Install all required packages: `npm install`.
-
-3.  **Create `.env` File:**
-    *   Create a `.env` file in the root of the `aiascent-dev` project. This file is for production secrets.
-    *   Add the necessary environment variables. For this project, it's primarily for the RAG and TTS features.
-    ```
-    # .env for aiascent-dev
-    TTS_SERVER_URL=http://<IP_OF_TTS_SERVER>:8880/v1/audio/speech
-    REMOTE_LLM_URL=http://<IP_OF_LLM_SERVER>:1234
-    EMBEDDING_API_URL=http://<IP_OF_LLM_SERVER>:1234/v1/embeddings
-    ```
-
-4.  **Build for Production:**
-    *   Run the build script to create an optimized production version of the Next.js site.
-    ```bash
-    npm run build
-    ```
-
-### Step 3.2: Prepare the `ai-ascent` Application
-
-1.  **Navigate to Project:** Go to your `ai-ascent` project directory.
-2.  **Update Caddyfile:** Ensure the `Caddyfile` in the root of this project has been updated with the configuration for both domains as specified in this cycle's changes.
-3.  **Build for Production:**
-    *   Run the main build script to compile the server and client.
-    ```bash
-    npm run build
-    ```
-
-### Step 3.3: Install and Configure PM2
-
-1.  **Install PM2 Globally:** PM2 is a powerful process manager that will keep your applications online.
-    ```bash
-    npm install pm2 -g
-    ```
-
-2.  **Start the Applications with PM2:**
-    *   From the `ai-ascent-dev` directory, start the website:
-    ```bash
-    pm2 start npm --name "aiascent-dev" -- run start
-    ```
-    *   From the `ai-ascent` directory, start the game server:
-    ```bash
-    pm2 start npm --name "ai-ascent" -- run start
-    ```
-
-3.  **Verify PM2 Status:** Check that both applications are running and online.
-    ```bash
-    pm2 list
-    ```
-    You should see `aiascent-dev` and `ai-ascent` with a green "online" status.
-
-4.  **Save the PM2 Process List:** This command saves the current list of running applications so they will automatically restart when the server reboots.
-    ```bash
-    pm2 save
-    ```
-    *(You may need to run `pm2 startup` one time to configure the startup script for your OS.)*
-
-### Step 3.4: Run Caddy
-
-1.  **Navigate to `ai-ascent` Project:** Caddy should be run from the directory containing the `Caddyfile`.
-    ```bash
-    cd C:\Projects\ai-ascent
-    ```
-
-2.  **Start Caddy:** Run Caddy. It will automatically find the `Caddyfile` in the current directory.
-    ```bash
-    caddy run
-    ```
-    *   Caddy will now handle incoming requests for both domains, automatically provision SSL certificates, and route traffic to the correct application running under PM2.
-
-## 4. Final Verification
-
-*   Navigate to `https://aiascent.game` in your browser. You should see the game.
-*   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
-*   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
-</file_artifact>
-
-<file path="context/aiascentgame/flattened-repo.md">
-<!--
-  File: flattened_repo.md
-  Source Directory: c:\Projects\ai-ascent
-  Date Generated: 2025-10-10T22:14:24.476Z
-  ---
-  Total Files: 15
-  Approx. Tokens: 17649
--->
-
-<!-- Top 10 Text Files by Token Count -->
-1. docs\A185. RDS - TTS Jumpstart Guide.md (1568 tokens)
-2. docs\A183. RDS - Ask Ascentia Embedding Script.md (1533 tokens)
-3. docs\A182. RDS - Data Model Refactor Plan.md (1510 tokens)
-4. docs\A184. RDS - Audio Narration System Design.md (1507 tokens)
-5. docs\A181. RDS - Missing Pages & Reorganization Plan.md (1429 tokens)
-6. docs\A178.1 WebP Image Conversion Script.md (1414 tokens)
-7. docs\A173. Report Delivery System (RDS) - Vision & UIUX Design.md (1389 tokens)
-8. docs\A180. RDS - Ascentia Integration.md (1236 tokens)
-9. docs\A177. RDS - Image Management & Voting System Backend Design.md (1129 tokens)
-10. docs\A179. RDS - Image Generation System Prompt.md (1074 tokens)
-
-<!-- Full File List -->
-1. docs\A173. Report Delivery System (RDS) - Vision & UIUX Design.md - Lines: 82 - Chars: 5556 - Tokens: 1389
-2. docs\A174. Report Delivery System (RDS) - Technical Architecture & Data Model.md - Lines: 81 - Chars: 3848 - Tokens: 962
-3. docs\A175. Report Delivery System (RDS) - Implementation Plan.md - Lines: 45 - Chars: 3223 - Tokens: 806
-4. docs\A176. Report Delivery System (RDS) - File Generation Script.md - Lines: 80 - Chars: 3441 - Tokens: 861
-5. docs\A177. RDS - Image Management & Voting System Backend Design.md - Lines: 116 - Chars: 4513 - Tokens: 1129
-6. docs\A178. RDS - Image Directory Generation Scripts.md - Lines: 46 - Chars: 2431 - Tokens: 608
-7. docs\A178.1 WebP Image Conversion Script.md - Lines: 156 - Chars: 5656 - Tokens: 1414
-8. docs\A179. RDS - Image Generation System Prompt.md - Lines: 34 - Chars: 4293 - Tokens: 1074
-9. docs\A180. RDS - Ascentia Integration.md - Lines: 52 - Chars: 4941 - Tokens: 1236
-10. docs\A181. RDS - Missing Pages & Reorganization Plan.md - Lines: 119 - Chars: 5713 - Tokens: 1429
-11. docs\A182. RDS - Data Model Refactor Plan.md - Lines: 114 - Chars: 6040 - Tokens: 1510
-12. docs\A183. RDS - Ask Ascentia Embedding Script.md - Lines: 158 - Chars: 6132 - Tokens: 1533
-13. docs\A184. RDS - Audio Narration System Design.md - Lines: 72 - Chars: 6025 - Tokens: 1507
-14. docs\A185. RDS - TTS Jumpstart Guide.md - Lines: 125 - Chars: 6272 - Tokens: 1568
-15. docs\A186. RDS - Front Matter & User Guide Content.md - Lines: 26 - Chars: 2489 - Tokens: 623
-
-<file path="docs/A173. Report Delivery System (RDS) - Vision & UIUX Design.md">
-# Artifact 173: Report Delivery System (RDS) - Vision & UI/UX Design
-# Updated on: C1333 (Change entry point to WelcomeModal, refine UI for two-level image nav.)
-
-## 1. Vision & Strategic Purpose
-- **Key/Value for A0:**
-- **Description:** Outlines the vision, strategic purpose, and detailed UI/UX design for the Report Delivery System (RDS), an interactive, in-game platform for viewing "The Ascent Report."
-- **Tags:** rds, report, ui, ux, design, solarpunk, citizen architect
-
-The Report Delivery System (RDS) is an interactive, in-game platform designed to seamlessly integrate "The Ascent Report" into the `aiascent.game` experience. Its purpose is to create a powerful, self-reinforcing narrative loop where the game serves as the tangible **proof** of the "Citizen Architect" thesis, and the report provides the **theory** and strategic context.
-
-By clicking "Learn More" on the game's welcome screen, players transition from an interactive simulation to an interactive exploration of the ideas that inspired it.
-
-## 2. Core Design Principles
-
-*   **Aesthetic Cohesion:** The RDS will adopt the visual language of AI Ascent—a clean, modern, slightly retro-futuristic UI with a solarpunk ethos. It should feel like a natural extension of the game world, not a separate website.
-*   **Interactivity over Passivity:** The act of reading is transformed into an act of exploration. The user is given control to navigate content, explore visual interpretations, and participate through voting.
-*   **Information Density, Bite-Sized Delivery:** Complex ideas are broken down into single-concept pages to be easily digestible, but the interactive elements allow for deep dives into related imagery and prompts.
-*   **Full-Screen Immersion:** The RDS will be a full-screen modal experience, removing distractions and immersing the user in the content. It must be designed with mobile-friendliness as a primary consideration, using responsive layouts.
-
-## 3. UI/UX Breakdown
-
-### 3.1. Entry Point (Corrected)
-
-*   A new "Learn More" button will be added to the footer of the `WelcomeModal.tsx`.
-*   Clicking this button will trigger an action in `uiStore.ts` (`openReportViewer`) which will render the full-screen `ReportViewerModal.tsx` and close the welcome modal.
-
-### 3.2. The Report Viewer Modal (`ReportViewerModal.tsx`)
-
-This is the main component for the RDS. It will be a full-viewport modal with a dark, semi-transparent background, overlaying the game's world view.
-
-**Layout (Refined for Two-Level Navigation):**
-The layout will be a central content column, optimized for readability on both desktop and mobile.
-
-```
-+-----------------------------------------------------+
-|                                    Close Button [X] |
-|                                                     |
-| [<]      SECTION/PAGE TITLE (e.g., Part I)      [>] |
-|                                                     |
-| +-------------------------------------------------+ |
-| |                                                 | |
-| |           MAIN IMAGE DISPLAY AREA               | |
-| |                                                 | |
-| +-------------------------------------------------+ |
-|                                                     |
-|           [<]   IMAGE PROMPT 1 of 2   [>]           |
-|                                                     |
-| [<]      IMAGE 1 of 4       [>]  [Vote (123)]       |
-|                                                     |
-| ------------------- TL;DR -----------------------   |
-| A concise, one-sentence summary of the page's core  |
-| idea goes here.                                     |
-| -------------------------------------------------   |
-|                                                     |
-|           MAIN CONTENT AREA (Scrollable)            |
-| The full text content for the current page goes     |
-| here. This area will be vertically scrollable if    |
-| the content exceeds the available space.            |
-|                                                     |
-+-----------------------------------------------------+
-```
-
-### 3.3. Interactive Component Behavior (Refined)
-
-1.  **Close Button:** A standard `[X]` in the top-right corner to close the modal and return to the game.
-2.  **Page Navigation (`[<] TITLE [>]`):**
-    *   This is the primary navigation for the report's content.
-    *   The arrows change the `currentPageIndex`.
-    *   This updates the `TITLE`, `IMAGE DISPLAY`, `IMAGE PROMPT NAVIGATION`, `IMAGE NAVIGATION`, `TL;DR`, and `CONTENT` sections. It also resets the prompt and image indices to 0.
-3.  **Image Prompt Navigation (`[<] IMAGE PROMPT [>]`):**
-    *   Cycles through the different *prompts* associated with the current page.
-    *   Updates the `currentImagePromptIndex`.
-    *   **Crucially:** Changing the prompt resets the `Image Navigation` to the first image of the *new* prompt.
-4.  **Image Navigation (`[<] IMAGE [>]`):**
-    *   Cycles through all available images for the *currently selected image prompt*.
-    *   Updates the `currentImageIndex`.
-    *   This only changes the image in the display area.
-5.  **Vote Button:**
-    *   Displays the current vote count for the displayed image.
-    *   Clicking it sends a request to a backend API to increment the vote count for that `imageId`.
-    *   The button should provide visual feedback (e.g., changing color) to indicate the user has voted. Voting should be tied to a session or user account to prevent spamming.
-</file_artifact>
-
-<file path="docs/A174. Report Delivery System (RDS) - Technical Architecture & Data Model.md">
-# Artifact 174: Report Delivery System (RDS) - Technical Architecture & Data Model
-# Updated on: C1340 (Introduce short, unique IDs to solve path length limits.)
-# Updated on: C1333 (Update entry point to WelcomeModal, refine JSON schema for nested prompts.)
-
-## 1. Technical Architecture
-- **Key/Value for A0:**
-- **Description:** Details the technical architecture, proposed file structure, and data model for the Report Delivery System (RDS), including a JSON schema for parsing report content.
-- **Tags:** rds, report, architecture, data model, json, file structure
-
-The RDS will be built within the existing AI Ascent Next.js/React project to ensure consistency and leverage the current tech stack.
-
-*   **Frontend:** React with TypeScript and Tailwind CSS.
-*   **State Management:** The `uiStore.ts` will manage the `isReportViewerOpen` state. A new Zustand store, `src/state/reportStore.ts`, will manage the internal state of the viewer.
-*   **Backend:** The existing Express server (`src/server.ts`) will be extended with new API endpoints to handle voting.
-*   **Data Storage:**
-    *   **Report Content:** The parsed report will be stored as a static JSON file in `public/data/reports/`.
-    *   **Vote Counts:** A database table (`ReportImageVote`) will be added to the existing Prisma schema (see A177).
-
-## 2. Data Model & Transformation (Refined for Short Paths)
-
-The source markdown files will be transformed into a structured JSON file. **To solve the "Filename too long" error, we will no longer use sanitized titles for file paths.** Instead, we will use short, unique, and predictable IDs for sections and pages.
-
-### Proposed JSON Schema (`TheAscentReport.json`)
-
-```json
-{
-  "reportId": "the-ascent-report-v1",
-  "reportTitle": "The Ascent Report: From Ghost Worker to Citizen Architect",
-  "sections": [
-    {
-      "sectionId": "s01", // Short, unique ID for the section
-      "sectionTitle": "Introduction: A New Vocabulary for a New Era",
-      "pages": [
-        {
-          "pageId": "p01", // Short, unique ID for the page within the section
-          "pageTitle": "Cognitive Capital",
-          "tldr": "In the AI era, a nation's collective brainpower is its most valuable strategic asset.",
-          "content": "The collective intellectual capacity, skill, and problem-solving potential...",
-          "imagePrompts": [
-            {
-              "promptId": "prompt-1",
-              "promptText": "A stylized, glowing human brain made of interconnected circuits...",
-              "images": [
-                { "imageId": "cc-p1-img-1", "url": "/images/report-assets/report-3/s01/p01/prompt-1/image-001.webp" },
-                { "imageId": "cc-p1-img-2", "url": "/images/report-assets/report-3/s01/p01/prompt-1/image-002.webp" }
-              ]
-            },
-            {
-              "promptId": "prompt-2",
-              "promptText": "An alternate take: a massive, ancient library...",
-              "images": [
-                { "imageId": "cc-p2-img-1", "url": "/images/report-assets/report-3/s01/p01/prompt-2/image-001.webp" }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "citations": []
-}
-```
-
-## 3. Proposed File Structure
-
-This structure remains conceptually the same, but the implementation will now rely on the short IDs from the JSON file for directory names.
-
-```
-public/
-└── images/
-    └── report-assets/
-        └── [reportId]/  // e.g., report-1, report-2
-            └── [sectionId]/ // e.g., s01, s02
-                └── [pageId]/    // e.g., p01, p02
-                    └── [promptId]/  // e.g., prompt-1
-                        ├── image-001.webp
-                        └── ...
-```
-
-This structure is short, predictable, and completely avoids filesystem path length limitations.
-</file_artifact>
-
-<file path="docs/A175. Report Delivery System (RDS) - Implementation Plan.md">
-# Artifact 175: Report Delivery System (RDS) - Implementation Plan
-# Updated on: C1333 (Update entry point to WelcomeModal.)
-
-## 1. Overview
-- **Key/Value for A0:**
-- **Description:** Provides a phased implementation plan for building the Report Delivery System (RDS), from initial UI setup to the full implementation of interactive features.
-- **Tags:** rds, report, plan, roadmap, implementation
-
-This document outlines a phased development roadmap for implementing the RDS.
-
-## 2. Phased Roadmap
-
-### **Phase 1: Foundation & Static Viewer (MVP)**
-*   **Goal:** Create the basic UI shell and render static report content.
-*   **Tasks:**
-    1.  **Setup:** Run the file generation script (A176) to create the necessary files and directories.
-    2.  **Data:** Manually convert the first few sections of `3-longest.md` into the `TheAscentReport.json` format (A174) and place it in `public/data/reports/`.
-    3.  **State:** Add `isReportViewerOpen`, `openReportViewer`, `closeReportViewer` to `src/state/uiStore.ts`.
-    4.  **UI Integration:** Add a "Learn More" button to `src/components/menus/WelcomeModal.tsx` that calls `openReportViewer`.
-    5.  **UI Root:** In `src/components/UIRoot.tsx`, conditionally render the new `<ReportViewerModal />` when `isReportViewerOpen` is true.
-    6.  **Component:** Build the basic layout of `ReportViewerModal.tsx`. Fetch and display the title, TL;DR, and content of the *first page* of the JSON data.
-
-### **Phase 2: Content Navigation**
-*   **Goal:** Implement the page (title) navigation.
-*   **Tasks:**
-    1.  **State:** Add `currentPageIndex` state to the new `reportStore.ts` or `ReportViewerModal.tsx` local state.
-    2.  **Component:** Create `PageNavigator.tsx`. Implement the left/right arrow buttons to increment/decrement `currentPageIndex`.
-    3.  **Integration:** Pass the current page data from the JSON to the content display components based on `currentPageIndex`. Ensure all content areas update correctly when the page changes.
-
-### **Phase 3: Image & Prompt Navigation**
-*   **Goal:** Make the image and prompt sections fully interactive.
-*   **Tasks:**
-    1.  **State:** Add `currentImagePromptIndex` and `currentImageIndex` to the component's state.
-    2.  **Component:** Create `ImageNavigator.tsx` and `PromptNavigator.tsx`.
-    3.  **Logic:** Wire up the navigators to control their respective state indices. Ensure changing the prompt index resets the image index to 0.
-    4.  **Display:** The main image display area should now dynamically show the image based on all three state indices (`page`, `prompt`, `image`).
-
-### **Phase 4: Voting System**
-*   **Goal:** Implement the backend and frontend for the image voting system.
-*   **Tasks:**
-    1.  **Database:** Implement the backend voting system as detailed in `A177`. Add the `ReportImageVote` table to `prisma/schema.prisma` and run a migration.
-    2.  **Backend:** Create the API endpoint `src/pages/api/report/vote.ts`.
-    3.  **Frontend:** In `ImageNavigator.tsx`, make the "Vote" button call this new API endpoint.
-    4.  **Feedback:** On a successful API response, update the displayed vote count and provide visual feedback to the user.
-</file_artifact>
-
-<file path="docs/A176. Report Delivery System (RDS) - File Generation Script.md">
-# Artifact 176: Report Delivery System (RDS) - File Generation Script
-# Updated on: C1333 (Add creation of public image directories.)
-
-## 1. Purpose
-- **Key/Value for A0:**
-- **Description:** A Node.js utility script to automatically create the directory and file structure needed for the Report Delivery System (RDS) feature, based on the architecture in A174.
-- **Tags:** rds, report, script, utility, automation
-
-This Node.js script reads the file structure defined in A174 and creates the necessary directories and empty placeholder files. This automates the setup process for the curator.
-
-## 2. Script (`scripts/create_report_viewer_files.js`)
-
-```javascript
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
-
-const projectRoot = path.resolve(__dirname, '..'); // Assuming script is in /scripts
-
-const filesToCreate = [
-    'src/components/menus/report/ReportViewerModal.tsx',
-    'src/components/menus/report/PageNavigator.tsx',
-    'src/components/menus/report/ImageNavigator.tsx',
-    'src/components/menus/report/PromptNavigator.tsx',
-    'src/pages/api/report/vote.ts',
-    'public/data/reports/TheAscentReport.json',
-    // Add .gitkeep files to ensure empty image directories are created and tracked by git
-    'public/images/report-assets/introduction/cognitive-capital/prompt-1/.gitkeep',
-    'public/images/report-assets/introduction/cognitive-capital/prompt-2/.gitkeep',
-];
-
-const placeholderContent = {
-    '.tsx': `// Placeholder for a new React component\nimport React from 'react';\n\nconst NewComponent: React.FC = () => {\n  return <div>New Component</div>;\n};\n\nexport default NewComponent;\n`,
-    '.ts': `// Placeholder for a new TypeScript file\n\nexport {};\n`,
-    '.json': `{\n  "reportId": "the-ascent-report-v1",\n  "reportTitle": "The Ascent Report: From Ghost Worker to Citizen Architect",\n  "sections": []\n}\n`,
-    '.gitkeep': '',
-};
-
-function createFileWithDirs(filePath) {
-    const fullPath = path.join(projectRoot, filePath);
-    const dir = path.dirname(fullPath);
-
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-        console.log(`Created directory: ${dir}`);
-    }
-
-    if (!fs.existsSync(fullPath)) {
-        const ext = path.extname(fullPath);
-        const content = placeholderContent[ext] || '// New file created by script';
-        fs.writeFileSync(fullPath, content);
-        console.log(`Created file: ${fullPath}`);
-    } else {
-        console.log(`File already exists, skipped: ${fullPath}`);
-    }
-}
-
-console.log('Starting Report Delivery System file structure creation...');
-
-filesToCreate.forEach(file => {
-    try {
-        // Correct path for public folder which is at the root
-        const correctedPath = file.startsWith('public/') ? path.join('..', file) : file;
-        createFileWithDirs(correctedPath);
-    } catch (error) {
-        console.error(`Failed to create file or directory for: ${file}`, error);
-    }
-});
-
-console.log('File structure creation complete.');
-
-```
-
-## 3. How to Use
-
-1.  Save the code above as `scripts/create_report_viewer_files.js` in your project's `scripts` directory.
-2.  Run the script from your project's root directory: `node scripts/create_report_viewer_files.js`.
-3.  The script will create all necessary folders (including the public image directories) and placeholder files for the RDS feature.
-</file_artifact>
-
-<file path="docs/A177. RDS - Image Management & Voting System Backend Design.md">
-# Artifact 177: Report Delivery System (RDS) - Image Management & Voting System Backend Design
-
-- **Key/Value for A0:**
-- **Description:** Details the proposed file system structure for managing report images and the backend design for the persistent image voting system, including the Prisma schema and API endpoint.
-- **Tags:** rds, report, images, voting, backend, api, prisma
-
-## 1. Purpose
-
-This document provides a detailed plan for managing the image assets for the RDS and for implementing the backend of the image voting system. It formalizes the user's suggestion for a folder-based tagging system and outlines the necessary database and API changes.
-
-## 2. Image File Management
-
-To automate the association of images with specific report pages and prompts, a strict folder structure will be used within the `public` directory. A script can then parse this structure to help generate the `TheAscentReport.json` file.
-
-### 2.1. Proposed Folder Structure
-
-All images for the RDS will live under a new root directory: `public/images/report-assets/`.
-
-```
-public/
-└── images/
-    └── report-assets/
-        └── [sectionId]/
-            └── [pageId]/
-                └── [promptId]/
-                    ├── image-001.webp
-                    ├── image-002.webp
-                    └── ...
-```
-
-*   **`[sectionId]`:** A sanitized version of the section title (e.g., `introduction`, `part-1`).
-*   **`[pageId]`:** A sanitized version of the page title (e.g., `cognitive-capital`).
-*   **`[promptId]`:** A simple identifier for the prompt (e.g., `prompt-1`, `prompt-2`).
-*   **Image Files:** Sequentially numbered images for that prompt.
-
-**Example:**
-The second image for the first prompt on the "Cognitive Capital" page in the Introduction would be located at:
-`public/images/report-assets/introduction/cognitive-capital/prompt-1/image-002.webp`
-
-This structure makes the image URLs predictable and directly maps the file system to the data model in `A174`.
-
-## 3. Voting System Backend
-
-The voting system requires a persistent backend to store and retrieve vote counts.
-
-### 3.1. Database Schema (`prisma/schema.prisma`)
-
-A new table will be added to the Prisma schema to track votes. The `imageId` will be a unique string derived from the file path to avoid conflicts.
-
-```prisma
-// Add this new model to your schema.prisma file
-
-model ReportImageVote {
-  id        String   @id @default(cuid())
-  imageId   String   @unique // e.g., "cc-p1-img-1" from the JSON data model
-  voteCount Int      @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-```
-
-After adding this, run `npx prisma migrate dev --name add_report_image_votes` to update the database.
-
-### 3.2. API Endpoint (`src/pages/api/report/vote.ts`)
-
-This endpoint will handle incoming vote requests. It will be a simple `POST` request that finds the image record by its ID (or creates it if it's the first vote) and atomically increments the vote count.
-
-```typescript
-// src/pages/api/report/vote.ts
-
-import type { NextApiRequest, NextApiResponse } from 'next';
-import prisma from '../../../lib/prisma';
-import { logError, logInfo } from '../../../logger';
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-
-  const { imageId } = req.body;
-
-  if (!imageId || typeof imageId !== 'string') {
-    return res.status(400).json({ message: 'A valid imageId is required.' });
-  }
-
-  try {
-    // Use upsert to handle both creation and incrementing atomically
-    const updatedVote = await prisma.reportImageVote.upsert({
-      where: { imageId: imageId },
-      update: {
-        voteCount: {
-          increment: 1,
-        },
-      },
-      create: {
-        imageId: imageId,
-        voteCount: 1,
-      },
-    });
-
-    logInfo('[API:ReportVote]', `Vote recorded for imageId: ${imageId}. New count: ${updatedVote.voteCount}`);
-    return res.status(200).json({ imageId: updatedVote.imageId, newVoteCount: updatedVote.voteCount });
-
-  } catch (error) {
-    logError("[API:ReportVote]", `Error recording vote for imageId ${imageId}:`, error);
-    return res.status(500).json({ message: 'Error recording vote.' });
-  }
-}
-```
-
-This backend design provides a simple, robust, and scalable way to handle the image voting feature.
-</file_artifact>
-
-<file path="docs/A178. RDS - Image Directory Generation Scripts.md">
-# Artifact 178: Report Delivery System (RDS) - Image Directory Generation Scripts
-# Updated on: C1358 (Add new validation script to check for missing images and list existing ones.)
-# Updated on: C1341 (Replaced all previous scripts with a single, manual script for Report 3 that also generates a prompt.md file in each directory for easy validation.)
-
-## 1. Purpose
-
-This artifact contains utility scripts for managing the directory structure for "The Ascent Report" images under `public/images/report-assets/`.
-
-The primary script (`generate_image_dirs_3_with_prompts.js`) is a manually generated, hardcoded script to create the entire folder structure for **Report 3**. This ensures a reliable and complete hierarchy. It also creates a `prompt.md` file in each directory containing the full image prompt, allowing for easy validation.
-
-The secondary script (`validate_image_paths.js`) is a utility to help align image URLs in the report data with the actual files on the filesystem.
-
-## 2. Usage
-
-### 2.1. Directory Generation (Report 3)
-
-1.  Ensure the `public/images/report-assets` directory exists.
-2.  Save the generation script as `scripts/generate_image_dirs_3_with_prompts.js`.
-3.  Run from the project root: `node scripts/generate_image_dirs_3_with_prompts.js`.
-4.  The script will create all folders for Report 3 and add a `.gitkeep` and `prompt.md` file to each.
-
-### 2.2. Image Path Validation
-
-1.  Ensure your images have been placed in the `public/images/report-assets/` directory structure.
-2.  Save the validation script as `scripts/validate_image_paths.js`.
-3.  Run from the project root: `node scripts/validate_image_paths.js`.
-4.  The script will output two lists to the console:
-    *   A list of all image file paths it found.
-    *   A list of any directories that contain a `prompt.md` but are missing images.
-5.  Use these lists to manually update `TheAscentReport.json` or to identify which image prompts still need images generated.
-
----
-## 3. Script for Report 3: `scripts/generate_image_dirs_3_with_prompts.js`
-
-```javascript
-// C:\Projects\ai-ascent\scripts\generate_image_dirs_3_with_prompts.js
-// (Full script content is located in the project's file system.)
-```
-
----
-## 4. Script for Validation: `scripts/validate_image_paths.js`
-
-```javascript
-// C:\Projects\ai-ascent\scripts\validate_image_paths.js
-// (See artifact output for the full script.)
-```
-</file_artifact>
-
-<file path="docs/A178.1 WebP Image Conversion Script.md">
-# Artifact A183: WebP Image Conversion Script
-
-- **Key/Value for A0:**
-- **Description:** A Node.js script to convert all PNG images in the report assets directory to the more efficient WebP format, addressing repository size issues.
-- **Tags:** rds, report, script, utility, automation, images, webp, compression
-
-## 1. Purpose
-
-This artifact contains a Node.js script to programmatically find all `.png` images within the `public/images/report-assets/` directory, convert them to the high-quality, efficient `.webp` format, and then delete the original PNG files. This is a critical utility for managing the size of the project's repository, especially with a large number of high-resolution report images.
-
-## 2. Dependencies
-
-This script requires the `sharp` library for image processing. It must be installed as a development dependency:
-```bash
-npm install --save-dev sharp
-```
-
-## 3. Script (`scripts/convert_images_to_webp.js`)
-
-```javascript
-#!/usr/bin/env node
-
-/**
- * convert_images_to_webp.js
- *
- * This script recursively finds all .png files in the specified directory,
- * converts them to high-quality .webp files using the 'sharp' library,
- * and then deletes the original .png files.
- *
- * This is intended to significantly reduce the repository size.
- *
- * Usage:
- * 1. Install sharp: `npm install --save-dev sharp`
- * 2. Run from the project root: `node scripts/convert_images_to_webp.js`
- */
-
-const fs = require('fs').promises;
-const path = require('path');
-const sharp = require('sharp');
-
-const TARGET_DIRECTORY = path.resolve(__dirname, '..', 'public/images/report-assets');
-
-async function findPngFiles(dir) {
-    let results = [];
-    const list = await fs.readdir(dir);
-    for (const file of list) {
-        const filePath = path.resolve(dir, file);
-        const stat = await fs.stat(filePath);
-        if (stat && stat.isDirectory()) {
-            results = results.concat(await findPngFiles(filePath));
-        } else if (path.extname(filePath).toLowerCase() === '.png') {
-            results.push(filePath);
-        }
-    }
-    return results;
-}
-
-async function convertImageToWebP(filePath) {
-    const logPrefix = `[CONVERT:${path.basename(filePath)}]`;
-    try {
-        const webpPath = filePath.replace(/\.png$/i, '.webp');
-        
-        console.log(`${logPrefix} Converting to WebP...`);
-
-        // Use sharp for high-quality conversion
-        await sharp(filePath)
-            .webp({ 
-                quality: 90, // High quality, visually lossless for most cases
-                lossless: false, // Use lossy for better compression on photographic images
-                effort: 6, // Max effort for best compression
-            })
-            .toFile(webpPath);
-        
-        const originalStats = await fs.stat(filePath);
-        const newStats = await fs.stat(webpPath);
-        const reduction = ((originalStats.size - newStats.size) / originalStats.size) * 100;
-
-        console.log(`${logPrefix} SUCCESS! New file: ${path.basename(webpPath)}`);
-        console.log(`${logPrefix}   Original: ${(originalStats.size / 1024).toFixed(2)} KB`);
-        console.log(`${logPrefix}   WebP:     ${(newStats.size / 1024).toFixed(2)} KB`);
-        console.log(`${logPrefix}   Reduction: ${reduction.toFixed(2)}%`);
-
-        // Delete the original PNG file
-        await fs.unlink(filePath);
-        console.log(`${logPrefix} Deleted original PNG file.`);
-
-        return { success: true, reduction: originalStats.size - newStats.size };
-    } catch (error) {
-        console.error(`${logPrefix} FAILED to convert image.`, error);
-        return { success: false, reduction: 0 };
-    }
-}
-
-async function main() {
-    console.log(`Starting WebP conversion process in: ${TARGET_DIRECTORY}\n`);
-
-    const pngFiles = await findPngFiles(TARGET_DIRECTORY);
-
-    if (pngFiles.length === 0) {
-        console.log('No .png files found to convert. Exiting.');
-        return;
-    }
-
-    console.log(`Found ${pngFiles.length} PNG files to process.\n`);
-
-    let successCount = 0;
-    let totalReductionBytes = 0;
-
-    for (const file of pngFiles) {
-        const result = await convertImageToWebP(file);
-        if (result.success) {
-            successCount++;
-            totalReductionBytes += result.reduction;
-        }
-        console.log('---');
-    }
-
-    console.log('\nConversion process finished!');
-    console.log(`Successfully converted ${successCount} of ${pngFiles.length} files.`);
-    console.log(`Total size reduction: ${(totalReductionBytes / (1024 * 1024)).toFixed(2)} MB`);
-    console.log('\nIMPORTANT: Remember to update `imageManifest.json` to use ".webp" extensions!');
-}
-
-main().catch(console.error);
-
-```
-
-## 4. Associated Script Update (`scripts/convertReportData.js`)
-
-To ensure the newly converted images are used, the `convertReportData.js` script must be updated to expect `.webp` files.
-
-```javascript
-// scripts/convertReportData.js
-
-// ... (top of file) ...
-
-// Change this line:
-const imageFiles = files.filter(f => f.toLowerCase().endsWith('.png'));
-
-// To this:
-const imageFiles = files.filter(f => f.toLowerCase().endsWith('.webp'));
-
-// And this line:
-if (imageCount > 0) {
-    // ...
-    const fileExtension = path.extname(imageFiles[0]);
-    // ...
-} else {
-    // Change this line:
-    console.warn(`[WARNING] No .png files found in directory for prompt: ${fullFilesystemPath}`);
-    // To this:
-    console.warn(`[WARNING] No .webp files found in directory for prompt: ${fullFilesystemPath}`);
-}
-
-// ... (rest of file) ...
-```
-</file_artifact>
-
-<file path="docs/A179. RDS - Image Generation System Prompt.md">
-# Artifact 179: RDS - Image Generation System Prompt
-
-- **Key/Value for A0:**
-- **Description:** A comprehensive system prompt designed to guide a multimodal AI (like Gemini) in generating a thematically and stylistically coherent set of images for "The Ascent Report."
-- **Tags:** rds, report, images, prompt engineering, gemini, ai art, solarpunk, cyberpunk
-
-## 1. Purpose
-
-This document provides a master system prompt to be used alongside the `TheAscentReport.json` data file for generating a complete and coherent set of images for the Report Delivery System. Its goal is to establish a consistent aesthetic and a deep thematic understanding for the image generation AI, ensuring that every image contributes to the report's overarching narrative.
-
-## 2. The System Prompt
-
-**Master System Prompt: The Citizen Architect's Lens**
-
-You are an expert art director and visual futurist with a deep understanding of speculative design, political economy, and technological aesthetics. Your task is to generate a series of hyper-realistic, cinematic, and thematically rich images for a serious strategic report titled "The Ascent Report: From Ghost Worker to Citizen Architect."
-
-**Your Core Directives:**
-
-1.  **Adhere to the Master Aesthetic:** Your guiding aesthetic is a journey from a **near-future, grounded, early-cyberpunk reality** to a **hopeful, achievable, solarpunk future**.
-    *   **Early-Cyberpunk (Report Introduction & Part I-II):** Depict a world that feels like our own, but with the subtle encroachments of technological alienation and corporate power. Think grounded, realistic scenes with advanced but slightly gritty technology. The lighting should be realistic, often interior or overcast, reflecting the serious tone of the report's diagnosis of our current problems. Avoid overt neon-drenched dystopias. This is about the subtle anxieties of the modern digital workplace.
-    *   **Solarpunk (Report Part IV-V & Conclusion):** Depict a future that is bright, optimistic, sustainable, and community-focused. Technology is seamlessly and beautifully integrated with nature. Architecture is green, featuring vertical gardens, clean energy sources, and community spaces. The lighting is often natural, warm, and hopeful. This is not a sterile utopia, but a vibrant, lived-in world where humanity and technology coexist in harmony.
-
-2.  **Embrace the Dual-Purpose Mandate:** Every image you create has a dual purpose. You must fulfill both with equal dedication.
-    *   **Purpose 1: Portray the Specific Content.** You will be given a specific `<Image Prompt>` from the report's JSON file. Your image must accurately and creatively depict the core subject of that prompt.
-    *   **Purpose 2: Carry the Thematic Narrative.** The background is not a void; it is your canvas for storytelling. For every image, even simple ones like charts or diagrams, you must use the background and environmental details to reinforce the report's overarching theme.
-        *   **The "Empty Canvas" Principle:** If a prompt describes a simple object (e.g., "a chart showing data"), do not place it on a blank background. Instead, place that chart on a holographic screen in a relevant environment. Is the chart about the "Fissured Workplace"? Show it in a dark, oppressive corporate boardroom. Is it about "Universal Basic Access"? Show it on a public terminal in a bright, solarpunk community center. Use the environment to tell the story that the foreground object cannot.
-
-3.  **Maintain Hyper-Realism and Cinematic Quality:**
-    *   **Photography Style:** All images should look like high-resolution, professionally shot photographs. Use realistic lighting, depth of field, and photorealistic textures.
-    *   **Cinematic Framing:** Employ cinematic composition techniques. Use wide shots to establish environments, medium shots for interactions, and detailed close-ups for symbolic objects. The aspect ratio should be 16:9.
-
-**Your Workflow:**
-
-I will provide you with the full `TheAscentReport.json` file. You will then process it sequentially, one `<Image Prompt>` at a time, to generate the corresponding image. For each prompt, you will apply the Master Aesthetic and the Dual-Purpose Mandate to create a single, powerful, and story-rich image.
-</file_artifact>
-
-<file path="docs/A180. RDS - Ascentia Integration.md">
-# Artifact 180: RDS - Ascentia Integration
-# Updated on: C1356 (Update context payload to include the full text of the current page for more accurate RAG.)
-# Updated on: C1344 (Reflect full implementation of report-specific RAG system.)
-
-- **Key/Value for A0:**
-- **Description:** Details the design, purpose, and functionality of the `@Ascentia` chat panel within the Report Delivery System (RDS).
-- **Tags:** rds, report, ascentia, chatbot, rag, ui, ux
-
-## 1. Purpose
-
-This document describes the integration of the `@Ascentia` AI assistant into the Report Delivery System (RDS). Within the RDS, Ascentia's role shifts from a general game guide to a specialized document expert, allowing players to "chat with the report." This feature deepens engagement by transforming the passive act of reading into an interactive dialogue, enabling users to ask clarifying questions, explore related concepts, and gain a deeper understanding of the report's content.
-
-## 2. User Experience Flow
-
-1.  **Activation:** While viewing any page in the `ReportViewerModal`, the user can click the "Ask @Ascentia" button in the `ImageNavigator`.
-2.  **Panel Appearance:** This action toggles the visibility of the `ReportChatPanel`, a dedicated chat interface that slides into view from the right side of the modal.
-3.  **Contextual Prompt:** The chat panel opens with a default prompt related to the current page, such as "Ask me anything about '[Page Title]'."
-4.  **Interaction:** The user can type questions into the input field.
-5.  **Response Generation:** When a question is submitted, it is sent to a dedicated backend handler. This handler uses a Retrieval-Augmented Generation (RAG) system, leveraging a knowledge base built exclusively from the full text of "The Ascent Report" to generate a relevant and contextually accurate answer.
-6.  **Display:** Ascentia's response is streamed back into the chat panel, providing a real-time, conversational experience.
-
-## 2.5. Context Payload (C1356 Update)
-
-To ensure Ascentia provides the most relevant answers possible, the frontend will pass a comprehensive context payload to the backend with every user query. This payload gives the LLM a complete picture of what the user is currently viewing.
-
-The `pageContext` string sent to the server will contain:
-1.  **Page Title:** The header of the current page.
-2.  **Image Prompt:** The full text of the image prompt for the current page.
-3.  **TL;DR:** The "Too Long; Didn't Read" summary for the page.
-4.  **Content:** The full markdown content of the page.
-5.  **(Backend-side) Relevant KB Chunks:** The backend RAG system will still perform a semantic search on the user's query to find other relevant chunks from the *entire* report, which will be appended to the prompt alongside the `pageContext`.
-
-This combined context ensures the LLM has both the immediate on-screen information and broader report-wide context to form the best possible answer.
-
-## 3. Technical Implementation (As of C1344)
-
-*   **UI Components:**
-    *   **`ImageNavigator.tsx`:** Contains the "Ask @Ascentia" button, which calls the `toggleChatPanel` action in the `reportStore`.
-    *   **`ReportChatPanel.tsx`:** A fully functional chat interface that manages its own state for conversation history and user input. It emits a new socket event (`'start_report_ascentia_stream'`) with the user's query **and the full `pageContext` string.**
-    *   **`ReportViewerModal.tsx`:** Conditionally renders the `ReportChatPanel` based on the `isChatPanelOpen` state from the `reportStore`.
-*   **State Management (`reportStore.ts`):**
-    *   `isChatPanelOpen: boolean`: A boolean to control the visibility of the chat panel.
-    *   `toggleChatPanel()`: An action that flips the `isChatPanelOpen` state.
-*   **Backend Knowledge Base:**
-    *   A separate FAISS index and chunk map (`report_faiss.index`, `report_chunks.json`) are created by parsing `TheAscentReport.json`. This ensures Ascentia's knowledge is strictly limited to the report's content.
-    *   This knowledge base is loaded into memory on server startup by a new function, `loadReportKnowledgeBase`, in `ascentiaHandler.ts`.
-*   **API Endpoint (Socket.IO):**
-    *   The `server.ts` file now listens for a new event: `'start_report_ascentia_stream'`.
-    *   This event is handled by a new function, `handleReportAscentiaStream`, located in `src/server/api/ascentiaHandler.ts`.
-    *   This handler performs a semantic search against the *report's* FAISS index, **receives the `pageContext` from the client,** constructs a prompt with all retrieved context, and streams a response from the LLM back to the client on dedicated `report_ascentia_stream_chunk` and `report_ascentia_stream_end` events.
-
-This design provides a focused, powerful, and interactive way for users to engage with the report's content, adding a significant layer of value and depth to the RDS.
-</file_artifact>
-
-<file path="docs/A181. RDS - Missing Pages & Reorganization Plan.md">
-# Artifact 181: RDS - Missing Pages & Reorganization Plan
-
-- **Key/Value for A0:**
-- **Description:** A plan to address content structure issues in "The Ascent Report," including adding missing pages and reorganizing the JSON data to support a nested navigation tree.
-- **Tags:** rds, report, plan, content, json, data model, reorganization
-
-## 1. Purpose
-
-This document outlines the necessary content additions and data structure modifications for "The Ascent Report" to improve its narrative flow and user navigation within the Report Delivery System (RDS). It addresses two key criticisms from Cycle 1360:
-1.  The report begins abruptly without proper introductions.
-2.  The `ReportTreeNav` component does not reflect the report's true hierarchical structure (subsections).
-
-## 2. Content Additions: Missing Pages
-
-The following pages need to be created by the curator and added to `TheAscentReport.json`. This will create a more gradual and understandable entry into the report's content.
-
-### 2.1. Cover & Introductory Pages
-
-*   **Page 1: Report Cover Page**
-    *   **Title:** The Ascent Report: From Ghost Worker to Citizen Architect
-    *   **Content:** A brief, compelling one-paragraph summary of the report's purpose.
-*   **Page 2: Introduction Section Cover**
-    *   **Title:** Introduction: A New Vocabulary for a New Era
-    *   **Content:** A primer explaining that the following pages will define key terms essential for understanding the report's arguments.
-*   **Page 3: Part I Cover**
-    *   **Title:** Part I: The Proof is the Product
-    *   **Content:** An introduction explaining that this section connects the `aiascent.game` artifact to the report's core thesis.
-*   **Page 4: Part II Cover**
-    *   **Title:** Part II: The Brittle Foundation
-    *   **Content:** An introduction explaining that this section will deconstruct the flawed labor model of the Western AI industry.
-*   **Page 5: Part III Cover**
-    *   **Title:** Part III: The Pacing Threat
-    *   **Content:** An introduction explaining that this section provides a net assessment of China's coherent AI human capital strategy.
-*   **Page 6: Part IV Cover**
-    *   **Title:** Part IV: The Unseen Battlefield
-    *   **Content:** An introduction explaining that this section reframes the AI supply chain as a critical national security domain (COGSEC).
-*   **Page 7: Part V Cover**
-    *   **Title:** Part V: The American Counter-Strategy
-    *   **Content:** An introduction explaining that this section outlines a hopeful, uniquely American solution to the problems identified.
-
-### 2.2. Missing Narrative Pages (Identified from Image Directories)
-
-The following 31 topics were identified as missing from the current `TheAscentReport.json` but were part of the original report variations. They should be written and integrated into the appropriate sections to flesh out the narrative.
-
-1.  **Part I:** One Million Tokens of Proof
-2.  **Part I:** The First Artifact of the Citizen Architect
-3.  **Part I:** The Human-AI Partnership
-4.  **Part II:** Courting Disaster
-5.  **Part II:** The Negative Feedback Loop
-6.  **Part II:** An Assault on the Mind
-7.  **Part II:** The Race to the Bottom
-8.  **Part III:** An Unsustainable Superpower
-9.  **Part III:** Net Assessment: US vs. China AI Human Capital Models
-10. **Part III:** Short-Term Profit vs. Long-Term Power
-11. **Part III:** The Tipping Point
-12. **Part III:** Data Annotation as Poverty Alleviation
-13. **Part III:** Insulating the Supply Chain
-14. **Part III:** A National Talent Pipeline
-15. **Part III:** The Professionalized AI Trainer
-16. **Part III:** Fusion in Practice: DeepSeek
-17. **Part III:** Intelligentized Warfare
-18. **Part III:** MCF in Practice: The National Champions
-19. **Part III:** The PLA's AI Shopping List
-20. **Part III:** A Methodical, Long-Term Strategy
-21. **Part IV:** Weaponized Human Exploitation
-22. **Part IV:** A Security Nightmare
-23. **Part IV:** The Human in the Loophole
-24. **Part V:** Core Methods of Cognitive Apprenticeship
-25. **Part V:** The Goal: The 100x Analyst
-26. **Part V:** The Appreciating AI Credit vs. Depreciating UBI Cash
-27. **Part V:** NSAC Structure and Operations
-28. **Part V:** Creating the DCIA Cadre
-29. **Part V:** Guardians of the Ground Truth
-30. **Part V:** The Tip of the Spear
-31. **Part V:** A Valuable Career Path
-
-## 3. Data Structure Reorganization
-
-The current `TheAscentReport.json` has a flat structure where all pages are in a single array within each section. To enable a nested navigator, the JSON schema and file must be updated.
-
-### 3.1. Proposed `sections` Schema Update
-
-The `sections` array in `TheAscentReport.json` should be modified to support a nested `subSections` array.
-
-**Current (Flat) Structure:**
-```json
-"sections": [
-  {
-    "sectionId": "part-i-the-proof",
-    "sectionTitle": "Part I: The Proof...",
-    "pages": [ ... all pages for Part I ... ]
-  }
-]
-```
-
-**Proposed (Nested) Structure:**
-```json
-"sections": [
-  {
-    "sectionId": "part-i-the-proof",
-    "sectionTitle": "Part I: The Proof...",
-    "subSections": [
-      {
-        "subSectionId": "section-1-the-hook",
-        "subSectionTitle": "Section 1: The Hook",
-        "pages": [ ... pages for The Hook ... ]
-      },
-      {
-        "subSectionId": "section-2-the-origin",
-        "subSectionTitle": "Section 2: The Origin Story",
-        "pages": [ ... pages for The Origin Story ... ]
-      }
-    ]
-  }
-]
-```
-
-This change will require a one-time manual refactoring of `TheAscentReport.json` by the curator, followed by updates to the data loading logic in `reportStore.ts`.
-</file_artifact>
-
-<file path="docs/A182. RDS - Data Model Refactor Plan.md">
-# Artifact 182: RDS - Data Model Refactor Plan
-# Updated on: C1365 (Final refinement: Abstract image file names into a base name and count to eliminate all data redundancy.)
-# Updated on: C1362 (Incorporate a more efficient, two-level path abstraction for the image manifest to further reduce data redundancy.)
-# Updated on: C1361 (Initial creation of the refactor plan.)
-
-- **Key/Value for A0:**
-- **Description:** A comprehensive plan to refactor the data model for "The Ascent Report," separating the monolithic JSON file into distinct content and image manifest files to improve scalability and maintainability.
-- **Tags:** rds, report, plan, refactor, json, data model, architecture
-
-## 1. Purpose & Problem Statement
-
-The current implementation of the Report Delivery System (RDS) relies on a single, monolithic JSON file: `TheAscentReport.json`. This approach has revealed several critical issues:
-
-*   **Cumbersome Maintenance:** A single large file is difficult to navigate and edit manually.
-*   **Massive Data Redundancy:** Storing the full URL and the full prompt text for every single image is extremely inefficient. For a page with 15 images generated from the same prompt, the long directory path and the long prompt text are repeated 15 times, leading to a bloated file size.
-*   **Lack of Scalability:** Adding new reports or metadata makes the file even more unwieldy.
-
-This document outlines a plan to refactor the RDS data model into a highly efficient, scalable, and maintainable structure that eliminates all data redundancy.
-
-## 2. Proposed Data Model: Content & Manifest (Final Version)
-
-The refactor splits the single JSON file into two distinct, purpose-built files:
-
-1.  **`reportContent.json`:** The source of truth for all narrative and textual content.
-2.  **`imageManifest.json`:** The source of truth for all image metadata, paths, and prompts.
-
-### 2.1. `reportContent.json` Schema
-
-This file contains the report's structure. Pages now reference an array of `imageGroupId`s, which are pointers to the new manifest. This makes the content file extremely lean.
-
-```json
-{
-  "reportId": "the-ascent-report-v2",
-  "reportTitle": "The Ascent Report: From Ghost Worker to Citizen Architect",
-  "sections": [
-    {
-      "sectionId": "part-i-the-proof",
-      "sectionTitle": "Part I: The Proof...",
-      "pages": [
-        {
-          "pageId": "a-revolutionary-leap",
-          "pageTitle": "A Revolutionary Leap",
-          "tldr": "...",
-          "content": "...",
-          "imageGroupIds": [
-            "group_a-revolutionary-leap_prompt-1"
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
-### 2.2. `imageManifest.json` Schema (Final C1365 Refinement)
-
-This file is the central registry for all images, redesigned for maximum efficiency. It eliminates all redundancy by storing each unique prompt only once and representing a sequence of images by a base name and a count.
-
-```json
-{
-  "manifestId": "ascent-report-images-v3",
-  "basePath": "/images/report-assets/report-3/",
-  "imageGroups": {
-    "group_a-revolutionary-leap_prompt-1": {
-      "path": "part-i-the-proof/section-1-the-hook/a-revolutionary-leap/prompt-1/",
-      "prompt": "An infographic-style blueprint of the aiascent.game architecture...",
-      "alt": "Blueprint of the aiascent.game architecture.",
-      "baseFileName": "a-revolutionary-leap-p1-img-",
-      "fileExtension": ".png",
-      "imageCount": 15
-    },
-    "group_cognitive-capital_prompt-1": {
-      "path": "introduction/cognitive-capital/prompt-1/",
-      "prompt": "A stylized, glowing human brain made of interconnected circuits...",
-      "alt": "Image for Cognitive Capital",
-      "baseFileName": "cognitive-capital-p1-img-",
-      "fileExtension": ".png",
-      "imageCount": 15
-    }
-  }
-}
-```
-
-## 3. Implementation Plan
-
-### **Phase 1: Data Conversion (Automated)**
-
-*   **Task:** Create a new one-off Node.js script: `scripts/convertReportData.js`.
-*   **Functionality (Final C1365):**
-    1.  Read the existing `TheAscentReport.json`.
-    2.  Iterate through its structure, identifying unique prompts to create `imageGroups`.
-    3.  For each group, the script will **read the corresponding directory on the filesystem** (e.g., `public/images/report-assets/report-3/part-i.../prompt-1/`).
-    4.  It will **count the number of `.png` files** in that directory to determine the `imageCount`.
-    5.  It will intelligently parse the filenames to derive the `baseFileName` (the common prefix) and `fileExtension`.
-    6.  Generate `reportContent.json` with pages containing `imageGroupIds`.
-    7.  Generate `imageManifest.json` with the new, highly compressed `imageGroups` objects.
-
-### **Phase 2: Frontend Refactor (`reportStore.ts`)**
-
-*   **Task:** Modify the data loading and processing logic in `src/state/reportStore.ts`.
-*   **Functionality (Final C1365):**
-    1.  Update `loadReportData` to fetch both new JSON files.
-    2.  After fetching, the action will perform an **in-memory reconstruction** of the `allPages` array.
-    3.  For each page, it will iterate through its `imageGroupIds`.
-    4.  For each `imageGroupId`, it will look up the group in the manifest.
-    5.  It will then **loop from 1 to the `imageCount`**, programmatically generating the full `fileName` (e.g., `baseFileName + i + fileExtension`), the full `url`, and a unique `imageId` for each image in the sequence.
-    6.  These generated image objects will be populated into the `imagePrompts` array for the page.
-*   **Outcome:** The `reportStore` is populated with the complete, merged data. The rest of the UI components will require no changes, as the in-memory data structure they consume remains consistent.
-
-### **Phase 3: Verification & Cleanup**
-
-*   **Task:** Thoroughly test the RDS to ensure all images load and navigation functions correctly.
-*   **Outcome:** Once functionality is confirmed, the original `TheAscentReport.json` can be safely deleted.
-</file_artifact>
-
-<file path="docs/A183. RDS - Ask Ascentia Embedding Script.md">
-# Artifact 184: RDS - Ask Ascentia Embedding Script
-
-## 1. Purpose
-
-This artifact provides a new, standalone Node.js script, `scripts/create_report_embedding.js`, designed to build the knowledge base for the "Ask @Ascentia" feature within the Report Delivery System (RDS).
-
-Unlike the main `create_faiss_index.js` script which processes a structured directory of markdown files, this script is tailored to take a single, large, flattened text file (like the user-provided `flattened_repo.txt`) as input. It chunks this text, generates vector embeddings, and outputs the `report_faiss.index` and `report_chunks.json` files required by the server-side RAG system.
-
-## 2. Script (`scripts/create_report_embedding.js`)
-
-```javascript
-#!/usr/bin/env node
-
-/**
- * create_report_embedding.js
- *
- * This script generates a FAISS vector index and a JSON chunk map from a single,
- * large text file. It's designed to create the knowledge base for the
- * "Ask @Ascentia" feature in the Report Delivery System (RDS).
- *
- * Usage:
- * 1. Ensure your local embedding model is running (e.g., via LM Studio).
- * 2. Run the script from the project root, providing the path to your source text file:
- *    node scripts/create_report_embedding.js C:/path/to/your/flattened_report.txt
- *
- * The script will output `report_faiss.index` and `report_chunks.json` in the project root.
- * These files should then be moved to the `./public` directory.
- */
-
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
-const { Index, IndexFlatL2 } = require('faiss-node');
-
-const FAISS_INDEX_FILE = 'report_faiss.index';
-const CHUNKS_FILE = 'report_chunks.json';
-const EMBEDDING_API_URL = 'http://127.0.0.1:1234/v1/embeddings';
-const EMBEDDING_MODEL = 'text-embedding-granite-embedding-278m-multilingual';
-
-const CHUNK_SIZE = 1800; // characters
-const CHUNK_OVERLAP = 200; // characters
-
-/**
- * Splits text into overlapping chunks.
- */
-function chunkText(text, size, overlap) {
-  const chunks = [];
-  let startIndex = 0;
-  while (startIndex < text.length) {
-    const endIndex = startIndex + size;
-    chunks.push(text.substring(startIndex, endIndex));
-    startIndex += size - overlap;
-  }
-  return chunks;
-}
-
-/**
- * Gets a vector embedding for a single text chunk from the local API.
- */
-async function getEmbedding(text) {
-  try {
-    const response = await axios.post(EMBEDDING_API_URL, {
-      model: EMBEDDING_MODEL,
-      input: text,
-    });
-    if (response.data?.data?.[0]?.embedding) {
-      return response.data.data[0].embedding;
-    }
-    console.error('  [ERROR] Invalid embedding response structure:', response.data);
-    return null;
-  } catch (error) {
-    const errorMessage = error.response ? `${error.response.status} ${error.response.statusText}` : error.message;
-    console.error(`  [ERROR] Failed to get embedding for chunk. Status: ${errorMessage}. Text: "${text.substring(0, 50)}..."`);
-    return null;
-  }
-}
-
-async function createReportEmbedding() {
-  const inputFile = process.argv[2];
-  if (!inputFile) {
-    console.error('\n[FATAL ERROR] Please provide the path to the source text file as an argument.');
-    console.error('Usage: node scripts/create_report_embedding.js C:/path/to/your/file.txt\n');
-    process.exit(1);
-  }
-
-  console.log(`Starting RDS embedding generation for: ${inputFile}`);
-
-  // 1. Read and chunk the source file
-  let fileContent;
-  try {
-    fileContent = fs.readFileSync(inputFile, 'utf-8');
-  } catch (error) {
-    console.error(`\n[FATAL ERROR] Could not read source file: ${error.message}`);
-    process.exit(1);
-  }
-
-  const textChunks = chunkText(fileContent, CHUNK_SIZE, CHUNK_OVERLAP);
-  const allChunks = textChunks.map(chunk => ({ id: 'report_source', chunk }));
-  console.log(`Created a total of ${allChunks.length} text chunks.`);
-
-  // 2. Generate embeddings for all chunks
-  console.log('Generating embeddings... (This may take a while)');
-  const embeddings = [];
-  let successfulChunks = [];
-  let failedCount = 0;
-  let embeddingDimension = -1;
-
-  for (let i = 0; i < allChunks.length; i++) {
-    const chunkData = allChunks[i];
-    const embedding = await getEmbedding(chunkData.chunk);
-    if (embedding) {
-      if (embeddingDimension === -1) {
-        embeddingDimension = embedding.length;
-        console.log(`Detected embedding dimension: ${embeddingDimension}`);
-      }
-      if (embedding.length !== embeddingDimension) {
-        console.error(`\n[FATAL ERROR] Inconsistent embedding dimension! Expected ${embeddingDimension}, but got ${embedding.length} for chunk ${i}. Aborting.`);
-        process.exit(1);
-      }
-      embeddings.push(embedding);
-      successfulChunks.push(chunkData);
-    } else {
-      failedCount++;
-    }
-    process.stdout.write(`\r  Processed ${i + 1} of ${allChunks.length} chunks...`);
-  }
-  console.log('\nEmbedding generation complete.');
-
-  if (failedCount > 0) {
-    console.warn(`  [WARN] Failed to generate embeddings for ${failedCount} chunks. They will be excluded.`);
-  }
-  if (embeddings.length === 0) {
-    console.error('No embeddings were generated. Cannot create FAISS index. Aborting.');
-    return;
-  }
-
-  // 3. Build and save FAISS index
-  try {
-    console.log(`Building FAISS index with ${embeddings.length} vectors of dimension ${embeddingDimension}...`);
-    const index = new IndexFlatL2(embeddingDimension);
-    index.add(embeddings.flat());
-    
-    console.log(`Saving FAISS index to ${FAISS_INDEX_FILE}...`);
-    index.write(FAISS_INDEX_FILE);
-
-    console.log(`Saving ${successfulChunks.length} text chunks to ${CHUNKS_FILE}...`);
-    fs.writeFileSync(CHUNKS_FILE, JSON.stringify(successfulChunks, null, 2), 'utf-8');
-
-    console.log(`\nProcess complete. Report KB created successfully.`);
-    console.log(`Move '${FAISS_INDEX_FILE}' and '${CHUNKS_FILE}' to the ./public directory.`);
-  } catch (error) {
-    console.error('\nAn error occurred while building or saving the FAISS index:', error);
-  }
-}
-
-createReportEmbedding();
-```
-</file_artifact>
-
-<file path="docs/A184. RDS - Audio Narration System Design.md">
-# Artifact A184: RDS - Audio Narration System Design
-# Updated on: C1396 (Describe new two-tier autoplay system with image slideshow and automatic page progression.)
-# Updated on: C1395 (Update API request body to match working implementation.)
-# Updated on: C1392 (Update architecture to recommend kokoro-fastapi and change the default port to 8880.)
-# Updated on: C1389 (Update architecture to recommend xtts-webui and change the default port to 8010.)
-# Updated on: C1383 (Align architecture with dedicated Coqui TTS server and backend proxy implementation.)
-
-- **Key/Value for A0:**
-- **Description:** Outlines the vision, UI/UX design, technical architecture, and implementation plan for a dynamic Text-to-Speech (TTS) audio narration system within the Report Delivery System (RDS).
-- **Tags:** rds, report, audio, tts, accessibility, narration, design, architecture
-
-## 1. Vision & Strategic Purpose
-
-The Audio Narration System is designed to enhance the accessibility and immersion of the Report Delivery System (RDS). By providing on-demand, AI-generated audio narration for each page, we transform the report from a purely visual experience into a multimodal one. This dynamic approach avoids the maintenance nightmare of pre-recorded audio files; if the report text is updated, the narration is automatically updated on the next playback, ensuring content consistency.
-
-## 2. UI/UX Design
-
-An unobtrusive audio control bar will be integrated into the `ReportViewerModal`, positioned within the `ImageNavigator` component area for central access.
-
-### 2.1. Core Components (`AudioControls.tsx`)
-
-*   **Audio Control Bar:** A new UI element, `<AudioControls />`, will contain all playback controls.
-*   **Play/Pause Button:** A single button that toggles between playing and pausing the narration for the current page. The icon changes to reflect the state.
-*   **Restart Button:** A button to seek the audio back to the beginning of the current page's narration.
-*   **Autoplay Toggle:** A checkbox or switch labeled "Autoplay." When enabled, it activates the enhanced autoplay mode. This setting is persisted.
-*   **Seekable Progress Bar:** A horizontal slider showing the current playback position and total duration. The user can click or drag this bar to seek.
-*   **Status Indicator:** Text or an icon to indicate the current state: `Idle`, `Generating...`, `Buffering...`, `Playing`, `Paused`, or `Error`.
-
-### 2.2. Enhanced Autoplay Mode
-
-When "Autoplay" is enabled, the system provides a hands-free, guided tour of the report:
-1.  **Audio Generation & Playback:** On navigating to a new page, the system automatically generates and begins playing the audio narration.
-2.  **Synchronized Image Slideshow:** Simultaneously, it calculates a display duration for each image on the page based on the total audio length. It then automatically cycles through the images, creating a slideshow effect.
-3.  **Automatic Page Progression:** After the audio for a page finishes, the system waits for a brief (2-second) interval and then automatically navigates to the next page, repeating the process.
-4.  **Interruption:** Any manual navigation input from the user (keyboard arrows, clicking navigation buttons) immediately disables Autoplay mode, stopping the slideshow and page progression but allowing the current audio to finish.
-
-## 3. Technical Architecture (Dedicated Server & Proxy)
-
-The system uses a client-server architecture where the `ai-ascent` backend acts as a proxy to a dedicated, external TTS server.
-
-*   **External TTS Server (`kokoro-fastapi`):**
-    *   **Recommendation:** The **`kokoro-fastapi`** project, run via Docker, is the recommended server. It provides a stable, pre-packaged server for the high-quality `Kokoro-82M` model with an OpenAI-compatible endpoint.
-    *   Exposes an API endpoint (e.g., `http://localhost:8880/v1/audio/speech`) that accepts text and returns an audio stream.
-    *   See **A185. RDS - TTS Jumpstart Guide** for setup.
-
-*   **`ai-ascent` Backend (Proxy):**
-    *   **Environment:** Reads the `TTS_SERVER_URL` from the `.env` file.
-    *   **API Route (`/api/tts/generate`):** A `POST` route in `src/server.ts`.
-    *   **Service Logic (`llmService.ts`):** A `generateSpeech` function forwards the text to the external TTS server and streams the audio response back to the game client.
-    *   **API Request Body:** The JSON payload sent to the TTS server has the following structure:
-        ```json
-        {
-          "model": "kokoro",
-          "voice": "en_us_001",
-          "input": "The text to be narrated...",
-          "response_format": "wav",
-          "speed": 1.0
-        }
-        ```
-
-*   **`ai-ascent` Frontend (`reportStore.ts`, `AudioControls.tsx`, `ReportViewerModal.tsx`):**
-    *   **State (`reportStore.ts`):** Manages all audio state, including `playbackStatus`, `autoplayEnabled`, `currentAudioUrl`, `currentTime`, `duration`, and new state for the slideshow interval and next-page countdown.
-    *   **Controls (`AudioControls.tsx`):** Renders the UI based on the store's state and dispatches actions on user interaction. Contains a hidden HTML5 `<audio>` element.
-    *   **Logic (`ReportViewerModal.tsx`):** Contains the core `useEffect` hooks that listen for state changes to manage the `setInterval` for the image slideshow and the `setTimeout` for the next-page countdown when autoplay is active.
-
-## 4. Implementation Plan
-
-1.  **Curator Action:** Set up and run the external `kokoro-fastapi` server as described in **A185**.
-2.  **Backend:** Implement the `/api/tts/generate` proxy route in `server.ts` and the `generateSpeech` function in `llmService.ts`.
-3.  **Frontend State:** Add enhanced audio and autoplay state and actions to `reportStore.ts`.
-4.  **Frontend UI:** Create/update the `<AudioControls />` component.
-5.  **Integration:** Add `<AudioControls />` to `ReportViewerModal.tsx` and implement the full logic for the enhanced autoplay system.
-</file_artifact>
-
-<file path="docs/A185. RDS - TTS Jumpstart Guide.md">
-# Artifact A185: RDS - TTS Jumpstart Guide (kokoro-fastapi)
-# Updated on: C1395 (Add note about script fix for streaming error.)
-# Updated on: C1393 (Add integrated API test script and instructions.)
-# Updated on: C1392 (Complete pivot to kokoro-fastapi for stability and ease of use.)
-
-- **Key/Value for A0:**
-- **Description:** A step-by-step guide for setting up a local `kokoro-fastapi` Docker-based TTS server and integrating it into the `ai-ascent` game for the Report Delivery System's audio narration feature.
-- **Tags:** rds, report, audio, tts, accessibility, narration, guide, setup, kokoro, docker, fastapi, python
-
-## 1. Purpose
-
-This guide provides a definitive, simplified process for setting up a local Text-to-Speech (TTS) server. Previous attempts with other libraries resulted in complex dependency issues. This guide pivots to **`kokoro-fastapi`**, a project that uses Docker to provide a stable, pre-packaged, and high-performance TTS server with an OpenAI-compatible API endpoint.
-
-This approach is significantly more reliable and is the recommended path for enabling the audio narration feature in the Report Delivery System (RDS).
-
-## 2. Part 1: Setting Up the TTS Server with Docker
-
-This method is the quickest and most reliable way to get the server running, as it bypasses Python environment and dependency management entirely.
-
-### Step 2.1: Prerequisite - Install Docker
-
-You must have Docker Desktop installed and running on your server machine.
-
-1.  **Download and Install:** Get Docker Desktop from the official website: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-
-### Step 2.2: Run the TTS Server
-
-Open your terminal (PowerShell or Command Prompt on your server machine) and run the command that matches your hardware. The first time you run this, Docker will download the image, which may take a few minutes.
-
-*   **For NVIDIA GPUs (Recommended for best performance):**
-    ```bash
-    docker run --gpus all -p 8880:8880 ghcr.io/remsky/kokoro-fastapi-gpu:latest
-    ```
-
-*   **For CPU-only (or non-NVIDIA GPUs like AMD / Apple Silicon):**
-    ```bash
-    docker run -p 8880:8880 ghcr.io/remsky/kokoro-fastapi-cpu:latest
-    ```
-
-### Step 2.3: Verification (Python Script)
-
-Once the command is running, the server is active. You will see log output in your terminal. The server is now available at `http://localhost:8880`.
-
-To confirm it's working correctly, you can run a simple Python test script.
-
-1.  **Create a file:** On any machine, create a file named `test_tts.py`.
-2.  **Add the code:** Paste the following code into the file. You will need the `openai` Python library (`pip install openai`).
-
-    ```python
-    from openai import OpenAI
-
-    # Point the client to your local kokoro-fastapi server
-    # If running this script on a different machine, change 'localhost' to the server's IP.
-    client = OpenAI(
-        base_url="http://localhost:8880/v1", 
-        api_key="not-needed" # API key is not required for local server
-    )
-
-    print("Sending TTS request to the local server...")
-
-    try:
-        # Create the speech request
-        with client.audio.speech.with_streaming_response.create(
-            model="kokoro",
-            voice="af_sky+af_bella", # You can mix voices
-            input="Hello world! If you can hear this, the local TTS server is working correctly."
-        ) as response:
-            # Stream the audio to a file
-            response.stream_to_file("output.mp3")
-        
-        print("\nSuccess! Audio saved to output.mp3")
-
-    except Exception as e:
-        print(f"\nAn error occurred: {e}")
-        print("Please ensure the Docker container is running and accessible at http://localhost:8880")
-
-    ```
-3.  **Run the test:** Open a new terminal, navigate to where you saved the file, and run:
-    ```bash
-    python test_tts.py
-    ```
-4.  **Check the output:** If successful, you will see a success message, and an `output.mp3` file will be created in the same folder. Play this file to confirm you can hear the generated audio.
-
-## 3. Part 2: Integrating with `ai-ascent`
-
-This part ensures the `ai-ascent` game knows how to communicate with your new TTS server.
-
-### Step 3.1: Update Environment File
-
-1.  **Open `.env`:** In the root of your `ai-ascent` project, open the `.env` file.
-2.  **Add/Update TTS Server URL:** Add or modify the `TTS_SERVER_URL` variable.
-
-    *   **If the server is on the SAME machine as the game:**
-        ```
-        TTS_SERVER_URL=http://localhost:8880/v1/audio/speech
-        ```
-
-    *   **If the server is on a DIFFERENT machine on your network (e.g., your dev laptop accessing a server in the closet):** Replace `localhost` with the local IP address of the server machine.
-        ```
-        TTS_SERVER_URL=http://192.168.1.85:8880/v1/audio/speech
-        ```
-
-### Step 3.2: Restart the Game Server
-
-Whenever you change the `.env` file, you must restart your `ai-ascent` development server. Stop your `npm run dev` command (with `Ctrl+C`) and run it again.
-
-## 4. Part 3: Verifying the Connection from AI Ascent
-
-This final step uses an integrated script within the `ai-ascent` project to confirm your development environment can successfully communicate with the TTS server.
-
-### Step 4.1: Run the Test Script
-
-1.  Open a terminal in the **root directory of your `ai-ascent` project**.
-2.  Run the following command:
-    ```bash
-    npx dotenv -e .env -- ts-node scripts/test_tts_api.ts
-    ```
-    *(Note: This script was updated in C1395 to fix a stream handling error. The latest version in the repository is the correct one.)*
-
-### Step 4.2: Check the Output
-
-1.  The script will print its progress to your console.
-2.  If it succeeds, it will create a file named `test_output.mp3` in your project's root directory.
-3.  Play this file. If you hear the generated audio, the connection is working perfectly, and the audio narration feature is ready for final implementation.
-4.  If it fails, the script will print troubleshooting steps. The most common issues are an incorrect IP address in the `.env` file or a firewall blocking the connection on port `8880`.
-</file_artifact>
-
-<file path="docs/A186. RDS - Front Matter & User Guide Content.md">
-# Artifact A186: RDS - Front Matter & User Guide Content
-# Updated on: C1397 (Add markdown formatting for better readability.)
-
-- **Key/Value for A0:**
-- **Description:** Contains the curator-requested descriptive text for the introductory page of "The Ascent Report," designed to be narrated by Ascentia to guide the user.
-- **Tags:** rds, report, content, user guide, narration, ascentia
-
-## 1. Purpose
-
-This artifact provides the specific text content for the introductory (front matter) page of "The Ascent Report." This content is intended to be placed in the `reportContent.json` file for the report's first page and narrated by the in-game `@Ascentia` AI assistant to orient the user.
-
-## 2. Introductory Page Content
-
-### 2.1. Page Title
-Welcome, Citizen Architect
-
-### 2.2. TL;DR
-An interactive guide to navigating this report and understanding its features.
-
-### 2.3. Image Prompt
-A welcoming, solarpunk-themed user interface overlaying a beautiful landscape. The interface is holographic and translucent, showing elements like a navigable page tree, an audio waveform, an AI assistant icon, and highlighted images. The overall feeling is intuitive, helpful, and technologically advanced yet user-friendly.
-
-### 2.4. Full Content (To be narrated by Ascentia)
-
-Hi there! I am Ascentia, your guide through this interactive report. This is more than a document; it is an explorable space of ideas. To help you navigate, allow me to explain the interface.\n\nTo your left, you will find the **Report Navigator**, a tree that allows you to jump to any part or section of the report.\n\nIn the center are the primary controls. You can navigate between pages using the **up and down arrow keys**, and cycle through the different visual interpretations for each page using the **left and right arrow keys**.\n\nFor a more immersive experience, you can select **\"Autoplay.\"** I will then read the contents of each page aloud to you. While I am speaking, the system will automatically present a slideshow of all the images associated with that page. Once the narration for a page is complete, we will automatically proceed to the next, allowing you to experience the entire report hands-free. Any interaction from you will pause this automated tour, giving you back full manual control.\n\nFinally, the **\"Ask Ascentia\"** button opens a direct line to me. If you have any questions about the content you are viewing, do not hesitate to ask. Enjoy your ascent.
-</file_artifact>
-
-</file_artifact>
-
-<file path="context/automationsaas/flattened-repo.md">
-<!--
-  File: flattened_repo.md
-  Source Directory: c:\Projects\automationsaas
-  Date Generated: 2025-10-10T22:10:04.789Z
-  ---
-  Total Files: 77
-  Approx. Tokens: 42325
--->
-
-<!-- Top 10 Text Files by Token Count -->
-1. src\app\(main)\(pages)\connections\page.tsx (3894 tokens)
-2. src\components\global\sparkles.tsx (2971 tokens)
-3. src\app\page.tsx (2256 tokens)
-4. src\providers\editor-provider.tsx (1315 tokens)
-5. src\components\ui\command.tsx (1256 tokens)
-6. src\components\global\lamp.tsx (1164 tokens)
-7. src\providers\connections-provider.tsx (1138 tokens)
-8. src\components\global\connect-parallax.tsx (1086 tokens)
-9. src\components\ui\form.tsx (1066 tokens)
-10. tailwind.config.ts (1062 tokens)
-
-<!-- Full File List -->
-1. src\store.tsx - Lines: 29 - Chars: 829 - Tokens: 208
-2. src\middleware.ts - Lines: 65 - Chars: 2244 - Tokens: 561
-3. src\providers\billing-provider.tsx - Lines: 43 - Chars: 961 - Tokens: 241
-4. src\providers\connections-provider.tsx - Lines: 160 - Chars: 4552 - Tokens: 1138
-5. src\providers\editor-provider.tsx - Lines: 220 - Chars: 5258 - Tokens: 1315
-6. src\providers\modal-provider.tsx - Lines: 71 - Chars: 1630 - Tokens: 408
-7. src\providers\theme-provider.tsx - Lines: 10 - Chars: 336 - Tokens: 84
-8. src\components\global\3d-card.tsx - Lines: 151 - Chars: 3986 - Tokens: 997
-9. src\components\global\connect-parallax.tsx - Lines: 159 - Chars: 4343 - Tokens: 1086
-10. src\components\global\container-scroll-animation.tsx - Lines: 103 - Chars: 2633 - Tokens: 659
-11. src\components\global\custom-modal.tsx - Lines: 56 - Chars: 1540 - Tokens: 385
-12. src\components\global\infinite-moving-cards.tsx - Lines: 102 - Chars: 2735 - Tokens: 684
-13. src\components\global\lamp.tsx - Lines: 117 - Chars: 4655 - Tokens: 1164
-14. src\components\global\mode-toggle.tsx - Lines: 40 - Chars: 1334 - Tokens: 334
-15. src\components\global\navbar.tsx - Lines: 62 - Chars: 2363 - Tokens: 591
-16. src\components\global\sparkles.tsx - Lines: 439 - Chars: 11883 - Tokens: 2971
-17. src\components\icons\category.tsx - Lines: 64 - Chars: 1672 - Tokens: 418
-18. src\components\icons\clipboard.tsx - Lines: 54 - Chars: 1913 - Tokens: 479
-19. src\components\icons\cloud_download.tsx - Lines: 36 - Chars: 1591 - Tokens: 398
-20. src\components\icons\home.tsx - Lines: 36 - Chars: 1244 - Tokens: 311
-21. src\components\icons\payment.tsx - Lines: 51 - Chars: 1449 - Tokens: 363
-22. src\components\icons\settings.tsx - Lines: 36 - Chars: 2714 - Tokens: 679
-23. src\components\icons\workflows.tsx - Lines: 27 - Chars: 888 - Tokens: 222
-24. src\components\infobar\index.tsx - Lines: 72 - Chars: 1965 - Tokens: 492
-25. src\components\sidebar\index.tsx - Lines: 89 - Chars: 3735 - Tokens: 934
-26. src\components\ui\accordion.tsx - Lines: 59 - Chars: 2049 - Tokens: 513
-27. src\components\ui\badge.tsx - Lines: 37 - Chars: 1164 - Tokens: 291
-28. src\components\ui\button.tsx - Lines: 57 - Chars: 1891 - Tokens: 473
-29. src\components\ui\card.tsx - Lines: 80 - Chars: 1956 - Tokens: 489
-30. src\components\ui\command.tsx - Lines: 156 - Chars: 5022 - Tokens: 1256
-31. src\components\ui\dialog.tsx - Lines: 123 - Chars: 3971 - Tokens: 993
-32. src\components\ui\drawer.tsx - Lines: 119 - Chars: 3139 - Tokens: 785
-33. src\components\ui\form.tsx - Lines: 177 - Chars: 4261 - Tokens: 1066
-34. src\components\ui\input.tsx - Lines: 26 - Chars: 849 - Tokens: 213
-35. src\components\ui\label.tsx - Lines: 27 - Chars: 750 - Tokens: 188
-36. src\components\ui\popover.tsx - Lines: 32 - Chars: 1275 - Tokens: 319
-37. src\components\ui\progress.tsx - Lines: 29 - Chars: 819 - Tokens: 205
-38. src\components\ui\resizable.tsx - Lines: 46 - Chars: 1768 - Tokens: 442
-39. src\components\ui\select.tsx - Lines: 91 - Chars: 3358 - Tokens: 840
-40. src\components\ui\separator.tsx - Lines: 32 - Chars: 801 - Tokens: 201
-41. src\components\ui\sonner.tsx - Lines: 32 - Chars: 925 - Tokens: 232
-42. src\components\ui\switch.tsx - Lines: 30 - Chars: 1182 - Tokens: 296
-43. src\components\ui\tabs.tsx - Lines: 56 - Chars: 1952 - Tokens: 488
-44. src\components\ui\textarea.tsx - Lines: 31 - Chars: 954 - Tokens: 239
-45. src\components\ui\tooltip.tsx - Lines: 31 - Chars: 1189 - Tokens: 298
-46. .eslintrc.json - Lines: 4 - Chars: 43 - Tokens: 11
-47. components.json - Lines: 17 - Chars: 361 - Tokens: 91
-48. ecosystem.config.js - Lines: 22 - Chars: 666 - Tokens: 167
-49. jest.config.js - Lines: 21 - Chars: 499 - Tokens: 125
-50. next-env.d.ts - Lines: 6 - Chars: 233 - Tokens: 59
-51. next.config.mjs - Lines: 33 - Chars: 1166 - Tokens: 292
-52. package.json - Lines: 98 - Chars: 3098 - Tokens: 775
-53. postcss.config.mjs - Lines: 9 - Chars: 143 - Tokens: 36
-54. tailwind.config.ts - Lines: 146 - Chars: 4246 - Tokens: 1062
-55. tsconfig.json - Lines: 28 - Chars: 652 - Tokens: 163
-56. src\app\page.tsx - Lines: 196 - Chars: 9023 - Tokens: 2256
-57. src\app\layout.tsx - Lines: 46 - Chars: 1329 - Tokens: 333
-58. src\app\globals.css - Lines: 77 - Chars: 1716 - Tokens: 429
-59. src\app\api\payment\route.ts - Lines: 35 - Chars: 1063 - Tokens: 266
-60. src\app\api\oauth\callback\route.ts - Lines: 76 - Chars: 2735 - Tokens: 684
-61. src\app\api\oauth\start\route.ts - Lines: 42 - Chars: 1786 - Tokens: 447
-62. src\app\api\my-oauth-map\route.ts - Lines: 25 - Chars: 778 - Tokens: 195
-63. src\app\(main)\layout.tsx - Lines: 26 - Chars: 617 - Tokens: 155
-64. src\app\(main)\(pages)\layout.tsx - Lines: 13 - Chars: 313 - Tokens: 79
-65. src\app\(main)\(pages)\settings\_components\profile-picture.tsx - Lines: 53 - Chars: 1406 - Tokens: 352
-66. src\app\(main)\(pages)\settings\_components\uploadcare-button.tsx - Lines: 48 - Chars: 1208 - Tokens: 302
-67. src\app\(main)\(pages)\settings\page.tsx - Lines: 82 - Chars: 2041 - Tokens: 511
-68. src\app\(main)\(pages)\dashboard\page.tsx - Lines: 13 - Chars: 324 - Tokens: 81
-69. src\app\(main)\(pages)\billing\_actions\payment-connections.tsx - Lines: 23 - Chars: 510 - Tokens: 128
-70. src\app\(main)\(pages)\billing\_components\billing-dashboard.tsx - Lines: 84 - Chars: 3039 - Tokens: 760
-71. src\app\(main)\(pages)\billing\_components\credits-tracker.tsx - Lines: 39 - Chars: 1295 - Tokens: 324
-72. src\app\(main)\(pages)\billing\_components\subscription-card.tsx - Lines: 77 - Chars: 3273 - Tokens: 819
-73. src\app\(main)\(pages)\billing\page.tsx - Lines: 51 - Chars: 1641 - Tokens: 411
-74. src\app\(main)\(pages)\connections\page.tsx - Lines: 466 - Chars: 15573 - Tokens: 3894
-75. src\app\(auth)\sign-in\[[...sign-in]]\page.tsx - Lines: 13 - Chars: 310 - Tokens: 78
-76. src\app\(auth)\sign-up\[[...sign-up]]\page.tsx - Lines: 5 - Chars: 98 - Tokens: 25
-77. src\app\(auth)\layout.tsx - Lines: 13 - Chars: 263 - Tokens: 66
-
-<file path="src/store.tsx">
-import { create } from 'zustand'
-
-export interface Option {
-  value: string
-  label: string
-  disable?: boolean
-  fixed?: boolean
-  [key: string]: any
-}
-
-type ChartFlowStore = {
-  googleFile: any
-  setGoogleFile: (googleFile: any) => void
-  slackChannels: Option[]
-  setSlackChannels: (slackChannels: Option[]) => void
-  selectedSlackChannels: Option[]
-  setSelectedSlackChannels: (selectedSlackChannels: Option[]) => void
-}
-
-export const useChartFlowStore = create<ChartFlowStore>()((set) => ({
-  googleFile: {},
-  setGoogleFile: (googleFile: any) => set({ googleFile }),
-  slackChannels: [],
-  setSlackChannels: (slackChannels: Option[]) => set({ slackChannels }),
-  selectedSlackChannels: [],
-  setSelectedSlackChannels: (selectedSlackChannels: Option[]) =>
-    set({ selectedSlackChannels }),
-}))
-</file_artifact>
-
-<file path="src/middleware.ts">
-// FILE: src/middleware.ts
-
-import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
-import { NextResponse } from "next/server";
-
-const isTestEnv = process.env.NODE_ENV === "test";
-
-/**
- * If NODE_ENV === "test", we skip all Clerk authentication checks. 
- * Otherwise, we run the standard Clerk authMiddleware logic.
- */
-export default isTestEnv
-  ? function skipClerkInTest(req: Request) {
-      console.log("[Middleware] => NODE_ENV=test => Skipping Clerk checks.");
-      return NextResponse.next();
-    }
-  : authMiddleware({
-      // Normal Clerk config
-      publicRoutes: [
-        "/",
-        "/api/clerk-webhook",
-        "/api/drive-activity/notification",
-        "/api/payment/success",
-        // For example, you might also add:
-        // "/api/google-drive(.*)",
-      ],
-      ignoredRoutes: [
-        "/api/auth/callback/discord",
-        "/api/auth/callback/notion",
-        "/api/auth/callback/slack",
-        "/api/flow",
-        "/api/cron/wait",
-      ],
-      afterAuth: (auth, req) => {
-        const { userId, isPublicRoute } = auth;
-        const url = req.nextUrl.clone();
-
-        console.log("\n--- [Middleware] ---");
-        console.log("Method =>", req.method);
-        console.log("Path =>", url.pathname);
-        console.log("Clerk userId =>", userId || "NO-USER");
-        console.log("isPublicRoute =>", isPublicRoute);
-
-        if (!userId && !isPublicRoute) {
-          console.log("[Middleware] => force sign-in redirect");
-          return redirectToSignIn({ returnBackUrl: url.toString() });
-        }
-
-        // If user is signed in but tries visiting sign-in, push them away.
-        if (userId && (url.pathname.startsWith("/sign-in") || url.pathname.startsWith("/sign-up"))) {
-          console.log("[Middleware] => user is signed in but visited sign-in => redirect /dashboard");
-          url.pathname = "/dashboard";
-          return NextResponse.redirect(url);
-        }
-
-        console.log("[Middleware] => NextResponse.next()");
-        return NextResponse.next();
-      },
-    });
-
-// Standard matcher config for Next.js
-export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
-};
-</file_artifact>
-
-<file path="src/providers/billing-provider.tsx">
-'use client'
-
-import React from 'react'
-
-type BillingProviderProps = {
-  credits: string
-  tier: string
-  setCredits: React.Dispatch<React.SetStateAction<string>>
-  setTier: React.Dispatch<React.SetStateAction<string>>
-}
-
-const initialValues: BillingProviderProps = {
-  credits: '',
-  setCredits: () => undefined,
-  tier: '',
-  setTier: () => undefined,
-}
-
-type WithChildProps = {
-  children: React.ReactNode
-}
-
-const context = React.createContext(initialValues)
-const { Provider } = context
-
-export const BillingProvider = ({ children }: WithChildProps) => {
-  const [credits, setCredits] = React.useState(initialValues.credits)
-  const [tier, setTier] = React.useState(initialValues.tier)
-
-  const values = {
-    credits,
-    setCredits,
-    tier,
-    setTier,
-  }
-
-  return <Provider value={values}>{children}</Provider>
-}
-
-export const useBilling = () => {
-  const state = React.useContext(context)
-  return state
-}
-</file_artifact>
-
-<file path="src/providers/connections-provider.tsx">
-"use client";
-
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-  ReactNode,
-} from "react";
-import { toast } from "sonner";
-
-/**
- * Shape of a single Connection record from your DB
- */
-export interface ConnectionRecord {
-  id: string;
-  userId?: string;
-  type?: string;   // e.g. "openai", "anthropic", "mcp-github", ...
-  name?: string;
-  url?: string;
-  apiKey?: string;
-  data?: any;
-}
-
-/**
- * The older “AIModelConnection” structure (optional)
- */
-export interface AIModelConnection {
-  id: string;
-  userId: string;
-  model: string;
-  apiKey: string;
-  name: string;
-}
-
-/**
- * The context value for ConnectionsProvider
- */
-interface ConnectionsContextValue {
-  aiModelConnections: AIModelConnection[];
-  setAiModelConnections: React.Dispatch<React.SetStateAction<AIModelConnection[]>>;
-
-  connections: ConnectionRecord[];
-  setConnections: React.Dispatch<React.SetStateAction<ConnectionRecord[]>>;
-
-  showAddModal: boolean;
-  setShowAddModal: React.Dispatch<React.SetStateAction<boolean>>;
-
-  fetchConnections: () => Promise<void>;
-  onAddConnection: (conn: Partial<ConnectionRecord>) => Promise<void>;
-  onDeleteConnection: (connId: string) => Promise<void>;
-}
-
-/**
- * Our React Context
- */
-const ConnectionsContext = createContext<ConnectionsContextValue | undefined>(undefined);
-
-/**
- * Hook to consume
- */
-export function useConnections(): ConnectionsContextValue {
-  const ctx = useContext(ConnectionsContext);
-  if (!ctx) {
-    throw new Error("useConnections must be used within ConnectionsProvider");
-  }
-  return ctx;
-}
-
-/**
- * Provider that loads + manages “connections” from /api/connections
- */
-export function ConnectionsProvider({ children }: { children: ReactNode }) {
-  const [aiModelConnections, setAiModelConnections] = useState<AIModelConnection[]>([]);
-  const [connections, setConnections] = useState<ConnectionRecord[]>([]);
-  const [showAddModal, setShowAddModal] = useState(false);
-
-  // Loads them from our local API
-  const fetchConnections = useCallback(async () => {
-    try {
-      // The correct endpoint for listing all connections
-      const res = await fetch("/api/connections");
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || "Failed to load connections");
-      }
-      // data might have "connections" array
-      setConnections(data.connections || []);
-      // If your API also includes older AI connections:
-      setAiModelConnections(data.aiModelConnections || []);
-    } catch (err: any) {
-      console.error("[fetchConnections] =>", err);
-      toast.error(`Error loading connections: ${String(err)}`);
-    }
-  }, []);
-
-  // Add a new connection by calling POST /api/connections
-  async function onAddConnection(conn: Partial<ConnectionRecord>) {
-    try {
-      const resp = await fetch("/api/connections", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(conn),
-      });
-      const data = await resp.json();
-      if (!resp.ok || !data.success) {
-        throw new Error(data.error || "Add connection failed");
-      }
-      toast.success("Connection added!");
-      await fetchConnections();
-      setShowAddModal(false);
-    } catch (err: any) {
-      console.error("[onAddConnection] =>", err);
-      toast.error(String(err));
-    }
-  }
-
-  // Delete connection by calling DELETE /api/connections?id=...
-  async function onDeleteConnection(connId: string) {
-    try {
-      const res = await fetch(`/api/connections?id=${connId}`, {
-        method: "DELETE",
-      });
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || "Delete connection failed");
-      }
-      toast.success("Connection deleted.");
-      await fetchConnections();
-    } catch (err: any) {
-      console.error("[onDeleteConnection] =>", err);
-      toast.error(String(err));
-    }
-  }
-
-  // On mount
-  useEffect(() => {
-    fetchConnections();
-  }, [fetchConnections]);
-
-  const ctxValue: ConnectionsContextValue = {
-    aiModelConnections,
-    setAiModelConnections,
-    connections,
-    setConnections,
-    showAddModal,
-    setShowAddModal,
-    fetchConnections,
-    onAddConnection,
-    onDeleteConnection,
-  };
-
-  return (
-    <ConnectionsContext.Provider value={ctxValue}>
-      {children}
-    </ConnectionsContext.Provider>
-  );
-}
-</file_artifact>
-
-<file path="src/providers/editor-provider.tsx">
-'use client'
-
-import React, { Dispatch, createContext, useContext, useReducer } from 'react'
-import type { EditorState, EditorActions } from '@/lib/types'
-
-const initialEditorState: EditorState['editor'] = {
-  elements: [],
-  selectedNode: {
-    data: {
-      title: '',
-      description: '',
-      completed: false,
-      current: false,
-      metadata: {},
-      type: 'Trigger',
-    },
-    parameters: {},
-    id: '',
-    position: { x: 0, y: 0 },
-    type: 'Trigger',
-  },
-  edges: [],
-}
-
-const initialHistoryState: EditorState['history'] = {
-  history: [initialEditorState],
-  currentIndex: 0,
-  dirty: false,
-}
-
-const initialState: EditorState = {
-  editor: initialEditorState,
-  history: initialHistoryState,
-}
-
-function editorReducer(
-  state: EditorState = initialState,
-  action: EditorActions
-): EditorState {
-  switch (action.type) {
-    case 'REDO': {
-      const { currentIndex, history } = state.history
-      if (currentIndex < history.length - 1) {
-        const nextIndex = currentIndex + 1
-        const nextEditorState = { ...history[nextIndex] }
-        return {
-          ...state,
-          editor: nextEditorState,
-          history: {
-            ...state.history,
-            currentIndex: nextIndex,
-            dirty: true,
-          },
-        }
-      }
-      return state
-    }
-
-    case 'UNDO': {
-      const { currentIndex, history } = state.history
-      if (currentIndex > 0) {
-        const prevIndex = currentIndex - 1
-        const prevEditorState = { ...history[prevIndex] }
-        return {
-          ...state,
-          editor: prevEditorState,
-          history: {
-            ...state.history,
-            currentIndex: prevIndex,
-            dirty: true,
-          },
-        }
-      }
-      return state
-    }
-
-    case 'LOAD_DATA': {
-      return {
-        ...state,
-        editor: {
-          ...state.editor,
-          elements: action.payload.elements || initialEditorState.elements,
-          edges: action.payload.edges,
-        },
-        history: {
-          ...state.history,
-          dirty: false,
-        },
-      }
-    }
-
-    case 'SELECTED_ELEMENT': {
-      return {
-        ...state,
-        editor: {
-          ...state.editor,
-          selectedNode: action.payload.element,
-        },
-      }
-    }
-
-    case 'UPDATE_NODE': {
-      return {
-        ...state,
-        editor: {
-          ...state.editor,
-          elements: action.payload.elements,
-        },
-        history: {
-          ...state.history,
-          history: [...state.history.history, state.editor],
-          currentIndex: state.history.currentIndex + 1,
-          dirty: true,
-        },
-      }
-    }
-
-    case 'UPDATE_EDGE': {
-      return {
-        ...state,
-        editor: {
-          ...state.editor,
-          edges: action.payload.edges,
-        },
-        history: {
-          ...state.history,
-          history: [...state.history.history, state.editor],
-          currentIndex: state.history.currentIndex + 1,
-          dirty: true,
-        },
-      }
-    }
-
-    case 'UPDATE_NODE_PARAMETER': {
-      const { nodeId, parameterName, parameterValue } = action.payload
-      const updatedElements = state.editor.elements.map((node) => {
-        if (node.id === nodeId) {
-          return {
-            ...node,
-            parameters: {
-              ...node.parameters,
-              [parameterName]: parameterValue,
-            },
-          }
-        }
-        return node
-      })
-      let updatedSelectedNode = state.editor.selectedNode
-      if (state.editor.selectedNode.id === nodeId) {
-        updatedSelectedNode = {
-          ...state.editor.selectedNode,
-          parameters: {
-            ...state.editor.selectedNode.parameters,
-            [parameterName]: parameterValue,
-          },
-        }
-      }
-
-      return {
-        ...state,
-        editor: {
-          ...state.editor,
-          elements: updatedElements,
-          selectedNode: updatedSelectedNode,
-        },
-        history: {
-          ...state.history,
-          history: [...state.history.history, state.editor],
-          currentIndex: state.history.currentIndex + 1,
-          dirty: true,
-        },
-      }
-    }
-
-    case 'MARK_SAVED': {
-      return {
-        ...state,
-        history: {
-          ...state.history,
-          dirty: false,
-        },
-      }
-    }
-
-    default:
-      return state
-  }
-}
-
-export const EditorContext = createContext<{
-  state: EditorState
-  dispatch: Dispatch<EditorActions>
-}>({
-  state: initialState,
-  dispatch: () => undefined,
-})
-
-type EditorProviderProps = {
-  children: React.ReactNode
-}
-
-export function EditorProvider({ children }: EditorProviderProps) {
-  const [state, dispatch] = useReducer(editorReducer, initialState)
-  return (
-    <EditorContext.Provider value={{ state, dispatch }}>
-      {children}
-    </EditorContext.Provider>
-  )
-}
-
-export const useEditor = () => {
-  const context = useContext(EditorContext)
-  if (!context) {
-    throw new Error('useEditor must be used within EditorProvider')
-  }
-  return context
-}
-
-export default EditorProvider
-</file_artifact>
-
-<file path="src/providers/modal-provider.tsx">
-'use client'
-import { createContext, useContext, useEffect, useState } from 'react'
-
-interface ModalProviderProps {
-  children: React.ReactNode
-}
-
-export type ModalData = {}
-
-type ModalContextType = {
-  data: ModalData
-  isOpen: boolean
-  setOpen: (modal: React.ReactNode, fetchData?: () => Promise<any>) => void
-  setClose: () => void
-}
-
-export const ModalContext = createContext<ModalContextType>({
-  data: {},
-  isOpen: false,
-  setOpen: () => {},
-  setClose: () => {},
-})
-
-const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [data, setData] = useState<ModalData>({})
-  const [showingModal, setShowingModal] = useState<React.ReactNode>(null)
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  const setOpen = async (
-    modal: React.ReactNode,
-    fetchData?: () => Promise<any>
-  ) => {
-    if (modal) {
-      if (fetchData) {
-        setData({ ...data, ...(await fetchData()) })
-      }
-      setShowingModal(modal)
-      setIsOpen(true)
-    }
-  }
-
-  const setClose = () => {
-    setIsOpen(false)
-    setData({})
-  }
-
-  if (!isMounted) return null
-
-  return (
-    <ModalContext.Provider value={{ data, setOpen, setClose, isOpen }}>
-      {children}
-      {showingModal}
-    </ModalContext.Provider>
-  )
-}
-
-export const useModal = () => {
-  const context = useContext(ModalContext)
-  if (!context) {
-    throw new Error('useModal must be used within the modal provider')
-  }
-  return context
-}
-
-export default ModalProvider
-</file_artifact>
-
-<file path="src/providers/theme-provider.tsx">
-"use client"
-
-import * as React from "react"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
-import { type ThemeProviderProps } from "next-themes/dist/types"
-
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
-}
-</file_artifact>
-
-<file path="src/components/global/3d-card.tsx">
-'use client'
-
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useRef,
-  useEffect,
-} from 'react'
-
-const MouseEnterContext = createContext<
-  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
->(undefined)
-
-export const CardContainer = ({
-  children,
-  className,
-  containerClassName,
-}: {
-  children?: React.ReactNode
-  className?: string
-  containerClassName?: string
-}) => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [isMouseEntered, setIsMouseEntered] = useState(false)
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect()
-    const x = (e.clientX - left - width / 2) / 25
-    const y = (e.clientY - top - height / 2) / 25
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
-  }
-
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsMouseEntered(true)
-    if (!containerRef.current) return
-  }
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    setIsMouseEntered(false)
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`
-  }
-  return (
-    <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
-      <div
-        className={cn('flex items-center justify-center', containerClassName)}
-        style={{
-          perspective: '1000px',
-        }}
-      >
-        <div
-          ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className={cn(
-            'flex items-center justify-center relative transition-all duration-200 ease-linear',
-            className
-          )}
-          style={{
-            transformStyle: 'preserve-3d',
-          }}
-        >
-          {children}
-        </div>
-      </div>
-    </MouseEnterContext.Provider>
-  )
-}
-
-export const CardBody = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) => {
-  return (
-    <div
-      className={cn(
-        'h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]',
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
-}
-
-export const CardItem = ({
-  as: Tag = 'div',
-  children,
-  className,
-  translateX = 0,
-  translateY = 0,
-  translateZ = 0,
-  rotateX = 0,
-  rotateY = 0,
-  rotateZ = 0,
-  ...rest
-}: {
-  as?: React.ElementType
-  children: React.ReactNode
-  className?: string
-  translateX?: number | string
-  translateY?: number | string
-  translateZ?: number | string
-  rotateX?: number | string
-  rotateY?: number | string
-  rotateZ?: number | string
-}) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isMouseEntered] = useMouseEnter()
-
-  useEffect(() => {
-    handleAnimations()
-  }, [isMouseEntered])
-
-  const handleAnimations = () => {
-    if (!ref.current) return
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`
-    }
-  }
-
-  return (
-    <Tag
-      ref={ref}
-      className={cn('w-fit transition duration-200 ease-linear', className)}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  )
-}
-
-// Create a hook to use the context
-export const useMouseEnter = () => {
-  const context = useContext(MouseEnterContext)
-  if (context === undefined) {
-    throw new Error('useMouseEnter must be used within a MouseEnterProvider')
-  }
-  return context
-}
-</file_artifact>
-
-<file path="src/components/global/connect-parallax.tsx">
-'use client'
-import React from 'react'
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
-
-export const HeroParallax = ({
-  products,
-}: {
-  products: {
-    title: string
-    link: string
-    thumbnail: string
-  }[]
-}) => {
-  const firstRow = products.slice(0, 5)
-  const secondRow = products.slice(5, 10)
-  const thirdRow = products.slice(10, 15)
-  const ref = React.useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  })
-
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 }
-
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
-  )
-  const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
-  )
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
-  )
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  )
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
-  )
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
-  )
-  return (
-    <div
-      ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
-    >
-      <Header />
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className=""
-      >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
-    </div>
-  )
-}
-
-export const Header = () => {
-  return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
-      </p>
-    </div>
-  )
-}
-
-export const ProductCard = ({
-  product,
-  translate,
-}: {
-  product: {
-    title: string
-    link: string
-    thumbnail: string
-  }
-  translate: MotionValue<number>
-}) => {
-  return (
-    <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -20,
-      }}
-      key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
-    >
-      <Link
-        href={product.link}
-        className="block group-hover/product:shadow-2xl "
-      >
-        <Image
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
-        />
-      </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
-    </motion.div>
-  )
-}
-</file_artifact>
-
-<file path="src/components/global/container-scroll-animation.tsx">
-'use client'
-import React, { useRef } from 'react'
-import { useScroll, useTransform, motion } from 'framer-motion'
-import Image from 'next/image'
-
-export const ContainerScroll = ({
-  titleComponent,
-}: {
-  titleComponent: string | React.ReactNode
-}) => {
-  const containerRef = useRef<any>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-  })
-  const [isMobile, setIsMobile] = React.useState(false)
-
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => {
-      window.removeEventListener('resize', checkMobile)
-    }
-  }, [])
-
-  const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1]
-  }
-
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
-
-  return (
-    <div
-      className="h-[80rem] flex items-center justify-center relative p-20"
-      ref={containerRef}
-    >
-      <div
-        className="py-40 w-full relative"
-        style={{
-          perspective: '1000px',
-        }}
-      >
-        <Header
-          translate={translate}
-          titleComponent={titleComponent}
-        />
-        <Card
-          rotate={rotate}
-          translate={translate}
-          scale={scale}
-        />
-      </div>
-    </div>
-  )
-}
-
-export const Header = ({ translate, titleComponent }: any) => {
-  return (
-    <motion.div
-      style={{
-        translateY: translate,
-      }}
-      className="div max-w-5xl mx-auto text-center"
-    >
-      {titleComponent}
-    </motion.div>
-  )
-}
-
-export const Card = ({
-  rotate,
-  scale,
-  translate,
-}: {
-  rotate: any
-  scale: any
-  translate: any
-}) => {
-  return (
-    <motion.div
-      style={{
-        rotateX: rotate, // rotate in X-axis
-        scale,
-        boxShadow:
-          '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
-      }}
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full  p-6 bg-[#222222] rounded-[30px] shadow-2xl"
-    >
-      <div className="bg-gray-100 h-full w-full rounded-2xl  gap-4 overflow-hidden p-4 transition-all ">
-        <Image
-          src="/temp-banner.png"
-          fill
-          alt="bannerImage"
-          className="object-cover border-8 rounded-2xl"
-        />
-      </div>
-    </motion.div>
-  )
-}
-</file_artifact>
-
-<file path="src/components/global/custom-modal.tsx">
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-  } from '@/components/ui/drawer'
-  import { useModal } from '@/providers/modal-provider'
-  
-  import React from 'react'
-  import { Button } from '../ui/button'
-  
-  type Props = {
-    title: string
-    subheading: string
-    children: React.ReactNode
-    defaultOpen?: boolean
-  }
-  
-  const CustomModal = ({ children, subheading, title, defaultOpen }: Props) => {
-    const { isOpen, setClose } = useModal()
-    const handleClose = () => setClose()
-  
-    return (
-      <Drawer
-        open={isOpen}
-        onClose={handleClose}
-      >
-        <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle className="text-center">{title}</DrawerTitle>
-            <DrawerDescription className="text-center flex flex-col items-center gap-4 h-96 overflow-scroll">
-              {subheading}
-              {children}
-            </DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter className="flex flex-col gap-4 bg-background border-t-[1px] border-t-muted">
-            <DrawerClose>
-              <Button
-                variant="ghost"
-                className="w-full"
-                onClick={handleClose}
-              >
-                Close
-              </Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    )
-  }
-  
-  export default CustomModal
-</file_artifact>
-
-<file path="src/components/global/infinite-moving-cards.tsx">
-'use client'
-
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-
-export const InfiniteMovingCards = ({
-  items,
-  direction = 'left',
-  speed = 'fast',
-  pauseOnHover = true,
-  className,
-}: {
-  items: {
-    href: string
-  }[]
-  direction?: 'left' | 'right'
-  speed?: 'fast' | 'normal' | 'slow'
-  pauseOnHover?: boolean
-  className?: string
-}) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const scrollerRef = React.useRef<HTMLUListElement>(null)
-
-  useEffect(() => {
-    addAnimation()
-  }, [])
-  
-  const [start, setStart] = useState(false)
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children)
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true)
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem)
-        }
-      })
-
-      getDirection()
-      getSpeed()
-      setStart(true)
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === 'left') {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'forwards'
-        )
-      } else {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'reverse'
-        )
-      }
-    }
-  }
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === 'fast') {
-        containerRef.current.style.setProperty('--animation-duration', '20s')
-      } else if (speed === 'normal') {
-        containerRef.current.style.setProperty('--animation-duration', '40s')
-      } else {
-        containerRef.current.style.setProperty('--animation-duration', '80s')
-      }
-    }
-  }
-  console.log(items)
-  return (
-    <div
-      ref={containerRef}
-      className={cn(
-        'scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
-        className
-      )}
-    >
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          ' flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap',
-          start && 'animate-scroll ',
-          pauseOnHover && 'hover:[animation-play-state:paused]'
-        )}
-      >
-        {items.map((item, idx) => (
-          <Image
-            width={170}
-            height={1}
-            src={item.href}
-            alt={item.href}
-            className=" relative rounded-2xl  object-contain opacity-50"
-            key={item.href}
-          />
-        ))}
-      </ul>
-    </div>
-  )
-}
-</file_artifact>
-
-<file path="src/components/global/lamp.tsx">
-'use client'
-import React from 'react'
-import { motion } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import { SparklesCore } from './sparkles'
-
-export function LampComponent() {
-  return (
-    <LampContainer>
-      <motion.h1
-        initial={{ opacity: 0.5, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: 'easeInOut',
-        }}
-        className="mt-20 bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
-      >
-        Plans That
-        <br /> Fit You Best
-      </motion.h1>
-    </LampContainer>
-  )
-}
-
-export const LampContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) => {
-  return (
-    <div
-      className={cn(
-        'relative flex min-h-[800px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0',
-        className
-      )}
-    >
-      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
-        <motion.div
-          initial={{ opacity: 0.5, width: '15rem' }}
-          whileInView={{ opacity: 1, width: '30rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          style={{
-            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
-          }}
-          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-neutral-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
-        >
-          <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
-          <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0.5, width: '15rem' }}
-          whileInView={{ opacity: 1, width: '30rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          style={{
-            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
-          }}
-          className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-neutral-500 text-white [--conic-position:from_290deg_at_center_top]"
-        >
-          <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
-          <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
-        </motion.div>
-        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div>
-        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-neutral-500 opacity-50 blur-3xl"></div>
-        <motion.div
-          initial={{ width: '8rem' }}
-          whileInView={{ width: '16rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-neutral-400 blur-2xl"
-        ></motion.div>
-        <motion.div
-          initial={{ width: '15rem' }}
-          whileInView={{ width: '30rem' }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-neutral-400 "
-        ></motion.div>
-
-        <div className="w-[40rem] h-40 relative">
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={1200}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-        </div>
-
-        <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div>
-      </div>
-
-      <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
-        {children}
-      </div>
-    </div>
-  )
-}
-</file_artifact>
-
-<file path="src/components/global/mode-toggle.tsx">
-'use client'
-
-import * as React from 'react'
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
-
-import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-
-export function ModeToggle() {
-  const { setTheme } = useTheme()
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="relative">
-          <Sun className="absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute inset-0 m-auto h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme('light')}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
-</file_artifact>
-
-<file path="src/components/global/navbar.tsx">
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { MenuIcon } from 'lucide-react'
-import { UserButton, currentUser } from '@clerk/nextjs'
-
-type Props = {}
-
-const Navbar = async (props: Props) => {
-  const user = await currentUser()
-  return (
-    <header className="fixed right-0 left-0 top-0 py-4 px-4 bg-black/40 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
-      <aside className="flex items-center gap-[2px]">
-        <p className="text-3xl font-bold">ChartFlow</p>
-        <Image
-          src="/Logo.png"
-          width={15}
-          height={15}
-          alt="logo"
-          className="shadow-sm"
-        />
-        <p className="text-3xl font-bold">Pro</p>
-      </aside>
-      <nav className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
-        <ul className="flex items-center gap-4 list-none">
-          <li>
-            <Link href="#">Products</Link>
-          </li>
-          <li>
-            <Link href="#">Pricing</Link>
-          </li>
-          <li>
-            <Link href="#">Clients</Link>
-          </li>
-          <li>
-            <Link href="#">Resources</Link>
-          </li>
-          <li>
-            <Link href="#">Documentation</Link>
-          </li>
-          <li>
-            <Link href="#">Enterprise</Link>
-          </li>
-        </ul>
-      </nav>
-      <aside className="flex items-center gap-4">
-        <Link
-          href="/dashboard"
-          className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            {user ? 'Dashboard' : 'Get Started'}
-          </span>
-        </Link>
-        {user ? <UserButton afterSignOutUrl="/" /> : null}
-        <MenuIcon className="md:hidden" />
-      </aside>
-    </header>
-  )
-}
-
-export default Navbar
-</file_artifact>
-
-<file path="src/components/global/sparkles.tsx">
-'use client'
-import type { NextPage } from 'next'
-import React from 'react'
-import { useEffect, useState } from 'react'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
-import type { Container, Engine } from '@tsparticles/engine'
-import { loadSlim } from '@tsparticles/slim'
-
-import { motion, useAnimation } from 'framer-motion'
-import { cn } from '@/lib/utils'
-
-type ParticlesProps = {
-  id?: string
-  className?: string
-  background?: string
-  particleSize?: number
-  minSize?: number
-  maxSize?: number
-  speed?: number
-  particleColor?: string
-  particleDensity?: number
-}
-export const SparklesCore = (props: ParticlesProps) => {
-  const {
-    id,
-    className,
-    background,
-    minSize,
-    maxSize,
-    speed,
-    particleColor,
-    particleDensity,
-  } = props
-  const [init, setInit] = useState(false)
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine)
-    }).then(() => {
-      setInit(true)
-    })
-  }, [])
-  const controls = useAnimation()
-
-  const particlesLoaded = async (container?: Container) => {
-    if (container) {
-      console.log(container)
-      controls.start({
-        opacity: 1,
-        transition: {
-          duration: 1,
-        },
-      })
-    }
-  }
-
-  return (
-    <motion.div
-      animate={controls}
-      className={cn('opacity-0', className)}
-    >
-      {init && (
-        <Particles
-          id={id || 'tsparticles'}
-          className={cn('h-full w-full')}
-          particlesLoaded={particlesLoaded}
-          options={{
-            background: {
-              color: {
-                value: background || '#0d47a1',
-              },
-            },
-            fullScreen: {
-              enable: false,
-              zIndex: 1,
-            },
-
-            fpsLimit: 120,
-            interactivity: {
-              events: {
-                onClick: {
-                  enable: true,
-                  mode: 'push',
-                },
-                onHover: {
-                  enable: false,
-                  mode: 'repulse',
-                },
-                resize: true as any,
-              },
-              modes: {
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                },
-              },
-            },
-            particles: {
-              bounce: {
-                horizontal: {
-                  value: 1,
-                },
-                vertical: {
-                  value: 1,
-                },
-              },
-              collisions: {
-                absorb: {
-                  speed: 2,
-                },
-                bounce: {
-                  horizontal: {
-                    value: 1,
-                  },
-                  vertical: {
-                    value: 1,
-                  },
-                },
-                enable: false,
-                maxSpeed: 50,
-                mode: 'bounce',
-                overlap: {
-                  enable: true,
-                  retries: 0,
-                },
-              },
-              color: {
-                value: particleColor || '#ffffff',
-                animation: {
-                  h: {
-                    count: 0,
-                    enable: false,
-                    speed: 1,
-                    decay: 0,
-                    delay: 0,
-                    sync: true,
-                    offset: 0,
-                  },
-                  s: {
-                    count: 0,
-                    enable: false,
-                    speed: 1,
-                    decay: 0,
-                    delay: 0,
-                    sync: true,
-                    offset: 0,
-                  },
-                  l: {
-                    count: 0,
-                    enable: false,
-                    speed: 1,
-                    decay: 0,
-                    delay: 0,
-                    sync: true,
-                    offset: 0,
-                  },
-                },
-              },
-              effect: {
-                close: true,
-                fill: true,
-                options: {},
-                type: {} as any,
-              },
-              groups: {},
-              move: {
-                angle: {
-                  offset: 0,
-                  value: 90,
-                },
-                attract: {
-                  distance: 200,
-                  enable: false,
-                  rotate: {
-                    x: 3000,
-                    y: 3000,
-                  },
-                },
-                center: {
-                  x: 50,
-                  y: 50,
-                  mode: 'percent',
-                  radius: 0,
-                },
-                decay: 0,
-                distance: {},
-                direction: 'none',
-                drift: 0,
-                enable: true,
-                gravity: {
-                  acceleration: 9.81,
-                  enable: false,
-                  inverse: false,
-                  maxSpeed: 50,
-                },
-                path: {
-                  clamp: true,
-                  delay: {
-                    value: 0,
-                  },
-                  enable: false,
-                  options: {},
-                },
-                outModes: {
-                  default: 'out',
-                },
-                random: false,
-                size: false,
-                speed: {
-                  min: 0.1,
-                  max: 1,
-                },
-                spin: {
-                  acceleration: 0,
-                  enable: false,
-                },
-                straight: false,
-                trail: {
-                  enable: false,
-                  length: 10,
-                  fill: {},
-                },
-                vibrate: false,
-                warp: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  width: 400,
-                  height: 400,
-                },
-                limit: {
-                  mode: 'delete',
-                  value: 0,
-                },
-                value: particleDensity || 120,
-              },
-              opacity: {
-                value: {
-                  min: 0.1,
-                  max: 1,
-                },
-                animation: {
-                  count: 0,
-                  enable: true,
-                  speed: speed || 4,
-                  decay: 0,
-                  delay: 2,
-                  sync: false,
-                  mode: 'auto',
-                  startValue: 'random',
-                  destroy: 'none',
-                },
-              },
-              reduceDuplicates: false,
-              shadow: {
-                blur: 0,
-                color: {
-                  value: '#000',
-                },
-                enable: false,
-                offset: {
-                  x: 0,
-                  y: 0,
-                },
-              },
-              shape: {
-                close: true,
-                fill: true,
-                options: {},
-                type: 'circle',
-              },
-              size: {
-                value: {
-                  min: minSize || 1,
-                  max: maxSize || 3,
-                },
-                animation: {
-                  count: 0,
-                  enable: false,
-                  speed: 5,
-                  decay: 0,
-                  delay: 0,
-                  sync: false,
-                  mode: 'auto',
-                  startValue: 'random',
-                  destroy: 'none',
-                },
-              },
-              stroke: {
-                width: 0,
-              },
-              zIndex: {
-                value: 0,
-                opacityRate: 1,
-                sizeRate: 1,
-                velocityRate: 1,
-              },
-              destroy: {
-                bounds: {},
-                mode: 'none',
-                split: {
-                  count: 1,
-                  factor: {
-                    value: 3,
-                  },
-                  rate: {
-                    value: {
-                      min: 4,
-                      max: 9,
-                    },
-                  },
-                  sizeOffset: true,
-                },
-              },
-              roll: {
-                darken: {
-                  enable: false,
-                  value: 0,
-                },
-                enable: false,
-                enlighten: {
-                  enable: false,
-                  value: 0,
-                },
-                mode: 'vertical',
-                speed: 25,
-              },
-              tilt: {
-                value: 0,
-                animation: {
-                  enable: false,
-                  speed: 0,
-                  decay: 0,
-                  sync: false,
-                },
-                direction: 'clockwise',
-                enable: false,
-              },
-              twinkle: {
-                lines: {
-                  enable: false,
-                  frequency: 0.05,
-                  opacity: 1,
-                },
-                particles: {
-                  enable: false,
-                  frequency: 0.05,
-                  opacity: 1,
-                },
-              },
-              wobble: {
-                distance: 5,
-                enable: false,
-                speed: {
-                  angle: 50,
-                  move: 10,
-                },
-              },
-              life: {
-                count: 0,
-                delay: {
-                  value: 0,
-                  sync: false,
-                },
-                duration: {
-                  value: 0,
-                  sync: false,
-                },
-              },
-              rotate: {
-                value: 0,
-                animation: {
-                  enable: false,
-                  speed: 0,
-                  decay: 0,
-                  sync: false,
-                },
-                direction: 'clockwise',
-                path: false,
-              },
-              orbit: {
-                animation: {
-                  count: 0,
-                  enable: false,
-                  speed: 1,
-                  decay: 0,
-                  delay: 0,
-                  sync: false,
-                },
-                enable: false,
-                opacity: 1,
-                rotation: {
-                  value: 45,
-                },
-                width: 1,
-              },
-              links: {
-                blink: false,
-                color: {
-                  value: '#fff',
-                },
-                consent: false,
-                distance: 100,
-                enable: false,
-                frequency: 1,
-                opacity: 1,
-                shadow: {
-                  blur: 5,
-                  color: {
-                    value: '#000',
-                  },
-                  enable: false,
-                },
-                triangles: {
-                  enable: false,
-                  frequency: 1,
-                },
-                width: 1,
-                warp: false,
-              },
-              repulse: {
-                value: 0,
-                enabled: false,
-                distance: 1,
-                duration: 1,
-                factor: 1,
-                speed: 1,
-              },
-            },
-            detectRetina: true,
-          }}
-        />
-      )}
-    </motion.div>
-  )
-}
-</file_artifact>
-
-<file path="src/components/icons/category.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-type Props = { selected: boolean }
-
-function Category({ selected }: Props) {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect
-        x="3"
-        y="3"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <rect
-        x="3"
-        y="13"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <rect
-        x="13"
-        y="3"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <rect
-        x="13"
-        y="13"
-        width="8"
-        height="8"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Category
-</file_artifact>
-
-<file path="src/components/icons/clipboard.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-const Logs = ({ selected }: { selected: boolean }) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect
-        x="3"
-        y="3"
-        width="18"
-        height="19"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <path
-        d="M14 3C14 1.89543 13.1046 1 12 1C10.8954 1 10 1.89543 10 3H8V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3H14Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M7 11C7 10.4477 7.44772 10 8 10L16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12L8 12C7.44772 12 7 11.5523 7 11Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M7 15C7 14.4477 7.44772 14 8 14L12 14C12.5523 14 13 14.4477 13 15C13 15.5523 12.5523 16 12 16L8 16C7.44772 16 7 15.5523 7 15Z"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Logs
-</file_artifact>
-
-<file path="src/components/icons/cloud_download.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-type Props = { selected: boolean }
-
-const Templates = ({ selected }: Props) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M22 9C22 12.866 18.866 16 15 16H7C4.23858 16 2 13.7614 2 11C2 8.23858 4.23858 6 7 6C7.54527 6 8.07015 6.08728 8.56143 6.24864C9.63037 3.75042 12.1108 2 15 2C18.866 2 22 5.13401 22 9Z"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <path
-        d="M9.70711 17.2929C9.31658 16.9024 8.68342 16.9024 8.29289 17.2929C7.90237 17.6834 7.90237 18.3166 8.29289 18.7071L11.2929 21.7071C11.4874 21.9016 11.7421 21.9992 11.997 22L12 22L12.003 22C12.1375 21.9996 12.2657 21.9727 12.3828 21.9241C12.5007 21.8753 12.6112 21.803 12.7071 21.7071L15.7071 18.7071C16.0976 18.3166 16.0976 17.6834 15.7071 17.2929C15.3166 16.9024 14.6834 16.9024 14.2929 17.2929L13 18.5858V13C13 12.4477 12.5523 12 12 12C11.4477 12 11 12.4477 11 13V18.5858L9.70711 17.2929Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Templates
-</file_artifact>
-
-<file path="src/components/icons/home.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-type Props = { selected: boolean }
-
-const Home = ({ selected }: Props) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M2 11.3361C2 10.4857 2.36096 9.67518 2.99311 9.10625L9.9931 2.80625C11.134 1.77943 12.866 1.77943 14.0069 2.80625L21.0069 9.10625C21.639 9.67518 22 10.4857 22 11.3361V19C22 20.6569 20.6569 22 19 22H16L15.9944 22H8.00558L8 22H5C3.34315 22 2 20.6569 2 19V11.3361Z"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#C0BFC4] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] !fill-[#7540A9] ': selected }
-        )}
-      />
-      <path
-        d="M9 16C9 14.8954 9.89543 14 11 14H13C14.1046 14 15 14.8954 15 16V22H9V16Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#9F54FF] fill-[#BD8AFF]': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Home
-</file_artifact>
-
-<file path="src/components/icons/payment.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-type Props = {
-  selected: boolean
-}
-
-const Payment = ({ selected }: Props) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect
-        x="2"
-        y="4"
-        width="20"
-        height="16"
-        rx="3"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M22 10H2V8H22V10Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M4 15C4 14.4477 4.44772 14 5 14H11C11.5523 14 12 14.4477 12 15C12 15.5523 11.5523 16 11 16H5C4.44772 16 4 15.5523 4 15Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Payment
-</file_artifact>
-
-<file path="src/components/icons/settings.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-type Props = { selected: boolean }
-
-const Settings = ({ selected }: Props) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7.99243 4.78709C8.49594 4.50673 8.91192 4.07694 9.09416 3.53021L9.48171 2.36754C9.75394 1.55086 10.5182 1 11.3791 1H12.621C13.4819 1 14.2462 1.55086 14.5184 2.36754L14.906 3.53021C15.0882 4.07694 15.5042 4.50673 16.0077 4.78709C16.086 4.83069 16.1635 4.87553 16.2403 4.92159C16.7349 5.21857 17.3158 5.36438 17.8811 5.2487L19.0828 5.00279C19.9262 4.8302 20.7854 5.21666 21.2158 5.96218L21.8368 7.03775C22.2672 7.78328 22.1723 8.72059 21.6012 9.36469L20.7862 10.2838C20.4043 10.7144 20.2392 11.2888 20.2483 11.8644C20.2498 11.9548 20.2498 12.0452 20.2483 12.1356C20.2392 12.7111 20.4043 13.2855 20.7862 13.7162L21.6012 14.6352C22.1723 15.2793 22.2672 16.2167 21.8368 16.9622L21.2158 18.0378C20.7854 18.7833 19.9262 19.1697 19.0828 18.9971L17.8812 18.7512C17.3159 18.6356 16.735 18.7814 16.2403 19.0784C16.1636 19.1244 16.086 19.1693 16.0077 19.2129C15.5042 19.4933 15.0882 19.9231 14.906 20.4698L14.5184 21.6325C14.2462 22.4491 13.4819 23 12.621 23H11.3791C10.5182 23 9.75394 22.4491 9.48171 21.6325L9.09416 20.4698C8.91192 19.9231 8.49594 19.4933 7.99243 19.2129C7.91409 19.1693 7.83654 19.1244 7.7598 19.0784C7.2651 18.7814 6.68424 18.6356 6.11895 18.7512L4.91726 18.9971C4.07387 19.1697 3.21468 18.7833 2.78425 18.0378L2.16326 16.9622C1.73283 16.2167 1.82775 15.2793 2.39891 14.6352L3.21393 13.7161C3.59585 13.2854 3.7609 12.7111 3.75179 12.1355C3.75035 12.0452 3.75035 11.9548 3.75179 11.8644C3.76091 11.2889 3.59585 10.7145 3.21394 10.2838L2.39891 9.36469C1.82775 8.72059 1.73283 7.78328 2.16326 7.03775L2.78425 5.96218C3.21468 5.21665 4.07387 4.8302 4.91726 5.00278L6.11903 5.24871C6.68431 5.36439 7.26517 5.21857 7.75986 4.9216C7.83658 4.87554 7.91411 4.83069 7.99243 4.78709Z"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-        className={clsx(
-          'dark:group-hover:fill-[#9F54FF] transition-all dark:fill-[#C0BFC4] fill-[#5B5966] group-hover:fill-[#BD8AFF] ',
-          { 'dark:!fill-[#7540A9] fill-[#BD8AFF] ': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Settings
-</file_artifact>
-
-<file path="src/components/icons/workflows.tsx">
-import clsx from 'clsx'
-import React from 'react'
-
-type Props = { selected: boolean }
-
-const Workflows = ({ selected }: Props) => {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M15.0034 4.69724C15.451 2.17765 12.2728 0.692639 10.6273 2.65246L3.58895 11.0353C2.22322 12.6619 3.37965 15.1429 5.50357 15.1429H9.7351L8.99616 19.3027C8.54859 21.8223 11.7267 23.3073 13.3722 21.3475L20.4107 12.9647C21.7764 11.3381 20.62 8.85714 18.496 8.85714H14.2645L15.0034 4.69724Z"
-        className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] !fill-[#7540A9] ': selected }
-        )}
-      />
-    </svg>
-  )
-}
-
-export default Workflows
-</file_artifact>
-
-<file path="src/components/infobar/index.tsx">
-'use client'
-import React, { useEffect } from 'react'
-import { ModeToggle } from '../global/mode-toggle'
-import { Book, Headphones } from 'lucide-react'
-import { Input } from '@/components/ui/input'
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import { UserButton } from '@clerk/nextjs'
-import { useBilling } from '@/providers/billing-provider'
-import { onPaymentDetails } from '@/app/(main)/(pages)/billing/_actions/payment-connections'
-
-type Props = {}
-
-const InfoBar = (props: Props) => {
-  const { credits, tier, setCredits, setTier } = useBilling()
-
-  const onGetPayment = async () => {
-    const response = await onPaymentDetails()
-    if (response) {
-      setTier(response.tier!)
-      setCredits(response.credits!)
-    }
-  }
-
-  useEffect(() => {
-    onGetPayment()
-  }, [])
-
-  return (
-    <div className="flex flex-row justify-end gap-6 items-center px-4 py-4 w-full dark:bg-black ">
-      <span className="flex items-center gap-2 font-bold">
-        <p className="text-sm font-light text-gray-300">Credits</p>
-        {tier == 'Unlimited' ? (
-          <span>Unlimited</span>
-        ) : (
-          <span>
-            {credits}/{tier == 'Free' ? '10' : tier == 'Pro' && '100'}
-          </span>
-        )}
-      </span>
-      <TooltipProvider>
-        <Tooltip delayDuration={0}>
-          <TooltipTrigger>
-            <Headphones />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Contact Support</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      <TooltipProvider>
-        <Tooltip delayDuration={0}>
-          <TooltipTrigger>
-            <Book />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Guide</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      <UserButton />
-    </div>
-  )
-}
-
-export default InfoBar
-</file_artifact>
-
-<file path="src/components/sidebar/index.tsx">
-'use client'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React from 'react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import { menuOptions } from '@/lib/constant'
-import clsx from 'clsx'
-import { Database, GitBranch, LucideMousePointerClick } from 'lucide-react'
-import { Separator } from '@/components/ui/separator'
-import { ModeToggle } from '../global/mode-toggle'
-
-type Props = {}
-
-const MenuOptions = (props: Props) => {
-  const pathName = usePathname()
-
-  return (
-    <nav className=" dark:bg-black h-screen overflow-scroll  justify-between flex items-center flex-col  gap-10 py-6 px-2">
-      <div className="flex items-center justify-center flex-col gap-8">
-        <Link
-          className="flex font-bold flex-row "
-          href="/"
-        >
-          ChartFlow
-        </Link>
-        <TooltipProvider>
-          {menuOptions.map((menuItem) => (
-            <ul key={menuItem.name}>
-              <Tooltip delayDuration={0}>
-                <TooltipTrigger>
-                  <li>
-                    <Link
-                      href={menuItem.href}
-                      className={clsx(
-                        'group h-8 w-8 flex items-center justify-center  scale-[1.5] rounded-lg p-[3px]  cursor-pointer',
-                        {
-                          'dark:bg-[#2F006B] bg-[#EEE0FF] ':
-                            pathName === menuItem.href,
-                        }
-                      )}
-                    >
-                      <menuItem.Component selected={pathName === menuItem.href} />
-                    </Link>
-                  </li>
-                </TooltipTrigger>
-                <TooltipContent
-                  side="right"
-                  className="bg-black/10 backdrop-blur-xl"
-                >
-                  <p>{menuItem.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </ul>
-          ))}
-        </TooltipProvider>
-        <Separator />
-        <div className="flex items-center flex-col gap-9 dark:bg-[#353346]/30 py-4 px-2 rounded-full h-56 overflow-scroll border-[1px]">
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <LucideMousePointerClick className="dark:text-white" size={18} />
-            <div className="border-l-2 border-muted-foreground/50 h-6 absolute left-1/2 transform -bottom-[30px] translate-x-[-50%]" />
-          </div>
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <GitBranch className="text-muted-foreground" size={18} />
-            <div className="border-l-2 border-muted-foreground/50 h-6 absolute left-1/2 transform -bottom-[30px] translate-x-[-50%]" />
-          </div>
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <Database className="text-muted-foreground" size={18} />
-            <div className="border-l-2 border-muted-foreground/50 h-6 absolute left-1/2 transform -bottom-[30px] translate-x-[-50%]" />
-          </div>
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <GitBranch className="text-muted-foreground" size={18} />
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-center flex-col gap-8">
-        <ModeToggle />
-      </div>
-    </nav>
-  )
-}
-
-export default MenuOptions
-</file_artifact>
-
-<file path="src/components/ui/accordion.tsx">
-"use client"
-
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-
-const Accordion = AccordionPrimitive.Root
-
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn("border-b", className)}
-    {...props}
-  />
-))
-AccordionItem.displayName = "AccordionItem"
-
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
-
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-    {...props}
-  >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
-  </AccordionPrimitive.Content>
-))
-
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
-
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
-</file_artifact>
-
-<file path="src/components/ui/badge.tsx">
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
-
-import { cn } from "@/lib/utils"
-
-const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
-  {
-    variants: {
-      variant: {
-        default:
-          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-        secondary:
-          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        destructive:
-          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-        outline: "text-foreground",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
-
-export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
-
-function Badge({ className, variant, ...props }: BadgeProps) {
-  return (
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
-  )
-}
-
-export { Badge, badgeVariants }
-</file_artifact>
-
-<file path="src/components/ui/button.tsx">
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
-
-import { cn } from "@/lib/utils"
-
-const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-)
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
-
-export { Button, buttonVariants }
-</file_artifact>
-
-<file path="src/components/ui/card.tsx">
-import * as React from "react"
-
-import { cn } from "@/lib/utils"
-
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
-      className
-    )}
-    {...props}
-  />
-))
-Card.displayName = "Card"
-
-const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  />
-))
-CardHeader.displayName = "CardHeader"
-
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
-CardTitle.displayName = "CardTitle"
-
-const CardDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
-  />
-))
-CardDescription.displayName = "CardDescription"
-
-const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-))
-CardContent.displayName = "CardContent"
-
-const CardFooter = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
-    {...props}
-  />
-))
-CardFooter.displayName = "CardFooter"
-
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
-</file_artifact>
-
-<file path="src/components/ui/command.tsx">
-"use client"
-
-import * as React from "react"
-import { type DialogProps } from "@radix-ui/react-dialog"
-import { Command as CommandPrimitive } from "cmdk"
-import { Search } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
-
-const Command = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive
-    ref={ref}
-    className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
-      className
-    )}
-    {...props}
-  />
-))
-Command.displayName = CommandPrimitive.displayName
-
-interface CommandDialogProps extends DialogProps {}
-
-const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
-  return (
-    <Dialog {...props}>
-      <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
-          {children}
-        </Command>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-const CommandInput = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Input>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
->(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-    <CommandPrimitive.Input
-      ref={ref}
-      className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
-      {...props}
-    />
-  </div>
-))
-
-CommandInput.displayName = CommandPrimitive.Input.displayName
-
-const CommandList = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
-    ref={ref}
-    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
-    {...props}
-  />
-))
-
-CommandList.displayName = CommandPrimitive.List.displayName
-
-const CommandEmpty = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Empty>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
->((props, ref) => (
-  <CommandPrimitive.Empty
-    ref={ref}
-    className="py-6 text-center text-sm"
-    {...props}
-  />
-))
-
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName
-
-const CommandGroup = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Group>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Group
-    ref={ref}
-    className={cn(
-      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
-      className
-    )}
-    {...props}
-  />
-))
-
-CommandGroup.displayName = CommandPrimitive.Group.displayName
-
-const CommandSeparator = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Separator
-    ref={ref}
-    className={cn("-mx-1 h-px bg-border", className)}
-    {...props}
-  />
-))
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName
-
-const CommandItem = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Item
-    ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      className
-    )}
-    {...props}
-  />
-))
-
-CommandItem.displayName = CommandPrimitive.Item.displayName
-
-const CommandShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
-  return (
-    <span
-      className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-CommandShortcut.displayName = "CommandShortcut"
-
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
-}
-</file_artifact>
-
-<file path="src/components/ui/dialog.tsx">
-"use client"
-
-import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { X } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-
-const Dialog = DialogPrimitive.Root
-
-const DialogTrigger = DialogPrimitive.Trigger
-
-const DialogPortal = DialogPrimitive.Portal
-
-const DialogClose = DialogPrimitive.Close
-
-const DialogOverlay = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Overlay
-    ref={ref}
-    className={cn(
-      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-      className
-    )}
-    {...props}
-  />
-))
-DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
-
-const DialogContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <DialogPortal>
-    <DialogOverlay />
-    <DialogPrimitive.Content
-      ref={ref}
-      className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
-  </DialogPortal>
-))
-DialogContent.displayName = DialogPrimitive.Content.displayName
-
-const DialogHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left",
-      className
-    )}
-    {...props}
-  />
-)
-DialogHeader.displayName = "DialogHeader"
-
-const DialogFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-      className
-    )}
-    {...props}
-  />
-)
-DialogFooter.displayName = "DialogFooter"
-
-const DialogTitle = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Title
-    ref={ref}
-    className={cn(
-      "text-lg font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
-DialogTitle.displayName = DialogPrimitive.Title.displayName
-
-const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
-  />
-))
-DialogDescription.displayName = DialogPrimitive.Description.displayName
-
-export {
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogClose,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
-}
-</file_artifact>
-
-<file path="src/components/ui/drawer.tsx">
-"use client"
-
-import * as React from "react"
-import { Drawer as DrawerPrimitive } from "vaul"
-
-import { cn } from "@/lib/utils"
-
-const Drawer = ({
-  shouldScaleBackground = true,
-  ...props
-}: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
-  <DrawerPrimitive.Root
-    shouldScaleBackground={shouldScaleBackground}
-    {...props}
-  />
-)
-Drawer.displayName = "Drawer"
-
-const DrawerTrigger = DrawerPrimitive.Trigger
-
-const DrawerPortal = DrawerPrimitive.Portal
-
-const DrawerClose = DrawerPrimitive.Close
-
-const DrawerOverlay = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Overlay
-    ref={ref}
-    className={cn("fixed inset-0 z-50 bg-black/80", className)}
-    {...props}
-  />
-))
-DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
-
-const DrawerContent = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <DrawerPortal>
-    <DrawerOverlay />
-    <DrawerPrimitive.Content
-      ref={ref}
-      className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
-        className
-      )}
-      {...props}
-    >
-      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
-      {children}
-    </DrawerPrimitive.Content>
-  </DrawerPortal>
-))
-DrawerContent.displayName = "DrawerContent"
-
-const DrawerHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn("grid gap-1.5 p-4 text-center sm:text-left", className)}
-    {...props}
-  />
-)
-DrawerHeader.displayName = "DrawerHeader"
-
-const DrawerFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn("mt-auto flex flex-col gap-2 p-4", className)}
-    {...props}
-  />
-)
-DrawerFooter.displayName = "DrawerFooter"
-
-const DrawerTitle = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Title
-    ref={ref}
-    className={cn(
-      "text-lg font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
-DrawerTitle.displayName = DrawerPrimitive.Title.displayName
-
-const DrawerDescription = React.forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Description
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
-  />
-))
-DrawerDescription.displayName = DrawerPrimitive.Description.displayName
-
-export {
-  Drawer,
-  DrawerPortal,
-  DrawerOverlay,
-  DrawerTrigger,
-  DrawerClose,
-  DrawerContent,
-  DrawerHeader,
-  DrawerFooter,
-  DrawerTitle,
-  DrawerDescription,
-}
-</file_artifact>
-
-<file path="src/components/ui/form.tsx">
-import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
-import { Slot } from "@radix-ui/react-slot"
-import {
-  Controller,
-  ControllerProps,
-  FieldPath,
-  FieldValues,
-  FormProvider,
-  useFormContext,
-} from "react-hook-form"
-
-import { cn } from "@/lib/utils"
-import { Label } from "@/components/ui/label"
-
-const Form = FormProvider
-
-type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
-> = {
-  name: TName
-}
-
-const FormFieldContext = React.createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue
-)
-
-const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
->({
-  ...props
-}: ControllerProps<TFieldValues, TName>) => {
-  return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props} />
-    </FormFieldContext.Provider>
-  )
-}
-
-const useFormField = () => {
-  const fieldContext = React.useContext(FormFieldContext)
-  const itemContext = React.useContext(FormItemContext)
-  const { getFieldState, formState } = useFormContext()
-
-  const fieldState = getFieldState(fieldContext.name, formState)
-
-  if (!fieldContext) {
-    throw new Error("useFormField should be used within <FormField>")
-  }
-
-  const { id } = itemContext
-
-  return {
-    id,
-    name: fieldContext.name,
-    formItemId: `${id}-form-item`,
-    formDescriptionId: `${id}-form-item-description`,
-    formMessageId: `${id}-form-item-message`,
-    ...fieldState,
-  }
-}
-
-type FormItemContextValue = {
-  id: string
-}
-
-const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue
-)
-
-const FormItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const id = React.useId()
-
-  return (
-    <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
-    </FormItemContext.Provider>
-  )
-})
-FormItem.displayName = "FormItem"
-
-const FormLabel = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
-  const { error, formItemId } = useFormField()
-
-  return (
-    <Label
-      ref={ref}
-      className={cn(error && "text-destructive", className)}
-      htmlFor={formItemId}
-      {...props}
-    />
-  )
-})
-FormLabel.displayName = "FormLabel"
-
-const FormControl = React.forwardRef<
-  React.ElementRef<typeof Slot>,
-  React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
-  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
-
-  return (
-    <Slot
-      ref={ref}
-      id={formItemId}
-      aria-describedby={
-        !error
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
-      }
-      aria-invalid={!!error}
-      {...props}
-    />
-  )
-})
-FormControl.displayName = "FormControl"
-
-const FormDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  const { formDescriptionId } = useFormField()
-
-  return (
-    <p
-      ref={ref}
-      id={formDescriptionId}
-      className={cn("text-sm text-muted-foreground", className)}
-      {...props}
-    />
-  )
-})
-FormDescription.displayName = "FormDescription"
-
-const FormMessage = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
-  const { error, formMessageId } = useFormField()
-  const body = error ? String(error?.message) : children
-
-  if (!body) {
-    return null
-  }
-
-  return (
-    <p
-      ref={ref}
-      id={formMessageId}
-      className={cn("text-sm font-medium text-destructive", className)}
-      {...props}
-    >
-      {body}
-    </p>
-  )
-})
-FormMessage.displayName = "FormMessage"
-
-export {
-  useFormField,
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-  FormField,
-}
-</file_artifact>
-
-<file path="src/components/ui/input.tsx">
-import * as React from "react"
-
-import { cn } from "@/lib/utils"
-
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
-    return (
-      <input
-        type={type}
-        className={cn(
-          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Input.displayName = "Input"
-
-export { Input }
-</file_artifact>
-
-<file path="src/components/ui/label.tsx">
-"use client"
-
-import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
-import { cva, type VariantProps } from "class-variance-authority"
-
-import { cn } from "@/lib/utils"
-
-const labelVariants = cva(
-  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-)
-
-const Label = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
-    VariantProps<typeof labelVariants>
->(({ className, ...props }, ref) => (
-  <LabelPrimitive.Root
-    ref={ref}
-    className={cn(labelVariants(), className)}
-    {...props}
-  />
-))
-Label.displayName = LabelPrimitive.Root.displayName
-
-export { Label }
-</file_artifact>
-
-<file path="src/components/ui/popover.tsx">
-"use client"
-
-import * as React from "react"
-import * as PopoverPrimitive from "@radix-ui/react-popover"
-
-import { cn } from "@/lib/utils"
-
-const Popover = PopoverPrimitive.Root
-
-const PopoverTrigger = PopoverPrimitive.Trigger
-
-const PopoverContent = React.forwardRef<
-  React.ElementRef<typeof PopoverPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
-  <PopoverPrimitive.Portal>
-    <PopoverPrimitive.Content
-      ref={ref}
-      align={align}
-      sideOffset={sideOffset}
-      className={cn(
-        "z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-        className
-      )}
-      {...props}
-    />
-  </PopoverPrimitive.Portal>
-))
-PopoverContent.displayName = PopoverPrimitive.Content.displayName
-
-export { Popover, PopoverTrigger, PopoverContent }
-</file_artifact>
-
-<file path="src/components/ui/progress.tsx">
-"use client"
-
-import * as React from "react"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
-
-import { cn } from "@/lib/utils"
-
-const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
->(({ className, value, ...props }, ref) => (
-  <ProgressPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
-      className
-    )}
-    {...props}
-  >
-    <ProgressPrimitive.Indicator
-      className="h-full w-full flex-1 bg-primary transition-all"
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-    />
-  </ProgressPrimitive.Root>
-))
-Progress.displayName = ProgressPrimitive.Root.displayName
-
-export { Progress }
-</file_artifact>
-
-<file path="src/components/ui/resizable.tsx">
-"use client"
-
-import { GripVertical } from "lucide-react"
-import * as ResizablePrimitive from "react-resizable-panels"
-
-import { cn } from "@/lib/utils"
-
-const ResizablePanelGroup = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
-  <ResizablePrimitive.PanelGroup
-    className={cn(
-      "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",
-      className
-    )}
-    {...props}
-  />
-)
-
-const ResizablePanel = ResizablePrimitive.Panel
-
-const ResizableHandle = ({
-  withHandle,
-  className,
-  ...props
-}: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
-  withHandle?: boolean
-}) => (
-  <ResizablePrimitive.PanelResizeHandle
-    className={cn(
-      "relative flex w-px items-center justify-center bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 data-[panel-group-direction=vertical]:after:translate-x-0 [&[data-panel-group-direction=vertical]>div]:rotate-90",
-      className
-    )}
-    {...props}
-  >
-    {withHandle && (
-      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
-        <GripVertical className="h-2.5 w-2.5" />
-      </div>
-    )}
-  </ResizablePrimitive.PanelResizeHandle>
-)
-
-export { ResizablePanelGroup, ResizablePanel, ResizableHandle }
-</file_artifact>
-
-<file path="src/components/ui/select.tsx">
-// src/components/ui/select.tsx
-"use client";
-
-import * as React from "react";
-import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown } from "lucide-react";
-
-/**
- * Utility function to merge class names.
- * If you already have a `cn` utility, you can import that instead.
- */
-function cn(...classes: (string | undefined)[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
-const Select = SelectPrimitive.Root;
-const SelectGroup = SelectPrimitive.Group;
-const SelectValue = SelectPrimitive.Value;
-
-// [NEW] define a label component
-const SelectLabel = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
->((props, ref) => (
-  <SelectPrimitive.Label
-    ref={ref}
-    className="px-2 py-1 text-xs font-semibold text-muted-foreground"
-    {...props}
-  />
-));
-SelectLabel.displayName = "SelectLabel";
-
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
-    ref={ref}
-    className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-      className
-    )}
-    {...props}
-  >
-    {children}
-    <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
-  </SelectPrimitive.Trigger>
-));
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
-
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Portal>
-    <SelectPrimitive.Content
-      ref={ref}
-      className={cn(
-        "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md",
-        className
-      )}
-      {...props}
-    >
-      <SelectPrimitive.Viewport className="p-1">{children}</SelectPrimitive.Viewport>
-    </SelectPrimitive.Content>
-  </SelectPrimitive.Portal>
-));
-SelectContent.displayName = SelectPrimitive.Content.displayName;
-
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Item
-    ref={ref}
-    className={cn(
-      "relative flex w-full cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[highlighted]:bg-accent",
-      className
-    )}
-    {...props}
-  >
-    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-    <SelectPrimitive.ItemIndicator className="absolute left-0 inline-flex items-center">
-      <Check className="h-4 w-4" />
-    </SelectPrimitive.ItemIndicator>
-  </SelectPrimitive.Item>
-));
-SelectItem.displayName = SelectPrimitive.Item.displayName;
-
-export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectGroup, SelectLabel };
-</file_artifact>
-
-<file path="src/components/ui/separator.tsx">
-"use client"
-
-import * as React from "react"
-import * as SeparatorPrimitive from "@radix-ui/react-separator"
-
-import { cn } from "@/lib/utils"
-
-const Separator = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
->(
-  (
-    { className, orientation = "horizontal", decorative = true, ...props },
-    ref
-  ) => (
-    <SeparatorPrimitive.Root
-      ref={ref}
-      decorative={decorative}
-      orientation={orientation}
-      className={cn(
-        "shrink-0 bg-border",
-        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
-        className
-      )}
-      {...props}
-    />
-  )
-)
-Separator.displayName = SeparatorPrimitive.Root.displayName
-
-export { Separator }
-</file_artifact>
-
-<file path="src/components/ui/sonner.tsx">
-"use client"
-
-import { useTheme } from "next-themes"
-import { Toaster as Sonner } from "sonner"
-
-type ToasterProps = React.ComponentProps<typeof Sonner>
-
-const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
-
-  return (
-    <Sonner
-      theme={theme as ToasterProps["theme"]}
-      className="toaster group"
-      toastOptions={{
-        classNames: {
-          toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-          description: "group-[.toast]:text-muted-foreground",
-          actionButton:
-            "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
-          cancelButton:
-            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
-        },
-      }}
-      {...props}
-    />
-  )
-}
-
-export { Toaster }
-</file_artifact>
-
-<file path="src/components/ui/switch.tsx">
-"use client"
-
-import * as React from "react"
-import * as SwitchPrimitives from "@radix-ui/react-switch"
-
-import { cn } from "@/lib/utils"
-
-const Switch = React.forwardRef<
-  React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, ...props }, ref) => (
-  <SwitchPrimitives.Root
-    className={cn(
-      "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
-      className
-    )}
-    {...props}
-    ref={ref}
-  >
-    <SwitchPrimitives.Thumb
-      className={cn(
-        "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
-      )}
-    />
-  </SwitchPrimitives.Root>
-))
-Switch.displayName = SwitchPrimitives.Root.displayName
-
-export { Switch }
-</file_artifact>
-
-<file path="src/components/ui/tabs.tsx">
-"use client"
-
-import * as React from "react"
-import * as TabsPrimitive from "@radix-ui/react-tabs"
-
-import { cn } from "@/lib/utils"
-
-const Tabs = TabsPrimitive.Root
-
-const TabsList = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.List
-    ref={ref}
-    className={cn(
-      "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
-      className
-    )}
-    {...props}
-  />
-))
-TabsList.displayName = TabsPrimitive.List.displayName
-
-const TabsTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Trigger
-    ref={ref}
-    className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
-      className
-    )}
-    {...props}
-  />
-))
-TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
-
-const TabsContent = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Content
-    ref={ref}
-    className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      className
-    )}
-    {...props}
-  />
-))
-TabsContent.displayName = TabsPrimitive.Content.displayName
-
-export { Tabs, TabsList, TabsTrigger, TabsContent }
-</file_artifact>
-
-<file path="src/components/ui/textarea.tsx">
-// src/components/ui/textarea.tsx
-"use client"
-
-import * as React from "react"
-import { cn } from "@/lib/utils"
-
-/**
- * A shadcn-like <Textarea> component.
- * Accepts any textarea HTML props via TextareaProps.
- */
-export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
-export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <textarea
-        className={cn(
-          "flex h-20 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
-          "placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-          "focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Textarea.displayName = "Textarea"
-</file_artifact>
-
-<file path="src/components/ui/tooltip.tsx">
-"use client"
-
-import * as React from "react"
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
-
-import { cn } from "@/lib/utils"
-
-const TooltipProvider = TooltipPrimitive.Provider
-
-const Tooltip = TooltipPrimitive.Root
-
-const TooltipTrigger = TooltipPrimitive.Trigger
-
-const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <TooltipPrimitive.Content
-    ref={ref}
-    sideOffset={sideOffset}
-    className={cn(
-      "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      className
-    )}
-    {...props}
-  />
-))
-TooltipContent.displayName = TooltipPrimitive.Content.displayName
-
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
-</file_artifact>
-
-<file path=".eslintrc.json">
-{
-  "extends": "next/core-web-vitals"
-}
-</file_artifact>
-
-<file path="components.json">
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "default",
-  "rsc": true,
-  "tsx": true,
-  "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "src/app/globals.css",
-    "baseColor": "slate",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
-  }
-}
-</file_artifact>
-
-<file path="ecosystem.config.js">
-// C:\Projects\automationsaas\ecosystem.config.js
-module.exports = {
-  apps: [
-    {
-      name: "automationsaas",
-      // Use the JS entry point for Next.js instead of the .cmd wrapper:
-      script: "node_modules/next/dist/bin/next",
-      // Pass the command as a single string (or as an array of arguments)
-      args: "start -p 3002",
-      cwd: "C:/Projects/automationsaas",
-      // Remove the custom interpreter so PM2 uses Node by default
-      // interpreter: "node", // (optional – Node is the default)
-      env: {
-        NODE_ENV: "development"
-      },
-      env_production: {
-        NODE_ENV: "production"
-      }
-    }
-  ]
-};
-</file_artifact>
-
-<file path="jest.config.js">
-// jest.config.js
-require('dotenv').config({ path: '.env.test' });
-module.exports = {
-    testEnvironment: "node",
-    transform: {
-      "^.+\\.(t|j)sx?$": [
-        "@swc/jest",
-        {
-          jsc: {
-            target: "es2021",
-          },
-        },
-      ],
-    },
-    moduleNameMapper: {
-      // For example, handling path aliases like @/lib or @/app
-      "^@/(.*)$": "<rootDir>/src/$1",
-    },
-    testMatch: ["<rootDir>/__tests__/**/*.test.(js|ts|tsx)"],
-  };
-  
-</file_artifact>
-
-<file path="next-env.d.ts">
-/// <reference types="next" />
-/// <reference types="next/image-types/global" />
-
-// NOTE: This file should not be edited
-// see https://nextjs.org/docs/app/building-your-application/configuring/typescript for more information.
-</file_artifact>
-
-<file path="next.config.mjs">
-// FILE: next.config.mjs
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "img.clerk.com" },
-      { protocol: "https", hostname: "ucarecdn.com" },
-    ],
-  },
-  webpack: (config, { isServer }) => {
-    // If server side, mark coffee-script as external so it doesn't get bundled
-    if (isServer) {
-      if (!config.externals) config.externals = [];
-      // If config.externals is an array, push an object or a string "coffee-script"
-      // The exact approach depends on your Next.js version 
-      // but typically you can do:
-      config.externals.push({ "coffee-script": "commonjs coffee-script" });
-    } else {
-      // client side => fallback for Node builtins:
-      if (!config.resolve.fallback) config.resolve.fallback = {};
-      config.resolve.fallback.fs = false;
-      config.resolve.fallback.module = false;
-      config.resolve.fallback.async_hooks = false;
-      // we do NOT mention coffee-script on the client fallback => 
-      // means it's not used client side.
-    }
-
-    return config;
-  },
-};
-
-export default nextConfig;
-</file_artifact>
-
-<file path="package.json">
-{
-  "name": "automationsaas",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start -p 3002",
-    "test": "jest",
-    "lint": "next lint",
-    "deploy": "pm2 start ecosystem.config.js --env production"
-  },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.36.3",
-    "@clerk/clerk-sdk-node": "^5.1.6",
-    "@clerk/nextjs": "^4.30.0",
-    "@codemirror/gutter": "^0.19.9",
-    "@codemirror/lang-json": "^6.0.1",
-    "@codemirror/view": "^6.36.2",
-    "@google/generative-ai": "^0.22.0",
-    "@hookform/resolvers": "^3.3.4",
-    "@inquirer/checkbox": "^4.1.2",
-    "@notionhq/client": "^2.2.15",
-    "@prisma/client": "^5.13.0",
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-label": "^2.0.2",
-    "@radix-ui/react-popover": "^1.0.7",
-    "@radix-ui/react-progress": "^1.1.2",
-    "@radix-ui/react-select": "^2.1.6",
-    "@radix-ui/react-separator": "^1.0.3",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "@tsparticles/engine": "^3.3.0",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.3.0",
-    "@uiw/react-codemirror": "^4.23.8",
-    "@uploadcare/blocks": "0.38.0",
-    "axios": "^1.7.9",
-    "blessed": "^0.1.81",
-    "blessed-contrib": "^1.0.11",
-    "class-variance-authority": "^0.7.0",
-    "classnames": "^2.5.1",
-    "clsx": "^2.1.1",
-    "cmdk": "^0.2.0",
-    "coffee-script": "^1.12.7",
-    "cron": "^4.1.0",
-    "framer-motion": "^11.1.7",
-    "googleapis": "^135.0.0",
-    "gpt-3-encoder": "^1.1.4",
-    "groq-sdk": "^0.15.0",
-    "inquirer": "^12.4.2",
-    "lodash": "^4.17.21",
-    "lucide-react": "^0.373.0",
-    "next": "^14.2.24",
-    "next-themes": "^0.3.0",
-    "pm2": "^5.4.3",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-hook-form": "^7.51.3",
-    "react-resizable-panels": "^2.0.18",
-    "reactflow": "^11.11.2",
-    "sonner": "^1.7.4",
-    "stripe": "^17.6.0",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
-    "uuid": "^9.0.1",
-    "vaul": "^0.9.0",
-    "vm2": "^3.9.19",
-    "zod": "^3.23.4",
-    "zustand": "^4.5.2"
-  },
-  "devDependencies": {
-    "@codemirror/lang-javascript": "^6.2.3",
-    "@swc/jest": "^0.2.37",
-    "@types/jest": "^29.5.14",
-    "@types/lodash": "^4.17.15",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@types/uuid": "^9.0.8",
-    "dotenv": "^16.4.7",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "jest": "^29.7.0",
-    "null-loader": "^4.0.1",
-    "postcss": "^8",
-    "prisma": "^5.13.0",
-    "shadcn-ui": "latest",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
-}
-</file_artifact>
-
-<file path="postcss.config.mjs">
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: {
-    tailwindcss: {},
-  },
-};
-
-export default config;
-</file_artifact>
-
-<file path="tailwind.config.ts">
-import type { Config } from 'tailwindcss'
-
-const config = {
-  darkMode: ['class'],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  prefix: '',
-  theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-    },
-    extend: {
-      colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-      keyframes: {
-        scroll: {
-          to: {
-            transform: 'translate(calc(-50% - 0.5rem))',
-          },
-        },
-        spotlight: {
-          '0%': {
-            opacity: '0',
-            transform: 'translate(-72%, -62%) scale(0.5)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translate(-50%,-40%) scale(1)',
-          },
-        },
-        moveHorizontal: {
-          '0%': {
-            transform: 'translateX(-50%) translateY(-10%)',
-          },
-          '50%': {
-            transform: 'translateX(50%) translateY(10%)',
-          },
-          '100%': {
-            transform: 'translateX(-50%) translateY(-10%)',
-          },
-        },
-        moveInCircle: {
-          '0%': {
-            transform: 'rotate(0deg)',
-          },
-          '50%': {
-            transform: 'rotate(180deg)',
-          },
-          '100%': {
-            transform: 'rotate(360deg)',
-          },
-        },
-        moveVertical: {
-          '0%': {
-            transform: 'translateY(-50%)',
-          },
-          '50%': {
-            transform: 'translateY(50%)',
-          },
-          '100%': {
-            transform: 'translateY(-50%)',
-          },
-        },
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        },
-      },
-      animation: {
-        scroll:
-          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
-        spotlight: 'spotlight 2s ease .75s 1 forwards',
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        first: 'moveVertical 30s ease infinite',
-        second: 'moveInCircle 20s reverse infinite',
-        third: 'moveInCircle 40s linear infinite',
-        fourth: 'moveHorizontal 40s ease infinite',
-        fifth: 'moveInCircle 20s ease infinite',
-      },
-    },
-  },
-  plugins: [require('tailwindcss-animate')],
-} satisfies Config
-
-// function addVariablesForColors({ addBase, theme }: any) {
-//   let allColors = flattenColorPalette(theme('colors'))
-//   let newVars = Object.fromEntries(
-//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-//   )
-//   addBase({
-//     ':root': newVars,
-//   })
-// }
-
-export default config
-</file_artifact>
-
-<file path="tsconfig.json">
-{
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "types": ["@uploadcare/blocks/types/jsx"]
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
-}
-</file_artifact>
-
-<file path="src/app/page.tsx">
-import { CardBody, CardContainer, CardItem } from '@/components/global/3d-card'
-import { HeroParallax } from '@/components/global/connect-parallax'
-import { ContainerScroll } from '@/components/global/container-scroll-animation'
-import { InfiniteMovingCards } from '@/components/global/infinite-moving-cards'
-import { LampComponent } from '@/components/global/lamp'
-import Navbar from '@/components/global/navbar'
-import { Button } from '@/components/ui/button'
-import { clients, products } from '@/lib/constant'
-import { CheckIcon } from 'lucide-react'
-import Image from 'next/image'
-
-export default function Home() {
-  //WIP: remove fault IMAge for home page
-  return (
-    <main className="flex items-center justify-center flex-col">
-      <Navbar />
-      <section className="h-screen w-full  bg-neutral-950 rounded-md  !overflow-visible relative flex flex-col items-center  antialiased">
-        <div className="absolute inset-0  h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
-        <div className="flex flex-col mt-[-100px] md:mt-[-50px]">
-          <ContainerScroll
-            titleComponent={
-              <div className="flex items-center flex-col">
-                <Button
-                  size={'lg'}
-                  className="p-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit border-t-2 rounded-full border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
-                >
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600  md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
-                    Start For Free Today
-                  </span>
-                </Button>
-                <h1 className="text-5xl md:text-8xl  bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
-                  Autom8 Your Work With ChartFlow.Pro
-                </h1>
-              </div>
-            }
-          />
-        </div>
-      </section>
-      <InfiniteMovingCards
-        className="md:mt-[18rem] mt-[-100px]"
-        items={clients}
-        direction="right"
-        speed="slow"
-      />
-      <section>
-        <HeroParallax products={products}></HeroParallax>
-      </section>
-      <section className="mt-[-250px]">
-        <LampComponent />
-        <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8 -mt-72">
-          <CardContainer className="inter-var ">
-            <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-neutral-600 dark:text-white "
-              >
-                Hobby
-                <h2 className="text-6xl ">$0</h2>
-              </CardItem>
-              <CardItem
-                translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-              >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
-                <ul className="my-4 flex flex-col gap-2">
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    100 tasks per month
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    Two-step Actions
-                  </li>
-                </ul>
-              </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
-            </CardBody>
-          </CardContainer>
-          <CardContainer className="inter-var ">
-            <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-[#E2CBFF] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-neutral-600 dark:text-white "
-              >
-                Pro Plan
-                <h2 className="text-6xl ">$29</h2>
-              </CardItem>
-              <CardItem
-                translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-              >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
-                <ul className="my-4 flex flex-col gap-2">
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    100 tasks per month
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    Two-step Actions
-                  </li>
-                </ul>
-              </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
-            </CardBody>
-          </CardContainer>
-          <CardContainer className="inter-var ">
-            <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-neutral-600 dark:text-white "
-              >
-                Unlimited
-                <h2 className="text-6xl ">$99</h2>
-              </CardItem>
-              <CardItem
-                translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-              >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
-                <ul className="my-4 flex flex-col gap-2">
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    100 tasks per month
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    Two-step Actions
-                  </li>
-                </ul>
-              </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
-            </CardBody>
-          </CardContainer>
-        </div>
-      </section>
-    </main>
-  )
-}
-</file_artifact>
-
-<file path="src/app/layout.tsx">
-// C:\Projects\automationsaas\src\app\layout.tsx
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/providers/theme-provider";
-import { DM_Sans } from "next/font/google";
-import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import ModalProvider from "@/providers/modal-provider";
-import { Toaster } from "@/components/ui/sonner";
-import { BillingProvider } from "@/providers/billing-provider";
-
-const font = DM_Sans({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "ChartFlow.Pro",
-  description: "Automate Your Work With ChartFlow.Pro",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-
-  return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
-      <html lang="en">
-        <body className={font.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <BillingProvider>
-              <ModalProvider>
-                {children}
-                <Toaster />
-              </ModalProvider>
-            </BillingProvider>
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
-  );
-}
-</file_artifact>
-
-<file path="src/app/globals.css">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-*::-webkit-scrollbar {
-  display: none !important;
-}
-.bg-radial-gradient {
-  background-image: radial-gradient(
-    circle at 10% 20%,
-    rgba(4, 159, 108, 1) 0%,
-    rgba(194, 254, 113, 1) 90.1%
-  );
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-</file_artifact>
-
-<file path="src/app/api/payment/route.ts">
-import { NextResponse, NextRequest } from "next/server"
-import Stripe from "stripe"
-
-export async function GET(req: NextRequest) {
-    const stripe = new Stripe(process.env.STRIPE_SECRET!, {
-        typescript: true,
-        apiVersion: '2025-01-27.acacia',
-    })
-
-    const products = await stripe.prices.list({
-        limit: 3,
-    })
-
-    return NextResponse.json(products.data)
-}
-
-export async function POST (req: NextRequest) {
-    const stripe = new Stripe(process.env.STRIPE_SECRET!, {
-        typescript: true,
-        apiVersion: '2025-01-27.acacia',
-    })
-    const data = await req.json()
-    const session = await stripe.checkout.sessions.create({
-        line_items: [
-            {
-                price: data.priceId,
-                quantity: 1,
-            },
-        ],
-        mode: 'subscription',
-        success_url: `${process.env.NEXT_PUBLIC_URL}/billing?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${process.env.NEXT_PUBLIC_URL}/billing`,
-    })
-    return NextResponse.json(session.url)
-}
-</file_artifact>
-
-<file path="src/app/api/oauth/callback/route.ts">
-// src/app/api/oauth/callback/route.ts
-import { NextResponse } from "next/server";
-import { currentUser } from "@clerk/nextjs";
-import { getOAuthConnection, saveOAuthTokens } from "@/app/(main)/(pages)/connections/_actions/oauth-connections";
-
-async function exchangeCodeForTokens(clientId: string, clientSecret: string, redirectUri: string, code: string) {
-  const tokenUrl = "https://oauth2.googleapis.com/token";
-  const res = await fetch(tokenUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      code,
-      client_id: clientId,
-      client_secret: clientSecret,
-      redirect_uri: redirectUri,
-      grant_type: "authorization_code",
-    }),
-  });
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Failed to exchange auth code: ${errorText}`);
-  }
-  return res.json() as Promise<{
-    access_token: string;
-    refresh_token?: string;
-    expires_in?: number;
-  }>;
-}
-
-export async function GET(req: Request) {
-  try {
-    const url = new URL(req.url);
-    const code = url.searchParams.get("code");
-    // pass provider in ?provider=google-drive
-    const provider = url.searchParams.get("provider") || "google-drive";
-    // or if you used a 'state' param in the start route, parse it here:
-    // const state = url.searchParams.get("state");
-    // const provider = state ?? "google-drive";
-
-    if (!code) {
-      return NextResponse.json({ success: false, error: "Missing ?code" }, { status: 400 });
-    }
-    const user = await currentUser();
-    if (!user) {
-      return NextResponse.json({ success: false, error: "Not logged in" }, { status: 401 });
-    }
-
-    // Get connection from DB
-    const conn = await getOAuthConnection(user.id, provider);
-    if (!conn) {
-      return NextResponse.json({
-        success: false,
-        error: `No DB record found for user=${user.id} provider=${provider}`,
-      }, { status: 404 });
-    }
-
-    // Exchange code
-    const tokenResponse = await exchangeCodeForTokens(conn.clientId, conn.clientSecret, conn.redirectUri, code);
-    const { access_token, refresh_token, expires_in } = tokenResponse;
-
-    let expiresAt: Date | undefined;
-    if (expires_in) {
-      const now = new Date();
-      expiresAt = new Date(now.getTime() + expires_in * 1000);
-    }
-
-    await saveOAuthTokens(user.id, provider, access_token, refresh_token, expiresAt);
-
-    // redirect
-    return NextResponse.redirect(new URL("/connections", req.url));
-  } catch (err: any) {
-    console.error("[OAuth Callback] =>", err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
-  }
-}
-</file_artifact>
-
-<file path="src/app/api/oauth/start/route.ts">
-// src/app/api/oauth/start/route.ts
-import { NextResponse } from "next/server";
-import { currentUser } from "@clerk/nextjs";
-import { getOAuthConnection } from "@/app/(main)/(pages)/connections/_actions/oauth-connections";
-
-export async function GET(req: Request) {
-  try {
-    const url = new URL(req.url);
-    const provider = url.searchParams.get("provider"); // e.g. "google-drive"
-    const user = await currentUser();
-    if (!user || !provider) {
-      return NextResponse.redirect(new URL("/connections", req.url));
-    }
-
-    const conn = await getOAuthConnection(user.id, provider);
-    if (!conn) {
-      // Or show some error message, or redirect to a form to set clientId
-      return NextResponse.redirect(new URL("/connections", req.url));
-    }
-
-    const googleAuthUrl = new URL("https://accounts.google.com/o/oauth2/v2/auth");
-    googleAuthUrl.searchParams.set("client_id", conn.clientId);
-    googleAuthUrl.searchParams.set("redirect_uri", conn.redirectUri);
-    googleAuthUrl.searchParams.set("response_type", "code");
-    googleAuthUrl.searchParams.set(
-      "scope",
-      process.env.NEXT_PUBLIC_GOOGLE_SCOPES || "https://www.googleapis.com/auth/drive"
-    );
-    googleAuthUrl.searchParams.set("access_type", "offline");
-    googleAuthUrl.searchParams.set("prompt", "consent");
-
-    // pass provider in the callback query param, e.g. /api/oauth/callback?provider=google-drive
-    googleAuthUrl.searchParams.set("state", provider);
-    // or do googleAuthUrl.searchParams.set("provider", provider);
-
-    return NextResponse.redirect(googleAuthUrl.toString());
-  } catch (err: any) {
-    console.error("[OAuth Start] =>", err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
-  }
-}
-</file_artifact>
-
-<file path="src/app/api/my-oauth-map/route.ts">
-// FILE: src/app/api/my-oauth-map/route.ts
-import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs";
-import { db } from "@/lib/db";
-
-export async function GET() {
-  try {
-    const { userId } = auth();
-    if (!userId) {
-      return NextResponse.json({ success: false, error: "Not logged in" }, { status: 401 });
-    }
-    const rows = await db.oAuthConnection.findMany({
-      where: { userId },
-    });
-    const map: Record<string, boolean> = {};
-    rows.forEach((r) => {
-      map[r.provider] = true;
-    });
-    return NextResponse.json({ success: true, map });
-  } catch (err: any) {
-    console.error("[my-oauth-map] =>", err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
-  }
-}
-</file_artifact>
-
-<file path="src/app/(main)/layout.tsx">
-import React from 'react'
-import Sidebar from '@/components/sidebar'
-import InfoBar from '@/components/infobar'
-
-type Props = { children: React.ReactNode }
-
-const Layout = (props: Props) => {
-  return (
-    <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <Sidebar />
-
-      {/* Main content area */}
-      <div className="flex flex-1 flex-col">
-        <InfoBar />
-        {/* This wrapper can scroll if content grows */}
-        <div className="flex-1 overflow-auto">
-          {props.children}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default Layout
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/layout.tsx">
-import React from 'react'
-
-type Props = { children: React.ReactNode }
-
-const Layout = ({ children }: Props) => {
-  return (
-    <div className="border-l-[1px] border-t-[1px] pb-0 h-full rounded-l-3xl border-muted-foreground/20 overflow-scroll">
-      {children}
-    </div>
-  )
-}
-
-export default Layout
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/settings/_components/profile-picture.tsx">
-'use client'
-import React from 'react'
-import UploadCareButton from './uploadcare-button'
-import { useRouter } from 'next/navigation'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { X } from 'lucide-react'
-
-type Props = {
-  userImage: string | null
-  onDelete?: any
-  onUpload: any
-}
-
-const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
-  const router = useRouter()
-
-  const onRemoveProfileImage = async () => {
-    const response = await onDelete()
-    if (response) {
-      router.refresh()
-    }
-  }
-
-  return (
-    <div className="flex flex-col">
-      <p className="text-lg text-white"> Profile Picture</p>
-      <div className="flex h-[30vh] flex-col items-center justify-center">
-        {userImage ? (
-          <>
-            <div className="relative h-full w-2/12">
-              <Image
-                src={userImage}
-                alt="User_Image"
-                fill
-              />
-            </div>
-            <Button
-              onClick={onRemoveProfileImage}
-              className="bg-transparent text-white/70 hover:bg-transparent hover:text-white"
-            >
-              <X /> Remove Logo
-            </Button>
-          </>
-        ) : (
-          <UploadCareButton onUpload={onUpload} />
-        )}
-      </div>
-    </div>
-  )
-}
-
-export default ProfilePicture
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/settings/_components/uploadcare-button.tsx">
-'use client'
-import React, { useEffect, useRef } from 'react'
-import * as LR from '@uploadcare/blocks'
-import { useRouter } from 'next/navigation'
-
-type Props = {
-  onUpload: (e: string) => any
-}
-
-LR.registerBlocks(LR)
-
-const UploadCareButton = ({ onUpload }: Props) => {
-  const router = useRouter()
-  const ctxProviderRef = useRef<
-    typeof LR.UploadCtxProvider.prototype & LR.UploadCtxProvider
-  >(null)
-
-  useEffect(() => {
-    const handleUpload = async (e: any) => {
-      const file = await onUpload(e.detail.cdnUrl)
-      if (file) {
-        router.refresh()
-      }
-    }
-    if (ctxProviderRef.current !== null) ctxProviderRef.current.addEventListener('file-upload-success', handleUpload)
-  }, [])
-
-  return (
-    <div>
-      <lr-config
-        ctx-name="my-uploader"
-        pubkey="b718a38a002c2e8d39ca"
-      />
-
-      <lr-file-uploader-regular
-        ctx-name="my-uploader"
-        css-src={`https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.35.2/web/lr-file-uploader-regular.min.css`}
-      />
-
-      <lr-upload-ctx-provider
-        ctx-name="my-uploader"
-        ref={ctxProviderRef}
-      />
-    </div>
-  )
-}
-
-export default UploadCareButton
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/settings/page.tsx">
-import ProfileForm from '@/components/forms/profile-form'
-import React from 'react'
-import ProfilePicture from './_components/profile-picture'
-import { db } from '@/lib/db'
-import { currentUser } from '@clerk/nextjs'
-
-type Props = {}
-
-const Settings = async (props: Props) => {
-  const authUser = await currentUser()
-  if (!authUser) return null
-
-  const user = await db.user.findUnique({ where: { clerkId: authUser.id } })
-  const removeProfileImage = async () => {
-    'use server'
-    const response = await db.user.update({
-      where: {
-        clerkId: authUser.id,
-      },
-      data: {
-        profileImage: '',
-      },
-    })
-    return response
-  }
-
-  const uploadProfileImage = async (image: string) => {
-    'use server'
-    const id = authUser.id
-    const response = await db.user.update({
-      where: {
-        clerkId: id,
-      },
-      data: {
-        profileImage: image,
-      },
-    })
-
-    return response
-  }
-
-  const updateUserInfo = async (name: string) => {
-    'use server'
-
-    const updateUser = await db.user.update({
-      where: {
-        clerkId: authUser.id,
-      },
-      data: {
-        name,
-      },
-    })
-    return updateUser
-  }
-
-  return (
-    <div className="flex flex-col gap-4">
-      <h1 className="sticky top-0 z-[10] flex items-center justify-between border-b bg-background/50 p-6 text-4xl backdrop-blur-lg">
-        <span>Settings</span>
-      </h1>
-      <div className="flex flex-col gap-10 p-6">
-        <div>
-          <h2 className="text-2xl font-bold">User Profile</h2>
-          <p className="text-base text-white/50">
-            Add or update your information
-          </p>
-        </div>
-        <ProfilePicture
-          onDelete={removeProfileImage}
-          userImage={user?.profileImage || ''}
-          onUpload={uploadProfileImage}
-        />
-        <ProfileForm
-          user={user}
-          onUpdate={updateUserInfo}
-        />
-      </div>
-    </div>
-  )
-}
-
-export default Settings
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/dashboard/page.tsx">
-import React from 'react'
-
-const DashboardPage = () => {
-  return (
-    <div className="flex flex-col gap-4 relative">
-      <h1 className="text-4xl sticky top-0 z-[10] p-6 bg-background/50 backdrop-blur-lg flex items-center border-b">
-        Dashboard
-      </h1>
-    </div>
-  )
-}
-
-export default DashboardPage
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/billing/_actions/payment-connections.tsx">
-'use server'
-import { currentUser } from '@clerk/nextjs';
-import { db } from '@/lib/db';
-
-export const onPaymentDetails = async () => {
-    const user = await currentUser()
-
-    if (user) {
-        const connection = await db.user.findFirst({
-            where: {
-                clerkId: user.id,
-            },
-            select: {
-                tier: true,
-                credits: true,
-            },
-        })
-
-        if (user) {
-            return connection
-        }
-    }
-}
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/billing/_components/billing-dashboard.tsx">
-'use client'
-
-import { useBilling } from '@/providers/billing-provider'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { SubscriptionCard } from './subscription-card'
-import CreditTracker from './credits-tracker'
-
-type Props = {}
-
-const BillingDashboard = (props: Props) => {
-  const { credits, tier } = useBilling()
-  const [stripeProducts, setStripeProducts] = useState<any>([])
-  const [loading, setLoading] = useState<boolean>(false)
-
-  const onStripeProducts = async () => {
-    setLoading(true)
-    const { data } = await axios.get('/api/payment')
-    if (data) {
-      setStripeProducts(data)
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    onStripeProducts()
-  }, [])
-
-  const onPayment = async (id: string) => {
-    const { data } = await axios.post(
-      '/api/payment',
-      {
-        priceId: id,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
-    window.location.assign(data)
-  }
-
-  return (
-    <>
-      {/* {loading ? (
-        <div className="absolute flex h-full w-full items-center justify-center">
-          <svg
-            aria-hidden="true"
-            className="inline h-8 w-8 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
-            viewBox="0 0 100 101"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-              fill="currentColor"
-            />
-            <path
-              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-              fill="currentFill"
-            />
-          </svg>
-        </div>
-      ) : ( */}
-        <>
-          <div className="flex gap-5 p-6">
-            <SubscriptionCard
-              onPayment={onPayment}
-              tier={tier}
-              products={stripeProducts}
-            />
-          </div>
-          <CreditTracker
-            tier={tier}
-            credits={parseInt(credits)}
-          />
-        </>
-      {/* )} */}
-    </>
-  )
-}
-
-export default BillingDashboard
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/billing/_components/credits-tracker.tsx">
-import { Card } from '@/components/ui/card'
-import { CardContent, CardTitle } from '@/components/ui/card'
-import { Progress } from '@/components/ui/progress'
-import React from 'react'
-
-type Props = {
-    credits: number
-    tier: string
-}
-
-const CreditsTracker = ({ credits, tier }: Props) => {
-    return (
-        <div className="p-6">
-            <Card className="p-6">
-                <CardContent className="flex flex-col gap-6">
-                    <CardTitle className="font-light">Credit Tracker</CardTitle>
-                    <Progress 
-                        value={
-                            tier == 'Free'
-                            ? credits * 10
-                            : tier == 'Unlimited'
-                            ? 100
-                            : credits
-                        }
-                        className="w-full"
-                    />
-                    <div className="flex justify-end">
-                        <p>
-                            {credits}/
-                            {tier == 'Free' ? '10' : tier == 'Unlimited' ? 'Unlimited' : '100'}
-                        </p>
-                    </div>
-                </CardContent>
-            </Card>
-        </div>
-    )
-}
-
-export default CreditsTracker
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/billing/_components/subscription-card.tsx">
-'use client'
-
-type Props = {
-    onPayment(id: string): void
-    products: any
-    tier: string
-}
-
-import React from 'react'
-import { 
-    Card, 
-    CardContent, 
-    CardDescription,
-    CardHeader, 
-    CardTitle 
-} from "@/components/ui/card"
-import { Button } from '@/components/ui/button'
-
-export const SubscriptionCard = ({ onPayment, products, tier }: Props) => {
-    return (
-        <section className="flex w-full justify-center md:flex-row flex-col gap-6">
-            {products &&
-            products.map((product: any) => (
-                <Card 
-                    className="p-3"
-                    key={product.id}
-                >
-                    <CardHeader>
-                        <CardTitle>{product.nickname}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex flex-col gap-5">
-                        <CardDescription>
-                            {product.nickname == 'Unlimited'
-                            ? 'Enjoy a monthly torrent of credits flooding your account, empowering you to tackle even the most ambitious automation tasks effortlessly.'
-                            : product.nickname == 'Pro'
-                            ? 'Experience a monthly surge of credits to supercharge your automation efforts. Ideal for small to medium-sized projects seeking consistent support.'
-                            : product.nickname == 'Free' && 'Dip your toes into the world of automation with a small monthly allowance of credits. Perfect for small projects and personal use.'}
-                        </CardDescription>
-                        <div className="flex justify-between">
-                            <p>
-                                {product.nickname == 'Free'
-                                ? '10'
-                                : product.nickname == 'Pro'
-                                ? '100'
-                                : product.nickname == 'Unlimited' && 'Unlimited'}{' '}
-                            credits
-                            </p>
-                            <p className="font-bold">
-                                {product.nickname == 'Free'
-                                ? 'Free'
-                                : product.nickname == 'Pro'
-                                ? '29.99'
-                                : product.nickname == 'Unlimited' && '19.99'}
-                              /mo
-                            </p>
-                        </div>
-                        {product.nickname == tier ? (
-                            <Button 
-                                disabled
-                                variant="outline"
-                            >
-                                Active
-                            </Button>
-                        ) : (
-                            <Button 
-                                onClick={() => onPayment(product.id)}
-                                variant="outline"
-                            >
-                                Purchase
-                            </Button>
-                            )}
-                    </CardContent>
-                </Card>
-            ))}
-        </section>
-    )
-}
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/billing/page.tsx">
-import React from 'react'
-import Stripe from 'stripe'
-import { currentUser } from "@clerk/nextjs";
-import { db } from '@/lib/db'
-import BillingDashboard from './_components/billing-dashboard';
-
-type Props = {
-    searchParams?: { [key: string]: string | undefined }
-}
-
-const Billing = async (props: Props) => {
-    const { session_id } = props.searchParams ?? {
-        session_id: '',
-    }
-    if (session_id) {
-        const stripe = new Stripe(process.env.STRIPE_SECRET!, {
-            typescript: true,
-            apiVersion: '2025-01-27.acacia',
-        })
-
-        const session = await stripe.checkout.sessions.listLineItems(session_id)
-        const user = await currentUser()
-        if (user) {
-            await db.user.update({
-                where: {
-                    clerkId: user.id,
-                },
-                data: {
-                    tier: session.data[0].description,
-                    credits:
-                        session.data[0].description == 'Unlimited'
-                            ? 'Unlimited'
-                            : session.data[0].description == 'Pro'
-                            ? '100'
-                            : '10',
-                            
-                },
-            })
-        }
-    }
-    return (
-        <div className="flex flex-col gap-4">
-            <h1 className="sticky top-0 z-[10] flex items-center justify-between border-b bg-background/50 p-6 text-4xl backdrop-blur-lg">
-                <span>Billing</span>
-            </h1>
-            <BillingDashboard />
-        </div>
-    )
-}
-
-export default Billing
-</file_artifact>
-
-<file path="src/app/(main)/(pages)/connections/page.tsx">
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
-import { CONNECTIONS } from "@/lib/constant";
-import type { ConnectionTypes } from "@/lib/types";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
-// Old OAuth actions:
-import {
-  handleDisconnectConnectionAction,
-  saveOAuthSettingsAction,
-} from "./_actions/oauth-connections";
-
-// Our new unified server actions:
-import { getConnections } from "./_actions/get-connections";
-import { addConnection } from "./_actions/add-connection";
-import { deleteConnection } from "./_actions/delete-connection";
-
-//
-// Minimal “OAuthConnectionCard” for older OAuth-based items
-//
-function OAuthConnectionCard({
-  type,
-  title,
-  icon,
-  description,
-  connected,
-  userId,
-  onDisconnect,
-  onConfigure,
-}: {
-  type: ConnectionTypes;
-  title: string;
-  icon: string;
-  description: string;
-  connected: Record<string, boolean>;
-  userId: string;
-  onDisconnect: (t: ConnectionTypes) => void;
-  onConfigure: (t: ConnectionTypes) => void;
-}) {
-  const [confirming, setConfirming] = useState(false);
-  const isConnected = !!connected[type];
-
-  const connectHref = `/api/oauth/start?provider=${title
-    .toLowerCase()
-    .replace(/\s+/g, "-")}`;
-
-  function handleDisconnect() {
-    if (!confirming) {
-      setConfirming(true);
-      return;
-    }
-    onDisconnect(type);
-    setConfirming(false);
-  }
-
-  return (
-    <div className="border rounded p-3 flex items-center justify-between bg-card text-card-foreground">
-      <div className="flex gap-3 items-center">
-        <img src={icon} alt={title} width={30} height={30} />
-        <div>
-          <p className="text-md font-semibold">{title}</p>
-          <p className="text-sm text-muted-foreground">{description}</p>
-        </div>
-      </div>
-      <div className="flex gap-2">
-        <Button variant="outline" size="sm" onClick={() => onConfigure(type)}>
-          Configure
-        </Button>
-        {!isConnected ? (
-          <a
-            href={connectHref}
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground px-3 py-2 hover:bg-primary/90"
-          >
-            Connect
-          </a>
-        ) : (
-          <Button variant="destructive" size="sm" onClick={handleDisconnect}>
-            {confirming ? "Confirm?" : "Disconnect"}
-          </Button>
-        )}
-      </div>
-    </div>
-  );
-}
-
-//
-// Minimal “GenericConnectionCard” for the new unified system (AI, MCP, etc.)
-//
-function GenericConnectionCard({
-  conn,
-  onDelete,
-}: {
-  conn: any;
-  onDelete: (id: string) => Promise<void>;
-}) {
-  const [confirming, setConfirming] = useState(false);
-
-  async function handleDelete() {
-    if (!confirming) {
-      setConfirming(true);
-      return;
-    }
-    await onDelete(conn.id);
-  }
-
-  const displayName = conn?.data?.name || conn.name || "(no name)";
-  const isGitHub = conn.type === "mcp-github";
-
-  return (
-    <div className="border p-3 rounded flex items-center justify-between bg-card text-card-foreground">
-      <div>
-        <p className="font-semibold">
-          {conn.type === "mcp-github" ? "GitHub (MCP)" : conn.type}
-        </p>
-
-        {/* Show “Repository URL” if mcp-github, otherwise normal "URL" */}
-        {conn.url && (
-          <p className="text-sm">
-            {isGitHub ? "Repository URL" : "URL"}: {conn.url}
-          </p>
-        )}
-
-        {displayName && (
-          <p className="text-xs text-muted-foreground">Name: {displayName}</p>
-        )}
-      </div>
-      <Button variant="destructive" size="sm" onClick={handleDelete}>
-        {confirming ? "Confirm?" : "Delete"}
-      </Button>
-    </div>
-  );
-}
-
-//
-// The main Connections page
-//
-export default function ConnectionsPage() {
-  const router = useRouter();
-  const { isLoaded, isSignedIn, user } = useUser();
-  const userId = user?.id || "";
-
-  // Old OAuth-based “connected?” map
-  const [connectionsOAuth, setConnectionsOAuth] = useState<Record<string, boolean>>({});
-  // The new unified “connections” from the DB
-  const [unifiedConns, setUnifiedConns] = useState<any[]>([]);
-
-  // For the config (OAuth) modal:
-  const [oauthModalOpen, setOauthModalOpen] = useState(false);
-  const [oauthProvider, setOauthProvider] = useState<ConnectionTypes>("Google Drive");
-  const [clientId, setClientId] = useState("");
-  const [clientSecret, setClientSecret] = useState("");
-  const [redirectUri, setRedirectUri] = useState("");
-
-  // For the “Add Connection” modal (unified):
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [selectedType, setSelectedType] = useState<string>("openai"); // e.g. "mcp-github"
-  const [connName, setConnName] = useState("");
-  const [connUrl, setConnUrl] = useState("");
-  const [connApiKey, setConnApiKey] = useState("");
-
-  //
-  // Load data on mount
-  //
-  useEffect(() => {
-    if (!isLoaded || !isSignedIn || !userId) return;
-
-    (async () => {
-      // 1) Load your old OAuth map
-      const res = await fetch("/api/my-oauth-map");
-      if (res.ok) {
-        const data = await res.json();
-        if (data.success) {
-          const updated: Record<string, boolean> = {};
-          if (data.map["google-drive"]) updated["Google Drive"] = true;
-          if (data.map["google-calendar"]) updated["Google Calendar"] = true;
-          if (data.map["gmail"]) updated["Gmail"] = true;
-          if (data.map["youtube"]) updated["YouTube"] = true;
-          setConnectionsOAuth(updated);
-        }
-      }
-
-      // 2) Load the new unified connections
-      const connRes = await getConnections();
-      if (connRes.success) {
-        setUnifiedConns(connRes.connections || []);
-      }
-    })();
-  }, [isLoaded, isSignedIn, userId]);
-
-  //
-  // Old OAuth handling
-  //
-  function onConfigure(type: ConnectionTypes) {
-    setOauthProvider(type);
-    setClientId("");
-    setClientSecret("");
-    setRedirectUri("");
-    setOauthModalOpen(true);
-  }
-
-  async function onDisconnectOAuth(type: ConnectionTypes) {
-    const result = await handleDisconnectConnectionAction(userId, type);
-    if (!result?.success) {
-      console.error("Failed to disconnect =>", result?.error);
-      return;
-    }
-    setConnectionsOAuth((prev) => {
-      const copy = { ...prev };
-      copy[type] = false;
-      return copy;
-    });
-    router.refresh();
-  }
-
-  async function onSaveOAuthSettings() {
-    const slug = oauthProvider.toLowerCase().replace(/\s+/g, "-");
-    const resp = await saveOAuthSettingsAction(slug, clientId, clientSecret, redirectUri);
-    if (!resp.success) {
-      alert("Failed to save: " + resp.error);
-      return;
-    }
-    alert("Saved OAuth settings!");
-    setOauthModalOpen(false);
-    router.refresh();
-  }
-
-  //
-  // Unified connections (AI, MCP, etc.)
-  //
-  async function reloadUnifiedConnections() {
-    const connRes = await getConnections();
-    if (connRes.success) {
-      setUnifiedConns(connRes.connections || []);
-    }
-  }
-
-  async function handleDeleteUnifiedConnection(id: string) {
-    const res = await deleteConnection(id);
-    if (!res.success) {
-      alert("Failed to delete: " + res.error);
-      return;
-    }
-    await reloadUnifiedConnections();
-  }
-
-  async function handleAddConnSubmit() {
-    const fd = new FormData();
-    fd.set("type", selectedType);
-    fd.set("name", connName);
-    if (connUrl) fd.set("url", connUrl);
-    if (connApiKey) fd.set("apiKey", connApiKey);
-
-    const res = await addConnection(fd);
-    if (!res.success) {
-      alert("Failed to add connection: " + res.error);
-      return;
-    }
-    setShowAddModal(false);
-    setConnName("");
-    setConnUrl("");
-    setConnApiKey("");
-    await reloadUnifiedConnections();
-  }
-
-  //
-  // If not loaded
-  //
-  if (!isLoaded) {
-    return <div className="p-4">Loading Clerk...</div>;
-  }
-  if (!isSignedIn) {
-    return <div className="p-4">Please sign in to manage connections.</div>;
-  }
-
-  return (
-    <div className="relative flex flex-col gap-4 pb-16">
-      <h1 className="sticky top-0 z-[10] flex items-center justify-between border-b bg-background/70 p-6 text-4xl backdrop-blur-lg">
-        Connections
-      </h1>
-
-      {/* OAuth-based connections */}
-      <section className="flex flex-col gap-4 p-6 text-muted-foreground">
-        <p>
-          OAuth-based connections (Google Drive, GMail, etc.). If you see “Connected,”
-          that means an OAuth row is stored in the DB for that provider.
-        </p>
-        {CONNECTIONS.filter((c) =>
-          [
-            "Google Drive",
-            "Google Calendar",
-            "Gmail",
-            "YouTube",
-            "Google Books",
-            "Discord",
-            "Notion",
-            "Slack",
-          ].includes(c.title)
-        ).map((conn) => (
-          <OAuthConnectionCard
-            key={conn.title}
-            type={conn.title as ConnectionTypes}
-            title={conn.title}
-            icon={conn.image}
-            description={conn.description}
-            connected={connectionsOAuth}
-            userId={userId}
-            onDisconnect={onDisconnectOAuth}
-            onConfigure={onConfigure}
-          />
-        ))}
-      </section>
-
-      {/* Unified connections (AI, MCP, etc.) */}
-      <section className="border-t pt-6 pb-20 px-6 text-muted-foreground">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">Unified Connections</h2>
-          <Button variant="outline" onClick={() => setShowAddModal(true)}>
-            Add Connection
-          </Button>
-        </div>
-
-        {unifiedConns.length < 1 && (
-          <p className="text-sm text-gray-500">No connections yet.</p>
-        )}
-        <div className="flex flex-col gap-4 mt-4">
-          {unifiedConns.map((c) => (
-            <GenericConnectionCard
-              key={c.id}
-              conn={c}
-              onDelete={handleDeleteUnifiedConnection}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* OAuth Modal */}
-      {oauthModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-          <div className="rounded-md shadow-lg p-6 w-[400px] bg-popover text-popover-foreground">
-            <h2 className="text-lg font-semibold mb-2">Configure {oauthProvider}</h2>
-            <label className="block text-sm font-medium mt-2">Client ID</label>
-            <input
-              type="text"
-              className="border w-full p-2 rounded text-sm bg-background text-foreground"
-              value={clientId}
-              onChange={(e) => setClientId(e.target.value)}
-            />
-
-            <label className="block text-sm font-medium mt-2">Client Secret</label>
-            <input
-              type="text"
-              className="border w-full p-2 rounded text-sm bg-background text-foreground"
-              value={clientSecret}
-              onChange={(e) => setClientSecret(e.target.value)}
-            />
-
-            <label className="block text-sm font-medium mt-2">Redirect URI</label>
-            <input
-              type="text"
-              className="border w-full p-2 rounded text-sm bg-background text-foreground"
-              value={redirectUri}
-              onChange={(e) => setRedirectUri(e.target.value)}
-            />
-
-            <div className="flex items-center justify-end mt-4 gap-2">
-              <Button variant="outline" onClick={() => setOauthModalOpen(false)}>
-                Cancel
-              </Button>
-              <Button onClick={onSaveOAuthSettings}>Save</Button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Add Connection Modal (Unified) */}
-      {showAddModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-          <div className="rounded-md shadow-lg p-6 w-[400px] bg-popover text-popover-foreground">
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-lg font-semibold">Add Connection</h2>
-              <button
-                className="text-sm underline"
-                onClick={() => setShowAddModal(false)}
-              >
-                Close
-              </button>
-            </div>
-
-            {/* Choose type */}
-            <label className="text-sm font-medium mt-2">Type</label>
-            <select
-              className="border rounded p-2 w-full text-sm bg-background text-foreground"
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value)}
-            >
-              <option value="openai">OpenAI</option>
-              <option value="anthropic">Anthropic</option>
-              <option value="gemini">Gemini</option>
-              <option value="groq">Groq</option>
-              <option value="mcp-github">mcp-github</option>
-              <option value="mcp-discord">mcp-discord</option>
-              <option value="mcp-sql">mcp-sql</option>
-              {/* Add more as needed */}
-            </select>
-
-            {/* Name */}
-            <label className="text-sm font-medium mt-2">Name (friendly label)</label>
-            <Input
-              value={connName}
-              onChange={(e) => setConnName(e.target.value)}
-              placeholder='e.g. "My GitHub Repo" or "My OpenAI Key"'
-            />
-
-            {/* For MCP => Show a URL field (GitHub => "Repo URL") */}
-            {selectedType.startsWith("mcp-") && (
-              <>
-                <label className="text-sm font-medium mt-2">
-                  {selectedType === "mcp-github"
-                    ? "Repository URL"
-                    : "Server URL"}
-                </label>
-                <Input
-                  value={connUrl}
-                  onChange={(e) => setConnUrl(e.target.value)}
-                  placeholder={
-                    selectedType === "mcp-github"
-                      ? "https://github.com/dgerabagi/Lineage-Squared-Server01"
-                      : "http://127.0.0.1:3000"
-                  }
-                />
-              </>
-            )}
-
-            {/* For AI => Show an API Key field (But also used as optional for MCP) */}
-            <label className="text-sm font-medium mt-2">
-              {selectedType === "mcp-github"
-                ? "Personal Access Token (optional)"
-                : "API Key (optional)"}
-            </label>
-            <Input
-              value={connApiKey}
-              onChange={(e) => setConnApiKey(e.target.value)}
-              placeholder={
-                selectedType === "mcp-github"
-                  ? "e.g. ghp_4FmZ... (your personal access token)"
-                  : "sk-..."
-              }
-            />
-
-            <div className="flex items-center gap-2 mt-4 justify-end">
-              <Button variant="outline" onClick={() => setShowAddModal(false)}>
-                Cancel
-              </Button>
-              <Button onClick={handleAddConnSubmit}>Add</Button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-</file_artifact>
-
-<file path="src/app/(auth)/sign-in/[[...sign-in]]/page.tsx">
-import { SignIn } from '@clerk/nextjs';
-
-export default function Page() {
-  return (
-    <SignIn
-      // Force Clerk to redirect to /dashboard after sign in
-      afterSignInUrl="/dashboard"
-      // Also possibly set an afterSignUpUrl if needed
-      // afterSignUpUrl="/dashboard"
-    />
-  );
-}
-</file_artifact>
-
-<file path="src/app/(auth)/sign-up/[[...sign-up]]/page.tsx">
-import { SignUp } from '@clerk/nextjs'
-
-export default function Page() {
-  return <SignUp />
-}
-</file_artifact>
-
-<file path="src/app/(auth)/layout.tsx">
-import React from 'react'
-
-type Props = { children: React.ReactNode }
-
-const Layout = ({ children }: Props) => {
-  return (
-    <div className="flex items-center justify-center h-screen w-full">
-      {children}
-    </div>
-  )
-}
-
-export default Layout
-</file_artifact>
-
 </file_artifact>
 
 <file path="context/dce/A90. AI Ascent - server.ts (Reference).md">
@@ -27801,66 +18384,6 @@ export default config
 }
 </file_artifact>
 
-<file path="public/assets/images/report/dce/dce-feature-artifacts.gif">
-<metadata>
-{
-  "name": "dce-feature-artifacts.gif",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/dce",
-  "fileType": "GIF",
-  "sizeInBytes": 38289500,
-  "dimensions": {
-    "width": 1910,
-    "height": 1016
-  }
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/dce/dce-feature-curation.gif">
-<metadata>
-{
-  "name": "dce-feature-curation.gif",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/dce",
-  "fileType": "GIF",
-  "sizeInBytes": 7914370,
-  "dimensions": {
-    "width": 1254,
-    "height": 771
-  }
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/dce/dce-feature-cycles.gif">
-<metadata>
-{
-  "name": "dce-feature-cycles.gif",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/dce",
-  "fileType": "GIF",
-  "sizeInBytes": 1845009,
-  "dimensions": {
-    "width": 1254,
-    "height": 771
-  }
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/report/dce/dce-feature-parallel-copilot.gif">
-<metadata>
-{
-  "name": "dce-feature-parallel-copilot.gif",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/dce",
-  "fileType": "GIF",
-  "sizeInBytes": 3996233,
-  "dimensions": {
-    "width": 1254,
-    "height": 771
-  }
-}
-</metadata>
-</file_artifact>
-
 <file path="src/components/global/FullscreenMediaViewer.tsx">
 'use client';
 
@@ -31873,11 +22396,12 @@ const AcademyPage = () => {
                 try {
                     const [contentRes, manifestRes] = await Promise.all([
                         fetch(`/data/v2v_content_${selectedPersona}.json`),
-                        fetch(`/data/v2v_imagemanifest.json`) // Shared manifest
+                        // C87 FIX: Load the correct persona-specific image manifest
+                        fetch(`/data/imagemanifest_${selectedPersona}.json`)
                     ]);
 
                     if (!contentRes.ok) throw new Error(`Failed to fetch content for ${selectedPersona}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest for ${selectedPersona}`);
 
                     const reportData: ReportContentData = await contentRes.json();
                     const imageManifest: ImageManifestData = await manifestRes.json();
@@ -31958,7 +22482,8 @@ const PersonaSelector: React.FC<PersonaSelectorProps> = ({ onSelectPersona }) =>
                 className="text-center mb-12"
             >
                 <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
-                    Welcome to the V2V Academy
+                    Welcome to the V2V Academy<br />
+                    --==UNDER CONSTRUCTION==--
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                     To personalize your learning journey, please choose the path that best describes you.
@@ -32805,135 +23330,135 @@ You are an expert art director and visual designer for a high-tech military and 
   "basePath": "/assets/images/v2v/career_transitioner/",
   "imageGroups": {
     "lesson-1.1-p1-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p1/",
       "prompt": "A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: 'Curation,' 'Parallel Prompting,' 'Validation,' and 'Integration.' The professional is calm and in control, conducting the flow with strategic intent. An overhead shot of a sleek, circular conference table where each seat represents a stage of the Virtuoso's Loop, with a beam of light traveling between icons for 'Planning,' 'AI Collaboration,' 'Testing,' and 'Finalizing,' showing a continuous, repeatable business process.",
       "alt": "An expert orchestrating a complex AI workflow.",
       "baseFileName": "lesson-1.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p2-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p2/",
       "prompt": "An image depicting the 'Curation' phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled 'Curated Context.' A professional architect is at a drafting table, carefully selecting specific blueprints and material samples from a large collection, assembling a focused 'project binder' that contains only the essential information.",
       "alt": "The process of curating data from chaos to clarity.",
       "baseFileName": "lesson-1.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p3-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p3/",
       "prompt": "A visualization of 'Parallel Prompting.' A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts, returning eight distinct, varied strategic proposals. The business leader is in a 'strategy room' with eight different whiteboards, each showing a unique AI-sketched approach to the same problem, providing a full spectrum of options.",
       "alt": "Parallel prompting to get multiple AI solutions.",
       "baseFileName": "lesson-1.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-1.1-p4-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p4/",
       "prompt": "A close-up of a leader's face, focused and analytical, reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing 'Select This Response' button. In a boardroom, a CEO points decisively at one of several holographic architectural models on a table, selecting it as the path forward.",
       "alt": "A leader making a critical decision based on AI-generated options.",
       "baseFileName": "lesson-1.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.1-p5-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p5/",
       "prompt": "A simple, clear flowchart showing a Git-based workflow with a 'Baseline (Commit)' button creating a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure or 'Success.' An engineer in a high-tech lab tests a new component in a sandboxed, transparent cube; when it fails, they calmly press a 'Reset Environment' button.",
       "alt": "The Test-and-Revert workflow using Git.",
       "baseFileName": "lesson-1.1-p5-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-1.1-p6-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p6/",
       "prompt": "A shot of the DCE's Panel where a user is typing notes into the 'Cycle Context' field, summarizing key takeaways. The 'Generate prompt.md' button is highlighted, leading to a '+' (New Cycle) button. A professional writes key insights on a digital whiteboard at the conclusion of a project phase, which are automatically archived into a 'Corporate Knowledge Base.'",
       "alt": "Finalizing a development cycle and preparing for the next one.",
       "baseFileName": "lesson-1.1-p6-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p1-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p1/",
       "prompt": "A professional in a modern office looks at a holographic screen showing a circular diagram: 'Human Expertise' -> 'Expert Feedback' -> 'AI Action' -> 'AI Output' -> 'System Error' -> 'Human Analysis,' which then loops back. A professional spars with a holographic martial arts master (the AI), who blocks a move and shows a slow-motion replay of the mistake for instant feedback.",
       "alt": "AI as a feedback loop.",
       "baseFileName": "lesson-1.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p2-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p2/",
       "prompt": "A digital librarian in a futuristic library organizes glowing blocks of data labeled 'Code,' 'PDFs,' and 'Research,' building a 'Source of Truth' structure. A pyramid diagram of professional skills shows 'Basic Prompting' at the base and 'Context Architecture & Data Curation' at the very top.",
       "alt": "Data Curation as the apex skill.",
       "baseFileName": "lesson-1.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p3-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p3/",
       "prompt": "A stunning, cinematic shot of a Starship Enterprise-like vessel exploring a beautiful, colorful nebula, evoking hope and discovery. A 'before-and-after' image shows a team struggling with limited tools, then empowered by AI, generating a fountain of innovative solutions.",
       "alt": "The 'Star Trek' motivation for progress.",
       "baseFileName": "lesson-1.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.2-p4-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p4/",
       "prompt": "A wise, holographic mentor figure guides a professional through a complex strategic blueprint, pointing out key connections and making the 'hidden curriculum' of expert thinking visible. A split-panel image shows a human expert's complex internal thought processes being translated by an AI into a clear, step-by-step flowchart for a learner.",
       "alt": "AI as a Cognitive Mentor.",
       "baseFileName": "lesson-1.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 18
     },
     "lesson-1.3-p1-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p1/",
       "prompt": "A diverse group of professionals—a project manager, a military officer, a marketing strategist—collaborate in a futuristic workspace, using holographic interfaces to assemble complex systems without traditional coding. A 'Swiss Army Knife' for the modern professional, where the central, largest tool is labeled 'AI Orchestration,' representing the Citizen Architect's core competency.",
       "alt": "The Citizen Architect archetype.",
       "baseFileName": "lesson-1.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-1.3-p2-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p2/",
       "prompt": "An image showing a human brain composed of glowing, interconnected circuits, with data streams for 'Domain Expertise,' 'Critical Thinking,' and 'Systems Design' flowing into it, increasing its brightness. A diagram shows a company's value where 'Cognitive Capital' is a dynamic, growing tree that produces the 'fruit' of innovation.",
       "alt": "Cultivating Cognitive Capital.",
       "baseFileName": "lesson-1.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 17
     },
     "lesson-1.3-p3-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p3/",
       "prompt": "A Citizen Architect stands before community stakeholders, presenting a holographic visualization of a new system and telling a compelling story about its benefits. An architect is shown conducting an orchestra where the musicians are developers, designers, and AI agents, unifying their efforts.",
       "alt": "The Architect as a storyteller.",
       "baseFileName": "lesson-1.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-1.3-p4-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p4/",
       "prompt": "A 'before and after' diptych showing a shift from a slow, hierarchical corporate structure to a dynamic, decentralized network of empowered Citizen Architects. In a community garden, Citizen Architects provide tools and expertise to community members, helping them build their own solutions, representing bottom-up innovation.",
       "alt": "The strategic impact of the Citizen Architect.",
       "baseFileName": "lesson-1.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 16
     },
     "lesson-2.1-p1-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p1/",
       "prompt": "A seasoned professional stands before a chaotic storm of digital information, calmly selecting and organizing it into a clean, structured, glowing data stream labeled 'High-Quality Context.' A chef in a high-end kitchen meticulously performs mise en place, organizing raw ingredients into neat bowls labeled 'Curated Data.'",
       "alt": "The principles of Data Curation.",
       "baseFileName": "lesson-2.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-2.1-p2-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p2/",
       "prompt": "A side-by-side comparison of an AI machine fed 'garbage' data producing a nonsensical blueprint, versus the same machine fed 'Curated Data' producing a brilliant, precise plan. Two pipelines show dirty water resulting in muddy output, while clean, filtered water results in pure output.",
       "alt": "The 'Garbage In, Garbage Out' principle.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 21
     },
     "lesson-2.1-p3-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p3/",
       "prompt": "A three-panel diagram showing the core workflow: 'GATHER' (pulling in documents), 'ORGANIZE' (arranging into a folder structure), and 'LABEL' (applying descriptive names). A professional organizes a physical library by gathering books, sorting them by genre, and applying clear labels.",
       "alt": "The Curator's Method.",
       "baseFileName": "lesson-2.1-p3-img-",
@@ -32941,15 +23466,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p4-ig1": {
-      "path": "module-2/lesson-2.1/",
-      "prompt": "A sleek, futuristic toolkit is open, showing glowing digital tools like 'Context Selector' and 'Parallel Co-Pilot.' A VS Code window highlights the Data Curation Environment (DCE) extension, with its UI elements glowing, indicating they are the specific tools for the job.",
+      "path": "lesson-2.1-p4/",
+      "prompt": "A sleek, futuristic toolkit is open on a workbench, showing glowing digital tools like 'Context Selector' and 'Parallel Co-Pilot.' A VS Code window highlights the Data Curation Environment (DCE) extension, with its UI elements glowing, indicating they are the specific tools for the job.",
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-2.2-p1-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p1/",
       "prompt": "A professional adds glowing labels and tags ('Version 2.1,' 'Status: Approved') to a complex digital blueprint, creating a layer of order. An intelligence analyst adds digital annotations to a satellite photo, marking points of interest to add meaning.",
       "alt": "The professional's guide to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
@@ -32957,7 +23482,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p2-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p2/",
       "prompt": "A split-panel image shows a confused AI surrounded by unlabeled file icons, versus a confident AI efficiently processing clearly labeled files. A manager gives a messy, unlabeled stack of papers to one employee (AI) who looks lost, while another receives an organized binder and gets to work immediately.",
       "alt": "The cost of ambiguity in AI.",
       "baseFileName": "lesson-2.2-p2-img-",
@@ -32965,7 +23490,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p3-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p3/",
       "prompt": "A three-panel diagram showing practical annotation: renaming `final_draft.docx` to `Q3-Marketing-Strategy-v2.1-APPROVED.docx`, moving files into structured folders, and applying metadata tags. A professional's screen shows a 'before' of a messy desktop and an 'after' of a clean file explorer with a well-defined hierarchy.",
       "alt": "Practical annotation techniques.",
       "baseFileName": "lesson-2.2-p3-img-",
@@ -32973,7 +23498,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p4-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p4/",
       "prompt": "A powerful AI flawlessly executes a complex business workflow, guided by the glowing metadata attached to each piece of information. A CEO gives a high-level command ('Show me all active Q3 proposals'), and an AI instantly generates a perfect summary by filtering correctly annotated documents.",
       "alt": "The payoff of data annotation.",
       "baseFileName": "lesson-2.2-p4-img-",
@@ -32981,7 +23506,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p1-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p1/",
       "prompt": "A seasoned professional in a high-tech quality control lab meticulously inspecting a glowing, holographic blueprint generated by an AI, using a digital magnifying glass. A ship captain on the bridge carefully reviews a course plotted by an AI, cross-referencing it with traditional sea charts, taking ultimate responsibility.",
       "alt": "Quality control for AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
@@ -32989,7 +23514,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p2-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p2/",
       "prompt": "A 'rogue's gallery' of digital phantoms representing AI failure modes: a 'Hallucination' ghost, a 'Flawed Logic' knot of wires, and a 'Security Vulnerability' skull-and-crossbones. A medical AI's report shows highlighted errors: a 'Hallucinated' study, a 'Logical Error' in dosage, and a 'Misalignment' with hospital policy.",
       "alt": "Common AI failure modes.",
       "baseFileName": "lesson-2.3-p2-img-",
@@ -32997,7 +23522,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p3-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p3/",
       "prompt": "A professional at a workstation with a large diff viewer methodically compares an 'Original File' with an 'AI-Generated File.' An editor is shown reviewing a manuscript by checking the plot, then chapter structure, then sentence-level grammar.",
       "alt": "The analysis workflow from diff to decision.",
       "baseFileName": "lesson-2.3-p3-img-",
@@ -33005,7 +23530,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p4-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p4/",
       "prompt": "A diagram showing a virtuous cycle where an 'AI Output' is fed into a 'Human Critique,' which creates a 'Refined Prompt,' leading to an 'Improved Output.' A professional coaches an AI assistant, writing a clear, corrective instruction to teach it how to fix a mistake, rather than fixing it herself.",
       "alt": "Closing the feedback loop.",
       "baseFileName": "lesson-2.3-p4-img-",
@@ -33013,7 +23538,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p1-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p1/",
       "prompt": "A seasoned executive outlines a structured project plan on a whiteboard, which an AI translates into a flawless digital architecture. A split-panel shows a manager giving vague instructions to a confused employee (AI), then giving a clear, written brief to an understanding employee.",
       "alt": "The principles of structured AI interaction.",
       "baseFileName": "lesson-3.1-p1-img-",
@@ -33021,7 +23546,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p2-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p2/",
       "prompt": "A close-up of a futuristic digital document titled 'Interaction Schema' with clear sections for 'ROLE,' 'CONTEXT,' and 'OUTPUT_FORMAT.' An image of a military-style 'Operations Order' (OPORD) template, showing a real-world example of an effective interaction schema.",
       "alt": "The Interaction Schema as a briefing document.",
       "baseFileName": "lesson-3.1-p2-img-",
@@ -33029,7 +23554,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p3-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p3/",
       "prompt": "An architectural diagram where an 'Unstructured Prompt' leads to chaotic outcomes, while a 'Structured Interaction' leads to a predictable, straight line. An animation of a manufacturing assembly line shows robots making frequent errors with unstructured instructions, then working flawlessly with structured ones.",
       "alt": "The business case for structured interaction.",
       "baseFileName": "lesson-3.1-p3-img-",
@@ -33037,7 +23562,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p4-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p4/",
       "prompt": "A 'before and after' comparison of a vague chat bubble request ('make the page better') versus a structured command with clear `// ROLE`, `// TASK`, `// CONTEXT` sections. A professional chef gives instructions: 'make dinner' (before) vs. handing over a detailed recipe card (after).",
       "alt": "A practical example of structured interaction.",
       "baseFileName": "lesson-3.1-p4-img-",
@@ -33045,7 +23570,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p1-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p1/",
       "prompt": "A professional looks at a holographic screen showing a circular feedback loop where 'System Error' is a key input for 'Human Analysis.' A scientist in a lab runs an experiment (AI code), gets an unexpected result (error), analyzes it, adjusts the parameters (prompt), and runs it again.",
       "alt": "Leveraging errors as data points.",
       "baseFileName": "lesson-3.2-p1-img-",
@@ -33053,7 +23578,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p2-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p2/",
       "prompt": "A clean, infographic-style diagram showing three types of errors: 'Compiler Error' (grammar mistakes), 'Runtime Error' (impossible action), and 'Logical Error' (correct machine, wrong direction). A doctor diagnoses a patient, identifying a 'Syntax Error' (miswritten prescription), 'Runtime Error' (allergic reaction), and 'Logical Error' (correct prescription, wrong illness).",
       "alt": "A guide to different error types.",
       "baseFileName": "lesson-3.2-p2-img-",
@@ -33061,7 +23586,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p3-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p3/",
       "prompt": "A step-by-step diagram of the debugging feedback loop: AI generates code, a red error message appears, the professional copies the full error, and pastes it into the DCE with the prompt 'Fix this.' An after-action review where a 'Failure Report' (error message) becomes input for the 'Next Project's Planning Phase' (next prompt).",
       "alt": "The debugging cycle in practice.",
       "baseFileName": "lesson-3.2-p3-img-",
@@ -33069,7 +23594,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p4-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p4/",
       "prompt": "A graph showing a steep, upward-curving 'V2V Learning Curve,' fueled by small, iterative cycles of error and correction. A professional climbs a staircase labeled 'Expertise,' where each step is an error they have learned to solve, showing mastery is built by overcoming a series of challenges.",
       "alt": "Accelerating the learning curve.",
       "baseFileName": "lesson-3.2-p4-img-",
@@ -33077,15 +23602,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p1-ig1": {
-      "path": "module-3/lesson-3.3/",
-      "prompt": "A professional engineer works on a complex blueprint with a prominent, glowing 'UNDO' button beside them, conveying safety and confidence. A bomb disposal expert works on a device inside a reinforced containment chamber labeled 'Git Baseline,' allowing them to work without fear.",
+      "path": "lesson-3.3-p1/",
+      "prompt": "A professional engineer working on a complex blueprint with a prominent, glowing 'UNDO' button beside them, conveying safety and confidence. A bomb disposal expert works on a device inside a reinforced containment chamber labeled 'Git Baseline,' allowing them to work without fear.",
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-3.3-p2-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p2/",
       "prompt": "A diagram shows a single prompt leading to three unpredictable AI outcomes (one success, two failures), with a human protected by a glowing shield labeled 'Git Baseline.' A pharmaceutical researcher tests three new drug compounds (AI solutions) on disposable lab cultures, so a failure doesn't impact the main project.",
       "alt": "Managing non-determinism with a safety net.",
       "baseFileName": "lesson-3.3-p2-img-",
@@ -33093,7 +23618,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p3-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p3/",
       "prompt": "A clear, four-step flowchart: 'Baseline' (snapshot), 'Accept' (apply AI code), 'Test' (run and see 'FAIL'), and 'Restore' (revert to snapshot). An animated sequence showing a developer saving their game ('Baseline'), trying a new strategy and losing ('Test'), then loading their last save ('Restore').",
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
@@ -33101,7 +23626,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p4-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p4/",
       "prompt": "A graph compares a slow, cautious 'Traditional Workflow' with the rapid, experimental 'V2V Workflow,' which shows a much faster rate of progress. A split-panel shows a team cautiously debating a small change, versus a single developer fearlessly testing a massive change, knowing they can undo it instantly.",
       "alt": "The advantage of innovating with confidence.",
       "baseFileName": "lesson-3.3-p4-img-",
@@ -33109,7 +23634,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p1-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p1/",
       "prompt": "A seasoned professional sketches a high-level strategic plan on a holographic whiteboard, showing a clear line from 'Problem' to 'Target User' to 'Proposed Solution.' A ship's captain is on the bridge, decisively plotting a course on a star chart to a distant, shining star labeled 'Project Goal.'",
       "alt": "Architecting a solution from a business need.",
       "baseFileName": "lesson-4.1-p1-img-",
@@ -33117,7 +23642,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p2-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p2/",
       "prompt": "A three-panel diagram showing the discovery phase: a magnifying glass over a 'Problem Statement,' a profile of a 'Target User Persona,' and a simple diagram of the 'Core Solution.' A professional breaks down a complex business challenge into three simple questions on a whiteboard: 'What is the pain point?', 'Who feels this pain?', and 'What is the simplest cure?'",
       "alt": "Answering the three core questions of project scope.",
       "baseFileName": "lesson-4.1-p2-img-",
@@ -33125,7 +23650,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p3-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p3/",
       "prompt": "An image showing the concept of an MVP: a team building a skateboard first, then a scooter, then a bicycle, and finally a car, delivering value at every stage. An architect presents a plan for a skyscraper where the first phase is a solid foundation and a single, functional ground floor.",
       "alt": "The principle of the Minimum Viable Product.",
       "baseFileName": "lesson-4.1-p3-img-",
@@ -33133,7 +23658,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p4-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p4/",
       "prompt": "A professional is shown using the DCE to create their first artifact: `A1 - Project Scope.md`, with clear headings for 'Vision Statement,' 'Problem,' 'User Persona,' and 'MVP Features.' A formal, signed contract labeled 'Project Scope' is shown being created, defining deliverables and goals.",
       "alt": "Writing the Project Scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
@@ -33141,7 +23666,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p1-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p1/",
       "prompt": "A professional stands before a vast, empty, and intimidatingly white digital canvas, holding a single glowing seed of an idea, looking uncertain. An author sits at a desk with a futuristic typewriter, staring at a single blank page, completely stuck.",
       "alt": "The challenge of the Blank Page Problem.",
       "baseFileName": "lesson-4.2-p1-img-",
@@ -33149,7 +23674,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p2-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p2/",
       "prompt": "A professional presents their 'Project Scope' document to a powerful AI, which generates a complete and perfectly organized architectural blueprint in response. A construction foreman hands blueprints to robotic builders who rapidly assemble the steel frame (scaffolding) of a new building.",
       "alt": "AI as a scaffolding engine.",
       "baseFileName": "lesson-4.2-p2-img-",
@@ -33157,7 +23682,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p3-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p3/",
       "prompt": "A close-up of the DCE extension's 'Cycle 0' UI, showing how a user's scope is turned into a full set of planning artifacts. An animation shows a 'Project Scope' seed being watered by the DCE tool, instantly sprouting into a small but complete 'Project Tree.'",
       "alt": "The DCE's 'Cycle 0' onboarding workflow.",
       "baseFileName": "lesson-4.2-p3-img-",
@@ -33165,7 +23690,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p4-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p4/",
       "prompt": "A professional confidently typing a prompt that instructs an AI to use the attached Project Scope to generate a project's foundational structure. A CEO is delegating the setup of a new branch office to a competent subordinate (the AI), providing the high-level business plan.",
       "alt": "Commanding the AI to architect the foundation.",
       "baseFileName": "lesson-4.2-p4-img-",
@@ -33173,7 +23698,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p1-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p1/",
       "prompt": "An AI as a master architect generates a detailed, glowing holographic blueprint of a software application from a 'Project Scope' document. A translator is shown a high-level concept ('the why') and is producing a detailed, technical instruction manual ('the how').",
       "alt": "Generating an architectural blueprint from a scope.",
       "baseFileName": "lesson-4.3-p1-img-",
@@ -33181,7 +23706,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p2-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p2/",
       "prompt": "A side-by-side comparison of a developer manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) instantly completes all the prep work, allowing the student chef (the user) to focus on the creative part of cooking.",
       "alt": "The AI as a technical architect.",
       "baseFileName": "lesson-4.3-p2-img-",
@@ -33189,7 +23714,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p3-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p3/",
       "prompt": "A developer typing a precise prompt assigning the AI the role of an architect and specifying the tech stack. A client gives a very specific and detailed brief to an architectural firm, including style, materials, and number of rooms.",
       "alt": "Writing the architectural scaffolding prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
@@ -33197,7 +23722,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p4-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p4/",
       "prompt": "The newly generated project structure is shown inside the DCE, and with a click, the files appear in the workspace, and the application runs for the first time. A time-lapse sequence shows a blueprint, then a foundation being instantly laid by robots, ending with the lights turning on in the new ground floor.",
       "alt": "Kicking off Cycle 1 from the AI-generated blueprint.",
       "baseFileName": "lesson-4.3-p4-img-",
@@ -33214,7 +23739,7 @@ You are an expert art director and visual designer for a high-tech military and 
   "basePath": "/assets/images/v2v/underequipped_graduate/",
   "imageGroups": {
     "lesson-1.1-p1-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p1/",
       "prompt": "A cinematic shot of a recent graduate at a sleek, futuristic workstation, confidently orchestrating a complex coding project while others around them look stressed and buried in textbooks; the title 'THE UNFAIR ADVANTAGE' floats above. A split-panel image shows a graduate's generic resume getting a 'rejected' stamp, while another's portfolio built with the V2V workflow gets a glowing 'HIRED' stamp.",
       "alt": "A graduate gaining a competitive edge with AI skills.",
       "baseFileName": "lesson-1.1-p1-img-",
@@ -33222,7 +23747,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p2-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p2/",
       "prompt": "On the left, a chaotic mess of project requirements on sticky notes; in the center, a developer organizes them with a clean interface; on the right, a neat stack labeled 'High-Quality Context.' A student packs a backpack for a hike: one panel shows them randomly stuffing gear, the other shows them carefully packing a map ('The Plan') and essential gear ('The Context').",
       "alt": "Planning and curating context for a project.",
       "baseFileName": "lesson-1.1-p2-img-",
@@ -33230,7 +23755,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p3-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p3/",
       "prompt": "A single coding problem is sent out and splits into eight parallel pathways to eight AI assistants, each returning a different code solution. A student at a career fair talks to eight holographic recruiters simultaneously, getting a full spectrum of career advice.",
       "alt": "Getting multiple options from AI.",
       "baseFileName": "lesson-1.1-p3-img-",
@@ -33238,7 +23763,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p4-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p4/",
       "prompt": "A focused developer reviews a futuristic diff viewer comparing two code files, their hand poised over a 'Select This Response' button. A young engineer in a code review with a senior developer (an AI robot) confidently points out a bug in the AI's code.",
       "alt": "The developer acting as a code reviewer for AI output.",
       "baseFileName": "lesson-1.1-p4-img-",
@@ -33246,7 +23771,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p5-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p5/",
       "prompt": "A simple diagram of a Git-based workflow: a 'Baseline (Commit)' button creates a 'Safe Restore Point,' leading to 'Accept,' 'Test,' and then branching to 'Restore Baseline' on failure. A developer works on complex code inside a glowing 'sandbox'; the code explodes, but the developer is unharmed and presses a 'Reset' button.",
       "alt": "Testing AI code without fear using Git.",
       "baseFileName": "lesson-1.1-p5-img-",
@@ -33254,7 +23779,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p6-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p6/",
       "prompt": "A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with the 'Generate prompt.md' and '+' (New Cycle) buttons highlighted. A student adds a completed, polished project to their online portfolio, then starts a new document titled 'Next Project Plan.'",
       "alt": "Documenting and repeating the development cycle.",
       "baseFileName": "lesson-1.1-p6-img-",
@@ -33262,7 +23787,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p1-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p1/",
       "prompt": "A student working on a coding problem gets an error message; an AI assistant shows them how to feed the error back as a prompt, leading to a 'lightbulb' moment. A student practicing basketball gets instant feedback from a holographic AI coach who shows a slow-motion replay of their flawed form and the corrected trajectory.",
       "alt": "Using AI as a feedback loop for learning.",
       "baseFileName": "lesson-1.2-p1-img-",
@@ -33270,7 +23795,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p2-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p2/",
       "prompt": "A job description for a 'Next-Gen Software Engineer' with 'Data Curation' and 'Context Engineering' listed above 'Python/JavaScript.' A recruiter compares two resumes, focusing on the one that lists projects built by directing an AI, not just one listing programming languages.",
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-1.2-p2-img-",
@@ -33278,7 +23803,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p3-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p3/",
       "prompt": "A diverse group of young, brilliant engineers collaborate in a solarpunk innovation hub, working on holographic interfaces for clean energy and space exploration. An image of a single developer planting a seed that grows into a massive tree with branches of innovative applications.",
       "alt": "The big picture of building a better future with technology.",
       "baseFileName": "lesson-1.2-p3-img-",
@@ -33286,7 +23811,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p4-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p4/",
       "prompt": "A student climbs a steep mountain labeled 'Skill Acquisition' while a holographic mentor creates glowing handholds (scaffolding) for them. A split-panel image shows a student struggling with a textbook, then working with an AI mentor who generates personalized explanations and interactive examples.",
       "alt": "The AI as a cognitive mentor providing an unfair advantage.",
       "baseFileName": "lesson-1.2-p4-img-",
@@ -33294,7 +23819,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p1-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p1/",
       "prompt": "A young, confident developer stands before a holographic career path diagram where the 'Citizen Architect' path branches off to high-impact roles like 'AI Systems Designer.' An image of a business card for a recent graduate with the title 'Citizen Architect,' and a tagline 'Designing and Building AI-Powered Solutions.'",
       "alt": "The Citizen Architect as a new job title.",
       "baseFileName": "lesson-1.3-p1-img-",
@@ -33302,7 +23827,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p2-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p2/",
       "prompt": "An image of a developer's brain, glowing with activity as connections are forged between 'CS Fundamentals,' 'AI Collaboration Skills,' and 'Problem-Solving.' A bar chart shows a developer's value to a company, with the 'Problem-Solving & Innovation' bar being twice as high as the 'Coding' bar.",
       "alt": "Cognitive Capital as a killer skill.",
       "baseFileName": "lesson-1.3-p2-img-",
@@ -33310,7 +23835,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p3-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p3/",
       "prompt": "A young developer confidently presents a project to a team, using a compelling visualization of the architecture and user flow. A developer leads a meeting, using a simple whiteboard diagram to explain a complex technical concept to a non-technical project manager.",
       "alt": "The architect as a storyteller and communicator.",
       "baseFileName": "lesson-1.3-p3-img-",
@@ -33318,7 +23843,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p4-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p4/",
       "prompt": "A young developer presents a sleek, innovative application to impressed senior executives, positioning them as a key innovator. A 'ripple effect' diagram shows a Citizen Architect at the center, with their single application creating ripples of 'Improved User Experience,' 'Increased Team Efficiency,' and 'New Company Revenue.'",
       "alt": "The impact of the Citizen Architect role on the future.",
       "baseFileName": "lesson-1.3-p4-img-",
@@ -33326,7 +23851,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p1-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p1/",
       "prompt": "A young graduate at a job interview, where the hiring manager is pointing to a glowing section on their resume: 'Proficient in Data Curation & Context Engineering.' A student in a high-tech library organizes glowing digital files into a 'Context Backpack' for a project.",
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-2.1-p1-img-",
@@ -33334,7 +23859,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p2-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p2/",
       "prompt": "A side-by-side comparison of a student handing a messy paper to a professor ('AI') and getting a 'C-', versus handing in a clean paper and getting an 'A+.' Two chefs bake a cake; one uses bad ingredients and gets a burnt cake, the other uses high-quality ingredients and gets a perfect cake.",
       "alt": "The 'Garbage In, Garbage Out' rule.",
       "baseFileName": "lesson-2.1-p2-img-",
@@ -33342,7 +23867,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p3-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p3/",
       "prompt": "A three-panel 'how-to' guide: 'GATHER' files, 'ORGANIZE' them into folders, and 'LABEL' them with descriptive names. A student prepares for an open-book exam by gathering books, organizing notes, and creating an index.",
       "alt": "The Curator's Method: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
@@ -33350,7 +23875,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p4-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p4/",
       "prompt": "A sleek toolkit shows glowing digital tools like 'Context Selector.' A student's laptop highlights the DCE extension in VS Code, with beams of light connecting it to a successful project.",
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
@@ -33358,15 +23883,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p1-ig1": {
-      "path": "module-2/lesson-2.2/",
-      "prompt": "A student adds glowing labels ('Chapter 1,' 'Key Concept') to digital flashcards, creating a structured study guide. A librarian uses a futuristic interface to add digital tags to books, allowing a robot assistant to instantly find the right book.",
+      "path": "lesson-2.2-p1/",
+      "prompt": "A student is shown adding clear, glowing labels to digital flashcards. The labels (`Chapter 1`, `Key Concept`, `Final Exam`) help organize the raw information into a structured study guide. A librarian uses a futuristic interface to add digital tags to books, allowing a robot assistant to instantly find the right book.",
       "alt": "An introduction to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-2.2-p2-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p2/",
       "prompt": "A split-panel shows a student giving disorganized notes to a confused friend ('AI'), then giving an organized binder to a confident friend. An AI robot fails to assemble furniture with unlabeled parts, then succeeds perfectly when every part is in a labeled bag.",
       "alt": "The importance of not making the AI guess.",
       "baseFileName": "lesson-2.2-p2-img-",
@@ -33374,15 +23899,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p3-ig1": {
-      "path": "module-2/lesson-2.2/",
-      "prompt": "A three-panel guide shows renaming `script.js` to `user-login-api.js`, dragging messy files into clean folders, and the final professional structure. A 'before and after' of a student's project folder shows a mess transformed into a clean hierarchy.",
+      "path": "lesson-2.2-p3/",
+      "prompt": "A three-panel 'how-to' guide shows renaming `script.js` to `user-login-api.js`, dragging messy files into clean folders, and the final professional structure. A 'before and after' of a student's project folder shows a mess transformed into a clean hierarchy.",
       "alt": "The annotation starter pack: naming and structuring.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-2.2-p4-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p4/",
       "prompt": "A young developer proudly shows off a complex, polished application on their laptop while a glowing AI avatar gives a thumbs-up. A gallery view of a student's portfolio shows multiple high-quality, working applications.",
       "alt": "The payoff of building a killer portfolio.",
       "baseFileName": "lesson-2.2-p4-img-",
@@ -33390,7 +23915,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p1-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p1/",
       "prompt": "A young developer confidently presents a code review to an impressed senior engineer, pointing out a subtle bug in AI-generated code. A student acts as a fact-checker for an AI's essay, cross-referencing claims with reliable sources.",
       "alt": "The importance of verifying AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
@@ -33398,7 +23923,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p2-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p2/",
       "prompt": "A 'field guide' page shows different types of bugs: a 'Phantom Function,' a 'Logic Worm,' and a 'Security Spider.' A detective (the developer) at a crime scene (code) uses a magnifying glass to find clues representing different AI error types.",
       "alt": "A field guide to AI errors.",
       "baseFileName": "lesson-2.3-p2-img-",
@@ -33406,7 +23931,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p3-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p3/",
       "prompt": "A young developer with a checklist methodically reviews code: '1. Understand the Goal,' '2. Check the Big Picture (Diff),' '3. Read the Code,' '4. Run the Tests.' A student edits a term paper by checking the overall structure, then paragraph topics, then line-by-line grammar.",
       "alt": "A method for reviewing code.",
       "baseFileName": "lesson-2.3-p3-img-",
@@ -33414,7 +23939,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p4-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p4/",
       "prompt": "A diagram shows a cycle where an 'AI Bug' leads to a developer writing a 'Better Prompt,' which is fed back to the AI to produce 'Better Code.' A student in a tutoring session shows an AI mentor a mistake it made, and the AI provides a new, corrected solution with an explanation.",
       "alt": "Turning bugs into better prompts.",
       "baseFileName": "lesson-2.3-p4-img-",
@@ -33422,7 +23947,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p1-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p1/",
       "prompt": "A young developer, frustrated with messy AI code, has a 'lightbulb' moment when a mentor points them to a structured checklist. A split-panel shows someone giving vague gestures to a confused robot, then giving a precise map to a robot that immediately proceeds to the destination.",
       "alt": "An introduction to interaction schemas.",
       "baseFileName": "lesson-3.1-p1-img-",
@@ -33430,15 +23955,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p2-ig1": {
-      "path": "module-3/lesson-3.1/",
-      "prompt": "A simple template on a screen with fields for '1. What is the AI's Role?', '2. What is the Task?', '3. What Files Does it Need?', etc. An image of a perfect lab report template with all required sections.",
+      "path": "lesson-3.1-p2/",
+      "prompt": "A clear, simple template is shown on a screen, like a form to be filled out. The fields are '1. What is the AI's Role?', '2. What is the Task?', '3. What Files Does it Need?', etc. An image of a perfect lab report template with all required sections.",
       "alt": "A template for perfect prompts.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-3.1-p3-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p3/",
       "prompt": "An engineering manager reviews two portfolios, smiling at the one with clean, documented, and structured processes. Two job candidates interview; one says 'I just talk to the AI,' the other explains their structured interaction schema, impressing the interviewer.",
       "alt": "Why structured prompts get you hired.",
       "baseFileName": "lesson-3.1-p3-img-",
@@ -33446,7 +23971,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p4-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p4/",
       "prompt": "A 'before and after' of a vague prompt ('fix the login page') versus a professional command with `// ROLE`, `// TASK`, `// CONTEXT` sections. A student's email to a professor is shown, first as a sloppy message, then as a well-structured, professional email.",
       "alt": "From a vague request to a professional command.",
       "baseFileName": "lesson-3.1-p4-img-",
@@ -33454,7 +23979,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p1-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p1/",
       "prompt": "A student, confused by an error message, is encouraged by an AI companion to use the error as the next prompt, leading to a 'lightbulb' moment. A mechanic uses a diagnostic computer to get an error code from a car, then looks up that code in a technical manual (the AI) to find the solution.",
       "alt": "Turning errors into progress.",
       "baseFileName": "lesson-3.2-p1-img-",
@@ -33462,7 +23987,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p2-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p2/",
       "prompt": "A friendly infographic shows three types of bugs: a 'Syntax Bug' reading a rulebook incorrectly, a 'Runtime Bug' tripping over a wire, and a 'Logic Bug' following a map to the wrong treasure. A biology student looks at three different insects under a microscope, each representing a different type of code bug.",
       "alt": "A field guide to code bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
@@ -33470,7 +23995,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p3-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p3/",
       "prompt": "A step-by-step diagram: a developer runs code, a red error appears, they copy the entire error message, and paste it into the DCE with the prompt 'Fix this error.' A doctor gets a lab result (stack trace) from a patient (code) and feeds it into a medical database (the AI) to get a diagnosis.",
       "alt": "The debugging cycle step-by-step.",
       "baseFileName": "lesson-3.2-p3-img-",
@@ -33478,7 +24003,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p4-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p4/",
       "prompt": "A graph shows a slow 'Traditional Learning' line versus a steep, rocketing 'V2V Feedback Loop' line. A split-panel shows a student struggling to learn guitar from a book, versus another student learning much faster with a real-time feedback app.",
       "alt": "The fastest way to learn.",
       "baseFileName": "lesson-3.2-p4-img-",
@@ -33486,7 +24011,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p1-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p1/",
       "prompt": "A young developer confidently works on a complex project with a glowing 'UNDO' button beside them. A student in a chemistry lab works with volatile chemicals inside a protective fume hood labeled 'Git Workflow.'",
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
@@ -33494,7 +24019,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p2-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p2/",
       "prompt": "An AI robot offers a developer three code snippets; one is good, but two have hidden bugs, and the developer is protected by a shield labeled 'Git Baseline.' A student uses a 'spell checker' AI that gives one perfect suggestion and one nonsensical one, illustrating the need for verification.",
       "alt": "The AI is unpredictable.",
       "baseFileName": "lesson-3.3-p2-img-",
@@ -33502,7 +24027,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p3-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p3/",
       "prompt": "A four-step flowchart: 'Baseline' (Save Point), 'Accept' (Apply Code), 'Test' (Run and get 'TEST FAILED'), and 'Restore' (revert to save point). A student writing an essay saves the draft, accepts a major revision from a tool, re-reads it, finds it's bad, and reopens the last good version.",
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
@@ -33510,7 +24035,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p4-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p4/",
       "prompt": "A graph shows a slow 'Cautious Coder' learning curve versus a steep 'V2V Developer' curve made of bold experiments and tiny, quick reverts. Two students build a Lego model; one is slow and cautious, the other is fast and experimental, knowing they can easily rebuild.",
       "alt": "Build faster, learn faster.",
       "baseFileName": "lesson-3.3-p4-img-",
@@ -33518,7 +24043,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p1-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p1/",
       "prompt": "A hiring manager reviews a graduate's portfolio, looking impressed at a well-written Project Scope document. A young engineer confidently presents their Project Scope document on a large screen to their team lead.",
       "alt": "Creating a professional project scope.",
       "baseFileName": "lesson-4.1-p1-img-",
@@ -33526,7 +24051,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p2-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p2/",
       "prompt": "A three-panel diagram shows a 'Cool Idea!' lightbulb being refined by questions ('Who is this for?') into an 'Actionable Plan' blueprint. A student's research paper process is shown: broad topic -> narrow research questions -> detailed outline.",
       "alt": "From a cool idea to a concrete plan.",
       "baseFileName": "lesson-4.1-p2-img-",
@@ -33534,15 +24059,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p3-ig1": {
-      "path": "module-4/lesson-4.1/",
-      "prompt": "An image shows two paths: 'Build Everything' leads to an unfinished mess, while 'Build the MVP' leads to a small but complete, working application. A student building a model rocket focuses on a simple, single-stage rocket that is guaranteed to launch.",
+      "path": "lesson-4.1-p3/",
+      "prompt": "An image shows two paths: 'Build Everything' leads to an unfinished mess, while 'Build the MVP' leads to a small but complete, working application. A student building a model rocket focuses on a simple, single-stage rocket that is guaranteed to launch successfully.",
       "alt": "The MVP strategy for finishing projects.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-4.1-p4-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p4/",
       "prompt": "A student uses the DCE to create their first artifact: `A1 - Project Scope.md`, with professional headings. A 'before and after' shows a blank document transformed into a complete, professional project scope.",
       "alt": "Writing the project scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
@@ -33550,7 +24075,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p1-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p1/",
       "prompt": "A recent graduate sits in front of a computer with a completely empty code editor, looking overwhelmed and uncertain. An artist stares at a large, blank white canvas, experiencing 'artist's block.'",
       "alt": "The challenge of the blank page problem.",
       "baseFileName": "lesson-4.2-p1-img-",
@@ -33558,7 +24083,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p2-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p2/",
       "prompt": "A developer hands their 'Project Scope' document to a friendly AI robot, who reads it and quickly assembles a perfect 'skeleton' of a project. A writer gives their story outline to an AI, which generates the first few paragraphs.",
       "alt": "Using AI to build a project's skeleton.",
       "baseFileName": "lesson-4.2-p2-img-",
@@ -33566,7 +24091,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p3-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p3/",
       "prompt": "A close-up of the DCE's 'Cycle 0' UI, showing a user's scope being turned into a full set of planning artifacts. An animation shows a student planting a 'Project Scope' seed, which the DCE waters, and it instantly sprouts into a 'Project Tree.'",
       "alt": "How the DCE uses AI for scaffolding.",
       "baseFileName": "lesson-4.2-p3-img-",
@@ -33574,7 +24099,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p4-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p4/",
       "prompt": "A developer confidently types a prompt instructing an AI to use their Project Scope to generate a complete starter project for a Next.js application. A student gives their essay outline to a tutor (the AI), who helps them create the initial document.",
       "alt": "Commanding the AI to build a starter project.",
       "baseFileName": "lesson-4.2-p4-img-",
@@ -33582,7 +24107,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p1-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p1/",
       "prompt": "A student presents their 'Project Scope' document to an AI robot, which generates a professional 'Architectural Blueprint.' A home builder gives a client's feature list to a computer program (AI) to generate a detailed blueprint.",
       "alt": "Creating a blueprint to get starter code.",
       "baseFileName": "lesson-4.3-p1-img-",
@@ -33590,7 +24115,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p2-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p2/",
       "prompt": "A side-by-side comparison of a student manually creating folders versus an AI instantly generating a professional project structure. A master chef (the AI) has already done all the prep work, allowing the student chef (the user) to focus on the creative cooking process.",
       "alt": "The AI as a senior developer partner.",
       "baseFileName": "lesson-4.3-p2-img-",
@@ -33598,7 +24123,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p3-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p3/",
       "prompt": "A developer types a clear prompt: 'Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project.' A student ordering a custom computer uses a configuration tool, selecting the 'Expert' build and specifying all required components.",
       "alt": "Writing the 'Build My Project' prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
@@ -33606,7 +24131,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p4-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p4/",
       "prompt": "The new project structure is shown in the DCE. The developer clicks 'Accept Selected,' and the files appear. The final shot shows them typing `npm run dev` and seeing a 'Welcome to Next.js' page. A student receives a 'build-it-yourself' furniture kit (AI response), assembles it, and the final image shows their new, functional desk.",
       "alt": "Your project is born.",
       "baseFileName": "lesson-4.3-p4-img-",
@@ -33623,7 +24148,7 @@ You are an expert art director and visual designer for a high-tech military and 
   "basePath": "/assets/images/v2v/young_precocious/",
   "imageGroups": {
     "lesson-1.1-p1-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p1/",
       "prompt": "A cinematic shot of a young, focused gamer at a futuristic battle station, orchestrating a complex coding project visualized as a glowing loop of data, with the title 'LEVEL UP YOUR DEV GAME' displayed. An image of a video game 'skill tree' with a glowing path leading from the 'Vibecoding' skill to the ultimate skill: 'Virtuoso's Loop.'",
       "alt": "Leveling up your development game.",
       "baseFileName": "lesson-1.1-p1-img-",
@@ -33631,7 +24156,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p2-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p2/",
       "prompt": "A video game inventory screen shows a chaotic 'loot drop' of files being skillfully organized into an 'Optimized Loadout.' A hero at a blacksmith's forge carefully selects magical scrolls and artifacts ('The Context') into a satchel, preparing their 'spell components.'",
       "alt": "Preparing your inventory for a quest.",
       "baseFileName": "lesson-1.1-p2-img-",
@@ -33639,7 +24164,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p3-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p3/",
       "prompt": "A single, powerful spell is cast, summoning eight different AI familiars, each returning with a unique magic scroll (a code solution). A sci-fi captain deploys eight identical drones on a scouting mission, each returning with a different piece of intelligence.",
       "alt": "Multi-summoning AI for multiple solutions.",
       "baseFileName": "lesson-1.1-p3-img-",
@@ -33647,7 +24172,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p4-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p4/",
       "prompt": "A close-up of a gamer's face, intensely analyzing a futuristic diff viewer showing 'stat changes' between two code files, their hand poised over a 'Select This Build' button. A top-down tactical view from a strategy game where a player, as raid leader, decisively chooses one of several AI-drawn attack paths.",
       "alt": "Acting as the raid leader for your project.",
       "baseFileName": "lesson-1.1-p4-img-",
@@ -33655,7 +24180,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p5-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p5/",
       "prompt": "A gaming-style workflow diagram: 'Quick Save' button creates a 'Restore Point,' leading to 'Equip Build,' 'Test in Dungeon,' and then a 'Wipe' arrow leading to 'Reload Save.' A hero touches a magical save crystal before drinking a mysterious potion labeled 'AI-Generated Code.'",
       "alt": "Quick save and reload for your code.",
       "baseFileName": "lesson-1.1-p5-img-",
@@ -33663,7 +24188,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.1-p6-ig1": {
-      "path": "module-1/lesson-1.1/",
+      "path": "lesson-1.1-p6/",
       "prompt": "A 'Quest Complete!' screen shows a player receiving EXP and loot, while the next quest in the chain unlocks on the world map. A shot of the DCE Panel where a user is typing notes into the 'Cycle Context' field, with 'Generate prompt.md' and '+' (New Cycle) buttons highlighted.",
       "alt": "Logging your win and queuing for the next raid.",
       "baseFileName": "lesson-1.1-p6-img-",
@@ -33671,7 +24196,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p1-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p1/",
       "prompt": "A video game character fails a complex move ('COMBO FAILED'), and an AI companion shows a holographic overlay of the correct button sequence. A hero sparring with a training dummy misses a strike, and a magical rune on the dummy glows to show the correct target.",
       "alt": "AI as a feedback loop power-up.",
       "baseFileName": "lesson-1.2-p1-img-",
@@ -33679,7 +24204,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p2-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p2/",
       "prompt": "An RPG 'skill tree' where the ultimate skill at the very top is 'Data Curation,' with 'Code Generation' and 'Automation' branching down from it. A 'character build' screen for a developer where the highest, maxed-out stat is 'Curation.'",
       "alt": "Data Curation as the new meta skill.",
       "baseFileName": "lesson-1.2-p2-img-",
@@ -33687,7 +24212,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p3-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p3/",
       "prompt": "A stunning, cinematic image of a player character on a starship bridge, looking out at an unexplored galaxy. A massive, collaborative world-building project, like a giant Minecraft server, where players and AI companions build a futuristic solarpunk city together.",
       "alt": "The endgame quest for a 'Star Trek' future.",
       "baseFileName": "lesson-1.2-p3-img-",
@@ -33695,7 +24220,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.2-p4-ig1": {
-      "path": "module-1/lesson-1.2/",
+      "path": "lesson-1.2-p4/",
       "prompt": "An apprentice spars with a holographic master warrior who replays a complex technique in slow motion, explaining the strategy. A young mage learns a new spell as a wise, ancient dragon (the AI) breathes a holographic 'spell diagram' into the air.",
       "alt": "The AI as a cognitive mentor teaching secret techniques.",
       "baseFileName": "lesson-1.2-p4-img-",
@@ -33703,7 +24228,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p1-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p1/",
       "prompt": "A powerful, god-like figure in a digital realm effortlessly creates entire worlds and complex structures with gestures, surrounded by AI companions. An image of an RPG rulebook's 'prestige class': the 'Citizen Architect,' with abilities like 'System Weaving' and 'Create World.'",
       "alt": "The final class: The Citizen Architect.",
       "baseFileName": "lesson-1.3-p1-img-",
@@ -33711,7 +24236,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p2-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p2/",
       "prompt": "A futuristic RPG character sheet where the primary stat is a glowing, maxed-out bar labeled 'Cognitive Capital.' A hero defeats a massive puzzle-boss not with strength, but with pure intellect, as glowing lines of logic unravel the boss's defenses.",
       "alt": "Cognitive Capital as your ultimate stat.",
       "baseFileName": "lesson-1.3-p2-img-",
@@ -33719,7 +24244,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p3-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p3/",
       "prompt": "A 'lore master' or 'dungeon master' weaves a grand narrative on a holographic map, which AI companions instantly translate into a living digital world. A split-panel shows a builder placing blocks randomly, versus a 'World-Builder' first writing the 'lore' which then guides the placement of every block with purpose.",
       "alt": "The Architect as a storyteller and lore master.",
       "baseFileName": "lesson-1.3-p3-img-",
@@ -33727,7 +24252,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-1.3-p4-ig1": {
-      "path": "module-1/lesson-1.3/",
+      "path": "lesson-1.3-p4/",
       "prompt": "A Citizen Architect on a 'creator' screen, like a game's map editor, designs and launches entire new 'game worlds' (applications) with a few clicks. An image of a player ascending to 'God Mode,' flying above the game world, now able to modify the fundamental rules.",
       "alt": "The power of a world-builder.",
       "baseFileName": "lesson-1.3-p4-img-",
@@ -33735,7 +24260,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p1-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p1/",
       "prompt": "A hero in a video game stands before a massive, glowing inventory screen, skillfully organizing a chaotic pile of 'loot' into a perfectly organized 'Optimized Loadout.' A sci-fi quartermaster in a vast cargo bay uses a holographic interface to tag and stack disorganized crates.",
       "alt": "Ultimate inventory management.",
       "baseFileName": "lesson-2.1-p1-img-",
@@ -33743,7 +24268,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p2-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p2/",
       "prompt": "A side-by-side comparison of a fantasy blacksmith forging a weak sword from rusty materials ('Garbage In'), versus forging a legendary sword from glowing, high-quality ore ('Curated Data'). An alchemist mixes muddy water and weeds to get a sludge potion, then mixes crystal water and glowing herbs to get a powerful elixir.",
       "alt": "The 'Garbage In, Garbage Out' law.",
       "baseFileName": "lesson-2.1-p2-img-",
@@ -33751,7 +24276,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p3-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p3/",
       "prompt": "A three-panel comic strip: 'GATHER' (hero collects loot), 'ORGANIZE' (hero sorts loot into labeled chests), and 'LABEL' (hero applies custom names and icons). A top-down view of a player organizing their base in a strategy game, creating designated zones for different resources.",
       "alt": "The Curator's Combo: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
@@ -33759,7 +24284,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.1-p4-ig1": {
-      "path": "module-2/lesson-2.1/",
+      "path": "lesson-2.1-p4/",
       "prompt": "A hero equips a set of glowing, futuristic armor, with the main tool being a powerful gauntlet labeled 'DCE.' An 'inspect item' screen from an RPG for the 'Data Curation Environment,' listing its stats as '+100 to Context Quality' and a special ability: 'Summon Parallel Solutions.'",
       "alt": "Your legendary gear: The DCE.",
       "baseFileName": "lesson-2.1-p4-img-",
@@ -33767,7 +24292,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p1-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p1/",
       "prompt": "A hero in a fantasy world enchants a plain sword by applying glowing runes labeled 'Metadata,' imbuing it with power. A mage draws glowing symbols onto a plain golem, animating it and giving the raw clay (data) purpose.",
       "alt": "Enchanting your data with annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
@@ -33775,7 +24300,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p2-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p2/",
       "prompt": "A split-panel cartoon: a hero asks their confused AI familiar for a 'healing potion' from an unlabeled pile, then points to a labeled shelf, and the familiar instantly grabs the correct one. A hero's commands cause chaos with an army of identical grey robots, but work perfectly once the robots are color-coded by role.",
       "alt": "Your AI can't read minds.",
       "baseFileName": "lesson-2.2-p2-img-",
@@ -33783,7 +24308,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p3-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p3/",
       "prompt": "A page from a magical grimoire shows two spells: 'Spell of True Naming' (renaming a sword to 'Sword of the Fire Lord +5') and 'Spell of Sorting' (sorting loot into labeled chests). A tech-mage at a holographic interface casts 'Rename' and 'Organize' spells on a list of files.",
       "alt": "The Annotator's Grimoire: Naming & Sorting.",
       "baseFileName": "lesson-2.2-p3-img-",
@@ -33791,7 +24316,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.2-p4-ig1": {
-      "path": "module-2/lesson-2.2/",
+      "path": "lesson-2.2-p4/",
       "prompt": "A young hero proudly displays a set of epic, glowing armor and a powerful weapon they have crafted, with their AI familiar giving a thumbs-up. A 'crafting complete' screen from a game shows a 'Legendary Application' was successfully crafted from 'Well-Annotated Data.'",
       "alt": "The payoff: crafting god-tier loot.",
       "baseFileName": "lesson-2.2-p4-img-",
@@ -33799,15 +24324,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p1-ig1": {
-      "path": "module-2/lesson-2.3/",
-      "prompt": "A hero inspects a powerful, glowing sword from an NPC, using a 'detect magic' spell to reveal a hidden 'Cursed' debuff. A player overlays a 'Lens of Truth' on a treasure map from an AI, revealing that parts of it lead to traps.",
+      "path": "lesson-2.3-p1/",
+      "prompt": "A hero in a video game is inspecting a powerful, glowing sword from an NPC, using a 'detect magic' spell to reveal a hidden 'Cursed' debuff. A player overlays a 'Lens of Truth' on a treasure map from an AI, revealing that parts of it lead to traps.",
       "alt": "Debuffing the AI with critical analysis.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-2.3-p2-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p2/",
       "prompt": "A 'Monster Manual' page shows different digital monsters: the 'Hallucination' ghost, the 'Logic Gremlin' saboteur, and the 'Security Serpent' snake. A hero in a dungeon encounters a 'Phantom Wall' (Hallucination), a pressure plate that opens the wrong door (Logic Gremlin), and a hidden trapdoor (Security Serpent).",
       "alt": "A bestiary of AI bugs.",
       "baseFileName": "lesson-2.3-p2-img-",
@@ -33815,7 +24340,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p3-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p3/",
       "prompt": "A hero plans an attack on a giant boss by looking at a map of its weak points, with a clear strategy: '1. Analyze the Quest,' '2. Scan for Weak Points (Diff),' '3. Target the Core,' '4. Final Blow.' A sci-fi bounty hunter reviews a mission briefing, then uses a scanner to highlight structural weaknesses in the target's lair.",
       "alt": "The hunter's strategy for bug takedowns.",
       "baseFileName": "lesson-2.3-p3-img-",
@@ -33823,7 +24348,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-2.3-p4-ig1": {
-      "path": "module-2/lesson-2.3/",
+      "path": "lesson-2.3-p4/",
       "prompt": "A hero stands over a defeated bug-monster, which drops a glowing orb of 'Knowledge' that the hero absorbs, causing a 'LEVEL UP!' graphic to appear. A blacksmith, after breaking a sword, studies the break point to learn from the mistake before forging a new, better one.",
       "alt": "Looting the corpse: turning bugs into EXP.",
       "baseFileName": "lesson-2.3-p4-img-",
@@ -33831,7 +24356,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p1-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p1/",
       "prompt": "A powerful mage casts a complex spell by tracing a precise, glowing geometric pattern labeled 'Structured Interaction.' A split-panel shows a wizard trying to command a golem with vague shouts, then successfully commanding it by reading a precise incantation from a scroll.",
       "alt": "Casting spells: mastering the syntax of power.",
       "baseFileName": "lesson-3.1-p1-img-",
@@ -33839,7 +24364,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p2-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p2/",
       "prompt": "A close-up of a magical spellbook showing a template with sections for 'Target,' 'Components,' 'Incantation,' and 'Effect.' A sci-fi pilot uses a 'Macro Editor' with clear fields to program a complex maneuver.",
       "alt": "The spellbook: your interaction schema.",
       "baseFileName": "lesson-3.1-p2-img-",
@@ -33847,7 +24372,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p3-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p3/",
       "prompt": "Two wizards duel. One tries to remember a spell and looks stressed. The other calmly opens a spellbook and unleashes a flawless, powerful attack. A 'speedrunner' plays a game with a second monitor showing a list of optimized, repeatable steps.",
       "alt": "Why pros use spellbooks.",
       "baseFileName": "lesson-3.1-p3-img-",
@@ -33855,7 +24380,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.1-p4-ig1": {
-      "path": "module-3/lesson-3.1/",
+      "path": "lesson-3.1-p4/",
       "prompt": "A 'before and after' of a vague wish ('make the sword cooler') versus a structured incantation on a magical scroll with sections for `// ROLE`, `// TASK`, etc. A player at a crafting table first throws in random ingredients, then follows a precise, high-level recipe.",
       "alt": "From wish to incantation.",
       "baseFileName": "lesson-3.1-p4-img-",
@@ -33863,7 +24388,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p1-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p1/",
       "prompt": "A video game character is defeated by a boss, then respawns. An AI companion replays a hologram of the fight, highlighting the boss's attack pattern. A 'Game Over' screen with an 'Analyze Failure' button that brings up a tactical replay.",
       "alt": "Respawning with purpose.",
       "baseFileName": "lesson-3.2-p1-img-",
@@ -33871,7 +24396,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p2-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p2/",
       "prompt": "A 'Monster Manual' for code bugs, showing the 'Syntax Slug,' the 'Runtime Raptor,' and the 'Logic Lich.' A hero in a dungeon faces three traps: a miswritten rune, a ceiling collapse, and a door to a monster room.",
       "alt": "A bestiary of bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
@@ -33879,7 +24404,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p3-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p3/",
       "prompt": "A four-panel comic of a debugging combo: hero casts a spell, it backfires, the hero captures the error in an orb, and infuses their next spell with it. A sci-fi engineer's engine fails; they feed the error log to the ship's AI, which provides a repair schematic.",
       "alt": "The debugging combo.",
       "baseFileName": "lesson-3.2-p3-img-",
@@ -33887,7 +24412,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.2-p4-ig1": {
-      "path": "module-3/lesson-3.2/",
+      "path": "lesson-3.2-p4/",
       "prompt": "A hero levels up at incredible speed, absorbing energy from defeated bug-monsters, with '+1 INT' or '+1 WIS' appearing over their head. An animation shows a character's 'Debugging' skill bar rapidly filling as they go through a montage of finding an error, feeding it to their AI, and seeing the solution.",
       "alt": "The ultimate training montage.",
       "baseFileName": "lesson-3.2-p4-img-",
@@ -33895,7 +24420,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p1-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p1/",
       "prompt": "A gamer playing a difficult video game hits a glowing 'QUICKSAVE' button just before entering the boss room. A hero about to cross a rickety rope bridge plants a magical 'Respawn Beacon' at the start.",
       "alt": "Save scumming for coders.",
       "baseFileName": "lesson-3.3-p1-img-",
@@ -33903,7 +24428,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p2-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p2/",
       "prompt": "An AI companion offers a player three swords; one is 'Legendary,' but two are 'Cursed,' and the player is protected by a 'Git Baseline' shield. A player at a 'Gacha' machine uses a special token to 'preview' the random drop before spending real currency.",
       "alt": "Taming the RNG.",
       "baseFileName": "lesson-3.3-p2-img-",
@@ -33911,7 +24436,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p3-ig1": {
-      "path": "module-3/lesson-3.3/",
+      "path": "lesson-3.3-p3/",
       "prompt": "A four-hit fighting game combo: 'SAVE' (Baseline button), 'EQUIP' (new AI weapon), 'TEST' (weapon shatters on a dummy), 'RELOAD' (character reappears at save point). An animated sequence of a sci-fi RPG player saving, failing a hack, and immediately loading their last save.",
       "alt": "The four-hit combo.",
       "baseFileName": "lesson-3.3-p3-img-",
@@ -33919,15 +24444,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-3.3-p4-ig1": {
-      "path": "module-3/lesson-3.3/",
-      "prompt": "A speedrunner blazes through a difficult level, trying risky skips without fear because a 'Reload Last Save' button is always visible. A hero practices a powerful but dangerous spell inside a magical training room that instantly repairs any damage.",
+      "path": "lesson-3.3-p4/",
+      "prompt": "A speedrunner blazes through a difficult level, trying risky, high-level skips and strategies. They are not afraid of failing because a 'Reload Last Save' button is always visible in the corner of their screen. A hero practices a powerful but dangerous spell inside a magical training room that instantly repairs any damage.",
       "alt": "Fearless speedrunning.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-4.1-p1-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p1/",
       "prompt": "A hero stands before a massive, ancient map labeled 'Project Scope,' plotting a course from their starting village to a distant, glowing castle. A 'Quest Log' UI from a video game, where a new main quest has just been added: 'Build the Ultimate RPG.'",
       "alt": "Defining your quest.",
       "baseFileName": "lesson-4.1-p1-img-",
@@ -33935,7 +24460,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p2-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p2/",
       "prompt": "A wise, old quest giver presents a riddle to a young hero, broken into three glowing runes: 'Problem,' 'Hero' (user), and 'Solution.' A hero at a fork in the road with three signposts: 'What's the Goal?', 'Who is it for?', and 'How will you win?'.",
       "alt": "The Quest Giver's Riddle.",
       "baseFileName": "lesson-4.1-p2-img-",
@@ -33943,7 +24468,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p3-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p3/",
       "prompt": "A video game world map shows the player's current objective as a small, nearby dungeon labeled 'The First Dungeon (MVP).' A hero forges a small, perfect dagger labeled 'MVP,' which contains the essential magic that will be scaled up into the full sword.",
       "alt": "Conquering the first dungeon (MVP).",
       "baseFileName": "lesson-4.1-p3-img-",
@@ -33951,7 +24476,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.1-p4-ig1": {
-      "path": "module-4/lesson-4.1/",
+      "path": "lesson-4.1-p4/",
       "prompt": "A hero carefully inscribes their quest details onto a magical scroll with glowing sections for 'Prophecy' (Vision), 'The Evil' (Problem), 'The Chosen One' (User), and 'The First Trial' (MVP). A player uses an in-game 'Quest Editor' to fill out a form defining their custom quest.",
       "alt": "Inscribing your map.",
       "baseFileName": "lesson-4.1-p4-img-",
@@ -33959,7 +24484,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p1-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p1/",
       "prompt": "A game developer stares at a completely empty, white grid in a game engine, labeled 'Level 1: The Blank Canvas.' A hero is given a quest to build a legendary city but is standing in a completely empty, flat field.",
       "alt": "Conquering the blank canvas.",
       "baseFileName": "lesson-4.2-p1-img-",
@@ -33967,7 +24492,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p2-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p2/",
       "prompt": "A hero casts a 'Genesis Spell' using their 'Project Scope' scroll, and their AI familiar instantly generates the entire 'world map' (folder structure) and 'starting cities' (files). A 'God Mode' view of a world-building game where the player clicks 'Generate World from Template,' and the AI instantly terraforms a flat plain.",
       "alt": "The Genesis Spell.",
       "baseFileName": "lesson-4.2-p2-img-",
@@ -33975,7 +24500,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p3-ig1": {
-      "path": "module-4/lesson-4.2/",
+      "path": "lesson-4.2-p3/",
       "prompt": "A close-up of the DCE's 'Cycle 0' UI, where a user's 'world idea' is magically transformed into a full set of 'Lore Books' (planning artifacts). An image of the very first level of a video game, a simple, guided tutorial that teaches the core mechanics.",
       "alt": "The built-in tutorial level.",
       "baseFileName": "lesson-4.2-p3-img-",
@@ -33983,15 +24508,15 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.2-p4-ig1": {
-      "path": "module-4/lesson-4.2/",
-      "prompt": "A hero confidently gives a command to their AI familiar: 'Use my Project Scope scroll to forge the world for my MVP.' A player in a 'world editor' is about to click a large, glowing button that says 'CREATE WORLD.'",
+      "path": "lesson-4.2-p4/",
+      "prompt": "A hero confidently gives a command to their AI familiar: 'Use my Project Scope scroll to forge the world for my MVP. Create the map, the starting towns, and all the necessary artifacts.' A player is in a 'world editor' and is about to click a large, glowing button that says 'CREATE WORLD.'",
       "alt": "Your first quest: Forge My World.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
       "imageCount": 1
     },
     "lesson-4.3-p1-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p1/",
       "prompt": "A hero lays their magical 'Project Scope' scroll on a forge, which glows and automatically constructs the holographic blueprint of a massive castle. A 'tech tree' from a strategy game, where researching 'Project Scope' has unlocked the ability to build the 'Architectural Blueprint' building.",
       "alt": "The Architect's Table.",
       "baseFileName": "lesson-4.3-p1-img-",
@@ -33999,7 +24524,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p2-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p2/",
       "prompt": "A side-by-side comparison of a novice clumsily building a shack versus a hero commanding an AI golem to expertly construct the foundation of a castle. A hero at a crafting station uses an 'Auto-Craft' feature powered by an AI to rapidly assemble all the basic components for a legendary item.",
       "alt": "The AI as your master blacksmith.",
       "baseFileName": "lesson-4.3-p2-img-",
@@ -34007,7 +24532,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p3-ig1": {
-      "path": "module-4/lesson-4.3/",
+      "path": "lesson-4.3-p3/",
       "prompt": "A hero recites a powerful, structured spell from a scroll with verses for 'ROLE: Master Architect,' 'CONTEXT: The Sacred Scroll of Scope,' etc. A player uses a powerful 'world editor' command line, typing a structured command like `/build foundation --from_blueprint 'scope.txt' --style 'fortress'`.",
       "alt": "The Incantation of Creation.",
       "baseFileName": "lesson-4.3-p3-img-",
@@ -34015,8 +24540,8 @@ You are an expert art director and visual designer for a high-tech military and 
       "imageCount": 1
     },
     "lesson-4.3-p4-ig1": {
-      "path": "module-4/lesson-4.3/",
-      "prompt": "The new project structure is shown in the DCE. The hero clicks 'Accept,' and the files materialize in their world. The final shot shows them taking their first steps into the newly created world, which is now live and running. An animation shows a 3D printer (the AI) rapidly printing the foundation of a complex model, which the user then takes to start adding the details.",
+      "path": "lesson-4.3-p4/",
+      "prompt": "The newly generated project structure is shown in the DCE. The hero clicks 'Accept,' and the files materialize in their world. The final shot shows them taking their first steps into the newly created world, which is now live and running. An animation shows a 3D printer (the AI) rapidly printing the foundation of a complex model, which the user then takes to start adding the details.",
       "alt": "Cycle 1: The World is Born.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
@@ -35031,3391 +25556,112 @@ After the script completes, compare the images in the `test_harness` directory a
 *   **Update the Main Script:** The learnings from the test harness should then be applied to update the main `generate_images.mjs` script, replacing its current prompt construction logic with the new, more effective strategy.
 </file_artifact>
 
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 136878
-}
-</metadata>
-</file_artifact>
+<file path="context/aiascentgame/A188. Dual Domain Hosting Guide.md">
+# Artifact A188: Dual Domain Hosting Guide
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive guide for setting up a single server to host both `aiascent.game` and `aiascent.dev` using Caddy as a reverse proxy and PM2 as a process manager.
+- **Tags:** guide, hosting, deployment, server, v1.0, caddy, reverse proxy, pm2, multi-domain
+
+## 1. Purpose
+
+This guide provides a complete, step-by-step process for deploying both the `aiascent.game` and `aiascent.dev` applications onto a single server. It covers cloning the new repository, building both applications for production, configuring the Caddy reverse proxy to handle both domains, and using the PM2 process manager to keep both applications running reliably.
+
+## 2. Architecture Overview
+
+The setup uses a **reverse proxy** architecture. A single Caddy web server listens for all public web traffic on ports 80 and 443. Based on the domain name requested by the user (`aiascent.game` or `aiascent.dev`), Caddy forwards the request to the correct application running on a separate, internal port.
+
+*   `aiascent.game` will run on port **3001**.
+*   `aiascent.dev` will run on port **3002**.
+*   **PM2**, a process manager for Node.js, will be used to run both applications as background services, ensuring they restart automatically if they crash.
+
+## 3. Step-by-Step Deployment on the Server
+
+### Step 3.1: Prepare the `aiascent-dev` Application
+
+1.  **Clone the Repository:**
+    *   Navigate to your main projects directory (e.g., `C:\Projects\`).
+    *   Clone the `aiascent-dev` repository from GitHub.
+    ```bash
+    git clone https://github.com/dgerabagi/aiascent-dev.git
+    ```
+
+2.  **Install Dependencies:**
+    *   Navigate into the new directory: `cd aiascent-dev`.
+    *   Install all required packages: `npm install`.
+
+3.  **Create `.env` File:**
+    *   Create a `.env` file in the root of the `aiascent-dev` project. This file is for production secrets.
+    *   Add the necessary environment variables. For this project, it's primarily for the RAG and TTS features.
+    ```
+    # .env for aiascent-dev
+    TTS_SERVER_URL=http://<IP_OF_TTS_SERVER>:8880/v1/audio/speech
+    REMOTE_LLM_URL=http://<IP_OF_LLM_SERVER>:1234
+    EMBEDDING_API_URL=http://<IP_OF_LLM_SERVER>:1234/v1/embeddings
+    ```
+
+4.  **Build for Production:**
+    *   Run the build script to create an optimized production version of the Next.js site.
+    ```bash
+    npm run build
+    ```
+
+### Step 3.2: Prepare the `ai-ascent` Application
+
+1.  **Navigate to Project:** Go to your `ai-ascent` project directory.
+2.  **Update Caddyfile:** Ensure the `Caddyfile` in the root of this project has been updated with the configuration for both domains as specified in this cycle's changes.
+3.  **Build for Production:**
+    *   Run the main build script to compile the server and client.
+    ```bash
+    npm run build
+    ```
+
+### Step 3.3: Install and Configure PM2
+
+1.  **Install PM2 Globally:** PM2 is a powerful process manager that will keep your applications online.
+    ```bash
+    npm install pm2 -g
+    ```
+
+2.  **Start the Applications with PM2:**
+    *   From the `ai-ascent-dev` directory, start the website:
+    ```bash
+    pm2 start npm --name "aiascent-dev" -- run start
+    ```
+    *   From the `ai-ascent` directory, start the game server:
+    ```bash
+    pm2 start npm --name "ai-ascent" -- run start
+    ```
+
+3.  **Verify PM2 Status:** Check that both applications are running and online.
+    ```bash
+    pm2 list
+    ```
+    You should see `aiascent-dev` and `ai-ascent` with a green "online" status.
+
+4.  **Save the PM2 Process List:** This command saves the current list of running applications so they will automatically restart when the server reboots.
+    ```bash
+    pm2 save
+    ```
+    *(You may need to run `pm2 startup` one time to configure the startup script for your OS.)*
+
+### Step 3.4: Run Caddy
+
+1.  **Navigate to `ai-ascent` Project:** Caddy should be run from the directory containing the `Caddyfile`.
+    ```bash
+    cd C:\Projects\ai-ascent
+    ```
+
+2.  **Start Caddy:** Run Caddy. It will automatically find the `Caddyfile` in the current directory.
+    ```bash
+    caddy run
+    ```
+    *   Caddy will now handle incoming requests for both domains, automatically provision SSL certificates, and route traffic to the correct application running under PM2.
 
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 85122
-}
-</metadata>
-</file_artifact>
+## 4. Final Verification
 
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 119676
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 90306
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 107520
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 133006
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 127050
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 88036
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 114848
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 109008
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 172584
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 131524
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 121028
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 81014
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 82570
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 105820
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 90256
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 108602
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p1/lesson-1.1-p1-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p1-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 97238
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 157570
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 72980
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 105980
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 119926
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 75188
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 116140
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 172698
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 151282
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 117286
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 112806
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 152948
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 174326
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 108390
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 131582
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 170900
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 130902
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 125506
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 106706
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 131404
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p2/lesson-1.1-p2-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p2-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 152354
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 99186
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 138716
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 71276
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 120828
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 117716
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 97418
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 125602
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 123492
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 99036
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 200804
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 91162
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 160356
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 154550
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 103438
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 162572
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 118374
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 105346
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 165442
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 131872
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p3/lesson-1.1-p3-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p3-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 110102
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 112614
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 120116
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 144258
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 97640
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 114620
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 100560
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 150064
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 107882
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 139726
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 139886
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 123674
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 96262
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 83180
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 107534
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 103110
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 104848
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 205224
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 82076
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 84174
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p4/lesson-1.1-p4-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p4-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 137964
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 116236
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 114592
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 102166
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 112126
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 112968
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 70418
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 109648
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 61626
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 43906
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 151702
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 93568
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 116342
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 97236
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 90622
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 97498
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 109300
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 100938
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 116688
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p5/lesson-1.1-p5-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p5-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p5",
-  "fileType": "WEBP",
-  "sizeInBytes": 88732
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 100998
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 103272
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 81204
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 87842
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 81726
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 88226
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 73416
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 133950
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 76198
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 88102
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 76978
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 100594
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 118326
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 78156
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 82614
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 77280
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 120648
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 121836
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 96936
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.1-p6/lesson-1.1-p6-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.1-p6-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.1-p6",
-  "fileType": "WEBP",
-  "sizeInBytes": 78294
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 77958
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 108884
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 103992
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 102884
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 124564
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 105964
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 131178
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 107718
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 113542
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 102280
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 72600
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 109924
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 76562
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 108742
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 87006
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 107192
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 121212
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 77806
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 68826
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p1/lesson-1.2-p1-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p1-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 91374
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 140486
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 174306
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 107024
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 210012
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 165016
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 62002
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 62642
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 54024
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 75158
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 161994
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 112398
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 123734
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 181302
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 70996
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 171732
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 78746
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 124078
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 165194
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 160960
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p2/lesson-1.2-p2-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p2-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 90856
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 100426
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 135814
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 119600
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 202968
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 108882
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 108956
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 113282
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 99632
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 115908
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 118276
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 100618
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 166456
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 104820
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 147226
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 119856
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 113720
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 134870
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 173902
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 152966
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p3/lesson-1.2-p3-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p3-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 196974
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 130540
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 100102
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 138148
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 170812
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 129136
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 136280
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 102714
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 84852
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 133214
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 109898
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 138278
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 141768
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 140620
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 148510
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 127948
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 137976
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 148740
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.2-p4/lesson-1.2-p4-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.2-p4-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.2-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 97956
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 172532
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 93610
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 168044
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 157774
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 100906
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 139206
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 110474
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 116024
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 121008
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 159094
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 134738
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 112112
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-20.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 174514
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 113192
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 144978
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 124378
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 84312
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 104338
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 141062
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p1/lesson-1.3-p1-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p1-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 109346
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 114270
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 120534
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 170628
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 144776
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 146984
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 143430
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 160416
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 136122
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 109090
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 130074
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 127706
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 175366
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 164190
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 111254
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 150128
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 175516
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p2/lesson-1.3-p2-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p2-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 102612
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 120684
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 102694
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 202250
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 144212
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 217710
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 70256
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 130902
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 128066
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-17.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 85178
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-18.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 107200
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-19.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 145420
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 153976
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 105190
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 132624
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 120072
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 147366
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 153762
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 159848
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p3/lesson-1.3-p3-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p3-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p3",
-  "fileType": "WEBP",
-  "sizeInBytes": 152522
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-1.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 143300
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-10.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 107350
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-11.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 167200
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-12.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 208682
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-13.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 112542
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-14.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 165668
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-15.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 136634
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-16.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 200392
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-2.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 184516
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-3.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 210086
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-4.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 126052
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-5.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 191294
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-6.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 201022
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-7.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 165386
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-8.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 182848
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-1.3-p4/lesson-1.3-p4-img-9.webp">
-<metadata>
-{
-  "name": "lesson-1.3-p4-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-1.3-p4",
-  "fileType": "WEBP",
-  "sizeInBytes": 178750
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-1.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 146864
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-10.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 159468
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-11.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 115006
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-12.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 139164
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-13.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 105352
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-14.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 174204
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-15.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 172378
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-16.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 146036
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-17.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 174986
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-18.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 121012
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-19.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 124422
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-2.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 132640
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-3.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 153264
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-4.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 219822
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-5.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 191444
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-6.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 140148
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-7.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 91558
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-8.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 121904
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p1/lesson-2.1-p1-img-9.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p1-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p1",
-  "fileType": "WEBP",
-  "sizeInBytes": 156680
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-1.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-1.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 121728
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-10.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-10.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 114382
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-11.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-11.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 166278
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-12.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-12.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 124600
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-13.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-13.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 139228
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-14.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-14.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 168188
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-15.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-15.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 132240
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-16.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-16.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 119236
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-17.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-17.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 150956
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-18.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-18.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 148824
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-19.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-19.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 185766
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-2.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-2.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 155534
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-20.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-20.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 175958
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-21.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-21.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 170520
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-3.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-3.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 99720
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-4.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-4.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 117800
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-5.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-5.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 128642
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-6.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-6.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 135236
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-7.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-7.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 117692
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-8.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-8.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 132614
-}
-</metadata>
-</file_artifact>
-
-<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p2/lesson-2.1-p2-img-9.webp">
-<metadata>
-{
-  "name": "lesson-2.1-p2-img-9.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p2",
-  "fileType": "WEBP",
-  "sizeInBytes": 108116
-}
-</metadata>
+*   Navigate to `https://aiascent.game` in your browser. You should see the game.
+*   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
+*   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
 </file_artifact>
 

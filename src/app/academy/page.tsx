@@ -17,11 +17,12 @@ const AcademyPage = () => {
                 try {
                     const [contentRes, manifestRes] = await Promise.all([
                         fetch(`/data/v2v_content_${selectedPersona}.json`),
-                        fetch(`/data/v2v_imagemanifest.json`) // Shared manifest
+                        // C87 FIX: Load the correct persona-specific image manifest
+                        fetch(`/data/imagemanifest_${selectedPersona}.json`)
                     ]);
 
                     if (!contentRes.ok) throw new Error(`Failed to fetch content for ${selectedPersona}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest for ${selectedPersona}`);
 
                     const reportData: ReportContentData = await contentRes.json();
                     const imageManifest: ImageManifestData = await manifestRes.json();

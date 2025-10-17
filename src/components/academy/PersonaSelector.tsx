@@ -38,7 +38,8 @@ const PersonaSelector: React.FC<PersonaSelectorProps> = ({ onSelectPersona }) =>
                 className="text-center mb-12"
             >
                 <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
-                    Welcome to the V2V Academy
+                    Welcome to the V2V Academy<br />
+                    --==UNDER CONSTRUCTION==--
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                     To personalize your learning journey, please choose the path that best describes you.
