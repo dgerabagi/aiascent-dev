@@ -80,11 +80,10 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        // C89 FIX: Remove condition preventing suggestion generation for academy pages.
         if (currentPage) {
-            fetchPageSuggestions(currentPage, reportName);
+            fetchPageSuggestions(currentPage); // C90: Removed reportName argument
         }
-    }, [currentPage, reportName, fetchPageSuggestions]);
+    }, [currentPage, fetchPageSuggestions]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);

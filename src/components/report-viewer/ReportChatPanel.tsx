@@ -150,7 +150,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ...useReportStore.getState().reportChatHistory, 
                 { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
             ];
-            fetchConversationSuggestions(finalHistory, reportName);
+            fetchConversationSuggestions(finalHistory); // C90: Removed reportName
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);

@@ -1,19 +1,19 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-17T01:42:33.029Z
+  Date Generated: 2025-10-17T02:01:06.102Z
   ---
   Total Files: 166
-  Approx. Tokens: 458756
+  Approx. Tokens: 459084
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. context\dce\dce_kb.md (144566 tokens)
 2. context\dce\flattened-repo.md (14794 tokens)
-3. public\data\v2v_content_career_transitioner.json (13723 tokens)
+3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
-5. public\data\v2v_content_young_precocious.json (12257 tokens)
-6. src\stores\reportStore.ts (8111 tokens)
+5. public\data\v2v_content_young_precocious.json (12352 tokens)
+6. src\stores\reportStore.ts (8216 tokens)
 7. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7880 tokens)
 8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7390 tokens)
 9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
@@ -33,7 +33,7 @@
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 308 - Chars: 16143 - Tokens: 4036
+14. src\app\api\chat\route.ts - Lines: 308 - Chars: 16450 - Tokens: 4113
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
@@ -73,7 +73,7 @@
 51. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
 52. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
 53. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
-54. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 69 - Chars: 5285 - Tokens: 1322
+54. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 70 - Chars: 5470 - Tokens: 1368
 55. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
 56. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
 57. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
@@ -98,10 +98,10 @@
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 300 - Chars: 14310 - Tokens: 3578
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 300 - Chars: 14026 - Tokens: 3507
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 206 - Chars: 8823 - Tokens: 2206
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8746 - Tokens: 2187
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 84. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -112,7 +112,7 @@
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 716 - Chars: 32444 - Tokens: 8111
+93. src\stores\reportStore.ts - Lines: 720 - Chars: 32863 - Tokens: 8216
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -163,9 +163,9 @@
 141. src\Artifacts\A71 - V2V Academy - Lesson 4.1 - Defining Your Vision.md - Lines: 108 - Chars: 15323 - Tokens: 3831
 142. src\Artifacts\A72 - V2V Academy - Lesson 4.2 - The Blank Page Problem.md - Lines: 93 - Chars: 15303 - Tokens: 3826
 143. src\Artifacts\A73 - V2V Academy - Lesson 4.3 - Architecting Your MVP.md - Lines: 93 - Chars: 15757 - Tokens: 3940
-144. public\data\v2v_content_career_transitioner.json - Lines: 380 - Chars: 54890 - Tokens: 13723
+144. public\data\v2v_content_career_transitioner.json - Lines: 380 - Chars: 55269 - Tokens: 13818
 145. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
-146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49027 - Tokens: 12257
+146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49406 - Tokens: 12352
 147. public\data\v2v_imagemanifest.json - Lines: 98 - Chars: 17546 - Tokens: 4387
 148. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
 149. src\app\academy\page.tsx - Lines: 62 - Chars: 2479 - Tokens: 620
@@ -13749,7 +13749,7 @@ This plan provides a clean, user-friendly, and technically straightforward path 
 # Date Created: C35
 # Author: AI Model & Curator
 
-# Updated on: C45 (Add multi-report context isolation and page-by-page generation strategy)
+# Updated on: C90 (Codify robust state management for reportName)
 
 - **Key/Value for A0:**
 - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
@@ -13788,20 +13788,21 @@ The `ReportState` is the source of truth for suggestions and their status.
 *   **State:**
     *   `suggestedPrompts: string[]`: Stores the current list of suggestions.
     *   `suggestionsStatus: 'idle' | 'loading' | 'error'`: Tracks the status of the on-demand suggestion fetching.
-    *   `reportName: string | null`: Tracks the currently active report (`'whitepaper'` or `'showcase'`). This is critical for context isolation.
+    *   `reportName: string | null`: Tracks the currently active report (`'v2v-academy-career-transitioner'`, `'whitepaper'`, etc.). This is the **single source of truth** for context isolation.
 *   **Actions:**
-    *   `loadReport(reportName)`: **CRITICAL:** This action must completely reset the entire report state, including `suggestedPrompts` and `suggestionsStatus`, to their initial defaults *before* fetching new data. This prevents state from one report leaking to another.
-    *   `fetchAndSetSuggestions(page, reportName)`:
+    *   `loadReport(reportData)`: **CRITICAL:** This action must completely reset the entire report state to its initial defaults *before* fetching new data. It sets the `reportName` from the `reportId` within the `reportData`, establishing the authoritative context for the new report.
+    *   `fetchPageSuggestions(page)`:
+        *   **C90 Update:** This action no longer accepts `reportName` as an argument. It reads the authoritative `reportName` directly from the store state using `get()`.
         *   Sets `suggestionsStatus` to `'loading'`.
         *   Calls the backend API with `task: 'generate_suggestions'`.
-        *   **Race Condition Prevention:** Before updating the state with the fetched suggestions, it must check if the `reportName` passed to it still matches the *current* `reportName` in the store. If they don't match (i.e., the user has already navigated to a different report), the action must abort and not update the state.
+        *   **Race Condition Prevention:** Before updating the state with fetched suggestions, it must check if the `reportName` at the start of the async call still matches the *current* `reportName` in the store. If they don't match (i.e., the user has navigated away), the action must abort to prevent state corruption.
         *   On failure, it sets `suggestionsStatus` to `'error'` and populates `suggestedPrompts` with the correct default questions for the current `reportName`.
 
 ### 2.3. Frontend: UI and Logic (`ReportViewer.tsx`, `ReportChatPanel.tsx`)
 
 1.  **Triggering Suggestions (`ReportViewer.tsx`):**
     *   A `useEffect` hook listens for changes to `currentPageIndex`.
-    *   When the page changes, it calls the `fetchAndSetSuggestions` action, providing the new page's content and the current `reportName`.
+    *   When the page changes, it calls the `fetchPageSuggestions` action. **(C90 Update):** It no longer passes the `reportName` prop.
 
 2.  **UI Rendering (`ReportChatPanel.tsx`):**
     *   A new container below the chat history renders the suggestions.
@@ -16132,7 +16133,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ...useReportStore.getState().reportChatHistory, 
                 { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
             ];
-            fetchConversationSuggestions(finalHistory, reportName);
+            fetchConversationSuggestions(finalHistory); // C90: Removed reportName
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -16514,11 +16515,10 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        // C89 FIX: Remove condition preventing suggestion generation for academy pages.
         if (currentPage) {
-            fetchPageSuggestions(currentPage, reportName);
+            fetchPageSuggestions(currentPage); // C90: Removed reportName argument
         }
-    }, [currentPage, reportName, fetchPageSuggestions]);
+    }, [currentPage, fetchPageSuggestions]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -17278,6 +17278,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C90 (Refactor suggestion fetches to use store's reportName)
 // Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
 // Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
 // ... (rest of history ommitted for brevity)
@@ -17437,8 +17438,8 @@ export interface ReportActions {
     closeFullscreenMedia: () => void; // C54
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
-    fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
-    fetchConversationSuggestions: (history: ChatMessage[], reportName: string) => Promise<void>; // C49: New
+    fetchPageSuggestions: (page: ReportPage) => Promise<void>; // C90: Removed reportName
+    fetchConversationSuggestions: (history: ChatMessage[]) => Promise<void>; // C90: Removed reportName
     regenerateSuggestions: () => Promise<void>; // C49: New
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
@@ -17513,7 +17514,7 @@ const createInitialReportState = (): ReportState => ({
 
 const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
-    if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
+    if (reportName.startsWith('v2v-academy')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
@@ -17572,8 +17573,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
             // ... (fetchPageSuggestions, fetchConversationSuggestions, regenerateSuggestions ommitted for brevity)
-            fetchPageSuggestions: async (page: ReportPage, reportName: string) => {
-                if (get().suggestionsStatus === 'loading' || !page) return;
+            fetchPageSuggestions: async (page: ReportPage) => {
+                const { suggestionsStatus, reportName } = get(); // C90: Get reportName from store
+                if (suggestionsStatus === 'loading' || !page || !reportName) return;
 
                 const context = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
                 const payload = { reportName, context };
@@ -17581,6 +17583,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
 
                 const suggestions = await _fetchSuggestions('page', context, reportName);
                 
+                // The guard clause now works as intended for report transitions
                 if (get().reportName !== reportName) {
                     console.log(`[reportStore] Stale page suggestions for "${reportName}" ignored.`);
                     return;
@@ -17593,8 +17596,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
             },
 
-            fetchConversationSuggestions: async (history: ChatMessage[], reportName: string) => {
-                if (get().suggestionsStatus === 'loading' || history.length === 0) return;
+            fetchConversationSuggestions: async (history: ChatMessage[]) => {
+                const { suggestionsStatus, reportName } = get(); // C90: Get reportName from store
+                if (suggestionsStatus === 'loading' || history.length === 0 || !reportName) return;
                 
                 // Take the last 2 messages (user + assistant)
                 const relevantHistory = history.slice(-2);
@@ -17643,14 +17647,14 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     set({ isLoading: false });
                     return;
                 }
-                const reportName = contentData.reportId;
+                const reportNameFromData = contentData.reportId;
                 
                 set(createInitialReportState());
 
-                const defaultSuggestions = getFallbackSuggestions(reportName);
+                const defaultSuggestions = getFallbackSuggestions(reportNameFromData);
 
                 set({ 
-                    reportName: reportName,
+                    reportName: reportNameFromData, // C90: Use the ID from the data file as the source of truth
                     _hasHydrated: true, 
                     isLoading: true,
                     suggestedPrompts: defaultSuggestions,
@@ -17722,7 +17726,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
                 } catch (error) {
-                    console.error(`Failed to process report data for ${reportName}.`, error);
+                    console.error(`Failed to process report data for ${reportNameFromData}.`, error);
                     set({ isLoading: false });
                 }
             },
@@ -17933,8 +17937,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     reportChatInput: '',
                 });
                 const currentPage = allPages[currentPageIndex];
-                if (currentPage && reportName) {
-                    fetchPageSuggestions(currentPage, reportName);
+                if (currentPage) {
+                    fetchPageSuggestions(currentPage); // C90: Removed reportName
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),

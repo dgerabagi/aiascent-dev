@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C90 (Refactor suggestion fetches to use store's reportName)
 // Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
 // Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
 // ... (rest of history ommitted for brevity)
@@ -158,8 +159,8 @@ export interface ReportActions {
     closeFullscreenMedia: () => void; // C54
     setReportChatInput: (input: string) => void;
     setSuggestedPrompts: (prompts: string[]) => void; // C35: Action to update suggestions
-    fetchPageSuggestions: (page: ReportPage, reportName: string) => Promise<void>; // C49: Renamed
-    fetchConversationSuggestions: (history: ChatMessage[], reportName: string) => Promise<void>; // C49: New
+    fetchPageSuggestions: (page: ReportPage) => Promise<void>; // C90: Removed reportName
+    fetchConversationSuggestions: (history: ChatMessage[]) => Promise<void>; // C90: Removed reportName
     regenerateSuggestions: () => Promise<void>; // C49: New
     addReportChatMessage: (message: ChatMessage) => void;
     updateReportChatMessage: (id: string, chunk: string) => void;
@@ -234,7 +235,7 @@ const createInitialReportState = (): ReportState => ({
 
 const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
-    if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
+    if (reportName.startsWith('v2v-academy')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
@@ -293,8 +294,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
 
             // ... (fetchPageSuggestions, fetchConversationSuggestions, regenerateSuggestions ommitted for brevity)
-            fetchPageSuggestions: async (page: ReportPage, reportName: string) => {
-                if (get().suggestionsStatus === 'loading' || !page) return;
+            fetchPageSuggestions: async (page: ReportPage) => {
+                const { suggestionsStatus, reportName } = get(); // C90: Get reportName from store
+                if (suggestionsStatus === 'loading' || !page || !reportName) return;
 
                 const context = `Page Title: ${page.pageTitle || 'N/A'}\nTL;DR: ${page.tldr || 'N/A'}\nContent: ${page.content || 'N/A'}`;
                 const payload = { reportName, context };
@@ -302,6 +304,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
 
                 const suggestions = await _fetchSuggestions('page', context, reportName);
                 
+                // The guard clause now works as intended for report transitions
                 if (get().reportName !== reportName) {
                     console.log(`[reportStore] Stale page suggestions for "${reportName}" ignored.`);
                     return;
@@ -314,8 +317,9 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
             },
 
-            fetchConversationSuggestions: async (history: ChatMessage[], reportName: string) => {
-                if (get().suggestionsStatus === 'loading' || history.length === 0) return;
+            fetchConversationSuggestions: async (history: ChatMessage[]) => {
+                const { suggestionsStatus, reportName } = get(); // C90: Get reportName from store
+                if (suggestionsStatus === 'loading' || history.length === 0 || !reportName) return;
                 
                 // Take the last 2 messages (user + assistant)
                 const relevantHistory = history.slice(-2);
@@ -364,14 +368,14 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     set({ isLoading: false });
                     return;
                 }
-                const reportName = contentData.reportId;
+                const reportNameFromData = contentData.reportId;
                 
                 set(createInitialReportState());
 
-                const defaultSuggestions = getFallbackSuggestions(reportName);
+                const defaultSuggestions = getFallbackSuggestions(reportNameFromData);
 
                 set({ 
-                    reportName: reportName,
+                    reportName: reportNameFromData, // C90: Use the ID from the data file as the source of truth
                     _hasHydrated: true, 
                     isLoading: true,
                     suggestedPrompts: defaultSuggestions,
@@ -443,7 +447,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     });
                     get().setActiveExpansionPath(get().currentPageIndex);
                 } catch (error) {
-                    console.error(`Failed to process report data for ${reportName}.`, error);
+                    console.error(`Failed to process report data for ${reportNameFromData}.`, error);
                     set({ isLoading: false });
                 }
             },
@@ -654,8 +658,8 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     reportChatInput: '',
                 });
                 const currentPage = allPages[currentPageIndex];
-                if (currentPage && reportName) {
-                    fetchPageSuggestions(currentPage, reportName);
+                if (currentPage) {
+                    fetchPageSuggestions(currentPage); // C90: Removed reportName
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),
