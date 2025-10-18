@@ -1,6 +1,6 @@
 // src/stores/reportStore.ts
+// Updated on: C96 (Add content to FullscreenMedia and add fullscreen navigation actions)
 // Updated on: C95 (Add 'V S Code' replacement for TTS)
-// Updated on: C91 (Add knowledgeBase to _fetchSuggestions call)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -93,6 +93,7 @@ type LastSuggestionRequest = {
 interface FullscreenMedia {
     src: string;
     description: string;
+    content?: string; // C96: Added for lab content
 }
 
 export interface ReportState {
@@ -143,6 +144,8 @@ export interface ReportActions {
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
+    nextPageInFullscreen: () => void; // C96: New action
+    prevPageInFullscreen: () => void; // C96: New action
     nextImage: () => void;
     prevImage: () => void;
     handleKeyDown: (event: KeyboardEvent) => void;
@@ -570,6 +573,46 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     currentImageIndex: 0,
                     playbackStatus: 'idle',
                 }));
+            },
+            nextPageInFullscreen: () => {
+                set(state => {
+                    const newIndex = Math.min(state.allPages.length - 1, state.currentPageIndex + 1);
+                    if (newIndex === state.currentPageIndex) return state;
+
+                    const newPage = state.allPages[newIndex];
+                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                    if (!newPage || !newImage) return state;
+                    
+                    return {
+                        currentPageIndex: newIndex,
+                        currentImageIndex: 0,
+                        fullscreenMedia: {
+                            src: newImage.url,
+                            description: newImage.prompt,
+                            content: newPage.content,
+                        }
+                    };
+                });
+            },
+            prevPageInFullscreen: () => {
+                set(state => {
+                    const newIndex = Math.max(0, state.currentPageIndex - 1);
+                    if (newIndex === state.currentPageIndex) return state;
+
+                    const newPage = state.allPages[newIndex];
+                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                    if (!newPage || !newImage) return state;
+
+                    return {
+                        currentPageIndex: newIndex,
+                        currentImageIndex: 0,
+                        fullscreenMedia: {
+                            src: newImage.url,
+                            description: newImage.prompt,
+                            content: newPage.content,
+                        }
+                    };
+                });
             },
             goToPageByIndex: (pageIndex) => {
                 get().stopSlideshow(true);

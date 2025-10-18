@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 96 - second round of feedback
+Current Cycle 97 - take feedback continue iteration on lab, great work! please work to minimize truncations.
+Cycle 96 - second round of feedback
 Cycle 95 - iterate on the lab based on feedback
 Cycle 94 - build out lab steps
 Cycle 93 - create first lab artifacts
@@ -742,6 +743,46 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 97>
+<Cycle Context>
+great work, here is additional feedback:
+
+1. the new copy button on the code blocks, can we move it from the top-right to the bottom-right? its more likely to be seen by the user as the first line is very long and obscures the icon. in the bottom-right, the icon would be against the completely blank background and much more noticable.
+
+2. when i go full screen on an image in the report viewer on lab 1, i do not see the following differences that should be unique to any report within our lab section of our website, which are: navigation buttons (i see you added chevrons in the fullscreenmediaviewer.tsx but i dont visually see any indication of their appearance) and also we want to not display the image prompt in that text area and instead we want to display the content for that page as that is what contains the step by step that would be depicted in the image. 
+
+3. page 8 (step 12 - 14) is missing critical information. you truncated the model/temp/thinking selections. please restore those instructions.
+
+just like the last cycle, i would like for the steps that i perform be identical to the steps written. therefore, the steps written must exist first before i can record them. so please take this feedback and ill 'throw it back over the fence' so that you can work on the full screen, the other issues, and restore step 12-14 such that i have the proper steps for our learners to follow so i can do them manually so they have a visual aid that matches the written instructions, making it a complete self-referential loop without any misalignment.
+
+
+
+</Cycle Context>
+<Previous Cycle 96 Summary of Actions>
+I have analyzed the user's feedback from Cycle 95 and will implement all six requested improvements. My course of action is to completely overhaul the lab's data structure for better navigation, enrich the content with helpful links, disable a feature that is not yet ready, and fix a text-to-speech pronunciation issue.
+
+First, I will address the poor organization of the lab's navigation. I will completely rewrite the `v2v_lab_1_portfolio.json` file, deconstructing the existing content from artifact `A81` into a more granular, multi-section structure. This will break the lab into logical phases like "Environment Setup," "Cycle 0," "Git Workflow," and "Building the Code," which will be reflected in the report viewer's navigator, making the lab much easier to follow.
+
+During this rewrite, I will also enrich the content. On the first page, I will add a direct link to the official Visual Studio Code download page. On the "Install DCE" page, I will add the correct local link to download the `.vsix` extension file.
+
+Next, I will disable the "Suggested Questions" feature specifically for labs. I will add conditional logic to `ReportViewer.tsx` and `ReportChatPanel.tsx` to prevent this feature from activating and its UI from rendering when a lab report is being viewed.
+
+Finally, I will fix the TTS pronunciation of "VS Code" by implementing a simple string replacement. In both the `reportStore.ts` and `AudioControls.tsx`, I will add logic to replace all occurrences of "VS Code" with "V S Code" before the text is sent to the TTS API, which will force the desired pronunciation.
+
+1.  **Restructure Lab Content:** I will completely rewrite `public/data/v2v_lab_1_portfolio.json`. I will break down the content from `A81` into a new, multi-section format with 21 distinct pages to improve navigation.
+2.  **Add Download Links:**
+    *   In the new lab JSON, I will add the URL `https://code.visualstudio.com/download` to the first step.
+    *   I will add the link `/downloads/data-curation-environment-0.1.10.vsix` to the step explaining how to install the DCE extension.
+3.  **Update Image Manifest:** I will update `public/data/imagemanifest_lab_1_portfolio.json` to match the new `pageId`s created in the restructured lab content file.
+4.  **Disable Lab Suggestions:**
+    *   In `src/components/report-viewer/ReportViewer.tsx`, I will modify the `useEffect` hook to prevent `fetchPageSuggestions` from being called if the `reportName` starts with `v2v-academy-lab`.
+    *   In `src/components/report-viewer/ReportChatPanel.tsx`, I will wrap the suggestion UI in a conditional render and prevent `fetchConversationSuggestions` from being called for labs.
+5.  **Fix TTS Pronunciation:**
+    *   In `src/stores/reportStore.ts`, I will update the `playArbitraryText` action to replace "VS Code" with "V S Code".
+    *   In `src/components/report-viewer/AudioControls.tsx`, I will update the `generateAndPlayAudio` function to do the same replacement.
+</Previous Cycle 96 Summary of Actions>
+</Cycle 97>
 
 <Cycle 96>
 <Cycle Context>
@@ -4517,10 +4558,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-18T22:43:39.479Z
+  Date Generated: 2025-10-18T23:20:57.929Z
   ---
-  Total Files: 173
-  Approx. Tokens: 470454
+  Total Files: 175
+  Approx. Tokens: 471736
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4529,8 +4570,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
-7. src\stores\reportStore.ts (8340 tokens)
+6. src\stores\reportStore.ts (8820 tokens)
+7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
 8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7434 tokens)
 9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
 10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
@@ -4617,9 +4658,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 308 - Chars: 14375 - Tokens: 3594
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 206 - Chars: 8820 - Tokens: 2205
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 211 - Chars: 8998 - Tokens: 2250
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-84. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
+84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3700 - Tokens: 925
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 86. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
 87. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
@@ -4628,7 +4669,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 730 - Chars: 33358 - Tokens: 8340
+93. src\stores\reportStore.ts - Lines: 773 - Chars: 35277 - Tokens: 8820
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -4640,7 +4681,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 102. README.md - Lines: 87 - Chars: 3481 - Tokens: 871
 103. tailwind.config.ts - Lines: 140 - Chars: 2907 - Tokens: 727
 104. tsconfig.json - Lines: 27 - Chars: 499 - Tokens: 125
-105. src\components\global\FullscreenMediaViewer.tsx - Lines: 60 - Chars: 2632 - Tokens: 658
+105. src\components\global\FullscreenMediaViewer.tsx - Lines: 86 - Chars: 4393 - Tokens: 1099
 106. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
 107. src\Artifacts\A43 - V2V Academy - Project Vision and Roadmap.md - Lines: 62 - Chars: 4585 - Tokens: 1147
 108. src\Artifacts\A44 - V2V Academy - Content Research Proposal.md - Lines: 65 - Chars: 4393 - Tokens: 1099
@@ -4704,11 +4745,13 @@ This file-centric approach helps in planning and prioritizing work, especially i
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
 167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
 168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5080 - Tokens: 1270
-169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 16009 - Tokens: 4003
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 16620 - Tokens: 4155
 170. public\assets\images\v2v\labs\lab-1\step-2-1.png - [Binary] Size: 113.4 KB
 171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
 172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
 173. public\assets\images\v2v\labs\lab-1\step-5-1.gif - [Binary] Size: 700.4 KB
+174. public\assets\images\v2v\labs\lab-1\step-6-1.gif - [Binary] Size: 915.1 KB
+175. public\assets\images\v2v\labs\lab-1\step-8-1.gif - [Binary] Size: 6.6 MB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -21109,7 +21152,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     
     const handleImageClick = () => {
         if (currentImage) {
-            openFullscreenMedia({ src: currentImage.url, description: currentImage.prompt });
+            const isLab = reportName.startsWith('v2v-academy-lab');
+            openFullscreenMedia({ 
+                src: currentImage.url, 
+                description: currentImage.prompt,
+                ...(isLab && { content: currentPage.content })
+            });
         }
     };
 
@@ -21209,16 +21257,28 @@ export default ReportViewer;
 
 <file path="src/components/shared/MarkdownRenderer.tsx">
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { FaCopy, FaCheck } from 'react-icons/fa';
 
 interface MarkdownRendererProps {
   children: string;
 }
 
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
+  const [copiedStates, setCopiedStates] = useState<Record<number, boolean>>({});
+
+  const handleCopy = (code: string, index: number) => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopiedStates(prev => ({ ...prev, [index]: true }));
+      setTimeout(() => {
+        setCopiedStates(prev => ({ ...prev, [index]: false }));
+      }, 2000);
+    });
+  };
+
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -21240,32 +21300,35 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
           const childrenStr = String(children);
-
-          // Force single-line code snippets to be rendered inline.
-          // This prevents the markdown parser from wrapping them in a <pre> tag,
-          // which is a block element and causes invalid HTML nesting (<p><pre>...)</pre></p>),
-          // leading to hydration errors and layout breaks.
           const isLikelyInline = !childrenStr.includes('\n');
+          const index = props.sourcePosition?.start.line ?? 0;
 
           if (inline || isLikelyInline) {
-            // This is an inline code snippet.
             return (
               <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
                 {children}
               </code>
             );
           } else {
-            // This is a fenced code block.
             return (
-              <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              </pre>
+              <div className="relative group">
+                <button
+                  onClick={() => handleCopy(childrenStr.replace(/\n$/, ''), index)}
+                  className="absolute top-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                  title="Copy code"
+                >
+                  {copiedStates[index] ? <FaCheck className="text-green-500" /> : <FaCopy />}
+                </button>
+                <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                </pre>
+              </div>
             );
           }
         },
-        a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" {...props} />,
+        a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" target="_blank" rel="noopener noreferrer" {...props} />,
       }}
     >
       {children}
@@ -21827,8 +21890,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C96 (Add content to FullscreenMedia and add fullscreen navigation actions)
 // Updated on: C95 (Add 'V S Code' replacement for TTS)
-// Updated on: C91 (Add knowledgeBase to _fetchSuggestions call)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -21921,6 +21984,7 @@ type LastSuggestionRequest = {
 interface FullscreenMedia {
     src: string;
     description: string;
+    content?: string; // C96: Added for lab content
 }
 
 export interface ReportState {
@@ -21971,6 +22035,8 @@ export interface ReportActions {
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
+    nextPageInFullscreen: () => void; // C96: New action
+    prevPageInFullscreen: () => void; // C96: New action
     nextImage: () => void;
     prevImage: () => void;
     handleKeyDown: (event: KeyboardEvent) => void;
@@ -22398,6 +22464,46 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     currentImageIndex: 0,
                     playbackStatus: 'idle',
                 }));
+            },
+            nextPageInFullscreen: () => {
+                set(state => {
+                    const newIndex = Math.min(state.allPages.length - 1, state.currentPageIndex + 1);
+                    if (newIndex === state.currentPageIndex) return state;
+
+                    const newPage = state.allPages[newIndex];
+                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                    if (!newPage || !newImage) return state;
+                    
+                    return {
+                        currentPageIndex: newIndex,
+                        currentImageIndex: 0,
+                        fullscreenMedia: {
+                            src: newImage.url,
+                            description: newImage.prompt,
+                            content: newPage.content,
+                        }
+                    };
+                });
+            },
+            prevPageInFullscreen: () => {
+                set(state => {
+                    const newIndex = Math.max(0, state.currentPageIndex - 1);
+                    if (newIndex === state.currentPageIndex) return state;
+
+                    const newPage = state.allPages[newIndex];
+                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                    if (!newPage || !newImage) return state;
+
+                    return {
+                        currentPageIndex: newIndex,
+                        currentImageIndex: 0,
+                        fullscreenMedia: {
+                            src: newImage.url,
+                            description: newImage.prompt,
+                            content: newPage.content,
+                        }
+                    };
+                });
             },
             goToPageByIndex: (pageIndex) => {
                 get().stopSlideshow(true);
@@ -22995,15 +23101,19 @@ export default config
 import React from 'react';
 import { useReportState, useReportStore } from '@/stores/reportStore';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 import MarkdownRenderer from '../shared/MarkdownRenderer';
 
 const FullscreenMediaViewer = () => {
-    const { fullscreenMedia } = useReportState(state => ({
+    const { fullscreenMedia, currentPageIndex, allPages } = useReportState(state => ({
         fullscreenMedia: state.fullscreenMedia,
+        currentPageIndex: state.currentPageIndex,
+        allPages: state.allPages,
     }));
-    const { closeFullscreenMedia } = useReportStore.getState();
+    const { closeFullscreenMedia, prevPageInFullscreen, nextPageInFullscreen } = useReportStore.getState();
+
+    const isLabView = !!fullscreenMedia?.content;
 
     return (
         <AnimatePresence>
@@ -23021,7 +23131,7 @@ const FullscreenMediaViewer = () => {
                     >
                         <button
                             onClick={closeFullscreenMedia}
-                            className="absolute top-2 right-2 z-10 p-2 text-foreground/70 hover:text-foreground bg-background/50 rounded-full"
+                            className="absolute top-2 right-2 z-20 p-2 text-foreground/70 hover:text-foreground bg-background/50 rounded-full"
                             title="Close"
                         >
                             <FaTimes />
@@ -23035,11 +23145,33 @@ const FullscreenMediaViewer = () => {
                                 className="object-contain"
                                 unoptimized
                             />
+                            {isLabView && (
+                                <>
+                                    <button 
+                                        onClick={(e) => { e.stopPropagation(); prevPageInFullscreen(); }}
+                                        disabled={currentPageIndex === 0}
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full disabled:opacity-30 hover:bg-black/80 transition-colors z-10"
+                                        title="Previous Step"
+                                    >
+                                        <FaChevronLeft />
+                                    </button>
+                                    <button 
+                                        onClick={(e) => { e.stopPropagation(); nextPageInFullscreen(); }}
+                                        disabled={currentPageIndex >= allPages.length - 1}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full disabled:opacity-30 hover:bg-black/80 transition-colors z-10"
+                                        title="Next Step"
+                                    >
+                                        <FaChevronRight />
+                                    </button>
+                                </>
+                            )}
                         </div>
                         
                         <div className="w-full md:w-1/3 h-1/2 md:h-full p-6 overflow-y-auto">
                             <div className="prose prose-sm dark:prose-invert max-w-none">
-                                <MarkdownRenderer>{fullscreenMedia.description}</MarkdownRenderer>
+                                <MarkdownRenderer>
+                                    {(isLabView ? fullscreenMedia.content : fullscreenMedia.description) || ''}
+                                </MarkdownRenderer>
                             </div>
                         </div>
                     </div>
@@ -30669,8 +30801,8 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         "lab-1-step-3-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code 'Extensions' view, highlighting 'Install from VSIX...'", "alt": "Installing a VSIX in VS Code.", "baseFileName": "step-3-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-4-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a new 'portfolio-website' folder inside the 'Projects' directory.", "alt": "A new portfolio-website folder.", "baseFileName": "step-4-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-5-ig1": { "path": "lab-1/", "prompt": "A screenshot of VS Code's 'Open Folder...' dialog selecting the 'portfolio-website' folder.", "alt": "Opening the project folder in VS Code.", "baseFileName": "step-5-", "fileExtension": ".gif", "imageCount": 1 },
-        "lab-1-step-6-ig1": { "path": "lab-1/", "prompt": "A screenshot of the DCE Onboarding view with the 'Project Scope' text area filled out.", "alt": "The DCE Onboarding view.", "baseFileName": "step-6-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-8-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Generate Initial Artifacts Prompt' button being highlighted in the DCE.", "alt": "Generating the initial prompt.", "baseFileName": "step-8-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-6-ig1": { "path": "lab-1/", "prompt": "A screenshot of the DCE Onboarding view with the 'Project Scope' text area filled out.", "alt": "The DCE Onboarding view.", "baseFileName": "step-6-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-8-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Generate Initial Artifacts Prompt' button being highlighted in the DCE.", "alt": "Generating the initial prompt.", "baseFileName": "step-8-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-12-ig1": { "path": "lab-1/", "prompt": "A screenshot of Google's AI Studio, showing four browser tabs with the correct model settings.", "alt": "AI Studio setup.", "baseFileName": "step-12-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-15-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Parse All' button being highlighted in the PCPP toolbar.", "alt": "Parsing all responses.", "baseFileName": "step-15-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".png", "imageCount": 1 },
@@ -30747,7 +30879,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle0-1",
                     "pageTitle": "Step 6 & 7: Open DCE & Define Scope",
                     "tldr": "Open the DCE panel and provide the AI with your project's vision by pasting in the provided project scope.",
-                    "content": "Click the spiral icon in the Activity Bar to open the DCE panel. This will automatically start the onboarding process for your new project, also known as 'Cycle 0'. The large text area is for your **Project Scope**. Copy the text below and paste it into the text area:\n\n> The vision of this project is to create a professional and engaging personal portfolio website. It will serve as the primary public-facing hub for me, a Citizen Architect, to showcase my skills and projects...",
+                    "content": "Click the spiral icon in the Activity Bar to open the Data Curation **File Tree View**. This will automatically start the onboarding process for your new project, also known as 'Cycle 0'. The large text area is for your **Project Scope**. Copy the text below and paste it into the text area:\n\n```\nThe vision of this project is to create a professional and engaging personal portfolio website. It will serve as the primary public-facing hub for me, a Citizen Architect, to showcase my skills and projects. The website will be a living testament to my capabilities, featuring an interactive showcase of projects I have built.\n\nThe website should have a clean, modern, and professional aesthetic, with a dark-mode-first design. It should be fully responsive and look great on desktop and mobile devices.\n\nThe main sections will include:\n1.  A \"Home\" page with a compelling headline and an introduction.\n2.  An \"About Me\" page with my professional summary and skills.\n3.  A \"Showcase\" page to display my projects.\n4.  A \"Contact\" page with links to my GitHub, LinkedIn, etc.\n```",
                     "imageGroupIds": ["lab-1-step-6-ig1"]
                 },
                 {
@@ -30917,6 +31049,36 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
   "fileType": "GIF",
   "sizeInBytes": 717217,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-6-1.gif">
+<metadata>
+{
+  "name": "step-6-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 937056,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-8-1.gif">
+<metadata>
+{
+  "name": "step-8-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 6916869,
   "dimensions": {
     "width": 1920,
     "height": 1146

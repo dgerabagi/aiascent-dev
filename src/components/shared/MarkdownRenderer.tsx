@@ -1,14 +1,26 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { FaCopy, FaCheck } from 'react-icons/fa';
 
 interface MarkdownRendererProps {
   children: string;
 }
 
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
+  const [copiedStates, setCopiedStates] = useState<Record<number, boolean>>({});
+
+  const handleCopy = (code: string, index: number) => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopiedStates(prev => ({ ...prev, [index]: true }));
+      setTimeout(() => {
+        setCopiedStates(prev => ({ ...prev, [index]: false }));
+      }, 2000);
+    });
+  };
+
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -30,32 +42,35 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
         code: ({ node, inline, className, children, ...props }: any) => {
           const match = /language-(\w+)/.exec(className || '');
           const childrenStr = String(children);
-
-          // Force single-line code snippets to be rendered inline.
-          // This prevents the markdown parser from wrapping them in a <pre> tag,
-          // which is a block element and causes invalid HTML nesting (<p><pre>...)</pre></p>),
-          // leading to hydration errors and layout breaks.
           const isLikelyInline = !childrenStr.includes('\n');
+          const index = props.sourcePosition?.start.line ?? 0;
 
           if (inline || isLikelyInline) {
-            // This is an inline code snippet.
             return (
               <code className="inline bg-muted text-muted-foreground font-mono text-[90%] px-1.5 py-1 rounded-md mx-1" {...props}>
                 {children}
               </code>
             );
           } else {
-            // This is a fenced code block.
             return (
-              <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              </pre>
+              <div className="relative group">
+                <button
+                  onClick={() => handleCopy(childrenStr.replace(/\n$/, ''), index)}
+                  className="absolute top-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                  title="Copy code"
+                >
+                  {copiedStates[index] ? <FaCheck className="text-green-500" /> : <FaCopy />}
+                </button>
+                <pre className="bg-black/80 p-3 rounded-md my-4 overflow-x-auto text-sm">
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                </pre>
+              </div>
             );
           }
         },
-        a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" {...props} />,
+        a: ({ node, ...props }) => <a className="text-primary underline hover:no-underline" target="_blank" rel="noopener noreferrer" {...props} />,
       }}
     >
       {children}
