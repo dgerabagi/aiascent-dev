@@ -1,0 +1,277 @@
+{
+    "reportId": "v2v-academy-lab-1-portfolio",
+    "reportTitle": "V2V Academy Lab 1: Your First DCE Project",
+    "sections": [
+        {
+            "sectionId": "lab-1-intro",
+            "sectionTitle": "Introduction",
+            "pages": [
+                {
+                    "pageId": "lab-1-step-1",
+                    "pageTitle": "Step 1: Download Visual Studio Code",
+                    "tldr": "Download and install VS Code, the free and powerful code editor that will be your primary work environment.",
+                    "content": "The entire V2V workflow takes place inside **Visual Studio Code**, a code editor created by Microsoft that has become the industry standard for developers worldwide. The DCE is an *extension* for VS Code, so you'll need the editor first. If you don't already have it, please navigate to the official website and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions to get it set up on your machine.",
+                    "imageGroupIds": ["lab-1-step-1-ig1"]
+                }
+            ]
+        },
+        {
+            "sectionId": "lab-1-setup",
+            "sectionTitle": "Setup & Project Initiation",
+            "pages": [
+                {
+                    "pageId": "lab-1-step-2",
+                    "pageTitle": "Step 2: Install the DCE Extension",
+                    "tldr": "Install the Data Curation Environment (DCE) extension into VS Code using the `.vsix` file provided.",
+                    "content": "The DCE is distributed as a `.vsix` file. To install it:\n1.  Open Visual Studio Code.\n2.  Navigate to the **Extensions** view by clicking the icon that looks like four squares in the Activity Bar on the left side of the window.\n3.  Click the **...** (More Actions) button at the top-right of the Extensions view.\n4.  Select **\"Install from VSIX...\"** from the dropdown menu.\n5.  In the file dialog that opens, navigate to and select the `.vsix` file for the DCE.\n6.  VS Code will install the extension and may prompt you to reload the window.",
+                    "imageGroupIds": ["lab-1-step-2-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-3",
+                    "pageTitle": "Step 3: Create Your Projects Directory",
+                    "tldr": "Create a dedicated folder on your computer to store all your development projects.",
+                    "content": "It is a best practice to keep all of your coding projects in a single, easy-to-access location. We recommend creating a `Projects` folder in the root of your main drive (e.g., `C:\\Projects` on Windows). This keeps your work organized and separate from your other files. Please create this folder now.",
+                    "imageGroupIds": ["lab-1-step-3-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-4",
+                    "pageTitle": "Step 4: Create the Project Folder",
+                    "tldr": "Inside your `Projects` directory, create a new folder for this specific lab named `portfolio-website`.",
+                    "content": "Now, inside the `C:\\Projects` directory you just created, make a new folder and name it `portfolio-website`. This folder will contain all the files for the portfolio website you are about to build.",
+                    "imageGroupIds": ["lab-1-step-4-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-5",
+                    "pageTitle": "Step 5: Open the Project in VS Code",
+                    "tldr": "Open your new `portfolio-website` folder in VS Code. This sets it as your active project, or 'workspace.'",
+                    "content": "It's time to start your project.\n1.  In VS Code, go to the \"File\" menu.\n2.  Select \"Open Folder...\"\n3.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
+                    "imageGroupIds": ["lab-1-step-5-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-6",
+                    "pageTitle": "Step 6: Open the DCE Panel",
+                    "tldr": "Click the spiral icon in the Activity Bar to open the DCE panel. This will automatically start the onboarding process for your new project.",
+                    "content": "Look at the Activity Bar on the far left of your VS Code window. You should see a new icon that looks like a spiral. This is the entry point for the Data Curation Environment. Click on it. Because this is the first time you are using the DCE in this new project, it will automatically open to the \"Onboarding\" screen, also known as \"Cycle 0.\"",
+                    "imageGroupIds": ["lab-1-step-6-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-7",
+                    "pageTitle": "Step 7: Write Your Project Scope",
+                    "tldr": "Describe the website you want to build in the 'Project Scope' text area. This is your first instruction to the AI.",
+                    "content": "The first step in any project is to define your vision. The large text area you see is for your **Project Scope**. This is where you tell the AI, in plain English, what you want to build. Since this is your first project, we've written a starting scope for you. Copy the text below and paste it into the \"Project Scope\" text area:\n\n> The vision of this project is to create a professional and engaging personal portfolio website. It will serve as the primary public-facing hub for me, a Citizen Architect, to showcase my skills and projects. The website will be a living testament to my capabilities, featuring an interactive showcase of projects I have built.\n> \n> The website should have a clean, modern, and professional aesthetic, with a dark-mode-first design. It should be fully responsive and look great on desktop and mobile devices.\n> \n> The main sections will include:\n> 1.  A \"Home\" page with a compelling headline and an introduction.\n> 2.  An \"About Me\" page with my professional summary and skills.\n> 3.  A \"Showcase\" page to display my projects.\n> 4.  A \"Contact\" page with links to my GitHub, LinkedIn, etc.",
+                    "imageGroupIds": ["lab-1-step-7-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-8",
+                    "pageTitle": "Step 8: Generate Initial Artifacts Prompt",
+                    "tldr": "Click the 'Generate Initial Artifacts Prompt' button. The DCE will use your scope to create a complete prompt file for the AI.",
+                    "content": "Now that you've defined your vision, it's time to turn it into a complete, structured prompt for the AI. Click the **`Generate Initial Artifacts Prompt`** button. The DCE will take your project scope, combine it with a set of best-practice templates, and create two new files in your editor.",
+                    "imageGroupIds": ["lab-1-step-8-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-9",
+                    "pageTitle": "Step 9: Review the Generated Files",
+                    "tldr": "The DCE has created `prompt.md` and `DCE_README.md`. Take a moment to read the `DCE_README.md` file.",
+                    "content": "You will now see two new files open in your editor.\n1.  **`DCE_README.md`:** This file explains the purpose of the `src/Artifacts` directory that was just created for you. It provides a high-level overview of the DCE workflow. Please take a moment to read its contents.\n2.  **`prompt.md`:** This is the master prompt file. It contains everything the AI needs to start planning your project. We'll look at this next.",
+                    "imageGroupIds": ["lab-1-step-9-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-10",
+                    "pageTitle": "Step 10: A Cursory Review of `prompt.md`",
+                    "tldr": "Briefly look over the `prompt.md` file. You don't need to understand everything, but notice how the DCE has structured all the information for the AI.",
+                    "content": "Click on the `prompt.md` tab. This file might seem large and complex, but it's highly structured. Take a moment to scroll through it. Notice the different sections like `<M1. artifact schema>` and `<M4. current project scope>`. This structure is what allows the DCE to reliably parse the AI's response later. You don't need to read it all in detail right now.",
+                    "imageGroupIds": ["lab-1-step-10-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-11",
+                    "pageTitle": "Step 11: Copy the Entire Prompt",
+                    "tldr": "Select all the text in `prompt.md` and copy it to your clipboard.",
+                    "content": "Now, you need to copy the entire contents of the `prompt.md` file. The fastest and most accurate way to do this is with keyboard shortcuts:\n1.  Make sure the `prompt.md` file is the active tab in your editor.\n2.  Press **`Ctrl + A`** (or **`Cmd + A`** on Mac) to select all the text.\n3.  Press **`Ctrl + C`** (or **`Cmd + C`** on Mac) to copy the selected text to your clipboard.",
+                    "imageGroupIds": ["lab-1-step-11-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-12",
+                    "pageTitle": "Step 12: Open AI Studio",
+                    "tldr": "Open four separate tabs in your web browser and navigate to Google's AI Studio. Configure the model settings as shown.",
+                    "content": "Now you need to get responses from an AI. For this lab, we will use Google's AI Studio.\n1.  Open your web browser and open **four separate tabs**.\n2.  In each tab, navigate to **aistudio.google.com**.\n3.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs is a core part of the V2V workflow.",
+                    "imageGroupIds": ["lab-1-step-12-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-13",
+                    "pageTitle": "Step 13: Return to the PCPP",
+                    "tldr": "Close the `prompt.md` and `DCE_README.md` tabs in VS Code to reveal the Parallel Co-Pilot Panel (PCPP).",
+                    "content": "Back in VS Code, you can now close the `prompt.md` and `DCE_README.md` file tabs. Behind them, you will see the main interface of the DCE: the Parallel Co-Pilot Panel. Notice that the `Resp 1` tab is animated, guiding you to your next step.",
+                    "imageGroupIds": ["lab-1-step-13-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-14",
+                    "pageTitle": "Step 14: Paste the Responses",
+                    "tldr": "Paste the prompt from your clipboard into each of the four AI Studio tabs. Once you get the responses back, copy each one and paste it into the corresponding `Resp` tab in the PCPP.",
+                    "content": "Now, execute the parallel prompt:\n1.  Go to your first AI Studio browser tab and paste the prompt into the input area. Send it.\n2.  Repeat this for all four browser tabs.\n3.  As each AI finishes generating its response, click the \"Copy as Markdown\" button in AI Studio.\n4.  Go back to VS Code and paste the response into the corresponding tab in the PCPP (response from browser tab 1 goes into `Resp 1`, etc.).",
+                    "imageGroupIds": ["lab-1-step-14-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-15",
+                    "pageTitle": "Step 15: Parse All Responses",
+                    "tldr": "Once all four responses are pasted in, click the 'Parse All' button.",
+                    "content": "With all four responses loaded into the PCPP, you are ready for the next step. Notice that the **`Parse All`** button in the main toolbar is now highlighted. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format. Click the `Parse All` button now.",
+                    "imageGroupIds": ["lab-1-step-15-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-16",
+                    "pageTitle": "Step 16: Sort by Tokens",
+                    "tldr": "Click the 'Sort' button. This will reorder the response tabs from largest to smallest, which is a good starting point for your review.",
+                    "content": "After parsing, the UI transforms. You can now see metadata on each tab, including the number of files and the total 'token' count. The **`Sort`** button is now highlighted. Click it. This reorders the tabs, placing the response with the most content first. For a new user, a longer response in the planning phase often means more comprehensive documentation.",
+                    "imageGroupIds": ["lab-1-step-16-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-17",
+                    "pageTitle": "Step 17: Select the Longest Response",
+                    "tldr": "Review the sorted responses and click the 'Select This Response' button on the first tab (the longest one).",
+                    "content": "The tabs are now sorted. The first tab represents the most detailed response from the AI. For this first cycle, we will proceed with this option. Click the **`Select This Response`** button in the toolbar for `Resp 1`. This tells the DCE that you've chosen this response as the primary candidate for this cycle.",
+                    "imageGroupIds": ["lab-1-step-17-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-18",
+                    "pageTitle": "Step 18: Create a Baseline",
+                    "tldr": "Click the 'Baseline (Commit)' button. You will see an error message because we haven't set up version control yet. This is expected.",
+                    "content": "The animated guide is now highlighting the **`Baseline (Commit)`** button. This feature uses a version control system called **Git** to create a safe restore point before you apply the AI's code. However, since this is a brand new project, Git hasn't been set up yet. Click the `Baseline (Commit)` button now. You will see an error message appear. This is an expected and important part of your first lesson!",
+                    "imageGroupIds": ["lab-1-step-18-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-19",
+                    "pageTitle": "Step 19: The Failsafe Loop",
+                    "tldr": "You've encountered a problem. The V2V workflow is designed for this. We will now use the AI itself to solve the problem of not having Git installed.",
+                    "content": "You are now experiencing the core V2V feedback loop in action. You have a problem: you need to initialize a 'git repository,' but you don't have Git installed and don't have instructions. We will now use the exact same process you just learned to ask the AI to solve this problem for us.",
+                    "imageGroupIds": ["lab-1-step-19-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-20",
+                    "pageTitle": "Step 20: Accept the Artifacts",
+                    "tldr": "We need to review the documentation the AI has already created for us. It might already contain the instructions we need.",
+                    "content": "Even though we can't create a Git baseline, we can still accept the documentation artifacts the AI generated. It's possible the AI has already provided a `GitHub Repository Setup Guide`. The animated workflow is now highlighting the **`Select All`** button in the \"Associated Files\" list. Click it.",
+                    "imageGroupIds": ["lab-1-step-20-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-21",
+                    "pageTitle": "Step 21: Accept and Navigate",
+                    "tldr": "Click 'Accept Selected' to create the new documentation files in your project. Then, navigate to the `src/Artifacts` folder to see them.",
+                    "content": "Now that all the files are checked, the **`Accept Selected`** button is highlighted. Click it. This will write the new files to your workspace. You will see a new `src/Artifacts` folder appear in the VS Code File Explorer. Expand it and look at the new files.",
+                    "imageGroupIds": ["lab-1-step-21-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-22",
+                    "pageTitle": "Step 22: Your First Cycle - Asking for Help",
+                    "tldr": "You've found a guide, but it has a prerequisite you don't have. This is your first real problem to solve! We will now create a new cycle to ask the AI for Git installation instructions.",
+                    "content": "In our case, we found a `GitHub-Repository-Setup-Guide.md` file. It tells us how to initialize a repository, but it also lists a prerequisite: \"You have `git` installed on your machine.\" We will now start our first *real* development cycle to solve this. In the PCPP, in the \"Cycle & Context\" section, enter the following:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but the instructions say I need to have 'git' as a prerequisite. I do not have git. Can you provide me with instructions to install it? I am on a [windows/mac] machine.`",
+                    "imageGroupIds": ["lab-1-step-22-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-23",
+                    "pageTitle": "Step 23: Generate the Next Prompt",
+                    "tldr": "The 'Cycle & Context' banner is now green, indicating you are ready. Click 'Generate prompt.md' to create the prompt for your first cycle.",
+                    "content": "The 'Cycle & Context' banner at the top of the PCPP has turned green, indicating you are ready to create a new cycle prompt. The animated guide is now highlighting the **`Generate prompt.md`** button. Click it. The `prompt.md` file will be created and opened for you.",
+                    "imageGroupIds": ["lab-1-step-23-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-24",
+                    "pageTitle": "Step 24: Review the New Prompt",
+                    "tldr": "Briefly look at the new `prompt.md`. Notice that it now includes the artifacts you just accepted. This is how the AI maintains context.",
+                    "content": "This is the second time you've seen the `prompt.md` file. The main difference is that it now includes the new documentation artifacts. This is how the DCE maintains context from one cycle to the next. Now, copy the entire contents of this new `prompt.md`, clear your AI Studio tabs, and paste this new prompt into all four tabs to get new responses.",
+                    "imageGroupIds": ["lab-1-step-24-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-25",
+                    "pageTitle": "Step 25: Create Cycle 2",
+                    "tldr": "Once you have your new AI responses, click the `+` button in the PCPP to create a new cycle.",
+                    "content": "Before you paste in the new responses, you need to create a new cycle in the DCE to hold them. In the PCPP, in the \"Cycle & Context\" section, you'll see the cycle navigator (`< C1 >`). Click the **`+`** button to create Cycle 2.",
+                    "imageGroupIds": ["lab-1-step-25-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-26",
+                    "pageTitle": "Step 26: Paste and Parse Cycle 2",
+                    "tldr": "Paste your four new responses into the tabs for Cycle 2 and click 'Parse All.'",
+                    "content": "You are now in Cycle 2. Repeat the process you learned before:\n1.  Copy the four new responses from AI Studio.\n2.  Paste them into the `Resp 1` through `Resp 4` tabs.\n3.  Click **`Parse All`**.",
+                    "imageGroupIds": ["lab-1-step-26-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-27",
+                    "pageTitle": "Step 27: Accept the Solution",
+                    "tldr": "Select the longest response, click 'Select All,' and then 'Accept Selected' to get your new Git installation guide.",
+                    "content": "Now that the responses are parsed, you have the solution to your problem.\n1.  Focus on the longest response.\n2.  Click **`Select All`** in the \"Associated Files\" list.\n3.  Click **`Accept Selected`**.\nYou should see new files appear in your `src/Artifacts` directory, including one with instructions on how to install Git.",
+                    "imageGroupIds": ["lab-1-step-27-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-28",
+                    "pageTitle": "Step 28: Install Git",
+                    "tldr": "Open your new artifact and follow the instructions to install Git. Verify it's installed by running `git --version` in the terminal.",
+                    "content": "Navigate to your new Git installation guide in the `src/Artifacts` folder. Follow its instructions precisely. Once you are done, you can verify that Git is installed correctly by opening a terminal in VS Code (`Terminal > New Terminal`) and typing the command:\n```bash\ngit --version\n```\nIf you see a version number returned, you have successfully installed Git!",
+                    "imageGroupIds": ["lab-1-step-28-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-29",
+                    "pageTitle": "Step 29: First Commit",
+                    "tldr": "Go back to Cycle 1, change the title to 'First Commit,' and click 'Baseline (Commit)' again. This time, it will work.",
+                    "content": "Now that Git is installed, you can complete Step 18.\n1.  In the PCPP, use the `<` arrow to navigate back to **Cycle 1**.\n2.  Change the **Cycle Title** to `First Commit`. The Cycle Title is used as the commit message.\n3.  Click the **`Baseline (Commit)`** button again.\nThis time, a new button will be available: **`Initialize Repository`**. Click it. A \"Successfully initialized\" message will appear. Now, click `Baseline (Commit)` one last time. It will succeed.",
+                    "imageGroupIds": ["lab-1-step-29-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-30",
+                    "pageTitle": "Step 30: The GitHub Quest",
+                    "tldr": "Your next task is to use the skills you've just learned to create a guide for setting up a GitHub account and connecting it to your project.",
+                    "content": "You now have Git initialized locally. The next step is to connect it to GitHub. This is your next quest! Repeat the exact same process you just used to create the Git installation guide. Your task is to create a new guide for setting up a GitHub account and connecting it to your local repository. Once you have followed that guide and set up your GitHub connection, you can proceed to the next step.",
+                    "imageGroupIds": ["lab-1-step-30-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-31",
+                    "pageTitle": "Step 31: Successfully Initialized",
+                    "tldr": "After setting up GitHub, the 'Initialize Repository' button will now work, fully connecting your local project to the cloud.",
+                    "content": "Assuming you have completed your GitHub quest, clicking the **`Initialize Repository`** button will now succeed without any errors. Your local project is now fully connected to Git and GitHub, and you are ready to build your website's code.",
+                    "imageGroupIds": ["lab-1-step-31-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-32",
+                    "pageTitle": "Step 32: Create the Project Scaffold",
+                    "tldr": "In a new cycle, ask the AI to build the initial code files for your portfolio website.",
+                    "content": "You are now ready to have the AI generate the actual code for your website.\n1.  Create a new cycle in the PCPP.\n2.  Set the **Cycle Title** to `Create Project Scaffold`.\n3.  Set the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.`\n4.  Generate the prompt, send it to the AI, and get your responses.",
+                    "imageGroupIds": ["lab-1-step-32-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-33",
+                    "pageTitle": "Step 33: The Rinse-Repeat Loop",
+                    "tldr": "Follow the same rinse-repeat process you've learned to get the AI-generated code into your project.",
+                    "content": "You know the drill now. This is the core loop of the V2V workflow.\n1.  Generate `prompt.md`.\n2.  Copy the prompt and send it to your AI tabs.\n3.  Create a new cycle in the PCPP.\n4.  Copy the AI responses back into the PCPP.\n5.  Parse the responses and select the longest one.",
+                    "imageGroupIds": ["lab-1-step-33-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-34",
+                    "pageTitle": "Step 34: Baseline and Accept the Code",
+                    "tldr": "With Git initialized, you can now Baseline first, then Accept the new code files.",
+                    "content": "This time, the workflow is slightly different. After you parse the responses, the **`Baseline (Commit)`** button will be highlighted. Click it. This saves the current state of your project. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
+                    "imageGroupIds": ["lab-1-step-34-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-35",
+                    "pageTitle": "Step 35: Run Your Project!",
+                    "tldr": "Find the `Development and Testing Guide` artifact, open the VS Code terminal, and run the commands to install dependencies and start your website.",
+                    "content": "You now have a complete set of project files. Look in your `src/Artifacts` folder for a `Development-and-Testing-Guide.md`. This guide tells you the commands to run.\n1.  Open the integrated terminal in VS Code (`Terminal > New Terminal`).\n2.  Type `npm install` and press Enter.\n3.  After it finishes, type `npm run dev` and press Enter.",
+                    "imageGroupIds": ["lab-1-step-35-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-36",
+                    "pageTitle": "Step 36: Tada! Your Project!",
+                    "tldr": "Click the `localhost` link in your terminal to see your live website in your browser. Congratulations!",
+                    "content": "Once `npm run dev` is running, you will see a link in the terminal, usually `http://localhost:3000`. Ctrl-click this link to open it in your web browser. **Congratulations!** You are now looking at the first version of your portfolio website, created from scratch with the DCE and an AI partner.",
+                    "imageGroupIds": ["lab-1-step-36-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-37",
+                    "pageTitle": "Step 37: Continue to Iterate",
+                    "tldr": "You've completed the loop. Now, continue to enhance your project by curating new context, like your resume.",
+                    "content": "You are now on the path to becoming a Citizen Architect. To continue, try creating a `context/personal/` folder and adding your resume as a PDF. Check that file in the DCE's File Tree View, start a new cycle, and ask the AI to add a new section to your website summarizing your resume. This is **context curation** in action. As you progress through the V2V Academy, you can add your new projects to your portfolio's showcase, continuously improving it with the same workflow you've just mastered. This completes your first lab.",
+                    "imageGroupIds": ["lab-1-step-37-ig1"]
+                }
+            ]
+        }
+    ]
+}

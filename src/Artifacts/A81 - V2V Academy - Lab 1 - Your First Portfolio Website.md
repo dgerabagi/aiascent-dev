@@ -124,14 +124,14 @@
 ---
 ### **Page 13: Step 12 - Open Your AI Tool**
 *   **Page Title:** Step 12: Open AI Studio
-*   **Image Prompt:** A screenshot of Google's AI Studio (aistudio.google.com) open in a web browser. The model is set to "Gemini 1.5 Pro" and the temperature is set to 0.7. Four separate browser tabs are shown, each with AI Studio open.
+*   **Image Prompt:** A screenshot of Google's AI Studio (aistudio.google.com) open in a web browser. The model is set to "Gemini 2.5 Pro" and the temperature is set to 0.7. Four separate browser tabs are shown, each with AI Studio open.
 *   **TL;DR:** Open four separate tabs in your web browser and navigate to Google's AI Studio. Configure the model settings as shown.
 *   **Content:** Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.
     1.  Open your web browser of choice.
     2.  Open **four separate tabs**.
     3.  In each tab, navigate to **aistudio.google.com**.
     4.  In each tab, configure the settings:
-        *   **Model:** `Gemini 1.5 Pro`
+        *   **Model:** `Gemini 2.5 Pro`
         *   **Temperature:** `0.7`
         *   **Thinking budget:** `Maximum`
     Pasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.

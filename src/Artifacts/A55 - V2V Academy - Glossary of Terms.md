@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C93 (Add new terms from Lab 1)
+# Updated on: C94 (Add new terms from Lab 1)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -74,7 +74,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **G**
 
 *   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
-*   **Gemini Pro:** A family of powerful, multimodal generative AI models developed by Google. The V2V labs use Gemini models via AI Studio.
+*   **Gemini 2.5 Pro:** A powerful, multimodal generative AI model developed by Google. The V2V labs use Gemini models via AI Studio.
 *   **Genesis Prompt:** A specific, structured command given to an AI at the very beginning of a project (Cycle 0). Its purpose is to take a high-level `Project Scope` and generate the initial set of foundational planning artifacts and technical scaffolding, bootstrapping the entire project structure.
 *   **Git:** A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It is the underlying technology that powers the **Test-and-Revert Workflow**.
 

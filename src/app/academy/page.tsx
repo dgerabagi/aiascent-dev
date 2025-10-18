@@ -19,7 +19,7 @@ const AcademyPage = () => {
                 try {
                     const contentFile = selection.type === 'persona' 
                         ? `v2v_content_${selection.id}.json`
-                        : `v2v_content_${selection.id}.json`; // Assumes lab files follow a similar pattern for now
+                        : `v2v_${selection.id}.json`;
                     
                     const manifestFile = selection.type === 'persona'
                         ? `imagemanifest_${selection.id}.json`
@@ -65,7 +65,7 @@ const AcademyPage = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-start h-full container mx-auto px-4 pt-16">
+        <div className="flex flex-col items-center justify-start min-h-screen container mx-auto px-4 py-16 pt-32">
             
             {/* V2V Pathway Section */}
             <motion.div
@@ -99,7 +99,7 @@ const AcademyPage = () => {
             </motion.div>
 
             <motion.div 
-                className="w-full max-w-6xl"
+                className="w-full max-w-6xl mb-20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.0 }}
