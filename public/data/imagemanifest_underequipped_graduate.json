@@ -4,19 +4,19 @@
   "imageGroups": {
     "lesson-1.1-p1-ig1": {
       "path": "lesson-1.1-p1/",
-      "prompt": "A cinematic shot of a recent graduate at a sleek, futuristic workstation, confidently orchestrating a complex coding project while others around them look stressed and buried in textbooks; the title 'THE UNFAIR ADVANTAGE' floats above. A split-panel image shows a graduate's generic resume getting a 'rejected' stamp, while another's portfolio built with the V2V workflow gets a glowing 'HIRED' stamp.",
-      "alt": "A graduate gaining a competitive edge with AI skills.",
-      "baseFileName": "lesson-1.1-p1-img-",
-      "fileExtension": ".webp",
-      "imageCount": 20
-    },
+            "prompt": "A cinematic shot of a recent graduate at a sleek, futuristic workstation, confidently orchestrating a complex coding project while others around them look stressed and buried in textbooks; the title 'THE UNFAIR ADVANTAGE' floats above. A split-panel image shows a graduate's generic resume getting a 'rejected' stamp, while another's portfolio built with the V2V workflow gets a glowing 'HIRED' stamp.",
+                  "alt": "A graduate gaining a competitive edge with AI skills.",
+                        "baseFileName": "lesson-1.1-p1-img-",
+                              "fileExtension": ".webp",
+                                    "imageCount": 13
+                                        },
     "lesson-1.1-p2-ig1": {
       "path": "lesson-1.1-p2/",
       "prompt": "On the left, a chaotic mess of project requirements on sticky notes; in the center, a developer organizes them with a clean interface; on the right, a neat stack labeled 'High-Quality Context.' A student packs a backpack for a hike: one panel shows them randomly stuffing gear, the other shows them carefully packing a map ('The Plan') and essential gear ('The Context').",
       "alt": "Planning and curating context for a project.",
       "baseFileName": "lesson-1.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.1-p3-ig1": {
       "path": "lesson-1.1-p3/",
@@ -24,7 +24,7 @@
       "alt": "Getting multiple options from AI.",
       "baseFileName": "lesson-1.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.1-p4-ig1": {
       "path": "lesson-1.1-p4/",
@@ -32,7 +32,7 @@
       "alt": "The developer acting as a code reviewer for AI output.",
       "baseFileName": "lesson-1.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.1-p5-ig1": {
       "path": "lesson-1.1-p5/",
@@ -40,7 +40,7 @@
       "alt": "Testing AI code without fear using Git.",
       "baseFileName": "lesson-1.1-p5-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.1-p6-ig1": {
       "path": "lesson-1.1-p6/",
@@ -48,7 +48,7 @@
       "alt": "Documenting and repeating the development cycle.",
       "baseFileName": "lesson-1.1-p6-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.2-p1-ig1": {
       "path": "lesson-1.2-p1/",
@@ -56,7 +56,7 @@
       "alt": "Using AI as a feedback loop for learning.",
       "baseFileName": "lesson-1.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.2-p2-ig1": {
       "path": "lesson-1.2-p2/",
@@ -64,7 +64,7 @@
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-1.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.2-p3-ig1": {
       "path": "lesson-1.2-p3/",
@@ -72,7 +72,7 @@
       "alt": "The big picture of building a better future with technology.",
       "baseFileName": "lesson-1.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.2-p4-ig1": {
       "path": "lesson-1.2-p4/",
@@ -80,7 +80,7 @@
       "alt": "The AI as a cognitive mentor providing an unfair advantage.",
       "baseFileName": "lesson-1.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.3-p1-ig1": {
       "path": "lesson-1.3-p1/",
@@ -88,7 +88,7 @@
       "alt": "The Citizen Architect as a new job title.",
       "baseFileName": "lesson-1.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.3-p2-ig1": {
       "path": "lesson-1.3-p2/",
@@ -96,7 +96,7 @@
       "alt": "Cognitive Capital as a killer skill.",
       "baseFileName": "lesson-1.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.3-p3-ig1": {
       "path": "lesson-1.3-p3/",
@@ -104,7 +104,7 @@
       "alt": "The architect as a storyteller and communicator.",
       "baseFileName": "lesson-1.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 9
     },
     "lesson-1.3-p4-ig1": {
       "path": "lesson-1.3-p4/",

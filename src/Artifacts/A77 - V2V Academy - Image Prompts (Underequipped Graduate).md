@@ -59,8 +59,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A young developer is confidently presenting a project to a team. On a large screen behind them is a clear, compelling visualization of the project's architecture and user flow. They are not just showing code; they are communicating a vision and telling a story.
     *   **Approach 2:** A developer is shown leading a meeting. They are using a simple, clear diagram on a whiteboard to explain a complex technical concept to a non-technical project manager, who is nodding in understanding.
 *   **Page 4 (Why This Role Matters):**
-    *   **Approach 1:** A young developer is shown presenting a project to a group of impressed senior executives. The project, built using the V2V workflow, is a sleek, innovative application that solves a major company problem. The developer is seen as a key innovator, not just a junior coder.
-    *   **Approach 2:** A "ripple effect" diagram. At the center is a Citizen Architect building a single, innovative application. The ripples spreading outward are labeled "Improved User Experience," "Increased Team Efficiency," and "New Company Revenue," showing the broad impact of their work.
+    *   **Approach 1:** A young developer is shown presenting a project to a group of impressed senior executives. The project, built using the V2V workflow, is a sleek, innovative application that solves a major company problem. The developer is seen as a key innovator, not just a junior coder. A "ripple effect" results. At the center is a Citizen Architect building a single, innovative application. The ripples spreading outward are labeled "Improved User Experience," "Increased Team Efficiency," and "New Company Revenue," showing the broad impact of their work.
 
 ---
 
