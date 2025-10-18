@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C85 (Update A80 description)
+# Updated on: C93 (Add A81 and A82)
 
 ## 1. Purpose
 
@@ -430,3 +430,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A80. V2V Academy - Image Generation Test Harness Guide
 - **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
 - **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
+
+### A81. V2V Academy - Lab 1 - Your First Portfolio
+- **Description:** A step-by-step lab guide for first-time users on how to create a portfolio website from scratch using Visual Studio Code and the Data Curation Environment (DCE) extension.
+- **Tags:** v2v, curriculum, lab, project-based learning, dce, portfolio, git, getting started
+
+### A82. V2V Academy - Labs and Courses UI Plan
+- **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
+- **Tags:** v2v, curriculum, labs, page design, plan, ui, ux

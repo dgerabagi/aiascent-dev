@@ -1,0 +1,70 @@
+{
+    "manifestId": "v2v-academy-labs-images-v1",
+    "basePath": "/assets/images/v2v/labs/",
+    "imageGroups": {
+        "lab-1-step-1-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of Visual Studio Code showing an empty 'portfolio-website' folder open as the workspace.",
+            "alt": "An empty project folder in VS Code.",
+            "baseFileName": "step-1-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-2-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the DCE Onboarding view in VS Code, with the 'Project Scope' text area filled out.",
+            "alt": "The DCE Onboarding view with a project scope.",
+            "baseFileName": "step-2-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-3-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the DCE Parallel Co-Pilot Panel in Cycle 1, showing four tabs with pasted responses and the 'Parse All' button highlighted.",
+            "alt": "Pasting and parsing responses in the DCE.",
+            "baseFileName": "step-3-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-4-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot showing the 'This workspace is not a git repository' error message after clicking the 'Baseline (Commit)' button in the DCE.",
+            "alt": "The Git repository not found error in DCE.",
+            "baseFileName": "step-4-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-5-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot showing the newly created Git installation guide artifact open in the VS Code editor.",
+            "alt": "The generated Git installation guide.",
+            "baseFileName": "step-5-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-6-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the DCE panel after a successful baseline commit, with the 'Select All' button now highlighted.",
+            "alt": "Successful baseline commit in DCE.",
+            "baseFileName": "step-6-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-7-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the VS Code terminal after running `npm run dev`, with the localhost URL highlighted and ready to be clicked.",
+            "alt": "Running the local development server.",
+            "baseFileName": "step-7-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-8-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the final portfolio website running in a web browser, showing a clean and professional layout.",
+            "alt": "The completed portfolio website.",
+            "baseFileName": "step-8-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        }
+    }
+}

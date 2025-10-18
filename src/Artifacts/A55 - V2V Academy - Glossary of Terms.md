@@ -1,7 +1,7 @@
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C73 (Add Technical Debt and Architectural Blueprint)
+# Updated on: C93 (Add new terms from Lab 1)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -16,6 +16,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **A**
 
 *   **Agentic Workflow:** A development process where an AI agent can autonomously plan, reason, and execute complex, multi-step tasks, often involving the use of tools and memory.
+*   **AI Studio:** A web-based tool provided by Google that offers free access to powerful generative AI models like Gemini. It is used in the V2V labs as the primary interface for getting responses from an AI.
 *   **Annotation:** The process of adding descriptive metadata (labels, tags, names) to raw data to make it machine-readable and provide clear context to an AI. This is a core practice of Data Curation.
 *   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems.
 *   **Architectural Blueprint:** A high-level plan or design document that outlines the structure, components, and interactions of a software system. It serves as a guide for the development team, similar to how a building's blueprint guides construction.
@@ -39,6 +40,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
 *   **Commit:** A fundamental operation in Git that saves a snapshot of the current state of all tracked files in the repository. Each commit has a unique ID and a message describing the changes, creating a permanent part of the project's history.
 *   **Compiler Error:** An error detected by a compiler before a program is run, typically because the code violates the syntax or grammar rules of the programming language. It's like a spell-check for code.
+*   **Context Curation:** The professional discipline of identifying, gathering, organizing, and structuring raw information to create a high-signal, machine-readable asset (context) that empowers an AI to perform complex tasks with precision and reliability. It is the foundational practice of Context Engineering.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
 *   **Context Rot:** The degradation of an AI's performance over a long conversation as the context window becomes filled with irrelevant, outdated, or contradictory information, reducing the signal-to-noise ratio.
 *   **Context Window:** The finite amount of information (measured in tokens) that an LLM can "see" and process at any given time. Effective management of this "working memory" is a core challenge of Context Engineering.
@@ -48,7 +50,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **D**
 
-*   **Data Curation:** The professional discipline of identifying, gathering, organizing, and structuring raw information to create a high-signal, machine-readable asset (context) that empowers an AI to perform complex tasks with precision and reliability. It is the foundational practice of Context Engineering.
+*   **Data Curation:** See **Context Curation**.
 *   **Data Curation Environment (DCE):** A VS Code extension designed to streamline the workflow of AI-assisted development. It provides tools for selecting context, managing parallel AI responses, and iterating on projects in a structured, auditable manner.
 *   **Data Labeling:** A specific type of annotation that focuses on classifying data by assigning predefined tags or categories to data points. It primarily answers the question "What is this?" (e.g., this image contains a "cat").
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
@@ -72,6 +74,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **G**
 
 *   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
+*   **Gemini Pro:** A family of powerful, multimodal generative AI models developed by Google. The V2V labs use Gemini models via AI Studio.
 *   **Genesis Prompt:** A specific, structured command given to an AI at the very beginning of a project (Cycle 0). Its purpose is to take a high-level `Project Scope` and generate the initial set of foundational planning artifacts and technical scaffolding, bootstrapping the entire project structure.
 *   **Git:** A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It is the underlying technology that powers the **Test-and-Revert Workflow**.
 
@@ -112,18 +115,21 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **P**
 
+*   **Parse:** In computing, to analyze a string of symbols or data according to the rules of a formal grammar. In the DCE, "parsing" is the process of taking the raw text response from an AI and breaking it down into a structured format (summary, plan, files) based on the rules of the Interaction Schema.
 *   **Parallel Prompting:** The practice of sending the same prompt to multiple AI instances simultaneously to generate a diverse set of solutions. This allows the developer to compare different approaches and select the most promising one, rather than being locked into a single, linear path.
 *   **Project Scope:** A formal document or artifact that defines the boundaries of a project. It outlines the project's objectives, deliverables, features, functions, tasks, deadlines, and costs. A clear project scope is essential for aligning human and AI collaborators.
 
 ### **R**
 
+*   **Repository (Repo):** A central location where data, particularly source code, is stored and managed. In the context of Git, it's a project's complete set of files and folders, along with the entire history of changes to those files.
 *   **Restore (V2V Context):** The act of instantly discarding all changes made by an AI and reverting the project to the last saved "Baseline" using version control (`git restore`). This is the "revert" step in the **Test-and-Revert Workflow**.
 *   **Retrieval-Augmented Generation (RAG):** A technique that enhances an LLM's response by dynamically retrieving relevant information from an external knowledge base and including it in the context provided to the model. This grounds the AI's answer in factual, up-to-date, or proprietary data.
+*   **Rinse-Repeat Process:** A colloquial term for the core iterative loop of the V2V workflow. It emphasizes the cyclical nature of curating context, prompting the AI, and validating the results.
 *   **Runtime Error:** An error that occurs while a program is actively running. It happens when the program encounters an unexpected condition or tries to perform an operation that is impossible to execute, such as dividing by zero or accessing a file that doesn't exist.
 
 ### **S**
 
-*   **Scaffolding (Pedagogical Context):** Temporary support structures provided to a learner to help them complete a task that would otherwise be beyond their current capabilities. In the V2V workflow, AI is used as a scaffolding engine to generate boilerplate code, offer hints, or provide templates, with the support being gradually removed as the learner's skills grow.
+*   **Scaffolding (Software Context):** The initial, foundational structure of a software project, including the directory layout, configuration files, and essential boilerplate code. In the V2V workflow, the AI is used as a scaffolding engine to generate this structure automatically.
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
 *   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
 *   **Specification (Software):** A detailed document that outlines the requirements, objectives, design, and constraints of a software project. It serves as a comprehensive blueprint for the development team, ensuring everyone has a consistent understanding of what needs to be built.
@@ -150,4 +156,9 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
 *   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization.
 *   **Vision Document:** A high-level strategic document that defines the purpose, goals, and long-term direction of a project. It answers the "why" and serves as a north star for all development decisions.
+*   **Visual Studio Code (VS Code):** A free, popular, and powerful code editor developed by Microsoft. It serves as the primary development environment for the V2V Academy and is the platform for the DCE extension.
 *   **V2V (Vibecoding to Virtuosity):** The name of the pedagogical pathway and curriculum designed to guide learners from novice, intuitive AI interaction to expert-level mastery in human-AI collaboration.
+
+### **W**
+
+*   **Workspace:** In VS Code, the "workspace" refers to the collection of one or more folders that are opened in a VS Code window. For the V2V labs, your project folder (e.g., `portfolio-website`) is your workspace.

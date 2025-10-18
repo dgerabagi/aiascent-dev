@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-18T20:31:43.957Z
+  Date Generated: 2025-10-18T20:55:23.936Z
   ---
-  Total Files: 166
-  Approx. Tokens: 458709
+  Total Files: 170
+  Approx. Tokens: 471614
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -13,11 +13,11 @@
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\stores\reportStore.ts (8316 tokens)
-7. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7434 tokens)
-8. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
-9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
-10. src\Artifacts\A0-Master-Artifact-List.md (7140 tokens)
+6. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8486 tokens)
+7. src\stores\reportStore.ts (8316 tokens)
+8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7434 tokens)
+9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
+10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
 
 <!-- Full File List -->
 1. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
@@ -42,7 +42,7 @@
 20. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 21. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 22. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 432 - Chars: 28559 - Tokens: 7140
+23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 440 - Chars: 29162 - Tokens: 7291
 24. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 25. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 26. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -136,7 +136,7 @@
 114. src\Artifacts\A52 - V2V Academy - Foundational Skills Analysis.md - Lines: 52 - Chars: 4982 - Tokens: 1246
 115. src\Artifacts\A53 - V2V Academy - Curriculum Outline.md - Lines: 106 - Chars: 8072 - Tokens: 2018
 116. src\Artifacts\A54 - V2V Academy - Lesson 1.1 - The Virtuoso's Loop.md - Lines: 130 - Chars: 18402 - Tokens: 4601
-117. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 153 - Chars: 21591 - Tokens: 5398
+117. src\Artifacts\A55 - V2V Academy - Glossary of Terms.md - Lines: 164 - Chars: 23074 - Tokens: 5769
 118. src\Artifacts\A56 - V2V Academy - Practical Exercises Plan.md - Lines: 56 - Chars: 4743 - Tokens: 1186
 119. src\Artifacts\A57 - V2V Academy - C58 Response Analysis and Strategic Gaps.md - Lines: 50 - Chars: 5489 - Tokens: 1373
 120. src\Artifacts\A58 - V2V Academy - Target Learner Personas.md - Lines: 64 - Chars: 5141 - Tokens: 1286
@@ -168,7 +168,7 @@
 146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49406 - Tokens: 12352
 147. public\data\v2v_imagemanifest.json - Lines: 98 - Chars: 17546 - Tokens: 4387
 148. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
-149. src\app\academy\page.tsx - Lines: 62 - Chars: 2479 - Tokens: 620
+149. src\app\academy\page.tsx - Lines: 126 - Chars: 5667 - Tokens: 1417
 150. src\components\academy\PersonaSelector.tsx - Lines: 78 - Chars: 3663 - Tokens: 916
 151. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 152. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
@@ -186,6 +186,10 @@
 164. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
 165. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
 166. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
+167. public\data\v2v_lab_1.json - Lines: 74 - Chars: 6065 - Tokens: 1517
+168. public\data\v2v_lab_imagemanifest.json - Lines: 70 - Chars: 3135 - Tokens: 784
+169. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
+170. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 33944 - Tokens: 8486
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -11258,7 +11262,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C85 (Update A80 description)
+# Updated on: C93 (Add A81 and A82)
 
 ## 1. Purpose
 
@@ -11684,6 +11688,14 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A80. V2V Academy - Image Generation Test Harness Guide
 - **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
 - **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
+
+### A81. V2V Academy - Lab 1 - Your First Portfolio
+- **Description:** A step-by-step lab guide for first-time users on how to create a portfolio website from scratch using Visual Studio Code and the Data Curation Environment (DCE) extension.
+- **Tags:** v2v, curriculum, lab, project-based learning, dce, portfolio, git, getting started
+
+### A82. V2V Academy - Labs and Courses UI Plan
+- **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
+- **Tags:** v2v, curriculum, labs, page design, plan, ui, ux
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -19234,7 +19246,7 @@ The curriculum is divided into four core modules, each representing a stage in t
 # Artifact A55: V2V Academy - Glossary of Terms
 # Date Created: C59
 # Author: AI Model & Curator
-# Updated on: C73 (Add Technical Debt and Architectural Blueprint)
+# Updated on: C93 (Add new terms from Lab 1)
 
 - **Key/Value for A0:**
 - **Description:** A central glossary defining key terms, concepts, and acronyms used throughout the "Vibecoding to Virtuosity" curriculum and the broader aiascent.dev project.
@@ -19249,6 +19261,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **A**
 
 *   **Agentic Workflow:** A development process where an AI agent can autonomously plan, reason, and execute complex, multi-step tasks, often involving the use of tools and memory.
+*   **AI Studio:** A web-based tool provided by Google that offers free access to powerful generative AI models like Gemini. It is used in the V2V labs as the primary interface for getting responses from an AI.
 *   **Annotation:** The process of adding descriptive metadata (labels, tags, names) to raw data to make it machine-readable and provide clear context to an AI. This is a core practice of Data Curation.
 *   **Apex Skill:** The pinnacle of the V2V pathway, defined as "On-the-Fly Tooling." It is the ability to use AI not just as a tool to be used, but as a "foundry" to create bespoke tools and solutions in real-time to solve novel problems.
 *   **Architectural Blueprint:** A high-level plan or design document that outlines the structure, components, and interactions of a software system. It serves as a guide for the development team, similar to how a building's blueprint guides construction.
@@ -19272,6 +19285,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Cognitive Tutor:** An AI-powered system designed to provide personalized educational assistance. It models a student's knowledge, tracks their progress, and provides real-time feedback and hints to guide their learning process, mimicking a human tutor.
 *   **Commit:** A fundamental operation in Git that saves a snapshot of the current state of all tracked files in the repository. Each commit has a unique ID and a message describing the changes, creating a permanent part of the project's history.
 *   **Compiler Error:** An error detected by a compiler before a program is run, typically because the code violates the syntax or grammar rules of the programming language. It's like a spell-check for code.
+*   **Context Curation:** The professional discipline of identifying, gathering, organizing, and structuring raw information to create a high-signal, machine-readable asset (context) that empowers an AI to perform complex tasks with precision and reliability. It is the foundational practice of Context Engineering.
 *   **Context Engineering:** The discipline of designing, organizing, and optimizing the complete informational payload (context) provided to a Large Language Model (LLM) to ensure reliable and accurate performance on complex tasks. It is the core technical skill of the "Virtuoso."
 *   **Context Rot:** The degradation of an AI's performance over a long conversation as the context window becomes filled with irrelevant, outdated, or contradictory information, reducing the signal-to-noise ratio.
 *   **Context Window:** The finite amount of information (measured in tokens) that an LLM can "see" and process at any given time. Effective management of this "working memory" is a core challenge of Context Engineering.
@@ -19281,7 +19295,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **D**
 
-*   **Data Curation:** The professional discipline of identifying, gathering, organizing, and structuring raw information to create a high-signal, machine-readable asset (context) that empowers an AI to perform complex tasks with precision and reliability. It is the foundational practice of Context Engineering.
+*   **Data Curation:** See **Context Curation**.
 *   **Data Curation Environment (DCE):** A VS Code extension designed to streamline the workflow of AI-assisted development. It provides tools for selecting context, managing parallel AI responses, and iterating on projects in a structured, auditable manner.
 *   **Data Labeling:** A specific type of annotation that focuses on classifying data by assigning predefined tags or categories to data points. It primarily answers the question "What is this?" (e.g., this image contains a "cat").
 *   **DCIA (Data Curator / Intelligence Analyst):** The peak archetype of the V2V pathway. A professional who combines the data-centric skills of a curator with the critical thinking and synthesis skills of an intelligence analyst.
@@ -19305,6 +19319,7 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 ### **G**
 
 *   **Garbage In, Garbage Out (GIGO):** A fundamental principle in computing which states that the quality of the output is determined by the quality of the input. In the context of AI, it means that an LLM cannot produce high-quality results from low-quality (incomplete, incorrect, or irrelevant) data.
+*   **Gemini Pro:** A family of powerful, multimodal generative AI models developed by Google. The V2V labs use Gemini models via AI Studio.
 *   **Genesis Prompt:** A specific, structured command given to an AI at the very beginning of a project (Cycle 0). Its purpose is to take a high-level `Project Scope` and generate the initial set of foundational planning artifacts and technical scaffolding, bootstrapping the entire project structure.
 *   **Git:** A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It is the underlying technology that powers the **Test-and-Revert Workflow**.
 
@@ -19345,18 +19360,21 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 
 ### **P**
 
+*   **Parse:** In computing, to analyze a string of symbols or data according to the rules of a formal grammar. In the DCE, "parsing" is the process of taking the raw text response from an AI and breaking it down into a structured format (summary, plan, files) based on the rules of the Interaction Schema.
 *   **Parallel Prompting:** The practice of sending the same prompt to multiple AI instances simultaneously to generate a diverse set of solutions. This allows the developer to compare different approaches and select the most promising one, rather than being locked into a single, linear path.
 *   **Project Scope:** A formal document or artifact that defines the boundaries of a project. It outlines the project's objectives, deliverables, features, functions, tasks, deadlines, and costs. A clear project scope is essential for aligning human and AI collaborators.
 
 ### **R**
 
+*   **Repository (Repo):** A central location where data, particularly source code, is stored and managed. In the context of Git, it's a project's complete set of files and folders, along with the entire history of changes to those files.
 *   **Restore (V2V Context):** The act of instantly discarding all changes made by an AI and reverting the project to the last saved "Baseline" using version control (`git restore`). This is the "revert" step in the **Test-and-Revert Workflow**.
 *   **Retrieval-Augmented Generation (RAG):** A technique that enhances an LLM's response by dynamically retrieving relevant information from an external knowledge base and including it in the context provided to the model. This grounds the AI's answer in factual, up-to-date, or proprietary data.
+*   **Rinse-Repeat Process:** A colloquial term for the core iterative loop of the V2V workflow. It emphasizes the cyclical nature of curating context, prompting the AI, and validating the results.
 *   **Runtime Error:** An error that occurs while a program is actively running. It happens when the program encounters an unexpected condition or tries to perform an operation that is impossible to execute, such as dividing by zero or accessing a file that doesn't exist.
 
 ### **S**
 
-*   **Scaffolding (Pedagogical Context):** Temporary support structures provided to a learner to help them complete a task that would otherwise be beyond their current capabilities. In the V2V workflow, AI is used as a scaffolding engine to generate boilerplate code, offer hints, or provide templates, with the support being gradually removed as the learner's skills grow.
+*   **Scaffolding (Software Context):** The initial, foundational structure of a software project, including the directory layout, configuration files, and essential boilerplate code. In the V2V workflow, the AI is used as a scaffolding engine to generate this structure automatically.
 *   **Signal-to-Noise Ratio:** A measure of the quality of the context provided to an AI. "Signal" is the precise, relevant information needed for a task, while "Noise" is any irrelevant, redundant, or distracting information. The goal of data curation is to maximize this ratio.
 *   **Source of Truth:** A canonical document, artifact, or repository that is designated as the single, authoritative source of information for a project. In the V2V workflow, the curated and version-controlled project repository serves as the Source of Truth to ensure consistency for both human and AI collaborators.
 *   **Specification (Software):** A detailed document that outlines the requirements, objectives, design, and constraints of a software project. It serves as a comprehensive blueprint for the development team, ensuring everyone has a consistent understanding of what needs to be built.
@@ -19383,7 +19401,12 @@ This document serves as the definitive glossary for the V2V Academy. Its purpose
 *   **Virtuosity:** The state of mastery at the end of the V2V pathway. It is characterized by the ability to systematically and reliably architect complex systems in partnership with AI, leveraging a deep understanding of Context Engineering and structured workflows.
 *   **Virtuoso's Loop:** The codified, step-by-step expert workflow for AI-assisted development that is taught in the V2V Academy. It encompasses Curation, Parallel Prompting, Critical Analysis, Git-Integrated Validation, and Finalization.
 *   **Vision Document:** A high-level strategic document that defines the purpose, goals, and long-term direction of a project. It answers the "why" and serves as a north star for all development decisions.
+*   **Visual Studio Code (VS Code):** A free, popular, and powerful code editor developed by Microsoft. It serves as the primary development environment for the V2V Academy and is the platform for the DCE extension.
 *   **V2V (Vibecoding to Virtuosity):** The name of the pedagogical pathway and curriculum designed to guide learners from novice, intuitive AI interaction to expert-level mastery in human-AI collaboration.
+
+### **W**
+
+*   **Workspace:** In VS Code, the "workspace" refers to the collection of one or more folders that are opened in a VS Code window. For the V2V labs, your project folder (e.g., `portfolio-website`) is your workspace.
 </file_artifact>
 
 <file path="src/Artifacts/A56 - V2V Academy - Practical Exercises Plan.md">
@@ -22444,57 +22467,121 @@ import PersonaSelector from '@/components/academy/PersonaSelector';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
 import { useReportStore } from '@/stores/reportStore';
 import type { ReportContentData, ImageManifestData } from '@/stores/reportStore';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 
 const AcademyPage = () => {
-    const [selectedPersona, setSelectedPersona] = useState<string | null>(null);
+    const [selection, setSelection] = useState<{ type: 'persona' | 'lab'; id: string } | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const { loadReport } = useReportStore.getState();
 
     useEffect(() => {
-        if (selectedPersona) {
-            const loadCurriculumData = async () => {
+        if (selection) {
+            const loadData = async () => {
                 setIsLoading(true);
                 try {
+                    const contentFile = selection.type === 'persona' 
+                        ? `v2v_content_${selection.id}.json`
+                        : `v2v_content_${selection.id}.json`; // Assumes lab files follow a similar pattern for now
+                    
+                    const manifestFile = selection.type === 'persona'
+                        ? `imagemanifest_${selection.id}.json`
+                        : `imagemanifest_${selection.id}.json`;
+
                     const [contentRes, manifestRes] = await Promise.all([
-                        fetch(`/data/v2v_content_${selectedPersona}.json`),
-                        // C87 FIX: Load the correct persona-specific image manifest
-                        fetch(`/data/imagemanifest_${selectedPersona}.json`)
+                        fetch(`/data/${contentFile}`),
+                        fetch(`/data/${manifestFile}`)
                     ]);
 
-                    if (!contentRes.ok) throw new Error(`Failed to fetch content for ${selectedPersona}`);
-                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest for ${selectedPersona}`);
+                    if (!contentRes.ok) throw new Error(`Failed to fetch content for ${selection.id}`);
+                    if (!manifestRes.ok) throw new Error(`Failed to fetch image manifest for ${selection.id}`);
 
                     const reportData: ReportContentData = await contentRes.json();
                     const imageManifest: ImageManifestData = await manifestRes.json();
 
-                    // Pass the fetched data directly to the store
                     loadReport(reportData, imageManifest);
 
                 } catch (error) {
-                    console.error("Failed to load curriculum data:", error);
+                    console.error("Failed to load academy data:", error);
                 } finally {
                     setIsLoading(false);
                 }
             };
-            loadCurriculumData();
+            loadData();
         }
-    }, [selectedPersona, loadReport]);
+    }, [selection, loadReport]);
 
     if (isLoading) {
         return (
             <div className="flex items-center justify-center h-screen w-full pt-16">
-                <p className="text-2xl text-muted-foreground animate-pulse">Loading Curriculum...</p>
+                <p className="text-2xl text-muted-foreground animate-pulse">Loading Content...</p>
+            </div>
+        );
+    }
+
+    if (selection) {
+        return (
+            <div className="h-screen w-full pt-16 flex flex-col">
+                <ReportViewer reportName={selection.id} />
             </div>
         );
     }
 
     return (
-        <div className="h-screen w-full pt-16 flex flex-col">
-            {!selectedPersona ? (
-                <PersonaSelector onSelectPersona={setSelectedPersona} />
-            ) : (
-                <ReportViewer reportName={`v2v_${selectedPersona}`} />
-            )}
+        <div className="flex flex-col items-center justify-start h-full container mx-auto px-4 pt-16">
+            
+            {/* V2V Pathway Section */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-12 w-full"
+            >
+                <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+                    The V2V Academy
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    To personalize your learning journey, please choose the path that best describes you.
+                </p>
+            </motion.div>
+            <PersonaSelector onSelectPersona={(id) => setSelection({ type: 'persona', id })} />
+
+            {/* Labs & Projects Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="text-center my-20 w-full"
+            >
+                <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
+                    Labs & Projects
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Apply your knowledge with hands-on, project-based learning.
+                </p>
+            </motion.div>
+
+            <motion.div 
+                className="w-full max-w-6xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+            >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     <Card
+                        className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer"
+                        onClick={() => setSelection({ type: 'lab', id: 'lab_1_portfolio' })}
+                    >
+                        <CardHeader className="items-center text-center">
+                            <CardTitle>Lab 1: Your First Portfolio</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow text-center">
+                            <CardDescription>Go from an empty folder to a running portfolio website and learn the complete, end-to-end workflow of the Data Curation Environment.</CardDescription>
+                        </CardContent>
+                    </Card>
+                    {/* Future labs will be added here as more Card components */}
+                </div>
+            </motion.div>
         </div>
     );
 };
@@ -25717,5 +25804,577 @@ The setup uses a **reverse proxy** architecture. A single Caddy web server liste
 *   Navigate to `https://aiascent.game` in your browser. You should see the game.
 *   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
 *   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
+</file_artifact>
+
+<file path="public/data/v2v_lab_1.json">
+{
+    "reportId": "v2v-academy-lab-1",
+    "reportTitle": "V2V Academy Lab 1: Your First DCE Project",
+    "sections": [
+        {
+            "sectionId": "lab-1-setup",
+            "sectionTitle": "Setup & Project Initiation",
+            "pages": [
+                {
+                    "pageId": "lab-1-step-1",
+                    "pageTitle": "Step 1-5: Environment Setup",
+                    "tldr": "Install VS Code and the DCE extension, then create and open your project folder.",
+                    "content": "This lab will guide you through building a portfolio website from scratch. First, ensure you have Visual Studio Code installed. Then, install the Data Curation Environment (DCE) extension. Create a main `Projects` directory on your computer, and inside that, create a folder named `portfolio-website`. Finally, open this `portfolio-website` folder in VS Code.",
+                    "imageGroupIds": ["lab-1-step-1-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-2",
+                    "pageTitle": "Step 6-11: First DCE Interaction",
+                    "tldr": "Open the DCE, define your project scope, and generate your first AI prompt.",
+                    "content": "Open the DCE panel (spiral icon). The Onboarding view will appear. Paste the provided 'Citizen Architect Portfolio Website' scope into the text area. Click 'Generate Initial Artifacts Prompt'. Review the generated `DCE_README.md` and `prompt.md` files, then copy the entire content of `prompt.md`.",
+                    "imageGroupIds": ["lab-1-step-2-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-3",
+                    "pageTitle": "Step 12-17: The Parallel Co-Pilot Workflow",
+                    "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
+                    "content": "Open four tabs in your preferred AI tool (e.g., AI Studio). Paste the prompt into each and generate four responses. Copy these responses back into the 'Resp 1-4' tabs in the DCE's Cycle 1 view. Click `Parse All` to structure the responses. Click `Sort` to order them by length. Review the longest response and click `Select This Response` to choose it as your starting point.",
+                    "imageGroupIds": ["lab-1-step-3-ig1"]
+                }
+            ]
+        },
+        {
+            "sectionId": "lab-1-iteration",
+            "sectionTitle": "Iteration & First Cycles",
+            "pages": [
+                {
+                    "pageId": "lab-1-step-4",
+                    "pageTitle": "Step 18-22: First Roadblock & First Cycle (Git Setup)",
+                    "tldr": "Encounter the 'Not a git repository' error and use the DCE to ask the AI for instructions on how to install Git.",
+                    "content": "Click `Baseline (Commit)`. You will see an error because Git is not set up. This is your first task! In the 'Cycle Title', enter 'Create Git Installation Instructions'. In the 'Cycle Context', ask the AI for instructions to install Git and set up a repository. Click `Generate prompt.md` and copy the new prompt.",
+                    "imageGroupIds": ["lab-1-step-4-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-5",
+                    "pageTitle": "Step 23-28: The Feedback Loop in Action",
+                    "tldr": "Create a new cycle, get instructions from the AI, accept the new documentation, and follow it to install Git and set up GitHub.",
+                    "content": "Send the new prompt to your AI. While it generates, click `+` in the DCE to create 'Cycle 2'. Paste the new responses, parse, and accept the new artifacts. You will now have a guide in your `src/Artifacts` folder. Follow this guide to install Git and set up your GitHub account and repository.",
+                    "imageGroupIds": ["lab-1-step-5-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-6",
+                    "pageTitle": "Step 29-31: First Commit & Scaffolding",
+                    "tldr": "With Git installed, make your first commit and then ask the AI to build the actual project files.",
+                    "content": "Navigate back to Cycle 1 in the DCE, rename the title to `First Commit`, and click `Baseline (Commit)`. It will now succeed! Next, go to Cycle 2, change the title to `Create Project Scaffold`, and write a context asking the AI to build the project files.",
+                    "imageGroupIds": ["lab-1-step-6-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-7",
+                    "pageTitle": "Step 32-37: The Full Loop & Project Launch",
+                    "tldr": "Execute the full 'Virtuoso's Loop' to generate and accept your website's code, then run it locally.",
+                    "content": "Generate the prompt for Cycle 2, create Cycle 3, and get the AI's responses. In Cycle 3, execute the full loop: Parse -> Sort -> Select -> Baseline -> Select All -> Accept Selected. Your project files will be created. Open the terminal, run `npm install`, then `npm run dev`. Click the `localhost` link to see your website!",
+                    "imageGroupIds": ["lab-1-step-7-ig1"]
+                },
+                {
+                    "pageId": "lab-1-step-8",
+                    "pageTitle": "Conclusion: Continue to Iterate",
+                    "tldr": "Congratulations! You've completed the loop. Now, continue to enhance your project by curating new context, like your resume.",
+                    "content": "You are now on the path to becoming a Citizen Architect. To continue, try creating a `context/personal/` folder and adding your resume as a PDF. Check that file in the DCE's File Tree View, start a new cycle, and ask the AI to add a new section to your website summarizing your resume. Welcome to the future of development.",
+                    "imageGroupIds": ["lab-1-step-8-ig1"]
+                }
+            ]
+        }
+    ]
+}
+</file_artifact>
+
+<file path="public/data/v2v_lab_imagemanifest.json">
+{
+    "manifestId": "v2v-academy-labs-images-v1",
+    "basePath": "/assets/images/v2v/labs/",
+    "imageGroups": {
+        "lab-1-step-1-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of Visual Studio Code showing an empty 'portfolio-website' folder open as the workspace.",
+            "alt": "An empty project folder in VS Code.",
+            "baseFileName": "step-1-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-2-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the DCE Onboarding view in VS Code, with the 'Project Scope' text area filled out.",
+            "alt": "The DCE Onboarding view with a project scope.",
+            "baseFileName": "step-2-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-3-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the DCE Parallel Co-Pilot Panel in Cycle 1, showing four tabs with pasted responses and the 'Parse All' button highlighted.",
+            "alt": "Pasting and parsing responses in the DCE.",
+            "baseFileName": "step-3-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-4-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot showing the 'This workspace is not a git repository' error message after clicking the 'Baseline (Commit)' button in the DCE.",
+            "alt": "The Git repository not found error in DCE.",
+            "baseFileName": "step-4-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-5-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot showing the newly created Git installation guide artifact open in the VS Code editor.",
+            "alt": "The generated Git installation guide.",
+            "baseFileName": "step-5-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-6-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the DCE panel after a successful baseline commit, with the 'Select All' button now highlighted.",
+            "alt": "Successful baseline commit in DCE.",
+            "baseFileName": "step-6-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-7-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the VS Code terminal after running `npm run dev`, with the localhost URL highlighted and ready to be clicked.",
+            "alt": "Running the local development server.",
+            "baseFileName": "step-7-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        },
+        "lab-1-step-8-ig1": {
+            "path": "lab-1/",
+            "prompt": "A screenshot of the final portfolio website running in a web browser, showing a clean and professional layout.",
+            "alt": "The completed portfolio website.",
+            "baseFileName": "step-8-",
+            "fileExtension": ".png",
+            "imageCount": 1
+        }
+    }
+}
+</file_artifact>
+
+<file path="src/Artifacts/A82 - V2V Academy - Labs and Courses UI Plan.md">
+# Artifact A82: V2V Academy - Labs and Courses UI Plan
+# Date Created: C93
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
+- **Tags:** v2v, curriculum, labs, page design, plan, ui, ux
+
+## 1. Overview and Goal
+
+The V2V Academy is expanding to include practical, hands-on labs in addition to the existing theoretical lessons. To accommodate this, the `/academy` page needs to be updated to present both types of content clearly to the user.
+
+The goal of this plan is to refactor the `/academy` page to include two distinct sections: one for the "V2V Pathway" (the existing lessons) and a new one for "Labs & Projects." This will improve the organization and navigation of the academy's offerings.
+
+## 2. User Flow
+
+1.  **Navigation:** The user navigates to `/academy`.
+2.  **View Content:** The user now sees two clear sections on the page:
+    *   A top section titled "The V2V Pathway," which contains the existing persona-selector for the core curriculum.
+    *   A new section below it titled "Labs & Projects," which contains a series of cards, one for each available lab.
+3.  **Select a Lab:** The user clicks on the "Lab 1: Your First Portfolio" card.
+4.  **Start Lab:** The user is taken to the interactive report viewer, which loads the content for the selected lab.
+
+## 3. Technical Implementation Plan
+
+### 3.1. `src/app/academy/page.tsx` Refactor
+
+*   The main page component will be restructured to render two distinct sections.
+*   The existing `PersonaSelector` will be wrapped in a new container with the headline "The V2V Pathway."
+*   A new container will be created below it with the headline "Labs & Projects."
+*   Inside this new container, we will render a grid of `Card` components.
+*   The first card will be for "Lab 1: Your First Portfolio." Clicking this card will set the state to load the lab content (e.g., `setSelectedLab('lab_1_portfolio')`).
+*   The component's `useEffect` hook will be updated to handle loading both persona-based curricula and lab-based content.
+
+### 3.2. New Lab Data Files
+
+*   To support the new lab, a new set of data files will be created, following the existing convention:
+    *   `public/data/v2v_content_lab_1_portfolio.json` (This will be based on the content from `A81`).
+    *   `public/data/imagemanifest_lab_1_portfolio.json` (This will define the paths to the screenshot images for the lab).
+
+### 3.3. State Management (`/academy/page.tsx`)
+
+*   The state management on the page will be enhanced to differentiate between selecting a persona and selecting a lab.
+    ```typescript
+    const [selectionType, setSelectionType] = useState<'persona' | 'lab' | null>(null);
+    const [selectionId, setSelectionId] = useState<string | null>(null);
+    ```
+*   Clicking a persona card would set `selectionType` to `'persona'` and `selectionId` to `'career_transitioner'`.
+*   Clicking a lab card would set `selectionType` to `'lab'` and `selectionId` to `'lab_1_portfolio'`.
+*   The `useEffect` hook would then use these state variables to fetch the correct JSON files.
+</file_artifact>
+
+<file path="src/Artifacts/A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md">
+# Artifact A81: V2V Academy - Lab 1 - Your First Portfolio Website
+# Date Created: C93
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** The detailed content for Lab 1 of the V2V Academy, "Your First Portfolio Website," designed for the interactive report viewer. This lab guides a new user through the entire DCE workflow.
+- **Tags:** v2v, curriculum, lab, project-based learning, dce, portfolio, interactive learning
+
+## **Lab 1: Your First Portfolio Website**
+
+---
+### **Page 1: Introduction - Your First Project**
+*   **Page Title:** Lab 1: Your First Project with the DCE
+*   **Image Prompt:** A welcoming, futuristic graphic with the title "Lab 1: Build Your First Portfolio Website" prominently displayed. The background should show a blueprint of a website, indicating a construction or creation theme.
+*   **TL;DR:** In this lab, you will learn the complete, end-to-end workflow of the Data Curation Environment (DCE) by building a simple, professional portfolio website from scratch, with an AI as your partner.
+*   **Content:** Welcome to your first hands-on lab in the V2V Academy! The best way to learn the "Virtuoso's Loop" is to practice it. Over the next series of steps, you will use the DCE to initiate a new project, collaborate with an AI to generate the code, and launch your very own personal portfolio website. We will guide you through every single click, explaining the "what" and the "why" at each stage. This lab assumes you have no prior experience with coding, Git, or AI-assisted development. Let's begin.
+
+---
+### **Page 2: Step 1 - Download Visual Studio Code**
+*   **Page Title:** Step 1: Download Visual Studio Code
+*   **Image Prompt:** A screenshot of the official Visual Studio Code download page (code.visualstudio.com), with the download button for the user's operating system clearly highlighted.
+*   **TL;DR:** Download and install Visual Studio Code (VS Code), the free and powerful code editor that will be your primary work environment.
+*   **Content:** The entire V2V workflow takes place inside **Visual Studio Code**, a code editor created by Microsoft that has become the industry standard for developers worldwide. The DCE is an *extension* for VS Code, so you'll need the editor first. If you don't already have it, please navigate to the official website and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions to get it set up on your machine.
+
+---
+### **Page 3: Step 2 - Install the DCE Extension**
+*   **Page Title:** Step 2: Install the DCE Extension
+*   **Image Prompt:** A screenshot of the VS Code "Extensions" view. The user's mouse is hovering over the "..." (More Actions) menu, and the "Install from VSIX..." option is highlighted.
+*   **TL;DR:** Install the Data Curation Environment (DCE) extension into VS Code using the `.vsix` file provided.
+*   **Content:** The DCE is distributed as a `.vsix` file. To install it:
+    1.  Open Visual Studio Code.
+    2.  Navigate to the **Extensions** view by clicking the icon that looks like four squares in the Activity Bar on the left side of the window.
+    3.  Click the **...** (More Actions) button at the top-right of the Extensions view.
+    4.  Select **"Install from VSIX..."** from the dropdown menu.
+    5.  In the file dialog that opens, navigate to and select the `.vsix` file for the DCE.
+    6.  VS Code will install the extension and may prompt you to reload the window.
+
+---
+### **Page 4: Step 3 - Create Your Projects Directory**
+*   **Page Title:** Step 3: Create Your Projects Directory
+*   **Image Prompt:** A screenshot of Windows File Explorer or macOS Finder showing a new folder named `Projects` being created in the `C:\` drive or the user's home directory.
+*   **TL;DR:** Create a dedicated folder on your computer to store all your development projects.
+*   **Content:** It is a best practice to keep all of your coding projects in a single, easy-to-access location. We recommend creating a `Projects` folder in the root of your main drive (e.g., `C:\Projects` on Windows). This keeps your work organized and separate from your other files. Please create this folder now.
+
+---
+### **Page 5: Step 4 - Create the Project Folder**
+*   **Page Title:** Step 4: Create the Project Folder
+*   **Image Prompt:** A screenshot showing the newly created `Projects` directory, with a new subfolder named `portfolio-website` highlighted.
+*   **TL;DR:** Inside your `Projects` directory, create a new folder for this specific lab named `portfolio-website`.
+*   **Content:** Now, inside the `C:\Projects` directory you just created, make a new folder and name it `portfolio-website`. This folder will contain all the files for the portfolio website you are about to build.
+
+---
+### **Page 6: Step 5 - Open the Project in VS Code**
+*   **Page Title:** Step 5: Open the Project in VS Code
+*   **Image Prompt:** A screenshot of the VS Code "File" menu with the "Open Folder..." option highlighted. The file dialog is shown selecting the `portfolio-website` folder.
+*   **TL;DR:** Open your new `portfolio-website` folder in VS Code. This sets it as your active project, or "workspace."
+*   **Content:** It's time to start your project.
+    1.  In VS Code, go to the "File" menu.
+    2.  Select "Open Folder..."
+    3.  Navigate to `C:\Projects\portfolio-website` and click "Select Folder."
+    VS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.
+
+---
+### **Page 7: Step 6 - Open the DCE Panel**
+*   **Page Title:** Step 6: Open the DCE Panel
+*   **Image Prompt:** A screenshot of the VS Code Activity Bar on the left. The spiral icon for the DCE is highlighted. The main panel area shows the DCE's "Onboarding" view.
+*   **TL;DR:** Click the spiral icon in the Activity Bar to open the DCE panel. This will automatically start the onboarding process for your new project.
+*   **Content:** Look at the Activity Bar on the far left of your VS Code window. You should see a new icon that looks like a spiral. This is the entry point for the Data Curation Environment. Click on it. Because this is the first time you are using the DCE in this new project, it will automatically open to the "Onboarding" screen, also known as "Cycle 0."
+
+---
+### **Page 8: Step 7 - Write Your Project Scope**
+*   **Page Title:** Step 7: Define Your Vision
+*   **Image Prompt:** A screenshot of the DCE Onboarding view. The "Project Scope" text area is filled with the example scope provided in the content.
+*   **TL;DR:** Describe the website you want to build in the "Project Scope" text area. This is your first instruction to the AI.
+*   **Content:** The first step in any project is to define your vision. The large text area you see is for your **Project Scope**. This is where you tell the AI, in plain English, what you want to build. Since this is your first project, you might be facing the "blank page problem." Don't worry! We've written a starting scope for you. Copy the text below and paste it into the "Project Scope" text area:
+
+    > The vision of this project is to create a professional and engaging personal portfolio website. It will serve as the primary public-facing hub for me, a Citizen Architect, to showcase my skills and projects. The website will be a living testament to my capabilities, featuring an interactive showcase of projects I have built.
+    >
+    > The website should have a clean, modern, and professional aesthetic, with a dark-mode-first design. It should be fully responsive and look great on desktop and mobile devices.
+    >
+    > The main sections will include:
+    > 1.  A "Home" page with a compelling headline and an introduction.
+    > 2.  An "About Me" page with my professional summary and skills.
+    > 3.  A "Showcase" page to display my projects.
+    > 4.  A "Contact" page with links to my GitHub, LinkedIn, etc.
+
+---
+### **Page 9: Step 8 - Generate Initial Artifacts**
+*   **Page Title:** Step 8: Generate Your First Prompt
+*   **Image Prompt:** A screenshot of the DCE Onboarding view. The user's mouse is hovering over the "Generate Initial Artifacts Prompt" button, which is highlighted.
+*   **TL;DR:** Click the "Generate Initial Artifacts Prompt" button. The DCE will use your scope to create a complete prompt file for the AI.
+*   **Content:** Now that you've defined your vision, it's time to turn it into a complete, structured prompt for the AI. Click the **`Generate Initial Artifacts Prompt`** button. The DCE will take your project scope, combine it with a set of best-practice templates, and create two new files in your editor.
+
+---
+### **Page 10: Step 9 - Review the Generated Files**
+*   **Page Title:** Step 9: Review the Generated Files
+*   **Image Prompt:** A screenshot of the VS Code editor showing two new tabs: `prompt.md` and `DCE_README.md`. The `DCE_README.md` tab is active.
+*   **TL;DR:** The DCE has created `prompt.md` and `DCE_README.md`. Take a moment to read the `DCE_README.md` file.
+*   **Content:** You will now see two new files open in your editor.
+    1.  **`DCE_README.md`:** This file explains the purpose of the `src/Artifacts` directory that was just created for you. It provides a high-level overview of the DCE workflow. Please take a moment to read its contents.
+    2.  **`prompt.md`:** This is the master prompt file. It contains everything the AI needs to start planning your project. We'll look at this next.
+
+---
+### **Page 11: Step 10 - Review the Master Prompt**
+*   **Page Title:** Step 10: A Cursory Review of `prompt.md`
+*   **Image Prompt:** A screenshot of the `prompt.md` file, with the user scrolling through it. The different sections like `<M1. artifact schema>` and `<M4. current project scope>` should be visible.
+*   **TL;DR:** Briefly look over the `prompt.md` file. You don't need to understand everything, but notice how the DCE has structured all the information for the AI.
+*   **Content:** Click on the `prompt.md` tab. This file might seem large and complex, but it's highly structured. Take a moment to scroll through it. Notice the different sections:
+    *   `<M1. artifact schema>`: A table of contents for the prompt itself.
+    *   `<M3. interaction schema>`: The rules you are giving the AI on how it should format its response.
+    *   `<M4. current project scope>`: The vision you wrote in Step 7!
+    This structure is what allows the DCE to reliably parse the AI's response later. You don't need to read it all in detail right now.
+
+---
+### **Page 12: Step 11 - Copy the Prompt**
+*   **Page Title:** Step 11: Copy the Entire Prompt
+*   **Image Prompt:** A screenshot showing the `prompt.md` file in VS Code. The user is pressing `Ctrl + A` (or `Cmd + A`), and all the text in the file is highlighted.
+*   **TL;DR:** Select all the text in `prompt.md` and copy it to your clipboard.
+*   **Content:** Now, you need to copy the entire contents of the `prompt.md` file. The fastest and most accurate way to do this is with keyboard shortcuts:
+    1.  Make sure the `prompt.md` file is the active tab in your editor.
+    2.  Press **`Ctrl + A`** (or **`Cmd + A`** on Mac) to select all the text.
+    3.  Press **`Ctrl + C`** (or **`Cmd + C`** on Mac) to copy the selected text to your clipboard.
+
+---
+### **Page 13: Step 12 - Open Your AI Tool**
+*   **Page Title:** Step 12: Open AI Studio
+*   **Image Prompt:** A screenshot of Google's AI Studio (aistudio.google.com) open in a web browser. The model is set to "Gemini 1.5 Pro" and the temperature is set to 0.7. Four separate browser tabs are shown, each with AI Studio open.
+*   **TL;DR:** Open four separate tabs in your web browser and navigate to Google's AI Studio. Configure the model settings as shown.
+*   **Content:** Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.
+    1.  Open your web browser of choice.
+    2.  Open **four separate tabs**.
+    3.  In each tab, navigate to **aistudio.google.com**.
+    4.  In each tab, configure the settings:
+        *   **Model:** `Gemini 1.5 Pro`
+        *   **Temperature:** `0.7`
+        *   **Thinking budget:** `Maximum`
+    Pasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.
+
+---
+### **Page 14: Step 13 - Return to the PCPP**
+*   **Page Title:** Step 13: Return to the DCE Panel
+*   **Image Prompt:** A screenshot of VS Code. The `prompt.md` and `DCE_README.md` tabs have been closed, revealing the Parallel Co-Pilot Panel (PCPP) view. The `Resp 1` tab is highlighted with an animation.
+*   **TL;DR:** Close the `prompt.md` and `DCE_README.md` tabs in VS Code to reveal the Parallel Co-Pilot Panel (PCPP).
+*   **Content:** Back in VS Code, you can now close the `prompt.md` and `DCE_README.md` file tabs. Behind them, you will see the main interface of the DCE: the Parallel Co-Pilot Panel. This is where you will manage the AI's responses. Notice that the `Resp 1` tab is animated, guiding you to your next step.
+
+---
+### **Page 15: Step 14 - Paste the Responses**
+*   **Page Title:** Step 14: Paste the AI Responses
+*   **Image Prompt:** A screenshot showing the PCPP with text being pasted into the `Resp 1`, `Resp 2`, `Resp 3`, and `Resp 4` tabs sequentially.
+*   **TL;DR:** Paste the prompt from your clipboard into each of the four AI Studio tabs. Once you get the responses back, copy each one and paste it into the corresponding `Resp` tab in the PCPP.
+*   **Content:** Now, execute the parallel prompt:
+    1.  Go to your first AI Studio browser tab and paste the prompt into the input area. Send it.
+    2.  Repeat this for all four browser tabs.
+    3.  As each AI finishes generating its response, click the "Copy as Markdown" button in AI Studio.
+    4.  Go back to VS Code and paste the response into the corresponding tab in the PCPP (the response from the first browser tab goes into `Resp 1`, the second into `Resp 2`, and so on).
+
+---
+### **Page 16: Step 15 - Parse the Responses**
+*   **Page Title:** Step 15: Parse All Responses
+*   **Image Prompt:** A screenshot of the PCPP. All four response tabs have content. The "Parse All" button in the main toolbar is highlighted with an animation.
+*   **TL;DR:** Once all four responses are pasted in, click the "Parse All" button.
+*   **Content:** With all four responses loaded into the PCPP, you are ready for the next step. Notice that the **`Parse All`** button in the main toolbar is now highlighted. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks). Click the `Parse All` button now.
+
+---
+### **Page 17: Step 16 - Sort the Responses**
+*   **Page Title:** Step 16: Sort by Tokens
+*   **Image Prompt:** A screenshot of the PCPP after parsing. The "Sort" button is highlighted. The tabs now show metadata like "(5 files, 2.1K tk)".
+*   **TL;DR:** Click the "Sort" button. This will reorder the response tabs from largest to smallest, which is a good starting point for your review.
+*   **Content:** After parsing, the UI transforms. You can now see metadata on each tab, including the number of files and the total "token" count (a measure of size). The **`Sort`** button is now highlighted. Click it. This reorders the tabs, placing the response with the most content first.
+    
+    **Why is this valuable?** For a new user who doesn't yet have an intuition for what makes a "good" response, sorting by length is a simple, objective starting point. In the early planning phases of a project, a longer response from the AI often means it has generated more comprehensive documentation or considered more possibilities. It's a sound strategy for a novice to begin their review with the most detailed option.
+
+---
+### **Page 18: Step 17 - Select the Longest Response**
+*   **Page Title:** Step 17: Select the Longest Response
+*   **Image Prompt:** A screenshot of the PCPP. The first tab (the longest response) is active, and the "Select This Response" button within that tab's toolbar is highlighted.
+*   **TL;DR:** Review the sorted responses and click the "Select This Response" button on the first tab (the longest one).
+*   **Content:** The tabs are now sorted. The first tab represents the most detailed response from the AI. For this first cycle, we will proceed with this option. Click the **`Select This Response`** button in the toolbar for `Resp 1`. This tells the DCE that you've chosen this response as the primary candidate for this cycle.
+
+---
+### **Page 19: Step 18 - Create a Baseline**
+*   **Page Title:** Step 18: Create a Baseline (and encounter your first "error")
+*   **Image Prompt:** A screenshot of the PCPP. The user has just clicked the "Baseline (Commit)" button, and a VS Code error message has appeared at the bottom right: "This is not a git repository."
+*   **TL;DR:** Click the "Baseline (Commit)" button. You will see an error message because we haven't set up version control yet. This is expected.
+*   **Content:** The animated guide is now highlighting the **`Baseline (Commit)`** button. This feature uses a version control system called **Git** to create a safe restore point before you apply the AI's code. However, since this is a brand new project, Git hasn't been set up yet.
+    
+    Click the `Baseline (Commit)` button now. You will see an error message appear. This is an expected and important part of your first lesson! It demonstrates how the DCE guides you when something is missing. Most new users won't have Git installed, so the next steps will guide you through fixing this.
+
+---
+### **Page 20: Step 19 - The Failsafe Loop**
+*   **Page Title:** Step 19: The Failsafe Rinse-Repeat Process
+*   **Image Prompt:** A simple, encouraging graphic that shows a circular arrow with the text "Find Problem -> Ask AI for Help -> Get Solution -> Repeat."
+*   **TL;DR:** You've encountered a problem. The V2V workflow is designed for this. We will now use the AI itself to solve the problem of not having Git installed.
+*   **Content:** You are now experiencing the core V2V feedback loop in action. You have a problem: you need to initialize a "git repository," but you don't have Git installed and don't have instructions. We will now use the exact same process you just learned to ask the AI to solve this problem for us. This is the failsafe, rinse-repeat process that allows you to solve any problem, even if you have no prior experience.
+
+---
+### **Page 21: Step 20 - Checking for Existing Instructions**
+*   **Page Title:** Step 20: Accept the Artifacts to Review Them
+*   **Image Prompt:** A screenshot of the PCPP. The "Associated Files" panel is shown, and the "Select All" button inside it is highlighted.
+*   **TL;DR:** We need to review the documentation the AI has already created for us. It might already contain the instructions we need.
+*   **Content:** Even though we can't create a Git baseline, we can still accept the documentation artifacts the AI generated in the last step. It's possible the AI has already provided a `GitHub Repository Setup Guide` that tells us what to do.
+    
+    The animated workflow is now highlighting the **`Select All`** button in the "Associated Files" list. Click it. This will check the boxes for all the new documentation files the AI has proposed.
+
+---
+### **Page 22: Step 21 - Accept and Navigate**
+*   **Page Title:** Step 21: Accept Selected Files
+*   **Image Prompt:** A screenshot of the PCPP. The "Accept Selected" button is highlighted. In the background, the VS Code File Explorer shows the new files being created in the `src/Artifacts` directory.
+*   **TL;DR:** Click "Accept Selected" to create the new documentation files in your project. Then, navigate to the `src/Artifacts` folder to see them.
+*   **Content:** Now that all the files are checked, the **`Accept Selected`** button is highlighted. Click it. This will write the new files to your workspace. You will see a new `src/Artifacts` folder appear in the VS Code File Explorer on the left. Expand it and look at the new files the AI has created for your project.
+
+---
+### **Page 23: Step 22 - Your First Cycle**
+*   **Page Title:** Step 22: Your First Cycle - Asking for Help
+*   **Image Prompt:** A screenshot showing the VS Code file explorer with a `GitHub-Repository-Setup-Guide.md` file highlighted. The content of the file is visible, showing a "Prerequisites: git" section.
+*   **TL;DR:** You've found a guide, but it has a prerequisite you don't have. This is your first real problem to solve! We will now create a new cycle to ask the AI for Git installation instructions.
+*   **Content:** In our case, we found a `GitHub-Repository-Setup-Guide.md` file. It tells us how to initialize a repository, but it also lists a prerequisite: "You have `git` installed on your machine." This is a perfect example of **experiential blindness**—the guide's author assumed the reader would already have Git.
+    
+    We will now start our first *real* development cycle to solve this problem. In the PCPP, in the "Cycle & Context" section, enter the following:
+    *   **Cycle Title:** `Create Git Installation Instructions`
+    *   **Cycle Context:** `I need to 'initialize a git repository', but the instructions say I need to have 'git' as a prerequisite. I do not have git and I do not have instructions on how to get it. Can you provide me with those instructions in a new artifact? I am on a [windows/mac] machine.` (Choose your operating system).
+
+---
+### **Page 24: Step 23 - Generate the Next Prompt**
+*   **Page Title:** Step 23: Generate the Prompt for Cycle 1
+*   **Image Prompt:** A screenshot of the PCPP. The "Cycle & Context" banner is highlighted in green, and the "Generate prompt.md" button is also highlighted.
+*   **TL;DR:** The "Cycle & Context" banner is now green, indicating you are ready. Click "Generate prompt.md" to create the prompt for your first cycle.
+*   **Content:** Notice that the "Cycle & Context" banner at the top of the PCPP has turned green. This indicates that you have met all the criteria to create a new cycle prompt. The animated guide is now highlighting the **`Generate prompt.md`** button. Click it. The `prompt.md` file will be created and opened for you.
+
+---
+### **Page 25: Step 24 - Review the New Prompt**
+*   **Page Title:** Step 24: Review the New Prompt
+*   **Image Prompt:** A screenshot of the new `prompt.md` file. The user is scrolling, and the `<M5. organized artifacts list>` and `<M7. Flattened Repo>` sections are visible, now containing the newly created artifact files.
+*   **TL;DR:** Briefly look at the new `prompt.md`. Notice that it now includes the artifacts you just accepted. This is how the AI maintains context.
+*   **Content:** This is the second time you've seen the `prompt.md` file. The main difference is that it now includes the new documentation artifacts in the `<M5. organized artifacts list>` and `<M7. Flattened Repo>` sections. This is how the DCE maintains context from one cycle to the next, ensuring the AI always has the latest version of the project.
+    
+    Now, just as before:
+    1.  Copy the entire contents of this new `prompt.md`.
+    2.  Go back to your AI Studio tabs. Clear out the old prompts and responses.
+    3.  Paste this new prompt into all four tabs and get the new responses.
+
+---
+### **Page 26: Step 25 - Create a New Cycle**
+*   **Page Title:** Step 25: Create Cycle 2
+*   **Image Prompt:** A screenshot of the PCPP. The `+` button in the cycle navigator is highlighted.
+*   **TL;DR:** Once you have your new AI responses, click the `+` button in the PCPP to create a new cycle.
+*   **Content:** Before you paste in the new responses, you need to create a new cycle in the DCE to hold them. In the PCPP, in the "Cycle & Context" section, you'll see the cycle navigator (`< C1 >`). Click the **`+`** button to create Cycle 2. The view will update to a fresh, empty set of tabs for the new cycle.
+
+---
+### **Page 27: Step 26 - Paste and Parse Again**
+*   **Page Title:** Step 26: Paste and Parse Cycle 2
+*   **Image Prompt:** A sequence of screenshots showing the user pasting the new responses into the Cycle 2 tabs, then clicking "Parse All."
+*   **TL;DR:** Paste your four new responses into the tabs for Cycle 2 and click "Parse All."
+*   **Content:** You are now in Cycle 2. Repeat the process you learned before:
+    1.  Copy the four new responses from AI Studio.
+    2.  Paste them into the `Resp 1` through `Resp 4` tabs.
+    3.  Click **`Parse All`**.
+
+---
+### **Page 28: Step 27 - Accept the Solution**
+*   **Page Title:** Step 27: Accept the Solution
+*   **Image Prompt:** A screenshot of the PCPP in Cycle 2. The longest response is selected, and the user is clicking "Select All" and then "Accept Selected." The new `Git-Installation-Guide.md` file appears in the file explorer.
+*   **TL;DR:** Select the longest response, click "Select All," and then "Accept Selected" to get your new Git installation guide.
+*   **Content:** Now that the responses are parsed, you have the solution to your problem.
+    1.  Focus on the longest response.
+    2.  Click **`Select All`** in the "Associated Files" list.
+    3.  Click **`Accept Selected`**.
+    You should see new files appear in your `src/Artifacts` directory, including one with instructions on how to install Git.
+
+---
+### **Page 29: Step 28 - Install Git**
+*   **Page Title:** Step 28: Follow the Instructions
+*   **Image Prompt:** A screenshot showing the content of the new Git installation guide. It shows a command like `git --version` and instructions for downloading Git.
+*   **TL;DR:** Open your new artifact and follow the instructions to install Git. Verify it's installed by running `git --version` in the terminal.
+*   **Content:** Navigate to your new Git installation guide in the `src/Artifacts` folder. Follow its instructions precisely. Once you are done, you can verify that Git is installed correctly by opening a terminal in VS Code (`Terminal > New Terminal`) and typing the command:
+    ```bash
+    git --version
+    ```
+    If you see a version number returned, you have successfully installed Git!
+
+---
+### **Page 30: Step 29 - First Commit**
+*   **Page Title:** Step 29: Your First Commit
+*   **Image Prompt:** A screenshot of the PCPP. The user is in Cycle 1 and has changed the "Cycle Title" to "First Commit." The "Baseline (Commit)" button is highlighted.
+*   **TL;DR:** Go back to Cycle 1, change the title to "First Commit," and click "Baseline (Commit)" again. This time, it will work.
+*   **Content:** Now that Git is installed, you can complete Step 18.
+    1.  In the PCPP, use the `<` arrow to navigate back to **Cycle 1**.
+    2.  Change the **Cycle Title** from `Create Git Installation Instructions` to `First Commit`. The Cycle Title is used as the commit message.
+    3.  Click the **`Baseline (Commit)`** button again.
+    This time, you will get the same error message as before, but a new button will be available: **`Initialize Repository`**. Click it. A "Successfully initialized" message will appear. Now, click `Baseline (Commit)` one last time. It will succeed.
+
+---
+### **Page 31: Step 30 - The GitHub Quest**
+*   **Page Title:** Step 30: Your Next Quest - GitHub Setup
+*   **Image Prompt:** A stylized image of a GitHub logo with a question mark over it, representing a quest or challenge for the user.
+*   **TL;DR:** Your next task is to use the skills you've just learned to create a guide for setting up a GitHub account and connecting it to your project.
+*   **Content:** You now have Git initialized locally. The next step is to connect it to GitHub, a website for hosting your code. However, we will assume you don't have a GitHub account.
+    
+    This is your next quest! You will now repeat the exact same process you just used to create the Git installation guide. Your task is to create a new guide for setting up a GitHub account and connecting it to your local repository so that the "Initialize Repository" step can succeed.
+    
+    Use the skills you've learned. Create a new cycle, write a clear context explaining what you need, and get the AI to generate the guide for you. Once you have followed that guide and set up your GitHub connection, you can proceed to the next step.
+
+---
+### **Page 32: Step 31 - Successfully Initialized**
+*   **Page Title:** Step 31: Successfully Initialized
+*   **Image Prompt:** A screenshot of the PCPP with a success notification: "Successfully initialized repository."
+*   **TL;DR:** After setting up GitHub, the "Initialize Repository" button will now work, fully connecting your local project to the cloud.
+*   **Content:** Assuming you have completed your GitHub quest, clicking the **`Initialize Repository`** button will now succeed without any errors. Your local project is now fully connected to Git and GitHub, and you are ready to build your website's code.
+
+---
+### **Page 33: Step 32 - Create the Project Scaffold**
+*   **Page Title:** Step 32: Create the Project Scaffold
+*   **Image Prompt:** A screenshot of the PCPP in a new cycle (e.g., Cycle 2). The title is "Create Project Scaffold," and the context says, "Let's now build the project files!" The "Generate prompt.md" button is highlighted.
+*   **TL;DR:** In a new cycle, ask the AI to build the initial code files for your portfolio website.
+*   **Content:** You are now ready to have the AI generate the actual code for your website. This initial set of files is often called a "scaffold."
+    1.  Create a new cycle in the PCPP.
+    2.  Set the **Cycle Title** to `Create Project Scaffold`.
+    3.  Set the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.`
+    4.  Generate the prompt, send it to the AI, and get your responses.
+
+---
+### **Page 34: Step 33 - The Rinse-Repeat Loop**
+*   **Page Title:** Step 33: The Rinse-Repeat Loop
+*   **Image Prompt:** A simple, clear graphic showing the core loop: 1. Generate Prompt, 2. Copy Prompt, 3. Send to AI, 4. Create New Cycle, 5. Copy Responses, 6. Parse, 7. Select.
+*   **TL;DR:** Follow the same rinse-repeat process you've learned to get the AI-generated code into your project.
+*   **Content:** You know the drill now. This is the core loop of the V2V workflow.
+    1.  Generate `prompt.md`.
+    2.  Copy the prompt.
+    3.  Send it to your AI tabs.
+    4.  Create a new cycle in the PCPP.
+    5.  Copy the AI responses back into the PCPP.
+    6.  Parse the responses.
+    7.  Select the longest response.
+
+---
+### **Page 35: Step 34 - Baseline and Accept the Code**
+*   **Page Title:** Step 34: Baseline and Accept the Code
+*   **Image Prompt:** A screenshot of the PCPP after parsing the scaffold responses. The "Baseline (Commit)" button is highlighted first, then the "Select All" and "Accept Selected" buttons. The VS Code file explorer shows the color of `flattened_repo.md` changing from green to white after the commit.
+*   **TL;DR:** With Git initialized, you can now Baseline first, then Accept the new code files.
+*   **Content:** This time, the workflow is slightly different because Git is initialized.
+    1.  After you parse the responses, the **`Baseline (Commit)`** button will be highlighted. Click it. This saves the current state of your project. Observe how the color of `flattened_repo.md` in the file explorer changes from green to white, indicating it's now saved in Git.
+    2.  Now, click **`Select All`** and **`Accept Selected`**.
+    This will create all the new project files for your website (e.g., HTML, CSS, JavaScript files).
+
+---
+### **Page 36: Step 35 - Run Your Project**
+*   **Page Title:** Step 35: Run Your Project!
+*   **Image Prompt:** A screenshot of the VS Code integrated terminal. The user is typing `npm install`, then `npm run dev`. A localhost URL is highlighted in the output.
+*   **TL;DR:** Find the `Development and Testing Guide` artifact, open the VS Code terminal, and run the commands to install dependencies and start your website.
+*   **Content:** You now have a complete set of project files. But how do you run them? Look in your `src/Artifacts` folder for a file named `Development-and-Testing-Guide.md`. This guide, created by the AI in Cycle 1, tells you the commands.
+    1.  Open the integrated terminal in VS Code (`Terminal > New Terminal`).
+    2.  Type `npm install` and press Enter. This downloads all the code libraries your project needs.
+    3.  After it finishes, type `npm run dev` and press Enter. This starts your local web server.
+
+---
+### **Page 37: Step 36 - Tada! Your Project!**
+*   **Page Title:** Step 36: Tada! Your Project!
+*   **Image Prompt:** A screenshot of a web browser showing a simple but professional-looking "Hello World" or starter portfolio website running on `localhost:3000`.
+*   **TL;DR:** Click the `localhost` link in your terminal to see your live website in your browser. Congratulations!
+*   **Content:** Once `npm run dev` is running, you will see a link in the terminal, usually `http://localhost:3000`. Ctrl-click this link to open it in your web browser.
+    
+    **Congratulations!** You are now looking at the first version of your portfolio website, created from scratch with the DCE and an AI partner.
+    
+    From here, you can continue to iterate. Add your resume to a `context` folder in your project, add that folder to your selection in the DCE, and ask the AI: "Please update my portfolio website to include the information from my resume." This is **context curation** in action. As you progress through the V2V Academy, you can add your new projects to your portfolio's showcase, continuously improving it with the same workflow you've just mastered.
+    
+    This completes your first lab.
 </file_artifact>
 
