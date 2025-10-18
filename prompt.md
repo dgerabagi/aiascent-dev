@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 91 - suggestion questions for report on academy page functional, but are not first hitting the RAG step.
+Current Cycle 92 - upscale/align A77 undergraduate imagery
+Cycle 91 - suggestion questions for report on academy page functional, but are not first hitting the RAG step.
 Cycle 90 - suggested questions not quite working
 Cycle 89 - suggested questions for the academy
 Cycle 88 - image navigation arrows, leverage new academy embedding
@@ -729,6 +730,32 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 92>
+<Cycle Context>
+okay gret work. also we've got our career transitioner course finished. it definitely wont make anyone a DCE prodigee, but its a start.
+
+next, i would like to work on the images for the underequipped graduate, but in order to do that i would like to rework A77 based on the observations/lessons learned from generating the 
+
+
+
+however, i would like the overall thematic narrative be like a starfleet academy graduate. or rather, the individual is a starfleet graduate but the world is confusingly less of a star trek world and more of a modern world. not 100% modern, still futuristic, but clearly not star trek future, much more of a scarcity-based solarpunk future. thoughts? would it be possible to adjust A75 and/or A77 accordingly?
+
+in addition, we no longer need 'two approaches' just provide one holistic description. my process is actually this. i take your prompt and give it to nano banana, but first nano banan will re-write and display the image prompt. then i accept and it generates. therefore, you're better of not describing the image itself, or what the image should be. then, nano banana will take that and describe the image itself, then ill approve that. its only a slight difference, but i think it will help you articulate what you need to articulate if you know the overall process by which your product will be used as input down the pipe.
+</Cycle Context>
+<Previous Cycle 91 Summary of Actions>
+I have analyzed the issue with the suggested questions on the academy page. The backend logs clearly show that the AI is successfully generating and returning a valid list of questions. However, the frontend UI is getting stuck in a "Generating suggestions..." state and never displays them.
+
+The root cause is a subtle race condition. The suggestion fetching logic includes a safety check to prevent suggestions from one report from "leaking" onto another if the user navigates quickly. This check was failing because the `reportName` prop passed down from the page component (e.g., `v2v_career_transitioner`) did not exactly match the `reportId` loaded from the curriculum's data file (e.g., `v2v-academy-career-transitioner`). This mismatch caused the safety check to incorrectly discard the valid suggestions, leaving the UI in a perpetual loading state.
+
+My course of action is to make the state management more robust by removing this dependency on props. I will refactor the suggestion fetching actions to get the current `reportName` directly from the Zustand store, making it the single source of truth. This eliminates the mismatch and ensures the safety check works as intended—only preventing state corruption during actual report transitions. I will also update the planning artifact for this feature to codify this more robust approach.
+
+1.  **Update `src/stores/reportStore.ts`:** I will refactor the `fetchPageSuggestions` and `fetchConversationSuggestions` actions. They will no longer accept `reportName` as an argument. Instead, they will read the `reportName` directly from the store's state using `get()`. This ensures the safety check always compares against the correct, authoritative report name.
+2.  **Update `src/components/report-viewer/ReportViewer.tsx`:** I will update the `useEffect` hook that triggers suggestion generation to call `fetchPageSuggestions` without the `reportName` argument, aligning with the updated action.
+3.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:** I will update the call to `fetchConversationSuggestions` within the `sendMessage` function to remove the `reportName` argument, aligning it with the refactored action.
+4.  **Update `src/Artifacts/A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md`:** I will update this planning artifact to codify the new, more robust approach. I will clarify that the `reportName` for context isolation checks must be sourced from the store's state to prevent race conditions caused by discrepancies between props and loaded data.
+</Previous Cycle 91 Summary of Actions>
+</Cycle 92>
 
 <Cycle 91>
 <Cycle Context>
@@ -4341,10 +4368,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-17T02:01:06.102Z
+  Date Generated: 2025-10-18T17:02:58.188Z
   ---
-  Total Files: 166
-  Approx. Tokens: 459084
+  Total Files: 758
+  Approx. Tokens: 458619
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4353,9 +4380,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\stores\reportStore.ts (8216 tokens)
-7. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7880 tokens)
-8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7390 tokens)
+6. src\stores\reportStore.ts (8316 tokens)
+7. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7390 tokens)
+8. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
 9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
 10. src\Artifacts\A0-Master-Artifact-List.md (7140 tokens)
 
@@ -4373,7 +4400,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 308 - Chars: 16450 - Tokens: 4113
+14. src\app\api\chat\route.ts - Lines: 314 - Chars: 16405 - Tokens: 4102
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
@@ -4452,7 +4479,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 720 - Chars: 32863 - Tokens: 8216
+93. src\stores\reportStore.ts - Lines: 729 - Chars: 33262 - Tokens: 8316
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -4512,11 +4539,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 150. src\components\academy\PersonaSelector.tsx - Lines: 78 - Chars: 3663 - Tokens: 916
 151. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 152. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 5972 - Tokens: 1493
-153. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 202 - Chars: 31519 - Tokens: 7880
+153. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 196 - Chars: 29272 - Tokens: 7318
 154. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 201 - Chars: 29558 - Tokens: 7390
 155. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
 156. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
-157. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 27969 - Tokens: 6993
+157. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28003 - Tokens: 7001
 158. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25769 - Tokens: 6443
 159. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25510 - Tokens: 6378
 160. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
@@ -4526,6 +4553,598 @@ This file-centric approach helps in planning and prioritizing work, especially i
 164. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
 165. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
 166. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
+167. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-1.webp - [Binary] Size: 105 KB
+168. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-10.webp - [Binary] Size: 92.8 KB
+169. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-11.webp - [Binary] Size: 108.8 KB
+170. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-12.webp - [Binary] Size: 98.4 KB
+171. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-13.webp - [Binary] Size: 107.2 KB
+172. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-14.webp - [Binary] Size: 112.5 KB
+173. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-15.webp - [Binary] Size: 86.2 KB
+174. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-16.webp - [Binary] Size: 125.9 KB
+175. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-17.webp - [Binary] Size: 98.9 KB
+176. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-18.webp - [Binary] Size: 125.3 KB
+177. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-19.webp - [Binary] Size: 234 KB
+178. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-2.webp - [Binary] Size: 108.9 KB
+179. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-20.webp - [Binary] Size: 234 KB
+180. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-21.webp - [Binary] Size: 300.1 KB
+181. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-22.webp - [Binary] Size: 341.1 KB
+182. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-3.webp - [Binary] Size: 106.3 KB
+183. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-4.webp - [Binary] Size: 104.2 KB
+184. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-5.webp - [Binary] Size: 112.1 KB
+185. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-6.webp - [Binary] Size: 104.5 KB
+186. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-7.webp - [Binary] Size: 126.9 KB
+187. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-8.webp - [Binary] Size: 104.6 KB
+188. public\assets\images\v2v\career_transitioner\lesson-2.1-p3\lesson-2.1-p3-img-9.webp - [Binary] Size: 89 KB
+189. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-1.webp - [Binary] Size: 125.9 KB
+190. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-10.webp - [Binary] Size: 81.6 KB
+191. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-11.webp - [Binary] Size: 92.8 KB
+192. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-12.webp - [Binary] Size: 74.4 KB
+193. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-13.webp - [Binary] Size: 77.5 KB
+194. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-14.webp - [Binary] Size: 106.6 KB
+195. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-15.webp - [Binary] Size: 94.7 KB
+196. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-16.webp - [Binary] Size: 104.7 KB
+197. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-17.webp - [Binary] Size: 96.1 KB
+198. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-18.webp - [Binary] Size: 100.7 KB
+199. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-2.webp - [Binary] Size: 92.9 KB
+200. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-3.webp - [Binary] Size: 93.3 KB
+201. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-4.webp - [Binary] Size: 83.2 KB
+202. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-5.webp - [Binary] Size: 103 KB
+203. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-6.webp - [Binary] Size: 85.3 KB
+204. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-7.webp - [Binary] Size: 84.3 KB
+205. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-8.webp - [Binary] Size: 88.2 KB
+206. public\assets\images\v2v\career_transitioner\lesson-2.1-p4\lesson-2.1-p4-img-9.webp - [Binary] Size: 97.2 KB
+207. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-1.webp - [Binary] Size: 140.4 KB
+208. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-10.webp - [Binary] Size: 104.1 KB
+209. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-11.webp - [Binary] Size: 123.2 KB
+210. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-12.webp - [Binary] Size: 165.5 KB
+211. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-13.webp - [Binary] Size: 137.7 KB
+212. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-14.webp - [Binary] Size: 104.3 KB
+213. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-15.webp - [Binary] Size: 98.1 KB
+214. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-16.webp - [Binary] Size: 143.6 KB
+215. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-17.webp - [Binary] Size: 122.2 KB
+216. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-18.webp - [Binary] Size: 114.9 KB
+217. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-19.webp - [Binary] Size: 154.8 KB
+218. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-2.webp - [Binary] Size: 127.4 KB
+219. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-20.webp - [Binary] Size: 111 KB
+220. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-3.webp - [Binary] Size: 123.6 KB
+221. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-4.webp - [Binary] Size: 111.7 KB
+222. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-5.webp - [Binary] Size: 152.2 KB
+223. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-6.webp - [Binary] Size: 123.5 KB
+224. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-7.webp - [Binary] Size: 145.3 KB
+225. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-8.webp - [Binary] Size: 166 KB
+226. public\assets\images\v2v\career_transitioner\lesson-2.2-p1\lesson-2.2-p1-img-9.webp - [Binary] Size: 167.3 KB
+227. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-1.webp - [Binary] Size: 128.8 KB
+228. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-10.webp - [Binary] Size: 147.8 KB
+229. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-11.webp - [Binary] Size: 100.2 KB
+230. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-12.webp - [Binary] Size: 164.4 KB
+231. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-13.webp - [Binary] Size: 78.6 KB
+232. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-14.webp - [Binary] Size: 129.7 KB
+233. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-15.webp - [Binary] Size: 96.3 KB
+234. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-16.webp - [Binary] Size: 201 KB
+235. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-17.webp - [Binary] Size: 143 KB
+236. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-18.webp - [Binary] Size: 148.1 KB
+237. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-19.webp - [Binary] Size: 143.6 KB
+238. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-2.webp - [Binary] Size: 165.5 KB
+239. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-3.webp - [Binary] Size: 165.3 KB
+240. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-4.webp - [Binary] Size: 108.9 KB
+241. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-5.webp - [Binary] Size: 109.3 KB
+242. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-6.webp - [Binary] Size: 152.7 KB
+243. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-7.webp - [Binary] Size: 138.5 KB
+244. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-8.webp - [Binary] Size: 128.8 KB
+245. public\assets\images\v2v\career_transitioner\lesson-2.2-p2\lesson-2.2-p2-img-9.webp - [Binary] Size: 118 KB
+246. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-1.webp - [Binary] Size: 83.1 KB
+247. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-10.webp - [Binary] Size: 56.6 KB
+248. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-11.webp - [Binary] Size: 63 KB
+249. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-12.webp - [Binary] Size: 86.6 KB
+250. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-13.webp - [Binary] Size: 66.3 KB
+251. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-14.webp - [Binary] Size: 48.5 KB
+252. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-15.webp - [Binary] Size: 94.5 KB
+253. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-16.webp - [Binary] Size: 63.4 KB
+254. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-17.webp - [Binary] Size: 73.3 KB
+255. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-18.webp - [Binary] Size: 73.3 KB
+256. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-19.webp - [Binary] Size: 68.2 KB
+257. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-2.webp - [Binary] Size: 60.1 KB
+258. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-20.webp - [Binary] Size: 75.8 KB
+259. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-3.webp - [Binary] Size: 67.3 KB
+260. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-4.webp - [Binary] Size: 78.5 KB
+261. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-5.webp - [Binary] Size: 68.7 KB
+262. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-6.webp - [Binary] Size: 105.3 KB
+263. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-7.webp - [Binary] Size: 68.1 KB
+264. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-8.webp - [Binary] Size: 70.6 KB
+265. public\assets\images\v2v\career_transitioner\lesson-2.2-p3\lesson-2.2-p3-img-9.webp - [Binary] Size: 62.5 KB
+266. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-1.webp - [Binary] Size: 172.4 KB
+267. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-10.webp - [Binary] Size: 106.7 KB
+268. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-11.webp - [Binary] Size: 108.1 KB
+269. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-12.webp - [Binary] Size: 120.3 KB
+270. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-13.webp - [Binary] Size: 146.2 KB
+271. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-14.webp - [Binary] Size: 141.1 KB
+272. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-15.webp - [Binary] Size: 148 KB
+273. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-2.webp - [Binary] Size: 151.7 KB
+274. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-3.webp - [Binary] Size: 168.9 KB
+275. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-4.webp - [Binary] Size: 164 KB
+276. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-5.webp - [Binary] Size: 92.6 KB
+277. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-6.webp - [Binary] Size: 142.1 KB
+278. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-7.webp - [Binary] Size: 123.5 KB
+279. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-8.webp - [Binary] Size: 172.7 KB
+280. public\assets\images\v2v\career_transitioner\lesson-2.2-p4\lesson-2.2-p4-img-9.webp - [Binary] Size: 120.7 KB
+281. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-1.webp - [Binary] Size: 137.3 KB
+282. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-10.webp - [Binary] Size: 160 KB
+283. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-11.webp - [Binary] Size: 130 KB
+284. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-12.webp - [Binary] Size: 137.8 KB
+285. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-13.webp - [Binary] Size: 137.3 KB
+286. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-14.webp - [Binary] Size: 133.6 KB
+287. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-15.webp - [Binary] Size: 140.4 KB
+288. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-16.webp - [Binary] Size: 117.8 KB
+289. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-17.webp - [Binary] Size: 123.4 KB
+290. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-18.webp - [Binary] Size: 131.5 KB
+291. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-2.webp - [Binary] Size: 169.4 KB
+292. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-3.webp - [Binary] Size: 119.2 KB
+293. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-4.webp - [Binary] Size: 132.7 KB
+294. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-5.webp - [Binary] Size: 98.8 KB
+295. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-6.webp - [Binary] Size: 135.4 KB
+296. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-7.webp - [Binary] Size: 112.2 KB
+297. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-8.webp - [Binary] Size: 112.2 KB
+298. public\assets\images\v2v\career_transitioner\lesson-2.3-p1\lesson-2.3-p1-img-9.webp - [Binary] Size: 114.2 KB
+299. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-1.webp - [Binary] Size: 127.7 KB
+300. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-10.webp - [Binary] Size: 94.8 KB
+301. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-11.webp - [Binary] Size: 105.1 KB
+302. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-12.webp - [Binary] Size: 151.7 KB
+303. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-13.webp - [Binary] Size: 84.4 KB
+304. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-14.webp - [Binary] Size: 122.6 KB
+305. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-15.webp - [Binary] Size: 126.6 KB
+306. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-16.webp - [Binary] Size: 162.3 KB
+307. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-17.webp - [Binary] Size: 118.3 KB
+308. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-2.webp - [Binary] Size: 118.2 KB
+309. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-3.webp - [Binary] Size: 106.6 KB
+310. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-4.webp - [Binary] Size: 106.3 KB
+311. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-5.webp - [Binary] Size: 116.3 KB
+312. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-6.webp - [Binary] Size: 188.5 KB
+313. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-7.webp - [Binary] Size: 110.2 KB
+314. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-8.webp - [Binary] Size: 105.5 KB
+315. public\assets\images\v2v\career_transitioner\lesson-2.3-p2\lesson-2.3-p2-img-9.webp - [Binary] Size: 134.4 KB
+316. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-1.webp - [Binary] Size: 77.5 KB
+317. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-10.webp - [Binary] Size: 88.2 KB
+318. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-11.webp - [Binary] Size: 112.7 KB
+319. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-12.webp - [Binary] Size: 118.3 KB
+320. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-13.webp - [Binary] Size: 128.3 KB
+321. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-14.webp - [Binary] Size: 107.9 KB
+322. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-15.webp - [Binary] Size: 109.1 KB
+323. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-16.webp - [Binary] Size: 92.5 KB
+324. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-17.webp - [Binary] Size: 127.2 KB
+325. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-18.webp - [Binary] Size: 110.7 KB
+326. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-19.webp - [Binary] Size: 98.4 KB
+327. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-2.webp - [Binary] Size: 80.4 KB
+328. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-20.webp - [Binary] Size: 103.6 KB
+329. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-3.webp - [Binary] Size: 106.2 KB
+330. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-4.webp - [Binary] Size: 100 KB
+331. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-5.webp - [Binary] Size: 106.6 KB
+332. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-6.webp - [Binary] Size: 109.3 KB
+333. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-7.webp - [Binary] Size: 98.7 KB
+334. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-8.webp - [Binary] Size: 128 KB
+335. public\assets\images\v2v\career_transitioner\lesson-2.3-p3\lesson-2.3-p3-img-9.webp - [Binary] Size: 131.2 KB
+336. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-1.webp - [Binary] Size: 81.2 KB
+337. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-10.webp - [Binary] Size: 143.1 KB
+338. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-11.webp - [Binary] Size: 98.8 KB
+339. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-12.webp - [Binary] Size: 126.5 KB
+340. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-13.webp - [Binary] Size: 77.5 KB
+341. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-14.webp - [Binary] Size: 82.1 KB
+342. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-15.webp - [Binary] Size: 130.3 KB
+343. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-16.webp - [Binary] Size: 99.3 KB
+344. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-17.webp - [Binary] Size: 110.3 KB
+345. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-18.webp - [Binary] Size: 106.8 KB
+346. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-19.webp - [Binary] Size: 124 KB
+347. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-2.webp - [Binary] Size: 100.4 KB
+348. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-20.webp - [Binary] Size: 163.2 KB
+349. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-3.webp - [Binary] Size: 93.2 KB
+350. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-4.webp - [Binary] Size: 84.1 KB
+351. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-5.webp - [Binary] Size: 110.3 KB
+352. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-6.webp - [Binary] Size: 141.5 KB
+353. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-7.webp - [Binary] Size: 94.2 KB
+354. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-8.webp - [Binary] Size: 153.9 KB
+355. public\assets\images\v2v\career_transitioner\lesson-2.3-p4\lesson-2.3-p4-img-9.webp - [Binary] Size: 124.5 KB
+356. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-1.webp - [Binary] Size: 121.9 KB
+357. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-10.webp - [Binary] Size: 156.7 KB
+358. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-11.webp - [Binary] Size: 91.3 KB
+359. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-12.webp - [Binary] Size: 98.1 KB
+360. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-13.webp - [Binary] Size: 155.2 KB
+361. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-14.webp - [Binary] Size: 158.3 KB
+362. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-15.webp - [Binary] Size: 126.6 KB
+363. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-16.webp - [Binary] Size: 140.1 KB
+364. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-17.webp - [Binary] Size: 122.7 KB
+365. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-18.webp - [Binary] Size: 122.1 KB
+366. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-19.webp - [Binary] Size: 124.8 KB
+367. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-2.webp - [Binary] Size: 128.3 KB
+368. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-20.webp - [Binary] Size: 119.7 KB
+369. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-3.webp - [Binary] Size: 172.3 KB
+370. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-4.webp - [Binary] Size: 110.4 KB
+371. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-5.webp - [Binary] Size: 125.7 KB
+372. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-6.webp - [Binary] Size: 94.7 KB
+373. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-7.webp - [Binary] Size: 123.3 KB
+374. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-8.webp - [Binary] Size: 104.8 KB
+375. public\assets\images\v2v\career_transitioner\lesson-3.1-p1\lesson-3.1-p1-img-9.webp - [Binary] Size: 92.7 KB
+376. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-1.webp - [Binary] Size: 80 KB
+377. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-10.webp - [Binary] Size: 171.1 KB
+378. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-11.webp - [Binary] Size: 64 KB
+379. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-12.webp - [Binary] Size: 101.5 KB
+380. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-13.webp - [Binary] Size: 80.7 KB
+381. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-14.webp - [Binary] Size: 72.2 KB
+382. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-15.webp - [Binary] Size: 108.9 KB
+383. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-2.webp - [Binary] Size: 122.6 KB
+384. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-3.webp - [Binary] Size: 162.1 KB
+385. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-4.webp - [Binary] Size: 95 KB
+386. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-5.webp - [Binary] Size: 134.7 KB
+387. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-6.webp - [Binary] Size: 158.4 KB
+388. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-7.webp - [Binary] Size: 147.6 KB
+389. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-8.webp - [Binary] Size: 84 KB
+390. public\assets\images\v2v\career_transitioner\lesson-3.1-p2\lesson-3.1-p2-img-9.webp - [Binary] Size: 103.4 KB
+391. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-1.webp - [Binary] Size: 84.3 KB
+392. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-10.webp - [Binary] Size: 85.7 KB
+393. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-11.webp - [Binary] Size: 131.3 KB
+394. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-12.webp - [Binary] Size: 103.8 KB
+395. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-13.webp - [Binary] Size: 118.5 KB
+396. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-14.webp - [Binary] Size: 112.9 KB
+397. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-15.webp - [Binary] Size: 105.2 KB
+398. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-16.webp - [Binary] Size: 102 KB
+399. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-17.webp - [Binary] Size: 139.2 KB
+400. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-18.webp - [Binary] Size: 83.9 KB
+401. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-19.webp - [Binary] Size: 115.2 KB
+402. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-2.webp - [Binary] Size: 186.2 KB
+403. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-20.webp - [Binary] Size: 127.8 KB
+404. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-3.webp - [Binary] Size: 139.2 KB
+405. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-4.webp - [Binary] Size: 128 KB
+406. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-5.webp - [Binary] Size: 130.1 KB
+407. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-6.webp - [Binary] Size: 81.4 KB
+408. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-7.webp - [Binary] Size: 134.9 KB
+409. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-8.webp - [Binary] Size: 168.1 KB
+410. public\assets\images\v2v\career_transitioner\lesson-3.1-p3\lesson-3.1-p3-img-9.webp - [Binary] Size: 170.3 KB
+411. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-1.webp - [Binary] Size: 82.4 KB
+412. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-10.webp - [Binary] Size: 93.6 KB
+413. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-11.webp - [Binary] Size: 146.1 KB
+414. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-12.webp - [Binary] Size: 123.7 KB
+415. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-13.webp - [Binary] Size: 118.5 KB
+416. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-14.webp - [Binary] Size: 111.3 KB
+417. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-15.webp - [Binary] Size: 67.5 KB
+418. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-16.webp - [Binary] Size: 85.7 KB
+419. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-17.webp - [Binary] Size: 84.8 KB
+420. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-18.webp - [Binary] Size: 81.7 KB
+421. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-19.webp - [Binary] Size: 127.3 KB
+422. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-2.webp - [Binary] Size: 69.4 KB
+423. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-3.webp - [Binary] Size: 113.2 KB
+424. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-4.webp - [Binary] Size: 108.8 KB
+425. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-5.webp - [Binary] Size: 67.5 KB
+426. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-6.webp - [Binary] Size: 69.8 KB
+427. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-7.webp - [Binary] Size: 93.1 KB
+428. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-8.webp - [Binary] Size: 85.8 KB
+429. public\assets\images\v2v\career_transitioner\lesson-3.1-p4\lesson-3.1-p4-img-9.webp - [Binary] Size: 97 KB
+430. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-1.webp - [Binary] Size: 115.9 KB
+431. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-10.webp - [Binary] Size: 76.9 KB
+432. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-11.webp - [Binary] Size: 130.6 KB
+433. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-12.webp - [Binary] Size: 97.7 KB
+434. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-13.webp - [Binary] Size: 81.4 KB
+435. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-14.webp - [Binary] Size: 120 KB
+436. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-15.webp - [Binary] Size: 67.6 KB
+437. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-16.webp - [Binary] Size: 74 KB
+438. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-17.webp - [Binary] Size: 68.8 KB
+439. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-18.webp - [Binary] Size: 98.5 KB
+440. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-19.webp - [Binary] Size: 110.7 KB
+441. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-2.webp - [Binary] Size: 94.4 KB
+442. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-20.webp - [Binary] Size: 83.1 KB
+443. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-3.webp - [Binary] Size: 92 KB
+444. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-4.webp - [Binary] Size: 131 KB
+445. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-5.webp - [Binary] Size: 79.4 KB
+446. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-6.webp - [Binary] Size: 94.7 KB
+447. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-7.webp - [Binary] Size: 86.1 KB
+448. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-8.webp - [Binary] Size: 68.3 KB
+449. public\assets\images\v2v\career_transitioner\lesson-3.2-p1\lesson-3.2-p1-img-9.webp - [Binary] Size: 120.2 KB
+450. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-1.webp - [Binary] Size: 89.6 KB
+451. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-10.webp - [Binary] Size: 88.7 KB
+452. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-11.webp - [Binary] Size: 109.2 KB
+453. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-12.webp - [Binary] Size: 113 KB
+454. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-13.webp - [Binary] Size: 76.2 KB
+455. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-14.webp - [Binary] Size: 98.1 KB
+456. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-15.webp - [Binary] Size: 86 KB
+457. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-16.webp - [Binary] Size: 72.4 KB
+458. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-17.webp - [Binary] Size: 82 KB
+459. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-2.webp - [Binary] Size: 115.7 KB
+460. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-3.webp - [Binary] Size: 128.6 KB
+461. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-4.webp - [Binary] Size: 108.2 KB
+462. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-5.webp - [Binary] Size: 101.5 KB
+463. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-6.webp - [Binary] Size: 87.4 KB
+464. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-7.webp - [Binary] Size: 101.4 KB
+465. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-8.webp - [Binary] Size: 117 KB
+466. public\assets\images\v2v\career_transitioner\lesson-3.2-p2\lesson-3.2-p2-img-9.webp - [Binary] Size: 125.8 KB
+467. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-1.webp - [Binary] Size: 112.4 KB
+468. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-10.webp - [Binary] Size: 76.5 KB
+469. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-11.webp - [Binary] Size: 88.1 KB
+470. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-12.webp - [Binary] Size: 75.8 KB
+471. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-13.webp - [Binary] Size: 74 KB
+472. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-14.webp - [Binary] Size: 77.9 KB
+473. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-15.webp - [Binary] Size: 81.1 KB
+474. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-16.webp - [Binary] Size: 71.8 KB
+475. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-17.webp - [Binary] Size: 79.2 KB
+476. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-18.webp - [Binary] Size: 57.1 KB
+477. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-19.webp - [Binary] Size: 70.7 KB
+478. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-2.webp - [Binary] Size: 103.5 KB
+479. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-3.webp - [Binary] Size: 104 KB
+480. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-4.webp - [Binary] Size: 73.4 KB
+481. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-5.webp - [Binary] Size: 54.1 KB
+482. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-6.webp - [Binary] Size: 89.1 KB
+483. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-7.webp - [Binary] Size: 80.2 KB
+484. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-8.webp - [Binary] Size: 77.8 KB
+485. public\assets\images\v2v\career_transitioner\lesson-3.2-p3\lesson-3.2-p3-img-9.webp - [Binary] Size: 111.7 KB
+486. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-1.webp - [Binary] Size: 84.7 KB
+487. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-10.webp - [Binary] Size: 77.4 KB
+488. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-11.webp - [Binary] Size: 112.2 KB
+489. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-12.webp - [Binary] Size: 64.1 KB
+490. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-13.webp - [Binary] Size: 116 KB
+491. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-14.webp - [Binary] Size: 150 KB
+492. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-15.webp - [Binary] Size: 92.8 KB
+493. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-16.webp - [Binary] Size: 148 KB
+494. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-17.webp - [Binary] Size: 86.7 KB
+495. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-18.webp - [Binary] Size: 121.3 KB
+496. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-19.webp - [Binary] Size: 69.7 KB
+497. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-2.webp - [Binary] Size: 73.8 KB
+498. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-20.webp - [Binary] Size: 104.9 KB
+499. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-3.webp - [Binary] Size: 115.2 KB
+500. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-4.webp - [Binary] Size: 73.7 KB
+501. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-5.webp - [Binary] Size: 150 KB
+502. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-6.webp - [Binary] Size: 106.2 KB
+503. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-7.webp - [Binary] Size: 64.9 KB
+504. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-8.webp - [Binary] Size: 90.6 KB
+505. public\assets\images\v2v\career_transitioner\lesson-3.2-p4\lesson-3.2-p4-img-9.webp - [Binary] Size: 69.6 KB
+506. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-1.webp - [Binary] Size: 137.5 KB
+507. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-10.webp - [Binary] Size: 122.3 KB
+508. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-11.webp - [Binary] Size: 128.6 KB
+509. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-12.webp - [Binary] Size: 100.2 KB
+510. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-13.webp - [Binary] Size: 152.2 KB
+511. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-14.webp - [Binary] Size: 145.9 KB
+512. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-15.webp - [Binary] Size: 98.6 KB
+513. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-16.webp - [Binary] Size: 138.6 KB
+514. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-2.webp - [Binary] Size: 134.2 KB
+515. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-3.webp - [Binary] Size: 152.8 KB
+516. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-4.webp - [Binary] Size: 130.2 KB
+517. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-5.webp - [Binary] Size: 137.1 KB
+518. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-6.webp - [Binary] Size: 151.8 KB
+519. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-7.webp - [Binary] Size: 136.2 KB
+520. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-8.webp - [Binary] Size: 158 KB
+521. public\assets\images\v2v\career_transitioner\lesson-3.3-p1\lesson-3.3-p1-img-9.webp - [Binary] Size: 112.1 KB
+522. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-1.webp - [Binary] Size: 149.9 KB
+523. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-10.webp - [Binary] Size: 86.8 KB
+524. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-11.webp - [Binary] Size: 58.7 KB
+525. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-12.webp - [Binary] Size: 129.5 KB
+526. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-13.webp - [Binary] Size: 79.7 KB
+527. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-14.webp - [Binary] Size: 117 KB
+528. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-15.webp - [Binary] Size: 56.7 KB
+529. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-16.webp - [Binary] Size: 111.5 KB
+530. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-2.webp - [Binary] Size: 98.6 KB
+531. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-3.webp - [Binary] Size: 89.3 KB
+532. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-4.webp - [Binary] Size: 103.2 KB
+533. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-5.webp - [Binary] Size: 55 KB
+534. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-6.webp - [Binary] Size: 82.9 KB
+535. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-7.webp - [Binary] Size: 75.1 KB
+536. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-8.webp - [Binary] Size: 67.6 KB
+537. public\assets\images\v2v\career_transitioner\lesson-3.3-p2\lesson-3.3-p2-img-9.webp - [Binary] Size: 60.2 KB
+538. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-1.webp - [Binary] Size: 72.6 KB
+539. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-10.webp - [Binary] Size: 57 KB
+540. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-11.webp - [Binary] Size: 92.7 KB
+541. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-12.webp - [Binary] Size: 68.3 KB
+542. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-13.webp - [Binary] Size: 63.8 KB
+543. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-14.webp - [Binary] Size: 106.2 KB
+544. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-15.webp - [Binary] Size: 78.4 KB
+545. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-16.webp - [Binary] Size: 103 KB
+546. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-17.webp - [Binary] Size: 94.1 KB
+547. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-18.webp - [Binary] Size: 98.9 KB
+548. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-19.webp - [Binary] Size: 87.9 KB
+549. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-2.webp - [Binary] Size: 100.7 KB
+550. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-3.webp - [Binary] Size: 90.7 KB
+551. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-4.webp - [Binary] Size: 72 KB
+552. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-5.webp - [Binary] Size: 90.8 KB
+553. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-6.webp - [Binary] Size: 67.7 KB
+554. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-7.webp - [Binary] Size: 55.6 KB
+555. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-8.webp - [Binary] Size: 79.9 KB
+556. public\assets\images\v2v\career_transitioner\lesson-3.3-p3\lesson-3.3-p3-img-9.webp - [Binary] Size: 73.6 KB
+557. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-1.webp - [Binary] Size: 134.6 KB
+558. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-10.webp - [Binary] Size: 173.6 KB
+559. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-11.webp - [Binary] Size: 90.2 KB
+560. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-12.webp - [Binary] Size: 98.6 KB
+561. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-13.webp - [Binary] Size: 86.9 KB
+562. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-14.webp - [Binary] Size: 103.3 KB
+563. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-15.webp - [Binary] Size: 127.5 KB
+564. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-16.webp - [Binary] Size: 140 KB
+565. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-17.webp - [Binary] Size: 146.8 KB
+566. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-18.webp - [Binary] Size: 115.2 KB
+567. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-19.webp - [Binary] Size: 127.5 KB
+568. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-2.webp - [Binary] Size: 135.9 KB
+569. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-20.webp - [Binary] Size: 131.8 KB
+570. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-3.webp - [Binary] Size: 117.9 KB
+571. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-4.webp - [Binary] Size: 127.6 KB
+572. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-5.webp - [Binary] Size: 120.7 KB
+573. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-6.webp - [Binary] Size: 176.5 KB
+574. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-7.webp - [Binary] Size: 120.6 KB
+575. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-8.webp - [Binary] Size: 113.5 KB
+576. public\assets\images\v2v\career_transitioner\lesson-3.3-p4\lesson-3.3-p4-img-9.webp - [Binary] Size: 130.4 KB
+577. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-1.webp - [Binary] Size: 98 KB
+578. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-10.webp - [Binary] Size: 85 KB
+579. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-11.webp - [Binary] Size: 107.7 KB
+580. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-12.webp - [Binary] Size: 103.1 KB
+581. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-13.webp - [Binary] Size: 81.2 KB
+582. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-14.webp - [Binary] Size: 59.3 KB
+583. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-15.webp - [Binary] Size: 74.9 KB
+584. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-16.webp - [Binary] Size: 89.7 KB
+585. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-17.webp - [Binary] Size: 86.1 KB
+586. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-18.webp - [Binary] Size: 108.5 KB
+587. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-19.webp - [Binary] Size: 94.7 KB
+588. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-2.webp - [Binary] Size: 71.6 KB
+589. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-3.webp - [Binary] Size: 89.9 KB
+590. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-4.webp - [Binary] Size: 85 KB
+591. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-5.webp - [Binary] Size: 78.7 KB
+592. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-6.webp - [Binary] Size: 80.6 KB
+593. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-7.webp - [Binary] Size: 124.5 KB
+594. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-8.webp - [Binary] Size: 68.7 KB
+595. public\assets\images\v2v\career_transitioner\lesson-4.1-p1\lesson-4.1-p1-img-9.webp - [Binary] Size: 60 KB
+596. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-1.webp - [Binary] Size: 82.3 KB
+597. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-10.webp - [Binary] Size: 68.8 KB
+598. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-11.webp - [Binary] Size: 68.5 KB
+599. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-12.webp - [Binary] Size: 55 KB
+600. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-13.webp - [Binary] Size: 60.8 KB
+601. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-14.webp - [Binary] Size: 65.2 KB
+602. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-15.webp - [Binary] Size: 53.8 KB
+603. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-16.webp - [Binary] Size: 73 KB
+604. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-17.webp - [Binary] Size: 68.7 KB
+605. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-18.webp - [Binary] Size: 54.9 KB
+606. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-19.webp - [Binary] Size: 66.2 KB
+607. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-2.webp - [Binary] Size: 76.7 KB
+608. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-3.webp - [Binary] Size: 58.4 KB
+609. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-4.webp - [Binary] Size: 52.4 KB
+610. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-5.webp - [Binary] Size: 79.3 KB
+611. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-6.webp - [Binary] Size: 62.4 KB
+612. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-7.webp - [Binary] Size: 67.9 KB
+613. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-8.webp - [Binary] Size: 65.6 KB
+614. public\assets\images\v2v\career_transitioner\lesson-4.1-p2\lesson-4.1-p2-img-9.webp - [Binary] Size: 62.4 KB
+615. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-1.webp - [Binary] Size: 115.6 KB
+616. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-10.webp - [Binary] Size: 124.3 KB
+617. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-11.webp - [Binary] Size: 111.8 KB
+618. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-12.webp - [Binary] Size: 114.1 KB
+619. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-13.webp - [Binary] Size: 106.9 KB
+620. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-14.webp - [Binary] Size: 116.8 KB
+621. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-2.webp - [Binary] Size: 119.5 KB
+622. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-3.webp - [Binary] Size: 115.6 KB
+623. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-4.webp - [Binary] Size: 104.9 KB
+624. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-5.webp - [Binary] Size: 97.6 KB
+625. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-6.webp - [Binary] Size: 102.2 KB
+626. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-7.webp - [Binary] Size: 113.6 KB
+627. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-8.webp - [Binary] Size: 140.2 KB
+628. public\assets\images\v2v\career_transitioner\lesson-4.1-p3\lesson-4.1-p3-img-9.webp - [Binary] Size: 97.3 KB
+629. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-1.webp - [Binary] Size: 79.7 KB
+630. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-10.webp - [Binary] Size: 108.2 KB
+631. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-11.webp - [Binary] Size: 87.6 KB
+632. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-12.webp - [Binary] Size: 87.1 KB
+633. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-13.webp - [Binary] Size: 94.7 KB
+634. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-14.webp - [Binary] Size: 75.9 KB
+635. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-15.webp - [Binary] Size: 87.6 KB
+636. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-2.webp - [Binary] Size: 88.8 KB
+637. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-3.webp - [Binary] Size: 111.8 KB
+638. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-4.webp - [Binary] Size: 107.4 KB
+639. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-5.webp - [Binary] Size: 79.6 KB
+640. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-6.webp - [Binary] Size: 94.7 KB
+641. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-7.webp - [Binary] Size: 144.3 KB
+642. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-8.webp - [Binary] Size: 72.7 KB
+643. public\assets\images\v2v\career_transitioner\lesson-4.1-p4\lesson-4.1-p4-img-9.webp - [Binary] Size: 106.2 KB
+644. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-1.webp - [Binary] Size: 48.1 KB
+645. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-10.webp - [Binary] Size: 54.8 KB
+646. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-11.webp - [Binary] Size: 50.8 KB
+647. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-12.webp - [Binary] Size: 65.1 KB
+648. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-13.webp - [Binary] Size: 42.2 KB
+649. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-14.webp - [Binary] Size: 33.6 KB
+650. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-2.webp - [Binary] Size: 33.1 KB
+651. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-3.webp - [Binary] Size: 49.1 KB
+652. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-4.webp - [Binary] Size: 35.1 KB
+653. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-5.webp - [Binary] Size: 53.8 KB
+654. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-6.webp - [Binary] Size: 69.7 KB
+655. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-7.webp - [Binary] Size: 33.4 KB
+656. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-8.webp - [Binary] Size: 51.7 KB
+657. public\assets\images\v2v\career_transitioner\lesson-4.2-p1\lesson-4.2-p1-img-9.webp - [Binary] Size: 40.2 KB
+658. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-1.webp - [Binary] Size: 158.5 KB
+659. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-10.webp - [Binary] Size: 88.7 KB
+660. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-11.webp - [Binary] Size: 149.4 KB
+661. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-12.webp - [Binary] Size: 114.7 KB
+662. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-13.webp - [Binary] Size: 116.8 KB
+663. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-2.webp - [Binary] Size: 142.4 KB
+664. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-3.webp - [Binary] Size: 112 KB
+665. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-4.webp - [Binary] Size: 144.7 KB
+666. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-5.webp - [Binary] Size: 135.5 KB
+667. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-6.webp - [Binary] Size: 159.6 KB
+668. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-7.webp - [Binary] Size: 141.8 KB
+669. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-8.webp - [Binary] Size: 169.6 KB
+670. public\assets\images\v2v\career_transitioner\lesson-4.2-p2\lesson-4.2-p2-img-9.webp - [Binary] Size: 122.4 KB
+671. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-1.webp - [Binary] Size: 65.9 KB
+672. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-10.webp - [Binary] Size: 82.1 KB
+673. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-11.webp - [Binary] Size: 54.9 KB
+674. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-12.webp - [Binary] Size: 66.6 KB
+675. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-13.webp - [Binary] Size: 37.1 KB
+676. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-14.webp - [Binary] Size: 44 KB
+677. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-15.webp - [Binary] Size: 60.6 KB
+678. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-2.webp - [Binary] Size: 53.7 KB
+679. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-3.webp - [Binary] Size: 55.6 KB
+680. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-4.webp - [Binary] Size: 89.1 KB
+681. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-5.webp - [Binary] Size: 61.1 KB
+682. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-6.webp - [Binary] Size: 74.4 KB
+683. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-7.webp - [Binary] Size: 54.3 KB
+684. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-8.webp - [Binary] Size: 90.1 KB
+685. public\assets\images\v2v\career_transitioner\lesson-4.2-p3\lesson-4.2-p3-img-9.webp - [Binary] Size: 89.9 KB
+686. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-1.webp - [Binary] Size: 87 KB
+687. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-10.webp - [Binary] Size: 128.1 KB
+688. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-11.webp - [Binary] Size: 104.1 KB
+689. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-12.webp - [Binary] Size: 124.6 KB
+690. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-13.webp - [Binary] Size: 109 KB
+691. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-14.webp - [Binary] Size: 105.3 KB
+692. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-15.webp - [Binary] Size: 158.5 KB
+693. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-2.webp - [Binary] Size: 94.6 KB
+694. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-3.webp - [Binary] Size: 107 KB
+695. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-4.webp - [Binary] Size: 109 KB
+696. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-5.webp - [Binary] Size: 117.6 KB
+697. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-6.webp - [Binary] Size: 106.5 KB
+698. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-7.webp - [Binary] Size: 117.5 KB
+699. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-8.webp - [Binary] Size: 89.3 KB
+700. public\assets\images\v2v\career_transitioner\lesson-4.2-p4\lesson-4.2-p4-img-9.webp - [Binary] Size: 102.4 KB
+701. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-1.webp - [Binary] Size: 111.7 KB
+702. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-10.webp - [Binary] Size: 116.8 KB
+703. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-11.webp - [Binary] Size: 129.7 KB
+704. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-12.webp - [Binary] Size: 163.9 KB
+705. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-13.webp - [Binary] Size: 141.3 KB
+706. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-14.webp - [Binary] Size: 120.8 KB
+707. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-15.webp - [Binary] Size: 109.3 KB
+708. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-2.webp - [Binary] Size: 129.4 KB
+709. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-3.webp - [Binary] Size: 168.5 KB
+710. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-4.webp - [Binary] Size: 143.1 KB
+711. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-5.webp - [Binary] Size: 160.1 KB
+712. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-6.webp - [Binary] Size: 123.8 KB
+713. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-7.webp - [Binary] Size: 111.4 KB
+714. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-8.webp - [Binary] Size: 129.7 KB
+715. public\assets\images\v2v\career_transitioner\lesson-4.3-p1\lesson-4.3-p1-img-9.webp - [Binary] Size: 181 KB
+716. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-1.webp - [Binary] Size: 95.1 KB
+717. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-10.webp - [Binary] Size: 100.7 KB
+718. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-11.webp - [Binary] Size: 92.9 KB
+719. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-12.webp - [Binary] Size: 91.9 KB
+720. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-13.webp - [Binary] Size: 94.5 KB
+721. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-14.webp - [Binary] Size: 76.6 KB
+722. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-15.webp - [Binary] Size: 87.8 KB
+723. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-2.webp - [Binary] Size: 126.7 KB
+724. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-3.webp - [Binary] Size: 89.5 KB
+725. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-4.webp - [Binary] Size: 103 KB
+726. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-5.webp - [Binary] Size: 103 KB
+727. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-6.webp - [Binary] Size: 109 KB
+728. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-7.webp - [Binary] Size: 83.8 KB
+729. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-8.webp - [Binary] Size: 117.9 KB
+730. public\assets\images\v2v\career_transitioner\lesson-4.3-p2\lesson-4.3-p2-img-9.webp - [Binary] Size: 74.2 KB
+731. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-1.webp - [Binary] Size: 95.5 KB
+732. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-10.webp - [Binary] Size: 126.2 KB
+733. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-11.webp - [Binary] Size: 115.3 KB
+734. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-12.webp - [Binary] Size: 118.7 KB
+735. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-13.webp - [Binary] Size: 118.3 KB
+736. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-2.webp - [Binary] Size: 111.4 KB
+737. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-3.webp - [Binary] Size: 110 KB
+738. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-4.webp - [Binary] Size: 81.3 KB
+739. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-5.webp - [Binary] Size: 98.1 KB
+740. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-6.webp - [Binary] Size: 102.6 KB
+741. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-7.webp - [Binary] Size: 113.5 KB
+742. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-8.webp - [Binary] Size: 87.7 KB
+743. public\assets\images\v2v\career_transitioner\lesson-4.3-p3\lesson-4.3-p3-img-9.webp - [Binary] Size: 116 KB
+744. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-1.webp - [Binary] Size: 141 KB
+745. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-10.webp - [Binary] Size: 106.8 KB
+746. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-11.webp - [Binary] Size: 154.6 KB
+747. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-12.webp - [Binary] Size: 96.7 KB
+748. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-13.webp - [Binary] Size: 121.8 KB
+749. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-14.webp - [Binary] Size: 107.9 KB
+750. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-15.webp - [Binary] Size: 94.9 KB
+751. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-2.webp - [Binary] Size: 121.3 KB
+752. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-3.webp - [Binary] Size: 121.1 KB
+753. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-4.webp - [Binary] Size: 102.3 KB
+754. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-5.webp - [Binary] Size: 89.1 KB
+755. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-6.webp - [Binary] Size: 100 KB
+756. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-7.webp - [Binary] Size: 136.9 KB
+757. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-8.webp - [Binary] Size: 106.4 KB
+758. public\assets\images\v2v\career_transitioner\lesson-4.3-p4\lesson-4.3-p4-img-9.webp - [Binary] Size: 83.8 KB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -14677,6 +15296,52 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
     }
 }
 
+/**
+ * Performs a RAG lookup against a specified knowledge base.
+ */
+async function performRagLookup(query: string, kbIdentifier: string, embeddingUrl: string, k: number): Promise<{ retrievedContext: string; retrievedDocsLog: string; }> {
+    let retrievedContext = '';
+    let retrievedDocsLog = 'No documents retrieved.';
+    try {
+        const faissFile = `${kbIdentifier}_faiss.index`;
+        const chunksFile = `${kbIdentifier}_chunks.json`;
+
+        const publicPath = path.join(process.cwd(), 'public');
+        const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
+        const chunksPath = path.join(publicPath, 'data', 'embeddings', chunksFile);
+
+        const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
+        const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
+
+        if (!faissExists || !chunksExist) {
+            throw new Error(`Embedding files not found. Ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`);
+        }
+
+        const index = Index.read(faissPath);
+        const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
+        const queryEmbedding = await getEmbedding(query, embeddingUrl);
+
+        if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
+            const { labels, distances } = index.search(queryEmbedding, k);
+            if (labels.length > 0) {
+                const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
+                retrievedContext = results.join('\n\n---\n\n');
+                retrievedDocsLog = `Retrieved ${results.length} documents from '${kbIdentifier}' KB:\n${results.map((doc, i) => `  Doc ${i + 1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
+            }
+        } else if (!queryEmbedding) {
+            throw new Error("Could not generate embedding for the query.");
+        } else {
+            throw new Error(`Embedding dimension mismatch. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`);
+        }
+    } catch (error: any) {
+        console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB:`, error);
+        retrievedContext = `RAG system failed: ${error.message}.`;
+        retrievedDocsLog = `RAG Error: ${error.message}`;
+    }
+    return { retrievedContext, retrievedDocsLog };
+}
+
+
 const markdownFormattingInstruction = `
 Use standard GitHub Flavored Markdown for all formatting.
 - For lists, use compact formatting. The content must be on the same line as the bullet or number. For example, write "- First item" and NOT "-
@@ -14711,7 +15376,7 @@ ${markdownFormattingInstruction}`
 // C89: New persona-aware suggestion prompts
 const suggestionSystemPrompts = {
     page: {
-        default: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
+        default: `Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Your questions should be deeper, drawing connections between the original page content and the extra context provided. Respond ONLY with a valid JSON array of strings. Do not include any other text, explanation, or markdown formatting. Your entire response must be parseable as JSON.
 
 Example of a PERFECT response:
 ["What is the main benefit of this feature?", "How does this compare to other methods?"]`,
@@ -14744,11 +15409,8 @@ export async function POST(request: Request) {
   if (task === 'generate_suggestions') {
     const suggestionPromptType = (suggestionType === 'page' || suggestionType === 'conversation') ? suggestionType : 'page';
     
-    let systemPrompt = suggestionPromptType === 'conversation' 
-        ? suggestionSystemPrompts.conversation 
-        : suggestionSystemPrompts.page.default;
+    let systemPrompt = suggestionSystemPrompts.page.default;
 
-    // C89: Persona-aware prompt selection for academy page suggestions
     if (suggestionPromptType === 'page' && kbIdentifier === 'academy' && reportName) {
         if (reportName.includes('career_transitioner')) {
             systemPrompt = suggestionSystemPrompts.page.career_transitioner;
@@ -14757,19 +15419,27 @@ export async function POST(request: Request) {
         } else if (reportName.includes('young_precocious')) {
             systemPrompt = suggestionSystemPrompts.page.young_precocious;
         }
+    } else if (suggestionPromptType === 'conversation') {
+        systemPrompt = suggestionSystemPrompts.conversation;
     }
 
-    const contextTypeLabel = suggestionPromptType === 'page' ? 'DOCUMENT TEXT' : 'CONVERSATION HISTORY';
+    const { retrievedContext, retrievedDocsLog } = await performRagLookup(context, kbIdentifier, embeddingUrl, 3);
+    console.log(`[Chat API - Suggestions] RAG Diagnostic for page context using KB: '${kbIdentifier}'`);
+    console.log(`[Chat API - Suggestions] ${retrievedDocsLog}`);
 
     try {
         const suggestionPrompt = `
 System: ${systemPrompt}
 
---- START ${contextTypeLabel} ---
+--- START ORIGINAL DOCUMENT TEXT ---
 ${context}
---- END ${contextTypeLabel} ---
+--- END ORIGINAL DOCUMENT TEXT ---
 
-User: Generate questions based on the text above.
+--- START EXTRA CONTEXT FROM KNOWLEDGE BASE ---
+${retrievedContext}
+--- END EXTRA CONTEXT FROM KNOWLEDGE BASE ---
+
+User: Generate insightful questions based on all the text provided above.
 
 Assistant:`;
 
@@ -14827,52 +15497,7 @@ Assistant:`;
   }
 
   // --- Existing RAG and Chat Logic ---
-  let retrievedContext = '';
-  let retrievedDocsLog = 'No documents retrieved.';
-  try {
-    const faissFile = `${kbIdentifier}_faiss.index`;
-    const chunksFile = `${kbIdentifier}_chunks.json`;
-
-    const publicPath = path.join(process.cwd(), 'public');
-    const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
-    const chunksPath = path.join(publicPath, 'data', 'embeddings', chunksFile);
-
-    const faissExists = await fs.stat(faissPath).then(() => true).catch(() => false);
-    const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
-
-    if (!faissExists || !chunksExist) {
-        const errorMessage = `Embedding files for knowledge base '${kbIdentifier}' not found. Please ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`;
-        console.error(`[Chat API] RAG Error: ${errorMessage}`);
-        retrievedContext = `RAG system failed: ${errorMessage}`;
-    } else {
-        const index = Index.read(faissPath);
-        const chunks = JSON.parse(await fs.readFile(chunksPath, 'utf-8'));
-        
-        const queryEmbedding = await getEmbedding(prompt, embeddingUrl);
-
-        if (queryEmbedding && index.getDimension() === queryEmbedding.length) {
-            const { labels, distances } = index.search(queryEmbedding, 6);
-            
-            if (labels.length > 0) {
-                const results = labels.map((labelIndex: number) => chunks[labelIndex]?.chunk).filter(Boolean);
-                retrievedContext = results.join('\n\n---\n\n');
-                retrievedDocsLog = `Retrieved ${results.length} documents from '${kbIdentifier}' KB:\n${results.map((doc, i) => `  Doc ${i+1} (Dist: ${distances[i].toFixed(4)}): "${doc.substring(0, 80)}..."`).join('\n')}`;
-            }
-        } else if (!queryEmbedding) {
-            retrievedContext = "RAG system failed: Could not generate embedding for the query.";
-            retrievedDocsLog = "RAG Error: Could not generate embedding for the query.";
-        } else {
-            const errorMessage = `Embedding dimension mismatch for '${kbIdentifier}' KB. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`;
-            console.error(`[Chat API] RAG Error: ${errorMessage}`);
-            retrievedContext = `RAG system failed: ${errorMessage}`;
-            retrievedDocsLog = `RAG Error: ${errorMessage}`;
-        }
-    }
-  } catch (error: any) {
-    console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB: Could not load vector store or retrieve documents.`, error);
-    retrievedContext = `RAG system failed: ${error.message}.`;
-    retrievedDocsLog = `RAG Error: ${error.message}`;
-  }
+  const { retrievedContext, retrievedDocsLog } = await performRagLookup(prompt, kbIdentifier, embeddingUrl, 6);
 
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
@@ -21618,6 +22243,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C91 (Add knowledgeBase to _fetchSuggestions call)
 // Updated on: C90 (Refactor suggestion fetches to use store's reportName)
 // Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
 // Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
@@ -21854,7 +22480,7 @@ const createInitialReportState = (): ReportState => ({
 
 const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
-    if (reportName.startsWith('v2v-academy')) return ACADEMY_DEFAULT_SUGGESTIONS;
+    if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
@@ -21868,6 +22494,13 @@ const _fetchSuggestions = async (
     const MAX_RETRIES = 3;
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
+            let knowledgeBase = 'report'; // default
+            if (reportName === 'whitepaper') {
+                knowledgeBase = 'dce';
+            } else if (reportName.startsWith('v2v_')) {
+                knowledgeBase = 'academy';
+            }
+
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -21876,6 +22509,7 @@ const _fetchSuggestions = async (
                     suggestionType,
                     context,
                     reportName, // C89: Pass reportName to backend for persona-specific prompts
+                    knowledgeBase, // C91: Pass knowledgeBase to backend for RAG lookup
                 }),
             });
 
@@ -27159,10 +27793,9 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A "rogue's gallery" of digital phantoms. Each phantom represents a different AI failure mode: a ghost labeled "Hallucination" offers a non-existent API function; a tangled knot of wires labeled "Flawed Logic" shows a broken process; a block of code with a hidden skull-and-crossbones icon is labeled "Security Vulnerability."
     *   **Approach 2:** A medical diagnostic AI presents a report to a doctor. The report contains several subtle errors highlighted for the viewer: a "Hallucinated" reference to a non-existent medical study, a "Logical Error" in calculating a dosage, and a "Misalignment" where it suggests a treatment that violates hospital policy.
 *   **Page 3 (Method):**
-    *   **Approach 1:** A professional is shown at a workstation with a large, clear diff viewer. They are comparing the "Original File" on the left with the "AI-Generated File" on the right, with the changes clearly highlighted. Their process is methodical and focused.
-    *   **Approach 2:** An editor is reviewing a manuscript. They are using a red pen to mark up the text, but their process is structured: first, they check the overall plot (the plan), then the chapter structure (the architecture), and finally the sentence-level grammar (the line-by-line changes).
+    A professional is shown at a workstation with a large, clear diff viewer. They are comparing the "Original File" on the left with the "AI-Generated File" on the right, with the changes clearly highlighted. Their process is methodical and focused.
+
 *   **Page 4 (Feedback Loop):**
-    *   **Approach 1:** A diagram showing a virtuous cycle. An "AI Output" is fed into a "Human Critique" phase. The output of the critique is a "Refined Prompt," which is then fed back to the AI, resulting in an "Improved Output."
     *   **Approach 2:** A professional is coaching an AI assistant. The AI has made a mistake on a report. Instead of fixing it herself, the professional is shown writing a clear, corrective instruction and giving it back to the AI, teaching it how to do it correctly next time.
 
 ---
@@ -27189,21 +27822,17 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A scientist is in a lab. They run an experiment (the AI's code), the experiment produces an unexpected result (an error), they analyze the result, adjust the parameters of the experiment (the prompt), and run it again.
 *   **Page 2 (Error Types):**
     *   **Approach 1:** A clean, infographic-style diagram showing three types of errors. "Compiler Error" is represented by a document with grammatical mistakes highlighted. "Runtime Error" is a machine trying to perform an impossible action, like fitting a square peg in a round hole. "Logical Error" is a perfectly built machine that is driving in the wrong direction.
-    *   **Approach 2:** A doctor is diagnosing a patient. They identify three different types of problems: a "Syntax Error" (a miswritten prescription), a "Runtime Error" (a prescribed medicine that the patient is allergic to), and a "Logical Error" (a correct prescription for the wrong illness).
 *   **Page 3 (Workflow):**
     *   **Approach 1:** A step-by-step diagram of the feedback loop. 1. An AI generates a block of code. 2. The code is run, and a red error message (stack trace) appears in a terminal. 3. The professional highlights and copies the full error message. 4. The error is pasted into the "Ephemeral Context" of the DCE with a new, simple prompt: "Fix this."
-    *   **Approach 2:** An after-action review in a corporate setting. A project has failed. The team is shown putting the "Failure Report" (the error message) into the input hopper for the "Next Project's Planning Phase" (the next prompt), ensuring the same mistake isn't made twice.
 *   **Page 4 (Advantage):**
     *   **Approach 1:** A graph showing a steep, upward-curving line labeled "V2V Learning Curve," demonstrating rapid skill acquisition. The line is fueled by small, iterative cycles of "Error -> Feedback -> Correction."
     *   **Approach 2:** A professional is shown climbing a staircase labeled "Expertise." Each step is labeled with a different error they have learned to solve (e.g., "TypeError," "NullPointerException," "Off-by-One Error"), showing that mastery is built by overcoming a series of challenges.
 
 ### **Lesson 3.3: The Test-and-Revert Workflow**
 *   **Page 1 (Safety Net):**
-    *   **Approach 1:** A professional engineer is shown working on a complex blueprint. To their side is a prominent, glowing "UNDO" button. The engineer is confidently making a bold change to the blueprint, knowing they can instantly revert it if it doesn't work. The scene conveys a sense of safety, confidence, and controlled experimentation.
     *   **Approach 2:** A bomb disposal expert is working on a device, but they are inside a heavily reinforced containment chamber. They can work without fear because any potential explosion is safely contained. The chamber is labeled "Git Baseline."
 *   **Page 2 (Importance):**
     *   **Approach 1:** A diagram shows a single prompt leading to three different AI-generated outcomes, visualized as branching, unpredictable paths. One path leads to a green checkmark ("Success"), while the other two lead to red X's ("Bugs," "Logic Flaw"). A human figure stands at the branching point, protected by a glowing shield labeled "Git Baseline."
-    *   **Approach 2:** A pharmaceutical researcher is testing three new drug compounds (AI solutions). Instead of testing them on a live patient, they are testing each one on a separate, disposable lab culture. If a culture dies (the test fails), it has no impact on the main project.
 *   **Page 3 (Workflow):**
     *   **Approach 1:** A clear, four-step flowchart. 1. **Baseline:** A developer clicks a "Baseline (Commit)" button, creating a snapshot. 2. **Accept:** The developer accepts AI-generated code into their project. 3. **Test:** The developer runs a series of automated tests, which show a "FAIL" status. 4. **Restore:** The developer clicks a "Restore Baseline" button, and the project instantly reverts to the original snapshot.
     *   **Approach 2:** An animated sequence showing a developer's screen. They save their game ("Baseline"). They try a new strategy and lose ("Test"). They immediately load their last save ("Restore") and are back to where they started, ready to try a different strategy.
@@ -27232,7 +27861,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
 ### **Lesson 4.2: The Blank Page Problem**
 *   **Page 1 (Challenge):**
     *   **Approach 1:** A professional stands before a vast, empty, and intimidatingly white digital canvas. They hold a single glowing seed of an idea, looking uncertain about where to plant it. The scene conveys the daunting nature of starting a complex project from a completely blank state.
-    *   **Approach 2:** An author is sitting at a desk with an old-fashioned typewriter, staring at a single blank page, completely stuck. This classic image is updated with a futuristic, minimalist aesthetic.
+
 *   **Page 2 (Solution):**
     *   **Approach 1:** A professional is shown presenting their "Project Scope" document to a powerful AI. The AI processes the document and, in response, generates a complete and perfectly organized architectural blueprint, including folder structures, foundational code files, and key planning artifacts.
     *   **Approach 2:** A construction foreman hands a set of blueprints to a team of robotic builders. The robots immediately get to work, rapidly assembling the entire steel frame (scaffolding) of a new building.
@@ -27252,7 +27881,6 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** An image of a master chef (the AI) instantly completing all the tedious prep work (chopping vegetables, preparing sauces) for a complex recipe, allowing the student chef (the user) to focus on the creative part of cooking and assembly.
 *   **Page 3 (Architectural Prompt):**
     *   **Approach 1:** A professional is shown typing a clear, structured prompt. The prompt instructs the AI to "Act as a senior software architect" and "Generate the file and folder structure" for a specific tech stack (e.g., Next.js, TypeScript, TailwindCSS) based on the provided project scope.
-    *   **Approach 2:** A client is giving a very specific and detailed brief to an architectural firm. The brief includes the desired style (modern), materials (steel and glass), and the number of rooms, giving the architects a clear set of constraints to work within.
 *   **Page 4 (Cycle 1):**
     *   **Approach 1:** The newly generated project structure is shown inside the DCE. The developer clicks the "Accept Selected" button, and the files instantly appear in their workspace. The final shot shows them running the application for the first time, with a "Hello World" screen visible.
     *   **Approach 2:** A time-lapse sequence. It starts with a blueprint, then shows a foundation being instantly laid by robots, and ends with the lights turning on in the newly constructed ground floor, signifying the start of the "real" work.
@@ -27841,7 +28469,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The 'Garbage In, Garbage Out' principle.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 21
+      "imageCount": 20
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -27849,7 +28477,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Curator's Method.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 22
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -27857,7 +28485,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 18
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -27865,7 +28493,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The professional's guide to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -27873,7 +28501,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The cost of ambiguity in AI.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -27881,7 +28509,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Practical annotation techniques.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -27889,7 +28517,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The payoff of data annotation.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",
@@ -27897,7 +28525,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Quality control for AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 18
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -27905,7 +28533,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Common AI failure modes.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 17
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -27913,7 +28541,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The analysis workflow from diff to decision.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -27921,7 +28549,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Closing the feedback loop.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -27929,7 +28557,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The principles of structured AI interaction.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -27937,7 +28565,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Interaction Schema as a briefing document.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -27945,7 +28573,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The business case for structured interaction.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -27953,7 +28581,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A practical example of structured interaction.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -27961,7 +28589,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Leveraging errors as data points.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -27969,7 +28597,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A guide to different error types.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 17
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -27977,7 +28605,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The debugging cycle in practice.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -27985,7 +28613,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Accelerating the learning curve.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -27993,7 +28621,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 16
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -28001,7 +28629,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Managing non-determinism with a safety net.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 16
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -28009,7 +28637,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -28017,7 +28645,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The advantage of innovating with confidence.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -28025,7 +28653,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Architecting a solution from a business need.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -28033,7 +28661,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Answering the three core questions of project scope.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -28041,7 +28669,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The principle of the Minimum Viable Product.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 14
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -28049,7 +28677,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Writing the Project Scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -28057,7 +28685,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The challenge of the Blank Page Problem.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 14
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -28065,7 +28693,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "AI as a scaffolding engine.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 13
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -28073,7 +28701,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The DCE's 'Cycle 0' onboarding workflow.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -28081,7 +28709,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Commanding the AI to architect the foundation.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -28089,7 +28717,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Generating an architectural blueprint from a scope.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -28097,7 +28725,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI as a technical architect.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
@@ -28105,7 +28733,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Writing the architectural scaffolding prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 13
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -28113,7 +28741,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Kicking off Cycle 1 from the AI-generated blueprint.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     }
   }
 }
@@ -30049,6 +30677,6518 @@ The setup uses a **reverse proxy** architecture. A single Caddy web server liste
 *   Navigate to `https://aiascent.game` in your browser. You should see the game.
 *   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
 *   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 107568
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 95006
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 111394
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 100790
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 109760
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 115150
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 88218
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 128918
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 101320
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 128328
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-19.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 239572
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 111542
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-20.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 239646
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-21.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-21.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 307310
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-22.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-22.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 349260
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 108874
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 106656
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 114754
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 106996
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 129984
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 107144
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p3/lesson-2.1-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 91156
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 128918
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 83532
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 94984
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 76196
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 79402
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109170
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 96922
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 107260
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 98360
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 103130
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 95120
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 95498
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 85156
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 105504
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 87330
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 86286
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 90294
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.1-p4/lesson-2.1-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.1-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 99570
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 143794
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 106590
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 126114
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 169442
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 140992
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 106768
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 100466
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 147046
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 125166
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 117610
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-19.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 158548
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 130494
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-20.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 113668
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 126584
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 114414
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 155848
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 126496
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 148768
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 169998
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p1/lesson-2.2-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 171320
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 131872
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 151392
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 102618
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 168300
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 80510
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 132830
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 98572
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 205854
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 146456
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 151608
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-19.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 147004
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 169504
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 169242
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 111562
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 111910
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 156402
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 141782
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 131842
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p2/lesson-2.2-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 120858
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 85100
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 57926
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 64462
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 88728
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 67922
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 49620
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 96786
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 64930
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 75028
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 75036
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-19.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 69824
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 61538
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-20.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 77586
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 68966
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 80412
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 70394
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 107780
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 69724
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 72336
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p3/lesson-2.2-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 64016
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 176552
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109250
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 110664
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 123184
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 149696
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 144478
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 151562
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 155364
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 172992
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 167936
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 94776
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 145560
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 126470
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 176892
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.2-p4/lesson-2.2-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.2-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 123602
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 140634
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 163876
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 133070
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 141138
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 140602
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 136832
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 143774
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 120594
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 126356
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 134670
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 173460
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 122052
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 135884
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 101220
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 138664
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 114882
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 114882
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p1/lesson-2.3-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 116934
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 130732
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 97088
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 107662
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 155300
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 86382
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 125516
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 129664
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 166174
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 121090
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 121054
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 109126
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 108806
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 119116
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 192984
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 112806
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 108006
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p2/lesson-2.3-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 137618
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 79312
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 90310
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 115446
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 121164
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 131414
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 110460
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 111686
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 94728
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 130284
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 113406
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-19.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 100722
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 82314
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-20.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 106096
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 108724
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 102350
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 109110
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 111968
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 101112
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 131068
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p3/lesson-2.3-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 134350
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 83186
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 146490
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 101138
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 129538
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 79318
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 84104
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 133398
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-16.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 101656
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-17.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 112932
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-18.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109336
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-19.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 126978
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 102808
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-20.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 167076
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 95474
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 86128
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 112916
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 144910
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 96484
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 157574
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-2.3-p4/lesson-2.3-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-2.3-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-2.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 127496
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 124782
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 160426
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 93540
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 100458
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 158880
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 162100
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 129606
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 143458
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 125594
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 124998
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 127758
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 131412
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-20.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 122556
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 176416
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 113070
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 128722
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 96990
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 126304
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 107318
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p1/lesson-3.1-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 94918
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 81910
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 175218
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 65540
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 103936
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 82598
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 73884
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 111510
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 125584
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 165958
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 97318
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 137884
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 162206
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 151180
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 85972
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p2/lesson-3.1-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 105876
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 86360
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 87756
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 134442
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 106248
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 121340
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 115566
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 107736
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 104448
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 142492
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 85940
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 117962
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 190646
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-20.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 130858
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 142544
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 131104
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 133224
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 83392
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 138136
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 172110
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p3/lesson-3.1-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 174388
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 84330
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 95816
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 149624
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 126678
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 121386
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 113922
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 69166
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 87736
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 86820
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 83654
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 130362
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 71046
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 115958
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 111448
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 69168
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 71432
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 95334
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 87870
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.1-p4/lesson-3.1-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.1-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 99344
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 118632
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 78706
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 133778
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 100074
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 83310
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 122884
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 69198
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 75810
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 70404
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 100852
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 113344
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 96666
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-20.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 85116
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 94172
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 134162
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 81328
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 96970
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 88174
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 69936
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p1/lesson-3.2-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 123036
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 91740
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 90840
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 111808
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 115738
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 77992
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 100426
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 88022
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 74104
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 83936
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 118428
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 131734
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 110812
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 103938
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 89460
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 103868
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 119762
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p2/lesson-3.2-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 128860
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 115120
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 78330
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 90198
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 77664
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 75802
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 79746
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 83052
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 73532
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 81114
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 58508
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 72424
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 105984
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 106454
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 75212
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 55414
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 91226
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 82122
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 79626
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p3/lesson-3.2-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 114390
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 86732
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 79258
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 114848
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 65672
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 118766
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 153558
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 95052
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 151538
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 88824
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 124186
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 71368
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 75594
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-20.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 107368
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 117990
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 75432
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 153558
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 108722
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 66434
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 92744
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.2-p4/lesson-3.2-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.2-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 71238
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 140840
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 125194
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 131704
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 102644
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 155864
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 149404
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 100922
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 141890
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 137388
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 156506
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 133322
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 140422
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 155424
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 139438
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 161788
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p1/lesson-3.3-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 114812
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 153496
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 88856
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 60076
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 132606
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 81604
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 119844
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 58072
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 114192
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 100992
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 91442
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 105684
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 56278
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 84940
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 76886
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 69210
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p2/lesson-3.3-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 61624
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 74342
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 58330
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 94944
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 69950
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 65308
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 108782
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 80236
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 105512
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 96400
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 101234
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 90042
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 103162
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 92912
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 73724
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 92986
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 69328
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 56938
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 81862
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p3/lesson-3.3-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 75330
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 137800
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 177746
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 92320
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 100974
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 88952
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 105744
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 130516
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-16.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 143326
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-17.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 150300
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-18.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 117920
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-19.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 130592
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 139184
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-20.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-20.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 134984
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 120768
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 130708
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 123610
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 180742
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 123504
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 116198
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-3.3-p4/lesson-3.3-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-3.3-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-3.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 133580
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 100350
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 87034
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 110296
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 105580
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 83152
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 60734
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 76702
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-16.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 91850
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-17.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 88178
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-18.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 111118
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-19.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 96982
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 73304
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 92072
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 87054
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 80584
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 82514
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 127490
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 70334
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p1/lesson-4.1-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 61450
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 84232
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 70440
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 70192
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 56364
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 62226
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 66768
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 55096
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-16.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-16.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 74728
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-17.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-17.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 70398
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-18.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-18.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 56224
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-19.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-19.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 67814
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 78556
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 59794
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 53656
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 81246
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 63930
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 69518
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 67176
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p2/lesson-4.1-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 63876
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 118374
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 127266
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 114502
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 116886
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 109486
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 119604
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 122416
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 118374
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 107426
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 99938
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 104654
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 116310
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 143580
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p3/lesson-4.1-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 99610
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 81594
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 110838
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 89658
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 89176
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 96976
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 77692
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 89656
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 90920
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 114442
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109928
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 81504
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 96936
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 147756
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 74426
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.1-p4/lesson-4.1-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.1-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.1-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 108780
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 49254
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 56128
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 51992
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 66662
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 43230
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 34414
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 33896
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 50250
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 35976
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 55094
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 71388
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 34226
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 52988
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p1/lesson-4.2-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 41178
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 162256
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 90878
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 153006
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 117422
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 119650
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 145838
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 114722
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 148194
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 138722
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 163408
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 145232
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 173670
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p2/lesson-4.2-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 125302
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 67444
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 84120
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 56168
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 68194
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 38036
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 45042
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 62078
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 54976
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 56916
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 91260
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 62612
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 76142
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 55604
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 92304
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p3/lesson-4.2-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 92014
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 89068
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 131170
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 106566
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 127568
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 111572
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 107796
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 162268
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 96906
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109600
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 111586
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 120436
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109042
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 120276
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 91448
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.2-p4/lesson-4.2-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.2-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.2-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 104832
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 114412
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 119570
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 132798
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 167826
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 144640
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 123730
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 111910
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 132508
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 172558
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 146552
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 163986
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 126724
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 114056
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 132852
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p1/lesson-4.3-p1-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p1-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p1",
+  "fileType": "WEBP",
+  "sizeInBytes": 185342
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 97344
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 103096
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 95106
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 94144
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 96734
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 78464
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 89918
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 129776
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 91610
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 105502
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 105462
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 111576
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 85790
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 120760
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p2/lesson-4.3-p2-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p2-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p2",
+  "fileType": "WEBP",
+  "sizeInBytes": 75976
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 97796
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 129254
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 118110
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 121582
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 121172
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 114106
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 112618
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 83272
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 100460
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 105032
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 116228
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 89774
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p3/lesson-4.3-p3-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p3-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p3",
+  "fileType": "WEBP",
+  "sizeInBytes": 118766
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-1.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-1.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 144346
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-10.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-10.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 109358
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-11.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-11.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 158296
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-12.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-12.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 99012
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-13.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-13.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 124726
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-14.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-14.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 110516
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-15.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-15.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 97168
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-2.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-2.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 124254
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-3.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-3.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 124004
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-4.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-4.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 104742
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-5.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-5.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 91236
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-6.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-6.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 102396
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-7.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-7.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 140174
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-8.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-8.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 108954
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/career_transitioner/lesson-4.3-p4/lesson-4.3-p4-img-9.webp">
+<metadata>
+{
+  "name": "lesson-4.3-p4-img-9.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/career_transitioner/lesson-4.3-p4",
+  "fileType": "WEBP",
+  "sizeInBytes": 85822
+}
+</metadata>
 </file_artifact>
 
 

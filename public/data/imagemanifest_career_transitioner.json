@@ -184,7 +184,7 @@
       "alt": "Quality control for AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 18
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -192,7 +192,7 @@
       "alt": "Common AI failure modes.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 17
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -200,7 +200,7 @@
       "alt": "The analysis workflow from diff to decision.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -208,7 +208,7 @@
       "alt": "Closing the feedback loop.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -216,7 +216,7 @@
       "alt": "The principles of structured AI interaction.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -224,7 +224,7 @@
       "alt": "The Interaction Schema as a briefing document.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -232,7 +232,7 @@
       "alt": "The business case for structured interaction.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -240,7 +240,7 @@
       "alt": "A practical example of structured interaction.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -248,7 +248,7 @@
       "alt": "Leveraging errors as data points.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -256,7 +256,7 @@
       "alt": "A guide to different error types.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 17
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -264,7 +264,7 @@
       "alt": "The debugging cycle in practice.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -272,7 +272,7 @@
       "alt": "Accelerating the learning curve.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -280,7 +280,7 @@
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 16
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -288,7 +288,7 @@
       "alt": "Managing non-determinism with a safety net.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 16
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -296,7 +296,7 @@
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -304,7 +304,7 @@
       "alt": "The advantage of innovating with confidence.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 20
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -312,7 +312,7 @@
       "alt": "Architecting a solution from a business need.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -320,7 +320,7 @@
       "alt": "Answering the three core questions of project scope.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 19
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -328,7 +328,7 @@
       "alt": "The principle of the Minimum Viable Product.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 14
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -336,7 +336,7 @@
       "alt": "Writing the Project Scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -344,7 +344,7 @@
       "alt": "The challenge of the Blank Page Problem.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 14
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -352,7 +352,7 @@
       "alt": "AI as a scaffolding engine.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 13
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -360,7 +360,7 @@
       "alt": "The DCE's 'Cycle 0' onboarding workflow.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -368,7 +368,7 @@
       "alt": "Commanding the AI to architect the foundation.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -376,7 +376,7 @@
       "alt": "Generating an architectural blueprint from a scope.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -384,7 +384,7 @@
       "alt": "The AI as a technical architect.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
@@ -392,7 +392,7 @@
       "alt": "Writing the architectural scaffolding prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 13
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -400,7 +400,7 @@
       "alt": "Kicking off Cycle 1 from the AI-generated blueprint.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 1
+      "imageCount": 15
     }
   }
 }

@@ -103,10 +103,9 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A "rogue's gallery" of digital phantoms. Each phantom represents a different AI failure mode: a ghost labeled "Hallucination" offers a non-existent API function; a tangled knot of wires labeled "Flawed Logic" shows a broken process; a block of code with a hidden skull-and-crossbones icon is labeled "Security Vulnerability."
     *   **Approach 2:** A medical diagnostic AI presents a report to a doctor. The report contains several subtle errors highlighted for the viewer: a "Hallucinated" reference to a non-existent medical study, a "Logical Error" in calculating a dosage, and a "Misalignment" where it suggests a treatment that violates hospital policy.
 *   **Page 3 (Method):**
-    *   **Approach 1:** A professional is shown at a workstation with a large, clear diff viewer. They are comparing the "Original File" on the left with the "AI-Generated File" on the right, with the changes clearly highlighted. Their process is methodical and focused.
-    *   **Approach 2:** An editor is reviewing a manuscript. They are using a red pen to mark up the text, but their process is structured: first, they check the overall plot (the plan), then the chapter structure (the architecture), and finally the sentence-level grammar (the line-by-line changes).
+    A professional is shown at a workstation with a large, clear diff viewer. They are comparing the "Original File" on the left with the "AI-Generated File" on the right, with the changes clearly highlighted. Their process is methodical and focused.
+
 *   **Page 4 (Feedback Loop):**
-    *   **Approach 1:** A diagram showing a virtuous cycle. An "AI Output" is fed into a "Human Critique" phase. The output of the critique is a "Refined Prompt," which is then fed back to the AI, resulting in an "Improved Output."
     *   **Approach 2:** A professional is coaching an AI assistant. The AI has made a mistake on a report. Instead of fixing it herself, the professional is shown writing a clear, corrective instruction and giving it back to the AI, teaching it how to do it correctly next time.
 
 ---
@@ -133,21 +132,17 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A scientist is in a lab. They run an experiment (the AI's code), the experiment produces an unexpected result (an error), they analyze the result, adjust the parameters of the experiment (the prompt), and run it again.
 *   **Page 2 (Error Types):**
     *   **Approach 1:** A clean, infographic-style diagram showing three types of errors. "Compiler Error" is represented by a document with grammatical mistakes highlighted. "Runtime Error" is a machine trying to perform an impossible action, like fitting a square peg in a round hole. "Logical Error" is a perfectly built machine that is driving in the wrong direction.
-    *   **Approach 2:** A doctor is diagnosing a patient. They identify three different types of problems: a "Syntax Error" (a miswritten prescription), a "Runtime Error" (a prescribed medicine that the patient is allergic to), and a "Logical Error" (a correct prescription for the wrong illness).
 *   **Page 3 (Workflow):**
     *   **Approach 1:** A step-by-step diagram of the feedback loop. 1. An AI generates a block of code. 2. The code is run, and a red error message (stack trace) appears in a terminal. 3. The professional highlights and copies the full error message. 4. The error is pasted into the "Ephemeral Context" of the DCE with a new, simple prompt: "Fix this."
-    *   **Approach 2:** An after-action review in a corporate setting. A project has failed. The team is shown putting the "Failure Report" (the error message) into the input hopper for the "Next Project's Planning Phase" (the next prompt), ensuring the same mistake isn't made twice.
 *   **Page 4 (Advantage):**
     *   **Approach 1:** A graph showing a steep, upward-curving line labeled "V2V Learning Curve," demonstrating rapid skill acquisition. The line is fueled by small, iterative cycles of "Error -> Feedback -> Correction."
     *   **Approach 2:** A professional is shown climbing a staircase labeled "Expertise." Each step is labeled with a different error they have learned to solve (e.g., "TypeError," "NullPointerException," "Off-by-One Error"), showing that mastery is built by overcoming a series of challenges.
 
 ### **Lesson 3.3: The Test-and-Revert Workflow**
 *   **Page 1 (Safety Net):**
-    *   **Approach 1:** A professional engineer is shown working on a complex blueprint. To their side is a prominent, glowing "UNDO" button. The engineer is confidently making a bold change to the blueprint, knowing they can instantly revert it if it doesn't work. The scene conveys a sense of safety, confidence, and controlled experimentation.
     *   **Approach 2:** A bomb disposal expert is working on a device, but they are inside a heavily reinforced containment chamber. They can work without fear because any potential explosion is safely contained. The chamber is labeled "Git Baseline."
 *   **Page 2 (Importance):**
     *   **Approach 1:** A diagram shows a single prompt leading to three different AI-generated outcomes, visualized as branching, unpredictable paths. One path leads to a green checkmark ("Success"), while the other two lead to red X's ("Bugs," "Logic Flaw"). A human figure stands at the branching point, protected by a glowing shield labeled "Git Baseline."
-    *   **Approach 2:** A pharmaceutical researcher is testing three new drug compounds (AI solutions). Instead of testing them on a live patient, they are testing each one on a separate, disposable lab culture. If a culture dies (the test fails), it has no impact on the main project.
 *   **Page 3 (Workflow):**
     *   **Approach 1:** A clear, four-step flowchart. 1. **Baseline:** A developer clicks a "Baseline (Commit)" button, creating a snapshot. 2. **Accept:** The developer accepts AI-generated code into their project. 3. **Test:** The developer runs a series of automated tests, which show a "FAIL" status. 4. **Restore:** The developer clicks a "Restore Baseline" button, and the project instantly reverts to the original snapshot.
     *   **Approach 2:** An animated sequence showing a developer's screen. They save their game ("Baseline"). They try a new strategy and lose ("Test"). They immediately load their last save ("Restore") and are back to where they started, ready to try a different strategy.
@@ -176,7 +171,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
 ### **Lesson 4.2: The Blank Page Problem**
 *   **Page 1 (Challenge):**
     *   **Approach 1:** A professional stands before a vast, empty, and intimidatingly white digital canvas. They hold a single glowing seed of an idea, looking uncertain about where to plant it. The scene conveys the daunting nature of starting a complex project from a completely blank state.
-    *   **Approach 2:** An author is sitting at a desk with an old-fashioned typewriter, staring at a single blank page, completely stuck. This classic image is updated with a futuristic, minimalist aesthetic.
+
 *   **Page 2 (Solution):**
     *   **Approach 1:** A professional is shown presenting their "Project Scope" document to a powerful AI. The AI processes the document and, in response, generates a complete and perfectly organized architectural blueprint, including folder structures, foundational code files, and key planning artifacts.
     *   **Approach 2:** A construction foreman hands a set of blueprints to a team of robotic builders. The robots immediately get to work, rapidly assembling the entire steel frame (scaffolding) of a new building.
@@ -196,7 +191,6 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** An image of a master chef (the AI) instantly completing all the tedious prep work (chopping vegetables, preparing sauces) for a complex recipe, allowing the student chef (the user) to focus on the creative part of cooking and assembly.
 *   **Page 3 (Architectural Prompt):**
     *   **Approach 1:** A professional is shown typing a clear, structured prompt. The prompt instructs the AI to "Act as a senior software architect" and "Generate the file and folder structure" for a specific tech stack (e.g., Next.js, TypeScript, TailwindCSS) based on the provided project scope.
-    *   **Approach 2:** A client is giving a very specific and detailed brief to an architectural firm. The brief includes the desired style (modern), materials (steel and glass), and the number of rooms, giving the architects a clear set of constraints to work within.
 *   **Page 4 (Cycle 1):**
     *   **Approach 1:** The newly generated project structure is shown inside the DCE. The developer clicks the "Accept Selected" button, and the files instantly appear in their workspace. The final shot shows them running the application for the first time, with a "Hello World" screen visible.
     *   **Approach 2:** A time-lapse sequence. It starts with a blueprint, then shows a foundation being instantly laid by robots, and ends with the lights turning on in the newly constructed ground floor, signifying the start of the "real" work.
