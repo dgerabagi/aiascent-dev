@@ -1,6 +1,7 @@
 'use client';
 {
   /*
+  Cycle 95: Add 'V S Code' replacement for TTS.
   Cycle 32: Fix exhaustive-deps warning.
   - Added `currentPageIndex` to the `useCallback` dependency array for `generateAndPlayAudio`.
   Cycle 30: Fix exhaustive-deps warnings.
@@ -52,7 +53,9 @@ const AudioControls: React.FC = () => {
     };
 
     setPlaybackStatus('generating');
-    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
+    let textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
+    // C95: Replace "VS Code" with "V S Code" for better TTS pronunciation
+    textToNarrate = textToNarrate.replace(/VS Code/g, 'V S Code');
 
     try {
       const response = await fetch('/api/tts', {

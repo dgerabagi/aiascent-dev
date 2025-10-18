@@ -41,6 +41,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
+    // C95: Disable suggestions for labs
+    const showSuggestions = !reportName.startsWith('v2v-academy-lab');
+
     useEffect(() => {
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
@@ -145,12 +148,14 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
 
-            // C49: After message is complete, trigger suggestion generation based on conversation
-            const finalHistory = [
-                ...useReportStore.getState().reportChatHistory, 
-                { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
-            ];
-            fetchConversationSuggestions(finalHistory); // C90: Removed reportName
+            // C95: Disable suggestions for labs
+            if (showSuggestions) {
+                const finalHistory = [
+                    ...useReportStore.getState().reportChatHistory, 
+                    { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
+                ];
+                fetchConversationSuggestions(finalHistory);
+            }
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -190,6 +195,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
     const getKnowledgeBaseName = (name: string) => {
         if (name === 'whitepaper') return 'DCE Docs';
+        if (name.startsWith('v2v-academy-lab')) return 'Lab Mode';
         if (name.startsWith('v2v_')) return 'Academy KB';
         return 'Report KB';
     };
@@ -245,38 +251,40 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            <div className="p-2 border-t border-border bg-muted/20">
-                <div className="flex justify-between items-center mb-2 px-1">
-                    <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
-                    <button
-                        onClick={regenerateSuggestions}
-                        className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
-                        title="Generate new suggestions"
-                        disabled={suggestionsStatus === 'loading'}
-                    >
-                        <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
-                    </button>
-                </div>
-                <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
-                    {suggestionsStatus === 'loading' && (
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
-                            <FaSpinner className="animate-spin" />
-                            Generating suggestions...
-                        </div>
-                    )}
-                    {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
-                        <Badge
-                            key={index}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
-                            onClick={() => handleChipClick(prompt)}
-                            title={prompt}
+            {showSuggestions && (
+                <div className="p-2 border-t border-border bg-muted/20">
+                    <div className="flex justify-between items-center mb-2 px-1">
+                        <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
+                        <button
+                            onClick={regenerateSuggestions}
+                            className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
+                            title="Generate new suggestions"
+                            disabled={suggestionsStatus === 'loading'}
                         >
-                            {prompt}
-                        </Badge>
-                    ))}
+                            <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
+                        </button>
+                    </div>
+                    <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
+                        {suggestionsStatus === 'loading' && (
+                            <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                                <FaSpinner className="animate-spin" />
+                                Generating suggestions...
+                            </div>
+                        )}
+                        {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                            <Badge
+                                key={index}
+                                variant="secondary"
+                                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
+                                onClick={() => handleChipClick(prompt)}
+                                title={prompt}
+                            >
+                                {prompt}
+                            </Badge>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
 
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">
                 <textarea

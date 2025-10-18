@@ -1,8 +1,6 @@
 // src/stores/reportStore.ts
+// Updated on: C95 (Add 'V S Code' replacement for TTS)
 // Updated on: C91 (Add knowledgeBase to _fetchSuggestions call)
-// Updated on: C90 (Refactor suggestion fetches to use store's reportName)
-// Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
-// Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -525,13 +523,16 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
                 
                 stopArbitraryText();
-                set({ genericPlaybackStatus: 'generating', genericAudioText: text });
+
+                // C95: Replace "VS Code" with "V S Code" for better TTS pronunciation
+                const modifiedText = text.replace(/VS Code/g, 'V S Code');
+                set({ genericPlaybackStatus: 'generating', genericAudioText: text }); // Store original text for state comparison
 
                 try {
                     const response = await fetch('/api/tts', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text }),
+                        body: JSON.stringify({ text: modifiedText }), // Send modified text to API
                     });
 
                     if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
@@ -667,7 +668,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     reportChatInput: '',
                 });
                 const currentPage = allPages[currentPageIndex];
-                if (currentPage) {
+                if (currentPage && !reportName?.startsWith('v2v-academy-lab')) {
                     fetchPageSuggestions(currentPage); // C90: Removed reportName
                 }
             },

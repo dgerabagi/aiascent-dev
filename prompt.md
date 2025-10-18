@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 95 - iterate on the lab based on feedback
+Current Cycle 96 - second round of feedback
+Cycle 95 - iterate on the lab based on feedback
 Cycle 94 - build out lab steps
 Cycle 93 - create first lab artifacts
 Cycle 92 - upscale/align A77 undergraduate imagery
@@ -741,6 +742,34 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 96>
+<Cycle Context>
+great. here is additional feedback from the second round as i go through and make the images/gifs:
+
+1. can you make the links open in new tabs rather than in the existing tab? when i clicked to go to download visual studio it used my browesr now i have to navigate all back to my training... its a poor user experience.
+
+2. on step 5, lets instead instruct them at this point to click on `Open Folder` from the Data Curation File Tree View. Also lets identify this as the `File Tree View` in the lab the first time they open it (the step where they click on the spiral).
+
+3. the full screen view, for the labs, should instead of providing the image description in the right side panel, it should provide the content, which is the lab steps. also, for the labs, we should provide on this full screen view some arrow buttons which navigate between the pages. some users may prefer this minimized view of just the image/steps needed.
+
+4. you truncated the step on page 6, you need to restore it. im referring to the prompt which the user should be copy/pasting. in addition, can you put that particular part in a code block? that makes it clear to the user what should be copied. also if we could give the user a copy button on the code block that would be a peak user experience.
+
+im actually going to pause and stop at this point, because i would like for the instruction i paste in my gif match identically to that which is in our copied text. therefore, the copied text described in the previous section needs to exist first. good work so far, fix the truncation, address the other issues, and i will continue to build out the gifs for our lab.
+</Cycle Context>
+<Previous Cycle 95 Summary of Actions>
+I have analyzed the request to build out the first lab for the V2V Academy. The core issue is a mismatch between the lab content defined in the markdown artifact `A81` and the scaffolded JSON data (`v2v_lab_1.json`). Additionally, the academy page is failing to load the lab data due to an incorrect filename.
+
+My course of action is to fully populate the lab's content from the source artifact and fix the data loading issue. I will rename the existing lab JSON file to match what the academy page expects and then completely rewrite its contents to align with the 37 detailed steps outlined in `A81`. I will also create the corresponding image manifest required by the report viewer to display the lab's screenshots.
+
+This will resolve the loading error and provide a complete, step-by-step, interactive lab experience for the user.
+
+1.  **Rename `public/data/v2v_lab_1.json`:** I will rename this file to `public/data/v2v_lab_1_portfolio.json`. This directly fixes the `Failed to fetch content for lab_1_portfolio` error reported in the ephemeral context.
+2.  **Update `public/data/v2v_lab_1_portfolio.json`:** I will completely replace the content of this file. I will meticulously transcribe all 37 steps from `A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md` into the structured JSON format required by the `ReportViewer`, including `pageId`, `pageTitle`, `tldr`, and `content` for each step.
+3.  **Create `public/data/imagemanifest_lab_1_portfolio.json`:** I will create a new image manifest file. This file will contain an `imageGroup` entry for each of the 37 lab steps, defining the path, prompt, and filename for the screenshots that will accompany the lab. This is a necessary step for the `ReportViewer` to load the images.
+4.  **Update `src/app/academy/page.tsx`:** I will adjust the data loading logic to correctly fetch the newly named lab content and manifest files, ensuring the component requests `v2v_lab_1_portfolio.json` and `imagemanifest_lab_1_portfolio.json` when the lab is selected.
+</Previous Cycle 95 Summary of Actions>
+</Cycle 96>
 
 <Cycle 95>
 <Cycle Context>
@@ -4488,10 +4517,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-18T21:35:48.326Z
+  Date Generated: 2025-10-18T22:43:39.479Z
   ---
-  Total Files: 172
-  Approx. Tokens: 481169
+  Total Files: 173
+  Approx. Tokens: 470454
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4500,8 +4529,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8486 tokens)
-7. src\stores\reportStore.ts (8316 tokens)
+6. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
+7. src\stores\reportStore.ts (8340 tokens)
 8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7434 tokens)
 9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
 10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
@@ -4581,14 +4610,14 @@ This file-centric approach helps in planning and prioritizing work, especially i
 72. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
 73. src\components\layout\Header.tsx - Lines: 68 - Chars: 2651 - Tokens: 663
 74. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
-75. src\components\report-viewer\AudioControls.tsx - Lines: 228 - Chars: 9232 - Tokens: 2308
+75. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 300 - Chars: 14026 - Tokens: 3507
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 308 - Chars: 14375 - Tokens: 3594
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 205 - Chars: 8746 - Tokens: 2187
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 206 - Chars: 8820 - Tokens: 2205
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 84. src\components\shared\MarkdownRenderer.tsx - Lines: 66 - Chars: 3044 - Tokens: 761
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -4599,7 +4628,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 729 - Chars: 33262 - Tokens: 8316
+93. src\stores\reportStore.ts - Lines: 730 - Chars: 33358 - Tokens: 8340
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -4653,32 +4682,33 @@ This file-centric approach helps in planning and prioritizing work, especially i
 144. public\data\v2v_content_career_transitioner.json - Lines: 380 - Chars: 55269 - Tokens: 13818
 145. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
 146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49406 - Tokens: 12352
-147. public\data\v2v_imagemanifest.json - Lines: 98 - Chars: 17546 - Tokens: 4387
-148. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
-149. src\app\academy\page.tsx - Lines: 126 - Chars: 5623 - Tokens: 1406
-150. src\components\academy\PersonaSelector.tsx - Lines: 78 - Chars: 3663 - Tokens: 916
-151. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
-152. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
-153. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 196 - Chars: 29272 - Tokens: 7318
-154. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 200 - Chars: 29733 - Tokens: 7434
-155. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
-156. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
-157. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28003 - Tokens: 7001
-158. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25894 - Tokens: 6474
-159. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25510 - Tokens: 6378
-160. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
-161. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
-162. scripts\manage_v2v_images.mjs - Lines: 107 - Chars: 4232 - Tokens: 1058
-163. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
-164. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
-165. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
-166. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
-167. public\data\v2v_lab_1.json - Lines: 74 - Chars: 6065 - Tokens: 1517
-168. public\data\v2v_lab_imagemanifest.json - Lines: 70 - Chars: 3135 - Tokens: 784
-169. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
-170. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 33944 - Tokens: 8486
-171. public\data\imagemanifest_lab_1_portfolio.json - Lines: 43 - Chars: 9569 - Tokens: 2393
-172. public\data\v2v_lab_1_portfolio.json - Lines: 277 - Chars: 28697 - Tokens: 7175
+147. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
+148. src\app\academy\page.tsx - Lines: 126 - Chars: 5623 - Tokens: 1406
+149. src\components\academy\PersonaSelector.tsx - Lines: 78 - Chars: 3663 - Tokens: 916
+150. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
+151. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
+152. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 196 - Chars: 29272 - Tokens: 7318
+153. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 200 - Chars: 29733 - Tokens: 7434
+154. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
+155. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
+156. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28003 - Tokens: 7001
+157. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25894 - Tokens: 6474
+158. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25510 - Tokens: 6378
+159. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
+160. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
+161. scripts\manage_v2v_images.mjs - Lines: 107 - Chars: 4232 - Tokens: 1058
+162. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
+163. context\v2v\create images with imagen 4.md - Lines: 447 - Chars: 20619 - Tokens: 5155
+164. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
+165. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
+166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
+167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
+168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5080 - Tokens: 1270
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 16009 - Tokens: 4003
+170. public\assets\images\v2v\labs\lab-1\step-2-1.png - [Binary] Size: 113.4 KB
+171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
+172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
+173. public\assets\images\v2v\labs\lab-1\step-5-1.gif - [Binary] Size: 700.4 KB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -20100,6 +20130,7 @@ export default MissionSectionBlock;
 'use client';
 {
   /*
+  Cycle 95: Add 'V S Code' replacement for TTS.
   Cycle 32: Fix exhaustive-deps warning.
   - Added `currentPageIndex` to the `useCallback` dependency array for `generateAndPlayAudio`.
   Cycle 30: Fix exhaustive-deps warnings.
@@ -20151,7 +20182,9 @@ const AudioControls: React.FC = () => {
     };
 
     setPlaybackStatus('generating');
-    const textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
+    let textToNarrate = `${currentPage.pageTitle}. ${currentPage.content}`;
+    // C95: Replace "VS Code" with "V S Code" for better TTS pronunciation
+    textToNarrate = textToNarrate.replace(/VS Code/g, 'V S Code');
 
     try {
       const response = await fetch('/api/tts', {
@@ -20531,6 +20564,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
+    // C95: Disable suggestions for labs
+    const showSuggestions = !reportName.startsWith('v2v-academy-lab');
+
     useEffect(() => {
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
@@ -20635,12 +20671,14 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
 
-            // C49: After message is complete, trigger suggestion generation based on conversation
-            const finalHistory = [
-                ...useReportStore.getState().reportChatHistory, 
-                { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
-            ];
-            fetchConversationSuggestions(finalHistory); // C90: Removed reportName
+            // C95: Disable suggestions for labs
+            if (showSuggestions) {
+                const finalHistory = [
+                    ...useReportStore.getState().reportChatHistory, 
+                    { author: 'Ascentia', flag: '🤖', message: finalContent, channel: 'system', status: 'complete' } as ChatMessage
+                ];
+                fetchConversationSuggestions(finalHistory);
+            }
 
         } catch (error: unknown) {
             console.error("Error with chat stream:", error);
@@ -20680,6 +20718,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
     const getKnowledgeBaseName = (name: string) => {
         if (name === 'whitepaper') return 'DCE Docs';
+        if (name.startsWith('v2v-academy-lab')) return 'Lab Mode';
         if (name.startsWith('v2v_')) return 'Academy KB';
         return 'Report KB';
     };
@@ -20735,38 +20774,40 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 ))}
             </div>
 
-            <div className="p-2 border-t border-border bg-muted/20">
-                <div className="flex justify-between items-center mb-2 px-1">
-                    <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
-                    <button
-                        onClick={regenerateSuggestions}
-                        className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
-                        title="Generate new suggestions"
-                        disabled={suggestionsStatus === 'loading'}
-                    >
-                        <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
-                    </button>
-                </div>
-                <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
-                    {suggestionsStatus === 'loading' && (
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
-                            <FaSpinner className="animate-spin" />
-                            Generating suggestions...
-                        </div>
-                    )}
-                    {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
-                        <Badge
-                            key={index}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
-                            onClick={() => handleChipClick(prompt)}
-                            title={prompt}
+            {showSuggestions && (
+                <div className="p-2 border-t border-border bg-muted/20">
+                    <div className="flex justify-between items-center mb-2 px-1">
+                        <h4 className="text-xs font-semibold text-muted-foreground">Suggested Questions</h4>
+                        <button
+                            onClick={regenerateSuggestions}
+                            className="p-1 text-muted-foreground hover:text-foreground disabled:opacity-50"
+                            title="Generate new suggestions"
+                            disabled={suggestionsStatus === 'loading'}
                         >
-                            {prompt}
-                        </Badge>
-                    ))}
+                            <FaSync className={suggestionsStatus === 'loading' ? 'animate-spin' : ''} />
+                        </button>
+                    </div>
+                    <div className="flex gap-2 flex-wrap items-center justify-center min-h-[40px]">
+                        {suggestionsStatus === 'loading' && (
+                            <div className="flex items-center gap-2 text-xs text-muted-foreground italic">
+                                <FaSpinner className="animate-spin" />
+                                Generating suggestions...
+                            </div>
+                        )}
+                        {suggestionsStatus !== 'loading' && suggestedPrompts.map((prompt, index) => (
+                            <Badge
+                                key={index}
+                                variant="secondary"
+                                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors text-xs max-w-xs whitespace-normal text-center"
+                                onClick={() => handleChipClick(prompt)}
+                                title={prompt}
+                            >
+                                {prompt}
+                            </Badge>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
 
             <footer className="p-3 border-t border-border bg-background flex-shrink-0">
                 <textarea
@@ -21022,10 +21063,11 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        if (currentPage) {
-            fetchPageSuggestions(currentPage); // C90: Removed reportName argument
+        // C95: Disable suggested questions for labs
+        if (currentPage && !reportName.startsWith('v2v-academy-lab')) {
+            fetchPageSuggestions(currentPage);
         }
-    }, [currentPage, fetchPageSuggestions]);
+    }, [currentPage, fetchPageSuggestions, reportName]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -21785,10 +21827,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C95 (Add 'V S Code' replacement for TTS)
 // Updated on: C91 (Add knowledgeBase to _fetchSuggestions call)
-// Updated on: C90 (Refactor suggestion fetches to use store's reportName)
-// Updated on: C89 (Add academy default suggestions and pass reportName in fetch)
-// Updated on: C74 (Refactor loadReport to accept data directly, moving fetch logic to components)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -22311,13 +22351,16 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }
                 
                 stopArbitraryText();
-                set({ genericPlaybackStatus: 'generating', genericAudioText: text });
+
+                // C95: Replace "VS Code" with "V S Code" for better TTS pronunciation
+                const modifiedText = text.replace(/VS Code/g, 'V S Code');
+                set({ genericPlaybackStatus: 'generating', genericAudioText: text }); // Store original text for state comparison
 
                 try {
                     const response = await fetch('/api/tts', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text }),
+                        body: JSON.stringify({ text: modifiedText }), // Send modified text to API
                     });
 
                     if (!response.ok) throw new Error(`TTS server failed with status: ${response.status}`);
@@ -22453,7 +22496,7 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                     reportChatInput: '',
                 });
                 const currentPage = allPages[currentPageIndex];
-                if (currentPage) {
+                if (currentPage && !reportName?.startsWith('v2v-academy-lab')) {
                     fetchPageSuggestions(currentPage); // C90: Removed reportName
                 }
             },
@@ -26789,107 +26832,6 @@ This document provides a high-level synthesis of the key insights gleaned from t
 }
 </file_artifact>
 
-<file path="public/data/v2v_imagemanifest.json">
-{
-  "manifestId": "v2v-academy-images-v1",
-  "basePath": "/assets/images/report/",
-  "imageGroups": {
-    "lesson-1.1-p1-ig1": {
-      "path": "part-i-the-proof/the-virtuosos-loop/the-professionals-playbook/prompt-1/",
-      "prompt": "A cinematic, wide-angle shot of a seasoned professional in a modern, minimalist office. They stand at a holographic interface, orchestrating a complex workflow visualized as a glowing, circular loop of data flowing between stages: \"Curation,\" \"Parallel Prompting,\" \"Validation,\" and \"Integration.\" The professional is calm and in control, conducting the flow with strategic intent.",
-      "alt": "An expert orchestrating a complex AI workflow.",
-      "baseFileName": "the-professionals-playbook-p1-img-",
-      "fileExtension": ".webp",
-      "imageCount": 1
-    },
-    "lesson-1.1-p2-ig1": {
-      "path": "part-i-the-proof/the-virtuosos-loop/curation-and-documentation/prompt-1/",
-      "prompt": "An image depicting the \"Curation\" phase. On the left, a chaotic collection of business reports, spreadsheets, and emails. In the center, a project manager is using a clean interface to select specific documents. On the right, these items form an organized, high-signal data package labeled \"Curated Context.\"",
-      "alt": "The process of curating data from chaos to clarity.",
-      "baseFileName": "curation-and-documentation-p1-img-",
-      "fileExtension": ".webp",
-      "imageCount": 1
-    },
-    "lesson-1.1-p3-ig1": {
-        "path": "part-i-the-proof/the-virtuosos-loop/exploring-the-solution-space/prompt-1/",
-        "prompt": "A visualization of \"Parallel Prompting.\" A single, well-defined business problem is sent out, which then splits and travels down eight parallel pathways to eight identical but separate AI analysts. The pathways return eight distinct, varied strategic proposals.",
-        "alt": "Parallel prompting to get multiple AI solutions.",
-        "baseFileName": "exploring-the-solution-space-p1-img-",
-        "fileExtension": ".webp",
-        "imageCount": 1
-    },
-    "lesson-1.1-p4-ig1": {
-        "path": "part-i-the-proof/the-virtuosos-loop/the-executive-decision/prompt-1/",
-        "prompt": "A close-up of a leader's face, focused and analytical. They are reviewing a futuristic diff viewer comparing two versions of a technical blueprint. Their hand is poised over a glowing \"Select This Response\" button.",
-        "alt": "A leader making a critical decision based on AI-generated options.",
-        "baseFileName": "the-executive-decision-p1-img-",
-        "fileExtension": ".webp",
-        "imageCount": 1
-    },
-    "lesson-1.1-p5-ig1": {
-        "path": "part-i-the-proof/the-virtuosos-loop/risk-mitigation-and-rapid-validation/prompt-1/",
-        "prompt": "A simple, clear flowchart showing a Git-based workflow. A \"Baseline (Commit)\" button creates a \"Safe Restore Point.\" An \"Accept Selected\" arrow applies the AI code to a \"Staging Environment.\" A \"Test\" phase follows. An arrow labeled \"Failure\" leads to a \"Restore Baseline\" button. An arrow labeled \"Success\" moves forward.",
-        "alt": "The Test-and-Revert workflow using Git.",
-        "baseFileName": "risk-mitigation-and-rapid-validation-p1-img-",
-        "fileExtension": ".webp",
-        "imageCount": 1
-    },
-    "lesson-1.1-p6-ig1": {
-        "path": "part-i-the-proof/the-virtuosos-loop/capture-learnings-and-iterate/prompt-1/",
-        "prompt": "A shot of the DCE's Panel. The user is typing notes into the \"Cycle Context\" field, summarizing the key takeaways from the completed cycle. The \"Generate prompt.md\" button is highlighted, leading to a `+` (New Cycle) button.",
-        "alt": "Finalizing a development cycle and preparing for the next one.",
-        "baseFileName": "capture-learnings-and-iterate-p1-img-",
-        "fileExtension": ".webp",
-        "imageCount": 1
-    },
-    "lesson-1.2-p1-ig1": { "path": "placeholder/", "prompt": "A professional in a modern office looking at a holographic screen showing a circular feedback loop diagram.", "alt": "AI as a feedback loop.", "baseFileName": "lesson-1-2-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.2-p2-ig1": { "path": "placeholder/", "prompt": "An image of a digital librarian or archivist in a vast, futuristic library organizing glowing blocks of data.", "alt": "Data Curation as the apex skill.", "baseFileName": "lesson-1-2-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.2-p3-ig1": { "path": "placeholder/", "prompt": "A stunning, cinematic shot of a Starship Enterprise-like vessel exploring a beautiful, colorful nebula.", "alt": "The 'Star Trek' motivation for progress.", "baseFileName": "lesson-1-2-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.2-p4-ig1": { "path": "placeholder/", "prompt": "A wise, holographic mentor figure guiding a professional through a complex strategic blueprint, making the 'hidden curriculum' of expert thinking visible.", "alt": "AI as a Cognitive Mentor.", "baseFileName": "lesson-1-2-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.3-p1-ig1": { "path": "placeholder/", "prompt": "A diverse group of professionals—a project manager, a military officer, a marketing strategist—collaborating in a futuristic workspace, building systems without traditional coding.", "alt": "The Citizen Architect archetype.", "baseFileName": "lesson-1-3-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.3-p2-ig1": { "path": "placeholder/", "prompt": "An image showing a human brain composed of glowing, interconnected circuits, with data streams flowing into it.", "alt": "Cultivating Cognitive Capital.", "baseFileName": "lesson-1-3-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.3-p3-ig1": { "path": "placeholder/", "prompt": "A Citizen Architect presenting a holographic visualization of a new system to community stakeholders.", "alt": "The Architect as a storyteller.", "baseFileName": "lesson-1-3-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-1.3-p4-ig1": { "path": "placeholder/", "prompt": "A 'before and after' diptych showing a shift from a slow, hierarchical corporate structure to a dynamic network of empowered Citizen Architects.", "alt": "The strategic impact of the Citizen Architect.", "baseFileName": "lesson-1-3-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.1-p1-ig1": { "path": "placeholder/", "prompt": "A seasoned professional transforming a chaotic storm of digital information into a clean, structured, and glowing data stream.", "alt": "The principles of Data Curation.", "baseFileName": "lesson-2-1-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.1-p2-ig1": { "path": "placeholder/", "prompt": "A side-by-side comparison of an AI producing a nonsensical blueprint from 'garbage' data versus a precise plan from 'curated' data.", "alt": "The 'Garbage In, Garbage Out' principle.", "baseFileName": "lesson-2-1-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.1-p3-ig1": { "path": "placeholder/", "prompt": "A three-panel diagram showing the core workflow: Gather, Organize, Label.", "alt": "The Curator's Method.", "baseFileName": "lesson-2-1-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.1-p4-ig1": { "path": "placeholder/", "prompt": "A sleek, futuristic toolkit open on a workbench, showing digital tools for data curation.", "alt": "The Data Curation Environment (DCE) toolkit.", "baseFileName": "lesson-2-1-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.2-p1-ig1": { "path": "placeholder/", "prompt": "A professional adding clear, glowing labels and tags to a complex digital blueprint.", "alt": "The professional's guide to data annotation.", "baseFileName": "lesson-2-2-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.2-p2-ig1": { "path": "placeholder/", "prompt": "A split-panel image showing a confused AI with unlabeled files versus a confident AI with labeled files.", "alt": "The cost of ambiguity in AI.", "baseFileName": "lesson-2-2-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.2-p3-ig1": { "path": "placeholder/", "prompt": "A three-panel diagram showing practical annotation: Descriptive Naming, Logical Structure, and Metadata Tags.", "alt": "Practical annotation techniques.", "baseFileName": "lesson-2-2-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.2-p4-ig1": { "path": "placeholder/", "prompt": "A powerful AI flawlessly executing a complex business workflow, guided by glowing metadata.", "alt": "The payoff of data annotation.", "baseFileName": "lesson-2-2-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.3-p1-ig1": { "path": "placeholder/", "prompt": "A professional in a high-tech lab meticulously inspecting a holographic blueprint from an AI.", "alt": "Quality control for AI output.", "baseFileName": "lesson-2-3-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.3-p2-ig1": { "path": "placeholder/", "prompt": "A 'rogue's gallery' of digital phantoms representing AI failure modes like Hallucination and Flawed Logic.", "alt": "Common AI failure modes.", "baseFileName": "lesson-2-3-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.3-p3-ig1": { "path": "placeholder/", "prompt": "A professional using a diff viewer to compare an original file with an AI-generated file.", "alt": "The analysis workflow from diff to decision.", "baseFileName": "lesson-2-3-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-2.3-p4-ig1": { "path": "placeholder/", "prompt": "A diagram showing a virtuous cycle where human critique of AI output leads to a refined prompt and an improved output.", "alt": "Closing the feedback loop.", "baseFileName": "lesson-2-3-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.1-p1-ig1": { "path": "placeholder/", "prompt": "An executive outlining a structured plan on a whiteboard, which an AI translates into a flawless digital architecture.", "alt": "The principles of structured AI interaction.", "baseFileName": "lesson-3-1-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.1-p2-ig1": { "path": "placeholder/", "prompt": "A futuristic digital document titled 'Interaction Schema' with clear sections for ROLE, CONTEXT, and OUTPUT_FORMAT.", "alt": "The Interaction Schema as a briefing document.", "baseFileName": "lesson-3-1-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.1-p3-ig1": { "path": "placeholder/", "prompt": "An architectural diagram showing an unstructured prompt leading to chaotic outcomes versus a structured interaction leading to a predictable outcome.", "alt": "The business case for structured interaction.", "baseFileName": "lesson-3-1-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.1-p4-ig1": { "path": "placeholder/", "prompt": "A 'before and after' comparison of a vague request versus a precise, structured command for an AI.", "alt": "A practical example of structured interaction.", "baseFileName": "lesson-3-1-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.2-p1-ig1": { "path": "placeholder/", "prompt": "A professional looking at a holographic screen showing a circular diagram of a feedback loop where errors are a key input.", "alt": "Leveraging errors as data points.", "baseFileName": "lesson-3-2-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.2-p2-ig1": { "path": "placeholder/", "prompt": "An infographic showing three types of errors: Compiler, Runtime, and Logical.", "alt": "A guide to different error types.", "baseFileName": "lesson-3-2-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.2-p3-ig1": { "path": "placeholder/", "prompt": "A step-by-step diagram of the debugging feedback loop: AI generates code, an error appears, the human copies the error, and feeds it back to the AI.", "alt": "The debugging cycle in practice.", "baseFileName": "lesson-3-2-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.2-p4-ig1": { "path": "placeholder/", "prompt": "A graph showing a steep, upward-curving 'V2V Learning Curve' fueled by iterative cycles of error and correction.", "alt": "Accelerating the learning curve.", "baseFileName": "lesson-3-2-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.3-p1-ig1": { "path": "placeholder/", "prompt": "A professional engineer working on a complex blueprint with a prominent, glowing 'UNDO' button beside them.", "alt": "The professional's safety net.", "baseFileName": "lesson-3-3-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.3-p2-ig1": { "path": "placeholder/", "prompt": "A diagram showing a single prompt leading to three unpredictable AI outcomes, with a shield labeled 'Git Baseline' protecting the user.", "alt": "Managing non-determinism with a safety net.", "baseFileName": "lesson-3-3-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.3-p3-ig1": { "path": "placeholder/", "prompt": "A four-step flowchart of the validation process: Baseline, Accept, Test, Restore.", "alt": "The four-step validation process.", "baseFileName": "lesson-3-3-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-3.3-p4-ig1": { "path": "placeholder/", "prompt": "A graph showing the rapid, experimental progress of the 'V2V Workflow' compared to a slow, cautious 'Traditional Workflow'.", "alt": "The advantage of innovating with confidence.", "baseFileName": "lesson-3-3-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.1-p1-ig1": { "path": "placeholder/", "prompt": "A professional sketching a high-level strategic plan on a holographic whiteboard, showing a clear line from 'Problem' to 'Solution'.", "alt": "Architecting a solution from a business need.", "baseFileName": "lesson-4-1-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.1-p2-ig1": { "path": "placeholder/", "prompt": "A three-panel diagram showing the discovery phase: Problem Statement, Target User Persona, and Core Solution.", "alt": "Answering the three core questions of project scope.", "baseFileName": "lesson-4-1-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.1-p3-ig1": { "path": "placeholder/", "prompt": "An image showing the concept of an MVP: building a skateboard first, then a scooter, then a bicycle, and finally a car.", "alt": "The principle of the Minimum Viable Product.", "baseFileName": "lesson-4-1-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.1-p4-ig1": { "path": "placeholder/", "prompt": "A professional using the DCE to create their first artifact: `A1 - Project Scope.md`.", "alt": "Writing the Project Scope artifact.", "baseFileName": "lesson-4-1-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.2-p1-ig1": { "path": "placeholder/", "prompt": "A professional stands before a vast, empty, and intimidatingly white digital canvas, looking uncertain.", "alt": "The challenge of the Blank Page Problem.", "baseFileName": "lesson-4-2-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.2-p2-ig1": { "path": "placeholder/", "prompt": "A professional presents a 'Project Scope' document to an AI, which generates a complete architectural blueprint in response.", "alt": "AI as a scaffolding engine.", "baseFileName": "lesson-4-2-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.2-p3-ig1": { "path": "placeholder/", "prompt": "A close-up of the DCE extension's 'Cycle 0' UI, showing how a user's scope is turned into a full set of planning artifacts.", "alt": "The DCE's 'Cycle 0' onboarding workflow.", "baseFileName": "lesson-4-2-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.2-p4-ig1": { "path": "placeholder/", "prompt": "A professional confidently typing a prompt that instructs an AI to generate a project's foundational structure.", "alt": "Commanding the AI to architect the foundation.", "baseFileName": "lesson-4-2-p4-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.3-p1-ig1": { "path": "placeholder/", "prompt": "An AI as a master architect generates a detailed, glowing holographic blueprint of a software application from a 'Project Scope' document.", "alt": "Generating an architectural blueprint from a scope.", "baseFileName": "lesson-4-3-p1-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.3-p2-ig1": { "path": "placeholder/", "prompt": "A side-by-side comparison of a developer manually creating folders versus an AI instantly generating a professional project structure.", "alt": "The AI as a technical architect.", "baseFileName": "lesson-4-3-p2-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.3-p3-ig1": { "path": "placeholder/", "prompt": "A developer typing a precise prompt assigning the AI the role of an architect and specifying the tech stack.", "alt": "Writing the architectural scaffolding prompt.", "baseFileName": "lesson-4-3-p3-img-", "fileExtension": ".webp", "imageCount": 1 },
-    "lesson-4.3-p4-ig1": { "path": "placeholder/", "prompt": "The generated project structure is shown in the DCE, and with a click, the files appear in the workspace, and the application runs for the first time.", "alt": "Kicking off Cycle 1 from the AI-generated blueprint.", "baseFileName": "lesson-4-3-p4-img-", "fileExtension": ".webp", "imageCount": 1 }
-  }
-}
-</file_artifact>
-
 <file path="src/Artifacts/A74 - V2V Academy - Interactive Curriculum Page Plan.md">
 # Artifact A74: V2V Academy - Interactive Curriculum Page Plan
 # Date Created: C74
@@ -30295,156 +30237,6 @@ The setup uses a **reverse proxy** architecture. A single Caddy web server liste
 *   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
 </file_artifact>
 
-<file path="public/data/v2v_lab_1.json">
-{
-    "reportId": "v2v-academy-lab-1",
-    "reportTitle": "V2V Academy Lab 1: Your First DCE Project",
-    "sections": [
-        {
-            "sectionId": "lab-1-setup",
-            "sectionTitle": "Setup & Project Initiation",
-            "pages": [
-                {
-                    "pageId": "lab-1-step-1",
-                    "pageTitle": "Step 1-5: Environment Setup",
-                    "tldr": "Install VS Code and the DCE extension, then create and open your project folder.",
-                    "content": "This lab will guide you through building a portfolio website from scratch. First, ensure you have Visual Studio Code installed. Then, install the Data Curation Environment (DCE) extension. Create a main `Projects` directory on your computer, and inside that, create a folder named `portfolio-website`. Finally, open this `portfolio-website` folder in VS Code.",
-                    "imageGroupIds": ["lab-1-step-1-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-2",
-                    "pageTitle": "Step 6-11: First DCE Interaction",
-                    "tldr": "Open the DCE, define your project scope, and generate your first AI prompt.",
-                    "content": "Open the DCE panel (spiral icon). The Onboarding view will appear. Paste the provided 'Citizen Architect Portfolio Website' scope into the text area. Click 'Generate Initial Artifacts Prompt'. Review the generated `DCE_README.md` and `prompt.md` files, then copy the entire content of `prompt.md`.",
-                    "imageGroupIds": ["lab-1-step-2-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-3",
-                    "pageTitle": "Step 12-17: The Parallel Co-Pilot Workflow",
-                    "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
-                    "content": "Open four tabs in your preferred AI tool (e.g., AI Studio). Paste the prompt into each and generate four responses. Copy these responses back into the 'Resp 1-4' tabs in the DCE's Cycle 1 view. Click `Parse All` to structure the responses. Click `Sort` to order them by length. Review the longest response and click `Select This Response` to choose it as your starting point.",
-                    "imageGroupIds": ["lab-1-step-3-ig1"]
-                }
-            ]
-        },
-        {
-            "sectionId": "lab-1-iteration",
-            "sectionTitle": "Iteration & First Cycles",
-            "pages": [
-                {
-                    "pageId": "lab-1-step-4",
-                    "pageTitle": "Step 18-22: First Roadblock & First Cycle (Git Setup)",
-                    "tldr": "Encounter the 'Not a git repository' error and use the DCE to ask the AI for instructions on how to install Git.",
-                    "content": "Click `Baseline (Commit)`. You will see an error because Git is not set up. This is your first task! In the 'Cycle Title', enter 'Create Git Installation Instructions'. In the 'Cycle Context', ask the AI for instructions to install Git and set up a repository. Click `Generate prompt.md` and copy the new prompt.",
-                    "imageGroupIds": ["lab-1-step-4-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-5",
-                    "pageTitle": "Step 23-28: The Feedback Loop in Action",
-                    "tldr": "Create a new cycle, get instructions from the AI, accept the new documentation, and follow it to install Git and set up GitHub.",
-                    "content": "Send the new prompt to your AI. While it generates, click `+` in the DCE to create 'Cycle 2'. Paste the new responses, parse, and accept the new artifacts. You will now have a guide in your `src/Artifacts` folder. Follow this guide to install Git and set up your GitHub account and repository.",
-                    "imageGroupIds": ["lab-1-step-5-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-6",
-                    "pageTitle": "Step 29-31: First Commit & Scaffolding",
-                    "tldr": "With Git installed, make your first commit and then ask the AI to build the actual project files.",
-                    "content": "Navigate back to Cycle 1 in the DCE, rename the title to `First Commit`, and click `Baseline (Commit)`. It will now succeed! Next, go to Cycle 2, change the title to `Create Project Scaffold`, and write a context asking the AI to build the project files.",
-                    "imageGroupIds": ["lab-1-step-6-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-7",
-                    "pageTitle": "Step 32-37: The Full Loop & Project Launch",
-                    "tldr": "Execute the full 'Virtuoso's Loop' to generate and accept your website's code, then run it locally.",
-                    "content": "Generate the prompt for Cycle 2, create Cycle 3, and get the AI's responses. In Cycle 3, execute the full loop: Parse -> Sort -> Select -> Baseline -> Select All -> Accept Selected. Your project files will be created. Open the terminal, run `npm install`, then `npm run dev`. Click the `localhost` link to see your website!",
-                    "imageGroupIds": ["lab-1-step-7-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-8",
-                    "pageTitle": "Conclusion: Continue to Iterate",
-                    "tldr": "Congratulations! You've completed the loop. Now, continue to enhance your project by curating new context, like your resume.",
-                    "content": "You are now on the path to becoming a Citizen Architect. To continue, try creating a `context/personal/` folder and adding your resume as a PDF. Check that file in the DCE's File Tree View, start a new cycle, and ask the AI to add a new section to your website summarizing your resume. Welcome to the future of development.",
-                    "imageGroupIds": ["lab-1-step-8-ig1"]
-                }
-            ]
-        }
-    ]
-}
-</file_artifact>
-
-<file path="public/data/v2v_lab_imagemanifest.json">
-{
-    "manifestId": "v2v-academy-labs-images-v1",
-    "basePath": "/assets/images/v2v/labs/",
-    "imageGroups": {
-        "lab-1-step-1-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot of Visual Studio Code showing an empty 'portfolio-website' folder open as the workspace.",
-            "alt": "An empty project folder in VS Code.",
-            "baseFileName": "step-1-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-2-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot of the DCE Onboarding view in VS Code, with the 'Project Scope' text area filled out.",
-            "alt": "The DCE Onboarding view with a project scope.",
-            "baseFileName": "step-2-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-3-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot of the DCE Parallel Co-Pilot Panel in Cycle 1, showing four tabs with pasted responses and the 'Parse All' button highlighted.",
-            "alt": "Pasting and parsing responses in the DCE.",
-            "baseFileName": "step-3-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-4-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot showing the 'This workspace is not a git repository' error message after clicking the 'Baseline (Commit)' button in the DCE.",
-            "alt": "The Git repository not found error in DCE.",
-            "baseFileName": "step-4-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-5-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot showing the newly created Git installation guide artifact open in the VS Code editor.",
-            "alt": "The generated Git installation guide.",
-            "baseFileName": "step-5-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-6-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot of the DCE panel after a successful baseline commit, with the 'Select All' button now highlighted.",
-            "alt": "Successful baseline commit in DCE.",
-            "baseFileName": "step-6-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-7-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot of the VS Code terminal after running `npm run dev`, with the localhost URL highlighted and ready to be clicked.",
-            "alt": "Running the local development server.",
-            "baseFileName": "step-7-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        },
-        "lab-1-step-8-ig1": {
-            "path": "lab-1/",
-            "prompt": "A screenshot of the final portfolio website running in a web browser, showing a clean and professional layout.",
-            "alt": "The completed portfolio website.",
-            "baseFileName": "step-8-",
-            "fileExtension": ".png",
-            "imageCount": 1
-        }
-    }
-}
-</file_artifact>
-
 <file path="src/Artifacts/A82 - V2V Academy - Labs and Courses UI Plan.md">
 # Artifact A82: V2V Academy - Labs and Courses UI Plan
 # Date Created: C93
@@ -30872,41 +30664,23 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
     "manifestId": "v2v-academy-lab-1-portfolio-images-v1",
     "basePath": "/assets/images/v2v/labs/",
     "imageGroups": {
-        "lab-1-step-1-ig1": { "path": "lab-1/", "prompt": "A screenshot of the official Visual Studio Code download page.", "alt": "VS Code download page.", "baseFileName": "step-1-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-2-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code 'Extensions' view, highlighting 'Install from VSIX...'", "alt": "Installing a VSIX in VS Code.", "baseFileName": "step-2-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-3-ig1": { "path": "lab-1/", "prompt": "A screenshot of a file explorer showing a new 'Projects' folder.", "alt": "A new projects folder.", "baseFileName": "step-3-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-4-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a new 'portfolio-website' folder inside the 'Projects' directory.", "alt": "A new portfolio-website folder.", "baseFileName": "step-4-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-5-ig1": { "path": "lab-1/", "prompt": "A screenshot of VS Code's 'Open Folder...' dialog selecting the 'portfolio-website' folder.", "alt": "Opening the project folder in VS Code.", "baseFileName": "step-5-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-6-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code Activity Bar with the DCE spiral icon highlighted.", "alt": "The DCE icon in VS Code.", "baseFileName": "step-6-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-7-ig1": { "path": "lab-1/", "prompt": "A screenshot of the DCE Onboarding view with the 'Project Scope' text area filled out.", "alt": "The DCE Onboarding view.", "baseFileName": "step-7-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-1-ig1": { "path": "lab-1/", "prompt": "A welcoming, futuristic graphic with the title 'Lab 1: Build Your First Portfolio Website' prominently displayed.", "alt": "Lab 1 Title Card.", "baseFileName": "step-1-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-2-ig1": { "path": "lab-1/", "prompt": "A screenshot of the official Visual Studio Code download page.", "alt": "VS Code download page.", "baseFileName": "step-2-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-3-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code 'Extensions' view, highlighting 'Install from VSIX...'", "alt": "Installing a VSIX in VS Code.", "baseFileName": "step-3-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-4-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a new 'portfolio-website' folder inside the 'Projects' directory.", "alt": "A new portfolio-website folder.", "baseFileName": "step-4-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-5-ig1": { "path": "lab-1/", "prompt": "A screenshot of VS Code's 'Open Folder...' dialog selecting the 'portfolio-website' folder.", "alt": "Opening the project folder in VS Code.", "baseFileName": "step-5-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-6-ig1": { "path": "lab-1/", "prompt": "A screenshot of the DCE Onboarding view with the 'Project Scope' text area filled out.", "alt": "The DCE Onboarding view.", "baseFileName": "step-6-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-8-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Generate Initial Artifacts Prompt' button being highlighted in the DCE.", "alt": "Generating the initial prompt.", "baseFileName": "step-8-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-9-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code editor showing the two new tabs: `prompt.md` and `DCE_README.md`.", "alt": "The generated README and prompt files.", "baseFileName": "step-9-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-10-ig1": { "path": "lab-1/", "prompt": "A screenshot of the `prompt.md` file, showing its structured content.", "alt": "Reviewing the master prompt.", "baseFileName": "step-10-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-11-ig1": { "path": "lab-1/", "prompt": "A screenshot showing all text in `prompt.md` being selected with Ctrl+A.", "alt": "Copying the prompt.", "baseFileName": "step-11-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-12-ig1": { "path": "lab-1/", "prompt": "A screenshot of Google's AI Studio, showing four browser tabs with the correct model settings.", "alt": "AI Studio setup.", "baseFileName": "step-12-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-13-ig1": { "path": "lab-1/", "prompt": "A screenshot of the Parallel Co-Pilot Panel in VS Code, with the `Resp 1` tab highlighted.", "alt": "The PCPP view.", "baseFileName": "step-13-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-14-ig1": { "path": "lab-1/", "prompt": "A screenshot showing text being pasted into the PCPP response tabs.", "alt": "Pasting responses into the PCPP.", "baseFileName": "step-14-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-15-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Parse All' button being highlighted in the PCPP toolbar.", "alt": "Parsing all responses.", "baseFileName": "step-15-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-16-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Sort' button being highlighted in the PCPP toolbar.", "alt": "Sorting the responses.", "baseFileName": "step-16-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-18-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'This workspace is not a git repository' error message in VS Code.", "alt": "The Git repository not found error.", "baseFileName": "step-18-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-19-ig1": { "path": "lab-1/", "prompt": "An encouraging graphic showing a circular arrow with 'Find Problem -> Ask AI for Help -> Get Solution -> Repeat.'", "alt": "The failsafe rinse-repeat process.", "baseFileName": "step-19-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-20-ig1": { "path": "lab-1/", "prompt": "A screenshot of the PCPP with the 'Select All' button in the 'Associated Files' list highlighted.", "alt": "Selecting all associated files.", "baseFileName": "step-20-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-21-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Accept Selected' button being highlighted in the PCPP.", "alt": "Accepting selected files.", "baseFileName": "step-21-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot of the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-23-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Generate prompt.md' button being highlighted in the PCPP.", "alt": "Generating the next prompt.", "baseFileName": "step-23-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-24-ig1": { "path": "lab-1/", "prompt": "A screenshot of the new `prompt.md` file, showing the newly included artifacts.", "alt": "Reviewing the new prompt.", "baseFileName": "step-24-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-25-ig1": { "path": "lab-1/", "prompt": "A screenshot of the '+' button in the cycle navigator being highlighted.", "alt": "Creating a new cycle.", "baseFileName": "step-25-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-26-ig1": { "path": "lab-1/", "prompt": "A screenshot showing new responses being pasted into the Cycle 2 tabs.", "alt": "Pasting responses for Cycle 2.", "baseFileName": "step-26-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot showing the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-27-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Accept Selected' button being clicked in Cycle 2.", "alt": "Accepting the solution for Cycle 2.", "baseFileName": "step-27-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-29-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' button being clicked in Cycle 1, now successfully.", "alt": "Making the first commit.", "baseFileName": "step-29-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-30-ig1": { "path": "lab-1/", "prompt": "A stylized image of a GitHub logo with a quest marker over it.", "alt": "The GitHub setup quest.", "baseFileName": "step-30-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-32-ig1": { "path": "lab-1/", "prompt": "A screenshot of the PCPP in a new cycle with the title 'Create Project Scaffold.'", "alt": "Creating the project scaffold.", "baseFileName": "step-32-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-33-ig1": { "path": "lab-1/", "prompt": "A graphic showing the core V2V loop: Generate, Copy, Send, Create, Paste, Parse, Select.", "alt": "The rinse-repeat loop.", "baseFileName": "step-33-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-34-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' and 'Accept Selected' buttons being highlighted for the scaffold cycle.", "alt": "Baselining and accepting the scaffold code.", "baseFileName": "step-34-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-35-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing the `npm install` and `npm run dev` commands.", "alt": "Running the project.", "baseFileName": "step-35-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-36-ig1": { "path": "lab-1/", "prompt": "A screenshot of the portfolio website running for the first time in a browser.", "alt": "The live portfolio website.", "baseFileName": "step-36-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-37-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a resume PDF being added to the `context/personal` folder in VS Code.", "alt": "Continuing to iterate by adding new context.", "baseFileName": "step-37-", "fileExtension": ".png", "imageCount": 1 }
     }
@@ -30923,267 +30697,165 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
             "sectionTitle": "Introduction",
             "pages": [
                 {
-                    "pageId": "lab-1-step-1",
-                    "pageTitle": "Step 1: Download Visual Studio Code",
-                    "tldr": "Download and install VS Code, the free and powerful code editor that will be your primary work environment.",
-                    "content": "The entire V2V workflow takes place inside **Visual Studio Code**, a code editor created by Microsoft that has become the industry standard for developers worldwide. The DCE is an *extension* for VS Code, so you'll need the editor first. If you don't already have it, please navigate to the official website and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions to get it set up on your machine.",
+                    "pageId": "lab-1-intro-1",
+                    "pageTitle": "Lab 1: Your First Project with the DCE",
+                    "tldr": "In this lab, you will learn the complete, end-to-end workflow of the Data Curation Environment (DCE) by building a simple, professional portfolio website from scratch, with an AI as your partner.",
+                    "content": "Welcome to your first hands-on lab in the V2V Academy! The best way to learn the \"Virtuoso's Loop\" is to practice it. Over the next series of steps, you will use the DCE to initiate a new project, collaborate with an AI to generate the code, and launch your very own personal portfolio website. We will guide you through every single click, explaining the \"what\" and the \"why\" at each stage. This lab assumes you have no prior experience with coding, Git, or AI-assisted development. Let's begin.",
                     "imageGroupIds": ["lab-1-step-1-ig1"]
                 }
             ]
         },
         {
             "sectionId": "lab-1-setup",
-            "sectionTitle": "Setup & Project Initiation",
+            "sectionTitle": "Environment Setup",
             "pages": [
                 {
-                    "pageId": "lab-1-step-2",
-                    "pageTitle": "Step 2: Install the DCE Extension",
-                    "tldr": "Install the Data Curation Environment (DCE) extension into VS Code using the `.vsix` file provided.",
-                    "content": "The DCE is distributed as a `.vsix` file. To install it:\n1.  Open Visual Studio Code.\n2.  Navigate to the **Extensions** view by clicking the icon that looks like four squares in the Activity Bar on the left side of the window.\n3.  Click the **...** (More Actions) button at the top-right of the Extensions view.\n4.  Select **\"Install from VSIX...\"** from the dropdown menu.\n5.  In the file dialog that opens, navigate to and select the `.vsix` file for the DCE.\n6.  VS Code will install the extension and may prompt you to reload the window.",
+                    "pageId": "lab-1-setup-1",
+                    "pageTitle": "Step 1: Download Visual Studio Code",
+                    "tldr": "Download and install VS Code, the free and powerful code editor that will be your primary work environment.",
+                    "content": "The entire V2V workflow takes place inside **Visual Studio Code**, a code editor created by Microsoft that has become the industry standard for developers worldwide. The DCE is an *extension* for VS Code, so you'll need the editor first. If you don't already have it, please navigate to the official website at [https://code.visualstudio.com/download](https://code.visualstudio.com/download) and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions to get it set up on your machine.",
                     "imageGroupIds": ["lab-1-step-2-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-3",
-                    "pageTitle": "Step 3: Create Your Projects Directory",
-                    "tldr": "Create a dedicated folder on your computer to store all your development projects.",
-                    "content": "It is a best practice to keep all of your coding projects in a single, easy-to-access location. We recommend creating a `Projects` folder in the root of your main drive (e.g., `C:\\Projects` on Windows). This keeps your work organized and separate from your other files. Please create this folder now.",
+                    "pageId": "lab-1-setup-2",
+                    "pageTitle": "Step 2: Install the DCE Extension",
+                    "tldr": "Install the Data Curation Environment (DCE) extension into VS Code using the `.vsix` file provided.",
+                    "content": "The DCE is distributed as a `.vsix` file. You can download it directly here: [Download DCE Extension](/downloads/data-curation-environment-0.1.10.vsix).\n\nTo install it:\n1.  Open Visual Studio Code.\n2.  Navigate to the **Extensions** view by clicking the icon that looks like four squares in the Activity Bar on the left side of the window.\n3.  Click the **...** (More Actions) button at the top-right of the Extensions view.\n4.  Select **\"Install from VSIX...\"** from the dropdown menu.\n5.  In the file dialog that opens, navigate to and select the `.vsix` file you just downloaded.\n6.  VS Code will install the extension and may prompt you to reload the window.",
                     "imageGroupIds": ["lab-1-step-3-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-4",
-                    "pageTitle": "Step 4: Create the Project Folder",
-                    "tldr": "Inside your `Projects` directory, create a new folder for this specific lab named `portfolio-website`.",
-                    "content": "Now, inside the `C:\\Projects` directory you just created, make a new folder and name it `portfolio-website`. This folder will contain all the files for the portfolio website you are about to build.",
+                    "pageId": "lab-1-setup-3",
+                    "pageTitle": "Step 3 & 4: Create Project Folders",
+                    "tldr": "Create a dedicated folder on your computer to store all your development projects, and a specific folder for this lab.",
+                    "content": "It is a best practice to keep all of your coding projects in a single, easy-to-access location. First, create a `Projects` folder in the root of your main drive (e.g., `C:\\Projects` on Windows). This keeps your work organized.\n\nNext, inside the `Projects` directory you just created, make a new folder and name it `portfolio-website`. This folder will contain all the files for the portfolio website you are about to build.",
                     "imageGroupIds": ["lab-1-step-4-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-5",
+                    "pageId": "lab-1-setup-4",
                     "pageTitle": "Step 5: Open the Project in VS Code",
                     "tldr": "Open your new `portfolio-website` folder in VS Code. This sets it as your active project, or 'workspace.'",
                     "content": "It's time to start your project.\n1.  In VS Code, go to the \"File\" menu.\n2.  Select \"Open Folder...\"\n3.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
                     "imageGroupIds": ["lab-1-step-5-ig1"]
-                },
+                }
+            ]
+        },
+        {
+            "sectionId": "lab-1-cycle-0",
+            "sectionTitle": "Cycle 0: Your First Prompt",
+            "pages": [
                 {
-                    "pageId": "lab-1-step-6",
-                    "pageTitle": "Step 6: Open the DCE Panel",
-                    "tldr": "Click the spiral icon in the Activity Bar to open the DCE panel. This will automatically start the onboarding process for your new project.",
-                    "content": "Look at the Activity Bar on the far left of your VS Code window. You should see a new icon that looks like a spiral. This is the entry point for the Data Curation Environment. Click on it. Because this is the first time you are using the DCE in this new project, it will automatically open to the \"Onboarding\" screen, also known as \"Cycle 0.\"",
+                    "pageId": "lab-1-cycle0-1",
+                    "pageTitle": "Step 6 & 7: Open DCE & Define Scope",
+                    "tldr": "Open the DCE panel and provide the AI with your project's vision by pasting in the provided project scope.",
+                    "content": "Click the spiral icon in the Activity Bar to open the DCE panel. This will automatically start the onboarding process for your new project, also known as 'Cycle 0'. The large text area is for your **Project Scope**. Copy the text below and paste it into the text area:\n\n> The vision of this project is to create a professional and engaging personal portfolio website. It will serve as the primary public-facing hub for me, a Citizen Architect, to showcase my skills and projects...",
                     "imageGroupIds": ["lab-1-step-6-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-7",
-                    "pageTitle": "Step 7: Write Your Project Scope",
-                    "tldr": "Describe the website you want to build in the 'Project Scope' text area. This is your first instruction to the AI.",
-                    "content": "The first step in any project is to define your vision. The large text area you see is for your **Project Scope**. This is where you tell the AI, in plain English, what you want to build. Since this is your first project, we've written a starting scope for you. Copy the text below and paste it into the \"Project Scope\" text area:\n\n> The vision of this project is to create a professional and engaging personal portfolio website. It will serve as the primary public-facing hub for me, a Citizen Architect, to showcase my skills and projects. The website will be a living testament to my capabilities, featuring an interactive showcase of projects I have built.\n> \n> The website should have a clean, modern, and professional aesthetic, with a dark-mode-first design. It should be fully responsive and look great on desktop and mobile devices.\n> \n> The main sections will include:\n> 1.  A \"Home\" page with a compelling headline and an introduction.\n> 2.  An \"About Me\" page with my professional summary and skills.\n> 3.  A \"Showcase\" page to display my projects.\n> 4.  A \"Contact\" page with links to my GitHub, LinkedIn, etc.",
-                    "imageGroupIds": ["lab-1-step-7-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-8",
-                    "pageTitle": "Step 8: Generate Initial Artifacts Prompt",
-                    "tldr": "Click the 'Generate Initial Artifacts Prompt' button. The DCE will use your scope to create a complete prompt file for the AI.",
-                    "content": "Now that you've defined your vision, it's time to turn it into a complete, structured prompt for the AI. Click the **`Generate Initial Artifacts Prompt`** button. The DCE will take your project scope, combine it with a set of best-practice templates, and create two new files in your editor.",
+                    "pageId": "lab-1-cycle0-2",
+                    "pageTitle": "Step 8-11: Generate and Copy Prompt",
+                    "tldr": "Generate the initial prompt, review the generated files, and copy the entire content of `prompt.md`.",
+                    "content": "Click the **`Generate Initial Artifacts Prompt`** button. The DCE will create `DCE_README.md` and `prompt.md`. Take a moment to read the `DCE_README.md`. Then, switch to the `prompt.md` tab, select all the text (`Ctrl+A` or `Cmd+A`), and copy it (`Ctrl+C` or `Cmd+C`).",
                     "imageGroupIds": ["lab-1-step-8-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-9",
-                    "pageTitle": "Step 9: Review the Generated Files",
-                    "tldr": "The DCE has created `prompt.md` and `DCE_README.md`. Take a moment to read the `DCE_README.md` file.",
-                    "content": "You will now see two new files open in your editor.\n1.  **`DCE_README.md`:** This file explains the purpose of the `src/Artifacts` directory that was just created for you. It provides a high-level overview of the DCE workflow. Please take a moment to read its contents.\n2.  **`prompt.md`:** This is the master prompt file. It contains everything the AI needs to start planning your project. We'll look at this next.",
-                    "imageGroupIds": ["lab-1-step-9-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-10",
-                    "pageTitle": "Step 10: A Cursory Review of `prompt.md`",
-                    "tldr": "Briefly look over the `prompt.md` file. You don't need to understand everything, but notice how the DCE has structured all the information for the AI.",
-                    "content": "Click on the `prompt.md` tab. This file might seem large and complex, but it's highly structured. Take a moment to scroll through it. Notice the different sections like `<M1. artifact schema>` and `<M4. current project scope>`. This structure is what allows the DCE to reliably parse the AI's response later. You don't need to read it all in detail right now.",
-                    "imageGroupIds": ["lab-1-step-10-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-11",
-                    "pageTitle": "Step 11: Copy the Entire Prompt",
-                    "tldr": "Select all the text in `prompt.md` and copy it to your clipboard.",
-                    "content": "Now, you need to copy the entire contents of the `prompt.md` file. The fastest and most accurate way to do this is with keyboard shortcuts:\n1.  Make sure the `prompt.md` file is the active tab in your editor.\n2.  Press **`Ctrl + A`** (or **`Cmd + A`** on Mac) to select all the text.\n3.  Press **`Ctrl + C`** (or **`Cmd + C`** on Mac) to copy the selected text to your clipboard.",
-                    "imageGroupIds": ["lab-1-step-11-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-12",
-                    "pageTitle": "Step 12: Open AI Studio",
-                    "tldr": "Open four separate tabs in your web browser and navigate to Google's AI Studio. Configure the model settings as shown.",
-                    "content": "Now you need to get responses from an AI. For this lab, we will use Google's AI Studio.\n1.  Open your web browser and open **four separate tabs**.\n2.  In each tab, navigate to **aistudio.google.com**.\n3.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs is a core part of the V2V workflow.",
+                    "pageId": "lab-1-cycle0-3",
+                    "pageTitle": "Step 12-14: Get and Paste Responses",
+                    "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
+                    "content": "Open four tabs in your preferred AI tool (e.g., AI Studio). Paste the prompt into each and generate four responses. Copy these responses back into the 'Resp 1-4' tabs in the DCE's Cycle 1 view.",
                     "imageGroupIds": ["lab-1-step-12-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-13",
-                    "pageTitle": "Step 13: Return to the PCPP",
-                    "tldr": "Close the `prompt.md` and `DCE_README.md` tabs in VS Code to reveal the Parallel Co-Pilot Panel (PCPP).",
-                    "content": "Back in VS Code, you can now close the `prompt.md` and `DCE_README.md` file tabs. Behind them, you will see the main interface of the DCE: the Parallel Co-Pilot Panel. Notice that the `Resp 1` tab is animated, guiding you to your next step.",
-                    "imageGroupIds": ["lab-1-step-13-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-14",
-                    "pageTitle": "Step 14: Paste the Responses",
-                    "tldr": "Paste the prompt from your clipboard into each of the four AI Studio tabs. Once you get the responses back, copy each one and paste it into the corresponding `Resp` tab in the PCPP.",
-                    "content": "Now, execute the parallel prompt:\n1.  Go to your first AI Studio browser tab and paste the prompt into the input area. Send it.\n2.  Repeat this for all four browser tabs.\n3.  As each AI finishes generating its response, click the \"Copy as Markdown\" button in AI Studio.\n4.  Go back to VS Code and paste the response into the corresponding tab in the PCPP (response from browser tab 1 goes into `Resp 1`, etc.).",
-                    "imageGroupIds": ["lab-1-step-14-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-15",
-                    "pageTitle": "Step 15: Parse All Responses",
+                    "pageId": "lab-1-cycle0-4",
+                    "pageTitle": "Step 15: Parse Responses",
                     "tldr": "Once all four responses are pasted in, click the 'Parse All' button.",
-                    "content": "With all four responses loaded into the PCPP, you are ready for the next step. Notice that the **`Parse All`** button in the main toolbar is now highlighted. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format. Click the `Parse All` button now.",
+                    "content": "With all four responses loaded, click the now-highlighted **`Parse All`** button. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
                     "imageGroupIds": ["lab-1-step-15-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-16",
-                    "pageTitle": "Step 16: Sort by Tokens",
-                    "tldr": "Click the 'Sort' button. This will reorder the response tabs from largest to smallest, which is a good starting point for your review.",
-                    "content": "After parsing, the UI transforms. You can now see metadata on each tab, including the number of files and the total 'token' count. The **`Sort`** button is now highlighted. Click it. This reorders the tabs, placing the response with the most content first. For a new user, a longer response in the planning phase often means more comprehensive documentation.",
-                    "imageGroupIds": ["lab-1-step-16-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-17",
-                    "pageTitle": "Step 17: Select the Longest Response",
-                    "tldr": "Review the sorted responses and click the 'Select This Response' button on the first tab (the longest one).",
-                    "content": "The tabs are now sorted. The first tab represents the most detailed response from the AI. For this first cycle, we will proceed with this option. Click the **`Select This Response`** button in the toolbar for `Resp 1`. This tells the DCE that you've chosen this response as the primary candidate for this cycle.",
+                    "pageId": "lab-1-cycle0-5",
+                    "pageTitle": "Step 16-17: Sort and Select Response",
+                    "tldr": "Click the 'Sort' button to reorder responses by size, then click 'Select This Response' on the longest one.",
+                    "content": "After parsing, the **`Sort`** button will be highlighted. Click it to reorder the tabs by token count. For a new user, a longer response in the planning phase often means more comprehensive documentation. Review the first (longest) response and click the **`Select This Response`** button in its toolbar.",
                     "imageGroupIds": ["lab-1-step-17-ig1"]
-                },
+                }
+            ]
+        },
+        {
+            "sectionId": "lab-1-cycle-1",
+            "sectionTitle": "Cycle 1: The Git Workflow",
+            "pages": [
                 {
-                    "pageId": "lab-1-step-18",
-                    "pageTitle": "Step 18: Create a Baseline",
-                    "tldr": "Click the 'Baseline (Commit)' button. You will see an error message because we haven't set up version control yet. This is expected.",
-                    "content": "The animated guide is now highlighting the **`Baseline (Commit)`** button. This feature uses a version control system called **Git** to create a safe restore point before you apply the AI's code. However, since this is a brand new project, Git hasn't been set up yet. Click the `Baseline (Commit)` button now. You will see an error message appear. This is an expected and important part of your first lesson!",
+                    "pageId": "lab-1-cycle1-1",
+                    "pageTitle": "Step 18 & 19: Encountering the Git Error",
+                    "tldr": "Click the 'Baseline (Commit)' button. You will see an error message because we haven't set up version control yet. This is an expected part of the lesson.",
+                    "content": "The animated guide is now highlighting the **`Baseline (Commit)`** button. This feature uses **Git** to create a safe restore point. Since this is a new project, Git isn't set up yet. Click the button now. You will see an error message appear. This is your first roadblock and your first real task to solve using the V2V workflow.",
                     "imageGroupIds": ["lab-1-step-18-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-19",
-                    "pageTitle": "Step 19: The Failsafe Loop",
-                    "tldr": "You've encountered a problem. The V2V workflow is designed for this. We will now use the AI itself to solve the problem of not having Git installed.",
-                    "content": "You are now experiencing the core V2V feedback loop in action. You have a problem: you need to initialize a 'git repository,' but you don't have Git installed and don't have instructions. We will now use the exact same process you just learned to ask the AI to solve this problem for us.",
-                    "imageGroupIds": ["lab-1-step-19-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-20",
-                    "pageTitle": "Step 20: Accept the Artifacts",
-                    "tldr": "We need to review the documentation the AI has already created for us. It might already contain the instructions we need.",
-                    "content": "Even though we can't create a Git baseline, we can still accept the documentation artifacts the AI generated. It's possible the AI has already provided a `GitHub Repository Setup Guide`. The animated workflow is now highlighting the **`Select All`** button in the \"Associated Files\" list. Click it.",
-                    "imageGroupIds": ["lab-1-step-20-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-21",
-                    "pageTitle": "Step 21: Accept and Navigate",
-                    "tldr": "Click 'Accept Selected' to create the new documentation files in your project. Then, navigate to the `src/Artifacts` folder to see them.",
-                    "content": "Now that all the files are checked, the **`Accept Selected`** button is highlighted. Click it. This will write the new files to your workspace. You will see a new `src/Artifacts` folder appear in the VS Code File Explorer. Expand it and look at the new files.",
-                    "imageGroupIds": ["lab-1-step-21-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-22",
-                    "pageTitle": "Step 22: Your First Cycle - Asking for Help",
-                    "tldr": "You've found a guide, but it has a prerequisite you don't have. This is your first real problem to solve! We will now create a new cycle to ask the AI for Git installation instructions.",
-                    "content": "In our case, we found a `GitHub-Repository-Setup-Guide.md` file. It tells us how to initialize a repository, but it also lists a prerequisite: \"You have `git` installed on your machine.\" We will now start our first *real* development cycle to solve this. In the PCPP, in the \"Cycle & Context\" section, enter the following:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but the instructions say I need to have 'git' as a prerequisite. I do not have git. Can you provide me with instructions to install it? I am on a [windows/mac] machine.`",
+                    "pageId": "lab-1-cycle1-2",
+                    "pageTitle": "Step 20-22: Using the DCE to Ask for Help",
+                    "tldr": "First, accept the documentation the AI has already created. Then, in a new cycle, ask the AI for instructions on how to install Git.",
+                    "content": "First, accept the planning documents from Cycle 1 by clicking **`Select All`** then **`Accept Selected`**. Now, you can ask the AI for help. In the 'Cycle & Context' section, enter:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but I do not have git installed. Can you provide me with instructions to install it? I am on a [windows/mac] machine.`",
                     "imageGroupIds": ["lab-1-step-22-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-23",
-                    "pageTitle": "Step 23: Generate the Next Prompt",
-                    "tldr": "The 'Cycle & Context' banner is now green, indicating you are ready. Click 'Generate prompt.md' to create the prompt for your first cycle.",
-                    "content": "The 'Cycle & Context' banner at the top of the PCPP has turned green, indicating you are ready to create a new cycle prompt. The animated guide is now highlighting the **`Generate prompt.md`** button. Click it. The `prompt.md` file will be created and opened for you.",
-                    "imageGroupIds": ["lab-1-step-23-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-24",
-                    "pageTitle": "Step 24: Review the New Prompt",
-                    "tldr": "Briefly look at the new `prompt.md`. Notice that it now includes the artifacts you just accepted. This is how the AI maintains context.",
-                    "content": "This is the second time you've seen the `prompt.md` file. The main difference is that it now includes the new documentation artifacts. This is how the DCE maintains context from one cycle to the next. Now, copy the entire contents of this new `prompt.md`, clear your AI Studio tabs, and paste this new prompt into all four tabs to get new responses.",
-                    "imageGroupIds": ["lab-1-step-24-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-25",
-                    "pageTitle": "Step 25: Create Cycle 2",
-                    "tldr": "Once you have your new AI responses, click the `+` button in the PCPP to create a new cycle.",
-                    "content": "Before you paste in the new responses, you need to create a new cycle in the DCE to hold them. In the PCPP, in the \"Cycle & Context\" section, you'll see the cycle navigator (`< C1 >`). Click the **`+`** button to create Cycle 2.",
-                    "imageGroupIds": ["lab-1-step-25-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-26",
-                    "pageTitle": "Step 26: Paste and Parse Cycle 2",
-                    "tldr": "Paste your four new responses into the tabs for Cycle 2 and click 'Parse All.'",
-                    "content": "You are now in Cycle 2. Repeat the process you learned before:\n1.  Copy the four new responses from AI Studio.\n2.  Paste them into the `Resp 1` through `Resp 4` tabs.\n3.  Click **`Parse All`**.",
-                    "imageGroupIds": ["lab-1-step-26-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-27",
-                    "pageTitle": "Step 27: Accept the Solution",
-                    "tldr": "Select the longest response, click 'Select All,' and then 'Accept Selected' to get your new Git installation guide.",
-                    "content": "Now that the responses are parsed, you have the solution to your problem.\n1.  Focus on the longest response.\n2.  Click **`Select All`** in the \"Associated Files\" list.\n3.  Click **`Accept Selected`**.\nYou should see new files appear in your `src/Artifacts` directory, including one with instructions on how to install Git.",
+                    "pageId": "lab-1-cycle1-3",
+                    "pageTitle": "Step 23-27: Getting and Accepting the Solution",
+                    "tldr": "Generate a new prompt, create a new cycle, and get the AI's response which will contain your Git installation guide.",
+                    "content": "Click **`Generate prompt.md`**. Copy the new prompt and send it to your AI. While it generates, click the **`+`** button in the DCE to create Cycle 2. Paste the new responses, parse them, and accept the new artifacts. You will now have a guide in your `src/Artifacts` folder.",
                     "imageGroupIds": ["lab-1-step-27-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-28",
-                    "pageTitle": "Step 28: Install Git",
+                    "pageId": "lab-1-cycle1-4",
+                    "pageTitle": "Step 28: Installing Git",
                     "tldr": "Open your new artifact and follow the instructions to install Git. Verify it's installed by running `git --version` in the terminal.",
-                    "content": "Navigate to your new Git installation guide in the `src/Artifacts` folder. Follow its instructions precisely. Once you are done, you can verify that Git is installed correctly by opening a terminal in VS Code (`Terminal > New Terminal`) and typing the command:\n```bash\ngit --version\n```\nIf you see a version number returned, you have successfully installed Git!",
+                    "content": "Navigate to your new Git installation guide in the `src/Artifacts` folder and follow its instructions precisely. Once you are done, verify that Git is installed correctly by opening a terminal in VS Code (`Terminal > New Terminal`) and typing the command: `git --version`. If you see a version number, you have successfully installed Git!",
                     "imageGroupIds": ["lab-1-step-28-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-29",
-                    "pageTitle": "Step 29: First Commit",
-                    "tldr": "Go back to Cycle 1, change the title to 'First Commit,' and click 'Baseline (Commit)' again. This time, it will work.",
-                    "content": "Now that Git is installed, you can complete Step 18.\n1.  In the PCPP, use the `<` arrow to navigate back to **Cycle 1**.\n2.  Change the **Cycle Title** to `First Commit`. The Cycle Title is used as the commit message.\n3.  Click the **`Baseline (Commit)`** button again.\nThis time, a new button will be available: **`Initialize Repository`**. Click it. A \"Successfully initialized\" message will appear. Now, click `Baseline (Commit)` one last time. It will succeed.",
-                    "imageGroupIds": ["lab-1-step-29-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-30",
-                    "pageTitle": "Step 30: The GitHub Quest",
-                    "tldr": "Your next task is to use the skills you've just learned to create a guide for setting up a GitHub account and connecting it to your project.",
-                    "content": "You now have Git initialized locally. The next step is to connect it to GitHub. This is your next quest! Repeat the exact same process you just used to create the Git installation guide. Your task is to create a new guide for setting up a GitHub account and connecting it to your local repository. Once you have followed that guide and set up your GitHub connection, you can proceed to the next step.",
-                    "imageGroupIds": ["lab-1-step-30-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-31",
-                    "pageTitle": "Step 31: Successfully Initialized",
-                    "tldr": "After setting up GitHub, the 'Initialize Repository' button will now work, fully connecting your local project to the cloud.",
-                    "content": "Assuming you have completed your GitHub quest, clicking the **`Initialize Repository`** button will now succeed without any errors. Your local project is now fully connected to Git and GitHub, and you are ready to build your website's code.",
+                    "pageId": "lab-1-cycle1-5",
+                    "pageTitle": "Step 29-31: Initializing the Repository",
+                    "tldr": "With Git installed, go back to Cycle 1 and successfully initialize your repository. Then, complete the GitHub setup quest on your own.",
+                    "content": "Now, navigate back to **Cycle 1** in the DCE. Change the title to `First Commit` and click `Baseline (Commit)` again. This time, click the **`Initialize Repository`** button that appears. It will succeed! **Your next quest:** follow the same cycle process to get instructions for setting up a GitHub account and connecting it to your project.",
                     "imageGroupIds": ["lab-1-step-31-ig1"]
-                },
+                }
+            ]
+        },
+        {
+            "sectionId": "lab-1-cycle-2",
+            "sectionTitle": "Cycle 2: Building the Code",
+            "pages": [
                 {
-                    "pageId": "lab-1-step-32",
-                    "pageTitle": "Step 32: Create the Project Scaffold",
-                    "tldr": "In a new cycle, ask the AI to build the initial code files for your portfolio website.",
-                    "content": "You are now ready to have the AI generate the actual code for your website.\n1.  Create a new cycle in the PCPP.\n2.  Set the **Cycle Title** to `Create Project Scaffold`.\n3.  Set the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.`\n4.  Generate the prompt, send it to the AI, and get your responses.",
+                    "pageId": "lab-1-cycle2-1",
+                    "pageTitle": "Step 32 & 33: Asking the AI to Build the Scaffold",
+                    "tldr": "In a new cycle, ask the AI to build the initial code files for your portfolio website, then execute the familiar rinse-repeat loop.",
+                    "content": "Create a new cycle (Cycle 3). Set the **Cycle Title** to `Create Project Scaffold` and the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.` Now, execute the full loop: generate the prompt, get responses from your AI, and paste them into a new cycle (Cycle 4) in the DCE.",
                     "imageGroupIds": ["lab-1-step-32-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-33",
-                    "pageTitle": "Step 33: The Rinse-Repeat Loop",
-                    "tldr": "Follow the same rinse-repeat process you've learned to get the AI-generated code into your project.",
-                    "content": "You know the drill now. This is the core loop of the V2V workflow.\n1.  Generate `prompt.md`.\n2.  Copy the prompt and send it to your AI tabs.\n3.  Create a new cycle in the PCPP.\n4.  Copy the AI responses back into the PCPP.\n5.  Parse the responses and select the longest one.",
-                    "imageGroupIds": ["lab-1-step-33-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-34",
-                    "pageTitle": "Step 34: Baseline and Accept the Code",
+                    "pageId": "lab-1-cycle2-2",
+                    "pageTitle": "Step 34: The Full Loop - Baseline and Accept Code",
                     "tldr": "With Git initialized, you can now Baseline first, then Accept the new code files.",
-                    "content": "This time, the workflow is slightly different. After you parse the responses, the **`Baseline (Commit)`** button will be highlighted. Click it. This saves the current state of your project. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
+                    "content": "You are now in Cycle 4 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
                     "imageGroupIds": ["lab-1-step-34-ig1"]
                 },
                 {
-                    "pageId": "lab-1-step-35",
-                    "pageTitle": "Step 35: Run Your Project!",
+                    "pageId": "lab-1-cycle2-3",
+                    "pageTitle": "Step 35 & 36: Launching Your Website",
                     "tldr": "Find the `Development and Testing Guide` artifact, open the VS Code terminal, and run the commands to install dependencies and start your website.",
-                    "content": "You now have a complete set of project files. Look in your `src/Artifacts` folder for a `Development-and-Testing-Guide.md`. This guide tells you the commands to run.\n1.  Open the integrated terminal in VS Code (`Terminal > New Terminal`).\n2.  Type `npm install` and press Enter.\n3.  After it finishes, type `npm run dev` and press Enter.",
-                    "imageGroupIds": ["lab-1-step-35-ig1"]
-                },
-                {
-                    "pageId": "lab-1-step-36",
-                    "pageTitle": "Step 36: Tada! Your Project!",
-                    "tldr": "Click the `localhost` link in your terminal to see your live website in your browser. Congratulations!",
-                    "content": "Once `npm run dev` is running, you will see a link in the terminal, usually `http://localhost:3000`. Ctrl-click this link to open it in your web browser. **Congratulations!** You are now looking at the first version of your portfolio website, created from scratch with the DCE and an AI partner.",
+                    "content": "You now have a complete set of project files. Find the `Development-and-Testing-Guide.md` in your `src/Artifacts` folder. It tells you the commands to run. Open the integrated terminal in VS Code (`Terminal > New Terminal`), type `npm install` and press Enter. After it finishes, type `npm run dev` and press Enter. A link like `http://localhost:3000` will appear. Ctrl-click it to see your live website!",
                     "imageGroupIds": ["lab-1-step-36-ig1"]
-                },
+                }
+            ]
+        },
+        {
+            "sectionId": "lab-1-conclusion",
+            "sectionTitle": "Conclusion",
+            "pages": [
                 {
-                    "pageId": "lab-1-step-37",
+                    "pageId": "lab-1-conclusion-1",
                     "pageTitle": "Step 37: Continue to Iterate",
-                    "tldr": "You've completed the loop. Now, continue to enhance your project by curating new context, like your resume.",
+                    "tldr": "Congratulations! You've completed the loop. Now, continue to enhance your project by curating new context, like your resume.",
                     "content": "You are now on the path to becoming a Citizen Architect. To continue, try creating a `context/personal/` folder and adding your resume as a PDF. Check that file in the DCE's File Tree View, start a new cycle, and ask the AI to add a new section to your website summarizing your resume. This is **context curation** in action. As you progress through the V2V Academy, you can add your new projects to your portfolio's showcase, continuously improving it with the same workflow you've just mastered. This completes your first lab.",
                     "imageGroupIds": ["lab-1-step-37-ig1"]
                 }
@@ -31191,6 +30863,66 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         }
     ]
 }
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-2-1.png">
+<metadata>
+{
+  "name": "step-2-1.png",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "PNG",
+  "sizeInBytes": 116096,
+  "dimensions": {
+    "width": 1437,
+    "height": 697
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-3-1.gif">
+<metadata>
+{
+  "name": "step-3-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 1359746,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-4-1.gif">
+<metadata>
+{
+  "name": "step-4-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 389951,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-5-1.gif">
+<metadata>
+{
+  "name": "step-5-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 717217,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
 </file_artifact>
 
 

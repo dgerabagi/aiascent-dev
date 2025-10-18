@@ -80,10 +80,11 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        if (currentPage) {
-            fetchPageSuggestions(currentPage); // C90: Removed reportName argument
+        // C95: Disable suggested questions for labs
+        if (currentPage && !reportName.startsWith('v2v-academy-lab')) {
+            fetchPageSuggestions(currentPage);
         }
-    }, [currentPage, fetchPageSuggestions]);
+    }, [currentPage, fetchPageSuggestions, reportName]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
