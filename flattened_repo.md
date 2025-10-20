@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-20T12:43:03.561Z
+  Date Generated: 2025-10-20T19:48:28.551Z
   ---
-  Total Files: 185
-  Approx. Tokens: 473205
+  Total Files: 190
+  Approx. Tokens: 473430
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
 6. src\stores\reportStore.ts (8784 tokens)
-7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
+7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8648 tokens)
 8. src\Artifacts\A0-Master-Artifact-List.md (7378 tokens)
 9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
 10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
@@ -186,9 +186,9 @@
 164. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
 165. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
-167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
+167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 368 - Chars: 34591 - Tokens: 8648
 168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5081 - Tokens: 1271
-169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18330 - Tokens: 4583
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18951 - Tokens: 4738
 170. public\assets\images\v2v\labs\lab-1\step-2-1.webp - [Binary] Size: 54.1 KB
 171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
 172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
@@ -205,6 +205,11 @@
 183. public\assets\images\v2v\labs\lab-1\step-28-1.gif - [Binary] Size: 3.5 MB
 184. public\assets\images\v2v\labs\lab-1\step-31-1.gif - [Binary] Size: 1.5 MB
 185. public\assets\images\v2v\labs\lab-1\step-32-1.gif - [Binary] Size: 14.2 MB
+186. public\assets\images\v2v\labs\lab-1\step-34-1.gif - [Binary] Size: 2.6 MB
+187. public\assets\images\v2v\labs\lab-1\step-36-1.gif - [Binary] Size: 1.9 MB
+188. public\assets\images\v2v\labs\lab-1\step-37-1.gif - [Binary] Size: 4 MB
+189. public\assets\images\v2v\labs\lab-1\step-32-1.mp4 - [Binary] Size: 6.3 MB
+190. public\assets\images\v2v\labs\lab-1\step-27-1.mp4 - [Binary] Size: 10.5 MB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -25878,6 +25883,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 # Artifact A81: V2V Academy - Lab 1 - Your First Portfolio Website
 # Date Created: C93
 # Author: AI Model & Curator
+# Updated on: C95 (Refine language for Step 34)
 
 - **Key/Value for A0:**
 - **Description:** The detailed content for Lab 1 of the V2V Academy, "Your First Portfolio Website," designed for the interactive report viewer. This lab guides a new user through the entire DCE workflow.
@@ -26214,10 +26220,11 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 *   **Page Title:** Step 34: Baseline and Accept the Code
 *   **Image Prompt:** A screenshot of the PCPP after parsing the scaffold responses. The "Baseline (Commit)" button is highlighted first, then the "Select All" and "Accept Selected" buttons. The VS Code file explorer shows the color of `flattened_repo.md` changing from green to white after the commit.
 *   **TL;DR:** With Git initialized, you can now Baseline first, then Accept the new code files.
-*   **Content:** This time, the workflow is slightly different because Git is initialized.
-    1.  After you parse the responses, the **`Baseline (Commit)`** button will be highlighted. Click it. This saves the current state of your project. Observe how the color of `flattened_repo.md` in the file explorer changes from green to white, indicating it's now saved in Git.
-    2.  Now, click **`Select All`** and **`Accept Selected`**.
-    This will create all the new project files for your website (e.g., HTML, CSS, JavaScript files).
+*   **Content:** You are now in Cycle 3 with the AI's code responses. Execute the full loop, starting with **Parse All**.
+
+    After parsing, the **`Sort`** button will be highlighted. Click it to reorder the tabs by size. As a general rule, starting your review with the longest response is a sound strategy, as it's often the most detailed. However, choosing which response to proceed with is both an art and a science. For this cycle, our goal is to create the initial project files. You might notice one AI response returned more files than another, even if it wasn't the longest. In this case, choosing the response with the most files is a perfectly valid strategic decision.
+
+    Review your options, then click **Select This Response** on your chosen tab. With your choice made, the **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.
 
 ---
 ### **Page 36: Step 35 - Run Your Project**
@@ -26264,9 +26271,9 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-32-ig1": { "path": "lab-1/", "prompt": "A screenshot of the PCPP in a new cycle with the title 'Create Project Scaffold.'", "alt": "Creating the project scaffold.", "baseFileName": "step-32-", "fileExtension": ".gif", "imageCount": 1 },
-        "lab-1-step-34-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' and 'Accept Selected' buttons being highlighted for the scaffold cycle.", "alt": "Baselining and accepting the scaffold code.", "baseFileName": "step-34-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-36-ig1": { "path": "lab-1/", "prompt": "A screenshot of the portfolio website running for the first time in a browser.", "alt": "The live portfolio website.", "baseFileName": "step-36-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-37-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a resume PDF being added to the `context/personal` folder in VS Code.", "alt": "Continuing to iterate by adding new context.", "baseFileName": "step-37-", "fileExtension": ".png", "imageCount": 1 }
+        "lab-1-step-34-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' and 'Accept Selected' buttons being highlighted for the scaffold cycle.", "alt": "Baselining and accepting the scaffold code.", "baseFileName": "step-34-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-36-ig1": { "path": "lab-1/", "prompt": "A screenshot of the portfolio website running for the first time in a browser.", "alt": "The live portfolio website.", "baseFileName": "step-36-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-37-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a resume PDF being added to the `context/personal` folder in VS Code.", "alt": "Continuing to iterate by adding new context.", "baseFileName": "step-37-", "fileExtension": ".gif", "imageCount": 1 }
     }
 }
 </file_artifact>
@@ -26420,7 +26427,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle2-2",
                     "pageTitle": "Step 34: The Full Loop - Baseline and Accept Code",
                     "tldr": "With Git initialized, you can now Baseline first, then Accept the new code files.",
-                    "content": "You are now in Cycle 3 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
+                    "content": "You are now in Cycle 3 with the AI's code responses. Execute the full loop, starting with **Parse All**.\n\nAfter parsing, the **`Select This Response`** button will be highlighted. As a general rule, starting your review with the longest response is a sound strategy, as it's often the most detailed. However, choosing which response to proceed with is both an art and a science. For this cycle, our goal is to create the initial project files. You might notice one AI response returned more files than another, even if it wasn't the longest. In this case, choosing the response with the most files is a perfectly valid strategic decision.\n\nReview your options, then click **Select This Response** on your chosen tab. With your choice made, the **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
                     "imageGroupIds": ["lab-1-step-34-ig1"]
                 },
                 {
@@ -26720,6 +26727,73 @@ This method involves making your system temporarily "forget" where Git is instal
     "width": 1920,
     "height": 1146
   }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-34-1.gif">
+<metadata>
+{
+  "name": "step-34-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 2718929,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-36-1.gif">
+<metadata>
+{
+  "name": "step-36-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 2032020,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-37-1.gif">
+<metadata>
+{
+  "name": "step-37-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 4188225,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-32-1.mp4">
+<metadata>
+{
+  "name": "step-32-1.mp4",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "MP4",
+  "sizeInBytes": 6592424
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-27-1.mp4">
+<metadata>
+{
+  "name": "step-27-1.mp4",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "MP4",
+  "sizeInBytes": 10964482
 }
 </metadata>
 </file_artifact>

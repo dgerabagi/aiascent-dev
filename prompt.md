@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 95 - help with a steps language
+Current Cycle 96 - gifs created now create descriptions for them
+Cycle 95 - help with a steps language
 Cycle 94 - build out lab steps
 Cycle 93 - create first lab artifacts
 Cycle 92 - upscale/align A77 undergraduate imagery
@@ -746,11 +747,65 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
+<Cycle 96>
+<Cycle Context>
+okay fantastic, we've gotten the lab gifs done. in addition, i have converted the gifs to mp4 so that i can provide them to you and we can generate accurate image descriptions to place for them. ive provided the following 14 mp4s along with this prompt:
+
+step-3-1.mp4
+step-4-1.mp4
+step-5-1.mp4
+step-6-1.mp4
+step-8-1.mp4
+step-12-1.mp4
+step-15-1.mp4
+step-17-1.mp4
+step-18-1.mp4
+step-22-1.mp4
+step-27-1.mp4
+step-28-1.mp4
+step-31-1.mp4
+step-32-1.mp4
+step-34-1.mp4
+step-26-1.mp4
+step-37-1.mp4
+
+please provide a new artifact which contains decriptions for each, and then update our `imagemanifest_lab_1_portfolio.json` to align with it.
+</Cycle Context>
+<Previous Cycle 95 Summary of Actions>
+I have analyzed the feedback from Cycle 98 and will address the persistent fullscreen viewer bugs, update the lab content as requested, and provide a comprehensive guide to solve your environment simulation blocker.
+
+My course of action is to first correct the fullscreen viewer by ensuring the lab content and navigation controls are correctly passed to and rendered by the component. Second, I will enrich the V2V Lab content on pages 8 and 12 with the specified details about AI Studio rate limits and the Git prerequisite narrative. Finally, I will create a new artifact, `A83`, to provide safe, detailed instructions for simulating a fresh development environment, recommending the use of VS Code Dev Containers as the most robust solution. This will unblock your ability to create accurate GIFs for the lab.
+
+1.  **Fix Fullscreen Viewer Bugs:**
+    *   I will re-examine and correct the logic in `src/components/global/FullscreenMediaViewer.tsx`, `src/stores/reportStore.ts`, and `src/components/report-viewer/ReportViewer.tsx`.
+    *   The issue is likely a state-passing or conditional rendering error. I will ensure that when `handleImageClick` is called for a lab, it correctly includes the page's `content` in the payload to `openFullscreenMedia`.
+    *   I will then fix `FullscreenMediaViewer.tsx` to prioritize rendering this `content` instead of the image prompt and to correctly display and wire up the `nextPageInFullscreen` and `prevPageInFullscreen` navigation arrows.
+
+2.  **Update V2V Lab 1 Content:**
+    *   I will edit `public/data/v2v_lab_1_portfolio.json`.
+    *   On the page for Step 8 (AI Studio setup), I will add the information about API rate limits. I will mention the 2 million tokens per minute (TPM) limit for Gemini 2.5 Pro in AI Studio's free tier, explain that hitting the limit can result in a temporary block, and include a hyperlink to the official rate limits documentation. I will also make `aistudio.google.com` a clickable link.
+    *   On the page for Step 12 (Git prerequisite discovery), I will add the requested narrative about the importance of exploring documentation and how it can lead to discovering necessary prerequisites.
+
+3.  **Create Environment Simulation Guide:**
+    *   I will author a new artifact, `A83 - V2V Academy - Simulating a Fresh Environment Guide.md`.
+    *   This guide will detail several methods for simulating a "clean" machine without uninstalling critical software.
+    *   **Method 1 (Recommended):** Using VS Code Dev Containers. This creates a fully isolated Docker container with a clean OS, allowing you to run the lab in a pristine environment without affecting your main machine. This is the safest and most reproducible method.
+    *   **Method 2 (Advanced):** Temporarily modifying the system's `PATH` environment variable to hide the `git` executable and clearing cached credentials from the OS's credential manager. This is riskier and less reliable.
+    *   The guide will provide the curator with a clear, safe path to unblock their GIF recording workflow.
+
+4.  **Update Master Artifact List:**
+    *   I will add the new `A83` artifact to `src/Artifacts/A0-Master-Artifact-List.md`.
+
+5.  **Add Curator Activity:**
+    *   I will include a `<curator_activity>` block to direct you to the new `A83` guide to solve your Git/GitHub simulation blocker.
+</Previous Cycle 95 Summary of Actions>
+</Cycle 96>
+
 <Cycle 95>
 <Cycle Context>
-okay we are doing great on the lab and are almost done. i got to this point:
+okay we are doing great on the lab and are almost done. i got to this point in step 34:
 
-`Execute the full loop: **Parse All -> Sort -> Select This Response**.`
+`You are now in Cycle 3 with the AI's code responses. Execute the full loop: Parse All -> Sort -> Select This Response.`
 
 but i would like to add a bit of insight based on my lab environment and the results i got back. while the DCE sorts by most token and its generally a good idea to start there (as youve got to start somewhere, and my experience has shown me that 80% of the time, the longest is good enough to serve as precisely that, a starting prompt to baseline yourself to review the other responses against) but for those other 20%, my current lab environment responses have led me to choose not the longest, but instead the prompt which provided me with the most files back. this is because we are building out the scaffolding and it is at this point in time that is actually my goal to create the files, and one response has provided me with more of the files that are listed in the technical scaffold than another, and so for this reason i have decided to go with not with the longest, but instead the one that provided the most files. at this point in time, i ultimately could have gone with either. this is very much both a combination of an art and a science. can you help me to convey this notion to our students at this point in time in a succinct way as it aligns with what ive recorded in the accompanying gif?
 
@@ -4492,10 +4547,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-20T12:43:03.561Z
+  Date Generated: 2025-10-20T19:48:28.551Z
   ---
-  Total Files: 185
-  Approx. Tokens: 473205
+  Total Files: 190
+  Approx. Tokens: 473430
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4505,7 +4560,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
 6. src\stores\reportStore.ts (8784 tokens)
-7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
+7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8648 tokens)
 8. src\Artifacts\A0-Master-Artifact-List.md (7378 tokens)
 9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
 10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
@@ -4677,9 +4732,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 164. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
 165. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
-167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
+167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 368 - Chars: 34591 - Tokens: 8648
 168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5081 - Tokens: 1271
-169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18330 - Tokens: 4583
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18951 - Tokens: 4738
 170. public\assets\images\v2v\labs\lab-1\step-2-1.webp - [Binary] Size: 54.1 KB
 171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
 172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
@@ -4696,6 +4751,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 183. public\assets\images\v2v\labs\lab-1\step-28-1.gif - [Binary] Size: 3.5 MB
 184. public\assets\images\v2v\labs\lab-1\step-31-1.gif - [Binary] Size: 1.5 MB
 185. public\assets\images\v2v\labs\lab-1\step-32-1.gif - [Binary] Size: 14.2 MB
+186. public\assets\images\v2v\labs\lab-1\step-34-1.gif - [Binary] Size: 2.6 MB
+187. public\assets\images\v2v\labs\lab-1\step-36-1.gif - [Binary] Size: 1.9 MB
+188. public\assets\images\v2v\labs\lab-1\step-37-1.gif - [Binary] Size: 4 MB
+189. public\assets\images\v2v\labs\lab-1\step-32-1.mp4 - [Binary] Size: 6.3 MB
+190. public\assets\images\v2v\labs\lab-1\step-27-1.mp4 - [Binary] Size: 10.5 MB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -30369,6 +30429,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 # Artifact A81: V2V Academy - Lab 1 - Your First Portfolio Website
 # Date Created: C93
 # Author: AI Model & Curator
+# Updated on: C95 (Refine language for Step 34)
 
 - **Key/Value for A0:**
 - **Description:** The detailed content for Lab 1 of the V2V Academy, "Your First Portfolio Website," designed for the interactive report viewer. This lab guides a new user through the entire DCE workflow.
@@ -30705,10 +30766,11 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 *   **Page Title:** Step 34: Baseline and Accept the Code
 *   **Image Prompt:** A screenshot of the PCPP after parsing the scaffold responses. The "Baseline (Commit)" button is highlighted first, then the "Select All" and "Accept Selected" buttons. The VS Code file explorer shows the color of `flattened_repo.md` changing from green to white after the commit.
 *   **TL;DR:** With Git initialized, you can now Baseline first, then Accept the new code files.
-*   **Content:** This time, the workflow is slightly different because Git is initialized.
-    1.  After you parse the responses, the **`Baseline (Commit)`** button will be highlighted. Click it. This saves the current state of your project. Observe how the color of `flattened_repo.md` in the file explorer changes from green to white, indicating it's now saved in Git.
-    2.  Now, click **`Select All`** and **`Accept Selected`**.
-    This will create all the new project files for your website (e.g., HTML, CSS, JavaScript files).
+*   **Content:** You are now in Cycle 3 with the AI's code responses. Execute the full loop, starting with **Parse All**.
+
+    After parsing, the **`Sort`** button will be highlighted. Click it to reorder the tabs by size. As a general rule, starting your review with the longest response is a sound strategy, as it's often the most detailed. However, choosing which response to proceed with is both an art and a science. For this cycle, our goal is to create the initial project files. You might notice one AI response returned more files than another, even if it wasn't the longest. In this case, choosing the response with the most files is a perfectly valid strategic decision.
+
+    Review your options, then click **Select This Response** on your chosen tab. With your choice made, the **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.
 
 ---
 ### **Page 36: Step 35 - Run Your Project**
@@ -30755,9 +30817,9 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-32-ig1": { "path": "lab-1/", "prompt": "A screenshot of the PCPP in a new cycle with the title 'Create Project Scaffold.'", "alt": "Creating the project scaffold.", "baseFileName": "step-32-", "fileExtension": ".gif", "imageCount": 1 },
-        "lab-1-step-34-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' and 'Accept Selected' buttons being highlighted for the scaffold cycle.", "alt": "Baselining and accepting the scaffold code.", "baseFileName": "step-34-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-36-ig1": { "path": "lab-1/", "prompt": "A screenshot of the portfolio website running for the first time in a browser.", "alt": "The live portfolio website.", "baseFileName": "step-36-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-37-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a resume PDF being added to the `context/personal` folder in VS Code.", "alt": "Continuing to iterate by adding new context.", "baseFileName": "step-37-", "fileExtension": ".png", "imageCount": 1 }
+        "lab-1-step-34-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' and 'Accept Selected' buttons being highlighted for the scaffold cycle.", "alt": "Baselining and accepting the scaffold code.", "baseFileName": "step-34-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-36-ig1": { "path": "lab-1/", "prompt": "A screenshot of the portfolio website running for the first time in a browser.", "alt": "The live portfolio website.", "baseFileName": "step-36-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-37-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a resume PDF being added to the `context/personal` folder in VS Code.", "alt": "Continuing to iterate by adding new context.", "baseFileName": "step-37-", "fileExtension": ".gif", "imageCount": 1 }
     }
 }
 </file_artifact>
@@ -30911,7 +30973,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle2-2",
                     "pageTitle": "Step 34: The Full Loop - Baseline and Accept Code",
                     "tldr": "With Git initialized, you can now Baseline first, then Accept the new code files.",
-                    "content": "You are now in Cycle 3 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
+                    "content": "You are now in Cycle 3 with the AI's code responses. Execute the full loop, starting with **Parse All**.\n\nAfter parsing, the **`Select This Response`** button will be highlighted. As a general rule, starting your review with the longest response is a sound strategy, as it's often the most detailed. However, choosing which response to proceed with is both an art and a science. For this cycle, our goal is to create the initial project files. You might notice one AI response returned more files than another, even if it wasn't the longest. In this case, choosing the response with the most files is a perfectly valid strategic decision.\n\nReview your options, then click **Select This Response** on your chosen tab. With your choice made, the **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
                     "imageGroupIds": ["lab-1-step-34-ig1"]
                 },
                 {
@@ -31211,6 +31273,73 @@ This method involves making your system temporarily "forget" where Git is instal
     "width": 1920,
     "height": 1146
   }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-34-1.gif">
+<metadata>
+{
+  "name": "step-34-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 2718929,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-36-1.gif">
+<metadata>
+{
+  "name": "step-36-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 2032020,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-37-1.gif">
+<metadata>
+{
+  "name": "step-37-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 4188225,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-32-1.mp4">
+<metadata>
+{
+  "name": "step-32-1.mp4",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "MP4",
+  "sizeInBytes": 6592424
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-27-1.mp4">
+<metadata>
+{
+  "name": "step-27-1.mp4",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "MP4",
+  "sizeInBytes": 10964482
 }
 </metadata>
 </file_artifact>

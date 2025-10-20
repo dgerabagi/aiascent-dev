@@ -1,6 +1,7 @@
 # Artifact A81: V2V Academy - Lab 1 - Your First Portfolio Website
 # Date Created: C93
 # Author: AI Model & Curator
+# Updated on: C95 (Refine language for Step 34)
 
 - **Key/Value for A0:**
 - **Description:** The detailed content for Lab 1 of the V2V Academy, "Your First Portfolio Website," designed for the interactive report viewer. This lab guides a new user through the entire DCE workflow.
@@ -337,10 +338,11 @@
 *   **Page Title:** Step 34: Baseline and Accept the Code
 *   **Image Prompt:** A screenshot of the PCPP after parsing the scaffold responses. The "Baseline (Commit)" button is highlighted first, then the "Select All" and "Accept Selected" buttons. The VS Code file explorer shows the color of `flattened_repo.md` changing from green to white after the commit.
 *   **TL;DR:** With Git initialized, you can now Baseline first, then Accept the new code files.
-*   **Content:** This time, the workflow is slightly different because Git is initialized.
-    1.  After you parse the responses, the **`Baseline (Commit)`** button will be highlighted. Click it. This saves the current state of your project. Observe how the color of `flattened_repo.md` in the file explorer changes from green to white, indicating it's now saved in Git.
-    2.  Now, click **`Select All`** and **`Accept Selected`**.
-    This will create all the new project files for your website (e.g., HTML, CSS, JavaScript files).
+*   **Content:** You are now in Cycle 3 with the AI's code responses. Execute the full loop, starting with **Parse All**.
+
+    After parsing, the **`Sort`** button will be highlighted. Click it to reorder the tabs by size. As a general rule, starting your review with the longest response is a sound strategy, as it's often the most detailed. However, choosing which response to proceed with is both an art and a science. For this cycle, our goal is to create the initial project files. You might notice one AI response returned more files than another, even if it wasn't the longest. In this case, choosing the response with the most files is a perfectly valid strategic decision.
+
+    Review your options, then click **Select This Response** on your chosen tab. With your choice made, the **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.
 
 ---
 ### **Page 36: Step 35 - Run Your Project**
