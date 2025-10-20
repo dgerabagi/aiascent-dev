@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C98 (Add A83)
+# Updated on: C96 (Add A97)
 
 ## 1. Purpose
 
@@ -442,3 +442,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A83. V2V Academy - Simulating a Fresh Environment Guide
 - **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
 - **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
+
+### A97. V2V Academy - Lab 1 Media Descriptions
+- **Description:** Provides detailed, step-by-step descriptions for the screen recording videos used in Lab 1 of the V2V Academy.
+- **Tags:** v2v, curriculum, lab, documentation, media, accessibility
