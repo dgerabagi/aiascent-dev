@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 97 - take feedback continue iteration on lab, great work! please work to minimize truncations.
+Current Cycle 98 - more feedback to address
+Cycle 97 - take feedback continue iteration on lab, great work! please work to minimize truncations.
 Cycle 96 - second round of feedback
 Cycle 95 - iterate on the lab based on feedback
 Cycle 94 - build out lab steps
@@ -743,6 +744,193 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 98>
+<Cycle Context>
+1. fullscreen still displays the page image prompt and not the page content. there are still no page navigation buttons on the full screen view. thats two or three cycles you have been tasked with somethign and there has been no change whch usually means theres a missing piece of the puzzle please look closely.
+
+2. im working on page 8 of our v2v lab, which is where i paste in the responses. something that is important and worth surfacing on that pages content at this point in time, and that is the ai studio threshold limits. while ai studio is a free service, it has limitations. the specifics can be read about here, but for our purposes with the DCE the only threshold that ends up impacting us is mostly the tokens per minute. when a project is larger than 500,000 tokens, then its possible for you to accidentally cross the max tokens per minute threshold, which is 2 million for gemini 2.5 pro thru ai studio. what happens if u hit the rate limit is your account is blocked from additional requests to that model for the remainder of the day. ill provide the usage limits in the epehemeral context for you to write accurate/pertinent information, but also link the users to this url: https://ai.google.dev/gemini-api/docs/rate-limits
+
+3. in page 8, lets make the mention of aistudio.google.com an actual hyperlink for the user
+
+4. okay i got to page 12, i had given some explanations as to how and why we need to do the git, namely exploring the documentation and discovering the prerequisite. this is important narrative to carry in to the lab lesson at this point in time.
+
+okay so at this point in time im actually ready to make these gifs but the problem is that my environment is already prepared in that i have git installed and i have my github gpg key or whatever auth solution (i know there are a few ways to do github auth so u can run git init successfully). so in order to deliver a valid and accurate gif i need to uninstall those softwars but im afraid of doing it and breaking something like one of my dev environments. do you think you could guide me given the situation? is there a safe way to deactivate git/github such that i can run the lab and encounter the -exact- same scenario that the lab learners will hit in a fresh environment? otherwise people with experiential blindness will get to this point and get stuck. since this is a current blocker for me ill pause at this point in time and kick it back over to you.
+</Cycle Context>
+<Ephemeral Context>
+<api usage limits>
+
+Skip to main content
+Gemini API
+
+/
+Get API key
+Cookbook
+Community
+Sign in
+Gemini API docs
+API Reference
+
+Veo 3.1 is here! Read about the new model and its features in the blog post and documentation.
+
+    Home
+    Gemini API
+    Gemini API docs
+
+Was this helpful?
+Rate limits
+
+Rate limits regulate the number of requests you can make to the Gemini API within a given timeframe. These limits help maintain fair usage, protect against abuse, and help maintain system performance for all users.
+
+View your active rate limits in AI Studio
+How rate limits work
+
+Rate limits are usually measured across three dimensions:
+
+    Requests per minute (RPM)
+    Tokens per minute (input) (TPM)
+    Requests per day (RPD)
+
+Your usage is evaluated against each limit, and exceeding any of them will trigger a rate limit error. For example, if your RPM limit is 20, making 21 requests within a minute will result in an error, even if you haven't exceeded your TPM or other limits.
+
+Rate limits are applied per project, not per API key.
+
+Requests per day (RPD) quotas reset at midnight Pacific time.
+
+Limits vary depending on the specific model being used, and some limits only apply to specific models. For example, Images per minute, or IPM, is only calculated for models capable of generating images (Imagen 3), but is conceptually similar to TPM. Other models might have a token per day limit (TPD).
+
+Rate limits are more restricted for experimental and preview models.
+Usage tiers
+
+Rate limits are tied to the project's usage tier. As your API usage and spending increase, you'll have an option to upgrade to a higher tier with increased rate limits.
+
+The qualifications for Tiers 2 and 3 are based on the total cumulative spending on Google Cloud services (including, but not limited to, the Gemini API) for the billing account linked to your project.
+Tier 	Qualifications
+Free 	Users in eligible countries
+Tier 1 	Billing account linked to the project
+Tier 2 	Total spend: > $250 and at least 30 days since successful payment
+Tier 3 	Total spend: > $1,000 and at least 30 days since successful payment
+
+When you request an upgrade, our automated abuse protection system performs additional checks. While meeting the stated qualification criteria is generally sufficient for approval, in rare cases an upgrade request may be denied based on other factors identified during the review process.
+
+This system helps maintain the security and integrity of the Gemini API platform for all users.
+Standard API rate limits
+
+The following table lists the rate limits for all standard Gemini API calls.
+Note: Any values that show * have no published rate limits.
+Free Tier
+Tier 1
+Tier 2
+Tier 3
+Model 	RPM 	TPM 	RPD 	Batch Enqueued Tokens
+Text-out models
+Gemini 2.5 Pro 	150 	2,000,000 	10,000 	5,000,000
+Gemini 2.5 Flash 	1,000 	1,000,000 	10,000 	3,000,000
+Gemini 2.5 Flash Preview 	1,000 	1,000,000 	10,000 	3,000,000
+Gemini 2.5 Flash-Lite 	4,000 	4,000,000 	* 	10,000,000
+Gemini 2.5 Flash-Lite Preview 	4,000 	4,000,000 	* 	10,000,000
+Gemini 2.0 Flash 	2,000 	4,000,000 	* 	10,000,000
+Gemini 2.0 Flash-Lite 	4,000 	4,000,000 	* 	10,000,000
+Live API
+Gemini 2.5 Flash Live 	50 sessions 	4,000,000 	* 	*
+Gemini 2.5 Flash Preview Native Audio 	3 sessions 	50,000 	50 	*
+Gemini 2.5 Flash Experimental Native Audio Thinking 	1 session 	25,000 	50 	*
+Gemini 2.0 Flash Live 	50 sessions 	4,000,000 	* 	*
+Multi-modal generation models
+Gemini 2.5 Flash Preview TTS 	10 	10,000 	100 	*
+Gemini 2.5 Pro Preview TTS 	10 	10,000 	50 	*
+Gemini 2.5 Flash Image 	500 	500,000 	2,000 	*
+Gemini 2.0 Flash Preview Image Generation 	1,000 	1,000,000 	10,000 	*
+Imagen 4 Standard/Fast 	10 	* 	70 	*
+Imagen 4 Ultra 	5 	* 	30 	*
+Imagen 3 	20 	* 	* 	*
+Veo 3.1 	2 	* 	10 	*
+Veo 3.1 Fast 	2 	* 	10 	*
+Veo 3 	2 	* 	10 	*
+Veo 3 Fast 	2 	* 	10 	*
+Veo 2 	2 	* 	50 	*
+Other models
+Gemma 3 & 3n 	30 	15,000 	14,400 	*
+Gemini Embedding 	3,000 	1,000,000 	* 	*
+Gemini Robotics-ER 1.5 Preview 	300 	1,000,000 	10,000 	*
+Gemini 2.5 Computer Use Preview 	150 	2,000,000 	10,000 	*
+Deprecated models
+Gemini 1.5 Flash (Deprecated) 	2,000 	4,000,000 	* 	*
+Gemini 1.5 Flash-8B (Deprecated) 	4,000 	4,000,000 	* 	*
+Gemini 1.5 Pro (Deprecated) 	1,000 	4,000,000 	* 	*
+
+Specified rate limits are not guaranteed and actual capacity may vary.
+Batch API rate limits
+
+Batch API requests are subject to their own rate limits, separate from the non-batch API calls.
+
+    Concurrent batch requests: 100
+    Input file size limit: 2GB
+    File storage limit: 20GB
+    Enqueued tokens per model: The Batch Enqueued Tokens column in the rate limits table lists the maximum number of tokens that can be enqueued for batch processing across all your active batch jobs for a given model. See in the standard API rate limits table.
+
+How to upgrade to the next tier
+
+The Gemini API uses Cloud Billing for all billing services. To transition from the Free tier to a paid tier, you must first enable Cloud Billing for your Google Cloud project.
+
+Once your project meets the specified criteria, it becomes eligible for an upgrade to the next tier. To request an upgrade, follow these steps:
+
+    Navigate to the API keys page in AI Studio.
+    Locate the project you want to upgrade and click "Upgrade". The "Upgrade" option will only show up for projects that meet next tier qualifications.
+
+After a quick validation, the project will be upgraded to the next tier.
+Request a rate limit increase
+
+Each model variation has an associated rate limit (requests per minute, RPM). For details on those rate limits, see Gemini models.
+
+Request paid tier rate limit increase
+
+We offer no guarantees about increasing your rate limit, but we'll do our best to review your request.
+Was this helpful?
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+Last updated 2025-10-15 UTC.
+
+    Terms
+    Privacy
+
+
+</api usage limits>
+</Ephemeral Context>
+<Previous Cycle 97 Summary of Actions>
+I have analyzed the feedback from the second review round and will implement the requested improvements to enhance the user experience and functionality of the V2V Academy labs.
+
+My course of action is to address the four main points: I will make all external links in the lab content open in a new browser tab, update the lab instructions for clarity, overhaul the fullscreen viewer to include the lab's text content and page navigation, and fix the truncated prompt text while adding a convenient copy-to-clipboard feature.
+
+This will result in a more professional, intuitive, and user-friendly learning environment.
+
+1.  **Open Links in New Tabs:** I will update the `MarkdownRenderer` component to ensure all hyperlinks within the lab content automatically open in a new browser tab. This prevents users from losing their place in the training material.
+2.  **Clarify Lab Instructions:** I will revise the lab's JSON data file.
+    *   In Step 6, when the user first opens the DCE panel, I will explicitly identify it as the "Data Curation **File Tree View**" to establish consistent terminology.
+    *   In Step 7, I will restore the full, untruncated project scope prompt that was previously cut short, ensuring the user has the complete text to copy. I will also wrap this prompt in a markdown code block for better readability.
+3.  **Enhance Fullscreen Lab Viewer:** I will significantly upgrade the fullscreen viewing experience for labs.
+    *   The `FullscreenMediaViewer` will now display the lab step's full text content in the side panel instead of the image prompt, providing a focused, two-pane view of the image and its instructions.
+    *   I will add "Next" and "Previous" page navigation arrows directly within the fullscreen view, allowing users to seamlessly progress through the lab steps without exiting.
+4.  **Add "Copy Code" Button:** I will enhance the `MarkdownRenderer` to automatically add a "Copy" button to all code blocks. This provides a peak user experience, allowing learners to copy prompts and code snippets with a single click, ensuring accuracy and saving time.
+
+1.  **Update `public/data/v2v_lab_1_portfolio.json`:**
+    *   On the page for Step 7 (`lab-1-cycle0-1`), I will add the explicit identifier "Data Curation **File Tree View**" to the content.
+    *   On the same page, I will replace the truncated project scope prompt with the full, complete version from artifact `A81` and enclose it in markdown code fences (` ``` `).
+2.  **Update `src/components/shared/MarkdownRenderer.tsx`:**
+    *   I will modify the `a` component override to add `target="_blank"` and `rel="noopener noreferrer"` attributes to all rendered links.
+    *   I will refactor the `code` component override. For multi-line code blocks, I will wrap the `<pre>` tag in a relative container and add an absolutely positioned "Copy" button. This button will use the `navigator.clipboard` API to copy the code block's content and will provide visual feedback (e.g., changing to "Copied!") upon success.
+3.  **Update `src/stores/reportStore.ts`:**
+    *   I will update the `FullscreenMedia` type to include an optional `content?: string` field.
+    *   I will create two new actions, `nextPageInFullscreen` and `prevPageInFullscreen`. These actions will handle changing the page index and then immediately updating the `fullscreenMedia` state with the new page's image, prompt, and content, creating a seamless navigation experience within the fullscreen view.
+4.  **Update `src/components/report-viewer/ReportViewer.tsx`:**
+    *   I will modify the `handleImageClick` function. It will now check if the `reportName` indicates a lab. If so, it will call `openFullscreenMedia` with the current page's `content` included in the payload.
+5.  **Update `src/components/global/FullscreenMediaViewer.tsx`:**
+    *   The component will now check for the presence of `fullscreenMedia.content`.
+    *   If content exists, it will render the content (using `MarkdownRenderer`) in the side panel instead of the image prompt.
+    *   It will also render "Next" and "Previous" arrow buttons, wiring their `onClick` events to the new `nextPageInFullscreen` and `prevPageInFullscreen` actions from the store. The buttons will be disabled appropriately on the first and last pages.
+</Previous Cycle 97 Summary of Actions>
+</Cycle 98>
 
 <Cycle 97>
 <Cycle Context>
@@ -4558,10 +4746,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-18T23:20:57.929Z
+  Date Generated: 2025-10-19T23:59:59.589Z
   ---
-  Total Files: 175
-  Approx. Tokens: 471736
+  Total Files: 180
+  Approx. Tokens: 471628
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4570,11 +4758,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\stores\reportStore.ts (8820 tokens)
+6. src\stores\reportStore.ts (8811 tokens)
 7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
-8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7434 tokens)
-9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
-10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
+8. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
+9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
+10. src\Artifacts\A0-Master-Artifact-List.md (7291 tokens)
 
 <!-- Full File List -->
 1. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
@@ -4658,9 +4846,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 308 - Chars: 14375 - Tokens: 3594
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 211 - Chars: 8998 - Tokens: 2250
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9035 - Tokens: 2259
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3700 - Tokens: 925
+84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 86. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
 87. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
@@ -4669,7 +4857,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 773 - Chars: 35277 - Tokens: 8820
+93. src\stores\reportStore.ts - Lines: 773 - Chars: 35244 - Tokens: 8811
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -4729,7 +4917,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 150. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 151. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
 152. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 196 - Chars: 29272 - Tokens: 7318
-153. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 200 - Chars: 29733 - Tokens: 7434
+153. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 195 - Chars: 28710 - Tokens: 7178
 154. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
 155. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
 156. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28003 - Tokens: 7001
@@ -4745,13 +4933,18 @@ This file-centric approach helps in planning and prioritizing work, especially i
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
 167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
 168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5080 - Tokens: 1270
-169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 16620 - Tokens: 4155
-170. public\assets\images\v2v\labs\lab-1\step-2-1.png - [Binary] Size: 113.4 KB
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 17207 - Tokens: 4302
+170. public\assets\images\v2v\labs\lab-1\step-2-1.webp - [Binary] Size: 54.1 KB
 171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
 172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
 173. public\assets\images\v2v\labs\lab-1\step-5-1.gif - [Binary] Size: 700.4 KB
 174. public\assets\images\v2v\labs\lab-1\step-6-1.gif - [Binary] Size: 915.1 KB
 175. public\assets\images\v2v\labs\lab-1\step-8-1.gif - [Binary] Size: 6.6 MB
+176. public\assets\images\v2v\labs\lab-1\step-12-1.gif - [Binary] Size: 4 MB
+177. public\assets\images\v2v\labs\lab-1\step-15-1.gif - [Binary] Size: 2.9 MB
+178. public\assets\images\v2v\labs\lab-1\step-16-1.gif - [Binary] Size: 770.4 KB
+179. public\assets\images\v2v\labs\lab-1\step-18-1.gif - [Binary] Size: 421.9 KB
+180. public\assets\images\v2v\labs\lab-1\step-22-1.gif - [Binary] Size: 3.7 MB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -21153,11 +21346,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const handleImageClick = () => {
         if (currentImage) {
             const isLab = reportName.startsWith('v2v-academy-lab');
-            openFullscreenMedia({ 
+            const payload = { 
                 src: currentImage.url, 
                 description: currentImage.prompt,
                 ...(isLab && { content: currentPage.content })
-            });
+            };
+            openFullscreenMedia(payload);
         }
     };
 
@@ -21314,7 +21508,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
               <div className="relative group">
                 <button
                   onClick={() => handleCopy(childrenStr.replace(/\n$/, ''), index)}
-                  className="absolute top-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute bottom-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
                   title="Copy code"
                 >
                   {copiedStates[index] ? <FaCheck className="text-green-500" /> : <FaCopy />}
@@ -21890,8 +22084,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C96 (Add content to FullscreenMedia and add fullscreen navigation actions)
-// Updated on: C95 (Add 'V S Code' replacement for TTS)
+// Updated on: C97 (Implement fullscreen navigation actions)
+// Updated on: C96 (Add content to FullscreenMedia)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -22035,8 +22229,8 @@ export interface ReportActions {
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
-    nextPageInFullscreen: () => void; // C96: New action
-    prevPageInFullscreen: () => void; // C96: New action
+    nextPageInFullscreen: () => void; // C97: New action
+    prevPageInFullscreen: () => void; // C97: New action
     nextImage: () => void;
     prevImage: () => void;
     handleKeyDown: (event: KeyboardEvent) => void;
@@ -27670,12 +27864,10 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A three-panel "how-to" guide. Panel 1 shows a file being renamed from `script.js` to `user-login-api.js`. Panel 2 shows a messy desktop of files being dragged into clean folders named `_src`, `_docs`, and `_assets`. Panel 3 shows a final, clean project structure.
     *   **Approach 2:** A "before and after" of a student's project folder. "Before" is a single folder with 50 poorly named files. "After" is the same project, now with a clean, professional folder structure that a hiring manager would be impressed with.
 *   **Page 4 (Building a Portfolio):**
-    *   **Approach 1:** A young developer is proudly showing off a complex, polished application on their laptop screen. A glowing AI avatar is giving them a thumbs-up. The app looks clean, functional, and impressive.
-    *   **Approach 2:** A gallery view of a student's portfolio. Each project is a thumbnail of a working application. The portfolio looks professional and full of high-quality work, implying that this workflow is the key to building it.
+    *   **Approach 2:** A young developer is proudly showing off a complex, polished application on their laptop screen. It is actually a gallery view of a student's portfolio. Each project is a thumbnail of a working application. The portfolio looks professional and full of high-quality work, implying that this workflow is the key to building it. A glowing AI avatar is giving them a thumbs-up. The app looks clean, functional, and impressive.
 
 ### **Lesson 2.3: Critical Analysis of AI Output**
 *   **Page 1 (Don't Trust, Verify):**
-    *   **Approach 1:** A young developer is confidently presenting a code review to a senior engineer. The senior engineer looks impressed, giving a nod of approval. The young developer is shown pointing out a subtle but critical bug in a piece of AI-generated code on the screen.
     *   **Approach 2:** A student is acting as a fact-checker for an essay written by an AI. They have the AI's essay on one screen and are cross-referencing its claims with reliable sources on another, highlighting a factual error.
 *   **Page 2 (Spot the Bug):**
     *   **Approach 1:** A "field guide" page, like a bird-watching book. It shows different types of "bugs." One is a "Phantom Function" (a function that doesn't exist). Another is a "Logic Worm" (code that runs but gives the wrong answer). A third is a "Security Spider" (a hidden vulnerability).
@@ -27685,7 +27877,6 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A student is editing a term paper. Their process is shown: first, they check the overall essay structure, then they check each paragraph's topic sentence, and finally, they proofread for grammar line-by-line.
 *   **Page 4 (Turn Bugs into Prompts):**
     *   **Approach 1:** A diagram showing a cycle. An "AI Bug" is found. An arrow points to the developer writing a "Better Prompt" that says, "Fix this bug by..." The new prompt is fed back to the AI, which produces "Better Code."
-    *   **Approach 2:** A student is in a tutoring session with an AI mentor. The student shows the AI a mistake it made on a math problem. The AI then shows a new, corrected solution with a step-by-step explanation of how it fixed the original error.
 
 ---
 
@@ -27697,9 +27888,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A split-panel image. On the left, someone is trying to give directions to a robot using vague hand gestures, and the robot is confused. On the right, someone gives the robot a precise, step-by-step map, and the robot immediately proceeds to the destination.
 *   **Page 2 (Schema):**
     *   **Approach 1:** A clear, simple template is shown on a screen, like a form to be filled out. The fields are "1. What is the AI's Role?", "2. What is the Task?", "3. What Files Does it Need?", "4. What are the Steps?", and "5. What Should the Output Look Like?"
-    *   **Approach 2:** An image of a perfect lab report template from a science class. It has all the required sections (Hypothesis, Materials, Method, Results, Conclusion), ensuring a complete and professional submission.
 *   **Page 3 (Why it Gets You Hired):**
-    *   **Approach 1:** An engineering manager is reviewing two portfolios. One is a messy collection of one-off scripts. The other is a clean, organized project with clear documentation and a history of structured, repeatable processes. The manager is smiling and nodding at the second one.
     *   **Approach 2:** Two job candidates are in an interview. The first explains their process with "I just kind of talk to the AI until it works." The second explains their process with "I use a structured interaction schema to define the role, context, and output, ensuring predictable results." The interviewer is clearly more impressed with the second candidate.
 *   **Page 4 (Example):**
     *   **Approach 1:** A "before and after" comparison. "Before" shows a simple chat bubble: "Can you fix the login page?" "After" shows a structured command in a code-like block with clear sections for `// ROLE`, `// TASK`, `// CONTEXT`, and `// OUTPUT`.
@@ -27724,7 +27913,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A young developer is shown confidently working on a complex project. To their side is a prominent, glowing "UNDO" button. They are applying a large, complex piece of AI-generated code to their project, smiling because they know they can instantly revert it if it breaks anything.
     *   **Approach 2:** A student is in a chemistry lab, mixing volatile chemicals. However, they are working inside a protective fume hood, which protects them from any potential negative reactions. The fume hood is labeled "Git Workflow."
 *   **Page 2 (AI is Unpredictable):**
-    *   **Approach 1:** A diagram shows a developer asking an AI for a piece of code. The AI, represented as a friendly but slightly chaotic robot, offers three different code snippets. One has a green checkmark, but the other two have hidden red bug icons. A shield labeled "Git Baseline" protects the developer.
+    *   **Approach 1:** A diagram shows a developer asking an AI for a piece of code. The AI, represented as a friendly but slightly chaotic robot, representing a non-deterministic system, offers three different code snippets. One has a green checkmark, but the other two have hidden red bug icons. A shield labeled "Git Baseline" protects the developer.
     *   **Approach 2:** A student is using a "spell checker" AI. For one sentence, it gives a perfect suggestion. For the next, it suggests a grammatically correct but nonsensical word. The image illustrates that the AI's suggestions are not always correct and must be verified.
 *   **Page 3 (Validation Process):**
     *   **Approach 1:** A clear, four-step flowchart. 1. **Baseline:** A developer clicks a "Baseline (Commit)" button, creating a "Save Point." 2. **Accept:** The developer clicks "Accept Selected" to apply the AI's code. 3. **Test:** The developer runs the code, and a big "TEST FAILED" message appears. 4. **Restore:** The developer clicks a "Restore Baseline" button, and the project is instantly clean again.
@@ -30803,11 +30992,11 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         "lab-1-step-5-ig1": { "path": "lab-1/", "prompt": "A screenshot of VS Code's 'Open Folder...' dialog selecting the 'portfolio-website' folder.", "alt": "Opening the project folder in VS Code.", "baseFileName": "step-5-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-6-ig1": { "path": "lab-1/", "prompt": "A screenshot of the DCE Onboarding view with the 'Project Scope' text area filled out.", "alt": "The DCE Onboarding view.", "baseFileName": "step-6-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-8-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Generate Initial Artifacts Prompt' button being highlighted in the DCE.", "alt": "Generating the initial prompt.", "baseFileName": "step-8-", "fileExtension": ".gif", "imageCount": 1 },
-        "lab-1-step-12-ig1": { "path": "lab-1/", "prompt": "A screenshot of Google's AI Studio, showing four browser tabs with the correct model settings.", "alt": "AI Studio setup.", "baseFileName": "step-12-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-15-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Parse All' button being highlighted in the PCPP toolbar.", "alt": "Parsing all responses.", "baseFileName": "step-15-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-18-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'This workspace is not a git repository' error message in VS Code.", "alt": "The Git repository not found error.", "baseFileName": "step-18-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot showing the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-12-ig1": { "path": "lab-1/", "prompt": "A screenshot of Google's AI Studio, showing four browser tabs with the correct model settings.", "alt": "AI Studio setup.", "baseFileName": "step-12-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-15-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Parse All' button being highlighted in the PCPP toolbar.", "alt": "Parsing all responses.", "baseFileName": "step-15-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-18-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'This workspace is not a git repository' error message in VS Code.", "alt": "The Git repository not found error.", "baseFileName": "step-18-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot showing the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-27-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Accept Selected' button being clicked in Cycle 2.", "alt": "Accepting the solution for Cycle 2.", "baseFileName": "step-27-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".png", "imageCount": 1 },
@@ -30866,7 +31055,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-setup-4",
                     "pageTitle": "Step 5: Open the Project in VS Code",
                     "tldr": "Open your new `portfolio-website` folder in VS Code. This sets it as your active project, or 'workspace.'",
-                    "content": "It's time to start your project.\n1.  In VS Code, go to the \"File\" menu.\n2.  Select \"Open Folder...\"\n3.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
+                    "content": "It's time to start your project.\n1.  In VS Code, click on `Open Folder` from the Data Curation **File Tree View**.\n2.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
                     "imageGroupIds": ["lab-1-step-5-ig1"]
                 }
             ]
@@ -30893,14 +31082,14 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle0-3",
                     "pageTitle": "Step 12-14: Get and Paste Responses",
                     "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
-                    "content": "Open four tabs in your preferred AI tool (e.g., AI Studio). Paste the prompt into each and generate four responses. Copy these responses back into the 'Resp 1-4' tabs in the DCE's Cycle 1 view.",
+                    "content": "Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.\n1.  Open your web browser of choice.\n2.  Open **four separate tabs**.\n3.  In each tab, navigate to **aistudio.google.com**.\n4.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.",
                     "imageGroupIds": ["lab-1-step-12-ig1"]
                 },
                 {
                     "pageId": "lab-1-cycle0-4",
                     "pageTitle": "Step 15: Parse Responses",
                     "tldr": "Once all four responses are pasted in, click the 'Parse All' button.",
-                    "content": "With all four responses loaded, click the now-highlighted **`Parse All`** button. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
+                    "content": "After generating, copy each response and paste it back into the corresponding `Resp 1-4` tabs in the DCE's Cycle 1 view. With all four responses loaded, click the now-highlighted **`Parse All`** button.\n\n**Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
                     "imageGroupIds": ["lab-1-step-15-ig1"]
                 },
                 {
@@ -30997,17 +31186,13 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 }
 </file_artifact>
 
-<file path="public/assets/images/v2v/labs/lab-1/step-2-1.png">
+<file path="public/assets/images/v2v/labs/lab-1/step-2-1.webp">
 <metadata>
 {
-  "name": "step-2-1.png",
+  "name": "step-2-1.webp",
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
-  "fileType": "PNG",
-  "sizeInBytes": 116096,
-  "dimensions": {
-    "width": 1437,
-    "height": 697
-  }
+  "fileType": "WEBP",
+  "sizeInBytes": 55438
 }
 </metadata>
 </file_artifact>
@@ -31079,6 +31264,81 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
   "fileType": "GIF",
   "sizeInBytes": 6916869,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-12-1.gif">
+<metadata>
+{
+  "name": "step-12-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 4180184,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-15-1.gif">
+<metadata>
+{
+  "name": "step-15-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 3020527,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-16-1.gif">
+<metadata>
+{
+  "name": "step-16-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 788913,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-18-1.gif">
+<metadata>
+{
+  "name": "step-18-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 432072,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-22-1.gif">
+<metadata>
+{
+  "name": "step-22-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 3853692,
   "dimensions": {
     "width": 1920,
     "height": 1146

@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-18T23:20:57.929Z
+  Date Generated: 2025-10-19T23:59:59.589Z
   ---
-  Total Files: 175
-  Approx. Tokens: 471736
+  Total Files: 180
+  Approx. Tokens: 471628
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -13,11 +13,11 @@
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\stores\reportStore.ts (8820 tokens)
+6. src\stores\reportStore.ts (8811 tokens)
 7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
-8. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md (7434 tokens)
-9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
-10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
+8. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
+9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
+10. src\Artifacts\A0-Master-Artifact-List.md (7291 tokens)
 
 <!-- Full File List -->
 1. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
@@ -101,9 +101,9 @@
 79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 308 - Chars: 14375 - Tokens: 3594
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 211 - Chars: 8998 - Tokens: 2250
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9035 - Tokens: 2259
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3700 - Tokens: 925
+84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
 86. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 2956 - Tokens: 739
 87. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
@@ -112,7 +112,7 @@
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 773 - Chars: 35277 - Tokens: 8820
+93. src\stores\reportStore.ts - Lines: 773 - Chars: 35244 - Tokens: 8811
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -172,7 +172,7 @@
 150. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 151. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
 152. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 196 - Chars: 29272 - Tokens: 7318
-153. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 200 - Chars: 29733 - Tokens: 7434
+153. src\Artifacts\A77 - V2V Academy - Image Prompts (Underequipped Graduate).md - Lines: 195 - Chars: 28710 - Tokens: 7178
 154. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
 155. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
 156. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28003 - Tokens: 7001
@@ -188,13 +188,18 @@
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
 167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
 168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5080 - Tokens: 1270
-169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 16620 - Tokens: 4155
-170. public\assets\images\v2v\labs\lab-1\step-2-1.png - [Binary] Size: 113.4 KB
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 17207 - Tokens: 4302
+170. public\assets\images\v2v\labs\lab-1\step-2-1.webp - [Binary] Size: 54.1 KB
 171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
 172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
 173. public\assets\images\v2v\labs\lab-1\step-5-1.gif - [Binary] Size: 700.4 KB
 174. public\assets\images\v2v\labs\lab-1\step-6-1.gif - [Binary] Size: 915.1 KB
 175. public\assets\images\v2v\labs\lab-1\step-8-1.gif - [Binary] Size: 6.6 MB
+176. public\assets\images\v2v\labs\lab-1\step-12-1.gif - [Binary] Size: 4 MB
+177. public\assets\images\v2v\labs\lab-1\step-15-1.gif - [Binary] Size: 2.9 MB
+178. public\assets\images\v2v\labs\lab-1\step-16-1.gif - [Binary] Size: 770.4 KB
+179. public\assets\images\v2v\labs\lab-1\step-18-1.gif - [Binary] Size: 421.9 KB
+180. public\assets\images\v2v\labs\lab-1\step-22-1.gif - [Binary] Size: 3.7 MB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -16596,11 +16601,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const handleImageClick = () => {
         if (currentImage) {
             const isLab = reportName.startsWith('v2v-academy-lab');
-            openFullscreenMedia({ 
+            const payload = { 
                 src: currentImage.url, 
                 description: currentImage.prompt,
                 ...(isLab && { content: currentPage.content })
-            });
+            };
+            openFullscreenMedia(payload);
         }
     };
 
@@ -16757,7 +16763,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
               <div className="relative group">
                 <button
                   onClick={() => handleCopy(childrenStr.replace(/\n$/, ''), index)}
-                  className="absolute top-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute bottom-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
                   title="Copy code"
                 >
                   {copiedStates[index] ? <FaCheck className="text-green-500" /> : <FaCopy />}
@@ -17333,8 +17339,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C96 (Add content to FullscreenMedia and add fullscreen navigation actions)
-// Updated on: C95 (Add 'V S Code' replacement for TTS)
+// Updated on: C97 (Implement fullscreen navigation actions)
+// Updated on: C96 (Add content to FullscreenMedia)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -17478,8 +17484,8 @@ export interface ReportActions {
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
-    nextPageInFullscreen: () => void; // C96: New action
-    prevPageInFullscreen: () => void; // C96: New action
+    nextPageInFullscreen: () => void; // C97: New action
+    prevPageInFullscreen: () => void; // C97: New action
     nextImage: () => void;
     prevImage: () => void;
     handleKeyDown: (event: KeyboardEvent) => void;
@@ -23113,12 +23119,10 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A three-panel "how-to" guide. Panel 1 shows a file being renamed from `script.js` to `user-login-api.js`. Panel 2 shows a messy desktop of files being dragged into clean folders named `_src`, `_docs`, and `_assets`. Panel 3 shows a final, clean project structure.
     *   **Approach 2:** A "before and after" of a student's project folder. "Before" is a single folder with 50 poorly named files. "After" is the same project, now with a clean, professional folder structure that a hiring manager would be impressed with.
 *   **Page 4 (Building a Portfolio):**
-    *   **Approach 1:** A young developer is proudly showing off a complex, polished application on their laptop screen. A glowing AI avatar is giving them a thumbs-up. The app looks clean, functional, and impressive.
-    *   **Approach 2:** A gallery view of a student's portfolio. Each project is a thumbnail of a working application. The portfolio looks professional and full of high-quality work, implying that this workflow is the key to building it.
+    *   **Approach 2:** A young developer is proudly showing off a complex, polished application on their laptop screen. It is actually a gallery view of a student's portfolio. Each project is a thumbnail of a working application. The portfolio looks professional and full of high-quality work, implying that this workflow is the key to building it. A glowing AI avatar is giving them a thumbs-up. The app looks clean, functional, and impressive.
 
 ### **Lesson 2.3: Critical Analysis of AI Output**
 *   **Page 1 (Don't Trust, Verify):**
-    *   **Approach 1:** A young developer is confidently presenting a code review to a senior engineer. The senior engineer looks impressed, giving a nod of approval. The young developer is shown pointing out a subtle but critical bug in a piece of AI-generated code on the screen.
     *   **Approach 2:** A student is acting as a fact-checker for an essay written by an AI. They have the AI's essay on one screen and are cross-referencing its claims with reliable sources on another, highlighting a factual error.
 *   **Page 2 (Spot the Bug):**
     *   **Approach 1:** A "field guide" page, like a bird-watching book. It shows different types of "bugs." One is a "Phantom Function" (a function that doesn't exist). Another is a "Logic Worm" (code that runs but gives the wrong answer). A third is a "Security Spider" (a hidden vulnerability).
@@ -23128,7 +23132,6 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A student is editing a term paper. Their process is shown: first, they check the overall essay structure, then they check each paragraph's topic sentence, and finally, they proofread for grammar line-by-line.
 *   **Page 4 (Turn Bugs into Prompts):**
     *   **Approach 1:** A diagram showing a cycle. An "AI Bug" is found. An arrow points to the developer writing a "Better Prompt" that says, "Fix this bug by..." The new prompt is fed back to the AI, which produces "Better Code."
-    *   **Approach 2:** A student is in a tutoring session with an AI mentor. The student shows the AI a mistake it made on a math problem. The AI then shows a new, corrected solution with a step-by-step explanation of how it fixed the original error.
 
 ---
 
@@ -23140,9 +23143,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A split-panel image. On the left, someone is trying to give directions to a robot using vague hand gestures, and the robot is confused. On the right, someone gives the robot a precise, step-by-step map, and the robot immediately proceeds to the destination.
 *   **Page 2 (Schema):**
     *   **Approach 1:** A clear, simple template is shown on a screen, like a form to be filled out. The fields are "1. What is the AI's Role?", "2. What is the Task?", "3. What Files Does it Need?", "4. What are the Steps?", and "5. What Should the Output Look Like?"
-    *   **Approach 2:** An image of a perfect lab report template from a science class. It has all the required sections (Hypothesis, Materials, Method, Results, Conclusion), ensuring a complete and professional submission.
 *   **Page 3 (Why it Gets You Hired):**
-    *   **Approach 1:** An engineering manager is reviewing two portfolios. One is a messy collection of one-off scripts. The other is a clean, organized project with clear documentation and a history of structured, repeatable processes. The manager is smiling and nodding at the second one.
     *   **Approach 2:** Two job candidates are in an interview. The first explains their process with "I just kind of talk to the AI until it works." The second explains their process with "I use a structured interaction schema to define the role, context, and output, ensuring predictable results." The interviewer is clearly more impressed with the second candidate.
 *   **Page 4 (Example):**
     *   **Approach 1:** A "before and after" comparison. "Before" shows a simple chat bubble: "Can you fix the login page?" "After" shows a structured command in a code-like block with clear sections for `// ROLE`, `// TASK`, `// CONTEXT`, and `// OUTPUT`.
@@ -23167,7 +23168,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A young developer is shown confidently working on a complex project. To their side is a prominent, glowing "UNDO" button. They are applying a large, complex piece of AI-generated code to their project, smiling because they know they can instantly revert it if it breaks anything.
     *   **Approach 2:** A student is in a chemistry lab, mixing volatile chemicals. However, they are working inside a protective fume hood, which protects them from any potential negative reactions. The fume hood is labeled "Git Workflow."
 *   **Page 2 (AI is Unpredictable):**
-    *   **Approach 1:** A diagram shows a developer asking an AI for a piece of code. The AI, represented as a friendly but slightly chaotic robot, offers three different code snippets. One has a green checkmark, but the other two have hidden red bug icons. A shield labeled "Git Baseline" protects the developer.
+    *   **Approach 1:** A diagram shows a developer asking an AI for a piece of code. The AI, represented as a friendly but slightly chaotic robot, representing a non-deterministic system, offers three different code snippets. One has a green checkmark, but the other two have hidden red bug icons. A shield labeled "Git Baseline" protects the developer.
     *   **Approach 2:** A student is using a "spell checker" AI. For one sentence, it gives a perfect suggestion. For the next, it suggests a grammatically correct but nonsensical word. The image illustrates that the AI's suggestions are not always correct and must be verified.
 *   **Page 3 (Validation Process):**
     *   **Approach 1:** A clear, four-step flowchart. 1. **Baseline:** A developer clicks a "Baseline (Commit)" button, creating a "Save Point." 2. **Accept:** The developer clicks "Accept Selected" to apply the AI's code. 3. **Test:** The developer runs the code, and a big "TEST FAILED" message appears. 4. **Restore:** The developer clicks a "Restore Baseline" button, and the project is instantly clean again.
@@ -26246,11 +26247,11 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         "lab-1-step-5-ig1": { "path": "lab-1/", "prompt": "A screenshot of VS Code's 'Open Folder...' dialog selecting the 'portfolio-website' folder.", "alt": "Opening the project folder in VS Code.", "baseFileName": "step-5-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-6-ig1": { "path": "lab-1/", "prompt": "A screenshot of the DCE Onboarding view with the 'Project Scope' text area filled out.", "alt": "The DCE Onboarding view.", "baseFileName": "step-6-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-8-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Generate Initial Artifacts Prompt' button being highlighted in the DCE.", "alt": "Generating the initial prompt.", "baseFileName": "step-8-", "fileExtension": ".gif", "imageCount": 1 },
-        "lab-1-step-12-ig1": { "path": "lab-1/", "prompt": "A screenshot of Google's AI Studio, showing four browser tabs with the correct model settings.", "alt": "AI Studio setup.", "baseFileName": "step-12-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-15-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Parse All' button being highlighted in the PCPP toolbar.", "alt": "Parsing all responses.", "baseFileName": "step-15-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-18-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'This workspace is not a git repository' error message in VS Code.", "alt": "The Git repository not found error.", "baseFileName": "step-18-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot showing the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-12-ig1": { "path": "lab-1/", "prompt": "A screenshot of Google's AI Studio, showing four browser tabs with the correct model settings.", "alt": "AI Studio setup.", "baseFileName": "step-12-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-15-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Parse All' button being highlighted in the PCPP toolbar.", "alt": "Parsing all responses.", "baseFileName": "step-15-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-18-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'This workspace is not a git repository' error message in VS Code.", "alt": "The Git repository not found error.", "baseFileName": "step-18-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot showing the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-27-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Accept Selected' button being clicked in Cycle 2.", "alt": "Accepting the solution for Cycle 2.", "baseFileName": "step-27-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".png", "imageCount": 1 },
@@ -26309,7 +26310,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-setup-4",
                     "pageTitle": "Step 5: Open the Project in VS Code",
                     "tldr": "Open your new `portfolio-website` folder in VS Code. This sets it as your active project, or 'workspace.'",
-                    "content": "It's time to start your project.\n1.  In VS Code, go to the \"File\" menu.\n2.  Select \"Open Folder...\"\n3.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
+                    "content": "It's time to start your project.\n1.  In VS Code, click on `Open Folder` from the Data Curation **File Tree View**.\n2.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
                     "imageGroupIds": ["lab-1-step-5-ig1"]
                 }
             ]
@@ -26336,14 +26337,14 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle0-3",
                     "pageTitle": "Step 12-14: Get and Paste Responses",
                     "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
-                    "content": "Open four tabs in your preferred AI tool (e.g., AI Studio). Paste the prompt into each and generate four responses. Copy these responses back into the 'Resp 1-4' tabs in the DCE's Cycle 1 view.",
+                    "content": "Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.\n1.  Open your web browser of choice.\n2.  Open **four separate tabs**.\n3.  In each tab, navigate to **aistudio.google.com**.\n4.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.",
                     "imageGroupIds": ["lab-1-step-12-ig1"]
                 },
                 {
                     "pageId": "lab-1-cycle0-4",
                     "pageTitle": "Step 15: Parse Responses",
                     "tldr": "Once all four responses are pasted in, click the 'Parse All' button.",
-                    "content": "With all four responses loaded, click the now-highlighted **`Parse All`** button. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
+                    "content": "After generating, copy each response and paste it back into the corresponding `Resp 1-4` tabs in the DCE's Cycle 1 view. With all four responses loaded, click the now-highlighted **`Parse All`** button.\n\n**Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
                     "imageGroupIds": ["lab-1-step-15-ig1"]
                 },
                 {
@@ -26440,17 +26441,13 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 }
 </file_artifact>
 
-<file path="public/assets/images/v2v/labs/lab-1/step-2-1.png">
+<file path="public/assets/images/v2v/labs/lab-1/step-2-1.webp">
 <metadata>
 {
-  "name": "step-2-1.png",
+  "name": "step-2-1.webp",
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
-  "fileType": "PNG",
-  "sizeInBytes": 116096,
-  "dimensions": {
-    "width": 1437,
-    "height": 697
-  }
+  "fileType": "WEBP",
+  "sizeInBytes": 55438
 }
 </metadata>
 </file_artifact>
@@ -26522,6 +26519,81 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
   "fileType": "GIF",
   "sizeInBytes": 6916869,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-12-1.gif">
+<metadata>
+{
+  "name": "step-12-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 4180184,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-15-1.gif">
+<metadata>
+{
+  "name": "step-15-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 3020527,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-16-1.gif">
+<metadata>
+{
+  "name": "step-16-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 788913,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-18-1.gif">
+<metadata>
+{
+  "name": "step-18-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 432072,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-22-1.gif">
+<metadata>
+{
+  "name": "step-22-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 3853692,
   "dimensions": {
     "width": 1920,
     "height": 1146

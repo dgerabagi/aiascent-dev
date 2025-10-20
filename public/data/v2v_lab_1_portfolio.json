@@ -44,7 +44,7 @@
                     "pageId": "lab-1-setup-4",
                     "pageTitle": "Step 5: Open the Project in VS Code",
                     "tldr": "Open your new `portfolio-website` folder in VS Code. This sets it as your active project, or 'workspace.'",
-                    "content": "It's time to start your project.\n1.  In VS Code, go to the \"File\" menu.\n2.  Select \"Open Folder...\"\n3.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
+                    "content": "It's time to start your project.\n1.  In VS Code, click on `Open Folder` from the Data Curation **File Tree View**.\n2.  Navigate to `C:\\Projects\\portfolio-website` and click \"Select Folder.\"\nVS Code will reload and the `portfolio-website` folder will now be your active **workspace**. This is the environment where you will do all your work for this project.",
                     "imageGroupIds": ["lab-1-step-5-ig1"]
                 }
             ]
@@ -71,14 +71,14 @@
                     "pageId": "lab-1-cycle0-3",
                     "pageTitle": "Step 12-14: Get and Paste Responses",
                     "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
-                    "content": "Open four tabs in your preferred AI tool (e.g., AI Studio). Paste the prompt into each and generate four responses. Copy these responses back into the 'Resp 1-4' tabs in the DCE's Cycle 1 view.",
+                    "content": "Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.\n1.  Open your web browser of choice.\n2.  Open **four separate tabs**.\n3.  In each tab, navigate to **aistudio.google.com**.\n4.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.",
                     "imageGroupIds": ["lab-1-step-12-ig1"]
                 },
                 {
                     "pageId": "lab-1-cycle0-4",
                     "pageTitle": "Step 15: Parse Responses",
                     "tldr": "Once all four responses are pasted in, click the 'Parse All' button.",
-                    "content": "With all four responses loaded, click the now-highlighted **`Parse All`** button. **Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
+                    "content": "After generating, copy each response and paste it back into the corresponding `Resp 1-4` tabs in the DCE's Cycle 1 view. With all four responses loaded, click the now-highlighted **`Parse All`** button.\n\n**Parsing** is the process of taking the raw text from the AI and breaking it down into a structured format that the DCE can understand (summary, plan, file blocks).",
                     "imageGroupIds": ["lab-1-step-15-ig1"]
                 },
                 {

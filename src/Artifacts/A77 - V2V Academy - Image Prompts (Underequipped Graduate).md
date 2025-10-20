@@ -90,12 +90,10 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A three-panel "how-to" guide. Panel 1 shows a file being renamed from `script.js` to `user-login-api.js`. Panel 2 shows a messy desktop of files being dragged into clean folders named `_src`, `_docs`, and `_assets`. Panel 3 shows a final, clean project structure.
     *   **Approach 2:** A "before and after" of a student's project folder. "Before" is a single folder with 50 poorly named files. "After" is the same project, now with a clean, professional folder structure that a hiring manager would be impressed with.
 *   **Page 4 (Building a Portfolio):**
-    *   **Approach 1:** A young developer is proudly showing off a complex, polished application on their laptop screen. A glowing AI avatar is giving them a thumbs-up. The app looks clean, functional, and impressive.
-    *   **Approach 2:** A gallery view of a student's portfolio. Each project is a thumbnail of a working application. The portfolio looks professional and full of high-quality work, implying that this workflow is the key to building it.
+    *   **Approach 2:** A young developer is proudly showing off a complex, polished application on their laptop screen. It is actually a gallery view of a student's portfolio. Each project is a thumbnail of a working application. The portfolio looks professional and full of high-quality work, implying that this workflow is the key to building it. A glowing AI avatar is giving them a thumbs-up. The app looks clean, functional, and impressive.
 
 ### **Lesson 2.3: Critical Analysis of AI Output**
 *   **Page 1 (Don't Trust, Verify):**
-    *   **Approach 1:** A young developer is confidently presenting a code review to a senior engineer. The senior engineer looks impressed, giving a nod of approval. The young developer is shown pointing out a subtle but critical bug in a piece of AI-generated code on the screen.
     *   **Approach 2:** A student is acting as a fact-checker for an essay written by an AI. They have the AI's essay on one screen and are cross-referencing its claims with reliable sources on another, highlighting a factual error.
 *   **Page 2 (Spot the Bug):**
     *   **Approach 1:** A "field guide" page, like a bird-watching book. It shows different types of "bugs." One is a "Phantom Function" (a function that doesn't exist). Another is a "Logic Worm" (code that runs but gives the wrong answer). A third is a "Security Spider" (a hidden vulnerability).
@@ -105,7 +103,6 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A student is editing a term paper. Their process is shown: first, they check the overall essay structure, then they check each paragraph's topic sentence, and finally, they proofread for grammar line-by-line.
 *   **Page 4 (Turn Bugs into Prompts):**
     *   **Approach 1:** A diagram showing a cycle. An "AI Bug" is found. An arrow points to the developer writing a "Better Prompt" that says, "Fix this bug by..." The new prompt is fed back to the AI, which produces "Better Code."
-    *   **Approach 2:** A student is in a tutoring session with an AI mentor. The student shows the AI a mistake it made on a math problem. The AI then shows a new, corrected solution with a step-by-step explanation of how it fixed the original error.
 
 ---
 
@@ -117,9 +114,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A split-panel image. On the left, someone is trying to give directions to a robot using vague hand gestures, and the robot is confused. On the right, someone gives the robot a precise, step-by-step map, and the robot immediately proceeds to the destination.
 *   **Page 2 (Schema):**
     *   **Approach 1:** A clear, simple template is shown on a screen, like a form to be filled out. The fields are "1. What is the AI's Role?", "2. What is the Task?", "3. What Files Does it Need?", "4. What are the Steps?", and "5. What Should the Output Look Like?"
-    *   **Approach 2:** An image of a perfect lab report template from a science class. It has all the required sections (Hypothesis, Materials, Method, Results, Conclusion), ensuring a complete and professional submission.
 *   **Page 3 (Why it Gets You Hired):**
-    *   **Approach 1:** An engineering manager is reviewing two portfolios. One is a messy collection of one-off scripts. The other is a clean, organized project with clear documentation and a history of structured, repeatable processes. The manager is smiling and nodding at the second one.
     *   **Approach 2:** Two job candidates are in an interview. The first explains their process with "I just kind of talk to the AI until it works." The second explains their process with "I use a structured interaction schema to define the role, context, and output, ensuring predictable results." The interviewer is clearly more impressed with the second candidate.
 *   **Page 4 (Example):**
     *   **Approach 1:** A "before and after" comparison. "Before" shows a simple chat bubble: "Can you fix the login page?" "After" shows a structured command in a code-like block with clear sections for `// ROLE`, `// TASK`, `// CONTEXT`, and `// OUTPUT`.
@@ -144,7 +139,7 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 1:** A young developer is shown confidently working on a complex project. To their side is a prominent, glowing "UNDO" button. They are applying a large, complex piece of AI-generated code to their project, smiling because they know they can instantly revert it if it breaks anything.
     *   **Approach 2:** A student is in a chemistry lab, mixing volatile chemicals. However, they are working inside a protective fume hood, which protects them from any potential negative reactions. The fume hood is labeled "Git Workflow."
 *   **Page 2 (AI is Unpredictable):**
-    *   **Approach 1:** A diagram shows a developer asking an AI for a piece of code. The AI, represented as a friendly but slightly chaotic robot, offers three different code snippets. One has a green checkmark, but the other two have hidden red bug icons. A shield labeled "Git Baseline" protects the developer.
+    *   **Approach 1:** A diagram shows a developer asking an AI for a piece of code. The AI, represented as a friendly but slightly chaotic robot, representing a non-deterministic system, offers three different code snippets. One has a green checkmark, but the other two have hidden red bug icons. A shield labeled "Git Baseline" protects the developer.
     *   **Approach 2:** A student is using a "spell checker" AI. For one sentence, it gives a perfect suggestion. For the next, it suggests a grammatically correct but nonsensical word. The image illustrates that the AI's suggestions are not always correct and must be verified.
 *   **Page 3 (Validation Process):**
     *   **Approach 1:** A clear, four-step flowchart. 1. **Baseline:** A developer clicks a "Baseline (Commit)" button, creating a "Save Point." 2. **Accept:** The developer clicks "Accept Selected" to apply the AI's code. 3. **Test:** The developer runs the code, and a big "TEST FAILED" message appears. 4. **Restore:** The developer clicks a "Restore Baseline" button, and the project is instantly clean again.

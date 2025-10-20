@@ -1,6 +1,6 @@
 // src/stores/reportStore.ts
-// Updated on: C96 (Add content to FullscreenMedia and add fullscreen navigation actions)
-// Updated on: C95 (Add 'V S Code' replacement for TTS)
+// Updated on: C97 (Implement fullscreen navigation actions)
+// Updated on: C96 (Add content to FullscreenMedia)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -144,8 +144,8 @@ export interface ReportActions {
     nextPage: () => void;
     prevPage: () => void;
     goToPageByIndex: (pageIndex: number) => void;
-    nextPageInFullscreen: () => void; // C96: New action
-    prevPageInFullscreen: () => void; // C96: New action
+    nextPageInFullscreen: () => void; // C97: New action
+    prevPageInFullscreen: () => void; // C97: New action
     nextImage: () => void;
     prevImage: () => void;
     handleKeyDown: (event: KeyboardEvent) => void;

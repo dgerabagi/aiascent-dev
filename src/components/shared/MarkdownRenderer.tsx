@@ -56,7 +56,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
               <div className="relative group">
                 <button
                   onClick={() => handleCopy(childrenStr.replace(/\n$/, ''), index)}
-                  className="absolute top-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute bottom-2 right-2 p-1.5 rounded-md bg-muted text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
                   title="Copy code"
                 >
                   {copiedStates[index] ? <FaCheck className="text-green-500" /> : <FaCopy />}

@@ -127,11 +127,12 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const handleImageClick = () => {
         if (currentImage) {
             const isLab = reportName.startsWith('v2v-academy-lab');
-            openFullscreenMedia({ 
+            const payload = { 
                 src: currentImage.url, 
                 description: currentImage.prompt,
                 ...(isLab && { content: currentPage.content })
-            });
+            };
+            openFullscreenMedia(payload);
         }
     };
 
