@@ -1,6 +1,7 @@
 # Artifact A99: V2V Academy - Course 1: The AI-Powered Report Viewer - Vision and Roadmap
 # Date Created: C97
 # Author: AI Model & Curator
+# Updated on: C98 (Refine target audience and methodology)
 
 - **Key/Value for A0:**
 - **Description:** High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
@@ -25,15 +26,19 @@ Upon completion of this course, students will be able to:
 4.  **Master the Virtuoso's Loop:** Apply the full, end-to-end V2V workflow—including context curation, parallel prompting, and Git-integrated testing—to a real-world project.
 5.  **Deploy a Full-Stack Application:** Understand the basics of deploying a modern web application.
 
-## 3. Target Audience
+## 3. Target Audience (C98 Update)
 
-This course will be designed with our three core learner personas in mind, with the content and exercises framed to meet their specific goals:
+This course is designed for the **aspiring Citizen Architect**. At this stage in the V2V Academy's funnel, we have successfully guided learners from various backgrounds toward a single, unified goal: to become a proficient human-AI collaborator capable of architecting and building complex systems. This single-persona focus allows for a more streamlined and targeted content delivery, free from the need to tailor language to multiple, distinct entry-level personas.
 
-*   **The Career Transitioner:** Will learn how to architect and lead the development of a modern AI application, a key leadership skill.
-*   **The Underequipped Graduate:** Will build a highly impressive, portfolio-worthy project that demonstrates a wide range of in-demand AI development skills.
-*   **The Young Precocious:** Will be challenged to build a complex, multi-faceted system, channeling their creative energy into a structured engineering project.
+## 4. Core Methodology (C98 Update)
 
-## 4. Phased Course Development Roadmap
+The course will be taught using an **iterative, visualization-first** approach that mirrors the organic, real-world development of the Report Viewer itself.
+
+*   **"Single Page" Seed Idea:** The course will not begin with abstract data modeling. Instead, students will start by building the simplest possible visual component: a single, static page with one block of text and one image. This provides an immediate, tangible "win" and a visual foundation to build upon.
+*   **Iterative Expansion:** Subsequent modules will iteratively add layers of complexity. Students will first make the page interactive, then build the data structures (`content.json`, `imagemanifest.json`) to support multiple pages, then add AI services, and so on. This "build-what-you-see" approach is more intuitive and motivating than a traditional, theory-first methodology.
+*   **The Report Viewer as a "Printing Press":** The curriculum will frame the Report Viewer not as a specific, single-purpose application, but as a versatile, modern-day "printing press"—a general-purpose tool for publishing any form of curated content (text, images, audio). This broad framing sets the stage for future courses on AI-driven research and content generation.
+
+## 5. Phased Course Development Roadmap
 
 The development of the course content will follow a phased approach.
 

@@ -7,6 +7,8 @@ import type { ReportContentData, ImageManifestData } from '@/stores/reportStore'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { LampContainer } from '@/components/global/lamp';
+import { Button } from '@/components/ui/button';
 
 const AcademyPage = () => {
     const [selection, setSelection] = useState<{ type: 'persona' | 'lab'; id: string } | null>(null);
@@ -20,11 +22,11 @@ const AcademyPage = () => {
                 try {
                     const contentFile = selection.type === 'persona' 
                         ? `v2v_content_${selection.id}.json`
-                        : `v2v_${selection.id}.json`;
+                        : `v2v_lab_1_portfolio.json`;
                     
                     const manifestFile = selection.type === 'persona'
                         ? `imagemanifest_${selection.id}.json`
-                        : `imagemanifest_${selection.id}.json`;
+                        : `imagemanifest_lab_1_portfolio.json`;
 
                     const [contentRes, manifestRes] = await Promise.all([
                         fetch(`/data/${contentFile}`),
@@ -110,10 +112,20 @@ const AcademyPage = () => {
                         className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer group"
                         onClick={() => setSelection({ type: 'lab', id: 'lab_1_portfolio' })}
                     >
-                        <CardHeader className="items-center text-center">
-                            <CardTitle>Lab 1: Your First Portfolio</CardTitle>
+                        <CardHeader className="p-0">
+                             <div className="relative aspect-video w-full">
+                                <Image
+                                    src="/assets/images/v2v/lab_1_thumbnail.webp"
+                                    alt="Lab 1: Your First Portfolio"
+                                    fill
+                                    className="object-cover rounded-t-lg transition-transform group-hover:scale-105"
+                                />
+                            </div>
+                            <div className='p-6 text-center'>
+                                <CardTitle>Lab 1: Your First Portfolio</CardTitle>
+                            </div>
                         </CardHeader>
-                        <CardContent className="flex-grow text-center">
+                        <CardContent className="flex-grow text-center pt-0">
                             <CardDescription>Go from an empty folder to a running portfolio website and learn the complete, end-to-end workflow of the Data Curation Environment.</CardDescription>
                         </CardContent>
                     </Card>
@@ -122,18 +134,53 @@ const AcademyPage = () => {
                     <Card
                         className="h-full flex flex-col bg-muted/20 border-dashed relative overflow-hidden"
                     >
-                        <div className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
-                            COMING SOON
-                        </div>
-                        <CardHeader className="items-center text-center">
-                            <CardTitle className="text-muted-foreground">Course 1: The AI-Native Application</CardTitle>
+                        <CardHeader className="p-0">
+                             <div className="relative aspect-video w-full">
+                                <Image
+                                    src="/assets/images/v2v/course_1_thumbnail.webp"
+                                    alt="Course 1: The AI-Powered Report Viewer"
+                                    fill
+                                    className="object-cover rounded-t-lg opacity-50"
+                                />
+                            </div>
+                            <div className='p-6 text-center'>
+                                <CardTitle className="text-muted-foreground">Course 1: The AI-Native Application</CardTitle>
+                            </div>
                         </CardHeader>
-                        <CardContent className="flex-grow text-center">
+                        <CardContent className="flex-grow text-center pt-0">
                             <CardDescription>A comprehensive course on building a full-stack, AI-native application—the Report Viewer—from scratch using the V2V workflow.</CardDescription>
                         </CardContent>
+                         <div className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                            COMING SOON
+                        </div>
                     </Card>
                 </div>
             </motion.div>
+
+            <section className="w-full mt-24">
+                <LampContainer>
+                    <motion.div
+                        initial={{ opacity: 0.5, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.3,
+                            duration: 0.8,
+                            ease: 'easeInOut',
+                        }}
+                        className="flex flex-col items-center text-center"
+                    >
+                        <h2 className="mt-8 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground text-center text-3xl font-bold tracking-tight md:text-5xl">
+                            Ready to Become a Citizen Architect?
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-3xl text-center my-8">
+                            Create an account to track your progress, access exclusive content, and join a community of builders shaping the future of AI.
+                        </p>
+                        <Button size="lg" variant="outline" className='text-lg' disabled>
+                            Create Account (Coming Soon)
+                        </Button>
+                    </motion.div>
+                </LampContainer>
+            </section>
         </div>
     );
 };
