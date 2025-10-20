@@ -172,13 +172,11 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** An artist is staring at a large, blank white canvas, experiencing "artist's block" and not knowing where to make the first stroke.
 *   **Page 2 (The Solution):**
     *   **Approach 1:** A developer hands their "Project Scope" document to a friendly AI robot. The robot reads the document and then quickly assembles a perfect, clean "skeleton" of a project, complete with a folder structure and initial files.
-    *   **Approach 2:** A writer is stuck. They feed their story outline to an AI, which then generates the first few paragraphs of the story, giving the writer a starting point to build upon.
 *   **Page 3 (Case Study):**
     *   **Approach 1:** A close-up of the DCE extension's UI in "Cycle 0." It shows a user typing their project scope. An arrow points to a generated `prompt.md` file, which then leads to a neatly organized `src/Artifacts` folder filled with new planning documents.
     *   **Approach 2:** An animation shows a student planting a "Project Scope" seed. The DCE tool waters it, and it instantly sprouts into a small but fully formed "Project Tree" with branches for `/src`, `/docs`, etc.
 *   **Page 4 (First Command):**
     *   **Approach 1:** A developer is shown confidently typing a clear prompt into their AI chat. The prompt instructs the AI to use their Project Scope to generate a complete starter project for a Next.js application, including all the initial folders and config files.
-    *   **Approach 2:** A student is working with a tutor (the AI). The student gives the tutor their essay outline, and the tutor helps them create the initial document with the title page, bibliography, and section headings already in place.
 
 ### **Lesson 4.3: Architecting Your MVP**
 *   **Page 1 (Blueprint):**
@@ -186,10 +184,8 @@ This document provides two distinct, bespoke image prompt "approaches" for each 
     *   **Approach 2:** A home builder is given a client's list of desired features (the scope). They then use a computer program (the AI) to generate a detailed architectural blueprint, translating the client's wishes into a technical plan.
 *   **Page 2 (AI as Senior Dev):**
     *   **Approach 1:** A side-by-side comparison. On the left, a student is struggling, manually creating folders and empty files with generic names. On the right, a student gives a single command to an AI, which instantly generates a complete, perfectly organized project with folders like `/components`, `/lib`, and `/app`.
-    *   **Approach 2:** A student is learning to cook. Instead of figuring out all the prep work themselves, a master chef (the AI) has already chopped all the vegetables and measured all the ingredients, allowing the student to focus on the creative process of combining them.
 *   **Page 3 (The Prompt):**
     *   **Approach 1:** A developer is shown typing a clear, concise prompt. The prompt is: "Act as a senior Next.js developer. Use my Project Scope to scaffold the complete starter project using the App Router, TypeScript, and TailwindCSS."
-    *   **Approach 2:** A student is ordering a custom computer online. They are using a configuration tool, carefully selecting the "Expert" build option and specifying all their required components (tech stack) before clicking "Build."
 *   **Page 4 (Cycle 1):**
     *   **Approach 1:** The new project structure is shown inside the DCE. The developer clicks "Accept Selected," and the files appear in their VS Code explorer. The final shot shows them typing `npm run dev` in the terminal and seeing a "Welcome to Next.js" page in their browser.
     *   **Approach 2:** A student receives a "build-it-yourself" furniture kit (the AI's response). They follow the instructions to assemble it ("Accept" and `npm install`). The final image shows them with their new, fully assembled, and functional desk (`npm run dev`).
