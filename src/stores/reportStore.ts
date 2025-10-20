@@ -1,4 +1,5 @@
 // src/stores/reportStore.ts
+// Updated on: C98 (Fix fullscreen navigation actions)
 // Updated on: C97 (Implement fullscreen navigation actions)
 // Updated on: C96 (Add content to FullscreenMedia)
 // ... (rest of history ommitted for brevity)
@@ -575,43 +576,41 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }));
             },
             nextPageInFullscreen: () => {
-                set(state => {
-                    const newIndex = Math.min(state.allPages.length - 1, state.currentPageIndex + 1);
-                    if (newIndex === state.currentPageIndex) return state;
+                const { currentPageIndex, allPages } = get();
+                const newIndex = Math.min(allPages.length - 1, currentPageIndex + 1);
+                if (newIndex === currentPageIndex) return;
 
-                    const newPage = state.allPages[newIndex];
-                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
-                    if (!newPage || !newImage) return state;
-                    
-                    return {
-                        currentPageIndex: newIndex,
-                        currentImageIndex: 0,
-                        fullscreenMedia: {
-                            src: newImage.url,
-                            description: newImage.prompt,
-                            content: newPage.content,
-                        }
-                    };
+                const newPage = allPages[newIndex];
+                const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                if (!newPage || !newImage) return;
+                
+                set({
+                    currentPageIndex: newIndex,
+                    currentImageIndex: 0,
+                    fullscreenMedia: {
+                        src: newImage.url,
+                        description: newImage.prompt,
+                        content: newPage.content,
+                    }
                 });
             },
             prevPageInFullscreen: () => {
-                set(state => {
-                    const newIndex = Math.max(0, state.currentPageIndex - 1);
-                    if (newIndex === state.currentPageIndex) return state;
+                const { currentPageIndex, allPages } = get();
+                const newIndex = Math.max(0, currentPageIndex - 1);
+                if (newIndex === currentPageIndex) return;
 
-                    const newPage = state.allPages[newIndex];
-                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
-                    if (!newPage || !newImage) return state;
+                const newPage = allPages[newIndex];
+                const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                if (!newPage || !newImage) return;
 
-                    return {
-                        currentPageIndex: newIndex,
-                        currentImageIndex: 0,
-                        fullscreenMedia: {
-                            src: newImage.url,
-                            description: newImage.prompt,
-                            content: newPage.content,
-                        }
-                    };
+                set({
+                    currentPageIndex: newIndex,
+                    currentImageIndex: 0,
+                    fullscreenMedia: {
+                        src: newImage.url,
+                        description: newImage.prompt,
+                        content: newPage.content,
+                    }
                 });
             },
             goToPageByIndex: (pageIndex) => {

@@ -3,7 +3,7 @@
   "cycles": [
     {
       "cycleId": 99,
-      "timestamp": "2025-10-20T00:07:48.825Z",
+      "timestamp": "2025-10-20T00:10:46.287Z",
       "title": "New Cycle",
       "cycleContext": "",
       "ephemeralContext": "",
@@ -48,12 +48,19 @@
       "isParsedMode": true,
       "leftPaneWidth": 33,
       "selectedResponseId": "8",
-      "selectedFilesForReplacement": [],
+      "selectedFilesForReplacement": [
+        "8:::src/Artifacts/A83 - V2V Academy - Simulating a Fresh Environment Guide.md",
+        "8:::src/Artifacts/A0-Master-Artifact-List.md",
+        "8:::public/data/v2v_lab_1_portfolio.json",
+        "8:::src/stores/reportStore.ts",
+        "8:::src/components/report-viewer/ReportViewer.tsx",
+        "8:::src/components/global/FullscreenMediaViewer.tsx"
+      ],
       "tabCount": 12,
       "activeTab": 8,
       "isSortedByTokens": true,
       "pathOverrides": {},
-      "activeWorkflowStep": "awaitingBaseline"
+      "activeWorkflowStep": "awaitingAccept"
     }
   ]
 }

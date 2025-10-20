@@ -71,7 +71,7 @@
                     "pageId": "lab-1-cycle0-3",
                     "pageTitle": "Step 12-14: Get and Paste Responses",
                     "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
-                    "content": "Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.\n1.  Open your web browser of choice.\n2.  Open **four separate tabs**.\n3.  In each tab, navigate to **aistudio.google.com**.\n4.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.",
+                    "content": "Now you need to get responses from an AI. For this lab, we will use Google's [AI Studio](https://aistudio.google.com), which provides free access to powerful models.\n1. Open **four separate tabs** in your web browser and navigate to **aistudio.google.com**.\n2. In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nWhile AI Studio is a free service, it has usage limits to ensure fair access. The most relevant limit for the DCE is the **Tokens Per Minute (TPM)**. For Gemini 2.5 Pro, the free tier limit is 2,000,000 TPM. If your project is very large (over 500,000 tokens), it's possible to exceed this limit when generating a prompt, which could temporarily block your account for the rest of the day. For more details, you can review the official [Google AI Platform Rate Limits](https://ai.google.dev/gemini-api/docs/rate-limits).",
                     "imageGroupIds": ["lab-1-step-12-ig1"]
                 },
                 {
@@ -105,7 +105,7 @@
                     "pageId": "lab-1-cycle1-2",
                     "pageTitle": "Step 20-22: Using the DCE to Ask for Help",
                     "tldr": "First, accept the documentation the AI has already created. Then, in a new cycle, ask the AI for instructions on how to install Git.",
-                    "content": "First, accept the planning documents from Cycle 1 by clicking **`Select All`** then **`Accept Selected`**. Now, you can ask the AI for help. In the 'Cycle & Context' section, enter:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but I do not have git installed. Can you provide me with instructions to install it? I am on a [windows/mac] machine.`",
+                    "content": "You've hit a roadblock, but the AI has likely already given you the solution—we just need to find it. This is a realistic part of the development process: exploring the documentation to find prerequisites. First, accept the planning documents from Cycle 1 by clicking **`Select All`** then **`Accept Selected`**. Now, you can review the generated `GitHub-Repository-Setup-Guide.md`. You'll find that it lists `git` as a prerequisite, confirming our problem. Now, we will use the DCE to solve it. In the 'Cycle & Context' section, enter:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but the documentation says I need 'git' as a prerequisite. I do not have git installed. Can you provide me with instructions to install it for my [windows/mac] machine?`",
                     "imageGroupIds": ["lab-1-step-22-ig1"]
                 },
                 {
@@ -126,7 +126,7 @@
                     "pageId": "lab-1-cycle1-5",
                     "pageTitle": "Step 29-31: Initializing the Repository",
                     "tldr": "With Git installed, go back to Cycle 1 and successfully initialize your repository. Then, complete the GitHub setup quest on your own.",
-                    "content": "Now, navigate back to **Cycle 1** in the DCE. Change the title to `First Commit` and click `Baseline (Commit)` again. This time, click the **`Initialize Repository`** button that appears. It will succeed! **Your next quest:** follow the same cycle process to get instructions for setting up a GitHub account and connecting it to your project.",
+                    "content": "Now that Git is installed, you can complete Step 18.\n1.  In the PCPP, change the **Cycle Title** to `First Commit`. The Cycle Title is used as the commit message.\n2.  Click the **`Baseline (Commit)`** button again.\nThis time, you will get the same error message as before, but a new button will be available: **`Initialize Repository`**. Click it. A \"Successfully initialized\" message will appear. Now, click `Baseline (Commit)` one last time. It will succeed. **Your next quest:** follow the same cycle process to get instructions for setting up a GitHub account and connecting it to your project.",
                     "imageGroupIds": ["lab-1-step-31-ig1"]
                 }
             ]
@@ -139,14 +139,14 @@
                     "pageId": "lab-1-cycle2-1",
                     "pageTitle": "Step 32 & 33: Asking the AI to Build the Scaffold",
                     "tldr": "In a new cycle, ask the AI to build the initial code files for your portfolio website, then execute the familiar rinse-repeat loop.",
-                    "content": "Create a new cycle (Cycle 3). Set the **Cycle Title** to `Create Project Scaffold` and the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.` Now, execute the full loop: generate the prompt, get responses from your AI, and paste them into a new cycle (Cycle 4) in the DCE.",
+                    "content": "Now we are ready to write our next cycle. Set the **Cycle Title** from `First Commit` to `Create Project Scaffold` and the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.` Now, execute the full loop: generate the prompt, get responses from your AI, and paste them into a new cycle (Cycle 3) in the DCE.",
                     "imageGroupIds": ["lab-1-step-32-ig1"]
                 },
                 {
                     "pageId": "lab-1-cycle2-2",
                     "pageTitle": "Step 34: The Full Loop - Baseline and Accept Code",
                     "tldr": "With Git initialized, you can now Baseline first, then Accept the new code files.",
-                    "content": "You are now in Cycle 4 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
+                    "content": "You are now in Cycle 3 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
                     "imageGroupIds": ["lab-1-step-34-ig1"]
                 },
                 {

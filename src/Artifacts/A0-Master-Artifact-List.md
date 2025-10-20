@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C93 (Add A81 and A82)
+# Updated on: C98 (Add A83)
 
 ## 1. Purpose
 
@@ -438,3 +438,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A82. V2V Academy - Labs and Courses UI Plan
 - **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
 - **Tags:** v2v, curriculum, labs, page design, plan, ui, ux
+
+### A83. V2V Academy - Simulating a Fresh Environment Guide
+- **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
+- **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
