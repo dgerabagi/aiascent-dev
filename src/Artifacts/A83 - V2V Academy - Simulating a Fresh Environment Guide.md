@@ -6,9 +6,9 @@
 - **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
 - **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
 
-## 1. The Challenge: Experiential Blindness
+## 1. The Challenge
 
-As an experienced developer, your machine is already configured with all the necessary tools like Git and has authenticated credentials for services like GitHub. This "experiential blindness" makes it difficult to replicate the exact journey a brand-new learner will face, including the specific error messages they will encounter when a tool is missing or not configured.
+As an experienced developer, your machine is already configured with all the necessary tools like Git and has authenticated credentials for services like GitHub. This makes it difficult to replicate the exact journey a brand-new learner will face, including the specific error messages they will encounter when a tool is missing or not configured.
 
 To create accurate and helpful visual aids (like GIFs) for the V2V Academy labs, you need a way to safely simulate this "fresh environment" without uninstalling your own critical software and breaking your development setup.
 

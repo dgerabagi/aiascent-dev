@@ -11,10 +11,7 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 98 - more feedback to address
-Cycle 97 - take feedback continue iteration on lab, great work! please work to minimize truncations.
-Cycle 96 - second round of feedback
-Cycle 95 - iterate on the lab based on feedback
+Current Cycle 95 - help with a steps language
 Cycle 94 - build out lab steps
 Cycle 93 - create first lab artifacts
 Cycle 92 - upscale/align A77 undergraduate imagery
@@ -307,7 +304,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C93 (Add A81 and A82)
+# Updated on: C98 (Add A83)
 
 ## 1. Purpose
 
@@ -741,273 +738,22 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A82. V2V Academy - Labs and Courses UI Plan
 - **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
 - **Tags:** v2v, curriculum, labs, page design, plan, ui, ux
+
+### A83. V2V Academy - Simulating a Fresh Environment Guide
+- **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
+- **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
 </M5. organized artifacts list>
 
 <M6. Cycles>
 
-<Cycle 98>
-<Cycle Context>
-1. fullscreen still displays the page image prompt and not the page content. there are still no page navigation buttons on the full screen view. thats two or three cycles you have been tasked with somethign and there has been no change whch usually means theres a missing piece of the puzzle please look closely.
-
-2. im working on page 8 of our v2v lab, which is where i paste in the responses. something that is important and worth surfacing on that pages content at this point in time, and that is the ai studio threshold limits. while ai studio is a free service, it has limitations. the specifics can be read about here, but for our purposes with the DCE the only threshold that ends up impacting us is mostly the tokens per minute. when a project is larger than 500,000 tokens, then its possible for you to accidentally cross the max tokens per minute threshold, which is 2 million for gemini 2.5 pro thru ai studio. what happens if u hit the rate limit is your account is blocked from additional requests to that model for the remainder of the day. ill provide the usage limits in the epehemeral context for you to write accurate/pertinent information, but also link the users to this url: https://ai.google.dev/gemini-api/docs/rate-limits
-
-3. in page 8, lets make the mention of aistudio.google.com an actual hyperlink for the user
-
-4. okay i got to page 12, i had given some explanations as to how and why we need to do the git, namely exploring the documentation and discovering the prerequisite. this is important narrative to carry in to the lab lesson at this point in time.
-
-okay so at this point in time im actually ready to make these gifs but the problem is that my environment is already prepared in that i have git installed and i have my github gpg key or whatever auth solution (i know there are a few ways to do github auth so u can run git init successfully). so in order to deliver a valid and accurate gif i need to uninstall those softwars but im afraid of doing it and breaking something like one of my dev environments. do you think you could guide me given the situation? is there a safe way to deactivate git/github such that i can run the lab and encounter the -exact- same scenario that the lab learners will hit in a fresh environment? otherwise people with experiential blindness will get to this point and get stuck. since this is a current blocker for me ill pause at this point in time and kick it back over to you.
-</Cycle Context>
-<Ephemeral Context>
-<api usage limits>
-
-Skip to main content
-Gemini API
-
-/
-Get API key
-Cookbook
-Community
-Sign in
-Gemini API docs
-API Reference
-
-Veo 3.1 is here! Read about the new model and its features in the blog post and documentation.
-
-    Home
-    Gemini API
-    Gemini API docs
-
-Was this helpful?
-Rate limits
-
-Rate limits regulate the number of requests you can make to the Gemini API within a given timeframe. These limits help maintain fair usage, protect against abuse, and help maintain system performance for all users.
-
-View your active rate limits in AI Studio
-How rate limits work
-
-Rate limits are usually measured across three dimensions:
-
-    Requests per minute (RPM)
-    Tokens per minute (input) (TPM)
-    Requests per day (RPD)
-
-Your usage is evaluated against each limit, and exceeding any of them will trigger a rate limit error. For example, if your RPM limit is 20, making 21 requests within a minute will result in an error, even if you haven't exceeded your TPM or other limits.
-
-Rate limits are applied per project, not per API key.
-
-Requests per day (RPD) quotas reset at midnight Pacific time.
-
-Limits vary depending on the specific model being used, and some limits only apply to specific models. For example, Images per minute, or IPM, is only calculated for models capable of generating images (Imagen 3), but is conceptually similar to TPM. Other models might have a token per day limit (TPD).
-
-Rate limits are more restricted for experimental and preview models.
-Usage tiers
-
-Rate limits are tied to the project's usage tier. As your API usage and spending increase, you'll have an option to upgrade to a higher tier with increased rate limits.
-
-The qualifications for Tiers 2 and 3 are based on the total cumulative spending on Google Cloud services (including, but not limited to, the Gemini API) for the billing account linked to your project.
-Tier 	Qualifications
-Free 	Users in eligible countries
-Tier 1 	Billing account linked to the project
-Tier 2 	Total spend: > $250 and at least 30 days since successful payment
-Tier 3 	Total spend: > $1,000 and at least 30 days since successful payment
-
-When you request an upgrade, our automated abuse protection system performs additional checks. While meeting the stated qualification criteria is generally sufficient for approval, in rare cases an upgrade request may be denied based on other factors identified during the review process.
-
-This system helps maintain the security and integrity of the Gemini API platform for all users.
-Standard API rate limits
-
-The following table lists the rate limits for all standard Gemini API calls.
-Note: Any values that show * have no published rate limits.
-Free Tier
-Tier 1
-Tier 2
-Tier 3
-Model 	RPM 	TPM 	RPD 	Batch Enqueued Tokens
-Text-out models
-Gemini 2.5 Pro 	150 	2,000,000 	10,000 	5,000,000
-Gemini 2.5 Flash 	1,000 	1,000,000 	10,000 	3,000,000
-Gemini 2.5 Flash Preview 	1,000 	1,000,000 	10,000 	3,000,000
-Gemini 2.5 Flash-Lite 	4,000 	4,000,000 	* 	10,000,000
-Gemini 2.5 Flash-Lite Preview 	4,000 	4,000,000 	* 	10,000,000
-Gemini 2.0 Flash 	2,000 	4,000,000 	* 	10,000,000
-Gemini 2.0 Flash-Lite 	4,000 	4,000,000 	* 	10,000,000
-Live API
-Gemini 2.5 Flash Live 	50 sessions 	4,000,000 	* 	*
-Gemini 2.5 Flash Preview Native Audio 	3 sessions 	50,000 	50 	*
-Gemini 2.5 Flash Experimental Native Audio Thinking 	1 session 	25,000 	50 	*
-Gemini 2.0 Flash Live 	50 sessions 	4,000,000 	* 	*
-Multi-modal generation models
-Gemini 2.5 Flash Preview TTS 	10 	10,000 	100 	*
-Gemini 2.5 Pro Preview TTS 	10 	10,000 	50 	*
-Gemini 2.5 Flash Image 	500 	500,000 	2,000 	*
-Gemini 2.0 Flash Preview Image Generation 	1,000 	1,000,000 	10,000 	*
-Imagen 4 Standard/Fast 	10 	* 	70 	*
-Imagen 4 Ultra 	5 	* 	30 	*
-Imagen 3 	20 	* 	* 	*
-Veo 3.1 	2 	* 	10 	*
-Veo 3.1 Fast 	2 	* 	10 	*
-Veo 3 	2 	* 	10 	*
-Veo 3 Fast 	2 	* 	10 	*
-Veo 2 	2 	* 	50 	*
-Other models
-Gemma 3 & 3n 	30 	15,000 	14,400 	*
-Gemini Embedding 	3,000 	1,000,000 	* 	*
-Gemini Robotics-ER 1.5 Preview 	300 	1,000,000 	10,000 	*
-Gemini 2.5 Computer Use Preview 	150 	2,000,000 	10,000 	*
-Deprecated models
-Gemini 1.5 Flash (Deprecated) 	2,000 	4,000,000 	* 	*
-Gemini 1.5 Flash-8B (Deprecated) 	4,000 	4,000,000 	* 	*
-Gemini 1.5 Pro (Deprecated) 	1,000 	4,000,000 	* 	*
-
-Specified rate limits are not guaranteed and actual capacity may vary.
-Batch API rate limits
-
-Batch API requests are subject to their own rate limits, separate from the non-batch API calls.
-
-    Concurrent batch requests: 100
-    Input file size limit: 2GB
-    File storage limit: 20GB
-    Enqueued tokens per model: The Batch Enqueued Tokens column in the rate limits table lists the maximum number of tokens that can be enqueued for batch processing across all your active batch jobs for a given model. See in the standard API rate limits table.
-
-How to upgrade to the next tier
-
-The Gemini API uses Cloud Billing for all billing services. To transition from the Free tier to a paid tier, you must first enable Cloud Billing for your Google Cloud project.
-
-Once your project meets the specified criteria, it becomes eligible for an upgrade to the next tier. To request an upgrade, follow these steps:
-
-    Navigate to the API keys page in AI Studio.
-    Locate the project you want to upgrade and click "Upgrade". The "Upgrade" option will only show up for projects that meet next tier qualifications.
-
-After a quick validation, the project will be upgraded to the next tier.
-Request a rate limit increase
-
-Each model variation has an associated rate limit (requests per minute, RPM). For details on those rate limits, see Gemini models.
-
-Request paid tier rate limit increase
-
-We offer no guarantees about increasing your rate limit, but we'll do our best to review your request.
-Was this helpful?
-
-Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
-
-Last updated 2025-10-15 UTC.
-
-    Terms
-    Privacy
-
-
-</api usage limits>
-</Ephemeral Context>
-<Previous Cycle 97 Summary of Actions>
-I have analyzed the feedback from the second review round and will implement the requested improvements to enhance the user experience and functionality of the V2V Academy labs.
-
-My course of action is to address the four main points: I will make all external links in the lab content open in a new browser tab, update the lab instructions for clarity, overhaul the fullscreen viewer to include the lab's text content and page navigation, and fix the truncated prompt text while adding a convenient copy-to-clipboard feature.
-
-This will result in a more professional, intuitive, and user-friendly learning environment.
-
-1.  **Open Links in New Tabs:** I will update the `MarkdownRenderer` component to ensure all hyperlinks within the lab content automatically open in a new browser tab. This prevents users from losing their place in the training material.
-2.  **Clarify Lab Instructions:** I will revise the lab's JSON data file.
-    *   In Step 6, when the user first opens the DCE panel, I will explicitly identify it as the "Data Curation **File Tree View**" to establish consistent terminology.
-    *   In Step 7, I will restore the full, untruncated project scope prompt that was previously cut short, ensuring the user has the complete text to copy. I will also wrap this prompt in a markdown code block for better readability.
-3.  **Enhance Fullscreen Lab Viewer:** I will significantly upgrade the fullscreen viewing experience for labs.
-    *   The `FullscreenMediaViewer` will now display the lab step's full text content in the side panel instead of the image prompt, providing a focused, two-pane view of the image and its instructions.
-    *   I will add "Next" and "Previous" page navigation arrows directly within the fullscreen view, allowing users to seamlessly progress through the lab steps without exiting.
-4.  **Add "Copy Code" Button:** I will enhance the `MarkdownRenderer` to automatically add a "Copy" button to all code blocks. This provides a peak user experience, allowing learners to copy prompts and code snippets with a single click, ensuring accuracy and saving time.
-
-1.  **Update `public/data/v2v_lab_1_portfolio.json`:**
-    *   On the page for Step 7 (`lab-1-cycle0-1`), I will add the explicit identifier "Data Curation **File Tree View**" to the content.
-    *   On the same page, I will replace the truncated project scope prompt with the full, complete version from artifact `A81` and enclose it in markdown code fences (` ``` `).
-2.  **Update `src/components/shared/MarkdownRenderer.tsx`:**
-    *   I will modify the `a` component override to add `target="_blank"` and `rel="noopener noreferrer"` attributes to all rendered links.
-    *   I will refactor the `code` component override. For multi-line code blocks, I will wrap the `<pre>` tag in a relative container and add an absolutely positioned "Copy" button. This button will use the `navigator.clipboard` API to copy the code block's content and will provide visual feedback (e.g., changing to "Copied!") upon success.
-3.  **Update `src/stores/reportStore.ts`:**
-    *   I will update the `FullscreenMedia` type to include an optional `content?: string` field.
-    *   I will create two new actions, `nextPageInFullscreen` and `prevPageInFullscreen`. These actions will handle changing the page index and then immediately updating the `fullscreenMedia` state with the new page's image, prompt, and content, creating a seamless navigation experience within the fullscreen view.
-4.  **Update `src/components/report-viewer/ReportViewer.tsx`:**
-    *   I will modify the `handleImageClick` function. It will now check if the `reportName` indicates a lab. If so, it will call `openFullscreenMedia` with the current page's `content` included in the payload.
-5.  **Update `src/components/global/FullscreenMediaViewer.tsx`:**
-    *   The component will now check for the presence of `fullscreenMedia.content`.
-    *   If content exists, it will render the content (using `MarkdownRenderer`) in the side panel instead of the image prompt.
-    *   It will also render "Next" and "Previous" arrow buttons, wiring their `onClick` events to the new `nextPageInFullscreen` and `prevPageInFullscreen` actions from the store. The buttons will be disabled appropriately on the first and last pages.
-</Previous Cycle 97 Summary of Actions>
-</Cycle 98>
-
-<Cycle 97>
-<Cycle Context>
-great work, here is additional feedback:
-
-1. the new copy button on the code blocks, can we move it from the top-right to the bottom-right? its more likely to be seen by the user as the first line is very long and obscures the icon. in the bottom-right, the icon would be against the completely blank background and much more noticable.
-
-2. when i go full screen on an image in the report viewer on lab 1, i do not see the following differences that should be unique to any report within our lab section of our website, which are: navigation buttons (i see you added chevrons in the fullscreenmediaviewer.tsx but i dont visually see any indication of their appearance) and also we want to not display the image prompt in that text area and instead we want to display the content for that page as that is what contains the step by step that would be depicted in the image. 
-
-3. page 8 (step 12 - 14) is missing critical information. you truncated the model/temp/thinking selections. please restore those instructions.
-
-just like the last cycle, i would like for the steps that i perform be identical to the steps written. therefore, the steps written must exist first before i can record them. so please take this feedback and ill 'throw it back over the fence' so that you can work on the full screen, the other issues, and restore step 12-14 such that i have the proper steps for our learners to follow so i can do them manually so they have a visual aid that matches the written instructions, making it a complete self-referential loop without any misalignment.
-
-
-
-</Cycle Context>
-<Previous Cycle 96 Summary of Actions>
-I have analyzed the user's feedback from Cycle 95 and will implement all six requested improvements. My course of action is to completely overhaul the lab's data structure for better navigation, enrich the content with helpful links, disable a feature that is not yet ready, and fix a text-to-speech pronunciation issue.
-
-First, I will address the poor organization of the lab's navigation. I will completely rewrite the `v2v_lab_1_portfolio.json` file, deconstructing the existing content from artifact `A81` into a more granular, multi-section structure. This will break the lab into logical phases like "Environment Setup," "Cycle 0," "Git Workflow," and "Building the Code," which will be reflected in the report viewer's navigator, making the lab much easier to follow.
-
-During this rewrite, I will also enrich the content. On the first page, I will add a direct link to the official Visual Studio Code download page. On the "Install DCE" page, I will add the correct local link to download the `.vsix` extension file.
-
-Next, I will disable the "Suggested Questions" feature specifically for labs. I will add conditional logic to `ReportViewer.tsx` and `ReportChatPanel.tsx` to prevent this feature from activating and its UI from rendering when a lab report is being viewed.
-
-Finally, I will fix the TTS pronunciation of "VS Code" by implementing a simple string replacement. In both the `reportStore.ts` and `AudioControls.tsx`, I will add logic to replace all occurrences of "VS Code" with "V S Code" before the text is sent to the TTS API, which will force the desired pronunciation.
-
-1.  **Restructure Lab Content:** I will completely rewrite `public/data/v2v_lab_1_portfolio.json`. I will break down the content from `A81` into a new, multi-section format with 21 distinct pages to improve navigation.
-2.  **Add Download Links:**
-    *   In the new lab JSON, I will add the URL `https://code.visualstudio.com/download` to the first step.
-    *   I will add the link `/downloads/data-curation-environment-0.1.10.vsix` to the step explaining how to install the DCE extension.
-3.  **Update Image Manifest:** I will update `public/data/imagemanifest_lab_1_portfolio.json` to match the new `pageId`s created in the restructured lab content file.
-4.  **Disable Lab Suggestions:**
-    *   In `src/components/report-viewer/ReportViewer.tsx`, I will modify the `useEffect` hook to prevent `fetchPageSuggestions` from being called if the `reportName` starts with `v2v-academy-lab`.
-    *   In `src/components/report-viewer/ReportChatPanel.tsx`, I will wrap the suggestion UI in a conditional render and prevent `fetchConversationSuggestions` from being called for labs.
-5.  **Fix TTS Pronunciation:**
-    *   In `src/stores/reportStore.ts`, I will update the `playArbitraryText` action to replace "VS Code" with "V S Code".
-    *   In `src/components/report-viewer/AudioControls.tsx`, I will update the `generateAndPlayAudio` function to do the same replacement.
-</Previous Cycle 96 Summary of Actions>
-</Cycle 97>
-
-<Cycle 96>
-<Cycle Context>
-great. here is additional feedback from the second round as i go through and make the images/gifs:
-
-1. can you make the links open in new tabs rather than in the existing tab? when i clicked to go to download visual studio it used my browesr now i have to navigate all back to my training... its a poor user experience.
-
-2. on step 5, lets instead instruct them at this point to click on `Open Folder` from the Data Curation File Tree View. Also lets identify this as the `File Tree View` in the lab the first time they open it (the step where they click on the spiral).
-
-3. the full screen view, for the labs, should instead of providing the image description in the right side panel, it should provide the content, which is the lab steps. also, for the labs, we should provide on this full screen view some arrow buttons which navigate between the pages. some users may prefer this minimized view of just the image/steps needed.
-
-4. you truncated the step on page 6, you need to restore it. im referring to the prompt which the user should be copy/pasting. in addition, can you put that particular part in a code block? that makes it clear to the user what should be copied. also if we could give the user a copy button on the code block that would be a peak user experience.
-
-im actually going to pause and stop at this point, because i would like for the instruction i paste in my gif match identically to that which is in our copied text. therefore, the copied text described in the previous section needs to exist first. good work so far, fix the truncation, address the other issues, and i will continue to build out the gifs for our lab.
-</Cycle Context>
-<Previous Cycle 95 Summary of Actions>
-I have analyzed the request to build out the first lab for the V2V Academy. The core issue is a mismatch between the lab content defined in the markdown artifact `A81` and the scaffolded JSON data (`v2v_lab_1.json`). Additionally, the academy page is failing to load the lab data due to an incorrect filename.
-
-My course of action is to fully populate the lab's content from the source artifact and fix the data loading issue. I will rename the existing lab JSON file to match what the academy page expects and then completely rewrite its contents to align with the 37 detailed steps outlined in `A81`. I will also create the corresponding image manifest required by the report viewer to display the lab's screenshots.
-
-This will resolve the loading error and provide a complete, step-by-step, interactive lab experience for the user.
-
-1.  **Rename `public/data/v2v_lab_1.json`:** I will rename this file to `public/data/v2v_lab_1_portfolio.json`. This directly fixes the `Failed to fetch content for lab_1_portfolio` error reported in the ephemeral context.
-2.  **Update `public/data/v2v_lab_1_portfolio.json`:** I will completely replace the content of this file. I will meticulously transcribe all 37 steps from `A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md` into the structured JSON format required by the `ReportViewer`, including `pageId`, `pageTitle`, `tldr`, and `content` for each step.
-3.  **Create `public/data/imagemanifest_lab_1_portfolio.json`:** I will create a new image manifest file. This file will contain an `imageGroup` entry for each of the 37 lab steps, defining the path, prompt, and filename for the screenshots that will accompany the lab. This is a necessary step for the `ReportViewer` to load the images.
-4.  **Update `src/app/academy/page.tsx`:** I will adjust the data loading logic to correctly fetch the newly named lab content and manifest files, ensuring the component requests `v2v_lab_1_portfolio.json` and `imagemanifest_lab_1_portfolio.json` when the lab is selected.
-</Previous Cycle 95 Summary of Actions>
-</Cycle 96>
-
 <Cycle 95>
 <Cycle Context>
-1. provide the actual link to vscode install on page 1.
-2. give a link to download the DCE itself on page 2.
-3. lets better organize our steps in the report navigator section so far we have the introduction but then all other pages just get lumped into `Setup & Project Initiation` can we organize that more?
-4. lets disable the suggested questions for labs for now, i havent figured out how to integrate that yet.
-5. the TTS model says `V's` like plural v's instead of `V-S` can we have a mechanism that alters any occurence of `VS Code` going to the TTS model to be written as `V S Code`? then i can tweak that word and that gives us a mechanism to control particularly bad pronouncations.
-6. continue to review and upscale accordingly, largely the rest looked fine but you may see room for improvement clarification.
+okay we are doing great on the lab and are almost done. i got to this point:
+
+`Execute the full loop: **Parse All -> Sort -> Select This Response**.`
+
+but i would like to add a bit of insight based on my lab environment and the results i got back. while the DCE sorts by most token and its generally a good idea to start there (as youve got to start somewhere, and my experience has shown me that 80% of the time, the longest is good enough to serve as precisely that, a starting prompt to baseline yourself to review the other responses against) but for those other 20%, my current lab environment responses have led me to choose not the longest, but instead the prompt which provided me with the most files back. this is because we are building out the scaffolding and it is at this point in time that is actually my goal to create the files, and one response has provided me with more of the files that are listed in the technical scaffold than another, and so for this reason i have decided to go with not with the longest, but instead the one that provided the most files. at this point in time, i ultimately could have gone with either. this is very much both a combination of an art and a science. can you help me to convey this notion to our students at this point in time in a succinct way as it aligns with what ive recorded in the accompanying gif?
+
 
 </Cycle Context>
 <Previous Cycle 94 Summary of Actions>
@@ -4746,10 +4492,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-19T23:59:59.589Z
+  Date Generated: 2025-10-20T12:43:03.561Z
   ---
-  Total Files: 180
-  Approx. Tokens: 471628
+  Total Files: 185
+  Approx. Tokens: 473205
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4758,11 +4504,11 @@ This file-centric approach helps in planning and prioritizing work, especially i
 3. public\data\v2v_content_career_transitioner.json (13818 tokens)
 4. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
-6. src\stores\reportStore.ts (8811 tokens)
+6. src\stores\reportStore.ts (8784 tokens)
 7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8578 tokens)
-8. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
-9. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
-10. src\Artifacts\A0-Master-Artifact-List.md (7291 tokens)
+8. src\Artifacts\A0-Master-Artifact-List.md (7378 tokens)
+9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
+10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7293 tokens)
 
 <!-- Full File List -->
 1. context\aiascentgame\scripts\convert_images_to_webp.js.md - Lines: 104 - Chars: 3809 - Tokens: 953
@@ -4787,7 +4533,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 20. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 21. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 22. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 440 - Chars: 29162 - Tokens: 7291
+23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 444 - Chars: 29512 - Tokens: 7378
 24. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 25. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 26. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -4857,7 +4603,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 773 - Chars: 35244 - Tokens: 8811
+93. src\stores\reportStore.ts - Lines: 772 - Chars: 35135 - Tokens: 8784
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -4932,8 +4678,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 165. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
 167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 366 - Chars: 34309 - Tokens: 8578
-168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5080 - Tokens: 1270
-169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 17207 - Tokens: 4302
+168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 25 - Chars: 5081 - Tokens: 1271
+169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18330 - Tokens: 4583
 170. public\assets\images\v2v\labs\lab-1\step-2-1.webp - [Binary] Size: 54.1 KB
 171. public\assets\images\v2v\labs\lab-1\step-3-1.gif - [Binary] Size: 1.3 MB
 172. public\assets\images\v2v\labs\lab-1\step-4-1.gif - [Binary] Size: 380.8 KB
@@ -4942,9 +4688,14 @@ This file-centric approach helps in planning and prioritizing work, especially i
 175. public\assets\images\v2v\labs\lab-1\step-8-1.gif - [Binary] Size: 6.6 MB
 176. public\assets\images\v2v\labs\lab-1\step-12-1.gif - [Binary] Size: 4 MB
 177. public\assets\images\v2v\labs\lab-1\step-15-1.gif - [Binary] Size: 2.9 MB
-178. public\assets\images\v2v\labs\lab-1\step-16-1.gif - [Binary] Size: 770.4 KB
-179. public\assets\images\v2v\labs\lab-1\step-18-1.gif - [Binary] Size: 421.9 KB
-180. public\assets\images\v2v\labs\lab-1\step-22-1.gif - [Binary] Size: 3.7 MB
+178. public\assets\images\v2v\labs\lab-1\step-18-1.gif - [Binary] Size: 421.9 KB
+179. public\assets\images\v2v\labs\lab-1\step-22-1.gif - [Binary] Size: 3.7 MB
+180. src\Artifacts\A83 - V2V Academy - Simulating a Fresh Environment Guide.md - Lines: 51 - Chars: 4937 - Tokens: 1235
+181. public\assets\images\v2v\labs\lab-1\step-17-1.gif - [Binary] Size: 770.4 KB
+182. public\assets\images\v2v\labs\lab-1\step-27-1.gif - [Binary] Size: 21.9 MB
+183. public\assets\images\v2v\labs\lab-1\step-28-1.gif - [Binary] Size: 3.5 MB
+184. public\assets\images\v2v\labs\lab-1\step-31-1.gif - [Binary] Size: 1.5 MB
+185. public\assets\images\v2v\labs\lab-1\step-32-1.gif - [Binary] Size: 14.2 MB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -16017,7 +15768,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C93 (Add A81 and A82)
+# Updated on: C98 (Add A83)
 
 ## 1. Purpose
 
@@ -16451,6 +16202,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A82. V2V Academy - Labs and Courses UI Plan
 - **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
 - **Tags:** v2v, curriculum, labs, page design, plan, ui, ux
+
+### A83. V2V Academy - Simulating a Fresh Environment Guide
+- **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
+- **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -22084,6 +21839,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
+// Updated on: C98 (Fix fullscreen navigation actions)
 // Updated on: C97 (Implement fullscreen navigation actions)
 // Updated on: C96 (Add content to FullscreenMedia)
 // ... (rest of history ommitted for brevity)
@@ -22660,43 +22416,41 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
                 }));
             },
             nextPageInFullscreen: () => {
-                set(state => {
-                    const newIndex = Math.min(state.allPages.length - 1, state.currentPageIndex + 1);
-                    if (newIndex === state.currentPageIndex) return state;
+                const { currentPageIndex, allPages } = get();
+                const newIndex = Math.min(allPages.length - 1, currentPageIndex + 1);
+                if (newIndex === currentPageIndex) return;
 
-                    const newPage = state.allPages[newIndex];
-                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
-                    if (!newPage || !newImage) return state;
-                    
-                    return {
-                        currentPageIndex: newIndex,
-                        currentImageIndex: 0,
-                        fullscreenMedia: {
-                            src: newImage.url,
-                            description: newImage.prompt,
-                            content: newPage.content,
-                        }
-                    };
+                const newPage = allPages[newIndex];
+                const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                if (!newPage || !newImage) return;
+                
+                set({
+                    currentPageIndex: newIndex,
+                    currentImageIndex: 0,
+                    fullscreenMedia: {
+                        src: newImage.url,
+                        description: newImage.prompt,
+                        content: newPage.content,
+                    }
                 });
             },
             prevPageInFullscreen: () => {
-                set(state => {
-                    const newIndex = Math.max(0, state.currentPageIndex - 1);
-                    if (newIndex === state.currentPageIndex) return state;
+                const { currentPageIndex, allPages } = get();
+                const newIndex = Math.max(0, currentPageIndex - 1);
+                if (newIndex === currentPageIndex) return;
 
-                    const newPage = state.allPages[newIndex];
-                    const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
-                    if (!newPage || !newImage) return state;
+                const newPage = allPages[newIndex];
+                const newImage = newPage?.imagePrompts?.[0]?.images?.[0];
+                if (!newPage || !newImage) return;
 
-                    return {
-                        currentPageIndex: newIndex,
-                        currentImageIndex: 0,
-                        fullscreenMedia: {
-                            src: newImage.url,
-                            description: newImage.prompt,
-                            content: newPage.content,
-                        }
-                    };
+                set({
+                    currentPageIndex: newIndex,
+                    currentImageIndex: 0,
+                    fullscreenMedia: {
+                        src: newImage.url,
+                        description: newImage.prompt,
+                        content: newPage.content,
+                    }
                 });
             },
             goToPageByIndex: (pageIndex) => {
@@ -30986,7 +30740,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
     "basePath": "/assets/images/v2v/labs/",
     "imageGroups": {
         "lab-1-step-1-ig1": { "path": "lab-1/", "prompt": "A welcoming, futuristic graphic with the title 'Lab 1: Build Your First Portfolio Website' prominently displayed.", "alt": "Lab 1 Title Card.", "baseFileName": "step-1-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-2-ig1": { "path": "lab-1/", "prompt": "A screenshot of the official Visual Studio Code download page.", "alt": "VS Code download page.", "baseFileName": "step-2-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-2-ig1": { "path": "lab-1/", "prompt": "A screenshot of the official Visual Studio Code download page.", "alt": "VS Code download page.", "baseFileName": "step-2-", "fileExtension": ".webp", "imageCount": 1 },
         "lab-1-step-3-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code 'Extensions' view, highlighting 'Install from VSIX...'", "alt": "Installing a VSIX in VS Code.", "baseFileName": "step-3-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-4-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a new 'portfolio-website' folder inside the 'Projects' directory.", "alt": "A new portfolio-website folder.", "baseFileName": "step-4-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-5-ig1": { "path": "lab-1/", "prompt": "A screenshot of VS Code's 'Open Folder...' dialog selecting the 'portfolio-website' folder.", "alt": "Opening the project folder in VS Code.", "baseFileName": "step-5-", "fileExtension": ".gif", "imageCount": 1 },
@@ -30997,10 +30751,10 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
         "lab-1-step-17-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Select This Response' button being highlighted in the PCPP.", "alt": "Selecting a response.", "baseFileName": "step-17-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-18-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'This workspace is not a git repository' error message in VS Code.", "alt": "The Git repository not found error.", "baseFileName": "step-18-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-22-ig1": { "path": "lab-1/", "prompt": "A screenshot showing the `GitHub-Repository-Setup-Guide.md` file open in the editor.", "alt": "The generated GitHub setup guide.", "baseFileName": "step-22-", "fileExtension": ".gif", "imageCount": 1 },
-        "lab-1-step-27-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Accept Selected' button being clicked in Cycle 2.", "alt": "Accepting the solution for Cycle 2.", "baseFileName": "step-27-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".png", "imageCount": 1 },
-        "lab-1-step-32-ig1": { "path": "lab-1/", "prompt": "A screenshot of the PCPP in a new cycle with the title 'Create Project Scaffold.'", "alt": "Creating the project scaffold.", "baseFileName": "step-32-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-27-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Accept Selected' button being clicked in Cycle 2.", "alt": "Accepting the solution for Cycle 2.", "baseFileName": "step-27-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-28-ig1": { "path": "lab-1/", "prompt": "A screenshot of the VS Code terminal showing a successful 'git --version' command.", "alt": "Verifying Git installation.", "baseFileName": "step-28-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-31-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Successfully initialized repository' notification in VS Code.", "alt": "Successful repository initialization.", "baseFileName": "step-31-", "fileExtension": ".gif", "imageCount": 1 },
+        "lab-1-step-32-ig1": { "path": "lab-1/", "prompt": "A screenshot of the PCPP in a new cycle with the title 'Create Project Scaffold.'", "alt": "Creating the project scaffold.", "baseFileName": "step-32-", "fileExtension": ".gif", "imageCount": 1 },
         "lab-1-step-34-ig1": { "path": "lab-1/", "prompt": "A screenshot of the 'Baseline (Commit)' and 'Accept Selected' buttons being highlighted for the scaffold cycle.", "alt": "Baselining and accepting the scaffold code.", "baseFileName": "step-34-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-36-ig1": { "path": "lab-1/", "prompt": "A screenshot of the portfolio website running for the first time in a browser.", "alt": "The live portfolio website.", "baseFileName": "step-36-", "fileExtension": ".png", "imageCount": 1 },
         "lab-1-step-37-ig1": { "path": "lab-1/", "prompt": "A screenshot showing a resume PDF being added to the `context/personal` folder in VS Code.", "alt": "Continuing to iterate by adding new context.", "baseFileName": "step-37-", "fileExtension": ".png", "imageCount": 1 }
@@ -31082,7 +30836,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle0-3",
                     "pageTitle": "Step 12-14: Get and Paste Responses",
                     "tldr": "Use a powerful AI to generate planning documents, then use the DCE to parse, sort, and select the best response.",
-                    "content": "Now you need to get responses from an AI. The DCE is designed to work with any AI, but for this lab, we will use Google's AI Studio, which provides free access to a very powerful model.\n1.  Open your web browser of choice.\n2.  Open **four separate tabs**.\n3.  In each tab, navigate to **aistudio.google.com**.\n4.  In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nPasting the same prompt into multiple tabs and getting parallel responses is a core part of the V2V workflow. It allows you to explore different solutions and choose the best one.",
+                    "content": "Now you need to get responses from an AI. For this lab, we will use Google's [AI Studio](https://aistudio.google.com), which provides free access to powerful models.\n1. Open **four separate tabs** in your web browser and navigate to **aistudio.google.com**.\n2. In each tab, configure the settings:\n    *   **Model:** `Gemini 2.5 Pro`\n    *   **Temperature:** `0.7`\n    *   **Thinking budget:** `Maximum`\n\nWhile AI Studio is a free service, it has usage limits to ensure fair access. The most relevant limit for the DCE is the **Tokens Per Minute (TPM)**. For Gemini 2.5 Pro, the free tier limit is 2,000,000 TPM. If your project is very large (over 500,000 tokens), it's possible to exceed this limit when generating a prompt, which could temporarily block your account for the rest of the day. For more details, you can review the official [Google AI Platform Rate Limits](https://ai.google.dev/gemini-api/docs/rate-limits).",
                     "imageGroupIds": ["lab-1-step-12-ig1"]
                 },
                 {
@@ -31116,7 +30870,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle1-2",
                     "pageTitle": "Step 20-22: Using the DCE to Ask for Help",
                     "tldr": "First, accept the documentation the AI has already created. Then, in a new cycle, ask the AI for instructions on how to install Git.",
-                    "content": "First, accept the planning documents from Cycle 1 by clicking **`Select All`** then **`Accept Selected`**. Now, you can ask the AI for help. In the 'Cycle & Context' section, enter:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but I do not have git installed. Can you provide me with instructions to install it? I am on a [windows/mac] machine.`",
+                    "content": "You've hit a roadblock, but the AI has likely already given you the solution—we just need to find it. This is a realistic part of the development process: exploring the documentation to find prerequisites. First, accept the planning documents from Cycle 1 by clicking **`Select All`** then **`Accept Selected`**. Now, you can review the generated `GitHub-Repository-Setup-Guide.md`. You'll find that it lists `git` as a prerequisite, confirming our problem. Now, we will use the DCE to solve it. In the 'Cycle & Context' section, enter:\n*   **Cycle Title:** `Create Git Installation Instructions`\n*   **Cycle Context:** `I need to 'initialize a git repository', but the documentation says I need 'git' as a prerequisite. I do not have git installed. Can you provide me with instructions to install it for my [windows/mac] machine?`",
                     "imageGroupIds": ["lab-1-step-22-ig1"]
                 },
                 {
@@ -31137,7 +30891,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle1-5",
                     "pageTitle": "Step 29-31: Initializing the Repository",
                     "tldr": "With Git installed, go back to Cycle 1 and successfully initialize your repository. Then, complete the GitHub setup quest on your own.",
-                    "content": "Now, navigate back to **Cycle 1** in the DCE. Change the title to `First Commit` and click `Baseline (Commit)` again. This time, click the **`Initialize Repository`** button that appears. It will succeed! **Your next quest:** follow the same cycle process to get instructions for setting up a GitHub account and connecting it to your project.",
+                    "content": "Now that Git is installed, you can complete Step 18.\n1.  In the PCPP, change the **Cycle Title** to `First Commit`. The Cycle Title is used as the commit message.\n2.  Click the **`Baseline (Commit)`** button again.\nThis time, you will get the same error message as before, but a new button will be available: **`Initialize Repository`**. Click it. A \"Successfully initialized\" message will appear. Now, click `Baseline (Commit)` one last time. It will succeed. **Your next quest:** follow the same cycle process to get instructions for setting up a GitHub account and connecting it to your project.",
                     "imageGroupIds": ["lab-1-step-31-ig1"]
                 }
             ]
@@ -31150,14 +30904,14 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
                     "pageId": "lab-1-cycle2-1",
                     "pageTitle": "Step 32 & 33: Asking the AI to Build the Scaffold",
                     "tldr": "In a new cycle, ask the AI to build the initial code files for your portfolio website, then execute the familiar rinse-repeat loop.",
-                    "content": "Create a new cycle (Cycle 3). Set the **Cycle Title** to `Create Project Scaffold` and the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.` Now, execute the full loop: generate the prompt, get responses from your AI, and paste them into a new cycle (Cycle 4) in the DCE.",
+                    "content": "Now we are ready to write our next cycle. Set the **Cycle Title** from `First Commit` to `Create Project Scaffold` and the **Cycle Context** to `Let's now build the project files for the portfolio website based on the artifacts we've created.` Now, execute the full loop: generate the prompt, get responses from your AI, and paste them into a new cycle (Cycle 3) in the DCE.",
                     "imageGroupIds": ["lab-1-step-32-ig1"]
                 },
                 {
                     "pageId": "lab-1-cycle2-2",
                     "pageTitle": "Step 34: The Full Loop - Baseline and Accept Code",
                     "tldr": "With Git initialized, you can now Baseline first, then Accept the new code files.",
-                    "content": "You are now in Cycle 4 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
+                    "content": "You are now in Cycle 3 with the AI's code responses. Execute the full loop: **Parse All -> Sort -> Select This Response**. The **`Baseline (Commit)`** button will be highlighted. Click it to save your current state. Observe how the color of `flattened_repo.md` in the file explorer changes from manilla yellow to white, indicating it's now saved in Git. Now, click **`Select All`** and **`Accept Selected`**. This will create all the new project files for your website.",
                     "imageGroupIds": ["lab-1-step-34-ig1"]
                 },
                 {
@@ -31302,21 +31056,6 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
 </metadata>
 </file_artifact>
 
-<file path="public/assets/images/v2v/labs/lab-1/step-16-1.gif">
-<metadata>
-{
-  "name": "step-16-1.gif",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
-  "fileType": "GIF",
-  "sizeInBytes": 788913,
-  "dimensions": {
-    "width": 1920,
-    "height": 1146
-  }
-}
-</metadata>
-</file_artifact>
-
 <file path="public/assets/images/v2v/labs/lab-1/step-18-1.gif">
 <metadata>
 {
@@ -31339,6 +31078,135 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
   "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
   "fileType": "GIF",
   "sizeInBytes": 3853692,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="src/Artifacts/A83 - V2V Academy - Simulating a Fresh Environment Guide.md">
+# Artifact A83: V2V Academy - Simulating a Fresh Environment Guide
+# Date Created: C98
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
+- **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
+
+## 1. The Challenge
+
+As an experienced developer, your machine is already configured with all the necessary tools like Git and has authenticated credentials for services like GitHub. This makes it difficult to replicate the exact journey a brand-new learner will face, including the specific error messages they will encounter when a tool is missing or not configured.
+
+To create accurate and helpful visual aids (like GIFs) for the V2V Academy labs, you need a way to safely simulate this "fresh environment" without uninstalling your own critical software and breaking your development setup.
+
+## 2. Solutions
+
+There are several ways to achieve this, ranging from simple but risky to slightly more complex but completely safe.
+
+### Method 1: VS Code Dev Containers (Highly Recommended)
+
+This is the safest, most professional, and most reproducible method. It uses Docker to create a completely isolated development environment inside a container.
+
+*   **What it is:** The [VS Code Dev Containers extension](https://code.visualstudio.com/docs/devcontainers/containers) lets you open a project folder inside a lightweight, disposable Linux container. This container has its own file system, its own installed software, and its own network configuration, completely separate from your host Windows or macOS machine.
+*   **Benefits:**
+    *   **Pristine Environment:** The container starts as a clean slate. Git is not installed, and no GitHub credentials are present. It perfectly mimics a new user's machine.
+    *   **Zero Risk:** Your host machine's software and configuration are never touched. You can experiment freely inside the container.
+    *   **Reproducible:** The environment is defined in a configuration file, so you can tear it down and bring it back up in the exact same clean state every time.
+*   **How to Get Started:**
+    1.  **Prerequisites:** Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in VS Code.
+    2.  **Open Project:** Open the `aiascent-dev` project in VS Code.
+    3.  **Add Dev Container Config:** Open the Command Palette (`Ctrl+Shift+P`), run the command **`Dev Containers: Add Development Container Configuration Files...`**, and choose a basic definition like `Node.js`. This will create a `.devcontainer` folder in your project.
+    4.  **Reopen in Container:** VS Code will prompt you to "Reopen in Container." Click it. VS Code will build the Docker image (this may take a few minutes the first time) and reload your window, but you will now be "inside" the container.
+    5.  **Verify:** Open the integrated terminal in VS Code. You are now in a Linux shell. Type `git --version`. It will return "command not found," perfectly simulating the state of a new learner.
+    6.  You can now run through the lab steps, installing Git *inside the container* and recording the exact process. When you are done, simply close the container and reopen the project locally.
+
+### Method 2: Temporarily Modifying the PATH (Advanced & Risky)
+
+This method involves making your system temporarily "forget" where Git is installed. It is less reliable and carries a small risk of misconfiguration.
+
+*   **How it Works:** The command line finds programs like `git` by looking in the directories listed in your system's `PATH` environment variable. By temporarily removing the Git directory from this path, you can make the `git` command fail.
+*   **Windows Steps:**
+    1.  Find where Git is installed (usually `C:\Program Files\Git\cmd`).
+    2.  Open "Edit the system environment variables" from the Start Menu.
+    3.  Click "Environment Variables..."
+    4.  Under "System variables," find and select `Path`, then click "Edit."
+    5.  Find the entry for Git, select it, and click "Delete." **(Remember to note the exact path so you can add it back!)**
+    6.  Click OK on all dialogs. You will need to open a **new** terminal for the change to take effect.
+    7.  To revert, follow the same steps but click "New" and add the Git path back.
+*   **Clearing GitHub Credentials (Windows):** Search for "Credential Manager" in the Start Menu, go to "Windows Credentials," and find any entries for `git:https://github.com`. You can temporarily remove these.
+
+**Conclusion:** For its safety, reliability, and reproducibility, the **VS Code Dev Containers** method is the strongly recommended approach for solving this problem.
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-17-1.gif">
+<metadata>
+{
+  "name": "step-17-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 788913,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-27-1.gif">
+<metadata>
+{
+  "name": "step-27-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 22965836,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-28-1.gif">
+<metadata>
+{
+  "name": "step-28-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 3656955,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-31-1.gif">
+<metadata>
+{
+  "name": "step-31-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 1583742,
+  "dimensions": {
+    "width": 1920,
+    "height": 1146
+  }
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/v2v/labs/lab-1/step-32-1.gif">
+<metadata>
+{
+  "name": "step-32-1.gif",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/v2v/labs/lab-1",
+  "fileType": "GIF",
+  "sizeInBytes": 14839651,
   "dimensions": {
     "width": 1920,
     "height": 1146
