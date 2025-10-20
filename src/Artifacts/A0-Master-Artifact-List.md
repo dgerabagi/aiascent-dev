@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C96 (Add A97)
+# Updated on: C97 (Add A98, A99, A100, A101)
 
 ## 1. Purpose
 
@@ -446,3 +446,19 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A97. V2V Academy - Lab 1 Media Descriptions
 - **Description:** Provides detailed, step-by-step descriptions for the screen recording videos used in Lab 1 of the V2V Academy.
 - **Tags:** v2v, curriculum, lab, documentation, media, accessibility
+
+### A98. V2V Academy - Academy Page Image Prompts
+- **Description:** Provides a set of specific image prompts for generating cover and thumbnail images for the V2V Academy homepage, including personas, labs, and courses.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, aesthetic
+
+### A99. V2V Academy - Course 1: The AI-Powered Report Viewer - Vision and Roadmap
+- **Description:** High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer, roadmap
+
+### A100. V2V Academy - Course 1: The AI-Powered Report Viewer - Curriculum Outline
+- **Description:** A detailed curriculum outline for the V2V Academy's first course, "The AI-Powered Report Viewer," breaking the project into a logical sequence of modules and lessons.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer
+
+### A101. V2V Academy - Course 1: The AI-Powered Report Viewer - Lab Plan
+- **Description:** A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
+- **Tags:** v2v, curriculum, labs, project-based learning, report viewer

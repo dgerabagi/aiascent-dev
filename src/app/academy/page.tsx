@@ -6,6 +6,7 @@ import { useReportStore } from '@/stores/reportStore';
 import type { ReportContentData, ImageManifestData } from '@/stores/reportStore';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const AcademyPage = () => {
     const [selection, setSelection] = useState<{ type: 'persona' | 'lab'; id: string } | null>(null);
@@ -91,7 +92,7 @@ const AcademyPage = () => {
                 className="text-center my-20 w-full"
             >
                 <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
-                    Labs & Projects
+                    Labs & Courses
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                     Apply your knowledge with hands-on, project-based learning.
@@ -104,9 +105,9 @@ const AcademyPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.0 }}
             >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <Card
-                        className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer"
+                        className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer group"
                         onClick={() => setSelection({ type: 'lab', id: 'lab_1_portfolio' })}
                     >
                         <CardHeader className="items-center text-center">
@@ -116,7 +117,21 @@ const AcademyPage = () => {
                             <CardDescription>Go from an empty folder to a running portfolio website and learn the complete, end-to-end workflow of the Data Curation Environment.</CardDescription>
                         </CardContent>
                     </Card>
-                    {/* Future labs will be added here as more Card components */}
+                    
+                    {/* Coming Soon Course Card */}
+                    <Card
+                        className="h-full flex flex-col bg-muted/20 border-dashed relative overflow-hidden"
+                    >
+                        <div className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                            COMING SOON
+                        </div>
+                        <CardHeader className="items-center text-center">
+                            <CardTitle className="text-muted-foreground">Course 1: The AI-Native Application</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow text-center">
+                            <CardDescription>A comprehensive course on building a full-stack, AI-native application—the Report Viewer—from scratch using the V2V workflow.</CardDescription>
+                        </CardContent>
+                    </Card>
                 </div>
             </motion.div>
         </div>

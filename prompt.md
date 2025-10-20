@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 97 - request image prompts and plan for new course
+Current Cycle 98 - great progress, additional requests and course alignment
+Cycle 97 - request image prompts and plan for new course
 Cycle 96 - gifs created now create descriptions for them
 Cycle 95 - help with a steps language
 Cycle 94 - build out lab steps
@@ -306,7 +307,7 @@ The vision of **aiascent.dev** is to create a professional and engaging promotio
 
 # Author: AI Model & Curator
 
-# Updated on: C96 (Add A97)
+# Updated on: C97 (Add A98, A99, A100, A101)
 
 ## 1. Purpose
 
@@ -748,9 +749,71 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A97. V2V Academy - Lab 1 Media Descriptions
 - **Description:** Provides detailed, step-by-step descriptions for the screen recording videos used in Lab 1 of the V2V Academy.
 - **Tags:** v2v, curriculum, lab, documentation, media, accessibility
+
+### A98. V2V Academy - Academy Page Image Prompts
+- **Description:** Provides a set of specific image prompts for generating cover and thumbnail images for the V2V Academy homepage, including personas, labs, and courses.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, aesthetic
+
+### A99. V2V Academy - Course 1: The AI-Powered Report Viewer - Vision and Roadmap
+- **Description:** High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer, roadmap
+
+### A100. V2V Academy - Course 1: The AI-Powered Report Viewer - Curriculum Outline
+- **Description:** A detailed curriculum outline for the V2V Academy's first course, "The AI-Powered Report Viewer," breaking the project into a logical sequence of modules and lessons.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer
+
+### A101. V2V Academy - Course 1: The AI-Powered Report Viewer - Lab Plan
+- **Description:** A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
+- **Tags:** v2v, curriculum, labs, project-based learning, report viewer
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 98>
+<Cycle Context>
+nice, ive got the thumbnails made for the personas, as well as for lab 1 and course 1, but for lab 1 and course 1 i dont see a place to put those files. can you also add thumbnails to those two cards on the academy page?
+
+oh also the academy page should have its own sparkle page. it should have some sort of ready to become a citizen architect and we should have another coming soon which would be our create an account so that people could purchase the courses.
+
+oh and also, for our `manage_v2v_images.mjs` script, is it at all possible to have it update the appropriate image manifest json? what i mean is, after i run the script, i then manually go through the imagemanifest for that persona and update the 'imageCount' to the number of images within that folder. somtimes its 10, sometimes 12, sometimes 9. it depends on how many good images i was able to generate. once the script is done, once its generated the last image (and so knows how many images are in the folder as they were each numbered) could we have the script also go and update the imageCount in the imagemanifest? that will save me the manual step.
+
+ah, and for A99, the target audience at this point in time is now an aspiring citizen architect. the way we can conceptualize it is, at this point, we have successfully funnelled everyone into the persona of becoming a citizen architect. this simplifies out content delivery as we now only have this single persona to contend with.
+
+it looks like the initial planning documents (A100 and A101) are completed, if they are accepted then lets start on phase 2 by planning out every single artifact that we will need to create in order to consider phase 2 complete. then we will begin building each one in subsequent cycles.
+
+okay so for A100, we need to first consider a package of content to deliver to the student at the beginning of the course. We will be providing the student with a package file that will contain A173 - A186 from the AI Ascent Game project. these are they original documentation artifacts which led to the report viewer. the students can use those as their context. our first module, which is the blueprint - data modeling & project setup, would be much enhanced if this were the approach it took. please adjust accordingly.
+
+secondly, the way i built it first was i visualized it. this is an important iterative approach, especially when the idea is not well formed. in that situation, it is very beneficial to see -some sort of- version of your idea, albeit a very crude or no where near perfectly aligned version of it. this immediately gives a reference point and ideas immediately start coming in after that. for this reason, i do not wish to start with designing content.json or imagemanifest.json, because our students might not have any content ideas in mind. this is actually the polar opposite of where we should have our students start. instead, if they start with the visual approach--of which my original notion for the report viewer was a single page of information with an image to go with it, so from that idea i designed it outward--this is how i wish to construct the training. this is because nother one of our courses will need to be along the lines of 'how to generate research content/report content with ai' because that is using tools like deep research, but still curating the results with the DCE. in the same vein, a course must be over 'image generation with ai' as that too is a skill that i can transfer.
+
+we can piece this together such that we have it broad enough that when we advise the student to consider their own topics and ideate, that when they come back with their topic, we can proceed irrespective of their topic, as our guidance is broad, and a 'report viewer' of this type is essentially an internet-age version of the printing press, and so once mastered, any user can 'print' their own 'content' in the form of words (text), images and audio. in the future, we will deliver a video class, but i have to first figure that technology out (and it also has to mature, its very expensive at this point in time, making experimentation infeasible).
+
+so, to recap:
+
+1. academy page needs:
+1.1. thumbnail placement for lab 1 and course 1 (images have been generated already)
+1.2. sparkles! and a coming soon for account creation
+
+2. our image manage script should also update the image manifest with the number of images for that page.
+
+3. the rest of my feedback was for our course idea:
+3.1. focus our target audience to the single aspiring citizen architect persona
+3.2. rework a99, and by extension a100 and a101 to align with the 'single page' seed idea and 'step-by-step' iterative visualization approach to bring an idea in to reality for our course.
+</Cycle Context>
+<Previous Cycle 97 Summary of Actions>
+I have analyzed the request and the provided video files. My course of action is to create a new documentation artifact that provides detailed, step-by-step descriptions for each of the 17 screen recording videos. This will serve as the source of truth for the lab's visual aids.
+
+Concurrently, I will update the `imagemanifest_lab_1_portfolio.json` file. For each corresponding entry, I will change the file extension from `.gif` to `.mp4` and replace the existing `prompt` text with the new, detailed description. This ensures the lab viewer can load the correct media and has access to rich descriptive content, which could be used for alt-text or detailed captions in the future.
+
+Finally, I will update the master artifact list to include the new documentation artifact.
+
+1.  **Create `A97 - V2V Academy - Lab 1 Media Descriptions.md`:** Author a new artifact. For each of the 17 provided `.mp4` files, I will write a detailed, step-by-step description of the actions performed in the screen recording.
+2.  **Update `public/data/imagemanifest_lab_1_portfolio.json`:**
+    *   I will iterate through all 17 relevant entries in the `imageGroups` object (e.g., `lab-1-step-3-ig1`, `lab-1-step-4-ig1`, etc.).
+    *   For each entry, I will change the `fileExtension` value from `.gif` to `.mp4`.
+    *   I will replace the content of the `prompt` field with the corresponding detailed description from the new `A97` artifact.
+3.  **Update `src/Artifacts/A0-Master-Artifact-List.md`:** I will add a new entry for `A97` to the master artifact list under the "V2V Online Academy" section to ensure our project documentation remains current.
+</Previous Cycle 97 Summary of Actions>
+</Cycle 98>
 
 <Cycle 97>
 <Cycle Context>
@@ -4577,10 +4640,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-20T20:09:25.433Z
+  Date Generated: 2025-10-20T22:36:27.372Z
   ---
-  Total Files: 188
-  Approx. Tokens: 774029
+  Total Files: 192
+  Approx. Tokens: 778992
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4618,7 +4681,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 20. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 21. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 22. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
-23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 448 - Chars: 29761 - Tokens: 7441
+23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 464 - Chars: 31124 - Tokens: 7781
 24. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 25. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 26. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -4743,8 +4806,8 @@ This file-centric approach helps in planning and prioritizing work, especially i
 145. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
 146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49406 - Tokens: 12352
 147. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
-148. src\app\academy\page.tsx - Lines: 126 - Chars: 5623 - Tokens: 1406
-149. src\components\academy\PersonaSelector.tsx - Lines: 78 - Chars: 3663 - Tokens: 916
+148. src\app\academy\page.tsx - Lines: 141 - Chars: 6594 - Tokens: 1649
+149. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
 150. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 151. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
 152. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md - Lines: 196 - Chars: 29272 - Tokens: 7318
@@ -4752,7 +4815,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 154. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md - Lines: 201 - Chars: 29170 - Tokens: 7293
 155. context\vcpg\A58. VCPG - Image Generation System Prompt.md - Lines: 41 - Chars: 4887 - Tokens: 1222
 156. public\data\imagemanifest_career_transitioner.json - Lines: 406 - Chars: 28003 - Tokens: 7001
-157. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25894 - Tokens: 6474
+157. public\data\imagemanifest_underequipped_graduate.json - Lines: 406 - Chars: 25890 - Tokens: 6473
 158. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25510 - Tokens: 6378
 159. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
 160. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
@@ -4763,27 +4826,31 @@ This file-centric approach helps in planning and prioritizing work, especially i
 165. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 166. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
 167. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 368 - Chars: 34591 - Tokens: 8648
-168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 26 - Chars: 9377 - Tokens: 2345
+168. public\data\imagemanifest_lab_1_portfolio.json - Lines: 26 - Chars: 9378 - Tokens: 2345
 169. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18951 - Tokens: 4738
 170. src\Artifacts\A83 - V2V Academy - Simulating a Fresh Environment Guide.md - Lines: 51 - Chars: 4937 - Tokens: 1235
 171. src\Artifacts\A97 - V2V Academy - Lab 1 Media Descriptions.md - Lines: 128 - Chars: 7499 - Tokens: 1875
-172. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 354 - Chars: 33508 - Tokens: 8377
-173. context\v2v\audio-transcripts\1-on-1-training\transcript-2.md - Lines: 504 - Chars: 50152 - Tokens: 12538
-174. context\v2v\audio-transcripts\1-on-1-training\transcript-3.md - Lines: 1256 - Chars: 131611 - Tokens: 32903
-175. context\v2v\audio-transcripts\1-on-1-training\transcript-4.md - Lines: 130 - Chars: 17890 - Tokens: 4473
-176. context\v2v\audio-transcripts\1-on-1-training\transcript-6.md - Lines: 858 - Chars: 78046 - Tokens: 19512
-177. context\v2v\audio-transcripts\1-on-1-training\transcript-7.md - Lines: 1008 - Chars: 122887 - Tokens: 30722
-178. context\v2v\audio-transcripts\1-on-1-training\transcript-9.md - Lines: 818 - Chars: 65770 - Tokens: 16443
-179. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 704 - Chars: 89232 - Tokens: 22308
-180. context\v2v\research-proposals\01-V2V Academy Content Research Plan.md - Lines: 246 - Chars: 52667 - Tokens: 13167
-181. context\v2v\research-proposals\02-V2V Context Engineering Research Plan.md - Lines: 266 - Chars: 61311 - Tokens: 15328
-182. context\v2v\research-proposals\03-AI Research Proposal_ V2V Pathway.md - Lines: 217 - Chars: 61407 - Tokens: 15352
-183. context\v2v\research-proposals\04-AI Research Proposal_ V2V Pathway.md - Lines: 388 - Chars: 80971 - Tokens: 20243
-184. context\v2v\research-proposals\05-V2V Pathway Research Proposal Execution.md - Lines: 309 - Chars: 77291 - Tokens: 19323
-185. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md - Lines: 419 - Chars: 76982 - Tokens: 19246
-186. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
-187. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
-188. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
+172. src\Artifacts\A98 - V2V Academy - Academy Page Image Prompts.md - Lines: 40 - Chars: 3929 - Tokens: 983
+173. src\Artifacts\A100 - V2V Academy - Course 1 The AI-Powered Report Viewer - Curriculum Outline.md - Lines: 67 - Chars: 4908 - Tokens: 1227
+174. src\Artifacts\A101 - V2V Academy - Course 1 The AI-Powered Report Viewer - Lab Plan.md - Lines: 73 - Chars: 5135 - Tokens: 1284
+175. src\Artifacts\A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md - Lines: 63 - Chars: 4089 - Tokens: 1023
+176. context\v2v\audio-transcripts\1-on-1-training\transcript-1.md - Lines: 354 - Chars: 33508 - Tokens: 8377
+177. context\v2v\audio-transcripts\1-on-1-training\transcript-2.md - Lines: 504 - Chars: 50152 - Tokens: 12538
+178. context\v2v\audio-transcripts\1-on-1-training\transcript-3.md - Lines: 1256 - Chars: 131611 - Tokens: 32903
+179. context\v2v\audio-transcripts\1-on-1-training\transcript-4.md - Lines: 130 - Chars: 17890 - Tokens: 4473
+180. context\v2v\audio-transcripts\1-on-1-training\transcript-6.md - Lines: 858 - Chars: 78046 - Tokens: 19512
+181. context\v2v\audio-transcripts\1-on-1-training\transcript-7.md - Lines: 1008 - Chars: 122887 - Tokens: 30722
+182. context\v2v\audio-transcripts\1-on-1-training\transcript-9.md - Lines: 818 - Chars: 65770 - Tokens: 16443
+183. context\v2v\audio-transcripts\1-on-1-training\transcript-11.md - Lines: 704 - Chars: 89232 - Tokens: 22308
+184. context\v2v\research-proposals\01-V2V Academy Content Research Plan.md - Lines: 246 - Chars: 52667 - Tokens: 13167
+185. context\v2v\research-proposals\02-V2V Context Engineering Research Plan.md - Lines: 266 - Chars: 61311 - Tokens: 15328
+186. context\v2v\research-proposals\03-AI Research Proposal_ V2V Pathway.md - Lines: 217 - Chars: 61407 - Tokens: 15352
+187. context\v2v\research-proposals\04-AI Research Proposal_ V2V Pathway.md - Lines: 388 - Chars: 80971 - Tokens: 20243
+188. context\v2v\research-proposals\05-V2V Pathway Research Proposal Execution.md - Lines: 309 - Chars: 77291 - Tokens: 19323
+189. context\v2v\research-proposals\06-V2V Academy Context Engineering Research.md - Lines: 419 - Chars: 76982 - Tokens: 19246
+190. context\v2v\research-proposals\07-V2V Pathway Research Proposal.md - Lines: 292 - Chars: 62844 - Tokens: 15711
+191. context\v2v\research-proposals\08-V2V Pathway Research Proposal.md - Lines: 259 - Chars: 62152 - Tokens: 15538
+192. context\v2v\research-proposals\09-V2V Pathway Research Proposal.md - Lines: 221 - Chars: 65612 - Tokens: 16403
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -15856,7 +15923,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C96 (Add A97)
+# Updated on: C97 (Add A98, A99, A100, A101)
 
 ## 1. Purpose
 
@@ -16298,6 +16365,22 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A97. V2V Academy - Lab 1 Media Descriptions
 - **Description:** Provides detailed, step-by-step descriptions for the screen recording videos used in Lab 1 of the V2V Academy.
 - **Tags:** v2v, curriculum, lab, documentation, media, accessibility
+
+### A98. V2V Academy - Academy Page Image Prompts
+- **Description:** Provides a set of specific image prompts for generating cover and thumbnail images for the V2V Academy homepage, including personas, labs, and courses.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, aesthetic
+
+### A99. V2V Academy - Course 1: The AI-Powered Report Viewer - Vision and Roadmap
+- **Description:** High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer, roadmap
+
+### A100. V2V Academy - Course 1: The AI-Powered Report Viewer - Curriculum Outline
+- **Description:** A detailed curriculum outline for the V2V Academy's first course, "The AI-Powered Report Viewer," breaking the project into a logical sequence of modules and lessons.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer
+
+### A101. V2V Academy - Course 1: The AI-Powered Report Viewer - Lab Plan
+- **Description:** A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
+- **Tags:** v2v, curriculum, labs, project-based learning, report viewer
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -27072,6 +27155,7 @@ import { useReportStore } from '@/stores/reportStore';
 import type { ReportContentData, ImageManifestData } from '@/stores/reportStore';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const AcademyPage = () => {
     const [selection, setSelection] = useState<{ type: 'persona' | 'lab'; id: string } | null>(null);
@@ -27157,7 +27241,7 @@ const AcademyPage = () => {
                 className="text-center my-20 w-full"
             >
                 <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
-                    Labs & Projects
+                    Labs & Courses
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                     Apply your knowledge with hands-on, project-based learning.
@@ -27170,9 +27254,9 @@ const AcademyPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.0 }}
             >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <Card
-                        className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer"
+                        className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer group"
                         onClick={() => setSelection({ type: 'lab', id: 'lab_1_portfolio' })}
                     >
                         <CardHeader className="items-center text-center">
@@ -27182,7 +27266,21 @@ const AcademyPage = () => {
                             <CardDescription>Go from an empty folder to a running portfolio website and learn the complete, end-to-end workflow of the Data Curation Environment.</CardDescription>
                         </CardContent>
                     </Card>
-                    {/* Future labs will be added here as more Card components */}
+                    
+                    {/* Coming Soon Course Card */}
+                    <Card
+                        className="h-full flex flex-col bg-muted/20 border-dashed relative overflow-hidden"
+                    >
+                        <div className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                            COMING SOON
+                        </div>
+                        <CardHeader className="items-center text-center">
+                            <CardTitle className="text-muted-foreground">Course 1: The AI-Native Application</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow text-center">
+                            <CardDescription>A comprehensive course on building a full-stack, AI-native application—the Report Viewer—from scratch using the V2V workflow.</CardDescription>
+                        </CardContent>
+                    </Card>
                 </div>
             </motion.div>
         </div>
@@ -27197,6 +27295,7 @@ export default AcademyPage;
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface PersonaSelectorProps {
     onSelectPersona: (persona: string) => void;
@@ -27207,65 +27306,55 @@ const personas = [
         id: 'career_transitioner',
         title: 'The Career Transitioner',
         description: 'You have established expertise in a non-technical field and want to augment your skills with AI to future-proof your career and become a strategic leader.',
-        icon: ' briefcase', // Placeholder icon class
+        image: '/assets/images/v2v/career_transitioner_thumbnail.webp',
     },
     {
         id: 'underequipped_graduate',
         title: 'The Underequipped Graduate',
         description: 'You have a traditional degree but feel unprepared for the AI-driven job market. You want to gain a competitive edge with practical, in-demand skills.',
-        icon: ' graduation-cap', // Placeholder icon class
+        image: '/assets/images/v2v/underequipped_graduate_thumbnail.webp',
     },
     {
         id: 'young_precocious',
         title: 'The Young Precocious',
         description: 'You are a digitally native, self-taught creator, driven by curiosity. You want to channel your raw talent into a disciplined, powerful engineering practice.',
-        icon: ' rocket', // Placeholder icon class
+        image: '/assets/images/v2v/young_precocious_thumbnail.webp',
     },
 ];
 
 const PersonaSelector: React.FC<PersonaSelectorProps> = ({ onSelectPersona }) => {
     return (
-        <div className="flex flex-col items-center justify-center h-full container mx-auto px-4">
-            <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-center mb-12"
-            >
-                <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
-                    Welcome to the V2V Academy<br />
-                    --==UNDER CONSTRUCTION==--
-                </h1>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                    To personalize your learning journey, please choose the path that best describes you.
-                </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-                {personas.map((persona, index) => (
-                    <motion.div
-                        key={persona.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 * (index + 1) }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+            {personas.map((persona, index) => (
+                <motion.div
+                    key={persona.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 * (index + 1) }}
+                >
+                    <Card
+                        className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer group"
+                        onClick={() => onSelectPersona(persona.id)}
                     >
-                        <Card
-                            className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer"
-                            onClick={() => onSelectPersona(persona.id)}
-                        >
-                            <CardHeader className="items-center text-center">
-                                {/* <div className="p-4 bg-primary/10 rounded-full mb-4">
-                                    <i className={`fas fa-${persona.icon} text-primary text-3xl`}></i>
-                                </div> */}
+                        <CardHeader className="p-0">
+                            <div className="relative aspect-video w-full">
+                                <Image
+                                    src={persona.image}
+                                    alt={persona.title}
+                                    fill
+                                    className="object-cover rounded-t-lg transition-transform group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 text-center">
                                 <CardTitle>{persona.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow text-center">
-                                <CardDescription>{persona.description}</CardDescription>
-                            </CardContent>
-                        </Card>
-                    </motion.div>
-                ))}
-            </div>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="flex-grow text-center pt-0">
+                            <CardDescription>{persona.description}</CardDescription>
+                        </CardContent>
+                    </Card>
+                </motion.div>
+            ))}
         </div>
     );
 };
@@ -28483,7 +28572,7 @@ You are an expert art director and visual designer for a high-tech military and 
                   "alt": "A graduate gaining a competitive edge with AI skills.",
                         "baseFileName": "lesson-1.1-p1-img-",
                               "fileExtension": ".webp",
-                                    "imageCount": 13
+                                    "imageCount": 15
                                         },
     "lesson-1.1-p2-ig1": {
       "path": "lesson-1.1-p2/",
@@ -28587,7 +28676,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The impact of the Citizen Architect role on the future.",
       "baseFileName": "lesson-1.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.1-p1-ig1": {
       "path": "lesson-2.1-p1/",
@@ -28595,7 +28684,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-2.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.1-p2-ig1": {
       "path": "lesson-2.1-p2/",
@@ -28603,7 +28692,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The 'Garbage In, Garbage Out' rule.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -28611,7 +28700,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Curator's Method: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -28619,7 +28708,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -28627,7 +28716,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "An introduction to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -28635,7 +28724,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The importance of not making the AI guess.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -28643,7 +28732,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The annotation starter pack: naming and structuring.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -28651,7 +28740,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The payoff of building a killer portfolio.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",
@@ -28659,7 +28748,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The importance of verifying AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -28667,7 +28756,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A field guide to AI errors.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -28675,7 +28764,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A method for reviewing code.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -28683,7 +28772,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Turning bugs into better prompts.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -28691,7 +28780,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "An introduction to interaction schemas.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -28699,7 +28788,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A template for perfect prompts.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -28707,7 +28796,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Why structured prompts get you hired.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -28715,7 +28804,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "From a vague request to a professional command.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -28723,7 +28812,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Turning errors into progress.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -28731,7 +28820,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "A field guide to code bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -28739,7 +28828,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The debugging cycle step-by-step.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -28747,7 +28836,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The fastest way to learn.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -28755,7 +28844,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 9
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -28763,7 +28852,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI is unpredictable.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -28771,7 +28860,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -28779,7 +28868,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Build faster, learn faster.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -28787,7 +28876,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Creating a professional project scope.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -28795,7 +28884,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "From a cool idea to a concrete plan.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -28803,7 +28892,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The MVP strategy for finishing projects.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 9
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -28811,7 +28900,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Writing the project scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 8
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -28819,7 +28908,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The challenge of the blank page problem.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -28827,7 +28916,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Using AI to build a project's skeleton.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -28835,7 +28924,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "How the DCE uses AI for scaffolding.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -28843,7 +28932,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Commanding the AI to build a starter project.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -28851,7 +28940,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Creating a blueprint to get starter code.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -28859,7 +28948,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "The AI as a senior developer partner.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
@@ -28867,7 +28956,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Writing the 'Build My Project' prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -28875,7 +28964,7 @@ You are an expert art director and visual designer for a high-tech military and 
       "alt": "Your project is born.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 6
     }
   }
 }
@@ -30833,7 +30922,7 @@ The goal of this plan is to refactor the `/academy` page to include two distinct
     "manifestId": "v2v-academy-lab-1-portfolio-images-v1",
     "basePath": "/assets/images/v2v/labs/",
     "imageGroups": {
-        "lab-1-step-1-ig1": { "path": "lab-1/", "prompt": "A welcoming, futuristic graphic with the title 'Lab 1: Build Your First Portfolio Website' prominently displayed.", "alt": "Lab 1 Title Card.", "baseFileName": "step-1-", "fileExtension": ".png", "imageCount": 1 },
+        "lab-1-step-1-ig1": { "path": "lab-1/", "prompt": "A welcoming, futuristic graphic with the title 'Lab 1: Build Your First Portfolio Website' prominently displayed.", "alt": "Lab 1 Title Card.", "baseFileName": "step-1-", "fileExtension": ".webp", "imageCount": 1 },
         "lab-1-step-2-ig1": { "path": "lab-1/", "prompt": "A screenshot of the official Visual Studio Code download page.", "alt": "VS Code download page.", "baseFileName": "step-2-", "fileExtension": ".webp", "imageCount": 1 },
         "lab-1-step-3-ig1": { "path": "lab-1/", "prompt": "The user opens the Extensions view in VS Code. They click the '...' menu in the Extensions view sidebar. They select 'Install from VSIX...' from the dropdown menu. A file dialog opens, and the user selects the `data-curation-environment-0.1.10.vsix` file. A notification appears in the bottom-right indicating the extension is installing. Once complete, a notification confirms the installation, and the Data Curation icon appears in the Activity Bar.", "alt": "Installing a VSIX in VS Code.", "baseFileName": "step-3-", "fileExtension": ".mp4", "imageCount": 1 },
         "lab-1-step-4-ig1": { "path": "lab-1/", "prompt": "The user opens Windows File Explorer and navigates to the `C:\\` drive. They create a new folder and name it `Projects`. They navigate into the new `Projects` folder. They create a new folder inside `Projects` and name it `portfolio-website`.", "alt": "A new portfolio-website folder.", "baseFileName": "step-4-", "fileExtension": ".mp4", "imageCount": 1 },
@@ -31218,6 +31307,261 @@ This document serves as the source of truth for the descriptive content associat
 4.  They drag and drop their `My_Resume.pdf` file into the `personal` folder.
 5.  Back in VS Code, they refresh the File Tree View to see the new folders and file.
 6.  They check the box next to the `context` folder to add it to their selection.
+</file_artifact>
+
+<file path="src/Artifacts/A98 - V2V Academy - Academy Page Image Prompts.md">
+# Artifact A98: V2V Academy - Academy Page Image Prompts
+# Date Created: C97
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Provides a set of specific image prompts for generating cover and thumbnail images for the V2V Academy homepage, including personas, labs, and courses.
+- **Tags:** v2v, curriculum, images, prompt engineering, persona, aesthetic
+
+## 1. Overview
+
+This document contains the specific image generation prompts for key visual assets on the `/academy` page. These prompts are designed to be used with the master system prompt in `A75` to ensure a consistent and thematically appropriate visual identity for the V2V Academy.
+
+---
+
+## 2. Image Prompts
+
+### **2.1. Lab 1 Cover Image**
+
+*   **Asset:** Main illustration for "Lab 1: Your First Project with the DCE."
+*   **Prompt:** A hyper-realistic, cinematic image showing a first-time user's journey. The image is a split panel. On the left, a person sits before a completely blank computer screen, representing the "blank page problem." On the right, the same person is now confidently looking at a beautifully rendered, professional portfolio website they have just created. A glowing, translucent overlay of the DCE's spiral logo connects the two panels, symbolizing the tool that enabled the transformation. The aesthetic is hopeful, empowering, and solarpunk-inspired, with clean lighting and a modern, minimalist environment.
+
+### **2.2. Persona Thumbnail Images**
+
+*   **Asset:** Three separate thumbnail images for the persona selection cards. Each should be a powerful portrait of the "hero" of that journey.
+
+    *   **Prompt 1 (The Career Transitioner):** A hyper-realistic, cinematic portrait of a seasoned professional (40s) standing in a sleek, architectural office. They are looking thoughtfully at a holographic blueprint of a complex system, a look of strategic insight on their face. The style is professional and sophisticated, adhering to the "Career Transitioner" aesthetic from `A75`.
+
+    *   **Prompt 2 (The Underequipped Graduate):** A hyper-realistic, cinematic portrait of a recent graduate (20s) in a modern, collaborative tech office. They are looking up from their laptop with a confident, hopeful expression, a "lightbulb" moment of understanding visible. The background is slightly blurred, showing a positive, professional environment. The style aligns with the "Underequipped Graduate" aesthetic from `A75`.
+
+    *   **Prompt 3 (The Young Precocious):** A hyper-realistic, cinematic portrait of a young, intense developer (late teens) in a high-tech, gaming-style setup with RGB lighting. They are focused on a screen displaying complex, glowing code, their hands poised over the keyboard as if about to execute a powerful command. The style is energetic and masterful, aligning with the "Young Precocious" aesthetic from `A75`.
+
+### **2.3. Lab 1 Thumbnail Image**
+
+*   **Asset:** Thumbnail image for the "Lab 1: Your First Portfolio" card.
+*   **Prompt:** A clean, minimalist icon representing the creation of a portfolio. The icon shows a stylized browser window with a simple, elegant personal website inside it. A glowing `+` symbol and the DCE spiral logo are subtly overlaid in a corner, indicating that the website was created using the tool. The aesthetic is clean, modern, and instantly recognizable.
+
+### **2.4. "Coming Soon" Course Thumbnail Image**
+
+*   **Asset:** Thumbnail image for the "Course 1: The AI-Powered Report Viewer" card.
+*   **Prompt:** A visually striking and futuristic icon representing the AI-Powered Report Viewer. The icon depicts a central, glowing document. From this document, several streams of light emerge, connecting to smaller icons representing its key features: a waveform (for TTS), a picture icon (for AI images), and a chat bubble (for the RAG chatbot). The entire composition is sleek, high-tech, and visually represents a keystone generative AI artifact.
+</file_artifact>
+
+<file path="src/Artifacts/A100 - V2V Academy - Course 1 The AI-Powered Report Viewer - Curriculum Outline.md">
+# Artifact A100: V2V Academy - Course 1: The AI-Powered Report Viewer - Curriculum Outline
+# Date Created: C97
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A detailed curriculum outline for the V2V Academy's first course, "The AI-Powered Report Viewer," breaking the project into a logical sequence of modules and lessons.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer
+
+## 1. Overview
+
+This document provides the detailed, modular curriculum outline for "Course 1: The AI-Powered Report Viewer." The course is structured as a single, cumulative project, with each module representing a major phase of development. The lessons within each module will teach the theoretical concepts and then immediately apply them in a hands-on lab, guiding the student through the entire process of building the application.
+
+## 2. Curriculum Modules
+
+---
+
+### **Module 1: The Blueprint - Data Modeling & Project Setup**
+
+*   **Objective:** Students will apply the "Documentation First" principle to architect the data foundation of the application and set up their development environment.
+*   **Lessons:**
+    *   **1.1: The Architect's Vision:** Deconstructing the Report Viewer into its core components and features.
+    *   **1.2: Data as the Foundation:** Designing the `content.json` schema to structure the report's text.
+    *   **1.3: The Visual Language:** Designing the `imagemanifest.json` schema to manage AI-generated images.
+*   **Lab 1:** Students will create their project, initialize Git, and use the DCE to generate their first artifacts: the `content.json` and `imagemanifest.json` files for a simple, two-page report.
+
+---
+
+### **Module 2: The Static View - Building the Frontend with AI**
+
+*   **Objective:** Students will use the DCE and their data artifacts to guide an AI in generating the static frontend of the Report Viewer using React and Next.js.
+*   **Lessons:**
+    *   **2.1: The Component Mindset:** Breaking down the UI into reusable React components.
+    *   **2.2: State Management with Zustand:** Setting up a global store to manage the application's state.
+    *   **2.3: From Data to Display:** Generating the components to render the report's text, images, and navigation.
+*   **Lab 2:** Students will execute the V2V workflow to generate the core React components (`ReportViewer.tsx`, `PageNavigator.tsx`, etc.) and the Zustand store (`reportStore.ts`), culminating in a functional, locally-hosted static report viewer.
+
+---
+
+### **Module 3: The Voice & The Vision - Integrating Generative AI Services**
+
+*   **Objective:** Students will build and integrate backend services to add generative AI capabilities for audio and images.
+*   **Lessons:**
+    *   **3.1: The Voice of the AI:** Setting up a local, self-hosted Text-to-Speech (TTS) server and creating an API route to proxy requests to it.
+    *   **3.2: The Automated Artist:** Creating an image generation pipeline, including writing effective system prompts (`A75`) and using scripts to automate image creation.
+    *   **3.3: The Autoplay Slideshow:** Implementing the logic for an automated slideshow that syncs image transitions with the TTS narration.
+*   **Lab 3:** Students will integrate the TTS functionality into their `AudioControls` component and write the script to generate the images for their report, adding a new layer of dynamic content.
+
+---
+
+### **Module 4: The Brain - Architecting the RAG System**
+
+*   **Objective:** Students will build the most complex feature of the application: the "Ask Ascentia" RAG-powered chatbot.
+*   **Lessons:**
+    *   **4.1: The Knowledge Base:** Understanding embeddings and using a script to create a FAISS vector index from their report's content.
+    *   **4.2: The Backend API:** Building the `/api/chat` route that handles vector search, context augmentation, and streaming responses from an LLM.
+    *   **4.3: The Conversational UI:** Generating the `ReportChatPanel.tsx` component and wiring it up to the backend API to create a fully functional, streaming chat interface.
+*   **Lab 4:** Students will create their own knowledge base, build the backend RAG pipeline, and integrate the chat feature into their Report Viewer, completing the application's core feature set.
+
+---
+
+### **Module 5: The Launch - Deployment & Final Touches**
+
+*   **Objective:** Students will learn the basics of deploying a full-stack Next.js application and adding final polishing touches.
+*   **Lessons:**
+    *   **5.1: Preparing for Production:** An overview of building and optimizing a Next.js application for deployment.
+    *   **5.2: Introduction to Deployment:** A conceptual guide to deploying on platforms like Vercel or a self-hosted server.
+*   **Lab 5:** Students will generate a production build of their application and deploy it, resulting in a live, shareable URL for their completed portfolio project.
+</file_artifact>
+
+<file path="src/Artifacts/A101 - V2V Academy - Course 1 The AI-Powered Report Viewer - Lab Plan.md">
+# Artifact A101: V2V Academy - Course 1: The AI-Powered Report Viewer - Lab Plan
+# Date Created: C97
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
+- **Tags:** v2v, curriculum, labs, project-based learning, report viewer
+
+## 1. Overview
+
+This document outlines the hands-on lab exercises for "Course 1: The AI-Powered Report Viewer." The entire course is a single, cumulative project. This plan breaks that project down into a series of structured labs that align with the course modules defined in `A100`. Each lab will guide the student through a specific phase of development, using the DCE and the V2V workflow to build a piece of the final application.
+
+## 2. Lab Breakdown by Module
+
+---
+
+### **Lab 1: The Blueprint**
+
+*   **Module Alignment:** Module 1: The Blueprint - Data Modeling & Project Setup
+*   **Objective:** To create the foundational data artifacts for a simple, two-page report.
+*   **Steps:**
+    1.  **Project Initialization:** Students will follow a guided process similar to the "Your First Portfolio" lab to create a new Next.js project folder and open it in VS Code.
+    2.  **Cycle 0 - Scoping:** Students will use the DCE's Cycle 0 to write a `Project Scope` for their report viewer.
+    3.  **Cycle 1 - Data Modeling:** Students will instruct the AI to generate the initial `content.json` and `imagemanifest.json` files. The lab will provide the specific content for a simple two-page report about a topic of their choice, which they will include in their prompt.
+*   **Deliverable:** A Git repository containing a basic Next.js project structure and the two core JSON data artifacts.
+
+---
+
+### **Lab 2: The Static Viewer**
+
+*   **Module Alignment:** Module 2: The Static View - Building the Frontend with AI
+*   **Objective:** To generate and assemble the core React components needed to display the static report data.
+*   **Steps:**
+    1.  **Cycle 2 - State Management:** Students will prompt the AI to create the `reportStore.ts` file with the logic to load and parse the JSON data artifacts.
+    2.  **Cycle 3 - UI Components:** Students will instruct the AI to generate the placeholder React components (`ReportViewer.tsx`, `PageNavigator.tsx`, `ReportProgressBar.tsx`, etc.).
+    3.  **Cycle 4 - Integration:** Students will prompt the AI to integrate the components and state management, resulting in a functional viewer that can display the title, content, and images from their `content.json`.
+*   **Deliverable:** A running Next.js application that displays the static two-page report.
+
+---
+
+### **Lab 3: The Generative Services**
+
+*   **Module Alignment:** Module 3: The Voice & The Vision - Integrating Generative AI Services
+*   **Objective:** To add TTS and automated image generation capabilities.
+*   **Steps:**
+    1.  **Cycle 5 - TTS Integration:** Students will be guided through setting up a local TTS server. They will then prompt the AI to create the `/api/tts` proxy route and integrate the `AudioControls.tsx` component.
+    2.  **Cycle 6 - Image Prompting:** Students will write the image prompts for their two-page report and add them to their `imagemanifest.json`.
+    3.  **Cycle 7 - Image Generation:** Students will be provided with the `generate_images.mjs` script and will use it to generate the images for their report.
+*   **Deliverable:** The Report Viewer will now have functional audio playback for all pages and will display the newly generated AI images.
+
+---
+
+### **Lab 4: The RAG System**
+
+*   **Module Alignment:** Module 4: The Brain - Architecting the RAG System
+*   **Objective:** To build and integrate the RAG-powered chatbot.
+*   **Steps:**
+    1.  **Cycle 8 - Knowledge Base:** Students will use a provided script to create the `faiss.index` and `chunks.json` files from their report's content.
+    2.  **Cycle 9 - Backend API:** Students will instruct the AI to build the `/api/chat` route, including the logic for vector search, context augmentation, and streaming.
+    3.  **Cycle 10 - Chat UI:** Students will prompt the AI to generate the `ReportChatPanel.tsx` component and integrate it into the main viewer.
+*   **Deliverable:** A fully functional "Ask Ascentia" chat panel within the Report Viewer that can answer questions about the report's content.
+
+---
+
+### **Lab 5: The Launch**
+
+*   **Module Alignment:** Module 5: The Launch - Deployment & Final Touches
+*   **Objective:** To prepare and deploy the completed application.
+*   **Steps:**
+    1.  **Cycle 11 - Final Polish:** Students will perform a final review and can ask the AI to make minor styling adjustments or add small features.
+    2.  **Production Build:** Students will run the `npm run build` command to create an optimized build of their application.
+    3.  **Deployment:** The lab will provide conceptual guidance and links to resources for deploying a Next.js application on a platform like Vercel.
+*   **Deliverable:** A live, publicly accessible URL for their completed AI-Powered Report Viewer project.
+</file_artifact>
+
+<file path="src/Artifacts/A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md">
+# Artifact A99: V2V Academy - Course 1: The AI-Powered Report Viewer - Vision and Roadmap
+# Date Created: C97
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
+- **Tags:** v2v, curriculum, course design, project-based learning, report viewer, roadmap
+
+## 1. Project Vision
+
+The vision for "Course 1: The AI-Powered Report Viewer" is to create the V2V Academy's flagship, project-based learning experience. This course will guide students through the entire process of building a complex, AI-native application from the ground up, using the same tools and methodologies taught in the V2V curriculum. The Report Viewer is the perfect subject for this course, as it is a keystone generative AI artifact that embodies every core principle of the V2V pathway.
+
+This course will be the first monetizable product for the Academy, offering a deep, hands-on experience that provides immense value to students and serves as a tangible demonstration of the power of the DCE workflow.
+
+## 2. Learning Objectives
+
+Upon completion of this course, students will be able to:
+
+1.  **Architect an AI-Native Application:** Deconstruct a high-level requirement into a set of structured data models and planning artifacts.
+2.  **Generate a Frontend with AI:** Use the DCE workflow to guide an AI in building a complete, interactive frontend with React and Next.js.
+3.  **Integrate AI Services:** Build and integrate backend services for core generative AI functionalities, including:
+    *   Text-to-Speech (TTS) generation.
+    *   Automated image generation.
+    *   A Retrieval-Augmented Generation (RAG) powered chatbot.
+4.  **Master the Virtuoso's Loop:** Apply the full, end-to-end V2V workflow—including context curation, parallel prompting, and Git-integrated testing—to a real-world project.
+5.  **Deploy a Full-Stack Application:** Understand the basics of deploying a modern web application.
+
+## 3. Target Audience
+
+This course will be designed with our three core learner personas in mind, with the content and exercises framed to meet their specific goals:
+
+*   **The Career Transitioner:** Will learn how to architect and lead the development of a modern AI application, a key leadership skill.
+*   **The Underequipped Graduate:** Will build a highly impressive, portfolio-worthy project that demonstrates a wide range of in-demand AI development skills.
+*   **The Young Precocious:** Will be challenged to build a complex, multi-faceted system, channeling their creative energy into a structured engineering project.
+
+## 4. Phased Course Development Roadmap
+
+The development of the course content will follow a phased approach.
+
+### **Phase 1: Curriculum & Lab Design (Documentation First)**
+
+*   **Goal:** Create the complete set of planning artifacts that will define the course.
+*   **Tasks:**
+    1.  Create the detailed Curriculum Outline (`A100`).
+    2.  Create the detailed Lab Plan (`A101`), breaking down the project into step-by-step exercises.
+    3.  Generate all necessary image prompts and asset wishlists.
+
+### **Phase 2: Content Creation**
+
+*   **Goal:** Write the full text and create all media for the course lessons and labs.
+*   **Tasks:**
+    1.  Write the persona-specific content for each lesson defined in the curriculum outline.
+    2.  Create all necessary screenshots and screen recordings (GIFs/MP4s) for the lab steps.
+    3.  Generate all AI images required for the lessons.
+    4.  Consolidate all content into the final JSON data files for the `ReportViewer`.
+
+### **Phase 3: Platform Integration & Launch**
+
+*   **Goal:** Integrate the course into the `aiascent.dev` platform and launch it.
+*   **Tasks:**
+    1.  Update the `/academy` page to feature the new course prominently.
+    2.  (Future) Integrate with a payment and authentication system to handle enrollment for this paid course.
+    3.  Announce and launch the course to the community.
 </file_artifact>
 
 <file path="context/v2v/audio-transcripts/1-on-1-training/transcript-1.md">

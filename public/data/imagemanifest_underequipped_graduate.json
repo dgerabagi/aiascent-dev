@@ -8,7 +8,7 @@
                   "alt": "A graduate gaining a competitive edge with AI skills.",
                         "baseFileName": "lesson-1.1-p1-img-",
                               "fileExtension": ".webp",
-                                    "imageCount": 13
+                                    "imageCount": 15
                                         },
     "lesson-1.1-p2-ig1": {
       "path": "lesson-1.1-p2/",
@@ -112,7 +112,7 @@
       "alt": "The impact of the Citizen Architect role on the future.",
       "baseFileName": "lesson-1.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.1-p1-ig1": {
       "path": "lesson-2.1-p1/",
@@ -120,7 +120,7 @@
       "alt": "Data Curation as a key skill for employment.",
       "baseFileName": "lesson-2.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.1-p2-ig1": {
       "path": "lesson-2.1-p2/",
@@ -128,7 +128,7 @@
       "alt": "The 'Garbage In, Garbage Out' rule.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -136,7 +136,7 @@
       "alt": "The Curator's Method: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -144,7 +144,7 @@
       "alt": "The Data Curation Environment (DCE) toolkit.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -152,7 +152,7 @@
       "alt": "An introduction to data annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -160,7 +160,7 @@
       "alt": "The importance of not making the AI guess.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -168,7 +168,7 @@
       "alt": "The annotation starter pack: naming and structuring.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -176,7 +176,7 @@
       "alt": "The payoff of building a killer portfolio.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",
@@ -184,7 +184,7 @@
       "alt": "The importance of verifying AI output.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -192,7 +192,7 @@
       "alt": "A field guide to AI errors.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -200,7 +200,7 @@
       "alt": "A method for reviewing code.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -208,7 +208,7 @@
       "alt": "Turning bugs into better prompts.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -216,7 +216,7 @@
       "alt": "An introduction to interaction schemas.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -224,7 +224,7 @@
       "alt": "A template for perfect prompts.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -232,7 +232,7 @@
       "alt": "Why structured prompts get you hired.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -240,7 +240,7 @@
       "alt": "From a vague request to a professional command.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -248,7 +248,7 @@
       "alt": "Turning errors into progress.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -256,7 +256,7 @@
       "alt": "A field guide to code bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -264,7 +264,7 @@
       "alt": "The debugging cycle step-by-step.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 13
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -272,7 +272,7 @@
       "alt": "The fastest way to learn.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -280,7 +280,7 @@
       "alt": "The professional's safety net.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 9
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -288,7 +288,7 @@
       "alt": "The AI is unpredictable.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -296,7 +296,7 @@
       "alt": "The four-step validation process.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -304,7 +304,7 @@
       "alt": "Build faster, learn faster.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -312,7 +312,7 @@
       "alt": "Creating a professional project scope.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -320,7 +320,7 @@
       "alt": "From a cool idea to a concrete plan.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -328,7 +328,7 @@
       "alt": "The MVP strategy for finishing projects.",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 9
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -336,7 +336,7 @@
       "alt": "Writing the project scope artifact.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 8
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -344,7 +344,7 @@
       "alt": "The challenge of the blank page problem.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 12
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -352,7 +352,7 @@
       "alt": "Using AI to build a project's skeleton.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -360,7 +360,7 @@
       "alt": "How the DCE uses AI for scaffolding.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -368,7 +368,7 @@
       "alt": "Commanding the AI to build a starter project.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 11
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -376,7 +376,7 @@
       "alt": "Creating a blueprint to get starter code.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -384,7 +384,7 @@
       "alt": "The AI as a senior developer partner.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
@@ -392,7 +392,7 @@
       "alt": "Writing the 'Build My Project' prompt.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -400,7 +400,7 @@
       "alt": "Your project is born.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 6
     }
   }
 }
