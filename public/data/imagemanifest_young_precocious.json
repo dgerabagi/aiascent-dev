@@ -8,7 +8,7 @@
       "alt": "Leveling up your development game.",
       "baseFileName": "lesson-1.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 10
     },
     "lesson-1.1-p2-ig1": {
       "path": "lesson-1.1-p2/",
@@ -16,7 +16,7 @@
       "alt": "Preparing your inventory for a quest.",
       "baseFileName": "lesson-1.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.1-p3-ig1": {
       "path": "lesson-1.1-p3/",
@@ -24,7 +24,7 @@
       "alt": "Multi-summoning AI for multiple solutions.",
       "baseFileName": "lesson-1.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.1-p4-ig1": {
       "path": "lesson-1.1-p4/",
@@ -32,7 +32,7 @@
       "alt": "Acting as the raid leader for your project.",
       "baseFileName": "lesson-1.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.1-p5-ig1": {
       "path": "lesson-1.1-p5/",
@@ -40,7 +40,7 @@
       "alt": "Quick save and reload for your code.",
       "baseFileName": "lesson-1.1-p5-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.1-p6-ig1": {
       "path": "lesson-1.1-p6/",
@@ -48,7 +48,7 @@
       "alt": "Logging your win and queuing for the next raid.",
       "baseFileName": "lesson-1.1-p6-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.2-p1-ig1": {
       "path": "lesson-1.2-p1/",
@@ -56,7 +56,7 @@
       "alt": "AI as a feedback loop power-up.",
       "baseFileName": "lesson-1.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.2-p2-ig1": {
       "path": "lesson-1.2-p2/",
@@ -64,7 +64,7 @@
       "alt": "Data Curation as the new meta skill.",
       "baseFileName": "lesson-1.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.2-p3-ig1": {
       "path": "lesson-1.2-p3/",
@@ -72,7 +72,7 @@
       "alt": "The endgame quest for a 'Star Trek' future.",
       "baseFileName": "lesson-1.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.2-p4-ig1": {
       "path": "lesson-1.2-p4/",
@@ -80,7 +80,7 @@
       "alt": "The AI as a cognitive mentor teaching secret techniques.",
       "baseFileName": "lesson-1.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.3-p1-ig1": {
       "path": "lesson-1.3-p1/",
@@ -88,7 +88,7 @@
       "alt": "The final class: The Citizen Architect.",
       "baseFileName": "lesson-1.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.3-p2-ig1": {
       "path": "lesson-1.3-p2/",
@@ -96,7 +96,7 @@
       "alt": "Cognitive Capital as your ultimate stat.",
       "baseFileName": "lesson-1.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.3-p3-ig1": {
       "path": "lesson-1.3-p3/",
@@ -104,7 +104,7 @@
       "alt": "The Architect as a storyteller and lore master.",
       "baseFileName": "lesson-1.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-1.3-p4-ig1": {
       "path": "lesson-1.3-p4/",
@@ -112,7 +112,7 @@
       "alt": "The power of a world-builder.",
       "baseFileName": "lesson-1.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.1-p1-ig1": {
       "path": "lesson-2.1-p1/",
@@ -120,7 +120,7 @@
       "alt": "Ultimate inventory management.",
       "baseFileName": "lesson-2.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.1-p2-ig1": {
       "path": "lesson-2.1-p2/",
@@ -128,7 +128,7 @@
       "alt": "The 'Garbage In, Garbage Out' law.",
       "baseFileName": "lesson-2.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.1-p3-ig1": {
       "path": "lesson-2.1-p3/",
@@ -136,7 +136,7 @@
       "alt": "The Curator's Combo: Gather, Organize, Label.",
       "baseFileName": "lesson-2.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.1-p4-ig1": {
       "path": "lesson-2.1-p4/",
@@ -144,7 +144,7 @@
       "alt": "Your legendary gear: The DCE.",
       "baseFileName": "lesson-2.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.2-p1-ig1": {
       "path": "lesson-2.2-p1/",
@@ -152,7 +152,7 @@
       "alt": "Enchanting your data with annotation.",
       "baseFileName": "lesson-2.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.2-p2-ig1": {
       "path": "lesson-2.2-p2/",
@@ -160,7 +160,7 @@
       "alt": "Your AI can't read minds.",
       "baseFileName": "lesson-2.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.2-p3-ig1": {
       "path": "lesson-2.2-p3/",
@@ -168,7 +168,7 @@
       "alt": "The Annotator's Grimoire: Naming & Sorting.",
       "baseFileName": "lesson-2.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.2-p4-ig1": {
       "path": "lesson-2.2-p4/",
@@ -176,7 +176,7 @@
       "alt": "The payoff: crafting god-tier loot.",
       "baseFileName": "lesson-2.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.3-p1-ig1": {
       "path": "lesson-2.3-p1/",
@@ -184,7 +184,7 @@
       "alt": "Debuffing the AI with critical analysis.",
       "baseFileName": "lesson-2.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.3-p2-ig1": {
       "path": "lesson-2.3-p2/",
@@ -192,7 +192,7 @@
       "alt": "A bestiary of AI bugs.",
       "baseFileName": "lesson-2.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.3-p3-ig1": {
       "path": "lesson-2.3-p3/",
@@ -200,7 +200,7 @@
       "alt": "The hunter's strategy for bug takedowns.",
       "baseFileName": "lesson-2.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-2.3-p4-ig1": {
       "path": "lesson-2.3-p4/",
@@ -208,7 +208,7 @@
       "alt": "Looting the corpse: turning bugs into EXP.",
       "baseFileName": "lesson-2.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.1-p1-ig1": {
       "path": "lesson-3.1-p1/",
@@ -216,7 +216,7 @@
       "alt": "Casting spells: mastering the syntax of power.",
       "baseFileName": "lesson-3.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.1-p2-ig1": {
       "path": "lesson-3.1-p2/",
@@ -224,7 +224,7 @@
       "alt": "The spellbook: your interaction schema.",
       "baseFileName": "lesson-3.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.1-p3-ig1": {
       "path": "lesson-3.1-p3/",
@@ -232,7 +232,7 @@
       "alt": "Why pros use spellbooks.",
       "baseFileName": "lesson-3.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.1-p4-ig1": {
       "path": "lesson-3.1-p4/",
@@ -240,7 +240,7 @@
       "alt": "From wish to incantation.",
       "baseFileName": "lesson-3.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.2-p1-ig1": {
       "path": "lesson-3.2-p1/",
@@ -248,7 +248,7 @@
       "alt": "Respawning with purpose.",
       "baseFileName": "lesson-3.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.2-p2-ig1": {
       "path": "lesson-3.2-p2/",
@@ -256,7 +256,7 @@
       "alt": "A bestiary of bugs.",
       "baseFileName": "lesson-3.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.2-p3-ig1": {
       "path": "lesson-3.2-p3/",
@@ -264,7 +264,7 @@
       "alt": "The debugging combo.",
       "baseFileName": "lesson-3.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.2-p4-ig1": {
       "path": "lesson-3.2-p4/",
@@ -272,7 +272,7 @@
       "alt": "The ultimate training montage.",
       "baseFileName": "lesson-3.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.3-p1-ig1": {
       "path": "lesson-3.3-p1/",
@@ -280,7 +280,7 @@
       "alt": "Save scumming for coders.",
       "baseFileName": "lesson-3.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.3-p2-ig1": {
       "path": "lesson-3.3-p2/",
@@ -288,7 +288,7 @@
       "alt": "Taming the RNG.",
       "baseFileName": "lesson-3.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.3-p3-ig1": {
       "path": "lesson-3.3-p3/",
@@ -296,7 +296,7 @@
       "alt": "The four-hit combo.",
       "baseFileName": "lesson-3.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-3.3-p4-ig1": {
       "path": "lesson-3.3-p4/",
@@ -304,7 +304,7 @@
       "alt": "Fearless speedrunning.",
       "baseFileName": "lesson-3.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.1-p1-ig1": {
       "path": "lesson-4.1-p1/",
@@ -312,7 +312,7 @@
       "alt": "Defining your quest.",
       "baseFileName": "lesson-4.1-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.1-p2-ig1": {
       "path": "lesson-4.1-p2/",
@@ -320,7 +320,7 @@
       "alt": "The Quest Giver's Riddle.",
       "baseFileName": "lesson-4.1-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.1-p3-ig1": {
       "path": "lesson-4.1-p3/",
@@ -328,7 +328,7 @@
       "alt": "Conquering the first dungeon (MVP).",
       "baseFileName": "lesson-4.1-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.1-p4-ig1": {
       "path": "lesson-4.1-p4/",
@@ -336,7 +336,7 @@
       "alt": "Inscribing your map.",
       "baseFileName": "lesson-4.1-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.2-p1-ig1": {
       "path": "lesson-4.2-p1/",
@@ -344,7 +344,7 @@
       "alt": "Conquering the blank canvas.",
       "baseFileName": "lesson-4.2-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.2-p2-ig1": {
       "path": "lesson-4.2-p2/",
@@ -352,7 +352,7 @@
       "alt": "The Genesis Spell.",
       "baseFileName": "lesson-4.2-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.2-p3-ig1": {
       "path": "lesson-4.2-p3/",
@@ -360,7 +360,7 @@
       "alt": "The built-in tutorial level.",
       "baseFileName": "lesson-4.2-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.2-p4-ig1": {
       "path": "lesson-4.2-p4/",
@@ -368,7 +368,7 @@
       "alt": "Your first quest: Forge My World.",
       "baseFileName": "lesson-4.2-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.3-p1-ig1": {
       "path": "lesson-4.3-p1/",
@@ -376,7 +376,7 @@
       "alt": "The Architect's Table.",
       "baseFileName": "lesson-4.3-p1-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.3-p2-ig1": {
       "path": "lesson-4.3-p2/",
@@ -384,7 +384,7 @@
       "alt": "The AI as your master blacksmith.",
       "baseFileName": "lesson-4.3-p2-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.3-p3-ig1": {
       "path": "lesson-4.3-p3/",
@@ -392,7 +392,7 @@
       "alt": "The Incantation of Creation.",
       "baseFileName": "lesson-4.3-p3-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     },
     "lesson-4.3-p4-ig1": {
       "path": "lesson-4.3-p4/",
@@ -400,7 +400,7 @@
       "alt": "Cycle 1: The World is Born.",
       "baseFileName": "lesson-4.3-p4-img-",
       "fileExtension": ".webp",
-      "imageCount": 20
+      "imageCount": 0
     }
   }
 }
