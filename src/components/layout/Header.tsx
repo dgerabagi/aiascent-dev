@@ -27,14 +27,14 @@ return (
     </div>
 
     {/* Navigation Links - Absolutely Centered */}
-    {/* C74: Added Academy link */}
+    {/* C99: Reordered Academy to be last */}
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/mission">Mission</NavLink>
       <NavLink href="/learn">Learn</NavLink>
-      <NavLink href="/academy">Academy</NavLink>
       <NavLink href="/dce">DCE</NavLink>
       <NavLink href="/showcase">Showcase</NavLink>
+      <NavLink href="/academy">Academy</NavLink>
     </nav>
 
     {/* Right side (Actions/Toggle) - Pushed to right */}

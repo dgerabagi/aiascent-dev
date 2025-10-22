@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-21T22:37:04.137Z
+  Date Generated: 2025-10-22T00:25:31.961Z
   ---
-  Total Files: 176
-  Approx. Tokens: 477724
+  Total Files: 185
+  Approx. Tokens: 477972
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -35,10 +35,10 @@
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
 14. src\app\api\chat\route.ts - Lines: 314 - Chars: 16405 - Tokens: 4102
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-16. src\app\dce\page.tsx - Lines: 81 - Chars: 6826 - Tokens: 1707
-17. src\app\learn\page.tsx - Lines: 171 - Chars: 15546 - Tokens: 3887
-18. src\app\mission\page.tsx - Lines: 143 - Chars: 14246 - Tokens: 3562
-19. src\app\showcase\page.tsx - Lines: 15 - Chars: 435 - Tokens: 109
+16. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
+17. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
+18. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
+19. src\app\showcase\page.tsx - Lines: 24 - Chars: 887 - Tokens: 222
 20. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 21. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 22. src\app\page.tsx - Lines: 28 - Chars: 1016 - Tokens: 254
@@ -92,8 +92,8 @@
 70. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 71. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 72. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1465 - Tokens: 367
-73. src\components\layout\Header.tsx - Lines: 68 - Chars: 2651 - Tokens: 663
-74. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4799 - Tokens: 1200
+73. src\components\layout\Header.tsx - Lines: 68 - Chars: 2661 - Tokens: 666
+74. src\components\mission\MissionSectionBlock.tsx - Lines: 142 - Chars: 4940 - Tokens: 1235
 75. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
@@ -194,8 +194,17 @@
 172. src\Artifacts\A100 - V2V Academy - Course 1 The AI-Powered Report Viewer - Curriculum Outline.md - Lines: 79 - Chars: 5869 - Tokens: 1468
 173. src\Artifacts\A101 - V2V Academy - Course 1 The AI-Powered Report Viewer - Lab Plan.md - Lines: 86 - Chars: 5790 - Tokens: 1448
 174. src\Artifacts\A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md - Lines: 68 - Chars: 5289 - Tokens: 1323
-175. public\assets\images\citizen_architect_female_transparent.webp - [Binary] Size: 45.2 KB
-176. public\assets\images\citizen_architect_male_transparent.webp - [Binary] Size: 27.3 KB
+175. public\assets\images\avatars\citizen_architect_female_2_transparent.webp - [Binary] Size: 20.9 KB
+176. public\assets\images\avatars\citizen_architect_female_3_transparent.webp - [Binary] Size: 42.9 KB
+177. public\assets\images\avatars\citizen_architect_female_4_transparent.webp - [Binary] Size: 33.9 KB
+178. public\assets\images\avatars\citizen_architect_female_5_transparent.webp - [Binary] Size: 40.4 KB
+179. public\assets\images\avatars\citizen_architect_female_transparent.webp - [Binary] Size: 45.2 KB
+180. public\assets\images\avatars\citizen_architect_male_2_transparent.webp - [Binary] Size: 31.6 KB
+181. public\assets\images\avatars\citizen_architect_male_3_transparent.webp - [Binary] Size: 21.1 KB
+182. public\assets\images\avatars\citizen_architect_male_4_transparent.webp - [Binary] Size: 25.7 KB
+183. public\assets\images\avatars\citizen_architect_male_5_transparent.webp - [Binary] Size: 20.9 KB
+184. public\assets\images\avatars\citizen_architect_male_transparent.webp - [Binary] Size: 27.3 KB
+185. public\assets\images\master_of_realms.webp - [Binary] Size: 145.8 KB
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -11090,14 +11099,23 @@ export default MissionPage;
 'use client';
 
 import ShowcaseTabs from "@/components/showcase/ShowcaseTabs";
+import NextPageSection from "@/components/global/NextPageSection";
 import React from "react";
 
 export default function ShowcasePage() {
   return (
     // The pt-16 offsets for the fixed header. The h-screen and flex structure
     // ensure the tab component fills the entire remaining viewport.
-    <div className="h-screen w-full pt-16 flex flex-col">
-        <ShowcaseTabs />
+    <div className="w-full pt-16 flex flex-col">
+        <div className="h-screen flex flex-col">
+            <ShowcaseTabs />
+        </div>
+        <NextPageSection
+            title="Ready to Become a Citizen Architect?"
+            description="The V2V Academy provides the pathway to master the skills of AI-assisted development and become a leader in the new digital frontier."
+            buttonText="Explore the Academy"
+            href="/academy"
+        />
     </div>
   );
 }
@@ -15451,14 +15469,14 @@ return (
     </div>
 
     {/* Navigation Links - Absolutely Centered */}
-    {/* C74: Added Academy link */}
+    {/* C99: Reordered Academy to be last */}
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/mission">Mission</NavLink>
       <NavLink href="/learn">Learn</NavLink>
-      <NavLink href="/academy">Academy</NavLink>
       <NavLink href="/dce">DCE</NavLink>
       <NavLink href="/showcase">Showcase</NavLink>
+      <NavLink href="/academy">Academy</NavLink>
     </nav>
 
     {/* Right side (Actions/Toggle) - Pushed to right */}
@@ -26566,24 +26584,123 @@ The development of the course content will follow a phased approach.
     3.  Announce and launch the course to the community.
 </file_artifact>
 
-<file path="public/assets/images/citizen_architect_female_transparent.webp">
+<file path="public/assets/images/avatars/citizen_architect_female_2_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_female_2_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 21406
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_female_3_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_female_3_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 43936
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_female_4_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_female_4_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 34764
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_female_5_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_female_5_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 41356
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_female_transparent.webp">
 <metadata>
 {
   "name": "citizen_architect_female_transparent.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
   "fileType": "WEBP",
   "sizeInBytes": 46322
 }
 </metadata>
 </file_artifact>
 
-<file path="public/assets/images/citizen_architect_male_transparent.webp">
+<file path="public/assets/images/avatars/citizen_architect_male_2_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_male_2_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 32356
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_male_3_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_male_3_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 21630
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_male_4_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_male_4_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 26350
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_male_5_transparent.webp">
+<metadata>
+{
+  "name": "citizen_architect_male_5_transparent.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
+  "fileType": "WEBP",
+  "sizeInBytes": 21414
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/avatars/citizen_architect_male_transparent.webp">
 <metadata>
 {
   "name": "citizen_architect_male_transparent.webp",
-  "directory": "c:/Projects/aiascent-dev/public/assets/images",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/avatars",
   "fileType": "WEBP",
   "sizeInBytes": 27988
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/master_of_realms.webp">
+<metadata>
+{
+  "name": "master_of_realms.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images",
+  "fileType": "WEBP",
+  "sizeInBytes": 149308
 }
 </metadata>
 </file_artifact>
