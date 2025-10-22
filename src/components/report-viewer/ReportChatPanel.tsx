@@ -6,22 +6,20 @@ import { FaTimes, FaBroom, FaSpinner, FaSync } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
 import type { ChatMessage } from '@/stores/reportStore';
+import { getKnowledgeBase } from '@/lib/kb-helper';
 
-interface ReportChatPanelProps {
-    reportName: string;
-}
-
-const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
+const ReportChatPanel: React.FC = () => {
     const { 
         toggleChatPanel, clearReportChatHistory,
         setReportChatMessage, fetchConversationSuggestions,
         regenerateSuggestions,
     } = useReportStore.getState();
     const { 
-        allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
+        reportName, allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
         addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts,
         suggestionsStatus
     } = useReportState(state => ({
+        reportName: state.reportName,
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         reportChatHistory: state.reportChatHistory,
@@ -31,7 +29,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatMessage: state.updateReportChatMessage,
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
-        setSuggestedPrompts: state.setSuggestedPrompts,
         suggestionsStatus: state.suggestionsStatus,
     }));
     
@@ -41,8 +38,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    // C95: Disable suggestions for labs
-    const showSuggestions = !reportName.startsWith('v2v-academy-lab');
+    const showSuggestions = reportName ? !reportName.startsWith('v2v-academy-lab') : true;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -80,12 +76,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
         
-        let knowledgeBase = 'report'; // default
-        if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
-            knowledgeBase = 'dce';
-        } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
-            knowledgeBase = 'academy';
-        }
+        const knowledgeBase = getKnowledgeBase(reportName);
 
         try {
             const controller = new AbortController();
@@ -98,7 +89,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     prompt: text, 
                     pageContext,
                     knowledgeBase: knowledgeBase,
-                    reportName: reportName, // C101: Pass reportName for persona awareness
+                    reportName: reportName,
                 }),
                 signal: controller.signal,
             });
@@ -149,7 +140,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
 
-            // C95: Disable suggestions for labs
             if (showSuggestions) {
                 const finalHistory = [
                     ...useReportStore.getState().reportChatHistory, 
@@ -194,10 +184,13 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         sendMessage(prompt);
     };
 
-    const getKnowledgeBaseName = (name: string) => {
-        if (name === 'whitepaper' || name.startsWith('v2v-academy-lab')) return 'DCE Docs';
-        if (name.startsWith('v2v-academy-')) return 'Academy KB';
-        return 'Report KB';
+    const getKnowledgeBaseName = (name: string | null) => {
+        const kb = getKnowledgeBase(name);
+        switch (kb) {
+            case 'dce': return 'DCE Docs';
+            case 'academy': return 'Academy KB';
+            default: return 'Report KB';
+        }
     };
 
     return (

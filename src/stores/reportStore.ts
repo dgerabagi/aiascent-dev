@@ -1,10 +1,10 @@
 // src/stores/reportStore.ts
-// Updated on: C101 (Refine KB logic in fetch suggestions)
-// Updated on: C98 (Fix fullscreen navigation actions)
+// Updated on: C102 (Centralize KB logic)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
+import { getKnowledgeBase } from '@/lib/kb-helper';
 
 // ... (interfaces ommitted for brevity)
 export interface ReportImage {
@@ -251,12 +251,7 @@ const _fetchSuggestions = async (
     const MAX_RETRIES = 3;
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            let knowledgeBase = 'report'; // default
-            if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
-                knowledgeBase = 'dce';
-            } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
-                knowledgeBase = 'academy';
-            }
+            const knowledgeBase = getKnowledgeBase(reportName);
 
             const response = await fetch('/api/chat', {
                 method: 'POST',

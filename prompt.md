@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 102 - embedding error
+Current Cycle 103 - still embedding issues
+Cycle 102 - embedding error
 Cycle 101 - align ascentia tone and embedding for academy
 Cycle 100 - idea to use citizen architect avatars as decoration behind text blocks.
 Cycle 99 - sparkles missing on one page, new image assets, lets benefit from learned consistent image generation
@@ -773,15 +774,94 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 <M6. Cycles>
 
-<Cycle 102>
+<Cycle 103>
 <Cycle Context>
-hmm, okay the embedding gave us this error (see epehmeral), i can confirm the embedding exists at:
-public\data\embeddings\academy_chunks.json
-public\data\embeddings\academy_faiss.index
+hmm, still getting an error. i was able to observe that the error occurs when both trying to access the report kb and the academy kb.
 
-when i check the lab report, i see `Report KB` as the embedding. when i check all three onboarding reports, they also indicate they are using the `Report KB`. i would expect the lab to use the DCE kb, and for the three onboarding reports to use the new academy kb.
+also i think we disabled the suggested questions for the lab, but ive got a plan for it now we can re-enable those suggested questions please.
+
+this time im providing the lm studio logs. it seemed to access the embedding model just fine and provide an embedding. the website doesnt seem to like what it receives? 
 </Cycle Context>
 <Ephemeral Context>
+<lm studio logs>
+2025-10-22 17:07:34 [DEBUG]
+ Received request: POST to /v1/embeddings with body  {
+  "model": "text-embedding-granite-embedding-278m-multilingual",
+  "input": "Page Title: The Professional's Playbook: Mastering... <Truncated in logs> ...k through each step of this professional playbook."
+}
+2025-10-22 17:07:34  [INFO]
+ Received request to embed:  Page Title: The Professional's Playbook: Mastering an Expert AI Workflow
+TL;DR: This lesson introduc...
+2025-10-22 17:07:34  [INFO]
+ Returning embeddings (not shown in logs)
+2025-10-22 17:07:34 [DEBUG]
+ Received request: POST to /v1/completions with body  {
+  "model": "unsloth/gpt-oss-20b",
+  "prompt": "\nSystem: Your ONLY task is to analyze the followin... <Truncated in logs> ... based on all the text provided above.\n\nAssistant:",
+  "max_tokens": 512,
+  "temperature": 0.5,
+  "stream": false
+}
+2025-10-22 17:07:34  [INFO]
+ [LM STUDIO SERVER] Running completion on text:  System: Your ONLY task i...ovided above.
+
+Assistant:
+2025-10-22 17:07:34  [INFO]
+ [LM STUDIO SERVER] Processing...
+2025-10-22 17:07:34 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-10-22 17:07:34 [DEBUG]
+ Prompt successfully formatted with Harmony.
+2025-10-22 17:07:34 [DEBUG]
+ Sampling params:	repeat_last_n = 64, repeat_penalty = 1.100, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.500
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+Sampling: 
+logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+Generate: n_ctx = 48000, n_batch = 512, n_predict = 512, n_keep = 390
+2025-10-22 17:07:34 [DEBUG]
+ Cache reuse summary: 390/390 of prompt (100%), 390 prefix, 0 non-prefix
+Total prompt tokens: 390
+Prompt tokens to decode: 1
+BeginProcessingPrompt
+2025-10-22 17:07:34 [DEBUG]
+ FinishedProcessingPrompt. Progress: 100
+2025-10-22 17:07:38 [DEBUG]
+ Target model llama_perf stats:
+llama_perf_sampler_print:    sampling time =     284.17 ms /   728 runs   (    0.39 ms per token,  2561.82 tokens per second)
+llama_perf_context_print:        load time =    6357.43 ms
+llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+llama_perf_context_print:        eval time =    3057.69 ms /   338 runs   (    9.05 ms per token,   110.54 tokens per second)
+llama_perf_context_print:       total time =    3416.56 ms /   339 tokens
+llama_perf_context_print:    graphs reused =        327
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free     self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - CUDA0 (RTX 3090)   | 24575 =  334 + (19156 = 10688 +    2250 +    6218) +        5083 |
+llama_memory_breakdown_print: |   - Host               |                   576 =   379 +       0 +     197                |
+2025-10-22 17:07:38  [INFO]
+ [unsloth/gpt-oss-20b] Generated prediction:  {
+  "id": "cmpl-vji5zlnf5t9k80qpgy1zis",
+  "object": "text_completion",
+  "created": 1761170854,
+  "model": "unsloth/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "text": "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions. Should be deeper, drawing connections between original page content and extra context. The extra context is just \"RAG system failed: Could not generate embedding for the query..\" That suggests a RAG (retrieval augmented generation) issue; maybe ask about how to handle failures? We need to produce JSON array of strings.\n\nPossible questions:\n\n1. How does the Virtuoso's Loop address common pitfalls in AI-assisted development, such as over-reliance on model outputs or lack of version control?\n\n2. In what ways can a professional integrate RAG workflows into the Virtuoso's Loop when embeddings cannot be generated, and how would that impact the overall workflow?\n\n3. What strategies does the V2V Academy recommend for troubleshooting embedding failures during AI-assisted development, especially in a repeatable collaboration context?\n\n4. How might one adapt the expert workflow to ensure fluidity and repeatability even when the RAG system fails to produce embeddings?\n\nMake sure they are insightful.\n\nReturn as JSON array of strings.<|end|><|start|>assistant<|channel|>final<|message|>[\"How does the Virtuoso's Loop address common pitfalls in AI-assisted development, such as over-reliance on model outputs or lack of version control?\", \"In what ways can a professional integrate RAG workflows into the Virtuoso's Loop when embeddings cannot be generated, and how would that impact the overall workflow?\", \"What strategies does the V2V Academy recommend for troubleshooting embedding failures during AI-assisted development, especially in a repeatable collaboration context?\", \"How might one adapt the expert workflow to ensure fluidity and repeatability even when the RAG system fails to produce embeddings?\"]",
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 390,
+    "completion_tokens": 332,
+    "total_tokens": 722
+  },
+  "stats": {}
+}
+</lm studio logs>
+
+<npm console logs>
 PS C:\Projects\aiascent-dev> npm run dev
 
 > aiascent-dev@0.1.0 dev
@@ -792,19 +872,45 @@ PS C:\Projects\aiascent-dev> npm run dev
   - Environments: .env.local, .env
 
  ✓ Starting...
- ✓ Ready in 2.3s
- ○ Compiling / ...
- ✓ Compiled / in 6.3s (2873 modules)
- GET / 200 in 7525ms
- ✓ Compiled in 1533ms (1425 modules)
+ ✓ Ready in 2.5s
  ○ Compiling /academy ...
- ✓ Compiled /academy in 3.7s (2869 modules)
- GET /academy 200 in 4251ms
- ✓ Compiled /api/chat in 447ms (1487 modules)
-[Chat API] RAG Error for 'academy' KB: Error: Could not generate embedding for the query.
-    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:73:19)
+ ✓ Compiled /academy in 4.3s (2859 modules)
+ ✓ Compiled in 652ms (1424 modules)
+ ○ Compiling /dce ...
+ ✓ Compiled /dce in 1962ms (2859 modules)
+ ✓ Compiled /api/chat in 382ms (1476 modules)
+[Chat API] Requesting embedding for text (length: 759): "Page Title: Lab 1: Your First Project with the DCE
+TL;DR: In this lab, you will learn the complete, ..."
+[Chat API] Requesting embedding for text (length: 750): "Page Title: The Professional's Playbook: Mastering an Expert AI Workflow
+TL;DR: This lesson introduc..."
+[Chat API] RAG Error for 'dce' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:74:19)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:159:56)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:160:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'dce'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] RAG Error for 'academy' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:74:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:160:56)
     at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
     at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
     at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
@@ -825,15 +931,48 @@ PS C:\Projects\aiascent-dev> npm run dev
     at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
 [Chat API - Suggestions] RAG Diagnostic for page context using KB: 'academy'
 [Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
-[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions. The content: \"The Professional's Playbook: Mastering an Expert AI Workflow\" TL;DR: introduces end-to-end expert workflow for AI-assisted development, professional playbook leveraging AI as strategic partner. Welcome to V2V Academy. Journey to becoming AI-powered leader begins here. Understand destination: state of fluid, powerful, repeatable collaboration with AI. This expert workflow is \"Virtuoso's Loop.\" Systematic process transforms development from tactical guesses into disciplined engineering practice. In this lesson will walk through each step of professional playbook.\n\nExtra context: RAG system failed: Could not generate embedding for the query.. So perhaps user wants to ask follow-up questions about the content and extra context? The instruction: \"Your ONLY task is to analyze the following text from a document and generate 2-4 insightful follow-up questions a user might ask to learn more. Your questions should be deeper, drawing connections between the original page content and the extra context provided.\"\n\nSo we need to produce JSON array of strings with 2-4 questions.\n\nWe need to incorporate extra context: \"RAG system failed: Could not generate embedding for the query.\" So maybe question about why RAG system failed or how to handle it, or what implications. Also about Virtuoso's Loop, AI collaboration, etc.\n\nLet's craft 3 questions:\n\n1. How does the \"Virtuoso's Loop\" concretely differ from traditional iterative development cycles when integrating AI tools?\n2. What specific strategies can help a developer transition from tactical guesses to disciplined engineering practice within this expert workflow?\n3. Given that the RAG system failed to generate embeddings, how might one troubleshoot or redesign the embedding pipeline to support the playbook's AI collaboration goals?\n\nAlternatively 4th question: How can V2V Academy ensure repeatable collaboration with AI across diverse projects? But we only need 2-4.\n\nMake sure JSON array of strings.<|end|><|start|>assistant<|channel|>final<|message|>[\"How does the 'Virtuoso's Loop' concretely differ from traditional iterative development cycles when integrating AI tools?\", \"What specific strategies can help a developer transition from tactical guesses to disciplined engineering practice within this expert workflow?\", \"Given that the RAG system failed to generate embeddings, how might one troubleshoot or redesign the embedding pipeline to support the playbook's AI collaboration goals?\"]"
-[Chat API - Suggestions] Extracted JSON string: ["How does the 'Virtuoso's Loop' concretely differ from traditional iterative development cycles when integrating AI tools?", "What specific strategies can help a developer transition from tactical guesses to disciplined engineering practice within this expert workflow?", "Given that the RAG system failed to generate embeddings, how might one troubleshoot or redesign the embedding pipeline to support the playbook's AI collaboration goals?"]
+[Chat API - Suggestions] Raw LLM response: "<|channel|>analysis<|message|>We need to produce 2-4 follow-up questions that are deeper, drawing connections between original page content and extra context. The extra context is just \"RAG system failed: Could not generate embedding for the query..\" which is minimal. So we need to ask about why RAG failed? But the main content is lab instructions.\n\nWe should produce JSON array of strings as output. Let's think of deeper questions:\n\n- How does the DCE integrate with AI partners during code generation, and what are best practices for reviewing AI-generated code?\n\n- What specific challenges might a beginner face when launching a website from scratch using DCE, and how can the Virtuoso's Loop help mitigate them?\n\n- In what ways does the \"what\" and \"why\" approach in this lab guide users to make design decisions? Provide examples.\n\n- Given that the RAG system failed for embedding generation, how might that affect retrieval of relevant resources during the lab, and what steps can be taken to troubleshoot or circumvent this limitation?\n\nWe need 2-4 questions. Let's produce 3 or 4.\n\nReturn JSON array.<|end|><|start|>assistant<|channel|>final<|message|>[\"How does the DCE integrate with AI partners during code generation, and what are best practices for reviewing AI-generated code?\", \"What specific challenges might a beginner face when launching a website from scratch using DCE, and how can the Virtuoso's Loop help mitigate them?\", \"In what ways does the \\\"what\\\" and \\\"why\\\" approach in this lab guide users to make design decisions? Provide examples.\", \"Given that the RAG system failed for embedding generation, how might that affect retrieval of relevant resources during the lab, and what steps can be taken to troubleshoot or circumvent this limitation?\"]"
+[Chat API - Suggestions] Extracted JSON string: ["How does the DCE integrate with AI partners during code generation, and what are best practices for reviewing AI-generated code?", "What specific challenges might a beginner face when launching a website from scratch using DCE, and how can the Virtuoso's Loop help mitigate them?", "In what ways does the \"what\" and \"why\" approach in this lab guide users to make design decisions? Provide examples.", "Given that the RAG system failed for embedding generation, how might that affect retrieval of relevant resources during the lab, and what steps can be taken to troubleshoot or circumvent this limitation?"]
 [Chat API - Suggestions] Successfully parsed suggestions: [
-  "How does the 'Virtuoso's Loop' concretely differ from traditional iterative development cycles when integrating AI tools?",
-  'What specific strategies can help a developer transition from tactical guesses to disciplined engineering practice within this expert workflow?',
-  "Given that the RAG system failed to generate embeddings, how might one troubleshoot or redesign the embedding pipeline to support the playbook's AI collaboration goals?"
+  'How does the DCE integrate with AI partners during code generation, and what are best practices for reviewing AI-generated code?',
+  "What specific challenges might a beginner face when launching a website from scratch using DCE, and how can the Virtuoso's Loop help mitigate them?",
+  'In what ways does the "what" and "why" approach in this lab guide users to make design decisions? Provide examples.',
+  'Given that the RAG system failed for embedding generation, how might that affect retrieval of relevant resources during the lab, and what steps can be taken to troubleshoot or circumvent this limitation?'
 ]
- POST /api/chat 200 in 5592ms
+ POST /api/chat 200 in 4113ms
+[Chat API - Suggestions] Raw
+</npm console logs>
 </Ephemeral Context>
+<Previous Cycle 102 Summary of Actions>
+I have analyzed the request to implement a new `academy` knowledge base and to make the AI assistant, Ascentia, persona-aware. My course of action is to update both the backend API and the frontend components to handle this new, more nuanced logic.
+
+First, I will create a new documentation artifact, `A102`, to formally define the persona-aware tonal adjustments for Ascentia. This aligns with our "documentation first" principle and will serve as the source of truth for her behavior.
+
+Next, I will modify the backend chat API. I will add a new `academy` system prompt and update the RAG (Retrieval-Augmented Generation) logic to load the new `academy_faiss.index` and `academy_chunks.json` files when the `'academy'` knowledge base is requested. The core of the work will be to make the system prompt dynamic. When a request for the academy knowledge base is received, the API will inspect the `reportName` to identify the active persona and append specific instructions to the system prompt, tailoring Ascentia's tone for the Career Transitioner, Underequipped Graduate, or Young Precocious learner.
+
+Finally, I will update the frontend state and UI. The logic that determines which knowledge base to use will be refined to correctly select `'academy'` for the three persona-based courses and `'dce'` for the hands-on lab. I will also ensure that the `reportName` is consistently passed to the backend on all chat requests, providing the necessary information for the persona-aware logic to function correctly.
+
+1.  **Create `A102 - V2V Academy - Ascentia Persona-Aware Tone.md`**: I will author a new artifact to define and document the specific tonal and stylistic adjustments Ascentia should make when interacting with each of the three V2V learner personas.
+2.  **Update `src/Artifacts/A0-Master-Artifact-List.md`**: I will add the new `A102` artifact to the master list to ensure our project documentation remains current.
+3.  **Update `src/app/api/chat/route.ts`**:
+    *   I will add a new `academy` property to the `systemPrompts` object, defining Ascentia's role as a guide for the V2V curriculum.
+    *   I will enhance the main `POST` handler. It will now inspect the `reportName` from the request body. If the `knowledgeBase` is `'academy'`, it will append persona-specific instructions to the system prompt, guiding Ascentia to adopt an "ELI15" tone for the Young Precocious persona and similarly tailored tones for the others, as defined in the new `A102` artifact.
+4.  **Update `src/stores/reportStore.ts`**:
+    *   I will refine the `_fetchSuggestions` helper function. The logic will be updated to correctly determine the `knowledgeBase`: `'dce'` for lab reports (e.g., `v2v-academy-lab-1-portfolio`), `'academy'` for the three persona-based reports, and `'dce'` for the whitepaper.
+5.  **Update `src/components/report-viewer/ReportChatPanel.tsx`**:
+    *   I will update the `knowledgeBase` selection logic to mirror the changes in the `reportStore`, ensuring consistency between page suggestions and chat interactions.
+    *   I will modify the `sendMessage` function to include the `reportName` in the body of the main chat API request, which is the key piece of information the backend needs to select the correct persona-specific tone.
+</Previous Cycle 102 Summary of Actions>
+</Cycle 103>
+
+<Cycle 102>
+<Cycle Context>
+hmm, okay the embedding gave us this error (see epehmeral), i can confirm the embedding exists at:
+public\data\embeddings\academy_chunks.json
+public\data\embeddings\academy_faiss.index
+
+when i check the lab report, i see `Report KB` as the embedding. when i check all three onboarding reports, they also indicate they are using the `Report KB`. i would expect the lab to use the DCE kb, and for the three onboarding reports to use the new academy kb.
+</Cycle Context>
 <Previous Cycle 101 Summary of Actions>
 I will implement the requested changes to incorporate the new "citizen architect" avatars as decorative background elements and replace the placeholder GIF on the homepage. My course of action is to modify the relevant page and component files to add the avatar images with the correct styling for positioning, centering, and opacity, and to update the image source for the hero section's main visual.
 
@@ -4818,10 +4957,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-22T21:39:09.919Z
+  Date Generated: 2025-10-22T22:09:10.813Z
   ---
-  Total Files: 172
-  Approx. Tokens: 511286
+  Total Files: 173
+  Approx. Tokens: 511190
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -4831,7 +4970,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 4. public\data\v2v_content_career_transitioner.json (13818 tokens)
 5. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 6. public\data\v2v_content_young_precocious.json (12352 tokens)
-7. src\stores\reportStore.ts (8800 tokens)
+7. src\stores\reportStore.ts (8719 tokens)
 8. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8648 tokens)
 9. src\Artifacts\A0-Master-Artifact-List.md (7897 tokens)
 10. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
@@ -4850,7 +4989,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 326 - Chars: 18035 - Tokens: 4509
+14. src\app\api\chat\route.ts - Lines: 327 - Chars: 18153 - Tokens: 4539
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
@@ -4915,10 +5054,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 308 - Chars: 14563 - Tokens: 3641
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14140 - Tokens: 3535
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9035 - Tokens: 2259
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9011 - Tokens: 2253
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -4929,7 +5068,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 771 - Chars: 35198 - Tokens: 8800
+93. src\stores\reportStore.ts - Lines: 766 - Chars: 34873 - Tokens: 8719
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -4984,7 +5123,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 145. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
 146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49406 - Tokens: 12352
 147. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
-148. src\app\academy\page.tsx - Lines: 188 - Chars: 9387 - Tokens: 2347
+148. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
 149. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
 150. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 151. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
@@ -5009,6 +5148,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 170. src\Artifacts\A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md - Lines: 68 - Chars: 5289 - Tokens: 1323
 171. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
 172. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
+173. src\lib\kb-helper.ts - Lines: 11 - Chars: 368 - Tokens: 92
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -15134,6 +15274,7 @@ import path from 'path';
  * Gets a vector embedding for a single text chunk from the local API.
  */
 async function getEmbedding(text: string, embeddingUrl: string): Promise<number[] | null> {
+    console.log(`[Chat API] Requesting embedding for text (length: ${text.length}): "${text.substring(0, 100)}..."`);
     try {
         const response = await fetch(embeddingUrl, {
             method: 'POST',
@@ -20874,22 +21015,20 @@ import { FaTimes, FaBroom, FaSpinner, FaSync } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
 import type { ChatMessage } from '@/stores/reportStore';
+import { getKnowledgeBase } from '@/lib/kb-helper';
 
-interface ReportChatPanelProps {
-    reportName: string;
-}
-
-const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
+const ReportChatPanel: React.FC = () => {
     const { 
         toggleChatPanel, clearReportChatHistory,
         setReportChatMessage, fetchConversationSuggestions,
         regenerateSuggestions,
     } = useReportStore.getState();
     const { 
-        allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
+        reportName, allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
         addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts,
         suggestionsStatus
     } = useReportState(state => ({
+        reportName: state.reportName,
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         reportChatHistory: state.reportChatHistory,
@@ -20899,7 +21038,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatMessage: state.updateReportChatMessage,
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
-        setSuggestedPrompts: state.setSuggestedPrompts,
         suggestionsStatus: state.suggestionsStatus,
     }));
     
@@ -20909,8 +21047,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    // C95: Disable suggestions for labs
-    const showSuggestions = !reportName.startsWith('v2v-academy-lab');
+    const showSuggestions = reportName ? !reportName.startsWith('v2v-academy-lab') : true;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -20948,12 +21085,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
         
-        let knowledgeBase = 'report'; // default
-        if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
-            knowledgeBase = 'dce';
-        } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
-            knowledgeBase = 'academy';
-        }
+        const knowledgeBase = getKnowledgeBase(reportName);
 
         try {
             const controller = new AbortController();
@@ -20966,7 +21098,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     prompt: text, 
                     pageContext,
                     knowledgeBase: knowledgeBase,
-                    reportName: reportName, // C101: Pass reportName for persona awareness
+                    reportName: reportName,
                 }),
                 signal: controller.signal,
             });
@@ -21017,7 +21149,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
 
-            // C95: Disable suggestions for labs
             if (showSuggestions) {
                 const finalHistory = [
                     ...useReportStore.getState().reportChatHistory, 
@@ -21062,10 +21193,13 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         sendMessage(prompt);
     };
 
-    const getKnowledgeBaseName = (name: string) => {
-        if (name === 'whitepaper' || name.startsWith('v2v-academy-lab')) return 'DCE Docs';
-        if (name.startsWith('v2v-academy-')) return 'Academy KB';
-        return 'Report KB';
+    const getKnowledgeBaseName = (name: string | null) => {
+        const kb = getKnowledgeBase(name);
+        switch (kb) {
+            case 'dce': return 'DCE Docs';
+            case 'academy': return 'Academy KB';
+            default: return 'Report KB';
+        }
     };
 
     return (
@@ -21530,7 +21664,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                     }}
                     handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
                 >
-                    <ReportChatPanel reportName={reportName} />
+                    <ReportChatPanel />
                 </Resizable>
             )}
         </div>
@@ -22193,12 +22327,12 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C101 (Refine KB logic in fetch suggestions)
-// Updated on: C98 (Fix fullscreen navigation actions)
+// Updated on: C102 (Centralize KB logic)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
+import { getKnowledgeBase } from '@/lib/kb-helper';
 
 // ... (interfaces ommitted for brevity)
 export interface ReportImage {
@@ -22445,12 +22579,7 @@ const _fetchSuggestions = async (
     const MAX_RETRIES = 3;
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            let knowledgeBase = 'report'; // default
-            if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
-                knowledgeBase = 'dce';
-            } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
-                knowledgeBase = 'academy';
-            }
+            const knowledgeBase = getKnowledgeBase(reportName);
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -27348,11 +27477,11 @@ const AcademyPage = () => {
                 setIsLoading(true);
                 try {
                     const contentFile = selection.type === 'persona' 
-                        ? `v2v_content_${selection.id}.json`
+                        ? `v2v_content_${selection.id.replace('v2v-academy-','')}.json`
                         : `v2v_lab_1_portfolio.json`;
                     
                     const manifestFile = selection.type === 'persona'
-                        ? `imagemanifest_${selection.id}.json`
+                        ? `imagemanifest_${selection.id.replace('v2v-academy-','')}.json`
                         : `imagemanifest_lab_1_portfolio.json`;
 
                     const [contentRes, manifestRes] = await Promise.all([
@@ -27411,7 +27540,7 @@ const AcademyPage = () => {
                     To personalize your learning journey, please choose the path that best describes you.
                 </p>
             </motion.div>
-            <PersonaSelector onSelectPersona={(id) => setSelection({ type: 'persona', id })} />
+            <PersonaSelector onSelectPersona={(id) => setSelection({ type: 'persona', id: `v2v-academy-${id}` })} />
 
             {/* Labs & Projects Section */}
             <motion.div
@@ -27437,7 +27566,7 @@ const AcademyPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <Card
                         className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer group"
-                        onClick={() => setSelection({ type: 'lab', id: 'lab_1_portfolio' })}
+                        onClick={() => setSelection({ type: 'lab', id: 'v2v-academy-lab-1-portfolio' })}
                     >
                         <CardHeader className="p-0">
                              <div className="relative aspect-video w-full">
@@ -31866,6 +31995,20 @@ The development of the course content will follow a phased approach.
       ]
     }
   ]
+}
+</file_artifact>
+
+<file path="src/lib/kb-helper.ts">
+// src/lib/kb-helper.ts
+export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' {
+    if (!reportName) return 'report';
+    if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) {
+        return 'dce';
+    }
+    if (reportName.startsWith('v2v-academy-')) {
+        return 'academy';
+    }
+    return 'report';
 }
 </file_artifact>
 

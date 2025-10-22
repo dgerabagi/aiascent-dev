@@ -7,6 +7,7 @@ import path from 'path';
  * Gets a vector embedding for a single text chunk from the local API.
  */
 async function getEmbedding(text: string, embeddingUrl: string): Promise<number[] | null> {
+    console.log(`[Chat API] Requesting embedding for text (length: ${text.length}): "${text.substring(0, 100)}..."`);
     try {
         const response = await fetch(embeddingUrl, {
             method: 'POST',

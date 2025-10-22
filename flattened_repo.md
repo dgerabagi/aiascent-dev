@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-22T21:39:09.919Z
+  Date Generated: 2025-10-22T22:09:10.813Z
   ---
-  Total Files: 172
-  Approx. Tokens: 511286
+  Total Files: 173
+  Approx. Tokens: 511190
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. public\data\v2v_content_career_transitioner.json (13818 tokens)
 5. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 6. public\data\v2v_content_young_precocious.json (12352 tokens)
-7. src\stores\reportStore.ts (8800 tokens)
+7. src\stores\reportStore.ts (8719 tokens)
 8. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8648 tokens)
 9. src\Artifacts\A0-Master-Artifact-List.md (7897 tokens)
 10. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
@@ -33,7 +33,7 @@
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 326 - Chars: 18035 - Tokens: 4509
+14. src\app\api\chat\route.ts - Lines: 327 - Chars: 18153 - Tokens: 4539
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
@@ -98,10 +98,10 @@
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 308 - Chars: 14563 - Tokens: 3641
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14140 - Tokens: 3535
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9035 - Tokens: 2259
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9011 - Tokens: 2253
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -112,7 +112,7 @@
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 771 - Chars: 35198 - Tokens: 8800
+93. src\stores\reportStore.ts - Lines: 766 - Chars: 34873 - Tokens: 8719
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -167,7 +167,7 @@
 145. public\data\v2v_content_underequipped_graduate.json - Lines: 380 - Chars: 50403 - Tokens: 12601
 146. public\data\v2v_content_young_precocious.json - Lines: 380 - Chars: 49406 - Tokens: 12352
 147. src\Artifacts\A74 - V2V Academy - Interactive Curriculum Page Plan.md - Lines: 56 - Chars: 4662 - Tokens: 1166
-148. src\app\academy\page.tsx - Lines: 188 - Chars: 9387 - Tokens: 2347
+148. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
 149. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
 150. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 151. src\Artifacts\A75 - V2V Academy - Persona Image System Prompt.md - Lines: 60 - Chars: 6031 - Tokens: 1508
@@ -192,6 +192,7 @@
 170. src\Artifacts\A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md - Lines: 68 - Chars: 5289 - Tokens: 1323
 171. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
 172. public\data\showcase_content.json - Lines: 1550 - Chars: 204808 - Tokens: 51202
+173. src\lib\kb-helper.ts - Lines: 11 - Chars: 368 - Tokens: 92
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -10317,6 +10318,7 @@ import path from 'path';
  * Gets a vector embedding for a single text chunk from the local API.
  */
 async function getEmbedding(text: string, embeddingUrl: string): Promise<number[] | null> {
+    console.log(`[Chat API] Requesting embedding for text (length: ${text.length}): "${text.substring(0, 100)}..."`);
     try {
         const response = await fetch(embeddingUrl, {
             method: 'POST',
@@ -16057,22 +16059,20 @@ import { FaTimes, FaBroom, FaSpinner, FaSync } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/shared/MarkdownRenderer';
 import { Badge } from '@/components/ui/badge';
 import type { ChatMessage } from '@/stores/reportStore';
+import { getKnowledgeBase } from '@/lib/kb-helper';
 
-interface ReportChatPanelProps {
-    reportName: string;
-}
-
-const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
+const ReportChatPanel: React.FC = () => {
     const { 
         toggleChatPanel, clearReportChatHistory,
         setReportChatMessage, fetchConversationSuggestions,
         regenerateSuggestions,
     } = useReportStore.getState();
     const { 
-        allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
+        reportName, allPages, currentPageIndex, reportChatHistory, reportChatInput, setReportChatInput, 
         addReportChatMessage, updateReportChatMessage, updateReportChatStatus, suggestedPrompts,
         suggestionsStatus
     } = useReportState(state => ({
+        reportName: state.reportName,
         allPages: state.allPages,
         currentPageIndex: state.currentPageIndex,
         reportChatHistory: state.reportChatHistory,
@@ -16082,7 +16082,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         updateReportChatMessage: state.updateReportChatMessage,
         updateReportChatStatus: state.updateReportChatStatus,
         suggestedPrompts: state.suggestedPrompts,
-        setSuggestedPrompts: state.setSuggestedPrompts,
         suggestionsStatus: state.suggestionsStatus,
     }));
     
@@ -16092,8 +16091,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    // C95: Disable suggestions for labs
-    const showSuggestions = !reportName.startsWith('v2v-academy-lab');
+    const showSuggestions = reportName ? !reportName.startsWith('v2v-academy-lab') : true;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -16131,12 +16129,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
 
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
         
-        let knowledgeBase = 'report'; // default
-        if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
-            knowledgeBase = 'dce';
-        } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
-            knowledgeBase = 'academy';
-        }
+        const knowledgeBase = getKnowledgeBase(reportName);
 
         try {
             const controller = new AbortController();
@@ -16149,7 +16142,7 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                     prompt: text, 
                     pageContext,
                     knowledgeBase: knowledgeBase,
-                    reportName: reportName, // C101: Pass reportName for persona awareness
+                    reportName: reportName,
                 }),
                 signal: controller.signal,
             });
@@ -16200,7 +16193,6 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
             setReportChatMessage(temporaryId, finalContent);
             updateReportChatStatus(temporaryId, 'complete');
 
-            // C95: Disable suggestions for labs
             if (showSuggestions) {
                 const finalHistory = [
                     ...useReportStore.getState().reportChatHistory, 
@@ -16245,10 +16237,13 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         sendMessage(prompt);
     };
 
-    const getKnowledgeBaseName = (name: string) => {
-        if (name === 'whitepaper' || name.startsWith('v2v-academy-lab')) return 'DCE Docs';
-        if (name.startsWith('v2v-academy-')) return 'Academy KB';
-        return 'Report KB';
+    const getKnowledgeBaseName = (name: string | null) => {
+        const kb = getKnowledgeBase(name);
+        switch (kb) {
+            case 'dce': return 'DCE Docs';
+            case 'academy': return 'Academy KB';
+            default: return 'Report KB';
+        }
     };
 
     return (
@@ -16713,7 +16708,7 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
                     }}
                     handleClasses={{ left: 'border-l-4 border-transparent hover:border-primary transition-colors duration-200' }}
                 >
-                    <ReportChatPanel reportName={reportName} />
+                    <ReportChatPanel />
                 </Resizable>
             )}
         </div>
@@ -17376,12 +17371,12 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C101 (Refine KB logic in fetch suggestions)
-// Updated on: C98 (Fix fullscreen navigation actions)
+// Updated on: C102 (Centralize KB logic)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
+import { getKnowledgeBase } from '@/lib/kb-helper';
 
 // ... (interfaces ommitted for brevity)
 export interface ReportImage {
@@ -17628,12 +17623,7 @@ const _fetchSuggestions = async (
     const MAX_RETRIES = 3;
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            let knowledgeBase = 'report'; // default
-            if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
-                knowledgeBase = 'dce';
-            } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
-                knowledgeBase = 'academy';
-            }
+            const knowledgeBase = getKnowledgeBase(reportName);
 
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -22531,11 +22521,11 @@ const AcademyPage = () => {
                 setIsLoading(true);
                 try {
                     const contentFile = selection.type === 'persona' 
-                        ? `v2v_content_${selection.id}.json`
+                        ? `v2v_content_${selection.id.replace('v2v-academy-','')}.json`
                         : `v2v_lab_1_portfolio.json`;
                     
                     const manifestFile = selection.type === 'persona'
-                        ? `imagemanifest_${selection.id}.json`
+                        ? `imagemanifest_${selection.id.replace('v2v-academy-','')}.json`
                         : `imagemanifest_lab_1_portfolio.json`;
 
                     const [contentRes, manifestRes] = await Promise.all([
@@ -22594,7 +22584,7 @@ const AcademyPage = () => {
                     To personalize your learning journey, please choose the path that best describes you.
                 </p>
             </motion.div>
-            <PersonaSelector onSelectPersona={(id) => setSelection({ type: 'persona', id })} />
+            <PersonaSelector onSelectPersona={(id) => setSelection({ type: 'persona', id: `v2v-academy-${id}` })} />
 
             {/* Labs & Projects Section */}
             <motion.div
@@ -22620,7 +22610,7 @@ const AcademyPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <Card
                         className="h-full flex flex-col hover:bg-accent hover:border-primary transition-all cursor-pointer group"
-                        onClick={() => setSelection({ type: 'lab', id: 'lab_1_portfolio' })}
+                        onClick={() => setSelection({ type: 'lab', id: 'v2v-academy-lab-1-portfolio' })}
                     >
                         <CardHeader className="p-0">
                              <div className="relative aspect-video w-full">
@@ -27049,6 +27039,20 @@ The development of the course content will follow a phased approach.
       ]
     }
   ]
+}
+</file_artifact>
+
+<file path="src/lib/kb-helper.ts">
+// src/lib/kb-helper.ts
+export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' {
+    if (!reportName) return 'report';
+    if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) {
+        return 'dce';
+    }
+    if (reportName.startsWith('v2v-academy-')) {
+        return 'academy';
+    }
+    return 'report';
 }
 </file_artifact>
 
