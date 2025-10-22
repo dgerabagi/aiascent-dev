@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C97 (Add A98, A99, A100, A101)
+# Updated on: C104 (Add A102)
 
 ## 1. Purpose
 
@@ -41,6 +41,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
   - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
+
+### A102. aiascent.dev - Homepage Hero Section Revamp Plan
+- **Description:** A plan to revamp the homepage hero section to better communicate the core value proposition of the Data Curation Environment (DCE), focusing on the "vibe code for free" message and introducing new, more aspirational imagery.
+- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts
 
 ## II. Technical Architecture & Implementation
 

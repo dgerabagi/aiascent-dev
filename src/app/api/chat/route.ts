@@ -30,7 +30,7 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
 
         if (data?.data?.[0]?.embedding) {
             console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`);
-            return data.data.embedding;
+            return data.data[0].embedding;
         }
         
         if (data?.data?.embedding) {
