@@ -1,13 +1,15 @@
 // src/app/page.tsx
 import HeroSection from "@/components/home/HeroSection";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import MissionSection from "@/components/home/MissionSection";
 import ReportViewer from "@/components/report-viewer/ReportViewer";
 
 export default function Home() {
 return (
-<div className="flex flex-col pt-16">
+<div className="flex flex-col">
     <HeroSection />
+    <HowItWorksSection />
     <FeaturesSection />
 
     {/* Homepage Whitepaper Visualization */}

@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C104 (Add A102)
+# Updated on: C105 (Update A102 description)
 
 ## 1. Purpose
 
@@ -43,8 +43,8 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
 
 ### A102. aiascent.dev - Homepage Hero Section Revamp Plan
-- **Description:** A plan to revamp the homepage hero section to better communicate the core value proposition of the Data Curation Environment (DCE), focusing on the "vibe code for free" message and introducing new, more aspirational imagery.
-- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts
+- **Description:** A plan to revamp the homepage hero section by replacing the animated component with a more direct, impactful 'splash image' design to better showcase the 'Citizen Architect' brand.
+- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts, redesign
 
 ## II. Technical Architecture & Implementation
 
