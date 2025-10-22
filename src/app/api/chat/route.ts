@@ -23,7 +23,7 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
         }
         const data = await response.json();
         if (data?.data?.[0]?.embedding) {
-            return data.data[0].embedding;
+            return data.data.embedding;
         }
         console.error('[Chat API] Invalid embedding response structure:', data);
         return null;
@@ -239,7 +239,19 @@ Assistant:`;
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
   console.log(`[Chat API] ${retrievedDocsLog}`);
 
-  const systemPrompt = systemPrompts[kbIdentifier];
+  let systemPrompt = systemPrompts[kbIdentifier];
+
+  // C101: Add persona-specific tonal adjustments
+  if (kbIdentifier === 'academy' && reportName) {
+    if (reportName.includes('career_transitioner')) {
+        systemPrompt += `\n\nAdditionally, your tone should be professional and peer-to-peer. The user is a career-transitioning professional with existing domain expertise. Frame your explanations in a business context, using analogies related to strategy, project management, and return on investment (ROI). Focus on how these concepts provide a strategic advantage in a professional environment.`;
+    } else if (reportName.includes('underequipped_graduate')) {
+        systemPrompt += `\n\nAdditionally, your tone should be that of a helpful and encouraging mentor. The user is a recent graduate looking to build foundational, job-ready skills. Use clear, direct language and focus on the practical application of concepts. Connect your explanations to how these skills are valuable in the tech industry and how they contribute to building a strong professional portfolio.`;
+    } else if (reportName.includes('young_precocious')) {
+        systemPrompt += `\n\nAdditionally, your tone should be engaging, encouraging, and slightly less formal. The user is a young, ambitious learner who is digitally native. Use analogies from gaming (e.g., "leveling up," "skill trees," "boss battles"), science fiction, or other creative pursuits to explain complex topics. Your goal is to make the concepts feel powerful and exciting, like unlocking a new ability. Aim for an "Explain Like I'm 15" level of clarity, but assume the user is very intelligent and quick to learn.`;
+    }
+  }
+
 
   const finalPrompt = `
 System: ${systemPrompt}

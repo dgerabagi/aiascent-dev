@@ -81,9 +81,9 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
         const pageContext = `Page Title: ${currentPage?.pageTitle || 'N/A'}\nTL;DR: ${currentPage?.tldr || 'N/A'}\nContent: ${currentPage?.content || 'N/A'}`;
         
         let knowledgeBase = 'report'; // default
-        if (reportName === 'whitepaper') {
+        if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
             knowledgeBase = 'dce';
-        } else if (reportName.startsWith('v2v_')) {
+        } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
             knowledgeBase = 'academy';
         }
 
@@ -97,7 +97,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
                 body: JSON.stringify({ 
                     prompt: text, 
                     pageContext,
-                    knowledgeBase: knowledgeBase
+                    knowledgeBase: knowledgeBase,
+                    reportName: reportName, // C101: Pass reportName for persona awareness
                 }),
                 signal: controller.signal,
             });
@@ -194,9 +195,8 @@ const ReportChatPanel: React.FC<ReportChatPanelProps> = ({ reportName }) => {
     };
 
     const getKnowledgeBaseName = (name: string) => {
-        if (name === 'whitepaper') return 'DCE Docs';
-        if (name.startsWith('v2v-academy-lab')) return 'Lab Mode';
-        if (name.startsWith('v2v_')) return 'Academy KB';
+        if (name === 'whitepaper' || name.startsWith('v2v-academy-lab')) return 'DCE Docs';
+        if (name.startsWith('v2v-academy-')) return 'Academy KB';
         return 'Report KB';
     };
 

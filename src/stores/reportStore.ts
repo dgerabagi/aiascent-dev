@@ -1,7 +1,6 @@
 // src/stores/reportStore.ts
+// Updated on: C101 (Refine KB logic in fetch suggestions)
 // Updated on: C98 (Fix fullscreen navigation actions)
-// Updated on: C97 (Implement fullscreen navigation actions)
-// Updated on: C96 (Add content to FullscreenMedia)
 // ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -253,9 +252,9 @@ const _fetchSuggestions = async (
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
             let knowledgeBase = 'report'; // default
-            if (reportName === 'whitepaper') {
+            if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) { // C101: Labs use DCE kb
                 knowledgeBase = 'dce';
-            } else if (reportName.startsWith('v2v_')) {
+            } else if (reportName.startsWith('v2v-academy-')) { // C101: Persona courses use academy kb
                 knowledgeBase = 'academy';
             }
 
