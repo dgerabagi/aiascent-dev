@@ -697,15 +697,15 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
-                const { reportName, fetchPageSuggestions, allPages, currentPageIndex } = get();
+                const { fetchPageSuggestions, allPages, currentPageIndex } = get();
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
                 });
                 const currentPage = allPages[currentPageIndex];
-                if (currentPage && !reportName?.startsWith('v2v-academy-lab')) {
-                    fetchPageSuggestions(currentPage); // C90: Removed reportName
+                if (currentPage) {
+                    fetchPageSuggestions(currentPage);
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),

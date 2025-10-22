@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-22T22:09:10.813Z
+  Date Generated: 2025-10-22T22:27:58.571Z
   ---
   Total Files: 173
-  Approx. Tokens: 511190
+  Approx. Tokens: 511297
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -14,7 +14,7 @@
 4. public\data\v2v_content_career_transitioner.json (13818 tokens)
 5. public\data\v2v_content_underequipped_graduate.json (12601 tokens)
 6. public\data\v2v_content_young_precocious.json (12352 tokens)
-7. src\stores\reportStore.ts (8719 tokens)
+7. src\stores\reportStore.ts (8697 tokens)
 8. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8648 tokens)
 9. src\Artifacts\A0-Master-Artifact-List.md (7897 tokens)
 10. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
@@ -33,7 +33,7 @@
 11. context\vcpg\ai.gateway.ts.md - Lines: 88 - Chars: 2969 - Tokens: 743
 12. context\vcpg\ai.module.ts.md - Lines: 26 - Chars: 907 - Tokens: 227
 13. context\vcpg\ai.service.ts.md - Lines: 284 - Chars: 13001 - Tokens: 3251
-14. src\app\api\chat\route.ts - Lines: 327 - Chars: 18153 - Tokens: 4539
+14. src\app\api\chat\route.ts - Lines: 343 - Chars: 18835 - Tokens: 4709
 15. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 16. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 17. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
@@ -98,10 +98,10 @@
 76. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 77. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 78. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14140 - Tokens: 3535
+79. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14083 - Tokens: 3521
 80. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 81. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-82. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9011 - Tokens: 2253
+82. src\components\report-viewer\ReportViewer.tsx - Lines: 211 - Chars: 8901 - Tokens: 2226
 83. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 84. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 85. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
@@ -112,7 +112,7 @@
 90. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
 91. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 92. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-93. src\stores\reportStore.ts - Lines: 766 - Chars: 34873 - Tokens: 8719
+93. src\stores\reportStore.ts - Lines: 766 - Chars: 34788 - Tokens: 8697
 94. .env.local - Lines: 12 - Chars: 543 - Tokens: 136
 95. .eslintrc.json - Lines: 3 - Chars: 37 - Tokens: 10
 96. components.json - Lines: 17 - Chars: 370 - Tokens: 93
@@ -10328,19 +10328,35 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
                 input: text,
             }),
         });
+
+        const rawText = await response.text(); // Get raw text first for robust logging
+
         if (!response.ok) {
-            const errorBody = await response.text();
-            console.error(`[Chat API] Embedding API error: ${response.status}`, errorBody);
+            console.error(`[Chat API] Embedding API error: ${response.status}`, rawText);
             return null;
         }
-        const data = await response.json();
+        console.log(`[Chat API] Raw embedding response text:`, rawText);
+
+        const data = JSON.parse(rawText); // Parse manually after logging
+
         if (data?.data?.[0]?.embedding) {
+            console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`);
             return data.data.embedding;
         }
-        console.error('[Chat API] Invalid embedding response structure:', data);
+        
+        if (data?.data?.embedding) {
+             console.log(`[Chat API] Successfully extracted embedding vector from alternate structure.`);
+             return data.data.embedding;
+        }
+        if (data?.embedding) {
+            console.log(`[Chat API] Successfully extracted embedding vector from root structure.`);
+            return data.embedding;
+        }
+
+        console.error('[Chat API] Invalid embedding response structure. Full response object:', data);
         return null;
     } catch (error: any) {
-        console.error(`[Chat API] Failed to get embedding for query. Error: ${error.message}`);
+        console.error(`[Chat API] Failed to get embedding for query. Error name: ${error.name}, message: ${error.message}`, error);
         return null;
     }
 }
@@ -16091,7 +16107,7 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    const showSuggestions = reportName ? !reportName.startsWith('v2v-academy-lab') : true;
+    const showSuggestions = true;
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -16586,11 +16602,10 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     const currentPage = allPages[currentPageIndex];
 
     useEffect(() => {
-        // C95: Disable suggested questions for labs
-        if (currentPage && !reportName.startsWith('v2v-academy-lab')) {
+        if (currentPage) {
             fetchPageSuggestions(currentPage);
         }
-    }, [currentPage, fetchPageSuggestions, reportName]);
+    }, [currentPage, fetchPageSuggestions]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
@@ -18069,15 +18084,15 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
             setReportChatMessage: (id, message) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, message } : msg) })),
             updateReportChatStatus: (id, status) => set(state => ({ reportChatHistory: state.reportChatHistory.map(msg => msg.id === id ? { ...msg, status } : msg) })),
             clearReportChatHistory: (currentPageTitle) => {
-                const { reportName, fetchPageSuggestions, allPages, currentPageIndex } = get();
+                const { fetchPageSuggestions, allPages, currentPageIndex } = get();
                 const initialMessage: ChatMessage = { author: 'Ascentia', flag: '🤖', message: `Ask me anything about "${currentPageTitle}".`, channel: 'system', };
                 set({
                     reportChatHistory: [initialMessage],
                     reportChatInput: '',
                 });
                 const currentPage = allPages[currentPageIndex];
-                if (currentPage && !reportName?.startsWith('v2v-academy-lab')) {
-                    fetchPageSuggestions(currentPage); // C90: Removed reportName
+                if (currentPage) {
+                    fetchPageSuggestions(currentPage);
                 }
             },
             togglePromptVisibility: () => set(state => ({ isPromptVisible: !state.isPromptVisible })),

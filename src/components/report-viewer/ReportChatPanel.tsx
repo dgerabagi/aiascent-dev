@@ -38,7 +38,7 @@ const ReportChatPanel: React.FC = () => {
     const currentPage = allPages[currentPageIndex];
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    const showSuggestions = reportName ? !reportName.startsWith('v2v-academy-lab') : true;
+    const showSuggestions = true;
 
     useEffect(() => {
         if (chatContainerRef.current) {

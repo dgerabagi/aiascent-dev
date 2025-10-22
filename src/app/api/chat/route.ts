@@ -17,19 +17,35 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
                 input: text,
             }),
         });
+
+        const rawText = await response.text(); // Get raw text first for robust logging
+
         if (!response.ok) {
-            const errorBody = await response.text();
-            console.error(`[Chat API] Embedding API error: ${response.status}`, errorBody);
+            console.error(`[Chat API] Embedding API error: ${response.status}`, rawText);
             return null;
         }
-        const data = await response.json();
+        console.log(`[Chat API] Raw embedding response text:`, rawText);
+
+        const data = JSON.parse(rawText); // Parse manually after logging
+
         if (data?.data?.[0]?.embedding) {
+            console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`);
             return data.data.embedding;
         }
-        console.error('[Chat API] Invalid embedding response structure:', data);
+        
+        if (data?.data?.embedding) {
+             console.log(`[Chat API] Successfully extracted embedding vector from alternate structure.`);
+             return data.data.embedding;
+        }
+        if (data?.embedding) {
+            console.log(`[Chat API] Successfully extracted embedding vector from root structure.`);
+            return data.embedding;
+        }
+
+        console.error('[Chat API] Invalid embedding response structure. Full response object:', data);
         return null;
     } catch (error: any) {
-        console.error(`[Chat API] Failed to get embedding for query. Error: ${error.message}`);
+        console.error(`[Chat API] Failed to get embedding for query. Error name: ${error.name}, message: ${error.message}`, error);
         return null;
     }
 }
