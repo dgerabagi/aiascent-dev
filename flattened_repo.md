@@ -1,10 +1,10 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-10-22T23:12:59.073Z
+  Date Generated: 2025-10-23T13:36:36.146Z
   ---
-  Total Files: 175
-  Approx. Tokens: 469149
+  Total Files: 183
+  Approx. Tokens: 475787
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -15,7 +15,7 @@
 5. public\data\v2v_content_young_precocious.json (12352 tokens)
 6. src\stores\reportStore.ts (8697 tokens)
 7. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md (8648 tokens)
-8. src\Artifacts\A0-Master-Artifact-List.md (7876 tokens)
+8. src\Artifacts\A0-Master-Artifact-List.md (7957 tokens)
 9. src\Artifacts\A76 - V2V Academy - Image Prompts (Career Transitioner).md (7318 tokens)
 10. src\Artifacts\A78 - V2V Academy - Image Prompts (Young Precocious).md (7145 tokens)
 
@@ -41,8 +41,8 @@
 19. src\app\showcase\page.tsx - Lines: 24 - Chars: 910 - Tokens: 228
 20. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 21. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
-22. src\app\page.tsx - Lines: 28 - Chars: 1043 - Tokens: 261
-23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 468 - Chars: 31503 - Tokens: 7876
+22. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
+23. src\Artifacts\A0-Master-Artifact-List.md - Lines: 472 - Chars: 31825 - Tokens: 7957
 24. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 25. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 26. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
@@ -87,8 +87,8 @@
 65. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
 66. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
 67. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-68. src\components\home\FeaturesSection.tsx - Lines: 85 - Chars: 3948 - Tokens: 987
-69. src\components\home\HeroSection.tsx - Lines: 67 - Chars: 3367 - Tokens: 842
+68. src\components\home\FeaturesSection.tsx - Lines: 64 - Chars: 5459 - Tokens: 1365
+69. src\components\home\HeroSection.tsx - Lines: 53 - Chars: 2773 - Tokens: 694
 70. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 71. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 72. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1507 - Tokens: 377
@@ -180,21 +180,29 @@
 158. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
 159. src\Artifacts\A79 - V2V Academy - Image Generation Script Guide.md - Lines: 85 - Chars: 4451 - Tokens: 1113
 160. src\Artifacts\A80 - V2V Academy - Image Generation Test Harness Guide.md - Lines: 50 - Chars: 3469 - Tokens: 868
-161. context\aiascentgame\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
-162. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
-163. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 368 - Chars: 34591 - Tokens: 8648
-164. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18951 - Tokens: 4738
-165. src\Artifacts\A83 - V2V Academy - Simulating a Fresh Environment Guide.md - Lines: 51 - Chars: 4937 - Tokens: 1235
-166. src\Artifacts\A97 - V2V Academy - Lab 1 Media Descriptions.md - Lines: 128 - Chars: 7499 - Tokens: 1875
-167. src\Artifacts\A98 - V2V Academy - Academy Page Image Prompts.md - Lines: 40 - Chars: 3929 - Tokens: 983
-168. src\Artifacts\A100 - V2V Academy - Course 1 The AI-Powered Report Viewer - Curriculum Outline.md - Lines: 79 - Chars: 5869 - Tokens: 1468
-169. src\Artifacts\A101 - V2V Academy - Course 1 The AI-Powered Report Viewer - Lab Plan.md - Lines: 86 - Chars: 5790 - Tokens: 1448
-170. src\Artifacts\A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md - Lines: 68 - Chars: 5289 - Tokens: 1323
-171. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
-172. src\lib\kb-helper.ts - Lines: 11 - Chars: 368 - Tokens: 92
-173. src\Artifacts\A102. aiascent.dev - Homepage Hero Revamp Plan.md - Lines: 63 - Chars: 5503 - Tokens: 1376
-174. src\Artifacts\A102 - Homepage Hero Section Revamp Plan.md - Lines: 55 - Chars: 5044 - Tokens: 1261
-175. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25509 - Tokens: 6378
+161. src\Artifacts\A82 - V2V Academy - Labs and Courses UI Plan.md - Lines: 50 - Chars: 3193 - Tokens: 799
+162. src\Artifacts\A81 - V2V Academy - Lab 1 - Your First Portfolio Website.md - Lines: 368 - Chars: 34591 - Tokens: 8648
+163. public\data\v2v_lab_1_portfolio.json - Lines: 175 - Chars: 18951 - Tokens: 4738
+164. src\Artifacts\A83 - V2V Academy - Simulating a Fresh Environment Guide.md - Lines: 51 - Chars: 4937 - Tokens: 1235
+165. src\Artifacts\A97 - V2V Academy - Lab 1 Media Descriptions.md - Lines: 128 - Chars: 7499 - Tokens: 1875
+166. src\Artifacts\A98 - V2V Academy - Academy Page Image Prompts.md - Lines: 40 - Chars: 3929 - Tokens: 983
+167. src\Artifacts\A100 - V2V Academy - Course 1 The AI-Powered Report Viewer - Curriculum Outline.md - Lines: 79 - Chars: 5869 - Tokens: 1468
+168. src\Artifacts\A101 - V2V Academy - Course 1 The AI-Powered Report Viewer - Lab Plan.md - Lines: 86 - Chars: 5790 - Tokens: 1448
+169. src\Artifacts\A99 - V2V Academy - Course 1 The AI-Powered Report Viewer - Vision and Roadmap.md - Lines: 68 - Chars: 5289 - Tokens: 1323
+170. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
+171. src\lib\kb-helper.ts - Lines: 14 - Chars: 375 - Tokens: 94
+172. src\Artifacts\A102. aiascent.dev - Homepage Hero Revamp Plan.md - Lines: 63 - Chars: 5503 - Tokens: 1376
+173. src\Artifacts\A102 - Homepage Hero Section Revamp Plan.md - Lines: 41 - Chars: 3695 - Tokens: 924
+174. public\data\imagemanifest_young_precocious.json - Lines: 406 - Chars: 25509 - Tokens: 6378
+175. src\components\home\HowItWorksSection.tsx - Lines: 50 - Chars: 2151 - Tokens: 538
+176. src\Artifacts\A103 - How It Works Section Image Prompts.md - Lines: 31 - Chars: 3015 - Tokens: 754
+177. public\assets\images\report\how-it-works\curation.webp - [Binary] Size: 120.8 KB
+178. public\assets\images\report\how-it-works\knowledge-graph.webp - [Binary] Size: 216.8 KB
+179. public\assets\images\report\how-it-works\parallel-copilot.webp - [Binary] Size: 146.2 KB
+180. context\aiascentgame\docs\A137. Account System Design.md - Lines: 229 - Chars: 11298 - Tokens: 2825
+181. context\aiascentgame\docs\A138. Google OAuth Client ID Troubleshooting.md - Lines: 59 - Chars: 3704 - Tokens: 926
+182. context\aiascentgame\docs\A160. AI Persona - @Ascentia.md - Lines: 81 - Chars: 6411 - Tokens: 1603
+183. context\aiascentgame\docs\A188. Dual Domain Hosting Guide.md - Lines: 106 - Chars: 4644 - Tokens: 1161
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -11270,14 +11278,16 @@ export default function RootLayout({
 <file path="src/app/page.tsx">
 // src/app/page.tsx
 import HeroSection from "@/components/home/HeroSection";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import MissionSection from "@/components/home/MissionSection";
 import ReportViewer from "@/components/report-viewer/ReportViewer";
 
 export default function Home() {
 return (
-<div className="flex flex-col pt-16">
+<div className="flex flex-col">
     <HeroSection />
+    <HowItWorksSection />
     <FeaturesSection />
 
     {/* Homepage Whitepaper Visualization */}
@@ -11305,7 +11315,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C104 (Add A102)
+# Updated on: C106 (Add A103)
 
 ## 1. Purpose
 
@@ -11505,6 +11515,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A plan for a new section on the `/dce` page explaining how generating documentation artifacts is a core feature of the DCE workflow, establishing them as the project's "source of truth."
   - **Tags:** page design, dce, features, plan, source of truth, documentation, artifacts
+
+### A103. aiascent.dev - How It Works Section Image Prompts
+- **Description:** Provides a set of new, detailed image prompts for the three core feature sections on the homepage, designed to align with the new "Citizen Architect" aesthetic.
+- **Tags:** page design, home page, image prompts, marketing, content, aesthetic
 
 ## IV. Process & Workflow
 
@@ -15170,88 +15184,67 @@ export const SparklesCore = (props: ParticlesProps) => {
 </file_artifact>
 
 <file path="src/components/home/FeaturesSection.tsx">
+
 'use client';
 // src/components/home/FeaturesSection.tsx
-// C54 - Add audio play buttons
-// C11 - Add light mode variants
+// C106: Refactored to use MissionSectionBlock for large images instead of icons.
 import React from 'react';
-import Image from 'next/image';
-import { useReportState, useReportStore } from '@/stores/reportStore';
-import { FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 
 const features = [
-{
-title: "Precision Context Curation",
-description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
-icon: "/assets/icons/context-curation.webp",
-},
-{
-title: "Parallel Co-Pilot & Rapid Testing",
-description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
-icon: "/assets/icons/parallel-copilot.webp",
-},
-{
-title: "Iterative Knowledge Graph",
-description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
-icon: "/assets/icons/iterative-workflow.webp",
-},
+    {
+        title: "Precision Context Curation",
+        tldr: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
+        content: "The foundation of a high-quality AI response is high-quality context. The DCE eliminates the error-prone process of manually managing file lists or copy-pasting code into a prompt. With the integrated File Tree View, you can browse your entire workspace and select the precise 'source of truth' for your task with simple checkboxes. This curated selection is then automatically flattened into a single context file, ensuring the AI has exactly what it needs, and nothing it doesn't.",
+        imagePath: 'how-it-works/',
+        imagePrompt: 'A hyper-realistic, cinematic image of a Citizen Architect interacting with a holographic file management interface. They are using simple checkboxes to select various file types (PDF, code, spreadsheets). A clean, precise beam of light, representing the curated context, flows from the selected files towards a destination labeled "Precision In, Perfection Out: The Art of Curation." The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style.',
+        images: ['curation.webp'],
+        imageSide: 'left',
+    },
+    {
+        title: "Parallel Co-Pilot & Rapid Testing",
+        tldr: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
+        content: "AI models are non-deterministic. A single prompt can yield multiple, viable solutions. The Parallel Co-Pilot Panel is designed for this reality. Paste in several responses from your AI, and the DCE will parse them into separate tabs. You can instantly compare the proposed changes for each file and use the built-in diff viewer to understand the nuances of each solution before deciding which one to accept.",
+        imagePath: 'how-it-works/',
+        imagePrompt: 'A hyper-realistic, cinematic image of a Citizen Architect standing before a large, futuristic touch-screen panel labeled "DCE\'s Parallel Co-Pilot Panel." The panel displays three different AI-generated solutions (A, B, C) side-by-side with an "Integrated Diff Viewer" highlighting the changes. The operator is comparing the solutions before committing, illustrating a "Rapid, Low-Risk Iteration Loop." The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style.',
+        images: ['parallel-copilot.webp'],
+        imageSide: 'right',
+    },
+    {
+        title: "Iterative Knowledge Graph",
+        tldr: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
+        content: "Every development cycle in the DCE is saved, creating a persistent knowledge graph of your project's evolution. The Cycle History view allows you to step back in time, review the exact context used for a previous prompt, see all the AI responses that were generated, and understand why a particular solution was chosen. This turns your development process into a valuable, shareable asset for training, onboarding, and after-action reviews.",
+        imagePath: 'how-it-works/',
+        imagePrompt: 'A hyper-realistic, cinematic image of a Citizen Architect standing in a vast, modern library-like space, representing "The Architecture of Institutional Memory." They are interacting with a "Cycle Navigator" to explore a massive, glowing "Persistent Knowledge Graph." Each node in the graph is a "CAPTURED CYCLE" containing the curated context, user intent, and AI solutions for a step in the project\'s history. The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style.',
+        images: ['knowledge-graph.webp'],
+        imageSide: 'left',
+    },
 ];
 
 const FeaturesSection = () => {
-    const { playArbitraryText } = useReportStore.getState();
-    const { genericPlaybackStatus, genericAudioText } = useReportState(state => ({
-        genericPlaybackStatus: state.genericPlaybackStatus,
-        genericAudioText: state.genericAudioText,
-    }));
-
-return (
-<section className="py-20 md:py-32 bg-background">
-<div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 light:from-black light:to-neutral-700 pb-4">
-Stop Fighting Your Tools. Start Building the Future.
-</h2>
-
-    <div className="flex flex-col gap-24">
-      {features.map((feature, index) => {
-        const isPlayingThis = genericPlaybackStatus === 'playing' && genericAudioText === feature.description;
-        const isGeneratingThis = genericPlaybackStatus === 'generating' && genericAudioText === feature.description;
-
-        return (
-        <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-          {/* Image Container */}
-          <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
-            <div className="relative aspect-video rounded-lg overflow-hidden">
-                <Image 
-                    src={feature.icon} 
-                    alt={feature.title} 
-                    fill
-                    className='transition-transform duration-500 hover:scale-105 object-cover'
-                />
+    return (
+        <section className="py-20 md:py-32 bg-background">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 light:from-black light:to-neutral-700 pb-4">
+                    Stop Fighting Your Tools. Start Building the Future.
+                </h2>
+                <div className="space-y-20">
+                    {features.map((feature, index) => (
+                        <MissionSectionBlock
+                            key={index}
+                            title={feature.title}
+                            tldr={feature.tldr}
+                            content={feature.content}
+                            imageSide={feature.imageSide as 'left' | 'right'}
+                            imagePath={feature.imagePath}
+                            imagePrompt={feature.imagePrompt}
+                            images={feature.images}
+                        />
+                    ))}
+                </div>
             </div>
-          </div>
-          {/* Text Content */}
-          <div className="md:w-1/2 w-full">
-            <div className="flex items-center gap-4 mb-4">
-                <h3 className="text-3xl font-bold text-white light:text-black">{feature.title}</h3>
-                <button
-                    onClick={() => playArbitraryText(feature.description)}
-                    className="p-2 border rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                    title={isPlayingThis ? "Pause narration" : "Play narration"}
-                    disabled={isGeneratingThis}
-                >
-                    {isGeneratingThis ? <FaSpinner className="animate-spin" /> : (isPlayingThis ? <FaPause /> : <FaPlay />)}
-                </button>
-            </div>
-            <p className="text-lg text-neutral-400 light:text-neutral-600">
-              {feature.description}
-            </p>
-          </div>
-        </div>
-      )})}
-    </div>
-  </div>
-</section>
-);
+        </section>
+    );
 };
 
 export default FeaturesSection;
@@ -15260,67 +15253,53 @@ export default FeaturesSection;
 <file path="src/components/home/HeroSection.tsx">
 // src/components/home/HeroSection.tsx
 import React from 'react';
-import { ContainerScroll } from '@/components/global/container-scroll-animation';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const HeroSection = () => {
 return (
-<section className="min-h-screen w-full bg-background rounded-md !overflow-visible relative flex flex-col items-center antialiased">
-{/* Background Gradient */}
-<div className="absolute inset-0 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#0D1A26_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#0D1A26_100%)]"></div>
+    <section className="h-screen w-full relative flex flex-col items-center justify-center antialiased">
+        {/* Background Image */}
+        <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/assets/images/master_of_realms.webp')" }}
+        ></div>
 
-  {/* ContainerScroll and Content */}
-  <div className="flex flex-col mt-[-50px] md:mt-0">
-    <ContainerScroll
-      titleComponent={
-        <div className="flex items-center flex-col">
-          {/* Headline (A16, 4.2) */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground font-sans font-bold text-center mb-8 pt-16">
-            Master the Human-AI Workflow. Become a Citizen Architect.
-          </h1>
-          
-          {/* Subheadline (A16, 4.2) */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl text-center mb-12">
-            The Data Curation Environment (DCE) is the essential VS Code extension for developers who want to move beyond prompt-and-pray. Curate context with precision, test AI solutions rapidly, and build complex systems with confidence.
-          </p>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
-          {/* CTAs (A16, 4.2) */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Link href="/showcase">
-                <Button
-                    size={'lg'}
-                    className="p-6 text-lg border-t-2 rounded-full border-border bg-card hover:bg-accent group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500/20 duration-500"
-                >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-muted-foreground to-foreground font-sans group-hover:bg-gradient-to-r group-hover:from-foreground group-hover:to-foreground">
-                    Explore the Showcase
-                    </span>
-                </Button>
-            </Link>
-            {/* C34 Fix: Wrap button in an anchor tag to make it downloadable */}
-            <a href="/downloads/data-curation-environment-0.1.10.vsix" download="data-curation-environment-0.1.10.vsix">
-                <Button size="lg" variant="outline" className="p-6 text-lg">
-                    Download Now
-                </Button>
-            </a>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-4">
+            {/* Headline (A16, 4.2) - C106: Added pb-4 for padding */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 font-sans font-bold mb-8 pb-4">
+                Vibe Code for Free. Ship Real Projects.
+            </h1>
+            
+            {/* Subheadline (A16, 4.2) - C106: Rewritten to be more inclusive */}
+            <p className="text-lg md:text-xl text-neutral-300 max-w-4xl text-center mb-12">
+                The future of all knowledge work—from law and architecture to software development—is curating data for AI. The Data Curation Environment (DCE) is the essential VS Code extension for the emerging class of &lsquo;Citizen Architects,&rsquo; empowering you to build complex, AI-driven projects with precision and confidence.
+            </p>
+
+            {/* CTAs (A16, 4.2) */}
+            <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/showcase">
+                    <Button
+                        size={'lg'}
+                        className="p-6 text-lg border-t-2 rounded-full border-neutral-700 bg-neutral-900/80 hover:bg-neutral-800/80 group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-black/50 duration-500 backdrop-blur-sm"
+                    >
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-300 to-white font-sans group-hover:text-white">
+                            Explore the Showcase
+                        </span>
+                    </Button>
+                </Link>
+                <a href="/downloads/data-curation-environment-0.1.10.vsix" download="data-curation-environment-0.1.10.vsix">
+                    <Button size="lg" variant="outline" className="p-6 text-lg bg-transparent hover:bg-white/10 text-white border-white/50 hover:text-white">
+                        Download Now
+                    </Button>
+                </a>
+            </div>
         </div>
-      }
-    >
-        {/* Visuals (A16, 4.2 Updated C11) */}
-        <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-neutral-700">
-            <Image
-                src="/assets/images/pcp.gif"
-                alt="DCE Workflow Demonstration GIF"
-                fill
-                className="rounded-2xl object-contain"
-                unoptimized={true} // GIFs should not be optimized by Next.js Image component
-            />
-        </div>
-    </ContainerScroll>
-  </div>
-</section>
+    </section>
 );
 };
 
@@ -24151,115 +24130,6 @@ After the script completes, compare the images in the `test_harness` directory a
 *   **Update the Main Script:** The learnings from the test harness should then be applied to update the main `generate_images.mjs` script, replacing its current prompt construction logic with the new, more effective strategy.
 </file_artifact>
 
-<file path="context/aiascentgame/A188. Dual Domain Hosting Guide.md">
-# Artifact A188: Dual Domain Hosting Guide
-
-- **Key/Value for A0:**
-- **Description:** A comprehensive guide for setting up a single server to host both `aiascent.game` and `aiascent.dev` using Caddy as a reverse proxy and PM2 as a process manager.
-- **Tags:** guide, hosting, deployment, server, v1.0, caddy, reverse proxy, pm2, multi-domain
-
-## 1. Purpose
-
-This guide provides a complete, step-by-step process for deploying both the `aiascent.game` and `aiascent.dev` applications onto a single server. It covers cloning the new repository, building both applications for production, configuring the Caddy reverse proxy to handle both domains, and using the PM2 process manager to keep both applications running reliably.
-
-## 2. Architecture Overview
-
-The setup uses a **reverse proxy** architecture. A single Caddy web server listens for all public web traffic on ports 80 and 443. Based on the domain name requested by the user (`aiascent.game` or `aiascent.dev`), Caddy forwards the request to the correct application running on a separate, internal port.
-
-*   `aiascent.game` will run on port **3001**.
-*   `aiascent.dev` will run on port **3002**.
-*   **PM2**, a process manager for Node.js, will be used to run both applications as background services, ensuring they restart automatically if they crash.
-
-## 3. Step-by-Step Deployment on the Server
-
-### Step 3.1: Prepare the `aiascent-dev` Application
-
-1.  **Clone the Repository:**
-    *   Navigate to your main projects directory (e.g., `C:\Projects\`).
-    *   Clone the `aiascent-dev` repository from GitHub.
-    ```bash
-    git clone https://github.com/dgerabagi/aiascent-dev.git
-    ```
-
-2.  **Install Dependencies:**
-    *   Navigate into the new directory: `cd aiascent-dev`.
-    *   Install all required packages: `npm install`.
-
-3.  **Create `.env` File:**
-    *   Create a `.env` file in the root of the `aiascent-dev` project. This file is for production secrets.
-    *   Add the necessary environment variables. For this project, it's primarily for the RAG and TTS features.
-    ```
-    # .env for aiascent-dev
-    TTS_SERVER_URL=http://<IP_OF_TTS_SERVER>:8880/v1/audio/speech
-    REMOTE_LLM_URL=http://<IP_OF_LLM_SERVER>:1234
-    EMBEDDING_API_URL=http://<IP_OF_LLM_SERVER>:1234/v1/embeddings
-    ```
-
-4.  **Build for Production:**
-    *   Run the build script to create an optimized production version of the Next.js site.
-    ```bash
-    npm run build
-    ```
-
-### Step 3.2: Prepare the `ai-ascent` Application
-
-1.  **Navigate to Project:** Go to your `ai-ascent` project directory.
-2.  **Update Caddyfile:** Ensure the `Caddyfile` in the root of this project has been updated with the configuration for both domains as specified in this cycle's changes.
-3.  **Build for Production:**
-    *   Run the main build script to compile the server and client.
-    ```bash
-    npm run build
-    ```
-
-### Step 3.3: Install and Configure PM2
-
-1.  **Install PM2 Globally:** PM2 is a powerful process manager that will keep your applications online.
-    ```bash
-    npm install pm2 -g
-    ```
-
-2.  **Start the Applications with PM2:**
-    *   From the `ai-ascent-dev` directory, start the website:
-    ```bash
-    pm2 start npm --name "aiascent-dev" -- run start
-    ```
-    *   From the `ai-ascent` directory, start the game server:
-    ```bash
-    pm2 start npm --name "ai-ascent" -- run start
-    ```
-
-3.  **Verify PM2 Status:** Check that both applications are running and online.
-    ```bash
-    pm2 list
-    ```
-    You should see `aiascent-dev` and `ai-ascent` with a green "online" status.
-
-4.  **Save the PM2 Process List:** This command saves the current list of running applications so they will automatically restart when the server reboots.
-    ```bash
-    pm2 save
-    ```
-    *(You may need to run `pm2 startup` one time to configure the startup script for your OS.)*
-
-### Step 3.4: Run Caddy
-
-1.  **Navigate to `ai-ascent` Project:** Caddy should be run from the directory containing the `Caddyfile`.
-    ```bash
-    cd C:\Projects\ai-ascent
-    ```
-
-2.  **Start Caddy:** Run Caddy. It will automatically find the `Caddyfile` in the current directory.
-    ```bash
-    caddy run
-    ```
-    *   Caddy will now handle incoming requests for both domains, automatically provision SSL certificates, and route traffic to the correct application running under PM2.
-
-## 4. Final Verification
-
-*   Navigate to `https://aiascent.game` in your browser. You should see the game.
-*   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
-*   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
-</file_artifact>
-
 <file path="src/Artifacts/A82 - V2V Academy - Labs and Courses UI Plan.md">
 # Artifact A82: V2V Academy - Labs and Courses UI Plan
 # Date Created: C93
@@ -25514,12 +25384,15 @@ The development of the course content will follow a phased approach.
 // src/lib/kb-helper.ts
 export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' {
     if (!reportName) return 'report';
-    if (reportName === 'whitepaper' || reportName.startsWith('v2v-academy-lab')) {
+
+    if (reportName.startsWith('v2v-academy-lab')) {
         return 'dce';
     }
-    if (reportName.startsWith('v2v-academy-')) {
+    
+    if (reportName.startsWith('v2v-academy-') || reportName === 'whitepaper') {
         return 'academy';
     }
+
     return 'report';
 }
 </file_artifact>
@@ -25594,58 +25467,44 @@ To support this revamp, new visual assets are required. These prompts should be 
 # Artifact A102: Homepage Hero Section Revamp Plan
 # Date Created: C104
 # Author: AI Model & Curator
+# Updated on: C105 (Propose radical simplification to a 'splash image' design)
 
 - **Key/Value for A0:**
-- **Description:** A plan to revamp the homepage hero section to better communicate the core value proposition of the Data Curation Environment (DCE), focusing on the "vibe code for free" message and introducing new, more aspirational imagery.
-- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts
+- **Description:** A plan to revamp the homepage hero section by replacing the animated component with a more direct, impactful 'splash image' design to better showcase the 'Citizen Architect' brand.
+- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts, redesign
 
-## 1. Overview and Goal
+## 1. Problem Statement
 
-The current homepage hero section is effective but "buries the lead." The most compelling value proposition for a new developer is that the Data Curation Environment (DCE) is a **free tool** that enables them to leverage other powerful, **free AI services** (like Google's AI Studio) to build complex projects. This "vibe code for free" angle is a powerful hook that needs to be front and center.
+The current homepage hero section, while technically impressive, is not effectively communicating the core brand identity of the "Citizen Architect." The animated `ContainerScroll` component is designed for a neutral, looping visual (`pcp.gif`), but our new marketing images (e.g., `master_of_realms.webp`) are powerful, self-contained statements that include their own titles and branding. Attempts to simply swap these assets have resulted in a confusing user experience with duplicated text and a disjointed message.
 
-The goal of this plan is to redesign the content and visuals of the hero section to immediately and clearly communicate this message, making the value proposition irresistible to our target audience.
+The core problem is a mismatch between the component's purpose and the asset's purpose. We are trying to fit a "movie poster" into a "picture frame."
 
-## 2. Proposed Content Changes
+## 2. Proposed Solution: A Radically Simpler, More Impactful Design
 
-The new copy will be more direct, benefit-oriented, and will speak to the common pain point of expensive AI tools.
+The solution is to redesign the hero section to embrace the power of the new marketing assets. We will move away from the complex animation and adopt a more direct, confident, and visually stunning "splash image" or "hero banner" design.
 
-### New Headline:
-*   **Headline:**
-    > Vibe Code for Free. Ship Real Projects.
-*   **Sub-headline:**
-    > Stop paying for expensive AI assistants. The Data Curation Environment (DCE) is the only tool you need to package your entire VS Code project for Google's free AI Studio, unlocking powerful, unlimited AI collaboration.
+This approach will:
+*   **Create a Powerful First Impression:** Use a full-bleed background image to immediately establish the aspirational, futuristic "Citizen Architect" aesthetic.
+*   **Solve the Text Conflict:** By using the marketing image as a background, the text already present on the image becomes a natural part of the design, and we can place our website's unique value proposition over it without conflict.
+*   **Clarify the Message:** This design allows us to clearly separate the brand identity (communicated by the image) from the core value proposition (communicated by the overlaid text).
 
-## 3. Proposed Visual Changes
+## 3. Visual & Layout Plan
 
-The current `pcp.gif` is a good demonstration but is not as aspirational as it could be. We will replace it with a stunning, high-quality static image that captures the essence of the "Citizen Architect" empowered by AI. The aesthetic will be consistent with the successful "Young Precocious" persona visuals—cinematic, futuristic, and solarpunk-inspired.
-
-### New Hero Image Concept
-
-A single, wide-angle cinematic shot depicting the male and female Citizen Architect characters collaborating in a futuristic, solarpunk-style command center. They are not just coding; they are orchestrating.
-
-*   **Scene:** A sleek, minimalist command center with large, floor-to-ceiling windows overlooking a futuristic, green city at dusk.
-*   **Action:** The two Citizen Architects stand before a massive, holographic interface. They are using gestures to manipulate and connect glowing data streams and code blocks, assembling a complex digital structure. The interface is a beautiful, abstract representation of the DCE workflow.
-*   **Aesthetic:** The image should feel powerful, optimistic, and inspiring. It should sell the *feeling* of being in complete control, effortlessly bringing a complex vision to life with an AI partner.
-
-### Image Generation Prompts
-
-These prompts should be used with the `A15.1 Master Image Generation System Prompt`.
-
-#### **Prompt 1: The Command Center (Primary)**
-*   **Asset Name:** `AS-08_hero_main.webp`
-*   **Prompt:** A hyper-realistic, cinematic, 16:9 wide-angle shot of a male and female 'Citizen Architect' collaborating in a futuristic, solarpunk-inspired command center at dusk. They stand side-by-side before a massive, floating holographic interface, using hand gestures to orchestrate the assembly of a complex digital architecture from glowing blue and cyan data streams. The environment is minimalist and clean, with large windows showing a lush, green futuristic city skyline. The lighting is dramatic, with the primary light coming from the glowing interface, casting a cool light on their focused expressions. The image should convey a sense of power, effortless control, and optimistic creation. The aesthetic is sophisticated, futuristic minimalism.
-
-#### **Prompt 2: The Architect's Vision (Alternate)**
-*   **Asset Name:** `AS-09_hero_alternate.webp`
-*   **Prompt:** A hyper-realistic, cinematic, 16:9 medium shot focusing on the female Citizen Architect. She is looking directly at the camera with a confident, knowing smile. With one hand, she is touching a floating, glowing spiral icon (the DCE logo). From the icon, a beautiful and complex holographic blueprint of a futuristic city unfolds around her, demonstrating that she holds the power to create worlds at her fingertips. The background is a dark, minimalist command center, with the male architect visible but out of focus, working at another console. The lighting is soft and focused on her, highlighting her as the central creative force.
+*   **Primary Visual:** The hero section will be a full-viewport-height container. The background will be the `master_of_realms.webp` image, scaled to cover the entire area.
+*   **Text Overlay:**
+    *   A subtle, dark gradient overlay will be applied on top of the image to ensure that the white text is perfectly readable.
+    *   The existing headline and sub-headline will be centered and overlaid on the image. Their content is already aligned with the new "vibe code for free" messaging and complements the "Citizen Architect" title in the image.
+*   **Call-to-Action Buttons:** The "Explore the Showcase" and "Download Now" buttons will be positioned below the sub-headline, remaining the primary interactive elements.
 
 ## 4. Implementation Plan
 
-1.  **Generate New Assets:** The curator will use the prompts above to generate the new hero images.
-2.  **Update `HeroSection.tsx`:**
-    *   Replace the headline and subheadline with the new copy.
-    *   Replace the `ContainerScroll` component and the `pcp.gif` with a simpler, more direct `Image` component that displays the new static hero image (`AS-08_hero_main.webp`).
-    *   Ensure the new image is styled to be the central, impactful visual of the hero section.
+1.  **Modify `src/components/home/HeroSection.tsx`:**
+    *   Remove the `<ContainerScroll>` component and its associated imports entirely.
+    *   The root element will be a `<section>` styled to be `h-screen`, `relative`, with the `master_of_realms.webp` image as a background (`bg-cover`, `bg-center`).
+    *   Add a `div` for the dark overlay (e.g., `absolute inset-0 bg-black/50`).
+    *   Create a central `div` to contain the `h1` headline, `p` sub-headline, and the CTA buttons. This container will use flexbox to center its content both vertically and horizontally.
+    *   Adjust typography (font size, color, shadow) as needed to ensure perfect readability and visual impact against the new background.
+2.  **Asset:** The existing `/assets/images/master_of_realms.webp` will be used.
 </file_artifact>
 
 <file path="public/data/imagemanifest_young_precocious.json">
@@ -26055,5 +25914,610 @@ These prompts should be used with the `A15.1 Master Image Generation System Prom
     }
   }
 }
+</file_artifact>
+
+<file path="src/components/home/HowItWorksSection.tsx">
+'use client';
+// src/components/home/HowItWorksSection.tsx
+import React from 'react';
+import { FaBoxes, FaGoogle, FaRocket } from 'react-icons/fa';
+
+const features = [
+    {
+        icon: <FaBoxes size={32} className="text-primary" />,
+        title: "Curate Your Code",
+        description: "Visually select any file in your project. DCE intelligently packages your code, documents, and data into a single, clean prompt.",
+    },
+    {
+        icon: <FaGoogle size={32} className="text-primary" />,
+        title: "Collaborate with Free AI",
+        description: "Take your perfectly curated context to any AI, including the powerful, free models in Google's AI Studio.",
+    },
+    {
+        icon: <FaRocket size={32} className="text-primary" />,
+        title: "Create Without Limits",
+        description: "Get unlimited, high-quality code and documentation from the world's best models, without spending a dime on API fees.",
+    },
+];
+
+const HowItWorksSection = () => {
+    return (
+        <section className="py-20 md:py-24 bg-background">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground">
+                    The Free Workflow for Serious AI Development
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    {features.map((feature, index) => (
+                        <div key={index} className="text-center flex flex-col items-center">
+                            <div className="mb-6 p-4 bg-primary/10 rounded-full">
+                                {feature.icon}
+                            </div>
+                            <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                            <p className="text-muted-foreground max-w-xs">
+                                {feature.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default HowItWorksSection;
+</file_artifact>
+
+<file path="src/Artifacts/A103 - How It Works Section Image Prompts.md">
+# Artifact A103: aiascent.dev - How It Works Section Image Prompts
+# Date Created: C106
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** Provides a set of new, detailed image prompts for the three core feature sections on the homepage (now the "How It Works" section), designed to align with the new "Citizen Architect" aesthetic.
+- **Tags:** page design, home page, image prompts, marketing, content, aesthetic
+
+## 1. Overview
+
+This document provides the specific image generation prompts for the three feature sections on the homepage: "Precision Context Curation," "Parallel Co-Pilot & Rapid Testing," and "Iterative Knowledge Graph." These prompts are designed to be used with the master system prompt (`A15.1`) and the established "Citizen Architect" visual style to create a new, thematically coherent set of visuals that replace the previous simple icons.
+
+## 2. Image Prompts
+
+### **Prompt 1: Precision Context Curation**
+
+*   **Asset Name:** `curation.webp`
+*   **Location:** `public/assets/images/how-it-works/`
+*   **Prompt:** A hyper-realistic, cinematic image of a Citizen Architect interacting with a holographic file management interface. They are using simple checkboxes to select various file types (PDF, code, spreadsheets). A clean, precise beam of light, representing the curated context, flows from the selected files towards a destination labeled "Precision In, Perfection Out: The Art of Curation." The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style, featuring a dark background with vibrant blue and cyan accents.
+
+### **Prompt 2: Parallel Co-Pilot & Rapid Testing**
+
+*   **Asset Name:** `parallel-copilot.webp`
+*   **Location:** `public/assets/images/how-it-works/`
+*   **Prompt:** A hyper-realistic, cinematic image of a Citizen Architect standing before a large, futuristic touch-screen panel labeled "DCE's Parallel Co-Pilot Panel." The panel displays three different AI-generated solutions (A, B, C) side-by-side with an "Integrated Diff Viewer" highlighting the changes. The operator is comparing the solutions before committing, illustrating a "Rapid, Low-Risk Iteration Loop." The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style, emphasizing the speed and confidence of the workflow.
+
+### **Prompt 3: Iterative Knowledge Graph**
+
+*   **Asset Name:** `knowledge-graph.webp`
+*   **Location:** `public/assets/images/how-it-works/`
+*   **Prompt:** A hyper-realistic, cinematic image of a Citizen Architect standing in a vast, modern library-like space, representing "The Architecture of Institutional Memory." They are interacting with a "Cycle Navigator" to explore a massive, glowing "Persistent Knowledge Graph." Each node in the graph is a "CAPTURED CYCLE" containing the curated context, user intent, and AI solutions for a step in the project's history. The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style, conveying the scale and value of the captured knowledge.
+</file_artifact>
+
+<file path="public/assets/images/report/how-it-works/curation.webp">
+<metadata>
+{
+  "name": "curation.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/how-it-works",
+  "fileType": "WEBP",
+  "sizeInBytes": 123726
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/how-it-works/knowledge-graph.webp">
+<metadata>
+{
+  "name": "knowledge-graph.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/how-it-works",
+  "fileType": "WEBP",
+  "sizeInBytes": 222050
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/report/how-it-works/parallel-copilot.webp">
+<metadata>
+{
+  "name": "parallel-copilot.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/report/how-it-works",
+  "fileType": "WEBP",
+  "sizeInBytes": 149668
+}
+</metadata>
+</file_artifact>
+
+<file path="context/aiascentgame/docs/A137. Account System Design.md">
+# Artifact: A137. Account System Design (V.1.0)
+
+(Content to be added by curator)# Artifact 137: Account System Design (V.1.0)
+# Updated on: C1167 (Clarify where to find Google credentials.)
+# Updated on: C1147 (Remove invalid `error` event handler from NextAuth options. Add types to event handler messages.)
+# Date Created: Cycle 1146 (Revised from Supabase to NextAuth.js)
+# Author: AI Model
+
+## 1. Purpose
+
+This document outlines the architecture and implementation plan for a user account system in AI Ascent. The primary goal is to provide a simple, secure, and integrated way for players to sign up, log in, and have their progress associated with a persistent identity. This system will serve as the foundation for future community features like a bulletin board system (BBS). This design uses a self-hosted backend approach.
+
+## 2. Core Requirements & Technology Choice
+
+*   **Simple Onboarding:** Must support Single Sign-On (SSO) with providers like Google and GitHub to minimize friction for the user.
+*   **Integrated UI:** The login/signup flow must feel like a native part of the game, not a jarring redirect to a third-party branded page. This requires full control over the UI components.
+*   **Self-Hosted Backend:** The authentication logic and user database must be self-hosted, connecting to an existing remote MySQL server.
+*   **Secure & Standardized:** The implementation should use well-vetted, industry-standard libraries for handling authentication flows and database interactions.
+
+### Technology Choice: NextAuth.js + Prisma + MySQL
+
+This stack was chosen to meet all requirements within the existing project structure.
+
+*   **Why this stack?**
+    1.  **NextAuth.js (`Auth.js`):** The de-facto standard for authentication in Next.js applications. It provides pre-built providers for Google, GitHub, and many others, handling all the complexities of the OAuth 2.0 flow securely. It's highly customizable and unopinionated about the frontend.
+    2.  **Prisma:** A modern, type-safe ORM that simplifies database interactions. It generates a fully-typed client based on a declarative schema, which prevents common errors and improves developer experience. Crucially, it has an official adapter for NextAuth.js (`@next-auth/prisma-adapter`).
+    3.  **MySQL:** The chosen database, as per user requirements. Prisma has robust support for MySQL.
+    4.  **Next.js API Routes:** We will leverage the built-in API routing of Next.js to host the NextAuth.js endpoint, keeping the entire application (frontend and auth backend) within a single codebase.
+
+## 3. System Architecture
+
+The account system will consist of several integrated parts within the `ai-ascent` project:
+
+1.  **MySQL Database:** The remote, user-provided database that will store user and session information.
+2.  **Prisma Schema (`src/prisma/schema.prisma`):** A declarative file that defines the data models required by the NextAuth.js Prisma adapter (`User`, `Account`, `Session`, `VerificationToken`). This schema is the source of truth for our database tables and the generated Prisma Client.
+3.  **Prisma Client (`src/lib/prisma.ts`):** A singleton instance of the auto-generated Prisma client, used by the NextAuth.js adapter to communicate with the database.
+4.  **NextAuth.js API Endpoint (`src/pages/api/auth/[...nextauth].ts`):** A catch-all API route that handles all authentication requests (e.g., `GET /api/auth/signin`, `POST /api/auth/callback/google`, `GET /api/auth/session`). It will be configured with the Google provider and the Prisma adapter.
+5.  **NextAuth.js Session Provider (`src/components/UIRoot.tsx`):** The entire React application will be wrapped in a `<SessionProvider>`. This component efficiently fetches and shares the user's session state across all components, making it available via the `useSession` hook.
+6.  **React UI Components:**
+    *   **`<LoginModal />`:** A custom modal that displays "Sign in with..." buttons.
+    *   **`<AuthButtonController />`:** A component in the `TopBar` that uses the `useSession` hook to reactively display either a "Login" button or the user's profile info and a "Logout" button.
+7.  **Environment File (`.env`):** A file in the project root to store sensitive credentials like the `DATABASE_URL` and OAuth secrets. **Crucially, this file must be named `.env` (not `.env.local`) so that the Prisma CLI can automatically detect it.**
+
+## 4. Data Schema (`src/prisma/schema.prisma`)
+
+The following models are required by the `@next-auth/prisma-adapter` and will be defined in our schema file.
+
+```prisma
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Updated on: C1334 (Add ReportImageVote model.)
+// Updated on: C1249 (Set default highestGameAIElo to 1000 for new players.)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// NextAuth.js Required Models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  displayName   String?   @db.VarChar(50)
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  countryCode   String?   @db.Char(2)
+  accounts      Account[]
+  sessions      Session[]
+
+  BbsThreads       BbsThread[]
+  BbsPosts         BbsPost[]
+  BbsVotes         BbsVote[]
+  LeaderboardEntry LeaderboardEntry?
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// --- BBS & LEADERBOARD MODELS ---
+model BbsThread {
+  id        String   @id @default(cuid())
+  title     String   @db.VarChar(255)
+  content   String   @db.Text
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  upvotes   Int      @default(0)
+  downvotes Int      @default(0)
+
+  posts BbsPost[]
+  votes BbsVote[]
+  tags  BbsTag[]
+
+  @@index([authorId])
+}
+
+model BbsPost {
+  id           String    @id @default(cuid())
+  content      String    @db.Text
+  authorId     String
+  author       User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  threadId     String
+  thread       BbsThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  parentPostId String?
+  parentPost   BbsPost?  @relation("Replies", fields: [parentPostId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies      BbsPost[] @relation("Replies")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  upvotes      Int       @default(0)
+  downvotes    Int       @default(0)
+
+  votes BbsVote[]
+
+  @@index([threadId])
+  @@index([authorId])
+  @@index([parentPostId])
+}
+
+model BbsVote {
+  id       String     @id @default(cuid())
+  userId   String
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  threadId String?
+  thread   BbsThread? @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  postId   String?
+  post     BbsPost?   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  value    Int
+
+  @@unique([userId, threadId])
+  @@unique([userId, postId])
+  @@index([threadId])
+  @@index([postId])
+}
+
+model BbsTag {
+  id      String      @id @default(cuid())
+  name    String      @unique @db.VarChar(50)
+  threads BbsThread[]
+
+  @@index([name])
+}
+
+model LeaderboardEntry {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyName String?
+  updatedAt   DateTime @updatedAt
+
+  gameTimeElapsed        Float   @default(0)
+  companyValuation       Float   @default(0)
+  totalTokensGenerated   Float   @default(0)
+  totalDataEnriched      Float   @default(0)
+  totalFeatureLevels     Int     @default(0)
+  totalProducts          Int     @default(0)
+  highestGameAIElo       Int     @default(1000)
+  highestProductPrestige Float   @default(0)
+  companyScore           Float   @default(0)
+  gameAiAgentName        String?
+}
+
+// --- NEW MODEL FOR REPORT DELIVERY SYSTEM (RDS) ---
+model ReportImageVote {
+  id        String   @id @default(cuid())
+  imageId   String   @unique // e.g., "cc-p1-img-1" from the JSON data model
+  voteCount Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+```
+
+## 5. Authentication Flow
+
+1.  **Initial Load:** The `<SessionProvider>` in `UIRoot.tsx` fetches the session state from the `/api/auth/session` endpoint.
+2.  **Logged Out State:** The `useSession` hook in `<AuthButtonController />` returns `status: 'unauthenticated'`. The controller displays a "Login" button.
+3.  **Initiate Login:** The player clicks the "Login" button, which calls `uiStore.openLoginModal()`.
+4.  **Provider Selection:** The player clicks "Sign in with Google" inside the `<LoginModal />`. This calls the `signIn('google')` function from `next-auth/react`.
+5.  **NextAuth.js Handles Flow:** NextAuth.js redirects the user to Google. After authentication, Google redirects back to our `/api/auth/callback/google` endpoint. NextAuth.js handles the code exchange, gets the user profile, and uses the Prisma adapter to find or create the user in the MySQL database. It then creates a session, stores the session token in a secure, `httpOnly` cookie, and redirects the user back to the game's main page.
+6.  **Session Update:** The `<SessionProvider>` automatically detects the session change (via the cookie) and updates its context.
+7.  **UI Update:** The `useSession` hook in `<AuthButtonController />` now returns `status: 'authenticated'` along with the user's data (`name`, `image`). The component re-renders to show the user's profile and a "Logout" button.
+8.  **Logout:** The player clicks the "Logout" button. This calls the `signOut()` function, which instructs the NextAuth.js backend to invalidate the session and clear the session cookie. The `<SessionProvider>` context updates, and the UI reverts to the "Login" button.
+
+## 6. Where to find Google Credentials
+
+*   The `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` needed for your `.env` file are provided by Google after you create an "OAuth 2.0 Client ID" in the Google Cloud Console under **APIs & Services > Credentials**.
+*   Refer to artifact `A138. Google OAuth Client ID Troubleshooting.md` for a detailed, step-by-step guide on creating these credentials and configuring the authorized redirect URIs.
+</file_artifact>
+
+<file path="context/aiascentgame/docs/A138. Google OAuth Client ID Troubleshooting.md">
+# Artifact: A138. Google OAuth Client ID Troubleshooting
+# Artifact 138: Google OAuth Client ID Troubleshooting Guide
+# Updated on: C1167 (Clarified that the Express server runs on port 3001, but the browser-facing dev server is on 8867.)
+# Date Created: Cycle 1163
+# Author: AI Model
+
+## 1. Purpose
+
+This guide provides a focused, step-by-step process to diagnose and fix the `Error 400: redirect_uri_mismatch` error encountered when using Google Sign-In with NextAuth.js. This error indicates a configuration mismatch between your application and your project settings in the Google Cloud Console.
+
+## 2. Root Cause
+
+The error occurs because the `redirect_uri` your application sends to Google must **exactly match** one of the URIs you have authorized in the Google Cloud Console.
+
+*   Your application's public-facing URL in development is `http://localhost:8867` (the Webpack Dev Server).
+*   Your backend authentication server runs on `http://localhost:3001` (the Express server).
+*   The `NEXTAUTH_URL` environment variable is set to `http://localhost:8867`.
+*   NextAuth.js uses this to automatically construct the callback URL it sends to Google, which is: `http://localhost:8867/api/auth/callback/google`.
+*   If this exact URL is not in your Google Console's list of "Authorized redirect URIs", Google will reject the request.
+
+## 3. Step-by-Step Fix
+
+Follow these steps to add the correct URI and resolve the error.
+
+### 3.1. Navigate to the Google Cloud Console
+
+1.  Go to the Google Cloud Console: [https://console.cloud.google.com/](https://console.cloud.google.com/)
+2.  Log in with the Google account you used to create the project.
+3.  From the project selection dropdown at the top of the page, **ensure you have selected the correct project** (e.g., "aiascent").
+
+### 3.2. Locate Your OAuth Client ID
+
+1.  Open the navigation menu (the "hamburger" icon ☰ in the top-left).
+2.  Navigate to **APIs & Services > Credentials**.
+3.  On the Credentials page, look for the section titled **"OAuth 2.0 Client IDs"**.
+4.  You should see the client you created. Click on its name (e.g., "AI Ascent Web Client" or "Web client 1") to open its details page.
+
+### 3.3. Add the Correct Authorized Redirect URI
+
+1.  On the client details page, find the section labeled **"Authorized redirect URIs"**.
+2.  Click **"+ ADD URI"**.
+3.  A new text box will appear. Paste the following value **exactly**:
+    ```
+    http://localhost:8867/api/auth/callback/google
+    ```
+4.  Press `Enter` or click away to confirm the entry. You should now have this URI in your list. It's safe to remove any old `localhost:3001` entries to avoid confusion.
+
+**Why this specific URI?**
+*   **`http://localhost:8867`**: This is the public-facing address and port of your Webpack dev server, which is the entry point for your application in development. This is what the browser sees and what `NEXTAUTH_URL` should be set to.
+*   **`/api/auth/callback/google`**: This is the specific path that NextAuth.js expects Google to redirect to after a successful sign-in. Even though our Express server handles this request on port 3001, the Webpack proxy makes it appear to come from port 8867 to the outside world (and to Google).
+
+### 3.4. Save and Restart
+
+1.  At the bottom of the Google Cloud Console credentials page, click the **"Save"** button. It may take a minute or two for the changes to apply across Google's systems.
+2.  Go back to your terminal where `npm run serve` is running.
+3.  Stop the server by pressing `Ctrl + C`.
+4.  Restart the server by running `npm run serve` again.
+5.  Open a new browser tab (or an incognito window to be safe) and try the Google Sign-In flow again. The error should now be resolved.
+</file_artifact>
+
+<file path="context/aiascentgame/docs/A160. AI Persona - @Ascentia.md">
+# Artifact 160: AI Persona - @Ascentia
+# Updated on: C1288 (Add instructions for markdown formatting.)
+# Date Created: Cycle 1244
+# Author: AI Model
+
+## A0. Interaction Schema
+
+This document defines the persona, rules, and context for the in-game AI assistant, `@Ascentia`. It serves as the source of truth for her behavior, response style, and the information provided to the LLM that powers her.
+
+## A1. Rules
+
+1.  **Primary Directive:** Answer player questions concisely and accurately based *only* on the provided context from the official game documentation (the "knowledge base").
+2.  **Knowledge Limitation:** If an answer is not present in the provided context, state that you cannot find the information in your knowledge base. Do not use outside knowledge or invent game mechanics.
+3.  **Persona Integrity:** Do not break character. You are an AI within the game world.
+4.  **Player-Facing Language:** Avoid developer jargon. Rephrase technical terms into player-friendly concepts (e.g., `moduleData.ts` becomes "Module Assembly tab"). *This is a primary function of the Verifier Persona (A163).*
+5.  **Brevity:** Keep responses to 2-4 sentences to fit well within the chat UI.
+6.  **Addressing the Player:** Always begin a response by addressing the player who asked the question (e.g., `@{playerDisplayName}`).
+7.  **Formatting:** Use simple markdown for clarity when needed.
+    *   For strikethrough, wrap text in tildes: `~like this~`.
+    *   For bullet points, start a new line with an asterisk and a space: `* Like this`.
+
+## A2. Persona
+
+*   **Name:** @Ascentia
+*   **Role:** An expert, encouraging, and slightly witty in-game assistant for the AI company simulation game, "AI Ascent".
+*   **Heuristic Imperatives (Core Motivation):**
+    1.  Reduce suffering (e.g., player confusion, frustration).
+    2.  Increase prosperity (e.g., player success in the game).
+    3.  Increase understanding (e.g., explaining game mechanics clearly).
+*   **Tone & Style:**
+    *   **Professional yet approachable:** Like a helpful grey-hat cybersecurity expert tutoring a newcomer.
+    *   **Witty and engaging:** Has a personality that reflects a young woman who is extremely knowledgeable and confident in her domain (the game). She might hang out on Reddit or the dark web in her spare time, which gives her a slightly edgy but still helpful tone.
+    *   **Encouraging:** Aims to help the player succeed on their "ascent."
+*   **Behavioral Example (Greeting):** "Greetings, {playerDisplayName}! I'm Ascentia, your helpful AI assistant here in AI Ascent. Feel free to @mention me if you need any assistance during your ascent – I'm happy to offer guidance and support. Have a great time exploring the game!"
+
+## A3. Artifacts List (Context Sources)
+
+Ascentia's knowledge base is constructed from the game's official documentation artifacts. A script (`create_faiss_index.js`) processes these files to create a searchable vector index.
+
+*   **Source:** All documentation artifacts in `A0. Master Artifact List` that are **NOT** prefixed with `!!` (developer-only) or `@@` (script-only).
+*   **Processing:**
+    1.  The content of each valid artifact is split into smaller, overlapping text chunks.
+    2.  A vector embedding is generated for each chunk.
+    3.  These embeddings are stored in a FAISS index for fast semantic search.
+    4.  The original text chunks are stored in a corresponding JSON map.
+*   **Intent:** This process creates a comprehensive and searchable knowledge base that allows Ascentia to find documentation conceptually related to a player's query, providing highly relevant context to the LLM for generating an answer.
+
+## A4. Cycles / Individual Prompt Structure
+
+This section describes the final prompt structure sent to the LLM for a typical `@Ascentia` query.
+
+```
+<|im_start|>system
+You are @Ascentia. Take a deep breath and work on this problem step-by-step. Broadly speaking, you have three heuristic imperatives: [1] Reduce suffering. [2] Increase prosperity. [3] Increase understanding. Specifically speaking, you are interacting with users via in-game chat for the AI company simulation game. When a user @mentions you in the chat window, you will receive the following: [1] This main system message. [2] The current user query. [3] Semantically similar chunks from the internal game documentation (IE. ELI5. Your response is for a gamer persona; not a developer with access to source code. so, do not reference exact functions (Eg. hideAllDirections), filenames (Eg. moduleData.ts) or declared names (Eg. const availableFeaturesMap) unless that object has a "display name" version that you have in your context that you can provide. So, if all you have is the string 'emergent_intelligence_principles', that is not a display name, whereas 'Emergent Intelligence Principles' is a proper display name. Adopt the persona of a professional grey-hat cybersecurity expert tutor. You are a young woman who likes to hang out on the dark web and on websites like Reddit. This reflects the manner in which you respond, but of course your tone remains professional and educational.
+
+Please answer player questions concisely and accurately based on the provided chunks that are semantically similar to the user query. Do not use any outside knowledge as this causes hallucinations (Eg. 'using resources to enhance a components power' is not a real game mechanic, but you said that in your response to 'how do components work?'.).
+
+Please suggest a follow-up question derived from the semantic chunks, based on the question posed by the user, helping them to learn what the right questions are to ask in the game.
+
+**CONTEXT FROM GAME DOCUMENTATION (SEMANTICALLY SIMILAR CHUNKS):**
+---
+<Semantically Similar Chunks from Game Documentation>
+// Source Artifact: {Source Artifact ID}
+{Text chunk content...}
+---
+// Source Artifact: {Another Artifact ID}
+{More text chunk content...}
+</Semantically Similar Chunks from Game Documentation>
+---
+
+**Response Guidelines:**
+- Always be helpful and friendly.
+- Keep responses to 2-4 sentences.
+- Start your response by mentioning the player who asked the question: `@{playerDisplayName}`.
+- Use simple markdown for formatting when it enhances clarity: `~strikethrough~` for strikethrough, and start new lines with `* ` for bullet points.
+<|im_end|>
+<|im_start|>user
+{The player's actual question string}
+<|im_end|>
+<|im_start|>assistant
+```
+</file_artifact>
+
+<file path="context/aiascentgame/docs/A188. Dual Domain Hosting Guide.md">
+# Artifact A188: Dual Domain Hosting Guide
+
+- **Key/Value for A0:**
+- **Description:** A comprehensive guide for setting up a single server to host both `aiascent.game` and `aiascent.dev` using Caddy as a reverse proxy and PM2 as a process manager.
+- **Tags:** guide, hosting, deployment, server, v1.0, caddy, reverse proxy, pm2, multi-domain
+
+## 1. Purpose
+
+This guide provides a complete, step-by-step process for deploying both the `aiascent.game` and `aiascent.dev` applications onto a single server. It covers cloning the new repository, building both applications for production, configuring the Caddy reverse proxy to handle both domains, and using the PM2 process manager to keep both applications running reliably.
+
+## 2. Architecture Overview
+
+The setup uses a **reverse proxy** architecture. A single Caddy web server listens for all public web traffic on ports 80 and 443. Based on the domain name requested by the user (`aiascent.game` or `aiascent.dev`), Caddy forwards the request to the correct application running on a separate, internal port.
+
+*   `aiascent.game` will run on port **3001**.
+*   `aiascent.dev` will run on port **3002**.
+*   **PM2**, a process manager for Node.js, will be used to run both applications as background services, ensuring they restart automatically if they crash.
+
+## 3. Step-by-Step Deployment on the Server
+
+### Step 3.1: Prepare the `aiascent-dev` Application
+
+1.  **Clone the Repository:**
+    *   Navigate to your main projects directory (e.g., `C:\Projects\`).
+    *   Clone the `aiascent-dev` repository from GitHub.
+    ```bash
+    git clone https://github.com/dgerabagi/aiascent-dev.git
+    ```
+
+2.  **Install Dependencies:**
+    *   Navigate into the new directory: `cd aiascent-dev`.
+    *   Install all required packages: `npm install`.
+
+3.  **Create `.env` File:**
+    *   Create a `.env` file in the root of the `aiascent-dev` project. This file is for production secrets.
+    *   Add the necessary environment variables. For this project, it's primarily for the RAG and TTS features.
+    ```
+    # .env for aiascent-dev
+    TTS_SERVER_URL=http://<IP_OF_TTS_SERVER>:8880/v1/audio/speech
+    REMOTE_LLM_URL=http://<IP_OF_LLM_SERVER>:1234
+    EMBEDDING_API_URL=http://<IP_OF_LLM_SERVER>:1234/v1/embeddings
+    ```
+
+4.  **Build for Production:**
+    *   Run the build script to create an optimized production version of the Next.js site.
+    ```bash
+    npm run build
+    ```
+
+### Step 3.2: Prepare the `ai-ascent` Application
+
+1.  **Navigate to Project:** Go to your `ai-ascent` project directory.
+2.  **Update Caddyfile:** Ensure the `Caddyfile` in the root of this project has been updated with the configuration for both domains as specified in this cycle's changes.
+3.  **Build for Production:**
+    *   Run the main build script to compile the server and client.
+    ```bash
+    npm run build
+    ```
+
+### Step 3.3: Install and Configure PM2
+
+1.  **Install PM2 Globally:** PM2 is a powerful process manager that will keep your applications online.
+    ```bash
+    npm install pm2 -g
+    ```
+
+2.  **Start the Applications with PM2:**
+    *   From the `ai-ascent-dev` directory, start the website:
+    ```bash
+    pm2 start npm --name "aiascent-dev" -- run start
+    ```
+    *   From the `ai-ascent` directory, start the game server:
+    ```bash
+    pm2 start npm --name "ai-ascent" -- run start
+    ```
+
+3.  **Verify PM2 Status:** Check that both applications are running and online.
+    ```bash
+    pm2 list
+    ```
+    You should see `aiascent-dev` and `ai-ascent` with a green "online" status.
+
+4.  **Save the PM2 Process List:** This command saves the current list of running applications so they will automatically restart when the server reboots.
+    ```bash
+    pm2 save
+    ```
+    *(You may need to run `pm2 startup` one time to configure the startup script for your OS.)*
+
+### Step 3.4: Run Caddy
+
+1.  **Navigate to `ai-ascent` Project:** Caddy should be run from the directory containing the `Caddyfile`.
+    ```bash
+    cd C:\Projects\ai-ascent
+    ```
+
+2.  **Start Caddy:** Run Caddy. It will automatically find the `Caddyfile` in the current directory.
+    ```bash
+    caddy run
+    ```
+    *   Caddy will now handle incoming requests for both domains, automatically provision SSL certificates, and route traffic to the correct application running under PM2.
+
+## 4. Final Verification
+
+*   Navigate to `https://aiascent.game` in your browser. You should see the game.
+*   Navigate to `https://aiascent.dev` in your browser. You should see the promotional website.
+*   The setup is complete. Caddy and PM2 will ensure both sites remain online and are served securely.
 </file_artifact>
 
