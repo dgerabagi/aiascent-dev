@@ -17,14 +17,14 @@ return (
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-4">
-            {/* Headline (A16, 4.2) */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 font-sans font-bold mb-8">
-                Master the Human-AI Workflow
+            {/* Headline (A16, 4.2) - C106: Added pb-4 for padding */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 font-sans font-bold mb-8 pb-4">
+                Vibe Code for Free. Ship Real Projects.
             </h1>
             
-            {/* Subheadline (A16, 4.2) */}
+            {/* Subheadline (A16, 4.2) - C106: Rewritten to be more inclusive */}
             <p className="text-lg md:text-xl text-neutral-300 max-w-4xl text-center mb-12">
-                The Data Curation Environment (DCE) is the essential VS Code extension for developers who want to move beyond prompt-and-pray. Curate context with precision, test AI solutions rapidly, and build complex systems with confidence.
+                The future of all knowledge work—from law and architecture to software development—is curating data for AI. The Data Curation Environment (DCE) is the essential VS Code extension for the emerging class of 'Citizen Architects,' empowering you to build complex, AI-driven projects with precision and confidence.
             </p>
 
             {/* CTAs (A16, 4.2) */}

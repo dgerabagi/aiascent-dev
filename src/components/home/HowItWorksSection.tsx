@@ -1,3 +1,4 @@
+'use client';
 // src/components/home/HowItWorksSection.tsx
 import React from 'react';
 import { FaBoxes, FaGoogle, FaRocket } from 'react-icons/fa';

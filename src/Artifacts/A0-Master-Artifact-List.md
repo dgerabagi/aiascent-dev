@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C105 (Update A102 description)
+# Updated on: C106 (Add A103)
 
 ## 1. Purpose
 
@@ -43,8 +43,8 @@ This file serves as the definitive, parseable list of all documentation artifact
   - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
 
 ### A102. aiascent.dev - Homepage Hero Section Revamp Plan
-- **Description:** A plan to revamp the homepage hero section by replacing the animated component with a more direct, impactful 'splash image' design to better showcase the 'Citizen Architect' brand.
-- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts, redesign
+- **Description:** A plan to revamp the homepage hero section to better communicate the core value proposition of the Data Curation Environment (DCE), focusing on the "vibe code for free" message and introducing new, more aspirational imagery.
+- **Tags:** page design, home page, hero section, plan, marketing, content, image prompts
 
 ## II. Technical Architecture & Implementation
 
@@ -204,6 +204,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** A plan for a new section on the `/dce` page explaining how generating documentation artifacts is a core feature of the DCE workflow, establishing them as the project's "source of truth."
   - **Tags:** page design, dce, features, plan, source of truth, documentation, artifacts
+
+### A103. aiascent.dev - How It Works Section Image Prompts
+- **Description:** Provides a set of new, detailed image prompts for the three core feature sections on the homepage, designed to align with the new "Citizen Architect" aesthetic.
+- **Tags:** page design, home page, image prompts, marketing, content, aesthetic
 
 ## IV. Process & Workflow
 

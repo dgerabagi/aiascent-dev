@@ -1,85 +1,64 @@
+
 'use client';
 // src/components/home/FeaturesSection.tsx
-// C54 - Add audio play buttons
-// C11 - Add light mode variants
+// C106: Refactored to use MissionSectionBlock for large images instead of icons.
 import React from 'react';
-import Image from 'next/image';
-import { useReportState, useReportStore } from '@/stores/reportStore';
-import { FaPlay, FaPause, FaSpinner } from 'react-icons/fa';
+import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 
 const features = [
-{
-title: "Precision Context Curation",
-description: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
-icon: "/assets/icons/context-curation.webp",
-},
-{
-title: "Parallel Co-Pilot & Rapid Testing",
-description: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
-icon: "/assets/icons/parallel-copilot.webp",
-},
-{
-title: "Iterative Knowledge Graph",
-description: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
-icon: "/assets/icons/iterative-workflow.webp",
-},
+    {
+        title: "Precision Context Curation",
+        tldr: "Stop manual copy-pasting. DCE provides an intuitive, visual way to select and manage the exact files needed for your AI prompts directly within VS Code.",
+        content: "The foundation of a high-quality AI response is high-quality context. The DCE eliminates the error-prone process of manually managing file lists or copy-pasting code into a prompt. With the integrated File Tree View, you can browse your entire workspace and select the precise 'source of truth' for your task with simple checkboxes. This curated selection is then automatically flattened into a single context file, ensuring the AI has exactly what it needs, and nothing it doesn't.",
+        imagePath: 'how-it-works/',
+        imagePrompt: 'A hyper-realistic, cinematic image of a Citizen Architect interacting with a holographic file management interface. They are using simple checkboxes to select various file types (PDF, code, spreadsheets). A clean, precise beam of light, representing the curated context, flows from the selected files towards a destination labeled "Precision In, Perfection Out: The Art of Curation." The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style.',
+        images: ['curation.webp'],
+        imageSide: 'left',
+    },
+    {
+        title: "Parallel Co-Pilot & Rapid Testing",
+        tldr: "Don't rely on a single AI response. Compare multiple solutions side-by-side and use the Git-integrated testing workflow to safely audition code changes in seconds.",
+        content: "AI models are non-deterministic. A single prompt can yield multiple, viable solutions. The Parallel Co-Pilot Panel is designed for this reality. Paste in several responses from your AI, and the DCE will parse them into separate tabs. You can instantly compare the proposed changes for each file and use the built-in diff viewer to understand the nuances of each solution before deciding which one to accept.",
+        imagePath: 'how-it-works/',
+        imagePrompt: 'A hyper-realistic, cinematic image of a Citizen Architect standing before a large, futuristic touch-screen panel labeled "DCE\'s Parallel Co-Pilot Panel." The panel displays three different AI-generated solutions (A, B, C) side-by-side with an "Integrated Diff Viewer" highlighting the changes. The operator is comparing the solutions before committing, illustrating a "Rapid, Low-Risk Iteration Loop." The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style.',
+        images: ['parallel-copilot.webp'],
+        imageSide: 'right',
+    },
+    {
+        title: "Iterative Knowledge Graph",
+        tldr: "AI collaboration shouldn't be ephemeral. DCE captures the entire development process—prompts, responses, and decisions—as an iterative, auditable knowledge graph.",
+        content: "Every development cycle in the DCE is saved, creating a persistent knowledge graph of your project's evolution. The Cycle History view allows you to step back in time, review the exact context used for a previous prompt, see all the AI responses that were generated, and understand why a particular solution was chosen. This turns your development process into a valuable, shareable asset for training, onboarding, and after-action reviews.",
+        imagePath: 'how-it-works/',
+        imagePrompt: 'A hyper-realistic, cinematic image of a Citizen Architect standing in a vast, modern library-like space, representing "The Architecture of Institutional Memory." They are interacting with a "Cycle Navigator" to explore a massive, glowing "Persistent Knowledge Graph." Each node in the graph is a "CAPTURED CYCLE" containing the curated context, user intent, and AI solutions for a step in the project\'s history. The aesthetic is futuristic, clean, and aligned with the "Citizen Architect" style.',
+        images: ['knowledge-graph.webp'],
+        imageSide: 'left',
+    },
 ];
 
 const FeaturesSection = () => {
-    const { playArbitraryText } = useReportStore.getState();
-    const { genericPlaybackStatus, genericAudioText } = useReportState(state => ({
-        genericPlaybackStatus: state.genericPlaybackStatus,
-        genericAudioText: state.genericAudioText,
-    }));
-
-return (
-<section className="py-20 md:py-32 bg-background">
-<div className="container mx-auto px-4">
-<h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 light:from-black light:to-neutral-700 pb-4">
-Stop Fighting Your Tools. Start Building the Future.
-</h2>
-
-    <div className="flex flex-col gap-24">
-      {features.map((feature, index) => {
-        const isPlayingThis = genericPlaybackStatus === 'playing' && genericAudioText === feature.description;
-        const isGeneratingThis = genericPlaybackStatus === 'generating' && genericAudioText === feature.description;
-
-        return (
-        <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-          {/* Image Container */}
-          <div className="md:w-1/2 w-full p-4 border border-neutral-800 light:border-neutral-200 rounded-2xl bg-neutral-950/50 light:bg-neutral-100/50 shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
-            <div className="relative aspect-video rounded-lg overflow-hidden">
-                <Image 
-                    src={feature.icon} 
-                    alt={feature.title} 
-                    fill
-                    className='transition-transform duration-500 hover:scale-105 object-cover'
-                />
+    return (
+        <section className="py-20 md:py-32 bg-background">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 light:from-black light:to-neutral-700 pb-4">
+                    Stop Fighting Your Tools. Start Building the Future.
+                </h2>
+                <div className="space-y-20">
+                    {features.map((feature, index) => (
+                        <MissionSectionBlock
+                            key={index}
+                            title={feature.title}
+                            tldr={feature.tldr}
+                            content={feature.content}
+                            imageSide={feature.imageSide as 'left' | 'right'}
+                            imagePath={feature.imagePath}
+                            imagePrompt={feature.imagePrompt}
+                            images={feature.images}
+                        />
+                    ))}
+                </div>
             </div>
-          </div>
-          {/* Text Content */}
-          <div className="md:w-1/2 w-full">
-            <div className="flex items-center gap-4 mb-4">
-                <h3 className="text-3xl font-bold text-white light:text-black">{feature.title}</h3>
-                <button
-                    onClick={() => playArbitraryText(feature.description)}
-                    className="p-2 border rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                    title={isPlayingThis ? "Pause narration" : "Play narration"}
-                    disabled={isGeneratingThis}
-                >
-                    {isGeneratingThis ? <FaSpinner className="animate-spin" /> : (isPlayingThis ? <FaPause /> : <FaPlay />)}
-                </button>
-            </div>
-            <p className="text-lg text-neutral-400 light:text-neutral-600">
-              {feature.description}
-            </p>
-          </div>
-        </div>
-      )})}
-    </div>
-  </div>
-</section>
-);
+        </section>
+    );
 };
 
 export default FeaturesSection;
