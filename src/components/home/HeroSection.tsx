@@ -24,7 +24,7 @@ return (
             
             {/* Subheadline (A16, 4.2) - C106: Rewritten to be more inclusive */}
             <p className="text-lg md:text-xl text-neutral-300 max-w-4xl text-center mb-12">
-                The future of all knowledge work—from law and architecture to software development—is curating data for AI. The Data Curation Environment (DCE) is the essential VS Code extension for the emerging class of 'Citizen Architects,' empowering you to build complex, AI-driven projects with precision and confidence.
+                The future of all knowledge work—from law and architecture to software development—is curating data for AI. The Data Curation Environment (DCE) is the essential VS Code extension for the emerging class of &lsquo;Citizen Architects,&rsquo; empowering you to build complex, AI-driven projects with precision and confidence.
             </p>
 
             {/* CTAs (A16, 4.2) */}
