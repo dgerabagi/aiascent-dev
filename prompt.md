@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 111 - review/revise
+Current Cycle 112 - final revisions
+Cycle 111 - review/revise
 Cycle 110 - get me in to GWU
 Cycle 109 - GWU application
 Cycle 108 - align artifacts with feedback from images
@@ -833,6 +834,36 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 112>
+<Cycle Context>
+okay ive selected the ones i like the most. now for one final review. i still take issue with your lack of specificity. you state that my work in the Data Curation Environment as if the professor would just know what that is. this is the email in which we present the case. does that clear and unambigious distinction between meaningless language and tangible evidence-based explanations?
+
+for example, i explained about my colleague in OFFENSIVE CYBER OPERATIONS. thats probably the most grand proof of my point here, yet you have yet to make such a clear cut case in any of the emails, why is that not making it in? are you reviewing the context ive provided you in /personal?
+
+you literally have the entire context of the ai-ascent website yet you arent linking them to it? bro? have it help make your case? wtf
+</Cycle Context>
+<Previous Cycle 111 Summary of Actions>
+This is a deeply personal and high-stakes request. My course of action is to meticulously analyze all provided personal context—the voice recording, the dossiers on the four professors, and the collection of emails—to construct four distinct, persuasive, and bespoke appeal letters.
+
+The core strategy, derived from my analysis of the provided dossiers, will not be a simple appeal of the PhD rejection. Instead, it will be a sophisticated, multi-pronged approach:
+
+1.  **For Professors Sarkani, Mazzuchi, and Blackford:** I will frame the communication as a petition for *programmatic re-alignment*. I will argue that your practitioner-focused profile was a fundamental mismatch for a theoretical PhD in Computer Science but is a perfect fit for the **Doctor of Engineering (D.Eng.)** program that they oversee. This shows deep research and provides them with a procedural path to help you.
+2.  **For Professor Etemadi:** The appeal will be framed as an inquiry from a potential research collaborator. I will highlight the direct overlap between your professional experience in cybersecurity at Palo Alto Networks/NSA and his emerging research in cyber-attack detection on critical infrastructure.
+3.  **Unified Narrative:** All four letters will weave together the powerful personal narrative from your recording: your non-traditional path, your passion for AI, your proven ability to master complex subjects at an accelerated pace (B.S. in 6 months, M.S. in 3 months), and your vision for the Data Curation Environment (DCE) as a new paradigm in Human-Computer Interaction.
+4.  **Tactical Execution:** Each email will be crafted to resonate with the specific professor's background, research, and administrative role, using the precise "connecting stories" identified in the dossiers. They will be professional, respectful, and position you not as a rejected student, but as a high-value potential colleague and a strategic asset to GWU's engineering programs.
+
+I will now generate the four distinct appeal letters as artifacts.
+
+1.  **Analyze Personal Context:** I will thoroughly review `My recording 18.wav.txt` and `personal_flattened-repo.md` to extract key narrative points, your professional accomplishments, your passion for AI, and the core concepts behind your Data Curation Environment (DCE).
+2.  **Synthesize Dossier Strategies:** I will synthesize the detailed OSINT analysis from `Appeal-Blackford.md`, `Appeal-Etemadi.md`, `Appeal-Mazzuchi.md`, and `Appeal-Sarkani.md` to create a unique "connecting story" for each professor.
+3.  **Draft Email for Dr. Shahram Sarkani:** I will write an email that frames you as a peer-level expert in his niche research area (NSA's CSfC framework) and appeals to his documented philosophy of providing a "level playing field" for driven, non-traditional professionals. I will recommend CC'ing Dr. Mazzuchi.
+4.  **Draft Email for Dr. Thomas A. Mazzuchi:** I will draft an email that highlights the perfect fit between your practitioner profile and the D.Eng. program he co-directs. I will connect your background to his research in applied AI for cybersecurity and his stated mission to empower working professionals. I will recommend CC'ing Dr. Sarkani.
+5.  **Draft Email for Dr. J.P. Blackford:** I will compose an email that directly petitions for a "programmatic re-alignment" to the D.Eng. program. I will appeal to his own background as a D.Eng. graduate and his focus on innovation and hands-on experience, framing you as the ideal candidate for a practitioner's doctorate.
+6.  **Draft Email for Dr. Amir Etemadi:** I will write an email framed as a research inquiry. I will connect your high-level cybersecurity expertise to his recent work on cyber-attack detection and the security of critical infrastructure, positioning you as a potential research collaborator with valuable real-world data and insights.
+7.  **Standardize and Finalize:** I will ensure all four emails are professional, respectful, CC Maria Hoang as requested, and include a clear "ask" for a brief conversation or an opportunity to demonstrate the DCE. I will create these as four separate artifacts for your review.
+</Previous Cycle 111 Summary of Actions>
+</Cycle 112>
 
 <Cycle 111>
 <Cycle Context>
@@ -5070,10 +5101,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-10T13:58:01.597Z
+  Date Generated: 2025-11-10T14:24:18.298Z
   ---
   Total Files: 201
-  Approx. Tokens: 615920
+  Approx. Tokens: 616389
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -5286,10 +5317,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 195. context\personal\My recording 18.wav.txt - Lines: 166 - Chars: 29108 - Tokens: 7277
 196. context\personal\personal_flattened-repo.md - Lines: 4147 - Chars: 356477 - Tokens: 89120
 197. context\personal\dgerabagi_resume.md - Lines: 90 - Chars: 7480 - Tokens: 1870
-198. src\Artifacts\A111 - GWU Appeal Letter - Sarkani.md - Lines: 27 - Chars: 2686 - Tokens: 672
-199. src\Artifacts\A112 - GWU Appeal Letter - Mazzuchi.md - Lines: 27 - Chars: 2762 - Tokens: 691
-200. src\Artifacts\A113 - GWU Appeal Letter - Blackford.md - Lines: 27 - Chars: 2364 - Tokens: 591
-201. src\Artifacts\A114 - GWU Appeal Letter - Etemadi.md - Lines: 25 - Chars: 2316 - Tokens: 579
+198. src\Artifacts\A111 - GWU Appeal Letter - Sarkani.md - Lines: 32 - Chars: 3482 - Tokens: 871
+199. src\Artifacts\A112 - GWU Appeal Letter - Mazzuchi.md - Lines: 30 - Chars: 3135 - Tokens: 784
+200. src\Artifacts\A113 - GWU Appeal Letter - Blackford.md - Lines: 30 - Chars: 2739 - Tokens: 685
+201. src\Artifacts\A114 - GWU Appeal Letter - Etemadi.md - Lines: 30 - Chars: 2645 - Tokens: 662
 
 <file path="context/aiascentgame/scripts/convert_images_to_webp.js.md">
 #!/usr/bin/env node
@@ -37386,10 +37417,13 @@ Google (via Cynet Systems) | Mountain View, CA
 
 <file path="src/Artifacts/A111 - GWU Appeal Letter - Sarkani.md">
 # Artifact A111: GWU Appeal Letter - Sarkani
+# Date Created: C110
+# Author: AI Model & Curator
+# Updated on: C111 (Revised to be AI-centric and incorporate the 'Star Trek future' vision)
 
 - **Key/Value for A0:**
-- **Description:** A bespoke appeal letter drafted for Professor Shahram Sarkani, Director of GW Online Engineering, leveraging his research on the NSA CSfC framework.
-- **Tags:** appeal, gwu, sarkani, nsa, csfc, d.eng
+- **Description:** A revised, bespoke appeal letter drafted for Professor Shahram Sarkani, Director of GW Online Engineering. This version shifts the focus from cybersecurity to a passionate, AI-driven vision for building next-generation systems.
+- **Tags:** appeal, gwu, sarkani, nsa, csfc, d.eng, ai, cognitive capital
 
 **To:** sarkani@gwu.edu  
 **Cc:** mazzu@gwu.edu, maria.hoang@gwu.edu  
@@ -37397,17 +37431,19 @@ Google (via Cynet Systems) | Mountain View, CA
 
 Dear Professor Sarkani,
 
-I am writing to you directly, with the utmost respect for the SEAS admissions policy, as my inquiry is not a standard request for reconsideration but a strategic inquiry regarding a direct synthesis of your personal research and your leadership of the D.Eng. in AI & Machine Learning program.
+I am writing to you directly, with the utmost respect for the SEAS admissions policy, as my inquiry is not a standard request for reconsideration but rather a strategic inquiry regarding a direct synthesis of your personal research and your leadership of the D.Eng. in AI & Machine Learning program.
 
 My professional background is as a subject matter expert in high-assurance cybersecurity for national security clients (NSA/UKI) and as an SME at Palo Alto Networks. I recently read your and Dr. Mazzuchi's 2017 paper, "An Architecture for Agile Systems Engineering of Secure Commercial Off‐the‐Shelf Mobile Communications," and your related work on the NSA CSfC framework.
 
-I have spent the last several years as a practitioner implementing the very COTS/RMF architecture you and your team have researched. My entire purpose in applying for a doctorate at GWU was to develop a praxis research project focused on applying generative AI models to solve the "agile systems" and "rapid integration" problems that you yourself identified in that work.
+I have spent the last several years as a practitioner *implementing* the very COTS/RMF architecture you and your team have researched. My entire purpose in applying for a doctorate at GWU was to develop a praxis research project focused on applying generative AI models to solve the "agile systems" and "rapid integration" problems that you yourself identified in that work.
 
-I was recently informed that my application for the Ph.D. in AI was unsuccessful. I can only surmise that my non-traditional, practitioner-focused profile was misunderstood by a standard academic rubric. My "training" role, for example, is as a Subject Matter Expert in COTS architecture, and my "coding" experience is in applied generative AI model optimization and the creation of novel HCI frameworks like my Data Curation Environment.
+I was recently informed that my application was unsuccessful, and was concurrently offered admission to the Ph.D. in Cybersecurity, which I respectfully declined. This decision was not made lightly; it was a deliberate choice to pursue my true passion. While my work has been in cybersecurity, my goal has always been to move beyond it. My research is focused on developing the novel human-AI collaboration methodologies that will allow us to engineer systems so advanced that many of today's security challenges become obsolete. My mission is to help build the "Star Trek future"—a world of abundance where we have elevated our collective cognitive capital to solve grander challenges.
+
+To that end, I architected the Data Curation Environment (DCE), an AI-native framework for building complex systems. I believe my non-traditional, practitioner-focused profile may have been misunderstood. My work is not just about cybersecurity; it is about creating the foundational tools for the next generation of systems engineering.
 
 Your own story and your "Students First" philosophy of providing a "level playing field" for those with grit is what drew me to GWU. I believe I am exactly the type of industry-leading professional you built the D.Eng. program for. I am not asking for a special exception, but for a "level playing field" review of my profile, which I believe represents a strategic asset and potential research collaborator for your program.
 
-Would you be open to a brief, 15-minute conversation to discuss the alignment between my work and your research? I am confident I can demonstrate a level of passion, drive, and practical expertise that would be a credit to the D.Eng. program.
+Would you be open to a brief, 15-minute conversation to discuss this vision? I am confident I can demonstrate a level of passion and practical expertise that would be a credit to the D.Eng. program.
 
 Respectfully,
 
@@ -37416,26 +37452,29 @@ David Gerabagi
 
 <file path="src/Artifacts/A112 - GWU Appeal Letter - Mazzuchi.md">
 # Artifact A112: GWU Appeal Letter - Mazzuchi
+# Date Created: C110
+# Author: AI Model & Curator
+# Updated on: C111 (Revised to be AI-centric and incorporate the 'Star Trek future' vision)
 
 - **Key/Value for A0:**
-- **Description:** A bespoke appeal letter drafted for Professor Thomas A. Mazzuchi, Co-Director of GW Online Engineering, focusing on the D.Eng. program and shared research interests.
-- **Tags:** appeal, gwu, mazzuchi, d.eng, cybersecurity
+- **Description:** A revised, bespoke appeal letter drafted for Professor Thomas A. Mazzuchi, Co-Director of GW Online Engineering. This version reframes the applicant's work as a higher-level solution to systemic risk, driven by a passion for AI.
+- **Tags:** appeal, gwu, mazzuchi, d.eng, ai, systems engineering, cognitive capital
 
 **To:** mazzu@gwu.edu  
 **Cc:** sarkani@gwu.edu, maria.hoang@gwu.edu  
-**Subject:** Inquiry from an AI/Cybersecurity Professional (Palo Alto/NSA) Regarding D.Eng. in AI & Machine Learning
+**Subject:** Inquiry from an AI/Systems Practitioner (Palo Alto/NSA) Regarding D.Eng. in AI & Machine Learning
 
 Dear Professor Mazzuchi,
 
-I am writing to you in your capacity as both a Professor of Engineering Management and Systems Engineering and as the Co-Director of GW Engineering Online. I am an AI and cybersecurity professional, and my research into your work has revealed a powerful alignment that I hope you might provide some brief guidance on.
+I am writing to you in your capacity as both a Professor of Engineering Management and Systems Engineering and as the Co-Director of GW Engineering Online. I am an AI and systems practitioner, and my research into your work has revealed a powerful alignment that I hope you might provide some brief guidance on.
 
-My professional experience is centered at the intersection of complex systems, AI, and cybersecurity. In my roles at Palo Alto Networks and developing cybersecurity training for the NSA, my work has been the practical application of the very topics I see in your recent research—from "Mitigating Cybersecurity Risks in Grids" to "Deep learning Architectures for Network Intrusion Detection." As a professional who "trains" and productionalizes LLMs like Gemini, I was particularly drawn to your and Professor Sarkani's work on "MEETING THE NEEDS OF THE ARTIFICIAL INTELLIGENCE WORKFORCE."
+My professional experience is centered at the intersection of complex systems, AI, and cybersecurity risk. In my roles at Palo Alto Networks and developing training for the NSA, my work has been the practical application of the very topics I see in your recent research—from "Mitigating Cybersecurity Risks" to "Deep learning Architectures for Network Intrusion Detection."
 
-This brings me to my query. I am a driven practitioner, and I recently applied to and was rejected by the traditional Ph.D. in AI program in the Computer Science department. In retrospect, it is clear to me that my profile—which is focused on applied systems integration rather than foundational theory—was not the right fit for that program.
+This brings me to my query. I recently applied to the Ph.D. in AI program and was unsuccessful, though I was offered admission to the Ph.D. in Cybersecurity. I respectfully declined this offer because I believe focusing on cybersecurity alone addresses a symptom, not the root cause. My core passion and research interest lie in using AI to solve a higher-order problem: how do we fundamentally increase a society's "cognitive capital" to architect systems that are inherently more resilient and secure? My mission is to help build a "Star Trek future" of abundance, and I believe that starts by creating new paradigms for human-AI collaboration.
 
-However, my subsequent research led me to the EMSE department's strategic focus on "trustworthiness in artificial intelligence" and, more specifically, to the **Doctor of Engineering (D.Eng.) in AI & Machine Learning** that you and Professor Sarkani oversee. This practice-oriented doctorate for working professionals appears to be the "right fit" I was looking for.
+My work in creating the Data Curation Environment (DCE) is my first step in this direction. In retrospect, it is clear to me that my practitioner-focused profile was not the right fit for a traditional CS Ph.D. However, my research led me to the EMSE department's strategic focus on "trustworthiness in artificial intelligence" and, more specifically, to the **Doctor of Engineering (D.Eng.) in AI & Machine Learning** that you and Professor Sarkani oversee. This practice-oriented doctorate appears to be the "right fit" I was looking for.
 
-I was deeply struck by your and Professor Sarkani's stated mission to provide a "level playing field" for driven professionals to succeed. As someone who fits that profile, I am not asking to appeal a past decision. I am asking for 15 minutes of your guidance, as the Co-Director of this program, on how I might best prepare a future, successful application to the D.Eng. program—an environment where my practitioner background in AI and NSA-level cybersecurity risk would be an asset.
+I was deeply struck by your and Professor Sarkani's stated mission to provide a "level playing field" for driven professionals. I am not asking to appeal a past decision. I am asking for 15 minutes of your guidance, as the Co-Director of this program, on how a practitioner with a passionate, AI-driven vision for the future of systems engineering might find a home at GWU.
 
 Thank you for your time and for your leadership in building programs for working professionals.
 
@@ -37445,29 +37484,32 @@ David Gerabagi
 </file_artifact>
 
 <file path="src/Artifacts/A113 - GWU Appeal Letter - Blackford.md">
-# Artifact A113: GWU Appeal Letter - Blackford
+# Artifact A113: GWU Appeal Letter - Blackford (Revision 1)
+# Date Created: C110
+# Author: AI Model & Curator
+# Updated on: C111 (Incorporate feedback to be more direct, passionate, and clearly explain the AI-over-Cybersecurity focus)
 
 - **Key/Value for A0:**
-- **Description:** A bespoke appeal letter drafted for Professor J.P. Blackford, Doctoral Program Coordinator, focusing on a petition for programmatic re-alignment to the D.Eng. program.
-- **Tags:** appeal, gwu, blackford, d.eng, programmatic re-alignment
+- **Description:** A revised, bespoke appeal letter drafted for Professor J.P. Blackford, Doctoral Program Coordinator, focusing on a petition for programmatic re-alignment to the D.Eng. program with a more passionate, direct narrative.
+- **Tags:** appeal, gwu, blackford, d.eng, programmatic re-alignment, ai, cognitive capital
 
 **To:** jblackford@gwu.edu  
-**Cc:** maria.hoang@gwu.edu  
+**Cc:** maria.hoang@gwu.edu, sarkani@gwu.edu, mazzu@gwu.edu  
 **Subject:** Petition for Programmatic Re-evaluation – Application ID # [Your Application ID]
 
 Dear Professor Blackford,
 
-I am writing to you today not to challenge a decision, but to respectfully petition for a programmatic re-evaluation of my doctoral application. I was recently informed that my application for the Ph.D. in AI was not successful, a decision I respect. However, I believe my application may have been evaluated against a rubric for which my profile—that of a senior industry practitioner rather than a traditional academic—is an imperfect fit.
+I am writing to you today not to challenge a decision, but to respectfully petition for a programmatic re-evaluation of my doctoral application. I was recently informed that my application for the Ph.D. in AI program was unsuccessful. While an alternative in Cybersecurity was offered, my singular passion and research focus is on AI, and I had to decline.
 
-My professional background involves hands-on application and leadership in AI and cybersecurity at organizations like Palo Alto Networks, as well as developing cybersecurity training for the NSA and applied model refinement for generative AI (Gemini). The D.Eng. program, which is explicitly "designed to provide graduates with... hands-on experience in applying these techniques to real-world problems" and "prepare graduates for leadership roles in industry," appears to be the correct, intended program for my profile.
+I believe my application was a "type mismatch." My profile is that of a senior industry practitioner with a deep passion for building novel AI-native systems, not a traditional academic. My life's mission is to develop the frameworks that empower people to collaborate with AI, increasing our collective "Cognitive Capital" and accelerating our ability to solve major world problems.
 
-I am writing to you specifically in your capacity as the Doctoral Program Coordinator for the Online Engineering Programs. Your own background as a D.Eng. graduate and your work with the NSF I-Corps program suggests a deep understanding of the value that industry practitioners bring to engineering innovation.
+My entire purpose in applying to GWU was to pursue the **Doctor of Engineering (D.Eng.)**, a degree I believe is perfectly aligned with my practitioner profile. I am writing to you specifically in your capacity as the Doctoral Program Coordinator for the Online Engineering Programs. Your own background as a D.Eng. graduate and your work with the NSF I-Corps program suggest a deep understanding of the value that industry practitioners bring to engineering innovation.
 
-My request is not to appeal the Ph.D. decision, but to ask that my application file be re-activated and re-evaluated by the D.Eng. committee. I am confident that when viewed through the D.Eng. practitioner lens, my application, my passion for this field, and my work on novel HCI frameworks like the Data Curation Environment will demonstrate a strong capacity for original, applied scholarship.
+My request is to have my application file re-activated and re-evaluated by the D.Eng. committee for the D.Eng. in AI & Machine Learning. I am not a traditional applicant; I am an innovator who has already architected and built a novel HCI framework for AI development, the Data Curation Environment. This work is a prime example of the original, applied scholarship that the D.Eng. program champions.
 
-Would you be open to a brief 15-minute conversation to discuss this potential re-alignment?
+I am confident that when viewed through the D.Eng. practitioner lens, my application will demonstrate a level of passion, drive, and proven capability that would be a significant asset to your program.
 
-Thank you for your time and for considering this petition.
+Thank you for your time and for considering this petition for programmatic re-alignment.
 
 Sincerely,
 
@@ -37476,26 +37518,31 @@ David Gerabagi
 
 <file path="src/Artifacts/A114 - GWU Appeal Letter - Etemadi.md">
 # Artifact A114: GWU Appeal Letter - Etemadi
+# Date Created: C110
+# Author: AI Model & Curator
+# Updated on: C111 (Revised to be AI-centric and incorporate the 'Star Trek future' vision)
 
 - **Key/Value for A0:**
-- **Description:** A bespoke appeal letter drafted for Professor Amir Etemadi, framed as a research inquiry connecting to his work in cyber-attack detection.
-- **Tags:** appeal, gwu, etemadi, research, cybersecurity
+- **Description:** A revised, bespoke appeal letter drafted for Professor Amir Etemadi. This version frames the applicant's work as a higher-level AI solution to the problems his research addresses.
+- **Tags:** appeal, gwu, etemadi, research, ai, cybersecurity, cognitive capital
 
 **To:** etemadi@gwu.edu  
 **Cc:** maria.hoang@gwu.edu  
-**Subject:** Inquiry from a Cybersecurity Practitioner re: Your Research in Cyber-Attack Detection
+**Subject:** Inquiry from an AI Practitioner re: Your Research in Cyber-Attack Detection
 
 Dear Professor Etemadi,
 
-I am a cybersecurity and applied AI practitioner writing to you today with great respect for your work. I have been following your group's research and was particularly struck by your involvement in the 2023 dissertation "Cyber Deception Techniques... for Cybersecurity Enhancement" and your more recent work on "feature selection for cyber attack detection."
+I am an applied AI practitioner writing to you today with great respect for your work. I have been following your group's research and was particularly struck by your involvement in the 2023 dissertation "Cyber Deception Techniques... for Cybersecurity Enhancement" and your more recent work on "feature selection for cyber attack detection."
 
-My professional work is on the front-lines of this exact problem. I currently develop cybersecurity training for national security (NSA) clients and have an extensive background from Palo Alto Networks. In parallel, I do applied work on LLM alignment with Google's Gemini models. I am consistently finding that academic models for adversary detection could benefit immensely from the high-fidelity, real-world adversary TTP data I work with daily.
+My professional work is on the front-lines of this exact problem space. I develop cybersecurity training for national security clients and have an extensive background from Palo Alto Networks. In parallel, I do applied work on LLM alignment with Google's Gemini models. This dual focus has given me a unique perspective: cybersecurity is a critical domain, however my core passion and research focus is on moving "up the stack." 
 
-I see you are also the Assistant Director for Analytics for the AI/ML programs. This dual-role gives you a unique perspective on the intersection of academic AI research and its practical, industry-led application.
+While your research uses AI to *detect* problems, my work is focused on architecting new human-AI collaboration frameworks to build systems so advanced and resilient that many of today's attack vectors become obsolete. My ultimate goal is to help engineer a "Star Trek future" where we have elevated our collective cognitive capital to solve grander challenges than cybersecurity.
 
-I recently received a rejection for my application to the Ph.D. in AI program, and while I respect the decision, I believe my unique, practitioner-focused profile may have been misaligned with a traditional academic review. I am reaching out to you not to appeal, but to ask for guidance. My passion is to build a formal research framework around my industry experience, and your work at the nexus of AI, cybersecurity, and infrastructure is the closest alignment I have found.
+I recently received a rejection for my application to the Ph.D. in AI program, and while I respect the decision, I believe my unique, practitioner-focused profile and this higher-level AI vision may have been misunderstood. My work in creating the Data Curation Environment (DCE) is a tangible first step in this research direction.
 
-Would you be open to a brief, 15-minute virtual call in the coming weeks? I would be fascinated to learn more about your research and the industry-to-academia pipeline at GWU, and to demonstrate my own work on a novel HCI framework—the Data Curation Environment—that I believe has direct relevance to your field.
+I am reaching out to you not to appeal, but to ask for guidance. Your work at the nexus of AI and critical infrastructure security is the closest academic alignment I have found to my own passionate vision.
+
+Would you be open to a brief, 15-minute virtual call in the coming weeks? I would be fascinated to learn more about your research and to demonstrate my own work, which I believe has direct relevance to the future of building secure, AI-native systems.
 
 Respectfully,
 
