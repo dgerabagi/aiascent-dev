@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C106 (Add A103)
+# Updated on: C109 (Add A110)
 
 ## 1. Purpose
 
@@ -208,6 +208,26 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A103. aiascent.dev - How It Works Section Image Prompts
 - **Description:** Provides a set of new, detailed image prompts for the three core feature sections on the homepage, designed to align with the new "Citizen Architect" aesthetic.
 - **Tags:** page design, home page, image prompts, marketing, content, aesthetic
+
+### A106 - Re-branding Initiative - Phase 1 Plan
+- **Description:** A master plan outlining the phased approach for a site-wide visual re-branding, starting with the generation of new persona likenesses and the revamping of the homepage whitepaper images.
+- **Tags:** plan, re-branding, marketing, content, images, aesthetic, citizen architect
+
+### A107 - Master Image System Prompt v2
+- **Description:** The updated master system prompt for all image generation. It defines the core "Citizen Architect" aesthetic and introduces a new, critical section on "Likeness & Style Transfer" to guide the re-branding initiative.
+- **Tags:** assets, design, images, prompt engineering, system prompt, aesthetic, re-branding
+
+### A108 - Persona Likeness Generation Prompts
+- **Description:** Provides the specific image prompts needed to generate the male and female "Citizen Architect" likeness cards for the "Career Transitioner" and "Underequipped Graduate" personas, establishing the foundational assets for the re-branding initiative.
+- **Tags:** v2v, academy, re-branding, images, prompt engineering, persona, citizen architect
+
+### A109 - Whitepaper Image Re-branding Prompts
+- **Description:** A comprehensive list of new, abstract image prompts for all 19 pages of the "Process as Asset" whitepaper, designed to be used with the new "likeness and style transfer" workflow for the site-wide re-branding.
+- **Tags:** v2v, academy, re-branding, images, prompt engineering, whitepaper, citizen architect
+
+### A110 - V2V Academy - Citizen Architect Classes
+- **Description:** A definitive guide to the six "Citizen Architect" classes for the V2V Academy. This artifact serves as the source of truth for the lore, abilities, and descriptions used in marketing materials and character cards.
+- **Tags:** v2v, academy, re-branding, persona, citizen architect, lore, rpg
 
 ## IV. Process & Workflow
 
@@ -470,3 +490,11 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A101. V2V Academy - Course 1: The AI-Powered Report Viewer - Lab Plan
 - **Description:** A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
 - **Tags:** v2v, curriculum, labs, project-based learning, report viewer
+
+### A104 - V2V Academy - Account System Design
+- **Description:** An adaptation of the `aiascent.game` account system, outlining the architecture for user authentication and progress tracking for the V2V Academy on `aiascent.dev`.
+- **Tags:** v2v, academy, plan, architecture, authentication, nextauth, prisma, database
+
+### A105 - aiascent.dev - Google OAuth Setup Guide
+- **Description:** A guide for setting up Google OAuth credentials for the `aiascent.dev` user account system.
+- **Tags:** v2v, academy, guide, setup, authentication, oauth, google

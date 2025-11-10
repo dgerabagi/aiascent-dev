@@ -1,11 +1,10 @@
 'use client';
 {
   /*
+  Cycle 107: Add `interactionType` prop to support different image hover/click behaviors.
   Cycle 54: Make image clickable to open fullscreen viewer.
   Cycle 31: Fix "use client" directive placement.
-  - Moved 'use client' to line 1, before any other expressions including comments.
   Cycle 30: Fix unescaped entities.
-  - Replaced double quotes in imagePrompt with &quot; to fix linting errors.
   */
 }
 
@@ -24,6 +23,7 @@ interface MissionSectionBlockProps {
   imagePath: string;
   imagePrompt: string;
   imageSide?: 'left' | 'right';
+  interactionType?: 'fullscreen' | 'zoom'; // C107: New prop
 }
 
 const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
@@ -34,6 +34,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   imagePath,
   imagePrompt,
   imageSide = 'left',
+  interactionType = 'fullscreen', // C107: Default to fullscreen
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { playArbitraryText, openFullscreenMedia } = useReportStore.getState();
@@ -65,6 +66,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   };
 
   const handleImageClick = () => {
+    if (interactionType !== 'fullscreen') return;
     const fullImagePath = `/assets/images/report/${imagePath}${images[currentImageIndex]}`;
     openFullscreenMedia({ src: fullImagePath, description: imagePrompt });
   };
@@ -72,7 +74,7 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
   const imageContent = (
     <div className="md:w-1/2 w-full p-4 border rounded-2xl bg-card shadow-2xl shadow-black/20 light:shadow-neutral-300/20">
       <div 
-        className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer"
+        className={`relative aspect-video rounded-lg overflow-hidden group ${interactionType === 'fullscreen' ? 'cursor-pointer' : ''}`}
         onClick={handleImageClick}
       >
         <AnimatePresence initial={false}>
@@ -90,14 +92,16 @@ const MissionSectionBlock: React.FC<MissionSectionBlockProps> = ({
               alt={title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className={`object-cover ${interactionType === 'zoom' ? 'transition-transform duration-500 group-hover:scale-105' : ''}`}
               unoptimized={images[currentImageIndex].endsWith('.gif')}
             />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <FaExpand size={32} className="text-white/80" />
-        </div>
+        {interactionType === 'fullscreen' && (
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <FaExpand size={32} className="text-white/80" />
+            </div>
+        )}
       </div>
       <p className="text-xs italic text-muted-foreground mt-2 p-2 bg-black/20 rounded">
         <strong>Prompt:</strong> &quot;{imagePrompt}&quot;

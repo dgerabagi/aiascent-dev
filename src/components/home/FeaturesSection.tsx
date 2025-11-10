@@ -1,6 +1,6 @@
-
 'use client';
 // src/components/home/FeaturesSection.tsx
+// C107: Pass `interactionType="zoom"` to restore hover effect.
 // C106: Refactored to use MissionSectionBlock for large images instead of icons.
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
@@ -53,6 +53,7 @@ const FeaturesSection = () => {
                             imagePath={feature.imagePath}
                             imagePrompt={feature.imagePrompt}
                             images={feature.images}
+                            interactionType="zoom" // C107: Use zoom hover effect
                         />
                     ))}
                 </div>

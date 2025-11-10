@@ -1,0 +1,165 @@
+Transcribed with Cockatoo
+
+
+Okay, so I got into AI, and the reason why I want to tell this story. I'm trying to get a PhD from George Washington University, and they sort of declined my admission, and I'm looking for an informal or a formal appeal process of any kind. And if there's no formal, then I would like to request an informal one. Basically, when Chad GPT -3 came out, and here's the reason why I should be admitted, when Chad GPT -3 .5 came out, I heard two stories that really caught my attention. One was people starting companies with AI, then the other one, people writing code with AI. And so I thought to myself, I heard, I understood immediately the implications of an AI that could write code. 
+
+And I thought, well, if we have an AI that can, you know, generate words, what's the most valuable words it could possibly generate if it can generate those words? And that would be code. And so I understood the pure power of code. I had created my own game server when I was about 18 years old. However, I was not a developer. 
+
+I struggled to develop. I struggled to learn a foreign language. There was just something about the way that my brain operated. I could learn many other things, but a foreign language I just could not. And that translated into computer language as well. Seeing the vision but not having the coding capability was why I went with a bachelor's in political science, which took me eight years to accomplish. 
+
+And I was really not the same person that I am now. So at the time, I was working at Palo Alto Networks. I had gotten my bachelor's in cloud computing. I had obtained that degree in six months. In order to change my trajectory, Because I had in 2012, like I said, set up my own private game server and learn all I could about cloud computing in order to do it and set up my own like bare -bones server from the... everything was in -house done by me. I had my own private cloud. My servers ran better than the retail servers. 
+
+And so I spent six months after being in the contractor world Because I was in the contractor world, working at Wells Fargo, everywhere you work for a year, they lay you off. It's 97 % of new jobs are contract gig jobs. It's basically the new cast system. I saw a full, full, full brunt of it, not knowing what it was, a fissured workplace. Working at Wells Fargo, I was the top producer on the team. 
+
+I automated my entire job. I was able to do the entire job in one hour, and then the other seven hours I had nothing to do. So I started looking for a second job because I'm overproductive and over capable. And so at the same time I was working for the Independent School District in Tennessee. I was a career pathways coordinator. But at Wells Fargo, you work the way that they've systematized it, is you work there for a year, then two years, And then that's the maximum that they can keep you as a contractor before they have to convert you to an employee. 
+
+So then what they do is they let you go for six months. And so you go on unemployment and get supported by the government. And then you just take the, and then when you get the six months is up, your time off, your cool down period is over. it's the same time as the unemployment is up, and then they rehire you as a contract, and it just rinses and repeats, and you don't get a raise. So being one of the top producers, I was one of the first invited back, the manager told me that, and then they weren't able to renew my contract, and so that was the shortest little Stint ever and so I decided to get my bachelor's in cloud computing to get out of the rat race and the first job I got was Palo Alto Networks as a contractor again, but I was determined I Was the top student we were all hired 16 18 of us in the Prisma Cloud Academy. I was the top student I was actually offered a job on the team that creates the training So I was supposed to be a either a customer success engineer or customer success manager based off of my technical aptitude And I was actually hired First as a contractor, then as full time to be a technical enablement specialist. 
+
+The term technical enablement, the role technical enablement came from sales enablement, which came from right after the internet. So it's a technically enabling thing because basically salespeople who are maybe very, very, very good at selling, but have never heard or seen or touched a computer are now thrown into the Salesforce environment and expected to be able to create all those Salesforce events and leads and stuff. and to use that database. And they may have never even clicked a mouse. And so now, if you want a salesperson to be super effective, they need to use this tool. They can't use the pen and paper, and so they need to be taught how to use this new tool, because you do not want to lose your top sales guys. 
+
+And so sales enablement came to teach these people. And the technical enablement is just the logical evolution of sales enablement, of this enablement. And so as a technical enablement specialist at a cybersecurity company, at the leading cybersecurity company in the nation, I had actually got to meet the COO of Domisto, formerly known as Domisto, now known as Exxor. He was on his way out. He said he over -enabled on the team. He over -spent on enabling. 
+
+He built a bigger enablement team because he knew full well how important enablement was, especially in a cybersecurity company. where if you get, if you get hacked, if one of your guys clicks the wrong link because they're a bunch of do we bows on the internet browsing Facebook on their work computers, you, uh, you, you're going to have a bad time in the stock market. So, um, they don't do that. And so that was his plan. And so I was in technical enablement and then that was when chat GPT showed up. And so I realized the training, I was using it for creating my training. 
+
+right in the very beginning. I asked it about, do you know what Cortex XOR is? It's like, yeah, I know what Cortex XOR is. Security Orchestration Automation Response, blah, blah, blah, blah. Oh, great. Can you write instructions on how to make playbooks? 
+
+And it was absolute garbage. So I thought, well, wait a minute. I know about, I know the XOR. admin guide has good information on that. Well, what if I just like do a control F for playbook, find every part that has playbook in it, the word playbook, and then just kind of like add, put that in my message and then send that off. And it was like night and day. 
+
+It was just like a totally different response. It was like, what the heck? I got almost perfect training content from this thing. And I'm like, okay, okay, if I could somehow automate this process. And so, with AI, I created a Slack bot, having never done such a thing before, right? Prompted what I wanted, how I wanted it to work, and I made a Slack bot. 
+
+So I effectively made a multiplayer chat version of ChatGPT because one person, I saw the value of prompting and how one person could ask a question and many people could learn from the response. And so I essentially created what still doesn't really exist, which is a multiplayer ChatGPT. Everyone's AI engagement is largely isolated and siloed. I had created a multiplayer GPT, but that wasn't it because I still needed to get the knowledge base. I needed the documentation or else I didn't really have a product. And so I had found a YouTube video where someone did a PDF to PDF to chat with your PDF. 
+
+And so I reviewed it. It was actually what is now known as a naive rag, a naive rag pipeline. And so I ragged it, without knowing what rag, I learned the term rag months later while I was unemployed after Palo Alto Networks because they let me go because they literally had no idea what I was doing or building, getting ahead of myself. So not knowing RAG, developed a RAG pipeline and asked the question, what do you know about XOR and playbooks? And it was just incredible. I had created it and I delivered that bot in strategic partner training. 
+
+So it was a delivered, it was really used in real deployment. I turned every single no into yes. I created my own company in order to do it. My manager said I needed to create my own company with this work that I was doing, because I kept showing my team, look, we need to use this. We need to use this. We should have an AI help our people learn. 
+
+A technical enablement. What's more enabling than having an AI trained on every single Palo Alto Network's products? Good goodness. I cracked it. I cracked it. I created my own company. 
+
+InfoSec said, no, you can't connect the bot into any internal platforms. I said, OK, I'll host it externally. IP said, well, you can't connect to any internal knowledge bases. You can't use any of our data. All right, I'll use only publicly facing PDF documentation. 
+
+Next. 
+
+Legal said, well, we don't have a vendor agreement with you, so the only way you could, you can't do it for money. The only way we would allow this is if it was just like a pilot. And I was like, oh, great. 
+
+Yeah, that's exactly what the fuck this is. What the fuck? 
+
+It's exactly what I'm trying to do. I can care less. It's not about the fucking money. It's about the knowledge. It's about the learning. Yes, it's a fucking pilot. 
+
+I'm not trying to make money. Holy shit. Great. Thank you for letting me do what the fuck I wanted to do. Okay. So we delivered the train, the bot. 
+
+I had, I had trained it to always ask a follow through, suggest three follow up questions. And so when a student and it was okay. and it was for XIM, the brand new product. So a month prior, Palo Alto Networks hosted their first strategic partner training for their new flagship product, Cortex XIM. The training didn't go so well, mainly because the labs were terrible, but also the trainer himself had his service dog with him, and he was returned away at the headquarters by the security guards on account of his service dog and it was a huge issue because the first day of training the trainer doesn't show up for the first half of the day and IBM and everyone have all their employees there and they're like what the heck and come to find out he was returned away why because the security on his service dog IBM was furious about this they were absolutely furious and so Palo Alto Network said, no, don't worry. Next time it'll be different. 
+
+Next time it'll be different. And so two weeks later, they call our team. We are the internal enablement team. They are the external enablement team enabling our strategic partners. They drop the ball. They call us. 
+
+We're the team that can fix it. So we are all hands on deck. We send, I think, three people. I'm one of them. No, two people. And I make the the automation labs. 
+
+So I make the automation labs. They're incredibly amazing labs. And then on a Saturday, I'm like, hey, why don't why don't we use my bot in the training? Why don't we have our students able to ask the bot? So I told the guy, John Tellen, who I still now I train him now to be a citizen architect, but I'm getting way ahead of myself. said, why don't we use this bot? 
+
+He's like what bot? So I showed him and and we got it all set up We had a slack channel everything about it being about a boom that was Saturday and Sunday and then the training started on Monday So I trained it from XOR to XIM which is which was a brand new flagship product which there was no training material for not like the other products that existed for years and So within a week, within two weeks, I created all the training and then the Slackbot delivered them both. The training was a knockout. The labs were incredible. They loved the labs. The labs were absolutely insanely good. 
+
+Best in class. But then also the Slackbot, icing on the cake. Students were in the classroom. The professor, the SME was up talking. And students were writing down their questions to the AI and getting amazing answers and follow -up questions. It was like a lively chat. 
+
+Everyone could read everyone's comments. And then when the SME got back to his desk, he had a whole chat log of questions and answers and AI responses to like back up and validate or correct. It was just insane. It was unlike any other training I had ever seen. And I was just sitting back and watching it. The whole thing cost about a fucking quarter in API calls. 
+
+And I think a dollar to make the embedding or whatever. Whoop -dee -doo. I asked John on Thursday, I'm like, how much would you have paid to have this bought? He's like, easily thousands of dollars. This was insane. And then Palo Alto gets, I don't know, some external consulting firm to come in, probably like McKinsey or something. 
+
+And they say, Oh, you're spending too much on enablement. You need to unenable your enable, whatever. And then, so they fired the internal enablement team about a month after they rolled, they fired half of us and manager included. Me too, probably because they're like, what the hell is it? They probably just looked at me on a piece of paper. 
+
+Aha! 
+
+They probably just looked at me on a piece of paper. And they were like, oh, this guy, what the hell is he doing at this company? He doesn't, he's got no pedigree. He's nobody. Who the hell is this guy? He just got a bachelor's from some online degree just a month, a few months ago. 
+
+And how much are we paying him? Let's get rid of this guy. What a dead weight. I asked them, I'm like, is this because of my Slack bot? Because I talked to Legal, I talked to IP, I talked to InfoSec. Like, is this why, why am I getting let go? 
+
+I'm the guy who's leading AI. I was invited, after that Slack bot, I was invited to meet the CEO. I was going to meet the CEO. I was, before that, I was invited to speak at the Palo Alto Network's AI panel, which was attended by 100 people in the audience at Santa Clara. and 100 people online. And I was remote panelist for the damn company on AI because of the bot that I did. 
+
+And at the end of that, what I delivered was a Slack bot that everyone could join. that I had trained on every single Palo Alto product and so the whole company all 200 they were invited to my slack bot and they were the bot was Popping off everyone was asking questions one guy from Is a pre -sales team so like the guy who receives the RFPs? He's like dude when an RFP comes in Prisma cloud RFP. It's like all hands on deck fire on deck to put out the fire to get these questions answered because when an RFP comes in, if you don't like fucking answer by end of business Friday, like they're going to go find someone else. And so he was like, dude, with this AI, like it just makes mincemeat out of these, these, these questions. It's just insane. 
+
+And the answers are so good. And it's like everything that's wrong. I can just fix it. It's like so good. And I'm like, yes, one of us. But, and then so, and then I was invited to a round table with the CEO, with Nikesh Arora. 
+
+Okay, all right. Now I get someone who can finally, who would listen because boy, I was telling everyone and no one would listen. No one would listen. And that's the trend. And that's the trend that the PhD is going to fix. 
+
+All right? 
+
+Because then they have to listen. You're part of the equation. You can't not let me in. I will outperform every single admit you admit. Then I was, oh, by the way, and then after that, I was let go. I knew it was a mistake. 
+
+I knew it was. I was sure there was a mistake. I'm like, well, that must've been my pedigree. I just barely got a, so what did I do? I signed up for a master's in cybersecurity, because I'm like, there's no way. I belong there. 
+
+I need to be there. So I got my master's in cybersecurity out of spite in three months. And you can't blame that on AI. You can't say I did it all with AI because I got my bachelor's in cloud computing in six months before ChatGPT came out. So six month bachelor's, three month master's, that tracks. I'm gonna do the same thing for my PhD. 
+
+I've already got my research done, which is astounding that I'm, anyway, I'm getting ahead of myself. Then I got the job to train Google. I'm training Gemini now. I'm a, I'm what they call a content writer. So I'm right back into the, the rat race and I see the rat race. I find the glass ceiling or the fissured workplace, uh, global logic and sign that and how I'm promoted and even moved from the non -technical to the technical team, but I don't get a pay raise, which everyone else around me is getting paid $28 an hour. 
+
+I'm getting paid 21. So I get a second job because, again, I'm productive and I can do the job in an hour and now I'm looking for something else to do. So I get the second job. I apply for UKI to be a cybersecurity product engineer to create cybersecurity labs for the NSA, for the DOD, for the Navy. I interview, and I kill it, and I get hired, and I kill it, and now I'm teaching these guys how to use AI, because they're starting to listen. Why are they starting to listen? 
+
+Because I codified my process that I've been coding with AI for three years. I've been doing it with a notepad, and then I started using VS Code, and then I made a VS Code extension. It's called the Data Curation Environment, and that's going to be my PhD thesis. And now I'm getting home, and I'm going to turn this recording, and I'm going to see what we can do. So at Google, it was sort of the same thing. I was hired at $21 an hour. 
+
+Okay, this is important though. I was hired at $21 as a content writer. I was not on the Python team. I was on the English team. I was on the writing team. During the training, I heard that there was a Python team. 
+
+Having just written my Slack bot in Python, because I was looking for a developer to work with, and I had already written it in JavaScript, and the developer said he only worked in Python. So I converted the whole thing from JavaScript to Python. Turns out he can't even, he doesn't even wanna, he basically can barely even keep up with anything. So I'm like, oh wow, okay, nevermind. Maybe a lot of people just call themselves developers or AI experts. So I explained to the training manager at Global Logic about my Slackbot and how I felt before I talked to her. 
+
+I looked online and I confirmed that the pay rate for that role was $28 an hour, which was 33 % more than I was making, and I needed that extra money, because I was losing money every month. And so I reached out, took the initiative, convinced, basically re -interviewed, basically, because, and then, so the training manager, she said, I obviously, I had the writing, because I came from English, and I just demonstrated the Python, she said, that the new Python hires were good with Python, but they were not good with the English writing requirement part of the job, which is important. You have to be able to write English to talk to an AI, to train an AI, obviously. And this was so she saw I could fill that need and transitioned me. Great, so she did a good thing for the company, saw I would be better utilized, this resource would be better utilized in a more demanding role. 
+
+Okay. 
+
+I then go to Sinet and tell them about the circumstances have changed and that I'm now on this new team and that they could please look into seeing if there's an equivalent in pay raise for this different role that I'm now in. And then they take six months, eight months, the whole thing. I got a whole legal law. I don't know what to do about that. I had written an entire 100 page report on, I had realized, okay, so after getting nowhere with that, I'll just attach the email chain. 
+
+I'll just attach all the email chain and stuff with all that. So that's where I discover the fissure, because AWU, I joined AWU, I see that there's the, all the Super Raiders wrote that open letter. I'm a Super Raider, I'm like, oh my goodness, that letter is roundabout, that's from me, basically. And it was right. It was accurate. It was completely accurate about the paid disparity and everything. 
+
+I'm like, yes, that's exactly what I'm saying. So I took that to sign it. I'm like, look, this is what I've been saying for a year. Look at all this evidence. It's exactly with what I've been saying before all this evidence showed up and they didn't care. So they're just part of the fissured workplace. 
+
+It's institutionalized. This is, that's how Wells Fargo did it. This is how Google does it. It's the same, same thing. Problem here though is with Google is it's a national security threat. That's where it becomes different. 
+
+That's very different because who wins the AI race wins everything. What is the AI race is really it's not about ASI. It's about increasing the productivity of your economy. That's what it always has been since World War II. And I am the living proof that someone without code, that's why I need this. I'm living proof that someone without code can do all this. 
+
+I can't code. I cannot, I will not learn, but I don't need to anymore. There's a whole new layer of abstraction that we need to learn about and stop being headstrong in our ways. and not letting the right people in. to the right places to make the right things happen so the world can get to the right place. To that end, I've made the data curation environment, but I think I'm getting ahead of myself because UKI shows up and I start making my game with AI. 
+
+March, okay, so let's go with March. March of this year, Gemini 2 .5 Pro comes out and after six days, I decide to make a game with it as a project to learn This new AI that checks all the right boxes. High context window. Free thinking. Smart. 
+
+Codable. 
+
+Can write code. 
+
+Checks all the boxes. Everything after that is gravy train. So I decided to make a game, a tycoon game, about an AI company where you make an AI company, but the joke is that the whole game would obviously be written by AI. So I did that for about four months. 
+
+I made the game. 
+
+And then after making the game, I actually stopped and paused and sat back and took account of what I had made over the past 110 days. And it was astounding. It was 600 ,000 tokens of code and 350 ,000 tokens of documentation, like 12 systems, hundreds of components and things, full stack. You could talk to the AI that you made. I had an AI that could help you play the game. 
+
+Bye. 
+
+the power that if I could do this, then anyone can do this. And if anyone can do this, then, you know, China can do this. And so what is China doing with this? And so I did my research using deep research for open source intelligence because it can read Mandarin. So I had it read all the Chinese websites to tell me what is the Chinese plan for AI. And I fed that into the system. 
+
+I got an extrapolation of their plan and put that into a report. I made a whole 150 -page report about everything I just talked about, about the game, about what I was able to do with one person, the implications of that, and then the lay of the land, how is it in America. Because it's basically, before I jump into that, the AI trainer. Ultimately, what it boils down to is we're going to have all these smart AIs, but they don't know how to do your specific job, of course, because you need to get your data. for your job and only you know the data. And we can't just turn the AIs loose because we need a human in the loop. 
+
+And so the jobs of the future will be people with AI skills to manage AI pipelines. You don't have to be a nerd to do this. This is going to be secondary skills for everyone because the AI is going to handle largely the technical stuff. Every model that comes out will give better instructions on how to do the technical stuff until it's so easy a child could do it. Literally my stepson can do it. So I call it the vibe coding to virtue. 
+
+Pathway. I made a whole report on that. So that report, I then put into the game. So the game has a, you can open the report. The report, I made images for each page. I made multiple images for each page of the report. 
+
+I made like a Scarlett Johansson voice model, read it to you. So it's a adult picture book read to you by Scarlett Johansson. And still I can't get people to pay attention. No one's paying attention. I thought the game would attract attention, but it didn't. Understandably, I was learning how to make a lot of things. 
+
+My next project is way more visual. But anyway, and so yeah, all that work, all that information, the understanding that, and so what it's trying to do in there, they've professionalized the trick, they've professionalized the job. They have a whole professional development pathway for the AI trainer. And then what are we doing in America? It's a fissured workplace with a bunch of content writers who we can't say, we can't say where we work, we can't say we can put on LinkedIn that we train AI because we signed an NDA or something. 
+
+Okay, so the skills that everyone needs to learn is AI training so that everyone can make their own AI pipelines. In America, we don't even tell you what the job is, so no one can even imagine. And then the people who do know are all content writers. No one's going to listen to them, even though they're the ones that have all the skills, that have gained all the skills because they spent the time curating data for AI to even start to scratch the surface. But no one does it long enough because it's a revolving door that no one stays there long enough to see the big picture and put all the pieces together. The only reason why I was able to do it was because I've been doing it for three years. 
+
+And I haven't gotten let go from that team. They keep holding on to me. Every time they argue to keep me because they can't get rid of me because I helped them so much. Because I'm so good with AI. But I can't get the PhD. Interesting. 
+
+I'm one of the ones making GemIIni so good. If I wasn't, they wouldn't keep me around. GemIIni is going to have APIs soon now because of the project I piloted. So then at UKI, I showed them the game, actually, because the implications are astounding, and they understood, but then they were like, well, how can we use this? And understandably so, how can we use this? And so I thought, okay, now's the time to codify my process. 
+
+So that's when I set out to actually make a VS Code extension. I didn't have the idea for that until then. So I spent a month, about a month, creating the extension, and then about another month testing it by making another project with it. And then so two months goes by and I do another meeting with the team and I show them the new extension and they're just astounded. 
+
+They're floored. 
+
+It's incredible. Nice work all around. I share them how to use it. I'll show them what I made with it. One of the guys, one of the new guys, he's from this, this is where it all gets real. So he's from offensive combat operations from the NSA. 
+
+And he says, and now let's think about that for a second. Offensive combat operations for the NSA. They're the tip of the spear. They're the ones hacking into enemy territory. And so they can't get caught or else it's going to be a national incident. And so by definition, they must have the best tools. 
+
+they them that team and he said they have Nothing like what I have in the DCE in their toolkit and that it would make their job so immensely better And of course I knew that because my report I knew my report the adult picture book I'm like our leaders our senators should be getting these reports this level of information distillation the imagery that I'm able to concoct with the allegories and And that is the proof that I need to get involved. I would rather make my games at home and have fun with AI. But it looks like I need to get involved from both sides. I hear what's going on on the national security side. I hear what's going on. I was in Maryland in September in a room full of NSA and ex -NSA because we were delivering training that I delivered to the NSA. 
+
+Cybersecurity training for the NSA. And they had eight people. NSA agents testing the labs that I made, giving feedback for limited user acceptance. So I'm hearing it from that site, what they're doing, how they're handling it. I know what China's doing, because I did the research, and I know exactly what it's like inside. The glass ceiling, I found the glass ceiling of the fissured workplace. 
+
+And so what I see here is something that few, if any, could see, few, if any, could fix. And if you combine all the pieces of my puzzle I could be very well just the one one of the ones to help fix this quagmire and get us as a whole as a nation. into this Star Trek future. The future is already here, it's just unevenly distributed. This is Star Trek level status technology. We could solve all global problems if everyone just uses technology when they're making their decisions, uses AI, it's pure intelligence. 
+
+And we get over all of the pessimism and the scarcity mindset and we lead ourselves into a world of abundance. That is what I propose. And if you don't want it, don't worry, I will find someone else who will. Because I'm on a mission.
+
+
+Transcribed with Cockatoo
