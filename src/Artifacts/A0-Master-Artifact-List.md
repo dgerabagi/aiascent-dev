@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C109 (Add A110)
+# Updated on: C110 (Add GWU Appeal Letters)
 
 ## 1. Purpose
 
@@ -228,6 +228,22 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A110 - V2V Academy - Citizen Architect Classes
 - **Description:** A definitive guide to the six "Citizen Architect" classes for the V2V Academy. This artifact serves as the source of truth for the lore, abilities, and descriptions used in marketing materials and character cards.
 - **Tags:** v2v, academy, re-branding, persona, citizen architect, lore, rpg
+
+### A111 - GWU Appeal Letter - Sarkani
+- **Description:** A bespoke appeal letter drafted for Professor Shahram Sarkani, Director of GW Online Engineering, leveraging his research on the NSA CSfC framework.
+- **Tags:** appeal, gwu, sarkani, nsa, csfc, d.eng
+
+### A112 - GWU Appeal Letter - Mazzuchi
+- **Description:** A bespoke appeal letter drafted for Professor Thomas A. Mazzuchi, Co-Director of GW Online Engineering, focusing on the D.Eng. program and shared research interests.
+- **Tags:** appeal, gwu, mazzuchi, d.eng, cybersecurity
+
+### A113 - GWU Appeal Letter - Blackford
+- **Description:** A bespoke appeal letter drafted for Professor J.P. Blackford, Doctoral Program Coordinator, focusing on a petition for programmatic re-alignment to the D.Eng. program.
+- **Tags:** appeal, gwu, blackford, d.eng, programmatic re-alignment
+
+### A114 - GWU Appeal Letter - Etemadi
+- **Description:** A bespoke appeal letter drafted for Professor Amir Etemadi, framed as a research inquiry connecting to his work in cyber-attack detection.
+- **Tags:** appeal, gwu, etemadi, research, cybersecurity
 
 ## IV. Process & Workflow
 
