@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C1 (Add Anguilla Project Artifacts)
+# Updated on: C2 (Refine Anguilla Project Artifacts)
 
 ## 1. Purpose
 
@@ -12,35 +12,31 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 ## 2. Formatting Rules for Parsing
 
-*   Lines beginning with `#` are comments and are ignored.
-*   `##` denotes a major category header and is ignored.
-*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
-*   Lines beginning with `- **Description:**` provide context for the project.
-*   Lines beginning with `- **Tags:**` provide keywords for Inference.
+*   Lines beginning with `#` are comments and are ignored.
+*   `##` denotes a major category header and is ignored.
+*   `###` denotes an artifact entry. The text following it is the artifact's full name and ID.
+*   Lines beginning with `- **Description:**` provide context for the project.
+*   Lines beginning with `- **Tags:**` provide keywords for Inference.
 
 ## 3. Artifacts List
 
 ## I. Project Planning & Vision
 
 ### A1. aiascent.dev - Project Vision and Goals
-
-  - **Description:** High-level overview of the aiascent.dev website, its purpose to promote the DCE, and the phased development plan.
-  - **Tags:** project vision, goals, scope, dce, promotional website, interactive showcase
+- **Description:** High-level overview of the aiascent.dev website, its purpose to promote the DCE, and the phased development plan.
+- **Tags:** project vision, goals, scope, dce, promotional website, interactive showcase
 
 ### A2. aiascent.dev - Phase 1 Requirements & Design
-
-  - **Description:** Detailed functional and technical requirements for Phase 1 of aiascent.dev, focusing on the static site shell and the interactive showcase.
-  - **Tags:** requirements, design, phase 1, features, nextjs, showcase
+- **Description:** Detailed functional and technical requirements for Phase 1 of aiascent.dev, focusing on the static site shell and the interactive showcase.
+- **Tags:** requirements, design, phase 1, features, nextjs, showcase
 
 ### A11. aiascent.dev - Implementation Roadmap
-
-  - **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
-  - **Tags:** roadmap, implementation plan, project management, development stages
+- **Description:** A step-by-step roadmap for the implementation of the aiascent.dev website, breaking the development into manageable and testable stages.
+- **Tags:** roadmap, implementation plan, project management, development stages
 
 ### A23. aiascent.dev - Cognitive Capital Definition
-
-  - **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
-  - **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
+- **Description:** Provides the canonical definition and explanation of "Cognitive Capital" as the term is used within the aiascent.dev project, distinguishing it from other interpretations.
+- **Tags:** documentation, definition, cognitive capital, strategy, human capital, problem-solving
 
 ### A102. aiascent.dev - Homepage Hero Section Revamp Plan
 - **Description:** A plan to revamp the homepage hero section to better communicate the core value proposition of the Data Curation Environment (DCE), focusing on the "vibe code for free" message and introducing new, more aspirational imagery.
@@ -49,89 +45,72 @@ This file serves as the definitive, parseable list of all documentation artifact
 ## II. Technical Architecture & Implementation
 
 ### A3. aiascent.dev - Technical Scaffolding Plan
-
-  - **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
-  - **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
+- **Description:** Outlines the proposed technical scaffolding, file structure, and technology stack (Next.js, TypeScript, TailwindCSS) for the aiascent.dev website.
+- **Tags:** technical plan, scaffolding, file structure, nextjs, react, tailwindcss, typescript
 
 ### A20. aiascent.dev - Report Viewer Integration Plan
-
-  - **Description:** A detailed plan for porting the "AI Ascent Report Viewer" from the `aiascentgame` context into the `aiascent.dev` project to serve as the primary component for the Showcase, Learn, and Home pages.
-  - **Tags:** report viewer, integration plan, porting, showcase, learn, component, architecture
+- **Description:** A detailed plan for porting the "AI Ascent Report Viewer" from the `aiascentgame` context into the `aiascent.dev` project to serve as the primary component for the Showcase, Learn, and Home pages.
+- **Tags:** report viewer, integration plan, porting, showcase, learn, component, architecture
 
 ### A21. aiascent.dev - Ask Ascentia RAG Integration
-
-  - **Description:** A guide explaining the implementation of the Retrieval-Augmented Generation (RAG) system for the "Ask @Ascentia" chat feature, including instructions for file placement and environment configuration.
-  - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, langchain, architecture
+- **Description:** A guide explaining the implementation of the Retrieval-Augmented Generation (RAG) system for the "Ask @Ascentia" chat feature, including instructions for file placement and environment configuration.
+- **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, langchain, architecture
 
 ### A22. aiascent.dev - Mission Page Revamp Plan
-
-  - **Description:** A plan to refactor the static Mission page into a smaller, digestible, static version of the interactive report viewer, showcasing key concepts with associated imagery.
-  - **Tags:** page design, mission, report viewer, refactor, plan, ui, ux
+- **Description:** A plan to refactor the static Mission page into a smaller, digestible, static version of the interactive report viewer, showcasing key concepts with associated imagery.
+- **Tags:** page design, mission, report viewer, refactor, plan, ui, ux
 
 ### A24. aiascent.dev - Mission Page Content Expansion Plan
-
-  - **Description:** Provides the expanded, finalized content for the last three sections of the Mission Page to create a more comprehensive and compelling narrative.
-  - **Tags:** page design, mission, content, refactor, plan
+- **Description:** Provides the expanded, finalized content for the last three sections of the Mission Page to create a more comprehensive and compelling narrative.
+- **Tags:** page design, mission, content, refactor, plan
 
 ### A25. aiascent.dev - Learn Page Content Plan
-
-  - **Description:** A blueprint for the `/learn` page, structuring its content around the "Vibecoding to Virtuosity" pathway to educate users on the methodology behind the DCE.
-  - **Tags:** page design, learn, content, plan, vibecoding, virtuosity, cognitive apprenticeship
+- **Description:** A blueprint for the `/learn` page, structuring its content around the "Vibecoding to Virtuosity" pathway to educate users on the methodology behind the DCE.
+- **Tags:** page design, learn, content, plan, vibecoding, virtuosity, cognitive apprenticeship
 
 ### A26. aiascent.dev - Homepage Whitepaper Visualization Plan
-
-  - **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
-  - **Tags:** page design, home page, report viewer, whitepaper, content, plan, image prompts
+- **Description:** Deconstructs the "Process as Asset" whitepaper into a structured format suitable for an interactive report viewer on the homepage. Includes content, a new image naming scheme, and new image generation prompts.
+- **Tags:** page design, home page, report viewer, whitepaper, content, plan, image prompts
 
 ### A27. aiascent.dev - AI Persona - @Ascentia
-
-  - **Description:** Defines the persona, rules, and contextual system prompts for the @Ascentia AI assistant on the aiascent.dev website.
-  - **Tags:** documentation, persona, ai, ascentia, rag, prompt engineering
+- **Description:** Defines the persona, rules, and contextual system prompts for the @Ascentia AI assistant on the aiascent.dev website.
+- **Tags:** documentation, persona, ai, ascentia, rag, prompt engineering
 
 ### A28. aiascent.dev - Dual Embedding RAG Architecture
-
-  - **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
-  - **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
+- **Description:** A guide for implementing and managing a dual-embedding RAG system, allowing the chat assistant to use different knowledge bases for different sections of the website.
+- **Tags:** documentation, rag, chat, ascentia, embeddings, faiss, architecture, multi-tenancy
 
 ### A30. aiascent.dev - Showcase Expansion Plan
-
-  - **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
-  - **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
+- **Description:** A plan to expand the `/showcase` page into a multi-tabbed view, featuring both the interactive "Ascent Report" and an embedded version of the `aiascent.game` website.
+- **Tags:** page design, showcase, tabs, iframe, integration, plan, ui, ux
 
 ### A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan
-
-  - **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
-  - **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
+- **Description:** Outlines the technical implementation for generating, parsing, and displaying dynamic, context-aware follow-up questions ("chips") in the Ask @Ascentia chat interface.
+- **Tags:** plan, chat, ui, ux, llm, prompt engineering, ascentia
 
 ### A33. aiascent.dev - Report Viewer Fullscreen Plan
-
-  - **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
-  - **Tags:** plan, ui, ux, report viewer, fullscreen, feature
+- **Description:** Outlines the plan to implement a fullscreen toggle feature for the interactive report viewer, enhancing the immersive reading experience.
+- **Tags:** plan, ui, ux, report viewer, fullscreen, feature
 
 ### A34. aiascent.dev - Whitepaper Introduction Content
-
-  - **Description:** Provides the new introductory content for the homepage's interactive whitepaper, "Process as Asset," designed to welcome users and explain the interface.
-  - **Tags:** page design, home page, report viewer, whitepaper, content, user guide
+- **Description:** Provides the new introductory content for the homepage's interactive whitepaper, "Process as Asset," designed to welcome users and explain the interface.
+- **Tags:** page design, home page, report viewer, whitepaper, content, user guide
 
 ### A36. aiascent.dev - Learn Page - V2V Pathway Definition
-
-  - **Description:** Provides the expanded definitional content for the "Vibecoding to Virtuosity Pathway" section of the Learn page.
-  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+- **Description:** Provides the expanded definitional content for the "Vibecoding to Virtuosity Pathway" section of the Learn page.
+- **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
 
 ### A37. aiascent.dev - Learn Page - Annotator and Toolmaker
-
-  - **Description:** Provides the expanded definitional content for the "Stages 1 & 2: The Annotator and The Toolmaker" section of the Learn page.
-  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+- **Description:** Provides the expanded definitional content for the "Stages 1 & 2: The Annotator and The Toolmaker" section of the Learn page.
+- **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
 
 ### A38. aiascent.dev - Learn Page - Recursive Learner and Virtuoso
-
-  - **Description:** Provides the expanded definitional content for the "Stages 3 & 4: The Recursive Learner and The Virtuoso" section of the Learn page.
-  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+- **Description:** Provides the expanded definitional content for the "Stages 3 & 4: The Recursive Learner and The Virtuoso" section of the Learn page.
+- **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
 
 ### A39. aiascent.dev - Learn Page - Apex Skill Definition
-
-  - **Description:** Provides the expanded definitional content for "The Apex Skill: On-the-Fly Tooling" section of the Learn page.
-  - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+- **Description:** Provides the expanded definitional content for "The Apex Skill: On-the-Fly Tooling" section of the Learn page.
+- **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
 
 ### A115 - GlobalLogic AI Micro-Pilot Proposal
 - **Description:** A proposal for a micro-pilot leveraging the Data Curation Environment (DCE) methodology to address the exponential growth of task complexity and reduce the cognitive burden on Task Leads by distilling massive project context.
@@ -140,74 +119,60 @@ This file serves as the definitive, parseable list of all documentation artifact
 ## III. Design and Assets
 
 ### A15. aiascent.dev - Asset Wishlist and Directory Structure
-
-  - **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
-  - **Tags:** assets, wishlist, design, images, icons, file structure
+- **Description:** A list of required visual assets (images, icons, logos) for the aiascent.dev website and the definitive structure for the `public/assets` directory.
+- **Tags:** assets, wishlist, design, images, icons, file structure
 
 ### A15.1. aiascent.dev - Master Image Generation System Prompt
-
-  - **Description:** The master system prompt defining the aesthetic guidelines and thematic direction for all images generated for the aiascent.dev website.
-  - **Tags:** assets, design, images, prompt engineering, system prompt, aesthetic
+- **Description:** The master system prompt defining the aesthetic guidelines and thematic direction for all images generated for the aiascent.dev website.
+- **Tags:** assets, design, images, prompt engineering, system prompt, aesthetic
 
 ### A15.2. aiascent.dev - Image Prompt - Logo (AS-01)
-
-  - **Description:** Specific prompt for generating the main logo (AS-01) for aiascent.dev.
-  - **Tags:** assets, design, images, prompt, logo
+- **Description:** Specific prompt for generating the main logo (AS-01) for aiascent.dev.
+- **Tags:** assets, design, images, prompt, logo
 
 ### A15.3. aiascent.dev - Image Prompt - Favicon (AS-02)
-
-  - **Description:** Specific prompt for generating the favicon (AS-02) for aiascent.dev.
-  - **Tags:** assets, design, images, prompt, favicon
+- **Description:** Specific prompt for generating the favicon (AS-02) for aiascent.dev.
+- **Tags:** assets, design, images, prompt, favicon
 
 ### A15.4. aiascent.dev - Image Prompt - Icon: Context Curation (AS-04)
-
-  - **Description:** Specific prompt for generating the Context Curation icon (AS-04) for aiascent.dev.
-  - **Tags:** assets, design, images, prompt, icon
+- **Description:** Specific prompt for generating the Context Curation icon (AS-04) for aiascent.dev.
+- **Tags:** assets, design, images, prompt, icon
 
 ### A15.5. aiascent.dev - Image Prompt - Icon: Parallel Co-Pilot (AS-05)
-
-  - **Description:** Specific prompt for generating the Parallel Co-Pilot icon (AS-05) for aiascent.dev.
-  - **Tags:** assets, design, images, prompt, icon
+- **Description:** Specific prompt for generating the Parallel Co-Pilot icon (AS-05) for aiascent.dev.
+- **Tags:** assets, design, images, prompt, icon
 
 ### A15.6. aiascent.dev - Image Prompt - Icon: Iterative Workflow (AS-06)
-
-  - **Description:** Specific prompt for generating the Iterative Workflow icon (AS-06) for aiascent.dev.
-  - **Tags:** assets, design, images, prompt, icon
+- **Description:** Specific prompt for generating the Iterative Workflow icon (AS-06) for aiascent.dev.
+- **Tags:** assets, design, images, prompt, icon
 
 ### A15.7. aiascent.dev - Image Prompt - OG:Image (AS-07)
-
-  - **Description:** Specific prompt for generating the Open Graph image (AS-07) for aiascent.dev social sharing.
-  - **Tags:** assets, design, images, prompt, ogimage, social media
+- **Description:** Specific prompt for generating the Open Graph image (AS-07) for aiascent.dev social sharing.
+- **Tags:** assets, design, images, prompt, ogimage, social media
 
 ### A16. aiascent.dev - Page Design: Home (Landing Page)
-
-  - **Description:** Detailed design blueprint for the main landing page (Home) of aiascent.dev, focusing on the value proposition, aesthetics, and user engagement.
-  - **Tags:** page design, home page, landing page, ui, ux, dce, citizen architect
+- **Description:** Detailed design blueprint for the main landing page (Home) of aiascent.dev, focusing on the value proposition, aesthetics, and user engagement.
+- **Tags:** page design, home page, landing page, ui, ux, dce, citizen architect
 
 ### A17. aiascent.dev - Page Design: Showcase (Interactive Whitepaper)
-
-  - **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
-  - **Tags:** page design, showcase, interactive whitepaper, ui, ux, dce
+- **Description:** Detailed design blueprint for the Showcase page, featuring the Interactive Whitepaper component.
+- **Tags:** page design, showcase, interactive whitepaper, ui, ux, dce
 
 ### A18. aiascent.dev - Page Design: Learn (Tutorials and Education)
-
-  - **Description:** Detailed design blueprint for the Learn page, the educational hub for the DCE and the Citizen Architect methodology.
-  - **Tags:** page design, learn, tutorials, education, documentation, ui, ux
+- **Description:** Detailed design blueprint for the Learn page, the educational hub for the DCE and the Citizen Architect methodology.
+- **Tags:** page design, learn, tutorials, education, documentation, ui, ux
 
 ### A19. aiascent.dev - Page Design: Mission (About Us)
-
-  - **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
-  - **Tags:** page design, mission, about us, vision, strategy, cognitive capitalism
+- **Description:** Detailed design blueprint for the Mission page, outlining the strategic vision, the concept of Cognitive Capitalism, and the purpose of the DCE project.
+- **Tags:** page design, mission, about us, vision, strategy, cognitive capitalism
 
 ### A40. aiascent.dev - Page Design DCE
-
-  - **Description:** A blueprint for the `/dce` page, dedicated to explaining the core features of the Data Curation Environment VS Code extension with visual aids.
-  - **Tags:** page design, dce, features, plan, ui, ux
+- **Description:** A blueprint for the `/dce` page, dedicated to explaining the core features of the Data Curation Environment VS Code extension with visual aids.
+- **Tags:** page design, dce, features, plan, ui, ux
 
 ### A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth
-
-  - **Description:** A plan for a new section on the `/dce` page explaining how generating documentation artifacts is a core feature of the DCE workflow, establishing them as the project's "source of truth."
-  - **Tags:** page design, dce, features, plan, source of truth, documentation, artifacts
+- **Description:** A plan for a new section on the `/dce` page explaining how generating documentation artifacts is a core feature of the DCE workflow, establishing them as the project's "source of truth."
+- **Tags:** page design, dce, features, plan, source of truth, documentation, artifacts
 
 ### A103. aiascent.dev - How It Works Section Image Prompts
 - **Description:** Provides a set of new, detailed image prompts for the three core feature sections on the homepage, designed to align with the new "Citizen Architect" aesthetic.
@@ -252,34 +217,28 @@ This file serves as the definitive, parseable list of all documentation artifact
 ## IV. Process & Workflow
 
 ### A4. aiascent.dev - Universal Task Checklist
-
-  - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
-  - **Tags:** checklist, task management, planning, roadmap
+- **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
+- **Tags:** checklist, task management, planning, roadmap
 
 ### A7. aiascent.dev - Development and Testing Guide
-
-  - **Description:** A guide providing the standard procedure for running, debugging, and testing the aiascent.dev Next.js website locally.
-  - **Tags:** documentation, project setup, development, testing, nextjs, workflow
+- **Description:** A guide providing the standard procedure for running, debugging, and testing the aiascent.dev Next.js website locally.
+- **Tags:** documentation, project setup, development, testing, nextjs, workflow
 
 ### A14. aiascent.dev - GitHub Repository Setup Guide
-
-  - **Description:** A guide on setting up the aiascent.dev project with Git and GitHub, including the essential workflow for using Git alongside the Data Curation Environment (DCE).
-  - **Tags:** git, github, version control, workflow, setup, dce
+- **Description:** A guide on setting up the aiascent.dev project with Git and GitHub, including the essential workflow for using Git alongside the Data Curation Environment (DCE).
+- **Tags:** git, github, version control, workflow, setup, dce
 
 ### A29. aiascent.dev - GitHub Public Repository Guide
-
-  - **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
-  - **Tags:** git, github, version control, security, best practices, open source
+- **Description:** Provides guidance on the benefits, risks, and best practices for making a GitHub repository public, including how to audit for sensitive information.
+- **Tags:** git, github, version control, security, best practices, open source
 
 ### A31. aiascent.dev - iframe Integration Guide
-
-  - **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
-  - **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
+- **Description:** Explains the root cause of cross-domain cookie issues when embedding authenticated applications (like `aiascent.game` with NextAuth) in an iframe and provides the solution.
+- **Tags:** iframe, authentication, cookies, samesite, nextauth, security, integration
 
 ### A35. aiascent.dev - Discord Community Management Plan
-
-  - **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
-  - **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship
+- **Description:** Outlines a strategic plan for building, managing, and monetizing a Discord community around the Data Curation Environment (DCE).
+- **Tags:** plan, community, discord, monetization, dce, cognitive apprenticeship
 
 ### A48. NVIDIA CUDA on WSL Setup Guide
 - **Description:** A straightforward guide for setting up NVIDIA CUDA on Windows Subsystem for Linux (WSL) 2 to enable GPU acceleration for Docker containers.
@@ -522,29 +481,29 @@ This file serves as the definitive, parseable list of all documentation artifact
 ## VI. Anguilla Project
 
 ### A201 - Anguilla Project - Vision and Master Plan
-- **Description:** The high-level strategic vision for transforming Anguilla into the world's first AI-native nation, leveraging its unique digital asset (.ai domain) and small population size.
-- **Tags:** anguilla, strategy, vision, nation building, ai
+- **Description:** The high-level strategic vision for transforming Anguilla into the world's first AI-native nation, leveraging its unique digital asset (.ai domain) and small population size. Updated C2 to include core principles of Sovereignty, Culture, and Resilience.
+- **Tags:** anguilla, strategy, vision, nation building, ai, sovereignty, resilience
 
 ### A202 - Research Proposal - The AI Capital
-- **Description:** A proposal focused on leveraging the .ai domain windfall to fund sovereign digital infrastructure and creating a "Digital Wealth Fund" for the nation.
-- **Tags:** anguilla, economics, .ai domain, infrastructure, sovereign wealth
+- **Description:** A proposal focused on leveraging the .ai domain windfall to fund sovereign digital infrastructure, specifically emphasizing green, hurricane-resilient data centers.
+- **Tags:** anguilla, economics, .ai domain, infrastructure, sovereign wealth, green energy, resilience
 
 ### A203 - Research Proposal - The Cognitive Citizenry
-- **Description:** A proposal for a national upskilling initiative using the V2V/DCE methodology to turn the entire population into high-value "cognitive capital."
-- **Tags:** anguilla, education, upskilling, v2v, cognitive capital, workforce
+- **Description:** A proposal for a national upskilling initiative using the V2V/DCE methodology, featuring a "Cultural Heritage AI" component to preserve local history and dialect.
+- **Tags:** anguilla, education, upskilling, v2v, cognitive capital, workforce, culture, heritage
 
 ### A204 - Research Proposal - The Automated State
-- **Description:** A proposal for modernizing Anguilla's governance through AI, creating a frictionless, automated civil service for citizens and businesses.
-- **Tags:** anguilla, governance, automation, public services, efficiency
+- **Description:** A proposal for modernizing Anguilla's governance through AI, creating a frictionless, automated civil service with a focus on "Continuity of Government" during climate disasters.
+- **Tags:** anguilla, governance, automation, public services, efficiency, disaster recovery
 
 ### A205 - Research Proposal - Resilient Island Systems
-- **Description:** A proposal for using AI to manage critical island resources (water, energy) and enhance climate resilience through predictive modeling.
-- **Tags:** anguilla, sustainability, environment, climate change, resource management
+- **Description:** A proposal for using AI to manage critical island resources (water, energy) and enhance climate resilience through predictive modeling and digital twins.
+- **Tags:** anguilla, sustainability, environment, climate change, resource management, digital twin
 
 ### A206 - Research Proposal - The Global AI Sandbox
-- **Description:** A proposal to establish Anguilla as a "Regulatory Sandbox" for ethical AI development, attracting global companies to test and deploy in a safe, controlled environment.
-- **Tags:** anguilla, regulation, policy, sandbox, innovation, ethics
+- **Description:** A proposal to establish Anguilla as a "Regulatory Sandbox" for ethical AI development, ensuring frameworks respect local culture and prevent digital colonialism.
+- **Tags:** anguilla, regulation, policy, sandbox, innovation, ethics, sovereignty
 
 ### A207 - Strategic Presentation Guide
-- **Description:** A script and strategic guide for the meeting with the Minister of IT, outlining the narrative arc, key talking points, and the "ask."
+- **Description:** A script and strategic guide for the meeting with the Minister of IT, outlining the narrative arc, key talking points, and the "ask," woven with themes of political sovereignty, cultural preservation, and climate resilience.
 - **Tags:** anguilla, presentation, strategy, pitch, meeting guide

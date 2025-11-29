@@ -1,0 +1,86 @@
+{
+  "manifestId": "anguilla-presentation-images",
+  "basePath": "/images/anguilla-presentation/",
+  "imageGroups": {
+    "group_ax-01-cover": {
+      "path": "01-cover/",
+      "prompt": "A cinematic, hyper-realistic wide shot of Anguilla's coastline at sunrise. In the foreground, a futuristic but unobtrusive glass data center blends with the limestone cliffs, powered by solar panels. The .ai logo is subtly integrated into the clouds or landscape. The lighting is golden and hopeful.",
+      "alt": "Anguilla coastline with futuristic sustainable infrastructure",
+      "baseFileName": "cover",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-02-summary": {
+      "path": "02-summary/",
+      "prompt": "A split screen comparison. On the left, a 'Rentier' model showing coins flowing into a bucket that has a hole in it. On the right, a 'Sovereign' model showing coins flowing into a complex, glowing engine of infrastructure (servers, schools, power grids) that is generating its own light.",
+      "alt": "Comparison of Rentier vs Sovereign economic models",
+      "baseFileName": "summary",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-03-revenue": {
+      "path": "03-revenue/",
+      "prompt": "A sleek, modern infographic chart showing the exponential growth of .ai domain revenue from 2018 to 2024. The curve goes sharply upwards. The chart is superimposed over a map of Anguilla, highlighting the island's digital footprint.",
+      "alt": "Chart showing exponential growth of .ai revenue",
+      "baseFileName": "revenue",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-04-crisis": {
+      "path": "04-crisis/",
+      "prompt": "A visual representation of the 'Poly-Crisis'. Three interconnected circles: 'Water Scarcity' showing a leaking pipe, 'Energy Insecurity' showing a diesel generator emitting smoke, and 'Climate Risk' showing a hurricane storm track. The background is a stormy Caribbean sky.",
+      "alt": "Diagram of the Poly-Crisis: Water, Energy, Climate",
+      "baseFileName": "crisis",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-05-infrastructure": {
+      "path": "05-infrastructure/",
+      "prompt": "A futuristic concept art of the 'Sovereign AI Cloud' facility in Anguilla. It is a hurricane-proof concrete structure, partially bermed into the earth, covered in solar panels and surrounded by wind turbines. It looks secure, resilient, and high-tech.",
+      "alt": "Concept art of the Sovereign AI Cloud facility",
+      "baseFileName": "infra",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-06-education": {
+      "path": "06-education/",
+      "prompt": "A diverse group of Anguillian students and elders gathering in a modern library or community center. They are using tablets and holographic displays to interact with an AI. The AI is displaying images of Anguillian history (salt picking, boat racing). The mood is intergenerational connection and learning.",
+      "alt": "Students and elders interacting with Cultural AI",
+      "baseFileName": "education",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-07-governance": {
+      "path": "07-governance/",
+      "prompt": "A visualization of the 'Data Embassy'. A digital map shows a secure connection line between Anguilla and a server vault in a snowy location (like Estonia or UK). A shield icon protects the data. On the Anguilla side, a citizen uses a mobile app to access government services instantly.",
+      "alt": "Data Embassy concept connecting Anguilla to secure offshore servers",
+      "baseFileName": "governance",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-08-resilience": {
+      "path": "08-resilience/",
+      "prompt": "A 'Digital Twin' visualization. A wireframe 3D model of Anguilla is overlaid on the real island. Data streams (blue for water, yellow for energy) flow through the wireframe. An AI interface highlights a specific pipe with a red alert 'Leak Detected'.",
+      "alt": "Digital Twin of Anguilla showing infrastructure data layers",
+      "baseFileName": "resilience",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-09-sandbox": {
+      "path": "09-sandbox/",
+      "prompt": "A futuristic 'Sandbox' environment. A glass dome over a section of the island where drones and robots are being tested safely. Outside the dome, the environment is pristine and protected. Symbols of law and ethics (scales of justice) float above the dome.",
+      "alt": "Regulatory Sandbox for ethical AI testing",
+      "baseFileName": "sandbox",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "group_ax-10-ask": {
+      "path": "10-ask/",
+      "prompt": "A close-up of a handshake between a government official and a 'Citizen Architect'. In the background, a small pilot group is working on laptops, building tools. The lighting is warm and focuses on the human connection and the start of a partnership.",
+      "alt": "Handshake symbolizing the partnership for the Micro-Pilot",
+      "baseFileName": "ask",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    }
+  }
+}

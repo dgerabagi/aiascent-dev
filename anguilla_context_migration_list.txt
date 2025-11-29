@@ -1,0 +1,31 @@
+src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md
+src/Artifacts/A201 - Anguilla Project - Vision and Master Plan.md
+src/Artifacts/A202 - Research Proposal - The AI Capital.md
+src/Artifacts/A203 - Research Proposal - The Cognitive Citizenry.md
+src/Artifacts/A204 - Research Proposal - The Automated State.md
+src/Artifacts/A205 - Research Proposal - Resilient Island Systems.md
+src/Artifacts/A206 - Research Proposal - The Global AI Sandbox.md
+src/Artifacts/A207 - Strategic Presentation Guide.md
+src/Artifacts/A214 - Anguilla Project - GitHub Repository Setup Guide.md
+context/dce/dce_kb.md
+context/personal/dgerabagi_resume.md
+context/v2v/research-proposals/01-V2V Academy Content Research Plan.md
+context/v2v/research-proposals/02-V2V Context Engineering Research Plan.md
+context/v2v/research-proposals/03-AI Research Proposal_ V2V Pathway.md
+context/v2v/research-proposals/04-AI Research Proposal_ V2V Pathway.md
+context/v2v/research-proposals/06-V2V Academy Context Engineering Research.md
+context/v2v/research-proposals/07-V2V Pathway Research Proposal.md
+context/v2v/research-proposals/08-V2V Pathway Research Proposal.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-1.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-2.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-3.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-4.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-5.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-6.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-7.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-8.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-9.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-10.md
+context/v2v/audio-transcripts/1-on-1-training/transcript-11.md
+src/Artifacts/A52.1 DCE - Parser Logic and AI Guidance.md
+src/Artifacts/A52.2 DCE - Interaction Schema Source.md
