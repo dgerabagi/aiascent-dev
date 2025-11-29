@@ -23,7 +23,9 @@ export default function AnguillaPresentationPage() {
   }, [setAutoplay, setIsFullscreen]);
 
   return (
-    <div className="w-full h-screen bg-background overflow-hidden">
+    // C11 Update: Added pt-14 md:pt-16 to ensure content is pushed down below the fixed header
+    // if fullscreen mode is exited or hasn't engaged yet.
+    <div className="w-full h-screen bg-background overflow-hidden pt-14 md:pt-16">
         <ReportViewer reportName="anguilla" />
     </div>
   );

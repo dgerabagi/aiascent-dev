@@ -137,7 +137,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
     };
 
     return (
-        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
+        // C11 Update: Increased z-index to z-[5000] to ensure it covers the site header (z-50)
+        <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[5000]' : ''}`}>
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
                 {/* C7 Update: Reduced padding from p-2 to p-1 to save vertical space */}
