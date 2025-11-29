@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 7 - embedding fixed; bottom alignment almost resolved; create the 'presentation url'
+Current Cycle 8 - final tweaks based on observations
+Cycle 7 - embedding fixed; bottom alignment almost resolved; create the 'presentation url'
 Cycle 6 - fix report embedding, fix bottom of report viewer
 Cycle 5 - get server back up and running
 Cycle 4 - create image system prompt for the anguilla imagery
@@ -738,6 +739,34 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 8>
+<Cycle Context>
+okay great, well actually the way you programmed it, if i just navigate to anguilla project using the drop-down menu, itll trigger the fullscreen/autoplay which is not ideal.
+
+what if, instead we make the trigger be navigating to something separate/unique, like https://aiascent.dev/anguilla? that way, we will not interfere with normal usage/expectations of the website.
+
+next, now there is a bit too much space in between the bottom of the report viewer, and the start of the particle banner. can this be remedied?
+
+finally, it would be preferable if the project selector were assocaited/attached to the showcase button.
+</Cycle Context>
+<Previous Cycle 7 Summary of Actions>
+I have analyzed the reported issues:
+1.  **Embedding Mismatch:** The system is looking for an `anguilla` knowledge base, but the files provided are named `anguilla_report_chunks.json` and `anguilla_report_faiss.index`. Additionally, the `reportId` in the content file is `anguilla-vision-v1`, which needs to be correctly mapped to this knowledge base.
+2.  **UI Overlap:** The `ReportViewer` on the showcase page is extending beyond the viewport, causing it to overlap with or be obscured by the footer/banner elements. The `NextPageSection` (particle banner) is also likely interfering with the "app-like" experience of the viewer.
+
+My course of action is to:
+1.  **Update `src/lib/kb-helper.ts`:** Update the logic to detect `anguilla` in the report name and return the correct `anguilla_report` knowledge base identifier.
+2.  **Update `src/app/api/chat/route.ts`:** Register `anguilla_report` as a valid knowledge base key and ensure the system prompt is mapped correctly.
+3.  **Update `src/stores/reportStore.ts`:** Ensure fallback suggestions map correctly for the `anguilla_report` identifier.
+4.  **Update `src/app/showcase/page.tsx`:** Constrain the height of the container to `calc(100vh - 4rem)` (accounting for the fixed header) to prevent overflow and remove the `NextPageSection` to provide a clean, full-screen interface for the report and game.
+
+1.  **Update `src/lib/kb-helper.ts`:** Map `anguilla`-related report names to `anguilla_report`.
+2.  **Update `src/app/api/chat/route.ts`:** Add `anguilla_report` to `systemPrompts` and validation logic.
+3.  **Update `src/stores/reportStore.ts`:** Update `getFallbackSuggestions` to handle `anguilla-vision-v1` or `anguilla_report`.
+4.  **Update `src/app/showcase/page.tsx`:** Fix height calculation and remove `NextPageSection`.
+</Previous Cycle 7 Summary of Actions>
+</Cycle 8>
 
 <Cycle 7>
 <Cycle Context>
@@ -1864,10 +1893,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T19:12:12.576Z
+  Date Generated: 2025-11-29T19:26:54.407Z
   ---
-  Total Files: 146
-  Approx. Tokens: 162088
+  Total Files: 149
+  Approx. Tokens: 162819
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1878,7 +1907,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 5. src\app\learn\page.tsx (3929 tokens)
 6. public\data\whitepaper_content.json (3607 tokens)
 7. src\app\mission\page.tsx (3597 tokens)
-8. src\components\report-viewer\ReportChatPanel.tsx (3534 tokens)
+8. src\components\report-viewer\ReportChatPanel.tsx (3560 tokens)
 9. public\data\anguilla_content.json (3072 tokens)
 10. public\data\whitepaper_imagemanifest.json (2739 tokens)
 
@@ -1910,7 +1939,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 25. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 26. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
 27. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
-28. src\app\showcase\page.tsx - Lines: 24 - Chars: 925 - Tokens: 232
+28. src\app\showcase\page.tsx - Lines: 5 - Chars: 119 - Tokens: 30
 29. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 30. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 31. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
@@ -1918,7 +1947,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 34. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 35. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
+36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 63 - Chars: 2887 - Tokens: 722
 37. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 119 - Chars: 5899 - Tokens: 1475
 38. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
 39. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
@@ -1997,16 +2026,16 @@ This file-centric approach helps in planning and prioritizing work, especially i
 112. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
 113. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 114. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
-115. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+115. src\components\report-viewer\PageNavigator.tsx - Lines: 25 - Chars: 805 - Tokens: 202
 116. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-117. src\components\report-viewer\ReportChatPanel.tsx - Lines: 302 - Chars: 14134 - Tokens: 3534
+117. src\components\report-viewer\ReportChatPanel.tsx - Lines: 303 - Chars: 14238 - Tokens: 3560
 118. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 119. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-120. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9012 - Tokens: 2253
+120. src\components\report-viewer\ReportViewer.tsx - Lines: 213 - Chars: 9102 - Tokens: 2276
 121. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 122. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 123. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-124. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
+124. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3295 - Tokens: 824
 125. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
 126. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 127. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
@@ -2029,6 +2058,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 144. scripts\scaffold_anguilla_images.mjs - Lines: 44 - Chars: 1838 - Tokens: 460
 145. src\Artifacts\A208 - Anguilla Project - Image System Prompt.md - Lines: 57 - Chars: 4290 - Tokens: 1073
 146. public\data\anguilla_imagemanifest.json - Lines: 86 - Chars: 5271 - Tokens: 1318
+147. src\components\showcase\ShowcaseGame.tsx - Lines: 49 - Chars: 1851 - Tokens: 463
+148. src\app\showcase\[slug]\page.tsx - Lines: 59 - Chars: 2087 - Tokens: 522
+149. src\components\showcase\ProjectSelector.tsx - Lines: 54 - Chars: 1838 - Tokens: 460
 
 <file path="src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md">
 # Artifact A200: Anguilla Project - Universal Task Checklist
@@ -4531,29 +4563,10 @@ export default MissionPage;
 </file_artifact>
 
 <file path="src/app/showcase/page.tsx">
-// src/app/showcase/page.tsx
-'use client';
-
-import ShowcaseTabs from "@/components/showcase/ShowcaseTabs";
-import NextPageSection from "@/components/global/NextPageSection";
-import React from "react";
+import { redirect } from 'next/navigation';
 
 export default function ShowcasePage() {
-  return (
-    // C6 Update: Use h-[calc(100vh-4rem)] to ensure the tabs container fits exactly in the viewport
-    // without overflowing due to the pt-16 (4rem) padding.
-    <div className="w-full pt-16 flex flex-col min-h-screen">
-        <div className="h-[calc(100vh-4rem)] flex flex-col">
-            <ShowcaseTabs />
-        </div>
-        <NextPageSection
-            title="Ready to Become a Citizen Architect?"
-            description="The V2V Academy provides the pathway to master the skills of AI-assisted development and become a leader in the new digital frontier."
-            buttonText="Explore the Academy"
-            href="/academy"
-        />
-    </div>
-  );
+  redirect('/showcase/report');
 }
 </file_artifact>
 
@@ -5409,7 +5422,7 @@ aiascent-dev/
 
 # Author: AI Model & Curator
 
-# Updated on: C11 (Add tasks for visual fixes and feature implementation)
+# Updated on: C7 (Complete Cycle 6 tasks, Add Cycle 7 tasks for navigation and layout)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -5425,98 +5438,47 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 11+
+## Task List for Cycle 7+
 
-## T-7: Fix Hero Section GIF Styling
+## T-13: Enhance Navigation and Layout
 - **Files Involved:**
-    - `src/components/home/HeroSection.tsx`
-    - `src/components/global/container-scroll-animation.tsx`
-- **Total Tokens:** ~1,500
-- **More than one cycle?** No
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 7.1):** In `container-scroll-animation.tsx`, remove the `bg-gray-100` from the inner `div` of the `Card` component to eliminate the white border around the GIF.
-- [ ] **Task (T-ID: 7.2):** In `HeroSection.tsx`, adjust the styling of the `Image` component and its container to make the `pcp.gif` larger, filling more of the "monitor" frame to improve visibility of details.
-
-### Verification Steps
-1.  Load the homepage.
-2.  **Expected:** The `pcp.gif` in the hero section should not have a white border. It should be noticeably larger and more detailed.
-
-## T-8: Implement Light Mode Theme
-- **Files Involved:**
-    - `src/app/globals.css`
-    - `tailwind.config.ts`
-    - `src/components/home/FeaturesSection.tsx`
-    - `src/components/home/WorkflowSection.tsx`
-    - `src/components/global/lamp.tsx`
-- **Total Tokens:** ~5,000
-- **More than one cycle?** No
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 8.1):** In `globals.css`, define a new `:root` block with CSS variables for a complete light theme palette (backgrounds, foregrounds, cards, etc.).
-- [ ] **Task (T-ID: 8.2):** Apply `light:` variants in `FeaturesSection.tsx` and `WorkflowSection.tsx` to fix text visibility and border colors.
-- [ ] **Task (T-ID: 8.3):** In `lamp.tsx`, use `light:` variants to change the background color, gradient colors, and particle colors to be suitable for a light background.
-
-### Verification Steps
-1.  Toggle the theme to "Light".
-2.  **Expected:** All text should be clearly readable. The image borders in the features section should be subtle. The workflow steps should be visible. The mission section's background, lamp effect, and particles should be aesthetically pleasing on a light theme.
-
-## T-9: Implement Mission Page
-- **Files Involved:**
-    - `src/app/mission/page.tsx` (New)
-- **Total Tokens:** ~1,500
-- **More than one cycle?** No
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 9.1):** Create the `page.tsx` file for the `/mission` route.
-- [ ] **Task (T-ID: 9.2):** Implement the page layout and content based on `A19-Page-Design-Mission.md` and the user's narrative about "cognitive apprenticeship", "fissured workplace", and the "solarpunk" vision.
-
-### Verification Steps
-1.  Navigate to `/mission`.
-2.  **Expected:** The page should load without a 404 error and display the new content.
-
-## T-10: Port Report Viewer to Showcase Page
-- **Files Involved:**
+    - `src/app/showcase/[slug]/page.tsx` (New)
     - `src/app/showcase/page.tsx`
-    - `src/components/report-viewer/*` (New)
-    - `src/stores/reportStore.ts` (New)
-    - `package.json`
-- **Total Tokens:** ~20,000+
-- **More than one cycle?** Yes
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 10.1):** Create `src/components/report-viewer/` and `src/stores/` directories.
-- [ ] **Task (T-ID: 10.2):** Copy all component files and the store file from the `context/aiascentgame/report/` directory.
-- [ ] **Task (T-ID: 10.3):** Add `react-icons` to `package.json`.
-- [ ] **Task (T-ID: 10.4):** Begin adapting the ported files, fixing imports and preparing for integration into the `/showcase` page.
-- [ ] **Task (T-ID: 10.5):** (Curator Task) Place `reportContent.json` into `public/data/ai_ascent_report.json` and place report images into `public/assets/images/report/`.
-
-### Verification Steps
-1.  The project should build successfully after adding the new files.
-2.  The `/showcase` page should render a placeholder for the upcoming component.
-
-## T-11: Create Learn Page Shell
-- **Files Involved:**
-    - `src/app/learn/page.tsx` (New)
-- **Total Tokens:** ~500
+    - `src/components/showcase/ProjectSelector.tsx` (New)
+    - `src/components/showcase/ShowcaseGame.tsx` (New)
+    - `src/components/report-viewer/ReportChatPanel.tsx`
+    - `src/components/report-viewer/ReportViewer.tsx`
+- **Total Tokens:** ~4,000
 - **More than one cycle?** No
-- **Status:** To Do
+- **Status:** In Progress
 
-- [ ] **Task (T-ID: 11.1):** Create the `page.tsx` file for the `/learn` route with placeholder content to resolve the 404 error.
+- [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown.
+- [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
+- [x] **Task (T-ID: 13.3):** Implement dynamic routing in `src/app/showcase/[slug]/page.tsx`.
+- [x] **Task (T-ID: 13.4):** Implement auto-fullscreen and autoplay logic for the Anguilla project slug.
+- [x] **Task (T-ID: 13.5):** Update `src/app/showcase/page.tsx` to act as a redirect.
+- [x] **Task (T-ID: 13.6):** Add bottom padding to `ReportChatPanel` to fix alignment issues.
+- [x] **Task (T-ID: 13.7):** Reduce header padding in `ReportViewer` and `PageNavigator` to save vertical space.
 
 ### Verification Steps
-1.  Navigate to `/learn`.
-2.  **Expected:** The page should load without a 404 error.
+1.  Navigate to `/showcase/anguilla`.
+2.  **Expected:** The Anguilla report loads, automatically enters fullscreen, and starts autoplaying.
+3.  Navigate to `/showcase`.
+4.  **Expected:** Redirects to `/showcase/report`.
+5.  Check the top-left of the showcase view.
+6.  **Expected:** A "The Ascent Report" (or similar) dropdown button is visible. Clicking it allows switching to "Anguilla Project" or "AI Ascent Game".
+7.  Check the bottom of the chat panel.
+8.  **Expected:** The input box has sufficient clearance from the bottom edge.
 
-## T-12: Plan for Next Cycle
+## T-14: Plan for Next Cycle
 - **Files Involved:**
     - `src/Artifacts/A4-Universal-Task-Checklist.md`
-- [ ] **Task (T-ID: 12.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+- [ ] **Task (T-ID: 14.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
-(Previous tasks T-1 through T-6 are omitted for brevity)
+(Previous tasks T-1 through T-12 are omitted for brevity)
 </file_artifact>
 
 <file path="src/Artifacts/A5-Dual Domain Hosting Guide.md">
@@ -10965,8 +10927,9 @@ const PageNavigator: React.FC = () => {
   if (!currentPage) return null;
 
   return (
-    <div className="flex justify-center items-center w-full relative min-h-[40px]">
-      <h2 className="text-lg font-bold text-primary text-center px-12 truncate" title={currentPage.pageTitle}>
+    // C7 Update: Reduced min-height from 40px to 32px and adjusted text size for compactness
+    <div className="flex justify-center items-center w-full relative min-h-[32px]">
+      <h2 className="text-base font-bold text-primary text-center px-12 truncate" title={currentPage.pageTitle}>
         {currentPage.pageTitle}
       </h2>
     </div>
@@ -11291,7 +11254,8 @@ const ReportChatPanel: React.FC = () => {
                 </div>
             )}
 
-            <footer className="p-3 border-t border-border bg-background flex-shrink-0">
+            {/* C7 Update: Added pb-6 to ensure input isn't cut off by bottom of screen/footer */}
+            <footer className="p-3 pb-6 border-t border-border bg-background flex-shrink-0">
                 <textarea
                     ref={textareaRef}
                     className="w-full bg-muted border border-input rounded-md p-2 text-sm resize-none focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
@@ -11605,7 +11569,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
-                <header className="p-2 border-b flex-shrink-0">
+                {/* C7 Update: Reduced padding from p-2 to p-1 to save vertical space */}
+                <header className="p-1 border-b flex-shrink-0">
                     <PageNavigator />
                 </header>
                 <div className="p-2 border-b flex-shrink-0">
@@ -13510,6 +13475,177 @@ When generating images, always ensure the technology looks like it *belongs* on 
     }
   }
 }
+</file_artifact>
+
+<file path="src/components/showcase/ShowcaseGame.tsx">
+'use client';
+import React, { useRef, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { FaSync } from 'react-icons/fa';
+
+const ShowcaseGame = () => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isGameLoading, setIsGameLoading] = useState(true);
+
+  const handleRefresh = () => {
+    if (iframeRef.current) {
+      setIsGameLoading(true);
+      // Resetting the src attribute is a safe way to force an iframe to reload its content
+      // without running into cross-origin security issues.
+      iframeRef.current.src = iframeRef.current.src;
+    }
+  };
+
+  const handleIframeLoad = () => {
+    setIsGameLoading(false);
+  };
+
+  return (
+    <div className="relative w-full h-full flex flex-col items-center bg-background">
+      <p className="text-sm text-muted-foreground my-2 p-2 border rounded-md bg-muted/50 max-w-4xl text-center mx-4">
+        You are viewing an embedded version of AI Ascent. For the full experience, including login, chat, and multiplayer features, please visit the main site: {' '}
+        <a href="https://aiascent.game/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+          aiascent.game
+        </a>.
+      </p>
+      <div className="relative w-full flex-grow border-t border-border">
+        <div className="absolute top-2 right-2 z-10">
+          <Button onClick={handleRefresh} variant="outline" size="icon" className="bg-background/80 backdrop-blur-sm">
+            <FaSync className={isGameLoading ? 'animate-spin' : ''} />
+          </Button>
+        </div>
+        <iframe
+          ref={iframeRef}
+          src="https://aiascent.game/"
+          className="w-full h-full border-0"
+          title="AI Ascent Game"
+          onLoad={handleIframeLoad}
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
+export default ShowcaseGame;
+</file_artifact>
+
+<file path="src/app/showcase/[slug]/page.tsx">
+'use client';
+import React, { useEffect } from 'react';
+import ReportViewer from '@/components/report-viewer/ReportViewer';
+import ShowcaseGame from '@/components/showcase/ShowcaseGame';
+import ProjectSelector from '@/components/showcase/ProjectSelector';
+import NextPageSection from '@/components/global/NextPageSection';
+import { useReportStore } from '@/stores/reportStore';
+
+export default function ShowcaseSlugPage({ params }: { params: { slug: string } }) {
+  const { setAutoplay, setIsFullscreen } = useReportStore.getState();
+  const slug = params.slug;
+
+  useEffect(() => {
+    // Special presentation logic for Anguilla project
+    if (slug === 'anguilla') {
+      // Small timeout to ensure component mount before state updates trigger
+      setTimeout(() => {
+        setIsFullscreen(true);
+        setAutoplay(true);
+      }, 100);
+    } else {
+        // Reset defaults for other views
+        setIsFullscreen(false);
+        setAutoplay(false);
+    }
+  }, [slug, setAutoplay, setIsFullscreen]);
+
+  const renderContent = () => {
+    switch (slug) {
+      case 'game':
+        return <ShowcaseGame />;
+      case 'anguilla':
+        return <ReportViewer reportName="anguilla" />;
+      case 'report':
+      default:
+        return <ReportViewer reportName="showcase" />;
+    }
+  };
+
+  return (
+    <div className="w-full pt-16 flex flex-col min-h-screen">
+      <div className="h-[calc(100vh-4rem)] flex flex-col relative">
+        <ProjectSelector currentSlug={slug} />
+        {renderContent()}
+      </div>
+      
+      {/* Only show the NextPageSection if we are NOT in fullscreen mode (handled by ReportViewer CSS) 
+          and not in the game view where it might be distracting */}
+      {slug !== 'game' && (
+          <NextPageSection
+            title="Ready to Become a Citizen Architect?"
+            description="The V2V Academy provides the pathway to master the skills of AI-assisted development and become a leader in the new digital frontier."
+            buttonText="Explore the Academy"
+            href="/academy"
+          />
+      )}
+    </div>
+  );
+}
+</file_artifact>
+
+<file path="src/components/showcase/ProjectSelector.tsx">
+'use client';
+import React from 'react';
+import { useRouter } from 'next/navigation';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { FaChevronDown, FaProjectDiagram } from 'react-icons/fa';
+
+interface ProjectSelectorProps {
+  currentSlug: string;
+}
+
+const projects = [
+  { id: 'report', label: 'The Ascent Report' },
+  { id: 'anguilla', label: 'Anguilla Project' },
+  { id: 'game', label: 'AI Ascent Game' },
+];
+
+const ProjectSelector: React.FC<ProjectSelectorProps> = ({ currentSlug }) => {
+  const router = useRouter();
+  const currentProject = projects.find(p => p.id === currentSlug) || projects[0];
+
+  return (
+    <div className="absolute top-2 left-2 z-50">
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline" size="sm" className="gap-2 bg-background/80 backdrop-blur-sm border-primary/50 hover:bg-accent shadow-md">
+            <FaProjectDiagram className="text-primary" />
+            <span className="font-semibold hidden sm:inline">{currentProject.label}</span>
+            <span className="font-semibold sm:hidden">Projects</span>
+            <FaChevronDown className="text-xs opacity-50" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="start" className="w-56">
+          {projects.map((project) => (
+            <DropdownMenuItem 
+              key={project.id} 
+              onClick={() => router.push(`/showcase/${project.id}`)}
+              className={currentSlug === project.id ? 'bg-accent' : ''}
+            >
+              {project.label}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  );
+};
+
+export default ProjectSelector;
 </file_artifact>
 
 
