@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 10 - make top banner mobile friendly
+Current Cycle 11 - still getting overlap
+Cycle 10 - make top banner mobile friendly
 Cycle 9 - make showcase drop-down disappear after a selection is made
 Cycle 8 - final tweaks based on observations
 Cycle 7 - embedding fixed; bottom alignment almost resolved; create the 'presentation url'
@@ -741,6 +742,22 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 11>
+<Cycle Context>
+i like the new hamburger menu, but it did nto solve the overlap issue. ther eis still a title bar, and it is overlapping the title in the report viewer when i am viewing aiascent.dev/anguilla. basically, the first thing i can see is almost the entire progress bar. the very top of it is being covered by the top bar. 
+</Cycle Context>
+<Previous Cycle 10 Summary of Actions>
+I have analyzed the request to ensure the "Showcase" drop-down menu in the header closes automatically after a user makes a selection.
+
+The issue stems from using a Next.js `Link` component inside a Radix UI `DropdownMenuItem` without utilizing the `asChild` prop. Without `asChild`, the `DropdownMenuItem` wraps the `Link` in a `div`, and the click event handling can become disjointed from the navigation event, preventing the menu's internal "close on click" logic from firing. By using `asChild`, the `DropdownMenuItem` passes its behavior (including the close handler) directly to the `Link` component, ensuring a seamless experience.
+
+My course of action is to update `src/components/layout/Header.tsx` to apply the `asChild` prop to the showcase menu items.
+
+1.  **Update `src/components/layout/Header.tsx`:** Refactor the "Showcase" `DropdownMenu` items to use the `asChild` prop on `DropdownMenuItem` and ensure the child `Link` components are styled correctly to receive the menu item styles.
+2.  **Update `src/Artifacts/A4-Universal-Task-Checklist.md`:** Mark the navigation refinement task as complete.
+</Previous Cycle 10 Summary of Actions>
+</Cycle 11>
 
 <Cycle 10>
 <Cycle Context>
@@ -1943,10 +1960,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T21:35:46.103Z
+  Date Generated: 2025-11-29T21:50:53.950Z
   ---
   Total Files: 150
-  Approx. Tokens: 163444
+  Approx. Tokens: 163445
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1954,10 +1971,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 2. src\stores\reportStore.ts (8926 tokens)
 3. src\app\api\chat\route.ts (5223 tokens)
 4. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
-5. src\app\learn\page.tsx (3929 tokens)
+5. src\app\learn\page.tsx (3725 tokens)
 6. public\data\whitepaper_content.json (3607 tokens)
-7. src\app\mission\page.tsx (3597 tokens)
-8. src\components\report-viewer\ReportChatPanel.tsx (3560 tokens)
+7. src\components\report-viewer\ReportChatPanel.tsx (3560 tokens)
+8. src\app\mission\page.tsx (3389 tokens)
 9. public\data\anguilla_content.json (3072 tokens)
 10. public\data\whitepaper_imagemanifest.json (2739 tokens)
 
@@ -1986,9 +2003,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 22. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
 23. src\app\api\chat\route.ts - Lines: 373 - Chars: 20892 - Tokens: 5223
 24. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-25. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
-26. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
-27. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
+25. src\app\dce\page.tsx - Lines: 82 - Chars: 6859 - Tokens: 1715
+26. src\app\learn\page.tsx - Lines: 158 - Chars: 14897 - Tokens: 3725
+27. src\app\mission\page.tsx - Lines: 129 - Chars: 13553 - Tokens: 3389
 28. src\app\showcase\page.tsx - Lines: 5 - Chars: 119 - Tokens: 30
 29. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 30. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
@@ -1997,7 +2014,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 34. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 35. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 67 - Chars: 3383 - Tokens: 846
+36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 60 - Chars: 2637 - Tokens: 660
 37. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 119 - Chars: 5899 - Tokens: 1475
 38. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
 39. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
@@ -2072,7 +2089,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 108. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 109. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 110. src\components\layout\Footer.tsx - Lines: 44 - Chars: 1551 - Tokens: 388
-111. src\components\layout\Header.tsx - Lines: 92 - Chars: 4069 - Tokens: 1018
+111. src\components\layout\Header.tsx - Lines: 121 - Chars: 6408 - Tokens: 1602
 112. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
 113. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 114. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
@@ -2109,7 +2126,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 145. src\Artifacts\A208 - Anguilla Project - Image System Prompt.md - Lines: 57 - Chars: 4290 - Tokens: 1073
 146. public\data\anguilla_imagemanifest.json - Lines: 86 - Chars: 5271 - Tokens: 1318
 147. src\components\showcase\ShowcaseGame.tsx - Lines: 49 - Chars: 1851 - Tokens: 463
-148. src\app\showcase\[slug]\page.tsx - Lines: 49 - Chars: 1750 - Tokens: 438
+148. src\app\showcase\[slug]\page.tsx - Lines: 50 - Chars: 1859 - Tokens: 465
 149. src\components\showcase\ProjectSelector.tsx - Lines: 54 - Chars: 1838 - Tokens: 460
 150. src\app\anguilla\page.tsx - Lines: 30 - Chars: 907 - Tokens: 227
 
@@ -4251,12 +4268,13 @@ const DcePage = () => {
             imageSide: 'right',
             imagePath: 'dce/',
             imagePrompt: 'A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.',
-            images: ['dce-feature-artifacts.gif'], // Placeholder, assuming gif will be created.
+            images: ['dce-feature-artifacts.gif'],
         },
     ];
 
     return (
-        <div className="bg-background text-foreground pt-16">
+        // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+        <div className="bg-background text-foreground pt-14 md:pt-16">
             <div className="container mx-auto px-4 py-16">
                 <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
                     The Data Curation Environment
@@ -4295,27 +4313,14 @@ export default DcePage;
 
 <file path="src/app/learn/page.tsx">
 'use client';
-{
-  /*
-  Cycle 54: Add top padding for header consistency.
-  Cycle 51: Replace bottom button with NextPageSection and update content.
-  Cycle 50: Expand content for all sections based on A34.
-  Cycle 31: Add 'use client' directive.
-  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
-  - Therefore, this page must also be a Client Component to be used in the App Router.
-  Cycle 30: Fix unescaped entities and add "See Showcase" button.
-  - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
-  - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
-  */
-}
-// src/app/learn/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 import NextPageSection from '@/components/global/NextPageSection';
 
 const LearnPage = () => {
     return (
-        <div className="bg-background text-foreground min-h-screen pt-16">
+        // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+        <div className="bg-background text-foreground min-h-screen pt-14 md:pt-16">
             <div className="container mx-auto px-4 py-16">
                 <section className="text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">
@@ -4469,28 +4474,14 @@ export default LearnPage;
 
 <file path="src/app/mission/page.tsx">
 'use client';
-{
-  /*
-  Cycle 54: Add top padding for header consistency.
-  Cycle 51: Replace bottom button with NextPageSection component.
-  Cycle 50: Update Cognitive Apprenticeship content and image prompt.
-  Cycle 32: Fix unescaped entities.
-  - Replaced ' with &apos; in the content for "The Strategic Imperative: The Fissured Workplace" to fix linting error.
-  Cycle 31: Add 'use client' directive.
-  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
-  - Therefore, this page must also be a Client Component to be used in the App Router.
-  Cycle 30: Add a "Learn More" button to the bottom of the page.
-  - Added a new section at the end with a Link and Button component to navigate to the /learn page.
-  */
-}
-// src/app/mission/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 import NextPageSection from '@/components/global/NextPageSection';
 
 const MissionPage = () => {
     return (
-        <div className="bg-background text-foreground min-h-screen pt-16">
+        // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+        <div className="bg-background text-foreground min-h-screen pt-14 md:pt-16">
             <div className="container mx-auto px-4 py-16">
                 <section className="text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">
@@ -5473,7 +5464,7 @@ aiascent-dev/
 
 # Author: AI Model & Curator
 
-# Updated on: C9 (Fix dropdown close behavior)
+# Updated on: C10 (Mobile optimization for top banner)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -5489,51 +5480,44 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 8+
+## Task List for Cycle 10+
 
-## T-13: Enhance Navigation and Layout
+## T-14: Mobile Optimization
 - **Files Involved:**
-    - `src/app/anguilla/page.tsx` (New)
-    - `src/app/showcase/[slug]/page.tsx`
     - `src/components/layout/Header.tsx`
-    - `src/components/global/NextPageSection.tsx`
-- **Total Tokens:** ~2,500
+    - `src/app/showcase/[slug]/page.tsx`
+    - `src/app/dce/page.tsx`
+    - `src/app/learn/page.tsx`
+    - `src/app/mission/page.tsx`
+- **Total Tokens:** ~2,000
 - **More than one cycle?** No
 - **Status:** Complete
 
-- [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown. (Superseded by Header dropdown)
-- [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
-- [x] **Task (T-ID: 13.3):** Implement dynamic routing in `src/app/showcase/[slug]/page.tsx`.
-- [x] **Task (T-ID: 13.4):** Implement auto-fullscreen and autoplay logic. (Moved to explicit `/anguilla` route)
-- [x] **Task (T-ID: 13.5):** Update `src/app/showcase/page.tsx` to act as a redirect.
-- [x] **Task (T-ID: 13.6):** Add bottom padding to `ReportChatPanel` to fix alignment issues.
-- [x] **Task (T-ID: 13.7):** Reduce header padding in `ReportViewer` and `PageNavigator` to save vertical space.
-- [x] **Task (T-ID: 13.8):** Create dedicated `/anguilla` presentation route.
-- [x] **Task (T-ID: 13.9):** Move Showcase navigation to main Header dropdown.
-- [x] **Task (T-ID: 13.10):** Fix spacing between ReportViewer and bottom banner.
-- [x] **Bug Fix (T-ID: 13.11):** Ensure Header dropdown closes automatically upon selection.
+- [x] **Task (T-ID: 14.1):** Implement Mobile "Hamburger" Menu in Header.
+- [x] **Task (T-ID: 14.2):** Reduce Header height on mobile to `h-14` (3.5rem).
+- [x] **Task (T-ID: 14.3):** Ensure Header background is solid on mobile to prevent visual overlap.
+- [x] **Task (T-ID: 14.4):** Adjust top padding on all content pages to `pt-14 md:pt-16`.
+- [x] **Task (T-ID: 14.5):** Use `dvh` (Dynamic Viewport Height) for Showcase page to handle mobile address bar.
 
 ### Verification Steps
-1.  Navigate to `https://aiascent.dev/anguilla`.
-2.  **Expected:** The Anguilla report loads, automatically enters fullscreen, and starts autoplaying.
-3.  Navigate to `https://aiascent.dev/showcase/anguilla`.
-4.  **Expected:** The Anguilla report loads normally (embedded), without auto-fullscreen.
-5.  Hover over "Showcase" in the top navigation bar.
-6.  **Expected:** A dropdown menu appears with options for "The Ascent Report", "Anguilla Project", and "AI Ascent Game".
-7.  Click on any option in the "Showcase" dropdown.
-8.  **Expected:** The page navigates to the selected project AND the dropdown menu closes immediately.
-9.  Check the bottom of the showcase page.
-10. **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
+1.  Open the website on a mobile device (or dev tools mobile view).
+2.  **Expected:** A hamburger menu icon appears in the top right.
+3.  Click the hamburger menu.
+4.  **Expected:** A dropdown menu appears with all navigation links (Home, Mission, Learn, DCE, Showcase options, Academy).
+5.  Scroll down on a text-heavy page (like Mission).
+6.  **Expected:** The text scrolls *under* the header, but the header background is solid so the text is not visible through it (no messiness).
+7.  Navigate to `/showcase/report`.
+8.  **Expected:** The report viewer fits perfectly within the screen height (between header and bottom/address bar) without being cut off or requiring double scrolling.
 
-## T-14: Plan for Next Cycle
+## T-15: Plan for Next Cycle
 - **Files Involved:**
     - `src/Artifacts/A4-Universal-Task-Checklist.md`
-- [ ] **Task (T-ID: 14.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+- [ ] **Task (T-ID: 15.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
-(Previous tasks T-1 through T-12 are omitted for brevity)
+(Previous tasks T-1 through T-13 are omitted for brevity)
 </file_artifact>
 
 <file path="src/Artifacts/A5-Dual Domain Hosting Guide.md">
@@ -10415,50 +10399,48 @@ export default Footer;
 
 <file path="src/components/layout/Header.tsx">
 // src/components/layout/Header.tsx
-'use client'; // C8: Needs to be client component for Dropdown interactions
+'use client'; 
 import Link from 'next/link';
 import { ModeToggle } from '@/components/global/mode-toggle';
 import Image from 'next/image';
-import { FaDiscord, FaGithub, FaChevronDown } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaChevronDown, FaBars } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
 
 const Header = () => {
   return (
-    // Updated C3: Changed styling to match A16 (fixed, dark, blur)
-    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-lg">
-      {/* C19 Fix: Changed to relative container to allow absolute positioning of nav */}
-      <div className="container relative flex h-16 items-center px-4">
+    // Updated C10: h-14 on mobile, h-16 on desktop. Solid bg on mobile for readability.
+    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm md:bg-background/80 md:backdrop-blur-lg transition-all duration-300">
+      <div className="container relative flex h-14 md:h-16 items-center px-4">
 
         {/* Logo and Title - Pushed to left */}
         <div className="flex items-center gap-2 mr-auto">
           <Link href="/" className="flex items-center gap-2">
-            {/* Placeholder for Logo (A15.2) */}
             <Image
-              src="/assets/logo.svg" // Placeholder path
+              src="/assets/logo.svg" 
               width={30}
               height={30}
               alt="AIAscent Logo"
-              className="shadow-sm"
+              className="shadow-sm w-6 h-6 md:w-[30px] md:h-[30px]" // Smaller logo on mobile
             />
-            <span className="text-2xl font-bold">aiascent.dev</span>
+            <span className="text-xl md:text-2xl font-bold truncate">aiascent.dev</span>
           </Link>
         </div>
 
-        {/* Navigation Links - Absolutely Centered */}
-        {/* C99: Reordered Academy to be last */}
+        {/* Desktop Navigation Links - Absolutely Centered */}
         <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/mission">Mission</NavLink>
           <NavLink href="/learn">Learn</NavLink>
           <NavLink href="/dce">DCE</NavLink>
           
-          {/* C8: Showcase Dropdown */}
-          {/* C9 Update: Added asChild to DropdownMenuItem to ensure menu closes on selection */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
               Showcase <FaChevronDown size={10} />
@@ -10480,17 +10462,48 @@ const Header = () => {
         </nav>
 
         {/* Right side (Actions/Toggle) - Pushed to right */}
-        <div className="flex items-center justify-end gap-4 ml-auto">
-          <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="View on GitHub">
-            <FaGithub size={22} />
-          </a>
-          <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
-            <FaDiscord size={22} />
-          </a>
+        <div className="flex items-center justify-end gap-2 md:gap-4 ml-auto">
+          <div className="hidden md:flex items-center gap-4">
+            <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="View on GitHub">
+                <FaGithub size={22} />
+            </a>
+            <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
+                <FaDiscord size={22} />
+            </a>
+          </div>
           <ModeToggle />
-          {/* Placeholder for Mobile Menu Icon */}
+          
+          {/* Mobile Menu (C10) */}
           <div className="md:hidden">
-            {/* MenuIcon component would go here */}
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="-mr-2">
+                        <FaBars size={20} />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                    <DropdownMenuItem asChild><Link href="/" className="cursor-pointer w-full">Home</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/mission" className="cursor-pointer w-full">Mission</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/learn" className="cursor-pointer w-full">Learn</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/dce" className="cursor-pointer w-full">DCE</Link></DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuLabel>Showcase</DropdownMenuLabel>
+                    <DropdownMenuItem asChild><Link href="/showcase/report" className="cursor-pointer w-full pl-6">The Ascent Report</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/showcase/anguilla" className="cursor-pointer w-full pl-6">Anguilla Project</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/showcase/game" className="cursor-pointer w-full pl-6">AI Ascent Game</Link></DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild><Link href="/academy" className="cursor-pointer w-full font-bold text-primary">V2V Academy</Link></DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <div className="flex justify-around p-2">
+                        <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground" title="View on GitHub">
+                            <FaGithub size={24} />
+                        </a>
+                        <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground" title="Join our Discord Community">
+                            <FaDiscord size={24} />
+                        </a>
+                    </div>
+                </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>
@@ -13641,9 +13654,10 @@ export default function ShowcaseSlugPage({ params }: { params: { slug: string } 
   };
 
   return (
-    <div className="w-full pt-16 flex flex-col min-h-screen">
-      <div className="h-[calc(100vh-4rem)] flex flex-col relative">
-        {/* ProjectSelector moved to Header in C8 */}
+    // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+    <div className="w-full pt-14 md:pt-16 flex flex-col min-h-screen">
+      {/* C10: Updated height to use dvh for mobile address bar handling and adjust for smaller header */}
+      <div className="h-[calc(100dvh-3.5rem)] md:h-[calc(100vh-4rem)] flex flex-col relative">
         {renderContent()}
       </div>
       
@@ -13654,7 +13668,7 @@ export default function ShowcaseSlugPage({ params }: { params: { slug: string } 
             description="The V2V Academy provides the pathway to master the skills of AI-assisted development and become a leader in the new digital frontier."
             buttonText="Explore the Academy"
             href="/academy"
-            className="mt-0" // C8: Removed top margin to flush with viewer
+            className="mt-0" 
           />
       )}
     </div>
