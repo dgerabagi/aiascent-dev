@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C9 (Fix dropdown close behavior)
+# Updated on: C10 (Mobile optimization for top banner)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -20,48 +20,41 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 8+
+## Task List for Cycle 10+
 
-## T-13: Enhance Navigation and Layout
+## T-14: Mobile Optimization
 - **Files Involved:**
-    - `src/app/anguilla/page.tsx` (New)
-    - `src/app/showcase/[slug]/page.tsx`
     - `src/components/layout/Header.tsx`
-    - `src/components/global/NextPageSection.tsx`
-- **Total Tokens:** ~2,500
+    - `src/app/showcase/[slug]/page.tsx`
+    - `src/app/dce/page.tsx`
+    - `src/app/learn/page.tsx`
+    - `src/app/mission/page.tsx`
+- **Total Tokens:** ~2,000
 - **More than one cycle?** No
 - **Status:** Complete
 
-- [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown. (Superseded by Header dropdown)
-- [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
-- [x] **Task (T-ID: 13.3):** Implement dynamic routing in `src/app/showcase/[slug]/page.tsx`.
-- [x] **Task (T-ID: 13.4):** Implement auto-fullscreen and autoplay logic. (Moved to explicit `/anguilla` route)
-- [x] **Task (T-ID: 13.5):** Update `src/app/showcase/page.tsx` to act as a redirect.
-- [x] **Task (T-ID: 13.6):** Add bottom padding to `ReportChatPanel` to fix alignment issues.
-- [x] **Task (T-ID: 13.7):** Reduce header padding in `ReportViewer` and `PageNavigator` to save vertical space.
-- [x] **Task (T-ID: 13.8):** Create dedicated `/anguilla` presentation route.
-- [x] **Task (T-ID: 13.9):** Move Showcase navigation to main Header dropdown.
-- [x] **Task (T-ID: 13.10):** Fix spacing between ReportViewer and bottom banner.
-- [x] **Bug Fix (T-ID: 13.11):** Ensure Header dropdown closes automatically upon selection.
+- [x] **Task (T-ID: 14.1):** Implement Mobile "Hamburger" Menu in Header.
+- [x] **Task (T-ID: 14.2):** Reduce Header height on mobile to `h-14` (3.5rem).
+- [x] **Task (T-ID: 14.3):** Ensure Header background is solid on mobile to prevent visual overlap.
+- [x] **Task (T-ID: 14.4):** Adjust top padding on all content pages to `pt-14 md:pt-16`.
+- [x] **Task (T-ID: 14.5):** Use `dvh` (Dynamic Viewport Height) for Showcase page to handle mobile address bar.
 
 ### Verification Steps
-1.  Navigate to `https://aiascent.dev/anguilla`.
-2.  **Expected:** The Anguilla report loads, automatically enters fullscreen, and starts autoplaying.
-3.  Navigate to `https://aiascent.dev/showcase/anguilla`.
-4.  **Expected:** The Anguilla report loads normally (embedded), without auto-fullscreen.
-5.  Hover over "Showcase" in the top navigation bar.
-6.  **Expected:** A dropdown menu appears with options for "The Ascent Report", "Anguilla Project", and "AI Ascent Game".
-7.  Click on any option in the "Showcase" dropdown.
-8.  **Expected:** The page navigates to the selected project AND the dropdown menu closes immediately.
-9.  Check the bottom of the showcase page.
-10. **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
+1.  Open the website on a mobile device (or dev tools mobile view).
+2.  **Expected:** A hamburger menu icon appears in the top right.
+3.  Click the hamburger menu.
+4.  **Expected:** A dropdown menu appears with all navigation links (Home, Mission, Learn, DCE, Showcase options, Academy).
+5.  Scroll down on a text-heavy page (like Mission).
+6.  **Expected:** The text scrolls *under* the header, but the header background is solid so the text is not visible through it (no messiness).
+7.  Navigate to `/showcase/report`.
+8.  **Expected:** The report viewer fits perfectly within the screen height (between header and bottom/address bar) without being cut off or requiring double scrolling.
 
-## T-14: Plan for Next Cycle
+## T-15: Plan for Next Cycle
 - **Files Involved:**
     - `src/Artifacts/A4-Universal-Task-Checklist.md`
-- [ ] **Task (T-ID: 14.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+- [ ] **Task (T-ID: 15.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
-(Previous tasks T-1 through T-12 are omitted for brevity)
+(Previous tasks T-1 through T-13 are omitted for brevity)

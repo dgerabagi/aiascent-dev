@@ -1,48 +1,46 @@
 // src/components/layout/Header.tsx
-'use client'; // C8: Needs to be client component for Dropdown interactions
+'use client'; 
 import Link from 'next/link';
 import { ModeToggle } from '@/components/global/mode-toggle';
 import Image from 'next/image';
-import { FaDiscord, FaGithub, FaChevronDown } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaChevronDown, FaBars } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
 
 const Header = () => {
   return (
-    // Updated C3: Changed styling to match A16 (fixed, dark, blur)
-    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-lg">
-      {/* C19 Fix: Changed to relative container to allow absolute positioning of nav */}
-      <div className="container relative flex h-16 items-center px-4">
+    // Updated C10: h-14 on mobile, h-16 on desktop. Solid bg on mobile for readability.
+    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm md:bg-background/80 md:backdrop-blur-lg transition-all duration-300">
+      <div className="container relative flex h-14 md:h-16 items-center px-4">
 
         {/* Logo and Title - Pushed to left */}
         <div className="flex items-center gap-2 mr-auto">
           <Link href="/" className="flex items-center gap-2">
-            {/* Placeholder for Logo (A15.2) */}
             <Image
-              src="/assets/logo.svg" // Placeholder path
+              src="/assets/logo.svg" 
               width={30}
               height={30}
               alt="AIAscent Logo"
-              className="shadow-sm"
+              className="shadow-sm w-6 h-6 md:w-[30px] md:h-[30px]" // Smaller logo on mobile
             />
-            <span className="text-2xl font-bold">aiascent.dev</span>
+            <span className="text-xl md:text-2xl font-bold truncate">aiascent.dev</span>
           </Link>
         </div>
 
-        {/* Navigation Links - Absolutely Centered */}
-        {/* C99: Reordered Academy to be last */}
+        {/* Desktop Navigation Links - Absolutely Centered */}
         <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/mission">Mission</NavLink>
           <NavLink href="/learn">Learn</NavLink>
           <NavLink href="/dce">DCE</NavLink>
           
-          {/* C8: Showcase Dropdown */}
-          {/* C9 Update: Added asChild to DropdownMenuItem to ensure menu closes on selection */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
               Showcase <FaChevronDown size={10} />
@@ -64,17 +62,48 @@ const Header = () => {
         </nav>
 
         {/* Right side (Actions/Toggle) - Pushed to right */}
-        <div className="flex items-center justify-end gap-4 ml-auto">
-          <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="View on GitHub">
-            <FaGithub size={22} />
-          </a>
-          <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
-            <FaDiscord size={22} />
-          </a>
+        <div className="flex items-center justify-end gap-2 md:gap-4 ml-auto">
+          <div className="hidden md:flex items-center gap-4">
+            <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="View on GitHub">
+                <FaGithub size={22} />
+            </a>
+            <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
+                <FaDiscord size={22} />
+            </a>
+          </div>
           <ModeToggle />
-          {/* Placeholder for Mobile Menu Icon */}
+          
+          {/* Mobile Menu (C10) */}
           <div className="md:hidden">
-            {/* MenuIcon component would go here */}
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="-mr-2">
+                        <FaBars size={20} />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                    <DropdownMenuItem asChild><Link href="/" className="cursor-pointer w-full">Home</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/mission" className="cursor-pointer w-full">Mission</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/learn" className="cursor-pointer w-full">Learn</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/dce" className="cursor-pointer w-full">DCE</Link></DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuLabel>Showcase</DropdownMenuLabel>
+                    <DropdownMenuItem asChild><Link href="/showcase/report" className="cursor-pointer w-full pl-6">The Ascent Report</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/showcase/anguilla" className="cursor-pointer w-full pl-6">Anguilla Project</Link></DropdownMenuItem>
+                    <DropdownMenuItem asChild><Link href="/showcase/game" className="cursor-pointer w-full pl-6">AI Ascent Game</Link></DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild><Link href="/academy" className="cursor-pointer w-full font-bold text-primary">V2V Academy</Link></DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <div className="flex justify-around p-2">
+                        <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground" title="View on GitHub">
+                            <FaGithub size={24} />
+                        </a>
+                        <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground" title="Join our Discord Community">
+                            <FaDiscord size={24} />
+                        </a>
+                    </div>
+                </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>

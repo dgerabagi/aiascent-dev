@@ -1,25 +1,12 @@
 'use client';
-{
-  /*
-  Cycle 54: Add top padding for header consistency.
-  Cycle 51: Replace bottom button with NextPageSection and update content.
-  Cycle 50: Expand content for all sections based on A34.
-  Cycle 31: Add 'use client' directive.
-  - This page imports MissionSectionBlock, which uses client-side hooks (useState, useEffect).
-  - Therefore, this page must also be a Client Component to be used in the App Router.
-  Cycle 30: Fix unescaped entities and add "See Showcase" button.
-  - Replaced ' with &apos; in the content for "The 'Vibecoding to Virtuosity' Pathway" to fix linting error.
-  - Added a new section at the bottom with a Link and Button component to navigate to the /showcase page.
-  */
-}
-// src/app/learn/page.tsx
 import React from 'react';
 import MissionSectionBlock from '@/components/mission/MissionSectionBlock';
 import NextPageSection from '@/components/global/NextPageSection';
 
 const LearnPage = () => {
     return (
-        <div className="bg-background text-foreground min-h-screen pt-16">
+        // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+        <div className="bg-background text-foreground min-h-screen pt-14 md:pt-16">
             <div className="container mx-auto px-4 py-16">
                 <section className="text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground pb-4">

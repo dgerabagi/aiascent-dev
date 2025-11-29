@@ -39,12 +39,13 @@ const DcePage = () => {
             imageSide: 'right',
             imagePath: 'dce/',
             imagePrompt: 'A new GIF, `dce-feature-artifacts.gif`, showing the user in the PCPP, generating a `prompt.md` which is then used to generate a new `AXX-New-Feature-Plan.md` artifact file.',
-            images: ['dce-feature-artifacts.gif'], // Placeholder, assuming gif will be created.
+            images: ['dce-feature-artifacts.gif'],
         },
     ];
 
     return (
-        <div className="bg-background text-foreground pt-16">
+        // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+        <div className="bg-background text-foreground pt-14 md:pt-16">
             <div className="container mx-auto px-4 py-16">
                 <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600">
                     The Data Curation Environment

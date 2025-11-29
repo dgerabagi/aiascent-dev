@@ -28,9 +28,10 @@ export default function ShowcaseSlugPage({ params }: { params: { slug: string } 
   };
 
   return (
-    <div className="w-full pt-16 flex flex-col min-h-screen">
-      <div className="h-[calc(100vh-4rem)] flex flex-col relative">
-        {/* ProjectSelector moved to Header in C8 */}
+    // C10: Updated padding to pt-14 (mobile) and pt-16 (desktop)
+    <div className="w-full pt-14 md:pt-16 flex flex-col min-h-screen">
+      {/* C10: Updated height to use dvh for mobile address bar handling and adjust for smaller header */}
+      <div className="h-[calc(100dvh-3.5rem)] md:h-[calc(100vh-4rem)] flex flex-col relative">
         {renderContent()}
       </div>
       
@@ -41,7 +42,7 @@ export default function ShowcaseSlugPage({ params }: { params: { slug: string } 
             description="The V2V Academy provides the pathway to master the skills of AI-assisted development and become a leader in the new digital frontier."
             buttonText="Explore the Academy"
             href="/academy"
-            className="mt-0" // C8: Removed top margin to flush with viewer
+            className="mt-0" 
           />
       )}
     </div>
