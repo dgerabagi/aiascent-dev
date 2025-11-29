@@ -42,19 +42,20 @@ const Header = () => {
           <NavLink href="/dce">DCE</NavLink>
           
           {/* C8: Showcase Dropdown */}
+          {/* C9 Update: Added asChild to DropdownMenuItem to ensure menu closes on selection */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
               Showcase <FaChevronDown size={10} />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>
-                <Link href="/showcase/report" className="w-full h-full block">The Ascent Report</Link>
+              <DropdownMenuItem asChild>
+                <Link href="/showcase/report" className="w-full block cursor-pointer">The Ascent Report</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/showcase/anguilla" className="w-full h-full block">Anguilla Project</Link>
+              <DropdownMenuItem asChild>
+                <Link href="/showcase/anguilla" className="w-full block cursor-pointer">Anguilla Project</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/showcase/game" className="w-full h-full block">AI Ascent Game</Link>
+              <DropdownMenuItem asChild>
+                <Link href="/showcase/game" className="w-full block cursor-pointer">AI Ascent Game</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

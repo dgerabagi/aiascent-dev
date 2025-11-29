@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C8 (Refine navigation and presentation logic)
+# Updated on: C9 (Fix dropdown close behavior)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -30,7 +30,7 @@ This artifact provides a structured format for tracking development tasks for th
     - `src/components/global/NextPageSection.tsx`
 - **Total Tokens:** ~2,500
 - **More than one cycle?** No
-- **Status:** In Progress
+- **Status:** Complete
 
 - [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown. (Superseded by Header dropdown)
 - [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
@@ -42,6 +42,7 @@ This artifact provides a structured format for tracking development tasks for th
 - [x] **Task (T-ID: 13.8):** Create dedicated `/anguilla` presentation route.
 - [x] **Task (T-ID: 13.9):** Move Showcase navigation to main Header dropdown.
 - [x] **Task (T-ID: 13.10):** Fix spacing between ReportViewer and bottom banner.
+- [x] **Bug Fix (T-ID: 13.11):** Ensure Header dropdown closes automatically upon selection.
 
 ### Verification Steps
 1.  Navigate to `https://aiascent.dev/anguilla`.
@@ -50,8 +51,10 @@ This artifact provides a structured format for tracking development tasks for th
 4.  **Expected:** The Anguilla report loads normally (embedded), without auto-fullscreen.
 5.  Hover over "Showcase" in the top navigation bar.
 6.  **Expected:** A dropdown menu appears with options for "The Ascent Report", "Anguilla Project", and "AI Ascent Game".
-7.  Check the bottom of the showcase page.
-8.  **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
+7.  Click on any option in the "Showcase" dropdown.
+8.  **Expected:** The page navigates to the selected project AND the dropdown menu closes immediately.
+9.  Check the bottom of the showcase page.
+10. **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
 
 ## T-14: Plan for Next Cycle
 - **Files Involved:**
