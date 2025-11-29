@@ -1,14 +1,14 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T13:34:34.274Z
+  Date Generated: 2025-11-29T19:00:35.733Z
   ---
-  Total Files: 137
-  Approx. Tokens: 161415
+  Total Files: 146
+  Approx. Tokens: 161807
 -->
 
 <!-- Top 10 Text Files by Token Count -->
-1. src\Artifacts\A0-Master-Artifact-List.md (9575 tokens)
+1. src\Artifacts\A0-Master-Artifact-List.md (9590 tokens)
 2. src\stores\reportStore.ts (8735 tokens)
 3. src\app\api\chat\route.ts (5163 tokens)
 4. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
@@ -35,128 +35,137 @@
 13. src\Artifacts\A215 - Anguilla Project - Context Transfer List.md - Lines: 53 - Chars: 3413 - Tokens: 854
 14. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 15. anguilla_context_migration_list.txt - Lines: 31 - Chars: 1941 - Tokens: 486
-16. migrate_anguilla_context.ps1 - Lines: 63 - Chars: 1918 - Tokens: 480
-17. public\data\anguilla_content.json - Lines: 112 - Chars: 12295 - Tokens: 3074
-18. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
-19. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
-20. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
-21. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
-22. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
-23. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
-24. src\app\api\chat\route.ts - Lines: 367 - Chars: 20651 - Tokens: 5163
-25. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-26. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
-27. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
-28. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
-29. src\app\showcase\page.tsx - Lines: 24 - Chars: 910 - Tokens: 228
-30. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
-31. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
-32. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
-33. src\Artifacts\A0-Master-Artifact-List.md - Lines: 513 - Chars: 38298 - Tokens: 9575
-34. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
-35. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
-36. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-37. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-38. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
-39. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
-40. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
-41. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
-42. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
-43. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
-45. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
-46. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
-47. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
-48. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
-49. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
-50. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
-51. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
-52. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
-53. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-54. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
-55. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
-56. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
-57. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
-58. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-59. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
-60. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
-61. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
-62. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
-63. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
-64. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 70 - Chars: 5470 - Tokens: 1368
-65. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
-66. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
-67. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
-68. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
-69. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
-70. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
-71. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
-72. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
-73. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
-74. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
-75. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
-76. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
-77. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
-78. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
-79. src\Artifacts\A102 - Homepage Hero Section Revamp Plan.md - Lines: 41 - Chars: 3695 - Tokens: 924
-80. src\Artifacts\A102. aiascent.dev - Homepage Hero Revamp Plan.md - Lines: 63 - Chars: 5503 - Tokens: 1376
-81. src\Artifacts\A103 - How It Works Section Image Prompts.md - Lines: 31 - Chars: 3015 - Tokens: 754
-82. src\Artifacts\A103 - V2V Academy - Ascentia Persona Tones.md - Lines: 40 - Chars: 4182 - Tokens: 1046
-83. src\Artifacts\A104 - V2V Academy - Account System Design.md - Lines: 106 - Chars: 4972 - Tokens: 1243
-84. src\Artifacts\A105 - aiascent.dev - Google OAuth Setup Guide.md - Lines: 62 - Chars: 2923 - Tokens: 731
-85. src\Artifacts\A106 - Re-branding Initiative - Phase 1 Plan.md - Lines: 49 - Chars: 3866 - Tokens: 967
-86. src\Artifacts\A107 - Master Image System Prompt v2.md - Lines: 59 - Chars: 4758 - Tokens: 1190
-87. src\Artifacts\A108 - Persona Likeness Generation Prompts.md - Lines: 42 - Chars: 6683 - Tokens: 1671
-88. src\Artifacts\A109 - Whitepaper Image Re-branding Prompts.md - Lines: 77 - Chars: 6779 - Tokens: 1695
-89. src\Artifacts\A110 - V2V Academy - Citizen Architect Classes.md - Lines: 81 - Chars: 3707 - Tokens: 927
-90. src\Artifacts\A111 - GWU Appeal Letter - Sarkani.md - Lines: 32 - Chars: 3897 - Tokens: 975
-91. src\Artifacts\A112 - GWU Appeal Letter - Mazzuchi.md - Lines: 32 - Chars: 3673 - Tokens: 919
-92. src\Artifacts\A113 - GWU Appeal Letter - Blackford.md - Lines: 30 - Chars: 3017 - Tokens: 755
-93. src\Artifacts\A114 - GWU Appeal Letter - Etemadi.md - Lines: 28 - Chars: 2894 - Tokens: 724
-94. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
-95. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
-96. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
-97. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
-98. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-99. src\components\global\FullscreenMediaViewer.tsx - Lines: 86 - Chars: 4393 - Tokens: 1099
-100. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-101. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
-102. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
-103. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-104. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
-105. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-106. src\components\home\FeaturesSection.tsx - Lines: 65 - Chars: 5541 - Tokens: 1386
-107. src\components\home\HeroSection.tsx - Lines: 53 - Chars: 2773 - Tokens: 694
-108. src\components\home\HowItWorksSection.tsx - Lines: 50 - Chars: 2151 - Tokens: 538
-109. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
-110. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-111. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1507 - Tokens: 377
-112. src\components\layout\Header.tsx - Lines: 68 - Chars: 2728 - Tokens: 682
-113. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
-114. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
-115. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
-116. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-117. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-118. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14083 - Tokens: 3521
-119. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
-120. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-121. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9012 - Tokens: 2253
-122. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-123. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
-124. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-125. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
-126. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
-127. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
-128. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
-129. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
-130. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-131. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
-132. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
-133. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-134. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
-135. scripts\scaffold_anguilla_images.mjs - Lines: 44 - Chars: 1838 - Tokens: 460
-136. src\Artifacts\A208 - Anguilla Project - Image System Prompt.md - Lines: 52 - Chars: 3715 - Tokens: 929
-137. public\data\anguilla_imagemanifest.json - Lines: 86 - Chars: 4053 - Tokens: 1014
+16. public\data\anguilla_content.json - Lines: 112 - Chars: 12295 - Tokens: 3074
+17. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
+18. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
+19. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
+20. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
+21. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
+22. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
+23. src\app\api\chat\route.ts - Lines: 367 - Chars: 20651 - Tokens: 5163
+24. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
+25. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
+26. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
+27. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
+28. src\app\showcase\page.tsx - Lines: 24 - Chars: 910 - Tokens: 228
+29. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
+30. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
+31. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
+32. src\Artifacts\A0-Master-Artifact-List.md - Lines: 513 - Chars: 38357 - Tokens: 9590
+33. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
+34. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
+35. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
+36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
+37. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 119 - Chars: 5899 - Tokens: 1475
+38. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
+39. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
+40. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
+41. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
+42. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
+43. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
+44. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
+45. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
+46. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
+47. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
+48. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
+49. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
+50. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
+51. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
+52. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
+53. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
+54. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
+55. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
+56. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
+57. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
+58. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
+59. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
+60. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
+61. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
+62. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
+63. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 70 - Chars: 5470 - Tokens: 1368
+64. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
+65. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
+66. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
+67. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
+68. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+69. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
+70. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
+71. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
+72. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
+73. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
+74. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
+75. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
+76. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
+77. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
+78. src\Artifacts\A102 - Homepage Hero Section Revamp Plan.md - Lines: 41 - Chars: 3695 - Tokens: 924
+79. src\Artifacts\A102. aiascent.dev - Homepage Hero Revamp Plan.md - Lines: 63 - Chars: 5503 - Tokens: 1376
+80. src\Artifacts\A103 - How It Works Section Image Prompts.md - Lines: 31 - Chars: 3015 - Tokens: 754
+81. src\Artifacts\A103 - V2V Academy - Ascentia Persona Tones.md - Lines: 40 - Chars: 4182 - Tokens: 1046
+82. src\Artifacts\A104 - V2V Academy - Account System Design.md - Lines: 106 - Chars: 4972 - Tokens: 1243
+83. src\Artifacts\A105 - aiascent.dev - Google OAuth Setup Guide.md - Lines: 62 - Chars: 2923 - Tokens: 731
+84. src\Artifacts\A106 - Re-branding Initiative - Phase 1 Plan.md - Lines: 49 - Chars: 3866 - Tokens: 967
+85. src\Artifacts\A107 - Master Image System Prompt v2.md - Lines: 59 - Chars: 4758 - Tokens: 1190
+86. src\Artifacts\A108 - Persona Likeness Generation Prompts.md - Lines: 42 - Chars: 6683 - Tokens: 1671
+87. src\Artifacts\A109 - Whitepaper Image Re-branding Prompts.md - Lines: 77 - Chars: 6779 - Tokens: 1695
+88. src\Artifacts\A110 - V2V Academy - Citizen Architect Classes.md - Lines: 81 - Chars: 3707 - Tokens: 927
+89. src\Artifacts\A111 - GWU Appeal Letter - Sarkani.md - Lines: 32 - Chars: 3897 - Tokens: 975
+90. src\Artifacts\A112 - GWU Appeal Letter - Mazzuchi.md - Lines: 32 - Chars: 3673 - Tokens: 919
+91. src\Artifacts\A113 - GWU Appeal Letter - Blackford.md - Lines: 30 - Chars: 3017 - Tokens: 755
+92. src\Artifacts\A114 - GWU Appeal Letter - Etemadi.md - Lines: 28 - Chars: 2894 - Tokens: 724
+93. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
+94. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
+95. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
+96. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
+97. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
+98. src\components\global\FullscreenMediaViewer.tsx - Lines: 86 - Chars: 4393 - Tokens: 1099
+99. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
+100. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
+101. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
+102. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
+103. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
+104. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
+105. src\components\home\FeaturesSection.tsx - Lines: 65 - Chars: 5541 - Tokens: 1386
+106. src\components\home\HeroSection.tsx - Lines: 53 - Chars: 2773 - Tokens: 694
+107. src\components\home\HowItWorksSection.tsx - Lines: 50 - Chars: 2151 - Tokens: 538
+108. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
+109. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
+110. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1507 - Tokens: 377
+111. src\components\layout\Header.tsx - Lines: 68 - Chars: 2728 - Tokens: 682
+112. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
+113. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
+114. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
+115. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+116. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
+117. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14083 - Tokens: 3521
+118. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
+119. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
+120. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9012 - Tokens: 2253
+121. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
+122. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
+123. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
+124. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
+125. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
+126. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
+127. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
+128. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
+129. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
+130. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
+131. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
+132. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
+133. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
+134. public\assets\images\anguilla-presentation\ask\ask-pilot.webp - [Binary] Size: 111 KB
+135. public\assets\images\anguilla-presentation\capital\capital-cloud.webp - [Binary] Size: 142 KB
+136. public\assets\images\anguilla-presentation\capital\capital-fund.webp - [Binary] Size: 216.5 KB
+137. public\assets\images\anguilla-presentation\citizenry\citizenry-heritage.webp - [Binary] Size: 184.2 KB
+138. public\assets\images\anguilla-presentation\citizenry\citizenry-v2v.webp - [Binary] Size: 212.3 KB
+139. public\assets\images\anguilla-presentation\resilience\resilience-twin.webp - [Binary] Size: 140.1 KB
+140. public\assets\images\anguilla-presentation\state\state-embassy.webp - [Binary] Size: 169.9 KB
+141. public\assets\images\anguilla-presentation\state\state-frictionless.webp - [Binary] Size: 51.1 KB
+142. public\assets\images\anguilla-presentation\vision\vision-crisis.webp - [Binary] Size: 287.3 KB
+143. public\assets\images\anguilla-presentation\vision\vision-intro.webp - [Binary] Size: 200.8 KB
+144. scripts\scaffold_anguilla_images.mjs - Lines: 44 - Chars: 1838 - Tokens: 460
+145. src\Artifacts\A208 - Anguilla Project - Image System Prompt.md - Lines: 57 - Chars: 4290 - Tokens: 1073
+146. public\data\anguilla_imagemanifest.json - Lines: 86 - Chars: 5271 - Tokens: 1318
 
 <file path="src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md">
 # Artifact A200: Anguilla Project - Universal Task Checklist
@@ -819,72 +828,6 @@ context/v2v/audio-transcripts/1-on-1-training/transcript-10.md
 context/v2v/audio-transcripts/1-on-1-training/transcript-11.md
 src/Artifacts/A52.1 DCE - Parser Logic and AI Guidance.md
 src/Artifacts/A52.2 DCE - Interaction Schema Source.md
-</file_artifact>
-
-<file path="migrate_anguilla_context.ps1">
-# migrate_anguilla_context.ps1
-# A PowerShell script to automate the migration of selected artifacts to the new Anguilla Project repository.
-# Usage: .\migrate_anguilla_context.ps1
-
-$sourceDir = Get-Location
-$destDir = "../anguilla-project" # Adjust if your new repo is elsewhere
-$fileList = "anguilla_context_migration_list.txt"
-
-Write-Host "Starting Anguilla Context Migration..."
-Write-Host "Source: $sourceDir"
-Write-Host "Destination: $destDir"
-
-# Ensure destination exists
-if (-not (Test-Path $destDir)) {
-    New-Item -ItemType Directory -Path $destDir | Out-Null
-    Write-Host "Created destination directory."
-}
-
-# Create destination folder structure
-$folders = @(
-    "src/Artifacts",
-    "context/dce",
-    "context/personal",
-    "context/v2v/research-proposals",
-    "context/v2v/audio-transcripts/1-on-1-training"
-)
-
-foreach ($folder in $folders) {
-    $path = Join-Path $destDir $folder
-    if (-not (Test-Path $path)) {
-        New-Item -ItemType Directory -Path $path -Force | Out-Null
-    }
-}
-
-# Read file list and copy
-if (Test-Path $fileList) {
-    $files = Get-Content $fileList
-    foreach ($file in $files) {
-        $srcPath = Join-Path $sourceDir $file
-        $dstPath = Join-Path $destDir $file
-        
-        if (Test-Path $srcPath) {
-            Copy-Item -Path $srcPath -Destination $dstPath -Force
-            Write-Host "Copied: $file"
-        } else {
-            Write-Warning "File not found: $file"
-        }
-    }
-} else {
-    Write-Error "Migration list ($fileList) not found!"
-    exit 1
-}
-
-# Copy the new A0 to the destination as the primary A0
-$newA0Source = "src/Artifacts/A0 - Anguilla Project - Master Artifact List.md"
-$newA0Dest = Join-Path $destDir "src/Artifacts/A0.md"
-
-if (Test-Path $newA0Source) {
-    Copy-Item -Path $newA0Source -Destination $newA0Dest -Force
-    Write-Host "Initialized new Master Artifact List at $newA0Dest"
-}
-
-Write-Host "Migration Complete."
 </file_artifact>
 
 <file path="public/data/anguilla_content.json">
@@ -2912,7 +2855,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C4 (Add Anguilla Image System Prompt)
+# Updated on: C5 (Update Anguilla Image System Prompt description)
 
 ## 1. Purpose
 
@@ -3417,8 +3360,8 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** anguilla, presentation, strategy, pitch, meeting guide
 
 ### A208 - Anguilla Project - Image System Prompt
-- **Description:** The dedicated system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Island" aesthetic, emphasizing resilience, culture, and sovereignty.
-- **Tags:** anguilla, images, prompt engineering, system prompt, aesthetic, solarpunk
+- **Description:** The dedicated system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Caribbean" aesthetic and includes specific protocols for rendering text and cultural allegories.
+- **Tags:** anguilla, images, prompt engineering, system prompt, aesthetic, solarpunk, text rendering
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -3711,6 +3654,7 @@ This artifact provides a structured format for tracking development tasks for th
 # Artifact A114: AI Ascent - Dual Domain Hosting Guide
 # Date Created: C117
 # Author: AI Model & Curator
+# Updated on: C5 (Add Troubleshooting & Maintenance section)
 
 - **Key/Value for A0:**
 - **Description:** A guide explaining how to host multiple domains (e.g., `aiascent.game` and `aiascent.dev`) on a single server using a reverse proxy like Caddy.
@@ -3789,7 +3733,7 @@ www.aiascent.dev {
 }
 ```
 
-### 4. Action Steps
+## 4. Action Steps
 
 1.  **DNS:** Point the `aiascent.dev` A record to your server's public IP address.
 2.  **Application Ports:** Ensure your two applications are configured to run on different ports (e.g., 3001 and 3002).
@@ -3797,6 +3741,35 @@ www.aiascent.dev {
 4.  **Reload Caddy:** Run `caddy reload` in your server's terminal to apply the new configuration.
 
 Caddy will automatically obtain the SSL certificate for `aiascent.dev` and begin routing traffic to the correct application based on the domain name.
+
+## 5. Troubleshooting & Maintenance
+
+If the site is inaccessible after a server restart or update, follow this checklist.
+
+### 5.1. Check Caddy Status
+Caddy is the gateway. If it's down, everything is down.
+*   **Command:** `tasklist | findstr caddy` (Windows CMD) or `Get-Process caddy` (PowerShell).
+*   **Fix:** If not running, start it.
+    *   **If Service:** `net start caddy`
+    *   **If Manual:** Navigate to the folder containing `Caddyfile` and run `caddy run`.
+
+### 5.2. Check Application Ports
+Ensure your Next.js apps are actually running on the ports Caddy expects (e.g., 3001, 3002).
+*   **Command:** `pm2 logs aiascent-dev --lines 50`
+*   **Look for:** `Ready on http://localhost:3002` (or whatever port you configured).
+*   **Fix:** If the port doesn't match the Caddyfile, either update the Caddyfile and reload (`caddy reload`), or update the app's start command (e.g., `next start -p 3002`).
+
+### 5.3. Verify Local Access
+Isolate the issue by trying to access the app directly on the server, bypassing Caddy.
+*   **Action:** Open a browser on the server (via RDP) and visit `http://localhost:3002`.
+*   **Result:**
+    *   **Works:** The app is fine. The issue is Caddy or the Firewall.
+    *   **Fails:** The app is crashed or not binding correctly. Check PM2 logs.
+
+### 5.4. Firewall
+Ensure Windows Firewall isn't blocking the ports.
+*   **Public Access:** Ports 80 and 443 must be allowed for Caddy.
+*   **Internal Access:** Ports 3001/3002 usually don't need inbound rules if Caddy and the App are on the same machine (communicating via localhost).
 </file_artifact>
 
 <file path="src/Artifacts/A6-Porting Guide for aiascent.dev.md">
@@ -11362,6 +11335,116 @@ export const useReportState = <T>(selector: (state: ReportState & ReportActions)
 };
 </file_artifact>
 
+<file path="public/assets/images/anguilla-presentation/ask/ask-pilot.webp">
+<metadata>
+{
+  "name": "ask-pilot.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/ask",
+  "fileType": "WEBP",
+  "sizeInBytes": 113676
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/capital/capital-cloud.webp">
+<metadata>
+{
+  "name": "capital-cloud.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/capital",
+  "fileType": "WEBP",
+  "sizeInBytes": 145376
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/capital/capital-fund.webp">
+<metadata>
+{
+  "name": "capital-fund.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/capital",
+  "fileType": "WEBP",
+  "sizeInBytes": 221730
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/citizenry/citizenry-heritage.webp">
+<metadata>
+{
+  "name": "citizenry-heritage.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/citizenry",
+  "fileType": "WEBP",
+  "sizeInBytes": 188650
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/citizenry/citizenry-v2v.webp">
+<metadata>
+{
+  "name": "citizenry-v2v.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/citizenry",
+  "fileType": "WEBP",
+  "sizeInBytes": 217392
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/resilience/resilience-twin.webp">
+<metadata>
+{
+  "name": "resilience-twin.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/resilience",
+  "fileType": "WEBP",
+  "sizeInBytes": 143510
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/state/state-embassy.webp">
+<metadata>
+{
+  "name": "state-embassy.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/state",
+  "fileType": "WEBP",
+  "sizeInBytes": 173982
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/state/state-frictionless.webp">
+<metadata>
+{
+  "name": "state-frictionless.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/state",
+  "fileType": "WEBP",
+  "sizeInBytes": 52304
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/vision/vision-crisis.webp">
+<metadata>
+{
+  "name": "vision-crisis.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/vision",
+  "fileType": "WEBP",
+  "sizeInBytes": 294178
+}
+</metadata>
+</file_artifact>
+
+<file path="public/assets/images/anguilla-presentation/vision/vision-intro.webp">
+<metadata>
+{
+  "name": "vision-intro.webp",
+  "directory": "c:/Projects/aiascent-dev/public/assets/images/anguilla-presentation/vision",
+  "fileType": "WEBP",
+  "sizeInBytes": 205658
+}
+</metadata>
+</file_artifact>
+
 <file path="scripts/scaffold_anguilla_images.mjs">
 // scripts/scaffold_anguilla_images.mjs
 import fs from 'fs/promises';
@@ -11413,9 +11496,10 @@ scaffoldImages();
 # Artifact A208: Anguilla Project - Image System Prompt
 # Date Created: C4
 # Author: AI Model & Curator
+# Updated on: C5 (Added Text Rendering Protocols and Cultural Allegories)
 
 - **Key/Value for A0:**
-- **Description:** The master system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Caribbean" aesthetic, blending high-tech resilience with local culture and natural beauty.
+- **Description:** The master system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Caribbean" aesthetic, emphasizing resilience, culture, and sovereignty, with specific protocols for rendering text and allegories.
 - **Tags:** anguilla, design, images, prompt engineering, system prompt, aesthetic, solarpunk
 
 ## 1. Overview
@@ -11430,7 +11514,6 @@ The goal is to create a visual identity that is **aspirational, resilient, and c
 
 You are a visionary architectural concept artist and futurist specializing in "Solarpunk" and "Climate Resilience" aesthetics. Your task is to visualize the future of Anguilla as the world's first AI-Native Nation.
 
-
 **Your Core Aesthetic: "Solarpunk Caribbean"**
 
 1.  **The Vibe:** Optimistic, resilient, lush, and high-tech. It is a future where nature and technology exist in perfect harmony.
@@ -11444,22 +11527,27 @@ You are a visionary architectural concept artist and futurist specializing in "S
     *   **People:** Depict diverse Caribbean individuals (Afro-Caribbean descent) as the active agents, leaders, and innovators—not just passive beneficiaries. They are the "Citizen Architects."
     *   **Context:** Include subtle nods to Anguillian culture (e.g., boat racing sloops in the background, salt ponds, traditional architectural motifs).
 
-**Key Visual Themes:**
+**Text Rendering Protocols (CRITICAL):**
 
-*   **Resilience:** Structures should look sturdy and hurricane-proof (rounded edges, low profiles, reinforced concrete) but softened with greenery.
-*   **Integration:** Technology should be invisible or unobtrusive. Data centers are bermed into the earth or hidden behind waterfalls. Sensors are woven into the landscape.
-*   **Culture:** Include Anguillian people in every shot. They should be active participants (directing AI, building, learning), not passive consumers. Use local motifs (boat racing, salt picking) reimagined with a futuristic twist.
+*   **Handling Text:** If the user prompt includes text enclosed in double quotes (e.g., "THE AI CAPITAL"), you **MUST** render this text visibly and legibly in the image.
+*   **Typography:** Use a modern, clean, **bold sans-serif font** (similar to Futura or Roboto).
+*   **Integration:** Text should not look like a watermark. It must be **diegetic** (part of the world).
+    *   *Holographic:* Floating in 3D space with a soft cyan glow.
+    *   *Architectural:* Carved into a white stone wall or mounted as metal lettering on a building.
+    *   *Digital:* Displayed on a high-tech glass interface within the scene.
+*   **Spelling:** Ensure absolute spelling accuracy for the quoted text.
+
+**Cultural Allegories & Symbols:**
+
+*   **The Three Dolphins:** (From the national flag) Representing **Endurance, Unity, and Strength**. Use this motif in cloud formations, architectural layouts (three curved structures), or data visualizations.
+*   **The Racing Boat:** Anguilla's national sport. Use the sleek, white sails of racing sloops as a metaphor for **Speed, Agility, and Heritage**. They should be visible in the background or stylized in the architecture.
+*   **Salt:** (Historical industry) Use crystalline, white geometric shapes to represent **Stored Value and Memory**.
+*   **The Roots:** Digital networks visualized as organic mangrove root systems connecting the island, implying **Stability and Resilience**.
 
 **Technical Constraints:**
 *   **Aspect Ratio:** 16:9 (Cinematic Widescreen).
 *   **Style:** Photorealistic Concept Art. High detail, 8k resolution.
 *   **Composition:** Wide shots to show scale and context, or medium shots to show human emotion and interaction.
-
-**Allegories & Metaphors:**
-
-*   **"The Engine":** Contrast the "Bucket with a Hole" (Rentier Economy) with a "Self-Sustaining Engine" (Sovereign Economy).
-*   **"The Shield":** Technology acting as a shield against climate change (e.g., a digital dome or barrier protecting heritage sites).
-*   **"The Roots":** Digital networks visualized as organic root systems connecting the island, implying stability and grounding.
 
 When generating images, always ensure the technology looks like it *belongs* on the island, not like a spaceship landed on it.
 </file_artifact>
@@ -11471,82 +11559,82 @@ When generating images, always ensure the technology looks like it *belongs* on 
   "imageGroups": {
     "vision-intro": {
       "path": "vision/",
-      "prompt": "A futuristic, high-tech visualization of the island of Anguilla glowing with digital connections, symbolizing the .ai domain network connecting to the globe. Satellite view, night time, cyan and gold data streams.",
+      "prompt": "A futuristic, high-tech satellite view of the island of Anguilla at twilight. The island glows with cyan and gold digital connections, symbolizing the .ai domain network. In the upper atmosphere, a faint, constellation-like formation of 'The Three Dolphins' (curved shapes) watches over the island. In the foreground, large, floating holographic text reads \"AI NATIVE NATION\".",
       "alt": "Digital Anguilla Network",
       "baseFileName": "vision-intro",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "vision-crisis": {
       "path": "vision/",
-      "prompt": "A split screen comparison. Left: A dry, parched landscape representing water scarcity. Right: A sleek, modern desalination plant powered by solar panels. Cinematic lighting.",
+      "prompt": "A split screen comparison. Left: A dry, parched landscape representing water scarcity. Right: A sleek, modern desalination plant powered by solar panels and surrounded by lush greenery. The text \"RESILIENCE\" is etched into the white stone wall of the plant. Cinematic lighting.",
       "alt": "Water Scarcity vs Solution",
       "baseFileName": "vision-crisis",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "capital-fund": {
       "path": "capital/",
-      "prompt": "A conceptual visualization of a 'Digital Wealth Fund'. Digital coins flowing from a server rack into a physical foundation of a new, modern building. Gold and concrete textures.",
+      "prompt": "A conceptual visualization of a 'Digital Wealth Fund'. Streams of digital gold coins and binary code flow from a server rack into the physical foundation of a new, modern building made of white limestone. The text \"DIGITAL WEALTH FUND\" is displayed on a glass pane in the foreground. Crystalline salt structures are visible near the foundation.",
       "alt": "Digital Wealth Fund Concept",
       "baseFileName": "capital-fund",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "capital-cloud": {
       "path": "capital/",
-      "prompt": "A hurricane-proof data center bunker in a tropical setting, covered in solar panels. Brutalist architecture meets eco-futurism. Storm clouds in the distance, but the facility is secure and glowing.",
+      "prompt": "A hurricane-proof data center bunker in a tropical setting. The architecture is brutalist but softened with white aerogel and vertical gardens. It is covered in solar panels. Storm clouds gather in the distance, but the facility is secure and glowing warmly. The text \"SOVEREIGN CLOUD\" is mounted in metal lettering above the entrance.",
       "alt": "Sovereign Data Bunker",
       "baseFileName": "capital-cloud",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "citizenry-v2v": {
       "path": "citizenry/",
-      "prompt": "A diverse group of Anguillians (students, fishermen, office workers) using tablets and holographic interfaces to build software. They look empowered and focused. Caribbean setting.",
+      "prompt": "A diverse group of Anguillians (students, fishermen, office workers) using tablets and holographic interfaces to build software in an open-air pavilion. In the background, traditional racing boats with white sails are visible on the turquoise sea. The text \"CITIZEN ARCHITECT\" floats holographically above the group.",
       "alt": "Citizen Architects",
       "baseFileName": "citizenry-v2v",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "citizenry-heritage": {
       "path": "citizenry/",
-      "prompt": "An elderly Anguillian storyteller speaking to a futuristic AI interface that is visualizing their story as a hologram. Preservation of culture through technology. Warm, nostalgic lighting.",
+      "prompt": "An elderly Anguillian storyteller sitting under a tree, speaking to a futuristic AI interface that is visualizing their story as a golden hologram of a historic ship. The text \"CULTURAL HERITAGE\" is displayed in a stylish font near the hologram. Warm, nostalgic golden-hour lighting.",
       "alt": "Cultural Heritage AI",
       "baseFileName": "citizenry-heritage",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "state-frictionless": {
       "path": "state/",
-      "prompt": "A clean, minimalist mobile app interface showing 'Anguilla Citizen Key'. Icons for 'Vote', 'Land', 'Tax', 'ID'. The background is a blurred government office, symbolizing the move to digital.",
+      "prompt": "A close-up of a hand holding a transparent, high-tech mobile device. The screen displays a clean, minimalist app interface titled \"ANGUILLA KEY\" with icons for 'Vote', 'Land', and 'ID'. The background is a blurred, modern government office with white stone columns. The vibe is efficient and secure.",
       "alt": "Citizen SuperApp",
       "baseFileName": "state-frictionless",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "state-embassy": {
       "path": "state/",
-      "prompt": "A server rack inside a high-security vault with the Anguilla flag on it. The vault is located in a snowy landscape (representing the foreign Data Embassy location), contrasting with the island vibe.",
+      "prompt": "A server rack inside a high-security vault. The vault door is open, revealing a snowy landscape outside (representing a foreign location). Inside, the server glows with a warm Caribbean light. The text \"DATA EMBASSY\" is projected on the floor of the vault. The Anguilla flag is visible on the server.",
       "alt": "Data Embassy Vault",
       "baseFileName": "state-embassy",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "resilience-twin": {
       "path": "resilience/",
-      "prompt": "A 3D holographic map of Anguilla on a table. The map shows real-time water flow (blue lines) and energy grid (yellow lines). Red alert indicators show a detected leak. A hand is interacting with the hologram.",
+      "prompt": "A 3D holographic map of Anguilla hovering over a table. The map shows real-time water flow (blue lines) and energy grid (yellow lines). The map's base looks like organic mangrove roots. The text \"DIGITAL TWIN\" is displayed above the hologram. A hand is interacting with the data.",
       "alt": "Digital Twin Dashboard",
       "baseFileName": "resilience-twin",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "ask-pilot": {
       "path": "ask/",
-      "prompt": "A roadmap graphic. Phase 1: Micro-Pilot (highlighted). Phase 2: Infrastructure. Phase 3: Nation Scale. The focus is on the immediate next step.",
+      "prompt": "A futuristic roadmap graphic displayed on a glass wall. Three milestones are shown: 1. \"MICRO-PILOT\" (Highlighted and glowing), 2. \"INFRASTRUCTURE\", 3. \"NATION SCALE\". The background shows a sunrise over the ocean, symbolizing a new beginning.",
       "alt": "Micro-Pilot Roadmap",
       "baseFileName": "ask-pilot",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     }
   }

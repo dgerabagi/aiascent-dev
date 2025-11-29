@@ -1,6 +1,7 @@
 # Artifact A114: AI Ascent - Dual Domain Hosting Guide
 # Date Created: C117
 # Author: AI Model & Curator
+# Updated on: C5 (Add Troubleshooting & Maintenance section)
 
 - **Key/Value for A0:**
 - **Description:** A guide explaining how to host multiple domains (e.g., `aiascent.game` and `aiascent.dev`) on a single server using a reverse proxy like Caddy.
@@ -79,7 +80,7 @@ www.aiascent.dev {
 }
 ```
 
-### 4. Action Steps
+## 4. Action Steps
 
 1.  **DNS:** Point the `aiascent.dev` A record to your server's public IP address.
 2.  **Application Ports:** Ensure your two applications are configured to run on different ports (e.g., 3001 and 3002).
@@ -87,3 +88,32 @@ www.aiascent.dev {
 4.  **Reload Caddy:** Run `caddy reload` in your server's terminal to apply the new configuration.
 
 Caddy will automatically obtain the SSL certificate for `aiascent.dev` and begin routing traffic to the correct application based on the domain name.
+
+## 5. Troubleshooting & Maintenance
+
+If the site is inaccessible after a server restart or update, follow this checklist.
+
+### 5.1. Check Caddy Status
+Caddy is the gateway. If it's down, everything is down.
+*   **Command:** `tasklist | findstr caddy` (Windows CMD) or `Get-Process caddy` (PowerShell).
+*   **Fix:** If not running, start it.
+    *   **If Service:** `net start caddy`
+    *   **If Manual:** Navigate to the folder containing `Caddyfile` and run `caddy run`.
+
+### 5.2. Check Application Ports
+Ensure your Next.js apps are actually running on the ports Caddy expects (e.g., 3001, 3002).
+*   **Command:** `pm2 logs aiascent-dev --lines 50`
+*   **Look for:** `Ready on http://localhost:3002` (or whatever port you configured).
+*   **Fix:** If the port doesn't match the Caddyfile, either update the Caddyfile and reload (`caddy reload`), or update the app's start command (e.g., `next start -p 3002`).
+
+### 5.3. Verify Local Access
+Isolate the issue by trying to access the app directly on the server, bypassing Caddy.
+*   **Action:** Open a browser on the server (via RDP) and visit `http://localhost:3002`.
+*   **Result:**
+    *   **Works:** The app is fine. The issue is Caddy or the Firewall.
+    *   **Fails:** The app is crashed or not binding correctly. Check PM2 logs.
+
+### 5.4. Firewall
+Ensure Windows Firewall isn't blocking the ports.
+*   **Public Access:** Ports 80 and 443 must be allowed for Caddy.
+*   **Internal Access:** Ports 3001/3002 usually don't need inbound rules if Caddy and the App are on the same machine (communicating via localhost).
