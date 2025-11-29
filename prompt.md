@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 8 - final tweaks based on observations
+Current Cycle 9 - make showcase drop-down disappear after a selection is made
+Cycle 8 - final tweaks based on observations
 Cycle 7 - embedding fixed; bottom alignment almost resolved; create the 'presentation url'
 Cycle 6 - fix report embedding, fix bottom of report viewer
 Cycle 5 - get server back up and running
@@ -739,6 +740,32 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 9>
+<Cycle Context>
+fantastic! final issue, i like the showcase drop down, however, after i make my selection in it, can you roll the drop down back up? currently, after i click something in it, it just stays open. it is not until i click it a second time that it disappears.
+</Cycle Context>
+<Previous Cycle 8 Summary of Actions>
+I have analyzed the requests to refine the layout, implement direct URLs for the Anguilla project, and streamline the navigation headers.
+
+My course of action is as follows:
+1.  **Refactor Showcase Navigation:** I will replace the bulky `ShowcaseTabs` bar with a compact `ProjectSelector` dropdown menu. This will be positioned unobtrusively, recovering valuable vertical screen space.
+2.  **Implement Dynamic Routing:** I will create a new dynamic route `src/app/showcase/[slug]/page.tsx`. This allows for direct URLs like `/showcase/anguilla`.
+3.  **Automate Anguilla Presentation:** Inside the new dynamic page, I will add logic to automatically trigger "Fullscreen" mode and "Autoplay" when the `anguilla` slug is accessed, fulfilling the "presentation URL" requirement.
+4.  **Fix Bottom Alignment:** I will add padding to the bottom of the `ReportChatPanel` to ensure the input field is not obscured by the footer or browser chrome.
+5.  **Refactor Page Title Spacing:** I will reduce the padding in `ReportViewer` and `PageNavigator` to tighten the vertical layout.
+6.  **Extract Game Component:** I will move the game iframe logic into a dedicated `ShowcaseGame` component for cleaner architecture.
+
+1.  **Create `src/components/showcase/ShowcaseGame.tsx`:** Extract the game iframe and disclaimer logic.
+2.  **Create `src/components/showcase/ProjectSelector.tsx`:** Create a new compact dropdown component for switching projects.
+3.  **Create `src/app/showcase/[slug]/page.tsx`:** Implement the dynamic route with auto-fullscreen/autoplay logic for Anguilla.
+4.  **Update `src/app/showcase/page.tsx`:** Refactor to simply redirect to the default report view.
+5.  **Update `src/components/report-viewer/ReportChatPanel.tsx`:** Add bottom padding to the input container.
+6.  **Update `src/components/report-viewer/ReportViewer.tsx`:** Reduce header padding.
+7.  **Update `src/components/report-viewer/PageNavigator.tsx`:** Reduce container height and padding.
+8.  **Update `src/Artifacts/A4-Universal-Task-Checklist.md`:** Mark tasks as complete and add new ones.
+</Previous Cycle 8 Summary of Actions>
+</Cycle 9>
 
 <Cycle 8>
 <Cycle Context>
@@ -1893,10 +1920,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T19:26:54.407Z
+  Date Generated: 2025-11-29T19:36:08.857Z
   ---
-  Total Files: 149
-  Approx. Tokens: 162819
+  Total Files: 150
+  Approx. Tokens: 163349
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1947,7 +1974,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 34. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 35. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 63 - Chars: 2887 - Tokens: 722
+36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 64 - Chars: 3151 - Tokens: 788
 37. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 119 - Chars: 5899 - Tokens: 1475
 38. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
 39. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
@@ -2014,7 +2041,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 100. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
 101. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
 102. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-103. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
+103. src\components\global\NextPageSection.tsx - Lines: 48 - Chars: 1766 - Tokens: 442
 104. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
 105. src\components\home\FeaturesSection.tsx - Lines: 65 - Chars: 5541 - Tokens: 1386
 106. src\components\home\HeroSection.tsx - Lines: 53 - Chars: 2773 - Tokens: 694
@@ -2022,7 +2049,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 108. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 109. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 110. src\components\layout\Footer.tsx - Lines: 44 - Chars: 1551 - Tokens: 388
-111. src\components\layout\Header.tsx - Lines: 68 - Chars: 2728 - Tokens: 682
+111. src\components\layout\Header.tsx - Lines: 91 - Chars: 3923 - Tokens: 981
 112. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
 113. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 114. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
@@ -2059,8 +2086,9 @@ This file-centric approach helps in planning and prioritizing work, especially i
 145. src\Artifacts\A208 - Anguilla Project - Image System Prompt.md - Lines: 57 - Chars: 4290 - Tokens: 1073
 146. public\data\anguilla_imagemanifest.json - Lines: 86 - Chars: 5271 - Tokens: 1318
 147. src\components\showcase\ShowcaseGame.tsx - Lines: 49 - Chars: 1851 - Tokens: 463
-148. src\app\showcase\[slug]\page.tsx - Lines: 59 - Chars: 2087 - Tokens: 522
+148. src\app\showcase\[slug]\page.tsx - Lines: 49 - Chars: 1750 - Tokens: 438
 149. src\components\showcase\ProjectSelector.tsx - Lines: 54 - Chars: 1838 - Tokens: 460
+150. src\app\anguilla\page.tsx - Lines: 30 - Chars: 907 - Tokens: 227
 
 <file path="src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md">
 # Artifact A200: Anguilla Project - Universal Task Checklist
@@ -5422,7 +5450,7 @@ aiascent-dev/
 
 # Author: AI Model & Curator
 
-# Updated on: C7 (Complete Cycle 6 tasks, Add Cycle 7 tasks for navigation and layout)
+# Updated on: C8 (Refine navigation and presentation logic)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -5438,37 +5466,38 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 7+
+## Task List for Cycle 8+
 
 ## T-13: Enhance Navigation and Layout
 - **Files Involved:**
-    - `src/app/showcase/[slug]/page.tsx` (New)
-    - `src/app/showcase/page.tsx`
-    - `src/components/showcase/ProjectSelector.tsx` (New)
-    - `src/components/showcase/ShowcaseGame.tsx` (New)
-    - `src/components/report-viewer/ReportChatPanel.tsx`
-    - `src/components/report-viewer/ReportViewer.tsx`
-- **Total Tokens:** ~4,000
+    - `src/app/anguilla/page.tsx` (New)
+    - `src/app/showcase/[slug]/page.tsx`
+    - `src/components/layout/Header.tsx`
+    - `src/components/global/NextPageSection.tsx`
+- **Total Tokens:** ~2,500
 - **More than one cycle?** No
 - **Status:** In Progress
 
-- [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown.
+- [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown. (Superseded by Header dropdown)
 - [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
 - [x] **Task (T-ID: 13.3):** Implement dynamic routing in `src/app/showcase/[slug]/page.tsx`.
-- [x] **Task (T-ID: 13.4):** Implement auto-fullscreen and autoplay logic for the Anguilla project slug.
+- [x] **Task (T-ID: 13.4):** Implement auto-fullscreen and autoplay logic. (Moved to explicit `/anguilla` route)
 - [x] **Task (T-ID: 13.5):** Update `src/app/showcase/page.tsx` to act as a redirect.
 - [x] **Task (T-ID: 13.6):** Add bottom padding to `ReportChatPanel` to fix alignment issues.
 - [x] **Task (T-ID: 13.7):** Reduce header padding in `ReportViewer` and `PageNavigator` to save vertical space.
+- [x] **Task (T-ID: 13.8):** Create dedicated `/anguilla` presentation route.
+- [x] **Task (T-ID: 13.9):** Move Showcase navigation to main Header dropdown.
+- [x] **Task (T-ID: 13.10):** Fix spacing between ReportViewer and bottom banner.
 
 ### Verification Steps
-1.  Navigate to `/showcase/anguilla`.
+1.  Navigate to `https://aiascent.dev/anguilla`.
 2.  **Expected:** The Anguilla report loads, automatically enters fullscreen, and starts autoplaying.
-3.  Navigate to `/showcase`.
-4.  **Expected:** Redirects to `/showcase/report`.
-5.  Check the top-left of the showcase view.
-6.  **Expected:** A "The Ascent Report" (or similar) dropdown button is visible. Clicking it allows switching to "Anguilla Project" or "AI Ascent Game".
-7.  Check the bottom of the chat panel.
-8.  **Expected:** The input box has sufficient clearance from the bottom edge.
+3.  Navigate to `https://aiascent.dev/showcase/anguilla`.
+4.  **Expected:** The Anguilla report loads normally (embedded), without auto-fullscreen.
+5.  Hover over "Showcase" in the top navigation bar.
+6.  **Expected:** A dropdown menu appears with options for "The Ascent Report", "Anguilla Project", and "AI Ascent Game".
+7.  Check the bottom of the showcase page.
+8.  **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
 
 ## T-14: Plan for Next Cycle
 - **Files Involved:**
@@ -9686,17 +9715,19 @@ import { LampContainer } from '@/components/global/lamp';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface NextPageSectionProps {
     title: string;
     description: string;
     buttonText: string;
     href: string;
+    className?: string;
 }
 
-const NextPageSection: React.FC<NextPageSectionProps> = ({ title, description, buttonText, href }) => {
+const NextPageSection: React.FC<NextPageSectionProps> = ({ title, description, buttonText, href, className }) => {
     return (
-        <section className="w-full mt-24">
+        <section className={cn("w-full mt-24", className)}>
             <LampContainer>
                 <motion.div
                     initial={{ opacity: 0.5, y: 100 }}
@@ -10358,70 +10389,93 @@ export default Footer;
 
 <file path="src/components/layout/Header.tsx">
 // src/components/layout/Header.tsx
+'use client'; // C8: Needs to be client component for Dropdown interactions
 import Link from 'next/link';
 import { ModeToggle } from '@/components/global/mode-toggle';
 import Image from 'next/image';
-import { FaDiscord, FaGithub } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaChevronDown } from 'react-icons/fa';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Header = () => {
-return (
-// Updated C3: Changed styling to match A16 (fixed, dark, blur)
-<header className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-lg">
-  {/* C19 Fix: Changed to relative container to allow absolute positioning of nav */}
-  <div className="container relative flex h-16 items-center px-4">
+  return (
+    // Updated C3: Changed styling to match A16 (fixed, dark, blur)
+    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-lg">
+      {/* C19 Fix: Changed to relative container to allow absolute positioning of nav */}
+      <div className="container relative flex h-16 items-center px-4">
 
-    {/* Logo and Title - Pushed to left */}
-    <div className="flex items-center gap-2 mr-auto">
-      <Link href="/" className="flex items-center gap-2">
-        {/* Placeholder for Logo (A15.2) */}
-        <Image
-          src="/assets/logo.svg" // Placeholder path
-          width={30}
-          height={30}
-          alt="AIAscent Logo"
-          className="shadow-sm"
-        />
-        <span className="text-2xl font-bold">aiascent.dev</span>
-      </Link>
-    </div>
+        {/* Logo and Title - Pushed to left */}
+        <div className="flex items-center gap-2 mr-auto">
+          <Link href="/" className="flex items-center gap-2">
+            {/* Placeholder for Logo (A15.2) */}
+            <Image
+              src="/assets/logo.svg" // Placeholder path
+              width={30}
+              height={30}
+              alt="AIAscent Logo"
+              className="shadow-sm"
+            />
+            <span className="text-2xl font-bold">aiascent.dev</span>
+          </Link>
+        </div>
 
-    {/* Navigation Links - Absolutely Centered */}
-    {/* C99: Reordered Academy to be last */}
-    <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
-      <NavLink href="/">Home</NavLink>
-      <NavLink href="/mission">Mission</NavLink>
-      <NavLink href="/learn">Learn</NavLink>
-      <NavLink href="/dce">DCE</NavLink>
-      <NavLink href="/showcase">Showcase</NavLink>
-      <NavLink href="/academy">Academy</NavLink>
-    </nav>
+        {/* Navigation Links - Absolutely Centered */}
+        {/* C99: Reordered Academy to be last */}
+        <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/mission">Mission</NavLink>
+          <NavLink href="/learn">Learn</NavLink>
+          <NavLink href="/dce">DCE</NavLink>
+          
+          {/* C8: Showcase Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
+              Showcase <FaChevronDown size={10} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/showcase/report" className="w-full h-full block">The Ascent Report</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/showcase/anguilla" className="w-full h-full block">Anguilla Project</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/showcase/game" className="w-full h-full block">AI Ascent Game</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-    {/* Right side (Actions/Toggle) - Pushed to right */}
-    <div className="flex items-center justify-end gap-4 ml-auto">
-      <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="View on GitHub">
-        <FaGithub size={22} />
-      </a>
-      <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
-        <FaDiscord size={22} />
-      </a>
-      <ModeToggle />
-      {/* Placeholder for Mobile Menu Icon */}
-      <div className="md:hidden">
-        {/* MenuIcon component would go here */}
+          <NavLink href="/academy">Academy</NavLink>
+        </nav>
+
+        {/* Right side (Actions/Toggle) - Pushed to right */}
+        <div className="flex items-center justify-end gap-4 ml-auto">
+          <a href="https://github.com/dgerabagi/data-curation-environment" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="View on GitHub">
+            <FaGithub size={22} />
+          </a>
+          <a href="https://discord.gg/HYurQXDWPm" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-foreground/80 transition-colors" title="Join our Discord Community">
+            <FaDiscord size={22} />
+          </a>
+          <ModeToggle />
+          {/* Placeholder for Mobile Menu Icon */}
+          <div className="md:hidden">
+            {/* MenuIcon component would go here */}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</header>
-
-);
+    </header>
+  );
 };
 
 // Helper component for navigation links styling
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-
-<Link href={href} className="transition-colors hover:text-foreground/80 text-foreground/60">
-{children}
-</Link>
+  <Link href={href} className="transition-colors hover:text-foreground/80 text-foreground/60">
+    {children}
+  </Link>
 );
 
 export default Header;
@@ -13534,7 +13588,6 @@ export default ShowcaseGame;
 import React, { useEffect } from 'react';
 import ReportViewer from '@/components/report-viewer/ReportViewer';
 import ShowcaseGame from '@/components/showcase/ShowcaseGame';
-import ProjectSelector from '@/components/showcase/ProjectSelector';
 import NextPageSection from '@/components/global/NextPageSection';
 import { useReportStore } from '@/stores/reportStore';
 
@@ -13542,19 +13595,10 @@ export default function ShowcaseSlugPage({ params }: { params: { slug: string } 
   const { setAutoplay, setIsFullscreen } = useReportStore.getState();
   const slug = params.slug;
 
+  // C8: Reset presentation defaults on mount to ensure "normal" viewing mode
   useEffect(() => {
-    // Special presentation logic for Anguilla project
-    if (slug === 'anguilla') {
-      // Small timeout to ensure component mount before state updates trigger
-      setTimeout(() => {
-        setIsFullscreen(true);
-        setAutoplay(true);
-      }, 100);
-    } else {
-        // Reset defaults for other views
-        setIsFullscreen(false);
-        setAutoplay(false);
-    }
+    setIsFullscreen(false);
+    setAutoplay(false);
   }, [slug, setAutoplay, setIsFullscreen]);
 
   const renderContent = () => {
@@ -13572,18 +13616,18 @@ export default function ShowcaseSlugPage({ params }: { params: { slug: string } 
   return (
     <div className="w-full pt-16 flex flex-col min-h-screen">
       <div className="h-[calc(100vh-4rem)] flex flex-col relative">
-        <ProjectSelector currentSlug={slug} />
+        {/* ProjectSelector moved to Header in C8 */}
         {renderContent()}
       </div>
       
-      {/* Only show the NextPageSection if we are NOT in fullscreen mode (handled by ReportViewer CSS) 
-          and not in the game view where it might be distracting */}
+      {/* Only show the NextPageSection if we are not in the game view */}
       {slug !== 'game' && (
           <NextPageSection
             title="Ready to Become a Citizen Architect?"
             description="The V2V Academy provides the pathway to master the skills of AI-assisted development and become a leader in the new digital frontier."
             buttonText="Explore the Academy"
             href="/academy"
+            className="mt-0" // C8: Removed top margin to flush with viewer
           />
       )}
     </div>
@@ -13646,6 +13690,39 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ currentSlug }) => {
 };
 
 export default ProjectSelector;
+</file_artifact>
+
+<file path="src/app/anguilla/page.tsx">
+'use client';
+import React, { useEffect } from 'react';
+import ReportViewer from '@/components/report-viewer/ReportViewer';
+import { useReportStore } from '@/stores/reportStore';
+
+export default function AnguillaPresentationPage() {
+  const { setAutoplay, setIsFullscreen } = useReportStore.getState();
+
+  useEffect(() => {
+    // Force presentation mode behavior
+    // Small timeout ensures component is mounted and store is ready
+    const timer = setTimeout(() => {
+        setIsFullscreen(true);
+        setAutoplay(true);
+    }, 100);
+    
+    // Cleanup: Ensure we exit these modes when navigating away
+    return () => {
+        clearTimeout(timer);
+        setIsFullscreen(false);
+        setAutoplay(false);
+    };
+  }, [setAutoplay, setIsFullscreen]);
+
+  return (
+    <div className="w-full h-screen bg-background overflow-hidden">
+        <ReportViewer reportName="anguilla" />
+    </div>
+  );
+}
 </file_artifact>
 
 

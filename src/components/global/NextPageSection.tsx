@@ -4,17 +4,19 @@ import { LampContainer } from '@/components/global/lamp';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 interface NextPageSectionProps {
     title: string;
     description: string;
     buttonText: string;
     href: string;
+    className?: string;
 }
 
-const NextPageSection: React.FC<NextPageSectionProps> = ({ title, description, buttonText, href }) => {
+const NextPageSection: React.FC<NextPageSectionProps> = ({ title, description, buttonText, href, className }) => {
     return (
-        <section className="w-full mt-24">
+        <section className={cn("w-full mt-24", className)}>
             <LampContainer>
                 <motion.div
                     initial={{ opacity: 0.5, y: 100 }}
