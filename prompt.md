@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 9 - make showcase drop-down disappear after a selection is made
+Current Cycle 10 - make top banner mobile friendly
+Cycle 9 - make showcase drop-down disappear after a selection is made
 Cycle 8 - final tweaks based on observations
 Cycle 7 - embedding fixed; bottom alignment almost resolved; create the 'presentation url'
 Cycle 6 - fix report embedding, fix bottom of report viewer
@@ -740,6 +741,28 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 10>
+<Cycle Context>
+excellent work... when viewing on mobile, the top banner overlaps the content. is it possible to make that banner more 'mobile friendly' when viewed on a mobile device?
+</Cycle Context>
+<Previous Cycle 9 Summary of Actions>
+I have analyzed the request to refine the `aiascent.dev` website. The user wants to separate the "presentation mode" for the Anguilla project into a unique URL (`/anguilla`), remove the auto-fullscreen behavior from the standard showcase view, reduce the spacing between the report viewer and the bottom banner, and move the project selection logic into the main navigation header.
+
+My course of action is to:
+1.  **Create `src/app/anguilla/page.tsx`:** This will be the dedicated "presentation URL" that automatically triggers fullscreen and autoplay for the Anguilla report.
+2.  **Update `src/components/global/NextPageSection.tsx`:** Allow custom class names to override the default top margin, addressing the spacing issue.
+3.  **Update `src/app/showcase/[slug]/page.tsx`:** Remove the `ProjectSelector` (as it's moving to the header), remove the auto-fullscreen logic (as it's moving to `/anguilla`), and reduce the top margin of the `NextPageSection`.
+4.  **Update `src/components/layout/Header.tsx`:** Implement a dropdown menu for the "Showcase" link, allowing users to navigate directly to specific projects (`Report`, `Anguilla`, `Game`) from the top bar.
+5.  **Update `src/Artifacts/A4-Universal-Task-Checklist.md`:** Reflect these changes.
+
+1.  **Create `src/app/anguilla/page.tsx`:** Implement the presentation page.
+2.  **Update `src/components/global/NextPageSection.tsx`:** Add `className` prop support.
+3.  **Update `src/app/showcase/[slug]/page.tsx`:** Clean up logic and layout.
+4.  **Update `src/components/layout/Header.tsx`:** Add the Showcase dropdown.
+5.  **Update `src/Artifacts/A4-Universal-Task-Checklist.md`:** Update task status.
+</Previous Cycle 9 Summary of Actions>
+</Cycle 10>
 
 <Cycle 9>
 <Cycle Context>
@@ -1920,10 +1943,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T19:36:08.857Z
+  Date Generated: 2025-11-29T21:35:46.103Z
   ---
   Total Files: 150
-  Approx. Tokens: 163349
+  Approx. Tokens: 163444
 -->
 
 <!-- Top 10 Text Files by Token Count -->
@@ -1974,7 +1997,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 33. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
 34. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
 35. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 64 - Chars: 3151 - Tokens: 788
+36. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 67 - Chars: 3383 - Tokens: 846
 37. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 119 - Chars: 5899 - Tokens: 1475
 38. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
 39. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
@@ -2049,7 +2072,7 @@ This file-centric approach helps in planning and prioritizing work, especially i
 108. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 109. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
 110. src\components\layout\Footer.tsx - Lines: 44 - Chars: 1551 - Tokens: 388
-111. src\components\layout\Header.tsx - Lines: 91 - Chars: 3923 - Tokens: 981
+111. src\components\layout\Header.tsx - Lines: 92 - Chars: 4069 - Tokens: 1018
 112. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
 113. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 114. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
@@ -5450,7 +5473,7 @@ aiascent-dev/
 
 # Author: AI Model & Curator
 
-# Updated on: C8 (Refine navigation and presentation logic)
+# Updated on: C9 (Fix dropdown close behavior)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -5476,7 +5499,7 @@ This artifact provides a structured format for tracking development tasks for th
     - `src/components/global/NextPageSection.tsx`
 - **Total Tokens:** ~2,500
 - **More than one cycle?** No
-- **Status:** In Progress
+- **Status:** Complete
 
 - [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown. (Superseded by Header dropdown)
 - [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
@@ -5488,6 +5511,7 @@ This artifact provides a structured format for tracking development tasks for th
 - [x] **Task (T-ID: 13.8):** Create dedicated `/anguilla` presentation route.
 - [x] **Task (T-ID: 13.9):** Move Showcase navigation to main Header dropdown.
 - [x] **Task (T-ID: 13.10):** Fix spacing between ReportViewer and bottom banner.
+- [x] **Bug Fix (T-ID: 13.11):** Ensure Header dropdown closes automatically upon selection.
 
 ### Verification Steps
 1.  Navigate to `https://aiascent.dev/anguilla`.
@@ -5496,8 +5520,10 @@ This artifact provides a structured format for tracking development tasks for th
 4.  **Expected:** The Anguilla report loads normally (embedded), without auto-fullscreen.
 5.  Hover over "Showcase" in the top navigation bar.
 6.  **Expected:** A dropdown menu appears with options for "The Ascent Report", "Anguilla Project", and "AI Ascent Game".
-7.  Check the bottom of the showcase page.
-8.  **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
+7.  Click on any option in the "Showcase" dropdown.
+8.  **Expected:** The page navigates to the selected project AND the dropdown menu closes immediately.
+9.  Check the bottom of the showcase page.
+10. **Expected:** The "Ready to Become a Citizen Architect?" banner is flush (or appropriately spaced) relative to the report viewer, without excessive white space.
 
 ## T-14: Plan for Next Cycle
 - **Files Involved:**
@@ -10432,19 +10458,20 @@ const Header = () => {
           <NavLink href="/dce">DCE</NavLink>
           
           {/* C8: Showcase Dropdown */}
+          {/* C9 Update: Added asChild to DropdownMenuItem to ensure menu closes on selection */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-foreground/80 text-foreground/60 outline-none">
               Showcase <FaChevronDown size={10} />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>
-                <Link href="/showcase/report" className="w-full h-full block">The Ascent Report</Link>
+              <DropdownMenuItem asChild>
+                <Link href="/showcase/report" className="w-full block cursor-pointer">The Ascent Report</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/showcase/anguilla" className="w-full h-full block">Anguilla Project</Link>
+              <DropdownMenuItem asChild>
+                <Link href="/showcase/anguilla" className="w-full block cursor-pointer">Anguilla Project</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/showcase/game" className="w-full h-full block">AI Ascent Game</Link>
+              <DropdownMenuItem asChild>
+                <Link href="/showcase/game" className="w-full block cursor-pointer">AI Ascent Game</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
