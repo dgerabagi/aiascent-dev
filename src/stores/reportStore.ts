@@ -1,6 +1,4 @@
 // src/stores/reportStore.ts
-// Updated on: C102 (Centralize KB logic)
-// ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -80,6 +78,7 @@ export type ChatMessage = {
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 const ACADEMY_DEFAULT_SUGGESTIONS = ["Can you explain this concept in simpler terms?", "How does this apply to a real-world project?", "What is the key takeaway from this page?"];
+const ANGUILLA_DEFAULT_SUGGESTIONS = ["What is the 'Digital Wealth Fund'?", "How does the 'Automated State' work?", "What is 'Cognitive Capital' in this context?"];
 
 
 type LastSuggestionRequest = {
@@ -239,6 +238,7 @@ const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
     if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
+    if (reportName === 'anguilla') return ANGUILLA_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
 

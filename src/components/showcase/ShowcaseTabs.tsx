@@ -33,13 +33,18 @@ const ShowcaseTabs = () => {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0">
+      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0 gap-2 p-2">
         <Button
           variant={activeTab === 'report' ? 'secondary' : 'ghost'}
           onClick={() => setActiveTab('report')}
-          className="mr-2"
         >
           The Ascent Report
+        </Button>
+        <Button
+          variant={activeTab === 'anguilla' ? 'secondary' : 'ghost'}
+          onClick={() => setActiveTab('anguilla')}
+        >
+          Anguilla Project
         </Button>
         <Button
           variant={activeTab === 'game' ? 'secondary' : 'ghost'}
@@ -51,6 +56,7 @@ const ShowcaseTabs = () => {
 
       <div className="flex-grow">
         {activeTab === 'report' && <ReportViewer reportName="showcase" />}
+        {activeTab === 'anguilla' && <ReportViewer reportName="anguilla" />}
         {activeTab === 'game' && (
           <div className="relative w-full h-full flex flex-col items-center">
              <p className="text-sm text-muted-foreground mb-4 p-2 border rounded-md bg-muted/50 max-w-4xl text-center">

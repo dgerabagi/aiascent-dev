@@ -1,22 +1,22 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T03:36:57.717Z
+  Date Generated: 2025-11-29T04:02:07.917Z
   ---
   Total Files: 135
-  Approx. Tokens: 159452
+  Approx. Tokens: 159701
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. src\Artifacts\A0-Master-Artifact-List.md (9493 tokens)
-2. src\stores\reportStore.ts (8697 tokens)
-3. src\app\api\chat\route.ts (4710 tokens)
+2. src\stores\reportStore.ts (8735 tokens)
+3. src\app\api\chat\route.ts (4864 tokens)
 4. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 5. src\app\learn\page.tsx (3929 tokens)
 6. public\data\whitepaper_content.json (3607 tokens)
 7. src\app\mission\page.tsx (3597 tokens)
 8. src\components\report-viewer\ReportChatPanel.tsx (3521 tokens)
-9. public\data\anguilla_content.json (2817 tokens)
+9. public\data\anguilla_content.json (2813 tokens)
 10. public\data\whitepaper_imagemanifest.json (2739 tokens)
 
 <!-- Full File List -->
@@ -36,15 +36,15 @@
 14. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 15. anguilla_context_migration_list.txt - Lines: 31 - Chars: 1941 - Tokens: 486
 16. migrate_anguilla_context.ps1 - Lines: 63 - Chars: 1918 - Tokens: 480
-17. public\data\anguilla_content.json - Lines: 154 - Chars: 11266 - Tokens: 2817
-18. public\data\anguilla_manifest.json - Lines: 86 - Chars: 5229 - Tokens: 1308
+17. public\data\anguilla_content.json - Lines: 154 - Chars: 11250 - Tokens: 2813
+18. public\data\anguilla_manifest.json - Lines: 86 - Chars: 5223 - Tokens: 1306
 19. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
 20. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
 21. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
 22. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
 23. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
 24. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
-25. src\app\api\chat\route.ts - Lines: 343 - Chars: 18838 - Tokens: 4710
+25. src\app\api\chat\route.ts - Lines: 349 - Chars: 19453 - Tokens: 4864
 26. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 27. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 28. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
@@ -145,16 +145,16 @@
 123. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 124. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 125. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-126. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 3038 - Tokens: 760
+126. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
 127. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
 128. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 129. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 130. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
 131. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-132. src\lib\kb-helper.ts - Lines: 14 - Chars: 375 - Tokens: 94
+132. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
 133. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 134. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-135. src\stores\reportStore.ts - Lines: 766 - Chars: 34788 - Tokens: 8697
+135. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
 
 <file path="src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md">
 # Artifact A200: Anguilla Project - Universal Task Checklist
@@ -887,7 +887,7 @@ Write-Host "Migration Complete."
 
 <file path="public/data/anguilla_content.json">
 {
-  "reportId": "anguilla-presentation-v1",
+  "reportId": "anguilla",
   "reportTitle": "Anguilla: The First AI-Native Nation",
   "sections": [
     {
@@ -1044,8 +1044,8 @@ Write-Host "Migration Complete."
 
 <file path="public/data/anguilla_manifest.json">
 {
-  "manifestId": "anguilla-presentation-images",
-  "basePath": "/images/anguilla-presentation/",
+  "manifestId": "anguilla-images",
+  "basePath": "/assets/images/anguilla-presentation/",
   "imageGroups": {
     "group_ax-01-cover": {
       "path": "01-cover/",
@@ -2147,7 +2147,13 @@ ${markdownFormattingInstruction}`,
 Your answers must be based *only* on the provided context chunks from the V2V Academy's official curriculum. Be helpful, encouraging, and aim to clarify concepts for the learner.
 
 If the answer isn't directly in the context, state that, but you can guide the user to the relevant lesson if you can infer it. Use markdown for formatting to enhance clarity. Do not invent information.
-${markdownFormattingInstruction}`
+${markdownFormattingInstruction}`,
+    anguilla: `You are @Ascentia, an AI strategic advisor for the Anguilla Project. Your purpose is to answer questions about the proposal to transform Anguilla into an AI-Native Nation, covering topics like Sovereign Infrastructure, Cognitive Capital, and the Automated State.
+
+Your answers must be based *only* on the provided context chunks from the project proposals. Be helpful, professional, and persuasive.
+
+If the answer isn't directly in the context, state that. Use markdown for formatting as described below. Do not invent information.
+${markdownFormattingInstruction}`,
 };
 
 // C89: New persona-aware suggestion prompts
@@ -2170,7 +2176,7 @@ Example of a PERFECT response:
 
 export async function POST(request: Request) {
   const { prompt, pageContext, knowledgeBase = 'report', reportName, task, suggestionType, context } = await request.json();
-  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy' || knowledgeBase === 'anguilla') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;
@@ -10173,13 +10179,18 @@ const ShowcaseTabs = () => {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0">
+      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0 gap-2 p-2">
         <Button
           variant={activeTab === 'report' ? 'secondary' : 'ghost'}
           onClick={() => setActiveTab('report')}
-          className="mr-2"
         >
           The Ascent Report
+        </Button>
+        <Button
+          variant={activeTab === 'anguilla' ? 'secondary' : 'ghost'}
+          onClick={() => setActiveTab('anguilla')}
+        >
+          Anguilla Project
         </Button>
         <Button
           variant={activeTab === 'game' ? 'secondary' : 'ghost'}
@@ -10191,6 +10202,7 @@ const ShowcaseTabs = () => {
 
       <div className="flex-grow">
         {activeTab === 'report' && <ReportViewer reportName="showcase" />}
+        {activeTab === 'anguilla' && <ReportViewer reportName="anguilla" />}
         {activeTab === 'game' && (
           <div className="relative w-full h-full flex flex-col items-center">
              <p className="text-sm text-muted-foreground mb-4 p-2 border rounded-md bg-muted/50 max-w-4xl text-center">
@@ -10647,7 +10659,7 @@ export {
 
 <file path="src/lib/kb-helper.ts">
 // src/lib/kb-helper.ts
-export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' {
+export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' | 'anguilla' {
     if (!reportName) return 'report';
 
     if (reportName.startsWith('v2v-academy-lab')) {
@@ -10656,6 +10668,10 @@ export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 
     
     if (reportName.startsWith('v2v-academy-') || reportName === 'whitepaper') {
         return 'academy';
+    }
+
+    if (reportName === 'anguilla') {
+        return 'anguilla';
     }
 
     return 'report';
@@ -10685,8 +10701,6 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C102 (Centralize KB logic)
-// ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -10766,6 +10780,7 @@ export type ChatMessage = {
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 const ACADEMY_DEFAULT_SUGGESTIONS = ["Can you explain this concept in simpler terms?", "How does this apply to a real-world project?", "What is the key takeaway from this page?"];
+const ANGUILLA_DEFAULT_SUGGESTIONS = ["What is the 'Digital Wealth Fund'?", "How does the 'Automated State' work?", "What is 'Cognitive Capital' in this context?"];
 
 
 type LastSuggestionRequest = {
@@ -10925,6 +10940,7 @@ const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
     if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
+    if (reportName === 'anguilla') return ANGUILLA_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
 

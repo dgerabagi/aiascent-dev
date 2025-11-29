@@ -1,6 +1,6 @@
 {
-  "manifestId": "anguilla-presentation-images",
-  "basePath": "/images/anguilla-presentation/",
+  "manifestId": "anguilla-images",
+  "basePath": "/assets/images/anguilla-presentation/",
   "imageGroups": {
     "group_ax-01-cover": {
       "path": "01-cover/",

@@ -124,7 +124,13 @@ ${markdownFormattingInstruction}`,
 Your answers must be based *only* on the provided context chunks from the V2V Academy's official curriculum. Be helpful, encouraging, and aim to clarify concepts for the learner.
 
 If the answer isn't directly in the context, state that, but you can guide the user to the relevant lesson if you can infer it. Use markdown for formatting to enhance clarity. Do not invent information.
-${markdownFormattingInstruction}`
+${markdownFormattingInstruction}`,
+    anguilla: `You are @Ascentia, an AI strategic advisor for the Anguilla Project. Your purpose is to answer questions about the proposal to transform Anguilla into an AI-Native Nation, covering topics like Sovereign Infrastructure, Cognitive Capital, and the Automated State.
+
+Your answers must be based *only* on the provided context chunks from the project proposals. Be helpful, professional, and persuasive.
+
+If the answer isn't directly in the context, state that. Use markdown for formatting as described below. Do not invent information.
+${markdownFormattingInstruction}`,
 };
 
 // C89: New persona-aware suggestion prompts
@@ -147,7 +153,7 @@ Example of a PERFECT response:
 
 export async function POST(request: Request) {
   const { prompt, pageContext, knowledgeBase = 'report', reportName, task, suggestionType, context } = await request.json();
-  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy' || knowledgeBase === 'anguilla') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;

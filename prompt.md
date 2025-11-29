@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 3 - there and back again: a curators tale
+Current Cycle 4 - create image system prompt for the anguilla imagery
+Cycle 3 - there and back again: a curators tale
 Cycle 2 - make a list for the next project (A214 for details)
 Cycle 1 - initalize gameplan
 Cycle 0 - Project Initialization/Template Archive
@@ -730,6 +731,537 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 4>
+<Cycle Context>
+okay great, first, can you suppress the errors in the logs in ephemeral below? id have to do networking setup to get the rag to port through to my server at home since im in anguilla right now, instead, ill just test rag via pushing to main and seeing the results there. shouldnt require any modifications. i just dont need these logs appearing so verbosely when its essentially a non-issue right now.
+
+next, im ready to create the imagery. ill provide the anguilla_content.json and anguilla_manifest.json to nano banana, but if you could generate an image system prompt for this task, that will help create the kinds of imagery we want in a consistent manner. so you can define the text appearance, request the allegories relevant to help convey the context, or perhaps use anguillian analogies or allegories? whateves, im just really looking for consistency out of this artifact.
+
+finally, i did roll in the changes you have made, but when i click on anguilla project in the showcase tab, it doesnt appear. i just still see the ascent report content. i dont see any errors, perhaps its because im missing the images? theres nothing in the browser console logs except logs about the rag/llm calls which again are a non-issue currently.
+</Cycle Context>
+<Ephemeral Context>
+PS C:\Projects\aiascent-dev> npm run dev
+
+> aiascent-dev@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 7.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 11s (2879 modules)
+ GET / 200 in 13477ms
+ ✓ Compiled in 3.1s (1428 modules)
+ ✓ Compiled in 567ms (1414 modules)
+ ○ Compiling /api/chat ...
+ ✓ Compiled /api/chat in 881ms (1484 modules)
+[Chat API] Requesting embedding for text (length: 1164): "Page Title: Welcome to the Interactive Whitepaper
+TL;DR: An interactive guide to navigating this whi..."
+[Chat API] Requesting embedding for text (length: 1164): "Page Title: Welcome to the Interactive Whitepaper
+TL;DR: An interactive guide to navigating this whi..."
+ ○ Compiling /showcase ...
+ ✓ Compiled /showcase in 2.3s (2910 modules)
+[Chat API] Requesting embedding for text (length: 1504): "Page Title: The Ascent Report
+TL;DR: From Ghost Worker to Citizen Architect: The Case for a Whole-of..."
+[Chat API] Requesting embedding for text (length: 1504): "Page Title: The Ascent Report
+TL;DR: From Ghost Worker to Citizen Architect: The Case for a Whole-of..."
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:459:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:459:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API - Suggestions] Error generating suggestions: fetch failed
+ POST /api/chat 500 in 22908ms
+[Chat API - Suggestions] Error generating suggestions: fetch failed
+ POST /api/chat 500 in 22692ms
+[Chat API] Requesting embedding for text (length: 1164): "Page Title: Welcome to the Interactive Whitepaper
+TL;DR: An interactive guide to navigating this whi..."
+[Chat API] Requesting embedding for text (length: 1164): "Page Title: Welcome to the Interactive Whitepaper
+TL;DR: An interactive guide to navigating this whi..."
+[Chat API - Suggestions] Error generating suggestions: fetch failed
+ POST /api/chat 500 in 21071ms
+[Chat API - Suggestions] Error generating suggestions: fetch failed
+ POST /api/chat 500 in 21423ms
+[Chat API] Requesting embedding for text (length: 1504): "Page Title: The Ascent Report
+TL;DR: From Ghost Worker to Citizen Architect: The Case for a Whole-of..."
+[Chat API] Requesting embedding for text (length: 1504): "Page Title: The Ascent Report
+TL;DR: From Ghost Worker to Citizen Architect: The Case for a Whole-of..."
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:459:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:459:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+[Chat API] Failed to get embedding for query. Error name: TypeError, message: fetch failed TypeError: fetch failed
+    at node:internal/deps/undici/undici:13502:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getEmbedding (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:21:26)
+    at async performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:75:32)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: 192.168.1.85:1234, timeout: 10000ms)
+      at onConnectTimeout (node:internal/deps/undici/undici:2602:28)
+      at Immediate._onImmediate (node:internal/deps/undici/undici:2568:35)
+      at process.processImmediate (node:internal/timers:491:21)
+      at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+[Chat API] RAG Error for 'report' KB: Error: Could not generate embedding for the query.
+    at performRagLookup (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:84:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chat/route.ts:170:56)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Projects\aiascent-dev\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1599:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Projects\aiascent-dev\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Projects\aiascent-dev\node_modules\next\dist\server\lib\start-server.js:141:13)
+[Chat API - Suggestions] RAG Diagnostic for page context using KB: 'report'
+[Chat API - Suggestions] RAG Error: Could not generate embedding for the query.
+
+</Ephemeral Context>
+<Previous Cycle 3 Summary of Actions>
+I have analyzed the request to prepare the `anguilla-project` repository. To ensure the new AI instance in that repository has the necessary context ("notions") to effectively assist with the Anguilla initiative, we need to migrate not just the new Anguilla artifacts, but also the foundational documents that define your methodology, philosophy, and credibility.
+
+I have curated a list of **20 essential files** divided into four categories:
+1.  **Anguilla Project Core:** The specific proposals and plans we just created.
+2.  **Methodology & Vision:** The "Source of Truth" for V2V, Cognitive Capital, and the DCE philosophy.
+3.  **Personal Credibility:** Your resume, origin story, and relevant transcripts that establish your authority.
+4.  **System Artifacts:** The essential schemas required for the DCE to function in the new repo.
+
+I have created a new artifact, **`A215 - Anguilla Project - Migration Manifest`**, which lists these files. You can use this list to select the files for your `flattened_repo.md`.
+
+1.  **Create `src/Artifacts/A215 - Anguilla Project - Migration Manifest.md`**: A comprehensive list of files to migrate, categorized by their strategic purpose.
+2.  **Update `src/Artifacts/A0-Master-Artifact-List.md`**: Register the new A215 artifact.
+</Previous Cycle 3 Summary of Actions>
+</Cycle 4>
 
 <Cycle 3>
 <Cycle Context>
@@ -1746,22 +2278,22 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T03:36:57.717Z
+  Date Generated: 2025-11-29T04:02:07.917Z
   ---
   Total Files: 135
-  Approx. Tokens: 159452
+  Approx. Tokens: 159701
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. src\Artifacts\A0-Master-Artifact-List.md (9493 tokens)
-2. src\stores\reportStore.ts (8697 tokens)
-3. src\app\api\chat\route.ts (4710 tokens)
+2. src\stores\reportStore.ts (8735 tokens)
+3. src\app\api\chat\route.ts (4864 tokens)
 4. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 5. src\app\learn\page.tsx (3929 tokens)
 6. public\data\whitepaper_content.json (3607 tokens)
 7. src\app\mission\page.tsx (3597 tokens)
 8. src\components\report-viewer\ReportChatPanel.tsx (3521 tokens)
-9. public\data\anguilla_content.json (2817 tokens)
+9. public\data\anguilla_content.json (2813 tokens)
 10. public\data\whitepaper_imagemanifest.json (2739 tokens)
 
 <!-- Full File List -->
@@ -1781,15 +2313,15 @@ This file-centric approach helps in planning and prioritizing work, especially i
 14. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 15. anguilla_context_migration_list.txt - Lines: 31 - Chars: 1941 - Tokens: 486
 16. migrate_anguilla_context.ps1 - Lines: 63 - Chars: 1918 - Tokens: 480
-17. public\data\anguilla_content.json - Lines: 154 - Chars: 11266 - Tokens: 2817
-18. public\data\anguilla_manifest.json - Lines: 86 - Chars: 5229 - Tokens: 1308
+17. public\data\anguilla_content.json - Lines: 154 - Chars: 11250 - Tokens: 2813
+18. public\data\anguilla_manifest.json - Lines: 86 - Chars: 5223 - Tokens: 1306
 19. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
 20. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
 21. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
 22. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
 23. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
 24. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
-25. src\app\api\chat\route.ts - Lines: 343 - Chars: 18838 - Tokens: 4710
+25. src\app\api\chat\route.ts - Lines: 349 - Chars: 19453 - Tokens: 4864
 26. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 27. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 28. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
@@ -1890,16 +2422,16 @@ This file-centric approach helps in planning and prioritizing work, especially i
 123. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
 124. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
 125. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-126. src\components\showcase\ShowcaseTabs.tsx - Lines: 83 - Chars: 3038 - Tokens: 760
+126. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
 127. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
 128. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
 129. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 130. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
 131. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-132. src\lib\kb-helper.ts - Lines: 14 - Chars: 375 - Tokens: 94
+132. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
 133. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 134. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-135. src\stores\reportStore.ts - Lines: 766 - Chars: 34788 - Tokens: 8697
+135. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
 
 <file path="src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md">
 # Artifact A200: Anguilla Project - Universal Task Checklist
@@ -2632,7 +3164,7 @@ Write-Host "Migration Complete."
 
 <file path="public/data/anguilla_content.json">
 {
-  "reportId": "anguilla-presentation-v1",
+  "reportId": "anguilla",
   "reportTitle": "Anguilla: The First AI-Native Nation",
   "sections": [
     {
@@ -2789,8 +3321,8 @@ Write-Host "Migration Complete."
 
 <file path="public/data/anguilla_manifest.json">
 {
-  "manifestId": "anguilla-presentation-images",
-  "basePath": "/images/anguilla-presentation/",
+  "manifestId": "anguilla-images",
+  "basePath": "/assets/images/anguilla-presentation/",
   "imageGroups": {
     "group_ax-01-cover": {
       "path": "01-cover/",
@@ -3892,7 +4424,13 @@ ${markdownFormattingInstruction}`,
 Your answers must be based *only* on the provided context chunks from the V2V Academy's official curriculum. Be helpful, encouraging, and aim to clarify concepts for the learner.
 
 If the answer isn't directly in the context, state that, but you can guide the user to the relevant lesson if you can infer it. Use markdown for formatting to enhance clarity. Do not invent information.
-${markdownFormattingInstruction}`
+${markdownFormattingInstruction}`,
+    anguilla: `You are @Ascentia, an AI strategic advisor for the Anguilla Project. Your purpose is to answer questions about the proposal to transform Anguilla into an AI-Native Nation, covering topics like Sovereign Infrastructure, Cognitive Capital, and the Automated State.
+
+Your answers must be based *only* on the provided context chunks from the project proposals. Be helpful, professional, and persuasive.
+
+If the answer isn't directly in the context, state that. Use markdown for formatting as described below. Do not invent information.
+${markdownFormattingInstruction}`,
 };
 
 // C89: New persona-aware suggestion prompts
@@ -3915,7 +4453,7 @@ Example of a PERFECT response:
 
 export async function POST(request: Request) {
   const { prompt, pageContext, knowledgeBase = 'report', reportName, task, suggestionType, context } = await request.json();
-  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy') ? knowledgeBase as keyof typeof systemPrompts : 'report';
+  const kbIdentifier = (knowledgeBase === 'dce' || knowledgeBase === 'report' || knowledgeBase === 'academy' || knowledgeBase === 'anguilla') ? knowledgeBase as keyof typeof systemPrompts : 'report';
 
   const llmUrl = process.env.REMOTE_LLM_URL;
   const embeddingUrl = process.env.EMBEDDING_API_URL;
@@ -11918,13 +12456,18 @@ const ShowcaseTabs = () => {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0">
+      <div className="flex justify-center border-b border-muted mb-4 flex-shrink-0 gap-2 p-2">
         <Button
           variant={activeTab === 'report' ? 'secondary' : 'ghost'}
           onClick={() => setActiveTab('report')}
-          className="mr-2"
         >
           The Ascent Report
+        </Button>
+        <Button
+          variant={activeTab === 'anguilla' ? 'secondary' : 'ghost'}
+          onClick={() => setActiveTab('anguilla')}
+        >
+          Anguilla Project
         </Button>
         <Button
           variant={activeTab === 'game' ? 'secondary' : 'ghost'}
@@ -11936,6 +12479,7 @@ const ShowcaseTabs = () => {
 
       <div className="flex-grow">
         {activeTab === 'report' && <ReportViewer reportName="showcase" />}
+        {activeTab === 'anguilla' && <ReportViewer reportName="anguilla" />}
         {activeTab === 'game' && (
           <div className="relative w-full h-full flex flex-col items-center">
              <p className="text-sm text-muted-foreground mb-4 p-2 border rounded-md bg-muted/50 max-w-4xl text-center">
@@ -12392,7 +12936,7 @@ export {
 
 <file path="src/lib/kb-helper.ts">
 // src/lib/kb-helper.ts
-export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' {
+export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 'academy' | 'anguilla' {
     if (!reportName) return 'report';
 
     if (reportName.startsWith('v2v-academy-lab')) {
@@ -12401,6 +12945,10 @@ export function getKnowledgeBase(reportName: string | null): 'report' | 'dce' | 
     
     if (reportName.startsWith('v2v-academy-') || reportName === 'whitepaper') {
         return 'academy';
+    }
+
+    if (reportName === 'anguilla') {
+        return 'anguilla';
     }
 
     return 'report';
@@ -12430,8 +12978,6 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
 <file path="src/stores/reportStore.ts">
 // src/stores/reportStore.ts
-// Updated on: C102 (Centralize KB logic)
-// ... (rest of history ommitted for brevity)
 import { createWithEqualityFn } from 'zustand/traditional';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -12511,6 +13057,7 @@ export type ChatMessage = {
 const WHITEPAPER_DEFAULT_SUGGESTIONS = ['How does DCE work?', 'How do I install DCE?'];
 const SHOWCASE_DEFAULT_SUGGESTIONS = ["What is the 'fissured workplace'?", "What is Cognitive Security (COGSEC)?"];
 const ACADEMY_DEFAULT_SUGGESTIONS = ["Can you explain this concept in simpler terms?", "How does this apply to a real-world project?", "What is the key takeaway from this page?"];
+const ANGUILLA_DEFAULT_SUGGESTIONS = ["What is the 'Digital Wealth Fund'?", "How does the 'Automated State' work?", "What is 'Cognitive Capital' in this context?"];
 
 
 type LastSuggestionRequest = {
@@ -12670,6 +13217,7 @@ const getFallbackSuggestions = (reportName: string | null) => {
     if (!reportName) return SHOWCASE_DEFAULT_SUGGESTIONS;
     if (reportName.startsWith('v2v_')) return ACADEMY_DEFAULT_SUGGESTIONS;
     if (reportName === 'whitepaper') return WHITEPAPER_DEFAULT_SUGGESTIONS;
+    if (reportName === 'anguilla') return ANGUILLA_DEFAULT_SUGGESTIONS;
     return SHOWCASE_DEFAULT_SUGGESTIONS;
 };
 
