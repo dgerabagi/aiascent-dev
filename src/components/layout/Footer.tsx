@@ -1,10 +1,11 @@
 // src/components/layout/Footer.tsx
+// C6 Update: Changed bg-transparent to bg-background to prevent content bleed-through
 // C50 - Add Discord link
 // C7 - Refactor to position text in corners
 const Footer = () => {
 return (
 // Use a full-width container with padding
-<footer className="w-full border-t border-neutral-900 bg-transparent relative z-10 px-4 sm:px-6 lg:px-8">
+<footer className="w-full border-t border-neutral-900 bg-background relative z-10 px-4 sm:px-6 lg:px-8">
 {/* Flex container to justify content between edges */}
 <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-4 md:py-0 text-center md:text-left">
 {/* Left-aligned text */}

@@ -11,7 +11,8 @@ M7. Flattened Repo
 </M1. artifact schema>
 
 <M2. cycle overview>
-Current Cycle 6 - fix report embedding, fix bottom of report viewer
+Current Cycle 7 - embedding fixed; bottom alignment almost resolved; create the 'presentation url'
+Cycle 6 - fix report embedding, fix bottom of report viewer
 Cycle 5 - get server back up and running
 Cycle 4 - create image system prompt for the anguilla imagery
 Cycle 3 - there and back again: a curators tale
@@ -737,6 +738,34 @@ This file serves as the definitive, parseable list of all documentation artifact
 </M5. organized artifacts list>
 
 <M6. Cycles>
+
+<Cycle 7>
+<Cycle Context>
+okay, the particle banner at the bottom is not covering nearly as much, or rather the report viewer does not extend all the way to the bottom of the page behind the particle banner/footer. can you ensure that they are flush? currently, the bottom of the text field where a user would chat with ascentia is slightly cut off by the particle banner. a few more pixles of clearance is necessary.
+
+next, is it possible to make the anguilla project a direct url? i want it to work like this:
+
+if the user navigates to this url, say https://aiascent.dev/showcase/anguilla, then they are presented with the report viewer, which is automatically full screen, and the auto-play automatically starts. can that be done?
+
+finally, we are starting to 'stack up' the top banner/headers. for instance, when viewing the anguilla report, i got the first home | mission | learn | dce | showcase | academy bar, but then below that we ahve the three showcase projects, and then below that we have the page title bar. note that hte page title bar has extra spacing or padding, especially above the text, that can be removed. it would be better if the middle tab, the one with the three showcase elements, were turned into a pop-up menu or drop-down menu when the showcase tab is selected, or hovered over. this would save valuable screen space. at the top by removing one of the bars entirely. with the reduction of the padding, we should be in business.
+</Cycle Context>
+<Previous Cycle 6 Summary of Actions>
+I have analyzed the situation. You successfully pushed the updates and started the application via PM2, and the status shows "online". However, since you cannot access `https://aiascent.dev` after a server restart, the issue is almost certainly with the **Reverse Proxy (Caddy)**.
+
+In your architecture (defined in `A5`), Caddy listens on ports 80/443 and routes traffic to your Next.js app (likely on port 3000 or 3002). PM2 manages the Node.js app, but it usually does *not* manage Caddy. If the server restarted, Caddy might not have started automatically, or it might be failing to bind to the ports.
+
+My course of action is to guide you through troubleshooting Caddy and the application ports, and to update **Artifact A5** to codify these troubleshooting steps for future reference.
+
+1.  **Curator Action (Troubleshooting):**
+    *   **Step 1: Check Caddy.** Open PowerShell on the server and run `tasklist | findstr caddy`. If it returns nothing, Caddy is not running.
+    *   **Step 2: Start Caddy.** If you installed it as a service, run `net start caddy` or `Get-Service caddy | Start-Service`. If you run it manually, navigate to your Caddyfile location and run `caddy run`.
+    *   **Step 3: Verify App Port.** Run `pm2 logs aiascent-dev --lines 20`. Look for the line `Ready on http://localhost:XXXX`.
+    *   **Step 4: Verify Caddy Config.** Ensure your Caddyfile is pointing to that same port `XXXX`.
+    *   **Step 5: Local Test.** On the server's browser, try opening `http://localhost:XXXX`. If that works, the app is fine, and the issue is definitely Caddy/Firewall.
+
+2.  **Update `src/Artifacts/A5-Dual Domain Hosting Guide.md`:** Add a comprehensive "Troubleshooting & Maintenance" section to document how to handle server restarts and verify the reverse proxy status.
+</Previous Cycle 6 Summary of Actions>
+</Cycle 7>
 
 <Cycle 6>
 <Cycle Context>
@@ -1835,22 +1864,22 @@ This file-centric approach helps in planning and prioritizing work, especially i
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T19:00:35.733Z
+  Date Generated: 2025-11-29T19:12:12.576Z
   ---
   Total Files: 146
-  Approx. Tokens: 161807
+  Approx. Tokens: 162088
 -->
 
 <!-- Top 10 Text Files by Token Count -->
 1. src\Artifacts\A0-Master-Artifact-List.md (9590 tokens)
-2. src\stores\reportStore.ts (8735 tokens)
-3. src\app\api\chat\route.ts (5163 tokens)
+2. src\stores\reportStore.ts (8926 tokens)
+3. src\app\api\chat\route.ts (5223 tokens)
 4. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 5. src\app\learn\page.tsx (3929 tokens)
 6. public\data\whitepaper_content.json (3607 tokens)
 7. src\app\mission\page.tsx (3597 tokens)
-8. src\components\report-viewer\ReportChatPanel.tsx (3521 tokens)
-9. public\data\anguilla_content.json (3074 tokens)
+8. src\components\report-viewer\ReportChatPanel.tsx (3534 tokens)
+9. public\data\anguilla_content.json (3072 tokens)
 10. public\data\whitepaper_imagemanifest.json (2739 tokens)
 
 <!-- Full File List -->
@@ -1869,19 +1898,19 @@ This file-centric approach helps in planning and prioritizing work, especially i
 13. src\Artifacts\A215 - Anguilla Project - Context Transfer List.md - Lines: 53 - Chars: 3413 - Tokens: 854
 14. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 15. anguilla_context_migration_list.txt - Lines: 31 - Chars: 1941 - Tokens: 486
-16. public\data\anguilla_content.json - Lines: 112 - Chars: 12295 - Tokens: 3074
+16. public\data\anguilla_content.json - Lines: 112 - Chars: 12285 - Tokens: 3072
 17. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
 18. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
 19. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
 20. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
 21. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
 22. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
-23. src\app\api\chat\route.ts - Lines: 367 - Chars: 20651 - Tokens: 5163
+23. src\app\api\chat\route.ts - Lines: 373 - Chars: 20892 - Tokens: 5223
 24. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
 25. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
 26. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
 27. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
-28. src\app\showcase\page.tsx - Lines: 24 - Chars: 910 - Tokens: 228
+28. src\app\showcase\page.tsx - Lines: 24 - Chars: 925 - Tokens: 232
 29. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
 30. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
 31. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
@@ -1963,14 +1992,14 @@ This file-centric approach helps in planning and prioritizing work, especially i
 107. src\components\home\HowItWorksSection.tsx - Lines: 50 - Chars: 2151 - Tokens: 538
 108. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
 109. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-110. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1507 - Tokens: 377
+110. src\components\layout\Footer.tsx - Lines: 44 - Chars: 1551 - Tokens: 388
 111. src\components\layout\Header.tsx - Lines: 68 - Chars: 2728 - Tokens: 682
 112. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
 113. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
 114. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
 115. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
 116. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-117. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14083 - Tokens: 3521
+117. src\components\report-viewer\ReportChatPanel.tsx - Lines: 302 - Chars: 14134 - Tokens: 3534
 118. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
 119. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
 120. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9012 - Tokens: 2253
@@ -1983,10 +2012,10 @@ This file-centric approach helps in planning and prioritizing work, especially i
 127. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
 128. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
 129. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-130. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
+130. src\lib\kb-helper.ts - Lines: 18 - Chars: 476 - Tokens: 119
 131. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
 132. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-133. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
+133. src\stores\reportStore.ts - Lines: 766 - Chars: 35702 - Tokens: 8926
 134. public\assets\images\anguilla-presentation\ask\ask-pilot.webp - [Binary] Size: 111 KB
 135. public\assets\images\anguilla-presentation\capital\capital-cloud.webp - [Binary] Size: 142 KB
 136. public\assets\images\anguilla-presentation\capital\capital-fund.webp - [Binary] Size: 216.5 KB
@@ -2666,7 +2695,7 @@ src/Artifacts/A52.2 DCE - Interaction Schema Source.md
 
 <file path="public/data/anguilla_content.json">
 {
-  "reportId": "anguilla-vision-v1",
+  "reportId": "anguilla",
   "reportTitle": "Anguilla: The First AI-Native Nation",
   "sections": [
     {
@@ -3733,8 +3762,14 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
     let retrievedContext = '';
     let retrievedDocsLog = 'No documents retrieved.';
     try {
-        const faissFile = `${kbIdentifier}_faiss.index`;
-        const chunksFile = `${kbIdentifier}_chunks.json`;
+        // C6 Update: Handle Anguilla report filename mismatch
+        let filenamePrefix = kbIdentifier;
+        if (kbIdentifier === 'anguilla') {
+            filenamePrefix = 'anguilla_report';
+        }
+
+        const faissFile = `${filenamePrefix}_faiss.index`;
+        const chunksFile = `${filenamePrefix}_chunks.json`;
 
         const publicPath = path.join(process.cwd(), 'public');
         const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
@@ -3745,7 +3780,7 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
 
         if (!faissExists || !chunksExist) {
             // C4: Reduced to warning to avoid flooding logs during dev
-            console.warn(`[Chat API] Embeddings not found for '${kbIdentifier}'. Skipping RAG.`);
+            console.warn(`[Chat API] Embeddings not found for '${kbIdentifier}' (checked ${filenamePrefix}*). Skipping RAG.`);
             return { retrievedContext: '', retrievedDocsLog: 'Embeddings not found.' };
         }
 
@@ -4505,10 +4540,10 @@ import React from "react";
 
 export default function ShowcasePage() {
   return (
-    // The pt-16 offsets for the fixed header. The h-screen and flex structure
-    // ensure the tab component fills the entire remaining viewport.
-    <div className="w-full pt-16 flex flex-col">
-        <div className="h-screen flex flex-col">
+    // C6 Update: Use h-[calc(100vh-4rem)] to ensure the tabs container fits exactly in the viewport
+    // without overflowing due to the pt-16 (4rem) padding.
+    <div className="w-full pt-16 flex flex-col min-h-screen">
+        <div className="h-[calc(100vh-4rem)] flex flex-col">
             <ShowcaseTabs />
         </div>
         <NextPageSection
@@ -10314,12 +10349,13 @@ export default WorkflowSection;
 
 <file path="src/components/layout/Footer.tsx">
 // src/components/layout/Footer.tsx
+// C6 Update: Changed bg-transparent to bg-background to prevent content bleed-through
 // C50 - Add Discord link
 // C7 - Refactor to position text in corners
 const Footer = () => {
 return (
 // Use a full-width container with padding
-<footer className="w-full border-t border-neutral-900 bg-transparent relative z-10 px-4 sm:px-6 lg:px-8">
+<footer className="w-full border-t border-neutral-900 bg-background relative z-10 px-4 sm:px-6 lg:px-8">
 {/* Flex container to justify content between edges */}
 <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-24 py-4 md:py-0 text-center md:text-left">
 {/* Left-aligned text */}
@@ -11164,6 +11200,7 @@ const ReportChatPanel: React.FC = () => {
         switch (kb) {
             case 'dce': return 'DCE Docs';
             case 'academy': return 'Academy KB';
+            case 'anguilla': return 'Anguilla KB';
             default: return 'Report KB';
         }
     };

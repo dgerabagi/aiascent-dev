@@ -62,8 +62,14 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
     let retrievedContext = '';
     let retrievedDocsLog = 'No documents retrieved.';
     try {
-        const faissFile = `${kbIdentifier}_faiss.index`;
-        const chunksFile = `${kbIdentifier}_chunks.json`;
+        // C6 Update: Handle Anguilla report filename mismatch
+        let filenamePrefix = kbIdentifier;
+        if (kbIdentifier === 'anguilla') {
+            filenamePrefix = 'anguilla_report';
+        }
+
+        const faissFile = `${filenamePrefix}_faiss.index`;
+        const chunksFile = `${filenamePrefix}_chunks.json`;
 
         const publicPath = path.join(process.cwd(), 'public');
         const faissPath = path.join(publicPath, 'data', 'embeddings', faissFile);
@@ -74,7 +80,7 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
 
         if (!faissExists || !chunksExist) {
             // C4: Reduced to warning to avoid flooding logs during dev
-            console.warn(`[Chat API] Embeddings not found for '${kbIdentifier}'. Skipping RAG.`);
+            console.warn(`[Chat API] Embeddings not found for '${kbIdentifier}' (checked ${filenamePrefix}*). Skipping RAG.`);
             return { retrievedContext: '', retrievedDocsLog: 'Embeddings not found.' };
         }
 

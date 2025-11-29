@@ -189,6 +189,7 @@ const ReportChatPanel: React.FC = () => {
         switch (kb) {
             case 'dce': return 'DCE Docs';
             case 'academy': return 'Academy KB';
+            case 'anguilla': return 'Anguilla KB';
             default: return 'Report KB';
         }
     };

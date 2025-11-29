@@ -7,10 +7,10 @@ import React from "react";
 
 export default function ShowcasePage() {
   return (
-    // The pt-16 offsets for the fixed header. The h-screen and flex structure
-    // ensure the tab component fills the entire remaining viewport.
-    <div className="w-full pt-16 flex flex-col">
-        <div className="h-screen flex flex-col">
+    // C6 Update: Use h-[calc(100vh-4rem)] to ensure the tabs container fits exactly in the viewport
+    // without overflowing due to the pt-16 (4rem) padding.
+    <div className="w-full pt-16 flex flex-col min-h-screen">
+        <div className="h-[calc(100vh-4rem)] flex flex-col">
             <ShowcaseTabs />
         </div>
         <NextPageSection
