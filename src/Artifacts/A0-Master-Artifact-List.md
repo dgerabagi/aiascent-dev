@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C110 (Add GWU Appeal Letters)
+# Updated on: C1 (Add Anguilla Project Artifacts)
 
 ## 1. Purpose
 
@@ -132,6 +132,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 
   - **Description:** Provides the expanded definitional content for "The Apex Skill: On-the-Fly Tooling" section of the Learn page.
   - **Tags:** learn, content, vibecoding, virtuosity, cognitive apprenticeship
+
+### A115 - GlobalLogic AI Micro-Pilot Proposal
+- **Description:** A proposal for a micro-pilot leveraging the Data Curation Environment (DCE) methodology to address the exponential growth of task complexity and reduce the cognitive burden on Task Leads by distilling massive project context.
+- **Tags:** proposal, ai, micro-pilot, consulting, context management, cognitive capital
 
 ## III. Design and Assets
 
@@ -297,7 +301,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 ### A46. Whisper Transcription Setup Guide
 - **Description:** A technical guide detailing a simple, Docker-based setup for using a high-performance Whisper API to transcribe audio recordings, with specific commands for PowerShell.
-- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, powershell, curl
+- **Tags:** guide, setup, whisper, transcription, docker, audio processing, api, wsl, gpu, nvidia, powershell, curl
 
 ### A47. David Gerabagi Resume (DCE Update)
 - **Description:** An updated version of the curator's resume, reframing the primary project experience around the development of the Data Curation Environment (DCE) and aiascent.dev.
@@ -465,52 +469,82 @@ This file serves as the definitive, parseable list of all documentation artifact
 
 ### A78. V2V Academy - Image Prompts (Young Precocious)
 - **Description:** A comprehensive list of persona-specific image prompts for every page of the "Young Precocious" curriculum in the V2V Academy.
-- **Tags:** v2v, curriculum, images, prompt engineering, persona, young precocious
+- **Tags": v2v, curriculum, images, prompt engineering, persona, young precocious
 
 ### A79. V2V Academy - Image Generation Script Guide
-- **Description:** A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
-- **Tags:** v2v, curriculum, images, script, automation, guide, tooling
+- **Description": A comprehensive guide for using the `generate_images.mjs` script to automate the creation of visual assets for the V2V Academy curriculum.
+- **Tags": v2v, curriculum, images, script, automation, guide, tooling
 
 ### A80. V2V Academy - Image Generation Test Harness Guide
-- **Description:** A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
-- **Tags:** v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
+- **Description": A guide for using the `image_harness.mjs` script to test different static prompt strategies with the Imagen 4 model, helping to diagnose prompt engineering issues and reverse-engineer an optimal prompt structure.
+- **Tags": v2v, curriculum, images, script, automation, guide, tooling, testing, imagen, prompt engineering
 
 ### A81. V2V Academy - Lab 1 - Your First Portfolio
-- **Description:** A step-by-step lab guide for first-time users on how to create a portfolio website from scratch using Visual Studio Code and the Data Curation Environment (DCE) extension.
-- **Tags:** v2v, curriculum, lab, project-based learning, dce, portfolio, git, getting started
+- **Description": A step-by-step lab guide for first-time users on how to create a portfolio website from scratch using Visual Studio Code and the Data Curation Environment (DCE) extension.
+- **Tags": v2v, curriculum, lab, project-based learning, dce, portfolio, git, getting started
 
 ### A82. V2V Academy - Labs and Courses UI Plan
-- **Description:** A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
-- **Tags:** v2v, curriculum, labs, page design, plan, ui, ux
+- **Description": A plan to update the `/academy` page to include a new section for hands-on labs, separating them from the theoretical V2V curriculum lessons.
+- **Tags": v2v, curriculum, labs, page design, plan, ui, ux
 
 ### A83. V2V Academy - Simulating a Fresh Environment Guide
-- **Description:** A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
-- **Tags:** guide, v2v, curriculum, labs, testing, git, dev containers, docker
+- **Description": A guide for the curator on how to safely simulate a "fresh" development environment to replicate the experience of a new V2V Academy learner, for the purpose of creating accurate tutorials and GIFs.
+- **Tags": guide, v2v, curriculum, labs, testing, git, dev containers, docker
 
 ### A97. V2V Academy - Lab 1 Media Descriptions
-- **Description:** Provides detailed, step-by-step descriptions for the screen recording videos used in Lab 1 of the V2V Academy.
-- **Tags:** v2v, curriculum, lab, documentation, media, accessibility
+- **Description": Provides detailed, step-by-step descriptions for the screen recording videos used in Lab 1 of the V2V Academy.
+- **Tags": v2v, curriculum, lab, documentation, media, accessibility
 
 ### A98. V2V Academy - Academy Page Image Prompts
-- **Description:** Provides a set of specific image prompts for generating cover and thumbnail images for the V2V Academy homepage, including personas, labs, and courses.
-- **Tags:** v2v, curriculum, images, prompt engineering, persona, aesthetic
+- **Description": Provides a set of specific image prompts for generating cover and thumbnail images for the V2V Academy homepage, including personas, labs, and courses.
+- **Tags": v2v, curriculum, images, prompt engineering, persona, aesthetic
 
 ### A99. V2V Academy - Course 1: The AI-Powered Report Viewer - Vision and Roadmap
-- **Description:** High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
-- **Tags:** v2v, curriculum, course design, project-based learning, report viewer, roadmap
+- **Description": High-level overview of the V2V Academy's first monetizable course, "The AI-Powered Report Viewer," outlining its purpose, learning objectives, target audience, and a phased development plan.
+- **Tags": v2v, curriculum, course design, project-based learning, report viewer, roadmap
 
 ### A100. V2V Academy - Course 1: The AI-Powered Report Viewer - Curriculum Outline
-- **Description:** A detailed curriculum outline for the V2V Academy's first course, "The AI-Powered Report Viewer," breaking the project into a logical sequence of modules and lessons.
-- **Tags:** v2v, curriculum, course design, project-based learning, report viewer
+- **Description": A detailed curriculum outline for the V2V Academy's first course, "The AI-Powered Report Viewer," breaking the project into a logical sequence of modules and lessons.
+- **Tags": v2v, curriculum, course design, project-based learning, report viewer
 
 ### A101. V2V Academy - Course 1: The AI-Powered Report Viewer - Lab Plan
-- **Description:** A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
-- **Tags:** v2v, curriculum, labs, project-based learning, report viewer
+- **Description": A plan for the practical exercises and labs within the "The AI-Powered Report Viewer" course, detailing the hands-on projects for each module.
+- **Tags": v2v, curriculum, labs, project-based learning, report viewer
 
 ### A104 - V2V Academy - Account System Design
-- **Description:** An adaptation of the `aiascent.game` account system, outlining the architecture for user authentication and progress tracking for the V2V Academy on `aiascent.dev`.
-- **Tags:** v2v, academy, plan, architecture, authentication, nextauth, prisma, database
+- **Description": An adaptation of the `aiascent.game` account system, outlining the architecture for user authentication and progress tracking for the V2V Academy on `aiascent.dev`.
+- **Tags": v2v, academy, plan, architecture, authentication, nextauth, prisma, database
 
 ### A105 - aiascent.dev - Google OAuth Setup Guide
-- **Description:** A guide for setting up Google OAuth credentials for the `aiascent.dev` user account system.
-- **Tags:** v2v, academy, guide, setup, authentication, oauth, google
+- **Description": A guide for setting up Google OAuth credentials for the `aiascent.dev` user account system.
+- **Tags": v2v, academy, guide, setup, authentication, oauth, google
+
+## VI. Anguilla Project
+
+### A201 - Anguilla Project - Vision and Master Plan
+- **Description:** The high-level strategic vision for transforming Anguilla into the world's first AI-native nation, leveraging its unique digital asset (.ai domain) and small population size.
+- **Tags:** anguilla, strategy, vision, nation building, ai
+
+### A202 - Research Proposal - The AI Capital
+- **Description:** A proposal focused on leveraging the .ai domain windfall to fund sovereign digital infrastructure and creating a "Digital Wealth Fund" for the nation.
+- **Tags:** anguilla, economics, .ai domain, infrastructure, sovereign wealth
+
+### A203 - Research Proposal - The Cognitive Citizenry
+- **Description:** A proposal for a national upskilling initiative using the V2V/DCE methodology to turn the entire population into high-value "cognitive capital."
+- **Tags:** anguilla, education, upskilling, v2v, cognitive capital, workforce
+
+### A204 - Research Proposal - The Automated State
+- **Description:** A proposal for modernizing Anguilla's governance through AI, creating a frictionless, automated civil service for citizens and businesses.
+- **Tags:** anguilla, governance, automation, public services, efficiency
+
+### A205 - Research Proposal - Resilient Island Systems
+- **Description:** A proposal for using AI to manage critical island resources (water, energy) and enhance climate resilience through predictive modeling.
+- **Tags:** anguilla, sustainability, environment, climate change, resource management
+
+### A206 - Research Proposal - The Global AI Sandbox
+- **Description:** A proposal to establish Anguilla as a "Regulatory Sandbox" for ethical AI development, attracting global companies to test and deploy in a safe, controlled environment.
+- **Tags:** anguilla, regulation, policy, sandbox, innovation, ethics
+
+### A207 - Strategic Presentation Guide
+- **Description:** A script and strategic guide for the meeting with the Minister of IT, outlining the narrative arc, key talking points, and the "ask."
+- **Tags:** anguilla, presentation, strategy, pitch, meeting guide
