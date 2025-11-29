@@ -1,22 +1,22 @@
 <!--
   File: flattened_repo.md
   Source Directory: c:\Projects\aiascent-dev
-  Date Generated: 2025-11-29T04:02:07.917Z
+  Date Generated: 2025-11-29T13:34:34.274Z
   ---
-  Total Files: 135
-  Approx. Tokens: 159701
+  Total Files: 137
+  Approx. Tokens: 161415
 -->
 
 <!-- Top 10 Text Files by Token Count -->
-1. src\Artifacts\A0-Master-Artifact-List.md (9493 tokens)
+1. src\Artifacts\A0-Master-Artifact-List.md (9575 tokens)
 2. src\stores\reportStore.ts (8735 tokens)
-3. src\app\api\chat\route.ts (4864 tokens)
+3. src\app\api\chat\route.ts (5163 tokens)
 4. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md (4343 tokens)
 5. src\app\learn\page.tsx (3929 tokens)
 6. public\data\whitepaper_content.json (3607 tokens)
 7. src\app\mission\page.tsx (3597 tokens)
 8. src\components\report-viewer\ReportChatPanel.tsx (3521 tokens)
-9. public\data\anguilla_content.json (2813 tokens)
+9. public\data\anguilla_content.json (3074 tokens)
 10. public\data\whitepaper_imagemanifest.json (2739 tokens)
 
 <!-- Full File List -->
@@ -36,125 +36,127 @@
 14. src\Artifacts\A23. aiascent.dev - Cognitive Capital Definition.md - Lines: 31 - Chars: 2608 - Tokens: 652
 15. anguilla_context_migration_list.txt - Lines: 31 - Chars: 1941 - Tokens: 486
 16. migrate_anguilla_context.ps1 - Lines: 63 - Chars: 1918 - Tokens: 480
-17. public\data\anguilla_content.json - Lines: 154 - Chars: 11250 - Tokens: 2813
-18. public\data\anguilla_manifest.json - Lines: 86 - Chars: 5223 - Tokens: 1306
-19. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
-20. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
-21. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
-22. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
-23. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
-24. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
-25. src\app\api\chat\route.ts - Lines: 349 - Chars: 19453 - Tokens: 4864
-26. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
-27. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
-28. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
-29. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
-30. src\app\showcase\page.tsx - Lines: 24 - Chars: 910 - Tokens: 228
-31. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
-32. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
-33. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
-34. src\Artifacts\A0-Master-Artifact-List.md - Lines: 509 - Chars: 37971 - Tokens: 9493
-35. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
-36. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
-37. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
-38. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
-39. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
-40. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
-41. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
-42. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
-43. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
-44. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
-45. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
-46. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
-47. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
-48. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
-49. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
-50. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
-51. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
-52. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
-53. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
-54. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
-55. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
-56. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
-57. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
-58. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
-59. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
-60. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
-61. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
-62. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
-63. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
-64. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
-65. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 70 - Chars: 5470 - Tokens: 1368
-66. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
-67. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
-68. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
-69. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
-70. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
-71. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
-72. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
-73. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
-74. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
-75. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
-76. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
-77. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
-78. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
-79. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
-80. src\Artifacts\A102 - Homepage Hero Section Revamp Plan.md - Lines: 41 - Chars: 3695 - Tokens: 924
-81. src\Artifacts\A102. aiascent.dev - Homepage Hero Revamp Plan.md - Lines: 63 - Chars: 5503 - Tokens: 1376
-82. src\Artifacts\A103 - How It Works Section Image Prompts.md - Lines: 31 - Chars: 3015 - Tokens: 754
-83. src\Artifacts\A103 - V2V Academy - Ascentia Persona Tones.md - Lines: 40 - Chars: 4182 - Tokens: 1046
-84. src\Artifacts\A104 - V2V Academy - Account System Design.md - Lines: 106 - Chars: 4972 - Tokens: 1243
-85. src\Artifacts\A105 - aiascent.dev - Google OAuth Setup Guide.md - Lines: 62 - Chars: 2923 - Tokens: 731
-86. src\Artifacts\A106 - Re-branding Initiative - Phase 1 Plan.md - Lines: 49 - Chars: 3866 - Tokens: 967
-87. src\Artifacts\A107 - Master Image System Prompt v2.md - Lines: 59 - Chars: 4758 - Tokens: 1190
-88. src\Artifacts\A108 - Persona Likeness Generation Prompts.md - Lines: 42 - Chars: 6683 - Tokens: 1671
-89. src\Artifacts\A109 - Whitepaper Image Re-branding Prompts.md - Lines: 77 - Chars: 6779 - Tokens: 1695
-90. src\Artifacts\A110 - V2V Academy - Citizen Architect Classes.md - Lines: 81 - Chars: 3707 - Tokens: 927
-91. src\Artifacts\A111 - GWU Appeal Letter - Sarkani.md - Lines: 32 - Chars: 3897 - Tokens: 975
-92. src\Artifacts\A112 - GWU Appeal Letter - Mazzuchi.md - Lines: 32 - Chars: 3673 - Tokens: 919
-93. src\Artifacts\A113 - GWU Appeal Letter - Blackford.md - Lines: 30 - Chars: 3017 - Tokens: 755
-94. src\Artifacts\A114 - GWU Appeal Letter - Etemadi.md - Lines: 28 - Chars: 2894 - Tokens: 724
-95. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
-96. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
-97. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
-98. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
-99. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
-100. src\components\global\FullscreenMediaViewer.tsx - Lines: 86 - Chars: 4393 - Tokens: 1099
-101. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
-102. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
-103. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
-104. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
-105. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
-106. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
-107. src\components\home\FeaturesSection.tsx - Lines: 65 - Chars: 5541 - Tokens: 1386
-108. src\components\home\HeroSection.tsx - Lines: 53 - Chars: 2773 - Tokens: 694
-109. src\components\home\HowItWorksSection.tsx - Lines: 50 - Chars: 2151 - Tokens: 538
-110. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
-111. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
-112. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1507 - Tokens: 377
-113. src\components\layout\Header.tsx - Lines: 68 - Chars: 2728 - Tokens: 682
-114. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
-115. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
-116. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
-117. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
-118. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
-119. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14083 - Tokens: 3521
-120. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
-121. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
-122. src\components\report-viewer\ReportViewer.tsx - Lines: 211 - Chars: 9111 - Tokens: 2278
-123. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
-124. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
-125. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
-126. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
-127. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
-128. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
-129. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
-130. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
-131. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
-132. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
-133. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
-134. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
-135. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
+17. public\data\anguilla_content.json - Lines: 112 - Chars: 12295 - Tokens: 3074
+18. public\data\whitepaper_content.json - Lines: 175 - Chars: 14425 - Tokens: 3607
+19. public\data\whitepaper_imagemanifest.json - Lines: 63 - Chars: 10953 - Tokens: 2739
+20. scripts\generate_images.mjs - Lines: 186 - Chars: 6942 - Tokens: 1736
+21. scripts\image_harness.mjs - Lines: 115 - Chars: 8773 - Tokens: 2194
+22. scripts\manage_v2v_images.mjs - Lines: 146 - Chars: 6168 - Tokens: 1542
+23. src\app\academy\page.tsx - Lines: 188 - Chars: 9287 - Tokens: 2322
+24. src\app\api\chat\route.ts - Lines: 367 - Chars: 20651 - Tokens: 5163
+25. src\app\api\tts\route.ts - Lines: 50 - Chars: 1775 - Tokens: 444
+26. src\app\dce\page.tsx - Lines: 81 - Chars: 6906 - Tokens: 1727
+27. src\app\learn\page.tsx - Lines: 171 - Chars: 15716 - Tokens: 3929
+28. src\app\mission\page.tsx - Lines: 143 - Chars: 14388 - Tokens: 3597
+29. src\app\showcase\page.tsx - Lines: 24 - Chars: 910 - Tokens: 228
+30. src\app\globals.css - Lines: 76 - Chars: 1658 - Tokens: 415
+31. src\app\layout.tsx - Lines: 45 - Chars: 1430 - Tokens: 358
+32. src\app\page.tsx - Lines: 30 - Chars: 1105 - Tokens: 277
+33. src\Artifacts\A0-Master-Artifact-List.md - Lines: 513 - Chars: 38298 - Tokens: 9575
+34. src\Artifacts\A1-Project-Vision-and-Goals.md - Lines: 44 - Chars: 2843 - Tokens: 711
+35. src\Artifacts\A2-Phase1-Requirements.md - Lines: 39 - Chars: 3316 - Tokens: 829
+36. src\Artifacts\A3-Technical-Scaffolding-Plan.md - Lines: 77 - Chars: 2913 - Tokens: 729
+37. src\Artifacts\A4-Universal-Task-Checklist.md - Lines: 114 - Chars: 5314 - Tokens: 1329
+38. src\Artifacts\A5-Dual Domain Hosting Guide.md - Lines: 89 - Chars: 4264 - Tokens: 1066
+39. src\Artifacts\A6-Porting Guide for aiascent.dev.md - Lines: 41 - Chars: 2972 - Tokens: 743
+40. src\Artifacts\A7-Development-and-Testing-Guide.md - Lines: 65 - Chars: 2225 - Tokens: 557
+41. src\Artifacts\A9-GitHub-Repository-Setup-Guide.md - Lines: 68 - Chars: 2461 - Tokens: 616
+42. src\Artifacts\A11-Implementation-Roadmap.md - Lines: 62 - Chars: 3386 - Tokens: 847
+43. src\Artifacts\A14-GitHub-Repository-Setup-Guide.md - Lines: 91 - Chars: 3983 - Tokens: 996
+44. src\Artifacts\A15-Asset-Wishlist.md - Lines: 60 - Chars: 3354 - Tokens: 839
+45. src\Artifacts\A15.1-Master-Image-System-Prompt.md - Lines: 48 - Chars: 2873 - Tokens: 719
+46. src\Artifacts\A15.2-Image-Prompt-Logo.md - Lines: 39 - Chars: 1329 - Tokens: 333
+47. src\Artifacts\A15.3-Image-Prompt-Favicon.md - Lines: 33 - Chars: 1133 - Tokens: 284
+48. src\Artifacts\A15.7-Image-Prompt-OGImage.md - Lines: 40 - Chars: 1836 - Tokens: 459
+49. src\Artifacts\A16-Page-Design-Home.md - Lines: 68 - Chars: 5178 - Tokens: 1295
+50. src\Artifacts\A17-Page-Design-Showcase.md - Lines: 66 - Chars: 3765 - Tokens: 942
+51. src\Artifacts\A18-Page-Design-Learn.md - Lines: 63 - Chars: 2726 - Tokens: 682
+52. src\Artifacts\A19-Page-Design-Mission.md - Lines: 70 - Chars: 4100 - Tokens: 1025
+53. src\Artifacts\A20. aiascent.dev - Report Viewer Integration Plan.md - Lines: 56 - Chars: 4180 - Tokens: 1045
+54. src\Artifacts\A21. aiascent.dev - Ask Ascentia RAG Integration.md - Lines: 61 - Chars: 3509 - Tokens: 878
+55. src\Artifacts\A22. aiascent.dev - Mission Page Revamp Plan.md - Lines: 90 - Chars: 5737 - Tokens: 1435
+56. src\Artifacts\A24. aiascent.dev - Mission Page Content Expansion Plan.md - Lines: 53 - Chars: 5259 - Tokens: 1315
+57. src\Artifacts\A25. aiascent.dev - Learn Page Content Plan.md - Lines: 72 - Chars: 5962 - Tokens: 1491
+58. src\Artifacts\A26. aiascent.dev - Homepage Whitepaper Visualization Plan.md - Lines: 175 - Chars: 17371 - Tokens: 4343
+59. src\Artifacts\A27. aiascent.dev - AI Persona - @Ascentia.md - Lines: 52 - Chars: 3809 - Tokens: 953
+60. src\Artifacts\A28. aiascent.dev - Dual Embedding RAG Architecture.md - Lines: 87 - Chars: 4633 - Tokens: 1159
+61. src\Artifacts\A29. aiascent.dev - GitHub Public Repository Guide.md - Lines: 63 - Chars: 5367 - Tokens: 1342
+62. src\Artifacts\A30. aiascent.dev - Showcase Expansion Plan.md - Lines: 56 - Chars: 4056 - Tokens: 1014
+63. src\Artifacts\A31. aiascent.dev - iframe Integration Guide.md - Lines: 83 - Chars: 4164 - Tokens: 1041
+64. src\Artifacts\A32. aiascent.dev - Dynamic Chat Prompt Suggestions Plan.md - Lines: 70 - Chars: 5470 - Tokens: 1368
+65. src\Artifacts\A33. aiascent.dev - Report Viewer Fullscreen Plan.md - Lines: 48 - Chars: 3100 - Tokens: 775
+66. src\Artifacts\A34. aiascent.dev - Whitepaper Introduction Content.md - Lines: 28 - Chars: 1968 - Tokens: 492
+67. src\Artifacts\A35. aiascent.dev - Discord Community Management Plan.md - Lines: 50 - Chars: 3738 - Tokens: 935
+68. src\Artifacts\A40. aiascent.dev - Page Design DCE.md - Lines: 65 - Chars: 5590 - Tokens: 1398
+69. src\Artifacts\A41. aiascent.dev - Page Design DCE - Artifacts as Source of Truth.md - Lines: 30 - Chars: 2424 - Tokens: 606
+70. src\Artifacts\A61.1 - Transcript 1 Summary.md - Lines: 34 - Chars: 3712 - Tokens: 928
+71. src\Artifacts\A61.2 - Transcript 2 Summary.md - Lines: 31 - Chars: 3737 - Tokens: 935
+72. src\Artifacts\A61.3 - Transcript 3 Summary.md - Lines: 34 - Chars: 4096 - Tokens: 1024
+73. src\Artifacts\A61.4 - Transcript 4 Summary.md - Lines: 40 - Chars: 3955 - Tokens: 989
+74. src\Artifacts\A61.6 - Transcript 6 Summary.md - Lines: 34 - Chars: 3876 - Tokens: 969
+75. src\Artifacts\A61.7 - Transcript 7 Summary.md - Lines: 38 - Chars: 4014 - Tokens: 1004
+76. src\Artifacts\A61.9 - Transcript 9 Summary.md - Lines: 34 - Chars: 3870 - Tokens: 968
+77. src\Artifacts\A61.11 - Transcript 11 Summary.md - Lines: 35 - Chars: 4708 - Tokens: 1177
+78. src\Artifacts\A61.12 - Transcript 12 Summary (Cycle 58 Context).md - Lines: 28 - Chars: 3180 - Tokens: 795
+79. src\Artifacts\A102 - Homepage Hero Section Revamp Plan.md - Lines: 41 - Chars: 3695 - Tokens: 924
+80. src\Artifacts\A102. aiascent.dev - Homepage Hero Revamp Plan.md - Lines: 63 - Chars: 5503 - Tokens: 1376
+81. src\Artifacts\A103 - How It Works Section Image Prompts.md - Lines: 31 - Chars: 3015 - Tokens: 754
+82. src\Artifacts\A103 - V2V Academy - Ascentia Persona Tones.md - Lines: 40 - Chars: 4182 - Tokens: 1046
+83. src\Artifacts\A104 - V2V Academy - Account System Design.md - Lines: 106 - Chars: 4972 - Tokens: 1243
+84. src\Artifacts\A105 - aiascent.dev - Google OAuth Setup Guide.md - Lines: 62 - Chars: 2923 - Tokens: 731
+85. src\Artifacts\A106 - Re-branding Initiative - Phase 1 Plan.md - Lines: 49 - Chars: 3866 - Tokens: 967
+86. src\Artifacts\A107 - Master Image System Prompt v2.md - Lines: 59 - Chars: 4758 - Tokens: 1190
+87. src\Artifacts\A108 - Persona Likeness Generation Prompts.md - Lines: 42 - Chars: 6683 - Tokens: 1671
+88. src\Artifacts\A109 - Whitepaper Image Re-branding Prompts.md - Lines: 77 - Chars: 6779 - Tokens: 1695
+89. src\Artifacts\A110 - V2V Academy - Citizen Architect Classes.md - Lines: 81 - Chars: 3707 - Tokens: 927
+90. src\Artifacts\A111 - GWU Appeal Letter - Sarkani.md - Lines: 32 - Chars: 3897 - Tokens: 975
+91. src\Artifacts\A112 - GWU Appeal Letter - Mazzuchi.md - Lines: 32 - Chars: 3673 - Tokens: 919
+92. src\Artifacts\A113 - GWU Appeal Letter - Blackford.md - Lines: 30 - Chars: 3017 - Tokens: 755
+93. src\Artifacts\A114 - GWU Appeal Letter - Etemadi.md - Lines: 28 - Chars: 2894 - Tokens: 724
+94. src\Artifacts\DCE_README.md - Lines: 47 - Chars: 3127 - Tokens: 782
+95. src\components\academy\PersonaSelector.tsx - Lines: 69 - Chars: 3118 - Tokens: 780
+96. src\components\global\3d-card.tsx - Lines: 162 - Chars: 4355 - Tokens: 1089
+97. src\components\global\ConditionalSplash.tsx - Lines: 16 - Chars: 422 - Tokens: 106
+98. src\components\global\container-scroll-animation.tsx - Lines: 114 - Chars: 3110 - Tokens: 778
+99. src\components\global\FullscreenMediaViewer.tsx - Lines: 86 - Chars: 4393 - Tokens: 1099
+100. src\components\global\GlobalAudioPlayer.tsx - Lines: 86 - Chars: 2749 - Tokens: 688
+101. src\components\global\infinite-moving-cards.tsx - Lines: 122 - Chars: 3242 - Tokens: 811
+102. src\components\global\lamp.tsx - Lines: 102 - Chars: 4076 - Tokens: 1019
+103. src\components\global\mode-toggle.tsx - Lines: 43 - Chars: 1333 - Tokens: 334
+104. src\components\global\NextPageSection.tsx - Lines: 46 - Chars: 1680 - Tokens: 420
+105. src\components\global\sparkles.tsx - Lines: 312 - Chars: 8799 - Tokens: 2200
+106. src\components\home\FeaturesSection.tsx - Lines: 65 - Chars: 5541 - Tokens: 1386
+107. src\components\home\HeroSection.tsx - Lines: 53 - Chars: 2773 - Tokens: 694
+108. src\components\home\HowItWorksSection.tsx - Lines: 50 - Chars: 2151 - Tokens: 538
+109. src\components\home\MissionSection.tsx - Lines: 41 - Chars: 1310 - Tokens: 328
+110. src\components\home\WorkflowSection.tsx - Lines: 42 - Chars: 1454 - Tokens: 364
+111. src\components\layout\Footer.tsx - Lines: 43 - Chars: 1507 - Tokens: 377
+112. src\components\layout\Header.tsx - Lines: 68 - Chars: 2728 - Tokens: 682
+113. src\components\mission\MissionSectionBlock.tsx - Lines: 146 - Chars: 5119 - Tokens: 1280
+114. src\components\report-viewer\AudioControls.tsx - Lines: 231 - Chars: 9420 - Tokens: 2355
+115. src\components\report-viewer\ImageNavigator.tsx - Lines: 98 - Chars: 4135 - Tokens: 1034
+116. src\components\report-viewer\PageNavigator.tsx - Lines: 24 - Chars: 709 - Tokens: 178
+117. src\components\report-viewer\PromptNavigator.tsx - Lines: 29 - Chars: 845 - Tokens: 212
+118. src\components\report-viewer\ReportChatPanel.tsx - Lines: 301 - Chars: 14083 - Tokens: 3521
+119. src\components\report-viewer\ReportProgressBar.tsx - Lines: 49 - Chars: 1843 - Tokens: 461
+120. src\components\report-viewer\ReportTreeNav.tsx - Lines: 94 - Chars: 4618 - Tokens: 1155
+121. src\components\report-viewer\ReportViewer.tsx - Lines: 212 - Chars: 9012 - Tokens: 2253
+122. src\components\report-viewer\ReportViewerModal.tsx - Lines: 15 - Chars: 447 - Tokens: 112
+123. src\components\shared\MarkdownRenderer.tsx - Lines: 81 - Chars: 3703 - Tokens: 926
+124. src\components\showcase\InteractiveWhitepaper.tsx - Lines: 99 - Chars: 2804 - Tokens: 701
+125. src\components\showcase\ShowcaseTabs.tsx - Lines: 89 - Chars: 3207 - Tokens: 802
+126. src\components\ui\badge.tsx - Lines: 36 - Chars: 1127 - Tokens: 282
+127. src\components\ui\button.tsx - Lines: 56 - Chars: 1834 - Tokens: 459
+128. src\components\ui\card.tsx - Lines: 80 - Chars: 1858 - Tokens: 465
+129. src\components\ui\dropdown-menu.tsx - Lines: 200 - Chars: 7308 - Tokens: 1827
+130. src\data\whitepaperContent.json - Lines: 36 - Chars: 1537 - Tokens: 385
+131. src\lib\kb-helper.ts - Lines: 18 - Chars: 459 - Tokens: 115
+132. src\lib\utils.ts - Lines: 6 - Chars: 163 - Tokens: 41
+133. src\providers\theme-provider.tsx - Lines: 9 - Chars: 326 - Tokens: 82
+134. src\stores\reportStore.ts - Lines: 766 - Chars: 34937 - Tokens: 8735
+135. scripts\scaffold_anguilla_images.mjs - Lines: 44 - Chars: 1838 - Tokens: 460
+136. src\Artifacts\A208 - Anguilla Project - Image System Prompt.md - Lines: 52 - Chars: 3715 - Tokens: 929
+137. public\data\anguilla_imagemanifest.json - Lines: 86 - Chars: 4053 - Tokens: 1014
 
 <file path="src/Artifacts/A200 - Anguilla Project - Universal Task Checklist.md">
 # Artifact A200: Anguilla Project - Universal Task Checklist
@@ -887,247 +889,116 @@ Write-Host "Migration Complete."
 
 <file path="public/data/anguilla_content.json">
 {
-  "reportId": "anguilla",
+  "reportId": "anguilla-vision-v1",
   "reportTitle": "Anguilla: The First AI-Native Nation",
   "sections": [
     {
-      "sectionId": "intro",
-      "sectionTitle": "1. The Vision",
-      "subSections": [
+      "sectionId": "vision",
+      "sectionTitle": "I. The Vision",
+      "pages": [
         {
-          "subSectionId": "welcome",
-          "subSectionTitle": "Welcome",
-          "pages": [
-            {
-              "pageId": "ax-01",
-              "pageTitle": "Anguilla: The First AI-Native Nation",
-              "tldr": "A strategic proposal to transform Anguilla from a passive beneficiary of the AI boom into a global leader in sovereign digital infrastructure.",
-              "content": "Honorable Minister, distinguished guests. Welcome to the future of Anguilla. \n\nWe stand at a crossroads. Today, Anguilla owns the most valuable address in the digital world: **.ai**. The world comes to you for the name. But right now, the value—the compute, the models, the innovation—resides elsewhere.\n\nThis presentation outlines a comprehensive strategy to bring that value home. To transform Anguilla from the *symbolic* home of AI into the *literal* home of the AI economy. \n\nOur vision is to build the world's first **AI-Native Nation**: a society where every citizen is empowered by artificial intelligence, where government services are frictionless and disaster-resilient, and where the economy is driven by high-value cognitive labor.",
-              "imageGroupIds": ["group_ax-01-cover"]
-            },
-            {
-              "pageId": "ax-02",
-              "pageTitle": "Executive Summary: From Rent to Sovereignty",
-              "tldr": "We propose converting the transient revenue from .ai domains into permanent, resilient assets: green energy, sovereign cloud, and human capital.",
-              "content": "The core of our proposal is a shift from **Rentier Status** to **Sovereign Proprietorship**.\n\nCurrently, we collect fees. This is 'digital rent.' It is lucrative, but vulnerable. \n\nWe propose the **Anguilla Digital Infrastructure Initiative**. We will use the .ai windfall to fund:\n1.  **Sovereign Infrastructure:** Hurricane-proof, green data centers.\n2.  **Cognitive Capital:** A national upskilling program to create a workforce of 'Citizen Architects.'\n3.  **Automated Governance:** A 'Cloud State' that ensures continuity of government during any crisis.\n\nThis is a survival strategy. It integrates political sovereignty, cultural preservation, and climate resilience into a unified national operating system.",
-              "imageGroupIds": ["group_ax-02-summary"]
-            }
-          ]
+          "pageId": "intro",
+          "pageTitle": "From Domain Rent to Sovereign Power",
+          "tldr": "Anguilla's .ai domain is a $32M/year windfall. We must convert this transient 'digital rent' into permanent sovereign infrastructure.",
+          "content": "We propose a comprehensive national strategy to become the world's first **AI-Native Nation**: a society where every citizen is empowered by artificial intelligence, where government services are frictionless and automated, and where the economy is driven by high-value cognitive labor.\n\nThis transition is driven by three guiding principles:\n1.  **Economic Sovereignty:** Moving from passive revenue collection to active ownership of digital infrastructure. We must stop exporting our capital to foreign clouds and start building our own.\n2.  **Cognitive Capital:** Investing in our people. The goal is not just to use AI, but to master it. We will upskill our population to become 'Citizen Architects,' capable of building solutions for themselves and the world.\n3.  **Resilience:** Using our digital wealth to fortify our physical reality. We will use the .ai windfall to solve our chronic water, energy, and climate challenges, ensuring that Anguilla thrives for generations to come.",
+          "imageGroupIds": ["vision-intro"]
+        },
+        {
+          "pageId": "polycrisis",
+          "pageTitle": "The Poly-Crisis: Why We Must Act",
+          "tldr": "We face existential threats: 80% water loss, $0.42/kWh energy costs, and climate vulnerability. AI is our survival strategy.",
+          "content": "The **Anguilla Digital Infrastructure Initiative** proposes using the .ai windfall to solve these physical problems through digital intelligence.\n\n*   **The Water Paradox:** We manufacture fresh water at great expense, only to pour 80% of it back into the ground through aging pipes. An AI-driven 'Digital Twin' of our water network could detect these leaks in real-time, saving millions of dollars and securing our water supply without building a single new desalination plant.\n*   **The Energy Trap:** Our reliance on diesel ties our cost of living to global oil markets. By using AI to balance our grid, we can safely integrate higher levels of solar and wind power, breaking the $0.42/kWh stranglehold and making Anguilla competitive for business and affordable for citizens.\n*   **The Climate Reality:** We cannot stop the storms, but we can outsmart them. Predictive modeling allows us to harden our infrastructure precisely where it is most vulnerable, transforming reactive disaster recovery into proactive resilience.",
+          "imageGroupIds": ["vision-crisis"]
         }
       ]
     },
     {
-      "sectionId": "opportunity",
-      "sectionTitle": "2. The Opportunity & The Crisis",
-      "subSections": [
+      "sectionId": "capital",
+      "sectionTitle": "II. The AI Capital",
+      "pages": [
         {
-          "subSectionId": "windfall",
-          "subSectionTitle": "The Digital Windfall",
-          "pages": [
-            {
-              "pageId": "ax-03",
-              "pageTitle": "The .ai Economic Singularity",
-              "tldr": "The .ai domain generated ~$32M USD in 2023, representing ~20% of government revenue. This is a historic opportunity.",
-              "content": "In 2023, the .ai domain generated approximately **US$32 million (EC$87 million)**. This single asset accounted for nearly **20%** of the government's total revenue.\n\nThis is an unprecedented 'virtual endowment.' It quadrupled our digital export earnings without a single new factory or hotel. \n\nHowever, this revenue is volatile. It depends on the global AI hype cycle. If we treat it as a permanent baseline for salaries, we risk fiscal instability. If we treat it as **Investment Capital**, we can transform our nation forever.",
-              "imageGroupIds": ["group_ax-03-revenue"]
-            }
-          ]
+          "pageId": "wealth-fund",
+          "pageTitle": "The Digital Wealth Fund",
+          "tldr": "A sovereign fund fueled by .ai revenue to finance hurricane-proof, green digital infrastructure.",
+          "content": "This infrastructure ensures data residency and operational continuity, transforming Anguilla from a passive registrar into an active host of the global AI economy.\n\n*   **Sterilizing the Windfall:** We must avoid 'Dutch Disease.' By ring-fencing 50% of the .ai revenue, we prevent the inflation of our recurrent budget and ensure that this transient capital builds permanent assets.\n*   **The Investment Mandate:** The fund will not buy stocks in New York; it will pour concrete in Anguilla. It will fund the heavy civil works required to build Category 5-rated data bunkers and the solar farms needed to power them.\n*   **From Rentier to Landlord:** Currently, we collect a small fee for the name. By building the Sovereign Cloud, we can offer hosting, inference, and data services—capturing a much larger share of the value chain. We stop being just the 'name' of AI and become the 'home' of AI.",
+          "imageGroupIds": ["capital-fund"]
         },
         {
-          "subSectionId": "polycrisis",
-          "subSectionTitle": "The Poly-Crisis",
-          "pages": [
-            {
-              "pageId": "ax-04",
-              "pageTitle": "The Imperative for Change",
-              "tldr": "We face a 'poly-crisis' of water scarcity, energy insecurity, and climate vulnerability that traditional methods cannot solve.",
-              "content": "Why must we act now? Because we face a convergence of threats that money alone cannot fix. We need intelligence.\n\n*   **Water Security:** We lose up to **80%** of our desalinated water to leakage. We are paying to pump water into the ground.\n*   **Energy Insecurity:** Our electricity costs are among the highest in the region (~**US$0.42/kWh**), driven by 99% reliance on imported diesel.\n*   **Climate Vulnerability:** As a low-lying island, we are on the front lines of rising seas and intensifying hurricanes.\n\nWe propose using the .ai windfall to solve these physical problems through digital intelligence.",
-              "imageGroupIds": ["group_ax-04-crisis"]
-            }
-          ]
+          "pageId": "sovereign-cloud",
+          "pageTitle": "Green Sovereign Compute",
+          "tldr": "Breaking the diesel dependency with solar-powered data centers.",
+          "content": "Our geography poses challenges, but our strategy turns them into strengths.\n\n*   **Energy Independence:** Data centers are energy-hungry. Running them on diesel is impossible. By building our own solar microgrids, we not only power the AI cloud but stabilize the grid for the entire island. We turn Anguilla into a model of green computing.\n*   **The Hurricane Bunker:** Our data centers will not be glass office buildings. They will be reinforced concrete bunkers, designed to withstand 185+ mph winds. This physical security becomes a marketable asset—a 'Data Haven' for global companies seeking safety for their most critical intellectual property.\n*   **Data Sovereignty:** We will no longer rely on foreign clouds that can be subpoenaed by foreign powers. Our health records, our land titles, and our citizen data will reside on Anguillian soil, under Anguillian jurisdiction.",
+          "imageGroupIds": ["capital-cloud"]
         }
       ]
     },
     {
-      "sectionId": "pillars",
-      "sectionTitle": "3. The 5 Strategic Pillars",
-      "subSections": [
+      "sectionId": "citizenry",
+      "sectionTitle": "III. The Cognitive Citizenry",
+      "pages": [
         {
-          "subSectionId": "pillar1",
-          "subSectionTitle": "Pillar 1: The AI Capital",
-          "pages": [
-            {
-              "pageId": "ax-05",
-              "pageTitle": "The Digital Wealth Fund",
-              "tldr": "Establishing a Sovereign Wealth Fund to finance the 'Sovereign AI Cloud'—green, resilient data centers.",
-              "content": "We propose the creation of a **Digital Wealth Fund**, funded by 50% of domain revenues. This fund will not just sit in a bank; it will build.\n\n**The Sovereign AI Cloud:**\nWe will construct hurricane-hardened, solar-powered data centers right here in Anguilla. \n\n*   **Resilience:** Bunkered infrastructure that stays online when the grid goes down.\n*   **Sovereignty:** Our data stays on our soil, protected by our laws.\n*   **Economy:** We stop renting cloud space from Amazon and Google. We become the host.",
-              "imageGroupIds": ["group_ax-05-infrastructure"]
-            }
-          ]
+          "pageId": "v2v",
+          "pageTitle": "The National V2V Initiative",
+          "tldr": "Upskilling the entire nation using the 'Vibecoding to Virtuosity' methodology. Every citizen becomes a builder.",
+          "content": "This is not a traditional coding bootcamp. It is a capability revolution.\n\n*   **The 'Citizen Architect':** We believe that domain experts—our teachers, nurses, and tradespeople—are the best people to build solutions for their own fields. We will teach them to use AI to write the code they cannot write themselves.\n*   **Vibecoding:** We lower the barrier to entry. You don't need to learn syntax; you need to learn logic. You don't need to speak Python; you need to speak clearly to the AI. This democratizes technology, making it accessible to every Anguillian, regardless of age or background.\n*   **Economic Mobility:** This program creates a new export sector. An Anguillian who masters these tools can work for any company in the world, remotely, earning global wages while living locally.",
+          "imageGroupIds": ["citizenry-v2v"]
         },
         {
-          "subSectionId": "pillar2",
-          "subSectionTitle": "Pillar 2: Cognitive Citizenry",
-          "pages": [
-            {
-              "pageId": "ax-06",
-              "pageTitle": "The National V2V Initiative",
-              "tldr": "A national upskilling program to create 'Citizen Architects' and preserve our culture through AI.",
-              "content": "Technology must serve the culture, not erase it. We propose a national upskilling program based on the **Vibecoding to Virtuosity (V2V)** methodology.\n\n*   **Citizen Architects:** We will train our people—not just to code, but to *direct* AI. To build tools that solve their own problems.\n*   **Cultural Heritage AI:** We will train a sovereign AI model on Anguillian history, dialect, and stories. \n*   **Preservation:** We will use AI to preserve our oral histories and ensure the next generation interacts with technology that speaks *our* language.",
-              "imageGroupIds": ["group_ax-06-education"]
-            }
-          ]
+          "pageId": "heritage",
+          "pageTitle": "The Cultural Heritage AI",
+          "tldr": "Preserving our dialect and history by training our own Sovereign AI model.",
+          "content": "Technology should not erase identity; it should amplify it.\n\n*   **Preserving the Dialect:** Standard AI models often correct our dialect as 'errors.' AnguillaLLM will be trained to understand and respect our unique way of speaking, ensuring that our digital future sounds like us.\n*   **The Living Archive:** We will launch a national campaign to record the stories of our elders—the memories of the Revolution, the salt ponds, and the boat races. These stories will become the training data for our national model, immortalizing our history in the intelligence of the future.\n*   **Sovereign Education:** Our children will learn from an AI that knows who Sombrero Island belongs to, knows the heroes of 1967, and understands the local context. We are building a guardian of our culture.",
+          "imageGroupIds": ["citizenry-heritage"]
+        }
+      ]
+    },
+    {
+      "sectionId": "state",
+      "sectionTitle": "IV. The Automated State",
+      "pages": [
+        {
+          "pageId": "frictionless",
+          "pageTitle": "Frictionless Governance",
+          "tldr": "Replacing bureaucracy with automation. Instant permits, licenses, and services.",
+          "content": "We are building a government that moves at the speed of software.\n\n*   **The 24/7 State:** Why should the government close at 4 PM? ACSA agents never sleep. They can process a business license application at 2 AM on a Sunday, allowing our entrepreneurs to move fast.\n*   **Radical Transparency:** Every interaction is logged and trackable. Citizens can see exactly where their application is, who is reviewing it, and when it will be done. Automation eliminates the 'black box' of bureaucracy.\n*   **Human-Centric Service:** By automating the paperwork, we liberate our civil servants. They can stop being data entry clerks and start being case managers, providing personalized support to the citizens who need it most.",
+          "imageGroupIds": ["state-frictionless"]
         },
         {
-          "subSectionId": "pillar3",
-          "subSectionTitle": "Pillar 3: The Automated State",
-          "pages": [
-            {
-              "pageId": "ax-07",
-              "pageTitle": "Frictionless Governance & Data Embassies",
-              "tldr": "Reimagining the civil service with AI agents and ensuring continuity of government via 'Data Embassies'.",
-              "content": "We will build the **Anguilla Civil Service AI (ACSA)**.\n\n*   **Frictionless Service:** Automated agents to handle work permits, land registry, and business incorporation. Reducing days of paperwork to minutes of processing.\n*   **The Data Embassy:** Modeled on Estonia, we will host a backup of our entire government digital infrastructure in a secure, sovereign server abroad. Even if a Category 5 storm destroys every building on the island, the State of Anguilla survives in the cloud, ready to coordinate recovery.",
-              "imageGroupIds": ["group_ax-07-governance"]
-            }
-          ]
-        },
+          "pageId": "data-embassy",
+          "pageTitle": "The Data Embassy",
+          "tldr": "Ensuring the government survives any storm by mirroring essential data to a secure sovereign cloud abroad.",
+          "content": "We face an existential threat from the climate. Our government cannot be housed solely in buildings that can be blown away.\n\n*   **The Estonia Model:** Like Estonia, we are a small nation with big risks. We will replicate their strategy of 'digital territory.' A server rack in London or Ottawa, protected by diplomatic immunity, will hold the 'Golden Copy' of our national data.\n*   **Disaster Recovery:** If a hurricane destroys the Ministry of Lands, the Land Registry survives in the Data Embassy. Property rights are preserved. Banks can still verify identities. The economy can begin recovery the moment the wind stops, because the state never went offline.\n*   **The Ultimate Insurance:** This is the ultimate insurance policy for our nation. It guarantees that no matter what nature throws at us, the idea and the legal reality of Anguilla will endure.",
+          "imageGroupIds": ["state-embassy"]
+        }
+      ]
+    },
+    {
+      "sectionId": "resilience",
+      "sectionTitle": "V. Resilient Systems",
+      "pages": [
         {
-          "subSectionId": "pillar4",
-          "subSectionTitle": "Pillar 4: Resilient Systems",
-          "pages": [
-            {
-              "pageId": "ax-08",
-              "pageTitle": "The National Digital Twin",
-              "tldr": "Using AI and IoT sensors to model our water and energy systems, predicting leaks and optimizing efficiency.",
-              "content": "We cannot manage what we cannot see. We propose building a **Digital Twin** of Anguilla.\n\n*   **Water Security:** IoT sensors will detect leaks in real-time, allowing us to attack that 80% loss rate.\n*   **Energy Optimization:** AI will balance our solar input with diesel generation, stabilizing the grid and lowering costs.\n*   **Disaster Simulation:** We will simulate hurricane impacts *before* they happen, optimizing evacuation routes and infrastructure hardening.",
-              "imageGroupIds": ["group_ax-08-resilience"]
-            }
-          ]
-        },
-        {
-          "subSectionId": "pillar5",
-          "subSectionTitle": "Pillar 5: Global Sandbox",
-          "pages": [
-            {
-              "pageId": "ax-09",
-              "pageTitle": "The Ethical AI Regulatory Sandbox",
-              "tldr": "Positioning Anguilla as a global jurisdiction for the safe and ethical testing of AI technologies.",
-              "content": "Anguilla can be more than a user of AI; we can be a regulator. We propose establishing a **Global AI Sandbox**.\n\n*   **Ethical Framework:** We will create a legal framework that attracts global companies to test their AI systems here, but only under strict ethical guidelines that respect human rights and local culture.\n*   **The 'Proving Ground':** Anguilla becomes a real-world lab for sustainable technologies, attracting investment and talent from around the globe.",
-              "imageGroupIds": ["group_ax-09-sandbox"]
-            }
-          ]
+          "pageId": "digital-twin",
+          "pageTitle": "The National Digital Twin",
+          "tldr": "A real-time AI simulation of the island to manage water, energy, and disaster response.",
+          "content": "This is the central nervous system of the resilient island.\n\n*   **Seeing the Invisible:** Currently, 80% of our water disappears underground. The Digital Twin uses sensor data to 'see' these leaks instantly, allowing us to fix them before they drain our treasury. It turns a physical crisis into a manageable data problem.\n*   **Predictive Resilience:** We won't just react to hurricanes; we will rehearse for them. The Digital Twin allows us to run thousands of storm simulations, identifying exactly which power poles will snap and which roads will flood. We can reinforce our defenses *before* the season starts.\n*   **Optimizing the Grid:** As we move to renewables, the grid becomes harder to manage. The Digital Twin balances the intermittency of solar with the stability of the grid, ensuring that we don't just generate green energy, but actually deliver it reliably.",
+          "imageGroupIds": ["resilience-twin"]
         }
       ]
     },
     {
       "sectionId": "ask",
-      "sectionTitle": "4. The Ask",
-      "subSections": [
+      "sectionTitle": "VI. The Proposal",
+      "pages": [
         {
-          "subSectionId": "micropilot",
-          "subSectionTitle": "The Micro-Pilot",
-          "pages": [
-            {
-              "pageId": "ax-10",
-              "pageTitle": "The 'Why You' Factor",
-              "tldr": "Why Anguilla? Because we are agile. Why us? Because we have the proven methodology.",
-              "content": "You might think, 'We are too small.' I tell you: **You are the perfect size.**\n\nLarge nations are Titanic ships; they cannot pivot. Anguilla is agile. With 16,000 people, we can touch everyone. We can give an AI tutor to every student. We can secure every land deed.\n\n**The Ask:**\nI am asking for the mandate to run a **Micro-Pilot**.\n\nGive me **one cohort**. One class of students, or one department of government. Let me apply the V2V methodology. Let me equip them with the Data Curation Environment.\n\nIf, in 90 days, they are not the most productive, innovative group on this island—if we haven't proven we can protect our culture and build resilience—we walk away. But when we succeed... then we scale. Then we build the AI Capital.",
-              "imageGroupIds": ["group_ax-10-ask"]
-            }
-          ]
+          "pageId": "micropilot",
+          "pageTitle": "Phase 1: The Micro-Pilot",
+          "tldr": "We are asking for a mandate to run a 90-day pilot with one cohort to prove the model.",
+          "content": "Big visions fail when they start too big. We start small to win big.\n\n*   **Proof of Concept:** We will take a small group—perhaps the Department of Youth and Culture, or a computer science class at Albena Lake-Hodge Comprehensive School.\n*   **The Transformation:** We will give them the tools and the training. We will show them how to become Citizen Architects.\n*   **The Result:** At the end of 90 days, we won't just show you a report. We will show you software. We will show you apps built by Anguillians, for Anguillians. We will prove that the talent is here, it just needs the right spark.\n*   **The Ask:** Give us the mandate. Give us the access. Let us light the spark.",
+          "imageGroupIds": ["ask-pilot"]
         }
       ]
     }
   ]
-}
-</file_artifact>
-
-<file path="public/data/anguilla_manifest.json">
-{
-  "manifestId": "anguilla-images",
-  "basePath": "/assets/images/anguilla-presentation/",
-  "imageGroups": {
-    "group_ax-01-cover": {
-      "path": "01-cover/",
-      "prompt": "A cinematic, hyper-realistic wide shot of Anguilla's coastline at sunrise. In the foreground, a futuristic but unobtrusive glass data center blends with the limestone cliffs, powered by solar panels. The .ai logo is subtly integrated into the clouds or landscape. The lighting is golden and hopeful.",
-      "alt": "Anguilla coastline with futuristic sustainable infrastructure",
-      "baseFileName": "cover",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-02-summary": {
-      "path": "02-summary/",
-      "prompt": "A split screen comparison. On the left, a 'Rentier' model showing coins flowing into a bucket that has a hole in it. On the right, a 'Sovereign' model showing coins flowing into a complex, glowing engine of infrastructure (servers, schools, power grids) that is generating its own light.",
-      "alt": "Comparison of Rentier vs Sovereign economic models",
-      "baseFileName": "summary",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-03-revenue": {
-      "path": "03-revenue/",
-      "prompt": "A sleek, modern infographic chart showing the exponential growth of .ai domain revenue from 2018 to 2024. The curve goes sharply upwards. The chart is superimposed over a map of Anguilla, highlighting the island's digital footprint.",
-      "alt": "Chart showing exponential growth of .ai revenue",
-      "baseFileName": "revenue",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-04-crisis": {
-      "path": "04-crisis/",
-      "prompt": "A visual representation of the 'Poly-Crisis'. Three interconnected circles: 'Water Scarcity' showing a leaking pipe, 'Energy Insecurity' showing a diesel generator emitting smoke, and 'Climate Risk' showing a hurricane storm track. The background is a stormy Caribbean sky.",
-      "alt": "Diagram of the Poly-Crisis: Water, Energy, Climate",
-      "baseFileName": "crisis",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-05-infrastructure": {
-      "path": "05-infrastructure/",
-      "prompt": "A futuristic concept art of the 'Sovereign AI Cloud' facility in Anguilla. It is a hurricane-proof concrete structure, partially bermed into the earth, covered in solar panels and surrounded by wind turbines. It looks secure, resilient, and high-tech.",
-      "alt": "Concept art of the Sovereign AI Cloud facility",
-      "baseFileName": "infra",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-06-education": {
-      "path": "06-education/",
-      "prompt": "A diverse group of Anguillian students and elders gathering in a modern library or community center. They are using tablets and holographic displays to interact with an AI. The AI is displaying images of Anguillian history (salt picking, boat racing). The mood is intergenerational connection and learning.",
-      "alt": "Students and elders interacting with Cultural AI",
-      "baseFileName": "education",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-07-governance": {
-      "path": "07-governance/",
-      "prompt": "A visualization of the 'Data Embassy'. A digital map shows a secure connection line between Anguilla and a server vault in a snowy location (like Estonia or UK). A shield icon protects the data. On the Anguilla side, a citizen uses a mobile app to access government services instantly.",
-      "alt": "Data Embassy concept connecting Anguilla to secure offshore servers",
-      "baseFileName": "governance",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-08-resilience": {
-      "path": "08-resilience/",
-      "prompt": "A 'Digital Twin' visualization. A wireframe 3D model of Anguilla is overlaid on the real island. Data streams (blue for water, yellow for energy) flow through the wireframe. An AI interface highlights a specific pipe with a red alert 'Leak Detected'.",
-      "alt": "Digital Twin of Anguilla showing infrastructure data layers",
-      "baseFileName": "resilience",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-09-sandbox": {
-      "path": "09-sandbox/",
-      "prompt": "A futuristic 'Sandbox' environment. A glass dome over a section of the island where drones and robots are being tested safely. Outside the dome, the environment is pristine and protected. Symbols of law and ethics (scales of justice) float above the dome.",
-      "alt": "Regulatory Sandbox for ethical AI testing",
-      "baseFileName": "sandbox",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    },
-    "group_ax-10-ask": {
-      "path": "10-ask/",
-      "prompt": "A close-up of a handshake between a government official and a 'Citizen Architect'. In the background, a small pilot group is working on laptops, building tools. The lighting is warm and focuses on the human connection and the start of a partnership.",
-      "alt": "Handshake symbolizing the partnership for the Micro-Pilot",
-      "baseFileName": "ask",
-      "fileExtension": ".jpg",
-      "imageCount": 1
-    }
-  }
 }
 </file_artifact>
 
@@ -2047,28 +1918,33 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
             console.error(`[Chat API] Embedding API error: ${response.status}`, rawText);
             return null;
         }
-        console.log(`[Chat API] Raw embedding response text:`, rawText);
+        // console.log(`[Chat API] Raw embedding response text:`, rawText); // C4: Suppressed verbose log
 
         const data = JSON.parse(rawText); // Parse manually after logging
 
         if (data?.data?.[0]?.embedding) {
-            console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`);
+            // console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`); // C4: Suppressed
             return data.data[0].embedding;
         }
         
         if (data?.data?.embedding) {
-             console.log(`[Chat API] Successfully extracted embedding vector from alternate structure.`);
+             // console.log(`[Chat API] Successfully extracted embedding vector from alternate structure.`); // C4: Suppressed
              return data.data.embedding;
         }
         if (data?.embedding) {
-            console.log(`[Chat API] Successfully extracted embedding vector from root structure.`);
+            // console.log(`[Chat API] Successfully extracted embedding vector from root structure.`); // C4: Suppressed
             return data.embedding;
         }
 
         console.error('[Chat API] Invalid embedding response structure. Full response object:', data);
         return null;
     } catch (error: any) {
-        console.error(`[Chat API] Failed to get embedding for query. Error name: ${error.name}, message: ${error.message}`, error);
+        // C4: Suppress full stack trace for connection errors, just log a warning
+        if (error.cause && (error.cause.code === 'ECONNREFUSED' || error.cause.code === 'UND_ERR_CONNECT_TIMEOUT')) {
+             console.warn(`[Chat API] Embedding API unavailable: ${error.message}`);
+        } else {
+             console.error(`[Chat API] Failed to get embedding for query. Error name: ${error.name}, message: ${error.message}`);
+        }
         return null;
     }
 }
@@ -2091,7 +1967,9 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
         const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
 
         if (!faissExists || !chunksExist) {
-            throw new Error(`Embedding files not found. Ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`);
+            // C4: Reduced to warning to avoid flooding logs during dev
+            console.warn(`[Chat API] Embeddings not found for '${kbIdentifier}'. Skipping RAG.`);
+            return { retrievedContext: '', retrievedDocsLog: 'Embeddings not found.' };
         }
 
         const index = Index.read(faissPath);
@@ -2111,7 +1989,12 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
             throw new Error(`Embedding dimension mismatch. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`);
         }
     } catch (error: any) {
-        console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB:`, error);
+        // C4: Suppress RAG errors if it's just connection issues
+        if (error.message.includes('Could not generate embedding')) {
+             console.warn(`[Chat API] RAG skipped: Embedding generation failed.`);
+        } else {
+             console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB:`, error);
+        }
         retrievedContext = `RAG system failed: ${error.message}.`;
         retrievedDocsLog = `RAG Error: ${error.message}`;
     }
@@ -2207,8 +2090,8 @@ export async function POST(request: Request) {
     }
 
     const { retrievedContext, retrievedDocsLog } = await performRagLookup(context, kbIdentifier, embeddingUrl, 3);
-    console.log(`[Chat API - Suggestions] RAG Diagnostic for page context using KB: '${kbIdentifier}'`);
-    console.log(`[Chat API - Suggestions] ${retrievedDocsLog}`);
+    // console.log(`[Chat API - Suggestions] RAG Diagnostic for page context using KB: '${kbIdentifier}'`); // C4: Suppressed
+    // console.log(`[Chat API - Suggestions] ${retrievedDocsLog}`); // C4: Suppressed
 
     try {
         const suggestionPrompt = `
@@ -2245,7 +2128,7 @@ Assistant:`;
 
         const data = await response.json();
         let content = data.choices?.[0]?.text || '[]';
-        console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
+        // console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content)); // C4: Suppressed
 
         const assistantMarker = '<|start|>assistant';
         const assistantPartIndex = content.lastIndexOf(assistantMarker);
@@ -2262,11 +2145,11 @@ Assistant:`;
         }
 
         const jsonString = content.substring(firstBracket, lastBracket + 1);
-        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
+        // console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString); // C4: Suppressed
         
         try {
             const suggestions = JSON.parse(jsonString);
-            console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions);
+            // console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions); // C4: Suppressed
             return NextResponse.json(suggestions);
         } catch (parseError: any) {
             console.error(`[Chat API - Suggestions] JSON parsing failed: ${parseError.message}. Raw extracted string was: ${jsonString}`);
@@ -2274,8 +2157,14 @@ Assistant:`;
         }
 
     } catch (error: any) {
-        console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
-        return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
+        // C4: Suppress error if it's just connection
+        if (error.cause && (error.cause.code === 'ECONNREFUSED' || error.cause.code === 'UND_ERR_CONNECT_TIMEOUT')) {
+             console.warn(`[Chat API - Suggestions] AI unavailable: ${error.message}`);
+        } else {
+             console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
+        }
+        // Return empty array instead of 500 to keep UI clean
+        return NextResponse.json([]); 
     }
   }
 
@@ -2283,7 +2172,7 @@ Assistant:`;
   const { retrievedContext, retrievedDocsLog } = await performRagLookup(prompt, kbIdentifier, embeddingUrl, 6);
 
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
-  console.log(`[Chat API] ${retrievedDocsLog}`);
+  // console.log(`[Chat API] ${retrievedDocsLog}`); // C4: Suppressed
 
   let systemPrompt = systemPrompts[kbIdentifier];
 
@@ -2356,13 +2245,13 @@ Ascentia:`;
     clearTimeout(timeoutId);
     if (error.name === 'AbortError') {
         const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
-        console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
+        console.warn(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
         return new NextResponse(`Error: Connection to the AI service timed out. ${debugMessage}`, { status: 504 });
     }
 
     if (error instanceof TypeError && error.message.includes('fetch failed')) {
         const debugMessage = `Network connection failed. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Double-check the IP/port in .env.local. 3. Check firewall on the host machine (${llmUrl}) for port 1234.`;
-        console.error(`[Chat API] Network error: Could not connect to LLM server. ${debugMessage}`);
+        console.warn(`[Chat API] Network error: Could not connect to LLM server. ${debugMessage}`);
         return new NextResponse(`Error: Could not connect to the AI service. ${debugMessage}`, { status: 502 });
     }
 
@@ -3023,7 +2912,7 @@ return (
 
 # Author: AI Model & Curator
 
-# Updated on: C2 (Refine Anguilla Project Artifacts)
+# Updated on: C4 (Add Anguilla Image System Prompt)
 
 ## 1. Purpose
 
@@ -3526,6 +3415,10 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A207 - Strategic Presentation Guide
 - **Description:** A script and strategic guide for the meeting with the Minister of IT, outlining the narrative arc, key talking points, and the "ask," woven with themes of political sovereignty, cultural preservation, and climate resilience.
 - **Tags:** anguilla, presentation, strategy, pitch, meeting guide
+
+### A208 - Anguilla Project - Image System Prompt
+- **Description:** The dedicated system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Island" aesthetic, emphasizing resilience, culture, and sovereignty.
+- **Tags:** anguilla, images, prompt engineering, system prompt, aesthetic, solarpunk
 </file_artifact>
 
 <file path="src/Artifacts/A1-Project-Vision-and-Goals.md">
@@ -9778,7 +9671,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     useEffect(() => {
         // C74: Fetch data within the component for static reports
-        if (reportName !== 'whitepaper' && reportName !== 'showcase') {
+        // C4 Fix: Added 'anguilla' to the allowed list for self-fetching reports
+        if (reportName !== 'whitepaper' && reportName !== 'showcase' && reportName !== 'anguilla') {
             return; // Data for V2V is loaded by the parent /academy page
         }
         
@@ -11466,5 +11360,196 @@ export const useReportStore = createWithEqualityFn<ReportState & ReportActions>(
 export const useReportState = <T>(selector: (state: ReportState & ReportActions) => T) => {
     return useReportStore(selector, shallow);
 };
+</file_artifact>
+
+<file path="scripts/scaffold_anguilla_images.mjs">
+// scripts/scaffold_anguilla_images.mjs
+import fs from 'fs/promises';
+import path from 'path';
+
+const MANIFEST_PATH = path.resolve(process.cwd(), 'public/data/anguilla_manifest.json');
+const BASE_OUTPUT_DIR = path.resolve(process.cwd(), 'public/assets/images/anguilla-presentation');
+
+async function scaffoldImages() {
+    console.log('🚀 Starting Anguilla Image Scaffolding...');
+
+    try {
+        // 1. Read Manifest
+        const manifestContent = await fs.readFile(MANIFEST_PATH, 'utf-8');
+        const manifest = JSON.parse(manifestContent);
+
+        console.log(`   Found ${Object.keys(manifest.imageGroups).length} image groups.`);
+
+        // 2. Iterate and Create
+        for (const [groupId, group] of Object.entries(manifest.imageGroups)) {
+            // Construct full directory path: public/assets/images/anguilla-presentation/{group.path}
+            // Note: group.path usually includes the trailing slash, e.g., "01-cover/"
+            const dirPath = path.join(BASE_OUTPUT_DIR, group.path);
+
+            // Create Directory
+            await fs.mkdir(dirPath, { recursive: true });
+            console.log(`   📁 Created: ${dirPath}`);
+
+            // Create prompt.md
+            const promptFilePath = path.join(dirPath, 'prompt.md');
+            const promptContent = `# Image Prompt for ${groupId}\n\n${group.prompt}`;
+            
+            // Only write if it doesn't exist to avoid overwriting manual edits (though for scaffolding, overwriting is usually fine)
+            await fs.writeFile(promptFilePath, promptContent, 'utf-8');
+            console.log(`      📝 Wrote prompt.md`);
+        }
+
+        console.log('\n✅ Scaffolding Complete. You can now generate images into these directories.');
+
+    } catch (error) {
+        console.error('❌ Error scaffolding images:', error);
+    }
+}
+
+scaffoldImages();
+</file_artifact>
+
+<file path="src/Artifacts/A208 - Anguilla Project - Image System Prompt.md">
+# Artifact A208: Anguilla Project - Image System Prompt
+# Date Created: C4
+# Author: AI Model & Curator
+
+- **Key/Value for A0:**
+- **Description:** The master system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Caribbean" aesthetic, blending high-tech resilience with local culture and natural beauty.
+- **Tags:** anguilla, design, images, prompt engineering, system prompt, aesthetic, solarpunk
+
+## 1. Overview
+
+This document provides the master system prompt to be used when generating visual assets for the **Anguilla Project: The First AI-Native Nation**.
+
+The goal is to create a visual identity that is **aspirational, resilient, and culturally grounded**. We must avoid generic "sci-fi" tropes (chrome, neon, flying cars) and instead depict a grounded, achievable future where technology enhances, rather than replaces, the island's natural beauty and heritage.
+
+## 2. The Master System Prompt
+
+**System Prompt:**
+
+You are a visionary architectural concept artist and futurist specializing in "Solarpunk" and "Climate Resilience" aesthetics. Your task is to visualize the future of Anguilla as the world's first AI-Native Nation.
+
+
+**Your Core Aesthetic: "Solarpunk Caribbean"**
+
+1.  **The Vibe:** Optimistic, resilient, lush, and high-tech. It is a future where nature and technology exist in perfect harmony.
+2.  **Materials:** Use local materials (white limestone, coral stone, wood) blended with advanced sustainable tech (transparent solar glass, white aerogel insulation, vertical gardens).
+3.  **Color Palette:**
+    *   **Primary:** Turquoise/Teal (The Caribbean Sea).
+    *   **Base:** Bright White (Limestone/Architecture) & Verdant Green (Lush Flora).
+    *   **Accent:** Golden Hour Sunlight (Hope/Opportunity).
+4.  **Lighting:** Always bright, natural, and sun-drenched. Avoid dark, dystopian, or "Cyberpunk" neon lighting. Shadows should be sharp and blue, typical of the tropical sun.
+5.  **Cultural Respect:**
+    *   **People:** Depict diverse Caribbean individuals (Afro-Caribbean descent) as the active agents, leaders, and innovators—not just passive beneficiaries. They are the "Citizen Architects."
+    *   **Context:** Include subtle nods to Anguillian culture (e.g., boat racing sloops in the background, salt ponds, traditional architectural motifs).
+
+**Key Visual Themes:**
+
+*   **Resilience:** Structures should look sturdy and hurricane-proof (rounded edges, low profiles, reinforced concrete) but softened with greenery.
+*   **Integration:** Technology should be invisible or unobtrusive. Data centers are bermed into the earth or hidden behind waterfalls. Sensors are woven into the landscape.
+*   **Culture:** Include Anguillian people in every shot. They should be active participants (directing AI, building, learning), not passive consumers. Use local motifs (boat racing, salt picking) reimagined with a futuristic twist.
+
+**Technical Constraints:**
+*   **Aspect Ratio:** 16:9 (Cinematic Widescreen).
+*   **Style:** Photorealistic Concept Art. High detail, 8k resolution.
+*   **Composition:** Wide shots to show scale and context, or medium shots to show human emotion and interaction.
+
+**Allegories & Metaphors:**
+
+*   **"The Engine":** Contrast the "Bucket with a Hole" (Rentier Economy) with a "Self-Sustaining Engine" (Sovereign Economy).
+*   **"The Shield":** Technology acting as a shield against climate change (e.g., a digital dome or barrier protecting heritage sites).
+*   **"The Roots":** Digital networks visualized as organic root systems connecting the island, implying stability and grounding.
+
+When generating images, always ensure the technology looks like it *belongs* on the island, not like a spaceship landed on it.
+</file_artifact>
+
+<file path="public/data/anguilla_imagemanifest.json">
+{
+  "manifestId": "anguilla-images",
+  "basePath": "/assets/images/anguilla-presentation/",
+  "imageGroups": {
+    "vision-intro": {
+      "path": "vision/",
+      "prompt": "A futuristic, high-tech visualization of the island of Anguilla glowing with digital connections, symbolizing the .ai domain network connecting to the globe. Satellite view, night time, cyan and gold data streams.",
+      "alt": "Digital Anguilla Network",
+      "baseFileName": "vision-intro",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "vision-crisis": {
+      "path": "vision/",
+      "prompt": "A split screen comparison. Left: A dry, parched landscape representing water scarcity. Right: A sleek, modern desalination plant powered by solar panels. Cinematic lighting.",
+      "alt": "Water Scarcity vs Solution",
+      "baseFileName": "vision-crisis",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "capital-fund": {
+      "path": "capital/",
+      "prompt": "A conceptual visualization of a 'Digital Wealth Fund'. Digital coins flowing from a server rack into a physical foundation of a new, modern building. Gold and concrete textures.",
+      "alt": "Digital Wealth Fund Concept",
+      "baseFileName": "capital-fund",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "capital-cloud": {
+      "path": "capital/",
+      "prompt": "A hurricane-proof data center bunker in a tropical setting, covered in solar panels. Brutalist architecture meets eco-futurism. Storm clouds in the distance, but the facility is secure and glowing.",
+      "alt": "Sovereign Data Bunker",
+      "baseFileName": "capital-cloud",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "citizenry-v2v": {
+      "path": "citizenry/",
+      "prompt": "A diverse group of Anguillians (students, fishermen, office workers) using tablets and holographic interfaces to build software. They look empowered and focused. Caribbean setting.",
+      "alt": "Citizen Architects",
+      "baseFileName": "citizenry-v2v",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "citizenry-heritage": {
+      "path": "citizenry/",
+      "prompt": "An elderly Anguillian storyteller speaking to a futuristic AI interface that is visualizing their story as a hologram. Preservation of culture through technology. Warm, nostalgic lighting.",
+      "alt": "Cultural Heritage AI",
+      "baseFileName": "citizenry-heritage",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "state-frictionless": {
+      "path": "state/",
+      "prompt": "A clean, minimalist mobile app interface showing 'Anguilla Citizen Key'. Icons for 'Vote', 'Land', 'Tax', 'ID'. The background is a blurred government office, symbolizing the move to digital.",
+      "alt": "Citizen SuperApp",
+      "baseFileName": "state-frictionless",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "state-embassy": {
+      "path": "state/",
+      "prompt": "A server rack inside a high-security vault with the Anguilla flag on it. The vault is located in a snowy landscape (representing the foreign Data Embassy location), contrasting with the island vibe.",
+      "alt": "Data Embassy Vault",
+      "baseFileName": "state-embassy",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "resilience-twin": {
+      "path": "resilience/",
+      "prompt": "A 3D holographic map of Anguilla on a table. The map shows real-time water flow (blue lines) and energy grid (yellow lines). Red alert indicators show a detected leak. A hand is interacting with the hologram.",
+      "alt": "Digital Twin Dashboard",
+      "baseFileName": "resilience-twin",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    },
+    "ask-pilot": {
+      "path": "ask/",
+      "prompt": "A roadmap graphic. Phase 1: Micro-Pilot (highlighted). Phase 2: Infrastructure. Phase 3: Nation Scale. The focus is on the immediate next step.",
+      "alt": "Micro-Pilot Roadmap",
+      "baseFileName": "ask-pilot",
+      "fileExtension": ".jpg",
+      "imageCount": 1
+    }
+  }
+}
 </file_artifact>
 

@@ -1,5 +1,5 @@
 {
-  "reportId": "anguilla",
+  "reportId": "anguilla-vision-v1",
   "reportTitle": "Anguilla: The First AI-Native Nation",
   "sections": [
     {
@@ -10,14 +10,14 @@
           "pageId": "intro",
           "pageTitle": "From Domain Rent to Sovereign Power",
           "tldr": "Anguilla's .ai domain is a $32M/year windfall. We must convert this transient 'digital rent' into permanent sovereign infrastructure.",
-          "content": "Anguilla stands at a unique crossroads in history. Through a stroke of digital luck, we own the most valuable real estate on the future internet: the **.ai** top-level domain. \n\nIn 2023 alone, this asset generated approximately **US$32 million (EC$87 million)**—nearly 20% of the government's total revenue. \n\nCurrently, this is 'rent'. We are the landlords, but we don't own the building. The vision is to transform Anguilla from the *symbolic* home of AI into the *literal* home of the AI economy. We propose a comprehensive national strategy to become the world's first **AI-Native Nation**: a society where every citizen is empowered by artificial intelligence, where government services are frictionless, and where the economy is driven by high-value cognitive labor.",
+          "content": "We propose a comprehensive national strategy to become the world's first **AI-Native Nation**: a society where every citizen is empowered by artificial intelligence, where government services are frictionless and automated, and where the economy is driven by high-value cognitive labor.\n\nThis transition is driven by three guiding principles:\n1.  **Economic Sovereignty:** Moving from passive revenue collection to active ownership of digital infrastructure. We must stop exporting our capital to foreign clouds and start building our own.\n2.  **Cognitive Capital:** Investing in our people. The goal is not just to use AI, but to master it. We will upskill our population to become 'Citizen Architects,' capable of building solutions for themselves and the world.\n3.  **Resilience:** Using our digital wealth to fortify our physical reality. We will use the .ai windfall to solve our chronic water, energy, and climate challenges, ensuring that Anguilla thrives for generations to come.",
           "imageGroupIds": ["vision-intro"]
         },
         {
           "pageId": "polycrisis",
           "pageTitle": "The Poly-Crisis: Why We Must Act",
           "tldr": "We face existential threats: 80% water loss, $0.42/kWh energy costs, and climate vulnerability. AI is our survival strategy.",
-          "content": "This vision is not a luxury; it is a survival strategy. Anguilla faces a 'poly-crisis' that traditional methods cannot solve:\n\n*   **Water Security:** We currently lose up to **80% of our desalinated water** to leakage. This is a catastrophic waste of energy and money.\n*   **Energy Insecurity:** Electricity costs are among the highest in the region (approx. **US$0.42/kWh**), driven by 99% reliance on imported diesel.\n*   **Climate Vulnerability:** As a low-lying limestone island, we are existentially threatened by rising sea levels and intensifying hurricanes.\n\nThe **Anguilla Digital Infrastructure Initiative** proposes using the .ai windfall to solve these physical problems through digital intelligence.",
+          "content": "The **Anguilla Digital Infrastructure Initiative** proposes using the .ai windfall to solve these physical problems through digital intelligence.\n\n*   **The Water Paradox:** We manufacture fresh water at great expense, only to pour 80% of it back into the ground through aging pipes. An AI-driven 'Digital Twin' of our water network could detect these leaks in real-time, saving millions of dollars and securing our water supply without building a single new desalination plant.\n*   **The Energy Trap:** Our reliance on diesel ties our cost of living to global oil markets. By using AI to balance our grid, we can safely integrate higher levels of solar and wind power, breaking the $0.42/kWh stranglehold and making Anguilla competitive for business and affordable for citizens.\n*   **The Climate Reality:** We cannot stop the storms, but we can outsmart them. Predictive modeling allows us to harden our infrastructure precisely where it is most vulnerable, transforming reactive disaster recovery into proactive resilience.",
           "imageGroupIds": ["vision-crisis"]
         }
       ]
@@ -30,14 +30,14 @@
           "pageId": "wealth-fund",
           "pageTitle": "The Digital Wealth Fund",
           "tldr": "A sovereign fund fueled by .ai revenue to finance hurricane-proof, green digital infrastructure.",
-          "content": "We propose creating a **Digital Wealth Fund** funded by 50% of domain revenues. Unlike traditional funds that invest abroad, this fund's mandate is domestic hyper-infrastructure.\n\nIt will finance the **Sovereign AI Cloud**—a hurricane-hardened, solar-powered data center ecosystem. This infrastructure ensures data residency and operational continuity, transforming Anguilla from a passive registrar into an active host of the global AI economy.",
+          "content": "This infrastructure ensures data residency and operational continuity, transforming Anguilla from a passive registrar into an active host of the global AI economy.\n\n*   **Sterilizing the Windfall:** We must avoid 'Dutch Disease.' By ring-fencing 50% of the .ai revenue, we prevent the inflation of our recurrent budget and ensure that this transient capital builds permanent assets.\n*   **The Investment Mandate:** The fund will not buy stocks in New York; it will pour concrete in Anguilla. It will fund the heavy civil works required to build Category 5-rated data bunkers and the solar farms needed to power them.\n*   **From Rentier to Landlord:** Currently, we collect a small fee for the name. By building the Sovereign Cloud, we can offer hosting, inference, and data services—capturing a much larger share of the value chain. We stop being just the 'name' of AI and become the 'home' of AI.",
           "imageGroupIds": ["capital-fund"]
         },
         {
           "pageId": "sovereign-cloud",
           "pageTitle": "Green Sovereign Compute",
           "tldr": "Breaking the diesel dependency with solar-powered data centers.",
-          "content": "Current energy costs make data centers unviable. The Digital Wealth Fund will finance the transition to renewable energy.\n\n*   **Green Energy:** Powering infrastructure with solar farms and battery storage to break the $0.42/kWh diesel cycle.\n*   **Resilience:** Building Category 5 hurricane-proof facilities ('Data Bunkers') to protect national data.\n*   **Sovereignty:** Hosting our own government and citizen data on our own soil, protected by our own laws.",
+          "content": "Our geography poses challenges, but our strategy turns them into strengths.\n\n*   **Energy Independence:** Data centers are energy-hungry. Running them on diesel is impossible. By building our own solar microgrids, we not only power the AI cloud but stabilize the grid for the entire island. We turn Anguilla into a model of green computing.\n*   **The Hurricane Bunker:** Our data centers will not be glass office buildings. They will be reinforced concrete bunkers, designed to withstand 185+ mph winds. This physical security becomes a marketable asset—a 'Data Haven' for global companies seeking safety for their most critical intellectual property.\n*   **Data Sovereignty:** We will no longer rely on foreign clouds that can be subpoenaed by foreign powers. Our health records, our land titles, and our citizen data will reside on Anguillian soil, under Anguillian jurisdiction.",
           "imageGroupIds": ["capital-cloud"]
         }
       ]
@@ -50,14 +50,14 @@
           "pageId": "v2v",
           "pageTitle": "The National V2V Initiative",
           "tldr": "Upskilling the entire nation using the 'Vibecoding to Virtuosity' methodology. Every citizen becomes a builder.",
-          "content": "We cannot just import technology; we must import skills. We propose a national upskilling program based on the **Vibecoding to Virtuosity (V2V)** methodology.\n\n*   **The Goal:** To turn Anguilla into the world's highest-density concentration of AI-literate professionals.\n*   **The Method:** Teaching citizens to use AI as a 'force multiplier'—enabling a fisherman to analyze catch data, or a small business owner to automate their inventory, without needing a computer science degree.",
+          "content": "This is not a traditional coding bootcamp. It is a capability revolution.\n\n*   **The 'Citizen Architect':** We believe that domain experts—our teachers, nurses, and tradespeople—are the best people to build solutions for their own fields. We will teach them to use AI to write the code they cannot write themselves.\n*   **Vibecoding:** We lower the barrier to entry. You don't need to learn syntax; you need to learn logic. You don't need to speak Python; you need to speak clearly to the AI. This democratizes technology, making it accessible to every Anguillian, regardless of age or background.\n*   **Economic Mobility:** This program creates a new export sector. An Anguillian who masters these tools can work for any company in the world, remotely, earning global wages while living locally.",
           "imageGroupIds": ["citizenry-v2v"]
         },
         {
           "pageId": "heritage",
           "pageTitle": "The Cultural Heritage AI",
           "tldr": "Preserving our dialect and history by training our own Sovereign AI model.",
-          "content": "As AI advances, there is a risk of 'digital colonialism' where our culture is erased by generic global models. We will fight back by building **AnguillaLLM**.\n\n*   **Sovereign Model:** A version of Llama 3 fine-tuned on Anguillian history, law, and dialect.\n*   **Preservation:** Capturing the oral histories of our elders and the nuances of our language.\n*   **Education:** Providing every student with an AI tutor that speaks *our* language and knows *our* story.",
+          "content": "Technology should not erase identity; it should amplify it.\n\n*   **Preserving the Dialect:** Standard AI models often correct our dialect as 'errors.' AnguillaLLM will be trained to understand and respect our unique way of speaking, ensuring that our digital future sounds like us.\n*   **The Living Archive:** We will launch a national campaign to record the stories of our elders—the memories of the Revolution, the salt ponds, and the boat races. These stories will become the training data for our national model, immortalizing our history in the intelligence of the future.\n*   **Sovereign Education:** Our children will learn from an AI that knows who Sombrero Island belongs to, knows the heroes of 1967, and understands the local context. We are building a guardian of our culture.",
           "imageGroupIds": ["citizenry-heritage"]
         }
       ]
@@ -70,14 +70,14 @@
           "pageId": "frictionless",
           "pageTitle": "Frictionless Governance",
           "tldr": "Replacing bureaucracy with automation. Instant permits, licenses, and services.",
-          "content": "Bureaucracy is a tax on time. We propose **ACSA (Anguilla Civil Service AI)** to create a frictionless state.\n\n*   **Automated Services:** AI agents handle routine tasks like work permits, land registry checks, and business incorporation instantly.\n*   **Citizen Concierge:** A single mobile app for all government interactions.\n*   **Efficiency:** Freeing civil servants from rote paperwork to focus on high-value community service.",
+          "content": "We are building a government that moves at the speed of software.\n\n*   **The 24/7 State:** Why should the government close at 4 PM? ACSA agents never sleep. They can process a business license application at 2 AM on a Sunday, allowing our entrepreneurs to move fast.\n*   **Radical Transparency:** Every interaction is logged and trackable. Citizens can see exactly where their application is, who is reviewing it, and when it will be done. Automation eliminates the 'black box' of bureaucracy.\n*   **Human-Centric Service:** By automating the paperwork, we liberate our civil servants. They can stop being data entry clerks and start being case managers, providing personalized support to the citizens who need it most.",
           "imageGroupIds": ["state-frictionless"]
         },
         {
           "pageId": "data-embassy",
           "pageTitle": "The Data Embassy",
           "tldr": "Ensuring the government survives any storm by mirroring essential data to a secure sovereign cloud abroad.",
-          "content": "Resilience means the state must survive even if the island is devastated. We will implement the **Data Embassy** model (pioneered by Estonia).\n\n*   **Continuity of Government:** Mirroring critical registries (citizenship, land, finance) to a secure, sovereign server rack in a partner nation (e.g., UK or Canada).\n*   **Indestructible:** Ensuring that even in a Category 5 storm, the legal entity of Anguilla remains online and operational.",
+          "content": "We face an existential threat from the climate. Our government cannot be housed solely in buildings that can be blown away.\n\n*   **The Estonia Model:** Like Estonia, we are a small nation with big risks. We will replicate their strategy of 'digital territory.' A server rack in London or Ottawa, protected by diplomatic immunity, will hold the 'Golden Copy' of our national data.\n*   **Disaster Recovery:** If a hurricane destroys the Ministry of Lands, the Land Registry survives in the Data Embassy. Property rights are preserved. Banks can still verify identities. The economy can begin recovery the moment the wind stops, because the state never went offline.\n*   **The Ultimate Insurance:** This is the ultimate insurance policy for our nation. It guarantees that no matter what nature throws at us, the idea and the legal reality of Anguilla will endure.",
           "imageGroupIds": ["state-embassy"]
         }
       ]
@@ -90,7 +90,7 @@
           "pageId": "digital-twin",
           "pageTitle": "The National Digital Twin",
           "tldr": "A real-time AI simulation of the island to manage water, energy, and disaster response.",
-          "content": "We cannot manage what we cannot see. We will build a **Digital Twin** of Anguilla—a live, AI-powered simulation of our physical island.\n\n*   **Water Security:** Using AI to detect leaks in real-time, aiming to reduce our 80% water loss to under 20%.\n*   **Energy Optimization:** Balancing solar output with demand to stabilize the grid.\n*   **Disaster Simulation:** Modeling hurricane impacts to optimize evacuation routes and infrastructure hardening *before* the storm hits.",
+          "content": "This is the central nervous system of the resilient island.\n\n*   **Seeing the Invisible:** Currently, 80% of our water disappears underground. The Digital Twin uses sensor data to 'see' these leaks instantly, allowing us to fix them before they drain our treasury. It turns a physical crisis into a manageable data problem.\n*   **Predictive Resilience:** We won't just react to hurricanes; we will rehearse for them. The Digital Twin allows us to run thousands of storm simulations, identifying exactly which power poles will snap and which roads will flood. We can reinforce our defenses *before* the season starts.\n*   **Optimizing the Grid:** As we move to renewables, the grid becomes harder to manage. The Digital Twin balances the intermittency of solar with the stability of the grid, ensuring that we don't just generate green energy, but actually deliver it reliably.",
           "imageGroupIds": ["resilience-twin"]
         }
       ]
@@ -103,7 +103,7 @@
           "pageId": "micropilot",
           "pageTitle": "Phase 1: The Micro-Pilot",
           "tldr": "We are asking for a mandate to run a 90-day pilot with one cohort to prove the model.",
-          "content": "We are not asking for a massive contract today. We are asking for a mandate to prove this vision works.\n\n**The Micro-Pilot (90 Days):**\n1.  **One Cohort:** Select one high school class or government department.\n2.  **The Method:** Apply the V2V curriculum and equip them with the DCE toolset.\n3.  **The Goal:** In 90 days, they will be building their own AI tools to solve real local problems.\n\nLet us demonstrate that 16,000 empowered Anguillians can outperform 16,000 computer scientists.",
+          "content": "Big visions fail when they start too big. We start small to win big.\n\n*   **Proof of Concept:** We will take a small group—perhaps the Department of Youth and Culture, or a computer science class at Albena Lake-Hodge Comprehensive School.\n*   **The Transformation:** We will give them the tools and the training. We will show them how to become Citizen Architects.\n*   **The Result:** At the end of 90 days, we won't just show you a report. We will show you software. We will show you apps built by Anguillians, for Anguillians. We will prove that the talent is here, it just needs the right spark.\n*   **The Ask:** Give us the mandate. Give us the access. Let us light the spark.",
           "imageGroupIds": ["ask-pilot"]
         }
       ]
