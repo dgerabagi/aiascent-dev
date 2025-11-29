@@ -24,28 +24,33 @@ async function getEmbedding(text: string, embeddingUrl: string): Promise<number[
             console.error(`[Chat API] Embedding API error: ${response.status}`, rawText);
             return null;
         }
-        console.log(`[Chat API] Raw embedding response text:`, rawText);
+        // console.log(`[Chat API] Raw embedding response text:`, rawText); // C4: Suppressed verbose log
 
         const data = JSON.parse(rawText); // Parse manually after logging
 
         if (data?.data?.[0]?.embedding) {
-            console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`);
+            // console.log(`[Chat API] Successfully extracted embedding vector from standard structure.`); // C4: Suppressed
             return data.data[0].embedding;
         }
         
         if (data?.data?.embedding) {
-             console.log(`[Chat API] Successfully extracted embedding vector from alternate structure.`);
+             // console.log(`[Chat API] Successfully extracted embedding vector from alternate structure.`); // C4: Suppressed
              return data.data.embedding;
         }
         if (data?.embedding) {
-            console.log(`[Chat API] Successfully extracted embedding vector from root structure.`);
+            // console.log(`[Chat API] Successfully extracted embedding vector from root structure.`); // C4: Suppressed
             return data.embedding;
         }
 
         console.error('[Chat API] Invalid embedding response structure. Full response object:', data);
         return null;
     } catch (error: any) {
-        console.error(`[Chat API] Failed to get embedding for query. Error name: ${error.name}, message: ${error.message}`, error);
+        // C4: Suppress full stack trace for connection errors, just log a warning
+        if (error.cause && (error.cause.code === 'ECONNREFUSED' || error.cause.code === 'UND_ERR_CONNECT_TIMEOUT')) {
+             console.warn(`[Chat API] Embedding API unavailable: ${error.message}`);
+        } else {
+             console.error(`[Chat API] Failed to get embedding for query. Error name: ${error.name}, message: ${error.message}`);
+        }
         return null;
     }
 }
@@ -68,7 +73,9 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
         const chunksExist = await fs.stat(chunksPath).then(() => true).catch(() => false);
 
         if (!faissExists || !chunksExist) {
-            throw new Error(`Embedding files not found. Ensure '${faissFile}' and '${chunksFile}' are in 'public/data/embeddings/'.`);
+            // C4: Reduced to warning to avoid flooding logs during dev
+            console.warn(`[Chat API] Embeddings not found for '${kbIdentifier}'. Skipping RAG.`);
+            return { retrievedContext: '', retrievedDocsLog: 'Embeddings not found.' };
         }
 
         const index = Index.read(faissPath);
@@ -88,7 +95,12 @@ async function performRagLookup(query: string, kbIdentifier: string, embeddingUr
             throw new Error(`Embedding dimension mismatch. Index: ${index.getDimension()}, Query: ${queryEmbedding.length}. Please regenerate embeddings.`);
         }
     } catch (error: any) {
-        console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB:`, error);
+        // C4: Suppress RAG errors if it's just connection issues
+        if (error.message.includes('Could not generate embedding')) {
+             console.warn(`[Chat API] RAG skipped: Embedding generation failed.`);
+        } else {
+             console.error(`[Chat API] RAG Error for '${kbIdentifier}' KB:`, error);
+        }
         retrievedContext = `RAG system failed: ${error.message}.`;
         retrievedDocsLog = `RAG Error: ${error.message}`;
     }
@@ -184,8 +196,8 @@ export async function POST(request: Request) {
     }
 
     const { retrievedContext, retrievedDocsLog } = await performRagLookup(context, kbIdentifier, embeddingUrl, 3);
-    console.log(`[Chat API - Suggestions] RAG Diagnostic for page context using KB: '${kbIdentifier}'`);
-    console.log(`[Chat API - Suggestions] ${retrievedDocsLog}`);
+    // console.log(`[Chat API - Suggestions] RAG Diagnostic for page context using KB: '${kbIdentifier}'`); // C4: Suppressed
+    // console.log(`[Chat API - Suggestions] ${retrievedDocsLog}`); // C4: Suppressed
 
     try {
         const suggestionPrompt = `
@@ -222,7 +234,7 @@ Assistant:`;
 
         const data = await response.json();
         let content = data.choices?.[0]?.text || '[]';
-        console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content));
+        // console.log(`[Chat API - Suggestions] Raw LLM response:`, JSON.stringify(content)); // C4: Suppressed
 
         const assistantMarker = '<|start|>assistant';
         const assistantPartIndex = content.lastIndexOf(assistantMarker);
@@ -239,11 +251,11 @@ Assistant:`;
         }
 
         const jsonString = content.substring(firstBracket, lastBracket + 1);
-        console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString);
+        // console.log(`[Chat API - Suggestions] Extracted JSON string:`, jsonString); // C4: Suppressed
         
         try {
             const suggestions = JSON.parse(jsonString);
-            console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions);
+            // console.log(`[Chat API - Suggestions] Successfully parsed suggestions:`, suggestions); // C4: Suppressed
             return NextResponse.json(suggestions);
         } catch (parseError: any) {
             console.error(`[Chat API - Suggestions] JSON parsing failed: ${parseError.message}. Raw extracted string was: ${jsonString}`);
@@ -251,8 +263,14 @@ Assistant:`;
         }
 
     } catch (error: any) {
-        console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
-        return new NextResponse(`Error generating suggestions: ${error.message}`, { status: 500 });
+        // C4: Suppress error if it's just connection
+        if (error.cause && (error.cause.code === 'ECONNREFUSED' || error.cause.code === 'UND_ERR_CONNECT_TIMEOUT')) {
+             console.warn(`[Chat API - Suggestions] AI unavailable: ${error.message}`);
+        } else {
+             console.error('[Chat API - Suggestions] Error generating suggestions:', error.message);
+        }
+        // Return empty array instead of 500 to keep UI clean
+        return NextResponse.json([]); 
     }
   }
 
@@ -260,7 +278,7 @@ Assistant:`;
   const { retrievedContext, retrievedDocsLog } = await performRagLookup(prompt, kbIdentifier, embeddingUrl, 6);
 
   console.log(`[Chat API] RAG Diagnostic for prompt: "${prompt}" using KB: '${kbIdentifier}'`);
-  console.log(`[Chat API] ${retrievedDocsLog}`);
+  // console.log(`[Chat API] ${retrievedDocsLog}`); // C4: Suppressed
 
   let systemPrompt = systemPrompts[kbIdentifier];
 
@@ -333,13 +351,13 @@ Ascentia:`;
     clearTimeout(timeoutId);
     if (error.name === 'AbortError') {
         const debugMessage = `Connection timed out. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Check firewall on the host machine (${llmUrl}) for port 1234. 3. Ensure LMStudio is started with '--host 0.0.0.0'.`;
-        console.error(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
+        console.warn(`[Chat API] Request to LLM server timed out. ${debugMessage}`);
         return new NextResponse(`Error: Connection to the AI service timed out. ${debugMessage}`, { status: 504 });
     }
 
     if (error instanceof TypeError && error.message.includes('fetch failed')) {
         const debugMessage = `Network connection failed. TROUBLESHOOTING: 1. Verify the LMStudio server is running. 2. Double-check the IP/port in .env.local. 3. Check firewall on the host machine (${llmUrl}) for port 1234.`;
-        console.error(`[Chat API] Network error: Could not connect to LLM server. ${debugMessage}`);
+        console.warn(`[Chat API] Network error: Could not connect to LLM server. ${debugMessage}`);
         return new NextResponse(`Error: Could not connect to the AI service. ${debugMessage}`, { status: 502 });
     }
 

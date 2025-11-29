@@ -50,7 +50,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
 
     useEffect(() => {
         // C74: Fetch data within the component for static reports
-        if (reportName !== 'whitepaper' && reportName !== 'showcase') {
+        // C4 Fix: Added 'anguilla' to the allowed list for self-fetching reports
+        if (reportName !== 'whitepaper' && reportName !== 'showcase' && reportName !== 'anguilla') {
             return; // Data for V2V is loaded by the parent /academy page
         }
         

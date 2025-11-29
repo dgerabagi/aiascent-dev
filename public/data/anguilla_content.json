@@ -3,150 +3,108 @@
   "reportTitle": "Anguilla: The First AI-Native Nation",
   "sections": [
     {
-      "sectionId": "intro",
-      "sectionTitle": "1. The Vision",
-      "subSections": [
+      "sectionId": "vision",
+      "sectionTitle": "I. The Vision",
+      "pages": [
         {
-          "subSectionId": "welcome",
-          "subSectionTitle": "Welcome",
-          "pages": [
-            {
-              "pageId": "ax-01",
-              "pageTitle": "Anguilla: The First AI-Native Nation",
-              "tldr": "A strategic proposal to transform Anguilla from a passive beneficiary of the AI boom into a global leader in sovereign digital infrastructure.",
-              "content": "Honorable Minister, distinguished guests. Welcome to the future of Anguilla. \n\nWe stand at a crossroads. Today, Anguilla owns the most valuable address in the digital world: **.ai**. The world comes to you for the name. But right now, the value—the compute, the models, the innovation—resides elsewhere.\n\nThis presentation outlines a comprehensive strategy to bring that value home. To transform Anguilla from the *symbolic* home of AI into the *literal* home of the AI economy. \n\nOur vision is to build the world's first **AI-Native Nation**: a society where every citizen is empowered by artificial intelligence, where government services are frictionless and disaster-resilient, and where the economy is driven by high-value cognitive labor.",
-              "imageGroupIds": ["group_ax-01-cover"]
-            },
-            {
-              "pageId": "ax-02",
-              "pageTitle": "Executive Summary: From Rent to Sovereignty",
-              "tldr": "We propose converting the transient revenue from .ai domains into permanent, resilient assets: green energy, sovereign cloud, and human capital.",
-              "content": "The core of our proposal is a shift from **Rentier Status** to **Sovereign Proprietorship**.\n\nCurrently, we collect fees. This is 'digital rent.' It is lucrative, but vulnerable. \n\nWe propose the **Anguilla Digital Infrastructure Initiative**. We will use the .ai windfall to fund:\n1.  **Sovereign Infrastructure:** Hurricane-proof, green data centers.\n2.  **Cognitive Capital:** A national upskilling program to create a workforce of 'Citizen Architects.'\n3.  **Automated Governance:** A 'Cloud State' that ensures continuity of government during any crisis.\n\nThis is a survival strategy. It integrates political sovereignty, cultural preservation, and climate resilience into a unified national operating system.",
-              "imageGroupIds": ["group_ax-02-summary"]
-            }
-          ]
+          "pageId": "intro",
+          "pageTitle": "From Domain Rent to Sovereign Power",
+          "tldr": "Anguilla's .ai domain is a $32M/year windfall. We must convert this transient 'digital rent' into permanent sovereign infrastructure.",
+          "content": "Anguilla stands at a unique crossroads in history. Through a stroke of digital luck, we own the most valuable real estate on the future internet: the **.ai** top-level domain. \n\nIn 2023 alone, this asset generated approximately **US$32 million (EC$87 million)**—nearly 20% of the government's total revenue. \n\nCurrently, this is 'rent'. We are the landlords, but we don't own the building. The vision is to transform Anguilla from the *symbolic* home of AI into the *literal* home of the AI economy. We propose a comprehensive national strategy to become the world's first **AI-Native Nation**: a society where every citizen is empowered by artificial intelligence, where government services are frictionless, and where the economy is driven by high-value cognitive labor.",
+          "imageGroupIds": ["vision-intro"]
+        },
+        {
+          "pageId": "polycrisis",
+          "pageTitle": "The Poly-Crisis: Why We Must Act",
+          "tldr": "We face existential threats: 80% water loss, $0.42/kWh energy costs, and climate vulnerability. AI is our survival strategy.",
+          "content": "This vision is not a luxury; it is a survival strategy. Anguilla faces a 'poly-crisis' that traditional methods cannot solve:\n\n*   **Water Security:** We currently lose up to **80% of our desalinated water** to leakage. This is a catastrophic waste of energy and money.\n*   **Energy Insecurity:** Electricity costs are among the highest in the region (approx. **US$0.42/kWh**), driven by 99% reliance on imported diesel.\n*   **Climate Vulnerability:** As a low-lying limestone island, we are existentially threatened by rising sea levels and intensifying hurricanes.\n\nThe **Anguilla Digital Infrastructure Initiative** proposes using the .ai windfall to solve these physical problems through digital intelligence.",
+          "imageGroupIds": ["vision-crisis"]
         }
       ]
     },
     {
-      "sectionId": "opportunity",
-      "sectionTitle": "2. The Opportunity & The Crisis",
-      "subSections": [
+      "sectionId": "capital",
+      "sectionTitle": "II. The AI Capital",
+      "pages": [
         {
-          "subSectionId": "windfall",
-          "subSectionTitle": "The Digital Windfall",
-          "pages": [
-            {
-              "pageId": "ax-03",
-              "pageTitle": "The .ai Economic Singularity",
-              "tldr": "The .ai domain generated ~$32M USD in 2023, representing ~20% of government revenue. This is a historic opportunity.",
-              "content": "In 2023, the .ai domain generated approximately **US$32 million (EC$87 million)**. This single asset accounted for nearly **20%** of the government's total revenue.\n\nThis is an unprecedented 'virtual endowment.' It quadrupled our digital export earnings without a single new factory or hotel. \n\nHowever, this revenue is volatile. It depends on the global AI hype cycle. If we treat it as a permanent baseline for salaries, we risk fiscal instability. If we treat it as **Investment Capital**, we can transform our nation forever.",
-              "imageGroupIds": ["group_ax-03-revenue"]
-            }
-          ]
+          "pageId": "wealth-fund",
+          "pageTitle": "The Digital Wealth Fund",
+          "tldr": "A sovereign fund fueled by .ai revenue to finance hurricane-proof, green digital infrastructure.",
+          "content": "We propose creating a **Digital Wealth Fund** funded by 50% of domain revenues. Unlike traditional funds that invest abroad, this fund's mandate is domestic hyper-infrastructure.\n\nIt will finance the **Sovereign AI Cloud**—a hurricane-hardened, solar-powered data center ecosystem. This infrastructure ensures data residency and operational continuity, transforming Anguilla from a passive registrar into an active host of the global AI economy.",
+          "imageGroupIds": ["capital-fund"]
         },
         {
-          "subSectionId": "polycrisis",
-          "subSectionTitle": "The Poly-Crisis",
-          "pages": [
-            {
-              "pageId": "ax-04",
-              "pageTitle": "The Imperative for Change",
-              "tldr": "We face a 'poly-crisis' of water scarcity, energy insecurity, and climate vulnerability that traditional methods cannot solve.",
-              "content": "Why must we act now? Because we face a convergence of threats that money alone cannot fix. We need intelligence.\n\n*   **Water Security:** We lose up to **80%** of our desalinated water to leakage. We are paying to pump water into the ground.\n*   **Energy Insecurity:** Our electricity costs are among the highest in the region (~**US$0.42/kWh**), driven by 99% reliance on imported diesel.\n*   **Climate Vulnerability:** As a low-lying island, we are on the front lines of rising seas and intensifying hurricanes.\n\nWe propose using the .ai windfall to solve these physical problems through digital intelligence.",
-              "imageGroupIds": ["group_ax-04-crisis"]
-            }
-          ]
+          "pageId": "sovereign-cloud",
+          "pageTitle": "Green Sovereign Compute",
+          "tldr": "Breaking the diesel dependency with solar-powered data centers.",
+          "content": "Current energy costs make data centers unviable. The Digital Wealth Fund will finance the transition to renewable energy.\n\n*   **Green Energy:** Powering infrastructure with solar farms and battery storage to break the $0.42/kWh diesel cycle.\n*   **Resilience:** Building Category 5 hurricane-proof facilities ('Data Bunkers') to protect national data.\n*   **Sovereignty:** Hosting our own government and citizen data on our own soil, protected by our own laws.",
+          "imageGroupIds": ["capital-cloud"]
         }
       ]
     },
     {
-      "sectionId": "pillars",
-      "sectionTitle": "3. The 5 Strategic Pillars",
-      "subSections": [
+      "sectionId": "citizenry",
+      "sectionTitle": "III. The Cognitive Citizenry",
+      "pages": [
         {
-          "subSectionId": "pillar1",
-          "subSectionTitle": "Pillar 1: The AI Capital",
-          "pages": [
-            {
-              "pageId": "ax-05",
-              "pageTitle": "The Digital Wealth Fund",
-              "tldr": "Establishing a Sovereign Wealth Fund to finance the 'Sovereign AI Cloud'—green, resilient data centers.",
-              "content": "We propose the creation of a **Digital Wealth Fund**, funded by 50% of domain revenues. This fund will not just sit in a bank; it will build.\n\n**The Sovereign AI Cloud:**\nWe will construct hurricane-hardened, solar-powered data centers right here in Anguilla. \n\n*   **Resilience:** Bunkered infrastructure that stays online when the grid goes down.\n*   **Sovereignty:** Our data stays on our soil, protected by our laws.\n*   **Economy:** We stop renting cloud space from Amazon and Google. We become the host.",
-              "imageGroupIds": ["group_ax-05-infrastructure"]
-            }
-          ]
+          "pageId": "v2v",
+          "pageTitle": "The National V2V Initiative",
+          "tldr": "Upskilling the entire nation using the 'Vibecoding to Virtuosity' methodology. Every citizen becomes a builder.",
+          "content": "We cannot just import technology; we must import skills. We propose a national upskilling program based on the **Vibecoding to Virtuosity (V2V)** methodology.\n\n*   **The Goal:** To turn Anguilla into the world's highest-density concentration of AI-literate professionals.\n*   **The Method:** Teaching citizens to use AI as a 'force multiplier'—enabling a fisherman to analyze catch data, or a small business owner to automate their inventory, without needing a computer science degree.",
+          "imageGroupIds": ["citizenry-v2v"]
         },
         {
-          "subSectionId": "pillar2",
-          "subSectionTitle": "Pillar 2: Cognitive Citizenry",
-          "pages": [
-            {
-              "pageId": "ax-06",
-              "pageTitle": "The National V2V Initiative",
-              "tldr": "A national upskilling program to create 'Citizen Architects' and preserve our culture through AI.",
-              "content": "Technology must serve the culture, not erase it. We propose a national upskilling program based on the **Vibecoding to Virtuosity (V2V)** methodology.\n\n*   **Citizen Architects:** We will train our people—not just to code, but to *direct* AI. To build tools that solve their own problems.\n*   **Cultural Heritage AI:** We will train a sovereign AI model on Anguillian history, dialect, and stories. \n*   **Preservation:** We will use AI to preserve our oral histories and ensure the next generation interacts with technology that speaks *our* language.",
-              "imageGroupIds": ["group_ax-06-education"]
-            }
-          ]
+          "pageId": "heritage",
+          "pageTitle": "The Cultural Heritage AI",
+          "tldr": "Preserving our dialect and history by training our own Sovereign AI model.",
+          "content": "As AI advances, there is a risk of 'digital colonialism' where our culture is erased by generic global models. We will fight back by building **AnguillaLLM**.\n\n*   **Sovereign Model:** A version of Llama 3 fine-tuned on Anguillian history, law, and dialect.\n*   **Preservation:** Capturing the oral histories of our elders and the nuances of our language.\n*   **Education:** Providing every student with an AI tutor that speaks *our* language and knows *our* story.",
+          "imageGroupIds": ["citizenry-heritage"]
+        }
+      ]
+    },
+    {
+      "sectionId": "state",
+      "sectionTitle": "IV. The Automated State",
+      "pages": [
+        {
+          "pageId": "frictionless",
+          "pageTitle": "Frictionless Governance",
+          "tldr": "Replacing bureaucracy with automation. Instant permits, licenses, and services.",
+          "content": "Bureaucracy is a tax on time. We propose **ACSA (Anguilla Civil Service AI)** to create a frictionless state.\n\n*   **Automated Services:** AI agents handle routine tasks like work permits, land registry checks, and business incorporation instantly.\n*   **Citizen Concierge:** A single mobile app for all government interactions.\n*   **Efficiency:** Freeing civil servants from rote paperwork to focus on high-value community service.",
+          "imageGroupIds": ["state-frictionless"]
         },
         {
-          "subSectionId": "pillar3",
-          "subSectionTitle": "Pillar 3: The Automated State",
-          "pages": [
-            {
-              "pageId": "ax-07",
-              "pageTitle": "Frictionless Governance & Data Embassies",
-              "tldr": "Reimagining the civil service with AI agents and ensuring continuity of government via 'Data Embassies'.",
-              "content": "We will build the **Anguilla Civil Service AI (ACSA)**.\n\n*   **Frictionless Service:** Automated agents to handle work permits, land registry, and business incorporation. Reducing days of paperwork to minutes of processing.\n*   **The Data Embassy:** Modeled on Estonia, we will host a backup of our entire government digital infrastructure in a secure, sovereign server abroad. Even if a Category 5 storm destroys every building on the island, the State of Anguilla survives in the cloud, ready to coordinate recovery.",
-              "imageGroupIds": ["group_ax-07-governance"]
-            }
-          ]
-        },
+          "pageId": "data-embassy",
+          "pageTitle": "The Data Embassy",
+          "tldr": "Ensuring the government survives any storm by mirroring essential data to a secure sovereign cloud abroad.",
+          "content": "Resilience means the state must survive even if the island is devastated. We will implement the **Data Embassy** model (pioneered by Estonia).\n\n*   **Continuity of Government:** Mirroring critical registries (citizenship, land, finance) to a secure, sovereign server rack in a partner nation (e.g., UK or Canada).\n*   **Indestructible:** Ensuring that even in a Category 5 storm, the legal entity of Anguilla remains online and operational.",
+          "imageGroupIds": ["state-embassy"]
+        }
+      ]
+    },
+    {
+      "sectionId": "resilience",
+      "sectionTitle": "V. Resilient Systems",
+      "pages": [
         {
-          "subSectionId": "pillar4",
-          "subSectionTitle": "Pillar 4: Resilient Systems",
-          "pages": [
-            {
-              "pageId": "ax-08",
-              "pageTitle": "The National Digital Twin",
-              "tldr": "Using AI and IoT sensors to model our water and energy systems, predicting leaks and optimizing efficiency.",
-              "content": "We cannot manage what we cannot see. We propose building a **Digital Twin** of Anguilla.\n\n*   **Water Security:** IoT sensors will detect leaks in real-time, allowing us to attack that 80% loss rate.\n*   **Energy Optimization:** AI will balance our solar input with diesel generation, stabilizing the grid and lowering costs.\n*   **Disaster Simulation:** We will simulate hurricane impacts *before* they happen, optimizing evacuation routes and infrastructure hardening.",
-              "imageGroupIds": ["group_ax-08-resilience"]
-            }
-          ]
-        },
-        {
-          "subSectionId": "pillar5",
-          "subSectionTitle": "Pillar 5: Global Sandbox",
-          "pages": [
-            {
-              "pageId": "ax-09",
-              "pageTitle": "The Ethical AI Regulatory Sandbox",
-              "tldr": "Positioning Anguilla as a global jurisdiction for the safe and ethical testing of AI technologies.",
-              "content": "Anguilla can be more than a user of AI; we can be a regulator. We propose establishing a **Global AI Sandbox**.\n\n*   **Ethical Framework:** We will create a legal framework that attracts global companies to test their AI systems here, but only under strict ethical guidelines that respect human rights and local culture.\n*   **The 'Proving Ground':** Anguilla becomes a real-world lab for sustainable technologies, attracting investment and talent from around the globe.",
-              "imageGroupIds": ["group_ax-09-sandbox"]
-            }
-          ]
+          "pageId": "digital-twin",
+          "pageTitle": "The National Digital Twin",
+          "tldr": "A real-time AI simulation of the island to manage water, energy, and disaster response.",
+          "content": "We cannot manage what we cannot see. We will build a **Digital Twin** of Anguilla—a live, AI-powered simulation of our physical island.\n\n*   **Water Security:** Using AI to detect leaks in real-time, aiming to reduce our 80% water loss to under 20%.\n*   **Energy Optimization:** Balancing solar output with demand to stabilize the grid.\n*   **Disaster Simulation:** Modeling hurricane impacts to optimize evacuation routes and infrastructure hardening *before* the storm hits.",
+          "imageGroupIds": ["resilience-twin"]
         }
       ]
     },
     {
       "sectionId": "ask",
-      "sectionTitle": "4. The Ask",
-      "subSections": [
+      "sectionTitle": "VI. The Proposal",
+      "pages": [
         {
-          "subSectionId": "micropilot",
-          "subSectionTitle": "The Micro-Pilot",
-          "pages": [
-            {
-              "pageId": "ax-10",
-              "pageTitle": "The 'Why You' Factor",
-              "tldr": "Why Anguilla? Because we are agile. Why us? Because we have the proven methodology.",
-              "content": "You might think, 'We are too small.' I tell you: **You are the perfect size.**\n\nLarge nations are Titanic ships; they cannot pivot. Anguilla is agile. With 16,000 people, we can touch everyone. We can give an AI tutor to every student. We can secure every land deed.\n\n**The Ask:**\nI am asking for the mandate to run a **Micro-Pilot**.\n\nGive me **one cohort**. One class of students, or one department of government. Let me apply the V2V methodology. Let me equip them with the Data Curation Environment.\n\nIf, in 90 days, they are not the most productive, innovative group on this island—if we haven't proven we can protect our culture and build resilience—we walk away. But when we succeed... then we scale. Then we build the AI Capital.",
-              "imageGroupIds": ["group_ax-10-ask"]
-            }
-          ]
+          "pageId": "micropilot",
+          "pageTitle": "Phase 1: The Micro-Pilot",
+          "tldr": "We are asking for a mandate to run a 90-day pilot with one cohort to prove the model.",
+          "content": "We are not asking for a massive contract today. We are asking for a mandate to prove this vision works.\n\n**The Micro-Pilot (90 Days):**\n1.  **One Cohort:** Select one high school class or government department.\n2.  **The Method:** Apply the V2V curriculum and equip them with the DCE toolset.\n3.  **The Goal:** In 90 days, they will be building their own AI tools to solve real local problems.\n\nLet us demonstrate that 16,000 empowered Anguillians can outperform 16,000 computer scientists.",
+          "imageGroupIds": ["ask-pilot"]
         }
       ]
     }

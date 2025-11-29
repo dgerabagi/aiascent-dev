@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C2 (Refine Anguilla Project Artifacts)
+# Updated on: C4 (Add Anguilla Image System Prompt)
 
 ## 1. Purpose
 
@@ -507,3 +507,7 @@ This file serves as the definitive, parseable list of all documentation artifact
 ### A207 - Strategic Presentation Guide
 - **Description:** A script and strategic guide for the meeting with the Minister of IT, outlining the narrative arc, key talking points, and the "ask," woven with themes of political sovereignty, cultural preservation, and climate resilience.
 - **Tags:** anguilla, presentation, strategy, pitch, meeting guide
+
+### A208 - Anguilla Project - Image System Prompt
+- **Description:** The dedicated system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Island" aesthetic, emphasizing resilience, culture, and sovereignty.
+- **Tags:** anguilla, images, prompt engineering, system prompt, aesthetic, solarpunk
