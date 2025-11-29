@@ -280,7 +280,8 @@ const ReportChatPanel: React.FC = () => {
                 </div>
             )}
 
-            <footer className="p-3 border-t border-border bg-background flex-shrink-0">
+            {/* C7 Update: Added pb-6 to ensure input isn't cut off by bottom of screen/footer */}
+            <footer className="p-3 pb-6 border-t border-border bg-background flex-shrink-0">
                 <textarea
                     ref={textareaRef}
                     className="w-full bg-muted border border-input rounded-md p-2 text-sm resize-none focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"

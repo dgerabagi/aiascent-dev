@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C11 (Add tasks for visual fixes and feature implementation)
+# Updated on: C7 (Complete Cycle 6 tasks, Add Cycle 7 tasks for navigation and layout)
 
   - **Key/Value for A0:**
   - **Description:** A structured checklist for tracking development tasks, feedback, and bugs for the aiascent.dev project, organized by file packages and complexity.
@@ -20,95 +20,44 @@ This artifact provides a structured format for tracking development tasks for th
 
 -----
 
-## Task List for Cycle 11+
+## Task List for Cycle 7+
 
-## T-7: Fix Hero Section GIF Styling
+## T-13: Enhance Navigation and Layout
 - **Files Involved:**
-    - `src/components/home/HeroSection.tsx`
-    - `src/components/global/container-scroll-animation.tsx`
-- **Total Tokens:** ~1,500
-- **More than one cycle?** No
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 7.1):** In `container-scroll-animation.tsx`, remove the `bg-gray-100` from the inner `div` of the `Card` component to eliminate the white border around the GIF.
-- [ ] **Task (T-ID: 7.2):** In `HeroSection.tsx`, adjust the styling of the `Image` component and its container to make the `pcp.gif` larger, filling more of the "monitor" frame to improve visibility of details.
-
-### Verification Steps
-1.  Load the homepage.
-2.  **Expected:** The `pcp.gif` in the hero section should not have a white border. It should be noticeably larger and more detailed.
-
-## T-8: Implement Light Mode Theme
-- **Files Involved:**
-    - `src/app/globals.css`
-    - `tailwind.config.ts`
-    - `src/components/home/FeaturesSection.tsx`
-    - `src/components/home/WorkflowSection.tsx`
-    - `src/components/global/lamp.tsx`
-- **Total Tokens:** ~5,000
-- **More than one cycle?** No
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 8.1):** In `globals.css`, define a new `:root` block with CSS variables for a complete light theme palette (backgrounds, foregrounds, cards, etc.).
-- [ ] **Task (T-ID: 8.2):** Apply `light:` variants in `FeaturesSection.tsx` and `WorkflowSection.tsx` to fix text visibility and border colors.
-- [ ] **Task (T-ID: 8.3):** In `lamp.tsx`, use `light:` variants to change the background color, gradient colors, and particle colors to be suitable for a light background.
-
-### Verification Steps
-1.  Toggle the theme to "Light".
-2.  **Expected:** All text should be clearly readable. The image borders in the features section should be subtle. The workflow steps should be visible. The mission section's background, lamp effect, and particles should be aesthetically pleasing on a light theme.
-
-## T-9: Implement Mission Page
-- **Files Involved:**
-    - `src/app/mission/page.tsx` (New)
-- **Total Tokens:** ~1,500
-- **More than one cycle?** No
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 9.1):** Create the `page.tsx` file for the `/mission` route.
-- [ ] **Task (T-ID: 9.2):** Implement the page layout and content based on `A19-Page-Design-Mission.md` and the user's narrative about "cognitive apprenticeship", "fissured workplace", and the "solarpunk" vision.
-
-### Verification Steps
-1.  Navigate to `/mission`.
-2.  **Expected:** The page should load without a 404 error and display the new content.
-
-## T-10: Port Report Viewer to Showcase Page
-- **Files Involved:**
+    - `src/app/showcase/[slug]/page.tsx` (New)
     - `src/app/showcase/page.tsx`
-    - `src/components/report-viewer/*` (New)
-    - `src/stores/reportStore.ts` (New)
-    - `package.json`
-- **Total Tokens:** ~20,000+
-- **More than one cycle?** Yes
-- **Status:** To Do
-
-- [ ] **Task (T-ID: 10.1):** Create `src/components/report-viewer/` and `src/stores/` directories.
-- [ ] **Task (T-ID: 10.2):** Copy all component files and the store file from the `context/aiascentgame/report/` directory.
-- [ ] **Task (T-ID: 10.3):** Add `react-icons` to `package.json`.
-- [ ] **Task (T-ID: 10.4):** Begin adapting the ported files, fixing imports and preparing for integration into the `/showcase` page.
-- [ ] **Task (T-ID: 10.5):** (Curator Task) Place `reportContent.json` into `public/data/ai_ascent_report.json` and place report images into `public/assets/images/report/`.
-
-### Verification Steps
-1.  The project should build successfully after adding the new files.
-2.  The `/showcase` page should render a placeholder for the upcoming component.
-
-## T-11: Create Learn Page Shell
-- **Files Involved:**
-    - `src/app/learn/page.tsx` (New)
-- **Total Tokens:** ~500
+    - `src/components/showcase/ProjectSelector.tsx` (New)
+    - `src/components/showcase/ShowcaseGame.tsx` (New)
+    - `src/components/report-viewer/ReportChatPanel.tsx`
+    - `src/components/report-viewer/ReportViewer.tsx`
+- **Total Tokens:** ~4,000
 - **More than one cycle?** No
-- **Status:** To Do
+- **Status:** In Progress
 
-- [ ] **Task (T-ID: 11.1):** Create the `page.tsx` file for the `/learn` route with placeholder content to resolve the 404 error.
+- [x] **Task (T-ID: 13.1):** Create `ProjectSelector.tsx` to replace the tab bar with a compact dropdown.
+- [x] **Task (T-ID: 13.2):** Create `ShowcaseGame.tsx` to encapsulate the iframe logic.
+- [x] **Task (T-ID: 13.3):** Implement dynamic routing in `src/app/showcase/[slug]/page.tsx`.
+- [x] **Task (T-ID: 13.4):** Implement auto-fullscreen and autoplay logic for the Anguilla project slug.
+- [x] **Task (T-ID: 13.5):** Update `src/app/showcase/page.tsx` to act as a redirect.
+- [x] **Task (T-ID: 13.6):** Add bottom padding to `ReportChatPanel` to fix alignment issues.
+- [x] **Task (T-ID: 13.7):** Reduce header padding in `ReportViewer` and `PageNavigator` to save vertical space.
 
 ### Verification Steps
-1.  Navigate to `/learn`.
-2.  **Expected:** The page should load without a 404 error.
+1.  Navigate to `/showcase/anguilla`.
+2.  **Expected:** The Anguilla report loads, automatically enters fullscreen, and starts autoplaying.
+3.  Navigate to `/showcase`.
+4.  **Expected:** Redirects to `/showcase/report`.
+5.  Check the top-left of the showcase view.
+6.  **Expected:** A "The Ascent Report" (or similar) dropdown button is visible. Clicking it allows switching to "Anguilla Project" or "AI Ascent Game".
+7.  Check the bottom of the chat panel.
+8.  **Expected:** The input box has sufficient clearance from the bottom edge.
 
-## T-12: Plan for Next Cycle
+## T-14: Plan for Next Cycle
 - **Files Involved:**
     - `src/Artifacts/A4-Universal-Task-Checklist.md`
-- [ ] **Task (T-ID: 12.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
+- [ ] **Task (T-ID: 14.1):** Review progress, update this checklist, and prioritize tasks for the subsequent cycle.
 
 -----
 
 ## Completed Tasks
-(Previous tasks T-1 through T-6 are omitted for brevity)
+(Previous tasks T-1 through T-12 are omitted for brevity)

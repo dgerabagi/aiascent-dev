@@ -140,7 +140,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportName }) => {
         <div ref={viewerRef} className={`h-full w-full bg-background text-foreground flex ${isFullscreen ? 'fixed inset-0 z-[100]' : ''}`}>
             {isTreeNavOpen && <ReportTreeNav />}
             <div className="flex-1 flex flex-col min-w-0">
-                <header className="p-2 border-b flex-shrink-0">
+                {/* C7 Update: Reduced padding from p-2 to p-1 to save vertical space */}
+                <header className="p-1 border-b flex-shrink-0">
                     <PageNavigator />
                 </header>
                 <div className="p-2 border-b flex-shrink-0">

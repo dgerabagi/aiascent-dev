@@ -13,8 +13,9 @@ const PageNavigator: React.FC = () => {
   if (!currentPage) return null;
 
   return (
-    <div className="flex justify-center items-center w-full relative min-h-[40px]">
-      <h2 className="text-lg font-bold text-primary text-center px-12 truncate" title={currentPage.pageTitle}>
+    // C7 Update: Reduced min-height from 40px to 32px and adjusted text size for compactness
+    <div className="flex justify-center items-center w-full relative min-h-[32px]">
+      <h2 className="text-base font-bold text-primary text-center px-12 truncate" title={currentPage.pageTitle}>
         {currentPage.pageTitle}
       </h2>
     </div>
