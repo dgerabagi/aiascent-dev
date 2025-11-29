@@ -4,7 +4,7 @@
 
 # Author: AI Model & Curator
 
-# Updated on: C4 (Add Anguilla Image System Prompt)
+# Updated on: C5 (Update Anguilla Image System Prompt description)
 
 ## 1. Purpose
 
@@ -509,5 +509,5 @@ This file serves as the definitive, parseable list of all documentation artifact
 - **Tags:** anguilla, presentation, strategy, pitch, meeting guide
 
 ### A208 - Anguilla Project - Image System Prompt
-- **Description:** The dedicated system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Island" aesthetic, emphasizing resilience, culture, and sovereignty.
-- **Tags:** anguilla, images, prompt engineering, system prompt, aesthetic, solarpunk
+- **Description:** The dedicated system prompt for generating imagery for the Anguilla Project. It defines the "Solarpunk Caribbean" aesthetic and includes specific protocols for rendering text and cultural allegories.
+- **Tags:** anguilla, images, prompt engineering, system prompt, aesthetic, solarpunk, text rendering

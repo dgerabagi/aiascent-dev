@@ -4,82 +4,82 @@
   "imageGroups": {
     "vision-intro": {
       "path": "vision/",
-      "prompt": "A futuristic, high-tech visualization of the island of Anguilla glowing with digital connections, symbolizing the .ai domain network connecting to the globe. Satellite view, night time, cyan and gold data streams.",
+      "prompt": "A futuristic, high-tech satellite view of the island of Anguilla at twilight. The island glows with cyan and gold digital connections, symbolizing the .ai domain network. In the upper atmosphere, a faint, constellation-like formation of 'The Three Dolphins' (curved shapes) watches over the island. In the foreground, large, floating holographic text reads \"AI NATIVE NATION\".",
       "alt": "Digital Anguilla Network",
       "baseFileName": "vision-intro",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "vision-crisis": {
       "path": "vision/",
-      "prompt": "A split screen comparison. Left: A dry, parched landscape representing water scarcity. Right: A sleek, modern desalination plant powered by solar panels. Cinematic lighting.",
+      "prompt": "A split screen comparison. Left: A dry, parched landscape representing water scarcity. Right: A sleek, modern desalination plant powered by solar panels and surrounded by lush greenery. The text \"RESILIENCE\" is etched into the white stone wall of the plant. Cinematic lighting.",
       "alt": "Water Scarcity vs Solution",
       "baseFileName": "vision-crisis",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "capital-fund": {
       "path": "capital/",
-      "prompt": "A conceptual visualization of a 'Digital Wealth Fund'. Digital coins flowing from a server rack into a physical foundation of a new, modern building. Gold and concrete textures.",
+      "prompt": "A conceptual visualization of a 'Digital Wealth Fund'. Streams of digital gold coins and binary code flow from a server rack into the physical foundation of a new, modern building made of white limestone. The text \"DIGITAL WEALTH FUND\" is displayed on a glass pane in the foreground. Crystalline salt structures are visible near the foundation.",
       "alt": "Digital Wealth Fund Concept",
       "baseFileName": "capital-fund",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "capital-cloud": {
       "path": "capital/",
-      "prompt": "A hurricane-proof data center bunker in a tropical setting, covered in solar panels. Brutalist architecture meets eco-futurism. Storm clouds in the distance, but the facility is secure and glowing.",
+      "prompt": "A hurricane-proof data center bunker in a tropical setting. The architecture is brutalist but softened with white aerogel and vertical gardens. It is covered in solar panels. Storm clouds gather in the distance, but the facility is secure and glowing warmly. The text \"SOVEREIGN CLOUD\" is mounted in metal lettering above the entrance.",
       "alt": "Sovereign Data Bunker",
       "baseFileName": "capital-cloud",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "citizenry-v2v": {
       "path": "citizenry/",
-      "prompt": "A diverse group of Anguillians (students, fishermen, office workers) using tablets and holographic interfaces to build software. They look empowered and focused. Caribbean setting.",
+      "prompt": "A diverse group of Anguillians (students, fishermen, office workers) using tablets and holographic interfaces to build software in an open-air pavilion. In the background, traditional racing boats with white sails are visible on the turquoise sea. The text \"CITIZEN ARCHITECT\" floats holographically above the group.",
       "alt": "Citizen Architects",
       "baseFileName": "citizenry-v2v",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "citizenry-heritage": {
       "path": "citizenry/",
-      "prompt": "An elderly Anguillian storyteller speaking to a futuristic AI interface that is visualizing their story as a hologram. Preservation of culture through technology. Warm, nostalgic lighting.",
+      "prompt": "An elderly Anguillian storyteller sitting under a tree, speaking to a futuristic AI interface that is visualizing their story as a golden hologram of a historic ship. The text \"CULTURAL HERITAGE\" is displayed in a stylish font near the hologram. Warm, nostalgic golden-hour lighting.",
       "alt": "Cultural Heritage AI",
       "baseFileName": "citizenry-heritage",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "state-frictionless": {
       "path": "state/",
-      "prompt": "A clean, minimalist mobile app interface showing 'Anguilla Citizen Key'. Icons for 'Vote', 'Land', 'Tax', 'ID'. The background is a blurred government office, symbolizing the move to digital.",
+      "prompt": "A close-up of a hand holding a transparent, high-tech mobile device. The screen displays a clean, minimalist app interface titled \"ANGUILLA KEY\" with icons for 'Vote', 'Land', and 'ID'. The background is a blurred, modern government office with white stone columns. The vibe is efficient and secure.",
       "alt": "Citizen SuperApp",
       "baseFileName": "state-frictionless",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "state-embassy": {
       "path": "state/",
-      "prompt": "A server rack inside a high-security vault with the Anguilla flag on it. The vault is located in a snowy landscape (representing the foreign Data Embassy location), contrasting with the island vibe.",
+      "prompt": "A server rack inside a high-security vault. The vault door is open, revealing a snowy landscape outside (representing a foreign location). Inside, the server glows with a warm Caribbean light. The text \"DATA EMBASSY\" is projected on the floor of the vault. The Anguilla flag is visible on the server.",
       "alt": "Data Embassy Vault",
       "baseFileName": "state-embassy",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "resilience-twin": {
       "path": "resilience/",
-      "prompt": "A 3D holographic map of Anguilla on a table. The map shows real-time water flow (blue lines) and energy grid (yellow lines). Red alert indicators show a detected leak. A hand is interacting with the hologram.",
+      "prompt": "A 3D holographic map of Anguilla hovering over a table. The map shows real-time water flow (blue lines) and energy grid (yellow lines). The map's base looks like organic mangrove roots. The text \"DIGITAL TWIN\" is displayed above the hologram. A hand is interacting with the data.",
       "alt": "Digital Twin Dashboard",
       "baseFileName": "resilience-twin",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     },
     "ask-pilot": {
       "path": "ask/",
-      "prompt": "A roadmap graphic. Phase 1: Micro-Pilot (highlighted). Phase 2: Infrastructure. Phase 3: Nation Scale. The focus is on the immediate next step.",
+      "prompt": "A futuristic roadmap graphic displayed on a glass wall. Three milestones are shown: 1. \"MICRO-PILOT\" (Highlighted and glowing), 2. \"INFRASTRUCTURE\", 3. \"NATION SCALE\". The background shows a sunrise over the ocean, symbolizing a new beginning.",
       "alt": "Micro-Pilot Roadmap",
       "baseFileName": "ask-pilot",
-      "fileExtension": ".jpg",
+      "fileExtension": ".webp",
       "imageCount": 1
     }
   }
